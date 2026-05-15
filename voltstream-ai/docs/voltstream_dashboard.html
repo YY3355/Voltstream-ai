@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoltStream AI — Battery Backtest Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0F14;
+    --surface: #131920;
+    --surface-2: #1A2230;
+    --border: rgba(255,255,255,0.06);
+    --text: #E8ECF1;
+    --text-muted: #7A8899;
+    --text-dim: #4A5668;
+    --accent: #22C97A;
+    --accent-dim: rgba(34,201,122,0.12);
+    --accent-glow: rgba(34,201,122,0.25);
+    --blue: #3B82F6;
+    --blue-dim: rgba(59,130,246,0.12);
+    --amber: #F59E0B;
+    --amber-dim: rgba(245,158,11,0.12);
+    --red: #EF4444;
+    --gray-bar: #2A3444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,201,122,0.06) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s ease;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-icon svg { width: 20px; height: 20px; }
+
+  .brand-name {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-name span { color: var(--accent); }
+
+  .header-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Metric cards */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    animation: fadeUp 0.6s ease backwards;
+  }
+
+  .metric-card:nth-child(1) { animation-delay: 0.05s; }
+  .metric-card:nth-child(2) { animation-delay: 0.1s; }
+  .metric-card:nth-child(3) { animation-delay: 0.15s; }
+  .metric-card:nth-child(4) { animation-delay: 0.2s; }
+
+  .metric-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .metric-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .metric-value.green { color: var(--accent); }
+
+  /* Uplift banner */
+  .uplift-banner {
+    background: var(--accent-dim);
+    border: 1px solid rgba(34,201,122,0.15);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease 0.25s backwards;
+  }
+
+  .uplift-number {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -2px;
+    white-space: nowrap;
+  }
+
+  .uplift-text {
+    font-size: 14px;
+    color: var(--accent);
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  .uplift-text strong { font-weight: 600; opacity: 1; }
+
+  /* Section */
+  .section {
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease 0.3s backwards;
+  }
+
+  .section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Strategy bars */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .bar-label {
+    font-size: 13px;
+    width: 160px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 32px;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 7px;
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .bar-fill.naive { background: var(--gray-bar); }
+  .bar-fill.smart { background: linear-gradient(90deg, #1A9E60, var(--accent)); }
+  .bar-fill.perfect { background: linear-gradient(90deg, #2563EB, var(--blue)); }
+
+  .bar-val {
+    font-size: 14px;
+    width: 70px;
+    text-align: right;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0;
+  }
+
+  /* Chart */
+  .chart-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 260px;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .stat-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Pitch box */
+  .pitch-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.6s ease 0.5s backwards;
+  }
+
+  .pitch-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--blue), var(--accent));
+  }
+
+  .pitch-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pitch-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  .pitch-text .hl {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .pitch-text .green { color: var(--accent); font-weight: 600; }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 24px 16px; }
+    .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 100px; font-size: 11px; }
+    .uplift-banner { flex-direction: column; text-align: center; gap: 12px; }
+    .metric-value { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="glow-orb"></div>
+
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B0F14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <div class="brand-name">Volt<span>Stream</span> AI</div>
+    </div>
+    <div class="header-sub">12-month backtest · 100 MW / 400 MWh BESS · ERCOT market</div>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Smart strategy revenue</div>
+      <div class="metric-value">$5.7M</div>
+      <div class="metric-sub">$58.20/kW-year</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Naive strategy revenue</div>
+      <div class="metric-value">$2.2M</div>
+      <div class="metric-sub">$22.00/kW-year</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Revenue uplift</div>
+      <div class="metric-value green">+164%</div>
+      <div class="metric-sub">$3.6M additional</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Capture rate</div>
+      <div class="metric-value">94.8%</div>
+      <div class="metric-sub">vs perfect foresight</div>
+    </div>
+  </div>
+
+  <div class="uplift-banner">
+    <div class="uplift-number">+$3.6M</div>
+    <div class="uplift-text">Annual revenue uplift per 100 MW asset. At 8% revenue share, that's <strong>$454K ARR per customer.</strong> 10 assets = $4.5M ARR.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Strategy comparison</div>
+    <div class="bar-row">
+      <div class="bar-label">Naive (peak/off-peak)</div>
+      <div class="bar-track"><div class="bar-fill naive" id="bar1"></div></div>
+      <div class="bar-val">$2.2M</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Smart (ML-driven)</div>
+      <div class="bar-track"><div class="bar-fill smart" id="bar2"></div></div>
+      <div class="bar-val" style="color: var(--accent);">$5.7M</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Perfect foresight</div>
+      <div class="bar-track"><div class="bar-fill perfect" id="bar3"></div></div>
+      <div class="bar-val" style="color: var(--blue);">$6.0M</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Monthly revenue — smart strategy</div>
+    <div class="chart-container">
+      <div class="chart-wrap">
+        <canvas id="monthlyChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Model performance</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">1h forecast MAE</div>
+        <div class="stat-value">$16.77</div>
+        <div class="stat-sub">per MWh</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Direction accuracy</div>
+        <div class="stat-value">64.9%</div>
+        <div class="stat-sub">price up/down prediction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Battery cycles/year</div>
+        <div class="stat-value">266</div>
+        <div class="stat-sub">vs 320 naive — less degradation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Revenue at risk</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Best single day</div>
+        <div class="stat-value green">$179,864</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Median day</div>
+        <div class="stat-value">$13,150</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Top 10 days = % of total</div>
+        <div class="stat-value">19.1%</div>
+        <div class="stat-sub">Tail events drive outsized returns</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pitch-box">
+    <div class="pitch-label">The investor pitch</div>
+    <p class="pitch-text">
+      "Our AI dispatch system generated <span class="green">$5.7M in revenue</span> on a 100MW battery in ERCOT over 12 months — <span class="green">$3.6M more</span> than a simple peak/off-peak strategy. We take 8% of revenue as our fee. The operator nets <span class="hl">$5.2M vs $2.2M</span> doing it themselves. We capture <span class="hl">94.8%</span> of the theoretical maximum with fewer battery cycles, meaning less asset degradation. Every new asset improves our models through our data flywheel."
+    </p>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// Animate bars on load
+setTimeout(() => {
+  document.getElementById('bar1').style.width = '36%';
+  document.getElementById('bar2').style.width = '95%';
+  document.getElementById('bar3').style.width = '100%';
+}, 300);
+
+// Monthly chart
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const revenue = [343109, 706097, 783325, 745833, 657912, 700360, 329490, 269166, 305592, 273847, 273477, 289375];
+
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [{
+      data: revenue,
+      backgroundColor: revenue.map(v => v > 500000 ? '#22C97A' : 'rgba(34,201,122,0.45)'),
+      borderRadius: 6,
+      borderSkipped: false,
+      barPercentage: 0.7
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1A2230',
+        titleColor: '#E8ECF1',
+        bodyColor: '#7A8899',
+        borderColor: 'rgba(255,255,255,0.08)',
+        borderWidth: 1,
+        padding: 12,
+        cornerRadius: 8,
+        callbacks: {
+          label: ctx => '$' + ctx.raw.toLocaleString()
+        }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#4A5668', font: { family: "'JetBrains Mono'", size: 11 } },
+        grid: { display: false },
+        border: { display: false }
+      },
+      y: {
+        ticks: {
+          color: '#4A5668',
+          font: { family: "'JetBrains Mono'", size: 11 },
+          callback: v => '$' + Math.round(v/1000) + 'K'
+        },
+        grid: { color: 'rgba(255,255,255,0.04)' },
+        border: { display: false }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
