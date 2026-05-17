@@ -19,6 +19,8 @@ Usage:
   python main.py planning       Run anticipatory planning demo
   python main.py gametheory     Run game theory market awareness demo
   python main.py crossdomain    Run cross-domain synthesis demo
+  python main.py selflearn       Run self-directed learning demo
+  python main.py strategic       Run strategic positioning demo
   python main.py status         Check all modules
 """
 
@@ -82,6 +84,12 @@ def main():
     elif command == 'crossdomain':
         from agents.cross_domain import demo
         demo()
+    elif command == 'selflearn':
+        from agents.self_learning import demo
+        demo()
+    elif command == 'strategic':
+        from core.strategic_engine import demo
+        demo()
     elif command == 'status':
         print("⚡ VoltStream AI — System Status")
         print("=" * 50)
@@ -103,6 +111,8 @@ def main():
             'Core — Planning Engine':     'core.planning_engine',
             'Agents — Game Theory':       'agents.game_theory',
             'Agents — Cross-Domain':      'agents.cross_domain',
+            'Agents — Self-Learning':     'agents.self_learning',
+            'Core — Strategic Engine':    'core.strategic_engine',
             'Data — Weather Engine':      'data.weather_engine',
             'Data — Multi-Weather':       'data.multi_weather',
             'Data — ERCOT Generator':     'data.ercot_generator',
