@@ -12,6 +12,13 @@ Usage:
   python main.py ensemble       Run ensemble forecast demo
   python main.py probabilistic  Run probabilistic forecast demo
   python main.py memory         Run persistent memory demo
+  python main.py ancillary      Run ancillary service co-optimization demo
+  python main.py notices        Run market notice reader demo
+  python main.py ml             Run production ML forecaster demo
+  python main.py causal         Run causal reasoning engine demo
+  python main.py planning       Run anticipatory planning demo
+  python main.py gametheory     Run game theory market awareness demo
+  python main.py crossdomain    Run cross-domain synthesis demo
   python main.py status         Check all modules
 """
 
@@ -54,6 +61,27 @@ def main():
     elif command == 'memory':
         from agents.memory import demo
         demo()
+    elif command == 'ancillary':
+        from core.ancillary_optimizer import demo
+        demo()
+    elif command == 'notices':
+        from agents.notice_reader import demo
+        demo()
+    elif command == 'ml':
+        from models.production_ml import demo
+        demo()
+    elif command == 'causal':
+        from core.causal_engine import demo
+        demo()
+    elif command == 'planning':
+        from core.planning_engine import demo
+        demo()
+    elif command == 'gametheory':
+        from agents.game_theory import demo
+        demo()
+    elif command == 'crossdomain':
+        from agents.cross_domain import demo
+        demo()
     elif command == 'status':
         print("⚡ VoltStream AI — System Status")
         print("=" * 50)
@@ -64,10 +92,17 @@ def main():
             'Agents — Multi-Agent':       'agents.multi_agent',
             'Agents — RL Agent':          'agents.rl_agent',
             'Agents — Memory':            'agents.memory',
+            'Agents — Notice Reader':     'agents.notice_reader',
             'Models — Ensemble':          'models.ensemble',
             'Models — Probabilistic':     'models.probabilistic',
             'Models — GNN':               'models.gnn',
+            'Models — Production ML':     'models.production_ml',
             'Models — Price Forecaster':  'models.price_forecaster',
+            'Core — Ancillary Optimizer': 'core.ancillary_optimizer',
+            'Core — Causal Engine':       'core.causal_engine',
+            'Core — Planning Engine':     'core.planning_engine',
+            'Agents — Game Theory':       'agents.game_theory',
+            'Agents — Cross-Domain':      'agents.cross_domain',
             'Data — Weather Engine':      'data.weather_engine',
             'Data — Multi-Weather':       'data.multi_weather',
             'Data — ERCOT Generator':     'data.ercot_generator',

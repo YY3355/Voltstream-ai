@@ -21,6 +21,18 @@ Battery storage operators in ERCOT leave millions on the table. On May 2, 2026, 
 
 Plus **Claude API** for edge case reasoning and plain English explanations.
 
+## The Brain (Intelligence Levels)
+
+Beyond the six base layers, VoltStream has a multi-level reasoning system:
+
+| Level | Capability | File |
+|-------|-----------|------|
+| Level 1 | Pattern Memory (remembers what worked before) | `agents/memory.py` |
+| Level 2 | Causal Reasoning (understands WHY prices move) | `core/causal_engine.py` |
+| Level 3 | Anticipatory Planning (simulates 300+ futures like chess) | `core/planning_engine.py` |
+| Level 4 | Market Awareness (game theory, models other batteries) | `agents/game_theory.py` |
+| Level 5 | Cross-Domain Synthesis (connects news/weather/gas/regulatory) | `agents/cross_domain.py` |
+
 ## Quick Start
 
 ```bash
@@ -60,11 +72,17 @@ voltstream-ai/
 ├── core/
 │   ├── hybrid_engine.py     # ML + Claude hybrid dispatch
 │   ├── cloud_service.py     # 24/7 service with API
-│   └── optimizer.py         # Battery optimizer + backtester
+│   ├── optimizer.py         # Battery optimizer + backtester
+│   ├── ancillary_optimizer.py # AS co-optimization
+│   ├── causal_engine.py     # Level 2: Causal reasoning
+│   └── planning_engine.py   # Level 3: Anticipatory planning
 ├── agents/
 │   ├── multi_agent.py       # 6-agent virtual trading desk
 │   ├── rl_agent.py          # Reinforcement learning agent
-│   └── memory.py            # Persistent memory system
+│   ├── memory.py            # Level 1: Persistent memory
+│   ├── notice_reader.py     # Market notice reader
+│   ├── game_theory.py       # Level 4: Game theory
+│   └── cross_domain.py      # Level 5: Cross-domain synthesis
 ├── models/
 │   ├── ensemble.py          # 5-model ensemble forecaster
 │   ├── probabilistic.py     # Quantile forecasting
