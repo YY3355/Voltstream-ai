@@ -192,15 +192,12 @@ def strategy_traditional(df: pd.DataFrame) -> float:
 def strategy_voltstream(df: pd.DataFrame) -> float:
     """
     VoltStream Smart strategy.
-    Uses rolling price analysis to decide every interval.
     
-    Core logic:
-    - Track rolling price statistics
-    - Charge when price is in the bottom 25% of recent prices
-    - Discharge when price is in the top 25% of recent prices
-    - Use price momentum to time entries
-    - Avoid discharging into falling prices
-    - Avoid charging into rising prices
+    Hybrid approach: always be cycling, but reserve charge for evening.
+    Adapts to both flat days (sell whenever price > 30) and spike days
+    (hold for the $50-100+ evening peak).
+    
+    Validated against 4 full days of real ERCOT data.
     """
     battery = Battery()
     prices = df['HB_HOUSTON'].values
@@ -208,74 +205,90 @@ def strategy_voltstream(df: pd.DataFrame) -> float:
     for i, row in df.iterrows():
         price = row['HB_HOUSTON']
         hour = row['hour']
+        soc = battery.soc
         
-        # Build context from prices seen so far
-        seen_prices = prices[:i+1]
-        
-        if len(seen_prices) < 4:
+        seen = prices[:i+1]
+        if len(seen) < 4:
             battery.hold(price)
             continue
         
-        # Rolling statistics
-        recent = seen_prices[-min(48, len(seen_prices)):]  # last 12 hours
-        p25 = np.percentile(recent, 25)
-        p75 = np.percentile(recent, 75)
-        median = np.median(recent)
+        # Momentum: is the market trending up?
+        momentum_1h = price - seen[max(0, i-4)] if i >= 4 else 0
+        momentum_3h = price - seen[max(0, i-12)] if i >= 12 else 0
+        # Only suppress selling when prices are MODERATE and rising
+        # If prices are already high ($38+), sell into the momentum
+        rising_hold = momentum_3h > 8 and price < 37
         
-        # Price momentum (last 4 intervals = 1 hour)
-        if len(seen_prices) >= 4:
-            momentum = price - seen_prices[-4]
-        else:
-            momentum = 0
+        is_evening = 17 <= hour <= 22
+        is_pre_evening = 14 <= hour < 17
+        is_morning = 0 <= hour <= 8
+        is_midday = 9 <= hour <= 14
         
-        # Volatility
-        volatility = np.std(recent)
-        
-        # Decision logic
-        # KEY INSIGHT: Save charge for evening peak (17-21).
-        # Don't waste it on mediocre midday prices.
-        
-        is_peak_approaching = hour >= 14
-        is_peak = hour >= 17 and hour <= 21
-        is_off_peak = hour <= 8 or hour >= 22
-        
-        if price < 0:
+        # ===== ALWAYS RULES =====
+        if price < 0 and soc < 0.95:
             battery.charge(battery.power, price)
-        
-        elif price < 5 and battery.soc < 0.90:
+            continue
+        if price < 5 and soc < 0.90:
             battery.charge(battery.power, price)
-        
-        elif is_off_peak and price < 22 and battery.soc < 0.90:
-            # Cheap overnight/late night. Load up for tomorrow's peak.
-            battery.charge(battery.power * 0.7, price)
-        
-        elif is_peak and price > 40 and battery.soc > 0.10:
-            # PEAK HOURS with good prices. This is what we saved for.
-            if price > 80:
-                battery.discharge(battery.power, price)
-            elif price > 55:
-                battery.discharge(battery.power * 0.8, price)
-            else:
-                battery.discharge(battery.power * 0.6, price)
-        
-        elif price > 60 and battery.soc > 0.10:
-            # High price any hour. Always sell.
+            continue
+        if price > 60 and soc > 0.10:
             battery.discharge(battery.power, price)
+            continue
         
-        elif is_peak_approaching and battery.soc < 0.50 and price < 25:
-            # Peak approaching but we're low. Quick charge.
-            battery.charge(battery.power * 0.6, price)
+        # ===== MORNING: charge up =====
+        if is_morning:
+            if price < 22 and soc < 0.90:
+                battery.charge(battery.power * 0.7, price)
+            elif price > 35 and soc > 0.50:
+                battery.discharge(battery.power * 0.6, price)
+            else:
+                battery.hold(price)
         
-        elif not is_peak and not is_peak_approaching and price < p25 and battery.soc < 0.85:
-            # Off-peak cheap price. Charge.
-            battery.charge(battery.power * 0.6, price)
+        # ===== MIDDAY: recharge from solar, sell excess above 50% =====
+        elif is_midday:
+            if price < 15 and soc < 0.90:
+                battery.charge(battery.power * 0.8, price)
+            elif price > 40 and soc > 0.20 and not rising_hold:
+                battery.discharge(battery.power * 0.7, price)
+            elif price > 30 and soc > 0.50 and not rising_hold:
+                battery.discharge(battery.power * 0.5, price)
+            else:
+                battery.hold(price)
         
-        elif not is_peak_approaching and price > p75 and price > 30 and battery.soc > 0.30:
-            # High relative price, not near peak. Take some profit.
-            battery.discharge(battery.power * 0.4, price)
+        # ===== PRE-EVENING: position for peak =====
+        elif is_pre_evening:
+            if price < 18 and soc < 0.85:
+                battery.charge(battery.power * 0.6, price)
+            elif price > 35 and soc > 0.15 and not rising_hold:
+                battery.discharge(battery.power * 0.7, price)
+            elif price > 35 and soc > 0.15 and rising_hold:
+                # Market rising, sell slowly, save for spike
+                battery.discharge(battery.power * 0.3, price)
+            elif price > 25 and soc > 0.75 and not rising_hold:
+                battery.discharge(battery.power * 0.4, price)
+            else:
+                battery.hold(price)
         
+        # ===== EVENING: discharge everything =====
+        elif is_evening:
+            if price > 35 and soc > 0.10:
+                intensity = 1.0 if price > 50 else 0.8
+                battery.discharge(battery.power * intensity, price)
+            elif price > 25 and soc > 0.30:
+                battery.discharge(battery.power * 0.5, price)
+            elif price < 18 and soc < 0.60:
+                battery.charge(battery.power * 0.4, price)
+            else:
+                battery.hold(price)
+        
+        # ===== LATE NIGHT: rebalance =====
         else:
-            battery.hold(price)
+            if price < 22 and soc < 0.60:
+                battery.charge(battery.power * 0.4, price)
+            elif price > 30 and soc > 0.50:
+                battery.discharge(battery.power * 0.3, price)
+            else:
+                battery.hold(price)
     
     return battery.total_revenue, battery.total_cycles, battery.trade_log
 
