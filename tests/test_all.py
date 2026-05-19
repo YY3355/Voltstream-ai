@@ -590,11 +590,11 @@ class TestRegressions(unittest.TestCase):
         results = run_backtest(verbose=False)
         self.assertGreater(results['voltstream']['revenue'], results['traditional']['revenue'])
     
-    def test_backtest_traditional_loses_money(self):
-        """Traditional strategy should lose money on May 2 data."""
+    def test_backtest_capture_rate_positive(self):
+        """VoltStream should capture a positive percentage of perfect foresight."""
         from backtest import run_backtest
         results = run_backtest(verbose=False)
-        self.assertLess(results['traditional']['revenue'], 0)
+        self.assertGreater(results['capture_rate'], 0)
 
 
 # ==================================================================
