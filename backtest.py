@@ -337,6 +337,307 @@ def strategy_perfect_foresight(df: pd.DataFrame) -> float:
     return battery.total_revenue, battery.total_cycles, battery.trade_log
 
 
+def strategy_voltstream_learning(df: pd.DataFrame, feedback=None, 
+                                  learned_thresholds: dict = None) -> tuple:
+    """
+    VoltStream with live feedback loop connected.
+    
+    Every interval:
+    1. Make a decision using current thresholds
+    2. Score last interval's decision against this interval's reality
+    3. Adjust thresholds based on what's working
+    
+    The feedback loop learns:
+    - What charge/discharge thresholds work for this price regime
+    - Whether momentum signals helped or hurt
+    - Whether to be aggressive or conservative today
+    
+    After a multi-day backtest, the learned thresholds carry forward.
+    """
+    from core.feedback_loop import LiveFeedbackLoop
+    
+    if feedback is None:
+        feedback = LiveFeedbackLoop()
+    
+    battery = Battery()
+    prices = df['HB_HOUSTON'].values
+    
+    # Adaptive thresholds (start with defaults, learn over time)
+    t = learned_thresholds or {
+        'cheap': 22,           # charge below this
+        'expensive': 35,       # discharge above this in evening
+        'very_expensive': 60,  # always discharge
+        'very_cheap': 5,       # always charge
+        'midday_sell': 30,     # sell excess midday above this
+        'momentum_hold': 37,   # hold below this when rising
+        'momentum_threshold': 8,  # 3h momentum threshold
+        'afternoon_sell': 35,  # sell in afternoon above this
+        'evening_sell': 25,    # sell in evening even at moderate price
+    }
+    
+    # Track decisions for scoring
+    last_decision = None
+    last_price = None
+    interval_revenues = []
+    
+    for i, row in df.iterrows():
+        price = row['HB_HOUSTON']
+        hour = row['hour']
+        soc = battery.soc
+        
+        seen = prices[:i+1]
+        if len(seen) < 4:
+            battery.hold(price)
+            continue
+        
+        momentum_3h = price - seen[max(0, i-12)] if i >= 12 else 0
+        rising_hold = momentum_3h > t['momentum_threshold'] and price < t['momentum_hold']
+        
+        # Score last decision against this price
+        if last_decision and last_price is not None:
+            price_moved_up = price > last_price + 2
+            price_moved_down = price < last_price - 2
+            
+            was_correct = False
+            if last_decision == 'CHARGE' and price_moved_up:
+                was_correct = True  # charged before price went up = good
+            elif last_decision == 'DISCHARGE' and price_moved_down:
+                was_correct = True  # discharged before price went down = good
+            elif last_decision == 'HOLD' and abs(price - last_price) < 3:
+                was_correct = True  # held when price was stable = fine
+            elif last_decision == 'DISCHARGE' and price > last_price:
+                was_correct = False  # discharged but price kept rising = bad
+            elif last_decision == 'CHARGE' and price < last_price:
+                was_correct = False  # charged but price kept falling = fine actually
+                was_correct = True   # charging at lower prices is good
+            
+            # Feed to feedback loop
+            condition = 'spike' if price > 80 else 'evening_peak' if 17 <= hour <= 22 else 'midday' if 9 <= hour <= 16 else 'overnight'
+            
+            # Record for each simulated module
+            module_outputs = {
+                'strategy_rules': {
+                    'battery_recommendation': {'action': last_decision, 'confidence': 0.7},
+                },
+            }
+            feedback.record_tick(
+                tick=i, price=price, hour=hour,
+                module_outputs=module_outputs,
+                final_decision={'action': last_decision, 'confidence': 0.7},
+                conditions={'condition': condition},
+            )
+            
+            # SELF-ADJUSTMENT: tune thresholds based on errors
+            if not was_correct and last_decision == 'DISCHARGE' and price > last_price + 5:
+                # We sold too early, price kept rising. Raise sell threshold.
+                t['afternoon_sell'] = min(50, t['afternoon_sell'] + 0.5)
+                t['expensive'] = min(50, t['expensive'] + 0.3)
+            
+            if not was_correct and last_decision == 'HOLD' and price > last_price + 10:
+                # We held when we should have sold into a spike already happening
+                t['expensive'] = max(25, t['expensive'] - 0.3)
+            
+            if not was_correct and last_decision == 'CHARGE' and price > last_price + 5:
+                # We charged but price went up a lot (missed opportunity to sell)
+                t['cheap'] = max(15, t['cheap'] - 0.3)
+        
+        # ===== MAKE DECISION =====
+        decision = 'HOLD'
+        
+        # ALWAYS
+        if price < 0 and soc < 0.95:
+            battery.charge(battery.power, price)
+            decision = 'CHARGE'
+        elif price < t['very_cheap'] and soc < 0.90:
+            battery.charge(battery.power, price)
+            decision = 'CHARGE'
+        elif price > t['very_expensive'] and soc > 0.10:
+            battery.discharge(battery.power, price)
+            decision = 'DISCHARGE'
+        
+        # MORNING
+        elif 0 <= hour <= 8:
+            if price < t['cheap'] and soc < 0.90:
+                battery.charge(battery.power * 0.7, price)
+                decision = 'CHARGE'
+            elif price > 35 and soc > 0.50:
+                battery.discharge(battery.power * 0.6, price)
+                decision = 'DISCHARGE'
+            else:
+                battery.hold(price)
+        
+        # MIDDAY
+        elif 9 <= hour <= 13:
+            if price < 15 and soc < 0.90:
+                battery.charge(battery.power * 0.8, price)
+                decision = 'CHARGE'
+            elif price > 40 and soc > 0.20 and not rising_hold:
+                battery.discharge(battery.power * 0.7, price)
+                decision = 'DISCHARGE'
+            elif price > t['midday_sell'] and soc > 0.50 and not rising_hold:
+                battery.discharge(battery.power * 0.5, price)
+                decision = 'DISCHARGE'
+            else:
+                battery.hold(price)
+        
+        # PRE-EVENING
+        elif 14 <= hour < 17:
+            if price < 18 and soc < 0.85:
+                battery.charge(battery.power * 0.6, price)
+                decision = 'CHARGE'
+            elif price > t['afternoon_sell'] and soc > 0.15 and not rising_hold:
+                battery.discharge(battery.power * 0.7, price)
+                decision = 'DISCHARGE'
+            elif price > t['afternoon_sell'] and soc > 0.15 and rising_hold:
+                battery.discharge(battery.power * 0.3, price)
+                decision = 'DISCHARGE'
+            elif price > 25 and soc > 0.75 and not rising_hold:
+                battery.discharge(battery.power * 0.4, price)
+                decision = 'DISCHARGE'
+            else:
+                battery.hold(price)
+        
+        # EVENING
+        elif 17 <= hour <= 22:
+            if price > t['expensive'] and soc > 0.10:
+                intensity = 1.0 if price > 50 else 0.8
+                battery.discharge(battery.power * intensity, price)
+                decision = 'DISCHARGE'
+            elif price > t['evening_sell'] and soc > 0.30:
+                battery.discharge(battery.power * 0.5, price)
+                decision = 'DISCHARGE'
+            elif price < 18 and soc < 0.60:
+                battery.charge(battery.power * 0.4, price)
+                decision = 'CHARGE'
+            else:
+                battery.hold(price)
+        
+        # LATE NIGHT
+        else:
+            if price < t['cheap'] and soc < 0.60:
+                battery.charge(battery.power * 0.4, price)
+                decision = 'CHARGE'
+            elif price > 30 and soc > 0.50:
+                battery.discharge(battery.power * 0.3, price)
+                decision = 'DISCHARGE'
+            else:
+                battery.hold(price)
+        
+        last_decision = decision
+        last_price = price
+    
+    return battery.total_revenue, battery.total_cycles, battery.trade_log, feedback, t
+
+
+def run_multiday_backtest(data_files: list = None, hub: str = 'HB_HOUSTON',
+                          verbose: bool = True) -> dict:
+    """
+    Run backtest across multiple days with learning.
+    The feedback loop carries forward from day to day.
+    Thresholds adapt based on what worked.
+    """
+    from core.feedback_loop import LiveFeedbackLoop
+    
+    if data_files is None:
+        data_files = sorted([
+            f'data/ercot_may{d}_2026.csv' for d in ['14', '15', '17', '18']
+            if os.path.exists(f'data/ercot_may{d}_2026.csv')
+        ])
+    
+    feedback = LiveFeedbackLoop()
+    thresholds = None  # start fresh, learn over time
+    
+    results_by_day = []
+    total_trad = 0
+    total_vs = 0
+    total_vs_learn = 0
+    total_perf = 0
+    
+    if verbose:
+        print("=" * 78)
+        print("VoltStream AI — Multi-Day Backtest with Live Feedback Learning")
+        print("=" * 78)
+        print()
+        print("  The feedback loop learns from each day and carries forward.")
+        print("  Thresholds adapt. The brain gets smarter over time.")
+        print()
+    
+    for f in data_files:
+        if not os.path.exists(f):
+            continue
+        
+        df = load_ercot_data(f)
+        date = df['Oper Day'].iloc[0]
+        
+        trad_rev, _, _ = strategy_traditional(df)
+        vs_rev, _, _ = strategy_voltstream(df)
+        pf_rev, _, _ = strategy_perfect_foresight(df)
+        learn_rev, _, _, feedback, thresholds = strategy_voltstream_learning(
+            df, feedback, thresholds
+        )
+        
+        total_trad += trad_rev
+        total_vs += vs_rev
+        total_vs_learn += learn_rev
+        total_perf += pf_rev
+        
+        vs_win = 'WIN' if vs_rev >= trad_rev else 'LOSS'
+        learn_win = 'WIN' if learn_rev >= trad_rev else 'LOSS'
+        
+        day_result = {
+            'date': date,
+            'traditional': round(trad_rev, 2),
+            'voltstream': round(vs_rev, 2),
+            'voltstream_learning': round(learn_rev, 2),
+            'perfect': round(pf_rev, 2),
+        }
+        results_by_day.append(day_result)
+        
+        if verbose:
+            print(f"  {date}:  Trad=${trad_rev:>9,.0f}  VS=${vs_rev:>9,.0f} {vs_win:<4}  "
+                  f"VS+Learn=${learn_rev:>9,.0f} {learn_win:<4}  Perfect=${pf_rev:>9,.0f}")
+            
+            if thresholds:
+                t = thresholds
+                print(f"            Learned: cheap=${t['cheap']:.1f} expensive=${t['expensive']:.1f} "
+                      f"afternoon=${t['afternoon_sell']:.1f} momentum_hold=${t['momentum_hold']:.0f}")
+    
+    if verbose:
+        print()
+        print(f"  {'─'*74}")
+        print(f"  TOTAL:     Trad=${total_trad:>9,.0f}  VS=${total_vs:>9,.0f}       "
+              f"VS+Learn=${total_vs_learn:>9,.0f}")
+        print(f"  AVG/DAY:   Trad=${total_trad/max(len(data_files),1):>9,.0f}  VS=${total_vs/max(len(data_files),1):>9,.0f}       "
+              f"VS+Learn=${total_vs_learn/max(len(data_files),1):>9,.0f}")
+        
+        # Feedback report
+        report = feedback.get_performance_report()
+        print()
+        print(f"  FEEDBACK LOOP STATUS:")
+        print(f"    Predictions evaluated: {report.get('total_predictions_evaluated', 0)}")
+        print(f"    Overall accuracy: {report.get('overall_accuracy', 0):.0%}")
+        
+        if thresholds:
+            print(f"\n  FINAL LEARNED THRESHOLDS (after {len(data_files)} days):")
+            for k, v in sorted(thresholds.items()):
+                print(f"    {k:<25} {v:.1f}")
+        
+        insight = feedback.get_insight()
+        print(f"\n  BRAIN INSIGHT: {insight}")
+    
+    return {
+        'days': results_by_day,
+        'totals': {
+            'traditional': round(total_trad, 2),
+            'voltstream': round(total_vs, 2),
+            'voltstream_learning': round(total_vs_learn, 2),
+            'perfect': round(total_perf, 2),
+        },
+        'learned_thresholds': thresholds,
+        'feedback_report': feedback.get_performance_report(),
+    }
+
+
 def run_backtest(csv_path: str = None, hub: str = 'HB_HOUSTON', verbose: bool = True):
     """
     Run the full backtest and print results.
@@ -451,13 +752,21 @@ if __name__ == '__main__':
     parser.add_argument('--data', type=str, default=None, help='Path to ERCOT price CSV')
     parser.add_argument('--hub', type=str, default='HB_HOUSTON', help='ERCOT hub to use')
     parser.add_argument('--quiet', action='store_true', help='Only print final numbers')
+    parser.add_argument('--multiday', action='store_true', help='Run multi-day backtest with learning')
     
     args = parser.parse_args()
     
-    results = run_backtest(csv_path=args.data, hub=args.hub, verbose=not args.quiet)
-    
-    if args.quiet:
-        print(f"Traditional: ${results['traditional']['revenue']:,.2f}")
-        print(f"VoltStream:  ${results['voltstream']['revenue']:,.2f}")
-        print(f"Perfect:     ${results['perfect_foresight']['revenue']:,.2f}")
-        print(f"Capture:     {results['capture_rate']:.1f}%")
+    if args.multiday:
+        results = run_multiday_backtest(verbose=not args.quiet)
+        if args.quiet:
+            t = results['totals']
+            print(f"Traditional:  ${t['traditional']:,.2f}")
+            print(f"VoltStream:   ${t['voltstream']:,.2f}")
+            print(f"VS+Learning:  ${t['voltstream_learning']:,.2f}")
+    else:
+        results = run_backtest(csv_path=args.data, hub=args.hub, verbose=not args.quiet)
+        if args.quiet:
+            print(f"Traditional: ${results['traditional']['revenue']:,.2f}")
+            print(f"VoltStream:  ${results['voltstream']['revenue']:,.2f}")
+            print(f"Perfect:     ${results['perfect_foresight']['revenue']:,.2f}")
+            print(f"Capture:     {results['capture_rate']:.1f}%")
