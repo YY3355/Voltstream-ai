@@ -1,5 +1,7 @@
 # ⚡ VoltStream AI
 
+[![VoltStream CI](https://github.com/YY3355/Voltstream-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/YY3355/Voltstream-ai/actions/workflows/ci.yml)
+
 **Autonomous battery dispatch optimization for ERCOT using hybrid agentic AI.**
 
 Six AI agents work together as a virtual trading desk — making dispatch decisions 24/7, learning from every trade, and delivering more revenue than traditional approaches.
