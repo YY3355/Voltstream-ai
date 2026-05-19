@@ -22,6 +22,7 @@ Usage:
   python main.py selflearn       Run self-directed learning demo
   python main.py strategic       Run strategic positioning demo
   python main.py context         Run context window manager demo
+  python main.py orchestrate     Run the full brain (5 ticks demo)
   python main.py ragv2           Run RAG v2 demo
   python main.py status         Check all modules
 """
@@ -86,6 +87,9 @@ def main():
     elif command == 'crossdomain':
         from agents.cross_domain import demo
         demo()
+    elif command == 'orchestrate':
+        from core.orchestrator import demo
+        demo()
     elif command == 'context':
         from core.context_manager import demo
         demo()
@@ -122,6 +126,7 @@ def main():
             'Agents — Self-Learning':     'agents.self_learning',
             'Core — Strategic Engine':    'core.strategic_engine',
             'Core — Context Manager':    'core.context_manager',
+            'Core — Orchestrator':       'core.orchestrator',
             'Core — RAG Engine':         'core.rag_engine',
             'Core — RAG Engine v2':      'core.rag_engine_v2',
             'Data — Weather Engine':      'data.weather_engine',
