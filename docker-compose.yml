@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # The main VoltStream brain
+  voltstream:
+    build: .
+    container_name: voltstream-brain
+    restart: unless-stopped
+    
+    environment:
+      - VOLTSTREAM_MODE=live
+      - VOLTSTREAM_DB_PATH=/app/data/storage/voltstream.db
+      - VOLTSTREAM_LOG_PATH=/app/logs/voltstream.log
+      # Set these in .env file or pass at runtime
+      - ERCOT_EMAIL=${ERCOT_EMAIL:-}
+      - ERCOT_PASSWORD=${ERCOT_PASSWORD:-}
+      - ERCOT_KEY=${ERCOT_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - VOLTSTREAM_WEBHOOK=${VOLTSTREAM_WEBHOOK:-}
+    
+    volumes:
+      # Persist data between container restarts
+      - voltstream-data:/app/data/storage
+      - voltstream-logs:/app/logs
+    
+    ports:
+      - "5000:5000"  # Dashboard API
+    
+    # Run the orchestrator in live mode
+    command: python -c "
+      from core.orchestrator import Orchestrator;
+      import logging;
+      logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s');
+      o = Orchestrator();
+      o.run()
+      "
+  
+  # Run tests (one-off)
+  test:
+    build: .
+    container_name: voltstream-test
+    command: python -m tests.test_all
+    profiles:
+      - test
+  
+  # Run status check (one-off)
+  status:
+    build: .
+    container_name: voltstream-status
+    command: python main.py status
+    profiles:
+      - tools
+
+volumes:
+  voltstream-data:
+    driver: local
+  voltstream-logs:
+    driver: local

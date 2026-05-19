@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.db
+*.log
+*.json
+!models/rl_dispatch_model.json
+.git
+.gitignore
+*.md
+!README.md
+docs/
+*.zip
+*.csv
+.env
