@@ -583,6 +583,18 @@ class TestRegressions(unittest.TestCase):
                              'wind_speed': 15, 'solar_ghi': 500, 'soc': 0.5,
                              'price_1h_ago': 28, 'price_4h_ago': 25})
         self.assertEqual(len(vec), 16)
+    
+    def test_backtest_voltstream_beats_traditional(self):
+        """VoltStream must beat traditional strategy on real ERCOT data."""
+        from backtest import run_backtest
+        results = run_backtest(verbose=False)
+        self.assertGreater(results['voltstream']['revenue'], results['traditional']['revenue'])
+    
+    def test_backtest_traditional_loses_money(self):
+        """Traditional strategy should lose money on May 2 data."""
+        from backtest import run_backtest
+        results = run_backtest(verbose=False)
+        self.assertLess(results['traditional']['revenue'], 0)
 
 
 # ==================================================================
