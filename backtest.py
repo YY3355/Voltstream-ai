@@ -423,29 +423,28 @@ def strategy_voltstream_brain(df: pd.DataFrame) -> float:
         elif hour >= 23 and price < 22 and soc < 0.60:
             votes.append(('CHARGE', 0.6, 'Time: late night recharge'))
         
-        # --- ML Forecast vote ---
+        # --- ML Forecast vote (retrained, calibrated) ---
         if 'ml_forecast' in modules:
             try:
                 ml = modules['ml_forecast'].predict(
                     price, {'houston_temp': temp, 'wind_speed': wind,
-                            'solar_ghi': solar}, hour=hour
+                            'solar_ghi': solar}, hour=hour,
+                    price_history=list(seen[-16:]) if len(seen) >= 16 else None,
                 )
                 price_1h = ml.get('price_1h', price)
-                # Use DIRECTION not absolute value (model is uncalibrated)
-                ml_says_up = price_1h > price * 1.05
-                ml_says_down = price_1h < price * 0.95
-                conf = ml.get('confidence_1h', 0.5) * 0.5  # discount uncalibrated model
+                conf = ml.get('confidence_1h', 0.5)
                 
-                if ml_says_up and soc < 0.85:
-                    votes.append(('CHARGE', conf, 'ML: price trending up'))
-                elif ml_says_down and soc > 0.20:
-                    votes.append(('DISCHARGE', conf, 'ML: price trending down'))
+                # Direction: if ML says price will be higher, hold/charge
+                if price_1h > price + 5 and soc < 0.85:
+                    votes.append(('CHARGE', conf * 0.6, f'ML: rising to ${price_1h:.0f}'))
+                elif price_1h < price - 5 and soc > 0.20:
+                    votes.append(('DISCHARGE', conf * 0.6, f'ML: falling to ${price_1h:.0f}'))
                 
-                # Also add price-level awareness
+                # Price level
                 if price > 40 and soc > 0.15:
-                    votes.append(('DISCHARGE', 0.5, f'ML: high price ${price:.0f}'))
+                    votes.append(('DISCHARGE', 0.6, f'ML: high ${price:.0f}'))
                 elif price < 15 and soc < 0.85:
-                    votes.append(('CHARGE', 0.5, f'ML: low price ${price:.0f}'))
+                    votes.append(('CHARGE', 0.6, f'ML: low ${price:.0f}'))
             except Exception:
                 pass
         
@@ -453,22 +452,9 @@ def strategy_voltstream_brain(df: pd.DataFrame) -> float:
         # In production with real weather data, causal would contribute.
         # For backtesting with estimated weather, it adds noise.
         
-        # --- Planning Engine vote ---
-        if 'planning' in modules:
-            try:
-                plan = modules['planning'].plan(
-                    current_price=price, current_soc=soc,
-                    current_hour=hour, n_simulations=30,
-                )
-                action = plan.get('recommended_action', 'HOLD')
-                sharpe = plan.get('recommended_details', {}).get('sharpe', 0)
-                
-                if 'CHARGE' in action:
-                    votes.append(('CHARGE', min(0.4, abs(sharpe) * 0.5), f'Plan: {action}'))
-                elif 'DISCHARGE' in action:
-                    votes.append(('DISCHARGE', min(0.4, abs(sharpe) * 0.5), f'Plan: {action}'))
-            except Exception:
-                pass
+        # --- Planning Engine: skip (Monte Carlo uses synthetic price paths) ---
+        # In production with calibrated path generator, planning would contribute.
+        # For backtesting, its uncalibrated simulations add noise.
         
         # --- Game Theory vote ---
         if 'game_theory' in modules:

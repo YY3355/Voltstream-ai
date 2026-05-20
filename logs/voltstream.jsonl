@@ -334,3 +334,115 @@
 {"type": "module", "ts": "2026-05-20T01:13:22.852566", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
 {"type": "module", "ts": "2026-05-20T01:13:22.852767", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
 {"type": "tick", "ts": "2026-05-20T01:13:22.852978", "tick": 1, "price": 24.34, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5194, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1050.4, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:40.703831", "module": "hybrid_rag", "action": "run", "latency_ms": 2.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:40.709614", "module": "rag", "action": "run", "latency_ms": 4.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:40.711828", "module": "causal", "action": "run", "latency_ms": 1.7, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:40.763846", "module": "planning", "action": "run", "latency_ms": 51.7, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:40.764148", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:40.764258", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:40.764491", "tick": 1, "price": 41.64, "price_source": "synthetic", "action": "DISCHARGE", "intensity": 0.68, "confidence": 0.6, "soc": 0.4848, "hour": 1, "condition": "overnight", "n_modules_voted": 3, "modules_failed": [], "latency_ms": 3070.7, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:41.797997", "module": "hybrid_rag", "action": "run", "latency_ms": 2.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:41.800326", "module": "rag", "action": "run", "latency_ms": 1.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:41.801158", "module": "causal", "action": "run", "latency_ms": 0.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:41.853521", "module": "planning", "action": "run", "latency_ms": 52.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:41.853834", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:41.853929", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:41.854152", "tick": 1, "price": 37.61, "price_source": "synthetic", "action": "CHARGE", "intensity": 0.68, "confidence": 0.6, "soc": 0.5132, "hour": 1, "condition": "overnight", "n_modules_voted": 2, "modules_failed": [], "latency_ms": 1081.9, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:42.851785", "module": "hybrid_rag", "action": "run", "latency_ms": 5.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:42.854870", "module": "rag", "action": "run", "latency_ms": 1.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:42.856025", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:42.930108", "module": "planning", "action": "run", "latency_ms": 73.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:42.930344", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:42.930436", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:42.930559", "tick": 2, "price": 35.23, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5326, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1076.0, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:43.936004", "module": "hybrid_rag", "action": "run", "latency_ms": 4.7, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:43.939060", "module": "rag", "action": "run", "latency_ms": 1.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:43.939658", "module": "causal", "action": "run", "latency_ms": 0.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:44.018443", "module": "planning", "action": "run", "latency_ms": 78.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:44.018683", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:44.018780", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:44.018918", "tick": 3, "price": 19.14, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5521, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1087.7, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:45.013501", "module": "hybrid_rag", "action": "run", "latency_ms": 3.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:45.016523", "module": "rag", "action": "run", "latency_ms": 1.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:45.017505", "module": "causal", "action": "run", "latency_ms": 0.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:45.096755", "module": "planning", "action": "run", "latency_ms": 78.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:45.097213", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:45.097316", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:45.097474", "tick": 1, "price": 37.72, "price_source": "synthetic", "action": "CHARGE", "intensity": 0.66, "confidence": 0.575, "soc": 0.5128, "hour": 1, "condition": "overnight", "n_modules_voted": 2, "modules_failed": [], "latency_ms": 1071.2, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:46.126815", "module": "hybrid_rag", "action": "run", "latency_ms": 2.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:46.129556", "module": "rag", "action": "run", "latency_ms": 1.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:46.130576", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:46.205824", "module": "planning", "action": "run", "latency_ms": 74.7, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:46.206279", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:46.206374", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:46.206532", "tick": 1, "price": 35.24, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5194, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1105.7, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:47.200802", "module": "hybrid_rag", "action": "run", "latency_ms": 3.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:47.204163", "module": "rag", "action": "run", "latency_ms": 1.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:47.205082", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:47.279790", "module": "planning", "action": "run", "latency_ms": 74.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:47.280033", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:47.280103", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:47.280225", "tick": 2, "price": 31.99, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5389, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1073.4, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:48.253763", "module": "hybrid_rag", "action": "run", "latency_ms": 4.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:48.257915", "module": "rag", "action": "run", "latency_ms": 1.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:48.258754", "module": "causal", "action": "run", "latency_ms": 0.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:48.338184", "module": "planning", "action": "run", "latency_ms": 79.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:48.338489", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:48.338670", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:48.338777", "tick": 3, "price": 35.56, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5583, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1058.3, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:49.328665", "module": "hybrid_rag", "action": "run", "latency_ms": 3.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:49.331058", "module": "rag", "action": "run", "latency_ms": 1.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:49.332408", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:49.409369", "module": "planning", "action": "run", "latency_ms": 76.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:49.409603", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:49.409682", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:49.409799", "tick": 4, "price": 34.59, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5777, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1070.8, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:50.400625", "module": "hybrid_rag", "action": "run", "latency_ms": 5.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:50.403728", "module": "rag", "action": "run", "latency_ms": 1.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:50.404666", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:50.478701", "module": "planning", "action": "run", "latency_ms": 73.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:50.479048", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:50.479143", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:50.479305", "tick": 5, "price": 17.49, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.5972, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1069.3, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:51.470666", "module": "hybrid_rag", "action": "run", "latency_ms": 2.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:51.472888", "module": "rag", "action": "run", "latency_ms": 1.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:51.473622", "module": "causal", "action": "run", "latency_ms": 0.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:51.550324", "module": "planning", "action": "run", "latency_ms": 76.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:51.550528", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:51.550603", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:51.550720", "tick": 6, "price": 31.75, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.6166, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1071.2, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:52.543398", "module": "hybrid_rag", "action": "run", "latency_ms": 3.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:52.547140", "module": "rag", "action": "run", "latency_ms": 1.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:52.548089", "module": "causal", "action": "run", "latency_ms": 0.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:52.625970", "module": "planning", "action": "run", "latency_ms": 77.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:52.626345", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:52.626432", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:52.626575", "tick": 7, "price": 24.84, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.636, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1075.6, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:53.616216", "module": "hybrid_rag", "action": "run", "latency_ms": 3.4, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:53.619378", "module": "rag", "action": "run", "latency_ms": 1.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:53.620030", "module": "causal", "action": "run", "latency_ms": 0.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:53.685727", "module": "planning", "action": "run", "latency_ms": 65.5, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:53.686085", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:53.686214", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:53.686353", "tick": 8, "price": 38.93, "price_source": "synthetic", "action": "DISCHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.6137, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1059.5, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:54.695748", "module": "hybrid_rag", "action": "run", "latency_ms": 7.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:54.700650", "module": "rag", "action": "run", "latency_ms": 2.6, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:54.702058", "module": "causal", "action": "run", "latency_ms": 0.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:54.780653", "module": "planning", "action": "run", "latency_ms": 78.2, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:54.780938", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:54.781030", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:54.781214", "tick": 9, "price": 32.36, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.6331, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1094.5, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:55.771461", "module": "hybrid_rag", "action": "run", "latency_ms": 4.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:55.773540", "module": "rag", "action": "run", "latency_ms": 1.0, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:55.774036", "module": "causal", "action": "run", "latency_ms": 0.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:55.830114", "module": "planning", "action": "run", "latency_ms": 55.8, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:55.830362", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:55.830447", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:55.830560", "tick": 10, "price": 27.07, "price_source": "synthetic", "action": "CHARGE", "intensity": 1.0, "confidence": 1.0, "soc": 0.6526, "hour": 1, "condition": "overnight", "n_modules_voted": 1, "modules_failed": [], "latency_ms": 1049.0, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
+{"type": "module", "ts": "2026-05-20T01:13:56.829176", "module": "hybrid_rag", "action": "run", "latency_ms": 1.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:56.831031", "module": "rag", "action": "run", "latency_ms": 0.9, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:56.831629", "module": "causal", "action": "run", "latency_ms": 0.3, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:56.902574", "module": "planning", "action": "run", "latency_ms": 70.7, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:56.903322", "module": "game_theory", "action": "run", "latency_ms": 0.1, "success": true}
+{"type": "module", "ts": "2026-05-20T01:13:56.903450", "module": "cross_domain", "action": "run", "latency_ms": 0.0, "success": true}
+{"type": "tick", "ts": "2026-05-20T01:13:56.903635", "tick": 1, "price": 39.87, "price_source": "synthetic", "action": "CHARGE", "intensity": 0.63, "confidence": 0.534, "soc": 0.5122, "hour": 1, "condition": "overnight", "n_modules_voted": 2, "modules_failed": [], "latency_ms": 1069.1, "module_weights": {"ml_forecast": 1.0, "rl_agent": 1.0, "causal": 1.0, "planning": 1.0, "game_theory": 1.0, "cross_domain": 1.0, "rag": 1.0}}
