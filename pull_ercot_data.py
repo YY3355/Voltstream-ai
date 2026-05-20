@@ -38,12 +38,12 @@ LOAD_ZONES = ['LZ_AEN', 'LZ_CPS', 'LZ_HOUSTON', 'LZ_LCRA', 'LZ_NORTH', 'LZ_RAYBN
 ALL_POINTS = HUBS + LOAD_ZONES
 
 
-def get_token(email: str, key: str) -> str:
+def get_token(email: str, password: str) -> str:
     """Get OAuth token from ERCOT."""
     data = {
         'grant_type': 'password',
         'username': email,
-        'password': key,
+        'password': password,
         'scope': 'openid fec253ea-0d06-4272-a5e6-b478baeecd70 offline_access',
         'client_id': 'fec253ea-0d06-4272-a5e6-b478baeecd70',
         'response_type': 'id_token',
@@ -57,10 +57,14 @@ def get_token(email: str, key: str) -> str:
         return ''
 
 
-def pull_day_api(date_str: str, token: str) -> pd.DataFrame:
+def pull_day_api(date_str: str, token: str, sub_key: str = '') -> pd.DataFrame:
     """Pull one day of SPP data from the ERCOT API."""
     
-    headers = {'Authorization': f'Bearer {token}'}
+    headers = {
+        'Authorization': f'Bearer {token}',
+    }
+    if sub_key:
+        headers['Ocp-Apim-Subscription-Key'] = sub_key
     
     all_rows = []
     
@@ -147,13 +151,14 @@ def pull_day_scrape(date_str: str) -> pd.DataFrame:
 
 
 def pull_range(start_date: str, end_date: str, output_dir: str = 'data',
-               email: str = None, key: str = None) -> dict:
+               email: str = None, password: str = None, sub_key: str = None) -> dict:
     """
     Pull a range of dates from the ERCOT API.
     Saves each day as a separate CSV in output_dir.
     """
     email = email or os.environ.get('ERCOT_EMAIL', '')
-    key = key or os.environ.get('ERCOT_KEY', '')
+    password = password or os.environ.get('ERCOT_PASSWORD', '')
+    sub_key = sub_key or os.environ.get('ERCOT_KEY', '')
     
     os.makedirs(output_dir, exist_ok=True)
     
@@ -169,9 +174,9 @@ def pull_range(start_date: str, end_date: str, output_dir: str = 'data',
     
     # Get API token
     token = ''
-    if email and key:
+    if email and password:
         print("  Authenticating with ERCOT API...")
-        token = get_token(email, key)
+        token = get_token(email, password)
         if token:
             print("  Token acquired")
         else:
@@ -203,7 +208,7 @@ def pull_range(start_date: str, end_date: str, output_dir: str = 'data',
         df = pd.DataFrame()
         
         if token:
-            df = pull_day_api(date_str, token)
+            df = pull_day_api(date_str, token, sub_key)
         
         if df.empty:
             df = pull_day_scrape(date_str)
@@ -240,7 +245,8 @@ if __name__ == '__main__':
     parser.add_argument('--to-date', type=str, default=None, dest='to_date', help='End date (YYYY-MM-DD)')
     parser.add_argument('--output', type=str, default='data', help='Output directory')
     parser.add_argument('--email', type=str, default=None, help='ERCOT API email')
-    parser.add_argument('--key', type=str, default=None, help='ERCOT API key')
+    parser.add_argument('--password', type=str, default=None, help='ERCOT account password')
+    parser.add_argument('--key', type=str, default=None, help='ERCOT API subscription key')
     
     args = parser.parse_args()
     
@@ -253,4 +259,4 @@ if __name__ == '__main__':
         start = start_date.strftime('%Y-%m-%d')
         end = end_date.strftime('%Y-%m-%d')
     
-    pull_range(start, end, args.output, args.email, args.key)
+    pull_range(start, end, args.output, args.email, args.password, args.key)
