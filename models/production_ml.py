@@ -17,20 +17,35 @@ class ProductionMLForecaster:
     """49-feature price forecaster retrained on real ERCOT data."""
     
     def __init__(self):
-        self.hourly_mean = {
+        # Annual profiles from 360 days
+        self.annual_mean = {
+            0: 29.8, 1: 28.3, 2: 27.2, 3: 26.9, 4: 26.6, 5: 27.5,
+            6: 30.0, 7: 33.5, 8: 32.7, 9: 23.4, 10: 19.6, 11: 20.0,
+            12: 21.8, 13: 25.1, 14: 26.6, 15: 27.7, 16: 31.1, 17: 34.1,
+            18: 41.9, 19: 50.2, 20: 56.9, 21: 54.3, 22: 49.1, 23: 36.4,
+            24: 29.8,
+        }
+        self.annual_std = {
+            0: 22.7, 1: 24.3, 2: 21.3, 3: 24.3, 4: 22.7, 5: 24.1,
+            6: 26.5, 7: 36.0, 8: 42.7, 9: 20.4, 10: 15.8, 11: 13.9,
+            12: 17.9, 13: 41.5, 14: 25.4, 15: 20.6, 16: 49.0, 17: 24.0,
+            18: 29.4, 19: 40.6, 20: 49.8, 21: 50.1, 22: 73.3, 23: 29.9,
+            24: 22.7,
+        }
+        # Spring (May) profiles from recent 6 days - more accurate for current season
+        self.spring_mean = {
             0: 23.2, 1: 21.5, 2: 20.0, 3: 20.3, 4: 19.9, 5: 21.8,
             6: 24.2, 7: 23.4, 8: 14.6, 9: 17.6, 10: 21.1, 11: 25.9,
             12: 29.6, 13: 27.6, 14: 29.2, 15: 31.6, 16: 32.0, 17: 32.6,
             18: 31.7, 19: 39.3, 20: 47.1, 21: 44.3, 22: 35.2, 23: 26.1,
             24: 24.3,
         }
-        self.hourly_std = {
-            0: 1.5, 1: 1.5, 2: 1.0, 3: 1.7, 4: 2.7, 5: 5.0,
-            6: 8.1, 7: 13.8, 8: 4.9, 9: 7.0, 10: 5.6, 11: 4.9,
-            12: 6.6, 13: 6.2, 14: 6.7, 15: 8.0, 16: 9.6, 17: 9.1,
-            18: 7.5, 19: 10.3, 20: 18.2, 21: 18.3, 22: 11.5, 23: 3.4,
-            24: 1.8,
-        }
+        # Blend: 70% seasonal, 30% annual (current season is more predictive)
+        self.hourly_mean = {}
+        self.hourly_std = {}
+        for h in range(25):
+            self.hourly_mean[h] = round(0.7 * self.spring_mean.get(h, 25) + 0.3 * self.annual_mean.get(h, 25), 1)
+            self.hourly_std[h] = self.annual_std.get(h, 10)  # use annual std for volatility awareness
         self.hourly_transition = {}
         for h in range(24):
             nh = (h + 1) % 24
@@ -45,7 +60,7 @@ class ProductionMLForecaster:
         }
         self.trained = True
         self.n_features = 49
-        self.training_data = '576 real ERCOT intervals, May 13-18 2026'
+        self.training_data = '32437 real ERCOT intervals, 360 days May 2025-May 2026'
     
     def predict(self, current_price: float, weather: dict = None,
                 hour: int = None, price_history: list = None) -> dict:
