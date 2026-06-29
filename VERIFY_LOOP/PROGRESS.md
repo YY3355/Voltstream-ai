@@ -1,15 +1,11 @@
 # Progress
 
-- [done] T1: add `value_swap()` to forward_curve.py (MtM math)
-- [done] T2: add `/api/swap` endpoint to app.py
-- [done] T3: add swap panel (#c-swap) + swap() renderer to dashboard_live.html
-- [done] T4: final end-to-end verify (curl + headless-Chrome page render)
+- [done]  T1: add `/api/risk` endpoint to app.py (+ commit risk_engine.py it depends on)
+- [doing] T2: add risk panel 10 to dashboard_live.html, verify page renders
+- [todo]  T3: final end-to-end verify (curl + page render)
 
 ## Log
-- T1+T2: verified via curl in `volt` env. /api/swap defaults -> strike 28.55,
-  avg 31.72, basis 3.17, mtm 139430.92 (10MW, 4392h). peak/strike40/25MW ->
-  avg 35.46, mtm -237791.97. Sane + consistent. (commit pending below)
-- Env note: server only boots under `conda run -n volt`; base env has cvxpy/numpy clash.
-- T3+T4: verified in `volt`. curl /api/swap sane. Headless Chrome render of /
-  shows panel 9 populated: +$139,431, strike $28.55, fwd avg $31.72, 10MW,
-  4392h, 43,920 MWh, basis +$3.17/MWh; bar chart + legend present; no placeholder.
+- T1: verified via curl in `volt` (had to kill a stale :8020 listener first, then
+  wait for the new instance). /api/risk http=200 ~15s -> n_paths 150, mean_pnl 0.744,
+  std 0.261, var95 -0.315, es95 -0.236, sharpe 2.85, optionality 0.001, vega 0.038,
+  hist 22 counts sum 150 / 23 edges. Sane + consistent.

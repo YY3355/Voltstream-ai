@@ -295,6 +295,18 @@ def api_swap(strike: float = None, volume_mw: float = 10.0,
     }
 
 
+@app.get("/api/risk")
+def api_risk():
+    """Quant-risk layer: Monte-Carlo P&L distribution, VaR/ES, and battery optionality.
+
+    First call runs the Monte Carlo (~25s); risk_engine caches the result thereafter."""
+    from risk_engine import run_risk
+    try:
+        return run_risk(os.environ.get("ERCOT_DATA_DIR", "data"))
+    except Exception as e:
+        return {"error": f"risk engine failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:
