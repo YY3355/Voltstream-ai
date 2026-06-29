@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Volt Co-Pilot — Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0e14;--panel:#0f1620;--panel2:#121b27;--line:#1d2734;--ink:#c9d4e1;--dim:#5d6b7d;
+    --mut:#7e8da0;--amber:#f5a623;--green:#3fb950;--red:#f85149;--blue:#58a6ff;--violet:#a371f7;
+    --mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',sans-serif;}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(900px 500px at 80% -10%,rgba(83,109,254,.06),transparent),var(--bg);
+    color:var(--ink);font-family:var(--sans);min-height:100vh;background-attachment:fixed}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+  header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);
+    padding-bottom:14px;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+  .brand{font-family:var(--mono);font-weight:700;letter-spacing:.5px;font-size:18px}
+  .brand b{color:var(--amber)} .brand .tag{color:var(--dim);font-weight:500}
+  .meta{font-family:var(--mono);font-size:12px;color:var(--mut)} .meta .live{color:var(--green)}
+  .askbar{display:flex;gap:9px;margin-bottom:11px}
+  #qin{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);
+    font-family:var(--sans);font-size:14px;padding:11px 13px;outline:none}
+  #qin:focus{border-color:var(--amber)}
+  #send{font-family:var(--mono);font-size:13px;background:var(--amber);color:#1a1206;border:none;border-radius:8px;
+    padding:0 18px;cursor:pointer;font-weight:600}
+  #send:disabled{opacity:.5;cursor:default}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .chip{font-size:12px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:20px;
+    padding:6px 12px;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--amber);color:var(--ink)}
+  .flow{display:grid;gap:14px} .row.tools{display:grid;gap:14px;grid-template-columns:1.5fr 1.5fr 1.6fr}
+  @media(max-width:840px){.row.tools{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 15px;transition:.2s}
+  .card.off{opacity:.32;filter:grayscale(.6)}
+  .lid{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+  .num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--bg);background:var(--mut);width:19px;
+    height:19px;border-radius:5px;display:grid;place-items:center;flex:none}
+  .card.lit .num{background:var(--accent,var(--amber))}
+  .title{font-family:var(--mono);font-size:12px;letter-spacing:.8px;text-transform:uppercase}
+  .state{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:1px;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+  .state.on{color:var(--green);border:1px solid #1d3a26;background:#0d1f14} .state.skip{color:var(--dim);border:1px solid var(--line)}
+  .router .accent{--accent:var(--violet)}
+  .badges{display:flex;flex-wrap:wrap;gap:7px}
+  .badge{font-family:var(--mono);font-size:11px;padding:5px 9px;border-radius:6px;border:1px solid var(--line);
+    color:var(--dim);background:var(--panel2);letter-spacing:.5px}
+  .badge.hit{color:#fff;border-color:var(--violet);background:#1b1430;box-shadow:0 0 12px rgba(163,113,247,.25)}
+  .kv{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;margin-top:4px}
+  .kv b{color:#fff} .kv .l{color:var(--dim);display:block;font-size:10px;letter-spacing:.5px;margin-bottom:2px}
+  svg{width:100%;height:auto;display:block}
+  .legend{font-family:var(--mono);font-size:10px;color:var(--mut);display:flex;gap:13px;flex-wrap:wrap;margin-top:7px}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
+  .notice{border:1px solid var(--line);border-radius:7px;padding:9px 11px;margin-bottom:8px;background:var(--panel2)}
+  .notice:last-child{margin-bottom:0}
+  .nh{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
+  .nid{font-family:var(--mono);font-size:10px;color:var(--amber)}
+  .ntype{font-family:var(--mono);font-size:9px;letter-spacing:.5px;color:var(--red);border:1px solid #3a1d1d;padding:1px 5px;border-radius:3px}
+  .ntype.soft{color:var(--mut);border-color:var(--line)}
+  .nsc{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dim)}
+  .ntitle{font-size:12px;font-weight:600} .nbody{font-size:11.5px;color:var(--mut);line-height:1.45;margin-top:3px}
+  .none{font-family:var(--mono);font-size:12px;color:var(--dim);font-style:italic}
+  .verdict{border-radius:10px;padding:15px 18px;display:flex;align-items:center;gap:16px;border:1px solid var(--line);background:var(--panel)}
+  .verdict.AUTO{border-color:#1d3a26;background:linear-gradient(90deg,#0d1f14,var(--panel))}
+  .verdict.ESCALATE{border-color:#4a1d1d;background:linear-gradient(90deg,#1f0d0d,var(--panel))}
+  .vstamp{font-family:var(--mono);font-weight:700;font-size:22px;letter-spacing:1px;flex:none}
+  .verdict.AUTO .vstamp{color:var(--green)} .verdict.ESCALATE .vstamp{color:var(--red)}
+  .vtxt{font-size:13px;line-height:1.4} .vtxt .vlead{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;display:block;margin-bottom:3px}
+  .brief{border:1px solid var(--line);border-radius:10px;background:linear-gradient(90deg,#0e1726,var(--panel));padding:14px 16px}
+  .brief .num{background:var(--blue)} .brief .live-dot{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--blue);border:1px solid #1d3147;background:#0c1928;padding:2px 8px;border-radius:4px}
+  #brief-body{font-size:13.5px;line-height:1.55;white-space:pre-wrap;min-height:42px}
+  .thinking{font-family:var(--mono);font-size:12px;color:var(--blue)}
+  .foot{margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--dim);line-height:1.6;border-top:1px solid var(--line);padding-top:13px}
+  .coopt-sub{font-family:var(--sans);font-size:13px;color:var(--mut);margin:0 0 13px;line-height:1.55;max-width:66ch}
+  .coopt-controls{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin:0 0 15px;padding:11px 14px;
+    background:var(--panel2);border:1px solid var(--line);border-radius:8px}
+  .coopt-hero{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:15px}
+  .coopt-hero .big{display:flex;flex-direction:column}
+  .coopt-hero .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:1.1px;color:var(--dim);
+    text-transform:uppercase;margin-bottom:4px}
+  .coopt-hero .val{font-family:var(--mono);font-size:30px;font-weight:700;color:#fff;line-height:1}
+  .coopt-hero .delta{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--green);
+    padding:4px 10px;border:1px solid #1d3a26;background:#0d1f14;border-radius:6px;align-self:flex-end}
+  .coopt-hero .mini{display:flex;gap:24px;margin-left:auto;flex-wrap:wrap}
+  .coopt-hero .mini .l{font-family:var(--mono);font-size:9px;letter-spacing:.6px;color:var(--dim);
+    display:block;margin-bottom:3px;text-transform:uppercase}
+  .coopt-hero .mini b{font-family:var(--mono);font-size:15px;color:var(--ink)}
+  .ctl{font-family:var(--mono);font-size:12px;color:var(--mut);display:flex;align-items:center;gap:9px}
+  .ctl b{color:#fff}
+  .ctl input[type=range]{accent-color:var(--blue);width:150px}
+  .ctl.tog input{accent-color:var(--green);width:auto}
+  #as-lbl{color:var(--green);font-weight:600}
+  .legend .grp{color:var(--dim);font-weight:600;letter-spacing:.5px}
+  .coopt-note{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:9px;line-height:1.55}
+  .foot b{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">VOLT<b>·</b>CO-PILOT <span class="tag">// live backend</span></div>
+    <div class="meta" id="meta"><span class="live">● connecting…</span></div>
+  </header>
+
+  <div class="askbar">
+    <input id="qin" placeholder="Ask the desk co-pilot anything…" autocomplete="off"/>
+    <button id="send">SEND</button>
+  </div>
+  <div class="chips" id="chips"></div>
+
+  <div class="flow">
+    <div class="card router lit" id="c-router">
+      <div class="lid"><span class="num accent">1</span><span class="title">Agentic Router</span><span class="state on">always on</span></div>
+      <div class="badges" id="badges"><span class="none">ask a question to route…</span></div>
+    </div>
+    <div class="row tools">
+      <div class="card" id="c-fc">
+        <div class="lid"><span class="num">2</span><span class="title">Forecast Engine</span><span class="state skip" id="s-fc">idle</span></div>
+        <div id="fc-chart"></div>
+        <div class="legend"><span><i style="background:var(--blue)"></i>P50</span><span><i style="background:rgba(88,166,255,.25)"></i>P10–P90</span><span><i style="background:#c9d4e1"></i>actual</span></div>
+        <div class="kv" id="fc-kv"></div>
+      </div>
+      <div class="card" id="c-dp">
+        <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
+        <div id="dp-chart"></div>
+        <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
+        <div class="kv" id="dp-kv"></div>
+      </div>
+      <div class="card" id="c-rag">
+        <div class="lid"><span class="num">4</span><span class="title">Notice RAG</span><span class="state skip" id="s-rag">idle</span></div>
+        <div id="rag-list"><span class="none">retrieval runs when the router calls it…</span></div>
+      </div>
+    </div>
+    <div class="verdict" id="verdict"><div class="vstamp" id="vstamp">—</div>
+      <div class="vtxt"><span class="vlead">Confidence layer</span><span id="vwhy">awaiting a question</span></div></div>
+    <div class="brief" id="c-brief">
+      <div class="lid"><span class="num">⌁</span><span class="title">Co-Pilot Brief</span><span class="live-dot" id="brief-mode">server</span></div>
+      <div id="brief-body"><span class="none">the brief is generated server-side from the engine outputs</span></div>
+    </div>
+
+    <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
+      <div class="lid"><span class="num">5</span>
+        <span class="title">Energy + Ancillary Co-Optimization</span>
+        <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
+      <div class="coopt-controls">
+        <label class="ctl">Backup reserve <b id="rv-val">10</b> kWh
+          <input type="range" id="rv" min="0" max="22" value="10" step="1"></label>
+        <label class="ctl tog">Ancillary services
+          <input type="checkbox" id="as-on" checked> <span id="as-lbl">on</span></label>
+      </div>
+      <div class="coopt-hero" id="coopt-hero"></div>
+      <div id="coopt-chart"></div>
+      <div class="legend" id="coopt-legend"></div>
+      <div class="coopt-note" id="coopt-note">Co-optimization recomputes live on the server.</div>
+    </div>
+
+    <div class="card lit" id="c-vpp" style="--accent:var(--green)">
+      <div class="lid"><span class="num">6</span>
+        <span class="title">Virtual Power Plant &mdash; Fleet View</span>
+        <span class="live-dot" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
+      <div class="coopt-hero" id="vpp-hero"></div>
+      <div id="vpp-chart"></div>
+      <div class="coopt-note" id="vpp-note">A planning model that sums independent per-battery optima. Not a real VPP platform: no network constraints, device telemetry, or real-time dispatch.</div>
+    </div>
+
+    <div class="card lit" id="c-rt" style="--accent:var(--amber)">
+      <div class="lid"><span class="num">7</span>
+        <span class="title">Real-Time Decision Engine &mdash; Trading Under Uncertainty</span>
+        <span class="live-dot" style="margin-left:auto">backtest</span></div>
+      <p class="coopt-sub">The optimizer above has perfect foresight &mdash; it sees the whole day. A real desk never knows the next price. This walks each day interval by interval, deciding on a forecast of what&rsquo;s ahead (no peeking), then booking the actual price. The question: how much of the perfect-foresight optimum can a policy capture without knowing the future?</p>
+      <div class="coopt-hero" id="rt-hero"></div>
+      <div id="rt-chart"></div>
+      <div class="legend" id="rt-legend"></div>
+      <div class="coopt-note" id="rt-note">Receding-horizon policy on walk-forward forecasts. Energy-only, single node, P50 forecast, small day sample &mdash; demonstrates the structure of real-time decision-making, not a live desk.</div>
+    </div>
+
+    <div class="card lit" id="c-curve" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">8</span>
+        <span class="title">Forward Curve &mdash; Peak / Off-Peak Construction</span>
+        <span class="live-dot" style="margin-left:auto">curve</span></div>
+      <p class="coopt-sub">What a desk marks positions against. Monthly on-peak (ERCOT 5x16) and off-peak blocks, bootstrapped arbitrage-free, then shaped to an hourly curve using a real ERCOT hour-of-day profile &mdash; shaped hours re-aggregate exactly back to the block levels.</p>
+      <div class="coopt-hero" id="curve-hero"></div>
+      <div id="curve-chart"></div>
+      <div class="legend" id="curve-legend"></div>
+      <div id="curve-sample" style="margin-top:6px"></div>
+      <div class="coopt-note" id="curve-note">Methodology is desk-grade; shape is real ERCOT history. Forward levels are an illustrative strip &mdash; drop in CME ERCOT futures settlements and the same engine produces a live, market-calibrated curve.</div>
+    </div>
+
+    <div class="card lit" id="c-swap" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">9</span>
+        <span class="title">Fixed-for-Floating Swap &mdash; Mark-to-Market</span>
+        <span class="live-dot" style="margin-left:auto">swap</span></div>
+      <p class="coopt-sub">A power swap exchanges a fixed strike ($/MWh) for the floating forward price over a delivery window. Marked against the forward curve above, from the fixed-payer's perspective: MtM = (forward average &minus; strike) &times; volume &times; delivery hours. Positive when the curve floats above the strike.</p>
+      <div class="coopt-hero" id="swap-hero"></div>
+      <div id="swap-chart"></div>
+      <div class="legend" id="swap-legend"></div>
+      <div class="coopt-note" id="swap-note">Illustrative trade (10 MW, 7x24, full curve horizon, strike struck ~10% below the forward average). Same engine prices any strike/volume/window/product via /api/swap.</div>
+    </div>
+  </div>
+
+  <div class="foot" id="foot">
+    <b>live backend:</b> every question hits FastAPI — the router, forecast (GBM), Bolt (MILP) and RAG recompute server-side against <span id="src">…</span>.<br>
+    <b>brief:</b> generated server-side (real Claude if ANTHROPIC_API_KEY is set, else a grounded template). The math decides — the agent explains.
+  </div>
+</div>
+
+<script>
+let S=null;
+const $=id=>document.getElementById(id);
+
+/* charts (same renderers as the static build) */
+function forecastSVG(fc){
+  const W=560,H=240,P={l:40,r:10,t:12,b:24},n=fc.p50.length,maxY=Math.max(...fc.p90,...fc.actual)*1.12;
+  const X=i=>P.l+i*(W-P.l-P.r)/(n-1),Y=v=>H-P.b-(v/maxY)*(H-P.t-P.b);
+  let band='';for(let i=0;i<n;i++)band+=`${X(i).toFixed(1)},${Y(fc.p90[i]).toFixed(1)} `;
+  for(let i=n-1;i>=0;i--)band+=`${X(i).toFixed(1)},${Y(fc.p10[i]).toFixed(1)} `;
+  const line=a=>a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ');
+  let ax='';[0,.5,1].forEach(f=>{const v=maxY*f,y=Y(v);
+    ax+=`<line x1="${P.l}" y1="${y}" x2="${W-P.r}" y2="${y}" stroke="#1d2734"/><text x="${P.l-6}" y="${y+3}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;});
+  [[0,'00:00'],[24,'06:00'],[48,'12:00'],[72,'18:00'],[95,'24:00']].forEach(([i,t])=>ax+=`<text x="${X(i)}" y="${H-7}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${t}</text>`);
+  const pk=fc.peak_idx;
+  return `<svg viewBox="0 0 ${W} ${H}">${ax}<polygon points="${band}" fill="rgba(88,166,255,.18)"/><path d="${line(fc.actual)}" fill="none" stroke="#c9d4e1" stroke-width="1" opacity=".7"/><path d="${line(fc.p50)}" fill="none" stroke="#58a6ff" stroke-width="2"/><circle cx="${X(pk)}" cy="${Y(fc.p50[pk])}" r="3.5" fill="#f5a623"/><text x="${X(pk)}" y="${Y(fc.p50[pk])-7}" text-anchor="middle" fill="#f5a623" font-size="9" font-family="IBM Plex Mono">peak ${fc.peak_time}</text></svg>`;
+}
+function dispatchSVG(dp){
+  const W=560,H=240,P={l:40,r:34,t:12,b:24},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const pmax=Math.max(1,...dp.charge_kw,...dp.discharge_kw),zone=(H-P.t-P.b),y0=P.t+zone*0.46,ph=zone*0.40;
+  const cap=dp.capacity_kwh,Ysoc=v=>H-P.b-(v/cap)*zone,bw=Math.max(1,(W-P.l-P.r)/n-0.4);
+  let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
+    if(dp.charge_kw[i]>0.01){const h=dp.charge_kw[i]/pmax*ph;bars+=`<rect x="${x.toFixed(1)}" y="${(y0-h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}
+    if(dp.discharge_kw[i]>0.01){const h=dp.discharge_kw[i]/pmax*ph;bars+=`<rect x="${x.toFixed(1)}" y="${y0.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}}
+  const soc=dp.soc_kwh.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ysoc(v).toFixed(1)}`).join(' '),yr=Ysoc(dp.reserve_kwh);
+  const axis=`<line x1="${P.l}" y1="${y0}" x2="${W-P.r}" y2="${y0}" stroke="#2a3645"/><text x="${P.l-6}" y="${y0+3}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">0kW</text><text x="${W-P.r+4}" y="${Ysoc(cap)+8}" fill="#3fb950" font-size="9" font-family="IBM Plex Mono">${cap}kWh</text>`;
+  let xl='';[[0,'00:00'],[48,'12:00'],[95,'24:00']].forEach(([i,t])=>xl+=`<text x="${X(i)}" y="${H-7}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${t}</text>`);
+  return `<svg viewBox="0 0 ${W} ${H}">${axis}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/><line x1="${P.l}" y1="${yr}" x2="${W-P.r}" y2="${yr}" stroke="#f85149" stroke-width="1.3" stroke-dasharray="4 3"/><text x="${W-P.r}" y="${yr-4}" text-anchor="end" fill="#f85149" font-size="9" font-family="IBM Plex Mono">backup floor ${dp.reserve_kwh}kWh</text>${xl}</svg>`;
+}
+
+async function init(){
+  try{
+    S=await (await fetch('/api/state')).json();
+    $('meta').innerHTML=`HB_HOUSTON · ${S.target_date} · <span class="live">● ${S.source}</span>`;
+    $('src').textContent=S.source;
+    $('fc-chart').innerHTML=forecastSVG(S.forecast);
+    $('fc-kv').innerHTML=`<div><span class="l">PEAK P50</span><b>$${S.forecast.peak_price}</b>/MWh</div><div><span class="l">@ TIME</span><b>${S.forecast.peak_time}</b></div><div><span class="l">SPREAD</span><b>${S.forecast.rel_band_pct}%</b></div>`;
+    $('dp-chart').innerHTML=dispatchSVG(S.dispatch);
+    $('dp-kv').innerHTML=`<div><span class="l">ACTION NOW</span><b>${S.dispatch.action_now}</b></div><div><span class="l">CAPTURE</span><b>${S.dispatch.capture_pct}%</b></div><div><span class="l">REV</span><b>$${S.dispatch.revenue_forecast}</b></div>`;
+  }catch(e){$('meta').innerHTML='<span style="color:var(--red)">● backend offline — run: uvicorn app:app</span>';}
+}
+function setCard(id,sid,on){const c=$(id);c.classList.toggle('off',!on);c.classList.toggle('lit',on);
+  const s=$(sid);s.className='state '+(on?'on':'skip');s.textContent=on?'called':'not called';}
+
+async function ask(q){
+  if(!q.trim())return;
+  $('badges').innerHTML='<span class="thinking">routing…</span>';
+  $('brief-body').innerHTML='<span class="thinking">co-pilot reasoning</span>';
+  $('send').disabled=true;
+  let r;
+  try{ r=await (await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({question:q,reserve_kwh:S?S.dispatch.reserve_kwh:10})})).json(); }
+  catch(e){ $('brief-body').textContent='Backend unreachable.'; $('send').disabled=false; return; }
+  const order=['forecast','dispatch','retrieve'],labels={forecast:'forecast()',dispatch:'bolt.dispatch()',retrieve:'rag.retrieve()'};
+  $('badges').innerHTML=order.map(t=>`<span class="badge ${r.fires[t]?'hit':''}">${r.fires[t]?'▶ ':'○ '}${labels[t]}</span>`).join('');
+  setCard('c-fc','s-fc',r.fires.forecast); setCard('c-dp','s-dp',r.fires.dispatch); setCard('c-rag','s-rag',r.fires.retrieve);
+  const rl=$('rag-list'),sev=['FORCED_OUTAGE','TRANSMISSION_CONSTRAINT','CONSERVATION','EMERGENCY'];
+  if(!r.fires.retrieve)rl.innerHTML='<div class="none">router did not call retrieval</div>';
+  else if(!r.retrieved.length)rl.innerHTML='<div class="none">no notices crossed the relevance threshold</div>';
+  else rl.innerHTML=r.retrieved.map(n=>`<div class="notice"><div class="nh"><span class="nid">[${n.id}]</span><span class="ntype ${sev.includes(n.type)?'':'soft'}">${n.type.replace(/_/g,' ')}</span><span class="nsc">sim ${n.score}</span></div><div class="ntitle">${n.title}</div><div class="nbody">${n.body}</div></div>`).join('');
+  const v=$('verdict');v.className='verdict '+r.verdict;$('vstamp').textContent=r.verdict;
+  $('vwhy').textContent=r.why+(r.verdict==='ESCALATE'?' → routed to a human trader.':' → cleared to auto-execute.');
+  $('brief-body').textContent=r.answer; $('brief-mode').textContent=r.answer_mode;
+  $('send').disabled=false;
+}
+
+const CHIPS=["What should I do with the battery into the evening peak?","Why might RRS clear high tonight?",
+  "Should I hold my position given the Limestone unit outage and the West-Houston constraint?",
+  "What's the price forecast and how confident are you?"];
+$('chips').innerHTML=CHIPS.map(c=>`<span class="chip">${c}</span>`).join('');
+[...document.querySelectorAll('.chip')].forEach(el=>el.onclick=()=>{$('qin').value=el.textContent;ask(el.textContent);});
+$('send').onclick=()=>ask($('qin').value);
+$('qin').addEventListener('keydown',e=>{if(e.key==='Enter')ask($('qin').value);});
+const CO_COLORS={"Discharge":"#3fb950","RegUp":"#58a6ff","RRS":"#2dd4bf","ECRS":"#a371f7","NonSpin":"#f5a623"};
+function cooptSVG(d){
+  const W=760,H=300,P={l:58,r:74,t:28,b:42},n=d.hours.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const cap=d.capacity_kw,order=["Discharge","RegUp","RRS","ECRS","NonSpin"];
+  const series={Discharge:d.discharge_kw,...d.as_award_kw};
+  let peak=cap; for(let i=0;i<n;i++){let s=0;for(const k of order)s+=(series[k]||[])[i]||0;if(s>peak)peak=s;}
+  const maxY=Math.max(5,Math.ceil((peak*1.08)/5)*5),Y=v=>H-P.b-(v/maxY)*(H-P.t-P.b);
+  // horizontal gridlines + kW ticks
+  let grid="";
+  for(let g=0;g<=maxY;g+=5){const y=Y(g);
+    grid+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+      +`<text x="${P.l-9}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="10" font-family="IBM Plex Mono">${g}</text>`;}
+  // stacked areas
+  let cum=new Array(n).fill(0),areas="";
+  for(const k of order){
+    const arr=series[k]||new Array(n).fill(0),top=cum.map((c,i)=>c+(arr[i]||0));
+    const up=top.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ');
+    const dn=cum.map((v,i)=>`L${X(n-1-i).toFixed(1)} ${Y(cum[n-1-i]).toFixed(1)}`).join(' ');
+    areas+=`<path d="${up} ${dn} Z" fill="${CO_COLORS[k]}" opacity=".9" stroke="#0f1620" stroke-width=".4"/>`;
+    cum=top;
+  }
+  // axes frame
+  let ax=`<line x1="${P.l}" y1="${P.t}" x2="${P.l}" y2="${H-P.b}" stroke="#2a3645"/>`
+    +`<line x1="${P.l}" y1="${H-P.b}" x2="${W-P.r}" y2="${H-P.b}" stroke="#2a3645"/>`;
+  // inverter limit line + label OUTSIDE the plot (right margin)
+  const yc=Y(cap);
+  ax+=`<line x1="${P.l}" y1="${yc.toFixed(1)}" x2="${W-P.r}" y2="${yc.toFixed(1)}" stroke="#f85149" stroke-width="1.4" stroke-dasharray="6 4"/>`
+    +`<text x="${W-P.r+8}" y="${(yc-3).toFixed(1)}" fill="#f85149" font-size="10.5" font-weight="600" font-family="IBM Plex Mono">${cap} kW</text>`
+    +`<text x="${W-P.r+8}" y="${(yc+9).toFixed(1)}" fill="#7e8da0" font-size="8.5" font-family="IBM Plex Mono">inverter</text>`;
+  // x ticks + labels
+  [[0,'12 AM'],[24,'6 AM'],[48,'12 PM'],[72,'6 PM'],[95,'12 AM']].forEach(([i,t])=>{
+    ax+=`<line x1="${X(i).toFixed(1)}" y1="${H-P.b}" x2="${X(i).toFixed(1)}" y2="${H-P.b+4}" stroke="#2a3645"/>`
+      +`<text x="${X(i).toFixed(1)}" y="${H-P.b+17}" text-anchor="middle" fill="#5d6b7d" font-size="9.5" font-family="IBM Plex Mono">${t}</text>`;});
+  // axis titles
+  ax+=`<text x="${P.l-9}" y="${P.t-10}" fill="#7e8da0" font-size="10" font-family="IBM Plex Mono">kW committed</text>`
+    +`<text x="${W-P.r+8}" y="${P.t-10}" fill="#7e8da0" font-size="10" font-family="IBM Plex Mono">$/MWh</text>`;
+  // energy price line (secondary, right axis)
+  const pe=d.energy_price,pmin=Math.min(...pe),pmax=Math.max(...pe),span=(pmax-pmin)||1;
+  const py=v=>H-P.b-((v-pmin)/span)*(H-P.t-P.b)*0.9;
+  const pl=pe.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${py(v).toFixed(1)}`).join(' ');
+  ax+=`<path d="${pl}" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity=".85"/>`
+    +`<text x="${W-P.r+8}" y="${(py(pmax)+3).toFixed(1)}" fill="#9aa7b5" font-size="9" font-family="IBM Plex Mono">$${Math.round(pmax)}</text>`
+    +`<text x="${W-P.r+8}" y="${(py(pmin)+3).toFixed(1)}" fill="#9aa7b5" font-size="9" font-family="IBM Plex Mono">$${Math.round(pmin)}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${areas}${ax}</svg>`;
+}
+let coTok=0;
+async function coopt(){
+  const tok=++coTok, rv=$('rv').value, ason=$('as-on').checked;
+  $('rv-val').textContent=rv; $('as-lbl').textContent=ason?'on':'off';
+  $('coopt-hero').innerHTML='<span class="thinking">co-optimizing…</span>';
+  let d; try{ d=await (await fetch(`/api/cooptimize?reserve_kwh=${rv}&ancillary=${ason}`)).json(); }
+  catch(e){ $('coopt-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(tok!==coTok) return;
+  if(d.error){ $('coopt-hero').innerHTML=`<span class="none">${d.error}</span>`; $('coopt-chart').innerHTML=''; return; }
+  $('coopt-chart').innerHTML=cooptSVG(d);
+  $('coopt-legend').innerHTML=`<span class="grp">Energy:</span><span><i style="background:${CO_COLORS.Discharge}"></i>Discharge</span>`
+    +`<span class="grp">Ancillary:</span>`+["RegUp","RRS","ECRS","NonSpin"].map(k=>`<span><i style="background:${CO_COLORS[k]}"></i>${k}</span>`).join('')
+    +`<span><i style="background:#e6edf3"></i>Energy price</span>`;
+  const asShare=d.total_revenue?Math.round(100*d.as_revenue/d.total_revenue):0;
+  const uplift=d.energy_only_total?Math.round(100*(d.total_revenue-d.energy_only_total)/Math.max(d.energy_only_total,0.01)):0;
+  const delta = ason ? `<div class="delta">+${uplift}% vs energy-only</div>` : '';
+  $('coopt-hero').innerHTML=
+    `<div class="big"><span class="lab">${ason?'Co-optimized revenue · today':'Energy-only revenue · today'}</span><span class="val">$${d.total_revenue.toFixed(2)}</span></div>`
+    +delta
+    +`<div class="mini"><div><span class="l">Energy</span><b>$${d.energy_revenue.toFixed(2)}</b></div>`
+    +`<div><span class="l">Ancillary</span><b>$${d.as_revenue.toFixed(2)}</b></div>`
+    +`<div><span class="l">AS share</span><b>${asShare}%</b></div></div>`;
+  const note=$('coopt-note'); if(note){ note.innerHTML=`Energy: ${d.data_source}. Ancillary: ${d.as_source}. Perfect-foresight planning model, not ERCOT's live SCED. Up-capacity can exceed nameplate while charging — reducing charge is itself an upward response.`; }
+}
+let coDeb; const cooptDebounced=()=>{clearTimeout(coDeb);coDeb=setTimeout(coopt,180);};
+$('rv').addEventListener('input',cooptDebounced);
+$('as-on').addEventListener('change',coopt);
+init();
+coopt();
+// auto-refresh: re-pull + recompute every 60s (server caches the live pull, so ERCOT isn't hammered)
+setInterval(coopt, 60000);
+
+function vppSVG(d){
+  const W=720,H=210,P={l:46,r:16,t:16,b:46},u=d.units,n=u.length;
+  const gap=W-P.l-P.r, bw=gap/n*0.6, step=gap/n;
+  const maxR=Math.max(...u.map(x=>x.revenue))*1.18||1;
+  const Y=v=>H-P.b-(v/maxR)*(H-P.t-P.b);
+  let g="";
+  for(let k=0;k<=4;k++){const val=maxR*k/4,y=Y(val);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${val.toFixed(0)}</text>`;}
+  let bars="";
+  u.forEach((x,i)=>{const cx=P.l+step*i+step/2,y=Y(x.revenue),h=(H-P.b)-y;
+    bars+=`<rect x="${(cx-bw/2).toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0,h).toFixed(1)}" rx="2" fill="#3fb950" opacity=".9"/>`
+      +`<text x="${cx.toFixed(1)}" y="${(y-5).toFixed(1)}" text-anchor="middle" fill="#fff" font-size="10" font-weight="600" font-family="IBM Plex Mono">$${x.revenue.toFixed(2)}</text>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+15}" text-anchor="middle" fill="#adbac7" font-size="9.5" font-family="IBM Plex Mono">${x.name}</text>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+28}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${x.capacity_kwh}kWh</text>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+38}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${x.reserve_kwh}kWh held</text>`;});
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${bars}</svg>`;
+}
+async function vpp(){
+  $('vpp-hero').innerHTML='<span class="thinking">running fleet…</span>';
+  let d; try{ d=await (await fetch('/api/vpp')).json(); }
+  catch(e){ $('vpp-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('vpp-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const asShare=d.total_revenue?Math.round(100*d.as_revenue/d.total_revenue):0;
+  $('vpp-hero').innerHTML=
+    `<div class="big"><span class="lab">Fleet revenue \u00b7 today</span><span class="val">$${d.total_revenue.toFixed(2)}</span></div>`
+    +`<div class="delta">${asShare}% from ancillary</div>`
+    +`<div class="mini"><div><span class="l">Fleet</span><b>${d.n_units} batteries</b></div>`
+    +`<div><span class="l">Capacity</span><b>${d.fleet_capacity_kwh} kWh</b></div>`
+    +`<div><span class="l">Power</span><b>${d.fleet_power_kw} kW</b></div></div>`;
+  $('vpp-chart').innerHTML=vppSVG(d);
+  const note=$('vpp-note'); if(note){ note.innerHTML=`Per-battery daily revenue (less backup held \u2192 more earned). Energy: ${d.data_source}. Ancillary: ${d.as_source}. Sums independent per-battery optima \u2014 not a real VPP platform (no network constraints, telemetry, or real-time dispatch).`; }
+}
+vpp();
+
+function rtSVG(d){
+  const W=720,H=230,P={l:46,r:16,t:18,b:42},days=d.per_day,n=days.length;
+  const step=(W-P.l-P.r)/n, gw=step*0.62;
+  const Y=v=>H-P.b-(v/110)*(H-P.t-P.b);   // 0..110%
+  let g="";
+  [0,25,50,75,100].forEach(v=>{const y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${v}%</text>`;});
+  // perfect-foresight reference at 100%
+  const y100=Y(100);
+  g+=`<line x1="${P.l}" y1="${y100.toFixed(1)}" x2="${W-P.r}" y2="${y100.toFixed(1)}" stroke="#f85149" stroke-width="1.2" stroke-dasharray="6 4"/>`
+   +`<text x="${W-P.r}" y="${(y100-5).toFixed(1)}" text-anchor="end" fill="#f85149" font-size="9" font-family="IBM Plex Mono">perfect foresight = 100%</text>`;
+  let bars="";
+  days.forEach((x,i)=>{const cx=P.l+step*i+step/2;
+    const yp=Y(x.capture_pct), hp=(H-P.b)-yp;
+    const yn=Y(x.naive_pct), hn=(H-P.b)-yn;
+    // naive (faint, behind), policy (solid)
+    bars+=`<rect x="${(cx-gw/2).toFixed(1)}" y="${yn.toFixed(1)}" width="${gw.toFixed(1)}" height="${Math.max(0,hn).toFixed(1)}" rx="2" fill="#30363d"/>`
+      +`<rect x="${(cx-gw/2).toFixed(1)}" y="${yp.toFixed(1)}" width="${gw.toFixed(1)}" height="${Math.max(0,hp).toFixed(1)}" rx="2" fill="#f5a623" opacity=".92"/>`
+      +`<text x="${cx.toFixed(1)}" y="${(yp-5).toFixed(1)}" text-anchor="middle" fill="#fff" font-size="9.5" font-weight="600" font-family="IBM Plex Mono">${x.capture_pct}%</text>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+15}" text-anchor="middle" fill="#adbac7" font-size="9.5" font-family="IBM Plex Mono">${x.day}</text>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+27}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">naive ${x.naive_pct}%</text>`;});
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${bars}</svg>`;
+}
+async function rt(){
+  $('rt-hero').innerHTML='<span class="thinking">running rolling policy across days… (first load ~6s)</span>';
+  let d; try{ d=await (await fetch('/api/rt')).json(); }
+  catch(e){ $('rt-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('rt-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const s=d.summary;
+  $('rt-hero').innerHTML=
+    `<div class="big"><span class="lab">Captured of perfect foresight \u00b7 ${s.n_days}-day avg</span><span class="val">${s.mean_capture}%</span></div>`
+    +`<div class="delta">naive rule only ${s.mean_naive}%</div>`
+    +`<div class="mini"><div><span class="l">Worst day</span><b>${s.worst_capture}%</b></div>`
+    +`<div><span class="l">Best day</span><b>${s.best_capture}%</b></div>`
+    +`<div><span class="l">Avg regret</span><b>$${s.mean_regret}/day</b></div></div>`;
+  $('rt-chart').innerHTML=rtSVG(d);
+  $('rt-legend').innerHTML=`<span><i style="background:#f5a623"></i>forecast policy (no peeking)</span>`
+    +`<span><i style="background:#30363d"></i>naive rule</span>`
+    +`<span><i style="background:#f85149"></i>perfect foresight (ceiling)</span>`;
+}
+rt();
+
+function curveSVG(d){
+  const W=720,H=230,P={l:48,r:18,t:18,b:34},n=d.months.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const all=d.peak.concat(d.offpeak),lo=Math.min(...all)*0.9,hi=Math.max(...all)*1.06;
+  const Y=v=>H-P.b-((v-lo)/(hi-lo))*(H-P.t-P.b);
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=lo+(hi-lo)*k/ticks,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;}
+  // spread band
+  let band="M"+d.peak.map((v,i)=>`${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(" L");
+  band+=" L"+d.offpeak.map((v,i)=>`${X(n-1-i).toFixed(1)} ${Y(d.offpeak[n-1-i]).toFixed(1)}`).join(" L")+" Z";
+  let svg=`<path d="${band}" fill="#22d3ee" opacity=".08"/>`;
+  const line=(arr,col)=>{const p=arr.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ');
+    let s=`<path d="${p}" fill="none" stroke="${col}" stroke-width="2"/>`;
+    arr.forEach((v,i)=>{s+=`<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="2.6" fill="${col}"/>`
+      +`<text x="${X(i).toFixed(1)}" y="${(Y(v)-7).toFixed(1)}" text-anchor="middle" fill="#adbac7" font-size="8" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;});
+    return s;};
+  svg+=line(d.peak,"#22d3ee")+line(d.offpeak,"#58a6ff");
+  d.months.forEach((m,i)=>svg+=`<text x="${X(i).toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${m.slice(5)}/${m.slice(2,4)}</text>`);
+  svg+=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">$/MWh</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${svg}</svg>`;
+}
+function curveSampleSVG(d){
+  const a=d.sample_hourly||[]; if(!a.length) return "";
+  const W=720,H=92,P={l:48,r:18,t:16,b:18},n=a.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const lo=Math.min(...a)*0.95,hi=Math.max(...a)*1.05,Y=v=>H-P.b-((v-lo)/(hi-lo))*(H-P.t-P.b);
+  const p=a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ');
+  let ax=`<text x="${P.l-8}" y="${(Y(hi)+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${hi.toFixed(0)}</text>`
+    +`<text x="${P.l-8}" y="${(Y(lo)+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${lo.toFixed(0)}</text>`
+    +`<text x="${P.l}" y="${P.t-4}" fill="#7e8da0" font-size="8.5" font-family="IBM Plex Mono">shaped hourly \u2014 representative week, ${d.sample_month} (peak month)</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}"><path d="${p}" fill="none" stroke="#22d3ee" stroke-width="1.3" opacity=".85"/>${ax}</svg>`;
+}
+async function curve(){
+  $('curve-hero').innerHTML='<span class="thinking">building forward curve\u2026</span>';
+  let d; try{ d=await (await fetch('/api/curve')).json(); }
+  catch(e){ $('curve-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('curve-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const okTxt = d.reaggregation_ok ? 'arbitrage-free \u2713' : 'check failed';
+  $('curve-hero').innerHTML=
+    `<div class="big"><span class="lab">Peak \u2013 off-peak spread \u00b7 avg</span><span class="val">$${d.spread.toFixed(2)}</span></div>`
+    +`<div class="delta">${okTxt}</div>`
+    +`<div class="mini"><div><span class="l">Horizon</span><b>${d.months.length} mo</b></div>`
+    +`<div><span class="l">Hourly pts</span><b>${d.n_hours}</b></div>`
+    +`<div><span class="l">Range</span><b>$${d.low}\u2013$${d.high}</b></div></div>`;
+  $('curve-chart').innerHTML=curveSVG(d);
+  $('curve-legend').innerHTML=`<span><i style="background:#22d3ee"></i>on-peak (5x16)</span>`
+    +`<span><i style="background:#58a6ff"></i>off-peak</span>`
+    +`<span><i style="background:#22d3ee;opacity:.3"></i>spread</span>`;
+  $('curve-sample').innerHTML=curveSampleSVG(d);
+  const note=$('curve-note'); if(note){ note.innerHTML=`Shape: ${d.shape_source}. Levels: ${d.level_source}. Bootstrapped arbitrage-free; shaped hours re-aggregate to block levels (${okTxt}).`; }
+}
+curve();
+
+function swapChartSVG(d){
+  // a compact bar: strike vs forward average, with the basis (gain/loss per MWh) called out
+  const W=720,H=120,P={l:120,r:24,t:18,b:22};
+  const vals=[{lab:'strike',v:d.strike,col:'#58a6ff'},{lab:'forward avg',v:d.forward_avg,col:'#22d3ee'}];
+  const hi=Math.max(d.strike,d.forward_avg)*1.12||1;
+  const X=v=>P.l+(v/hi)*(W-P.l-P.r);
+  const bh=22, gap=20;
+  let svg='';
+  vals.forEach((r,i)=>{const y=P.t+i*(bh+gap);
+    svg+=`<text x="${P.l-10}" y="${(y+bh*0.7).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="11" font-family="IBM Plex Mono">${r.lab}</text>`
+       +`<rect x="${P.l}" y="${y}" width="${(X(r.v)-P.l).toFixed(1)}" height="${bh}" rx="3" fill="${r.col}" opacity=".85"/>`
+       +`<text x="${(X(r.v)+7).toFixed(1)}" y="${(y+bh*0.7).toFixed(1)}" fill="#c9d4e1" font-size="11" font-family="IBM Plex Mono">$${r.v.toFixed(2)}</text>`;});
+  const sign=d.basis>=0?'+':'';
+  const bcol=d.basis>=0?'#3fb950':'#f85149';
+  svg+=`<text x="${P.l}" y="${(P.t+2*(bh+gap)+2).toFixed(1)}" fill="${bcol}" font-size="11" font-family="IBM Plex Mono">basis ${sign}$${d.basis.toFixed(2)}/MWh × ${d.notional_mwh.toLocaleString()} MWh</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+async function swap(){
+  $('swap-hero').innerHTML='<span class="thinking">pricing swap…</span>';
+  let d; try{ d=await (await fetch('/api/swap')).json(); }
+  catch(e){ $('swap-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('swap-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const sign=d.mtm>=0?'+':'−';
+  const mtmAbs=Math.abs(d.mtm).toLocaleString(undefined,{maximumFractionDigits:0});
+  const dcol=d.mtm>=0?'var(--green)':'#f85149';
+  $('swap-hero').innerHTML=
+    `<div class="big"><span class="lab">Mark-to-market · fixed-payer</span><span class="val" style="color:${dcol}">${sign}$${mtmAbs}</span></div>`
+    +`<div class="delta" style="color:${dcol}">${d.product} · ${d.start}→${d.end}</div>`
+    +`<div class="mini"><div><span class="l">Strike</span><b>$${d.strike.toFixed(2)}</b></div>`
+    +`<div><span class="l">Fwd avg</span><b>$${d.forward_avg.toFixed(2)}</b></div>`
+    +`<div><span class="l">Volume</span><b>${d.volume_mw} MW</b></div>`
+    +`<div><span class="l">Deliv hrs</span><b>${d.hours.toLocaleString()}</b></div>`
+    +`<div><span class="l">Notional</span><b>${d.notional_mwh.toLocaleString()} MWh</b></div></div>`;
+  $('swap-chart').innerHTML=swapChartSVG(d);
+  $('swap-legend').innerHTML=`<span><i style="background:#58a6ff"></i>fixed strike</span>`
+    +`<span><i style="background:#22d3ee"></i>forward average</span>`;
+  const note=$('swap-note'); if(note){ note.innerHTML=`Marked vs the forward curve (${d.shape_source}; levels: ${d.level_source}). MtM = (forward avg − strike) × volume × delivery hours = ${sign}$${mtmAbs}.`; }
+}
+swap();
+</script>
+</body>
+</html>
