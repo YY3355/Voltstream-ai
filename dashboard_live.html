@@ -198,6 +198,18 @@
       <div class="legend" id="swap-legend"></div>
       <div class="coopt-note" id="swap-note">Illustrative trade (10 MW, 7x24, full curve horizon, strike struck ~10% below the forward average). Same engine prices any strike/volume/window/product via /api/swap.</div>
     </div>
+
+    <div class="card lit" id="c-risk" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">10</span>
+        <span class="title">Quant Risk &mdash; P&amp;L Distribution, VaR &amp; Optionality</span>
+        <span class="live-dot" style="margin-left:auto">risk</span></div>
+      <p class="coopt-sub">A mean-reverting jump-diffusion calibrated to real ERCOT prices simulates hundreds of day-paths; the no-peek policy runs on each to give a <i>distribution</i> of daily P&amp;L instead of a single number. From it: Value-at-Risk, Expected Shortfall, and the battery's optionality value (the revenue that comes purely from price variability).</p>
+      <div class="coopt-hero" id="risk-hero"></div>
+      <div id="risk-chart"></div>
+      <div class="legend" id="risk-legend"></div>
+      <div id="risk-opt" style="margin-top:8px"></div>
+      <div class="coopt-note" id="risk-note">Monte Carlo (first load runs ~150 paths, ~25s). VaR95 = loss not exceeded on 95% of days; Expected Shortfall = mean of the worst 5%. Optionality is the value of flexibility &mdash; modest in absolute terms on this calm May sample, but the vega sign confirms the battery is structurally long volatility.</div>
+    </div>
   </div>
 
   <div class="foot" id="foot">
@@ -526,6 +538,60 @@ async function swap(){
   const note=$('swap-note'); if(note){ note.innerHTML=`Marked vs the forward curve (${d.shape_source}; levels: ${d.level_source}). MtM = (forward avg − strike) × volume × delivery hours = ${sign}$${mtmAbs}.`; }
 }
 swap();
+
+function riskHistSVG(d){
+  const c=d.hist_counts||[],e=d.hist_edges||[]; if(!c.length||e.length!==c.length+1) return "";
+  const W=720,H=210,P={l:48,r:18,t:18,b:34},n=c.length;
+  const x0=e[0],x1=e[e.length-1],spanX=(x1-x0)||1;
+  const X=v=>P.l+((v-x0)/spanX)*(W-P.l-P.r);
+  const maxc=Math.max(...c)||1,Y=v=>H-P.b-(v/maxc)*(H-P.t-P.b);
+  // VaR95 / ES95 thresholds in P&L space (var/es are stated as losses => P&L level = -value)
+  const varPnL=-d.var95, esPnL=-d.es95;
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=x0+spanX*k/ticks,x=X(v);
+    g+=`<text x="${x.toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(2)}</text>`;}
+  let bars="";
+  for(let i=0;i<n;i++){const xa=X(e[i]),xb=X(e[i+1]),w=Math.max(1,xb-xa-1),y=Y(c[i]);
+    const mid=(e[i]+e[i+1])/2;
+    const col=mid<varPnL? '#f85149' : '#22d3ee';      // worst-5% tail (below VaR P&L) in red
+    bars+=`<rect x="${xa.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${(H-P.b-y).toFixed(1)}" fill="${col}" opacity="${mid<varPnL?'.9':'.8'}"/>`;}
+  const vline=(xv,lab,col)=>{const x=X(xv);return `<line x1="${x.toFixed(1)}" y1="${P.t}" x2="${x.toFixed(1)}" y2="${H-P.b}" stroke="${col}" stroke-width="1.4" stroke-dasharray="4 3"/>`
+    +`<text x="${(x+4).toFixed(1)}" y="${(P.t+10).toFixed(1)}" fill="${col}" font-size="9" font-family="IBM Plex Mono">${lab}</text>`;};
+  let marks=vline(varPnL,`VaR95 $${d.var95.toFixed(2)}`,'#f0a35e')+vline(esPnL,`ES95 $${d.es95.toFixed(2)}`,'#f85149');
+  marks+=vline(d.mean_pnl,`mean $${d.mean_pnl.toFixed(2)}`,'#3fb950');
+  let ax=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">paths</text>`
+    +`<text x="${(W-P.r).toFixed(1)}" y="${H-P.b+16}" text-anchor="end" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">daily P&amp;L $</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${bars}${marks}${ax}</svg>`;
+}
+async function risk(){
+  $('risk-hero').innerHTML='<span class="thinking">running Monte Carlo (~25s on first load)…</span>';
+  let d; try{ d=await (await fetch('/api/risk')).json(); }
+  catch(e){ $('risk-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('risk-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const sh=(d.sharpe_like==null)?'—':d.sharpe_like.toFixed(2);
+  $('risk-hero').innerHTML=
+    `<div class="big"><span class="lab">Mean daily P&amp;L · ${d.n_paths} paths</span><span class="val">$${d.mean_pnl.toFixed(2)}</span></div>`
+    +`<div class="delta">Sharpe-like ${sh}</div>`
+    +`<div class="mini"><div><span class="l">VaR95</span><b>$${d.var95.toFixed(2)}</b></div>`
+    +`<div><span class="l">Exp. shortfall</span><b>$${d.es95.toFixed(2)}</b></div>`
+    +`<div><span class="l">Std</span><b>$${d.std_pnl.toFixed(2)}</b></div>`
+    +`<div><span class="l">Best</span><b>$${d.best.toFixed(2)}</b></div>`
+    +`<div><span class="l">Worst</span><b>$${d.worst.toFixed(2)}</b></div></div>`;
+  $('risk-chart').innerHTML=riskHistSVG(d);
+  $('risk-legend').innerHTML=`<span><i style="background:#22d3ee"></i>daily P&amp;L outcomes</span>`
+    +`<span><i style="background:#f85149"></i>worst 5% (tail)</span>`
+    +`<span><i style="background:#f0a35e"></i>VaR95</span>`
+    +`<span><i style="background:#3fb950"></i>mean</span>`;
+  const vsign=d.vega>=0?'+':'−';
+  const opt=$('risk-opt'); if(opt){ opt.innerHTML=
+    `<div class="verdict AUTO" style="gap:14px">`
+    +`<div style="font-family:var(--mono);font-size:13px;color:var(--green);font-weight:600">long volatility · vega ${vsign}$${Math.abs(d.vega).toFixed(2)}/vol-unit</div>`
+    +`<div style="font-family:var(--mono);font-size:11px;color:var(--dim)">optionality value $${d.optionality_value.toFixed(3)}/day${d.optionality_pct!=null?` (${d.optionality_pct}% of P&amp;L)`:''} — modest in absolute terms on calm data; the positive vega confirms the battery gains as volatility rises.</div>`
+    +`</div>`; }
+  const note=$('risk-note'); if(note){ const c=d.calib;
+    note.innerHTML=`Calibrated to real ERCOT: mean-reversion κ=${c.kappa}, σ=$${c.sigma}, jump prob ${c.jump_prob_pct}%/step (mean jump $${c.jump_mean}). VaR95 = loss not exceeded 95% of days; ES95 = mean of the worst 5%; optionality from re-running on vol-flattened paths.`; }
+}
+risk();
 </script>
 </body>
 </html>
