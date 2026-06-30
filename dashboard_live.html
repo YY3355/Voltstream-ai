@@ -210,6 +210,20 @@
       <div id="risk-opt" style="margin-top:8px"></div>
       <div class="coopt-note" id="risk-note">Monte Carlo (first load runs ~150 paths, ~25s). VaR95 = loss not exceeded on 95% of days; Expected Shortfall = mean of the worst 5%. Optionality is the value of flexibility &mdash; modest in absolute terms on this calm May sample, but the vega sign confirms the battery is structurally long volatility.</div>
     </div>
+
+    <div class="card lit" id="c-qse" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">11</span>
+        <span class="title">Dynamic QSE Loop &mdash; Telemetry Age &amp; MW/MWh Coordination</span>
+        <span class="live-dot" style="margin-left:auto">qse</span></div>
+      <p class="coopt-sub">Habitat's QSE write-up makes two testable claims about the real-time loop linking a battery's telemetry to its market bids: <b>(A)</b> stale state-of-charge erodes revenue and creates bids the asset can't back, and <b>(B)</b> offering power (MW) without checking sustainable energy (MWh) burns flexibility too early to catch short-lived spikes. This isolates and quantifies both on simulated ERCOT-like paths.</p>
+      <div class="coopt-hero" id="qse-hero"></div>
+      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">A &middot; cost of stale telemetry &mdash; commitment error (MWh offered but undeliverable) vs SoC age</div>
+      <div id="qse-lag-chart"></div>
+      <div class="coopt-sub" style="margin:10px 0 2px;color:var(--dim)">B &middot; MW/MWh coordination &mdash; one high-spike day: the coupled policy saves energy for the spike, power-only spends it early</div>
+      <div id="qse-coord-chart"></div>
+      <div class="legend" id="qse-legend"></div>
+      <div class="coopt-note" id="qse-note">Models the <i>concept</i> from Habitat's QSE article with simulated telemetry and simple dispatch heuristics chosen to isolate each effect &mdash; not a real QSE (no physical asset, no live telemetry feed, no certified ERCOT market interface). It quantifies the economic argument, it does not implement the pipeline.</div>
+    </div>
   </div>
 
   <div class="foot" id="foot">
@@ -592,6 +606,71 @@ async function risk(){
     note.innerHTML=`Calibrated to real ERCOT: mean-reversion κ=${c.kappa}, σ=$${c.sigma}, jump prob ${c.jump_prob_pct}%/step (mean jump $${c.jump_mean}). VaR95 = loss not exceeded 95% of days; ES95 = mean of the worst 5%; optionality from re-running on vol-flattened paths.`; }
 }
 risk();
+
+function qseLagSVG(d){
+  const lc=d.lag_curve||[]; if(!lc.length) return "";
+  const W=720,H=200,P={l:52,r:18,t:18,b:34},n=lc.length;
+  const xs=lc.map(r=>r.lag_min),ys=lc.map(r=>r.commit_err_mwh);
+  const xmax=Math.max(...xs)||1,ymax=Math.max(...ys)*1.12||1;
+  const X=v=>P.l+(v/xmax)*(W-P.l-P.r),Y=v=>H-P.b-(v/ymax)*(H-P.t-P.b);
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=ymax*k/ticks,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${v.toFixed(0)}</text>`;}
+  const path=lc.map((r,i)=>`${i?'L':'M'}${X(r.lag_min).toFixed(1)} ${Y(r.commit_err_mwh).toFixed(1)}`).join(' ');
+  let area=`M${X(0).toFixed(1)} ${Y(0).toFixed(1)} `+lc.map(r=>`L${X(r.lag_min).toFixed(1)} ${Y(r.commit_err_mwh).toFixed(1)}`).join(' ')+` L${X(xmax).toFixed(1)} ${Y(0).toFixed(1)} Z`;
+  let svg=`<path d="${area}" fill="#f0a35e" opacity=".08"/><path d="${path}" fill="none" stroke="#f0a35e" stroke-width="2"/>`;
+  lc.forEach(r=>{svg+=`<circle cx="${X(r.lag_min).toFixed(1)}" cy="${Y(r.commit_err_mwh).toFixed(1)}" r="2.8" fill="#f0a35e"/>`
+    +`<text x="${X(r.lag_min).toFixed(1)}" y="${(Y(r.commit_err_mwh)-7).toFixed(1)}" text-anchor="middle" fill="#adbac7" font-size="8" font-family="IBM Plex Mono">${r.commit_err_mwh.toFixed(1)}</text>`
+    +`<text x="${X(r.lag_min).toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${r.lag_min}m</text>`;});
+  svg+=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">commit err (MWh)</text>`
+    +`<text x="${(W-P.r).toFixed(1)}" y="${H-P.b+16}" text-anchor="end" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">telemetry age</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${svg}</svg>`;
+}
+function qseCoordSVG(d){
+  const il=d.illustration||{}; const pr=il.price||[],sc=il.soc_coupled||[],sp=il.soc_power_only||[];
+  if(!pr.length) return "";
+  const W=720,H=220,P={l:48,r:48,t:18,b:30},n=pr.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const cap=il.capacity_kwh||Math.max(...sc,...sp);
+  const pmax=Math.max(...pr)*1.08||1,Ypr=v=>H-P.b-(v/pmax)*(H-P.t-P.b);          // left axis: price
+  const smax=cap*1.05,Ysoc=v=>H-P.b-(v/smax)*(H-P.t-P.b);                        // right axis: SoC
+  // price as a faint filled area (context)
+  let parea=`M${X(0).toFixed(1)} ${(H-P.b).toFixed(1)} `+pr.map((v,i)=>`L${X(i).toFixed(1)} ${Ypr(v).toFixed(1)}`).join(' ')+` L${X(n-1).toFixed(1)} ${(H-P.b).toFixed(1)} Z`;
+  let svg=`<path d="${parea}" fill="#58a6ff" opacity=".10"/>`
+    +`<path d="${pr.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ypr(v).toFixed(1)}`).join(' ')}" fill="none" stroke="#58a6ff" stroke-width="1" opacity=".5"/>`;
+  const soc=(arr,col)=>`<path d="${arr.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ysoc(v).toFixed(1)}`).join(' ')}" fill="none" stroke="${col}" stroke-width="2"/>`;
+  svg+=soc(sp,'#f85149')+soc(sc,'#22d3ee');     // power-only red, coupled cyan
+  // reserve floor
+  const yr=Ysoc(il.reserve_kwh||0); svg+=`<line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#3a2a2a" stroke-dasharray="3 3"/>`;
+  // axes labels
+  svg+=`<text x="${P.l-6}" y="${P.t-7}" fill="#58a6ff" font-size="9" font-family="IBM Plex Mono">$/MWh</text>`
+    +`<text x="${(W-P.r+6).toFixed(1)}" y="${P.t-7}" text-anchor="end" fill="#22d3ee" font-size="9" font-family="IBM Plex Mono">SoC kWh</text>`
+    +`<text x="${(W-P.r+6).toFixed(1)}" y="${(Ysoc(cap)+3).toFixed(1)}" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${cap}</text>`
+    +`<text x="${(W-P.r+6).toFixed(1)}" y="${(yr+3).toFixed(1)}" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${il.reserve_kwh}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+async function qse(){
+  $('qse-hero').innerHTML='<span class="thinking">running QSE-loop experiment…</span>';
+  let d; try{ d=await (await fetch('/api/qse')).json(); }
+  catch(e){ $('qse-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('qse-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const cg=(d.coord_gain_pct==null)?'—':`+${d.coord_gain_pct}%`;
+  $('qse-hero').innerHTML=
+    `<div class="big"><span class="lab">Coordination gain · spike revenue</span><span class="val" style="color:var(--green)">${cg}</span></div>`
+    +`<div class="delta">coupled vs power-only · ${d.n_paths} paths</div>`
+    +`<div class="mini"><div><span class="l">2h-stale bids</span><b>${d.commit_err_2h.toFixed(1)} MWh</b></div>`
+    +`<div><span class="l">Coupled spike</span><b>$${d.coupled_spike.toFixed(2)}</b></div>`
+    +`<div><span class="l">Power-only spike</span><b>$${d.power_spike.toFixed(2)}</b></div>`
+    +`<div><span class="l">Coupled rev</span><b>$${d.coupled_rev.toFixed(2)}</b></div>`
+    +`<div><span class="l">Power-only rev</span><b>$${d.power_only_rev.toFixed(2)}</b></div></div>`;
+  $('qse-lag-chart').innerHTML=qseLagSVG(d);
+  $('qse-coord-chart').innerHTML=qseCoordSVG(d);
+  $('qse-legend').innerHTML=`<span><i style="background:#f0a35e"></i>commitment error vs telemetry age</span>`
+    +`<span><i style="background:#22d3ee"></i>SoC · coupled (MW+MWh)</span>`
+    +`<span><i style="background:#f85149"></i>SoC · power-only</span>`
+    +`<span><i style="background:#58a6ff;opacity:.5"></i>price</span>`;
+}
+qse();
 </script>
 </body>
 </html>
