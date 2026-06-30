@@ -307,6 +307,19 @@ def api_risk():
         return {"error": f"risk engine failed ({e})"}
 
 
+@app.get("/api/qse")
+def api_qse():
+    """Dynamic QSE loop experiment: cost of stale telemetry + MW/MWh coordination.
+
+    Models the concept from Habitat's QSE write-up on simulated paths (NOT a real QSE).
+    First call runs the Monte Carlo (~25-30s); qse_loop caches the result thereafter."""
+    from qse_loop import run_qse
+    try:
+        return run_qse(os.environ.get("ERCOT_DATA_DIR", "data"))
+    except Exception as e:
+        return {"error": f"qse loop failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:

@@ -1,30 +1,31 @@
 # Goal
-Wire the existing risk_engine.py into the app as panel 10.
+Wire qse_loop.py into the app as panel 11 (copied in from ~/Downloads, same pattern as risk_engine).
 
-risk_engine.run_risk(data_dir) already works; returns:
-  n_paths, mean_pnl, std_pnl, var95, es95, best, worst, sharpe_like,
-  optionality_value, optionality_pct, vega, hist_counts, hist_edges,
-  calib{kappa, sigma, jump_prob_pct, jump_mean}
+run_qse(data_dir) already works; returns:
+  lag_curve: list of {lag_min, commit_err_mwh, revenue, pct_of_fresh}
+  commit_err_2h, coupled_spike, power_spike, coord_gain_pct,
+  coupled_rev, power_only_rev, n_paths, calib_jump_pct,
+  illustration: {price[], soc_coupled[], soc_power_only[], capacity_kwh, reserve_kwh}
 
 ## Definition of done
-1. `/api/risk` endpoint in app.py calls run_risk(os.environ.get("ERCOT_DATA_DIR","data"))
-   and returns its dict (wrapped in try/except like the other endpoints).
-2. New dashboard panel 10 in dashboard_live.html, matching existing panel style:
-   - leads with a P&L distribution histogram (hist_counts/hist_edges)
-   - VaR95 and expected-shortfall (es95) numbers
-   - mean/std/Sharpe-like
-   - optionality row framed "long volatility · vega +$X/vol-unit"
-     (note absolute optionality is modest on calm data)
+1. `/api/qse` endpoint in app.py calls run_qse(os.environ.get("ERCOT_DATA_DIR","data"))
+   and returns its dict (try/except like the other engine routes).
+2. New dashboard panel 11 in dashboard_live.html, matching existing panel style, with TWO charts:
+   - commitment-error-vs-telemetry-age curve (lag_curve: commit_err_mwh vs lag_min)
+   - coordination illustration: price + the two SoC traces (soc_coupled, soc_power_only)
+   Frame it as engaging Habitat's QSE article; note it models the CONCEPT with simulated
+   telemetry, NOT a real QSE.
 
 ## How to verify (every iteration)
 This project runs in the `volt` conda env (NOT base). Always prefix with `conda run -n volt`.
+IMPORTANT: kill any stale :8020 listener first, then wait for the NEW instance (200 on /api/state).
 Start server:
     ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean conda run -n volt python -m uvicorn app:app --port 8020
 Then:
-    curl --max-time 60 http://127.0.0.1:8020/api/risk   (FIRST call ~25s: runs Monte Carlo)
-        -> confirm sane numbers (no error; var95/es95/mean_pnl/hist_counts present)
-    render http://127.0.0.1:8020/ via headless Chrome -> confirm panel 10 populates
-Fresh-eyes check where possible.
+    curl --max-time 30 http://127.0.0.1:8020/api/qse   (first call runs Monte Carlo, ~25-30s)
+        -> confirm sane numbers (no error; lag_curve / coord_gain_pct / illustration present)
+    render http://127.0.0.1:8020/ via headless Chrome -> confirm panel 11 populates
+    (warm /api/qse with curl FIRST so the page render returns from cache fast)
 
 ## Guardrails
 - Supervised. Max 12 iterations.
