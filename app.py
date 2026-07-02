@@ -352,6 +352,24 @@ def api_dart():
         return {"error": f"dart engine failed ({e})"}
 
 
+@app.get("/api/dcopf")
+def api_dcopf():
+    """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
+
+    Returns a congested case (WEST-NORTH line tight), an uncongested case (roomy lines ->
+    one price everywhere), and a transmission-upgrade sweep. A learning model with made-up
+    costs, not calibrated to the real grid."""
+    from dcopf import solve_dcopf, sweep_transmission
+    try:
+        return {
+            "congested": solve_dcopf(),
+            "uncongested": solve_dcopf(limit_scale=20.0),
+            "sweep": sweep_transmission(),
+        }
+    except Exception as e:
+        return {"error": f"dcopf failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:
