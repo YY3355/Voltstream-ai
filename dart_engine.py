@@ -16,6 +16,7 @@ call shape as ercot_live.py. There is NO synthetic fallback for DA prices — if
 pull fails the module says so honestly rather than inventing a day-ahead market.
 """
 import os
+import re
 import logging
 import threading
 import numpy as np
@@ -108,6 +109,31 @@ def compute_dart(da_hourly: pd.DataFrame, rt_hourly: pd.DataFrame):
 # ------------------------ live fetch (runs on the Mac, not sandbox) ------------------------
 def _cache_path(market, day):
     return os.path.join(CACHE_DIR, f"{market}_{day.strftime('%Y-%m-%d')}.pkl")
+
+
+def prune_cache(max_age_days=30):
+    """Drop cached day-files whose date is older than max_age_days, so dart_cache/ doesn't
+    grow without bound. Returns the number of files removed. Safe to call on every startup."""
+    if not os.path.isdir(CACHE_DIR):
+        return 0
+    cutoff = (pd.Timestamp.now().normalize() - pd.Timedelta(days=max_age_days)).date()
+    removed = 0
+    for fn in os.listdir(CACHE_DIR):
+        m = re.search(r"(\d{4}-\d{2}-\d{2})\.pkl$", fn)
+        if not m:
+            continue
+        try:
+            day = pd.Timestamp(m.group(1)).date()
+        except Exception:
+            continue
+        if day < cutoff:
+            try:
+                os.remove(os.path.join(CACHE_DIR, fn))
+                removed += 1
+                log.info("dart_cache prune removed %s (older than %dd)", fn, max_age_days)
+            except Exception:
+                pass
+    return removed
 
 
 def _get_spp_day(iso, market, day, use_cache):

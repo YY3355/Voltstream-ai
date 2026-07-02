@@ -329,7 +329,8 @@ def _prewarm_dart():
 
     def _warm():
         try:
-            from dart_engine import run_dart
+            from dart_engine import run_dart, prune_cache
+            prune_cache(30)          # drop cached day-files older than 30 days
             run_dart()
         except Exception:
             pass
