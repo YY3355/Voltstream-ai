@@ -320,6 +320,20 @@ def api_qse():
         return {"error": f"qse loop failed ({e})"}
 
 
+@app.get("/api/dart")
+def api_dart():
+    """DART spreads (Day-Ahead minus Real-Time) + hub-basis congestion proxy.
+
+    LIVE ERCOT data via gridstatus (DA hourly + RT 15-min, Trading Hubs). First call
+    fetches several days (~slow); dart_engine caches for 30 min. No synthetic fallback:
+    returns an honest error dict if the live pull fails."""
+    from dart_engine import run_dart
+    try:
+        return run_dart()
+    except Exception as e:
+        return {"error": f"dart engine failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:
