@@ -242,6 +242,24 @@
       <div class="coopt-hero" id="dart-basis-strip" style="margin-bottom:6px"></div>
       <div class="coopt-note" id="dart-note">Live ERCOT data via gridstatus (day-ahead hourly + real-time 15-min, Trading Hubs). No synthetic fallback &mdash; a day-ahead market can't be honestly faked, so if the live pull fails this panel says so. First load fetches several days and can take a few minutes; cached for 30 min thereafter.</div>
     </div>
+
+    <div class="card lit" id="c-dcopf" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">13</span>
+        <span class="title">Toy DCOPF &mdash; Nodal Pricing &amp; Congestion</span>
+        <span class="live-dot" style="margin-left:auto">dcopf</span></div>
+      <p class="coopt-sub">Locational marginal prices aren't set by anyone &mdash; they <i>fall out</i> of an optimization as the shadow prices (duals) of each bus's power-balance constraint. With no line at its limit, every bus clears at one price. The moment a line binds, prices split, and the gap between buses <b>is</b> the congestion. A 3-bus ERCOT-shaped system: cheap WEST wind, mid NORTH gas, expensive HOUSTON peaker.</p>
+      <div class="coopt-hero" id="dcopf-hero"></div>
+      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">Nodal LMPs ($/MWh) &mdash; congested (WEST trapped behind a binding line) vs uncongested (roomy lines)</div>
+      <div id="dcopf-lmp-chart"></div>
+      <div class="legend" id="dcopf-lmp-legend"></div>
+      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">LMP decomposition &mdash; each nodal price = system energy + local congestion (DC has no losses)</div>
+      <div id="dcopf-decomp"></div>
+      <div id="dcopf-binding" style="margin-top:8px"></div>
+      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">Upgrade ALL transmission together &mdash; nodal prices converge to a single system price</div>
+      <div id="dcopf-sweep-chart"></div>
+      <div class="legend" id="dcopf-sweep-legend"></div>
+      <div class="coopt-note" id="dcopf-note">A 3-bus <b>learning model with made-up costs and limits</b> &mdash; it demonstrates how LMPs, the congestion component, and shadow prices fall out of the optimization, and is <b>not calibrated to the real grid</b> (real nodal pricing is thousands of buses with measured topology). The point is to make "binding constraint" and "congestion component" things you have computed, not words you have read.</div>
+    </div>
   </div>
 
   <div class="foot" id="foot">
@@ -770,6 +788,98 @@ async function dart(){
     `${d.data_source}. Window ${d.window.start} → ${d.window.end} (${d.window.hours}h). No synthetic fallback &mdash; if the live pull fails this panel says so. First load fetches several days (can take a few minutes); cached 30 min.`; }
 }
 dart();
+
+const DCOPF_BUSES=['WEST','NORTH','HOUSTON'];
+function dcopfLmpSVG(c,u){
+  const W=720,H=210,P={l:48,r:18,t:18,b:34};
+  const all=DCOPF_BUSES.flatMap(b=>[c.lmp[b],u.lmp[b]]),hi=Math.max(...all)*1.14||1;
+  const gW=(W-P.l-P.r)/DCOPF_BUSES.length,bw=gW*0.28,Y=v=>H-P.b-(v/hi)*(H-P.t-P.b);
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=hi*k/ticks,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;}
+  let svg="";
+  DCOPF_BUSES.forEach((b,i)=>{const cx=P.l+gW*(i+0.5);
+    const bar=(v,off,col)=>{const y=Y(v),x=cx+off-bw/2;
+      return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(H-P.b-y).toFixed(1)}" rx="1.5" fill="${col}"/>`
+        +`<text x="${(x+bw/2).toFixed(1)}" y="${(y-5).toFixed(1)}" text-anchor="middle" fill="#adbac7" font-size="8.5" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;};
+    svg+=bar(c.lmp[b],-bw*0.62,'#22d3ee')+bar(u.lmp[b],bw*0.62,'#3b5566');
+    svg+=`<text x="${cx.toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#7e8da0" font-size="9.5" font-family="IBM Plex Mono">${b}</text>`;});
+  svg+=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">$/MWh</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${svg}</svg>`;
+}
+function dcopfDecompSVG(c){
+  const W=720,H=150,P={l:74,r:66,t:12,b:18};
+  const energy=c.decomp[DCOPF_BUSES[0]].energy;
+  const hi=Math.max(...DCOPF_BUSES.map(b=>c.lmp[b]),energy)*1.12||1;
+  const X=v=>P.l+(v/hi)*(W-P.l-P.r),rowH=(H-P.t-P.b)/DCOPF_BUSES.length,bh=rowH*0.5;
+  const ex=X(energy);
+  let svg="";
+  DCOPF_BUSES.forEach((b,i)=>{const y=P.t+rowH*i+(rowH-bh)/2,d=c.decomp[b];
+    svg+=`<rect x="${P.l}" y="${y.toFixed(1)}" width="${(X(d.lmp)-P.l).toFixed(1)}" height="${bh.toFixed(1)}" rx="2" fill="#22d3ee" opacity=".8"/>`;
+    // congestion segment: from energy to lmp, orange if +, red if -
+    if(Math.abs(d.congestion)>0.01){const x0=Math.min(ex,X(d.lmp)),x1=Math.max(ex,X(d.lmp));
+      svg+=`<rect x="${x0.toFixed(1)}" y="${y.toFixed(1)}" width="${(x1-x0).toFixed(1)}" height="${bh.toFixed(1)}" fill="${d.congestion>0?'#f0a35e':'#f85149'}" opacity=".85"/>`;}
+    svg+=`<text x="${(P.l-8).toFixed(1)}" y="${(y+bh*0.72).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="10" font-family="IBM Plex Mono">${b}</text>`
+      +`<text x="${(X(d.lmp)+7).toFixed(1)}" y="${(y+bh*0.72).toFixed(1)}" fill="#c9d4e1" font-size="10" font-family="IBM Plex Mono">$${d.lmp.toFixed(0)}</text>`
+      +`<text x="${(X(d.lmp)+34).toFixed(1)}" y="${(y+bh*0.72).toFixed(1)}" fill="${d.congestion>0?'#f0a35e':d.congestion<0?'#f85149':'#5d6b7d'}" font-size="8.5" font-family="IBM Plex Mono">${d.congestion>=0?'+':'−'}$${Math.abs(d.congestion).toFixed(0)}</text>`;});
+  svg+=`<line x1="${ex.toFixed(1)}" y1="${P.t-2}" x2="${ex.toFixed(1)}" y2="${H-P.b+2}" stroke="#8aa0b6" stroke-width="1.2" stroke-dasharray="4 3"/>`
+    +`<text x="${ex.toFixed(1)}" y="${(P.t-3).toFixed(1)}" text-anchor="middle" fill="#8aa0b6" font-size="8.5" font-family="IBM Plex Mono">energy $${energy.toFixed(0)}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+function dcopfSweepSVG(sw){
+  if(!sw||!sw.length) return "";
+  const W=720,H=210,P={l:48,r:60,t:18,b:34},n=sw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const all=sw.flatMap(r=>DCOPF_BUSES.map(b=>r[b])),lo=Math.min(...all),hi=Math.max(...all),pad=(hi-lo)*0.1||1;
+  const Y=v=>H-P.b-((v-(lo-pad))/((hi+pad)-(lo-pad)))*(H-P.t-P.b);
+  const col={WEST:'#22d3ee',NORTH:'#58a6ff',HOUSTON:'#f0a35e'};
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=(lo-pad)+((hi+pad)-(lo-pad))*k/ticks,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;}
+  let svg="";
+  // mark first "one price" (converged) scale
+  const ci=sw.findIndex(r=>!r.any_binding);
+  if(ci>=0){const x=X(ci);svg+=`<line x1="${x.toFixed(1)}" y1="${P.t}" x2="${x.toFixed(1)}" y2="${H-P.b}" stroke="#3fb950" stroke-width="1.2" stroke-dasharray="4 3"/>`
+    +`<text x="${(x+4).toFixed(1)}" y="${(P.t+10).toFixed(1)}" fill="#3fb950" font-size="9" font-family="IBM Plex Mono">converged (one price)</text>`;}
+  DCOPF_BUSES.forEach(b=>{const p=sw.map((r,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(r[b]).toFixed(1)}`).join(' ');
+    svg+=`<path d="${p}" fill="none" stroke="${col[b]}" stroke-width="2"/>`;
+    sw.forEach((r,i)=>{svg+=`<circle cx="${X(i).toFixed(1)}" cy="${Y(r[b]).toFixed(1)}" r="2.2" fill="${col[b]}"/>`;});
+    const last=sw[n-1];svg+=`<text x="${(W-P.r+6).toFixed(1)}" y="${(Y(last[b])+3).toFixed(1)}" fill="${col[b]}" font-size="9" font-family="IBM Plex Mono">${b}</text>`;});
+  sw.forEach((r,i)=>{svg+=`<text x="${X(i).toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#5d6b7d" font-size="8.5" font-family="IBM Plex Mono">${r.scale}×</text>`;});
+  svg+=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">$/MWh</text>`
+    +`<text x="${(W-P.r).toFixed(1)}" y="${H-P.b+16}" text-anchor="end" fill="#7e8da0" font-size="8.5" font-family="IBM Plex Mono">line limit ×</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${svg}</svg>`;
+}
+async function dcopf(){
+  $('dcopf-hero').innerHTML='<span class="thinking">solving DCOPF…</span>';
+  let d; try{ d=await (await fetch('/api/dcopf')).json(); }
+  catch(e){ $('dcopf-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('dcopf-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const c=d.congested,u=d.uncongested;
+  const spread=(c.lmp.HOUSTON-c.lmp.WEST);
+  const binder=(c.lines||[]).find(x=>x.binding);
+  $('dcopf-hero').innerHTML=
+    `<div class="big"><span class="lab">Congestion spread · HOUSTON − WEST</span><span class="val" style="color:#f0a35e">$${spread.toFixed(0)}</span></div>`
+    +`<div class="delta">vs $0 when uncongested (one price $${u.lmp.NORTH.toFixed(0)})</div>`
+    +`<div class="mini"><div><span class="l">Energy price</span><b>$${c.decomp.NORTH.energy.toFixed(0)}</b></div>`
+    +`<div><span class="l">Binding line</span><b>${binder?binder.line:'none'}</b></div>`
+    +`<div><span class="l">Shadow price</span><b>${binder?'$'+binder.shadow_price.toFixed(0):'—'}</b></div>`
+    +`<div><span class="l">Dispatch cost</span><b>$${c.total_cost.toFixed(0)}</b></div></div>`;
+  $('dcopf-lmp-chart').innerHTML=dcopfLmpSVG(c,u);
+  $('dcopf-lmp-legend').innerHTML=`<span><i style="background:#22d3ee"></i>congested (${binder?binder.line+' binding':'default limits'})</span>`
+    +`<span><i style="background:#3b5566"></i>uncongested (roomy lines)</span>`;
+  $('dcopf-decomp').innerHTML=dcopfDecompSVG(c);
+  const bind=$('dcopf-binding');
+  if(bind){ if(binder){ bind.innerHTML=`<div class="verdict ESCALATE" style="gap:14px">`
+      +`<div style="font-family:var(--mono);font-size:13px;color:#f0a35e;font-weight:600">${binder.line} BINDING · ${binder.flow} / ${binder.limit} MW</div>`
+      +`<div style="font-family:var(--mono);font-size:11px;color:var(--dim)">shadow price $${binder.shadow_price}/MWh — the marginal value of 1 more MW of capacity on this line. It's exactly this dual that splits WEST ($${c.lmp.WEST}) from HOUSTON ($${c.lmp.HOUSTON}); the congestion component at each bus is LMP − energy.</div></div>`;
+    } else { bind.innerHTML=`<div class="verdict AUTO"><div style="font-family:var(--mono);font-size:12px;color:var(--green)">no line binding — one system price</div></div>`; } }
+  $('dcopf-sweep-chart').innerHTML=dcopfSweepSVG(d.sweep);
+  $('dcopf-sweep-legend').innerHTML=DCOPF_BUSES.map((b,i)=>`<span><i style="background:${['#22d3ee','#58a6ff','#f0a35e'][i]}"></i>${b}</span>`).join('')
+    +`<span><i style="background:#3fb950"></i>converged</span>`;
+}
+dcopf();
 </script>
 </body>
 </html>
