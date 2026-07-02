@@ -224,6 +224,24 @@
       <div class="legend" id="qse-legend"></div>
       <div class="coopt-note" id="qse-note">Models the <i>concept</i> from Habitat's QSE article with simulated telemetry and simple dispatch heuristics chosen to isolate each effect &mdash; not a real QSE (no physical asset, no live telemetry feed, no certified ERCOT market interface). It quantifies the economic argument, it does not implement the pipeline.</div>
     </div>
+
+    <div class="card lit" id="c-dart" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">12</span>
+        <span class="title">DART Spreads &amp; Congestion <span style="color:var(--dim);font-weight:400">(live)</span></span>
+        <span class="live-dot" style="margin-left:auto">dart</span></div>
+      <p class="coopt-sub">DART = Day-Ahead minus Real-Time. You commit at the DA price and the same hour settles at RT; the spread is one of the most-traded relationships in power. A desk watches whether DA is systematically rich or cheap, by hub and by hour, and how volatile the spread is. Hub-to-hub basis is a first-order congestion read.</p>
+      <div class="coopt-hero" id="dart-hero"></div>
+      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">Day-ahead vs real-time &mdash; <span id="dart-refhub">ref hub</span>, last ~72h</div>
+      <div id="dart-overlay-chart"></div>
+      <div class="coopt-sub" style="margin:8px 0 2px;color:var(--dim)">DART spread (DA &minus; RT) &mdash; positive = DA settled rich</div>
+      <div id="dart-spread-chart"></div>
+      <div class="legend" id="dart-legend"></div>
+      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">Hour-of-day DART bias &mdash; the classic DART clock</div>
+      <div id="dart-hod-chart"></div>
+      <div class="coopt-sub" style="margin:12px 0 4px;color:var(--dim)">Congestion proxy (hub basis vs North) &mdash; real congestion analysis is nodal (DCOPF/shadow prices), not claimed here</div>
+      <div class="coopt-hero" id="dart-basis-strip" style="margin-bottom:6px"></div>
+      <div class="coopt-note" id="dart-note">Live ERCOT data via gridstatus (day-ahead hourly + real-time 15-min, Trading Hubs). No synthetic fallback &mdash; a day-ahead market can't be honestly faked, so if the live pull fails this panel says so. First load fetches several days and can take a few minutes; cached for 30 min thereafter.</div>
+    </div>
   </div>
 
   <div class="foot" id="foot">
@@ -671,6 +689,87 @@ async function qse(){
     +`<span><i style="background:#58a6ff;opacity:.5"></i>price</span>`;
 }
 qse();
+
+function dartOverlaySVG(d){
+  const s=d.series||{}; const da=s.da||[],rt=s.rt||[],ts=s.ts||[]; if(!da.length) return "";
+  const W=720,H=200,P={l:48,r:18,t:18,b:28},n=da.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const all=da.concat(rt),lo=Math.min(...all),hi=Math.max(...all),pad=(hi-lo)*0.08||1;
+  const Y=v=>H-P.b-((v-(lo-pad))/((hi+pad)-(lo-pad)))*(H-P.t-P.b);
+  let g="";
+  const ticks=4; for(let k=0;k<=ticks;k++){const v=(lo-pad)+((hi+pad)-(lo-pad))*k/ticks,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3.5).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;}
+  const line=(arr,col,w)=>`<path d="${arr.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join(' ')}" fill="none" stroke="${col}" stroke-width="${w}"/>`;
+  let svg=line(rt,'#58a6ff',1.4)+line(da,'#22d3ee',2);
+  // sparse time ticks
+  const step=Math.max(1,Math.floor(n/6));
+  for(let i=0;i<n;i+=step){ if(ts[i]) svg+=`<text x="${X(i).toFixed(1)}" y="${H-P.b+15}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${ts[i]}</text>`;}
+  svg+=`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">$/MWh</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${svg}</svg>`;
+}
+function dartSpreadSVG(d){
+  const a=(d.series||{}).dart||[]; if(!a.length) return "";
+  const W=720,H=96,P={l:48,r:18,t:12,b:16},n=a.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const mx=Math.max(...a.map(Math.abs))*1.1||1,Y=v=>H-P.b-((v+mx)/(2*mx))*(H-P.t-P.b);
+  const z=Y(0);
+  let svg=`<line x1="${P.l}" y1="${z.toFixed(1)}" x2="${W-P.r}" y2="${z.toFixed(1)}" stroke="#2a3543"/>`;
+  const bw=Math.max(0.7,(W-P.l-P.r)/n-0.6);
+  a.forEach((v,i)=>{const y=Y(v),h=Math.abs(z-y);
+    svg+=`<rect x="${(X(i)-bw/2).toFixed(1)}" y="${(v>=0?y:z).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${v>=0?'#22d3ee':'#f0a35e'}" opacity=".85"/>`;});
+  svg+=`<text x="${P.l-8}" y="${(z+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">0</text>`
+    +`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${mx.toFixed(0)}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+function dartHodSVG(d){
+  const hp=d.hod_profile||[]; if(!hp.length) return "";
+  const W=720,H=120,P={l:48,r:18,t:14,b:20},n=hp.length,X=i=>P.l+i*(W-P.l-P.r)/n;
+  const vals=hp.map(o=>o.dart),mx=Math.max(...vals.map(Math.abs))*1.12||1,Y=v=>H-P.b-((v+mx)/(2*mx))*(H-P.t-P.b);
+  const z=Y(0),bw=(W-P.l-P.r)/n-2;
+  let svg=`<line x1="${P.l}" y1="${z.toFixed(1)}" x2="${W-P.r}" y2="${z.toFixed(1)}" stroke="#2a3543"/>`;
+  hp.forEach((o,i)=>{const y=Y(o.dart),h=Math.abs(z-y);
+    svg+=`<rect x="${(X(i)+1).toFixed(1)}" y="${(o.dart>=0?y:z).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="1" fill="${o.dart>=0?'#22d3ee':'#f0a35e'}" opacity=".85"/>`;
+    if(o.hour%3===0) svg+=`<text x="${(X(i)+bw/2+1).toFixed(1)}" y="${H-P.b+14}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${o.hour}</text>`;});
+  svg+=`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${mx.toFixed(1)}</text>`
+    +`<text x="${(W-P.r).toFixed(1)}" y="${H-P.b+14}" text-anchor="end" fill="#7e8da0" font-size="8" font-family="IBM Plex Mono">hour of day</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+function dartBasisStrip(d){
+  const b=d.basis||{}; const order=["WEST-NORTH","HOUSTON-NORTH","SOUTH-NORTH"];
+  const keys=order.filter(k=>b[k]).concat(Object.keys(b).filter(k=>!order.includes(k)));
+  if(!keys.length) return '<span class="none">no basis</span>';
+  return `<div class="mini" style="margin-left:0;gap:28px">`+keys.map(k=>{const v=b[k];
+    const col=v.mean<0?'#f0a35e':'#22d3ee';
+    return `<div><span class="l">${k}</span><b style="color:${col}">$${v.mean.toFixed(2)}</b>`
+      +`<div style="font-family:var(--mono);font-size:9px;color:var(--dim)">σ $${v.std.toFixed(1)} · |max| $${v.max_abs.toFixed(1)}</div></div>`;}).join('')+`</div>`;
+}
+async function dart(){
+  $('dart-hero').innerHTML='<span class="thinking">pulling live ERCOT DA + RT (first load can take a few minutes)…</span>';
+  let d; try{ d=await (await fetch('/api/dart')).json(); }
+  catch(e){ $('dart-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('dart-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const ref=d.ref_hub||'', rs=(d.stats||{})[ref]||{};
+  const rlabel=ref.replace('HB_','');
+  $('dart-refhub').textContent=rlabel;
+  const mean=rs.mean!=null?rs.mean:0, rich=mean>=0;
+  $('dart-hero').innerHTML=
+    `<div class="big"><span class="lab">${rlabel} mean DART</span><span class="val" style="color:${rich?'var(--green)':'#f0a35e'}">${rich?'+':'−'}$${Math.abs(mean).toFixed(2)}</span></div>`
+    +`<div class="delta">DA rich ${rs.hit_rate_pct!=null?rs.hit_rate_pct:'—'}% of hours</div>`
+    +`<div class="mini"><div><span class="l">Std</span><b>$${(rs.std||0).toFixed(2)}</b></div>`
+    +`<div><span class="l">Hours</span><b>${rs.n_hours||0}</b></div>`
+    +`<div><span class="l">Cum 1MW</span><b>$${(rs.cum_1mw||0).toFixed(0)}</b></div>`
+    +`<div><span class="l">Hubs</span><b>${(d.hubs||[]).length}</b></div></div>`;
+  $('dart-overlay-chart').innerHTML=dartOverlaySVG(d);
+  $('dart-spread-chart').innerHTML=dartSpreadSVG(d);
+  $('dart-hod-chart').innerHTML=dartHodSVG(d);
+  $('dart-basis-strip').innerHTML=dartBasisStrip(d);
+  $('dart-legend').innerHTML=`<span><i style="background:#22d3ee"></i>day-ahead</span>`
+    +`<span><i style="background:#58a6ff"></i>real-time</span>`
+    +`<span><i style="background:#22d3ee"></i>DART &gt; 0 (DA rich)</span>`
+    +`<span><i style="background:#f0a35e"></i>DART &lt; 0 (DA cheap)</span>`;
+  const note=$('dart-note'); if(note && d.window){ note.innerHTML=
+    `${d.data_source}. Window ${d.window.start} → ${d.window.end} (${d.window.hours}h). No synthetic fallback &mdash; if the live pull fails this panel says so. First load fetches several days (can take a few minutes); cached 30 min.`; }
+}
+dart();
 </script>
 </body>
 </html>
