@@ -320,6 +320,23 @@ def api_qse():
         return {"error": f"qse loop failed ({e})"}
 
 
+@app.on_event("startup")
+def _prewarm_dart():
+    """Kick off the (slow, live) DART fetch in the background at startup so the panel is
+    warm by the time anyone loads it. Non-blocking: the server accepts requests immediately.
+    With the on-disk cache, complete past days aren't re-scraped, so restarts warm fast."""
+    import threading
+
+    def _warm():
+        try:
+            from dart_engine import run_dart
+            run_dart()
+        except Exception:
+            pass
+
+    threading.Thread(target=_warm, name="dart-prewarm", daemon=True).start()
+
+
 @app.get("/api/dart")
 def api_dart():
     """DART spreads (Day-Ahead minus Real-Time) + hub-basis congestion proxy.

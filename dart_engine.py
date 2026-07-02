@@ -15,12 +15,22 @@ Data: live via gridstatus (DAY_AHEAD_HOURLY + REAL_TIME_15_MIN, Trading Hubs), t
 call shape as ercot_live.py. There is NO synthetic fallback for DA prices — if the live
 pull fails the module says so honestly rather than inventing a day-ahead market.
 """
+import os
+import logging
+import threading
 import numpy as np
 import pandas as pd
 
 HUBS = ["HB_HOUSTON", "HB_NORTH", "HB_SOUTH", "HB_WEST"]
 _cache = {"data": None, "ts": 0.0}
+_lock = threading.Lock()               # serialize fetches so a pre-warm + a page load don't double-scrape
 TTL = 1800  # refetch at most every 30 min
+
+log = logging.getLogger(__name__)
+# on-disk cache of per-day raw SPP pulls, so a restart doesn't re-scrape complete past days
+# (RT 15-min is ~55s/day via gridstatus; DA hourly ~2.5s/day). Only COMPLETE past days are
+# cached — today is still filling and the "latest" pull is always fresh.
+CACHE_DIR = os.environ.get("DART_CACHE_DIR", os.path.join(os.path.dirname(__file__), "dart_cache"))
 
 
 # ------------------------ pure compute core (fixture-testable) ------------------------
@@ -96,17 +106,48 @@ def compute_dart(da_hourly: pd.DataFrame, rt_hourly: pd.DataFrame):
 
 
 # ------------------------ live fetch (runs on the Mac, not sandbox) ------------------------
+def _cache_path(market, day):
+    return os.path.join(CACHE_DIR, f"{market}_{day.strftime('%Y-%m-%d')}.pkl")
+
+
+def _get_spp_day(iso, market, day, use_cache):
+    """One day of SPP for a market. Complete past days are read from / written to a disk
+    cache (raw gridstatus frame, pickled) so restarts don't re-scrape them."""
+    if use_cache:
+        p = _cache_path(market, day)
+        if os.path.exists(p):
+            try:
+                df = pd.read_pickle(p)
+                log.info("dart_cache HIT  %s %s (%d rows)", market, day.date(), len(df))
+                return df
+            except Exception:
+                log.info("dart_cache CORRUPT %s %s -> refetch", market, day.date())
+    df = iso.get_spp(date=day, market=market, location_type="Trading Hub")
+    if use_cache and df is not None and len(df):
+        try:
+            os.makedirs(CACHE_DIR, exist_ok=True)
+            df.to_pickle(_cache_path(market, day))
+            log.info("dart_cache MISS %s %s -> fetched + cached (%d rows)", market, day.date(), len(df))
+        except Exception as e:
+            log.info("dart_cache write failed %s %s: %r", market, day.date(), e)
+    return df
+
+
 def fetch_live(days=5):
-    """Pull DA-hourly and RT-15min hub SPPs via gridstatus; mirrors ercot_live.py's call shape."""
+    """Pull DA-hourly and RT-15min hub SPPs via gridstatus; mirrors ercot_live.py's call shape.
+
+    Complete past days come from the disk cache when present; today (still filling) and the
+    trailing "latest" RT pull are always fetched fresh."""
     import gridstatus
     iso = gridstatus.Ercot()
     today = pd.Timestamp.now().normalize()
     da_frames, rt_frames = [], []
     for k in range(days, -1, -1):
         day = today - pd.Timedelta(days=k)
+        use_cache = k >= 1                      # only cache COMPLETE past days; today is still filling
         for market, bucket in (("DAY_AHEAD_HOURLY", da_frames), ("REAL_TIME_15_MIN", rt_frames)):
             try:
-                bucket.append(iso.get_spp(date=day, market=market, location_type="Trading Hub"))
+                bucket.append(_get_spp_day(iso, market, day, use_cache))
             except Exception:
                 pass
     try:
@@ -125,15 +166,19 @@ def run_dart(days=5):
     import time
     if _cache["data"] is not None and time.time() - _cache["ts"] < TTL:
         return _cache["data"]
-    try:
-        da, rt = fetch_live(days)
-        result = compute_dart(da, rt)
-        result["data_source"] = "LIVE ERCOT via gridstatus (DA hourly + RT 15-min, Trading Hubs)"
-        _cache["data"] = result; _cache["ts"] = time.time()
-        return result
-    except Exception as e:
-        return {"error": f"live DART pull unavailable ({e}). No synthetic fallback — "
-                         f"a day-ahead market can't be honestly faked."}
+    with _lock:
+        # another caller (e.g. the startup pre-warm) may have populated the cache while we waited
+        if _cache["data"] is not None and time.time() - _cache["ts"] < TTL:
+            return _cache["data"]
+        try:
+            da, rt = fetch_live(days)
+            result = compute_dart(da, rt)
+            result["data_source"] = "LIVE ERCOT via gridstatus (DA hourly + RT 15-min, Trading Hubs)"
+            _cache["data"] = result; _cache["ts"] = time.time()
+            return result
+        except Exception as e:
+            return {"error": f"live DART pull unavailable ({e}). No synthetic fallback — "
+                             f"a day-ahead market can't be honestly faked."}
 
 
 # ------------------------ fixture self-test ------------------------
