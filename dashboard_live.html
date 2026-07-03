@@ -106,6 +106,8 @@
     border:1px solid var(--line);border-radius:20px;padding:4px 11px}
   .sysstrip .pill i{color:var(--dim);font-style:normal;letter-spacing:.5px;margin-right:6px;text-transform:uppercase;font-size:9px}
   .sysstrip .pill b{color:var(--green)}
+  .about{font-family:var(--sans);font-size:13px;color:var(--mut);line-height:1.6;margin:2px 0 0;padding-left:18px}
+  .about li{margin-bottom:8px} .about b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -314,7 +316,45 @@
     </div>
   </div>
   </section>
-  <section class="section" id="sec-about" data-sec="about"><div class="secph">About — honest-scope page coming soon.</div></section>
+  <section class="section" id="sec-about" data-sec="about">
+  <div class="flow">
+    <div class="card lit" style="--accent:var(--blue)">
+      <div class="lid"><span class="num">✦</span><span class="title">About VoltStream &mdash; Honest Scope</span></div>
+      <p class="coopt-sub">VoltStream is an agentic co-pilot demo for ERCOT battery trading: the math makes the decisions, the AI explains them. This page is the honest boundary &mdash; what is real, what is illustrative, and what this explicitly is not. Nothing here is a solicitation or a track record.</p>
+    </div>
+
+    <div class="card lit" style="--accent:var(--green)">
+      <div class="lid"><span class="num">●</span><span class="title">Live Data &amp; Real Methodology</span></div>
+      <ul class="about">
+        <li><b>Live ERCOT data</b> &mdash; the DART panel pulls day-ahead hourly + real-time 15-min hub prices live via gridstatus. No synthetic fallback: if the pull fails, the panel says so.</li>
+        <li><b>Real ERCOT price history</b> &mdash; the forecast, Bolt dispatch, co-optimization, VPP, RT engine, risk, and QSE panels all run on cached real ERCOT interval prices.</li>
+        <li><b>Desk-grade methods</b> &mdash; probabilistic GBM quantile forecast; MILP battery dispatch; energy + five-product ancillary co-optimization; an arbitrage-free forward-curve bootstrap shaped from a real hour-of-day profile; a mean-reverting jump-diffusion risk model (VaR / Expected Shortfall / optionality) calibrated to real prices; DCOPF LMPs computed as genuine LP duals.</li>
+        <li><b>Git-audited paper book</b> &mdash; DART journal calls are committed to git <i>before</i> settlement with a creation timestamp; the git history is the audit trail.</li>
+      </ul>
+    </div>
+
+    <div class="card lit" style="--accent:var(--amber)">
+      <div class="lid"><span class="num">◐</span><span class="title">Illustrative &mdash; Not Calibrated to the Live Grid</span></div>
+      <ul class="about">
+        <li><b>Forward-curve levels</b> &mdash; the curve <i>shape</i> is real ERCOT history, but the forward <i>levels</i> are an illustrative strip anchored to a recent level. Drop in CME ERCOT futures settlements and the same engine produces a market-calibrated curve.</li>
+        <li><b>Swap</b> &mdash; an illustrative 10&nbsp;MW / 7&times;24 mark-to-market against that curve.</li>
+        <li><b>Toy DCOPF</b> &mdash; a 3-bus learning model with made-up costs and limits; it shows how LMPs and congestion fall out of the optimization, not the real thousands-of-buses grid.</li>
+        <li><b>QSE loop</b> &mdash; models the <i>concept</i> with simulated telemetry and simple heuristics; not a real QSE (no physical asset, live telemetry feed, or certified market interface).</li>
+        <li><b>VPP</b> &mdash; a planning model that sums independent per-battery optima; no network constraints, device telemetry, or real-time dispatch.</li>
+        <li><b>Ancillary prices</b> &mdash; real ERCOT MCPC when available, otherwise a clearly-labeled synthetic placeholder.</li>
+      </ul>
+    </div>
+
+    <div class="card lit" style="--accent:var(--red)">
+      <div class="lid"><span class="num">✕</span><span class="title">What This Is <i>Not</i></span></div>
+      <ul class="about">
+        <li><b>Not live trading</b> &mdash; there is no execution, order routing, fills, fees, credit, or risk limits, and no certified ERCOT market interface.</li>
+        <li><b>The paper book is a discipline record</b> &mdash; virtual fills at settlement prices, 1&nbsp;MW clips; evidence of process, not a profit claim.</li>
+        <li><b>The co-pilot brief</b> is generated server-side (real Claude when ANTHROPIC_API_KEY is set, else a grounded template). The engines decide; the language layer only explains.</li>
+      </ul>
+    </div>
+  </div>
+  </section>
 
   <div class="foot" id="foot">
     <b>live backend:</b> every question hits FastAPI — the router, forecast (GBM), Bolt (MILP) and RAG recompute server-side against <span id="src">…</span>.<br>
