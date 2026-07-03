@@ -1,8 +1,13 @@
 # Progress
 
 - [done]  T1: rename title/masthead/tagline
-- [doing] T2: /api/journal endpoint (empty state) + verify curl
-- [todo]  T3: nav + section machinery + lazy loaders + hash routing + MOVE all panels into 6 sections
+- [done]  T2: /api/journal endpoint (empty state) + verify curl
+- [doing] T3a: nav bar + 6 empty sections + tab-switch/hash-routing JS; all panels initially under Co-Pilot
+- [todo]  T3b: MOVE Asset Opt panels (Bolt #c-dp, coopt, vpp) into Asset Opt section (verify ask still lights Bolt)
+- [todo]  T3c: MOVE Trading Desk panels (rt, dart) into Trading Desk section
+- [todo]  T3d: MOVE Quant panels (curve, swap, risk, qse) into Quant section
+- [todo]  T3e: MOVE Learning Lab panel (dcopf) into Learning section
+- [todo]  T3f: lazy-load wiring — bare auto-calls -> per-section loaders (fire on first open); + status strip
 - [todo]  T4: NEW P&L panel in Trading Desk (journal empty state + header line)
 - [todo]  T5: About honest-scope content
 - [todo]  T6: final full verify (all /api 200 + every tab renders + no leakage)

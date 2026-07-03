@@ -370,6 +370,37 @@ def api_dcopf():
         return {"error": f"dcopf failed ({e})"}
 
 
+@app.get("/api/journal")
+def api_journal():
+    """DART paper-trading P&L from journal/ledger.csv — a git-audited discipline record
+    (calls committed in advance, virtual fills at settlement, no execution/fees). Honest
+    empty state until the first settlement writes the ledger."""
+    import pandas as pd
+    EMPTY = {"n_days": 0, "total_pnl": 0.0, "hit_rate_pct": None, "by_hub": {},
+             "cum_series": [], "note": "no settled days yet — first settlement 2026-07-05"}
+    path = os.path.join(os.path.dirname(__file__), "journal", "ledger.csv")
+    if not os.path.exists(path):
+        return EMPTY
+    try:
+        df = pd.read_csv(path)
+        if df.empty:
+            return EMPTY
+        daily = df.groupby("date")["pnl"].sum().sort_index()
+        cum = daily.cumsum()
+        cum_series = [{"date": str(d), "pnl": round(float(daily[d]), 2), "cum": round(float(cum[d]), 2)}
+                      for d in daily.index]
+        hit = float(((df["position"] * df["dart"]) > 0).mean())
+        by_hub = {str(h): round(float(v), 2) for h, v in df.groupby("hub")["pnl"].sum().items()}
+        return {"n_days": int(df["date"].nunique()),
+                "total_pnl": round(float(df["pnl"].sum()), 2),
+                "hit_rate_pct": round(100 * hit, 1),
+                "by_hub": by_hub,
+                "cum_series": cum_series,
+                "n_positions": int(len(df))}
+    except Exception as e:
+        return {"error": f"journal read failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:

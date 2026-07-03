@@ -3,10 +3,11 @@ Restructure dashboard_live.html from one scroll into the unified VoltStream plat
 top nav + six show/hide sections, heavy tabs lazy-load on first open. MOVE existing
 panel markup + JS intact (don't rewrite). Add /api/journal + a new P&L panel.
 
-## Section → panel mapping (MOVE, don't rewrite)
-- Co-Pilot        : panels 1-4 (router/forecast/bolt/RAG) + verdict + brief + askbar/chips
+## Section → panel mapping (MOVE, don't rewrite)  [Bolt placement per user: move to Asset Opt]
+- Co-Pilot        : panels 1 router, 2 forecast, 4 RAG + verdict + brief + askbar/chips
                     + a thin system-status strip (reuse /api/state values, no new endpoint)
-- Asset Optimization: panel 5 co-optimization (Bolt/MILP engine), panel 6 VPP
+- Asset Optimization: panel 3 Bolt (MOVED out of Co-Pilot tools row; single copy — ask() must
+                    still update #c-dp via getElementById), panel 5 co-optimization, panel 6 VPP
 - Trading Desk    : panel 7 RT engine, panel 12 DART, + NEW P&L panel (/api/journal)
 - Quant & Structuring: panel 8 forward curve, 9 swap, 10 risk, 11 QSE
 - Learning Lab    : panel 13 DCOPF
