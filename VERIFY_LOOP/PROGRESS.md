@@ -7,7 +7,7 @@
 - [done]  T3c: MOVE Trading Desk panels (rt, dart) into Trading Desk section
 - [done]  T3d: MOVE Quant panels (curve, swap, risk, qse) into Quant section
 - [done]  T3e: MOVE Learning Lab panel (dcopf) into Learning section
-- [todo]  T3f: lazy-load wiring — bare auto-calls -> per-section loaders (fire on first open); + status strip
+- [done]  T3f: lazy-load wiring — bare auto-calls -> per-section loaders (fire on first open); + status strip
 - [todo]  T4: NEW P&L panel in Trading Desk (journal empty state + header line)
 - [todo]  T5: About honest-scope content
 - [todo]  T6: final full verify (all /api 200 + every tab renders + no leakage)

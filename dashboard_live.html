@@ -101,6 +101,11 @@
   .tab.active{color:var(--amber);border-bottom-color:var(--amber)}
   .section{display:none} .section.active{display:block}
   .secph{font-family:var(--mono);font-size:12px;color:var(--dim);padding:34px 4px}
+  .sysstrip{display:flex;gap:8px;flex-wrap:wrap;margin:-4px 0 18px}
+  .sysstrip .pill{font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--panel2);
+    border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+  .sysstrip .pill i{color:var(--dim);font-style:normal;letter-spacing:.5px;margin-right:6px;text-transform:uppercase;font-size:9px}
+  .sysstrip .pill b{color:var(--green)}
 </style>
 </head>
 <body>
@@ -128,6 +133,7 @@
     <button id="send">SEND</button>
   </div>
   <div class="chips" id="chips"></div>
+  <div class="sysstrip" id="sysstrip"><span class="none">system status…</span></div>
 
   <div class="flow">
     <div class="card router lit" id="c-router">
@@ -345,6 +351,12 @@ async function init(){
     $('fc-kv').innerHTML=`<div><span class="l">PEAK P50</span><b>$${S.forecast.peak_price}</b>/MWh</div><div><span class="l">@ TIME</span><b>${S.forecast.peak_time}</b></div><div><span class="l">SPREAD</span><b>${S.forecast.rel_band_pct}%</b></div>`;
     $('dp-chart').innerHTML=dispatchSVG(S.dispatch);
     $('dp-kv').innerHTML=`<div><span class="l">ACTION NOW</span><b>${S.dispatch.action_now}</b></div><div><span class="l">CAPTURE</span><b>${S.dispatch.capture_pct}%</b></div><div><span class="l">REV</span><b>$${S.dispatch.revenue_forecast}</b></div>`;
+    const st=$('sysstrip'); if(st){ st.innerHTML=
+      `<span class="pill"><i>data</i><b>${S.source}</b></span>`
+      +`<span class="pill"><i>target</i>${S.target_date}</span>`
+      +`<span class="pill"><i>forecast</i>peak $${S.forecast.peak_price} @ ${S.forecast.peak_time}</span>`
+      +`<span class="pill"><i>bolt</i>${S.dispatch.action_now}</span>`
+      +`<span class="pill"><i>notices</i>${(S.notices||[]).length} active</span>`; }
   }catch(e){$('meta').innerHTML='<span style="color:var(--red)">● backend offline — run: uvicorn app:app</span>';}
 }
 function setCard(id,sid,on){const c=$(id);c.classList.toggle('off',!on);c.classList.toggle('lit',on);
@@ -451,10 +463,7 @@ async function coopt(){
 let coDeb; const cooptDebounced=()=>{clearTimeout(coDeb);coDeb=setTimeout(coopt,180);};
 $('rv').addEventListener('input',cooptDebounced);
 $('as-on').addEventListener('change',coopt);
-init();
-coopt();
-// auto-refresh: re-pull + recompute every 60s (server caches the live pull, so ERCOT isn't hammered)
-setInterval(coopt, 60000);
+init();   // light /api/state loader — drives masthead, status strip, forecast + Bolt; always on load
 
 function vppSVG(d){
   const W=720,H=210,P={l:46,r:16,t:16,b:46},u=d.units,n=u.length;
@@ -489,7 +498,6 @@ async function vpp(){
   $('vpp-chart').innerHTML=vppSVG(d);
   const note=$('vpp-note'); if(note){ note.innerHTML=`Per-battery daily revenue (less backup held \u2192 more earned). Energy: ${d.data_source}. Ancillary: ${d.as_source}. Sums independent per-battery optima \u2014 not a real VPP platform (no network constraints, telemetry, or real-time dispatch).`; }
 }
-vpp();
 
 function rtSVG(d){
   const W=720,H=230,P={l:46,r:16,t:18,b:42},days=d.per_day,n=days.length;
@@ -532,7 +540,6 @@ async function rt(){
     +`<span><i style="background:#30363d"></i>naive rule</span>`
     +`<span><i style="background:#f85149"></i>perfect foresight (ceiling)</span>`;
 }
-rt();
 
 function curveSVG(d){
   const W=720,H=230,P={l:48,r:18,t:18,b:34},n=d.months.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
@@ -585,7 +592,6 @@ async function curve(){
   $('curve-sample').innerHTML=curveSampleSVG(d);
   const note=$('curve-note'); if(note){ note.innerHTML=`Shape: ${d.shape_source}. Levels: ${d.level_source}. Bootstrapped arbitrage-free; shaped hours re-aggregate to block levels (${okTxt}).`; }
 }
-curve();
 
 function swapChartSVG(d){
   // a compact bar: strike vs forward average, with the basis (gain/loss per MWh) called out
@@ -625,7 +631,6 @@ async function swap(){
     +`<span><i style="background:#22d3ee"></i>forward average</span>`;
   const note=$('swap-note'); if(note){ note.innerHTML=`Marked vs the forward curve (${d.shape_source}; levels: ${d.level_source}). MtM = (forward avg − strike) × volume × delivery hours = ${sign}$${mtmAbs}.`; }
 }
-swap();
 
 function riskHistSVG(d){
   const c=d.hist_counts||[],e=d.hist_edges||[]; if(!c.length||e.length!==c.length+1) return "";
@@ -679,7 +684,6 @@ async function risk(){
   const note=$('risk-note'); if(note){ const c=d.calib;
     note.innerHTML=`Calibrated to real ERCOT: mean-reversion κ=${c.kappa}, σ=$${c.sigma}, jump prob ${c.jump_prob_pct}%/step (mean jump $${c.jump_mean}). VaR95 = loss not exceeded 95% of days; ES95 = mean of the worst 5%; optionality from re-running on vol-flattened paths.`; }
 }
-risk();
 
 function qseLagSVG(d){
   const lc=d.lag_curve||[]; if(!lc.length) return "";
@@ -744,7 +748,6 @@ async function qse(){
     +`<span><i style="background:#f85149"></i>SoC · power-only</span>`
     +`<span><i style="background:#58a6ff;opacity:.5"></i>price</span>`;
 }
-qse();
 
 function dartOverlaySVG(d){
   const s=d.series||{}; const da=s.da||[],rt=s.rt||[],ts=s.ts||[]; if(!da.length) return "";
@@ -825,7 +828,6 @@ async function dart(){
   const note=$('dart-note'); if(note && d.window){ note.innerHTML=
     `${d.data_source}. Window ${d.window.start} → ${d.window.end} (${d.window.hours}h). No synthetic fallback &mdash; if the live pull fails this panel says so. First load fetches several days (can take a few minutes); cached 30 min.`; }
 }
-dart();
 
 const DCOPF_BUSES=['WEST','NORTH','HOUSTON'];
 function dcopfLmpSVG(c,u){
@@ -917,13 +919,20 @@ async function dcopf(){
   $('dcopf-sweep-legend').innerHTML=DCOPF_BUSES.map((b,i)=>`<span><i style="background:${['#22d3ee','#58a6ff','#f0a35e'][i]}"></i>${b}</span>`).join('')
     +`<span><i style="background:#3fb950"></i>converged</span>`;
 }
-dcopf();
 
 /* ---- section nav: show/hide tabs + hash routing. Lazy loaders wired in a later step;
    for now the auto-calls above still populate every panel on page load. ---- */
 const SECTIONS=['copilot','assetopt','trading','quant','learning','about'];
 const _loaded={};
-const LOADERS={};   // section -> loader fn (filled when auto-calls become lazy)
+// per-section lazy loaders: each fires ONCE on first open of its tab. Co-Pilot's light
+// state (init) always runs on page load above; heavy engines wait until their tab is opened.
+let _coInterval=false;
+const LOADERS={
+  assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
+  trading(){ rt(); dart(); },
+  quant(){ curve(); swap(); risk(); qse(); },
+  learning(){ dcopf(); },
+};
 function openSection(sec){
   if(!SECTIONS.includes(sec)) sec='copilot';
   SECTIONS.forEach(s=>{const el=$('sec-'+s); if(el) el.classList.toggle('active', s===sec);});
