@@ -1,39 +1,60 @@
 # Goal
-Wire dcopf.py into the app as panel 13 — "Toy DCOPF — Nodal Pricing & Congestion".
-(dcopf.py copied in from ~/Downloads, same pattern as prior engines.)
+Restructure dashboard_live.html from one scroll into the unified VoltStream platform:
+top nav + six show/hide sections, heavy tabs lazy-load on first open. MOVE existing
+panel markup + JS intact (don't rewrite). Add /api/journal + a new P&L panel.
 
-dcopf.py (cvxpy+HIGHS, fast toy LP):
-  solve_dcopf(wn_limit=None, wh_limit=None, load_scale=1.0, limit_scale=1.0) ->
-    lmp: {WEST, NORTH, HOUSTON}
-    decomp: {bus: {lmp, energy, congestion}}
-    dispatch: {"WEST ($2)": mw, "NORTH ($35)": mw, "HOUSTON ($80)": mw}
-    lines: [{line, flow, limit, binding, shadow_price}]
-    total_cost
-  sweep_transmission() -> [{scale, WEST, NORTH, HOUSTON, any_binding}]
+## Section → panel mapping (MOVE, don't rewrite)
+- Co-Pilot        : panels 1-4 (router/forecast/bolt/RAG) + verdict + brief + askbar/chips
+                    + a thin system-status strip (reuse /api/state values, no new endpoint)
+- Asset Optimization: panel 5 co-optimization (Bolt/MILP engine), panel 6 VPP
+- Trading Desk    : panel 7 RT engine, panel 12 DART, + NEW P&L panel (/api/journal)
+- Quant & Structuring: panel 8 forward curve, 9 swap, 10 risk, 11 QSE
+- Learning Lab    : panel 13 DCOPF
+- About           : honest-scope page (live data + real methodology vs illustrative levels /
+                    simulated telemetry vs NOT live trading)
 
-## Definition of done
-1. `/api/dcopf` endpoint in app.py returns (try/except like other routes):
-   {"congested": solve_dcopf(),
-    "uncongested": solve_dcopf(limit_scale=20.0),
-    "sweep": sweep_transmission()}
-2. Panel 13 in dashboard_live.html, house style, showing:
-   - 3-bus LMP comparison, congested vs uncongested
-   - LMP decomposition (energy + congestion per bus) with the BINDING line + its shadow price called out
-   - transmission-sweep convergence chart (LMPs per bus vs scale, converging to one price)
-   - clear label: a 3-bus LEARNING model with made-up costs; shows how LMPs & congestion
-     fall out of the optimization; NOT calibrated to the real grid.
+## Loader refactor (CRITICAL)
+Currently bare auto-run at page load: init(); coopt()+setInterval(coopt,60000); vpp(); rt();
+curve(); swap(); risk(); qse(); dart(); dcopf().
+Refactor the CALLS (not the functions) into a per-section lazy loader registry: each section's
+loader runs ONCE on first open. Co-Pilot loads on page load (landing tab). coopt's 60s interval
+starts on first Asset-Opt open. Implement location.hash routing (#assetopt/#trading/#quant/
+#learning/#about) so each tab is deep-linkable AND independently renderable in headless Chrome.
 
-## How to verify (every iteration)
-Project runs in `volt` conda env. Kill any stale :8020 listener first; wait for NEW instance
-(200 on /openapi.json). Start server:
-    ERCOT_DATA_DIR=data_clean conda run -n volt python -m uvicorn app:app --port 8020
-Then:
-    curl --max-time 30 http://127.0.0.1:8020/api/dcopf
-      -> sane: congested has price split (WEST<NORTH<=HOUSTON) + a binding line w/ shadow_price>0;
-         uncongested is one price (all 3 equal); sweep converges to one price at high scale.
-    Render http://127.0.0.1:8020/ via headless Chrome -> panel 13 populates.
+## New API
+/api/journal reads journal/ledger.csv -> {cum_series, total_pnl, hit_rate_pct, n_days, by_hub}.
+ledger.csv does NOT exist yet -> honest empty state:
+  {"n_days": 0, "note": "no settled days yet — first settlement 2026-07-05"}
+P&L panel renders that empty state cleanly; header (not a footnote) carries:
+  "paper book — calls committed in advance (git-audited), no execution/fees".
+
+## Masthead / title
+title + masthead -> "VoltStream — agentic co-pilot for ERCOT battery trading"
+tagline -> "the math makes the decisions, the AI explains them."
+
+## Tasks (granular, each commit green; DOM move is atomic so isolated in its own commit)
+- T1: rename title/masthead/tagline only
+- T2: /api/journal endpoint (empty state) — verify curl
+- T3: nav + section machinery + lazy-loader registry + hash routing; MOVE all panels into the
+      six sections; convert every bare auto-call into its section loader (About = stub)
+- T4: NEW P&L panel in Trading Desk rendering the journal empty state + header line
+- T5: About honest-scope content
+- T6: final full verify
+
+## How to verify (every iteration) — recipe from project memory (no CLAUDE.md in repo)
+`volt` conda env. Kill stale :8020 first, wait for NEW instance (200 on /openapi.json).
+Warm heavy caches first: curl /api/dart and /api/risk (dart cached on disk + pre-warmed; risk ~15s).
+Start: ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean conda run -n volt python -m uvicorn app:app --port 8020
+  NB: ERCOT_LIVE=0 is REQUIRED — without it get_prices() does a live pull (~71 pts, < one full
+  day) and /api/state (forecast/coopt/vpp/rt) 500s on empty `full`. DART is unaffected (its
+  fetch_live hits gridstatus directly regardless of ERCOT_LIVE). Task's start cmd omitted it.
+Checks:
+  - curl EVERY /api endpoint still 200: state, cooptimize, vpp, rt, curve, swap, risk, qse,
+    dart, dcopf, journal (+ POST ask).
+  - headless-Chrome render EACH tab via hash (/, /#assetopt, /#trading, /#quant, /#learning,
+    /#about); confirm that tab's panels populate.
+  - render `/` (Co-Pilot only) and confirm NO auto-loader fired for unopened tabs (heavy panel
+    placeholders like #dart-hero/#risk-hero/#dcopf-hero still show their "…" placeholder text).
 
 ## Guardrails
-- Supervised. Max 10 iterations.
-- Never commit anything that fails the curl check.
-- One task per commit.
+- Supervised. Max 15 iterations. One task = one commit. Never commit red / a broken panel.

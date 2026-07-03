@@ -1,16 +1,23 @@
 # Progress
 
-- [done]  T1: add `/api/dcopf` endpoint to app.py (+ commit dcopf.py)
-- [done] T2: add DCOPF panel 13 (#c-dcopf) + dcopf() renderer to dashboard_live.html
-- [done] T3: final end-to-end verify (curl + headless-Chrome render)
+- [done]  T1: rename title/masthead/tagline
+- [doing] T2: /api/journal endpoint (empty state) + verify curl
+- [todo]  T3: nav + section machinery + lazy loaders + hash routing + MOVE all panels into 6 sections
+- [todo]  T4: NEW P&L panel in Trading Desk (journal empty state + header line)
+- [todo]  T5: About honest-scope content
+- [todo]  T6: final full verify (all /api 200 + every tab renders + no leakage)
+
+## Notes
+- Loaders today (bare, page-load): init(); coopt()+setInterval(coopt,60000) @419; vpp() @454;
+  rt() @497; curve() @550; swap() @590; risk() @644; qse() @709; dart() @790; dcopf() @882.
+- Endpoints: /api/state, POST /api/ask, /api/cooptimize, /api/vpp, /api/rt, /api/curve,
+  /api/swap, /api/risk, /api/qse, /api/dart, /api/dcopf (+ new /api/journal).
+- Interpretation: "Bolt" in Asset Optimization = the co-optimization engine (panel 3 "Bolt
+  Optimizer" stays in Co-Pilot per "panels 1-4"). Flag at check-in.
 
 ## Log
-- T1: verified in `volt`, /api/dcopf http 200 in 0.13s. Independent checks PASS: congested
-  WEST 2 < NORTH 41 <= HOUSTON 80; binding line WEST-HOUSTON 100/100, shadow $117; decomp
-  sums (WEST cong -39 / HOUSTON +39, energy 41); uncongested all 35; sweep -> 35 (any_binding
-  false) at scale>=3. NB: binding line is WEST-HOUSTON (read from data, don't hardcode WEST-NORTH).
-- T2+T3: verified in `volt`. /api/dcopf http 200 ~0.13s. Headless-Chrome render shows panel 13
-  populated: hero spread $78 / one-price $35 / energy $41 / binding WEST-HOUSTON / shadow $117 /
-  cost $12690; grouped LMP bars (congested vs uncongested), decomp bars + energy line, sweep
-  convergence chart, WEST-HOUSTON binding callout, learning-model label. Fixed one hardcoded
-  legend ("WEST-NORTH tight" -> dynamic "WEST-HOUSTON binding" from data) and re-verified.
+- HARNESS FIX: must start server with ERCOT_LIVE=0 (task cmd omitted it). Without it,
+  get_prices() live-pulls ~71 pts (<96) and /api/state 500s (full[-1] on empty). DART
+  unaffected. Updated GOAL.md verify command.
+- T1: verified with ERCOT_LIVE=0 — /api/state 200 (1.1s); headless render shows new masthead
+  "VoltStream" + tagline, forecast + bolt panels populate; all 13 cards present; old brand gone.
