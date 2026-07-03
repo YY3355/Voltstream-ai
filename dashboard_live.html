@@ -153,6 +153,48 @@
       <div id="brief-body"><span class="none">the brief is generated server-side from the engine outputs</span></div>
     </div>
 
+  </div>
+  </section>
+
+  <section class="section" id="sec-assetopt" data-sec="assetopt">
+  <div class="flow">
+    <div class="card" id="c-dp">
+      <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
+      <div id="dp-chart"></div>
+      <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
+      <div class="kv" id="dp-kv"></div>
+    </div>
+
+    <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
+      <div class="lid"><span class="num">5</span>
+        <span class="title">Energy + Ancillary Co-Optimization</span>
+        <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
+      <div class="coopt-controls">
+        <label class="ctl">Backup reserve <b id="rv-val">10</b> kWh
+          <input type="range" id="rv" min="0" max="22" value="10" step="1"></label>
+        <label class="ctl tog">Ancillary services
+          <input type="checkbox" id="as-on" checked> <span id="as-lbl">on</span></label>
+      </div>
+      <div class="coopt-hero" id="coopt-hero"></div>
+      <div id="coopt-chart"></div>
+      <div class="legend" id="coopt-legend"></div>
+      <div class="coopt-note" id="coopt-note">Co-optimization recomputes live on the server.</div>
+    </div>
+
+    <div class="card lit" id="c-vpp" style="--accent:var(--green)">
+      <div class="lid"><span class="num">6</span>
+        <span class="title">Virtual Power Plant &mdash; Fleet View</span>
+        <span class="live-dot" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
+      <div class="coopt-hero" id="vpp-hero"></div>
+      <div id="vpp-chart"></div>
+      <div class="coopt-note" id="vpp-note">A planning model that sums independent per-battery optima. Not a real VPP platform: no network constraints, device telemetry, or real-time dispatch.</div>
+    </div>
+  </div>
+  </section>
+  <section class="section" id="sec-trading" data-sec="trading">
+  <div class="flow">
     <div class="card lit" id="c-rt" style="--accent:var(--amber)">
       <div class="lid"><span class="num">7</span>
         <span class="title">Real-Time Decision Engine &mdash; Trading Under Uncertainty</span>
@@ -164,6 +206,27 @@
       <div class="coopt-note" id="rt-note">Receding-horizon policy on walk-forward forecasts. Energy-only, single node, P50 forecast, small day sample &mdash; demonstrates the structure of real-time decision-making, not a live desk.</div>
     </div>
 
+    <div class="card lit" id="c-dart" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">12</span>
+        <span class="title">DART Spreads &amp; Congestion <span style="color:var(--dim);font-weight:400">(live)</span></span>
+        <span class="live-dot" style="margin-left:auto">dart</span></div>
+      <p class="coopt-sub">DART = Day-Ahead minus Real-Time. You commit at the DA price and the same hour settles at RT; the spread is one of the most-traded relationships in power. A desk watches whether DA is systematically rich or cheap, by hub and by hour, and how volatile the spread is. Hub-to-hub basis is a first-order congestion read.</p>
+      <div class="coopt-hero" id="dart-hero"></div>
+      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">Day-ahead vs real-time &mdash; <span id="dart-refhub">ref hub</span>, last ~72h</div>
+      <div id="dart-overlay-chart"></div>
+      <div class="coopt-sub" style="margin:8px 0 2px;color:var(--dim)">DART spread (DA &minus; RT) &mdash; positive = DA settled rich</div>
+      <div id="dart-spread-chart"></div>
+      <div class="legend" id="dart-legend"></div>
+      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">Hour-of-day DART bias &mdash; the classic DART clock</div>
+      <div id="dart-hod-chart"></div>
+      <div class="coopt-sub" style="margin:12px 0 4px;color:var(--dim)">Congestion proxy (hub basis vs North) &mdash; real congestion analysis is nodal (DCOPF/shadow prices), not claimed here</div>
+      <div class="coopt-hero" id="dart-basis-strip" style="margin-bottom:6px"></div>
+      <div class="coopt-note" id="dart-note">Live ERCOT data via gridstatus (day-ahead hourly + real-time 15-min, Trading Hubs). No synthetic fallback &mdash; a day-ahead market can't be honestly faked, so if the live pull fails this panel says so. First load fetches several days and can take a few minutes; cached for 30 min thereafter.</div>
+    </div>
+  </div>
+  </section>
+  <section class="section" id="sec-quant" data-sec="quant">
+  <div class="flow">
     <div class="card lit" id="c-curve" style="--accent:var(--cyan)">
       <div class="lid"><span class="num">8</span>
         <span class="title">Forward Curve &mdash; Peak / Off-Peak Construction</span>
@@ -212,25 +275,10 @@
       <div class="legend" id="qse-legend"></div>
       <div class="coopt-note" id="qse-note">Models the <i>concept</i> from Habitat's QSE article with simulated telemetry and simple dispatch heuristics chosen to isolate each effect &mdash; not a real QSE (no physical asset, no live telemetry feed, no certified ERCOT market interface). It quantifies the economic argument, it does not implement the pipeline.</div>
     </div>
-
-    <div class="card lit" id="c-dart" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">12</span>
-        <span class="title">DART Spreads &amp; Congestion <span style="color:var(--dim);font-weight:400">(live)</span></span>
-        <span class="live-dot" style="margin-left:auto">dart</span></div>
-      <p class="coopt-sub">DART = Day-Ahead minus Real-Time. You commit at the DA price and the same hour settles at RT; the spread is one of the most-traded relationships in power. A desk watches whether DA is systematically rich or cheap, by hub and by hour, and how volatile the spread is. Hub-to-hub basis is a first-order congestion read.</p>
-      <div class="coopt-hero" id="dart-hero"></div>
-      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">Day-ahead vs real-time &mdash; <span id="dart-refhub">ref hub</span>, last ~72h</div>
-      <div id="dart-overlay-chart"></div>
-      <div class="coopt-sub" style="margin:8px 0 2px;color:var(--dim)">DART spread (DA &minus; RT) &mdash; positive = DA settled rich</div>
-      <div id="dart-spread-chart"></div>
-      <div class="legend" id="dart-legend"></div>
-      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">Hour-of-day DART bias &mdash; the classic DART clock</div>
-      <div id="dart-hod-chart"></div>
-      <div class="coopt-sub" style="margin:12px 0 4px;color:var(--dim)">Congestion proxy (hub basis vs North) &mdash; real congestion analysis is nodal (DCOPF/shadow prices), not claimed here</div>
-      <div class="coopt-hero" id="dart-basis-strip" style="margin-bottom:6px"></div>
-      <div class="coopt-note" id="dart-note">Live ERCOT data via gridstatus (day-ahead hourly + real-time 15-min, Trading Hubs). No synthetic fallback &mdash; a day-ahead market can't be honestly faked, so if the live pull fails this panel says so. First load fetches several days and can take a few minutes; cached for 30 min thereafter.</div>
-    </div>
-
+  </div>
+  </section>
+  <section class="section" id="sec-learning" data-sec="learning">
+  <div class="flow">
     <div class="card lit" id="c-dcopf" style="--accent:var(--cyan)">
       <div class="lid"><span class="num">13</span>
         <span class="title">Toy DCOPF &mdash; Nodal Pricing &amp; Congestion</span>
@@ -250,47 +298,6 @@
     </div>
   </div>
   </section>
-
-  <section class="section" id="sec-assetopt" data-sec="assetopt">
-  <div class="flow">
-    <div class="card" id="c-dp">
-      <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
-      <div id="dp-chart"></div>
-      <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
-      <div class="kv" id="dp-kv"></div>
-    </div>
-
-    <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
-      <div class="lid"><span class="num">5</span>
-        <span class="title">Energy + Ancillary Co-Optimization</span>
-        <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
-      <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
-      <div class="coopt-controls">
-        <label class="ctl">Backup reserve <b id="rv-val">10</b> kWh
-          <input type="range" id="rv" min="0" max="22" value="10" step="1"></label>
-        <label class="ctl tog">Ancillary services
-          <input type="checkbox" id="as-on" checked> <span id="as-lbl">on</span></label>
-      </div>
-      <div class="coopt-hero" id="coopt-hero"></div>
-      <div id="coopt-chart"></div>
-      <div class="legend" id="coopt-legend"></div>
-      <div class="coopt-note" id="coopt-note">Co-optimization recomputes live on the server.</div>
-    </div>
-
-    <div class="card lit" id="c-vpp" style="--accent:var(--green)">
-      <div class="lid"><span class="num">6</span>
-        <span class="title">Virtual Power Plant &mdash; Fleet View</span>
-        <span class="live-dot" style="margin-left:auto">live</span></div>
-      <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
-      <div class="coopt-hero" id="vpp-hero"></div>
-      <div id="vpp-chart"></div>
-      <div class="coopt-note" id="vpp-note">A planning model that sums independent per-battery optima. Not a real VPP platform: no network constraints, device telemetry, or real-time dispatch.</div>
-    </div>
-  </div>
-  </section>
-  <section class="section" id="sec-trading" data-sec="trading"><div class="secph">Trading Desk — panels arrive here as the restructure proceeds.</div></section>
-  <section class="section" id="sec-quant" data-sec="quant"><div class="secph">Quant &amp; Structuring — panels arrive here as the restructure proceeds.</div></section>
-  <section class="section" id="sec-learning" data-sec="learning"><div class="secph">Learning Lab — panels arrive here as the restructure proceeds.</div></section>
   <section class="section" id="sec-about" data-sec="about"><div class="secph">About — honest-scope page coming soon.</div></section>
 
   <div class="foot" id="foot">

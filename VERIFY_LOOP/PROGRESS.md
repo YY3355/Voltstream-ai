@@ -4,9 +4,9 @@
 - [done]  T2: /api/journal endpoint (empty state) + verify curl
 - [done]  T3a: nav bar + 6 empty sections + tab-switch/hash-routing JS; all panels initially under Co-Pilot
 - [done]  T3b: MOVE Asset Opt panels (Bolt #c-dp, coopt, vpp) into Asset Opt section (verify ask still lights Bolt)
-- [todo]  T3c: MOVE Trading Desk panels (rt, dart) into Trading Desk section
-- [todo]  T3d: MOVE Quant panels (curve, swap, risk, qse) into Quant section
-- [todo]  T3e: MOVE Learning Lab panel (dcopf) into Learning section
+- [done]  T3c: MOVE Trading Desk panels (rt, dart) into Trading Desk section
+- [done]  T3d: MOVE Quant panels (curve, swap, risk, qse) into Quant section
+- [done]  T3e: MOVE Learning Lab panel (dcopf) into Learning section
 - [todo]  T3f: lazy-load wiring — bare auto-calls -> per-section loaders (fire on first open); + status strip
 - [todo]  T4: NEW P&L panel in Trading Desk (journal empty state + header line)
 - [todo]  T5: About honest-scope content
