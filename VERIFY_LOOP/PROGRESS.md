@@ -3,7 +3,7 @@
 - [done]  T1: rename title/masthead/tagline
 - [done]  T2: /api/journal endpoint (empty state) + verify curl
 - [done]  T3a: nav bar + 6 empty sections + tab-switch/hash-routing JS; all panels initially under Co-Pilot
-- [doing] T3b: MOVE Asset Opt panels (Bolt #c-dp, coopt, vpp) into Asset Opt section (verify ask still lights Bolt)
+- [done]  T3b: MOVE Asset Opt panels (Bolt #c-dp, coopt, vpp) into Asset Opt section (verify ask still lights Bolt)
 - [todo]  T3c: MOVE Trading Desk panels (rt, dart) into Trading Desk section
 - [todo]  T3d: MOVE Quant panels (curve, swap, risk, qse) into Quant section
 - [todo]  T3e: MOVE Learning Lab panel (dcopf) into Learning section

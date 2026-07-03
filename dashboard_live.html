@@ -31,7 +31,7 @@
   .chip{font-size:12px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:20px;
     padding:6px 12px;cursor:pointer;transition:.15s}
   .chip:hover{border-color:var(--amber);color:var(--ink)}
-  .flow{display:grid;gap:14px} .row.tools{display:grid;gap:14px;grid-template-columns:1.5fr 1.5fr 1.6fr}
+  .flow{display:grid;gap:14px} .row.tools{display:grid;gap:14px;grid-template-columns:1fr 1fr}
   @media(max-width:840px){.row.tools{grid-template-columns:1fr}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 15px;transition:.2s}
   .card.off{opacity:.32;filter:grayscale(.6)}
@@ -141,12 +141,6 @@
         <div class="legend"><span><i style="background:var(--blue)"></i>P50</span><span><i style="background:rgba(88,166,255,.25)"></i>P10–P90</span><span><i style="background:#c9d4e1"></i>actual</span></div>
         <div class="kv" id="fc-kv"></div>
       </div>
-      <div class="card" id="c-dp">
-        <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
-        <div id="dp-chart"></div>
-        <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
-        <div class="kv" id="dp-kv"></div>
-      </div>
       <div class="card" id="c-rag">
         <div class="lid"><span class="num">4</span><span class="title">Notice RAG</span><span class="state skip" id="s-rag">idle</span></div>
         <div id="rag-list"><span class="none">retrieval runs when the router calls it…</span></div>
@@ -157,33 +151,6 @@
     <div class="brief" id="c-brief">
       <div class="lid"><span class="num">⌁</span><span class="title">Co-Pilot Brief</span><span class="live-dot" id="brief-mode">server</span></div>
       <div id="brief-body"><span class="none">the brief is generated server-side from the engine outputs</span></div>
-    </div>
-
-    <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
-      <div class="lid"><span class="num">5</span>
-        <span class="title">Energy + Ancillary Co-Optimization</span>
-        <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
-      <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
-      <div class="coopt-controls">
-        <label class="ctl">Backup reserve <b id="rv-val">10</b> kWh
-          <input type="range" id="rv" min="0" max="22" value="10" step="1"></label>
-        <label class="ctl tog">Ancillary services
-          <input type="checkbox" id="as-on" checked> <span id="as-lbl">on</span></label>
-      </div>
-      <div class="coopt-hero" id="coopt-hero"></div>
-      <div id="coopt-chart"></div>
-      <div class="legend" id="coopt-legend"></div>
-      <div class="coopt-note" id="coopt-note">Co-optimization recomputes live on the server.</div>
-    </div>
-
-    <div class="card lit" id="c-vpp" style="--accent:var(--green)">
-      <div class="lid"><span class="num">6</span>
-        <span class="title">Virtual Power Plant &mdash; Fleet View</span>
-        <span class="live-dot" style="margin-left:auto">live</span></div>
-      <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
-      <div class="coopt-hero" id="vpp-hero"></div>
-      <div id="vpp-chart"></div>
-      <div class="coopt-note" id="vpp-note">A planning model that sums independent per-battery optima. Not a real VPP platform: no network constraints, device telemetry, or real-time dispatch.</div>
     </div>
 
     <div class="card lit" id="c-rt" style="--accent:var(--amber)">
@@ -284,7 +251,43 @@
   </div>
   </section>
 
-  <section class="section" id="sec-assetopt" data-sec="assetopt"><div class="secph">Asset Optimization — panels arrive here as the restructure proceeds.</div></section>
+  <section class="section" id="sec-assetopt" data-sec="assetopt">
+  <div class="flow">
+    <div class="card" id="c-dp">
+      <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
+      <div id="dp-chart"></div>
+      <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
+      <div class="kv" id="dp-kv"></div>
+    </div>
+
+    <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
+      <div class="lid"><span class="num">5</span>
+        <span class="title">Energy + Ancillary Co-Optimization</span>
+        <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
+      <div class="coopt-controls">
+        <label class="ctl">Backup reserve <b id="rv-val">10</b> kWh
+          <input type="range" id="rv" min="0" max="22" value="10" step="1"></label>
+        <label class="ctl tog">Ancillary services
+          <input type="checkbox" id="as-on" checked> <span id="as-lbl">on</span></label>
+      </div>
+      <div class="coopt-hero" id="coopt-hero"></div>
+      <div id="coopt-chart"></div>
+      <div class="legend" id="coopt-legend"></div>
+      <div class="coopt-note" id="coopt-note">Co-optimization recomputes live on the server.</div>
+    </div>
+
+    <div class="card lit" id="c-vpp" style="--accent:var(--green)">
+      <div class="lid"><span class="num">6</span>
+        <span class="title">Virtual Power Plant &mdash; Fleet View</span>
+        <span class="live-dot" style="margin-left:auto">live</span></div>
+      <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
+      <div class="coopt-hero" id="vpp-hero"></div>
+      <div id="vpp-chart"></div>
+      <div class="coopt-note" id="vpp-note">A planning model that sums independent per-battery optima. Not a real VPP platform: no network constraints, device telemetry, or real-time dispatch.</div>
+    </div>
+  </div>
+  </section>
   <section class="section" id="sec-trading" data-sec="trading"><div class="secph">Trading Desk — panels arrive here as the restructure proceeds.</div></section>
   <section class="section" id="sec-quant" data-sec="quant"><div class="secph">Quant &amp; Structuring — panels arrive here as the restructure proceeds.</div></section>
   <section class="section" id="sec-learning" data-sec="learning"><div class="secph">Learning Lab — panels arrive here as the restructure proceeds.</div></section>
