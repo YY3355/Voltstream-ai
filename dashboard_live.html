@@ -229,6 +229,16 @@
       <div class="coopt-hero" id="dart-basis-strip" style="margin-bottom:6px"></div>
       <div class="coopt-note" id="dart-note">Live ERCOT data via gridstatus (day-ahead hourly + real-time 15-min, Trading Hubs). No synthetic fallback &mdash; a day-ahead market can't be honestly faked, so if the live pull fails this panel says so. First load fetches several days and can take a few minutes; cached for 30 min thereafter.</div>
     </div>
+
+    <div class="card lit" id="c-journal" style="--accent:var(--green)">
+      <div class="lid"><span class="num">14</span>
+        <span class="title">DART Paper Book &mdash; Committed-in-Advance P&amp;L</span>
+        <span class="live-dot" style="margin-left:auto">journal</span></div>
+      <p class="coopt-sub"><b style="color:var(--ink)">Paper book &mdash; calls committed in advance (git-audited), no execution/fees.</b> The trailing hour-of-day DART-bias strategy writes tomorrow's 1&nbsp;MW positions to a dated JSON <i>before</i> settlement; each day's realized DART then scores them into an immutable ledger. Evidence of process, not a profit claim.</p>
+      <div class="coopt-hero" id="journal-hero"></div>
+      <div id="journal-chart"></div>
+      <div class="coopt-note" id="journal-note"></div>
+    </div>
   </div>
   </section>
   <section class="section" id="sec-quant" data-sec="quant">
@@ -924,12 +934,52 @@ async function dcopf(){
    for now the auto-calls above still populate every panel on page load. ---- */
 const SECTIONS=['copilot','assetopt','trading','quant','learning','about'];
 const _loaded={};
+function journalSVG(cs){
+  if(!cs||!cs.length) return "";
+  const W=720,H=180,P={l:52,r:18,t:16,b:28},n=cs.length,X=i=>n>1?P.l+i*(W-P.l-P.r)/(n-1):(P.l+(W-P.l-P.r)/2);
+  const vals=cs.map(r=>r.cum),lo=Math.min(0,...vals),hi=Math.max(0,...vals),pad=(hi-lo)*0.12||1;
+  const Y=v=>H-P.b-((v-(lo-pad))/((hi+pad)-(lo-pad)))*(H-P.t-P.b),z=Y(0);
+  let svg=`<line x1="${P.l}" y1="${z.toFixed(1)}" x2="${W-P.r}" y2="${z.toFixed(1)}" stroke="#2a3543"/>`;
+  const p=cs.map((r,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(r.cum).toFixed(1)}`).join(' ');
+  svg+=`<path d="${p}" fill="none" stroke="#3fb950" stroke-width="2"/>`;
+  cs.forEach((r,i)=>{svg+=`<circle cx="${X(i).toFixed(1)}" cy="${Y(r.cum).toFixed(1)}" r="2.6" fill="#3fb950"/>`
+    +`<text x="${X(i).toFixed(1)}" y="${H-P.b+15}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${r.date.slice(5)}</text>`;});
+  svg+=`<text x="${P.l-8}" y="${P.t-4}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">cum $</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
+}
+async function journal(){
+  $('journal-hero').innerHTML='<span class="thinking">loading paper book…</span>';
+  let d; try{ d=await (await fetch('/api/journal')).json(); }
+  catch(e){ $('journal-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('journal-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  if(!d.n_days){
+    $('journal-hero').innerHTML=
+      `<div class="big"><span class="lab">Cumulative paper P&amp;L</span><span class="val">$0.00</span></div>`
+      +`<div class="delta" style="color:var(--dim);border-color:var(--line);background:var(--panel2)">awaiting first settlement</div>`
+      +`<div class="mini"><div><span class="l">Settled days</span><b>0</b></div>`
+      +`<div><span class="l">Hit rate</span><b>&mdash;</b></div>`
+      +`<div><span class="l">Positions</span><b>0</b></div></div>`;
+    $('journal-chart').innerHTML='';
+    const nt=$('journal-note'); if(nt) nt.innerHTML=`${d.note}. Tomorrow's calls are already committed to git (journal/calls_*.json) with a creation timestamp; settlement scores them against realized DART and appends to journal/ledger.csv — the git history is the audit trail.`;
+    return;
+  }
+  const sign=d.total_pnl>=0?'+':'−',col=d.total_pnl>=0?'var(--green)':'#f85149';
+  $('journal-hero').innerHTML=
+    `<div class="big"><span class="lab">Cumulative paper P&amp;L</span><span class="val" style="color:${col}">${sign}$${Math.abs(d.total_pnl).toFixed(2)}</span></div>`
+    +`<div class="delta">${d.hit_rate_pct}% hit rate</div>`
+    +`<div class="mini"><div><span class="l">Settled days</span><b>${d.n_days}</b></div>`
+    +`<div><span class="l">Positions</span><b>${d.n_positions||0}</b></div>`
+    +Object.entries(d.by_hub||{}).map(([h,v])=>`<div><span class="l">${h.replace('HB_','')}</span><b>$${v.toFixed(1)}</b></div>`).join('')+`</div>`;
+  $('journal-chart').innerHTML=journalSVG(d.cum_series);
+  const nt=$('journal-note'); if(nt) nt.innerHTML=`${d.n_days} settled day(s), 1&nbsp;MW hour clips, virtual fills at settlement — no execution, fees, or risk limits. Calls committed in advance; git history is the audit trail.`;
+}
+
 // per-section lazy loaders: each fires ONCE on first open of its tab. Co-Pilot's light
 // state (init) always runs on page load above; heavy engines wait until their tab is opened.
 let _coInterval=false;
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
-  trading(){ rt(); dart(); },
+  trading(){ rt(); dart(); journal(); },
   quant(){ curve(); swap(); risk(); qse(); },
   learning(){ dcopf(); },
 };
