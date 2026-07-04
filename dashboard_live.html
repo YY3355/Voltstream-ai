@@ -150,7 +150,7 @@
         <div class="kv" id="fc-kv"></div>
       </div>
       <div class="card" id="c-rag">
-        <div class="lid"><span class="num">4</span><span class="title">Notice RAG</span><span class="state skip" id="s-rag">idle</span></div>
+        <div class="lid"><span class="num">3</span><span class="title">Notice RAG</span><span class="state skip" id="s-rag">idle</span></div>
         <div id="rag-list"><span class="none">retrieval runs when the router calls it…</span></div>
       </div>
     </div>
@@ -167,14 +167,14 @@
   <section class="section" id="sec-assetopt" data-sec="assetopt">
   <div class="flow">
     <div class="card" id="c-dp">
-      <div class="lid"><span class="num">3</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
+      <div class="lid"><span class="num">1</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
       <div id="dp-chart"></div>
       <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
       <div class="kv" id="dp-kv"></div>
     </div>
 
     <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
-      <div class="lid"><span class="num">5</span>
+      <div class="lid"><span class="num">2</span>
         <span class="title">Energy + Ancillary Co-Optimization</span>
         <span class="live-dot" id="coopt-mode" style="margin-left:auto">live</span></div>
       <p class="coopt-sub">A 25 kWh / 12.5 kW battery dividing one power budget between energy arbitrage and five ERCOT ancillary-service products across the day. Move the reserve or toggle ancillary services to see revenue respond.</p>
@@ -191,7 +191,7 @@
     </div>
 
     <div class="card lit" id="c-vpp" style="--accent:var(--green)">
-      <div class="lid"><span class="num">6</span>
+      <div class="lid"><span class="num">3</span>
         <span class="title">Virtual Power Plant &mdash; Fleet View</span>
         <span class="live-dot" style="margin-left:auto">live</span></div>
       <p class="coopt-sub">The same co-optimizer run across a small, mixed fleet of distributed batteries, then aggregated &mdash; the per-battery economics behind the VPP trend. Each unit holds its own backup reserve.</p>
@@ -204,7 +204,7 @@
   <section class="section" id="sec-trading" data-sec="trading">
   <div class="flow">
     <div class="card lit" id="c-rt" style="--accent:var(--amber)">
-      <div class="lid"><span class="num">7</span>
+      <div class="lid"><span class="num">1</span>
         <span class="title">Real-Time Decision Engine &mdash; Trading Under Uncertainty</span>
         <span class="live-dot" style="margin-left:auto">backtest</span></div>
       <p class="coopt-sub">The optimizer above has perfect foresight &mdash; it sees the whole day. A real desk never knows the next price. This walks each day interval by interval, deciding on a forecast of what&rsquo;s ahead (no peeking), then booking the actual price. The question: how much of the perfect-foresight optimum can a policy capture without knowing the future?</p>
@@ -215,7 +215,7 @@
     </div>
 
     <div class="card lit" id="c-dart" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">12</span>
+      <div class="lid"><span class="num">2</span>
         <span class="title">DART Spreads &amp; Congestion <span style="color:var(--dim);font-weight:400">(live)</span></span>
         <span class="live-dot" style="margin-left:auto">dart</span></div>
       <p class="coopt-sub">DART = Day-Ahead minus Real-Time. You commit at the DA price and the same hour settles at RT; the spread is one of the most-traded relationships in power. A desk watches whether DA is systematically rich or cheap, by hub and by hour, and how volatile the spread is. Hub-to-hub basis is a first-order congestion read.</p>
@@ -233,7 +233,7 @@
     </div>
 
     <div class="card lit" id="c-journal" style="--accent:var(--green)">
-      <div class="lid"><span class="num">14</span>
+      <div class="lid"><span class="num">3</span>
         <span class="title">DART Paper Book &mdash; Committed-in-Advance P&amp;L</span>
         <span class="live-dot" style="margin-left:auto">journal</span></div>
       <p class="coopt-sub"><b style="color:var(--ink)">Paper book &mdash; calls committed in advance (git-audited), no execution/fees.</b> The trailing hour-of-day DART-bias strategy writes tomorrow's 1&nbsp;MW positions to a dated JSON <i>before</i> settlement; each day's realized DART then scores them into an immutable ledger. Evidence of process, not a profit claim.</p>
@@ -246,7 +246,7 @@
   <section class="section" id="sec-quant" data-sec="quant">
   <div class="flow">
     <div class="card lit" id="c-curve" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">8</span>
+      <div class="lid"><span class="num">1</span>
         <span class="title">Forward Curve &mdash; Peak / Off-Peak Construction</span>
         <span class="live-dot" style="margin-left:auto">curve</span></div>
       <p class="coopt-sub">What a desk marks positions against. Monthly on-peak (ERCOT 5x16) and off-peak blocks, bootstrapped arbitrage-free, then shaped to an hourly curve using a real ERCOT hour-of-day profile &mdash; shaped hours re-aggregate exactly back to the block levels.</p>
@@ -258,7 +258,7 @@
     </div>
 
     <div class="card lit" id="c-swap" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">9</span>
+      <div class="lid"><span class="num">2</span>
         <span class="title">Fixed-for-Floating Swap &mdash; Mark-to-Market</span>
         <span class="live-dot" style="margin-left:auto">swap</span></div>
       <p class="coopt-sub">A power swap exchanges a fixed strike ($/MWh) for the floating forward price over a delivery window. Marked against the forward curve above, from the fixed-payer's perspective: MtM = (forward average &minus; strike) &times; volume &times; delivery hours. Positive when the curve floats above the strike.</p>
@@ -269,7 +269,7 @@
     </div>
 
     <div class="card lit" id="c-risk" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">10</span>
+      <div class="lid"><span class="num">3</span>
         <span class="title">Quant Risk &mdash; P&amp;L Distribution, VaR &amp; Optionality</span>
         <span class="live-dot" style="margin-left:auto">risk</span></div>
       <p class="coopt-sub">A mean-reverting jump-diffusion calibrated to real ERCOT prices simulates hundreds of day-paths; the no-peek policy runs on each to give a <i>distribution</i> of daily P&amp;L instead of a single number. From it: Value-at-Risk, Expected Shortfall, and the battery's optionality value (the revenue that comes purely from price variability).</p>
@@ -281,7 +281,7 @@
     </div>
 
     <div class="card lit" id="c-qse" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">11</span>
+      <div class="lid"><span class="num">4</span>
         <span class="title">Dynamic QSE Loop &mdash; Telemetry Age &amp; MW/MWh Coordination</span>
         <span class="live-dot" style="margin-left:auto">qse</span></div>
       <p class="coopt-sub">Habitat's QSE write-up makes two testable claims about the real-time loop linking a battery's telemetry to its market bids: <b>(A)</b> stale state-of-charge erodes revenue and creates bids the asset can't back, and <b>(B)</b> offering power (MW) without checking sustainable energy (MWh) burns flexibility too early to catch short-lived spikes. This isolates and quantifies both on simulated ERCOT-like paths.</p>
@@ -298,7 +298,7 @@
   <section class="section" id="sec-learning" data-sec="learning">
   <div class="flow">
     <div class="card lit" id="c-dcopf" style="--accent:var(--cyan)">
-      <div class="lid"><span class="num">13</span>
+      <div class="lid"><span class="num">1</span>
         <span class="title">Toy DCOPF &mdash; Nodal Pricing &amp; Congestion</span>
         <span class="live-dot" style="margin-left:auto">dcopf</span></div>
       <p class="coopt-sub">Locational marginal prices aren't set by anyone &mdash; they <i>fall out</i> of an optimization as the shadow prices (duals) of each bus's power-balance constraint. With no line at its limit, every bus clears at one price. The moment a line binds, prices split, and the gap between buses <b>is</b> the congestion. A 3-bus ERCOT-shaped system: cheap WEST wind, mid NORTH gas, expensive HOUSTON peaker.</p>
