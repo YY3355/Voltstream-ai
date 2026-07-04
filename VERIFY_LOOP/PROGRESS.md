@@ -10,7 +10,7 @@
 - [done]  T3f: lazy-load wiring — bare auto-calls -> per-section loaders (fire on first open); + status strip
 - [done]  T4: NEW P&L panel in Trading Desk (journal empty state + header line)
 - [done]  T5: About honest-scope content
-- [todo]  T6: final full verify (all /api 200 + every tab renders + no leakage)
+- [done]  T6: final full verify (all /api 200 + every tab renders + no leakage)
 
 ## Notes
 - Loaders today (bare, page-load): init(); coopt()+setInterval(coopt,60000) @419; vpp() @454;
@@ -26,3 +26,10 @@
   unaffected. Updated GOAL.md verify command.
 - T1: verified with ERCOT_LIVE=0 — /api/state 200 (1.1s); headless render shows new masthead
   "VoltStream" + tagline, forecast + bolt panels populate; all 13 cards present; old brand gone.
+
+## Final verify (fresh server, ERCOT_LIVE=0)
+- All 12 endpoints 200 (dart 64s cold, risk 14s). Co-Pilot: masthead+tagline, forecast+bolt+
+  sysstrip (5 pills), NO heavy-loader leakage (all 10 heavy heroes empty on /). Each tab
+  populates only its own panels on open (assetopt coopt+vpp; trading rt+dart+journal; quant
+  curve+swap+risk+qse; learning dcopf; about content). "10 pills" doc-count = 5 rendered +
+  5 template-literal source in <script> (dump-dom includes it); one #sysstrip. DONE.
