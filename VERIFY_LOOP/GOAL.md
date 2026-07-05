@@ -1,61 +1,35 @@
 # Goal
-Restructure dashboard_live.html from one scroll into the unified VoltStream platform:
-top nav + six show/hide sections, heavy tabs lazy-load on first open. MOVE existing
-panel markup + JS intact (don't rewrite). Add /api/journal + a new P&L panel.
+Retire the static-CSV crutch: wire price_store.py (rolling real-ERCOT price memory, shares
+dart_cache/) as the platform's price source. Real recent prices feed every engine.
 
-## Section → panel mapping (MOVE, don't rewrite)  [Bolt placement per user: move to Asset Opt]
-- Co-Pilot        : panels 1 router, 2 forecast, 4 RAG + verdict + brief + askbar/chips
-                    + a thin system-status strip (reuse /api/state values, no new endpoint)
-- Asset Optimization: panel 3 Bolt (MOVED out of Co-Pilot tools row; single copy — ask() must
-                    still update #c-dp via getElementById), panel 5 co-optimization, panel 6 VPP
-- Trading Desk    : panel 7 RT engine, panel 12 DART, + NEW P&L panel (/api/journal)
-- Quant & Structuring: panel 8 forward curve, 9 swap, 10 risk, 11 QSE
-- Learning Lab    : panel 13 DCOPF
-- About           : honest-scope page (live data + real methodology vs illustrative levels /
-                    simulated telemetry vs NOT live trading)
+price_store API: cached_days()->[YYYY-MM-DD]; ensure_days(n)->(have,fetched,missing) fetches
+missing complete past days into dart_cache; get_prices_rolling(hub,days=30,include_today=True,
+fetch_missing=True,min_points=288)->(series,meta) raises RuntimeError if thin; meta["source"]
+is the label. NB: get_prices_rolling calls ensure_days(fetch_missing=True) internally, so in
+REQUEST paths pass fetch_missing=False to avoid a 20-min fetch inside a request.
 
-## Loader refactor (CRITICAL)
-Currently bare auto-run at page load: init(); coopt()+setInterval(coopt,60000); vpp(); rt();
-curve(); swap(); risk(); qse(); dart(); dcopf().
-Refactor the CALLS (not the functions) into a per-section lazy loader registry: each section's
-loader runs ONCE on first open. Co-Pilot loads on page load (landing tab). coopt's 60s interval
-starts on first Asset-Opt open. Implement location.hash routing (#assetopt/#trading/#quant/
-#learning/#about) so each tab is deep-linkable AND independently renderable in headless Chrome.
+## Tasks
+- T1 BACKFILL: run ensure_days(30) once in background (~1 min/missing day; ~10 days cached now
+  → ~20 missing). Verify cached_days() ~30 after. (Data op, no commit — dart_cache is gitignored.)
+- T2 ercot_live.get_prices(): when LIVE_ON (ERCOT_LIVE!=0), try get_prices_rolling("HB_HOUSTON",
+  days=30, fetch_missing=False) FIRST → set _cache["src"]=meta["source"]; else existing live pull;
+  else CSV. ERCOT_LIVE=0 still forces CSV path unchanged (gate stays `if LIVE_ON`). data_source()
+  surfaces meta["source"].
+- T3 ercot_data.load_prices(): use store when PRICE_STORE!="0" AND ERCOT_LIVE!="0" — try
+  get_prices_rolling(TARGET, days=30, include_today=False, fetch_missing=False) first, fall back
+  to CSV dir. (include_today=False → only complete 96-pt days for rt/risk/qse per-day logic.)
+  Coupling to ERCOT_LIVE!=0 makes ERCOT_LIVE=0 a clean offline switch → regression guard holds
+  end-to-end with the specified test command. FLAG this design choice at check-in.
+- T4 app.py startup pre-warm thread: also call price_store.ensure_days(30) (backfill + daily
+  maintenance), before run_dart().
 
-## New API
-/api/journal reads journal/ledger.csv -> {cum_series, total_pnl, hit_rate_pct, n_days, by_hub}.
-ledger.csv does NOT exist yet -> honest empty state:
-  {"n_days": 0, "note": "no settled days yet — first settlement 2026-07-05"}
-P&L panel renders that empty state cleanly; header (not a footnote) carries:
-  "paper book — calls committed in advance (git-audited), no execution/fees".
-
-## Masthead / title
-title + masthead -> "VoltStream — agentic co-pilot for ERCOT battery trading"
-tagline -> "the math makes the decisions, the AI explains them."
-
-## Tasks (granular, each commit green; DOM move is atomic so isolated in its own commit)
-- T1: rename title/masthead/tagline only
-- T2: /api/journal endpoint (empty state) — verify curl
-- T3: nav + section machinery + lazy-loader registry + hash routing; MOVE all panels into the
-      six sections; convert every bare auto-call into its section loader (About = stub)
-- T4: NEW P&L panel in Trading Desk rendering the journal empty state + header line
-- T5: About honest-scope content
-- T6: final full verify
-
-## How to verify (every iteration) — recipe from project memory (no CLAUDE.md in repo)
-`volt` conda env. Kill stale :8020 first, wait for NEW instance (200 on /openapi.json).
-Warm heavy caches first: curl /api/dart and /api/risk (dart cached on disk + pre-warmed; risk ~15s).
-Start: ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean conda run -n volt python -m uvicorn app:app --port 8020
-  NB: ERCOT_LIVE=0 is REQUIRED — without it get_prices() does a live pull (~71 pts, < one full
-  day) and /api/state (forecast/coopt/vpp/rt) 500s on empty `full`. DART is unaffected (its
-  fetch_live hits gridstatus directly regardless of ERCOT_LIVE). Task's start cmd omitted it.
-Checks:
-  - curl EVERY /api endpoint still 200: state, cooptimize, vpp, rt, curve, swap, risk, qse,
-    dart, dcopf, journal (+ POST ask).
-  - headless-Chrome render EACH tab via hash (/, /#assetopt, /#trading, /#quant, /#learning,
-    /#about); confirm that tab's panels populate.
-  - render `/` (Co-Pilot only) and confirm NO auto-loader fired for unopened tabs (heavy panel
-    placeholders like #dart-hero/#risk-hero/#dcopf-hero still show their "…" placeholder text).
+## Verify (per CLAUDE.md recipe; volt env; kill stale :8020; warm dart+risk)
+- MAIN (NO ERCOT_LIVE=0): ERCOT_DATA_DIR=data_clean conda run -n volt uvicorn app:app :8020
+  → /api/state 200 with data source = rolling-store label AND target_date RECENT (this month
+    2026-07, NOT May). All 12 endpoints 200. Render each tab (hash deep-links) → panels populate.
+- REGRESSION (WITH ERCOT_LIVE=0): restart; /api/state 200; source = "cached ERCOT CSVs";
+  target_date = May (CSV data); all endpoints 200. Confirms CSV path unchanged.
 
 ## Guardrails
-- Supervised. Max 15 iterations. One task = one commit. Never commit red / a broken panel.
+- Supervised. Max 12 iterations. One task = one commit. Never commit a broken panel.
+- First /api/state after a cold start may take ~55s (today live fetch) — use long curl timeouts.
