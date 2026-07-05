@@ -331,6 +331,11 @@ def _prewarm_dart():
         try:
             from dart_engine import run_dart, prune_cache
             prune_cache(30)          # drop cached day-files older than 30 days
+            try:
+                from price_store import ensure_days
+                ensure_days(30)      # backfill + daily maintenance of the rolling price store
+            except Exception:
+                pass
             run_dart()
         except Exception:
             pass
