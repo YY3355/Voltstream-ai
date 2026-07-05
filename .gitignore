@@ -9,6 +9,8 @@ env/
 .vscode/
 .idea/
 *.csv
+# the DART paper-book ledger IS the git-audited track record — must be tracked
+!journal/*.csv
 *.db
 *.sqlite3
 *.log
