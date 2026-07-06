@@ -19,3 +19,5 @@ models/*.pkl
 models/*.h5
 models/*.pt
 dart_cache/
+# ERCOT catalog + archiver outputs (re-fetchable; may hold large raw JSON)
+data_archive/
