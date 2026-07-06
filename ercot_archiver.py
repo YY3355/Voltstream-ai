@@ -27,6 +27,7 @@ import io
 import json
 import os
 import sys
+import time
 import zipfile
 
 import pandas as pd
@@ -36,8 +37,11 @@ from ercot_catalog import get_token, BASE
 
 CACHE_DIR = os.path.join(os.environ.get("ARCHIVE_DIR", "data_archive"), "archive_cache")
 PAGE_SIZE = 1000
+MIN_INTERVAL = float(os.environ.get("ERCOT_API_MIN_INTERVAL", "0.3"))  # throttle: be kind to the API
+MAX_RETRIES = 6
 
 _token = {"val": None}
+_last = {"t": 0.0}
 
 
 # ----------------------------- auth + request plumbing -----------------------------
@@ -51,10 +55,23 @@ def _auth_headers(refresh=False):
 
 
 def _get(url, **kw):
-    """GET with the subscription key + bearer token; refresh the token once on a 401."""
-    r = requests.get(url, headers=_auth_headers(), timeout=kw.pop("timeout", 60), **kw)
-    if r.status_code == 401:
-        r = requests.get(url, headers=_auth_headers(refresh=True), timeout=60, **kw)
+    """GET with subscription key + bearer token. Throttled, with a refresh-once on 401 and
+    exponential backoff on 429 (rate limit) — high-frequency products post ~288 docs/day."""
+    timeout = kw.pop("timeout", 60)
+    for attempt in range(MAX_RETRIES):
+        gap = time.time() - _last["t"]
+        if gap < MIN_INTERVAL:
+            time.sleep(MIN_INTERVAL - gap)
+        r = requests.get(url, headers=_auth_headers(), timeout=timeout, **kw)
+        _last["t"] = time.time()
+        if r.status_code == 401:          # token expired -> refresh and retry
+            _auth_headers(refresh=True)
+            continue
+        if r.status_code == 429:          # rate limited -> honor Retry-After / back off
+            time.sleep(float(r.headers.get("Retry-After", min(2 ** attempt, 30))))
+            continue
+        r.raise_for_status()
+        return r
     r.raise_for_status()
     return r
 
@@ -197,11 +214,14 @@ def _summarize(emil, day, df):
         print(f"\nbinding constraints (ShadowPrice > 0): {binding['ConstraintName'].nunique()} distinct")
         with pd.option_context("display.width", 200):
             print(top.round(2).to_string())
-    elif "SettlementPoint" in df.columns:
-        col = next((c for c in df.columns if "Price" in c and c != "_docId"), None)
-        print("\nsettlement points:", df["SettlementPoint"].nunique(), "| price col:", col)
-        if col:
-            print(df.groupby("SettlementPoint")[col].mean().sort_values(ascending=False).head(8).round(2).to_string())
+    else:
+        spc = next((c for c in df.columns if c.lower() in ("settlementpoint", "settlementpointname")), None)
+        pc = next((c for c in df.columns if "price" in c.lower()), None)
+        if spc and pc:
+            v = df.copy()
+            v[pc] = pd.to_numeric(v[pc], errors="coerce")
+            print(f"\nsettlement points: {v[spc].nunique()} | price col: {pc}")
+            print(v.groupby(spc)[pc].mean().sort_values(ascending=False).head(8).round(2).to_string())
 
 
 if __name__ == "__main__":
