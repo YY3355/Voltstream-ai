@@ -15,6 +15,7 @@ env/
 *.sqlite3
 *.log
 .DS_Store
+.claude/settings.local.json
 models/*.pkl
 models/*.h5
 models/*.pt
