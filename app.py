@@ -332,11 +332,11 @@ def _prewarm_dart():
             from dart_engine import run_dart, prune_cache
             prune_cache(30)          # drop cached day-files older than 30 days
             try:
-                from price_store import ensure_days
-                ensure_days(30)      # backfill + daily maintenance of the rolling price store
+                from ercot_archiver import backfill_prices_to_cache
+                backfill_prices_to_cache(30)  # fast (~3s): 30 real days of HB_HOUSTON RT SPP via query endpoint
             except Exception:
                 pass
-            run_dart()
+            run_dart()                        # DART warms + caches its own recent gridstatus days
         except Exception:
             pass
 
@@ -373,6 +373,64 @@ def api_dcopf():
         }
     except Exception as e:
         return {"error": f"dcopf failed ({e})"}
+
+
+@app.get("/api/constraints")
+def api_constraints():
+    """Live SCED binding transmission constraints (NP6-86-CD, official ERCOT API): today's
+    binding constraints with shadow prices sorted by severity, plus how many recent cached
+    days each constraint has bound. Reads REAL constraint data — it is NOT a grid model (no
+    topology, no shift factors); it's the reality counterpart to the toy DCOPF."""
+    import pandas as pd
+    from ercot_archiver import most_recent_day, ensure_day, cached_days, CACHE_DIR, _day_path
+    emil = "NP6-86-CD"
+    try:
+        day = most_recent_day(emil)
+        if not day:
+            return {"error": "no SCED shadow-price archive available"}
+        df = ensure_day(emil, day).copy()
+        if not len(df):
+            return {"error": f"no constraint rows for {day}"}
+    except Exception as e:
+        return {"error": f"constraints unavailable ({e})"}
+    df["ShadowPrice"] = pd.to_numeric(df["ShadowPrice"], errors="coerce")
+    binding = df[df["ShadowPrice"] > 0]
+
+    # recent bind-frequency: over all cached NP6-86-CD days, count days each constraint bound
+    days = cached_days(emil)
+    freq = {}
+    for d in days:
+        try:
+            dd = pd.read_pickle(_day_path(emil, d))
+            dd["ShadowPrice"] = pd.to_numeric(dd["ShadowPrice"], errors="coerce")
+            for c in dd.loc[dd["ShadowPrice"] > 0, "ConstraintName"].astype(str).unique():
+                freq[c] = freq.get(c, 0) + 1
+        except Exception:
+            pass
+
+    def mode(s):
+        m = s.astype(str).mode()
+        return m.iloc[0] if len(m) else ""
+
+    g = (binding.groupby("ConstraintName")
+         .agg(max_shadow=("ShadowPrice", "max"), mean_shadow=("ShadowPrice", "mean"),
+              intervals=("ShadowPrice", "size"), contingency=("ContingencyName", mode))
+         .sort_values("max_shadow", ascending=False).reset_index())
+    constraints = [{"name": r["ConstraintName"], "contingency": r["contingency"],
+                    "max_shadow": round(float(r["max_shadow"]), 2),
+                    "mean_shadow": round(float(r["mean_shadow"]), 2),
+                    "intervals": int(r["intervals"]),
+                    "bound_days_recent": int(freq.get(r["ConstraintName"], 0))}
+                   for _, r in g.iterrows()]
+    return {
+        "as_of_day": day,
+        "n_docs": int(df["_docId"].nunique()) if "_docId" in df.columns else None,
+        "n_binding": int(binding["ConstraintName"].nunique()),
+        "n_constraints_seen": int(df["ConstraintName"].nunique()),
+        "cached_days": len(days),
+        "constraints": constraints,
+        "source": "LIVE ERCOT SCED shadow prices (NP6-86-CD) via official API",
+    }
 
 
 @app.get("/api/journal")
