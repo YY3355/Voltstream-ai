@@ -24,3 +24,6 @@
   (dropped the wasteful ensure_days(30) that retried unavailable deep days).
 - T2 done: /api/constraints (NP6-86-CD live) -> 11 binding today, top SEA_AAT1 $2044.80;
   Learning Lab panel renders beside toy DCOPF (concept vs reality), honest "not a grid model" label.
+- Follow-up: NP6-86-CD constraint backfill via query endpoint (shdw_prices_bnd_trns_const):
+  backfill_constraints_to_cache(14) wired into pre-warm. 14 days in ~77s. /api/constraints
+  cached_days 15, bind-frequency now real (NUECES_WHITE_2_1 bound 5d).

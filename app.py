@@ -332,8 +332,9 @@ def _prewarm_dart():
             from dart_engine import run_dart, prune_cache
             prune_cache(30)          # drop cached day-files older than 30 days
             try:
-                from ercot_archiver import backfill_prices_to_cache
-                backfill_prices_to_cache(30)  # fast (~3s): 30 real days of HB_HOUSTON RT SPP via query endpoint
+                from ercot_archiver import backfill_prices_to_cache, backfill_constraints_to_cache
+                backfill_prices_to_cache(30)      # fast (~3s): 30 real days of HB_HOUSTON RT SPP
+                backfill_constraints_to_cache(14)  # fast: 14 days of SCED constraints for bind counts
             except Exception:
                 pass
             run_dart()                        # DART warms + caches its own recent gridstatus days

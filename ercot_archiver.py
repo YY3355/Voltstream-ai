@@ -186,6 +186,45 @@ def backfill_prices_to_cache(days=30, hub="HB_HOUSTON", emil="NP6-905-CD"):
     return sorted(written)
 
 
+def fetch_constraints_query(days=14, emil="NP6-86-CD", artifact="shdw_prices_bnd_trns_const"):
+    """Pull the last `days` of SCED binding-constraint shadow prices via the query endpoint.
+    Returns a DataFrame in the download_doc CSV schema (ConstraintName/ShadowPrice/...)."""
+    end = pd.Timestamp.now().normalize()
+    frm = (end - pd.Timedelta(days=days)).strftime("%Y-%m-%dT00:00:00")
+    to = end.strftime("%Y-%m-%dT00:00:00")
+    url = f"{BASE}/{emil.lower()}/{artifact}"
+    rows, fields, page = [], None, 1
+    while True:
+        p = _get(url, params={"SCEDTimestampFrom": frm, "SCEDTimestampTo": to, "size": 1000, "page": page}).json()
+        fields = fields or [f["name"] for f in (p.get("fields") or [])]
+        rows += (p.get("data") or [])
+        meta = p.get("_meta") or {}
+        if page >= (meta.get("totalPages") or 1):
+            break
+        page += 1
+    df = pd.DataFrame(rows, columns=fields)
+    return df.rename(columns={"SCEDTimestamp": "SCEDTimeStamp", "constraintName": "ConstraintName",
+                              "contingencyName": "ContingencyName", "shadowPrice": "ShadowPrice"})
+
+
+def backfill_constraints_to_cache(days=14, emil="NP6-86-CD"):
+    """Fast backfill of recent SCED constraint days (query endpoint) for the bind-frequency
+    counts. Writes per-COMPLETE-day pkls in the schema /api/constraints reads. Returns days."""
+    df = fetch_constraints_query(days, emil)
+    if not len(df) or "SCEDTimeStamp" not in df.columns:
+        return []
+    df["_day"] = pd.to_datetime(df["SCEDTimeStamp"]).dt.strftime("%Y-%m-%d")
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    today = pd.Timestamp.now().normalize().strftime("%Y-%m-%d")
+    written = []
+    for day, g in df.groupby("_day"):
+        if day >= today:
+            continue
+        g.drop(columns=["_day"]).to_pickle(_day_path(emil, day))
+        written.append(day)
+    return sorted(written)
+
+
 # ----------------------------- per-day fetch + cache (the archiver) -----------------------------
 def fetch_day(emil, day):
     """Assemble all archived docs for one operating day into one DataFrame (uncached)."""
