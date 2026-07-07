@@ -314,6 +314,16 @@
       <div class="legend" id="dcopf-sweep-legend"></div>
       <div class="coopt-note" id="dcopf-note">A 3-bus <b>learning model with made-up costs and limits</b> &mdash; it demonstrates how LMPs, the congestion component, and shadow prices fall out of the optimization, and is <b>not calibrated to the real grid</b> (real nodal pricing is thousands of buses with measured topology). The point is to make "binding constraint" and "congestion component" things you have computed, not words you have read.</div>
     </div>
+
+    <div class="card lit" id="c-constraints" style="--accent:var(--red)">
+      <div class="lid"><span class="num">2</span>
+        <span class="title">Live Binding Constraints &mdash; Today's Actual Grid</span>
+        <span class="live-dot" style="margin-left:auto">reality</span></div>
+      <p class="coopt-sub"><b style="color:var(--ink)">Concept vs reality.</b> The panel above is the <i>concept</i> &mdash; a 3-bus toy where congestion falls out of an optimization you can read end to end. This is the <i>reality</i>: the transmission constraints actually binding on ERCOT's grid today, with the shadow prices SCED computed for each.</p>
+      <div class="coopt-hero" id="constraints-hero"></div>
+      <div id="constraints-table"></div>
+      <div class="coopt-note" id="constraints-note">Reads real ERCOT SCED shadow-price data (NP6-86-CD, official API). It is <b>not a grid model</b> &mdash; no topology, no shift factors, no power-flow solve; it reports the binding constraints and shadow prices ERCOT's SCED already produced. "Bound" = how many recent cached days each constraint has bound.</div>
+    </div>
   </div>
   </section>
   <section class="section" id="sec-about" data-sec="about">
@@ -1016,12 +1026,41 @@ async function journal(){
 
 // per-section lazy loaders: each fires ONCE on first open of its tab. Co-Pilot's light
 // state (init) always runs on page load above; heavy engines wait until their tab is opened.
+function constraintsTable(cs){
+  if(!cs.length) return '<span class="none">no constraints binding right now</span>';
+  const mx=Math.max(...cs.map(c=>c.max_shadow))||1;
+  const hdr=`<div style="display:grid;grid-template-columns:150px 1fr 78px 54px;gap:8px;font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px"><div>constraint</div><div>max shadow price (severity)</div><div style="text-align:right">$/MWh</div><div style="text-align:right">bound</div></div>`;
+  const rows=cs.slice(0,14).map(c=>{
+    const w=Math.max(2,100*c.max_shadow/mx);
+    return `<div style="display:grid;grid-template-columns:150px 1fr 78px 54px;gap:8px;align-items:center;padding:3px 0;font-family:var(--mono);font-size:11px">`
+      +`<div style="color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${c.name} · ${c.contingency}">${c.name}</div>`
+      +`<div style="background:#1a1016;border-radius:3px"><div style="width:${w.toFixed(0)}%;background:#f85149;height:12px;border-radius:3px;opacity:.85"></div></div>`
+      +`<div style="text-align:right;color:#f0a35e">$${c.max_shadow.toFixed(2)}</div>`
+      +`<div style="text-align:right;color:var(--dim)">${c.bound_days_recent}d</div></div>`;
+  }).join('');
+  return hdr+rows;
+}
+async function constraints(){
+  $('constraints-hero').innerHTML='<span class="thinking">pulling live SCED binding constraints…</span>';
+  let d; try{ d=await (await fetch('/api/constraints')).json(); }
+  catch(e){ $('constraints-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('constraints-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const cs=d.constraints||[],top=cs[0];
+  $('constraints-hero').innerHTML=
+    `<div class="big"><span class="lab">Binding constraints today · ${d.as_of_day}</span><span class="val" style="color:#f85149">${d.n_binding}</span></div>`
+    +`<div class="delta" style="color:#f0a35e;border-color:#4a3a1d;background:#1f1708">${top?top.name+' · $'+top.max_shadow.toFixed(0):'—'}</div>`
+    +`<div class="mini"><div><span class="l">SCED runs</span><b>${d.n_docs||'—'}</b></div>`
+    +`<div><span class="l">Constraints seen</span><b>${d.n_constraints_seen}</b></div>`
+    +`<div><span class="l">Cached days</span><b>${d.cached_days}</b></div></div>`;
+  $('constraints-table').innerHTML=constraintsTable(cs);
+  const nt=$('constraints-note'); if(nt&&d.source){ nt.innerHTML=`${d.source}. NOT a grid model &mdash; no topology, no shift factors, no power-flow solve; it reports what SCED already computed. "Bound" = recent cached days each constraint bound (of ${d.cached_days}).`; }
+}
 let _coInterval=false;
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); },
   quant(){ curve(); swap(); risk(); qse(); },
-  learning(){ dcopf(); },
+  learning(){ dcopf(); constraints(); },
 };
 function openSection(sec){
   if(!SECTIONS.includes(sec)) sec='copilot';
