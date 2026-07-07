@@ -141,6 +141,51 @@ def most_recent_day(emil):
     return str(arch[0]["postDatetime"])[:10] if arch else None
 
 
+# ----------------------------- fast query-endpoint price backfill -----------------------------
+# Some products expose a queryable data artifact that returns filtered tabular rows in one
+# paginated call — vastly faster than per-interval archive downloads for a single point.
+def fetch_prices_query(days=30, hub="HB_HOUSTON", emil="NP6-905-CD", artifact="spp_node_zone_hub"):
+    """Pull the last `days` of one settlement point's RT SPP via the query data endpoint.
+    Returns a DataFrame in the download_doc/archive CSV schema (so _api_frame_to_series reads it)."""
+    end = pd.Timestamp.now().normalize()
+    frm = (end - pd.Timedelta(days=days)).strftime("%Y-%m-%d")
+    to = end.strftime("%Y-%m-%d")
+    url = f"{BASE}/{emil.lower()}/{artifact}"
+    rows, fields, page = [], None, 1
+    while True:
+        p = _get(url, params={"deliveryDateFrom": frm, "deliveryDateTo": to,
+                              "settlementPoint": hub, "size": 1000, "page": page}).json()
+        fields = fields or [f["name"] for f in (p.get("fields") or [])]
+        rows += (p.get("data") or [])
+        meta = p.get("_meta") or {}
+        if page >= (meta.get("totalPages") or 1):
+            break
+        page += 1
+    df = pd.DataFrame(rows, columns=fields)
+    return df.rename(columns={"deliveryDate": "DeliveryDate", "deliveryHour": "DeliveryHour",
+                              "deliveryInterval": "DeliveryInterval", "settlementPoint": "SettlementPointName",
+                              "settlementPointPrice": "SettlementPointPrice"})
+
+
+def backfill_prices_to_cache(days=30, hub="HB_HOUSTON", emil="NP6-905-CD"):
+    """Fast backfill: query the range once, write per-COMPLETE-day pkls into the archive cache
+    in the schema price_store._api_frame_to_series expects. Returns the days written."""
+    df = fetch_prices_query(days, hub, emil)
+    if not len(df):
+        return []
+    df["_postDatetime"] = ""  # query returns final settled values; no repost ambiguity
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    today = pd.Timestamp.now().normalize().strftime("%Y-%m-%d")
+    written = []
+    for day, g in df.groupby(df["DeliveryDate"].astype(str)):
+        d = day[:10]
+        if d >= today:
+            continue  # today is still filling — skip
+        g.to_pickle(_day_path(emil, d))
+        written.append(d)
+    return sorted(written)
+
+
 # ----------------------------- per-day fetch + cache (the archiver) -----------------------------
 def fetch_day(emil, day):
     """Assemble all archived docs for one operating day into one DataFrame (uncached)."""
