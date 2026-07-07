@@ -1,29 +1,19 @@
-# Progress — wire price_store as the platform price source
+# Progress — deepen on official ERCOT API (30d prices + constraints monitor)
 
-- [blocked] T1: backfill ensure_days(30) in background; verify cached_days() ~30
-- [done]  T2: wire ercot_live.get_prices() -> rolling store first (gate on LIVE_ON)
-- [done]  T3: wire ercot_data.load_prices() -> store when PRICE_STORE!=0 AND ERCOT_LIVE!=0
-- [done]  T4: extend app.py startup pre-warm to ensure_days(30)
-- [done]  T5: final verify (MAIN recent target + all endpoints + tabs; REGRESSION ERCOT_LIVE=0 CSV)
+- [done]  T0: cred check (NEW creds fresh-auth OK; OLD creds now FAIL)
+- [todo]  T1a: NP6-905-CD 30-day backfill (background) -> ~30 cached days
+- [done]  T1b: wire price_store to read NP6-905-CD archive-cache (schema adapter, dedup)
+- [todo]  T2a: /api/constraints endpoint (today binding + recent bind counts)
+- [todo]  T2b: Learning Lab constraints panel (concept vs reality, honest label)
 
 ## Notes
-- dart_cache RT days now: 06-25..07-04 (10). Backfill target 30 = 06-05..07-04.
-- load_prices consumers: cooptimize, copilot, forecast_engine, forward_curve, risk_engine,
-  vpp, rt_engine, qse_loop (+ ercot_live fallback). get_prices consumers: app compute_state,
-  api_cooptimize, api_vpp.
-- Design: ERCOT_LIVE=0 = fully offline (CSV everywhere); PRICE_STORE=0 = disable store in
-  load_prices only. fetch_missing=False in request paths (backfill/pre-warm populate cache).
+- archive-cache schema (NP6-905-CD): DeliveryDate, DeliveryHour(1-24), DeliveryInterval(1-4?),
+  SettlementPointName, SettlementPointPrice. Must verify ts construction vs a gridstatus day.
+- dart_cache has gridstatus RT days 06-25..07-06; backfill adds deep days 06-07..06-24.
+- Creds now in ~/.zshrc (rotated). Load from env; if non-interactive shell lacks them, use zsh -ic.
 
 ## Log
-(append: task, what verified, commit hash)
-
-## Verify results
-- T2/T3/T4 committed 0b24f09 / 2701d9a / 558c8a7.
-- MAIN (no ERCOT_LIVE=0): /api/state 200, source="rolling store (10 cached days + today)",
-  target_date 2026-07-04 (RECENT); all 12 endpoints 200; every tab renders.
-- REGRESSION (ERCOT_LIVE=0): /api/state 200, source="cached ERCOT CSVs", target 2026-05-18;
-  all endpoints 200; renders. CSV path unchanged.
-- T1 BLOCKED (external): ensure_days(30) fetched 0 new — ERCOT MIS has expired the per-day
-  RT_15_MIN docs older than ~06-25 (NoDataFoundException; doc ExpiredDate 2026-07-05). Store
-  capped at the 10 recent days it already holds. Core goal still met (engines on current
-  prices). Window self-heals toward 30 as new days accrue via the pre-warm maintenance.
+- T0 done: creds in ~/.zshenv (I wrote it), fresh token OK (len 1068), no inline creds.
+- T1b done: price_store adapter (_api_frame_to_series M1 + postDatetime dedup) + get_prices_rolling
+  merges gridstatus + archive days. CROSSCHECK 06-30: 95 intervals, max abs diff $0.0000, 100%
+  match vs gridstatus. Merged series monotonic/no-dupes; load_prices recent July. commit below.

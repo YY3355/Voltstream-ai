@@ -115,32 +115,83 @@ def _today_frame():
     return frames
 
 
+# ----------------- official-API archive cache (NP6-905-CD RT settlement point prices) -----------------
+# Written by ercot_archiver.py; reaches far past the ~30-day gridstatus scrape window.
+ARCHIVE_CACHE = os.path.join(os.environ.get("ARCHIVE_DIR", "data_archive"), "archive_cache")
+ARCHIVE_EMIL = "NP6-905-CD"
+
+
+def _arch_path(day):
+    return os.path.join(ARCHIVE_CACHE, f"{ARCHIVE_EMIL}_{day}.pkl")
+
+
+def _archive_days(n_days):
+    """Cached official-API archive days (YYYY-MM-DD) within the last n_days window."""
+    if not os.path.isdir(ARCHIVE_CACHE):
+        return []
+    lo = (pd.Timestamp.now().normalize() - pd.Timedelta(days=n_days)).strftime("%Y-%m-%d")
+    pre, suf = f"{ARCHIVE_EMIL}_", ".pkl"
+    return sorted(f[len(pre):-len(suf)] for f in os.listdir(ARCHIVE_CACHE)
+                  if f.startswith(pre) and f.endswith(suf) and f[len(pre):-len(suf)] >= lo)
+
+
+def _api_frame_to_series(df, hub):
+    """One NP6-905-CD archive day-frame -> 15-min price series for one hub.
+
+    Timestamp = DeliveryDate + (DeliveryHour-1)h + (DeliveryInterval-1)*15min  (verified to the
+    cent against an overlapping gridstatus day). Where an interval was re-posted (preliminary ->
+    final) keep the value from the newest _postDatetime."""
+    d = df[df["SettlementPointName"].astype(str).str.upper() == hub.upper()].copy()
+    if d.empty:
+        return pd.Series(dtype=float)
+    mins = (d["DeliveryHour"].astype(int) - 1) * 60 + (d["DeliveryInterval"].astype(int) - 1) * 15
+    d["ts"] = pd.to_datetime(d["DeliveryDate"]) + pd.to_timedelta(mins, unit="m")
+    d["price"] = pd.to_numeric(d["SettlementPointPrice"], errors="coerce")
+    d = d.dropna(subset=["price"])
+    if "_postDatetime" in d.columns:                       # newest posting wins per interval
+        d = d.sort_values("_postDatetime", kind="stable")
+    d = d[~d["ts"].duplicated(keep="last")]
+    return pd.Series(d["price"].values, index=pd.DatetimeIndex(d["ts"])).sort_index()
+
+
 def get_prices_rolling(hub: str = "HB_HOUSTON", days: int = 30, include_today: bool = True,
                        fetch_missing: bool = True, min_points: int = 96 * 3):
-    """The store's main product: a continuous 15-min series over the rolling window.
-
-    Raises RuntimeError (honestly) if the assembled history is too thin — callers keep
-    their existing fallback. Returns (series, meta)."""
+    """The store's main product: a continuous 15-min series over the rolling window, assembled
+    from the gridstatus day-cache AND the official-API archive cache (which reaches far deeper).
+    Archive days win on any timestamp overlap (final settled values). Raises RuntimeError
+    (honestly) if the assembled history is too thin. Returns (series, meta)."""
     have, fetched, missing = ensure_days(days, fetch_missing=fetch_missing)
-    frames = []
-    for day in have:
+    parts = []
+    for day in have:                                       # gridstatus dart_cache days
         try:
-            frames.append(pd.read_pickle(_path(day)))
+            parts.append(_frame_to_series(pd.read_pickle(_path(day)), hub))
         except Exception:
             missing.append(day)
-    if include_today:
+    arch = _archive_days(days)
+    for day in arch:                                       # official-API archive days (loaded last -> win)
         try:
-            frames += _today_frame()
+            parts.append(_api_frame_to_series(pd.read_pickle(_arch_path(day)), hub))
         except Exception:
             pass
-    s = assemble(frames, hub)
+    if include_today:
+        try:
+            parts += [_frame_to_series(f, hub) for f in _today_frame()]
+        except Exception:
+            pass
+    parts = [p for p in parts if len(p)]
+    s = pd.concat(parts).sort_index(kind="stable") if parts else pd.Series(dtype=float)
+    s = s[~s.index.duplicated(keep="last")]                # later part (archive/today) wins on overlap
+    s.name = f"{hub}_rt_spp"
+    n_days = len(set(have) | set(arch))
     if len(s) < min_points:
         raise RuntimeError(f"rolling store too thin: {len(s)} pts < {min_points} "
-                           f"({len(have)} cached days, {len(missing)} missing)")
-    meta = {"hub": hub, "days_cached": len(have), "days_fetched_now": len(fetched),
+                           f"({n_days} cached days, {len(missing)} missing)")
+    bits = ([f"{len(have)} gridstatus"] if have else []) + ([f"{len(arch)} archive"] if arch else [])
+    meta = {"hub": hub, "days_cached": n_days, "days_gridstatus": len(have),
+            "days_archive": len(arch), "days_fetched_now": len(fetched),
             "days_missing": len(missing), "points": len(s),
             "start": str(s.index.min()), "end": str(s.index.max()),
-            "source": f"rolling store ({len(have)} cached days + today, live ERCOT via gridstatus)"}
+            "source": f"rolling store ({' + '.join(bits) or 'no'} days + today, real ERCOT)"}
     return s, meta
 
 
