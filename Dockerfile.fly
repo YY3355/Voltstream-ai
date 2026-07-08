@@ -1,0 +1,21 @@
+# Dockerfile.fly — VoltStream dashboard (FastAPI app:app) for Fly.io.
+# The legacy orchestrator (main.py, core/, api/, agents/, Dockerfile, docker-compose.yml)
+# is intentionally left untouched and is NOT run here.
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# numpy/pandas/scikit-learn/cvxpy/highspy all ship manylinux wheels for py3.12 — no build
+# toolchain needed. gridstatus + requests are pure-python.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV PYTHONUNBUFFERED=1 \
+    PORT=8080
+# Cache dirs (DART_CACHE_DIR / PRICE_CACHE_DIR / ARCHIVE_DIR) are pointed at the mounted
+# /data volume via fly.toml [env]. ERCOT_LIVE is left unset -> live mode (no CSVs in image).
+
+EXPOSE 8080
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8080}"]

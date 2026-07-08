@@ -1,0 +1,29 @@
+# fly.toml — VoltStream dashboard (FastAPI app:app). Built from Dockerfile.fly.
+app = "voltstream-ercot"
+primary_region = "dfw"   # Dallas — closest to ERCOT
+
+[build]
+  dockerfile = "Dockerfile.fly"
+
+[env]
+  PORT = "8080"
+  # cache dirs -> the mounted /data volume (survives restarts)
+  DART_CACHE_DIR = "/data/dart_cache"
+  PRICE_CACHE_DIR = "/data/dart_cache"
+  ARCHIVE_DIR = "/data"
+  # ERCOT_LIVE unset -> live mode (rolling store). ANTHROPIC_API_KEY unset -> grounded template.
+
+[[mounts]]
+  source = "voltstream_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false     # single always-on machine
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"                 # cvxpy + sklearn + Monte-Carlo risk + 30-day data

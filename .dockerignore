@@ -13,3 +13,14 @@ docs/
 *.zip
 *.csv
 .env
+
+# --- VoltStream dashboard (Dockerfile.fly) deploy ---
+# live mode: keep the image CSV-free; exclude local data + caches (the /data volume holds caches)
+data/
+data_clean/
+dart_cache/
+data_archive/
+VERIFY_LOOP/
+.claude/
+# but DO ship the git-audited paper-book ledger (the P&L panel reads journal/ledger.csv)
+!journal/ledger.csv

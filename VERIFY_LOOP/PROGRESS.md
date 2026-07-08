@@ -1,8 +1,8 @@
 # Progress — deploy VoltStream to Fly.io
 
 - [done]    T0: fresh-clone test (clean venv, pip install, live-mode boot)
-- [todo]    T1: Dockerfile + fly.toml + 1GB volume at /data
-- [blocked] T2: secrets + deploy  (BLOCKED: flyctl not authed in this shell)
+- [done]    T1: Dockerfile + fly.toml + 1GB volume at /data
+- [todo]    T2: secrets + deploy  (BLOCKED: flyctl not authed in this shell)
 - [todo]    T3: verify public https end-to-end + volume persistence
 - [todo]    T4: README live URL, commit+push
 
@@ -20,3 +20,9 @@
   today-fetch on landing) + backfill_if_thin. ercot_data.load_prices backfill_if_thin + empty
   guard (no more "No objects to concatenate" on absent data_clean). app.py forecast train-window
   cap (FORECAST_TRAIN_DAYS=10). Clone boot: /api/state 46s->1.5s, live rolling store, target 2026-07-07.
+- T0 VERIFIED from a FRESH LOCAL clone (cdc92d0, clean venv, no data_clean): app boots live;
+  /api/state 200 @1.5s (source "rolling store (30 archive days, real ERCOT)", target 2026-07-07);
+  all core endpoints + risk 200; journal real ledger (n_days 1, -$36.86, 40.5%); dart 200 once
+  warm (cold gridstatus fetch slow, unchanged). Label honesty fix confirmed (no "+ today").
+- Pre-existing Dockerfile/fly? repo already has Dockerfile + docker-compose.yml + main.py + api/
+  core/ agents/ dirs — must inspect Dockerfile in T1 (may need to align to app:app).
