@@ -155,43 +155,57 @@ def _api_frame_to_series(df, hub):
 
 
 def get_prices_rolling(hub: str = "HB_HOUSTON", days: int = 30, include_today: bool = True,
-                       fetch_missing: bool = True, min_points: int = 96 * 3):
+                       fetch_missing: bool = True, min_points: int = 96 * 3,
+                       backfill_if_thin: bool = False):
     """The store's main product: a continuous 15-min series over the rolling window, assembled
     from the gridstatus day-cache AND the official-API archive cache (which reaches far deeper).
-    Archive days win on any timestamp overlap (final settled values). Raises RuntimeError
-    (honestly) if the assembled history is too thin. Returns (series, meta)."""
-    have, fetched, missing = ensure_days(days, fetch_missing=fetch_missing)
-    parts = []
-    for day in have:                                       # gridstatus dart_cache days
-        try:
-            parts.append(_frame_to_series(pd.read_pickle(_path(day)), hub))
-        except Exception:
-            missing.append(day)
-    arch = _archive_days(days)
-    for day in arch:                                       # official-API archive days (loaded last -> win)
-        try:
-            parts.append(_api_frame_to_series(pd.read_pickle(_arch_path(day)), hub))
+    Archive days win on any timestamp overlap (final settled values). If the store is thin and
+    backfill_if_thin is set, do a one-time fast query-endpoint backfill and reassemble (cold
+    start on a fresh deploy with no caches). Raises RuntimeError if still too thin. -> (series, meta)."""
+    def _assemble():
+        have, fetched, missing = ensure_days(days, fetch_missing=fetch_missing)
+        parts = []
+        for day in have:                                   # gridstatus dart_cache days
+            try:
+                parts.append(_frame_to_series(pd.read_pickle(_path(day)), hub))
+            except Exception:
+                missing.append(day)
+        arch = _archive_days(days)
+        for day in arch:                                   # official-API archive days (loaded last -> win)
+            try:
+                parts.append(_api_frame_to_series(pd.read_pickle(_arch_path(day)), hub))
+            except Exception:
+                pass
+        if include_today:
+            try:
+                parts += [_frame_to_series(f, hub) for f in _today_frame()]
+            except Exception:
+                pass
+        parts = [p for p in parts if len(p)]
+        s = pd.concat(parts).sort_index(kind="stable") if parts else pd.Series(dtype=float)
+        s = s[~s.index.duplicated(keep="last")]            # later part (archive/today) wins on overlap
+        s.name = f"{hub}_rt_spp"
+        return s, have, fetched, missing, arch
+
+    s, have, fetched, missing, arch = _assemble()
+    if len(s) < min_points and backfill_if_thin:
+        try:                                               # cold start: fast query-endpoint populate, then retry
+            from ercot_archiver import backfill_prices_to_cache
+            backfill_prices_to_cache(days, hub)
+            s, have, fetched, missing, arch = _assemble()
         except Exception:
             pass
-    if include_today:
-        try:
-            parts += [_frame_to_series(f, hub) for f in _today_frame()]
-        except Exception:
-            pass
-    parts = [p for p in parts if len(p)]
-    s = pd.concat(parts).sort_index(kind="stable") if parts else pd.Series(dtype=float)
-    s = s[~s.index.duplicated(keep="last")]                # later part (archive/today) wins on overlap
-    s.name = f"{hub}_rt_spp"
     n_days = len(set(have) | set(arch))
     if len(s) < min_points:
         raise RuntimeError(f"rolling store too thin: {len(s)} pts < {min_points} "
                            f"({n_days} cached days, {len(missing)} missing)")
     bits = ([f"{len(have)} gridstatus"] if have else []) + ([f"{len(arch)} archive"] if arch else [])
+    tail = " + today" if include_today else ""
     meta = {"hub": hub, "days_cached": n_days, "days_gridstatus": len(have),
             "days_archive": len(arch), "days_fetched_now": len(fetched),
             "days_missing": len(missing), "points": len(s),
             "start": str(s.index.min()), "end": str(s.index.max()),
-            "source": f"rolling store ({' + '.join(bits) or 'no'} days + today, real ERCOT)"}
+            "source": f"rolling store ({' + '.join(bits) or 'no'} days{tail}, real ERCOT)"}
     return s, meta
 
 

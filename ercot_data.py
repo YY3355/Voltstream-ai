@@ -44,13 +44,15 @@ def load_prices(data_dir: str = "data") -> pd.Series:
         try:
             import price_store
             s, _meta = price_store.get_prices_rolling(TARGET, days=30, include_today=False,
-                                                      fetch_missing=False)
+                                                      fetch_missing=False, backfill_if_thin=True)
             if s is not None and len(s) > 0:
                 return s.astype(float)
         except Exception:
             pass  # store thin/unavailable -> fall through to the cached CSVs
     files = sorted(glob.glob(os.path.join(data_dir, "*.csv")))
-    frames = [_load_one(f) for f in files]
+    frames = [f for f in (_load_one(f) for f in files) if len(f)]
+    if not frames:                                          # no CSVs (e.g. fresh clone) and store thin
+        return pd.Series(dtype=float, name=TARGET)
     s = (
         pd.concat(frames)
         .dropna()

@@ -14,6 +14,7 @@ Open:  http://localhost:8000
 """
 import os
 import time
+from datetime import timedelta
 import numpy as np
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
@@ -43,7 +44,12 @@ def compute_state(reserve_kwh: float = 10.0):
     full = [d for d in days if (feat.index.date == d).sum() >= DAY]
     target = full[-1]
     test = feat[feat.index.date == target]
-    train = feat[feat.index.date < target]
+    # cap the GBM training window: the rolling store holds ~30 days, and fitting 3 quantile
+    # models over all of it makes /api/state ~40s+ (too slow for the landing tab / cloud timeouts).
+    # Recent days carry the hour-of-day pattern; keep it snappy. Tunable via FORECAST_TRAIN_DAYS.
+    train_days = int(os.environ.get("FORECAST_TRAIN_DAYS", "10"))
+    lo = target - timedelta(days=train_days)
+    train = feat[(feat.index.date < target) & (feat.index.date >= lo)]
     q = fit_predict_gbm(train, test)
     p10, p50, p90 = q[0.1], q[0.5], q[0.9]
     actual = test["y"].values

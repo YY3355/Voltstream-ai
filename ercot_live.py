@@ -80,7 +80,11 @@ def get_prices() -> pd.Series:
         #    fetch_missing=False so a request never blocks on backfill (pre-warm populates it).
         try:
             import price_store
-            s, meta = price_store.get_prices_rolling(SETTLEMENT_POINT, days=30, fetch_missing=False)
+            # include_today=False: the archive store covers through yesterday (fresh enough for
+            # the forecast, which targets the last COMPLETE day). Skipping today avoids a ~46s
+            # gridstatus scrape on the landing endpoint. DART provides true intraday data separately.
+            s, meta = price_store.get_prices_rolling(SETTLEMENT_POINT, days=30, fetch_missing=False,
+                                                     include_today=False, backfill_if_thin=True)
             if s is not None and len(s) > 0:
                 _cache["energy"] = (time.time(), s)
                 _cache["src"] = meta["source"]

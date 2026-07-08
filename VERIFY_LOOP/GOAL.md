@@ -1,35 +1,36 @@
 # Goal
-Deepen the platform on the official ERCOT API (archiver already built): real 30-day price
-history + a live binding-constraints monitor paired with the toy DCOPF.
+Deploy VoltStream to a public Fly.io URL. Fresh-clone test FIRST, then containerize, deploy, verify.
 
 ## Tasks
-- T0 CRED CHECK: archiver authenticates with the NEW rotated creds (now in ~/.zshrc) via a
-  FRESH token fetch; the OLD creds must now FAIL. (Runtime check, no commit.)
-  NB: non-interactive shells may NOT source ~/.zshrc — if env is empty, use `zsh -ic '...'`
-  or `source ~/.zshrc` so creds load; never paste creds inline (they're rotated/secret now).
-- T1a BACKFILL (background): ercot_archiver.ensure_days("NP6-905-CD", 30) -> 30 days of RT
-  settlement-point prices into data_archive/archive_cache/ (throttled, 429 backoff). Verify
-  ~30 cached days after.
-- T1b WIRE price_store: teach price_store to also assemble the hub series from the NP6-905-CD
-  archive-cache (ERCOT-API schema: DeliveryDate/DeliveryHour/DeliveryInterval + SettlementPoint
-  Name/SettlementPointPrice -> 15-min HB_HOUSTON series), merged+deduped with the existing
-  dart_cache gridstatus days. get_prices_rolling should report ~30 real days. VERIFY timestamp
-  construction against an overlapping gridstatus day before trusting it. Commit.
-- T2a ENDPOINT: /api/constraints -> today's SCED binding constraints from NP6-86-CD (name,
-  shadow price, sorted by severity) + "how often each bound recently" count over cached days.
-  Verify curl live. Commit.
-- T2b PANEL: new Learning Lab panel beside toy DCOPF. Concept (3-bus toy) vs reality (today's
-  actual grid). Honest label: reads real constraint data, NOT a grid model (no topology, no
-  shift factors). Verify live + tab render. Commit.
+- T0 FRESH-CLONE TEST (critical, pre-deploy): clone the GitHub repo to a temp dir, clean venv,
+  pip install -r requirements.txt, start the server. data_clean/*.csv are gitignored -> NO CSV
+  fallback in a clone; app must come up in LIVE mode via the rolling store (query-endpoint
+  backfill, needs ERCOT creds in env). Fix repo gaps (requirements/paths/missing files). Never
+  commit data caches or secrets.
+- T1 CONTAINERIZE: Dockerfile (python:3.12-slim, requirements, uvicorn 0.0.0.0:$PORT) + fly.toml.
+  Cache dirs already env-driven: DART_CACHE_DIR, PRICE_CACHE_DIR, ARCHIVE_DIR -> point to /data.
+  Create 1GB Fly volume, mount /data.
+- T2 SECRETS + DEPLOY: flyctl secrets set ERCOT_API_USERNAME/PASSWORD/SUBSCRIPTION_KEY from
+  ~/.zshenv (verify present first; if missing STOP+ask). Do NOT set ANTHROPIC_API_KEY (brief ->
+  grounded template). Deploy single always-on small machine.
+- T3 VERIFY PUBLIC (https): all endpoints 200 (long timeouts for first dart/risk), headless-Chrome
+  render every tab, paper-book shows real ledger (not $0.00), constraints live, About renders,
+  honest labels. Restart machine -> caches persisted on volume (fast 2nd boot).
+- T4 README: "Live demo:" URL at top + note first DART load ~a minute. Commit, push.
 
-## Verify (CLAUDE.md recipe)
-- volt env; kill stale :8020; warm dart+risk before rendering.
-- Store deepening: start WITHOUT ERCOT_LIVE=0 -> /api/state source shows expanded store
-  (~30 cached days) + RECENT target_date; all 12 endpoints 200.
-- Regression: ERCOT_LIVE=0 still -> cached CSVs / May (unchanged).
-- Constraints panel: /api/constraints returns real constraint names + shadow prices; render
-  /#learning -> both DCOPF and the new constraints panel populate.
+## Env for the volume (already supported by the modules)
+  DART_CACHE_DIR=/data/dart_cache  PRICE_CACHE_DIR=/data/dart_cache  ARCHIVE_DIR=/data
+  (dart_engine reads DART_CACHE_DIR; price_store reads PRICE_CACHE_DIR + ARCHIVE_DIR;
+   ercot_archiver reads ARCHIVE_DIR. journal/ ships in the image (committed ledger).)
 
-## Guardrails
-- Supervised. Max 12 iterations. One task = one commit. Never commit a broken panel.
-- Creds are secret (rotated) — load from env/~/.zshrc, never inline in a command.
+## Verify recipe
+- Local server (T0): volt-independent clean venv; LIVE mode (no ERCOT_LIVE=0); creds from ~/.zshenv;
+  wait for pre-warm backfill (~seconds) then curl /api/state (must be 200 with rolling-store source).
+- Public (T3): curl the fly https URL; headless Chrome per tab via #hash.
+- flyctl: full path ~/.fly/bin/flyctl (not on non-interactive PATH).
+
+## BLOCKERS found
+- flyctl installed (~/.fly/bin) but NOT authed in this shell (config.yml has no token, no FLY_API_TOKEN).
+  Needs resolving before T1/T2 deploy. T0 is independent.
+
+## Guardrails: supervised, max 15 iters, one task one commit, never echo/commit secrets.
