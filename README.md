@@ -3,7 +3,8 @@
 **An agentic co-pilot for ERCOT battery trading — built to learn the market by building it.**
 *The math makes the decisions; the AI explains them.*
 
-
+**▶ Live demo: https://voltstream-ercot.fly.dev**
+*The DART tab pulls several days of live ERCOT data on first load and can take a couple of minutes; every other tab is instant.*
 
 ---
 
@@ -13,7 +14,7 @@
 
 **Asset Optimization** — Bolt, the MILP dispatch optimizer (cvxpy/HiGHS) under state-of-charge and backup-reserve constraints; energy + five-product ancillary co-optimization (RegUp, RegDown, RRS, ECRS, NonSpin) against one shared power budget, RTC+B-style; and a VPP fleet view aggregating heterogeneous batteries.
 
-**Trading Desk** — a real-time decision engine (receding-horizon, no peeking: decides on forecasts, books actual prices, captures ~82% of the perfect-foresight ceiling); a live DART spreads & congestion monitor (DA vs RT across the four hubs, hour-of-day bias, hub basis); and the **paper book** — a DART strategy whose calls are git-committed *before* settlement, scored mechanically into an immutable ledger. The git history is the audit trail. It is currently down, honestly.
+**Trading Desk** — a real-time decision engine (receding-horizon, no peeking: decides on forecasts, books actual prices, captures ~82% of the perfect-foresight ceiling); a live DART spreads & congestion monitor (DA vs RT across the four hubs, hour-of-day bias, hub basis); and the **paper book** — a DART strategy whose calls are git-committed *before* settlement, scored mechanically into an immutable ledger. The git history is the audit trail. First day has settled — a small paper loss; the disciplined record is the point, not the P&L.
 
 **Quant & Structuring** — forward-curve construction (arbitrage-free block bootstrap, shaped to hourly from a real ERCOT hour-of-day profile; shaped hours re-aggregate exactly to block levels); fixed-for-floating swap mark-to-market; Monte-Carlo risk (mean-reverting jump-diffusion calibrated to real prices → P&L distribution, VaR/Expected Shortfall, and a positive vega — the battery is long volatility); and a QSE-loop analysis quantifying the cost of stale telemetry and MW/MWh mis-coordination.
 
