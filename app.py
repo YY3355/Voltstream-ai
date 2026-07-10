@@ -494,6 +494,31 @@ def api_decade():
         return {"error": f"decade result read failed ({e})"}
 
 
+@app.get("/api/hedge")
+def api_hedge():
+    """The hedging layer on the Decade Study: how much of a battery's merchant revenue to sell
+    forward as a flat fixed-for-floating swap. Serves a hedge-ratio sweep (0..1) with across-year
+    mean/std/worst/best, the interior minimum-variance ratio, and per-year merchant-vs-hedged at
+    full hedge. Strike is a STATED PROXY (across-years mean of realized hub averages), zero
+    expected P&L by construction; energy-only, analysis not advice. Pre-computed cache
+    (hedge_result.json); returns an honest note if not built yet."""
+    import json
+    # committed ~2.5KB summary at the repo root (ships in the image); override via HEDGE_RESULT.
+    path = os.environ.get("HEDGE_RESULT",
+                          os.path.join(os.path.dirname(__file__), "hedge_result.json"))
+    if not os.path.exists(path):
+        return {"available": False,
+                "note": "hedge study not computed yet — run `python hedge_run.py` (after "
+                        "`python decade_run.py`) to build hedge_result.json"}
+    try:
+        with open(path) as f:
+            result = json.load(f)
+        result["available"] = True
+        return result
+    except Exception as e:
+        return {"error": f"hedge result read failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:
