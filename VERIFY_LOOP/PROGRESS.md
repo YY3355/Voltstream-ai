@@ -1,7 +1,7 @@
 # Progress — the Decade Study
 
-- [doing] T1: reach test (query endpoint back to 2017?) + decade backfill
-- [todo]  T2: assemble series + run study + cache result JSON (sanity: Uri 2021, coverage)
+- [done]  T1: reach test (query endpoint back to 2017?) + decade backfill
+- [done]  T2: assemble series + run study + cache result JSON (sanity: Uri 2021, coverage)
 - [todo]  T3: /api/decade endpoint (serve cached JSON)
 - [todo]  T4: Quant panel (year bars + concentration + levers + forward, honest labels)
 
@@ -17,3 +17,8 @@
   2026-06 (~8.5yr, includes Uri). One 13MB zip/month of ~2689 per-interval nested CSVs.
   Real data reaches 2018-01 (not 2017 — reported). bundle_to_hub_series verified on 2021-02:
   2688 pts, Uri Feb 13-19 maxing ~$9000, monthly mean $1516. Backfill running -> data_archive/decade/{year}.pkl.
+- T1 DONE: decade cache 2018-2025 full (~35036 pts/yr) + partials (2017 junk, 2026 half). commit a22fa4e.
+- T2 DONE: decade_run.py -> data_archive/decade_result.json (gitignored) in 49s. SANITY PASS:
+  Uri 2021 best-day 2021-02-15 $30,944, maxP $9,161, top10 59.3%; coverage all included yrs >=95%
+  (dropped 2017 junk + 2026 49.6%); concentration top1%=31% of decade rev; levers monotonic;
+  forward P10/50/90 $939K/$1.17M/$1.41M. NEVER committed the cache (verified gitignored).
