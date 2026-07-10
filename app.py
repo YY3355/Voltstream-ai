@@ -471,6 +471,27 @@ def api_journal():
         return {"error": f"journal read failed ({e})"}
 
 
+@app.get("/api/decade")
+def api_decade():
+    """The Decade Study: a multi-year perfect-foresight battery-arbitrage backtest on real ERCOT
+    HB_HOUSTON prices — yearly $/MW-year, revenue concentration, design-lever sweep, and a
+    bootstrap forward scenario. Served from a pre-computed cache (data_archive/decade_result.json,
+    minutes of compute); returns an honest note if the cache hasn't been built yet."""
+    import json
+    path = os.path.join(os.environ.get("ARCHIVE_DIR", "data_archive"), "decade_result.json")
+    if not os.path.exists(path):
+        return {"available": False,
+                "note": "decade study not computed yet — run `python decade_run.py` to build "
+                        "data_archive/decade_result.json from the bundle cache"}
+    try:
+        with open(path) as f:
+            result = json.load(f)
+        result["available"] = True
+        return result
+    except Exception as e:
+        return {"error": f"decade result read failed ({e})"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     with open(os.path.join(os.path.dirname(__file__), "dashboard_live.html")) as f:

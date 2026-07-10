@@ -2,7 +2,7 @@
 
 - [done]  T1: reach test (query endpoint back to 2017?) + decade backfill
 - [done]  T2: assemble series + run study + cache result JSON (sanity: Uri 2021, coverage)
-- [todo]  T3: /api/decade endpoint (serve cached JSON)
+- [done]  T3: /api/decade endpoint (serve cached JSON)
 - [todo]  T4: Quant panel (year bars + concentration + levers + forward, honest labels)
 
 ## Notes
@@ -22,3 +22,6 @@
   Uri 2021 best-day 2021-02-15 $30,944, maxP $9,161, top10 59.3%; coverage all included yrs >=95%
   (dropped 2017 junk + 2026 49.6%); concentration top1%=31% of decade rev; levers monotonic;
   forward P10/50/90 $939K/$1.17M/$1.41M. NEVER committed the cache (verified gitignored).
+- T3 DONE: /api/decade serves cached JSON (200 @6ms, available, years 2018-2025, yearly+
+  concentration+levers+forward+labels). Honest note if cache missing. Other endpoints 200
+  (constraints 000 = its own cold today-fetch timeout, pre-existing, unrelated to decade).
