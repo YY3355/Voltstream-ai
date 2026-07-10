@@ -186,6 +186,79 @@ def backfill_prices_to_cache(days=30, hub="HB_HOUSTON", emil="NP6-905-CD"):
     return sorted(written)
 
 
+def list_bundles(emil="NP6-905-CD"):
+    """List the monthly archive bundles for a product (newest-first source, returned sorted by
+    name). Each bundle is a whole month's data as one downloadable zip — far cheaper than the
+    per-interval archive docs for deep history. Returns [{name, date, href}]."""
+    out, page = [], 1
+    while True:
+        p = _get(f"{BASE}/bundle/{emil}", params={"size": 1000, "page": page}).json()
+        for b in (p.get("bundles") or []):
+            out.append({"name": b["friendlyName"], "date": str(b["postDatetime"])[:10],
+                        "href": b["_links"]["endpoint"]["href"]})
+        if page >= (p.get("_meta", {}).get("totalPages") or 1):
+            break
+        page += 1
+    return sorted(out, key=lambda x: x["name"])
+
+
+def bundle_to_hub_series(zip_bytes, hub="HB_HOUSTON"):
+    """Parse a monthly SPP bundle (zip of per-interval nested zips, each a 1-line-per-point CSV)
+    into a 15-min price series for one hub. Timestamp = DeliveryDate + (DeliveryHour-1)h +
+    (DeliveryInterval-1)*15min (verified to the cent vs gridstatus last session). Fast string
+    scan (no pandas per inner file — a month is ~2700 tiny CSVs)."""
+    key = f",{hub.upper()},"
+    ts_list, px_list = [], []
+    outer = zipfile.ZipFile(io.BytesIO(zip_bytes))
+    for name in outer.namelist():
+        try:
+            izf = zipfile.ZipFile(io.BytesIO(outer.read(name)))
+            csv_txt = izf.read(izf.namelist()[0]).decode("utf-8", "ignore")
+        except Exception:
+            continue
+        for line in csv_txt.splitlines():
+            if key in line:                                # DeliveryDate,H,I,HUB,HU,price,DST
+                f = line.split(",")
+                try:
+                    ts = pd.Timestamp(f[0]) + pd.Timedelta(minutes=(int(f[1]) - 1) * 60 + (int(f[2]) - 1) * 15)
+                    ts_list.append(ts); px_list.append(float(f[5]))
+                except Exception:
+                    pass
+                break
+    s = pd.Series(px_list, index=pd.DatetimeIndex(ts_list)).sort_index()
+    return s[~s.index.duplicated(keep="last")]
+
+
+def backfill_decade_hub(hub="HB_HOUSTON", emil="NP6-905-CD", out_dir=None, verbose=True):
+    """Download every monthly SPP bundle, parse the hub's 15-min series, and cache one pickle
+    per YEAR under out_dir (default data_archive/decade/{year}.pkl, gitignored). Returns
+    {year: n_points}. ~102 month-downloads for the full ERCOT history reachable via bundles."""
+    out_dir = out_dir or os.path.join(os.environ.get("ARCHIVE_DIR", "data_archive"), "decade")
+    os.makedirs(out_dir, exist_ok=True)
+    by_year = {}
+    for b in list_bundles(emil):
+        try:
+            s = bundle_to_hub_series(_get(b["href"], timeout=180).content, hub)
+        except Exception as e:
+            if verbose:
+                print(f"decade: {b['name']} FAILED ({e})", flush=True)
+            continue
+        if not len(s):
+            continue
+        for yr, g in s.groupby(s.index.year):
+            by_year.setdefault(int(yr), []).append(g)
+        if verbose:
+            print(f"decade: {b['name']} -> {len(s)} pts", flush=True)
+    counts = {}
+    for yr, parts in by_year.items():
+        ser = pd.concat(parts).sort_index()
+        ser = ser[~ser.index.duplicated(keep="last")]
+        ser.name = f"{hub}_rt_spp"
+        ser.to_pickle(os.path.join(out_dir, f"{yr}.pkl"))
+        counts[yr] = len(ser)
+    return counts
+
+
 def fetch_constraints_query(days=14, emil="NP6-86-CD", artifact="shdw_prices_bnd_trns_const"):
     """Pull the last `days` of SCED binding-constraint shadow prices via the query endpoint.
     Returns a DataFrame in the download_doc CSV schema (ConstraintName/ShadowPrice/...)."""

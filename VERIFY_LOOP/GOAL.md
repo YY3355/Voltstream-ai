@@ -1,36 +1,34 @@
 # Goal
-Deploy VoltStream to a public Fly.io URL. Fresh-clone test FIRST, then containerize, deploy, verify.
+The Decade Study: multi-year battery revenue backtest on real ERCOT prices via decade_study.py.
+API: run_backtest(prices, duration_h, rte, cycle_cap) -> daily df; yearly_summary(daily);
+concentration_decade(daily) -> (pct, k); lever_sweep(prices, durations, cycle_caps);
+forward_scenarios(annual_revs).
 
 ## Tasks
-- T0 FRESH-CLONE TEST (critical, pre-deploy): clone the GitHub repo to a temp dir, clean venv,
-  pip install -r requirements.txt, start the server. data_clean/*.csv are gitignored -> NO CSV
-  fallback in a clone; app must come up in LIVE mode via the rolling store (query-endpoint
-  backfill, needs ERCOT creds in env). Fix repo gaps (requirements/paths/missing files). Never
-  commit data caches or secrets.
-- T1 CONTAINERIZE: Dockerfile (python:3.12-slim, requirements, uvicorn 0.0.0.0:$PORT) + fly.toml.
-  Cache dirs already env-driven: DART_CACHE_DIR, PRICE_CACHE_DIR, ARCHIVE_DIR -> point to /data.
-  Create 1GB Fly volume, mount /data.
-- T2 SECRETS + DEPLOY: flyctl secrets set ERCOT_API_USERNAME/PASSWORD/SUBSCRIPTION_KEY from
-  ~/.zshenv (verify present first; if missing STOP+ask). Do NOT set ANTHROPIC_API_KEY (brief ->
-  grounded template). Deploy single always-on small machine.
-- T3 VERIFY PUBLIC (https): all endpoints 200 (long timeouts for first dart/risk), headless-Chrome
-  render every tab, paper-book shows real ledger (not $0.00), constraints live, About renders,
-  honest labels. Restart machine -> caches persisted on volume (fast 2nd boot).
-- T4 README: "Live demo:" URL at top + note first DART load ~a minute. Commit, push.
+- T1 REACH TEST: probe how far back the NP6-905-CD query endpoint (spp_node_zone_hub) serves
+  HB_HOUSTON — try 2017-01. If it reaches years -> backfill 2017..present via paginated query
+  into data_archive/decade/{year}.pkl (gitignored). If it refuses old dates -> archive-doc path
+  per year (throttled, background). REPORT which path won + how far real data actually goes.
+- T2 RUN: assemble full HB_HOUSTON 15-min series; run study durations (1,2,4)h, rte 0.88,
+  cycle caps (unlimited=None, 1.0/day); cache full result JSON to data_archive/decade_result.json
+  (gitignored; minutes of compute, compute once). SANITY before trusting: 2021 shows Winter
+  Storm Uri (Feb best-day, max prices in thousands, extreme top10 share); year coverage >=95% of
+  days for included years (drop + report partial years).
+- T3 ENDPOINT: /api/decade serving the cached JSON (yearly table, decade concentration, lever
+  sweep, forward P10/50/90). Honest empty/rebuild note if cache missing.
+- T4 PANEL in Quant & Structuring: year-by-year $/MW-year bars (Uri callout), concentration
+  headline ("top 1% of days = X% of revenue"), duration x cycle lever table, forward P10/50/90
+  with the assumption stated. Honest labels IN PANEL: perfect-foresight CEILING (good policy
+  ~80%); energy arbitrage ONLY — AS excluded so AS-heavy recent years understated; nominal $;
+  1 MW normalized.
 
-## Env for the volume (already supported by the modules)
-  DART_CACHE_DIR=/data/dart_cache  PRICE_CACHE_DIR=/data/dart_cache  ARCHIVE_DIR=/data
-  (dart_engine reads DART_CACHE_DIR; price_store reads PRICE_CACHE_DIR + ARCHIVE_DIR;
-   ercot_archiver reads ARCHIVE_DIR. journal/ ships in the image (committed ledger).)
+## Verify (CLAUDE.md recipe)
+- volt env; source ~/.zshenv (ERCOT creds for the query endpoint); ~/.fly for anything fly.
+- T1: probe returns real 2017 rows OR documents refusal; decade cache years present.
+- T2: sanity asserts (2021 Uri, coverage). result JSON written.
+- T3: start server ERCOT_DATA_DIR=data_clean conda run -n volt uvicorn app:app :8020 (kill stale);
+  curl /api/decade 200 with yearly/concentration/levers/forward. All existing endpoints still 200.
+- T4: headless-Chrome render /#quant -> decade panel populates; Uri callout, honest labels present.
 
-## Verify recipe
-- Local server (T0): volt-independent clean venv; LIVE mode (no ERCOT_LIVE=0); creds from ~/.zshenv;
-  wait for pre-warm backfill (~seconds) then curl /api/state (must be 200 with rolling-store source).
-- Public (T3): curl the fly https URL; headless Chrome per tab via #hash.
-- flyctl: full path ~/.fly/bin/flyctl (not on non-interactive PATH).
-
-## BLOCKERS found
-- flyctl installed (~/.fly/bin) but NOT authed in this shell (config.yml has no token, no FLY_API_TOKEN).
-  Needs resolving before T1/T2 deploy. T0 is independent.
-
-## Guardrails: supervised, max 15 iters, one task one commit, never echo/commit secrets.
+## Guardrails: supervised, max 15 iters, one task one commit. NEVER commit the decade cache
+  (data_archive/ is gitignored — verify). decade_study.py commit with T1/T2.
