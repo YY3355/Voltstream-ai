@@ -308,6 +308,21 @@
       <div id="decade-forward"></div>
       <div class="coopt-note" id="decade-note"></div>
     </div>
+
+    <div class="card lit" id="c-hedge" style="--accent:var(--green)">
+      <div class="lid"><span class="num">6</span>
+        <span class="title">The Hedge &mdash; How Much Future to Sell Forward</span>
+        <span class="live-dot" style="margin-left:auto">hedge</span></div>
+      <p class="coopt-sub">The Decade Study showed merchant revenue swinging <b>~4&times;</b> between calm and wild years. A lender can't underwrite that. The classic fix: sell part of the future at a fixed price &mdash; a flat fixed-for-floating <b>swap</b>, settled against the year's realized hub average. This sweeps the <b>hedge ratio</b> (0 = fully merchant, 1 = full flat hedge) across the real eight years and asks what it does to the <i>shape</i> of revenue.</p>
+      <div class="coopt-hero" id="hedge-hero"></div>
+      <div class="coopt-sub" style="margin:4px 0 2px;color:var(--dim)">Across-year volatility (std of annual revenue) vs hedge ratio &mdash; the minimum is <b>interior</b></div>
+      <div id="hedge-curve"></div>
+      <div class="coopt-sub" style="margin:12px 0 2px;color:var(--dim)">Merchant vs fully-hedged revenue by year &mdash; the flat swap <b>caps</b> the boom (Uri) and <b>lifts</b> the calm years</div>
+      <div id="hedge-year-chart"></div>
+      <div class="legend" id="hedge-legend"></div>
+      <div class="coopt-take" id="hedge-take" style="margin:12px 0 2px;padding:10px 12px;border-left:3px solid var(--green);background:#0c1a12;font-style:italic;color:var(--ink)"></div>
+      <div class="coopt-note" id="hedge-note"></div>
+    </div>
   </div>
   </section>
   <section class="section" id="sec-learning" data-sec="learning">
@@ -1129,11 +1144,75 @@ async function decade(){
   const nt=$('decade-note'),L=d.labels||{};
   if(nt) nt.innerHTML=`<b style="color:var(--mut)">Honest scope:</b> ${L.ceiling||''} ${L.energy_only||''} ${L.nominal||''} ${L.normalized||''} Forward assumption: ${(d.forward||{}).assumption||''}. ${d.years_dropped&&d.years_dropped.length?'Dropped partial years: '+d.years_dropped.map(x=>x.year+' ('+x.coverage_pct+'%)').join(', ')+'. ':''}Source: ${d.source||'real ERCOT SPP'}.`;
 }
+function hedgeCurveSVG(sweep,minvar){
+  if(!sweep||!sweep.length) return "";
+  const W=720,H=200,P={l:58,r:20,t:18,b:38};
+  const stds=sweep.map(s=>s.std),lo=Math.min(...stds)*0.9,hi=Math.max(...stds)*1.06,rng=(hi-lo)||1;
+  const X=r=>P.l+r*(W-P.l-P.r),Y=v=>H-P.b-((v-lo)/rng)*(H-P.t-P.b);
+  let g=""; for(let k=0;k<=4;k++){const v=lo+rng*k/4,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${(v/1000).toFixed(0)}k</text>`;}
+  // x ticks (ratios)
+  let xt=""; sweep.forEach(s=>{const x=X(s.hedge_ratio);
+    xt+=`<text x="${x.toFixed(1)}" y="${H-P.b+16}" text-anchor="middle" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">${s.hedge_ratio}</text>`;});
+  const pts=sweep.map(s=>`${X(s.hedge_ratio).toFixed(1)},${Y(s.std).toFixed(1)}`).join(' ');
+  let dots=sweep.map(s=>`<circle cx="${X(s.hedge_ratio).toFixed(1)}" cy="${Y(s.std).toFixed(1)}" r="3" fill="#3fb950"/>`).join('');
+  // mark the interior minimum
+  const mvx=X(minvar.hedge_ratio),mvy=Y(minvar.std);
+  const mark=`<line x1="${mvx.toFixed(1)}" y1="${(P.t).toFixed(1)}" x2="${mvx.toFixed(1)}" y2="${(H-P.b).toFixed(1)}" stroke="#f0a35e" stroke-dasharray="3 3" opacity=".7"/>`
+    +`<circle cx="${mvx.toFixed(1)}" cy="${mvy.toFixed(1)}" r="5.5" fill="none" stroke="#f0a35e" stroke-width="2"/>`
+    +`<text x="${mvx.toFixed(1)}" y="${(mvy-11).toFixed(1)}" text-anchor="middle" fill="#f0a35e" font-size="9.5" font-family="IBM Plex Mono">min-var @ ${minvar.hedge_ratio}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${g}<polyline points="${pts}" fill="none" stroke="#3fb950" stroke-width="2"/>${dots}${mark}${xt}`
+    +`<text x="${P.l-8}" y="${P.t-7}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">std $/yr</text>`
+    +`<text x="${W-P.r}" y="${H-P.b+30}" text-anchor="end" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">hedge ratio &rarr;</text></svg>`;
+}
+function hedgeYearSVG(py){
+  if(!py||!py.length) return "";
+  const W=720,H=240,P={l:52,r:18,t:20,b:40},n=py.length;
+  const mx=Math.max(...py.map(y=>Math.max(y.merchant,y.hedged)))*1.14||1;
+  const gW=(W-P.l-P.r)/n,bw=gW*0.30,Y=v=>H-P.b-(v/mx)*(H-P.t-P.b);
+  let g=""; for(let k=0;k<=4;k++){const v=mx*k/4,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#19222e"/>`
+     +`<text x="${P.l-8}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">$${(v/1000).toFixed(0)}k</text>`;}
+  let bars="";
+  py.forEach((y,i)=>{const cx=P.l+gW*(i+0.5),uri=y.year===2021;
+    const mx0=cx-bw-1,hx0=cx+1,ym=Y(y.merchant),yh=Y(y.hedged);
+    bars+=`<rect x="${mx0.toFixed(1)}" y="${ym.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0,(H-P.b)-ym).toFixed(1)}" rx="2" fill="#22d3ee" opacity=".8"/>`
+      +`<rect x="${hx0.toFixed(1)}" y="${yh.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0,(H-P.b)-yh).toFixed(1)}" rx="2" fill="#3fb950" opacity=".9"/>`
+      +`<text x="${cx.toFixed(1)}" y="${H-P.b+15}" text-anchor="middle" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">${y.year}</text>`;
+    if(uri) bars+=`<text x="${cx.toFixed(1)}" y="${(yh-5).toFixed(1)}" text-anchor="middle" fill="#f0a35e" font-size="8" font-family="IBM Plex Mono">capped</text>`;});
+  return `<svg viewBox="0 0 ${W} ${H}">${g}${bars}<text x="${P.l-8}" y="${P.t-8}" fill="#7e8da0" font-size="9" font-family="IBM Plex Mono">$/MW-yr</text></svg>`;
+}
+async function hedge(){
+  $('hedge-hero').innerHTML='<span class="thinking">loading the hedge study…</span>';
+  let d; try{ d=await (await fetch('/api/hedge')).json(); }
+  catch(e){ $('hedge-hero').innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ $('hedge-hero').innerHTML=`<span class="none">${d.error}</span>`; return; }
+  if(!d.available){ $('hedge-hero').innerHTML=`<span class="none">${d.note||'hedge study not computed yet'}</span>`; return; }
+  const sw=d.sweep||[],mv=d.min_variance||{},sn=d.sanity||{};
+  const unhedged=(sw.find(r=>r.hedge_ratio===0)||{}).std||0;
+  const mvRed=unhedged?Math.round((1-mv.std/unhedged)*100):0;
+  const fullStd=(sw.find(r=>r.hedge_ratio===1)||{}).std||0;
+  $('hedge-hero').innerHTML=
+    `<div class="big"><span class="lab">Minimum-variance hedge ratio</span><span class="val" style="color:#3fb950">${mv.hedge_ratio}${mv.interior?'':''}</span></div>`
+    +`<div class="delta" style="color:#3fb950;border-color:#1d4a2b;background:#08160d">volatility &minus;${mvRed}% vs merchant &middot; ${mv.interior?'interior optimum':'corner'}</div>`
+    +`<div class="mini"><div><span class="l">Strike proxy</span><b>$${d.strike_proxy_usd_mwh}/MWh</b></div>`
+    +`<div><span class="l">Uri 2021 capped</span><b>$${Math.round(sn.uri_merchant/1000)}k&rarr;$${Math.round(sn.uri_hedged/1000)}k</b></div>`
+    +`<div><span class="l">Full hedge over-shoots</span><b>std $${Math.round(fullStd/1000)}k</b></div></div>`;
+  $('hedge-curve').innerHTML=hedgeCurveSVG(sw,mv);
+  $('hedge-year-chart').innerHTML=hedgeYearSVG(d.per_year_full_hedge);
+  const lg=$('hedge-legend'); if(lg) lg.innerHTML=
+    `<span><i style="background:#22d3ee"></i>merchant (perfect-foresight)</span>`
+    +`<span><i style="background:#3fb950"></i>fully hedged (ratio 1.0)</span>`;
+  const tk=$('hedge-take'); if(tk) tk.innerHTML=`&ldquo;${d.takeaway||''}&rdquo;`;
+  const nt=$('hedge-note'),L=d.labels||{};
+  if(nt) nt.innerHTML=`<b style="color:var(--mut)">Honest scope:</b> ${L.strike_proxy||''} ${L.zero_ep||''} ${L.merchant||''} ${L.energy_only||''} ${L.advice||''} Source: ${d.source||'real ERCOT SPP'}.`;
+}
 let _coInterval=false;
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); },
-  quant(){ curve(); swap(); risk(); qse(); decade(); },
+  quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); },
   learning(){ dcopf(); constraints(); },
 };
 function openSection(sec){
