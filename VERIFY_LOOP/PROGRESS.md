@@ -3,7 +3,7 @@
 - [done]  T1: reach test (query endpoint back to 2017?) + decade backfill
 - [done]  T2: assemble series + run study + cache result JSON (sanity: Uri 2021, coverage)
 - [done]  T3: /api/decade endpoint (serve cached JSON)
-- [todo]  T4: Quant panel (year bars + concentration + levers + forward, honest labels)
+- [done]  T4: Quant panel (year bars + concentration + levers + forward, honest labels)
 
 ## Notes
 - ercot_archiver has fetch_prices_query(days,...) (query artifact spp_node_zone_hub, deliveryDate
@@ -25,3 +25,9 @@
 - T3 DONE: /api/decade serves cached JSON (200 @6ms, available, years 2018-2025, yearly+
   concentration+levers+forward+labels). Honest note if cache missing. Other endpoints 200
   (constraints 000 = its own cold today-fetch timeout, pre-existing, unrelated to decade).
+- T4 DONE: decade panel in Quant (num 5). Verified render /#quant: hero 31% headline
+  (29 of 2922 days), year bars with 2021 amber "Uri" callout ($183k, best-day $30,944),
+  lever grid (1/2/4h x unlimited/1-cycle), forward P10/50/90 $0.94M/$1.17M/$1.41M, honest
+  labels present (perfect-foresight ceiling, AS excluded, nominal, 1MW). Screenshot confirmed.
+- Deploy note: result JSON is gitignored -> not in the Fly image. For the live deploy the panel
+  would need the JSON built on the volume (pre-warm) or the small summary committed. Local verified.
