@@ -6,6 +6,7 @@ __pycache__
 *.json
 !models/rl_dispatch_model.json
 !decade_result.json
+!hedge_result.json
 .git
 .gitignore
 *.md
