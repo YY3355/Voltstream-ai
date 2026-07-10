@@ -27,8 +27,11 @@ DT = 0.25  # 15-min
 
 
 # ----------------------------- daily dispatch (fast LP) -----------------------------
-def dispatch_day(prices_mwh, power_mw=1.0, duration_h=2.0, rte=0.88, cycle_cap=None):
+def dispatch_day(prices_mwh, power_mw=1.0, duration_h=2.0, rte=0.88, cycle_cap=None,
+                 return_discharge=False):
     """Perfect-foresight energy-arbitrage dispatch for one day. Returns (revenue_$, per-interval net $).
+    With return_discharge=True, also returns discharged MWh (sum of d*DT) as a 3rd element —
+    backward-compatible: the default 2-tuple is unchanged.
 
     LP (not MILP) with a tiny simultaneity penalty: with positive prices simultaneous
     charge+discharge is never optimal; with NEGATIVE prices burning energy is genuinely
@@ -38,7 +41,7 @@ def dispatch_day(prices_mwh, power_mw=1.0, duration_h=2.0, rte=0.88, cycle_cap=N
     p = np.asarray(prices_mwh, float)
     T = len(p)
     if T < 8:
-        return 0.0, np.zeros(T)
+        return (0.0, np.zeros(T), 0.0) if return_discharge else (0.0, np.zeros(T))
     eta = np.sqrt(rte)
     pmax = power_mw
     cap = power_mw * duration_h                      # MWh
@@ -61,9 +64,11 @@ def dispatch_day(prices_mwh, power_mw=1.0, duration_h=2.0, rte=0.88, cycle_cap=N
     bounds = [(0, pmax)] * T + [(0, pmax)] * T + [(0, cap)] * T
     r = linprog(obj, A_eq=A, b_eq=b, A_ub=A_ub, b_ub=b_ub, bounds=bounds, method="highs")
     if not r.success:
-        return 0.0, np.zeros(T)
+        return (0.0, np.zeros(T), 0.0) if return_discharge else (0.0, np.zeros(T))
     c, d = r.x[:T], r.x[T:2 * T]
     per_int = p * (d - c) * DT                        # $ per interval (1 MW system)
+    if return_discharge:
+        return float(per_int.sum()), per_int, float((d * DT).sum())   # discharged MWh/day
     return float(per_int.sum()), per_int
 
 
@@ -75,9 +80,10 @@ def run_backtest(prices: pd.Series, duration_h=2.0, rte=0.88, cycle_cap=None):
     for day, g in s.groupby(s.index.normalize()):
         if len(g) < 48:                               # skip badly incomplete days
             continue
-        rev, _ = dispatch_day(g.values, 1.0, duration_h, rte, cycle_cap)
-        rows.append({"date": day, "year": day.year, "revenue": rev, "n_int": len(g),
-                     "max_price": float(g.max()), "min_price": float(g.min())})
+        rev, _, dis_mwh = dispatch_day(g.values, 1.0, duration_h, rte, cycle_cap,
+                                       return_discharge=True)
+        rows.append({"date": day, "year": day.year, "revenue": rev, "discharge_mwh": dis_mwh,
+                     "n_int": len(g), "max_price": float(g.max()), "min_price": float(g.min())})
     return pd.DataFrame(rows)
 
 

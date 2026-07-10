@@ -20,6 +20,9 @@ DECADE_DIR = os.path.join(ARCHIVE_DIR, "decade")           # per-year price cach
 # per-year price cache never is). Overridable via DECADE_RESULT for a volume path if desired.
 RESULT_JSON = os.environ.get("DECADE_RESULT",
                              os.path.join(os.path.dirname(os.path.abspath(__file__)), "decade_result.json"))
+# per-day revenue+discharge table for the hedge layer (gitignored — derived cache, ~KBs*days)
+DAILY_PKL = os.environ.get("DECADE_DAILY",
+                           os.path.join(ARCHIVE_DIR, "decade_daily.pkl"))
 
 RTE = 0.88
 DURATIONS = (1.0, 2.0, 4.0)
@@ -79,35 +82,51 @@ def build_decade_result():
     sweep = DS.lever_sweep(fs, durations=DURATIONS, rte=RTE, cycle_caps=CYCLE_CAPS)
     fwd = DS.forward_scenarios(ys["rev_per_mw_year"].values, 10)
 
+    # --- hedge-layer inputs (persisted for hedge_run.py) ---
+    # ACTUAL average daily discharge for the 2h battery (measured, not guessed): sets the
+    # hedgeable volume. Under perfect foresight + unlimited cycles this exceeds a naive
+    # 1-cycle/day (~2 MWh) because volatile days cycle more than once.
+    discharge_mwh_per_day = float(daily["discharge_mwh"].mean())
+    # per-year realized average hub price (the swap settles against this)
+    realized = {int(yr): float(g.mean()) for yr, g in fs.groupby(fs.index.year)}
+
     y2021 = ys[ys.year == 2021]
     sanity = {}
     if len(y2021):
         r = y2021.iloc[0]
         sanity = {"y2021_best_day": r["best_day"], "y2021_best_day_rev": float(r["best_day_rev"]),
                   "y2021_max_price": float(r["max_price_seen"]), "y2021_top10_share": float(r["top10_share_pct"])}
+    yearly_records = ys.to_dict("records")
+    for rec in yearly_records:                          # attach realized hub avg per year
+        rec["realized_avg"] = realized.get(int(rec["year"]))
+
     return {
         "hub": "HB_HOUSTON",
         "years_included": years,
         "years_dropped": dropped,
         "rte": RTE, "duration_base_h": 2.0,
-        "yearly": ys.to_dict("records"),
+        "discharge_mwh_per_day": round(discharge_mwh_per_day, 3),
+        "yearly": yearly_records,
         "concentration": {"top1pct_share": conc_pct, "top1pct_days": conc_k, "total_days": int(len(daily))},
         "levers": sweep,
         "forward": fwd,
         "sanity": sanity,
         "labels": LABELS,
         "source": f"real ERCOT HB_HOUSTON 15-min SPP, {years[0]}–{years[-1]} (monthly bundles)",
-    }
+    }, daily
 
 
 if __name__ == "__main__":
     import time
     t = time.time()
-    result = build_decade_result()
+    result, daily = build_decade_result()
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
     with open(RESULT_JSON, "w") as f:
         json.dump(result, f, default=_jsonable)
+    daily.to_pickle(DAILY_PKL)                                       # for the hedge layer
     print(f"decade study computed in {time.time() - t:.0f}s -> {RESULT_JSON}")
+    print(f"per-day table -> {DAILY_PKL} ({len(daily)} days); "
+          f"actual discharge = {result['discharge_mwh_per_day']} MWh/day (2h battery)")
     print("years included:", result["years_included"], "| dropped:", result["years_dropped"])
     print("concentration:", result["concentration"])
     print("sanity (Uri 2021):", result["sanity"])
