@@ -478,7 +478,9 @@ def api_decade():
     bootstrap forward scenario. Served from a pre-computed cache (data_archive/decade_result.json,
     minutes of compute); returns an honest note if the cache hasn't been built yet."""
     import json
-    path = os.path.join(os.environ.get("ARCHIVE_DIR", "data_archive"), "decade_result.json")
+    # committed 4KB summary at the repo root (ships in the image); override via DECADE_RESULT.
+    path = os.environ.get("DECADE_RESULT",
+                          os.path.join(os.path.dirname(__file__), "decade_result.json"))
     if not os.path.exists(path):
         return {"available": False,
                 "note": "decade study not computed yet — run `python decade_run.py` to build "

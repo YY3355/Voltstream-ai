@@ -31,3 +31,6 @@
   labels present (perfect-foresight ceiling, AS excluded, nominal, 1MW). Screenshot confirmed.
 - Deploy note: result JSON is gitignored -> not in the Fly image. For the live deploy the panel
   would need the JSON built on the volume (pre-warm) or the small summary committed. Local verified.
+- Deploy-enable: committed the 4KB summary decade_result.json at repo root; decade_run.py +
+  /api/decade read it (DECADE_RESULT overridable); .dockerignore un-excludes it so it ships in
+  the image. Raw per-year price cache stays gitignored/uncommitted. Verified endpoint serves committed JSON.

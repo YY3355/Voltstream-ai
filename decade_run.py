@@ -15,8 +15,11 @@ import pandas as pd
 import decade_study as DS
 
 ARCHIVE_DIR = os.environ.get("ARCHIVE_DIR", "data_archive")
-DECADE_DIR = os.path.join(ARCHIVE_DIR, "decade")
-RESULT_JSON = os.path.join(ARCHIVE_DIR, "decade_result.json")
+DECADE_DIR = os.path.join(ARCHIVE_DIR, "decade")           # per-year price cache (gitignored)
+# The 4KB summary is committed at the repo root so it ships in the image / deploy (the raw
+# per-year price cache never is). Overridable via DECADE_RESULT for a volume path if desired.
+RESULT_JSON = os.environ.get("DECADE_RESULT",
+                             os.path.join(os.path.dirname(os.path.abspath(__file__)), "decade_result.json"))
 
 RTE = 0.88
 DURATIONS = (1.0, 2.0, 4.0)
