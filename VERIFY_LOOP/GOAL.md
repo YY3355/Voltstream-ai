@@ -1,34 +1,48 @@
-# Goal
-The Decade Study: multi-year battery revenue backtest on real ERCOT prices via decade_study.py.
-API: run_backtest(prices, duration_h, rte, cycle_cap) -> daily df; yearly_summary(daily);
-concentration_decade(daily) -> (pct, k); lever_sweep(prices, durations, cycle_caps);
-forward_scenarios(annual_revs).
+# GOAL — wire hedge_study.py as the hedging layer on the Decade Study
+
+Wire `hedge_study.py` (in repo, fixture-tested) into the platform as the hedging layer on
+top of the Decade Study.
+
+## API (hedge_study.py)
+- `year_table(daily_revenue_df, prices_series, discharge_mwh_per_day)` -> per-year table
+  (year, merchant_rev, realized_avg, hours)
+- `run_hedge_sweep(yt, discharge_mwh_per_day, ratios, bias_pct)` -> (sweep_df, per-year detail dict, F0 strike proxy)
+- `summarize(sweep)` -> {vol_reduction_pct, best_year_given_up, worst_year_change}
 
 ## Tasks
-- T1 REACH TEST: probe how far back the NP6-905-CD query endpoint (spp_node_zone_hub) serves
-  HB_HOUSTON — try 2017-01. If it reaches years -> backfill 2017..present via paginated query
-  into data_archive/decade/{year}.pkl (gitignored). If it refuses old dates -> archive-doc path
-  per year (throttled, background). REPORT which path won + how far real data actually goes.
-- T2 RUN: assemble full HB_HOUSTON 15-min series; run study durations (1,2,4)h, rte 0.88,
-  cycle caps (unlimited=None, 1.0/day); cache full result JSON to data_archive/decade_result.json
-  (gitignored; minutes of compute, compute once). SANITY before trusting: 2021 shows Winter
-  Storm Uri (Feb best-day, max prices in thousands, extreme top10 share); year coverage >=95% of
-  days for included years (drop + report partial years).
-- T3 ENDPOINT: /api/decade serving the cached JSON (yearly table, decade concentration, lever
-  sweep, forward P10/50/90). Honest empty/rebuild note if cache missing.
-- T4 PANEL in Quant & Structuring: year-by-year $/MW-year bars (Uri callout), concentration
-  headline ("top 1% of days = X% of revenue"), duration x cycle lever table, forward P10/50/90
-  with the assumption stated. Honest labels IN PANEL: perfect-foresight CEILING (good policy
-  ~80%); energy arbitrage ONLY — AS excluded so AS-heavy recent years understated; nominal $;
-  1 MW normalized.
+- **T1** Extend `decade_run.py` to ALSO persist the per-day revenue table + per-year realized
+  average hub price (both computed internally). Regenerate the cached result. Set
+  `discharge_mwh_per_day` from the backtest's ACTUAL average daily discharge for the 2h
+  battery (not a guess) — requires exposing discharge from the dispatch.
+- **T2** Run hedge sweep on the REAL eight years (ratios 0/0.25/0.5/0.75/1.0, bias 0).
+  Sanity: hedging must cap 2021 (Uri) hedged < merchant; report where the min-variance ratio
+  lands. Cache result JSON; commit the small summary like the decade JSON.
+- **T3** `/api/hedge` endpoint serving it.
+- **T4** Panel in Quant & Structuring beside the decade panel:
+  - ratio-vs-volatility curve (mark interior minimum)
+  - per-year merchant-vs-hedged bars (Uri capped, calm years lifted)
+  - takeaway "a flat swap hedges the level, not the tails — the residual is why structured products exist"
+  - HONEST LABELS in-panel: strike is a stated proxy (across-years mean of realized averages
+    — no public decade of futures marks), zero-expected-P&L by construction, perfect-foresight
+    merchant underneath, energy-only, analysis not advice.
 
-## Verify (CLAUDE.md recipe)
-- volt env; source ~/.zshenv (ERCOT creds for the query endpoint); ~/.fly for anything fly.
-- T1: probe returns real 2017 rows OR documents refusal; decade cache years present.
-- T2: sanity asserts (2021 Uri, coverage). result JSON written.
-- T3: start server ERCOT_DATA_DIR=data_clean conda run -n volt uvicorn app:app :8020 (kill stale);
-  curl /api/decade 200 with yearly/concentration/levers/forward. All existing endpoints still 200.
-- T4: headless-Chrome render /#quant -> decade panel populates; Uri callout, honest labels present.
+## Definition of done
+- decade_result.json regenerated with per-year realized_avg + actual discharge_mwh_per_day.
+- hedge_result.json computed on real 8 years, Uri capped, committed (small summary).
+- /api/hedge returns the cached JSON.
+- Quant tab renders the hedge panel (curve + bars + takeaway + honest labels) — verified via
+  headless Chrome DOM/screenshot per CLAUDE.md recipe.
+- decade_study.py fixture self-test still PASSES after the discharge change.
+- Pushed when green.
 
-## Guardrails: supervised, max 15 iters, one task one commit. NEVER commit the decade cache
-  (data_archive/ is gitignored — verify). decade_study.py commit with T1/T2.
+## Verification (CLAUDE.md recipe)
+- `python decade_study.py` fixture self-test PASSES.
+- `python hedge_study.py` fixture self-test PASSES.
+- Run app (uvicorn app:app), curl /api/decade + /api/hedge -> 200 with expected keys.
+- Headless Chrome: load /#quant, confirm hedge panel DOM nodes + screenshot render.
+
+## Guardrails
+- Max 12 iterations. Supervised (check in per task). One task = one commit. Green commits only.
+- NEVER commit data caches or secrets. decade_daily.pkl / raw price cache stay gitignored.
+  Only the small hedge_result.json summary is committed (like decade_result.json).
+- Do not break the decade_study fixture (backward-compatible discharge change only).

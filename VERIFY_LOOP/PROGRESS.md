@@ -1,36 +1,21 @@
-# Progress — the Decade Study
+# Progress — hedge_study.py wiring (hedging layer on the Decade Study)
 
-- [done]  T1: reach test (query endpoint back to 2017?) + decade backfill
-- [done]  T2: assemble series + run study + cache result JSON (sanity: Uri 2021, coverage)
-- [done]  T3: /api/decade endpoint (serve cached JSON)
-- [done]  T4: Quant panel (year bars + concentration + levers + forward, honest labels)
+Max 12 iterations. Supervised.
 
-## Notes
-- ercot_archiver has fetch_prices_query(days,...) (query artifact spp_node_zone_hub, deliveryDate
-  range). Need a date-RANGE fetcher for per-year. data_archive/ gitignored -> decade cache safe.
-- decade_study API confirmed. rte 0.88, durations (1,2,4), cycle_caps (None, 1.0).
+## Tasks
+- [done] T1 — decade_run.py persists per-day revenue table + per-year realized_avg + ACTUAL
+  discharge_mwh_per_day. Verified: decade fixture PASSES; decade_result.json (4.4KB) has
+  discharge=4.527 + realized_avg all years; /api/decade -> 200. commit 3b9dda5.
+- [done] T2 — hedge_run.py runs sweep on real 8y. Verified: both fixtures PASS; Uri $183,212
+  -> $20,765 (capped); MIN-VARIANCE RATIO = 0.5 INTERIOR (std 61k->46k->54k); F0=$52.42.
+  hedge_result.json 2.5KB committed + .dockerignore un-exclude. commit 91c3749.
+- [done] T3 — /api/hedge endpoint. Verified 200, all keys, min_variance 0.5/interior, Uri
+  sanity intact. commit 46752b4.
+- [done] T4 — Quant panel #6. Verified: /api/hedge 200; headless /#quant DOM shows both SVGs
+  (curve w/ interior-min mark + merchant-vs-hedged bars) + takeaway + honest labels; lazy-load
+  clean (empty on /). Screenshot confirms layout. commit 51a2765. PUSHED 42ce19d..51a2765.
+
+ALL GREEN — 4/12 iterations. Pushed.
 
 ## Log
-- T1 REACH: query endpoint (spp_node_zone_hub) serves ONLY ~2024-01->present (0 for 2023 & older)
-  -> NOT the decade. Archive-doc path = full history to 2016 but 96 docs/day (427,392 docs) =
-  impractical. WINNER: the BUNDLE endpoint (/bundle/NP6-905-CD) -> 102 MONTHLY zips 2018-01 ->
-  2026-06 (~8.5yr, includes Uri). One 13MB zip/month of ~2689 per-interval nested CSVs.
-  Real data reaches 2018-01 (not 2017 — reported). bundle_to_hub_series verified on 2021-02:
-  2688 pts, Uri Feb 13-19 maxing ~$9000, monthly mean $1516. Backfill running -> data_archive/decade/{year}.pkl.
-- T1 DONE: decade cache 2018-2025 full (~35036 pts/yr) + partials (2017 junk, 2026 half). commit a22fa4e.
-- T2 DONE: decade_run.py -> data_archive/decade_result.json (gitignored) in 49s. SANITY PASS:
-  Uri 2021 best-day 2021-02-15 $30,944, maxP $9,161, top10 59.3%; coverage all included yrs >=95%
-  (dropped 2017 junk + 2026 49.6%); concentration top1%=31% of decade rev; levers monotonic;
-  forward P10/50/90 $939K/$1.17M/$1.41M. NEVER committed the cache (verified gitignored).
-- T3 DONE: /api/decade serves cached JSON (200 @6ms, available, years 2018-2025, yearly+
-  concentration+levers+forward+labels). Honest note if cache missing. Other endpoints 200
-  (constraints 000 = its own cold today-fetch timeout, pre-existing, unrelated to decade).
-- T4 DONE: decade panel in Quant (num 5). Verified render /#quant: hero 31% headline
-  (29 of 2922 days), year bars with 2021 amber "Uri" callout ($183k, best-day $30,944),
-  lever grid (1/2/4h x unlimited/1-cycle), forward P10/50/90 $0.94M/$1.17M/$1.41M, honest
-  labels present (perfect-foresight ceiling, AS excluded, nominal, 1MW). Screenshot confirmed.
-- Deploy note: result JSON is gitignored -> not in the Fly image. For the live deploy the panel
-  would need the JSON built on the volume (pre-warm) or the small summary committed. Local verified.
-- Deploy-enable: committed the 4KB summary decade_result.json at repo root; decade_run.py +
-  /api/decade read it (DECADE_RESULT overridable); .dockerignore un-excludes it so it ships in
-  the image. Raw per-year price cache stays gitignored/uncommitted. Verified endpoint serves committed JSON.
+- init — goal pinned, decade_study dispatch/backtest read; discharge needs exposing.
