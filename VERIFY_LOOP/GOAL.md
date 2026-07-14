@@ -1,48 +1,44 @@
-# GOAL — wire hedge_study.py as the hedging layer on the Decade Study
+# GOAL — add an interactive ERCOT DART Map tab to VoltStream
 
-Wire `hedge_study.py` (in repo, fixture-tested) into the platform as the hedging layer on
-top of the Decade Study.
+Interactive ERCOT DART map (Mapbox GL + deck.gl via CDN script tags, no build step — matches
+the vanilla-HTML platform). map_data.py is in repo, fixture-tested.
 
-## API (hedge_study.py)
-- `year_table(daily_revenue_df, prices_series, discharge_mwh_per_day)` -> per-year table
-  (year, merchant_rev, realized_avg, hours)
-- `run_hedge_sweep(yt, discharge_mwh_per_day, ratios, bias_pct)` -> (sweep_df, per-year detail dict, F0 strike proxy)
-- `summarize(sweep)` -> {vol_reduction_pct, best_year_given_up, worst_year_change}
+## API
+- `dart_engine.run_dart()` -> {stats{hub:{mean,hit_rate_pct,std,cum_1mw,n_hours}}, window,
+  data_source, ...} or {error}
+- `map_data.build_map(run_dart_result)` -> {center{lon,lat,zoom}, points[], window,
+  data_source, note} (or {error, center, points:[]}). Each point: id/label/region/precision/
+  lon/lat/dart/abs_dart/sign('rich'|'cheap')/hit_rate_pct/std/cum_1mw/n_hours.
 
 ## Tasks
-- **T1** Extend `decade_run.py` to ALSO persist the per-day revenue table + per-year realized
-  average hub price (both computed internally). Regenerate the cached result. Set
-  `discharge_mwh_per_day` from the backtest's ACTUAL average daily discharge for the 2h
-  battery (not a guess) — requires exposing discharge from the dispatch.
-- **T2** Run hedge sweep on the REAL eight years (ratios 0/0.25/0.5/0.75/1.0, bias 0).
-  Sanity: hedging must cap 2021 (Uri) hedged < merchant; report where the min-variance ratio
-  lands. Cache result JSON; commit the small summary like the decade JSON.
-- **T3** `/api/hedge` endpoint serving it.
-- **T4** Panel in Quant & Structuring beside the decade panel:
-  - ratio-vs-volatility curve (mark interior minimum)
-  - per-year merchant-vs-hedged bars (Uri capped, calm years lifted)
-  - takeaway "a flat swap hedges the level, not the tails — the residual is why structured products exist"
-  - HONEST LABELS in-panel: strike is a stated proxy (across-years mean of realized averages
-    — no public decade of futures marks), zero-expected-P&L by construction, perfect-foresight
-    merchant underneath, energy-only, analysis not advice.
+- **T1** `/api/map` endpoint: call `dart_engine.run_dart()` then `map_data.build_map()`; return
+  its dict, honest error passthrough if DART unavailable. Reuses DART's cache (fast once warm).
+- **T2** Map tab in the nav: full-bleed dark Mapbox basemap centered on Texas (center from
+  payload), deck.gl ScatterplotLayer over it — circle color green(rich)/red(cheap) by sign,
+  radius by abs_dart, pickable tooltip (label, DART $, hit rate, precision note). Legend +
+  data_source + window line. Mapbox public token from a JS const at top of the tab, clearly
+  marked to replace (token supplied).
+- **T3** Honest-scope line ON the map ("Hub markers are regional centers, not physical buses;
+  a hub is an average of many nodes"), and lazy-load the tab (deck.gl/mapbox init only on first
+  open, like the other heavy tabs via LOADERS/_loaded).
 
 ## Definition of done
-- decade_result.json regenerated with per-year realized_avg + actual discharge_mwh_per_day.
-- hedge_result.json computed on real 8 years, Uri capped, committed (small summary).
-- /api/hedge returns the cached JSON.
-- Quant tab renders the hedge panel (curve + bars + takeaway + honest labels) — verified via
-  headless Chrome DOM/screenshot per CLAUDE.md recipe.
-- decade_study.py fixture self-test still PASSES after the discharge change.
-- Pushed when green.
+- /api/map returns 200 with real points once DART is warm.
+- Map tab renders: Mapbox dark basemap + deck.gl ScatterplotLayer circles, pickable tooltip,
+  legend, honest-scope line, data_source/window line.
+- Verified via headless Chrome: basemap + deck.gl canvas present, no JS errors, app-level
+  success signal (map-meta populated) shows.
+- Existing tabs untouched (curl the other endpoints + render another tab).
+- Pushed when green; then REDEPLOY to Fly and confirm the public URL renders the map.
 
 ## Verification (CLAUDE.md recipe)
-- `python decade_study.py` fixture self-test PASSES.
-- `python hedge_study.py` fixture self-test PASSES.
-- Run app (uvicorn app:app), curl /api/decade + /api/hedge -> 200 with expected keys.
-- Headless Chrome: load /#quant, confirm hedge panel DOM nodes + screenshot render.
+- `python map_data.py` fixture PASSES.
+- Run app; warm /api/dart; curl /api/map -> 200 with points[] (or honest error if DART down).
+- Headless Chrome /#map: `.mapboxgl-canvas` + deck canvas present, map-meta text populated,
+  console error-free. Lazy-load: on `/`, map not initialized (no canvas) until tab opened.
 
 ## Guardrails
-- Max 12 iterations. Supervised (check in per task). One task = one commit. Green commits only.
-- NEVER commit data caches or secrets. decade_daily.pkl / raw price cache stay gitignored.
-  Only the small hedge_result.json summary is committed (like decade_result.json).
-- Do not break the decade_study fixture (backward-compatible discharge change only).
+- Max 12 iterations. Supervised. One task = one commit. Green commits only.
+- NEVER commit secrets/data caches. Mapbox token is a PUBLIC pk. token (URL-restricted by the
+  user) — it lives in the client HTML by design (public token), not a secret to hide.
+- Stay in scope: add the tab; do not refactor existing tabs.

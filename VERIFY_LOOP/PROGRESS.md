@@ -1,21 +1,20 @@
-# Progress — hedge_study.py wiring (hedging layer on the Decade Study)
+# Progress — ERCOT DART Map tab (Mapbox GL + deck.gl, no build)
 
 Max 12 iterations. Supervised.
 
 ## Tasks
-- [done] T1 — decade_run.py persists per-day revenue table + per-year realized_avg + ACTUAL
-  discharge_mwh_per_day. Verified: decade fixture PASSES; decade_result.json (4.4KB) has
-  discharge=4.527 + realized_avg all years; /api/decade -> 200. commit 3b9dda5.
-- [done] T2 — hedge_run.py runs sweep on real 8y. Verified: both fixtures PASS; Uri $183,212
-  -> $20,765 (capped); MIN-VARIANCE RATIO = 0.5 INTERIOR (std 61k->46k->54k); F0=$52.42.
-  hedge_result.json 2.5KB committed + .dockerignore un-exclude. commit 91c3749.
-- [done] T3 — /api/hedge endpoint. Verified 200, all keys, min_variance 0.5/interior, Uri
-  sanity intact. commit 46752b4.
-- [done] T4 — Quant panel #6. Verified: /api/hedge 200; headless /#quant DOM shows both SVGs
-  (curve w/ interior-min mark + merchant-vs-hedged bars) + takeaway + honest labels; lazy-load
-  clean (empty on /). Screenshot confirms layout. commit 51a2765. PUSHED 42ce19d..51a2765.
-
-ALL GREEN — 4/12 iterations. Pushed.
+- [done] T1 — /api/map endpoint. Verified: map_data fixture PASSES; /api/map 200 (0.02s warm)
+  with 4 live hub points, TX center, window/data_source/note. commit ce39aca.
+- [done] T2+T3 — Map tab (Mapbox GL v3.9.0 + deck.gl v9.0.35 CDN, lazy). Verified headless:
+  dark TX basemap + 4 green hub circles placed correctly, map-meta "4 hubs plotted" +
+  source/window, honest-scope ON map, 2 canvases, tooltip wired. Lazy-load clean (map not
+  init on /). Existing untouched: state 200 (canonical env), quant hedge+decade render, all
+  endpoints 200. commit 76e34b2.
+- [done*] DEPLOY — Fly redeployed; public /api/map 200 (4 live hubs); public /#map renders
+  full labeled TX basemap + 4 correctly-placed green circles (Dallas/San Angelo/San Antonio/
+  Houston), on-map scope, meta. GitHub push BLOCKED by push-protection (Mapbox pk. token at
+  dashboard_live.html:1251); user chose "allow via GitHub URL" — push pending their unblock click.
 
 ## Log
-- init — goal pinned, decade_study dispatch/backtest read; discharge needs exposing.
+- init — APIs confirmed (run_dart stats shape, build_map output). Nav/section/LOADERS/_loaded
+  lazy-load mechanism understood (SECTIONS@1015, LOADERS@1212, openSection@1218).
