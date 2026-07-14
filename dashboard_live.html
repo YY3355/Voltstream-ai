@@ -6,6 +6,10 @@
 <title>VoltStream — agentic co-pilot for ERCOT battery trading</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Map tab (loaded for all pages; the map only initializes when the Map tab is first opened) -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
+<script src="https://unpkg.com/deck.gl@9.0.35/dist.min.js"></script>
 <style>
   :root{--bg:#0a0e14;--panel:#0f1620;--panel2:#121b27;--line:#1d2734;--ink:#c9d4e1;--dim:#5d6b7d;
     --mut:#7e8da0;--amber:#f5a623;--green:#3fb950;--red:#f85149;--blue:#58a6ff;--violet:#a371f7;
@@ -108,6 +112,20 @@
   .sysstrip .pill b{color:var(--green)}
   .about{font-family:var(--sans);font-size:13px;color:var(--mut);line-height:1.6;margin:2px 0 0;padding-left:18px}
   .about li{margin-bottom:8px} .about b{color:var(--ink)}
+  /* Map tab — full-bleed dark basemap */
+  #map-canvas{position:relative;width:100%;height:66vh;min-height:480px;border-radius:10px;
+    overflow:hidden;border:1px solid var(--line);background:#0a0e14}
+  #map-canvas .mapboxgl-ctrl-attrib{font-size:10px}
+  .map-tip{font-family:var(--mono);font-size:11px;background:#0c1420;color:var(--ink);
+    border:1px solid var(--line);border-radius:7px;padding:8px 10px;max-width:240px;line-height:1.5;
+    box-shadow:0 6px 20px rgba(0,0,0,.5)}
+  .map-tip .h{font-weight:700;color:#fff;font-size:12px}
+  .map-tip .rich{color:var(--green)} .map-tip .cheap{color:var(--red)}
+  .map-tip .pr{color:var(--dim);font-style:italic;margin-top:4px;display:block}
+  #map-scope{position:absolute;left:10px;right:10px;bottom:10px;pointer-events:none;
+    font-family:var(--mono);font-size:10.5px;line-height:1.45;color:#aeb9c7;
+    background:rgba(8,12,18,.78);border:1px solid var(--line);border-radius:7px;padding:7px 10px}
+  #map-scope b{color:var(--mut);font-weight:600}
 </style>
 </head>
 <body>
@@ -124,6 +142,7 @@
     <button class="tab active" data-sec="copilot">Co-Pilot</button>
     <button class="tab" data-sec="assetopt">Asset Optimization</button>
     <button class="tab" data-sec="trading">Trading Desk</button>
+    <button class="tab" data-sec="map">Map</button>
     <button class="tab" data-sec="quant">Quant &amp; Structuring</button>
     <button class="tab" data-sec="learning">Learning Lab</button>
     <button class="tab" data-sec="about">About</button>
@@ -240,6 +259,23 @@
       <div class="coopt-hero" id="journal-hero"></div>
       <div id="journal-chart"></div>
       <div class="coopt-note" id="journal-note"></div>
+    </div>
+  </div>
+  </section>
+  <section class="section" id="sec-map" data-sec="map">
+  <div class="flow">
+    <div class="card lit" id="c-map" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">1</span>
+        <span class="title">The Map &mdash; Live DART Across the ERCOT Hubs</span>
+        <span class="live-dot" style="margin-left:auto">map</span></div>
+      <p class="coopt-sub">Where the day-ahead / real-time spread is landing right now, on the ground. Each marker is an ERCOT trading hub at its real regional center; <b style="color:var(--green)">green</b> = day-ahead trading <b>rich</b> to real-time (sell DA), <b style="color:var(--red)">red</b> = day-ahead <b>cheap</b> (buy DA). Circle size scales with the size of the spread. Click a hub for its DART, hit rate, and precision.</p>
+      <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
+      <div class="map-wrap" style="position:relative">
+        <div id="map-canvas"></div>
+        <div id="map-scope"></div>
+      </div>
+      <div class="legend" id="map-legend" style="margin-top:9px"></div>
+      <div class="coopt-note" id="map-meta"></div>
     </div>
   </div>
   </section>
@@ -1012,7 +1048,7 @@ async function dcopf(){
 
 /* ---- section nav: show/hide tabs + hash routing. Lazy loaders wired in a later step;
    for now the auto-calls above still populate every panel on page load. ---- */
-const SECTIONS=['copilot','assetopt','trading','quant','learning','about'];
+const SECTIONS=['copilot','assetopt','trading','map','quant','learning','about'];
 const _loaded={};
 function journalSVG(cs){
   if(!cs||!cs.length) return "";
@@ -1208,10 +1244,64 @@ async function hedge(){
   const nt=$('hedge-note'),L=d.labels||{};
   if(nt) nt.innerHTML=`<b style="color:var(--mut)">Honest scope:</b> ${L.strike_proxy||''} ${L.zero_ep||''} ${L.merchant||''} ${L.energy_only||''} ${L.advice||''} Source: ${d.source||'real ERCOT SPP'}.`;
 }
+// ── Map tab (Mapbox GL + deck.gl, lazy — initializes only on first open) ──────────
+// Mapbox PUBLIC access token. A pk. token is designed to ship in client HTML; keep it
+// URL-restricted in the Mapbox dashboard so only your domains can use it.
+//   >>> REPLACE with your own URL-restricted Mapbox public (pk.) token <<<
+const MAPBOX_TOKEN='pk.eyJ1Ijoidm9sdHN0cmVhbSIsImEiOiJjbXJqcmM3N2oweXh2NDhuOWtrNnZpbzBzIn0.OEOB2P2npv7lXV7dbfqqgw';
+let _mapInited=false;
+async function initMap(){
+  if(_mapInited) return; _mapInited=true;
+  const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading live DART map…</span>';
+  let d; try{ d=await (await fetch('/api/map')).json(); }
+  catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
+  if(d.error){ hero.innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const pts=d.points||[];
+  if(!pts.length){ hero.innerHTML='<span class="none">no live hub data to place right now</span>'; return; }
+  if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
+    hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
+  const rich=pts.filter(p=>p.sign==='rich').length;
+  hero.innerHTML=`<div class="big"><span class="lab">ERCOT trading hubs · live DART</span><span class="val">${pts.length}</span></div>`
+    +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${pts.length-rich} cheap &mdash; day-ahead vs real-time</div>`;
+  const c=d.center||{lon:-99.3,lat:31.2,zoom:5.4};
+  mapboxgl.accessToken=MAPBOX_TOKEN;
+  let map;
+  try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
+        center:[c.lon,c.lat],zoom:c.zoom,attributionControl:true}); }
+  catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
+  map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
+    $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
+  const maxAbs=Math.max(...pts.map(p=>p.abs_dart),1);
+  const layer=new deck.ScatterplotLayer({
+    id:'dart-hubs', data:pts, pickable:true,
+    getPosition:p=>[p.lon,p.lat], radiusUnits:'pixels',
+    getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*34, radiusMinPixels:8, radiusMaxPixels:60,
+    stroked:true, lineWidthMinPixels:1.5, getLineColor:[255,255,255,170],
+    getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],
+  });
+  const overlay=new deck.MapboxOverlay({interleaved:false, layers:[layer],
+    getTooltip:({object})=>object&&{className:'map-tip',html:
+      `<div class="h">${object.label}</div>`
+      +`<div>DART <span class="${object.sign}">$${object.dart>=0?'+':''}${(object.dart||0).toFixed(2)}/MWh</span> (${object.sign})</div>`
+      +`<div>hit rate ${object.hit_rate_pct}% &middot; &sigma; $${(object.std||0).toFixed(1)}</div>`
+      +`<span class="pr">${object.precision==='hub_region'?'regional marker, not a physical bus':object.precision}</span>`}
+  });
+  // add the deck overlay + meta immediately (do not gate on the 'load' event — the basemap
+  // and the ScatterplotLayer render independently; MapboxOverlay accepts addControl any time)
+  map.addControl(overlay);
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${pts.length} hubs plotted.</b> `
+    +`Source: ${d.data_source||'live ERCOT'} &middot; window ${d.window?d.window.hours+'h':'&mdash;'} `
+    +`(${d.window?d.window.start:''} &rarr; ${d.window?d.window.end:''}).`;
+  $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>DA rich to RT (sell day-ahead)</span>`
+    +`<span><i style="background:#f85149"></i>DA cheap to RT (buy day-ahead)</span>`
+    +`<span><i style="background:#8a97a8"></i>circle size = |DART| spread</span>`;
+  $('map-scope').innerHTML=`<b>Honest scope:</b> ${d.note||'Hub markers are regional centers, not physical buses; a hub is an average of many nodes.'}`;
+}
 let _coInterval=false;
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); },
+  map(){ initMap(); },
   quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); },
   learning(){ dcopf(); constraints(); },
 };
