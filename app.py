@@ -364,6 +364,22 @@ def api_dart():
         return {"error": f"dart engine failed ({e})"}
 
 
+@app.get("/api/map")
+def api_map():
+    """Geospatial DART map: real ERCOT hub coordinates joined to the live DART result.
+
+    Calls dart_engine.run_dart() (reuses DART's gridstatus cache — fast once warm) and
+    map_data.build_map() to attach each hub's live DART spread to an honest regional marker.
+    Passes DART errors through unchanged (no fake map): hub markers are REGIONAL centers, not
+    physical buses. Points without live data are omitted rather than fabricated."""
+    from dart_engine import run_dart
+    import map_data
+    try:
+        return map_data.build_map(run_dart())
+    except Exception as e:
+        return {"error": f"map build failed ({e})", "points": []}
+
+
 @app.get("/api/dcopf")
 def api_dcopf():
     """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
