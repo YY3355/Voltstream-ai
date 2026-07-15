@@ -380,6 +380,52 @@ def api_map():
         return {"error": f"map build failed ({e})", "points": []}
 
 
+@app.get("/api/geo")
+def api_geo():
+    """Geography layers for the Map tab: EIA-860M batteries + power plants (asset-exact
+    coordinates), embedded TX cities (Census centroids), and a per-county battery MW rollup.
+
+    Served from the cached geo pickles (data_archive/geo/, built by `python geo_data.py fetch`
+    with an EIA_API_KEY). Cities are always available (embedded); batteries/plants appear once
+    the EIA cache exists. Honest empty-state — no fabricated coordinates, points without a real
+    lat/lon are already dropped upstream."""
+    import geo_data
+    try:
+        batteries, plants, cities = geo_data.load_geo()
+        if (cities is None or cities.empty):
+            cities = geo_data.cities_table()          # embedded fallback (never needs the fetch)
+
+        def recs(df, cols):
+            if df is None or df.empty:
+                return []
+            keep = [c for c in cols if c in df.columns]
+            return df[keep].to_dict("records")
+
+        batt = recs(batteries, ["plant_id", "plant", "operator", "tech", "county", "mw", "lat", "lon", "precision"])
+        plnt = recs(plants, ["plant_id", "plant", "operator", "tech", "county", "mw", "lat", "lon", "precision"])
+        city = recs(cities, ["name", "county", "population", "lat", "lon", "precision"])
+        rollup = recs(geo_data.county_rollup(batteries) if (batteries is not None and not batteries.empty) else None,
+                      ["county", "assets", "mw", "lat", "lon"])
+
+        assets_cached = bool(batt or plnt)
+        return {
+            "available": True,
+            "assets_cached": assets_cached,
+            "batteries": batt, "plants": plnt, "cities": city, "county_rollup": rollup,
+            "counts": {"batteries": len(batt), "plants": len(plnt), "cities": len(city),
+                       "battery_counties": len(rollup)},
+            "note": ("Battery & power-plant markers are EIA-860M asset coordinates (exact). City "
+                     "markers are Census centroids, NOT load-delivery points. Data centers and "
+                     "city-level load are deliberately absent — no authoritative public dataset."),
+            "assets_note": (None if assets_cached else
+                            "EIA generator inventory not cached yet — run `python geo_data.py "
+                            "fetch` (needs a valid EIA_API_KEY) to populate batteries & plants."),
+        }
+    except Exception as e:
+        return {"available": False, "error": f"geo load failed ({e})",
+                "batteries": [], "plants": [], "cities": [], "county_rollup": []}
+
+
 @app.get("/api/dcopf")
 def api_dcopf():
     """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
