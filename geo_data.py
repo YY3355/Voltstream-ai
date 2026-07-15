@@ -131,10 +131,22 @@ def fetch_eia(api_key=None, period=None):
         raise SystemExit("Missing EIA_API_KEY (free at api.eia.gov/register). Put it in ~/.zshenv.")
     out, offset = [], 0
     params = {
-        "api_key": key, "frequency": "monthly", "data[0]": "nameplate-capacity-mw",
+        # latitude/longitude/county are optional data columns on this route — request them
+        # explicitly or the response omits them and every row drops for lack of coordinates.
+        "api_key": key, "frequency": "monthly",
+        "data[0]": "nameplate-capacity-mw", "data[1]": "latitude",
+        "data[2]": "longitude", "data[3]": "county",
         "facets[stateid][]": "TX", "sort[0][column]": "period", "sort[0][direction]": "desc",
         "length": 5000, "offset": 0,
     }
+    if not period:
+        # 860M is a monthly snapshot; without pinning a period we'd pull every month and
+        # duplicate every generator. Probe the newest period and fetch only that snapshot.
+        probe = requests.get(EIA_URL, params={**params, "length": 1}, timeout=60)
+        if probe.status_code == 200:
+            pd_rows = probe.json().get("response", {}).get("data", [])
+            if pd_rows:
+                period = pd_rows[0].get("period")
     if period:
         params["start"] = period; params["end"] = period
     while True:
