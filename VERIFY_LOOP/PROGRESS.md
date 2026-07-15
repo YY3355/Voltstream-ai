@@ -1,20 +1,27 @@
-# Progress — ERCOT DART Map tab (Mapbox GL + deck.gl, no build)
+# Progress — Map Phase 1 (geo layers + controls + fix zoom)
 
 Max 12 iterations. Supervised.
 
+## Prereq blocker
+- EIA key 403 INVALID -> no batteries/plants cache. Cities real (28). Will seed fixture-shaped
+  cache for layer-mechanics verification (NOT committed); real EIA data pending a valid key.
+
 ## Tasks
-- [done] T1 — /api/map endpoint. Verified: map_data fixture PASSES; /api/map 200 (0.02s warm)
-  with 4 live hub points, TX center, window/data_source/note. commit ce39aca.
-- [done] T2+T3 — Map tab (Mapbox GL v3.9.0 + deck.gl v9.0.35 CDN, lazy). Verified headless:
-  dark TX basemap + 4 green hub circles placed correctly, map-meta "4 hubs plotted" +
-  source/window, honest-scope ON map, 2 canvases, tooltip wired. Lazy-load clean (map not
-  init on /). Existing untouched: state 200 (canonical env), quant hedge+decade render, all
-  endpoints 200. commit 76e34b2.
-- [done*] DEPLOY — Fly redeployed; public /api/map 200 (4 live hubs); public /#map renders
-  full labeled TX basemap + 4 correctly-placed green circles (Dallas/San Angelo/San Antonio/
-  Houston), on-map scope, meta. GitHub push BLOCKED by push-protection (Mapbox pk. token at
-  dashboard_live.html:1251); user chose "allow via GitHub URL" — push pending their unblock click.
+- [done] T1 — fix zoom/pan (interleaved:true + NavigationControl + window.__map). Verified via
+  CDP on real /#map: wheel 5.4->5.97, setZoom->7.9, scrollZoom+dragPan on, nav buttons present,
+  canvasCount 2->1 (overlay canvas gone). commit 7b1dfff.
+- [done] T2 — /api/geo endpoint + geo_data.py committed. Verified both paths: empty-state (28
+  cities, 0 batt/plants, assets_note) and real-counts via fixture-seeded cache (2 batt w/ full
+  fields, 2 plants w/ tech, county_rollup MW-desc). commit 24bd6d3. NOTE: seeded cache is
+  gitignored + .dockerignored -> Fly shows honest empty-state until a real EIA fetch runs there.
+- [done] T3+T4 — layer controls + Batteries/Plants/Cities layers + click popups + honest
+  labels. Verified CDP: toggle flips active set, battery pickable+popup renders correct fields,
+  labels present; fresh screenshot shows 4 hubs+28 cities+2 batteries placed correctly. commit
+  2e6cb82. CORRECTION: interleaved:true (T1) rendered markers BLANK on real GPU -> restored
+  interleaved:false; real zoom fix is the scrollZoom/dragPan enable + NavigationControl (kept).
+- [todo] DEPLOY — push, redeploy Fly. NOTE: batteries/plants are fixture-seeded locally; Fly
+  shows honest empty-state (0 batt/plants + assets_note) until a real EIA fetch runs there.
 
 ## Log
-- init — APIs confirmed (run_dart stats shape, build_map output). Nav/section/LOADERS/_loaded
-  lazy-load mechanism understood (SECTIONS@1015, LOADERS@1212, openSection@1218).
+- init — geo_data API confirmed (load_geo, county_rollup, 28 cities). EIA key still 403.
+  Current initMap uses MapboxOverlay(interleaved:false) -> overlay canvas intercepts zoom/pan.
