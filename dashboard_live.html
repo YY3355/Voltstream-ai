@@ -1269,6 +1269,9 @@ async function initMap(){
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
         center:[c.lon,c.lat],zoom:c.zoom,attributionControl:true}); }
   catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
+  window.__map=map;                                   // handle for programmatic zoom checks
+  map.scrollZoom.enable(); map.dragPan.enable();       // explicit: nothing should suppress these
+  map.addControl(new mapboxgl.NavigationControl({visualizePitch:false}),'top-right');
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
   const maxAbs=Math.max(...pts.map(p=>p.abs_dart),1);
@@ -1279,7 +1282,7 @@ async function initMap(){
     stroked:true, lineWidthMinPixels:1.5, getLineColor:[255,255,255,170],
     getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],
   });
-  const overlay=new deck.MapboxOverlay({interleaved:false, layers:[layer],
+  const overlay=new deck.MapboxOverlay({interleaved:true, layers:[layer],   // draw INTO mapbox ctx: no overlay canvas to intercept zoom/pan
     getTooltip:({object})=>object&&{className:'map-tip',html:
       `<div class="h">${object.label}</div>`
       +`<div>DART <span class="${object.sign}">$${object.dart>=0?'+':''}${(object.dart||0).toFixed(2)}/MWh</span> (${object.sign})</div>`
