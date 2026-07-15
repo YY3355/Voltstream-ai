@@ -19,8 +19,10 @@ Max 12 iterations. Supervised.
   labels present; fresh screenshot shows 4 hubs+28 cities+2 batteries placed correctly. commit
   2e6cb82. CORRECTION: interleaved:true (T1) rendered markers BLANK on real GPU -> restored
   interleaved:false; real zoom fix is the scrollZoom/dragPan enable + NavigationControl (kept).
-- [todo] DEPLOY — push, redeploy Fly. NOTE: batteries/plants are fixture-seeded locally; Fly
-  shows honest empty-state (0 batt/plants + assets_note) until a real EIA fetch runs there.
+- [done] DEPLOY — pushed (8b272ef..b20451d; Mapbox-token allow finally registered) + Fly
+  redeployed. Public verified via CDP: zoom 5.4->5.97 + nav buttons; live /#map renders 4 hubs
+  + 28 cities; Batteries/Power-plants checkboxes greyed at 0 (honest empty-state, no EIA cache
+  on Fly). All done.
 
 ## Log
 - init — geo_data API confirmed (load_geo, county_rollup, 28 cities). EIA key still 403.
