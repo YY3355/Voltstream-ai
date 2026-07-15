@@ -126,6 +126,22 @@
     font-family:var(--mono);font-size:10.5px;line-height:1.45;color:#aeb9c7;
     background:rgba(8,12,18,.78);border:1px solid var(--line);border-radius:7px;padding:7px 10px}
   #map-scope b{color:var(--mut);font-weight:600}
+  .map-controls{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 10px}
+  .map-controls label{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);
+    font-size:11px;color:var(--ink);background:var(--panel2);border:1px solid var(--line);
+    border-radius:20px;padding:5px 12px;cursor:pointer;user-select:none}
+  .map-controls label.off{opacity:.45}
+  .map-controls label.disabled{opacity:.35;cursor:not-allowed}
+  .map-controls input{accent-color:var(--cyan);margin:0}
+  .map-controls .sw{width:9px;height:9px;border-radius:2px;display:inline-block}
+  .map-controls .ct{color:var(--dim);font-size:9.5px}
+  .mapboxgl-popup-content{background:#0c1420;color:var(--ink);border:1px solid var(--line);
+    border-radius:8px;font-family:var(--mono);font-size:11px;line-height:1.5;padding:9px 11px;
+    box-shadow:0 6px 22px rgba(0,0,0,.55)}
+  .mapboxgl-popup-content .h{font-weight:700;color:#fff;font-size:12px;margin-bottom:2px}
+  .mapboxgl-popup-content .pr{color:var(--dim);font-style:italic;display:block;margin-top:4px}
+  .mapboxgl-popup-close-button{color:var(--mut)}
+  .mapboxgl-popup-tip{border-top-color:var(--line)!important;border-bottom-color:var(--line)!important}
 </style>
 </head>
 <body>
@@ -266,10 +282,11 @@
   <div class="flow">
     <div class="card lit" id="c-map" style="--accent:var(--cyan)">
       <div class="lid"><span class="num">1</span>
-        <span class="title">The Map &mdash; Live DART Across the ERCOT Hubs</span>
+        <span class="title">The Map &mdash; ERCOT Geography &amp; Live DART</span>
         <span class="live-dot" style="margin-left:auto">map</span></div>
-      <p class="coopt-sub">Where the day-ahead / real-time spread is landing right now, on the ground. Each marker is an ERCOT trading hub at its real regional center; <b style="color:var(--green)">green</b> = day-ahead trading <b>rich</b> to real-time (sell DA), <b style="color:var(--red)">red</b> = day-ahead <b>cheap</b> (buy DA). Circle size scales with the size of the spread. Click a hub for its DART, hit rate, and precision.</p>
+      <p class="coopt-sub">Everything is connected through latitude/longitude. <b>Prices</b> come from ERCOT &mdash; the live DART spread at each trading hub. <b>Coordinates</b> come from public GIS: batteries and power plants at their EIA-reported locations, Texas cities at their Census centroids. Toggle the layers; click any marker for its details. Scroll to zoom, drag to pan.</p>
       <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
+      <div class="map-controls" id="map-controls"></div>
       <div class="map-wrap" style="position:relative">
         <div id="map-canvas"></div>
         <div id="map-scope"></div>
@@ -1250,20 +1267,45 @@ async function hedge(){
 //   >>> REPLACE with your own URL-restricted Mapbox public (pk.) token <<<
 const MAPBOX_TOKEN='pk.eyJ1Ijoidm9sdHN0cmVhbSIsImEiOiJjbXJqcmM3N2oweXh2NDhuOWtrNnZpbzBzIn0.OEOB2P2npv7lXV7dbfqqgw';
 let _mapInited=false;
+// popup / tooltip HTML builders (shared by hover tooltip and click popup)
+function hubTip(o){ return `<div class="h">${o.label}</div>`
+  +`<div>DART <span style="color:${o.sign==='rich'?'#3fb950':'#f85149'}">$${o.dart>=0?'+':''}${(o.dart||0).toFixed(2)}/MWh</span> (${o.sign})</div>`
+  +`<div>hit rate ${o.hit_rate_pct}% &middot; &sigma; $${(o.std||0).toFixed(1)}</div>`
+  +`<span class="pr">${o.precision==='hub_region'?'regional marker, not a physical bus':o.precision}</span>`; }
+function battTip(o){ return `<div class="h">${o.plant||'Battery'}</div>`
+  +`<div>${o.operator||'&mdash;'}</div><div><b>${(o.mw||0).toLocaleString()} MW</b> &middot; ${o.county} County</div>`
+  +`<span class="pr">EIA-reported asset coordinate (exact)</span>`; }
+function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
+  +`<div>${o.operator||'&mdash;'}</div><div><b>${(o.mw||0).toLocaleString()} MW</b> &middot; ${o.tech||'&mdash;'}</div>`
+  +`<div>${o.county} County</div><span class="pr">EIA-reported asset coordinate (exact)</span>`; }
+function cityTip(o){ return `<div class="h">${o.name}</div>`
+  +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
+  +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):cityTip(o); }
+function techColor(tech){ const t=(tech||'').toLowerCase();
+  if(t.includes('gas')) return [245,166,35,205];
+  if(t.includes('wind')) return [34,211,238,205];
+  if(t.includes('solar')||t.includes('photovolt')) return [240,205,60,205];
+  if(t.includes('nuclear')) return [248,81,73,205];
+  if(t.includes('coal')) return [150,158,170,205];
+  if(t.includes('hydro')||t.includes('water')) return [88,166,255,205];
+  return [163,113,247,205]; }                                   // other
+
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
-  const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading live DART map…</span>';
-  let d; try{ d=await (await fetch('/api/map')).json(); }
+  const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
+  let dart,geo;
+  try{ [dart,geo]=await Promise.all([
+      fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
+      fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]}))]); }
   catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
-  if(d.error){ hero.innerHTML=`<span class="none">${d.error}</span>`; return; }
-  const pts=d.points||[];
-  if(!pts.length){ hero.innerHTML='<span class="none">no live hub data to place right now</span>'; return; }
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
-  const rich=pts.filter(p=>p.sign==='rich').length;
-  hero.innerHTML=`<div class="big"><span class="lab">ERCOT trading hubs · live DART</span><span class="val">${pts.length}</span></div>`
-    +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${pts.length-rich} cheap &mdash; day-ahead vs real-time</div>`;
-  const c=d.center||{lon:-99.3,lat:31.2,zoom:5.4};
+  const hubs=(dart&&dart.points)||[], batts=(geo&&geo.batteries)||[], plants=(geo&&geo.plants)||[], cities=(geo&&geo.cities)||[];
+  const rich=hubs.filter(p=>p.sign==='rich').length;
+  hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
+    +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
+  const c=(dart&&dart.center)||{lon:-99.3,lat:31.2,zoom:5.4};
   mapboxgl.accessToken=MAPBOX_TOKEN;
   let map;
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
@@ -1274,31 +1316,54 @@ async function initMap(){
   map.addControl(new mapboxgl.NavigationControl({visualizePitch:false}),'top-right');
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
-  const maxAbs=Math.max(...pts.map(p=>p.abs_dart),1);
-  const layer=new deck.ScatterplotLayer({
-    id:'dart-hubs', data:pts, pickable:true,
-    getPosition:p=>[p.lon,p.lat], radiusUnits:'pixels',
-    getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*34, radiusMinPixels:8, radiusMaxPixels:60,
-    stroked:true, lineWidthMinPixels:1.5, getLineColor:[255,255,255,170],
-    getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],
-  });
-  const overlay=new deck.MapboxOverlay({interleaved:true, layers:[layer],   // draw INTO mapbox ctx: no overlay canvas to intercept zoom/pan
-    getTooltip:({object})=>object&&{className:'map-tip',html:
-      `<div class="h">${object.label}</div>`
-      +`<div>DART <span class="${object.sign}">$${object.dart>=0?'+':''}${(object.dart||0).toFixed(2)}/MWh</span> (${object.sign})</div>`
-      +`<div>hit rate ${object.hit_rate_pct}% &middot; &sigma; $${(object.std||0).toFixed(1)}</div>`
-      +`<span class="pr">${object.precision==='hub_region'?'regional marker, not a physical bus':object.precision}</span>`}
-  });
-  // add the deck overlay + meta immediately (do not gate on the 'load' event — the basemap
-  // and the ScatterplotLayer render independently; MapboxOverlay accepts addControl any time)
-  map.addControl(overlay);
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${pts.length} hubs plotted.</b> `
-    +`Source: ${d.data_source||'live ERCOT'} &middot; window ${d.window?d.window.hours+'h':'&mdash;'} `
-    +`(${d.window?d.window.start:''} &rarr; ${d.window?d.window.end:''}).`;
-  $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>DA rich to RT (sell day-ahead)</span>`
-    +`<span><i style="background:#f85149"></i>DA cheap to RT (buy day-ahead)</span>`
-    +`<span><i style="background:#8a97a8"></i>circle size = |DART| spread</span>`;
-  $('map-scope').innerHTML=`<b>Honest scope:</b> ${d.note||'Hub markers are regional centers, not physical buses; a hub is an average of many nodes.'}`;
+
+  // click popup: one Popup at a time, at the picked feature's coordinate
+  let _popup=null;
+  function pop(info){ if(!info||!info.object) return false; const o=info.object,id=info.layer&&info.layer.id;
+    if(_popup) _popup.remove();
+    _popup=new mapboxgl.Popup({closeButton:true,offset:10}).setLngLat([o.lon,o.lat]).setHTML(tipFor(id,o)).addTo(map);
+    return true; }
+  const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
+        maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1);
+  // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set
+  const REG={
+    hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*30,radiusMinPixels:8,radiusMaxPixels:55,
+      stroked:true,lineWidthMinPixels:1.5,getLineColor:[255,255,255,170],getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],onClick:pop})},
+    batteries:{label:'Batteries',sw:'#a371f7',data:batts,on:true,make:()=>new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,
+      getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>6+Math.sqrt((b.mw||0)/maxBattMw)*26,radiusMinPixels:5,radiusMaxPixels:44,
+      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,150],getFillColor:[163,113,247,215],onClick:pop})},
+    plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>5+Math.sqrt((p.mw||0)/maxPlantMw)*24,radiusMinPixels:4,radiusMaxPixels:40,
+      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,130],getFillColor:p=>techColor(p.tech),onClick:pop})},
+    cities:{label:'Cities',sw:'#58a6ff',data:cities,on:true,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
+      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>4+Math.sqrt((c.population||0)/maxPop)*24,radiusMinPixels:3,radiusMaxPixels:38,
+      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,120],getFillColor:[88,166,255,195],onClick:pop})},
+  };
+  function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
+  // build the overlay WITH its initial layers so they paint on first render (interleaved)
+  const overlay=new deck.MapboxOverlay({interleaved:false, layers:activeLayers().map(k=>REG[k].make()),   // overlaid: deck renders visible markers; events forwarded to the map
+    getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
+  map.addControl(overlay); window.__overlay=overlay;   // debug handle for pick tests
+  window.__activeLayers=activeLayers();
+  function refreshLayers(){ overlay.setProps({layers:activeLayers().map(k=>REG[k].make())}); window.__activeLayers=activeLayers(); }
+
+  // layer-control checkboxes (disabled + greyed when a layer has no cached data)
+  $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0;
+    return `<label class="${L.on&&has?'':'off'}${has?'':' disabled'}" title="${has?'':'no data cached — run geo_data.py fetch'}">`
+      +`<input type="checkbox" id="lyr-${k}" ${L.on&&has?'checked':''} ${has?'':'disabled'}>`
+      +`<span class="sw" style="background:${L.sw}"></span>${L.label}<span class="ct">${L.data.length}</span></label>`;}).join('');
+  Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
+    cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers(); });});
+
+  // meta + legend + honest scope (T4)
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities.</b> `
+    +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
+    +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
+  $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
+    +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
+    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`;
+  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
 let _coInterval=false;
 const LOADERS={
