@@ -386,10 +386,11 @@ def api_geo():
     coordinates), embedded TX cities (Census centroids), and a per-county battery MW rollup.
 
     Served from the cached geo pickles (data_archive/geo/, built by `python geo_data.py fetch`
-    with an EIA_API_KEY). Cities are always available (embedded); batteries/plants appear once
-    the EIA cache exists. Honest empty-state — no fabricated coordinates, points without a real
-    lat/lon are already dropped upstream."""
-    import geo_data
+    with an EIA_API_KEY). When that live cache is absent (e.g. on the deployed box) it falls
+    back to the committed geo_result.json snapshot so the map ships with real assets. Cities are
+    always available (embedded). Honest empty-state — no fabricated coordinates, points without a
+    real lat/lon are already dropped upstream."""
+    import geo_data, json
     try:
         batteries, plants, cities = geo_data.load_geo()
         if (cities is None or cities.empty):
@@ -408,6 +409,16 @@ def api_geo():
                       ["county", "assets", "mw", "lat", "lon"])
 
         assets_cached = bool(batt or plnt)
+        if not assets_cached:
+            # no live pkl cache (deployed box): serve the committed EIA-860M snapshot if present
+            snap = os.path.join(os.path.dirname(__file__), "geo_result.json")
+            if os.path.exists(snap):
+                with open(snap) as f:
+                    payload = json.load(f)
+                payload["available"] = True
+                payload["assets_cached"] = bool(payload.get("batteries") or payload.get("plants"))
+                payload["source"] = "committed EIA-860M snapshot"
+                return payload
         return {
             "available": True,
             "assets_cached": assets_cached,
