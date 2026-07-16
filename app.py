@@ -437,6 +437,21 @@ def api_geo():
                 "batteries": [], "plants": [], "cities": [], "county_rollup": []}
 
 
+@app.get("/api/weather")
+def api_weather():
+    """Weather layer for the Map tab: live conditions + 48h forecast at each of ERCOT's eight
+    weather-zone centroids, plus the wind-belt signal (the weather->net-load mechanism).
+
+    LIVE via Open-Meteo (free, no API key); weather_data.run_weather() self-caches for 30 min.
+    Zone points are REGIONAL centroids (a sample, not a weather field), and nothing here is a
+    price forecast. Honest error passthrough if the pull fails and no cache exists."""
+    import weather_data
+    try:
+        return weather_data.run_weather()
+    except Exception as e:
+        return {"error": f"weather engine failed ({e})", "zones": []}
+
+
 @app.get("/api/dcopf")
 def api_dcopf():
     """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
