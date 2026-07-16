@@ -452,6 +452,49 @@ def api_weather():
         return {"error": f"weather engine failed ({e})", "zones": []}
 
 
+@app.get("/api/countyheat")
+def api_countyheat():
+    """Battery MW by county — a rollup of real EIA assets, NOT an interpolated surface.
+
+    load_geo() batteries -> map_layers.county_heat(). County points are the mean position of
+    that county's assets (a marker, not a boundary). Honest empty-state if geography isn't
+    cached. We deliberately do not paint a price heatmap: 4 hub prices can't honestly color a
+    statewide surface."""
+    import geo_data, map_layers
+    try:
+        batteries, _plants, _cities = geo_data.load_geo()
+        return map_layers.county_heat(batteries)
+    except Exception as e:
+        return {"error": f"county heat failed ({e})", "counties": []}
+
+
+_FORECAST_CACHE = {}   # hub -> (monotonic_ts, result); GBM fit is seconds, cache ~30 min
+
+
+@app.get("/api/forecast")
+def api_forecast(hub: str = "HB_HOUSTON"):
+    """Honest next-24h day-ahead P10/P50/P90 for one hub.
+
+    price_store.get_prices_rolling(hub, days=30) -> map_layers.forecast_hub(). A DAY-AHEAD model
+    (features known 24h out only), deliberately separate from the platform's nowcaster and weaker
+    by design. forecast_hub RAISES on thin history — surfaced here as an honest error, never a
+    fabricated forecast (the deployed box may have a thin store)."""
+    import time, price_store, map_layers
+    hub = (hub or "HB_HOUSTON").upper()
+    hit = _FORECAST_CACHE.get(hub)
+    if hit and time.monotonic() - hit[0] < 1800:
+        return hit[1]
+    try:
+        s, _meta = price_store.get_prices_rolling(hub, days=30, include_today=False,
+                                                  fetch_missing=False)
+        out = map_layers.forecast_hub(s)
+        out["hub"] = hub
+        _FORECAST_CACHE[hub] = (time.monotonic(), out)
+        return out
+    except Exception as e:
+        return {"error": f"day-ahead forecast unavailable for {hub}: {e}", "hub": hub}
+
+
 @app.get("/api/dcopf")
 def api_dcopf():
     """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
