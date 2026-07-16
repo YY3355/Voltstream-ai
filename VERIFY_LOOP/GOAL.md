@@ -1,50 +1,43 @@
-# GOAL — Map architecture Phase 1: geography layers + layer controls + fix zoom
+# GOAL — Map architecture Phase 2: weather layer on the Map tab
 
-geo_data.py in repo (fixture-tested): load_geo() -> (batteries, plants, cities) DataFrames
-with lat/lon/mw/county/operator/precision; county_rollup(df) -> per-county totals.
-cities_table() = 28 embedded TX cities (always available). batteries/plants come from the EIA
-860M fetch -> data_archive/geo/*.pkl.
+weather_data.py in repo, fixture-tested. run_weather() -> {zones[], signal{...}, source, note}
+or {error, zones:[]}. Self-caches 30min to data_archive/weather (gitignored). LIVE Open-Meteo
+fetch, NO API KEY — so it works live on Fly with no committed snapshot (the box fetches fresh).
 
-## PREREQUISITE BLOCKER (external)
-The EIA API key (845759783...d075) returns 403 API_KEY_INVALID on a clean direct call — so
-`geo_data.py fetch` cannot populate batteries.pkl / plants.pkl yet. Consequences:
-- Cities layer: fully real (28 embedded). DART hubs: already live.
-- Batteries/Plants: share the cities code path; will light up automatically once a VALID key
-  produces the cache. For layer-mechanics verification I may seed a SMALL fixture-shaped cache
-  (parse_eia on the module's fixture rows) — clearly a stand-in, NOT committed (data_archive is
-  gitignored) — then confirm real EIA data pending a working key.
+## API
+- `run_weather(ttl_s=1800)` -> {zones[], signal, source, note}
+- zone: zone/lat/lon/wind_heavy/note/precision('zone_centroid')/temp_f/wind_mph/
+  forecast_hours[]/forecast_temp_f[]/forecast_wind_mph[] (up to 48h)
+- signal: wind_belt_avg_mph, wind_belt_48h_avg_mph, state('strong'|'moderate'|'light'),
+  mechanism, zones_counted[], caveat
 
 ## Tasks
-- **T1** FIX ZOOM/PAN on Map tab: scroll-zoom, drag-pan, NavigationControl must work. Cause:
-  deck MapboxOverlay(interleaved:false) overlay canvas intercepts events. Fix: interleaved:true
-  (deck draws into mapbox context) + add NavigationControl. Verify programmatically: dispatch a
-  wheel event over the map, map.getZoom() changes; scrollZoom/dragPan enabled; nav buttons exist.
-- **T2** /api/geo endpoint: cached geography as layer-ready JSON — batteries (id/name/operator/
-  mw/county/lat/lon), plants (+tech), cities (name/county/population/lat/lon), county_rollup for
-  batteries. Honest empty-state if cache missing (tell user to run `geo_data.py fetch`).
-- **T3** LAYER CONTROLS on Map tab: checkboxes toggling deck layers — DART hubs (existing),
-  Batteries (size by MW, distinct color), Power plants (color by tech), Cities (size by
-  population). Click popups: battery -> name/operator/MW/county; plant -> + tech; city ->
-  population.
-- **T4** Honest labels ON the map: battery/plant markers are EIA-reported asset coords (exact);
-  city markers are centroids, NOT load-delivery points; data-center & city-level-load layers
-  deliberately absent (no authoritative public data).
+- **T1** `/api/weather` endpoint calling run_weather() (self-caches 30min; honest error
+  passthrough, mirror /api/dart).
+- **T2** Weather layer + checkbox on the Map tab: 8 zone markers, color by temp_f (cool->hot
+  ramp), wind indicator sized/labeled by wind_mph, wind-belt zones visually distinguished.
+  Popup: zone, temp, wind, 48h wind trend sparkline if easy, zone note.
+- **T3** Wind-belt banner on the Map tab: signal.state + signal.mechanism + 48h average — the
+  market story in one line ("Wind belt: strong, 24 mph -> more wind generation -> lower net load").
+- **T4** Honest labels: zone markers are REGIONAL CENTROIDS sampling a large zone (not a
+  weather field); weather only, not a price forecast (signal.caveat verbatim).
 
 ## Definition of done
-- /api/geo 200 with real counts (cities real now; batteries/plants real once key works — else
-  honest empty-state, verified).
-- Map tab: zoom/pan/NavigationControl work; layer checkboxes toggle each layer; markers appear
-  (cities real; batteries/plants via cache); popups per spec; honest labels on map.
-- Existing tabs untouched. Pushed when green; redeploy to Fly.
+- /api/weather 200 with 8 zones + signal.
+- Map tab: weather checkbox toggles the layer; 8 zone markers colored by temp + wind-sized,
+  wind-belt distinguished; popup per zone; wind-belt banner shows state+mechanism+48h.
+- Honest labels on map (centroid sample + caveat verbatim).
+- Other layers (hubs/batteries/plants/cities) + other tabs untouched.
+- Pushed when green; redeploy to Fly (weather is live there — no snapshot).
 
 ## Verification (CLAUDE.md recipe)
-- geo_data.py fixture PASSES.
-- Run app; curl /api/geo -> 200 with counts (cities>=28; batteries/plants real or honest empty).
-- Headless Chrome /#map: wheel event -> getZoom changes; nav buttons present; toggle each layer
-  checkbox -> deck layer count changes / markers render; existing tabs render.
+- weather_data.py fixture PASSES.
+- Run app; curl /api/weather -> 200, 8 zones + signal.
+- Headless Chrome / CDP /#map: toggle weather checkbox -> weather in active layer set + markers
+  render; banner text shows state/mechanism/48h; a zone is pickable+popup renders; other layers
+  still toggle; existing tabs render.
 
 ## Guardrails
 - Max 12 iterations. Supervised. One task = one commit. Green commits only.
-- NEVER commit data caches or secrets. data_archive/geo/*.pkl gitignored. EIA key stays in
-  ~/.zshenv, never echoed/committed. Mapbox pk. token already in client HTML by design.
-- Do not break the existing DART-hub layer or other tabs.
+- NEVER commit data caches/secrets. data_archive/weather gitignored. No key involved.
+- Do not break Phase-1 layers (hubs/batteries/plants/cities), zoom, or other tabs.
