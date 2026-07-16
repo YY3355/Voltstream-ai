@@ -460,9 +460,17 @@ def api_countyheat():
     that county's assets (a marker, not a boundary). Honest empty-state if geography isn't
     cached. We deliberately do not paint a price heatmap: 4 hub prices can't honestly color a
     statewide surface."""
-    import geo_data, map_layers
+    import geo_data, map_layers, json
+    import pandas as pd
     try:
         batteries, _plants, _cities = geo_data.load_geo()
+        if batteries is None or batteries.empty:
+            # deployed box has no live pkl cache — rebuild batteries from the committed
+            # geo_result.json snapshot (same source /api/geo falls back to)
+            snap = os.path.join(os.path.dirname(__file__), "geo_result.json")
+            if os.path.exists(snap):
+                with open(snap) as f:
+                    batteries = pd.DataFrame(json.load(f).get("batteries", []))
         return map_layers.county_heat(batteries)
     except Exception as e:
         return {"error": f"county heat failed ({e})", "counties": []}
