@@ -140,6 +140,23 @@
     border-left-width:3px;border-radius:8px;padding:8px 12px;margin:2px 0 10px}
   .wx-banner .wx-dot{width:10px;height:10px;border-radius:50%;flex:none}
   .wx-banner .wx-caveat{color:var(--dim);font-style:italic;font-size:10.5px}
+  #county-panel{flex:0 1 246px;display:flex;flex-direction:column;min-width:210px;
+    border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}
+  #county-panel .cp-head{font-family:var(--mono);font-size:11px;color:var(--ink);padding:9px 11px;
+    border-bottom:1px solid var(--line);background:var(--panel2)}
+  #county-panel .cp-head b{color:var(--amber)} #county-panel .cp-head span{color:var(--dim);font-size:9.5px;display:block;margin-top:2px}
+  #county-panel .cp-list{overflow-y:auto;max-height:520px;font-family:var(--mono);font-size:10.5px}
+  #county-panel .cp-row{display:grid;grid-template-columns:16px 1fr auto;gap:6px;align-items:baseline;
+    padding:4px 11px;border-bottom:1px solid #141c26;cursor:default}
+  #county-panel .cp-row:hover{background:var(--panel2)}
+  #county-panel .cp-rank{color:var(--dim)} #county-panel .cp-name{color:var(--ink)}
+  #county-panel .cp-mw{color:#f0a35e;text-align:right} #county-panel .cp-sub{color:var(--dim);font-size:9px;grid-column:2/4}
+  #county-panel .cp-foot{font-family:var(--mono);font-size:9px;color:var(--dim);padding:7px 11px;border-top:1px solid var(--line);font-style:italic}
+  .fc-box{margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
+  .fc-box .fc-title{font-family:var(--mono);font-size:9.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+  .fc-box .fc-caveat{font-family:var(--sans);font-size:9.5px;color:var(--dim);font-style:italic;line-height:1.4;margin-top:4px}
+  .fc-box .fc-load{font-family:var(--mono);font-size:10px;color:var(--dim)}
+  .fc-box .fc-err{font-family:var(--mono);font-size:9.5px;color:var(--amber);line-height:1.4}
   .mapboxgl-popup-content{background:#0c1420;color:var(--ink);border:1px solid var(--line);
     border-radius:8px;font-family:var(--mono);font-size:11px;line-height:1.5;padding:9px 11px;
     box-shadow:0 6px 22px rgba(0,0,0,.55)}
@@ -293,9 +310,12 @@
       <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
       <div class="wx-banner" id="map-wxbanner" style="display:none"></div>
       <div class="map-controls" id="map-controls"></div>
-      <div class="map-wrap" style="position:relative">
-        <div id="map-canvas"></div>
-        <div id="map-scope"></div>
+      <div class="map-row" style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
+        <div class="map-wrap" style="position:relative;flex:1 1 560px;min-width:0">
+          <div id="map-canvas"></div>
+          <div id="map-scope"></div>
+        </div>
+        <div id="county-panel"></div>
       </div>
       <div class="legend" id="map-legend" style="margin-top:9px"></div>
       <div class="coopt-note" id="map-meta"></div>
@@ -1287,7 +1307,7 @@ function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
 function cityTip(o){ return `<div class="h">${o.name}</div>`
   +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
   +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):cityTip(o); }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
   if(t.includes('wind')) return [34,211,238,205];
@@ -1312,20 +1332,51 @@ function wxTip(o){ const belt=o.wind_heavy?' &middot; <span style="color:#22d3ee
     +(spark?`<div style="margin-top:2px">48h wind${spark}</div>`:'')
     +`<div style="color:var(--mut)">${o.note||''}</div>`
     +`<span class="pr">regional centroid &mdash; samples a zone, not a weather field</span>`; }
+function heatColor(mw,max){ const t=Math.sqrt(Math.max(0,Math.min(1,(mw||0)/(max||1)))),   // MW -> heat ramp
+  L=(a,b,u)=>Math.round(a+(b-a)*u);                                                         // dark red -> bright amber
+  return [L(120,255,t),L(28,210,t),L(16,60,t),225]; }
+function countyTip(o){ return `<div class="h">${o.county} County</div>`
+  +`<div><b>${(o.mw||0).toLocaleString()} MW</b> &middot; ${o.assets} batter${o.assets===1?'y':'ies'}</div>`
+  +`<div>${o.share_pct}% of Texas battery MW</div>`
+  +`<span class="pr">county MW rollup &mdash; point is the mean asset position, not a boundary</span>`; }
+function forecastFanSVG(fc){ const p10=fc.p10||[],p50=fc.p50||[],p90=fc.p90||[],n=p50.length; if(n<2) return '';
+  const W=270,H=94,P={l:38,r:8,t:8,b:16}, all=p10.concat(p90);
+  let mn=Math.min(...all),mx=Math.max(...all); if(mx-mn<1){mx+=1;mn-=1;}
+  const X=i=>P.l+(i/(n-1))*(W-P.l-P.r), Y=v=>H-P.b-((v-mn)/(mx-mn))*(H-P.t-P.b);
+  const band=p90.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ')
+    +' '+p10.map((v,i)=>`${X(n-1-i).toFixed(1)},${Y(p10[n-1-i]).toFixed(1)}`).join(' ');
+  const mid=p50.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
+  let g=''; for(let k=0;k<=2;k++){const v=mn+(mx-mn)*k/2,y=Y(v);
+    g+=`<line x1="${P.l}" y1="${y.toFixed(1)}" x2="${W-P.r}" y2="${y.toFixed(1)}" stroke="#1d2734"/>`
+      +`<text x="${P.l-4}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${v.toFixed(0)}</text>`;}
+  return `<svg width="${W}" height="${H}" style="display:block">${g}`
+    +`<polygon points="${band}" fill="rgba(34,211,238,.16)"/>`
+    +`<polyline points="${mid}" fill="none" stroke="#22d3ee" stroke-width="1.5"/>`
+    +`<text x="${P.l}" y="${H-4}" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">now</text>`
+    +`<text x="${W-P.r}" y="${H-4}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">+24h</text></svg>`; }
+async function loadForecast(hub){ const box=document.getElementById('fc-box'); if(!box) return;
+  let fc; try{ fc=await (await fetch('/api/forecast?hub='+encodeURIComponent(hub))).json(); }
+  catch(e){ if(box.isConnected) box.innerHTML='<div class="fc-err">forecast unreachable</div>'; return; }
+  if(!box.isConnected) return;                                   // popup already closed
+  if(fc.error){ box.innerHTML=`<div class="fc-err">${fc.error}</div>`; return; }
+  box.innerHTML=`<div class="fc-title">Next 24h &mdash; day-ahead P10 / P50 / P90</div>`
+    +forecastFanSVG(fc)+`<div class="fc-caveat">${fc.caveat||''}</div>`; }
 
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
   const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
-  let dart,geo,wx;
-  try{ [dart,geo,wx]=await Promise.all([
+  let dart,geo,wx,ch;
+  try{ [dart,geo,wx,ch]=await Promise.all([
       fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
       fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]})),
-      fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]}))]); }
+      fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]})),
+      fetch('/api/countyheat').then(r=>r.json()).catch(()=>({error:'county heat unreachable',counties:[]}))]); }
   catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
   const hubs=(dart&&dart.points)||[], batts=(geo&&geo.batteries)||[], plants=(geo&&geo.plants)||[], cities=(geo&&geo.cities)||[];
   const wxZones=(wx&&wx.zones)||[], wxSignal=wx&&wx.signal;
+  const counties=(ch&&ch.counties)||[], allCounties=(ch&&ch.all_counties)||[];
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1341,15 +1392,20 @@ async function initMap(){
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
 
-  // click popup: one Popup at a time, at the picked feature's coordinate
+  // click popup: one Popup at a time, at the picked feature's coordinate.
+  // Hub popups additionally lazy-load a next-24h day-ahead forecast fan (T3).
   let _popup=null;
   function pop(info){ if(!info||!info.object) return false; const o=info.object,id=info.layer&&info.layer.id;
     if(_popup) _popup.remove();
-    _popup=new mapboxgl.Popup({closeButton:true,offset:10}).setLngLat([o.lon,o.lat]).setHTML(tipFor(id,o)).addTo(map);
+    let html=tipFor(id,o);
+    if(id==='dart-hubs') html+='<div class="fc-box" id="fc-box"><div class="fc-load">loading day-ahead forecast…</div></div>';
+    _popup=new mapboxgl.Popup({closeButton:true,offset:10,maxWidth:'300px'}).setLngLat([o.lon,o.lat]).setHTML(html).addTo(map);
+    if(id==='dart-hubs' && o.id) loadForecast(o.id);
     return true; }
+  window.__pop=pop;                                    // debug handle for popup/forecast tests
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
         maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
-        maxWind=Math.max(...wxZones.map(z=>z.wind_mph||0),1);
+        maxWind=Math.max(...wxZones.map(z=>z.wind_mph||0),1), maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
   // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set.
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
@@ -1365,6 +1421,9 @@ async function initMap(){
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:true,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>4+Math.sqrt((c.population||0)/maxPop)*24,radiusMinPixels:3,radiusMaxPixels:38,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,120],getFillColor:[88,166,255,195],onClick:pop})},
+    county:{label:'County heat (battery MW)',sw:'#f0663a',data:allCounties,on:false,make:()=>new deck.ScatterplotLayer({id:'county',data:allCounties,pickable:true,
+      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>7+Math.sqrt((c.mw||0)/maxCountyMw)*30,radiusMinPixels:6,radiusMaxPixels:48,
+      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,90],getFillColor:c=>heatColor(c.mw,maxCountyMw),onClick:pop})},
     weather:{label:'Weather (zones)',sw:'#f0a35e',data:wxZones,on:false,make:()=>{
       const scatter=new deck.ScatterplotLayer({id:'weather',data:wxZones,pickable:true,
         getPosition:z=>[z.lon,z.lat],radiusUnits:'pixels',getRadius:z=>12+Math.sqrt((z.wind_mph||0)/maxWind)*20,radiusMinPixels:10,radiusMaxPixels:38,
@@ -1394,6 +1453,18 @@ async function initMap(){
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers(); });});
 
+  // county list panel — "list all the counties" view (rollup of real EIA battery assets)
+  const cp=$('county-panel');
+  if(cp){
+    if(allCounties.length){
+      cp.innerHTML=`<div class="cp-head"><b>Battery MW by county</b><span>${ch.n_counties} counties &middot; ${(ch.total_mw||0).toLocaleString()} MW &middot; top 5 = ${ch.top_share_pct}%</span></div>`
+        +`<div class="cp-list">`+allCounties.map((c,i)=>
+          `<div class="cp-row"><span class="cp-rank">${i+1}</span><span class="cp-name">${c.county}</span><span class="cp-mw">${(c.mw||0).toLocaleString()} MW</span>`
+          +`<span class="cp-sub">${c.assets} asset${c.assets===1?'':'s'} &middot; ${c.share_pct}% of TX</span></div>`).join('')+`</div>`
+        +`<div class="cp-foot">Rollup of EIA assets &mdash; not an interpolated surface. Toggle "County heat" to map it.</div>`;
+    } else { cp.innerHTML=`<div class="cp-head"><b>Battery MW by county</b></div><div class="cp-foot">${(ch&&ch.note)||'no battery geography cached'}</div>`; }
+  }
+
   // wind-belt banner (T3): the market story in one line + honest caveat (T4, verbatim)
   const bn=$('map-wxbanner');
   if(bn && wxSignal){
@@ -1408,14 +1479,15 @@ async function initMap(){
     bn.innerHTML=`<span class="wx-caveat">weather layer unavailable — ${wx.error}</span>`; }
 
   // meta + legend + honest scope (T4)
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones.</b> `
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties.</b> `
     +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
     +`${wx&&wx.source?'Weather: '+wx.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
-  $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
+  $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich (click: 24h forecast)</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
-    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`;
-  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. Weather zones are <b>regional centroids</b> sampling a zone hundreds of miles across (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
+    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0663a"></i>county heat (fill+size=MW)</span>`
+    +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`;
+  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. County-heat points are a <b>rollup</b> of real EIA assets placed at the <b>mean position</b> of each county's batteries (a marker, not a boundary). There is <b>no price heatmap</b> — 4 hub prices can't honestly paint a statewide surface. Weather zones are <b>regional centroids</b> (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
 let _coInterval=false;
 const LOADERS={
