@@ -1,43 +1,46 @@
-# GOAL — Map architecture Phase 2: weather layer on the Map tab
+# GOAL — Phase 2 FINAL: county heat + day-ahead forecast on the Map tab
 
-weather_data.py in repo, fixture-tested. run_weather() -> {zones[], signal{...}, source, note}
-or {error, zones:[]}. Self-caches 30min to data_archive/weather (gitignored). LIVE Open-Meteo
-fetch, NO API KEY — so it works live on Fly with no committed snapshot (the box fetches fresh).
+map_layers.py in repo, fixture-tested. Then Phase 2 STANDS (no transmission/constraint mapping).
 
 ## API
-- `run_weather(ttl_s=1800)` -> {zones[], signal, source, note}
-- zone: zone/lat/lon/wind_heavy/note/precision('zone_centroid')/temp_f/wind_mph/
-  forecast_hours[]/forecast_temp_f[]/forecast_wind_mph[] (up to 48h)
-- signal: wind_belt_avg_mph, wind_belt_48h_avg_mph, state('strong'|'moderate'|'light'),
-  mechanism, zones_counted[], caveat
+- `county_heat(batteries_df, top_n=25)` -> {counties[](top25), all_counties[], n_counties,
+  total_mw, top_share_pct, note}. Row: county/mw/assets/lat/lon/share_pct.
+- `forecast_hub(prices_series, horizon=96, min_train=960)` -> {times[], p10[], p50[], p90[],
+  train_rows, history_end, model, caveat}. RAISES RuntimeError on thin history — SURFACE it,
+  do not swallow/fake.
+- Supporting: geo_data.load_geo() -> (batteries, plants, cities). price_store.get_prices_rolling(
+  hub, days=30, include_today, fetch_missing) -> (series, meta) TUPLE. HUBS = HB_HOUSTON/NORTH/
+  SOUTH/WEST.
 
 ## Tasks
-- **T1** `/api/weather` endpoint calling run_weather() (self-caches 30min; honest error
-  passthrough, mirror /api/dart).
-- **T2** Weather layer + checkbox on the Map tab: 8 zone markers, color by temp_f (cool->hot
-  ramp), wind indicator sized/labeled by wind_mph, wind-belt zones visually distinguished.
-  Popup: zone, temp, wind, 48h wind trend sparkline if easy, zone note.
-- **T3** Wind-belt banner on the Map tab: signal.state + signal.mechanism + 48h average — the
-  market story in one line ("Wind belt: strong, 24 mph -> more wind generation -> lower net load").
-- **T4** Honest labels: zone markers are REGIONAL CENTROIDS sampling a large zone (not a
-  weather field); weather only, not a price forecast (signal.caveat verbatim).
+- **T1** `/api/countyheat`: load_geo() batteries -> county_heat(). `/api/forecast?hub=HB_HOUSTON`:
+  get_prices_rolling(hub, days=30, include_today=False, fetch_missing=False) -> (s,_meta) ->
+  forecast_hub(s); per-hub ~30min cache; honest error passthrough if store thin (Fly box may be).
+- **T2** County heat layer + checkbox: deck markers at county points sized/colored by MW +
+  ranked county list panel BESIDE the map (county / MW / assets / share%). Honest label: rollup
+  of real EIA assets; county points are the MEAN position of that county's assets, NOT
+  boundaries; and NO price heatmap (4 hub prices can't honestly paint a surface).
+- **T3** Forecast chart in each HUB popup: next-24h P10/P50/P90 fan (inline SVG, house style),
+  fetched async on hub click, with model + caveat verbatim — a DAY-AHEAD model, separate from
+  the platform's nowcaster, weaker by design.
+- **T4** STOP: no transmission/constraint mapping. Phase 2 stands here.
 
 ## Definition of done
-- /api/weather 200 with 8 zones + signal.
-- Map tab: weather checkbox toggles the layer; 8 zone markers colored by temp + wind-sized,
-  wind-belt distinguished; popup per zone; wind-belt banner shows state+mechanism+48h.
-- Honest labels on map (centroid sample + caveat verbatim).
-- Other layers (hubs/batteries/plants/cities) + other tabs untouched.
-- Pushed when green; redeploy to Fly (weather is live there — no snapshot).
+- /api/countyheat 200: ~87 counties / 16,317 MW total.
+- /api/forecast?hub=HB_HOUSTON 200: 96 points, ordered quantiles (p10<=p50<=p90), model+caveat.
+  (Honest error if the store is thin — that's acceptable, not a failure.)
+- Map tab: county checkbox toggles the layer; county markers render; ranked county list panel
+  populated; hub popup shows the forecast fan chart. Honest labels present.
+- Other layers (hubs/batteries/plants/cities/weather) + other tabs untouched.
+- Pushed when green; redeploy to Fly (forecast may honest-error on Fly if the store is thin).
 
-## Verification (CLAUDE.md recipe)
-- weather_data.py fixture PASSES.
-- Run app; curl /api/weather -> 200, 8 zones + signal.
-- Headless Chrome / CDP /#map: toggle weather checkbox -> weather in active layer set + markers
-  render; banner text shows state/mechanism/48h; a zone is pickable+popup renders; other layers
-  still toggle; existing tabs render.
+## Verification (CLAUDE.md recipe / CDP)
+- map_layers.py fixture PASSES.
+- curl /api/countyheat -> 200 counts; curl /api/forecast?hub=HB_HOUSTON -> 200 ordered quantiles.
+- CDP /#map: toggle county checkbox -> 'county' active + markers; county-panel list populated;
+  click a hub -> popup fan SVG appears (async) with caveat; other layers still toggle; tabs render.
 
 ## Guardrails
 - Max 12 iterations. Supervised. One task = one commit. Green commits only.
-- NEVER commit data caches/secrets. data_archive/weather gitignored. No key involved.
-- Do not break Phase-1 layers (hubs/batteries/plants/cities), zoom, or other tabs.
+- NEVER commit data caches/secrets. Do not break Phase-1/weather layers, zoom, or other tabs.
+- forecast_hub RAISES on thin history: surface the error honestly, never fabricate a forecast.
