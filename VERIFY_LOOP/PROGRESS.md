@@ -11,7 +11,10 @@ Max 12 iterations. Supervised.
   now/48h+mechanism), honest labels (centroid + caveat verbatim). Verified CDP: toggle adds
   weather, Far West pickable+popup, banner+scope+legend correct; screenshot confirms. Other
   layers/tabs untouched (endpoints 200, quant renders). commit e0e3c03.
-- [todo] DEPLOY — push, redeploy Fly (weather live there via Open-Meteo, no snapshot needed).
+- [done] DEPLOY — pushed (b270a31..249a890) + Fly redeployed. Public /api/weather 200 in 4.2s
+  cold (live Open-Meteo, no snapshot). Public CDP: weather toggles on, Far West pickable, banner
+  present, ok=true; screenshot shows labeled temp-fill markers + cyan wind-belt rings + banner
+  live. ALL DONE.
 
 ## Log
 - init — API confirmed (run_weather, zone/signal shapes). Weather is LIVE (no key), self-caches
