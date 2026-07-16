@@ -135,6 +135,11 @@
   .map-controls input{accent-color:var(--cyan);margin:0}
   .map-controls .sw{width:9px;height:9px;border-radius:2px;display:inline-block}
   .map-controls .ct{color:var(--dim);font-size:9.5px}
+  .wx-banner{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-family:var(--mono);
+    font-size:12px;color:var(--ink);background:var(--panel2);border:1px solid var(--line);
+    border-left-width:3px;border-radius:8px;padding:8px 12px;margin:2px 0 10px}
+  .wx-banner .wx-dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .wx-banner .wx-caveat{color:var(--dim);font-style:italic;font-size:10.5px}
   .mapboxgl-popup-content{background:#0c1420;color:var(--ink);border:1px solid var(--line);
     border-radius:8px;font-family:var(--mono);font-size:11px;line-height:1.5;padding:9px 11px;
     box-shadow:0 6px 22px rgba(0,0,0,.55)}
@@ -286,6 +291,7 @@
         <span class="live-dot" style="margin-left:auto">map</span></div>
       <p class="coopt-sub">Everything is connected through latitude/longitude. <b>Prices</b> come from ERCOT &mdash; the live DART spread at each trading hub. <b>Coordinates</b> come from public GIS: batteries and power plants at their EIA-reported locations, Texas cities at their Census centroids. Toggle the layers; click any marker for its details. Scroll to zoom, drag to pan.</p>
       <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
+      <div class="wx-banner" id="map-wxbanner" style="display:none"></div>
       <div class="map-controls" id="map-controls"></div>
       <div class="map-wrap" style="position:relative">
         <div id="map-canvas"></div>
@@ -1281,7 +1287,7 @@ function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
 function cityTip(o){ return `<div class="h">${o.name}</div>`
   +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
   +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):cityTip(o); }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
   if(t.includes('wind')) return [34,211,238,205];
@@ -1290,18 +1296,36 @@ function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('coal')) return [150,158,170,205];
   if(t.includes('hydro')||t.includes('water')) return [88,166,255,205];
   return [163,113,247,205]; }                                   // other
+function tempColor(f){ const t=Math.max(0,Math.min(1,((f||75)-60)/45)),   // 60F cool -> 105F hot
+  L=(a,b,u)=>Math.round(a+(b-a)*u); let c;
+  if(t<0.5){const u=t/0.5; c=[L(70,245,u),L(130,166,u),L(255,35,u)];}      // blue -> amber
+  else{const u=(t-0.5)/0.5; c=[L(245,248,u),L(166,81,u),L(35,73,u)];}      // amber -> red
+  return [c[0],c[1],c[2],215]; }
+function wxSpark(arr){ if(!arr||arr.length<2) return '';
+  const w=124,h=22,mx=Math.max(...arr),mn=Math.min(...arr),rng=(mx-mn)||1;
+  const pts=arr.map((v,i)=>`${(i/(arr.length-1)*w).toFixed(1)},${(h-((v-mn)/rng)*(h-3)-1.5).toFixed(1)}`).join(' ');
+  return `<svg width="${w}" height="${h}" style="vertical-align:middle;margin-left:4px"><polyline points="${pts}" fill="none" stroke="#22d3ee" stroke-width="1.4"/></svg>`; }
+function wxTip(o){ const belt=o.wind_heavy?' &middot; <span style="color:#22d3ee">WIND BELT</span>':'';
+  const spark=wxSpark(o.forecast_wind_mph);
+  return `<div class="h">${o.zone}${belt}</div>`
+    +`<div>temp <b>${o.temp_f}&deg;F</b> &middot; wind <b>${o.wind_mph} mph</b></div>`
+    +(spark?`<div style="margin-top:2px">48h wind${spark}</div>`:'')
+    +`<div style="color:var(--mut)">${o.note||''}</div>`
+    +`<span class="pr">regional centroid &mdash; samples a zone, not a weather field</span>`; }
 
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
   const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
-  let dart,geo;
-  try{ [dart,geo]=await Promise.all([
+  let dart,geo,wx;
+  try{ [dart,geo,wx]=await Promise.all([
       fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
-      fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]}))]); }
+      fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]})),
+      fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]}))]); }
   catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
   const hubs=(dart&&dart.points)||[], batts=(geo&&geo.batteries)||[], plants=(geo&&geo.plants)||[], cities=(geo&&geo.cities)||[];
+  const wxZones=(wx&&wx.zones)||[], wxSignal=wx&&wx.signal;
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1324,8 +1348,10 @@ async function initMap(){
     _popup=new mapboxgl.Popup({closeButton:true,offset:10}).setLngLat([o.lon,o.lat]).setHTML(tipFor(id,o)).addTo(map);
     return true; }
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
-        maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1);
-  // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set
+        maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
+        maxWind=Math.max(...wxZones.map(z=>z.wind_mph||0),1);
+  // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set.
+  // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
     hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*30,radiusMinPixels:8,radiusMaxPixels:55,
@@ -1339,14 +1365,26 @@ async function initMap(){
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:true,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>4+Math.sqrt((c.population||0)/maxPop)*24,radiusMinPixels:3,radiusMaxPixels:38,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,120],getFillColor:[88,166,255,195],onClick:pop})},
+    weather:{label:'Weather (zones)',sw:'#f0a35e',data:wxZones,on:false,make:()=>{
+      const scatter=new deck.ScatterplotLayer({id:'weather',data:wxZones,pickable:true,
+        getPosition:z=>[z.lon,z.lat],radiusUnits:'pixels',getRadius:z=>12+Math.sqrt((z.wind_mph||0)/maxWind)*20,radiusMinPixels:10,radiusMaxPixels:38,
+        stroked:true,lineWidthMinPixels:2.5,getLineColor:z=>z.wind_heavy?[34,211,238,255]:[255,255,255,150],   // wind-belt = bright cyan ring
+        getFillColor:z=>tempColor(z.temp_f),onClick:pop});                                                    // fill = temperature
+      if(!deck.TextLayer) return scatter;
+      const labels=new deck.TextLayer({id:'weather-labels',data:wxZones,pickable:false,
+        getPosition:z=>[z.lon,z.lat],getText:z=>`${Math.round(z.wind_mph)}`,getSize:12,
+        getColor:[255,255,255,235],getPixelOffset:[0,-19],fontFamily:'monospace',
+        getTextAnchor:'middle',getAlignmentBaseline:'center',outlineWidth:2,outlineColor:[10,14,20,255]});
+      return [scatter,labels]; }},
   };
   function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
-  // build the overlay WITH its initial layers so they paint on first render (interleaved)
-  const overlay=new deck.MapboxOverlay({interleaved:false, layers:activeLayers().map(k=>REG[k].make()),   // overlaid: deck renders visible markers; events forwarded to the map
+  const buildLayers=()=>activeLayers().flatMap(k=>[].concat(REG[k].make()));   // flatten multi-layer entries
+  // build the overlay WITH its initial layers so they paint on first render
+  const overlay=new deck.MapboxOverlay({interleaved:false, layers:buildLayers(),   // overlaid: deck renders visible markers; events forwarded to the map
     getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
   map.addControl(overlay); window.__overlay=overlay;   // debug handle for pick tests
   window.__activeLayers=activeLayers();
-  function refreshLayers(){ overlay.setProps({layers:activeLayers().map(k=>REG[k].make())}); window.__activeLayers=activeLayers(); }
+  function refreshLayers(){ overlay.setProps({layers:buildLayers()}); window.__activeLayers=activeLayers(); }
 
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0;
@@ -1356,14 +1394,28 @@ async function initMap(){
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers(); });});
 
+  // wind-belt banner (T3): the market story in one line + honest caveat (T4, verbatim)
+  const bn=$('map-wxbanner');
+  if(bn && wxSignal){
+    const col=wxSignal.state==='strong'?'#3fb950':wxSignal.state==='moderate'?'#f5a623':'#f85149';
+    bn.style.display='flex'; bn.style.borderLeftColor=col;
+    bn.innerHTML=`<span class="wx-dot" style="background:${col}"></span>`
+      +`<span><b>Wind belt: ${wxSignal.state.toUpperCase()}</b> &mdash; ${wxSignal.wind_belt_avg_mph} mph now`
+      +`${wxSignal.wind_belt_48h_avg_mph!=null?' &rarr; '+wxSignal.wind_belt_48h_avg_mph+' mph next 48h':''} `
+      +`<span style="color:var(--mut)">&middot; ${wxSignal.mechanism}</span></span>`
+      +`<span class="wx-caveat">${wxSignal.caveat}</span>`;
+  } else if(bn && wx && wx.error){ bn.style.display='flex'; bn.style.borderLeftColor='var(--line)';
+    bn.innerHTML=`<span class="wx-caveat">weather layer unavailable — ${wx.error}</span>`; }
+
   // meta + legend + honest scope (T4)
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities.</b> `
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones.</b> `
     +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
+    +`${wx&&wx.source?'Weather: '+wx.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
   $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
-    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`;
-  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
+    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`;
+  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. Weather zones are <b>regional centroids</b> sampling a zone hundreds of miles across (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
 let _coInterval=false;
 const LOADERS={
