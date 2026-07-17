@@ -1,19 +1,16 @@
-# Progress — constraint arcs (measured), registry + match-rate GATE
+# Progress — constraint-arc recovery (curated crosswalk before shelving)
 
-Max 12 iterations. Supervised. GATE: report match rate before UI; STOP if <25%.
+Max 12 iterations. Supervised. GATE: complete arc-row placement >= 25% before any UI.
 
 ## Tasks
-- [done] T1 — substation_registry.py fetches+caches HIFLD (4,929) + OSM (4,543) = 9,472 TX subs
-  (6,600 real names). Reusable, cached (gitignored). commit pending.
-- [BLOCKED] T1-GATE — match rate over real binding-constraint stations (7d, 124 distinct):
-  station match 33.1%, BUT arc placement (both-ends-or-no-arc, what actually draws) = 6.1% of
-  rows / 14.1% of distinct constraints; the LIVE snapshot draws 0 arcs (1 binding, both ends
-  unmatched). The map-relevant number is well under 25% -> STOP per directive. Root cause: ERCOT
-  station codes (MGSES/ATSO/NLARSW/PDSES...) have no public crosswalk to HIFLD/OSM full names.
-- [held] T2/T3/T4/DEPLOY — NOT started; await user go/no-go on the low-coverage finding.
+- [doing] R1 — constraint_report.py: 90d frequency-ranked unmatched-code report (7 fields) +
+  alias candidates + est. coverage gain. (cache pull running in background.)
+- [todo] R2 — crosswalk.json + authoritative pre-match (precedence over fuzzy, provenance+conf).
+- [todo] R3 — research+curate smallest top-N set (verified coords only); re-run gate per batch.
+- [todo] UI — only if complete arc-row placement clears 25%.
 
 ## Log
-- init — fixture PASSES. NP6-86-CD has all needed cols (fromStation/toStation/limit/value/...).
-  Latest snapshot ~1 binding constraint -> measure match rate over a multi-day station universe.
-  HIFLD endpoint found (4,939 TX subs, services5/HDRa0B57OVrv2E1q); many NAME=UNKNOWN. Overpass
-  needs User-Agent.
+- prior gate STOP: 33.1% station / 6.1% arc-row / 14.1% unique-constraint / 0 live arcs.
+- registry = 9,472 subs (HIFLD 4,929 + OSM 4,543). Root cause: ERCOT codes (MGSES/ATSO/...) have
+  no public code->name->coord table; need a curated crosswalk.
+- 90d SCED constraint pull -> data_archive/constraints/sced_90d.pkl (background, gitignored).

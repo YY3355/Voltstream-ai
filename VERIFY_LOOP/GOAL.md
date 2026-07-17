@@ -1,46 +1,41 @@
-# GOAL — constraint arcs from MEASURED data (guardrail cleared: measured only, no estimated transfers)
+# GOAL — recover constraint-arc coverage via a curated ERCOT station crosswalk (before shelving)
 
-constraint_arcs.py (in repo, fixture-tested): parse_constraints(NP6-86-CD df) -> binding+placeable
-rows; match_stations(names, registry, min_score) -> (matches, unmatched); build_arcs(constraints,
-registry) -> {arcs[], n_constraints, n_placed, match_rate_pct, unplaced[], unmatched_stations[],
-labels{measured,partial,scope}}. RULE: an arc is drawn only if BOTH endpoints match a real
-substation; unmatched are counted/listed, never guessed.
+Guardrail: MEASURED only, no invented locations. GATE unchanged: build UI only when COMPLETE
+ARC-ROW placement >= 25%. Prior gate result: 33% station / 6.1% arc-row / 14.1% unique-constraint
+/ 0 live arcs -> stopped. Now attempt recovery per the user's plan.
 
-## HARD GATE (user directive)
-Fetch a substation registry MYSELF (HIFLD primary, OSM fallback), cache it, and REPORT the real
-match rate BEFORE building any UI. If match rate < 25%, STOP and show the unmatched list.
+## Recovery plan (no UI until the gate clears)
+1. **Frequency-ranked unmatched-code report** over a 90-day SCED window. Per unmatched code:
+   (1) # constraint rows affected, (2) # unique counterpart stations, (3) voltage levels,
+   (4) most common overloaded-element (ConstraintName), (5) most common contingency names,
+   (6) likely duplicate aliases, (7) estimated complete-arc coverage gain if resolved.
+2. **Alias normalization** — collapse LEONCRK/LEON_CRK/LEON CRK, strip bus/equip suffixes
+   (MV_HBRG4, W_BATESV, S_MISSIN) where they denote one physical station.
+3. **Curated crosswalk** (crosswalk.json), schema per code: station_code, canonical_name, lat,
+   lon, voltage_kv, utility, county, source, confidence, review_status, aliases[]. Authoritative
+   layer that takes PRECEDENCE over fuzzy matching in match_stations.
+4. **Research the smallest set** of top-frequency codes to lift complete arc-row placement >=25%.
+   Accept a coordinate ONLY with an ERCOT doc / utility|PUCT filing / two corroborating
+   independent sources. Store provenance + confidence. NO city-name guesses. Do NOT loosen fuzzy
+   matching.
+5. **Re-run the gate after every batch** (station match, arc-row %, unique-constraint %, live).
+   Build UI only after complete arc-row placement clears 25%.
 
-## Confirmed facts
-- NP6-86-CD (ercot_archiver.fetch_constraints_query) returns fromStation/toStation/limit/value/
-  ShadowPrice/from&toStationkV/violatedMW — all columns build_arcs needs. LATEST snapshot is often
-  just 1-2 binding constraints, so measure the match rate over ALL distinct stations in binding
-  constraints across a multi-day window (representative), not one instant.
-- HIFLD Electric Substations (working): https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/
-  services/Electric_Substations/FeatureServer/0 — 4,939 TX subs; fields NAME/LATITUDE/LONGITUDE/
-  MAX_VOLT/COUNTY/STATUS. Many NAME='UNKNOWN######' (won't match ERCOT abbrevs). OSM/Overpass
-  reachable with a User-Agent header.
+## Assets
+- substation_registry.py — HIFLD+OSM = 9,472 TX subs (committed b429160). data_archive/registry/
+  (gitignored). data_archive/constraints/sced_90d.pkl — cached 90d NP6-86-CD (gitignored).
+- constraint_arcs.py (staged, fixture-tested): parse_constraints / match_stations / build_arcs.
 
 ## Tasks
-- **T1** substation_registry.py: fetch HIFLD TX subs (paginated), normalize to name/lat/lon/kv/
-  county/source, cache (gitignored). OSM/Overpass fallback/supplement if needed. Verify: registry
-  has thousands of placeable rows.
-- **T1-GATE** Pull binding constraints over a multi-day window, collect distinct stations, run
-  match_stations vs the registry, REPORT match rate + unmatched list. If <25% STOP and show
-  unmatched. (No UI before this passes.)
-- **T2** (only if gate passes) /api/constraintarcs endpoint: live NP6-86-CD -> parse_constraints
-  -> build_arcs(registry). Honest error/empty passthrough.
-- **T3** (only if gate passes) Map arc layer + checkbox: deck.gl ArcLayer, width=utilization,
-  color=shadow price; popup per arc (constraint, from/to, flow/limit, shadow $, contingency);
-  show match rate + unplaced count. Labels verbatim from labels{}. MEASURED arcs only.
-- **T4** Stop; measured only, no estimated transfers.
-
-## Definition of done (through the gate)
-- Registry cached with thousands of TX substations (name+coords).
-- Real match rate reported against the true binding-constraint station universe.
-- If >=25%: proceed to endpoint + map layer, verify arcs render, other layers/tabs untouched,
-  push + redeploy. If <25%: STOP, present the unmatched list, await user decision.
+- **R1** constraint_report.py: 90d frequency-ranked unmatched-code report (the 7 fields) +
+  alias-normalization candidates + estimated coverage gain. Verify: top-N codes ranked, coverage
+  math checks out.
+- **R2** crosswalk.json + wire it as an authoritative pre-match into the matching path
+  (precedence over fuzzy; measured provenance/confidence). Verify: a curated code places its arc.
+- **R3** Research + curate the smallest top-N set with verified coords (provenance/confidence);
+  re-run gate after each batch. STOP-or-GO strictly on complete arc-row >=25%.
+- **UI (T2/T3/T4)** only if the gate clears.
 
 ## Guardrails
-- Max 12 iterations. Supervised. One task = one commit. Green commits only.
-- NEVER fabricate a coordinate — both-ends-or-no-arc. Registry cache gitignored; commit only a
-  small summary if an endpoint needs it on Fly. No estimated/interpolated transfers, ever.
+- Max 12 iterations. Supervised. One task = one commit. Green commits only. NEVER a guessed
+  coordinate; both-ends-or-no-arc; provenance+confidence on every crosswalk row.
