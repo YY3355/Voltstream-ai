@@ -1,53 +1,46 @@
-# GOAL — Phase 3: locational decade revenue with year playback on the Map tab
+# GOAL — constraint arcs from MEASURED data (guardrail cleared: measured only, no estimated transfers)
 
-Delivers the public promise: "what a battery at this location would have earned, year by year,
-on real history." locational_revenue.py in repo, fixture-tested.
+constraint_arcs.py (in repo, fixture-tested): parse_constraints(NP6-86-CD df) -> binding+placeable
+rows; match_stations(names, registry, min_score) -> (matches, unmatched); build_arcs(constraints,
+registry) -> {arcs[], n_constraints, n_placed, match_rate_pct, unplaced[], unmatched_stations[],
+labels{measured,partial,scope}}. RULE: an arc is drawn only if BOTH endpoints match a real
+substation; unmatched are counted/listed, never guessed.
 
-## API
-- `build_locational(prices_by_hub_dict, hub_coords_dict, duration_h=2.0)` -> {years[],
-  frames{year:[{hub,lon,lat,rev,best_day,best_day_rev,max_price,top10_share_pct}]}, by_hub,
-  mean_by_hub, rev_min, rev_max, dropped_partial_years, duration_h, labels{what,ceiling,
-  regional,excludes,not_forecast}}. HUBS = HB_HOUSTON/NORTH/SOUTH/WEST.
+## HARD GATE (user directive)
+Fetch a substation registry MYSELF (HIFLD primary, OSM fallback), cache it, and REPORT the real
+match rate BEFORE building any UI. If match rate < 25%, STOP and show the unmatched list.
 
-## KEY DATA FACT (verified)
-The cached data_archive/decade/*.pkl are SINGLE-HUB (HB_HOUSTON) Series. backfill_decade_hub
-does NOT cache raw bundle zips. So the 4-hub extraction must RE-DOWNLOAD the monthly SPP
-bundles (ercot_archiver.list_bundles + bundle_to_hub_series), parsing all 4 hubs per download
-(network dominates). Cross-check: my Houston extraction must match the existing Houston pkl.
+## Confirmed facts
+- NP6-86-CD (ercot_archiver.fetch_constraints_query) returns fromStation/toStation/limit/value/
+  ShadowPrice/from&toStationkV/violatedMW — all columns build_arcs needs. LATEST snapshot is often
+  just 1-2 binding constraints, so measure the match rate over ALL distinct stations in binding
+  constraints across a multi-day window (representative), not one instant.
+- HIFLD Electric Substations (working): https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/
+  services/Electric_Substations/FeatureServer/0 — 4,939 TX subs; fields NAME/LATITUDE/LONGITUDE/
+  MAX_VOLT/COUNTY/STATUS. Many NAME='UNKNOWN######' (won't match ERCOT abbrevs). OSM/Overpass
+  reachable with a User-Agent header.
 
 ## Tasks
-- **T1** DATA: locational_run.py — download each monthly bundle once, extract per-hub 15-min
-  series for all 4 hubs (2018-2025), run build_locational with map_data.HUB_POINTS coords,
-  cache result JSON. Compute once (minutes). Sanity: 2021 shows Uri at EVERY hub (max_price in
-  thousands, extreme top10 share); report dropped partial years. Cross-check Houston vs cache.
-- **T2** /api/locational serving the cached JSON; commit the small summary JSON (like
-  decade_result.json) + .dockerignore un-exclude so it works on Fly.
-- **T3** MAP: year slider (2018->2025) scrubbing frames; hub circles sized/colored by that
-  year's $/MW-year on a FIXED scale (rev_min..rev_max) so years compare; play button animating
-  years; popup per hub w/ that year's revenue, best day + $, max price, top-10 share. 2021 (Uri)
-  must be visually dramatic.
-- **T4** Labels verbatim from labels{}: ceiling not achievable; HUB-LEVEL regional not nodal;
-  energy-only no AS/degradation/capex; history not forecast. NO animated power-flow arcs (no
-  flow data, won't fake).
+- **T1** substation_registry.py: fetch HIFLD TX subs (paginated), normalize to name/lat/lon/kv/
+  county/source, cache (gitignored). OSM/Overpass fallback/supplement if needed. Verify: registry
+  has thousands of placeable rows.
+- **T1-GATE** Pull binding constraints over a multi-day window, collect distinct stations, run
+  match_stations vs the registry, REPORT match rate + unmatched list. If <25% STOP and show
+  unmatched. (No UI before this passes.)
+- **T2** (only if gate passes) /api/constraintarcs endpoint: live NP6-86-CD -> parse_constraints
+  -> build_arcs(registry). Honest error/empty passthrough.
+- **T3** (only if gate passes) Map arc layer + checkbox: deck.gl ArcLayer, width=utilization,
+  color=shadow price; popup per arc (constraint, from/to, flow/limit, shadow $, contingency);
+  show match rate + unplaced count. Labels verbatim from labels{}. MEASURED arcs only.
+- **T4** Stop; measured only, no estimated transfers.
 
-## Definition of done
-- /api/locational 200: 8 years (2018-2025) x 4 hubs in frames; rev_min/rev_max; labels.
-- 2021 sanity: every hub max_price in thousands + elevated top10 share.
-- Map tab: slider scrubs frames, circles resize/recolor on fixed scale, play animates, hub
-  popup shows year detail; 2021 spikes visibly.
-- Honest labels verbatim on map. NO flow arcs.
-- Other layers (hubs/batteries/plants/cities/weather/county) + other tabs untouched.
-- Pushed when green; redeploy to Fly (summary JSON committed so it works there).
-
-## Verification (CDP)
-- locational_revenue.py fixture PASSES.
-- locational_run.py produces JSON with 8 yrs x 4 hubs; Houston series == cached pkl (cross-check).
-- curl /api/locational -> 200 shape + 2021 Uri sanity.
-- CDP /#map: slider present, scrub year -> frame changes (circle radii change), 2021 max radius
-  spike, play button advances, hub popup shows year detail; other layers still toggle; tabs render.
+## Definition of done (through the gate)
+- Registry cached with thousands of TX substations (name+coords).
+- Real match rate reported against the true binding-constraint station universe.
+- If >=25%: proceed to endpoint + map layer, verify arcs render, other layers/tabs untouched,
+  push + redeploy. If <25%: STOP, present the unmatched list, await user decision.
 
 ## Guardrails
 - Max 12 iterations. Supervised. One task = one commit. Green commits only.
-- NEVER commit data caches/secrets (raw decade pkls, bundles stay out). Only the small
-  locational_result.json summary is committed (like decade_result.json).
-- Do not break Phase-1/2 layers, zoom, forecast, or other tabs. NO fabricated flow data.
+- NEVER fabricate a coordinate — both-ends-or-no-arc. Registry cache gitignored; commit only a
+  small summary if an endpoint needs it on Fly. No estimated/interpolated transfers, ever.
