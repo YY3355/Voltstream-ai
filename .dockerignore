@@ -9,6 +9,8 @@ __pycache__
 !hedge_result.json
 !geo_result.json
 !locational_result.json
+!constraintarcs_result.json
+!crosswalk.json
 .git
 .gitignore
 *.md

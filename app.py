@@ -658,6 +658,52 @@ def api_locational():
         return {"error": f"locational result read failed ({e})"}
 
 
+_ARCS_LIVE_CACHE = {"t": 0, "v": None}
+
+
+@app.get("/api/constraintarcs")
+def api_constraintarcs(mode: str = "aggregate"):
+    """Measured ERCOT transmission-constraint flow arcs (NP6-86-CD SCED shadow prices).
+
+    mode=aggregate (default): 90-day BINDING-FREQUENCY arcs from the committed summary — width =
+    how often the line bound, color = mean shadow price. Always populated (the congested
+    corridors). mode=live: places the CURRENT SCED snapshot and is honestly empty when nothing
+    placeable is binding. Only constraints whose BOTH endpoints resolve to a real substation are
+    drawn (station match ~39%); the unresolved list ships as the roadmap. Measured facts, not a
+    model; no guessed coordinates."""
+    import json, time
+    path = os.environ.get("CONSTRAINTARCS_RESULT",
+                          os.path.join(os.path.dirname(__file__), "constraintarcs_result.json"))
+    if not os.path.exists(path):
+        return {"available": False, "note": "constraint arcs not computed — run "
+                "`python constraintarcs_run.py` to build constraintarcs_result.json"}
+    with open(path) as f:
+        agg = json.load(f)
+    agg["available"] = True
+    if mode != "live":
+        return agg
+
+    # live-now: place the current SCED snapshot using the committed resolved-station table
+    # (no need to ship the full registry). Honest empty when nothing placeable is binding.
+    if time.time() - _ARCS_LIVE_CACHE["t"] < 300 and _ARCS_LIVE_CACHE["v"] is not None:
+        return _ARCS_LIVE_CACHE["v"]
+    try:
+        import pandas as pd, ercot_archiver, constraint_arcs
+        reg = pd.DataFrame([{"name": k, "lat": v[0], "lon": v[1]}
+                            for k, v in agg.get("resolved_stations", {}).items()])
+        cons = constraint_arcs.parse_constraints(ercot_archiver.fetch_constraints_query(days=2))
+        built = constraint_arcs.build_arcs(cons, reg)
+        live = {"available": True, "mode": "live", "arcs": built.get("arcs", []),
+                "n_constraints": built.get("n_constraints", 0), "n_placed": built.get("n_placed", 0),
+                "timestamp": built.get("timestamp"), "labels": agg.get("labels", {}),
+                "note": ("Live SCED snapshot. Empty is honest — often only 1-2 constraints bind, "
+                         "and only placeable ones are drawn. The 90-day aggregate is the fuller view.")}
+        _ARCS_LIVE_CACHE.update(t=time.time(), v=live)
+        return live
+    except Exception as e:
+        return {"available": True, "mode": "live", "arcs": [], "error": f"live constraint pull failed ({e})"}
+
+
 @app.get("/api/hedge")
 def api_hedge():
     """The hedging layer on the Decade Study: how much of a battery's merchant revenue to sell
