@@ -1,0 +1,69 @@
+{
+  "_about": "Curated ERCOT constraint station-code -> verified coordinate crosswalk. Every entry is corroborated by at least two independent sources: the ERCOT SCED constraint/contingency element name (which spells out the line endpoint) AND an independent public GIS record (HIFLD and/or OpenStreetMap) for a station of that name at a location consistent with the named counterpart and voltage. No coordinate is taken from a city-name guess; fuzzy matching is not loosened. See station_crosswalk.py.",
+  "entries": [
+    {
+      "canonical_name": "Morgan Creek Switching Station",
+      "codes": ["MGSES"],
+      "lat": 32.3343, "lon": -100.9159, "voltage_kv": 345,
+      "county": "Mitchell", "utility": "Oncor/ERCOT West",
+      "source": "ERCOT SCED contingencies SRGRMGS5/MRGRMGS5 (MGS = Morgan Creek) at 345 kV, corroborated by OpenStreetMap 'Morgan Creek Substation' 345 kV (32.3343,-100.9159), Mitchell County",
+      "confidence": 0.95, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Venus Switching Station",
+      "codes": ["VENSW"],
+      "lat": 32.4440, "lon": -97.0728, "voltage_kv": 345,
+      "county": "Ellis", "utility": "Oncor",
+      "source": "ERCOT SCED code VENSW + contingency SVENFTS5 (VEN) at 345 kV, corroborated by HIFLD 'VENUS' 345 kV (Ellis Co) and OSM 'Venus Substation' 345 kV (32.4440,-97.0728)",
+      "confidence": 0.95, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Devine Switch",
+      "codes": ["DEVINESW"],
+      "lat": 29.1253, "lon": -98.9243, "voltage_kv": 69,
+      "county": "Medina", "utility": "CPS/AEP",
+      "source": "ERCOT SCED constraint HON_DEVI_1 (Hondo-Devine line) at 69 kV, corroborated by HIFLD/OSM 'Devine' 69 kV substation (29.1253,-98.9243), Medina County adjacent to Hondo",
+      "confidence": 0.9, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "White Point Substation",
+      "codes": ["WHITE_PT"],
+      "lat": 27.9358, "lon": -97.3609, "voltage_kv": 138,
+      "county": "San Patricio", "utility": "AEP Texas",
+      "source": "ERCOT SCED constraint NUECES_WHITE_2_1 (Nueces-White Point line), corroborated by OSM 'Whitepoint Substation' (27.9358,-97.3609) near Corpus Christi; constraint references the 138 kV bus at the same site",
+      "confidence": 0.85, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Coleto Creek Substation",
+      "codes": ["COLETO"],
+      "lat": 28.7169, "lon": -97.2128, "voltage_kv": 138,
+      "county": "Goliad", "utility": "AEP Texas",
+      "source": "ERCOT SCED constraint COLETO_VICTOR2_1 (Coleto-Victoria line), corroborated by OSM 'Coleto Creek Substation' (28.7169,-97.2128) adjacent to Victoria; constraint references the 138 kV bus at the same site",
+      "confidence": 0.85, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Twin Buttes Substation",
+      "codes": ["TWINBU"],
+      "lat": 31.5137, "lon": -100.5980, "voltage_kv": 138,
+      "county": "Tom Green", "utility": "AEP Texas",
+      "source": "ERCOT SCED constraint HARGRO_TWINBU1_1 (Hargrove-Twin Buttes line), corroborated by HIFLD/OSM 'Twin Buttes' (31.5137,-100.5980) near San Angelo, Tom Green County; constraint references the 138 kV bus at the same site",
+      "confidence": 0.85, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Fowlerton Substation",
+      "codes": ["FOWLRTON"],
+      "lat": 28.3715, "lon": -98.8008, "voltage_kv": 138,
+      "county": "La Salle", "utility": "AEP Texas",
+      "source": "ERCOT SCED constraint FWLRTN_TILDEN_1 (Fowlerton-Tilden line), corroborated by OSM 'Fowlerton Substation' (28.3715,-98.8008) in La Salle County; constraint references the 138 kV bus at the same site",
+      "confidence": 0.85, "review_status": "verified_two_source"
+    },
+    {
+      "canonical_name": "Bergheim Substation",
+      "codes": ["BERGHE"],
+      "lat": 29.7887, "lon": -98.5263, "voltage_kv": 138,
+      "county": "Comal", "utility": "CPS Energy",
+      "source": "ERCOT SCED constraint BERGHE_AT1H (Bergheim autotransformer), corroborated by HIFLD 'BERGHEIM' 138 kV (Comal Co) and OSM 'Bergheim Substation' (29.7887,-98.5263)",
+      "confidence": 0.9, "review_status": "verified_two_source"
+    }
+  ]
+}

@@ -3,9 +3,10 @@
 Max 12 iterations. Supervised. GATE: complete arc-row placement >= 25% before any UI.
 
 ## Tasks
-- [doing] R1 — constraint_report.py: 90d frequency-ranked unmatched-code report (7 fields) +
-  alias candidates + est. coverage gain. (cache pull running in background.)
-- [todo] R2 — crosswalk.json + authoritative pre-match (precedence over fuzzy, provenance+conf).
+- [done] R1 — fetch_sced_window.py (277,574 rows/89d) + constraint_report.py. 89d: station 36.8%,
+  arc-row 17.3%. Sole-blocker ranking: OLNEY 3799, SCRCV 2922, MDO 2856, MGSES 2067, VENSW 1710,
+  BCKSW 1690, PALOUSE 1642... top 3 = +9,577 rows -> ~27% (clears 25% gate). commit ce35bd4.
+- [doing] R2 — crosswalk.json + authoritative pre-match (precedence over fuzzy, provenance+conf).
 - [todo] R3 — research+curate smallest top-N set (verified coords only); re-run gate per batch.
 - [todo] UI — only if complete arc-row placement clears 25%.
 
