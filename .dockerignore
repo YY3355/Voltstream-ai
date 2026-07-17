@@ -8,6 +8,7 @@ __pycache__
 !decade_result.json
 !hedge_result.json
 !geo_result.json
+!locational_result.json
 .git
 .gitignore
 *.md

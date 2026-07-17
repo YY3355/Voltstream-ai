@@ -633,6 +633,31 @@ def api_decade():
         return {"error": f"decade result read failed ({e})"}
 
 
+@app.get("/api/locational")
+def api_locational():
+    """Phase 3 — locational decade revenue: what a 1 MW / 2h battery would have earned per YEAR
+    at each ERCOT trading hub, 2018–2025, on real history (perfect-foresight energy arbitrage).
+    Powers the Map tab's year-playback slider. Served from a pre-computed cache
+    (locational_result.json, minutes of bundle compute); honest note if not built yet.
+
+    HUB-LEVEL (regional), a revenue ceiling, energy-only, nominal $, history not forecast —
+    the labels{} block carries these verbatim to the UI."""
+    import json
+    path = os.environ.get("LOCATIONAL_RESULT",
+                          os.path.join(os.path.dirname(__file__), "locational_result.json"))
+    if not os.path.exists(path):
+        return {"available": False,
+                "note": "locational study not computed yet — run `python locational_run.py` to "
+                        "build locational_result.json from the ERCOT SPP bundles"}
+    try:
+        with open(path) as f:
+            result = json.load(f)
+        result["available"] = True
+        return result
+    except Exception as e:
+        return {"error": f"locational result read failed ({e})"}
+
+
 @app.get("/api/hedge")
 def api_hedge():
     """The hedging layer on the Decade Study: how much of a battery's merchant revenue to sell
