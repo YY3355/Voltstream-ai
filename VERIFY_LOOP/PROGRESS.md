@@ -12,7 +12,9 @@ Max 12 iterations. Supervised.
   labels verbatim + NO flow arcs. Verified CDP: 8yrs x 4 hubs, off-by-default, scrub 2020->2021
   spikes radius 24->57, popup year detail, 4 labels present, no arc layer; screenshot confirms
   2021 Uri drama. Other layers/tabs untouched. commit 2a43205.
-- [todo] DEPLOY — push, redeploy Fly (locational_result.json ships in image).
+- [done] DEPLOY — pushed (44ce9ab..d68ed90) + Fly redeployed. Public /api/locational 200 (8yrs
+  x 4 hubs). Public CDP: scrub 2020->2021 spikes 24->57, popup+labels+noArcs all pass, ok=true;
+  live 2021 screenshot shows hot-amber revenue circles + playback panel. ALL DONE.
 
 ## Log
 - init — API confirmed. Cached decade pkls are SINGLE-HUB Houston; raw bundles NOT on disk ->
