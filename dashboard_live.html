@@ -152,6 +152,19 @@
   #county-panel .cp-rank{color:var(--dim)} #county-panel .cp-name{color:var(--ink)}
   #county-panel .cp-mw{color:#f0a35e;text-align:right} #county-panel .cp-sub{color:var(--dim);font-size:9px;grid-column:2/4}
   #county-panel .cp-foot{font-family:var(--mono);font-size:9px;color:var(--dim);padding:7px 11px;border-top:1px solid var(--line);font-style:italic}
+  .loc-playback{border:1px solid var(--line);border-radius:10px;background:var(--panel2);padding:10px 13px;margin:2px 0 10px}
+  .loc-playback .loc-head{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .loc-play{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--panel);
+    color:var(--cyan);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+  .loc-play:hover{border-color:var(--cyan)} .loc-play.playing{color:var(--amber)}
+  .loc-title{font-family:var(--sans);font-size:12px;color:var(--mut)} .loc-title b{color:var(--ink)}
+  .loc-title #loc-year{font-family:var(--mono);color:var(--amber);font-weight:700;font-size:14px}
+  .loc-legend{margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--dim);display:flex;align-items:center;gap:6px}
+  .loc-legend .bar{width:70px;height:9px;border-radius:2px;background:linear-gradient(90deg,#1d3a4d,#22d3ee,#f0a35e,#f85149)}
+  #loc-slider{width:100%;margin:11px 0 3px;accent-color:var(--amber);cursor:pointer}
+  .loc-ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--dim)}
+  .loc-ticks span{cursor:pointer} .loc-ticks span.on{color:var(--amber);font-weight:700}
+  #loc-labels{margin-top:7px}
   .fc-box{margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
   .fc-box .fc-title{font-family:var(--mono);font-size:9.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
   .fc-box .fc-caveat{font-family:var(--sans);font-size:9.5px;color:var(--dim);font-style:italic;line-height:1.4;margin-top:4px}
@@ -310,6 +323,16 @@
       <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
       <div class="wx-banner" id="map-wxbanner" style="display:none"></div>
       <div class="map-controls" id="map-controls"></div>
+      <div class="loc-playback" id="loc-playback" style="display:none">
+        <div class="loc-head">
+          <button class="loc-play" id="loc-play" title="Play the decade">&#9654;</button>
+          <div class="loc-title"><b>What a 1&nbsp;MW / 2h battery would have earned</b> &mdash; perfect-foresight energy arbitrage, by hub, <span id="loc-year">2018</span></div>
+          <div class="loc-legend" id="loc-legend"></div>
+        </div>
+        <input type="range" id="loc-slider" min="0" max="7" value="0" step="1">
+        <div class="loc-ticks" id="loc-ticks"></div>
+        <div class="coopt-note" id="loc-labels"></div>
+      </div>
       <div class="map-row" style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
         <div class="map-wrap" style="position:relative;flex:1 1 560px;min-width:0">
           <div id="map-canvas"></div>
@@ -1307,7 +1330,7 @@ function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
 function cityTip(o){ return `<div class="h">${o.name}</div>`
   +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
   +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyTip(o):cityTip(o); }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyTip(o):id==='locational'?locTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
   if(t.includes('wind')) return [34,211,238,205];
@@ -1362,21 +1385,41 @@ async function loadForecast(hub){ const box=document.getElementById('fc-box'); i
   box.innerHTML=`<div class="fc-title">Next 24h &mdash; day-ahead P10 / P50 / P90</div>`
     +forecastFanSVG(fc)+`<div class="fc-caveat">${fc.caveat||''}</div>`; }
 
+// locational revenue playback (Phase 3): $/MW-year on a FIXED scale across all years
+function locNorm(rev,lo,hi){ return Math.max(0,Math.min(1,((rev||0)-lo)/((hi-lo)||1))); }
+// 4-stop heat ramp matching the legend bar: deep teal -> cyan -> amber -> red (stays vivid, no gray midpoint)
+const LOC_STOPS=[[0.0,[29,58,77]],[0.4,[34,211,238]],[0.72,[240,163,94]],[1.0,[248,81,73]]];
+function locColor(rev,lo,hi){ const t=locNorm(rev,lo,hi);
+  for(let i=1;i<LOC_STOPS.length;i++){ const [t1,c1]=LOC_STOPS[i]; if(t<=t1||i===LOC_STOPS.length-1){
+    const [t0,c0]=LOC_STOPS[i-1], u=(t-t0)/((t1-t0)||1), L=(a,b)=>Math.round(a+(b-a)*u);
+    return [L(c0[0],c1[0]),L(c0[1],c1[1]),L(c0[2],c1[2]),235]; } }
+  return [248,81,73,235]; }
+function locTip(o){ return `<div class="h">${(o.hub||'').replace('HB_','')} Hub &mdash; ${o._year}</div>`
+  +`<div><b>$${(o.rev||0).toLocaleString()}/MW-year</b> (perfect-foresight ceiling)</div>`
+  +`<div>best day ${o.best_day} &middot; <b>$${(o.best_day_rev||0).toLocaleString()}</b></div>`
+  +`<div>max price seen $${(o.max_price||0).toLocaleString()} &middot; top-10 days = ${o.top10_share_pct}%</div>`
+  +`<span class="pr">hub-level (regional) &middot; energy-only ceiling &middot; history, not a forecast</span>`; }
+
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
   const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
-  let dart,geo,wx,ch;
-  try{ [dart,geo,wx,ch]=await Promise.all([
+  let dart,geo,wx,ch,loc;
+  try{ [dart,geo,wx,ch,loc]=await Promise.all([
       fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
       fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]})),
       fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]})),
-      fetch('/api/countyheat').then(r=>r.json()).catch(()=>({error:'county heat unreachable',counties:[]}))]); }
+      fetch('/api/countyheat').then(r=>r.json()).catch(()=>({error:'county heat unreachable',counties:[]})),
+      fetch('/api/locational').then(r=>r.json()).catch(()=>({error:'locational unreachable',years:[],frames:{}}))]); }
   catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
   const hubs=(dart&&dart.points)||[], batts=(geo&&geo.batteries)||[], plants=(geo&&geo.plants)||[], cities=(geo&&geo.cities)||[];
   const wxZones=(wx&&wx.zones)||[], wxSignal=wx&&wx.signal;
   const counties=(ch&&ch.counties)||[], allCounties=(ch&&ch.all_counties)||[];
+  const locYears=(loc&&loc.years)||[], locFrames=(loc&&loc.frames)||{},
+        locLo=(loc&&loc.rev_min)||0, locHi=(loc&&loc.rev_max)||1,
+        locAll=locYears.flatMap(y=>locFrames[String(y)]||[]);
+  let locIdx=0;
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1394,12 +1437,14 @@ async function initMap(){
 
   // click popup: one Popup at a time, at the picked feature's coordinate.
   // Hub popups additionally lazy-load a next-24h day-ahead forecast fan (T3).
-  let _popup=null;
+  let _popup=null, _popupLoc=null;                     // _popupLoc: hub of an open locational popup
   function pop(info){ if(!info||!info.object) return false; const o=info.object,id=info.layer&&info.layer.id;
     if(_popup) _popup.remove();
+    _popupLoc = (id==='locational') ? o.hub : null;    // scrubbing the year refreshes this popup
     let html=tipFor(id,o);
     if(id==='dart-hubs') html+='<div class="fc-box" id="fc-box"><div class="fc-load">loading day-ahead forecast…</div></div>';
     _popup=new mapboxgl.Popup({closeButton:true,offset:10,maxWidth:'300px'}).setLngLat([o.lon,o.lat]).setHTML(html).addTo(map);
+    _popup.on('close',()=>{ _popupLoc=null; });
     if(id==='dart-hubs' && o.id) loadForecast(o.id);
     return true; }
   window.__pop=pop;                                    // debug handle for popup/forecast tests
@@ -1435,6 +1480,12 @@ async function initMap(){
         getColor:[255,255,255,235],getPixelOffset:[0,-19],fontFamily:'monospace',
         getTextAnchor:'middle',getAlignmentBaseline:'center',outlineWidth:2,outlineColor:[10,14,20,255]});
       return [scatter,labels]; }},
+    locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
+      const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
+      return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
+        getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>16+Math.sqrt(locNorm(p.rev,locLo,locHi))*46,radiusMinPixels:12,radiusMaxPixels:72,
+        stroked:true,lineWidthMinPixels:2,getLineColor:[255,255,255,190],getFillColor:p=>locColor(p.rev,locLo,locHi),
+        updateTriggers:{getRadius:[locIdx],getFillColor:[locIdx]},onClick:pop}); }},
   };
   function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
   const buildLayers=()=>activeLayers().flatMap(k=>[].concat(REG[k].make()));   // flatten multi-layer entries
@@ -1451,7 +1502,34 @@ async function initMap(){
       +`<input type="checkbox" id="lyr-${k}" ${L.on&&has?'checked':''} ${has?'':'disabled'}>`
       +`<span class="sw" style="background:${L.sw}"></span>${L.label}<span class="ct">${L.data.length}</span></label>`;}).join('');
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
-    cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers(); });});
+    cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
+      if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; } });});
+
+  // ── Phase 3: decade-revenue year playback (slider + play, fixed color/size scale) ──
+  const pb=$('loc-playback');
+  if(pb && locYears.length){
+    $('loc-slider').max=locYears.length-1;
+    $('loc-ticks').innerHTML=locYears.map((y,i)=>`<span data-i="${i}">${y}</span>`).join('');
+    $('loc-legend').innerHTML=`$${Math.round(locLo/1000)}k <span class="bar"></span> $${Math.round(locHi/1000)}k /MW-yr`;
+    const L=(loc&&loc.labels)||{};
+    $('loc-labels').innerHTML=`<b style="color:var(--mut)">Honest scope:</b> ${L.ceiling||''} ${L.regional||''} ${L.excludes||''} ${L.not_forecast||''} Source: real ERCOT hub SPP ${locYears[0]}&ndash;${locYears[locYears.length-1]} (monthly bundles).`;
+    let _timer=null;
+    function stopPlay(){ if(_timer){clearInterval(_timer);_timer=null;} $('loc-play').classList.remove('playing'); $('loc-play').innerHTML='&#9654;'; }
+    function setYear(i){ locIdx=Math.max(0,Math.min(locYears.length-1,i));
+      $('loc-slider').value=locIdx; $('loc-year').textContent=locYears[locIdx];
+      document.querySelectorAll('#loc-ticks span').forEach((s,k)=>s.classList.toggle('on',k===locIdx));
+      window.__locYear=locYears[locIdx]; window.__locIdx=locIdx;
+      if(REG.locational.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint();
+        if(_popup&&_popupLoc){ const o=(locFrames[String(locYears[locIdx])]||[]).find(p=>p.hub===_popupLoc); if(o) _popup.setHTML(locTip({...o,_year:locYears[locIdx]})); } } }
+    window.__locSetYear=setYear;
+    $('loc-slider').addEventListener('input',e=>{ stopPlay(); setYear(+e.target.value); });
+    $('loc-ticks').addEventListener('click',e=>{ const s=e.target.closest('span'); if(s){ stopPlay(); setYear(+s.dataset.i); }});
+    $('loc-play').addEventListener('click',()=>{ if(_timer){ stopPlay(); return; }
+      const cb=$('lyr-locational'); if(cb && !cb.checked){ cb.checked=true; cb.dispatchEvent(new Event('change')); }   // ensure layer visible
+      $('loc-play').classList.add('playing'); $('loc-play').innerHTML='&#10073;&#10073;';
+      _timer=setInterval(()=>{ setYear(locIdx+1>=locYears.length?0:locIdx+1); },900); });
+    setYear(0);
+  }
 
   // county list panel — "list all the counties" view (rollup of real EIA battery assets)
   const cp=$('county-panel');
@@ -1479,14 +1557,15 @@ async function initMap(){
     bn.innerHTML=`<span class="wx-caveat">weather layer unavailable — ${wx.error}</span>`; }
 
   // meta + legend + honest scope (T4)
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties.</b> `
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties · ${locYears.length} yrs revenue playback.</b> `
     +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
     +`${wx&&wx.source?'Weather: '+wx.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
   $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich (click: 24h forecast)</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0663a"></i>county heat (fill+size=MW)</span>`
-    +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`;
+    +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`
+    +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`;
   $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. County-heat points are a <b>rollup</b> of real EIA assets placed at the <b>mean position</b> of each county's batteries (a marker, not a boundary). There is <b>no price heatmap</b> — 4 hub prices can't honestly paint a statewide surface. Weather zones are <b>regional centroids</b> (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
 let _coInterval=false;
