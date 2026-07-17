@@ -165,6 +165,16 @@
   .loc-ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--dim)}
   .loc-ticks span{cursor:pointer} .loc-ticks span.on{color:var(--amber);font-weight:700}
   #loc-labels{margin-top:7px}
+  .arc-banner{border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;background:var(--panel2);padding:10px 13px;margin:2px 0 10px}
+  .arc-banner .arc-head{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .arc-banner .arc-title{font-family:var(--sans);font-size:12px;color:var(--mut)} .arc-banner .arc-title b{color:var(--ink)}
+  .arc-livetoggle{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .arc-livetoggle input{accent-color:var(--red)}
+  .arc-stats{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:6px}
+  .arc-stats b{color:var(--amber)} .arc-stats .barmini{display:inline-block;width:60px;height:8px;border-radius:2px;background:linear-gradient(90deg,#58a6ff,#f0a35e,#f85149);vertical-align:middle;margin:0 4px}
+  #arc-labels{margin-top:6px}
+  .arc-roadmap{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:6px;line-height:1.5}
+  .arc-roadmap b{color:var(--mut)} .arc-roadmap .code{color:#c9a06a}
   .fc-box{margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
   .fc-box .fc-title{font-family:var(--mono);font-size:9.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
   .fc-box .fc-caveat{font-family:var(--sans);font-size:9.5px;color:var(--dim);font-style:italic;line-height:1.4;margin-top:4px}
@@ -332,6 +342,15 @@
         <input type="range" id="loc-slider" min="0" max="7" value="0" step="1">
         <div class="loc-ticks" id="loc-ticks"></div>
         <div class="coopt-note" id="loc-labels"></div>
+      </div>
+      <div class="arc-banner" id="arc-banner" style="display:none">
+        <div class="arc-head">
+          <span class="arc-title"><b>Measured constraint arcs</b> &mdash; ERCOT SCED congested grid</span>
+          <label class="arc-livetoggle"><input type="checkbox" id="arc-live"> live now</label>
+        </div>
+        <div class="arc-stats" id="arc-stats"></div>
+        <div class="coopt-note" id="arc-labels"></div>
+        <div class="arc-roadmap" id="arc-roadmap"></div>
       </div>
       <div class="map-row" style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
         <div class="map-wrap" style="position:relative;flex:1 1 560px;min-width:0">
@@ -1330,7 +1349,8 @@ function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
 function cityTip(o){ return `<div class="h">${o.name}</div>`
   +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
   +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyTip(o):id==='locational'?locTip(o):cityTip(o); }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyTip(o):id==='locational'?locTip(o)
+  :id==='constraint-arcs'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
   if(t.includes('wind')) return [34,211,238,205];
@@ -1399,17 +1419,38 @@ function locTip(o){ return `<div class="h">${(o.hub||'').replace('HB_','')} Hub 
   +`<div>best day ${o.best_day} &middot; <b>$${(o.best_day_rev||0).toLocaleString()}</b></div>`
   +`<div>max price seen $${(o.max_price||0).toLocaleString()} &middot; top-10 days = ${o.top10_share_pct}%</div>`
   +`<span class="pr">hub-level (regional) &middot; energy-only ceiling &middot; history, not a forecast</span>`; }
+// constraint arcs: color by shadow price ($/MWh), width by bind frequency
+function shadowColor(sp){ const t=Math.max(0,Math.min(1,Math.log10(Math.max(1,sp||1))/Math.log10(3000))),   // $1..$3000 log
+  L=(a,b,u)=>Math.round(a+(b-a)*u); let c;
+  if(t<0.5){const u=t/0.5; c=[L(88,240,u),L(166,163,u),L(255,94,u)];}   // blue -> amber
+  else{const u=(t-0.5)/0.5; c=[L(240,248,u),L(163,81,u),L(94,73,u)];}   // amber -> red
+  return [c[0],c[1],c[2],210]; }
+function arcTip(o){ return `<div class="h">${o.from_station} &harr; ${o.to_station}</div>`
+  +`<div>bound <b>${o.bind_pct}%</b> of the last 90d (${(o.bind_intervals||0).toLocaleString()} SCED runs)</div>`
+  +`<div>shadow price mean <b>$${(o.mean_shadow||0).toLocaleString()}</b> &middot; max $${(o.max_shadow||0).toLocaleString()}/MWh</div>`
+  +(o.mean_util!=null?`<div>mean utilization ${Math.round(o.mean_util*100)}% of limit</div>`:'')
+  +`<div style="color:var(--mut)">${(o.kv||[]).join('/')} kV &middot; ${(o.constraints||[]).slice(0,2).join(', ')}</div>`
+  +`<span class="pr">measured ERCOT SCED constraint (NP6-86-CD) &mdash; reported flow, not a model</span>`; }
+function arcNodeTip(o){ return `<div class="h">${o.from_station} (station constraint)</div>`
+  +`<div>bound <b>${o.bind_pct}%</b> of 90d &middot; shadow mean $${(o.mean_shadow||0).toLocaleString()}, max $${(o.max_shadow||0).toLocaleString()}</div>`
+  +`<div style="color:var(--mut)">${(o.kv||[]).join('/')} kV &middot; ${(o.constraints||[]).slice(0,2).join(', ')}</div>`
+  +`<span class="pr">transformer/bus limit AT one station (from=to) &mdash; drawn as a node, not a line</span>`; }
+function liveArcTip(o){ return `<div class="h">${o.from_station} &harr; ${o.to_station} &middot; <span style="color:#f85149">LIVE</span></div>`
+  +`<div>flow <b>${(o.flow_mw||0).toLocaleString()} MW</b> / ${(o.limit_mw||0).toLocaleString()} MW limit (${Math.round((o.utilization||0)*100)}%)</div>`
+  +`<div>shadow price <b>$${(o.shadow_price||0).toLocaleString()}/MWh</b></div>`
+  +`<span class="pr">current SCED snapshot ${o.contingency?'&middot; '+o.contingency:''}</span>`; }
 
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
   const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
-  let dart,geo,wx,ch,loc;
-  try{ [dart,geo,wx,ch,loc]=await Promise.all([
+  let dart,geo,wx,ch,loc,arc;
+  try{ [dart,geo,wx,ch,loc,arc]=await Promise.all([
       fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
       fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]})),
       fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]})),
       fetch('/api/countyheat').then(r=>r.json()).catch(()=>({error:'county heat unreachable',counties:[]})),
-      fetch('/api/locational').then(r=>r.json()).catch(()=>({error:'locational unreachable',years:[],frames:{}}))]); }
+      fetch('/api/locational').then(r=>r.json()).catch(()=>({error:'locational unreachable',years:[],frames:{}})),
+      fetch('/api/constraintarcs').then(r=>r.json()).catch(()=>({error:'arcs unreachable',aggregate_arcs:[]}))]); }
   catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; _mapInited=false; return; }
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
@@ -1420,6 +1461,9 @@ async function initMap(){
         locLo=(loc&&loc.rev_min)||0, locHi=(loc&&loc.rev_max)||1,
         locAll=locYears.flatMap(y=>locFrames[String(y)]||[]);
   let locIdx=0;
+  const arcAgg=(arc&&arc.aggregate_arcs)||[], arcNodes=(arc&&arc.node_constraints)||[],
+        arcCov=(arc&&arc.coverage)||{}, arcRoad=(arc&&arc.roadmap_unmatched)||[], arcLabels=(arc&&arc.labels)||{};
+  let arcLive=null, arcLiveOn=false;   // live-now snapshot (lazy-fetched on toggle)
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1441,9 +1485,11 @@ async function initMap(){
   function pop(info){ if(!info||!info.object) return false; const o=info.object,id=info.layer&&info.layer.id;
     if(_popup) _popup.remove();
     _popupLoc = (id==='locational') ? o.hub : null;    // scrubbing the year refreshes this popup
+    // arcs have no single point -> place the popup at the line midpoint (source/target lon,lat)
+    let lngLat = (o.source && o.target) ? [(o.source[0]+o.target[0])/2, (o.source[1]+o.target[1])/2] : [o.lon, o.lat];
     let html=tipFor(id,o);
     if(id==='dart-hubs') html+='<div class="fc-box" id="fc-box"><div class="fc-load">loading day-ahead forecast…</div></div>';
-    _popup=new mapboxgl.Popup({closeButton:true,offset:10,maxWidth:'300px'}).setLngLat([o.lon,o.lat]).setHTML(html).addTo(map);
+    _popup=new mapboxgl.Popup({closeButton:true,offset:10,maxWidth:'300px'}).setLngLat(lngLat).setHTML(html).addTo(map);
     _popup.on('close',()=>{ _popupLoc=null; });
     if(id==='dart-hubs' && o.id) loadForecast(o.id);
     return true; }
@@ -1486,6 +1532,25 @@ async function initMap(){
         getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>16+Math.sqrt(locNorm(p.rev,locLo,locHi))*46,radiusMinPixels:12,radiusMaxPixels:72,
         stroked:true,lineWidthMinPixels:2,getLineColor:[255,255,255,190],getFillColor:p=>locColor(p.rev,locLo,locHi),
         updateTriggers:{getRadius:[locIdx],getFillColor:[locIdx]},onClick:pop}); }},
+    constraints:{label:'Constraint arcs (SCED)',sw:'#f85149',data:arcAgg.concat(arcNodes),on:false,make:()=>{
+      const out=[];
+      if(arcLiveOn && arcLive){                                  // live-now: current SCED snapshot
+        const la=(arcLive.arcs)||[];
+        out.push(new deck.ArcLayer({id:'constraint-live',data:la,pickable:true,
+          getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
+          getSourceColor:a=>shadowColor(a.shadow_price),getTargetColor:a=>shadowColor(a.shadow_price),
+          getWidth:a=>2+Math.min(8,(a.utilization||0)*6),getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[la.length]}}));
+      } else {                                                   // aggregate: 90d binding frequency
+        const mx=Math.max(...arcAgg.map(a=>a.bind_pct),1);
+        out.push(new deck.ArcLayer({id:'constraint-arcs',data:arcAgg,pickable:true,
+          getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
+          getSourceColor:a=>shadowColor(a.mean_shadow),getTargetColor:a=>shadowColor(a.mean_shadow),
+          getWidth:a=>1.5+Math.sqrt(a.bind_pct/mx)*9,getHeight:0.35,onClick:pop}));
+        if(arcNodes.length) out.push(new deck.ScatterplotLayer({id:'constraint-nodes',data:arcNodes,pickable:true,
+          getPosition:n=>[n.lon,n.lat],radiusUnits:'pixels',getRadius:n=>4+Math.sqrt(n.bind_pct/mx)*10,radiusMinPixels:4,radiusMaxPixels:16,
+          stroked:true,lineWidthMinPixels:1.2,getLineColor:[255,255,255,180],getFillColor:n=>shadowColor(n.mean_shadow),onClick:pop}));
+      }
+      return out; }},
   };
   function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
   const buildLayers=()=>activeLayers().flatMap(k=>[].concat(REG[k].make()));   // flatten multi-layer entries
@@ -1503,7 +1568,33 @@ async function initMap(){
       +`<span class="sw" style="background:${L.sw}"></span>${L.label}<span class="ct">${L.data.length}</span></label>`;}).join('');
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
-      if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; } });});
+      if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
+      if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; } });});
+
+  // ── constraint-arc banner: coverage stats + honest labels + unmatched roadmap + live toggle ──
+  const ab=$('arc-banner');
+  if(ab && (arcAgg.length || arcNodes.length)){
+    $('arc-stats').innerHTML=`<b>${arcAgg.length}</b> lines + <b>${arcNodes.length}</b> station constraints drawn `
+      +`&middot; <b>${arcCov.arc_row_pct}%</b> of constraint-rows placeable &middot; <b>${arcCov.stations_resolved}/${arcCov.stations_total}</b> stations resolved `
+      +`<span class="barmini"></span>width = 90-day bind frequency, color = mean shadow price.`;
+    $('arc-labels').innerHTML=`<b style="color:var(--mut)">Honest scope:</b> ${arcLabels.measured||''} ${arcLabels.partial||''} ${arcLabels.aggregate||''} ${arcLabels.scope||''}`;
+    if(arcRoad.length) $('arc-roadmap').innerHTML=`<b>Roadmap</b> &mdash; top unresolved station codes (no public geocode yet; would add the most arcs): `
+      +arcRoad.slice(0,12).map(r=>`<span class="code">${r.code}</span>&nbsp;(${(r.sole_blocker_rows||0).toLocaleString()})`).join(', ')+'.';
+    const lc=$('arc-live');
+    lc.addEventListener('change',async()=>{
+      arcLiveOn=lc.checked;
+      if(arcLiveOn && !arcLive){
+        $('arc-stats').insertAdjacentHTML('beforeend',' <span id="arc-lwait" style="color:var(--dim)">loading live snapshot…</span>');
+        try{ arcLive=await (await fetch('/api/constraintarcs?mode=live')).json(); }catch(e){ arcLive={arcs:[],error:'unreachable'}; }
+        const w=$('arc-lwait'); if(w) w.remove();
+      }
+      if(arcLiveOn){ const n=(arcLive&&arcLive.arcs)?arcLive.arcs.length:0;
+        $('arc-stats').insertAdjacentHTML('beforeend',` <span id="arc-lnote" style="color:${n?'#f85149':'var(--dim)'}">live: ${n} arc${n===1?'':'s'} binding now${n?'':' (honestly empty — see the 90-day view)'}.</span>`);
+      } else { const w=$('arc-lnote'); if(w) w.remove(); }
+      if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); }
+      window.__arcLiveOn=arcLiveOn; window.__arcLiveCount=(arcLive&&arcLive.arcs)?arcLive.arcs.length:0;
+    });
+  }
 
   // ── Phase 3: decade-revenue year playback (slider + play, fixed color/size scale) ──
   const pb=$('loc-playback');
@@ -1557,7 +1648,7 @@ async function initMap(){
     bn.innerHTML=`<span class="wx-caveat">weather layer unavailable — ${wx.error}</span>`; }
 
   // meta + legend + honest scope (T4)
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties · ${locYears.length} yrs revenue playback.</b> `
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties · ${locYears.length} yrs revenue playback · ${arcAgg.length} constraint arcs.</b> `
     +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
     +`${wx&&wx.source?'Weather: '+wx.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
@@ -1565,7 +1656,8 @@ async function initMap(){
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0663a"></i>county heat (fill+size=MW)</span>`
     +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`
-    +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`;
+    +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
+    +`<span><i style="background:#f85149"></i>constraint arcs (width=90d bind freq, color=shadow $)</span>`;
   $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. County-heat points are a <b>rollup</b> of real EIA assets placed at the <b>mean position</b> of each county's batteries (a marker, not a boundary). There is <b>no price heatmap</b> — 4 hub prices can't honestly paint a statewide surface. Weather zones are <b>regional centroids</b> (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
 let _coInterval=false;
