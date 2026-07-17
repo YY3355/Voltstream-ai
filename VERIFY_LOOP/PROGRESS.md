@@ -1,18 +1,21 @@
-# Progress — Phase 2 FINAL (county heat + day-ahead forecast)
+# Progress — Phase 3 (locational decade revenue + year playback)
 
 Max 12 iterations. Supervised.
 
 ## Tasks
-- [done] T1 — /api/countyheat + /api/forecast + map_layers.py. Verified: fixture PASSES;
-  countyheat 200 (87 counties, 16,316.8 MW, Brazoria top); forecast 200 HOUSTON/WEST/NORTH
-  (96 pts, ordered quantiles, caveat). commit dcc379a.
-- [done] T2+T3 — county heat layer + ranked 87-county panel + hub-popup forecast fan. Verified
-  CDP: panel 87 rows, county toggle+pickable, hub fan SVG + caveat verbatim, scope rollup/mean-
-  position/no-heatmap; screenshot confirms. Other layers/tabs untouched. commit f471224.
-- [done] T4 — STOP: no transmission/constraint mapping added. Phase 2 stands here.
-- [todo] DEPLOY — push, redeploy Fly (forecast may honest-error if the store is thin there).
+- [done] T1 — locational_run.py (4-hub bundle extract). Verified: fixture PASSES; 8yrs x 4 hubs,
+  0 dropped; Houston cross-check vs decade cache = 280,477 intervals, max diff $0.0000; 2021 Uri
+  every hub (maxP ~$9k, top10 ~60%, best 2021-02-15 ~$31k). 11KB JSON committed. commit fa372c8.
+- [done] T2 — /api/locational endpoint + .dockerignore un-exclude. Verified 200 (7ms), 8yrs x
+  4 hubs, rev scale + mean_by_hub + labels. commit bce56e1.
+- [done] T3+T4 — year playback (slider+play, fixed teal->red scale, hub year popup) + honest
+  labels verbatim + NO flow arcs. Verified CDP: 8yrs x 4 hubs, off-by-default, scrub 2020->2021
+  spikes radius 24->57, popup year detail, 4 labels present, no arc layer; screenshot confirms
+  2021 Uri drama. Other layers/tabs untouched. commit 2a43205.
+- [todo] DEPLOY — push, redeploy Fly (locational_result.json ships in image).
 
 ## Log
-- init — API confirmed. get_prices_rolling returns (series, meta) TUPLE; use include_today=False
-  + fetch_missing=False for a fast forecast endpoint (cached history only). 4 hubs supported.
-  forecast_hub RAISES on <960 rows -> honest passthrough. Reuse Map REG/pop pattern.
+- init — API confirmed. Cached decade pkls are SINGLE-HUB Houston; raw bundles NOT on disk ->
+  must re-download bundles, parse all 4 hubs per download. 4 hub coords in map_data.HUB_POINTS.
+  Plan: reuse bundle_to_hub_series(zip_bytes,hub) on once-downloaded bytes (or single-pass
+  multi-hub parser); cross-check Houston output vs existing 2021.pkl.
