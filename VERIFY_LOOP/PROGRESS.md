@@ -17,7 +17,9 @@ Max 12 iterations. Supervised. GATE: complete arc-row placement >= 25% before an
 - [done] T3+T4 — constraint-arc layer (49 arcs + 15 nodes, aggregate-first), live-now toggle
   (honest 0), banner (coverage + roadmap + scope), midpoint popups, measured-only. Verified CDP
   + screenshot; other layers/tabs untouched. commit 6861994.
-- [doing] DEPLOY — push, redeploy Fly.
+- [done] DEPLOY — pushed (228451e..c9dbcd6) + Fly redeployed. Public /api/constraintarcs 200
+  (49 arcs, 25% coverage, roadmap). Public CDP: toggle+banner+arclayer+nodes+popup+live-now(0)
+  all pass, ok=true; live screenshot shows congested-grid arcs + banner. ALL DONE.
 
 ## Log
 - prior gate STOP: 33.1% station / 6.1% arc-row / 14.1% unique-constraint / 0 live arcs.
