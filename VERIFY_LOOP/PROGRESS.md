@@ -13,7 +13,9 @@ Max 15 iterations. Supervised.
   + scrubber (slider+play) reusing snapshot-arc rendering + B's particles. Verified CDP: scrub
   matches API frames exactly (02:20=1,02:30=2), particles animate measured-only, replay label.
   commit 671290b.
-- [doing] DEPLOY — push, redeploy Fly.
+- [done] DEPLOY — pushed (468650c..a00bd27) + Fly redeployed. Public verified via CDP: A alerts
+  ok (1 info, verbatim), B flow ok (agg 0 particles / live 10 advancing), C intraday ok (244
+  snapshots, frames match, particles animate). ALL DONE.
 
 ## Log
 - init — alert fixture PASSES. run_dart has stats+basis; run_weather has signal. Alert
