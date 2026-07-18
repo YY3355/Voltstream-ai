@@ -175,6 +175,9 @@
   #arc-labels{margin-top:6px}
   .arc-roadmap{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:6px;line-height:1.5}
   .arc-roadmap b{color:var(--mut)} .arc-roadmap .code{color:#c9a06a}
+  .intraday-ctl{display:flex;align-items:center;gap:10px;margin-top:9px}
+  #intraday-slider{flex:1;accent-color:var(--red);cursor:pointer}
+  .intraday-label{font-family:var(--mono);font-size:11px;color:var(--amber);white-space:nowrap;min-width:150px}
   .alert-strip{border:1px solid var(--line);border-radius:10px;background:var(--panel2);padding:9px 12px;margin:2px 0 10px}
   .alert-strip.sev-none{border-left:3px solid var(--line)}
   .alert-strip.sev-info{border-left:3px solid var(--blue)}
@@ -366,9 +369,15 @@
       <div class="arc-banner" id="arc-banner" style="display:none">
         <div class="arc-head">
           <span class="arc-title"><b>Measured constraint arcs</b> &mdash; ERCOT SCED congested grid</span>
+          <label class="arc-livetoggle"><input type="checkbox" id="intraday-on"> intraday replay</label>
           <label class="arc-livetoggle"><input type="checkbox" id="arc-live"> live now</label>
         </div>
         <div class="arc-stats" id="arc-stats"></div>
+        <div class="intraday-ctl" id="intraday-ctl" style="display:none">
+          <button class="loc-play" id="intraday-play" title="Play the day">&#9654;</button>
+          <input type="range" id="intraday-slider" min="0" max="0" value="0" step="1">
+          <span class="intraday-label" id="intraday-label"></span>
+        </div>
         <div class="coopt-note" id="arc-labels"></div>
         <div class="arc-roadmap" id="arc-roadmap"></div>
       </div>
@@ -1581,7 +1590,7 @@ async function initMap(){
   map.addControl(overlay); window.__overlay=overlay;   // debug handle for pick tests
   window.__activeLayers=activeLayers();
   // the current MEASURED snapshot arc set: live-now, else intraday-selected, else none.
-  function snapshotArcs(){ const s = arcLiveOn ? (arcLive&&arcLive.arcs) : (intradayOn ? intradayArcs : null); return (s&&s.length)?s:null; }
+  function snapshotArcs(){ const s = intradayOn ? intradayArcs : (arcLiveOn ? (arcLive&&arcLive.arcs) : null); return (s&&s.length)?s:null; }
   let _curLayers=buildLayers();
   function refreshLayers(){ _curLayers=buildLayers(); overlay.setProps({layers:_flowRAF?_curLayers.concat(particleLayer()):_curLayers}); window.__activeLayers=activeLayers(); }
 
@@ -1633,6 +1642,7 @@ async function initMap(){
     const lc=$('arc-live');
     lc.addEventListener('change',async()=>{
       arcLiveOn=lc.checked;
+      if(arcLiveOn){ const io=$('intraday-on'); if(io&&io.checked){ io.checked=false; io.dispatchEvent(new Event('change')); } }   // mutually exclusive with intraday
       if(arcLiveOn && !arcLive){
         $('arc-stats').insertAdjacentHTML('beforeend',' <span id="arc-lwait" style="color:var(--dim)">loading live snapshot…</span>');
         try{ arcLive=await (await fetch('/api/constraintarcs?mode=live')).json(); }catch(e){ arcLive={arcs:[],error:'unreachable'}; }
@@ -1645,6 +1655,38 @@ async function initMap(){
       syncFlow();
       window.__arcLiveOn=arcLiveOn; window.__arcLiveCount=(arcLive&&arcLive.arcs)?arcLive.arcs.length:0;
     });
+
+    // ── Task C: intraday replay — scrub real SCED snapshots of a recent day ──
+    let intraday=null, _idIdx=0, _idTimer=null;
+    function idStop(){ if(_idTimer){clearInterval(_idTimer);_idTimer=null;} $('intraday-play').classList.remove('playing'); $('intraday-play').innerHTML='&#9654;'; }
+    function idSet(i){ if(!intraday) return; const ts=intraday.timestamps; _idIdx=Math.max(0,Math.min(ts.length-1,i));
+      $('intraday-slider').value=_idIdx; const t=ts[_idIdx];
+      intradayArcs=(intraday.frames[t])||[];                       // real snapshot arcs (or honestly empty)
+      const hhmm=t.slice(11,16), n=intradayArcs.length;
+      $('intraday-label').innerHTML=`${hhmm} &middot; ${n} arc${n===1?'':'s'} binding`;
+      window.__intradayTs=t; window.__intradayArcCount=n; window.__intradayIdx=_idIdx;
+      if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); }
+      syncFlow();
+    }
+    $('intraday-on').addEventListener('change',async e=>{
+      intradayOn=e.target.checked;
+      if(intradayOn){
+        const lc=$('arc-live'); if(lc.checked){ lc.checked=false; arcLiveOn=false; }   // mutually exclusive with live
+        if(!intraday){ try{ intraday=await (await fetch('/api/intraday')).json(); }catch(err){ intraday={timestamps:[],frames:{}}; } }
+        $('intraday-slider').max=Math.max(0,(intraday.timestamps.length-1));
+        $('intraday-ctl').style.display='flex';
+        $('arc-labels').insertAdjacentHTML('afterbegin',`<b style="color:var(--amber)">Replay of real SCED snapshots &mdash; ${intraday.day} (${intraday.n_snapshots} runs).</b> `);
+        idSet(Math.floor((intraday.timestamps.length||1)*0.58));    // open near the afternoon congestion peak
+      } else { idStop(); $('intraday-ctl').style.display='none'; intradayArcs=null;
+        if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); } syncFlow(); }
+      window.__intradayOn=intradayOn;
+    });
+    $('intraday-slider').addEventListener('input',e=>{ idStop(); idSet(+e.target.value); });
+    $('intraday-play').addEventListener('click',()=>{ if(_idTimer){ idStop(); return; }
+      if(!intraday||!intraday.timestamps.length) return;
+      $('intraday-play').classList.add('playing'); $('intraday-play').innerHTML='&#10073;&#10073;';
+      _idTimer=setInterval(()=>{ idSet(_idIdx+1>=intraday.timestamps.length?0:_idIdx+1); },180); });
+    window.__idSet=(i)=>idSet(i);
   }
 
   // ── Phase 3: decade-revenue year playback (slider + play, fixed color/size scale) ──

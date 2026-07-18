@@ -11,6 +11,7 @@ __pycache__
 !locational_result.json
 !constraintarcs_result.json
 !crosswalk.json
+!intraday_result.json
 .git
 .gitignore
 *.md

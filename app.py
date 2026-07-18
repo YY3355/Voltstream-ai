@@ -713,6 +713,24 @@ def api_alerts():
     return res
 
 
+@app.get("/api/intraday")
+def api_intraday():
+    """Intraday replay: one recent day of real NP6-86-CD SCED snapshots as placeable
+    constraint-arc frames (~every 5 min). Powers the Map tab's time scrubber — which lines were
+    binding through the day. Served from the committed intraday_result.json; snapshots with no
+    placeable binding constraint are honestly empty."""
+    import json
+    path = os.environ.get("INTRADAY_RESULT",
+                          os.path.join(os.path.dirname(__file__), "intraday_result.json"))
+    if not os.path.exists(path):
+        return {"available": False, "note": "intraday replay not computed — run "
+                "`python intraday_run.py`"}
+    with open(path) as f:
+        res = json.load(f)
+    res["available"] = True
+    return res
+
+
 @app.get("/api/constraintarcs")
 def api_constraintarcs(mode: str = "aggregate"):
     """Measured ERCOT transmission-constraint flow arcs (NP6-86-CD SCED shadow prices).
