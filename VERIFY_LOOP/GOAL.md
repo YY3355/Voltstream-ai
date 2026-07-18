@@ -1,41 +1,47 @@
-# GOAL — recover constraint-arc coverage via a curated ERCOT station crosswalk (before shelving)
+# GOAL — finish Phase 3: (A) live alerts, (B) animated flow, (C) intraday playback
 
-Guardrail: MEASURED only, no invented locations. GATE unchanged: build UI only when COMPLETE
-ARC-ROW placement >= 25%. Prior gate result: 33% station / 6.1% arc-row / 14.1% unique-constraint
-/ 0 live arcs -> stopped. Now attempt recovery per the user's plan.
+Three tasks, commit each. alert_engine.py fixture-tested.
 
-## Recovery plan (no UI until the gate clears)
-1. **Frequency-ranked unmatched-code report** over a 90-day SCED window. Per unmatched code:
-   (1) # constraint rows affected, (2) # unique counterpart stations, (3) voltage levels,
-   (4) most common overloaded-element (ConstraintName), (5) most common contingency names,
-   (6) likely duplicate aliases, (7) estimated complete-arc coverage gain if resolved.
-2. **Alias normalization** — collapse LEONCRK/LEON_CRK/LEON CRK, strip bus/equip suffixes
-   (MV_HBRG4, W_BATESV, S_MISSIN) where they denote one physical station.
-3. **Curated crosswalk** (crosswalk.json), schema per code: station_code, canonical_name, lat,
-   lon, voltage_kv, utility, county, source, confidence, review_status, aliases[]. Authoritative
-   layer that takes PRECEDENCE over fuzzy matching in match_stations.
-4. **Research the smallest set** of top-frequency codes to lift complete arc-row placement >=25%.
-   Accept a coordinate ONLY with an ERCOT doc / utility|PUCT filing / two corroborating
-   independent sources. Store provenance + confidence. NO city-name guesses. Do NOT loosen fuzzy
-   matching.
-5. **Re-run the gate after every batch** (station match, arc-row %, unique-constraint %, live).
-   Build UI only after complete arc-row placement clears 25%.
-
-## Assets
-- substation_registry.py — HIFLD+OSM = 9,472 TX subs (committed b429160). data_archive/registry/
-  (gitignored). data_archive/constraints/sced_90d.pkl — cached 90d NP6-86-CD (gitignored).
-- constraint_arcs.py (staged, fixture-tested): parse_constraints / match_stations / build_arcs.
+## APIs / facts
+- `alert_engine.run_alerts(dart, weather, constraints)` -> {alerts[], n, max_severity, context,
+  note}; alert: id/source/severity(info<watch<alert)/threshold/value/detail/rationale.
+  Inputs: dart = run_dart() (has stats{hub:{mean}}, basis{pair:{last/mean}}); weather =
+  run_weather() (signal.wind_belt_avg_mph); constraints = LIVE build_arcs output ({arcs[],
+  unplaced[]} each with shadow_price/constraint) — NOT the 90d aggregate.
+- Snapshot flow arcs (build_arcs) carry direction + flow_mw + utilization + type=
+  reported_constraint_flow. The 90d AGGREGATE arcs do NOT (no measured instantaneous direction).
+- Intraday: data_archive/constraints/sced_90d.pkl has a full recent day 2026-07-16 (290 SCED
+  snapshots). Augmented registry (GIS + crosswalk.json) resolves placeable stations.
 
 ## Tasks
-- **R1** constraint_report.py: 90d frequency-ranked unmatched-code report (the 7 fields) +
-  alias-normalization candidates + estimated coverage gain. Verify: top-N codes ranked, coverage
-  math checks out.
-- **R2** crosswalk.json + wire it as an authoritative pre-match into the matching path
-  (precedence over fuzzy; measured provenance/confidence). Verify: a curated code places its arc.
-- **R3** Research + curate the smallest top-N set with verified coords (provenance/confidence);
-  re-run gate after each batch. STOP-or-GO strictly on complete arc-row >=25%.
-- **UI (T2/T3/T4)** only if the gate clears.
+- **A ALERTS** /api/alerts: assemble live inputs (run_dart, run_weather, live build_arcs) ->
+  run_alerts(). Map-tab alerts bell/badge: count colored by max_severity (info/watch/alert),
+  list each fired alert's detail + rationale VERBATIM, honest empty-state ("no thresholds
+  crossed — conditions calm"). Poll on a sane interval (e.g. 60s), not a tight loop.
+- **B ANIMATED FLOW** animate particles along the EXISTING measured snapshot arcs ONLY
+  (type=reported_constraint_flow) in the MEASURED flow direction ('direction'/flow sign);
+  requestAnimationFrame; speed/density scale with utilization. HARD RULE: animate ONLY arcs
+  from real from/to/flow — NO new arcs, NO estimated flows, nothing between hubs/regions/any
+  pair without measured flow. The 90d aggregate arcs (no direction) do NOT animate.
+- **C INTRADAY PLAYBACK** from archived NP6-86-CD snapshots: a time scrubber that replays one
+  recent day's constraint evolution (which lines binding through the day). Reuse the snapshot-
+  arc rendering (which animates via B); drive it from the selected timestamp. Label "replay of
+  real SCED snapshots." Ship a small intraday_result.json (committed) so it works on Fly.
+
+## Definition of done
+- /api/alerts 200 with real evaluation; badge reflects real conditions; empty-state honest.
+- Particles animate ONLY on measured snapshot arcs (live/intraday), never the aggregate/hubs.
+- Intraday scrubber replays real per-SCED snapshots of a recent day.
+- Other layers (hubs/batteries/plants/cities/weather/county/locational/constraints) + tabs
+  untouched. Pushed when green; redeploy Fly.
+
+## Verify (CDP)
+- alert fixture PASSES; curl /api/alerts -> 200 real context/alerts.
+- CDP: alert badge count+color matches /api/alerts; particle positions advance over rAF frames
+  and exist ONLY for flow arcs (assert none for aggregate/other layers); scrubber changes the
+  rendered snapshot arcs across timestamps; existing tabs render.
 
 ## Guardrails
-- Max 12 iterations. Supervised. One task = one commit. Green commits only. NEVER a guessed
-  coordinate; both-ends-or-no-arc; provenance+confidence on every crosswalk row.
+- Max 15 iterations. Supervised. One task = one commit. Green commits only.
+- HARD RULE (B): measured arcs only, never fabricate a flow/arc. Sane poll interval (no tight
+  loop). NEVER commit data caches/secrets; only small committed *_result.json summaries.
