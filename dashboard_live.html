@@ -1484,6 +1484,7 @@ async function initMap(){
   const arcAgg=(arc&&arc.aggregate_arcs)||[], arcNodes=(arc&&arc.node_constraints)||[],
         arcCov=(arc&&arc.coverage)||{}, arcRoad=(arc&&arc.roadmap_unmatched)||[], arcLabels=(arc&&arc.labels)||{};
   let arcLive=null, arcLiveOn=false;   // live-now snapshot (lazy-fetched on toggle)
+  let intradayOn=false, intradayArcs=null;   // intraday replay (Task C) — a selected SCED snapshot
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1554,12 +1555,12 @@ async function initMap(){
         updateTriggers:{getRadius:[locIdx],getFillColor:[locIdx]},onClick:pop}); }},
     constraints:{label:'Constraint arcs (SCED)',sw:'#f85149',data:arcAgg.concat(arcNodes),on:false,make:()=>{
       const out=[];
-      if(arcLiveOn && arcLive){                                  // live-now: current SCED snapshot
-        const la=(arcLive.arcs)||[];
-        out.push(new deck.ArcLayer({id:'constraint-live',data:la,pickable:true,
+      const snap = snapshotArcs();                               // live-now OR intraday-selected snapshot
+      if(snap){                                                  // measured SCED snapshot (has direction/flow)
+        out.push(new deck.ArcLayer({id:'constraint-live',data:snap,pickable:true,
           getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
           getSourceColor:a=>shadowColor(a.shadow_price),getTargetColor:a=>shadowColor(a.shadow_price),
-          getWidth:a=>2+Math.min(8,(a.utilization||0)*6),getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[la.length]}}));
+          getWidth:a=>2+Math.min(8,(a.utilization||0)*6),getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn]}}));
       } else {                                                   // aggregate: 90d binding frequency
         const mx=Math.max(...arcAgg.map(a=>a.bind_pct),1);
         out.push(new deck.ArcLayer({id:'constraint-arcs',data:arcAgg,pickable:true,
@@ -1579,7 +1580,36 @@ async function initMap(){
     getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
   map.addControl(overlay); window.__overlay=overlay;   // debug handle for pick tests
   window.__activeLayers=activeLayers();
-  function refreshLayers(){ overlay.setProps({layers:buildLayers()}); window.__activeLayers=activeLayers(); }
+  // the current MEASURED snapshot arc set: live-now, else intraday-selected, else none.
+  function snapshotArcs(){ const s = arcLiveOn ? (arcLive&&arcLive.arcs) : (intradayOn ? intradayArcs : null); return (s&&s.length)?s:null; }
+  let _curLayers=buildLayers();
+  function refreshLayers(){ _curLayers=buildLayers(); overlay.setProps({layers:_flowRAF?_curLayers.concat(particleLayer()):_curLayers}); window.__activeLayers=activeLayers(); }
+
+  // ── Task B: animated particles along MEASURED snapshot arcs only (never the aggregate) ──
+  // Particles ride the flow arc from source->target in the MEASURED direction; density + speed
+  // scale with utilization. HARD RULE: only arcs with type=reported_constraint_flow + real
+  // source/target/flow are animated — no aggregate arcs, no hubs, nothing without measured flow.
+  let _flowRAF=null, _flowT=0;
+  function measuredFlowArcs(){ const s=snapshotArcs()||[]; return REG.constraints.on ? s.filter(a=>a.type==='reported_constraint_flow'&&a.source&&a.target) : []; }
+  function bezierPt(a,f){ const s=a.source,t=a.target,mx=(s[0]+t[0])/2,my=(s[1]+t[1])/2;   // matches ArcLayer bow
+    const len=Math.hypot(t[0]-s[0],t[1]-s[1]),cy=my+len*0.16,u=1-f;
+    return [u*u*s[0]+2*u*f*mx+f*f*t[0], u*u*s[1]+2*u*f*cy+f*f*t[1]]; }
+  function flowParticleData(){ const out=[];
+    measuredFlowArcs().forEach((a,ai)=>{ const rev=a.direction==='target_to_source';
+      const util=Math.max(0.05,Math.min(1,a.utilization||0.3)), k=3+Math.round(util*7), speed=0.12+util*0.5;
+      for(let i=0;i<k;i++){ const ph=((_flowT*speed)+(i/k))%1, frac=rev?1-ph:ph;
+        out.push({position:bezierPt(a,frac), r:1.4+util*1.8, arc:ai}); } });
+    return out; }
+  function particleLayer(){ return new deck.ScatterplotLayer({id:'flow-particles',data:flowParticleData(),pickable:false,
+    getPosition:p=>p.position,radiusUnits:'pixels',getRadius:p=>2+p.r,radiusMinPixels:2,radiusMaxPixels:6,
+    stroked:true,lineWidthMinPixels:0.5,getLineColor:[10,14,20,200],getFillColor:[255,255,255,235],updateTriggers:{getPosition:[_flowT]}}); }
+  function flowTick(){ _flowT+=0.018; overlay.setProps({layers:_curLayers.concat(particleLayer())});
+    window.__flowT=_flowT; window.__flowParticles=flowParticleData().length; window.__flowArcs=measuredFlowArcs().length;
+    _flowRAF=requestAnimationFrame(flowTick); }
+  function startFlow(){ if(_flowRAF || !measuredFlowArcs().length) return; flowTick(); }
+  function stopFlow(){ if(_flowRAF){ cancelAnimationFrame(_flowRAF); _flowRAF=null; window.__flowParticles=0; window.__flowArcs=0; overlay.setProps({layers:_curLayers}); } }
+  function syncFlow(){ if(measuredFlowArcs().length) startFlow(); else stopFlow(); }
+  window.__syncFlow=syncFlow; window.__measuredFlowArcs=measuredFlowArcs;
 
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0;
@@ -1589,7 +1619,7 @@ async function initMap(){
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
-      if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; } });});
+      if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); } });});
 
   // ── constraint-arc banner: coverage stats + honest labels + unmatched roadmap + live toggle ──
   const ab=$('arc-banner');
@@ -1612,6 +1642,7 @@ async function initMap(){
         $('arc-stats').insertAdjacentHTML('beforeend',` <span id="arc-lnote" style="color:${n?'#f85149':'var(--dim)'}">live: ${n} arc${n===1?'':'s'} binding now${n?'':' (honestly empty — see the 90-day view)'}.</span>`);
       } else { const w=$('arc-lnote'); if(w) w.remove(); }
       if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); }
+      syncFlow();
       window.__arcLiveOn=arcLiveOn; window.__arcLiveCount=(arcLive&&arcLive.arcs)?arcLive.arcs.length:0;
     });
   }
