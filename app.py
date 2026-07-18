@@ -659,6 +659,58 @@ def api_locational():
 
 
 _ARCS_LIVE_CACHE = {"t": 0, "v": None}
+_ALERTS_CACHE = {"t": 0, "v": None}
+
+
+def _live_constraint_arcs():
+    """Live SCED snapshot placed against the committed resolved-station table -> build_arcs
+    output ({arcs, unplaced, ...} with shadow_price). Shared by /api/alerts and constraintarcs
+    live-now. Returns None on failure (callers degrade honestly)."""
+    import json
+    import pandas as pd
+    import ercot_archiver
+    import constraint_arcs
+    path = os.environ.get("CONSTRAINTARCS_RESULT",
+                          os.path.join(os.path.dirname(__file__), "constraintarcs_result.json"))
+    with open(path) as f:
+        resolved = json.load(f).get("resolved_stations", {})
+    reg = pd.DataFrame([{"name": k, "lat": v[0], "lon": v[1]} for k, v in resolved.items()])
+    cons = constraint_arcs.parse_constraints(ercot_archiver.fetch_constraints_query(days=2))
+    return constraint_arcs.build_arcs(cons, reg)
+
+
+@app.get("/api/alerts")
+def api_alerts():
+    """Live threshold alerts over the data VoltStream already pulls — wind-belt state, hub DART,
+    hub basis, and binding-constraint shadow prices. Each fired alert cites the real value, the
+    threshold it crossed, and the market rationale (verbatim from alert_engine). Describes
+    CONDITIONS on real ERCOT data, not price forecasts. 60s cache (the UI polls at that rate)."""
+    import time
+    import alert_engine
+    if time.time() - _ALERTS_CACHE["t"] < 60 and _ALERTS_CACHE["v"] is not None:
+        return _ALERTS_CACHE["v"]
+    dart = weather = cons = None
+    try:
+        from dart_engine import run_dart
+        dart = run_dart()
+    except Exception:
+        dart = None
+    try:
+        import weather_data
+        weather = weather_data.run_weather()
+    except Exception:
+        weather = None
+    try:
+        cons = _live_constraint_arcs()
+    except Exception:
+        cons = None
+    res = alert_engine.run_alerts(dart, weather, cons)
+    res["available"] = True
+    res["sources"] = {"dart": bool(dart and "stats" in dart),
+                      "weather": bool(weather and weather.get("signal")),
+                      "constraints": bool(cons)}
+    _ALERTS_CACHE.update(t=time.time(), v=res)
+    return res
 
 
 @app.get("/api/constraintarcs")

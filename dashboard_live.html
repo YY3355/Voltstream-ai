@@ -175,6 +175,25 @@
   #arc-labels{margin-top:6px}
   .arc-roadmap{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:6px;line-height:1.5}
   .arc-roadmap b{color:var(--mut)} .arc-roadmap .code{color:#c9a06a}
+  .alert-strip{border:1px solid var(--line);border-radius:10px;background:var(--panel2);padding:9px 12px;margin:2px 0 10px}
+  .alert-strip.sev-none{border-left:3px solid var(--line)}
+  .alert-strip.sev-info{border-left:3px solid var(--blue)}
+  .alert-strip.sev-watch{border-left:3px solid var(--amber)}
+  .alert-strip.sev-alert{border-left:3px solid var(--red)}
+  .alert-strip .a-head{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;color:var(--ink)}
+  .alert-strip .a-bell{font-size:15px;position:relative;line-height:1}
+  .alert-strip .a-badge{font-family:var(--mono);font-size:10px;font-weight:700;color:#0a0e14;border-radius:9px;padding:1px 7px}
+  .alert-strip .a-badge.info{background:var(--blue)} .alert-strip .a-badge.watch{background:var(--amber)} .alert-strip .a-badge.alert{background:var(--red)}
+  .alert-strip .a-time{margin-left:auto;color:var(--dim);font-size:9.5px}
+  .alert-strip .a-list{margin-top:8px;display:flex;flex-direction:column;gap:7px}
+  .alert-strip .a-item{border-left:2px solid var(--line);padding:2px 0 2px 9px}
+  .alert-strip .a-item.info{border-color:var(--blue)} .alert-strip .a-item.watch{border-color:var(--amber)} .alert-strip .a-item.alert{border-color:var(--red)}
+  .alert-strip .a-chip{font-family:var(--mono);font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:1px 5px;border-radius:3px;margin-right:6px}
+  .alert-strip .a-chip.info{background:#12283f;color:var(--blue)} .alert-strip .a-chip.watch{background:#2a2410;color:var(--amber)} .alert-strip .a-chip.alert{background:#2a1210;color:var(--red)}
+  .alert-strip .a-detail{font-family:var(--mono);font-size:11px;color:var(--ink)}
+  .alert-strip .a-why{font-family:var(--sans);font-size:10.5px;color:var(--mut);line-height:1.45;margin-top:2px}
+  .alert-strip .a-calm{font-family:var(--mono);font-size:11px;color:var(--mut)}
+  .alert-strip .a-note{font-family:var(--sans);font-size:9.5px;color:var(--dim);font-style:italic;margin-top:7px}
   .fc-box{margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
   .fc-box .fc-title{font-family:var(--mono);font-size:9.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
   .fc-box .fc-caveat{font-family:var(--sans);font-size:9.5px;color:var(--dim);font-style:italic;line-height:1.4;margin-top:4px}
@@ -331,6 +350,7 @@
         <span class="live-dot" style="margin-left:auto">map</span></div>
       <p class="coopt-sub">Everything is connected through latitude/longitude. <b>Prices</b> come from ERCOT &mdash; the live DART spread at each trading hub. <b>Coordinates</b> come from public GIS: batteries and power plants at their EIA-reported locations, Texas cities at their Census centroids. Toggle the layers; click any marker for its details. Scroll to zoom, drag to pan.</p>
       <div id="map-hero" class="coopt-hero" style="margin-bottom:10px"></div>
+      <div class="alert-strip" id="alert-strip"></div>
       <div class="wx-banner" id="map-wxbanner" style="display:none"></div>
       <div class="map-controls" id="map-controls"></div>
       <div class="loc-playback" id="loc-playback" style="display:none">
@@ -1660,11 +1680,30 @@ async function initMap(){
     +`<span><i style="background:#f85149"></i>constraint arcs (width=90d bind freq, color=shadow $)</span>`;
   $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. County-heat points are a <b>rollup</b> of real EIA assets placed at the <b>mean position</b> of each county's batteries (a marker, not a boundary). There is <b>no price heatmap</b> — 4 hub prices can't honestly paint a statewide surface. Weather zones are <b>regional centroids</b> (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
 }
+// ── Live alerts (Task A): threshold conditions on real data, polled on a sane interval ──
+async function loadAlerts(){
+  const el=$('alert-strip'); if(!el) return;
+  let d; try{ d=await (await fetch('/api/alerts')).json(); }
+  catch(e){ el.className='alert-strip sev-none'; el.innerHTML='<div class="a-head"><span class="a-bell">&#128276;</span> alerts unreachable</div>'; return; }
+  const sev=d.max_severity||'none', n=d.n||0;
+  el.className='alert-strip sev-'+sev;
+  let head=`<div class="a-head"><span class="a-bell">&#128276;</span>`;
+  head+= n ? `<b>${n}</b> condition${n===1?'':'s'} <span class="a-badge ${sev}">${sev.toUpperCase()}</span>`
+           : `<span class="a-calm">no thresholds crossed &mdash; conditions calm</span>`;
+  const t=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  head+=`<span class="a-time">live &middot; ${t}</span></div>`;
+  let list='';
+  if(n){ list='<div class="a-list">'+(d.alerts||[]).map(a=>
+    `<div class="a-item ${a.severity}"><div><span class="a-chip ${a.severity}">${a.severity}</span><span class="a-detail">${a.detail}</span></div>`
+    +`<div class="a-why">${a.rationale}</div></div>`).join('')+'</div>'; }
+  el.innerHTML=head+list+`<div class="a-note">${d.note||'Conditions on real ERCOT data crossing stated thresholds — not price forecasts.'}</div>`;
+}
+let _alertPoll=false;
 let _coInterval=false;
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); },
-  map(){ initMap(); },
+  map(){ initMap(); loadAlerts(); if(!_alertPoll){ _alertPoll=true; setInterval(loadAlerts,60000); } },
   quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); },
   learning(){ dcopf(); constraints(); },
 };
