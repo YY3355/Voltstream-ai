@@ -1,24 +1,25 @@
-# Progress — Phase 3 finish: alerts + animated flow + intraday playback
+# Progress — Map visual redesign (pure UI)
 
-Max 15 iterations. Supervised.
+Max 15 iterations. Supervised. Verify with CDP + SCREENSHOTS each task.
 
 ## Tasks
-- [done] A — /api/alerts + Map alert strip. Verified: fixture PASSES; /api/alerts 200 real eval
-  (1 info now); CDP strip sev-class+count match API, detail+rationale verbatim, empty-state+note.
-  Poll 60s. commit 080e21d.
-- [done] B — particle flow on measured snapshot arcs only (rAF, measured direction, density/
-  speed by utilization). Verified CDP: aggregate=0 particles/no layer; live-now=10 particles +
-  __flowT advancing + measured-only; off=0. HARD RULE holds. commit 52240b9.
-- [done] C — intraday replay: /api/intraday (244 runs/2026-07-16, 123 w/ arcs, 73KB committed)
-  + scrubber (slider+play) reusing snapshot-arc rendering + B's particles. Verified CDP: scrub
-  matches API frames exactly (02:20=1,02:30=2), particles animate measured-only, replay label.
-  commit 671290b.
-- [done] DEPLOY — pushed (468650c..a00bd27) + Fly redeployed. Public verified via CDP: A alerts
-  ok (1 info, verbatim), B flow ok (agg 0 particles / live 10 advancing), C intraday ok (244
-  snapshots, frames match, particles animate). ALL DONE.
+- [done] T1 — defaults county+hubs ON only; TX frame center[-99.7,31.25] zoom5.55. Verified CDP
+  (active==[county,hubs], bounds -105.8..-93.6 tight) + screenshot. commit ee5fafc.
+- [done] T2 — #map-scope emptied+hidden; per-layer ⓘ tooltips + sidebar "Data & scope" details.
+  Verified CDP: scope empty, all 8 caveats+extra reachable in DOM (sidebar+tips), details opens.
+  commit 6ca4eff.
+- [done] T3 — arcs 2-4px/alpha135(53%)/muted-cyan blend; markers compressed (county 2.56x);
+  subdued palette; cyan transmission legend. Verified CDP (widths 2-4, alpha 135, ratio 2.56) +
+  screenshots (calm markers, translucent blending arcs). commit 557edbc.
+- [done] T4 — sidebar insight cards per active layer (county "87 counties·16,317 MW·top Brazoria
+  1,252 MW", hubs rich/cheap, constraints "49 corridors·25% placed"). Verified CDP + screenshot.
+  commit ef0a2fe.
+- [done] T5 — layer opacity fade on/off (0.74/0.33 mid-fade, settles) + camera easeTo TX frame
+  (zoom 5.55). Verified CDP; no regression (flow/intraday/quant ok). commit f48844c.
+- [doing] DEPLOY — push, redeploy Fly.
 
 ## Log
-- init — alert fixture PASSES. run_dart has stats+basis; run_weather has signal. Alert
-  constraints input = LIVE build_arcs (arcs+unplaced w/ shadow_price), not aggregate. Snapshot
-  arcs carry direction/flow/type=reported_constraint_flow (animatable); aggregate does not.
-  Intraday day 2026-07-16 = 290 snapshots in sced_90d.pkl.
+- init — REG has 8 layers (no substations layer). map-scope@1754 big box over canvas. controls@
+  1624. camera default {-99.3,31.2,zoom5.4}@1500. refreshLayers@1595. Plan: add caveat+op fields
+  to REG; fitBounds TX; per-layer ⓘ + Data&scope collapsible; compress radii; thin/translucent
+  arcs; opacity fade controller.
