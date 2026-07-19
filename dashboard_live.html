@@ -1637,7 +1637,12 @@ async function initMap(){
   function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
   // T5: per-layer opacity, animated on toggle so layers fade in/out instead of popping.
   const _op={}; Object.keys(REG).forEach(k=>_op[k]=REG[k].on?1:0);
-  function renderKeys(){ return Object.keys(REG).filter(k=>(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
+  // T1: explicit z-order — county weather FILL renders at the BOTTOM so every marker/arc draws
+  // (and picks) ON TOP of it; a battery/plant/hub/arc under a county polygon is never swallowed.
+  // deck picks the topmost drawn layer at a pixel, so draw order == pick priority.
+  const Z_ORDER=['county','hubs','batteries','plants','cities','locational','constraints'];
+  function renderKeys(){ const ord=Z_ORDER.concat(Object.keys(REG).filter(k=>!Z_ORDER.includes(k)));
+    return ord.filter(k=>REG[k]&&(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
   const buildLayers=()=>renderKeys().flatMap(k=>[].concat(REG[k].make())
     .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))})));   // fade via animated opacity
   // build the overlay WITH its initial layers so they paint on first render

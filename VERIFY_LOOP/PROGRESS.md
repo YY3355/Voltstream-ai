@@ -10,8 +10,10 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> 
   temps (not ~8), coherent S-hot/W-high-cool gradient, Dallas 99.5 vs Tarrant 96.6 (adjacent, not
   identical) — true per-county. countyheat sidebar intact (87). Also updated dashboard readers
   (countyWxTip, layerStat, caveat, toggle label) to the per-county shape. commit PENDING.
-- [todo] T1 — county fill renders under markers/arcs; pickable only when fill on. Battery pickable
-  through fill.
+- [done] T1 — explicit Z_ORDER puts county fill at the BOTTOM (draw order == pick priority in deck);
+  markers/arcs draw + pick above it. Real CDP pickObject at a battery's projected pixel (county
+  fill ON) returns layer 'batteries' (pickedIsBattery true); pick stack [batteries, county, ...];
+  county still pickable underneath (present in stack) for its own tooltip. commit PENDING.
 - [todo] T2 — outlines always-on; fill is the toggle; DELETE zone-marker layer entirely; rewire
   wind-belt banner to county data.
 - [todo] T4 — legend temp+rain w/ new label, remove weather legend entry; sidebar battery-MW untouched.
