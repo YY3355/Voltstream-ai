@@ -25,7 +25,9 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> 
   swatch gone (T2), stale "zone temp" wording fixed to "per-county temp". CDP: legendPerCounty/
   rain/outline true, no weather swatch, no zone-temp. Battery-MW sidebar (#county-panel) UNTOUCHED —
   "87 counties · 16,316.8 MW", Brazoria present, rows intact (reads /api/countyheat, never changed). commit PENDING.
-- [todo] DEPLOY — push, redeploy Fly.
+- [todo] DEPLOY — push 4 commits (44c5df6 T3, 4599fa3 T1, 5c84b47 T2, a83145c T4), redeploy Fly.
+  (Awaiting go-ahead.) Final checks green: 16 endpoints 200, trading tab renders, independent diff
+  review clean (node --check passes, no dangling refs, Promise.all aligned).
 
 ## Log
 - init — read weather_data.py, county_weather.py, app.py /api/countyweather, dashboard initMap
