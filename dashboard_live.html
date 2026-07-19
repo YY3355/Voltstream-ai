@@ -122,10 +122,23 @@
   .map-tip .h{font-weight:700;color:#fff;font-size:12px}
   .map-tip .rich{color:var(--green)} .map-tip .cheap{color:var(--red)}
   .map-tip .pr{color:var(--dim);font-style:italic;margin-top:4px;display:block}
-  #map-scope{position:absolute;left:10px;right:10px;bottom:10px;pointer-events:none;
-    font-family:var(--mono);font-size:10.5px;line-height:1.45;color:#aeb9c7;
-    background:rgba(8,12,18,.78);border:1px solid var(--line);border-radius:7px;padding:7px 10px}
-  #map-scope b{color:var(--mut);font-weight:600}
+  #map-scope{display:none}   /* honest scope relocated off-canvas to the sidebar + per-layer ⓘ (T2) */
+  .map-side{flex:0 1 246px;display:flex;flex-direction:column;gap:8px;min-width:210px}
+  #scope-details{border:1px solid var(--line);border-radius:10px;background:var(--panel);font-family:var(--mono);font-size:10px}
+  #scope-details summary{cursor:pointer;padding:8px 11px;color:var(--mut);font-size:11px;list-style:none;user-select:none}
+  #scope-details summary::-webkit-details-marker{display:none}
+  #scope-details summary::before{content:'▸ ';color:var(--dim)} #scope-details[open] summary::before{content:'▾ '}
+  #scope-body{padding:0 11px 10px;color:#93a1b0;line-height:1.5}
+  #scope-body .sc{margin-bottom:6px} #scope-body .sc b{color:var(--mut)}
+  #scope-body .sc-extra{color:var(--dim);font-style:italic;border-top:1px solid var(--line);padding-top:6px;margin-top:4px}
+  .lyr-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;
+    border-radius:50%;border:1px solid var(--dim);color:var(--dim);font-size:8.5px;font-style:normal;cursor:help;margin-left:1px}
+  .lyr-info:hover{border-color:var(--mut);color:var(--mut)}
+  .lyr-info .tip{display:none;position:absolute;bottom:150%;left:50%;transform:translateX(-50%);z-index:40;
+    width:230px;background:#0c1420;border:1px solid var(--line);border-radius:7px;padding:7px 9px;
+    font-family:var(--sans);font-size:10.5px;font-style:normal;color:#aeb9c7;line-height:1.45;text-align:left;
+    box-shadow:0 6px 20px rgba(0,0,0,.55);pointer-events:none}
+  .lyr-info:hover .tip,.lyr-info.show .tip{display:block}
   .map-controls{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 10px}
   .map-controls label{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);
     font-size:11px;color:var(--ink);background:var(--panel2);border:1px solid var(--line);
@@ -386,7 +399,11 @@
           <div id="map-canvas"></div>
           <div id="map-scope"></div>
         </div>
-        <div id="county-panel"></div>
+        <div class="map-side">
+          <div id="layer-insight"></div>
+          <div id="county-panel"></div>
+          <details id="scope-details"><summary>Data &amp; scope</summary><div id="scope-body"></div></details>
+        </div>
       </div>
       <div class="legend" id="map-legend" style="margin-top:9px"></div>
       <div class="coopt-note" id="map-meta"></div>
@@ -1528,6 +1545,19 @@ async function initMap(){
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
         maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
         maxWind=Math.max(...wxZones.map(z=>z.wind_mph||0),1), maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
+  // per-layer honest-scope caveats — surfaced as a ⓘ tooltip next to each toggle (T2) and
+  // collected in the sidebar "Data & scope" section. Relocated off the canvas, never deleted.
+  const LAYER_CAVEATS={
+    hubs:"Trading hubs are regional price points — each is an average of many nodes, not a single physical bus. Click a hub for its 24h day-ahead forecast.",
+    batteries:"EIA-860M battery coordinates (asset-exact), sized by nameplate MW.",
+    plants:"EIA-860M generator coordinates (asset-exact), colored by technology.",
+    cities:"Census city centroids — population markers, NOT load-delivery points.",
+    county:"Battery MW rolled up by county, drawn at the mean position of each county's assets (a marker, not a boundary). No price heatmap — 4 hub prices can't honestly paint a statewide surface.",
+    weather:"ERCOT weather-zone centroids — a sample, not a weather field. Weather only, not a price forecast.",
+    locational:"Perfect-foresight decade-revenue CEILING by hub ($/MW-year). Hub-level (regional), energy-only, history — not a forecast.",
+    constraints:"Measured ERCOT SCED constraints (NP6-86-CD). Only lines whose BOTH endpoints resolve to a real substation are drawn (~39% of stations). A congested-grid layer, not a complete power-flow map.",
+  };
+  const SCOPE_EXTRA="Data centers and city-level load are deliberately absent — no authoritative public dataset. Nothing here predicts prices.";
   // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set.
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
@@ -1623,9 +1653,19 @@ async function initMap(){
 
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0;
+    const cav=(LAYER_CAVEATS[k]||'').replace(/"/g,'&quot;');
     return `<label class="${L.on&&has?'':'off'}${has?'':' disabled'}" title="${has?'':'no data cached — run geo_data.py fetch'}">`
       +`<input type="checkbox" id="lyr-${k}" ${L.on&&has?'checked':''} ${has?'':'disabled'}>`
-      +`<span class="sw" style="background:${L.sw}"></span>${L.label}<span class="ct">${L.data.length}</span></label>`;}).join('');
+      +`<span class="sw" style="background:${L.sw}"></span>${L.label}<span class="ct">${L.data.length}</span>`
+      +(cav?`<span class="lyr-info" data-k="${k}" title="${cav}">&#9432;<span class="tip">${cav}</span></span>`:'')
+      +`</label>`;}).join('');
+  // Data & scope sidebar (T2): every per-layer caveat, collapsible, always reachable in the DOM.
+  $('scope-body').innerHTML=Object.keys(LAYER_CAVEATS).map(k=>
+    `<div class="sc" data-k="${k}"><b>${REG[k]?REG[k].label:k}:</b> ${LAYER_CAVEATS[k]}</div>`).join('')
+    +`<div class="sc-extra">${SCOPE_EXTRA}</div>`;
+  // clicking a ⓘ pins its tooltip (hover already shows it)
+  $('map-controls').querySelectorAll('.lyr-info').forEach(el=>el.addEventListener('click',e=>{
+    e.preventDefault(); e.stopPropagation(); el.classList.toggle('show'); }));
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
@@ -1752,7 +1792,9 @@ async function initMap(){
     +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
     +`<span><i style="background:#f85149"></i>constraint arcs (width=90d bind freq, color=shadow $)</span>`;
-  $('map-scope').innerHTML=`<b>Honest scope:</b> Battery &amp; power-plant markers are EIA-reported asset coordinates (exact). City markers are Census centroids, <b>not</b> load-delivery points. County-heat points are a <b>rollup</b> of real EIA assets placed at the <b>mean position</b> of each county's batteries (a marker, not a boundary). There is <b>no price heatmap</b> — 4 hub prices can't honestly paint a statewide surface. Weather zones are <b>regional centroids</b> (not a weather field), and ${wxSignal?wxSignal.caveat:'weather only — not a price forecast'}. Data centers and city-level load are deliberately absent &mdash; no authoritative public dataset. ${(dart&&dart.note)?'Hubs: '+dart.note:''}`;
+  // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar
+  // "Data & scope" collapsible + the per-layer ⓘ tooltips. Kept empty/hidden, nothing deleted.
+  $('map-scope').innerHTML='';
 }
 // ── Live alerts (Task A): threshold conditions on real data, polled on a sane interval ──
 async function loadAlerts(){
