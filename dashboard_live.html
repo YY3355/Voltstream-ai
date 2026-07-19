@@ -124,6 +124,12 @@
   .map-tip .pr{color:var(--dim);font-style:italic;margin-top:4px;display:block}
   #map-scope{display:none}   /* honest scope relocated off-canvas to the sidebar + per-layer ⓘ (T2) */
   .map-side{flex:0 1 246px;display:flex;flex-direction:column;gap:8px;min-width:210px}
+  #layer-insight{display:flex;flex-direction:column;gap:6px}
+  #layer-insight .li{border:1px solid var(--line);border-radius:8px;background:var(--panel);
+    padding:7px 10px;font-family:var(--mono);font-size:10.5px;color:var(--ink)}
+  #layer-insight .li .lk{color:var(--mut);font-size:9px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px}
+  #layer-insight .li b{color:var(--amber)}
+  #layer-insight .li-empty{color:var(--dim);font-family:var(--mono);font-size:10px;font-style:italic;padding:2px}
   #scope-details{border:1px solid var(--line);border-radius:10px;background:var(--panel);font-family:var(--mono);font-size:10px}
   #scope-details summary{cursor:pointer;padding:8px 11px;color:var(--mut);font-size:11px;list-style:none;user-select:none}
   #scope-details summary::-webkit-details-marker{display:none}
@@ -1674,7 +1680,29 @@ async function initMap(){
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
-      if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); } });});
+      if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); }
+      updateInsight(); });});
+
+  // T4: sidebar carries context — a compact summary stat for each ACTIVE layer.
+  const _fmt=n=>Math.round(n||0).toLocaleString();
+  function layerStat(k){ switch(k){
+    case 'hubs':{ const r=hubs.filter(h=>h.sign==='rich').length; return `${hubs.length} hubs · <b>${r}</b> rich / <b>${hubs.length-r}</b> cheap (DA vs RT)`; }
+    case 'county':{ const t=allCounties[0]; return `<b>${ch&&ch.n_counties||allCounties.length}</b> counties · <b>${_fmt(ch&&ch.total_mw)}</b> MW · top ${t?t.county+' '+_fmt(t.mw)+' MW':'—'}`; }
+    case 'batteries':{ const mw=batts.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(batts.length)}</b> batteries · <b>${_fmt(mw)}</b> MW (EIA-860M)`; }
+    case 'plants':{ const mw=plants.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(plants.length)}</b> plants · ${_fmt(mw)} MW · by technology`; }
+    case 'cities':return `<b>${cities.length}</b> cities · Census centroids`;
+    case 'weather':return wxSignal?`<b>${wxZones.length}</b> zones · wind belt <b>${wxSignal.wind_belt_avg_mph}</b> mph (${wxSignal.state})`:`${wxZones.length} weather zones`;
+    case 'locational':return `<b>${locYears.length}</b> yrs · $${Math.round(locLo/1000)}k–$${Math.round(locHi/1000)}k/MW-yr (perfect foresight)`;
+    case 'constraints':return `<b>${arcAgg.length}</b> corridors · <b>${arcCov.arc_row_pct||0}%</b> placed (${arcCov.stations_resolved||0}/${arcCov.stations_total||0} stations)`;
+    default:return REG[k]?REG[k].label:k;
+  } }
+  function updateInsight(){ const el=$('layer-insight'); if(!el) return;
+    const on=Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length);
+    el.innerHTML = on.length ? on.map(k=>`<div class="li"><span class="lk">${REG[k].label}</span>${layerStat(k)}</div>`).join('')
+      : `<div class="li-empty">No layers active — toggle one above.</div>`;
+    window.__insightLayers=on;
+  }
+  updateInsight();
 
   // ── constraint-arc banner: coverage stats + honest labels + unmatched roadmap + live toggle ──
   const ab=$('arc-banner');
