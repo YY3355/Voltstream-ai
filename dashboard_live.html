@@ -116,6 +116,10 @@
   #map-canvas{position:relative;width:100%;height:66vh;min-height:480px;border-radius:10px;
     overflow:hidden;border:1px solid var(--line);background:#0a0e14}
   #map-canvas .mapboxgl-ctrl-attrib{font-size:10px}
+  /* T1: soft vignette over the canvas — darkens the corners so the eye lands on Texas (depth cue) */
+  .map-vignette{position:absolute;inset:0;border-radius:10px;pointer-events:none;z-index:4;
+    box-shadow:inset 0 0 140px 26px rgba(4,7,12,.6);
+    background:radial-gradient(120% 90% at 50% 42%,transparent 55%,rgba(4,7,12,.32) 100%)}
   .map-tip{font-family:var(--mono);font-size:11px;background:#0c1420;color:var(--ink);
     border:1px solid var(--line);border-radius:7px;padding:8px 10px;max-width:240px;line-height:1.5;
     box-shadow:0 6px 20px rgba(0,0,0,.5)}
@@ -403,6 +407,7 @@
       <div class="map-row" style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
         <div class="map-wrap" style="position:relative;flex:1 1 560px;min-width:0">
           <div id="map-canvas"></div>
+          <div class="map-vignette"></div>
           <div id="map-scope"></div>
         </div>
         <div class="map-side">
@@ -1514,17 +1519,27 @@ async function initMap(){
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
-  // Frame ERCOT/Texas snugly (not NM/OK/LA/Mexico) — explicit center+zoom fills the frame with TX.
-  const TX_VIEW={center:[-99.7,31.25],zoom:5.55};
+  // T1: frame TX snugly, PITCHED so the map reads as three planes (terrain -> infrastructure ->
+  // intelligence). center+zoom fill the frame with TX; pitch gives depth + a horizon for atmosphere.
+  const TX_VIEW={center:[-99.1,29.9],zoom:4.8,pitch:52,bearing:-6};
   mapboxgl.accessToken=MAPBOX_TOKEN;
   let map;
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
-        center:TX_VIEW.center,zoom:TX_VIEW.zoom-0.35,attributionControl:true}); }   // start a touch out...
+        center:TX_VIEW.center,zoom:TX_VIEW.zoom,pitch:TX_VIEW.pitch,bearing:TX_VIEW.bearing,
+        antialias:true,attributionControl:true}); }
   catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
   window.__map=map; window.__txView=TX_VIEW;          // handle for programmatic zoom/frame checks
   map.scrollZoom.enable(); map.dragPan.enable();       // explicit: nothing should suppress these
-  map.addControl(new mapboxgl.NavigationControl({visualizePitch:false}),'top-right');
-  map.once('load',()=>map.easeTo({center:TX_VIEW.center,zoom:TX_VIEW.zoom,duration:650}));   // ...ease into the TX frame
+  map.addControl(new mapboxgl.NavigationControl({visualizePitch:true}),'top-right');
+  map.once('load',()=>{
+    // T1 ATMOSPHERE — subtle dark fog + horizon glow so the pitched view has air, not a hard edge.
+    // (Terrain DEM intentionally omitted: it needs WebGL features our verify harness can't render,
+    //  and pitch+fog+vignette already deliver the depth — no unverifiable visuals shipped.)
+    try{ map.setFog({range:[0.5,10],color:'#0b1018','high-color':'#1b2c48','horizon-blend':0.14,
+      'space-color':'#05070c','star-intensity':0.1}); }catch(e){}
+    // T8 load motion: one gentle pitch-in so the scene "settles" rather than snapping in.
+    map.jumpTo({pitch:TX_VIEW.pitch-8}); map.easeTo({pitch:TX_VIEW.pitch,duration:1100,essential:true});
+  });
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
 

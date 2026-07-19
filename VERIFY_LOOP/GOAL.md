@@ -1,68 +1,61 @@
-# GOAL — TRUE per-county weather + map layer fixes (ordering/picking, outlines-always, delete zone markers)
+# GOAL — MAP DESIGN ELEVATION (engineering UI → product design)
 
-Three map fixes. County weather stops being zone-inheritance (8 readings tiled over counties) and
-becomes REAL per-county readings (254 centroids). County polygons stop swallowing marker/arc picks.
-Outlines become permanent basemap geography; the weather FILL is the toggle. The old 8-zone weather
-marker layer is deleted; the wind-belt banner survives but recomputes from the new county data.
+Pure visual/UX + ONE context-data add (HIFLD transmission lines). All in dashboard_live.html's
+Map card + initMap (+ small app.py endpoint for the data add). Do NOT touch other tabs/engines.
+Judged by EYES: screenshot at state zoom + metro zoom every iteration.
 
-## Current state (pre-loop)
-- weather_data.py: 8 ERCOT zone centroids; parse_openmeteo (current temp+wind+precip, 48h hourly);
-  wind_signal (mean wind of 4 wind_heavy zones + 48h). run_weather() 30-min cache.
-- county_weather.py: COUNTY_ZONE (198 counties -> 8 zones, 56 left out); build_county_weather joins
-  ZONE weather to counties (gray where unassigned). temp_color(f)->[r,g,b].
-- app.py /api/countyweather: run_weather -> build_county_weather -> merge into tx_counties.geojson
-  (254 feats, 198 colored / 56 null-fill). coverage + uncolored list.
-- dashboard_live.html map (initMap): REG layer registry order = hubs,batteries,plants,cities,county,
-  weather,locational,constraints (array order == z-order; LATER renders ON TOP + wins picks). county
-  = GeoJsonLayer(fill+outline, on:true) — currently ABOVE the marker layers (BUG: swallows picks).
-  weather = ScatterplotLayer(wxZones)+TextLayer(labels), on:false. Wind-belt banner (#map-wxbanner)
-  reads wx.signal. Legend @~1850 has a weather entry + county entry. Sidebar #county-panel = battery
-  MW (separate /api/countyheat — DO NOT TOUCH). tx_counties.geojson: 254 feats, props NAME+FIPS,
-  Polygon geom, committed under data_archive/geo/.
+## Current state (pre-loop, from code read)
+- Map: mapbox-gl v3.9.0 + deck.gl 9.0.35. dark-v11 style, flat (pitch 0), TX_VIEW center[-99.7,31.25]
+  zoom 5.55. Overlay=MapboxOverlay(interleaved:false). Z_ORDER=['county','hubs','batteries','plants',
+  'cities','locational','constraints'] + always-on county-outline at bottom. Fade animation (_op/
+  animateFade). Flow particles: ScatterplotLayer dots along MEASURED snapshot arcs (already ●-style).
+- Batteries: ScatterplotLayer (flat circles, radius ~ sqrt MW). County: fill GeoJsonLayer + outline.
+- Sidebar (.map-side): #layer-insight (per-active-layer stat), #county-panel (battery MW bar — DO NOT
+  TOUCH data), #scope-details. Banner #map-wxbanner (wind belt). #alert-strip (loadAlerts).
+- Design tokens: --mono IBM Plex Mono, --sans IBM Plex Sans; colors amber/green/red/blue/violet.
+- Endpoints available for briefing: /api/rt (RT prices), /api/constraintarcs (90d + live), /api/map
+  (DART), /api/countyweather (wind_signal + hottest), alerts via loadAlerts.
 
-## Tasks (commit each; implement in dependency order T3 -> T1 -> T2 -> T4)
-- **T3 PER-COUNTY WEATHER (backend first — everything downstream depends on the new shape)**:
-  weather_data.py — add county-centroid fetch: centroids from cached tx_counties.geojson, Open-Meteo
-  MULTI-LOCATION batching (~100 coords/req -> ~3 reqs), current temp+wind+precip, 30-min cache
-  (data_archive/weather/counties.json). Pure parse fn + fixture. county_weather.py — new build that
-  consumes per-county readings DIRECTLY: every county gets its OWN temp/wind/precip/fill; NO zone
-  inheritance, NO gray unassigned. New label verbatim: "county-centroid readings — one real
-  measurement per county; weather varies within large counties." Also compute a wind-belt summary
-  (mean wind of the wind-belt-region counties) for the banner. /api/countyweather serves it: 254
-  feats ALL fill!=null, coverage colored=254 uncolored=0, label, wind_signal.
-  Verify: fixtures pass; curl 254 feats, 0 null fill, label present, wind_signal present.
-- **T1 ORDERING + PICKING**: county fill renders UNDER every marker/arc layer (move to bottom of the
-  deck layer array) so a battery/plant/hub/arc under a county polygon still wins hover/click. County
-  stays pickable for its OWN tooltip only when the fill is active. Verify: with fill ON, a real pick
-  at a battery's projected pixel returns layer id 'batteries' (not 'county'); with fill OFF county
-  isn't pickable.
-- **T2 OUTLINES ALWAYS + FILL TOGGLE + DELETE ZONE MARKERS + REWIRE BANNER**: county OUTLINES (thin,
-  subtle) always render (permanent geography, not user-toggleable / always-on). The weather FILL is
-  the toggle. DELETE the 8-zone weather layer entirely — ScatterplotLayer+TextLayer, its REG entry,
-  its checkbox/toggle, its legend entry, its caveat, maxWind. KEEP the wind-belt banner — rewire it
-  to cw.wind_signal (mean wind of wind-belt-region counties). Verify: no 'weather'/'weather-labels'
-  deck layer + no weather checkbox; outlines visible with fill OFF; banner still populated + live.
-- **T4 LEGEND/SIDEBAR**: legend = temp ramp + rain swatch with the new per-county label; remove the
-  weather legend entry. Sidebar Battery-MW bar (#county-panel / allCounties) untouched. Verify:
-  legend text = new label, no weather swatch; #county-panel rows identical.
+## Tasks (commit each; screenshots each)
+### PHASE A — depth & atmosphere
+- **T1 CAMERA + ATMOSPHERE**: default pitch ~40-45°; Mapbox fog + sky (subtle, dark); optional gentle
+  terrain (mapbox-dem, low exaggeration); CSS soft vignette over the canvas. Reads as 3 planes.
+- **T2 3D BATTERIES**: batteries → deck.gl ColumnLayer, height = real MW (honest extrusion), muted
+  green, small footprint. Flat discs at low zoom, columns as you zoom in (zoom-switch). Still pickable.
+- **T3 ZOOM-TIERED REVEAL**: at state zoom show ONLY anchors — Houston/Dallas/Austin/San Antonio
+  designed labels (rounded, subtle glow, NOT raw mapbox labels), 5 largest batteries, top congestion
+  corridor. Rest fades in with zoom (Google-Maps principle). Radii on the 4/5/7/10/14 scale.
+### PHASE B — hierarchy & motion
+- **T4 TRANSMISSION CONTEXT (data add)**: fetch HIFLD transmission lines Texas subset → cache
+  data_archive/geo/tx_lines.geojson; app.py /api/txlines serves it. Render voltage-tiered: 69kV thin
+  gray → 138 blue → 230 teal → 345 cyan → 500 white, subtle opacity. Label verbatim: "transmission
+  context (HIFLD geometry) — constraint status shown only by the measured SCED arcs." Off by default,
+  one toggle.
+- **T5 PALETTE DISCIPLINE**: 4 semantic colors — blue grid infra, green batteries, red congestion
+  ONLY, amber weather-heat — everything else muted/gray. Counties: gradient opacity + soft hover glow
+  (not flat fill).
+- **T6 ARC PARTICLES**: moving dots along MEASURED arcs (●──►), density by utilization. Measured arcs
+  ONLY (verify rule holds). (Largely present — refine to dot style + density, confirm measured-only.)
+- **T7 SIDEBAR AS BRIEFING**: top of sidebar = "Right now": live RT price by hub (biggest mover
+  highlighted), top congestion corridor (90d + live-now), wind-belt state, hottest county, active
+  alerts count. From EXISTING endpoints. NO new claims, NO "recommended dispatch" language.
+- **T8 MOTION + TYPO**: layers fade, tooltips slide, anchors pulse once on load, sidebar expands
+  smoothly. Typography pass: one font family, small/consistent/muted — kill the dev-dashboard look.
 
 ## Definition of done
-- /api/countyweather 200: 254 features, ALL colored from real per-county readings (0 gray), label =
-  "county-centroid readings — one real measurement per county; weather varies within large counties."
-- Map: batteries/plants/hubs/arcs pickable THROUGH the county fill; county outlines always visible;
-  fill is one toggle; zone-marker layer + toggle + legend entry GONE; wind-belt banner live from
-  county data. Legend temp+rain w/ new label. Sidebar battery-MW bar identical. Other tabs untouched.
+- 3 planes read (terrain/fog → infra → intelligence); pitched camera; batteries extruded by MW.
+- State zoom = calm anchors only; detail fades in with zoom; transmission tiers distinguishable.
+- 4-color palette; particles = measured-arc dots only; sidebar "Right now" briefing from real data.
+- Batteries pickable; anchors legible in 3s; all caveat tooltips reachable; other tabs untouched.
 - Pushed when green; redeploy Fly.
 
-## Verify (CDP + SCREENSHOTS — visual)
-- python weather_data.py / county_weather.py fixtures pass. curl /api/countyweather -> 254 feats,
-  0 null-fill, label+wind_signal present. Independent (subagent) recount.
-- CDP /#map: real pickObject at a battery pixel with county fill on -> 'batteries'; deck layers list
-  has NO 'weather'/'weather-labels'; county-outline present with fill toggled off; banner text present.
-- Screenshots: fill ON (all 254 shaded, no gray), fill OFF (outlines-only geography). Other tabs render.
+## Verify (CDP + SCREENSHOTS — visual, every iteration)
+- Screenshots: state zoom, metro zoom (Houston), each phase's layers on. CDP: batteries pickObject
+  ok; deck layers present; measured-arc particles only (flowArcs all type=reported_constraint_flow);
+  caveat tooltips in DOM; other tabs render.
 
 ## Guardrails
-- Max 15 iterations. Supervised. One task = one commit. Green commits only.
-- Per-county weather is REAL (one Open-Meteo reading per county centroid) — honestly labeled that a
-  single centroid reading doesn't resolve within-county variation. No fabrication. Do NOT touch the
-  sidebar battery-MW bar (#county-panel) or /api/countyheat. Keep /api/weather endpoint (other tabs).
+- Max 18 iterations. Supervised. One task = one commit. Green commits only.
+- NO fabricated data: HIFLD = geometry context ONLY (constraint status stays with measured SCED arcs);
+  particles measured-arcs only; no "recommended dispatch" in the briefing. Do NOT touch #county-panel
+  data / /api/countyheat or other tabs. Keep every honesty caveat reachable.

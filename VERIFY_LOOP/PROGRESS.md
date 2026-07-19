@@ -1,42 +1,27 @@
-# Progress — TRUE per-county weather + map layer fixes
+# Progress — MAP DESIGN ELEVATION
 
-Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> T1 -> T2 -> T4.
+Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro zoom). Judged by eyes.
 
 ## Tasks
-- [done] T3 — per-county Open-Meteo fetch (254 centroids, batched ~100/req) + county_weather
-  consumes it directly (0 gray) + new label + wind_signal (83 wind-belt counties) from county data;
-  /api/countyweather serves it. Fixtures pass. curl: 254 feats, 254 colored / 0 uncolored, label
-  verbatim, wind_signal present, no zone field. Independent subagent REALNESS check: 91 distinct
-  temps (not ~8), coherent S-hot/W-high-cool gradient, Dallas 99.5 vs Tarrant 96.6 (adjacent, not
-  identical) — true per-county. countyheat sidebar intact (87). Also updated dashboard readers
-  (countyWxTip, layerStat, caveat, toggle label) to the per-county shape. commit PENDING.
-- [done] T1 — explicit Z_ORDER puts county fill at the BOTTOM (draw order == pick priority in deck);
-  markers/arcs draw + pick above it. Real CDP pickObject at a battery's projected pixel (county
-  fill ON) returns layer 'batteries' (pickedIsBattery true); pick stack [batteries, county, ...];
-  county still pickable underneath (present in stack) for its own tooltip. commit PENDING.
-- [done] T2 — county-outline layer always rendered (bottom, non-pickable, thin subtle); REG.county
-  is fill-only = the toggle. DELETED the 8-zone weather layer entirely: REG.weather, its checkbox,
-  legend entry, caveat, wxTip, maxWind, the /api/weather map fetch + wx/wxZones/wxSignal, and
-  orphaned tempColor/wxSpark. Banner rewired to cw.wind_signal (10.1 mph, 83 counties, live).
-  CDP: no weather layer/toggle; outline present with fill on AND off; fill toggles cleanly; banner
-  live; batteries still pickable (rendered [county-outline,county,batteries] -> picks batteries).
-  Screenshots: fill-on (254 shaded, per-county gradient) + fill-off (outlines-only geography). commit PENDING.
-- [done] T4 — legend now: county-outline swatch (always-on) + per-county temp ramp + rain; weather
-  swatch gone (T2), stale "zone temp" wording fixed to "per-county temp". CDP: legendPerCounty/
-  rain/outline true, no weather swatch, no zone-temp. Battery-MW sidebar (#county-panel) UNTOUCHED —
-  "87 counties · 16,316.8 MW", Brazoria present, rows intact (reads /api/countyheat, never changed). commit PENDING.
-- [done] DEPLOY — pushed (ecca258..f519ed1), flyctl deploy --remote-only exit 0, DNS verified.
-  Public voltstream-ercot.fly.dev verified: root 200; /api/countyweather 254/254/0, 91 distinct
-  temps (real per-county), wind_signal light 10.4mph/83 counties, label ok, no zone field. Public
-  #map screenshot: 254 shaded (hottest Starr 100.6°F live), no Weather toggle, legend has
-  outline+per-county+rain, battery-MW sidebar intact. Pre-deploy: 16 endpoints 200, trading tab
-  renders, independent diff review clean (node --check, no dangling refs, Promise.all aligned).
-
-## DONE — loop complete. T1-T4 + DEPLOY all green. TRUE per-county weather: 254/254 real readings,
-## batteries pickable through fill, outlines always-on + fill toggle, zone-markers deleted, banner live.
+- [done] T1 — camera pitch 52° + bearing -6, zoom 4.8 framing that reveals an atmospheric horizon;
+  Mapbox setFog (dark, horizon-blend .14 — verified getFog true); CSS .map-vignette overlay; T8
+  pitch-in settle. Terrain DROPPED: raster-DEM needs WebGL our swiftshader harness can't render, so
+  unverifiable — pitch+fog+vignette already give the depth (3 planes read: horizon→TX→markers).
+  Verified: pitch 52, fog set, vignette in DOM, deck layers intact; state screenshot cinematic. commit PENDING.
+- [todo] T2 — batteries as deck.gl ColumnLayer, height=MW, muted green; flat→columns by zoom; pickable.
+- [todo] T3 — zoom-tiered reveal: state=anchors only (designed metro labels + 5 biggest batteries +
+  top corridor); rest fades in w/ zoom. Radii 4/5/7/10/14.
+- [todo] T4 — HIFLD transmission lines TX subset → tx_lines.geojson + /api/txlines; voltage-tiered
+  render; off by default; honest label.
+- [todo] T5 — 4-color palette (blue infra / green batt / red congestion / amber heat); counties
+  gradient opacity + hover glow.
+- [todo] T6 — arc particles = measured-arc dots, density by utilization (confirm measured-only).
+- [todo] T7 — sidebar "Right now" briefing from existing endpoints; no new claims.
+- [todo] T8 — motion (fades/slides/anchor pulse/section expand) + typography pass (one family, muted).
+- [todo] DEPLOY — push, redeploy Fly.
 
 ## Log
-- init — read weather_data.py, county_weather.py, app.py /api/countyweather, dashboard initMap
-  (REG order, buildLayers, pop/pick, banner, legend). geojson: 254 Polygon feats NAME+FIPS, committed.
-  Plan: T3 backend first (new shape: all colored + wind_signal), then UI (T1 order/pick, T2 outlines/
-  delete-weather/rewire-banner, T4 legend). Verify pick via real deck.pickObject at projected pixel.
+- init — read map HTML section (#map-canvas, .map-side, banner, alert-strip, legend), CSS design
+  tokens + map CSS, map init (mapbox dark-v11 flat pitch0, TX_VIEW zoom5.55, easeTo on load),
+  LAYER_CAVEATS, Z_ORDER + county-outline. CDP driver ready (scratchpad/cdp.py: screenshot + eval,
+  swiftshader). Plan: T1 first (self-contained camera/atmosphere), read per-task code as reached.
