@@ -31,3 +31,5 @@ VERIFY_LOOP/
 .claude/
 # but DO ship the git-audited paper-book ledger (the P&L panel reads journal/ledger.csv)
 !journal/ledger.csv
+!data_archive/geo/
+!data_archive/geo/tx_counties.geojson

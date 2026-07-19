@@ -437,6 +437,55 @@ def api_geo():
                 "batteries": [], "plants": [], "cities": [], "county_rollup": []}
 
 
+_COUNTYWX_GEO = {"v": None}
+
+
+@app.get("/api/countyweather")
+def api_countyweather():
+    """County-outlined weather layer: real Texas county polygons, each shaded by its ERCOT
+    weather ZONE's live temperature + rain (run_weather -> county_weather.build_county_weather).
+    Honest: 8 zone readings mapped to counties (NOT per-county measurement); counties whose zone
+    assignment is ambiguous are returned uncolored (fill=null) and listed. Returns a render-ready
+    GeoJSON FeatureCollection (geometry + weather props merged) so the map draws all 254 outlined."""
+    import json
+    import county_weather
+    import weather_data
+    # county polygons (committed build input)
+    if _COUNTYWX_GEO["v"] is None:
+        path = os.path.join(os.path.dirname(__file__), "data_archive", "geo", "tx_counties.geojson")
+        if not os.path.exists(path):
+            return {"available": False, "error": "tx_counties.geojson missing", "features": []}
+        with open(path) as f:
+            _COUNTYWX_GEO["v"] = json.load(f)
+    geo = _COUNTYWX_GEO["v"]
+    try:
+        wx = weather_data.run_weather()
+        cw = county_weather.build_county_weather(wx)
+        by_county = {c["county"]: c for c in cw.get("counties", [])}
+        feats = []
+        for f in geo.get("features", []):
+            name = f["properties"].get("NAME")
+            c = by_county.get(name)
+            props = {"NAME": name,
+                     "zone": c["zone"] if c else None,
+                     "temp_f": c["temp_f"] if c else None,
+                     "precip_mm": c["precip_mm"] if c else None,
+                     "raining": c["raining"] if c else False,
+                     "fill": c["fill"] if c else None}          # null fill -> uncolored county
+            feats.append({"type": "Feature", "geometry": f["geometry"], "properties": props})
+        colored = sorted(by_county)
+        uncolored = sorted(f["properties"]["NAME"] for f in geo["features"]
+                           if f["properties"]["NAME"] not in by_county)
+        return {
+            "available": True, "type": "FeatureCollection", "features": feats,
+            "zones": cw.get("zones", []), "label": cw.get("label", ""),
+            "coverage": {"total": len(feats), "colored": len(colored), "uncolored": len(uncolored)},
+            "uncolored": uncolored,
+        }
+    except Exception as e:
+        return {"available": False, "error": f"county weather failed ({e})", "features": []}
+
+
 @app.get("/api/weather")
 def api_weather():
     """Weather layer for the Map tab: live conditions + 48h forecast at each of ERCOT's eight
