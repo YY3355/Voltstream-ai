@@ -1,25 +1,32 @@
-# Progress — Map visual redesign (pure UI)
+# Progress — county-outlined weather layer
 
-Max 15 iterations. Supervised. Verify with CDP + SCREENSHOTS each task.
+Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS.
 
 ## Tasks
-- [done] T1 — defaults county+hubs ON only; TX frame center[-99.7,31.25] zoom5.55. Verified CDP
-  (active==[county,hubs], bounds -105.8..-93.6 tight) + screenshot. commit ee5fafc.
-- [done] T2 — #map-scope emptied+hidden; per-layer ⓘ tooltips + sidebar "Data & scope" details.
-  Verified CDP: scope empty, all 8 caveats+extra reachable in DOM (sidebar+tips), details opens.
-  commit 6ca4eff.
-- [done] T3 — arcs 2-4px/alpha135(53%)/muted-cyan blend; markers compressed (county 2.56x);
-  subdued palette; cyan transmission legend. Verified CDP (widths 2-4, alpha 135, ratio 2.56) +
-  screenshots (calm markers, translucent blending arcs). commit 557edbc.
-- [done] T4 — sidebar insight cards per active layer (county "87 counties·16,317 MW·top Brazoria
-  1,252 MW", hubs rich/cheap, constraints "49 corridors·25% placed"). Verified CDP + screenshot.
-  commit ef0a2fe.
-- [done] T5 — layer opacity fade on/off (0.74/0.33 mid-fade, settles) + camera easeTo TX frame
-  (zoom 5.55). Verified CDP; no regression (flow/intraday/quant ok). commit f48844c.
-- [done] DEPLOY — pushed (fbac7ce..5998798) + Fly redeployed. Public CDP re-verified T1 (active [county,hubs], zoom 5.54, span 12.2), T2 (scope empty, caveats reachable), T4 (insight stats), T5 (fade 0.74/0.26, zoom 5.55). ALL DONE.
+- [done] T1 — precip in weather_data.py (Open-Meteo current param + precip_mm in parse). Verified
+  fixture + live run_weather (all 8 zones carry precip_mm). commit e2ac107.
+- [done] T2 — tx_counties.geojson cached (254 Census). COUNTY_ZONE -> 198/254 confident-core
+  (user chose this); 56 uncolored (Panhandle/South Plains + SW borders + Brown), reported. No
+  typos/dups; fixture passes. commit a3e4bf1. (Authoritative ERCOT machine-readable list not
+  fetchable — user OK'd confident-core.)
+- [done] T3 — /api/countyweather (254 features, 198 colored/56 uncolored, live join, label). Verified 200. Geojson force-tracked+un-dockerignored for Fly. commit 0715067.
+- [done] T4 — county GeoJsonLayer (254 outlined, 198 zone-shaded, 56 uncolored outline-only); sidebar MW bar untouched; caveat=label; legend temp+rain. Verified CDP (hotter=redder, sidebar intact) + screenshot. commit 96a5f64.
+
+- [done] T5 — county layer already in the reveal system (REG + checkbox + T5 fade animation,
+  default-on), committed with T4. Verified default #map view is CALM: soft ~59% zone-temp fill,
+  basemap reads through, alerts at WATCH level, sidebar battery-MW bar untouched. Screenshots
+  (scratchpad map_default2.png / map_full.png) show 254 counties outlined, confident core
+  amber→red (hottest North Central 98.1°F), Panhandle/South-Plains left neutral gray. Legend
+  carries temp ramp + rain. Independent fresh-eyes API verify (subagent): 254 features, 198
+  colored / 56 uncolored (== coverage block), 8 zones summing to 198, label present, no
+  colored-but-no-zone / no fill↔zone inconsistency; 56 uncolored are Dallam/Hartley/Hansford/
+  Lipscomb-type border counties. countyheat separate + intact (87 counties). No code change
+  needed (T4 carried it) — verification-only.
+
+- [todo] DEPLOY — push 4 commits, redeploy Fly. (Awaiting go-ahead: final counts 198/56/254.)
 
 ## Log
-- init — REG has 8 layers (no substations layer). map-scope@1754 big box over canvas. controls@
-  1624. camera default {-99.3,31.2,zoom5.4}@1500. refreshLayers@1595. Plan: add caveat+op fields
-  to REG; fitBounds TX; per-layer ⓘ + Data&scope collapsible; compress radii; thin/translucent
-  arcs; opacity fade controller.
+- init — county_weather + weather_data fixtures pass. COUNTY_ZONE ~64 counties (needs 254).
+  Map 'county' layer = battery-MW scatter @1588 default-on; sidebar #county-panel MW list reads
+  /api/countyheat allCounties (KEEP). weather fetch params @126-128. Plan: replace map county
+  fill only; add /api/countyweather + tx_counties.geojson; ERCOT zone list for 254.

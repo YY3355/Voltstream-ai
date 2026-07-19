@@ -1,49 +1,54 @@
-# GOAL — MAP VISUAL REDESIGN (pure UI, no new data/engines)
+# GOAL — county-outlined weather layer (replace county-heat fill), honest zone-at-county-resolution
 
-Make the Map tab a calm decision-support surface with progressive reveal. All in
-dashboard_live.html (Map card + initMap). Do NOT touch other tabs, endpoints, or engines.
+Replace the map's county-heat (battery-MW) FILL with real Texas county polygons OUTLINED and
+shaded by each county's ERCOT weather ZONE live temp + rain. No fake per-county weather — it's
+8 zone readings mapped to counties, labeled as such. Sidebar battery-MW bar stays EXACTLY as-is.
 
-## Current state
-- REG layers (8): hubs, batteries, plants, cities, county, weather, locational, constraints.
-  (No standalone "substations" layer exists — apply default-off spirit to the 8 that do.)
-  Current defaults ON: hubs, batteries, cities. Camera: center {-99.3,31.2} zoom 5.4 (too wide —
-  shows NM/OK/LA/Mexico). map-scope = a big absolute honest-scope box over the canvas. Controls =
-  horizontal chip row (#map-controls). Right panel = #county-panel (county list). Legend =
-  #map-legend, meta = #map-meta.
+## APIs / facts
+- county_weather.build_county_weather(weather_result, county_zone=None) -> {counties[{county,
+  zone,temp_f,precip_mm,raining,fill}], zones[], n_counties, label}; temp_color(f)->[r,g,b].
+  COUNTY_ZONE currently ~64 counties — extend to all 254 (T2).
+- weather_data.parse_openmeteo currently carries temp+wind; needs precip (T1). fetch params at
+  weather_data.py:126-128 (current/hourly "temperature_2m,wind_speed_10m").
+- Map: the REG 'county' layer (dashboard_live.html:1588) is a ScatterplotLayer of allCounties
+  (battery MW), default ON. Its ⓘ caveat @1567. Sidebar #county-panel (battery MW list) reads
+  allCounties from /api/countyheat — KEEP UNTOUCHED. geo cache: data_archive/geo/.
 
 ## Tasks (commit each)
-- **T1 DEFAULT + FRAMING**: default ON = county + hubs ONLY; all others OFF. Tighten initial
-  camera to frame Texas snugly (fitBounds a TX bbox, not the wide zoom-5.4). Calm default
-  answers "where's the congestion value".
-- **T2 SCOPE RELOCATION**: remove the large #map-scope box from the canvas. Move every caveat
-  into (a) a sidebar collapsible "Data & scope" section, and (b) per-layer ⓘ tooltips next to
-  each layer toggle (hover/click shows THAT layer's caveat). NOTHING deleted — every caveat
-  still reachable in the DOM. Verify each layer's caveat text still exists.
-- **T3 VISUAL DISCIPLINE**: arcs 2-4px, 40-60% opacity, blend on overlap (translucent, not
-  opaque spaghetti). Marker radius range compressed to ~2-3x (not ~10x). Palette subdued: at
-  most 1-2 active colors/layer, muted (county reds, cyan transmission, charcoal sidebar), rest
-  subdued. Reduce competing labels.
-- **T4 SIDEBAR AS INSIGHT**: the layer sidebar carries context — for each active layer show a
-  couple of summary stats (county → "87 counties, 16,317 MW, top Brazoria 1,252 MW"; arcs →
-  "49 corridors, 25% placed"; hubs → "4 hubs, N rich / M cheap"; etc.).
-- **T5 SMOOTH TRANSITIONS**: layers fade/animate on/off (not pop); camera eases (easeTo/
-  fitBounds duration).
+- **T1 PRECIP**: add "precipitation" to Open-Meteo current+hourly params in weather_data.py;
+  carry precip_mm into each zone record in parse_openmeteo. Keep everything else identical.
+  Verify: weather_data fixture passes; run_weather zones have precip_mm.
+- **T2 POLYGONS + ZONES**: fetch real TX county boundaries (US Census cartographic county
+  GeoJSON, state FIPS 48) -> cache data_archive/geo/tx_counties.geojson. Extend county_weather.
+  COUNTY_ZONE to all 254 TX counties from ERCOT's authoritative weather-zone-to-county list.
+  Ambiguous counties: leave UNCOLORED (out of COUNTY_ZONE), report which. Verify: geojson has
+  ~254 TX county features; COUNTY_ZONE covers ~254 (report any omitted).
+- **T3 /api/countyweather**: run_weather() -> build_county_weather(); serve counties+zones+
+  label. Honest error passthrough. Verify: 200, ~254 counties, label present.
+- **T4 MAP**: replace the county-heat fill with a deck.gl GeoJsonLayer of county polygons —
+  every county OUTLINED (thin stroke), filled by build_county_weather fill (temp ramp; blue
+  where raining), ~50-60% opacity so the basemap reads through. KEEP the sidebar county-MW bar
+  exactly as-is (do not touch #county-panel / allCounties). Replace the old county ⓘ caveat with
+  the new label verbatim. Legend: temp ramp + rain swatch, noted "zone weather at county
+  resolution". Verify: counties outlined+shaded, rain blue, hotter zones redder, sidebar
+  MW-bar unchanged, label present.
+- **T5 REVEAL**: keep in the progressive-reveal system (default-on or one toggle, matching the
+  calm-default redesign). Verify default view still calm; screenshots.
 
 ## Definition of done
-- Default view is calm: exactly county + hubs active; framing tight on Texas.
-- All scope caveats reachable via sidebar "Data & scope" + per-layer ⓘ (verified text in DOM).
-- Arcs thin (2-4px) + translucent; markers compressed (~2-3x); palette subdued.
-- Active-layer summary stats in the sidebar.
-- Toggling a layer fades (no hard pop); camera eases.
+- /api/countyweather 200 with ~254 counties + label.
+- Map: TX counties outlined + zone-weather shaded (rain blue, hotter redder), basemap reads
+  through; sidebar battery-MW bar identical to before; new label verbatim; legend has temp+rain.
 - Other tabs untouched. Pushed when green; redeploy Fly.
 
-## Verify (CDP + SCREENSHOTS — this is visual, screenshots matter)
-- Screenshot the default view: only 2 layers, Texas framed tightly.
-- CDP: window.__activeLayers == [county,hubs] at load; map bounds within a TX-tight box; each
-  layer caveat string present in DOM; arc getWidth <=4 & alpha in 40-60%; radius max/min ~2-3x;
-  toggling a layer animates opacity (not instant); other tabs render.
+## Verify (CDP + SCREENSHOTS — visual)
+- weather/county_weather fixtures pass. curl /api/countyweather 200 ~254.
+- CDP /#map: GeoJsonLayer 'county' present with ~254 polygon features; a hot county redder than
+  a cool one; raining county blue; #county-panel MW list unchanged (same rows); caveat==label.
+- Screenshot the shaded county map. Other tabs render.
 
 ## Guardrails
-- Max 15 iterations. Supervised. One task = one commit. Green commits only. Pure UI — no data/
-  engine/endpoint changes. Do not break existing layer/alert/flow/intraday behavior or the
-  honesty content (relocate, never delete).
+- Max 15 iterations. Supervised. One task = one commit. Green commits only.
+- NO fabricated per-county weather; ambiguous counties uncolored not guessed. County boundaries
+  from Census (real). Do NOT touch the sidebar battery-MW bar or /api/countyheat. Cache geojson
+  gitignored under data_archive; commit only small summaries if needed for Fly.
