@@ -184,7 +184,7 @@
   .arc-livetoggle{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
   .arc-livetoggle input{accent-color:var(--red)}
   .arc-stats{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:6px}
-  .arc-stats b{color:var(--amber)} .arc-stats .barmini{display:inline-block;width:60px;height:8px;border-radius:2px;background:linear-gradient(90deg,#58a6ff,#f0a35e,#f85149);vertical-align:middle;margin:0 4px}
+  .arc-stats b{color:var(--amber)} .arc-stats .barmini{display:inline-block;width:60px;height:8px;border-radius:2px;background:linear-gradient(90deg,#2c8c9e,#5bd6ea,#8fe6f5);vertical-align:middle;margin:0 4px}
   #arc-labels{margin-top:6px}
   .arc-roadmap{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:6px;line-height:1.5}
   .arc-roadmap b{color:var(--mut)} .arc-roadmap .code{color:#c9a06a}
@@ -1471,6 +1471,11 @@ function shadowColor(sp){ const t=Math.max(0,Math.min(1,Math.log10(Math.max(1,sp
   if(t<0.5){const u=t/0.5; c=[L(88,240,u),L(166,163,u),L(255,94,u)];}   // blue -> amber
   else{const u=(t-0.5)/0.5; c=[L(240,248,u),L(163,81,u),L(94,73,u)];}   // amber -> red
   return [c[0],c[1],c[2],210]; }
+// transmission arcs: ONE muted-cyan family, brightness by shadow price, ~53% alpha so lines
+// blend (translucent) on overlap instead of opaque spaghetti (T3 visual discipline).
+function arcColor(sp){ const t=Math.max(0,Math.min(1,Math.log10(Math.max(1,sp||1))/Math.log10(3000))),
+  L=(a,b)=>Math.round(a+(b-a)*t);
+  return [L(44,140), L(120,224), L(140,238), 135]; }   // dim teal -> bright cyan, alpha 135 (~53%)
 function arcTip(o){ return `<div class="h">${o.from_station} &harr; ${o.to_station}</div>`
   +`<div>bound <b>${o.bind_pct}%</b> of the last 90d (${(o.bind_intervals||0).toLocaleString()} SCED runs)</div>`
   +`<div>shadow price mean <b>$${(o.mean_shadow||0).toLocaleString()}</b> &middot; max $${(o.max_shadow||0).toLocaleString()}/MWh</div>`
@@ -1562,23 +1567,23 @@ async function initMap(){
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
     hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
-      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*30,radiusMinPixels:8,radiusMaxPixels:55,
-      stroked:true,lineWidthMinPixels:1.5,getLineColor:[255,255,255,170],getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],onClick:pop})},
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>8+Math.sqrt(p.abs_dart/maxAbs)*11,radiusMinPixels:7,radiusMaxPixels:20,
+      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,110],getFillColor:p=>p.sign==='rich'?[74,158,96,190]:[206,92,86,190],onClick:pop})},
     batteries:{label:'Batteries',sw:'#a371f7',data:batts,on:false,make:()=>new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,
-      getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>6+Math.sqrt((b.mw||0)/maxBattMw)*26,radiusMinPixels:5,radiusMaxPixels:44,
-      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,150],getFillColor:[163,113,247,215],onClick:pop})},
+      getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>5+Math.sqrt((b.mw||0)/maxBattMw)*9,radiusMinPixels:4,radiusMaxPixels:15,
+      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,90],getFillColor:[150,120,196,165],onClick:pop})},
     plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
-      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>5+Math.sqrt((p.mw||0)/maxPlantMw)*24,radiusMinPixels:4,radiusMaxPixels:40,
-      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,130],getFillColor:p=>techColor(p.tech),onClick:pop})},
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>4+Math.sqrt((p.mw||0)/maxPlantMw)*8,radiusMinPixels:4,radiusMaxPixels:13,
+      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,80],getFillColor:p=>techColor(p.tech),onClick:pop})},
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
-      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>4+Math.sqrt((c.population||0)/maxPop)*24,radiusMinPixels:3,radiusMaxPixels:38,
-      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,120],getFillColor:[88,166,255,195],onClick:pop})},
+      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>3+Math.sqrt((c.population||0)/maxPop)*8,radiusMinPixels:3,radiusMaxPixels:12,
+      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,70],getFillColor:[108,150,200,150],onClick:pop})},
     county:{label:'County heat (battery MW)',sw:'#f0663a',data:allCounties,on:true,make:()=>new deck.ScatterplotLayer({id:'county',data:allCounties,pickable:true,
-      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>7+Math.sqrt((c.mw||0)/maxCountyMw)*30,radiusMinPixels:6,radiusMaxPixels:48,
-      stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,90],getFillColor:c=>heatColor(c.mw,maxCountyMw),onClick:pop})},
+      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>8+Math.sqrt((c.mw||0)/maxCountyMw)*14,radiusMinPixels:7,radiusMaxPixels:22,
+      stroked:true,lineWidthMinPixels:0.75,getLineColor:[255,255,255,70],getFillColor:c=>heatColor(c.mw,maxCountyMw),onClick:pop})},
     weather:{label:'Weather (zones)',sw:'#f0a35e',data:wxZones,on:false,make:()=>{
       const scatter=new deck.ScatterplotLayer({id:'weather',data:wxZones,pickable:true,
-        getPosition:z=>[z.lon,z.lat],radiusUnits:'pixels',getRadius:z=>12+Math.sqrt((z.wind_mph||0)/maxWind)*20,radiusMinPixels:10,radiusMaxPixels:38,
+        getPosition:z=>[z.lon,z.lat],radiusUnits:'pixels',getRadius:z=>11+Math.sqrt((z.wind_mph||0)/maxWind)*11,radiusMinPixels:10,radiusMaxPixels:24,
         stroked:true,lineWidthMinPixels:2.5,getLineColor:z=>z.wind_heavy?[34,211,238,255]:[255,255,255,150],   // wind-belt = bright cyan ring
         getFillColor:z=>tempColor(z.temp_f),onClick:pop});                                                    // fill = temperature
       if(!deck.TextLayer) return scatter;
@@ -1590,26 +1595,26 @@ async function initMap(){
     locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
       const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
       return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
-        getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>16+Math.sqrt(locNorm(p.rev,locLo,locHi))*46,radiusMinPixels:12,radiusMaxPixels:72,
+        getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>14+Math.sqrt(locNorm(p.rev,locLo,locHi))*22,radiusMinPixels:12,radiusMaxPixels:40,
         stroked:true,lineWidthMinPixels:2,getLineColor:[255,255,255,190],getFillColor:p=>locColor(p.rev,locLo,locHi),
         updateTriggers:{getRadius:[locIdx],getFillColor:[locIdx]},onClick:pop}); }},
-    constraints:{label:'Constraint arcs (SCED)',sw:'#f85149',data:arcAgg.concat(arcNodes),on:false,make:()=>{
+    constraints:{label:'Constraint arcs (SCED)',sw:'#5bd6ea',data:arcAgg.concat(arcNodes),on:false,make:()=>{
       const out=[];
       const snap = snapshotArcs();                               // live-now OR intraday-selected snapshot
       if(snap){                                                  // measured SCED snapshot (has direction/flow)
         out.push(new deck.ArcLayer({id:'constraint-live',data:snap,pickable:true,
           getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
-          getSourceColor:a=>shadowColor(a.shadow_price),getTargetColor:a=>shadowColor(a.shadow_price),
-          getWidth:a=>2+Math.min(8,(a.utilization||0)*6),getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn]}}));
+          getSourceColor:a=>arcColor(a.shadow_price),getTargetColor:a=>arcColor(a.shadow_price),   // muted cyan, translucent
+          getWidth:a=>2+Math.min(2,(a.utilization||0)*2),widthMinPixels:2,widthMaxPixels:4,getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn]}}));
       } else {                                                   // aggregate: 90d binding frequency
         const mx=Math.max(...arcAgg.map(a=>a.bind_pct),1);
         out.push(new deck.ArcLayer({id:'constraint-arcs',data:arcAgg,pickable:true,
           getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
-          getSourceColor:a=>shadowColor(a.mean_shadow),getTargetColor:a=>shadowColor(a.mean_shadow),
-          getWidth:a=>1.5+Math.sqrt(a.bind_pct/mx)*9,getHeight:0.35,onClick:pop}));
+          getSourceColor:a=>arcColor(a.mean_shadow),getTargetColor:a=>arcColor(a.mean_shadow),   // thin translucent cyan — blends on overlap
+          getWidth:a=>2+Math.sqrt(a.bind_pct/mx)*2,widthMinPixels:2,widthMaxPixels:4,getHeight:0.35,onClick:pop}));
         if(arcNodes.length) out.push(new deck.ScatterplotLayer({id:'constraint-nodes',data:arcNodes,pickable:true,
-          getPosition:n=>[n.lon,n.lat],radiusUnits:'pixels',getRadius:n=>4+Math.sqrt(n.bind_pct/mx)*10,radiusMinPixels:4,radiusMaxPixels:16,
-          stroked:true,lineWidthMinPixels:1.2,getLineColor:[255,255,255,180],getFillColor:n=>shadowColor(n.mean_shadow),onClick:pop}));
+          getPosition:n=>[n.lon,n.lat],radiusUnits:'pixels',getRadius:n=>4+Math.sqrt(n.bind_pct/mx)*6,radiusMinPixels:4,radiusMaxPixels:11,
+          stroked:true,lineWidthMinPixels:0.75,getLineColor:[255,255,255,90],getFillColor:n=>arcColor(n.mean_shadow),onClick:pop}));
       }
       return out; }},
   };
@@ -1791,7 +1796,7 @@ async function initMap(){
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span><span><i style="background:#f0663a"></i>county heat (fill+size=MW)</span>`
     +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
-    +`<span><i style="background:#f85149"></i>constraint arcs (width=90d bind freq, color=shadow $)</span>`;
+    +`<span><i style="background:#5bd6ea"></i>transmission arcs (width=bind freq, brightness=shadow $)</span>`;
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar
   // "Data & scope" collapsible + the per-layer ⓘ tooltips. Kept empty/hidden, nothing deleted.
   $('map-scope').innerHTML='';
