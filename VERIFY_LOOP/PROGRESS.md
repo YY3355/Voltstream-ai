@@ -23,7 +23,15 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS.
   Lipscomb-type border counties. countyheat separate + intact (87 counties). No code change
   needed (T4 carried it) — verification-only.
 
-- [todo] DEPLOY — push 4 commits, redeploy Fly. (Awaiting go-ahead: final counts 198/56/254.)
+- [done] DEPLOY — pushed 5 commits (ad70951..0cd2f04), flyctl deploy --remote-only exit 0.
+  Public verified: voltstream-ercot.fly.dev/ 200, /api/countyweather 200 → 254 features,
+  198 colored / 56 uncolored (coverage matches). Public #map screenshot (map_public.png):
+  254 counties outlined, confident core amber→red (hottest North Central 99.1°F live),
+  Panhandle/South-Plains neutral gray, hubs on, battery-MW sidebar intact. (Fly smoke-check
+  "not listening on 0.0.0.0:8080" was a startup-timing false alarm — machine reached good
+  state, DNS verified, live curls 200.)
+
+## DONE — loop complete. All tasks T1–T5 + DEPLOY green. Final: 254 counties / 198 shaded / 56 neutral.
 
 ## Log
 - init — county_weather + weather_data fixtures pass. COUNTY_ZONE ~64 counties (needs 254).
