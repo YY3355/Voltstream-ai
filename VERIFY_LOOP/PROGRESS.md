@@ -14,8 +14,13 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> 
   markers/arcs draw + pick above it. Real CDP pickObject at a battery's projected pixel (county
   fill ON) returns layer 'batteries' (pickedIsBattery true); pick stack [batteries, county, ...];
   county still pickable underneath (present in stack) for its own tooltip. commit PENDING.
-- [todo] T2 — outlines always-on; fill is the toggle; DELETE zone-marker layer entirely; rewire
-  wind-belt banner to county data.
+- [done] T2 — county-outline layer always rendered (bottom, non-pickable, thin subtle); REG.county
+  is fill-only = the toggle. DELETED the 8-zone weather layer entirely: REG.weather, its checkbox,
+  legend entry, caveat, wxTip, maxWind, the /api/weather map fetch + wx/wxZones/wxSignal, and
+  orphaned tempColor/wxSpark. Banner rewired to cw.wind_signal (10.1 mph, 83 counties, live).
+  CDP: no weather layer/toggle; outline present with fill on AND off; fill toggles cleanly; banner
+  live; batteries still pickable (rendered [county-outline,county,batteries] -> picks batteries).
+  Screenshots: fill-on (254 shaded, per-county gradient) + fill-off (outlines-only geography). commit PENDING.
 - [todo] T4 — legend temp+rain w/ new label, remove weather legend entry; sidebar battery-MW untouched.
 - [todo] DEPLOY — push, redeploy Fly.
 

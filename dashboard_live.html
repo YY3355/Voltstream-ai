@@ -1405,7 +1405,7 @@ function countyWxTip(f){ const p=f.properties||f; if(p.temp_f==null) return `<di
   return `<div class="h">${p.NAME} County</div>`
     +`<div><b>${p.temp_f}&deg;F</b>${p.wind_mph!=null?` &middot; ${p.wind_mph} mph wind`:''}${p.raining?` &middot; <span style="color:#4aa8e0">raining</span> (${p.precip_mm} mm)`:''}</div>`
     +`<span class="pr">county-centroid reading &mdash; one measurement per county; varies within a large county</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyWxTip(o):id==='locational'?locTip(o)
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='locational'?locTip(o)
   :id==='constraint-arcs'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
@@ -1415,22 +1415,6 @@ function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('coal')) return [150,158,170,205];
   if(t.includes('hydro')||t.includes('water')) return [88,166,255,205];
   return [163,113,247,205]; }                                   // other
-function tempColor(f){ const t=Math.max(0,Math.min(1,((f||75)-60)/45)),   // 60F cool -> 105F hot
-  L=(a,b,u)=>Math.round(a+(b-a)*u); let c;
-  if(t<0.5){const u=t/0.5; c=[L(70,245,u),L(130,166,u),L(255,35,u)];}      // blue -> amber
-  else{const u=(t-0.5)/0.5; c=[L(245,248,u),L(166,81,u),L(35,73,u)];}      // amber -> red
-  return [c[0],c[1],c[2],215]; }
-function wxSpark(arr){ if(!arr||arr.length<2) return '';
-  const w=124,h=22,mx=Math.max(...arr),mn=Math.min(...arr),rng=(mx-mn)||1;
-  const pts=arr.map((v,i)=>`${(i/(arr.length-1)*w).toFixed(1)},${(h-((v-mn)/rng)*(h-3)-1.5).toFixed(1)}`).join(' ');
-  return `<svg width="${w}" height="${h}" style="vertical-align:middle;margin-left:4px"><polyline points="${pts}" fill="none" stroke="#22d3ee" stroke-width="1.4"/></svg>`; }
-function wxTip(o){ const belt=o.wind_heavy?' &middot; <span style="color:#22d3ee">WIND BELT</span>':'';
-  const spark=wxSpark(o.forecast_wind_mph);
-  return `<div class="h">${o.zone}${belt}</div>`
-    +`<div>temp <b>${o.temp_f}&deg;F</b> &middot; wind <b>${o.wind_mph} mph</b></div>`
-    +(spark?`<div style="margin-top:2px">48h wind${spark}</div>`:'')
-    +`<div style="color:var(--mut)">${o.note||''}</div>`
-    +`<span class="pr">regional centroid &mdash; samples a zone, not a weather field</span>`; }
 function heatColor(mw,max){ const t=Math.sqrt(Math.max(0,Math.min(1,(mw||0)/(max||1)))),   // MW -> heat ramp
   L=(a,b,u)=>Math.round(a+(b-a)*u);                                                         // dark red -> bright amber
   return [L(120,255,t),L(28,210,t),L(16,60,t),225]; }
@@ -1504,11 +1488,10 @@ function liveArcTip(o){ return `<div class="h">${o.from_station} &harr; ${o.to_s
 async function initMap(){
   if(_mapInited) return; _mapInited=true;
   const hero=$('map-hero'); hero.innerHTML='<span class="thinking">loading the map…</span>';
-  let dart,geo,wx,ch,loc,arc,cw;
-  try{ [dart,geo,wx,ch,loc,arc,cw]=await Promise.all([
+  let dart,geo,ch,loc,arc,cw;
+  try{ [dart,geo,ch,loc,arc,cw]=await Promise.all([
       fetch('/api/map').then(r=>r.json()).catch(()=>({error:'DART unreachable',points:[]})),
       fetch('/api/geo').then(r=>r.json()).catch(()=>({error:'geo unreachable',cities:[],batteries:[],plants:[]})),
-      fetch('/api/weather').then(r=>r.json()).catch(()=>({error:'weather unreachable',zones:[]})),
       fetch('/api/countyheat').then(r=>r.json()).catch(()=>({error:'county heat unreachable',counties:[]})),
       fetch('/api/locational').then(r=>r.json()).catch(()=>({error:'locational unreachable',years:[],frames:{}})),
       fetch('/api/constraintarcs').then(r=>r.json()).catch(()=>({error:'arcs unreachable',aggregate_arcs:[]})),
@@ -1517,7 +1500,6 @@ async function initMap(){
   if(typeof mapboxgl==='undefined'||typeof deck==='undefined'){
     hero.innerHTML='<span class="none">map libraries failed to load (CDN blocked?)</span>'; return; }
   const hubs=(dart&&dart.points)||[], batts=(geo&&geo.batteries)||[], plants=(geo&&geo.plants)||[], cities=(geo&&geo.cities)||[];
-  const wxZones=(wx&&wx.zones)||[], wxSignal=wx&&wx.signal;
   const counties=(ch&&ch.counties)||[], allCounties=(ch&&ch.all_counties)||[];   // battery-MW (sidebar bar — untouched)
   const cwFeats=(cw&&cw.features)||[], cwFC={type:'FeatureCollection',features:cwFeats},   // county-weather polygons
         cwLabel=(cw&&cw.label)||'', cwCov=(cw&&cw.coverage)||{}, cwWind=(cw&&cw.wind_signal)||null;
@@ -1564,7 +1546,7 @@ async function initMap(){
   window.__pop=pop;                                    // debug handle for popup/forecast tests
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
         maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
-        maxWind=Math.max(...wxZones.map(z=>z.wind_mph||0),1), maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
+        maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
   // per-layer honest-scope caveats — surfaced as a ⓘ tooltip next to each toggle (T2) and
   // collected in the sidebar "Data & scope" section. Relocated off the canvas, never deleted.
   const LAYER_CAVEATS={
@@ -1573,7 +1555,6 @@ async function initMap(){
     plants:"EIA-860M generator coordinates (asset-exact), colored by technology.",
     cities:"Census city centroids — population markers, NOT load-delivery points.",
     county:cwLabel||"County outlines are real boundaries; fill is each county's OWN live Open-Meteo reading at its centroid (blue cool -> red hot), blue where it is raining. County-centroid readings — one real measurement per county; weather varies within large counties.",
-    weather:"ERCOT weather-zone centroids — a sample, not a weather field. Weather only, not a price forecast.",
     locational:"Perfect-foresight decade-revenue CEILING by hub ($/MW-year). Hub-level (regional), energy-only, history — not a forecast.",
     constraints:"Measured ERCOT SCED constraints (NP6-86-CD). Only lines whose BOTH endpoints resolve to a real substation are drawn (~39% of stations). A congested-grid layer, not a complete power-flow map.",
   };
@@ -1593,21 +1574,12 @@ async function initMap(){
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>3+Math.sqrt((c.population||0)/maxPop)*8,radiusMinPixels:3,radiusMaxPixels:12,
       stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,70],getFillColor:[108,150,200,150],onClick:pop})},
+    // T2: county weather is FILL-ONLY (the toggle). The always-on outline layer (see buildLayers)
+    // draws the permanent county geography; this layer only tints it by per-county temp/rain.
     county:{label:'County weather (temp + rain)',sw:'#e0a24a',data:cwFeats,on:true,make:()=>new deck.GeoJsonLayer({id:'county',data:cwFC,pickable:true,
-      stroked:true,filled:true,lineWidthUnits:'pixels',getLineWidth:0.6,lineWidthMinPixels:0.4,getLineColor:[228,233,240,75],   // every county outlined (thin)
-      getFillColor:f=>{const c=f.properties.fill; return c?[c[0],c[1],c[2],150]:[70,74,82,26];},   // zone temp/rain fill ~59%; uncolored = faint outline only
+      stroked:false,filled:true,
+      getFillColor:f=>{const c=f.properties.fill; return c?[c[0],c[1],c[2],150]:[70,74,82,26];},   // per-county temp/rain fill ~59%
       onClick:pop})},
-    weather:{label:'Weather (zones)',sw:'#f0a35e',data:wxZones,on:false,make:()=>{
-      const scatter=new deck.ScatterplotLayer({id:'weather',data:wxZones,pickable:true,
-        getPosition:z=>[z.lon,z.lat],radiusUnits:'pixels',getRadius:z=>11+Math.sqrt((z.wind_mph||0)/maxWind)*11,radiusMinPixels:10,radiusMaxPixels:24,
-        stroked:true,lineWidthMinPixels:2.5,getLineColor:z=>z.wind_heavy?[34,211,238,255]:[255,255,255,150],   // wind-belt = bright cyan ring
-        getFillColor:z=>tempColor(z.temp_f),onClick:pop});                                                    // fill = temperature
-      if(!deck.TextLayer) return scatter;
-      const labels=new deck.TextLayer({id:'weather-labels',data:wxZones,pickable:false,
-        getPosition:z=>[z.lon,z.lat],getText:z=>`${Math.round(z.wind_mph)}`,getSize:12,
-        getColor:[255,255,255,235],getPixelOffset:[0,-19],fontFamily:'monospace',
-        getTextAnchor:'middle',getAlignmentBaseline:'center',outlineWidth:2,outlineColor:[10,14,20,255]});
-      return [scatter,labels]; }},
     locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
       const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
       return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
@@ -1643,8 +1615,15 @@ async function initMap(){
   const Z_ORDER=['county','hubs','batteries','plants','cities','locational','constraints'];
   function renderKeys(){ const ord=Z_ORDER.concat(Object.keys(REG).filter(k=>!Z_ORDER.includes(k)));
     return ord.filter(k=>REG[k]&&(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
-  const buildLayers=()=>renderKeys().flatMap(k=>[].concat(REG[k].make())
-    .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))})));   // fade via animated opacity
+  // T2: county OUTLINES are permanent basemap geography — always drawn, at the very bottom, thin +
+  // subtle, non-pickable (clicks pass straight through to whatever is under the cursor). The weather
+  // FILL (REG.county) is the toggle that tints these outlines; toggling it never removes the geography.
+  const countyOutline=()=> (cwFeats.length? new deck.GeoJsonLayer({id:'county-outline',data:cwFC,
+      pickable:false,stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:0.6,
+      lineWidthMinPixels:0.4,getLineColor:[228,233,240,55]}) : null);
+  const buildLayers=()=>[countyOutline()].filter(Boolean).concat(
+    renderKeys().flatMap(k=>[].concat(REG[k].make())
+      .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))}))));   // outline first (bottom), then fade-managed layers
   // build the overlay WITH its initial layers so they paint on first render
   const overlay=new deck.MapboxOverlay({interleaved:false, layers:buildLayers(),   // overlaid: deck renders visible markers; events forwarded to the map
     getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
@@ -1723,7 +1702,6 @@ async function initMap(){
     case 'batteries':{ const mw=batts.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(batts.length)}</b> batteries · <b>${_fmt(mw)}</b> MW (EIA-860M)`; }
     case 'plants':{ const mw=plants.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(plants.length)}</b> plants · ${_fmt(mw)} MW · by technology`; }
     case 'cities':return `<b>${cities.length}</b> cities · Census centroids`;
-    case 'weather':return wxSignal?`<b>${wxZones.length}</b> zones · wind belt <b>${wxSignal.wind_belt_avg_mph}</b> mph (${wxSignal.state})`:`${wxZones.length} weather zones`;
     case 'locational':return `<b>${locYears.length}</b> yrs · $${Math.round(locLo/1000)}k–$${Math.round(locHi/1000)}k/MW-yr (perfect foresight)`;
     case 'constraints':return `<b>${arcAgg.length}</b> corridors · <b>${arcCov.arc_row_pct||0}%</b> placed (${arcCov.stations_resolved||0}/${arcCov.stations_total||0} stations)`;
     default:return REG[k]?REG[k].label:k;
@@ -1833,29 +1811,29 @@ async function initMap(){
     } else { cp.innerHTML=`<div class="cp-head"><b>Battery MW by county</b></div><div class="cp-foot">${(ch&&ch.note)||'no battery geography cached'}</div>`; }
   }
 
-  // wind-belt banner (T3): the market story in one line + honest caveat (T4, verbatim)
+  // wind-belt banner (T2): now computed from the REAL per-county wind readings (cw.wind_signal —
+  // mean wind of the wind-belt-region counties), not the deleted 8-zone layer. Same market story.
   const bn=$('map-wxbanner');
-  if(bn && wxSignal){
-    const col=wxSignal.state==='strong'?'#3fb950':wxSignal.state==='moderate'?'#f5a623':'#f85149';
+  if(bn && cwWind){
+    const col=cwWind.state==='strong'?'#3fb950':cwWind.state==='moderate'?'#f5a623':'#f85149';
     bn.style.display='flex'; bn.style.borderLeftColor=col;
     bn.innerHTML=`<span class="wx-dot" style="background:${col}"></span>`
-      +`<span><b>Wind belt: ${wxSignal.state.toUpperCase()}</b> &mdash; ${wxSignal.wind_belt_avg_mph} mph now`
-      +`${wxSignal.wind_belt_48h_avg_mph!=null?' &rarr; '+wxSignal.wind_belt_48h_avg_mph+' mph next 48h':''} `
-      +`<span style="color:var(--mut)">&middot; ${wxSignal.mechanism}</span></span>`
-      +`<span class="wx-caveat">${wxSignal.caveat}</span>`;
-  } else if(bn && wx && wx.error){ bn.style.display='flex'; bn.style.borderLeftColor='var(--line)';
-    bn.innerHTML=`<span class="wx-caveat">weather layer unavailable — ${wx.error}</span>`; }
+      +`<span><b>Wind belt: ${cwWind.state.toUpperCase()}</b> &mdash; ${cwWind.wind_belt_avg_mph} mph now`
+      +`${cwWind.wind_belt_48h_avg_mph!=null?' &rarr; '+cwWind.wind_belt_48h_avg_mph+' mph next 48h':''} `
+      +`<span style="color:var(--mut)">&middot; ${cwWind.mechanism} · ${cwWind.counties_counted} counties</span></span>`
+      +`<span class="wx-caveat">${cwWind.caveat}</span>`;
+  } else if(bn && cw && cw.error){ bn.style.display='flex'; bn.style.borderLeftColor='var(--line)';
+    bn.innerHTML=`<span class="wx-caveat">county weather unavailable — ${cw.error}</span>`; }
 
   // meta + legend + honest scope (T4)
-  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${wxZones.length} weather zones · ${allCounties.length} battery counties · ${locYears.length} yrs revenue playback · ${arcAgg.length} constraint arcs.</b> `
+  $('map-meta').innerHTML=`<b style="color:var(--mut)">${hubs.length} hubs · ${batts.length} batteries · ${plants.length} plants · ${cities.length} cities · ${cwCov.total||cwFeats.length} counties (per-county weather) · ${allCounties.length} battery counties · ${locYears.length} yrs revenue playback · ${arcAgg.length} constraint arcs.</b> `
     +`DART: ${(dart&&dart.data_source)||'live ERCOT'}${dart&&dart.window?' · window '+dart.window.hours+'h':''}. `
-    +`${wx&&wx.source?'Weather: '+wx.source+'. ':''}`
+    +`${cw&&cw.source?'Weather: '+cw.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
   $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich (click: 24h forecast)</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`
     +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (zone temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
-    +`<span><i style="background:#f0a35e"></i>weather (fill=temp, size=wind, cyan ring=wind belt)</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
     +`<span><i style="background:#5bd6ea"></i>transmission arcs (width=bind freq, brightness=shadow $)</span>`;
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar
