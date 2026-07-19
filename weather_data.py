@@ -161,8 +161,125 @@ def run_weather(ttl_s=1800):
         return {"error": f"weather unavailable ({e})", "zones": []}
 
 
+# ----------------------------- per-county weather (TRUE per-county readings) -----------------------------
+# Upgrade from the 8-zone sample: one REAL Open-Meteo reading at EACH of the 254 Texas county
+# centroids. Honest caveat: a single centroid reading still doesn't resolve weather WITHIN a large
+# county — but it is that county's own measurement, not a zone value inherited by 30 counties.
+COUNTY_GEO = os.path.join("data_archive", "geo", "tx_counties.geojson")
+
+
+def _flatten_coords(x, out):
+    """Collect every [lon,lat] pair from a (possibly nested) GeoJSON coordinate array."""
+    if isinstance(x, (list, tuple)):
+        if len(x) == 2 and all(isinstance(v, (int, float)) for v in x):
+            out.append((float(x[0]), float(x[1])))
+        else:
+            for e in x:
+                _flatten_coords(e, out)
+
+
+def county_centroids(geojson_path=None):
+    """[{county,lat,lon}] — a representative point (mean of boundary vertices) per TX county."""
+    import json
+    path = geojson_path or COUNTY_GEO
+    d = json.load(open(path))
+    rows = []
+    for f in d.get("features", []):
+        pts = []
+        _flatten_coords(f["geometry"]["coordinates"], pts)
+        if not pts:
+            continue
+        lon = sum(p[0] for p in pts) / len(pts)
+        lat = sum(p[1] for p in pts) / len(pts)
+        rows.append({"county": f["properties"]["NAME"], "lat": round(lat, 4), "lon": round(lon, 4)})
+    return rows
+
+
+def parse_county_current(county_row, cur):
+    """One Open-Meteo 'current' block -> a clean per-county record. Drops anything unusable."""
+    cur = cur or {}
+    temp = cur.get("temperature_2m")
+    wind = cur.get("wind_speed_10m")
+    if temp is None or wind is None:
+        return None                                    # no reading -> no county, never invented
+    precip = cur.get("precipitation")
+    return {
+        "county": county_row["county"], "lat": county_row["lat"], "lon": county_row["lon"],
+        "temp_f": round(float(temp) * 9 / 5 + 32, 1),
+        "wind_mph": round(float(wind) * 0.621371, 1),
+        "precip_mm": round(float(precip), 2) if precip is not None else 0.0,
+    }
+
+
+def fetch_county_weather(batch=100):
+    """Query Open-Meteo for ALL county centroids using multi-location batching (~100/req -> ~3 reqs)."""
+    import requests
+    rows = county_centroids()
+    out = []
+    for i in range(0, len(rows), batch):
+        chunk = rows[i:i + batch]
+        try:
+            r = requests.get(OM_URL, params={
+                "latitude": ",".join(str(c["lat"]) for c in chunk),
+                "longitude": ",".join(str(c["lon"]) for c in chunk),
+                "current": "temperature_2m,wind_speed_10m,precipitation",
+                "timezone": "America/Chicago",
+            }, timeout=45)
+            if r.status_code != 200:
+                continue
+            data = r.json()
+            if isinstance(data, dict):                 # single-location responses aren't wrapped in a list
+                data = [data]
+            for row, loc in zip(chunk, data):
+                rec = parse_county_current(row, (loc or {}).get("current"))
+                if rec:
+                    out.append(rec)
+        except Exception:
+            continue                                   # a failed batch is omitted, never faked
+    if not out:
+        raise SystemExit("Open-Meteo returned nothing usable for any county.")
+    return {
+        "counties": out, "n": len(out),
+        "source": "Open-Meteo (free, no key) at Texas county centroids",
+        "note": ("One current reading per county centroid — a single point does not resolve "
+                 "weather within a large county, but it is that county's own measurement."),
+    }
+
+
+def run_county_weather(ttl_s=1800):
+    """Cached top level for the per-county pull (30-min TTL; stale beats nothing)."""
+    import json, time
+    os.makedirs(CACHE, exist_ok=True)
+    p = os.path.join(CACHE, "counties.json")
+    if os.path.exists(p) and time.time() - os.path.getmtime(p) < ttl_s:
+        try:
+            return json.load(open(p))
+        except Exception:
+            pass
+    try:
+        d = fetch_county_weather()
+        json.dump(d, open(p, "w"))
+        return d
+    except Exception as e:
+        if os.path.exists(p):
+            return json.load(open(p))
+        return {"error": f"county weather unavailable ({e})", "counties": []}
+
+
 # ----------------------------- fixture self-test -----------------------------
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "county":
+        d = run_county_weather(ttl_s=0)
+        if "error" in d:
+            print(d["error"]); sys.exit(1)
+        cs = d["counties"]
+        print(f"{len(cs)} Texas counties — {d['source']}")
+        hot = sorted(cs, key=lambda c: -(c["temp_f"] or 0))[:3]
+        windy = sorted(cs, key=lambda c: -(c["wind_mph"] or 0))[:3]
+        print("  hottest:", ", ".join(f"{c['county']} {c['temp_f']}F" for c in hot))
+        print("  windiest:", ", ".join(f"{c['county']} {c['wind_mph']}mph" for c in windy))
+        print("  raining:", sum(1 for c in cs if (c["precip_mm"] or 0) > 0.1), "counties")
+        sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "fetch":
         d = run_weather(ttl_s=0)
         if "error" in d:
@@ -216,6 +333,23 @@ if __name__ == "__main__":
         assert wind_signal(calm)["state"] == "light", "light wind must flip the mechanism"
         assert "higher net load" in wind_signal(calm)["mechanism"]
         assert all(r["precision"] == "zone_centroid" for r in recs)
+
+        # --- per-county (T3): parse + centroid helpers, no network ---
+        cc = parse_county_current({"county": "Harris", "lat": 29.8, "lon": -95.4},
+                                  {"temperature_2m": 35.0, "wind_speed_10m": 48.0, "precipitation": 2.5})
+        assert cc["temp_f"] == 95.0 and abs(cc["wind_mph"] - 29.8) < 0.2 and cc["precip_mm"] == 2.5, cc
+        assert parse_county_current({"county": "X", "lat": 0, "lon": 0}, {}) is None, "no reading -> dropped"
+        assert parse_county_current({"county": "X", "lat": 0, "lon": 0},
+                                    {"temperature_2m": 30.0, "wind_speed_10m": 10.0})["precip_mm"] == 0.0
+        flat = []
+        _flatten_coords([[[-97.0, 31.0], [-96.0, 31.0], [-96.0, 32.0], [-97.0, 31.0]]], flat)
+        assert flat == [(-97.0, 31.0), (-96.0, 31.0), (-96.0, 32.0), (-97.0, 31.0)], flat
+        if os.path.exists(COUNTY_GEO):
+            cents = county_centroids()
+            assert len(cents) == 254, f"expected 254 county centroids, got {len(cents)}"
+            assert all(-107 < c["lon"] < -93 and 25 < c["lat"] < 37 for c in cents), "centroids inside TX bbox"
+            print(f"  per-county: 254 centroids computed, parse+units verified (C->F, km/h->mph)")
+
         print("fixture self-test PASSED")
         print(f"  8 zones parsed, unit conversions verified (C->F, km/h->mph)")
         print(f"  wind signal: strong={s['wind_belt_avg_mph']}mph -> '{s['mechanism']}'")

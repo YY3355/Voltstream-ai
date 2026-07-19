@@ -1401,11 +1401,10 @@ function plantTip(o){ return `<div class="h">${o.plant||'Plant'}</div>`
 function cityTip(o){ return `<div class="h">${o.name}</div>`
   +`<div>pop. <b>${(o.population||0).toLocaleString()}</b> &middot; ${o.county} County</div>`
   +`<span class="pr">Census centroid &mdash; NOT a load-delivery point</span>`; }
-function countyWxTip(f){ const p=f.properties||f; if(!p.zone) return `<div class="h">${p.NAME} County</div><span class="pr">outside the confident zone assignment — uncolored, not guessed</span>`;
+function countyWxTip(f){ const p=f.properties||f; if(p.temp_f==null) return `<div class="h">${p.NAME} County</div><span class="pr">no live reading for this county</span>`;
   return `<div class="h">${p.NAME} County</div>`
-    +`<div><b>${p.temp_f}&deg;F</b>${p.raining?` &middot; <span style="color:#4aa8e0">raining</span> (${p.precip_mm} mm)`:''}</div>`
-    +`<div>ERCOT <b>${p.zone}</b> weather zone</div>`
-    +`<span class="pr">zone weather at county resolution &mdash; not a per-county measurement</span>`; }
+    +`<div><b>${p.temp_f}&deg;F</b>${p.wind_mph!=null?` &middot; ${p.wind_mph} mph wind`:''}${p.raining?` &middot; <span style="color:#4aa8e0">raining</span> (${p.precip_mm} mm)`:''}</div>`
+    +`<span class="pr">county-centroid reading &mdash; one measurement per county; varies within a large county</span>`; }
 function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='weather'?wxTip(o):id==='county'?countyWxTip(o):id==='locational'?locTip(o)
   :id==='constraint-arcs'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
@@ -1521,7 +1520,7 @@ async function initMap(){
   const wxZones=(wx&&wx.zones)||[], wxSignal=wx&&wx.signal;
   const counties=(ch&&ch.counties)||[], allCounties=(ch&&ch.all_counties)||[];   // battery-MW (sidebar bar — untouched)
   const cwFeats=(cw&&cw.features)||[], cwFC={type:'FeatureCollection',features:cwFeats},   // county-weather polygons
-        cwLabel=(cw&&cw.label)||'', cwCov=(cw&&cw.coverage)||{}, cwZones=(cw&&cw.zones)||[];
+        cwLabel=(cw&&cw.label)||'', cwCov=(cw&&cw.coverage)||{}, cwWind=(cw&&cw.wind_signal)||null;
   const locYears=(loc&&loc.years)||[], locFrames=(loc&&loc.frames)||{},
         locLo=(loc&&loc.rev_min)||0, locHi=(loc&&loc.rev_max)||1,
         locAll=locYears.flatMap(y=>locFrames[String(y)]||[]);
@@ -1573,7 +1572,7 @@ async function initMap(){
     batteries:"EIA-860M battery coordinates (asset-exact), sized by nameplate MW.",
     plants:"EIA-860M generator coordinates (asset-exact), colored by technology.",
     cities:"Census city centroids — population markers, NOT load-delivery points.",
-    county:cwLabel||"County outlines are real boundaries; fill is each county's ERCOT WEATHER ZONE live temperature (blue cool -> red hot), blue where the zone reports rain. Zone weather at county resolution — 8 real readings mapped to counties, NOT per-county measurement.",
+    county:cwLabel||"County outlines are real boundaries; fill is each county's OWN live Open-Meteo reading at its centroid (blue cool -> red hot), blue where it is raining. County-centroid readings — one real measurement per county; weather varies within large counties.",
     weather:"ERCOT weather-zone centroids — a sample, not a weather field. Weather only, not a price forecast.",
     locational:"Perfect-foresight decade-revenue CEILING by hub ($/MW-year). Hub-level (regional), energy-only, history — not a forecast.",
     constraints:"Measured ERCOT SCED constraints (NP6-86-CD). Only lines whose BOTH endpoints resolve to a real substation are drawn (~39% of stations). A congested-grid layer, not a complete power-flow map.",
@@ -1594,7 +1593,7 @@ async function initMap(){
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>3+Math.sqrt((c.population||0)/maxPop)*8,radiusMinPixels:3,radiusMaxPixels:12,
       stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,70],getFillColor:[108,150,200,150],onClick:pop})},
-    county:{label:'County weather (zone temp + rain)',sw:'#e0a24a',data:cwFeats,on:true,make:()=>new deck.GeoJsonLayer({id:'county',data:cwFC,pickable:true,
+    county:{label:'County weather (temp + rain)',sw:'#e0a24a',data:cwFeats,on:true,make:()=>new deck.GeoJsonLayer({id:'county',data:cwFC,pickable:true,
       stroked:true,filled:true,lineWidthUnits:'pixels',getLineWidth:0.6,lineWidthMinPixels:0.4,getLineColor:[228,233,240,75],   // every county outlined (thin)
       getFillColor:f=>{const c=f.properties.fill; return c?[c[0],c[1],c[2],150]:[70,74,82,26];},   // zone temp/rain fill ~59%; uncolored = faint outline only
       onClick:pop})},
@@ -1713,9 +1712,9 @@ async function initMap(){
   const _fmt=n=>Math.round(n||0).toLocaleString();
   function layerStat(k){ switch(k){
     case 'hubs':{ const r=hubs.filter(h=>h.sign==='rich').length; return `${hubs.length} hubs · <b>${r}</b> rich / <b>${hubs.length-r}</b> cheap (DA vs RT)`; }
-    case 'county':{ const hot=[...cwZones].filter(z=>z.temp_f!=null).sort((a,b)=>b.temp_f-a.temp_f)[0];
-      const rain=cwZones.filter(z=>z.raining).length;
-      return `<b>${cwCov.colored||0}</b> of ${cwCov.total||254} counties shaded by zone · ${rain?`<b>${rain}</b> zone(s) raining · `:''}hottest ${hot?hot.zone+' '+hot.temp_f+'°F':'—'}`; }
+    case 'county':{ const wp=cwFeats.map(f=>f.properties).filter(p=>p.temp_f!=null);
+      const hot=wp.slice().sort((a,b)=>b.temp_f-a.temp_f)[0], rain=wp.filter(p=>p.raining).length;
+      return `<b>${cwCov.colored||wp.length}</b> of ${cwCov.total||254} counties · real per-county readings · ${rain?`<b>${rain}</b> raining · `:''}hottest ${hot?hot.NAME+' '+hot.temp_f+'°F':'—'}`; }
     case 'batteries':{ const mw=batts.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(batts.length)}</b> batteries · <b>${_fmt(mw)}</b> MW (EIA-860M)`; }
     case 'plants':{ const mw=plants.reduce((a,b)=>a+(b.mw||0),0); return `<b>${_fmt(plants.length)}</b> plants · ${_fmt(mw)} MW · by technology`; }
     case 'cities':return `<b>${cities.length}</b> cities · Census centroids`;

@@ -442,11 +442,11 @@ _COUNTYWX_GEO = {"v": None}
 
 @app.get("/api/countyweather")
 def api_countyweather():
-    """County-outlined weather layer: real Texas county polygons, each shaded by its ERCOT
-    weather ZONE's live temperature + rain (run_weather -> county_weather.build_county_weather).
-    Honest: 8 zone readings mapped to counties (NOT per-county measurement); counties whose zone
-    assignment is ambiguous are returned uncolored (fill=null) and listed. Returns a render-ready
-    GeoJSON FeatureCollection (geometry + weather props merged) so the map draws all 254 outlined."""
+    """County weather layer: real Texas county polygons, each shaded by its OWN live Open-Meteo
+    reading at the county centroid (run_county_weather -> county_weather.build_county_weather).
+    TRUE per-county now — one real measurement per county, none left gray. Returns a render-ready
+    GeoJSON FeatureCollection (geometry + per-county weather props merged) for all 254 counties,
+    plus the wind-belt signal (mean real wind over the wind-belt counties) for the banner."""
     import json
     import county_weather
     import weather_data
@@ -459,7 +459,7 @@ def api_countyweather():
             _COUNTYWX_GEO["v"] = json.load(f)
     geo = _COUNTYWX_GEO["v"]
     try:
-        wx = weather_data.run_weather()
+        wx = weather_data.run_county_weather()
         cw = county_weather.build_county_weather(wx)
         by_county = {c["county"]: c for c in cw.get("counties", [])}
         feats = []
@@ -467,20 +467,20 @@ def api_countyweather():
             name = f["properties"].get("NAME")
             c = by_county.get(name)
             props = {"NAME": name,
-                     "zone": c["zone"] if c else None,
                      "temp_f": c["temp_f"] if c else None,
+                     "wind_mph": c["wind_mph"] if c else None,
                      "precip_mm": c["precip_mm"] if c else None,
                      "raining": c["raining"] if c else False,
-                     "fill": c["fill"] if c else None}          # null fill -> uncolored county
+                     "fill": c["fill"] if c else None}          # null fill only if a county reading is missing
             feats.append({"type": "Feature", "geometry": f["geometry"], "properties": props})
-        colored = sorted(by_county)
-        uncolored = sorted(f["properties"]["NAME"] for f in geo["features"]
-                           if f["properties"]["NAME"] not in by_county)
+        colored = sorted(f["properties"]["NAME"] for f in feats if f["properties"]["fill"] is not None)
+        uncolored = sorted(f["properties"]["NAME"] for f in feats if f["properties"]["fill"] is None)
         return {
             "available": True, "type": "FeatureCollection", "features": feats,
-            "zones": cw.get("zones", []), "label": cw.get("label", ""),
+            "label": cw.get("label", ""), "wind_signal": cw.get("wind_signal"),
             "coverage": {"total": len(feats), "colored": len(colored), "uncolored": len(uncolored)},
             "uncolored": uncolored,
+            "source": wx.get("source"), "note": wx.get("note"),
         }
     except Exception as e:
         return {"available": False, "error": f"county weather failed ({e})", "features": []}
