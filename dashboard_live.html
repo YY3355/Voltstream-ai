@@ -1530,11 +1530,12 @@ async function initMap(){
   mapboxgl.accessToken=MAPBOX_TOKEN;
   let map;
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
-        center:TX_VIEW.center,zoom:TX_VIEW.zoom,attributionControl:true}); }
+        center:TX_VIEW.center,zoom:TX_VIEW.zoom-0.35,attributionControl:true}); }   // start a touch out...
   catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
   window.__map=map; window.__txView=TX_VIEW;          // handle for programmatic zoom/frame checks
   map.scrollZoom.enable(); map.dragPan.enable();       // explicit: nothing should suppress these
   map.addControl(new mapboxgl.NavigationControl({visualizePitch:false}),'top-right');
+  map.once('load',()=>map.easeTo({center:TX_VIEW.center,zoom:TX_VIEW.zoom,duration:650}));   // ...ease into the TX frame
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
 
@@ -1625,7 +1626,11 @@ async function initMap(){
       return out; }},
   };
   function activeLayers(){ return Object.keys(REG).filter(k=>REG[k].on && REG[k].data.length); }
-  const buildLayers=()=>activeLayers().flatMap(k=>[].concat(REG[k].make()));   // flatten multi-layer entries
+  // T5: per-layer opacity, animated on toggle so layers fade in/out instead of popping.
+  const _op={}; Object.keys(REG).forEach(k=>_op[k]=REG[k].on?1:0);
+  function renderKeys(){ return Object.keys(REG).filter(k=>(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
+  const buildLayers=()=>renderKeys().flatMap(k=>[].concat(REG[k].make())
+    .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))})));   // fade via animated opacity
   // build the overlay WITH its initial layers so they paint on first render
   const overlay=new deck.MapboxOverlay({interleaved:false, layers:buildLayers(),   // overlaid: deck renders visible markers; events forwarded to the map
     getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
@@ -1635,6 +1640,17 @@ async function initMap(){
   function snapshotArcs(){ const s = intradayOn ? intradayArcs : (arcLiveOn ? (arcLive&&arcLive.arcs) : null); return (s&&s.length)?s:null; }
   let _curLayers=buildLayers();
   function refreshLayers(){ _curLayers=buildLayers(); overlay.setProps({layers:_flowRAF?_curLayers.concat(particleLayer()):_curLayers}); window.__activeLayers=activeLayers(); }
+  // fade animation: ease each layer's opacity toward its on/off target, rebuild until settled
+  let _fadeRAF=null;
+  function animateFade(){ let moving=false;
+    Object.keys(REG).forEach(k=>{ const tgt=REG[k].on?1:0;
+      if(Math.abs(_op[k]-tgt)>0.02){ _op[k]+=(tgt-_op[k])*0.2; moving=true; } else _op[k]=tgt; });
+    refreshLayers();
+    window.__fading=moving;
+    if(moving){ _fadeRAF=requestAnimationFrame(animateFade); } else { _fadeRAF=null; }
+  }
+  function startFade(){ if(!_fadeRAF) animateFade(); }
+  window.__layerOp=()=>({..._op});
 
   // ── Task B: animated particles along MEASURED snapshot arcs only (never the aggregate) ──
   // Particles ride the flow arc from source->target in the MEASURED direction; density + speed
@@ -1678,7 +1694,7 @@ async function initMap(){
   $('map-controls').querySelectorAll('.lyr-info').forEach(el=>el.addEventListener('click',e=>{
     e.preventDefault(); e.stopPropagation(); el.classList.toggle('show'); }));
   Object.keys(REG).forEach(k=>{const cb=$('lyr-'+k); if(!cb) return;
-    cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); refreshLayers();
+    cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); startFade();   // fade, don't pop
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
       if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); }
       updateInsight(); });});
