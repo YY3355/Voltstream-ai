@@ -1833,7 +1833,8 @@ async function initMap(){
   $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich (click: 24h forecast)</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
     +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`
-    +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (zone temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
+    +`<span><i style="border:1px solid rgba(228,233,240,.55);background:transparent"></i>county outline (all 254, always on)</span>`
+    +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (per-county temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
     +`<span><i style="background:#5bd6ea"></i>transmission arcs (width=bind freq, brightness=shadow $)</span>`;
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar

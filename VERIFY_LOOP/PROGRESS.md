@@ -21,7 +21,10 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> 
   CDP: no weather layer/toggle; outline present with fill on AND off; fill toggles cleanly; banner
   live; batteries still pickable (rendered [county-outline,county,batteries] -> picks batteries).
   Screenshots: fill-on (254 shaded, per-county gradient) + fill-off (outlines-only geography). commit PENDING.
-- [todo] T4 — legend temp+rain w/ new label, remove weather legend entry; sidebar battery-MW untouched.
+- [done] T4 — legend now: county-outline swatch (always-on) + per-county temp ramp + rain; weather
+  swatch gone (T2), stale "zone temp" wording fixed to "per-county temp". CDP: legendPerCounty/
+  rain/outline true, no weather swatch, no zone-temp. Battery-MW sidebar (#county-panel) UNTOUCHED —
+  "87 counties · 16,316.8 MW", Brazoria present, rows intact (reads /api/countyheat, never changed). commit PENDING.
 - [todo] DEPLOY — push, redeploy Fly.
 
 ## Log
