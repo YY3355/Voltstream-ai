@@ -1497,13 +1497,14 @@ async function initMap(){
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
-  const c=(dart&&dart.center)||{lon:-99.3,lat:31.2,zoom:5.4};
+  // Frame ERCOT/Texas snugly (not NM/OK/LA/Mexico) — explicit center+zoom fills the frame with TX.
+  const TX_VIEW={center:[-99.7,31.25],zoom:5.55};
   mapboxgl.accessToken=MAPBOX_TOKEN;
   let map;
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
-        center:[c.lon,c.lat],zoom:c.zoom,attributionControl:true}); }
+        center:TX_VIEW.center,zoom:TX_VIEW.zoom,attributionControl:true}); }
   catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
-  window.__map=map;                                   // handle for programmatic zoom checks
+  window.__map=map; window.__txView=TX_VIEW;          // handle for programmatic zoom/frame checks
   map.scrollZoom.enable(); map.dragPan.enable();       // explicit: nothing should suppress these
   map.addControl(new mapboxgl.NavigationControl({visualizePitch:false}),'top-right');
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
@@ -1533,16 +1534,16 @@ async function initMap(){
     hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>10+Math.sqrt(p.abs_dart/maxAbs)*30,radiusMinPixels:8,radiusMaxPixels:55,
       stroked:true,lineWidthMinPixels:1.5,getLineColor:[255,255,255,170],getFillColor:p=>p.sign==='rich'?[63,185,80,205]:[248,81,73,205],onClick:pop})},
-    batteries:{label:'Batteries',sw:'#a371f7',data:batts,on:true,make:()=>new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,
+    batteries:{label:'Batteries',sw:'#a371f7',data:batts,on:false,make:()=>new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,
       getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>6+Math.sqrt((b.mw||0)/maxBattMw)*26,radiusMinPixels:5,radiusMaxPixels:44,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,150],getFillColor:[163,113,247,215],onClick:pop})},
     plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>5+Math.sqrt((p.mw||0)/maxPlantMw)*24,radiusMinPixels:4,radiusMaxPixels:40,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,130],getFillColor:p=>techColor(p.tech),onClick:pop})},
-    cities:{label:'Cities',sw:'#58a6ff',data:cities,on:true,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
+    cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>4+Math.sqrt((c.population||0)/maxPop)*24,radiusMinPixels:3,radiusMaxPixels:38,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,120],getFillColor:[88,166,255,195],onClick:pop})},
-    county:{label:'County heat (battery MW)',sw:'#f0663a',data:allCounties,on:false,make:()=>new deck.ScatterplotLayer({id:'county',data:allCounties,pickable:true,
+    county:{label:'County heat (battery MW)',sw:'#f0663a',data:allCounties,on:true,make:()=>new deck.ScatterplotLayer({id:'county',data:allCounties,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>7+Math.sqrt((c.mw||0)/maxCountyMw)*30,radiusMinPixels:6,radiusMaxPixels:48,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,90],getFillColor:c=>heatColor(c.mw,maxCountyMw),onClick:pop})},
     weather:{label:'Weather (zones)',sw:'#f0a35e',data:wxZones,on:false,make:()=>{
