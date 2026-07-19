@@ -25,9 +25,15 @@ Max 15 iterations. Supervised. Verify CDP + SCREENSHOTS. Implement order: T3 -> 
   swatch gone (T2), stale "zone temp" wording fixed to "per-county temp". CDP: legendPerCounty/
   rain/outline true, no weather swatch, no zone-temp. Battery-MW sidebar (#county-panel) UNTOUCHED —
   "87 counties · 16,316.8 MW", Brazoria present, rows intact (reads /api/countyheat, never changed). commit PENDING.
-- [todo] DEPLOY — push 4 commits (44c5df6 T3, 4599fa3 T1, 5c84b47 T2, a83145c T4), redeploy Fly.
-  (Awaiting go-ahead.) Final checks green: 16 endpoints 200, trading tab renders, independent diff
-  review clean (node --check passes, no dangling refs, Promise.all aligned).
+- [done] DEPLOY — pushed (ecca258..f519ed1), flyctl deploy --remote-only exit 0, DNS verified.
+  Public voltstream-ercot.fly.dev verified: root 200; /api/countyweather 254/254/0, 91 distinct
+  temps (real per-county), wind_signal light 10.4mph/83 counties, label ok, no zone field. Public
+  #map screenshot: 254 shaded (hottest Starr 100.6°F live), no Weather toggle, legend has
+  outline+per-county+rain, battery-MW sidebar intact. Pre-deploy: 16 endpoints 200, trading tab
+  renders, independent diff review clean (node --check, no dangling refs, Promise.all aligned).
+
+## DONE — loop complete. T1-T4 + DEPLOY all green. TRUE per-county weather: 254/254 real readings,
+## batteries pickable through fill, outlines always-on + fill toggle, zone-markers deleted, banner live.
 
 ## Log
 - init — read weather_data.py, county_weather.py, app.py /api/countyweather, dashboard initMap
