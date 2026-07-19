@@ -16,7 +16,7 @@ Max 15 iterations. Supervised. Verify with CDP + SCREENSHOTS each task.
   commit ef0a2fe.
 - [done] T5 — layer opacity fade on/off (0.74/0.33 mid-fade, settles) + camera easeTo TX frame
   (zoom 5.55). Verified CDP; no regression (flow/intraday/quant ok). commit f48844c.
-- [doing] DEPLOY — push, redeploy Fly.
+- [done] DEPLOY — pushed (fbac7ce..5998798) + Fly redeployed. Public CDP re-verified T1 (active [county,hubs], zoom 5.54, span 12.2), T2 (scope empty, caveats reachable), T4 (insight stats), T5 (fade 0.74/0.26, zoom 5.55). ALL DONE.
 
 ## Log
 - init — REG has 8 layers (no substations layer). map-scope@1754 big box over canvas. controls@
