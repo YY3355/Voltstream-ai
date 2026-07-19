@@ -64,12 +64,14 @@ def parse_openmeteo(zone_row, payload):
     t_series = hourly.get("temperature_2m") or []
     w_series = hourly.get("wind_speed_10m") or []
     n = min(len(times), len(t_series), len(w_series), 48)
+    precip = cur.get("precipitation")                  # mm in the current period (0 when dry / absent)
     return {
         "zone": zone_row["zone"], "lat": zone_row["lat"], "lon": zone_row["lon"],
         "wind_heavy": zone_row["wind_heavy"], "note": zone_row["note"],
         "precision": "zone_centroid",
         "temp_f": round(float(temp) * 9 / 5 + 32, 1),
         "wind_mph": round(float(wind) * 0.621371, 1),
+        "precip_mm": round(float(precip), 2) if precip is not None else 0.0,
         "forecast_hours": [str(t) for t in times[:n]],
         "forecast_temp_f": [round(float(x) * 9 / 5 + 32, 1) for x in t_series[:n]],
         "forecast_wind_mph": [round(float(x) * 0.621371, 1) for x in w_series[:n]],
@@ -123,7 +125,7 @@ def fetch_weather():
         try:
             r = requests.get(OM_URL, params={
                 "latitude": z["lat"], "longitude": z["lon"],
-                "current": "temperature_2m,wind_speed_10m",
+                "current": "temperature_2m,wind_speed_10m,precipitation",
                 "hourly": "temperature_2m,wind_speed_10m",
                 "forecast_days": 2, "timezone": "America/Chicago",
             }, timeout=30)
@@ -175,13 +177,14 @@ if __name__ == "__main__":
         print(f"mechanism: {s['mechanism']}")
     else:
         # Fixture in Open-Meteo's response shape, incl. a zone that must be dropped.
-        def payload(t_c, w_kmh):
-            return {"current": {"temperature_2m": t_c, "wind_speed_10m": w_kmh},
+        def payload(t_c, w_kmh, precip=0.0):
+            return {"current": {"temperature_2m": t_c, "wind_speed_10m": w_kmh, "precipitation": precip},
                     "hourly": {"time": [f"2026-07-16T{h:02d}:00" for h in range(24)],
                                "temperature_2m": [t_c] * 24, "wind_speed_10m": [w_kmh] * 24}}
         recs = []
         for z in ZONES:
-            pl = payload(35.0, 48.0) if z["wind_heavy"] else payload(38.0, 8.0)
+            pl = payload(35.0, 48.0, precip=(2.5 if z["zone"] == "North" else 0.0)) if z["wind_heavy"] \
+                else payload(38.0, 8.0)
             r = parse_openmeteo(z, pl)
             if r:
                 recs.append(r)
@@ -190,9 +193,18 @@ if __name__ == "__main__":
         assert far["temp_f"] == 95.0, f"C->F conversion wrong: {far['temp_f']}"
         assert abs(far["wind_mph"] - 29.8) < 0.2, f"kmh->mph wrong: {far['wind_mph']}"
         assert len(far["forecast_wind_mph"]) == 24
+        # precipitation must flow through parse_openmeteo (T1)
+        north = next(r for r in recs if r["zone"] == "North")           # given precip=2.5 above
+        assert north["precip_mm"] == 2.5, f"precip must carry through: {north['precip_mm']}"
+        assert all("precip_mm" in r for r in recs), "every zone record carries precip_mm"
+        assert far["precip_mm"] == 0.0, "dry zone reads 0 mm"
 
         bad = parse_openmeteo(ZONES[0], {"current": {}, "hourly": {}})
         assert bad is None, "a zone with no reading must be dropped, not invented"
+        # missing precipitation field defaults to 0.0, never crashes
+        noprecip = parse_openmeteo(ZONES[0], {"current": {"temperature_2m": 30.0, "wind_speed_10m": 10.0},
+                                              "hourly": {"time": [], "temperature_2m": [], "wind_speed_10m": []}})
+        assert noprecip["precip_mm"] == 0.0, "absent precip -> 0.0"
 
         d = build_weather(recs)
         s = d["signal"]
