@@ -54,8 +54,14 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   IBM Plex Mono, small + muted (data-terminal style, deliberately not a rainbow) — assessed already
   consistent; did NOT force a single-family swap that would regress numeric alignment (noted as
   possible follow-up). Full-map screenshot = polished product, no regressions. commit PENDING.
-- [doing] DEPLOY — push 8 commits (T1-T8), redeploy Fly. Pre-deploy green: 18 endpoints 200 (incl.
-  /api/txlines), quant tab renders (other tabs untouched).
+- [done] DEPLOY — pushed (4cd4514..aa0d13d), flyctl deploy exit 0, DNS verified. Public verified:
+  root 200; /api/txlines 200 (4.4MB live); /api/countyweather 200; /api/alerts 200 (17s cold, briefing
+  has graceful fallback). Live #map screenshot: pitched atmosphere, gradient-depth counties, 4 metro
+  anchor pills, top-corridor arc, "Right now" briefing LIVE (Houston -3.00, HHGT↔OMEGA 10.9%/4 now,
+  LIGHT 10.5mph, hottest Dallas 95°F, 2 WATCH). Pre-deploy: 18 endpoints 200, quant tab renders.
+
+## DONE — loop complete. T1-T8 + DEPLOY green. Map elevated engineering-UI -> product design.
+## GPU-only (battery 3D columns) deferred to user's real-GPU browser per their call (harness=swiftshader).
 
 ## Log
 - init — read map HTML section (#map-canvas, .map-side, banner, alert-strip, legend), CSS design
