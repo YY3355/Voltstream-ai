@@ -33,7 +33,13 @@ Static-transmission gate + standing gate run EVERY task.
   VERIFIED (fresh-eyes GREEN): code (uniform, elevation unpulsed, gated on batteries.on, no bleed to
   txlines) + uniformity proof (batt0 & batt1 both scale 1.055 identically; alpha 191->202) + diff
   (ring outlines at battery markers only, no other motion) + standing gate 0px. commit PENDING.
-- [todo] 5 — city anchors glow+label (Dallas/Houston/Austin/San Antonio/Permian), suppress default labels at 5.
+- [done] 5 — city anchors. Added Permian (5th anchor @[-102.08,31.9]); constant soft glow (steady
+  box-shadow + ::before radial halo, NOT animated; anchorPulse is 1-shot self-removing load flourish).
+  suppressCityLabels(): additive filter ['all',existing,['!',in name/name_en of Dallas/Houston/Austin/
+  San Antonio/Midland/Odessa]] on the 3 settlement-label layers, guarded (map.__lblSuppressed), on
+  style.load. VERIFIED (fresh-eyes GREEN): code + measured (5 anchors, lblSuppressed true, filter has
+  exclusion, queryRenderedFeatures at all 5 pts -> none of the 6 names render) + image (5 glowing pills,
+  no competing default labels, caveats intact). commit PENDING.
 - [todo] 6 — camera easing everywhere (no jumpTo in handlers).
 - [todo] 7 — layer fade transitions ~300ms on toggle.
 - [todo] 8 — sidebar "Right now" numbers roll/fade on change.

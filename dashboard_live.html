@@ -116,13 +116,16 @@
   #map-canvas{position:relative;width:100%;height:66vh;min-height:480px;border-radius:10px;
     overflow:hidden;border:1px solid var(--line);background:#0a0e14}
   #map-canvas .mapboxgl-ctrl-attrib{font-size:10px}
-  /* T3: designed metro anchor labels — rounded glass pills w/ subtle glow (not raw mapbox labels) */
-  .metro-anchor{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:500;
-    letter-spacing:.3px;color:#eef3fa;background:rgba(13,20,32,.86);border:1px solid rgba(140,170,210,.42);
+  /* T5: designed anchor labels — glass pills w/ a CONSTANT soft glow (not raw mapbox labels) */
+  .metro-anchor{position:relative;display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.3px;color:#eef3fa;background:rgba(13,20,32,.86);border:1px solid rgba(140,170,210,.46);
     border-radius:20px;padding:3px 11px 3px 8px;white-space:nowrap;pointer-events:none;
     -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);transition:opacity .5s ease;
-    text-shadow:0 1px 2px rgba(0,0,0,.8);box-shadow:0 2px 12px rgba(0,0,0,.55),0 0 18px rgba(90,130,190,.28),inset 0 1px 0 rgba(255,255,255,.06)}
-  .metro-anchor .dot{width:5px;height:5px;border-radius:50%;background:#9cc0f0;box-shadow:0 0 8px #6f9fe0}
+    text-shadow:0 1px 2px rgba(0,0,0,.8);box-shadow:0 2px 12px rgba(0,0,0,.55),0 0 22px rgba(96,140,205,.42),0 0 44px rgba(96,140,205,.18),inset 0 1px 0 rgba(255,255,255,.07)}
+  /* soft constant halo behind the pill (steady, not animated) */
+  .metro-anchor::before{content:'';position:absolute;inset:-7px -9px;border-radius:22px;z-index:-1;
+    background:radial-gradient(closest-side,rgba(104,150,214,.22),rgba(104,150,214,0) 78%);pointer-events:none}
+  .metro-anchor .dot{width:5px;height:5px;border-radius:50%;background:#9cc0f0;box-shadow:0 0 8px #7aa8ea,0 0 14px rgba(122,168,234,.6)}
   .metro-anchor.pulse{animation:anchorPulse 1.6s ease-out 1}
   @keyframes anchorPulse{0%{box-shadow:0 2px 10px rgba(0,0,0,.45),0 0 0 0 rgba(120,160,220,.55)}
     100%{box-shadow:0 2px 10px rgba(0,0,0,.45),0 0 0 16px rgba(120,160,220,0)}}
@@ -1581,14 +1584,23 @@ async function initMap(){
   function applyAtmosphere(){ try{ map.setFog({range:[0.5,10],color:'#0b1018','high-color':'#1b2c48',
     'horizon-blend':0.14,'space-color':'#05070c','star-intensity':0.1}); }catch(e){} }
   if(map.isStyleLoaded && map.isStyleLoaded()) applyAtmosphere(); else map.on('style.load',applyAtmosphere);
-  // T3 ANCHORS: designed metro labels — rounded glass pills (NOT raw mapbox labels), pulse once.
-  // Created synchronously (markers don't need 'load'); reposition automatically as the map moves.
-  [['Houston',-95.37,29.76],['Dallas',-96.80,32.78],['Austin',-97.74,30.27],['San Antonio',-98.49,29.42]]
+  // T5 ANCHORS: designed labels w/ a constant soft glow (NOT raw mapbox labels) for the 5 key ERCOT
+  // points — the four load metros + the Permian Basin (west-Texas wind + oilfield load). Created
+  // synchronously (markers don't need 'load'); reposition automatically as the map moves.
+  [['Houston',-95.37,29.76],['Dallas',-96.80,32.78],['Austin',-97.74,30.27],['San Antonio',-98.49,29.42],['Permian',-102.08,31.90]]
     .forEach(([n,lon,lat])=>{ const el=document.createElement('div'); el.className='metro-anchor pulse';
       el.innerHTML=`<span class="dot"></span>${n}`;
       new mapboxgl.Marker({element:el,anchor:'left'}).setLngLat([lon,lat]).addTo(map);
       el.addEventListener('animationend',()=>el.classList.remove('pulse')); });
   window.__anchors=document.querySelectorAll('.metro-anchor').length;
+  // T5: suppress the DEFAULT mapbox labels at exactly these 5 points so only our designed anchors show.
+  function suppressCityLabels(){ const names=['Dallas','Houston','Austin','San Antonio','Midland','Odessa'];
+    const excl=['!',['any',['in',['get','name_en'],['literal',names]],['in',['get','name'],['literal',names]]]];
+    ['settlement-major-label','settlement-minor-label','settlement-subdivision-label'].forEach(id=>{
+      if(!map.getLayer(id)||map.__lblSuppressed) return; const f=map.getFilter(id);
+      try{ map.setFilter(id, f?['all',f,excl]:excl); }catch(e){} });
+    map.__lblSuppressed=true; window.__lblSuppressed=true; }
+  if(map.isStyleLoaded&&map.isStyleLoaded()) suppressCityLabels(); else map.on('style.load',suppressCityLabels);
   // T8 load motion: one gentle pitch-in settle (guarded; runs shortly after init regardless of 'load').
   setTimeout(()=>{ try{ map.easeTo({pitch:TX_VIEW.pitch,duration:1000,essential:true}); }catch(e){} },400);
   map.jumpTo({pitch:TX_VIEW.pitch-8});
