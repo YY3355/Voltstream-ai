@@ -1644,6 +1644,9 @@ async function initMap(){
   // the measured SCED arcs). 500kV white -> 345 cyan -> 230 teal -> 138 blue -> 69 gray, subtle.
   let txlinesFC={type:'FeatureCollection',features:[]}, txlinesLoaded=false;
   let _mapZoom=TX_VIEW.zoom;   // T3: transmission is zoom-tiered like roads; track the live zoom
+  let _breatheT=0, _breatheRAF=null;   // T4: battery "breathing" clock (pure decoration)
+  const _breatheS=()=>1+0.09*Math.sin(_breatheT);                       // scale ±9% (uniform -> relative MW preserved)
+  const _breatheA=()=>0.82+0.18*(0.5+0.5*Math.sin(_breatheT));          // opacity 0.82..1.0
   // T3 de-emphasis: ~25% dimmer overall, 345/500kV brightest, 69kV near-invisible. Base tier RGBA:
   const kvBase=kv=> kv>=450?[236,241,248,118] : kv>=300?[96,214,234,100] : kv>=200?[64,184,178,70]
     : kv>=100?[86,128,182,45] : [110,118,132,20];   // 69kV alpha 20 ≈ near-invisible
@@ -1667,12 +1670,14 @@ async function initMap(){
           getPosition:b=>[b.lon,b.lat],
           getElevation:b=>(b.mw||0),                       // honest: column height ∝ real nameplate MW
           elevationScale:9000/maxBattMw,                   // scale so the tallest column reads (~9 km, not off-screen)
-          getFillColor:[70,165,105,230],getLineColor:[150,215,175,160],
+          getFillColor:[70,165,105,Math.round(230*_breatheA())],getLineColor:[150,215,175,160],   // T4: subtle opacity breathe (NOT elevation — that's MW)
           material:{ambient:0.85,diffuse:0.35,shininess:6},onClick:pop});   // mostly-ambient → uniform muted-green towers
       }
+      const bs=_breatheS();                                    // T4: uniform breathe scale (pure decoration; relative MW sizes preserved)
       return new deck.ScatterplotLayer({id:'batteries',data:battReveal(),pickable:true,   // overview: flat discs, zoom-revealed
-        getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>tierR(b.mw,maxBattMw),radiusMinPixels:4,radiusMaxPixels:14,
-        stroked:true,lineWidthMinPixels:0.5,getLineColor:[205,228,212,95],getFillColor:[64,150,96,205],onClick:pop});
+        getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>tierR(b.mw,maxBattMw)*bs,radiusMinPixels:4,radiusMaxPixels:16,
+        stroked:true,lineWidthMinPixels:0.5,getLineColor:[205,228,212,95],getFillColor:[64,150,96,Math.round(205*_breatheA())],
+        updateTriggers:{getRadius:[Math.round(bs*100)],getFillColor:[Math.round(_breatheA()*100)]},onClick:pop});
     }},
     // T5 palette discipline: plants + cities are secondary context -> muted gray (no rainbow).
     // Their identity (tech / population) lives in the tooltip, not in competing hues.
@@ -1840,6 +1845,14 @@ async function initMap(){
   window.__setEntrance=p=>{ _entOverride=p; if(REG.constraints.on) refreshLayers(); window.__entProg=_entProg(); };
   window.__entranceIds=()=>[..._entIds];
 
+  // T4: battery breathing — a soft, slow pulse (scale + opacity) on the battery markers. PURE
+  // DECORATION: uniform across all batteries so it can't be read as data (relative MW sizes and the
+  // column heights are untouched). Runs only while the batteries layer is on.
+  function breatheTick(){ _breatheT+=0.028; window.__breatheT=_breatheT;
+    if(REG.batteries.on){ refreshLayers(); _breatheRAF=requestAnimationFrame(breatheTick); } else { _breatheRAF=null; } }
+  function startBreathe(){ if(!_breatheRAF && REG.batteries.on) breatheTick(); }
+  window.__stepBreathe=(n)=>{ _breatheT+=(n||18)*0.028; if(REG.batteries.on) refreshLayers(); window.__breatheT=_breatheT; };
+
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0||L.lazy;   // lazy layers enabled before load
     const cav=(LAYER_CAVEATS[k]||'').replace(/"/g,'&quot;');
@@ -1859,6 +1872,7 @@ async function initMap(){
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); startFade();   // fade, don't pop
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
       if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); }
+      if(k==='batteries' && cb.checked) startBreathe();     // T4: start the breathing pulse when batteries turn on
       if(k==='txlines' && cb.checked && !txlinesLoaded){    // T4: lazy-fetch the ~5MB HIFLD geometry on first toggle
         txlinesLoaded=true; const lab=cb.closest('label'); lab.style.opacity='.55';
         fetch('/api/txlines').then(r=>r.json()).then(d=>{ txlinesFC={type:'FeatureCollection',features:(d&&d.features)||[]};

@@ -27,7 +27,12 @@ Static-transmission gate + standing gate run EVERY task.
   (getLineColor deps only kv+_mapZoom-discrete; updateTriggers=round(_mapZoom*10)). VERIFIED (fresh-eyes
   GREEN): code + tier data re-derived (z4.8: only 345/500; z8.2: 69→16/138→45/230→70/345→100/500→118) +
   before/after (t4_txlines bright -> t3_metro recessive, anchors dominate) + no-anim gate. commit PENDING.
-- [todo] 4 — battery breathing (soft slow pulse, confined to battery markers).
+- [done] 4 — battery breathing (pure decoration). _breatheS=1+0.09sin (±9% UNIFORM scale -> relative
+  MW preserved), _breatheA=0.82..1.0 opacity pulse. Disc radius*=bs + alpha pulse; column alpha pulse
+  ONLY (getElevation=MW NOT pulsed). breatheTick RAF runs only when batteries.on. __stepBreathe hook.
+  VERIFIED (fresh-eyes GREEN): code (uniform, elevation unpulsed, gated on batteries.on, no bleed to
+  txlines) + uniformity proof (batt0 & batt1 both scale 1.055 identically; alpha 191->202) + diff
+  (ring outlines at battery markers only, no other motion) + standing gate 0px. commit PENDING.
 - [todo] 5 — city anchors glow+label (Dallas/Houston/Austin/San Antonio/Permian), suppress default labels at 5.
 - [todo] 6 — camera easing everywhere (no jumpTo in handlers).
 - [todo] 7 — layer fade transitions ~300ms on toggle.
