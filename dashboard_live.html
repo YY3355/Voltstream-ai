@@ -1573,7 +1573,7 @@ async function initMap(){
   mapboxgl.accessToken=MAPBOX_TOKEN;
   let map;
   try{ map=new mapboxgl.Map({container:'map-canvas',style:'mapbox://styles/mapbox/dark-v11',
-        center:TX_VIEW.center,zoom:TX_VIEW.zoom,pitch:TX_VIEW.pitch,bearing:TX_VIEW.bearing,
+        center:TX_VIEW.center,zoom:TX_VIEW.zoom,pitch:TX_VIEW.pitch-8,bearing:TX_VIEW.bearing,   // T6: start a touch flatter…
         antialias:true,attributionControl:true}); }
   catch(e){ hero.innerHTML=`<span class="none">map init failed: ${e.message}</span>`; return; }
   window.__map=map; window.__txView=TX_VIEW;          // handle for programmatic zoom/frame checks
@@ -1602,8 +1602,7 @@ async function initMap(){
     map.__lblSuppressed=true; window.__lblSuppressed=true; }
   if(map.isStyleLoaded&&map.isStyleLoaded()) suppressCityLabels(); else map.on('style.load',suppressCityLabels);
   // T8 load motion: one gentle pitch-in settle (guarded; runs shortly after init regardless of 'load').
-  setTimeout(()=>{ try{ map.easeTo({pitch:TX_VIEW.pitch,duration:1000,essential:true}); }catch(e){} },400);
-  map.jumpTo({pitch:TX_VIEW.pitch-8});
+  setTimeout(()=>{ try{ map.easeTo({pitch:TX_VIEW.pitch,duration:1000,essential:true}); }catch(e){} },400);   // …then ease into the framed pitch (no jumpTo anywhere)
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
 
@@ -1620,6 +1619,7 @@ async function initMap(){
     if(id==='dart-hubs') html+='<div class="fc-box" id="fc-box"><div class="fc-load">loading day-ahead forecast…</div></div>';
     _popup=new mapboxgl.Popup({closeButton:true,offset:10,maxWidth:'300px'}).setLngLat(lngLat).setHTML(html).addTo(map);
     _popup.on('close',()=>{ _popupLoc=null; });
+    if(id==='dart-hubs'){ map.easeTo({center:lngLat,zoom:Math.max(map.getZoom(),6.8),duration:1200,essential:true}); }   // T6: smooth glide to the clicked hub (never jumpTo)
     if(id==='dart-hubs' && o.id) loadForecast(o.id);
     return true; }
   window.__pop=pop;                                    // debug handle for popup/forecast tests

@@ -40,7 +40,12 @@ Static-transmission gate + standing gate run EVERY task.
   style.load. VERIFIED (fresh-eyes GREEN): code + measured (5 anchors, lblSuppressed true, filter has
   exclusion, queryRenderedFeatures at all 5 pts -> none of the 6 names render) + image (5 glowing pills,
   no competing default labels, caveats intact). commit PENDING.
-- [todo] 6 — camera easing everywhere (no jumpTo in handlers).
+- [done] 6 — camera easing. Removed the last jumpTo (init pitch intro -> constructor pitch-8 +
+  easeTo settle). Hub click in pop() -> map.easeTo({center:hub,zoom:max(z,6.8),duration:1200,
+  essential:true}). GREP GATE: zero jumpTo/setCenter/setZoom METHOD calls (2 "jumpTo" hits are in
+  comments). VERIFIED (fresh-eyes GREEN): code + call-spy (hub click -> easeTo dur1200, jumpOrSet
+  false, camera 4.8/-99.1 -> 6.8/-95.37 Houston). Mid-flight screenshot = headless caveat (mapbox
+  easeTo completes <80ms headless; animates in real browser). commit PENDING.
 - [todo] 7 — layer fade transitions ~300ms on toggle.
 - [todo] 8 — sidebar "Right now" numbers roll/fade on change.
 - [todo] 9 — wind arrows per-county from Open-Meteo cache, zoom-gated, static/slow.
