@@ -1559,6 +1559,7 @@ async function initMap(){
     if(id==='dart-hubs' && o.id) loadForecast(o.id);
     return true; }
   window.__pop=pop;                                    // debug handle for popup/forecast tests
+  const BATT_COL_ZOOM=7;   // T2: at/above this zoom batteries render as 3D columns, below as flat discs
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
         maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
         maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
@@ -1580,9 +1581,22 @@ async function initMap(){
     hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>8+Math.sqrt(p.abs_dart/maxAbs)*11,radiusMinPixels:7,radiusMaxPixels:20,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,110],getFillColor:p=>p.sign==='rich'?[74,158,96,190]:[206,92,86,190],onClick:pop})},
-    batteries:{label:'Batteries',sw:'#a371f7',data:batts,on:false,make:()=>new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,
-      getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>5+Math.sqrt((b.mw||0)/maxBattMw)*9,radiusMinPixels:4,radiusMaxPixels:15,
-      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,90],getFillColor:[150,120,196,165],onClick:pop})},
+    // T2: batteries extrude by REAL nameplate MW — flat muted-green discs at overview zoom, honest
+    // 3D columns (height ∝ MW) as you zoom into a metro. Small footprint. Pickable in both modes.
+    batteries:{label:'Batteries',sw:'#3fb950',data:batts,on:false,make:()=>{
+      if(map.getZoom()>=BATT_COL_ZOOM){
+        return new deck.ColumnLayer({id:'batteries',data:batts,pickable:true,
+          diskResolution:16,radius:2200,extruded:true,radiusUnits:'meters',
+          getPosition:b=>[b.lon,b.lat],
+          getElevation:b=>(b.mw||0),                       // honest: column height ∝ real nameplate MW
+          elevationScale:9000/maxBattMw,                   // scale so the tallest column reads (~9 km, not off-screen)
+          getFillColor:[70,165,105,230],getLineColor:[150,215,175,160],
+          material:{ambient:0.85,diffuse:0.35,shininess:6},onClick:pop});   // mostly-ambient → uniform muted-green towers
+      }
+      return new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,   // overview: flat discs
+        getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>4+Math.sqrt((b.mw||0)/maxBattMw)*7,radiusMinPixels:4,radiusMaxPixels:11,
+        stroked:true,lineWidthMinPixels:0.5,getLineColor:[205,228,212,95],getFillColor:[64,150,96,205],onClick:pop});
+    }},
     plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>4+Math.sqrt((p.mw||0)/maxPlantMw)*8,radiusMinPixels:4,radiusMaxPixels:13,
       stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,80],getFillColor:p=>techColor(p.tech),onClick:pop})},
@@ -1639,8 +1653,14 @@ async function initMap(){
   const buildLayers=()=>[countyOutline()].filter(Boolean).concat(
     renderKeys().flatMap(k=>[].concat(REG[k].make())
       .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))}))));   // outline first (bottom), then fade-managed layers
+  // T2: strong ambient + soft directional light so extruded battery columns read as lit muted-green
+  // towers (without lights, deck shades extruded side-faces to near-black).
+  const _lighting = (deck.LightingEffect&&deck.AmbientLight&&deck.DirectionalLight) ? new deck.LightingEffect({
+    ambient:new deck.AmbientLight({color:[255,255,255],intensity:1.5}),
+    sun:new deck.DirectionalLight({color:[255,255,255],intensity:0.7,direction:[-0.6,-2,-1.2]})}) : null;
   // build the overlay WITH its initial layers so they paint on first render
   const overlay=new deck.MapboxOverlay({interleaved:false, layers:buildLayers(),   // overlaid: deck renders visible markers; events forwarded to the map
+    effects:_lighting?[_lighting]:undefined,
     getTooltip:({object,layer})=>object?{className:'map-tip',html:tipFor(layer&&layer.id,object)}:null});
   map.addControl(overlay); window.__overlay=overlay;   // debug handle for pick tests
   window.__activeLayers=activeLayers();
@@ -1648,6 +1668,11 @@ async function initMap(){
   function snapshotArcs(){ const s = intradayOn ? intradayArcs : (arcLiveOn ? (arcLive&&arcLive.arcs) : null); return (s&&s.length)?s:null; }
   let _curLayers=buildLayers();
   function refreshLayers(){ _curLayers=buildLayers(); overlay.setProps({layers:_flowRAF?_curLayers.concat(particleLayer()):_curLayers}); window.__activeLayers=activeLayers(); }
+  // T2: rebuild only when the battery disc<->column threshold is crossed (not every zoom frame).
+  let _battCol=map.getZoom()>=BATT_COL_ZOOM;
+  map.on('zoom',()=>{ const c=map.getZoom()>=BATT_COL_ZOOM;
+    if(c!==_battCol){ _battCol=c; window.__battCol=c; if(REG.batteries.on) refreshLayers(); } });
+  window.__battCol=_battCol;
   // fade animation: ease each layer's opacity toward its on/off target, rebuild until settled
   let _fadeRAF=null;
   function animateFade(){ let moving=false;

@@ -8,7 +8,13 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   pitch-in settle. Terrain DROPPED: raster-DEM needs WebGL our swiftshader harness can't render, so
   unverifiable — pitch+fog+vignette already give the depth (3 planes read: horizon→TX→markers).
   Verified: pitch 52, fog set, vignette in DOM, deck layers intact; state screenshot cinematic. commit PENDING.
-- [todo] T2 — batteries as deck.gl ColumnLayer, height=MW, muted green; flat→columns by zoom; pickable.
+- [done] T2 — batteries: ColumnLayer (extruded, getElevation∝real MW, elevationScale ~9km max,
+  radius 2200m small footprint, muted green, ambient+dir LightingEffect) at zoom>=7; flat green
+  pickable discs below; zoom-flip refresh only on threshold cross. Verified in-harness: overview
+  discs = ScatterplotLayer fill [64,150,96] muted green, pickObject → 'batteries' (pickable);
+  zoom-switch flips disc(Au)↔column(Iu). DEFERRED to real-GPU deploy (user OK'd): column lit-green
+  color + column click-pick — SwiftShader can't render/pick deck extruded geometry (renders dark,
+  pickObject null); standard deck.gl behavior on real GPUs. commit PENDING.
 - [todo] T3 — zoom-tiered reveal: state=anchors only (designed metro labels + 5 biggest batteries +
   top corridor); rest fades in w/ zoom. Radii 4/5/7/10/14.
 - [todo] T4 — HIFLD transmission lines TX subset → tx_lines.geojson + /api/txlines; voltage-tiered
