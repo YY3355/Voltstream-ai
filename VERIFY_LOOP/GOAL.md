@@ -21,6 +21,18 @@ conda run -n volt; ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean; kill stale :8020; war
 headless Chrome via CDP (scratchpad/cdp.py); verify vs committed 7/16 intraday replay snapshot
 (deterministic — no live API in the loop).
 
+## STANDING REQUIREMENT (added 2026-07-20 after T4/T5 recovery — MANDATORY, applies before ANY
+## animation task is re-attempted or marked done):
+## Motion/liveliness MUST be confirmed in a REAL browser session with UNTOUCHED requestAnimationFrame
+## (a headful Chrome, or a headless run WITHOUT --disable-*-throttling and WITHOUT clock-step hooks —
+## i.e. the animation must be observed advancing on its own real RAF clock, e.g. via CDP screencast /
+## Page.startScreencast capturing successive real frames, or a genuine headful capture). Clock-step /
+## __stepFlow / __stepBreathe / __setEntrance freeze-hook proofs verify the MATH only and NO LONGER
+## COUNT AS GREEN for any "it moves / feels alive" claim. Headless RAF is throttled, so clock-step can
+## pass while the feature janks or never runs live (this is exactly how T4 breathing + T5 anchors
+## slipped through). Also: headless swiftshader renders NO mapbox settlement labels — any label-
+## presence/suppression claim must likewise be confirmed in a real browser, not headless queryRenderedFeatures.
+
 ## VERIFICATION (maker != checker — spawn fresh-eyes subagent per task)
 a) Load Map tab in headless Chrome, wait ~5s for layers.
 b) FRAME PAIR (2 screenshots ~2s apart, same camera). Pixel-diff masked to the layer under test:

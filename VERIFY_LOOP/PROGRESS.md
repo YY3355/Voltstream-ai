@@ -27,19 +27,21 @@ Static-transmission gate + standing gate run EVERY task.
   (getLineColor deps only kv+_mapZoom-discrete; updateTriggers=round(_mapZoom*10)). VERIFIED (fresh-eyes
   GREEN): code + tier data re-derived (z4.8: only 345/500; z8.2: 69→16/138→45/230→70/345→100/500→118) +
   before/after (t4_txlines bright -> t3_metro recessive, anchors dominate) + no-anim gate. commit PENDING.
-- [done] 4 — battery breathing (pure decoration). _breatheS=1+0.09sin (±9% UNIFORM scale -> relative
-  MW preserved), _breatheA=0.82..1.0 opacity pulse. Disc radius*=bs + alpha pulse; column alpha pulse
-  ONLY (getElevation=MW NOT pulsed). breatheTick RAF runs only when batteries.on. __stepBreathe hook.
-  VERIFIED (fresh-eyes GREEN): code (uniform, elevation unpulsed, gated on batteries.on, no bleed to
-  txlines) + uniformity proof (batt0 & batt1 both scale 1.055 identically; alpha 191->202) + diff
-  (ring outlines at battery markers only, no other motion) + standing gate 0px. commit PENDING.
-- [done] 5 — city anchors. Added Permian (5th anchor @[-102.08,31.9]); constant soft glow (steady
-  box-shadow + ::before radial halo, NOT animated; anchorPulse is 1-shot self-removing load flourish).
-  suppressCityLabels(): additive filter ['all',existing,['!',in name/name_en of Dallas/Houston/Austin/
-  San Antonio/Midland/Odessa]] on the 3 settlement-label layers, guarded (map.__lblSuppressed), on
-  style.load. VERIFIED (fresh-eyes GREEN): code + measured (5 anchors, lblSuppressed true, filter has
-  exclusion, queryRenderedFeatures at all 5 pts -> none of the 6 names render) + image (5 glowing pills,
-  no competing default labels, caveats intact). commit PENDING.
+- [BLOCKED] 4 — battery breathing. REVERTED (commit d463529, reverts 0aebc7e). REASON: verified via
+  clock-step (__stepBreathe) in headless; broken in real browser — RAF/live-playback gap. The headless
+  RAF throttle meant breatheTick (which calls refreshLayers() EVERY frame, rebuilding all deck layers)
+  never actually ran, so the clock-step "proof" hid that it janks/misbehaves under untouched RAF.
+  Battery markers restored to EXACT pre-loop rendering: battery-layer code byte-identical to f480a19,
+  getRadius=tierR (no *bs), radiusMax 14, static fill [64,150,96,205], __stepBreathe undefined,
+  batteries-on framepair = 0 moved px. DO NOT re-mark done without a real-browser RAF check (see GOAL).
+- [BLOCKED] 5 — city anchors. REVERTED (commit 7b18596, reverts 4e5c289). REASON: verified via headless
+  (clock-step era) — broken in real browser (RAF/live-playback gap; anchors read as giant headers /
+  label handling misbehaves). Also the original "suppression verified" was a FALSE PASS: headless
+  swiftshader renders NO mapbox settlement labels at any zoom, so "none of the 5 render" was trivially
+  true regardless of the filter. City labels restored to EXACT pre-loop: anchor list + .metro-anchor CSS
+  byte-identical to f480a19, suppressCityLabels removed, settlement filters carry NO name_en exclusion,
+  __lblSuppressed undefined, back to 4 anchors (Permian removed). DO NOT re-mark done without a
+  real-browser RAF check (see GOAL).
 - [done] 6 — camera easing. Removed the last jumpTo (init pitch intro -> constructor pitch-8 +
   easeTo settle). Hub click in pop() -> map.easeTo({center:hub,zoom:max(z,6.8),duration:1200,
   essential:true}). GREP GATE: zero jumpTo/setCenter/setZoom METHOD calls (2 "jumpTo" hits are in
@@ -80,3 +82,16 @@ Static-transmission gate + standing gate run EVERY task.
   snapshot arcs; measuredFlowArcs filters type=reported_constraint_flow). Transmission=REG.txlines
   (HIFLD, static, lazy). Batteries=ColumnLayer/disc. Anchors=4 metro pills. Briefing="Right now".
   Task 1 = refine existing particles to the ~2px/~30% + width/speed/color mapping spec.
+
+## RECOVERY (2026-07-20) — T4/T5 reverted, verification failure acknowledged
+- User flagged T4 (battery breathing) + T5 (city anchors) broke in a REAL browser though they passed
+  my headless clock-step checks (RAF/live-playback gap). Root cause: headless throttles RAF, so the
+  continuous-RAF features (breatheTick rebuilding all layers every frame; anchor/label behavior) never
+  actually ran live — the clock-step hooks proved the math, not the liveliness.
+- Reverted (revert, not reset — history honest): 7b18596 reverts T5 (4e5c289), d463529 reverts T4
+  (0aebc7e). Each = one commit. T6-T10 preserved (resolved the T9-adjacency conflict by keeping wind).
+- Verified restore == EXACT pre-loop (f480a19): battery-layer code + anchor list + .metro-anchor CSS
+  byte-IDENTICAL; suppressCityLabels gone; settlement filters no exclusion; __stepBreathe/__lblSuppressed
+  undefined; batteries-on framepair 0 moved px; radius 14 / static fill; 4 anchors (no Permian).
+- GOAL.md: added a MANDATORY standing requirement — real-browser untouched-RAF confirmation now required
+  for any liveliness claim; clock-step alone no longer counts as green.
