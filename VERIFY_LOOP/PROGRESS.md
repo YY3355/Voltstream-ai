@@ -74,7 +74,8 @@ Static-transmission gate + standing gate run EVERY task.
   static-transmission gate: 21px/0.001% (AA jitter on fixed geometry, no anim code). Fresh-eyes COLD
   read: "calm and controlled, not busy" — GREEN. No red flags (no price heatmap/invented data/predicted
   spike/transmission flow). commit PENDING.
-- [todo] DEPLOY — fresh-clone test, push, Fly redeploy.
+- [done] DEPLOY — T1-T3 + T6-T10 shipped (8982019); after the T4/T5 revert, re-deployed the reverts
+  (d6f717e). Fresh-clone test passed (build+serve; T4-conflict area clean). Prod healthy: root/state 200.
 
 ## Log
 - init — GOAL+PROGRESS written. Env: conda volt, ERCOT_LIVE=0. CDP driver at scratchpad/cdp.py.
@@ -95,3 +96,12 @@ Static-transmission gate + standing gate run EVERY task.
   undefined; batteries-on framepair 0 moved px; radius 14 / static fill; 4 anchors (no Permian).
 - GOAL.md: added a MANDATORY standing requirement — real-browser untouched-RAF confirmation now required
   for any liveliness claim; clock-step alone no longer counts as green.
+
+## CLOSEOUT (2026-07-20) — user chose to leave T4/T5 BLOCKED, close the loop.
+- Automated REAL-BROWSER (untouched-RAF) verification proved unreliable: headful-CDP DevTools ws drops
+  on this heavy mapbox+deck page across 4 approaches (single long eval, heartbeat, short-eval poll,
+  Page.startScreencast) -> connection-lost / socket-closed / timeout. Per the standing requirement I
+  cannot mark a liveliness task green without it, so T4/T5 were NOT re-attempted.
+- FINAL: 8/10 tasks done + deployed (T1 particles, T2 entrance, T3 tx de-emphasis, T6 camera easing,
+  T7 fades, T8 briefing rolls, T9 wind arrows, T10 rest audit). T4 battery breathing + T5 city anchors
+  = BLOCKED (reverted, prod clean/calm). Standing requirement recorded in GOAL.md for any future re-attempt.
