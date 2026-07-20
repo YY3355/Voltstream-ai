@@ -41,7 +41,12 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   density by utilization (util 1.0 -> 10 dots = 3+round(1·7)), and measuredFlowArcs enforces
   measured-ONLY (allMeasuredOnly true: every animated arc type=reported_constraint_flow w/ src+tgt).
   Screenshot: white dots flowing along the single measured SCED arc. Verification-only, no code change.
-- [todo] T7 — sidebar "Right now" briefing from existing endpoints; no new claims.
+- [done] T7 — sidebar "Right now" briefing at the top of .map-side. 5 rows from EXISTING endpoints:
+  DA−RT biggest mover + rich/cheap (hubs), top corridor stations+90d bind%+live-now (arcAgg + alerts
+  n_binding), wind-belt state (cwWind), hottest county (cwFeats), alerts count+severity (/api/alerts).
+  Read-only, no new claims, NO dispatch language (verified regex hasDispatchLanguage=false). Verified:
+  5 rows populate w/ real values (Houston -2.28, HHGT↔OMEGA 10.9%/1 now, LIGHT 11.3, Dimmit 96.8°F,
+  2 watch); screenshot shows a clean designed situation board. commit PENDING.
 - [todo] T8 — motion (fades/slides/anchor pulse/section expand) + typography pass (one family, muted).
 - [todo] DEPLOY — push, redeploy Fly.
 

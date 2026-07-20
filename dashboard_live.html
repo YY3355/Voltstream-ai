@@ -138,6 +138,20 @@
   .map-tip .pr{color:var(--dim);font-style:italic;margin-top:4px;display:block}
   #map-scope{display:none}   /* honest scope relocated off-canvas to the sidebar + per-layer ⓘ (T2) */
   .map-side{flex:0 1 246px;display:flex;flex-direction:column;gap:8px;min-width:210px}
+  /* T7: "Right now" briefing — a live read-only situation board at the top of the sidebar */
+  #briefing{border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:linear-gradient(180deg,#111a29,#0d1421)}
+  #briefing .bh{font-family:var(--mono);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--mut);padding:8px 11px 7px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  #briefing .bh .bt{color:var(--dim);font-size:8.5px;letter-spacing:.5px}
+  #briefing .br{display:flex;gap:9px;padding:6px 11px;border-bottom:1px solid #141c26;
+    font-family:var(--mono);font-size:10.5px;align-items:baseline}
+  #briefing .br:last-child{border-bottom:none}
+  #briefing .bk{color:var(--mut);font-size:8.5px;text-transform:uppercase;letter-spacing:.4px;flex:0 0 58px}
+  #briefing .bv{color:var(--ink);flex:1;line-height:1.35} #briefing .bv b{color:#fff}
+  #briefing .bv .rich{color:var(--green)} #briefing .bv .cheap{color:var(--red)}
+  #briefing .bv .hi{color:var(--amber);font-weight:600} #briefing .bv .dim{color:var(--dim)}
+  #briefing .bsev{font-size:8px;font-weight:700;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:.5px}
   #layer-insight{display:flex;flex-direction:column;gap:6px}
   #layer-insight .li{border:1px solid var(--line);border-radius:8px;background:var(--panel);
     padding:7px 10px;font-family:var(--mono);font-size:10.5px;color:var(--ink)}
@@ -421,6 +435,7 @@
           <div id="map-scope"></div>
         </div>
         <div class="map-side">
+          <div id="briefing"></div>
           <div id="layer-insight"></div>
           <div id="county-panel"></div>
           <details id="scope-details"><summary>Data &amp; scope</summary><div id="scope-body"></div></details>
@@ -1944,6 +1959,29 @@ async function initMap(){
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar
   // "Data & scope" collapsible + the per-layer ⓘ tooltips. Kept empty/hidden, nothing deleted.
   $('map-scope').innerHTML='';
+
+  // T7: "Right now" briefing — a live, READ-ONLY situation board from existing endpoints. No new
+  // claims, no dispatch advice — just what the real data says this moment (Bolt's plan stays in its
+  // own tab, where its assumptions are labelled).
+  async function renderBriefing(){ const el=$('briefing'); if(!el) return;
+    let al={}; try{ al=await (await fetch('/api/alerts')).json(); }catch(e){}
+    const ctx=(al&&al.context)||{}, nB=ctx.n_binding, sev=(al&&al.max_severity)||'none';
+    const mover=hubs.length?[...hubs].sort((a,b)=>b.abs_dart-a.abs_dart)[0]:null;   // biggest |DA−RT| mover
+    const rich=hubs.filter(h=>h.sign==='rich').length;
+    const tc=_topArc;
+    const hotP=cwFeats.map(f=>f.properties).filter(p=>p.temp_f!=null).sort((a,b)=>b.temp_f-a.temp_f)[0];
+    const sevCol={alert:'var(--red)',watch:'var(--amber)',info:'var(--blue)',none:'var(--dim)'}[sev]||'var(--dim)';
+    const rows=[];
+    if(mover) rows.push(['DA−RT', `<span class="${mover.sign==='rich'?'rich':'cheap'}"><b>${mover.label.replace(' Hub','')}</b> ${mover.dart>0?'+':''}${mover.dart.toFixed(2)}</span> <span class="dim">· ${rich} rich / ${hubs.length-rich} cheap</span>`]);
+    if(tc) rows.push(['Corridor', `<b>${tc.from_station}↔${tc.to_station}</b>${tc.kv&&tc.kv[0]?' '+tc.kv[0]+'kV':''} <span class="dim">·</span> binds <b>${tc.bind_pct.toFixed(1)}%</b> 90d${nB!=null?` <span class="dim">·</span> <span class="hi">${nB} now</span>`:''}`]);
+    if(cwWind) rows.push(['Wind belt', `<b>${cwWind.state.toUpperCase()}</b> ${cwWind.wind_belt_avg_mph} mph <span class="dim">· ${cwWind.counties_counted} cos</span>`]);
+    if(hotP) rows.push(['Hottest', `<b>${hotP.NAME}</b> ${hotP.temp_f}°F`]);
+    rows.push(['Alerts', `<b>${(al&&al.n)||0}</b> <span class="bsev" style="color:${sevCol};background:${sevCol}22">${sev==='none'?'calm':sev}</span>`]);
+    el.innerHTML=`<div class="bh"><span>Right now</span><span class="bt">live · read-only</span></div>`
+      +rows.map(([k,v])=>`<div class="br"><span class="bk">${k}</span><span class="bv">${v}</span></div>`).join('');
+    window.__briefingRows=rows.length;
+  }
+  renderBriefing();
 }
 // ── Live alerts (Task A): threshold conditions on real data, polled on a sane interval ──
 async function loadAlerts(){
