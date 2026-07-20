@@ -29,8 +29,13 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   voltage-tiered GeoJsonLayer (69 gray/138 blue/230 teal/345 cyan/500 white, subtle), txTip caveat,
   legend gradient. Verified: endpoint 200/6965/label; toggle enabled; lazy-load populated 6965; 6
   distinct kv tiers w/ distinct colors; metro screenshot = tiered grid web around Dallas. commit PENDING.
-- [todo] T5 — 4-color palette (blue infra / green batt / red congestion / amber heat); counties
-  gradient opacity + hover glow.
+- [done] T5 — palette discipline. Semantic 4 kept: blue transmission / green batteries / red
+  congestion (arcs + top corridor) / amber county heat. Killed the rainbow: plants techColor -> muted
+  gray, cities -> muted gray (identity in tooltip). Counties: GRADIENT OPACITY by temp (74°F→α48
+  faint .. 106°F→α188 opaque — cool recede so basemap reads through = depth; hot pop) + soft amber
+  autoHighlight hover glow. Legend swatches updated (battery green, plant/city gray). Hubs keep
+  green/red as the price hero (the DART signal) — noted exception. Verified: Presidio α55 vs Dimmit
+  α148, plants/cities gray fills, autoHighlight on; state screenshot shows the heat-depth gradient. commit PENDING.
 - [todo] T6 — arc particles = measured-arc dots, density by utilization (confirm measured-only).
 - [todo] T7 — sidebar "Right now" briefing from existing endpoints; no new claims.
 - [todo] T8 — motion (fades/slides/anchor pulse/section expand) + typography pass (one family, muted).

@@ -1635,17 +1635,22 @@ async function initMap(){
         getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>tierR(b.mw,maxBattMw),radiusMinPixels:4,radiusMaxPixels:14,
         stroked:true,lineWidthMinPixels:0.5,getLineColor:[205,228,212,95],getFillColor:[64,150,96,205],onClick:pop});
     }},
-    plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
+    // T5 palette discipline: plants + cities are secondary context -> muted gray (no rainbow).
+    // Their identity (tech / population) lives in the tooltip, not in competing hues.
+    plants:{label:'Power plants',sw:'#8a91a0',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
       getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>tierR(p.mw,maxPlantMw),radiusMinPixels:4,radiusMaxPixels:14,
-      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,80],getFillColor:p=>techColor(p.tech),onClick:pop})},
-    cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
+      stroked:true,lineWidthMinPixels:0.5,getLineColor:[210,216,226,70],getFillColor:[138,145,158,150],onClick:pop})},
+    cities:{label:'Cities',sw:'#7e8da0',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
       getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>tierR(c.population,maxPop),radiusMinPixels:3,radiusMaxPixels:14,
-      stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,70],getFillColor:[108,150,200,150],onClick:pop})},
+      stroked:true,lineWidthMinPixels:0.5,getLineColor:[200,208,220,60],getFillColor:[120,130,146,120],onClick:pop})},
     // T2: county weather is FILL-ONLY (the toggle). The always-on outline layer (see buildLayers)
     // draws the permanent county geography; this layer only tints it by per-county temp/rain.
     county:{label:'County weather (temp + rain)',sw:'#e0a24a',data:cwFeats,on:true,make:()=>new deck.GeoJsonLayer({id:'county',data:cwFC,pickable:true,
-      stroked:false,filled:true,
-      getFillColor:f=>{const c=f.properties.fill; return c?[c[0],c[1],c[2],150]:[70,74,82,26];},   // per-county temp/rain fill ~59%
+      stroked:false,filled:true,autoHighlight:true,highlightColor:[255,214,150,55],   // T5 soft amber hover glow
+      // T5 GRADIENT OPACITY: cool counties recede (basemap reads through -> depth), hot counties pop.
+      getFillColor:f=>{const c=f.properties.fill,t=f.properties.temp_f; if(!c) return [70,74,82,16];
+        const a=Math.round(48+Math.max(0,Math.min(1,((t||74)-74)/32))*140);   // 74°F→48α … 106°F→188α
+        return [c[0],c[1],c[2],a];},
       onClick:pop})},
     txlines:{label:'Transmission (HIFLD)',sw:'#5896dc',data:txlinesFC.features,on:false,lazy:true,make:()=>new deck.GeoJsonLayer({id:'txlines',data:txlinesFC,pickable:true,
       stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:f=>kvWidth(f.properties.kv),lineWidthMinPixels:0.5,lineWidthMaxPixels:3,
@@ -1929,8 +1934,8 @@ async function initMap(){
     +`${cw&&cw.source?'Weather: '+cw.source+'. ':''}`
     +`${geo&&geo.assets_note?'<span style="color:var(--amber)">'+geo.assets_note+'</span>':'Assets: EIA-860M.'}`;
   $('map-legend').innerHTML=`<span><i style="background:#3fb950"></i>hub DA rich (click: 24h forecast)</span><span><i style="background:#f85149"></i>hub DA cheap</span>`
-    +`<span><i style="background:#a371f7"></i>battery (size=MW)</span><span><i style="background:#f5a623"></i>plant (color=tech)</span>`
-    +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`
+    +`<span><i style="background:#41aa66"></i>battery (height/size=MW)</span><span><i style="background:#8a91a0"></i>plant (size=MW)</span>`
+    +`<span><i style="background:#7e8da0"></i>city (size=pop)</span>`
     +`<span><i style="border:1px solid rgba(228,233,240,.55);background:transparent"></i>county outline (all 254, always on)</span>`
     +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (per-county temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
     +`<span><i style="background:linear-gradient(90deg,#8c96a5,#5c96dc,#40b8b2,#5cd6ea,#ecf1f8)"></i>transmission kV (69→500: gray→blue→teal→cyan→white)</span>`
