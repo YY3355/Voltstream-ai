@@ -36,7 +36,11 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   autoHighlight hover glow. Legend swatches updated (battery green, plant/city gray). Hubs keep
   green/red as the price hero (the DART signal) — noted exception. Verified: Presidio α55 vs Dimmit
   α148, plants/cities gray fills, autoHighlight on; state screenshot shows the heat-depth gradient. commit PENDING.
-- [todo] T6 — arc particles = measured-arc dots, density by utilization (confirm measured-only).
+- [done] T6 — arc particles already meet spec (no ribbon existed); VERIFIED via intraday replay
+  (live arcs honestly empty in dev). Drove a measured frame: flow-particles = ScatterplotLayer DOTS,
+  density by utilization (util 1.0 -> 10 dots = 3+round(1·7)), and measuredFlowArcs enforces
+  measured-ONLY (allMeasuredOnly true: every animated arc type=reported_constraint_flow w/ src+tgt).
+  Screenshot: white dots flowing along the single measured SCED arc. Verification-only, no code change.
 - [todo] T7 — sidebar "Right now" briefing from existing endpoints; no new claims.
 - [todo] T8 — motion (fades/slides/anchor pulse/section expand) + typography pass (one family, muted).
 - [todo] DEPLOY — push, redeploy Fly.
