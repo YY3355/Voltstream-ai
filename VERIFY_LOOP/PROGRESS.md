@@ -59,7 +59,13 @@ Static-transmission gate + standing gate run EVERY task.
   (idSet -> __refreshBriefing(true)) else live n_binding. VERIFIED (fresh-eyes GREEN): code + driven
   (2->7 rolled, changed=1, class removed after, noRollOnSame true, keyframe present) + honesty/read-
   only preserved, transmission untouched. commit PENDING.
-- [todo] 9 — wind arrows per-county from Open-Meteo cache, zoom-gated, static/slow.
+- [done] 9 — per-county wind arrows. Cache lacked wind DIRECTION, so fetched wind_direction_10m+
+  wind_speed_10m CLIENT-SIDE from Open-Meteo on toggle (centroids from cwFC; same free dataset; NO
+  backend work — honors scope). Static TextLayer '↑', getAngle=-(deg+180) (flow bearing from real
+  dir), size~speed, zoom-gated (WIND_ZOOM 6.3), off by default, honest caveat. VERIFIED (fresh-eyes
+  GREEN): code (no clock dep, no fabricated fallback) + spot-check 3 counties (Midland185/Dallas175/
+  Harris189, getAngle==-(deg+180)) + live re-fetch == stored deg (real, not fabricated) + zoom-gate
+  (0@z5, 254@z8) + STATIC gate (254 arrows, 0 moved px) + image. commit PENDING.
 - [todo] 10 — rest-state audit (calm+alive, <=10% animated, gates pass).
 - [todo] DEPLOY — fresh-clone test, push, Fly redeploy.
 

@@ -1451,7 +1451,11 @@ function countyWxTip(f){ const p=f.properties||f; if(p.temp_f==null) return `<di
     +`<span class="pr">county-centroid reading &mdash; one measurement per county; varies within a large county</span>`; }
 function txTip(f){ const p=f.properties||f; return `<div class="h">${p.kv} kV transmission</div>`
   +`<span class="pr">HIFLD geometry &mdash; constraint status is shown only by the measured SCED arcs</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='txlines'?txTip(o):id==='locational'?locTip(o)
+function windTip(d){ const p=d.object||d; const dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  const from=dirs[Math.round((p.deg||0)/22.5)%16];
+  return `<div class="h">${p.county} County</div><div>wind <b>${p.mph} mph</b> from <b>${from}</b> (${p.deg}&deg;)</div>`
+    +`<span class="pr">real Open-Meteo direction at the county centroid — static snapshot, not a wind field</span>`; }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='txlines'?txTip(o):id==='wind'?windTip(o):id==='locational'?locTip(o)
   :id==='constraint-arcs'||id==='top-corridor'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
@@ -1652,8 +1656,27 @@ async function initMap(){
     locational:"Perfect-foresight decade-revenue CEILING by hub ($/MW-year). Hub-level (regional), energy-only, history — not a forecast.",
     constraints:"Measured ERCOT SCED constraints (NP6-86-CD). Only lines whose BOTH endpoints resolve to a real substation are drawn (~39% of stations). A congested-grid layer, not a complete power-flow map.",
     txlines:"transmission context (HIFLD geometry) — constraint status shown only by the measured SCED arcs.",
+    wind:"per-county wind arrows — real Open-Meteo wind direction + speed at each county centroid (live, free, no key). Static snapshot, zoom-gated; one reading per county, not a wind field.",
   };
   const SCOPE_EXTRA="Data centers and city-level load are deliberately absent — no authoritative public dataset. Nothing here predicts prices.";
+  // T9: per-county WIND ARROWS — real Open-Meteo wind direction + speed at each county centroid,
+  // fetched CLIENT-SIDE on first toggle (same free Open-Meteo source, no backend work). STATIC
+  // snapshot (no animation), zoom-gated. Arrow points the way the wind BLOWS (met dir + 180).
+  let windArrows=[], windLoaded=false; const WIND_ZOOM=6.3;
+  function _flatLL(x,out){ if(Array.isArray(x)){ if(x.length===2&&typeof x[0]==='number'){ out.push(x); } else x.forEach(e=>_flatLL(e,out)); } }
+  async function loadWindArrows(){ const feats=(cwFC&&cwFC.features)||[]; if(!feats.length) return [];
+    const cents=feats.map(f=>{ const pts=[]; _flatLL(f.geometry.coordinates,pts);
+      const lon=pts.reduce((a,p)=>a+p[0],0)/pts.length, lat=pts.reduce((a,p)=>a+p[1],0)/pts.length;
+      return {county:f.properties.NAME, lon:+lon.toFixed(3), lat:+lat.toFixed(3)}; });
+    const out=[];
+    for(let i=0;i<cents.length;i+=100){ const ch=cents.slice(i,i+100);
+      try{ const d=await (await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${ch.map(c=>c.lat).join(',')}&longitude=${ch.map(c=>c.lon).join(',')}&current=wind_direction_10m,wind_speed_10m&timezone=America/Chicago`)).json();
+        const arr=Array.isArray(d)?d:[d];
+        ch.forEach((c,j)=>{ const cur=arr[j]&&arr[j].current; if(cur&&cur.wind_direction_10m!=null)
+          out.push({...c, deg:cur.wind_direction_10m, mph:+((cur.wind_speed_10m||0)*0.621371).toFixed(1)}); });
+      }catch(e){}
+    }
+    return out; }
   // T4: HIFLD transmission-line CONTEXT — lazy-loaded on first toggle (~5MB, off by default),
   // voltage-tiered. GEOMETRY ONLY: where lines are, never their loading/congestion (that stays with
   // the measured SCED arcs). 500kV white -> 345 cyan -> 230 teal -> 138 blue -> 69 gray, subtle.
@@ -1714,6 +1737,14 @@ async function initMap(){
     txlines:{label:'Transmission (HIFLD)',sw:'#5896dc',data:txlinesFC.features,on:false,lazy:true,make:()=>new deck.GeoJsonLayer({id:'txlines',data:txlinesFC,pickable:true,
       stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:f=>kvWidth(f.properties.kv),lineWidthMinPixels:0.4,lineWidthMaxPixels:2.5,
       getLineColor:f=>kvColor(f.properties.kv,_mapZoom),updateTriggers:{getLineColor:[Math.round(_mapZoom*10)]},onClick:pop})},
+    // T9: per-county wind arrows — STATIC (no animation), zoom-gated (only at/above WIND_ZOOM so they
+    // don't clutter the overview). getAngle rotates a '↑' to the wind-FLOW bearing (met dir + 180);
+    // size scales subtly with speed. Real Open-Meteo direction — never fabricated.
+    wind:{label:'Wind arrows (per-county)',sw:'#8fc0e6',data:windArrows,on:false,lazy:true,make:()=> deck.TextLayer? new deck.TextLayer({id:'wind',
+      data:_mapZoom>=WIND_ZOOM?windArrows:[],pickable:true,characterSet:['↑'],fontFamily:'monospace',
+      getPosition:d=>[d.lon,d.lat],getText:()=>'↑',getSize:d=>12+Math.min(9,(d.mph||0)*0.45),
+      getAngle:d=>-(d.deg+180),getColor:[150,200,232,140],getTextAnchor:'middle',getAlignmentBaseline:'center',
+      updateTriggers:{getPosition:[windArrows.length],getAngle:[windArrows.length],data:[_mapZoom>=WIND_ZOOM]},onClick:pop}) : null},
     locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
       const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
       return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
@@ -1758,7 +1789,7 @@ async function initMap(){
   // T1: explicit z-order — county weather FILL renders at the BOTTOM so every marker/arc draws
   // (and picks) ON TOP of it; a battery/plant/hub/arc under a county polygon is never swallowed.
   // deck picks the topmost drawn layer at a pixel, so draw order == pick priority.
-  const Z_ORDER=['county','txlines','hubs','batteries','plants','cities','locational','constraints'];
+  const Z_ORDER=['county','txlines','wind','hubs','batteries','plants','cities','locational','constraints'];
   function renderKeys(){ const ord=Z_ORDER.concat(Object.keys(REG).filter(k=>!Z_ORDER.includes(k)));
     return ord.filter(k=>REG[k]&&(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
   // T2: county OUTLINES are permanent basemap geography — always drawn, at the very bottom, thin +
@@ -1798,7 +1829,7 @@ async function initMap(){
     if(c!==_battCol){ _battCol=c; window.__battCol=c; if(REG.batteries.on) refreshLayers(); } });
   window.__battCol=_battCol;
   // T3: re-reveal batteries by zoom (top-5 at state -> more as you zoom). zoomend = once per settle.
-  map.on('zoomend',()=>{ _mapZoom=map.getZoom(); if(REG.batteries.on||REG.txlines.on) refreshLayers(); window.__battShown=battReveal().length; });
+  map.on('zoomend',()=>{ _mapZoom=map.getZoom(); if(REG.batteries.on||REG.txlines.on||REG.wind.on) refreshLayers(); window.__battShown=battReveal().length; });
   window.__battShown=battReveal().length;
   // T7: layer fade transitions — a precise, frame-rate-INDEPENDENT ~300ms easeInOut per layer on
   // toggle (was a per-frame 0.2 factor that varied with fps). Each layer eases its opacity from where
@@ -1895,6 +1926,12 @@ async function initMap(){
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
       if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); }
       if(k==='batteries' && cb.checked) startBreathe();     // T4: start the breathing pulse when batteries turn on
+      if(k==='wind' && cb.checked && !windLoaded){          // T9: client-side Open-Meteo wind direction on first toggle (no backend)
+        windLoaded=true; const lab=cb.closest('label'); lab.style.opacity='.55';
+        loadWindArrows().then(a=>{ windArrows=a; REG.wind.data=windArrows; lab.style.opacity='';
+          const ct=lab.querySelector('.ct'); if(ct) ct.textContent=windArrows.length;
+          window.__windArrows=windArrows.length; refreshLayers(); updateInsight(); })
+        .catch(()=>{ lab.style.opacity=''; windLoaded=false; }); }
       if(k==='txlines' && cb.checked && !txlinesLoaded){    // T4: lazy-fetch the ~5MB HIFLD geometry on first toggle
         txlinesLoaded=true; const lab=cb.closest('label'); lab.style.opacity='.55';
         fetch('/api/txlines').then(r=>r.json()).then(d=>{ txlinesFC={type:'FeatureCollection',features:(d&&d.features)||[]};
@@ -2054,6 +2091,7 @@ async function initMap(){
     +`<span><i style="border:1px solid rgba(228,233,240,.55);background:transparent"></i>county outline (all 254, always on)</span>`
     +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (per-county temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
     +`<span><i style="background:linear-gradient(90deg,#8c96a5,#5c96dc,#40b8b2,#5cd6ea,#ecf1f8)"></i>transmission kV (69→500: gray→blue→teal→cyan→white)</span>`
+    +`<span><i style="background:#96c0e6"></i>wind arrow ↑ (Open-Meteo dir, size=speed; zoom in)</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
     +`<span><i style="background:#5bd6ea"></i>transmission arcs (width=bind freq, brightness=shadow $)</span>`;
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar
