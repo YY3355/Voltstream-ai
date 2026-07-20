@@ -15,8 +15,13 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   zoom-switch flips disc(Au)↔column(Iu). DEFERRED to real-GPU deploy (user OK'd): column lit-green
   color + column click-pick — SwiftShader can't render/pick deck extruded geometry (renders dark,
   pickObject null); standard deck.gl behavior on real GPUs. commit PENDING.
-- [todo] T3 — zoom-tiered reveal: state=anchors only (designed metro labels + 5 biggest batteries +
-  top corridor); rest fades in w/ zoom. Radii 4/5/7/10/14.
+- [done] T3 — zoom-tiered reveal + anchors. Designed metro labels (Houston/Dallas/Austin/San Antonio)
+  as rounded glass pills w/ glow + leading dot (NOT raw mapbox labels), created synchronously (the
+  map 'load' event stalls in-harness — also fixed the T1 easeTo via style.load + setTimeout settle).
+  Battery zoom-reveal: top-5 at state zoom -> more as you zoom -> all at metro (verified 5 -> 189/235).
+  Radii compressed to 4/5/7/10/14 tiers (verified hubs {7,12,16}, batteries {14}). Top congestion
+  corridor = persistent subtle red ArcLayer of the #1 90d-binding aggregate arc (measured; arcTip
+  caveat). Verified: 4 anchors present+legible, battReveal 5/189, top-corridor layer present. commit PENDING.
 - [todo] T4 — HIFLD transmission lines TX subset → tx_lines.geojson + /api/txlines; voltage-tiered
   render; off by default; honest label.
 - [todo] T5 — 4-color palette (blue infra / green batt / red congestion / amber heat); counties

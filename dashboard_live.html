@@ -116,6 +116,16 @@
   #map-canvas{position:relative;width:100%;height:66vh;min-height:480px;border-radius:10px;
     overflow:hidden;border:1px solid var(--line);background:#0a0e14}
   #map-canvas .mapboxgl-ctrl-attrib{font-size:10px}
+  /* T3: designed metro anchor labels — rounded glass pills w/ subtle glow (not raw mapbox labels) */
+  .metro-anchor{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.3px;color:#eef3fa;background:rgba(13,20,32,.86);border:1px solid rgba(140,170,210,.42);
+    border-radius:20px;padding:3px 11px 3px 8px;white-space:nowrap;pointer-events:none;
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);transition:opacity .5s ease;
+    text-shadow:0 1px 2px rgba(0,0,0,.8);box-shadow:0 2px 12px rgba(0,0,0,.55),0 0 18px rgba(90,130,190,.28),inset 0 1px 0 rgba(255,255,255,.06)}
+  .metro-anchor .dot{width:5px;height:5px;border-radius:50%;background:#9cc0f0;box-shadow:0 0 8px #6f9fe0}
+  .metro-anchor.pulse{animation:anchorPulse 1.6s ease-out 1}
+  @keyframes anchorPulse{0%{box-shadow:0 2px 10px rgba(0,0,0,.45),0 0 0 0 rgba(120,160,220,.55)}
+    100%{box-shadow:0 2px 10px rgba(0,0,0,.45),0 0 0 16px rgba(120,160,220,0)}}
   /* T1: soft vignette over the canvas — darkens the corners so the eye lands on Texas (depth cue) */
   .map-vignette{position:absolute;inset:0;border-radius:10px;pointer-events:none;z-index:4;
     box-shadow:inset 0 0 140px 26px rgba(4,7,12,.6);
@@ -1411,7 +1421,7 @@ function countyWxTip(f){ const p=f.properties||f; if(p.temp_f==null) return `<di
     +`<div><b>${p.temp_f}&deg;F</b>${p.wind_mph!=null?` &middot; ${p.wind_mph} mph wind`:''}${p.raining?` &middot; <span style="color:#4aa8e0">raining</span> (${p.precip_mm} mm)`:''}</div>`
     +`<span class="pr">county-centroid reading &mdash; one measurement per county; varies within a large county</span>`; }
 function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='locational'?locTip(o)
-  :id==='constraint-arcs'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
+  :id==='constraint-arcs'||id==='top-corridor'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
   if(t.includes('wind')) return [34,211,238,205];
@@ -1531,15 +1541,22 @@ async function initMap(){
   window.__map=map; window.__txView=TX_VIEW;          // handle for programmatic zoom/frame checks
   map.scrollZoom.enable(); map.dragPan.enable();       // explicit: nothing should suppress these
   map.addControl(new mapboxgl.NavigationControl({visualizePitch:true}),'top-right');
-  map.once('load',()=>{
-    // T1 ATMOSPHERE — subtle dark fog + horizon glow so the pitched view has air, not a hard edge.
-    // (Terrain DEM intentionally omitted: it needs WebGL features our verify harness can't render,
-    //  and pitch+fog+vignette already deliver the depth — no unverifiable visuals shipped.)
-    try{ map.setFog({range:[0.5,10],color:'#0b1018','high-color':'#1b2c48','horizon-blend':0.14,
-      'space-color':'#05070c','star-intensity':0.1}); }catch(e){}
-    // T8 load motion: one gentle pitch-in so the scene "settles" rather than snapping in.
-    map.jumpTo({pitch:TX_VIEW.pitch-8}); map.easeTo({pitch:TX_VIEW.pitch,duration:1100,essential:true});
-  });
+  // T1 ATMOSPHERE — subtle dark fog + horizon glow. setFog needs the style; 'style.load' is reliable
+  // (the 'load' event can stall behind slow tiles), so apply it there (or immediately if ready).
+  function applyAtmosphere(){ try{ map.setFog({range:[0.5,10],color:'#0b1018','high-color':'#1b2c48',
+    'horizon-blend':0.14,'space-color':'#05070c','star-intensity':0.1}); }catch(e){} }
+  if(map.isStyleLoaded && map.isStyleLoaded()) applyAtmosphere(); else map.on('style.load',applyAtmosphere);
+  // T3 ANCHORS: designed metro labels — rounded glass pills (NOT raw mapbox labels), pulse once.
+  // Created synchronously (markers don't need 'load'); reposition automatically as the map moves.
+  [['Houston',-95.37,29.76],['Dallas',-96.80,32.78],['Austin',-97.74,30.27],['San Antonio',-98.49,29.42]]
+    .forEach(([n,lon,lat])=>{ const el=document.createElement('div'); el.className='metro-anchor pulse';
+      el.innerHTML=`<span class="dot"></span>${n}`;
+      new mapboxgl.Marker({element:el,anchor:'left'}).setLngLat([lon,lat]).addTo(map);
+      el.addEventListener('animationend',()=>el.classList.remove('pulse')); });
+  window.__anchors=document.querySelectorAll('.metro-anchor').length;
+  // T8 load motion: one gentle pitch-in settle (guarded; runs shortly after init regardless of 'load').
+  setTimeout(()=>{ try{ map.easeTo({pitch:TX_VIEW.pitch,duration:1000,essential:true}); }catch(e){} },400);
+  map.jumpTo({pitch:TX_VIEW.pitch-8});
   map.on('error',e=>{ const msg=(e&&e.error&&e.error.message)||'map error';
     $('map-meta').innerHTML=`<span style="color:var(--red)">Mapbox: ${msg}</span>`; });
 
@@ -1563,6 +1580,17 @@ async function initMap(){
   const maxAbs=Math.max(...hubs.map(p=>p.abs_dart),1), maxBattMw=Math.max(...batts.map(b=>b.mw||0),1),
         maxPlantMw=Math.max(...plants.map(p=>p.mw||0),1), maxPop=Math.max(...cities.map(c=>c.population||0),1),
         maxCountyMw=Math.max(...counties.map(c=>c.mw||0),1);
+  // T3: compressed marker-radius tiers — every point-radius snaps to one of 5 sizes (no 10x blobs).
+  const R_SCALE=[4,5,7,10,14];
+  const tierR=(v,max)=>R_SCALE[Math.min(4,Math.max(0,Math.floor(Math.sqrt(Math.max(0,(v||0)/(max||1)))*5)))];
+  // T3: zoom-tiered reveal — at state zoom only the 5 largest batteries (anchors); more fade in as
+  // you zoom, all of them by metro/column zoom (Google-Maps progressive disclosure).
+  const _battByMw=[...batts].sort((a,b)=>(b.mw||0)-(a.mw||0));
+  function battReveal(){ const z=map.getZoom();
+    if(z>=BATT_COL_ZOOM) return batts;                       // metro: all (columns)
+    if(z<5.0) return _battByMw.slice(0,5);                   // state zoom: top-5 anchors only
+    const frac=Math.min(1,(z-5.0)/(BATT_COL_ZOOM-5.0));
+    return _battByMw.slice(0,Math.max(5,Math.round(5+frac*(batts.length-5)))); }
   // per-layer honest-scope caveats — surfaced as a ⓘ tooltip next to each toggle (T2) and
   // collected in the sidebar "Data & scope" section. Relocated off the canvas, never deleted.
   const LAYER_CAVEATS={
@@ -1579,7 +1607,7 @@ async function initMap(){
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
     hubs:{label:'DART hubs',sw:'#3fb950',data:hubs,on:true,make:()=>new deck.ScatterplotLayer({id:'dart-hubs',data:hubs,pickable:true,
-      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>8+Math.sqrt(p.abs_dart/maxAbs)*11,radiusMinPixels:7,radiusMaxPixels:20,
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>tierR(p.abs_dart,maxAbs)+2,radiusMinPixels:6,radiusMaxPixels:18,
       stroked:true,lineWidthMinPixels:1,getLineColor:[255,255,255,110],getFillColor:p=>p.sign==='rich'?[74,158,96,190]:[206,92,86,190],onClick:pop})},
     // T2: batteries extrude by REAL nameplate MW — flat muted-green discs at overview zoom, honest
     // 3D columns (height ∝ MW) as you zoom into a metro. Small footprint. Pickable in both modes.
@@ -1593,15 +1621,15 @@ async function initMap(){
           getFillColor:[70,165,105,230],getLineColor:[150,215,175,160],
           material:{ambient:0.85,diffuse:0.35,shininess:6},onClick:pop});   // mostly-ambient → uniform muted-green towers
       }
-      return new deck.ScatterplotLayer({id:'batteries',data:batts,pickable:true,   // overview: flat discs
-        getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>4+Math.sqrt((b.mw||0)/maxBattMw)*7,radiusMinPixels:4,radiusMaxPixels:11,
+      return new deck.ScatterplotLayer({id:'batteries',data:battReveal(),pickable:true,   // overview: flat discs, zoom-revealed
+        getPosition:b=>[b.lon,b.lat],radiusUnits:'pixels',getRadius:b=>tierR(b.mw,maxBattMw),radiusMinPixels:4,radiusMaxPixels:14,
         stroked:true,lineWidthMinPixels:0.5,getLineColor:[205,228,212,95],getFillColor:[64,150,96,205],onClick:pop});
     }},
     plants:{label:'Power plants',sw:'#f5a623',data:plants,on:false,make:()=>new deck.ScatterplotLayer({id:'plants',data:plants,pickable:true,
-      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>4+Math.sqrt((p.mw||0)/maxPlantMw)*8,radiusMinPixels:4,radiusMaxPixels:13,
+      getPosition:p=>[p.lon,p.lat],radiusUnits:'pixels',getRadius:p=>tierR(p.mw,maxPlantMw),radiusMinPixels:4,radiusMaxPixels:14,
       stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,80],getFillColor:p=>techColor(p.tech),onClick:pop})},
     cities:{label:'Cities',sw:'#58a6ff',data:cities,on:false,make:()=>new deck.ScatterplotLayer({id:'cities',data:cities,pickable:true,
-      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>3+Math.sqrt((c.population||0)/maxPop)*8,radiusMinPixels:3,radiusMaxPixels:12,
+      getPosition:c=>[c.lon,c.lat],radiusUnits:'pixels',getRadius:c=>tierR(c.population,maxPop),radiusMinPixels:3,radiusMaxPixels:14,
       stroked:true,lineWidthMinPixels:0.5,getLineColor:[255,255,255,70],getFillColor:[108,150,200,150],onClick:pop})},
     // T2: county weather is FILL-ONLY (the toggle). The always-on outline layer (see buildLayers)
     // draws the permanent county geography; this layer only tints it by per-county temp/rain.
@@ -1650,9 +1678,16 @@ async function initMap(){
   const countyOutline=()=> (cwFeats.length? new deck.GeoJsonLayer({id:'county-outline',data:cwFC,
       pickable:false,stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:0.6,
       lineWidthMinPixels:0.4,getLineColor:[228,233,240,55]}) : null);
+  // T3 ANCHOR: the single top congestion corridor (highest 90-day bind %) — a persistent subtle red
+  // highlight shown even at state zoom. MEASURED aggregate arc; caveat carried in its tooltip.
+  const _topArc=[...arcAgg].filter(a=>a.source&&a.target).sort((a,b)=>(b.bind_pct||0)-(a.bind_pct||0))[0];
+  const topCorridor=()=> (_topArc? new deck.ArcLayer({id:'top-corridor',data:[_topArc],pickable:true,
+      getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
+      getSourceColor:[248,81,73,70],getTargetColor:[248,81,73,180],getWidth:2.4,widthMinPixels:2,getHeight:0.4,onClick:pop}) : null);
   const buildLayers=()=>[countyOutline()].filter(Boolean).concat(
     renderKeys().flatMap(k=>[].concat(REG[k].make())
-      .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))}))));   // outline first (bottom), then fade-managed layers
+      .map(L=>L.clone({opacity:Math.max(0,Math.min(1,_op[k]))}))))   // outline first (bottom), then fade-managed layers
+    .concat([topCorridor()].filter(Boolean));                        // top corridor anchor on top
   // T2: strong ambient + soft directional light so extruded battery columns read as lit muted-green
   // towers (without lights, deck shades extruded side-faces to near-black).
   const _lighting = (deck.LightingEffect&&deck.AmbientLight&&deck.DirectionalLight) ? new deck.LightingEffect({
@@ -1673,6 +1708,9 @@ async function initMap(){
   map.on('zoom',()=>{ const c=map.getZoom()>=BATT_COL_ZOOM;
     if(c!==_battCol){ _battCol=c; window.__battCol=c; if(REG.batteries.on) refreshLayers(); } });
   window.__battCol=_battCol;
+  // T3: re-reveal batteries by zoom (top-5 at state -> more as you zoom). zoomend = once per settle.
+  map.on('zoomend',()=>{ if(REG.batteries.on) refreshLayers(); window.__battShown=battReveal().length; });
+  window.__battShown=battReveal().length;
   // fade animation: ease each layer's opacity toward its on/off target, rebuild until settled
   let _fadeRAF=null;
   function animateFade(){ let moving=false;
