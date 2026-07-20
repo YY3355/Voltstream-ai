@@ -54,7 +54,8 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   IBM Plex Mono, small + muted (data-terminal style, deliberately not a rainbow) — assessed already
   consistent; did NOT force a single-family swap that would regress numeric alignment (noted as
   possible follow-up). Full-map screenshot = polished product, no regressions. commit PENDING.
-- [todo] DEPLOY — push, redeploy Fly.
+- [doing] DEPLOY — push 8 commits (T1-T8), redeploy Fly. Pre-deploy green: 18 endpoints 200 (incl.
+  /api/txlines), quant tab renders (other tabs untouched).
 
 ## Log
 - init — read map HTML section (#map-canvas, .map-side, banner, alert-strip, legend), CSS design
