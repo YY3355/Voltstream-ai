@@ -47,7 +47,13 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   Read-only, no new claims, NO dispatch language (verified regex hasDispatchLanguage=false). Verified:
   5 rows populate w/ real values (Houston -2.28, HHGT↔OMEGA 10.9%/1 now, LIGHT 11.3, Dimmit 96.8°F,
   2 watch); screenshot shows a clean designed situation board. commit PENDING.
-- [todo] T8 — motion (fades/slides/anchor pulse/section expand) + typography pass (one family, muted).
+- [done] T8 — motion + typography. Motion: layer opacity fade (pre-existing animateFade), anchor
+  pulse-once on load (T3 anchorPulse), tooltip + popup slide-in (tipIn), briefing/insight rows cascade
+  in (rowIn, staggered), panel box-shadow/border transitions. Verified: map-tip animationName=tipIn,
+  #layer-insight .li=rowIn, anchorPulse keyframe in CSS, 4 anchors. Typography: map UI is consistently
+  IBM Plex Mono, small + muted (data-terminal style, deliberately not a rainbow) — assessed already
+  consistent; did NOT force a single-family swap that would regress numeric alignment (noted as
+  possible follow-up). Full-map screenshot = polished product, no regressions. commit PENDING.
 - [todo] DEPLOY — push, redeploy Fly.
 
 ## Log

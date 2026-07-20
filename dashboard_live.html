@@ -132,7 +132,15 @@
     background:radial-gradient(120% 90% at 50% 42%,transparent 55%,rgba(4,7,12,.32) 100%)}
   .map-tip{font-family:var(--mono);font-size:11px;background:#0c1420;color:var(--ink);
     border:1px solid var(--line);border-radius:7px;padding:8px 10px;max-width:240px;line-height:1.5;
-    box-shadow:0 6px 20px rgba(0,0,0,.5)}
+    box-shadow:0 6px 20px rgba(0,0,0,.5);animation:tipIn .16s ease-out}
+  /* T8 motion: tooltips slide in, sidebar rows cascade in — subtle, once. */
+  @keyframes tipIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes rowIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  #briefing .br,#layer-insight .li{animation:rowIn .38s ease-out both}
+  #briefing .br:nth-child(2){animation-delay:.03s} #briefing .br:nth-child(3){animation-delay:.07s}
+  #briefing .br:nth-child(4){animation-delay:.11s} #briefing .br:nth-child(5){animation-delay:.15s}
+  #briefing .br:nth-child(6){animation-delay:.19s}
+  #briefing,#layer-insight .li,#county-panel{transition:box-shadow .25s ease,border-color .25s ease}
   .map-tip .h{font-weight:700;color:#fff;font-size:12px}
   .map-tip .rich{color:var(--green)} .map-tip .cheap{color:var(--red)}
   .map-tip .pr{color:var(--dim);font-style:italic;margin-top:4px;display:block}
@@ -251,7 +259,7 @@
   .fc-box .fc-err{font-family:var(--mono);font-size:9.5px;color:var(--amber);line-height:1.4}
   .mapboxgl-popup-content{background:#0c1420;color:var(--ink);border:1px solid var(--line);
     border-radius:8px;font-family:var(--mono);font-size:11px;line-height:1.5;padding:9px 11px;
-    box-shadow:0 6px 22px rgba(0,0,0,.55)}
+    box-shadow:0 6px 22px rgba(0,0,0,.55);animation:tipIn .18s ease-out}
   .mapboxgl-popup-content .h{font-weight:700;color:#fff;font-size:12px;margin-bottom:2px}
   .mapboxgl-popup-content .pr{color:var(--dim);font-style:italic;display:block;margin-top:4px}
   .mapboxgl-popup-close-button{color:var(--mut)}
