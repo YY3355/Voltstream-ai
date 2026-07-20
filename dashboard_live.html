@@ -160,6 +160,9 @@
   #briefing .br:last-child{border-bottom:none}
   #briefing .bk{color:var(--mut);font-size:8.5px;text-transform:uppercase;letter-spacing:.4px;flex:0 0 58px}
   #briefing .bv{color:var(--ink);flex:1;line-height:1.35} #briefing .bv b{color:#fff}
+  /* T8: briefing values roll/fade when they CHANGE (never an instant swap) */
+  #briefing .bv.rolling{animation:numRoll .42s ease-out}
+  @keyframes numRoll{0%{opacity:0;transform:translateY(-5px)}55%{opacity:1}100%{opacity:1;transform:translateY(0)}}
   #briefing .bv .rich{color:var(--green)} #briefing .bv .cheap{color:var(--red)}
   #briefing .bv .hi{color:var(--amber);font-weight:600} #briefing .bv .dim{color:var(--dim)}
   #briefing .bsev{font-size:8px;font-weight:700;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:.5px}
@@ -1964,6 +1967,7 @@ async function initMap(){
       _prevArcIds=curIds; window.__newBinding=newIds.length;
       if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); }
       syncFlow(); startEntrance(newIds);
+      if(window.__refreshBriefing) window.__refreshBriefing(true);   // T8: replay tick -> briefing "N now" rolls
     }
     $('intraday-on').addEventListener('change',async e=>{
       intradayOn=e.target.checked;
@@ -1975,7 +1979,8 @@ async function initMap(){
         $('arc-labels').insertAdjacentHTML('afterbegin',`<b style="color:var(--amber)">Replay of real SCED snapshots &mdash; ${intraday.day} (${intraday.n_snapshots} runs).</b> `);
         idSet(Math.floor((intraday.timestamps.length||1)*0.58));    // open near the afternoon congestion peak
       } else { idStop(); $('intraday-ctl').style.display='none'; intradayArcs=null;
-        if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); } syncFlow(); }
+        if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); } syncFlow();
+        if(window.__refreshBriefing) window.__refreshBriefing(true); }   // T8: revert briefing to live on replay off
       window.__intradayOn=intradayOn;
     });
     $('intraday-slider').addEventListener('input',e=>{ idStop(); idSet(+e.target.value); });
@@ -2058,12 +2063,12 @@ async function initMap(){
   // T7: "Right now" briefing — a live, READ-ONLY situation board from existing endpoints. No new
   // claims, no dispatch advice — just what the real data says this moment (Bolt's plan stays in its
   // own tab, where its assumptions are labelled).
-  async function renderBriefing(){ const el=$('briefing'); if(!el) return;
-    let al={}; try{ al=await (await fetch('/api/alerts')).json(); }catch(e){}
-    const ctx=(al&&al.context)||{}, nB=ctx.n_binding, sev=(al&&al.max_severity)||'none';
-    const mover=hubs.length?[...hubs].sort((a,b)=>b.abs_dart-a.abs_dart)[0]:null;   // biggest |DA−RT| mover
-    const rich=hubs.filter(h=>h.sign==='rich').length;
-    const tc=_topArc;
+  // T8: compute the briefing rows (pure). The corridor "N now" follows the replay when it's on, so
+  // scrubbing the replay actually mutates a value -> it rolls.
+  function briefingRows(al){ const ctx=(al&&al.context)||{}, sev=(al&&al.max_severity)||'none';
+    const nB = intradayOn ? window.__intradayArcCount : ctx.n_binding;
+    const mover=hubs.length?[...hubs].sort((a,b)=>b.abs_dart-a.abs_dart)[0]:null;
+    const rich=hubs.filter(h=>h.sign==='rich').length, tc=_topArc;
     const hotP=cwFeats.map(f=>f.properties).filter(p=>p.temp_f!=null).sort((a,b)=>b.temp_f-a.temp_f)[0];
     const sevCol={alert:'var(--red)',watch:'var(--amber)',info:'var(--blue)',none:'var(--dim)'}[sev]||'var(--dim)';
     const rows=[];
@@ -2072,11 +2077,23 @@ async function initMap(){
     if(cwWind) rows.push(['Wind belt', `<b>${cwWind.state.toUpperCase()}</b> ${cwWind.wind_belt_avg_mph} mph <span class="dim">· ${cwWind.counties_counted} cos</span>`]);
     if(hotP) rows.push(['Hottest', `<b>${hotP.NAME}</b> ${hotP.temp_f}°F`]);
     rows.push(['Alerts', `<b>${(al&&al.n)||0}</b> <span class="bsev" style="color:${sevCol};background:${sevCol}22">${sev==='none'?'calm':sev}</span>`]);
-    el.innerHTML=`<div class="bh"><span>Right now</span><span class="bt">live · read-only</span></div>`
-      +rows.map(([k,v])=>`<div class="br"><span class="bk">${k}</span><span class="bv">${v}</span></div>`).join('');
-    window.__briefingRows=rows.length;
-  }
-  renderBriefing();
+    return rows; }
+  // Paint rows in place; any value that CHANGED rolls/fades (never an instant swap).
+  function paintBriefing(rows, animate){ const el=$('briefing'); if(!el) return;
+    if(!el.querySelector('.bh')) el.innerHTML=`<div class="bh"><span>Right now</span><span class="bt">live · read-only</span></div>`
+      +rows.map(([k])=>`<div class="br" data-k="${k}"><span class="bk">${k}</span><span class="bv"></span></div>`).join('');
+    let changed=0;
+    rows.forEach(([k,v])=>{ const bv=el.querySelector(`.br[data-k="${CSS.escape(k)}"] .bv`); if(!bv) return;
+      if(bv.innerHTML!==v){ bv.innerHTML=v; changed++;
+        if(animate){ bv.classList.remove('rolling'); void bv.offsetWidth; bv.classList.add('rolling');   // restart the roll
+          bv.addEventListener('animationend',()=>bv.classList.remove('rolling'),{once:true}); } } });
+    window.__briefingChanged=changed; }
+  let _briefAl={};
+  async function renderBriefing(animate){ try{ _briefAl=await (await fetch('/api/alerts')).json(); }catch(e){}
+    const rows=briefingRows(_briefAl); paintBriefing(rows, animate); window.__briefingRows=rows.length; }
+  // repaint (with roll) using the last-fetched alerts — used by the replay tick (no refetch needed).
+  window.__refreshBriefing=(animate)=>{ paintBriefing(briefingRows(_briefAl), animate!==false); };
+  renderBriefing(false);   // initial paint, no animation
 }
 // ── Live alerts (Task A): threshold conditions on real data, polled on a sane interval ──
 async function loadAlerts(){

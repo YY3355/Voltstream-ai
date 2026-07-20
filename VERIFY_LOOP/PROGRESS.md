@@ -52,7 +52,13 @@ Static-transmission gate + standing gate run EVERY task.
   VERIFIED (fresh-eyes GREEN): code (300ms time-based, easeInOut, records start, renderKeys keeps
   fading-out layer alive) + freeze proof (set county 0.4 -> deck props.opacity 0.4; battery 0.25) +
   mid-fade screenshot (county 30% visibly faint). Headless real-time-capture caveat noted. commit PENDING.
-- [todo] 8 — sidebar "Right now" numbers roll/fade on change.
+- [done] 8 — briefing numbers roll/fade on change. Refactored renderBriefing -> briefingRows(pure)
+  + paintBriefing(in-place via data-k) + __refreshBriefing. Value change -> .bv gets .rolling
+  (numRoll .42s fade+slide), removed on animationend; UNCHANGED values not animated (innerHTML!==v
+  guard) = no instant swap, no needless anim. Corridor "N now" = replay frame count when replaying
+  (idSet -> __refreshBriefing(true)) else live n_binding. VERIFIED (fresh-eyes GREEN): code + driven
+  (2->7 rolled, changed=1, class removed after, noRollOnSame true, keyframe present) + honesty/read-
+  only preserved, transmission untouched. commit PENDING.
 - [todo] 9 — wind arrows per-county from Open-Meteo cache, zoom-gated, static/slow.
 - [todo] 10 — rest-state audit (calm+alive, <=10% animated, gates pass).
 - [todo] DEPLOY — fresh-clone test, push, Fly redeploy.
