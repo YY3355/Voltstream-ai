@@ -1510,6 +1510,15 @@ function shadowColor(sp){ const t=Math.max(0,Math.min(1,Math.log10(Math.max(1,sp
 function arcColor(sp){ const t=Math.max(0,Math.min(1,Math.log10(Math.max(1,sp||1))/Math.log10(3000))),
   L=(a,b)=>Math.round(a+(b-a)*t);
   return [L(44,140), L(120,224), L(140,238), 135]; }   // dim teal -> bright cyan, alpha 135 (~53%)
+// Shadow-price TIER for measured SCED arcs + their particles. sp is the ERCOT SCED shadow price in
+// $/MWh (the constraint's dual — marginal value of +1 MW of capacity). Discrete tiers so the eye
+// reads SEVERITY, not a smooth ramp:  <$50 green (mild) · $50–250 yellow · $250–1000 orange · ≥$1000 red.
+function shadowTier(sp){ sp=sp||0;
+  if(sp>=1000) return [230,86,78];    // red    — severe scarcity (≥ $1000/MWh)
+  if(sp>=250)  return [234,148,68];   // orange — high        ($250–1000/MWh)
+  if(sp>=50)   return [226,201,92];   // yellow — moderate     ($50–250/MWh)
+  return [92,198,132];                // green  — mild         (< $50/MWh)
+}
 function arcTip(o){ return `<div class="h">${o.from_station} &harr; ${o.to_station}</div>`
   +`<div>bound <b>${o.bind_pct}%</b> of the last 90d (${(o.bind_intervals||0).toLocaleString()} SCED runs)</div>`
   +`<div>shadow price mean <b>$${(o.mean_shadow||0).toLocaleString()}</b> &middot; max $${(o.max_shadow||0).toLocaleString()}/MWh</div>`
@@ -1688,10 +1697,12 @@ async function initMap(){
       const out=[];
       const snap = snapshotArcs();                               // live-now OR intraday-selected snapshot
       if(snap){                                                  // measured SCED snapshot (has direction/flow)
+        const maxFlow=Math.max(...snap.map(a=>a.flow_mw||0),1);   // T1 mapping: arc WIDTH = flow MW
         out.push(new deck.ArcLayer({id:'constraint-live',data:snap,pickable:true,
           getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
-          getSourceColor:a=>arcColor(a.shadow_price),getTargetColor:a=>arcColor(a.shadow_price),   // muted cyan, translucent
-          getWidth:a=>2+Math.min(2,(a.utilization||0)*2),widthMinPixels:2,widthMaxPixels:4,getHeight:0.3,onClick:pop,updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn]}}));
+          getSourceColor:a=>[...shadowTier(a.shadow_price),150],getTargetColor:a=>[...shadowTier(a.shadow_price),195],   // COLOR = shadow-price tier
+          getWidth:a=>1.5+Math.sqrt((a.flow_mw||0)/maxFlow)*5,widthMinPixels:1.5,widthMaxPixels:7,getHeight:0.3,onClick:pop,   // WIDTH = flow MW (speed=utilization lives in the particles)
+          updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn],getWidth:[snap.length],getSourceColor:[snap.length]}}));
       } else {                                                   // aggregate: 90d binding frequency
         const mx=Math.max(...arcAgg.map(a=>a.bind_pct),1);
         out.push(new deck.ArcLayer({id:'constraint-arcs',data:arcAgg,pickable:true,
@@ -1775,13 +1786,16 @@ async function initMap(){
     return [u*u*s[0]+2*u*f*mx+f*f*t[0], u*u*s[1]+2*u*f*cy+f*f*t[1]]; }
   function flowParticleData(){ const out=[];
     measuredFlowArcs().forEach((a,ai)=>{ const rev=a.direction==='target_to_source';
-      const util=Math.max(0.05,Math.min(1,a.utilization||0.3)), k=3+Math.round(util*7), speed=0.12+util*0.5;
+      const util=Math.max(0.05,Math.min(1,a.utilization||0.3)), k=3+Math.round(util*7), speed=0.12+util*0.5;   // SPEED = utilization (flow/limit)
       for(let i=0;i<k;i++){ const ph=((_flowT*speed)+(i/k))%1, frac=rev?1-ph:ph;
-        out.push({position:bezierPt(a,frac), r:1.4+util*1.8, arc:ai}); } });
+        out.push({position:bezierPt(a,frac), sp:a.shadow_price, arc:ai}); } });   // carry shadow price -> particle color tier
     return out; }
+  // Particles: understated ~2px, ~30% opacity, COLOR = shadow-price tier. Size is NOT a data channel
+  // (constant); the measured channels are arc width (flow MW), particle speed (util), color (shadow).
   function particleLayer(){ return new deck.ScatterplotLayer({id:'flow-particles',data:flowParticleData(),pickable:false,
-    getPosition:p=>p.position,radiusUnits:'pixels',getRadius:p=>2+p.r,radiusMinPixels:2,radiusMaxPixels:6,
-    stroked:true,lineWidthMinPixels:0.5,getLineColor:[10,14,20,200],getFillColor:[255,255,255,235],updateTriggers:{getPosition:[_flowT]}}); }
+    getPosition:p=>p.position,radiusUnits:'pixels',getRadius:2,radiusMinPixels:1.5,radiusMaxPixels:2.5,
+    stroked:false,getFillColor:p=>{const c=shadowTier(p.sp); return [c[0],c[1],c[2],78];},   // alpha 78 ≈ 30% opacity
+    updateTriggers:{getPosition:[_flowT],getFillColor:[_flowT]}}); }
   function flowTick(){ _flowT+=0.018; overlay.setProps({layers:_curLayers.concat(particleLayer())});
     window.__flowT=_flowT; window.__flowParticles=flowParticleData().length; window.__flowArcs=measuredFlowArcs().length;
     _flowRAF=requestAnimationFrame(flowTick); }
@@ -1789,6 +1803,9 @@ async function initMap(){
   function stopFlow(){ if(_flowRAF){ cancelAnimationFrame(_flowRAF); _flowRAF=null; window.__flowParticles=0; window.__flowArcs=0; overlay.setProps({layers:_curLayers}); } }
   function syncFlow(){ if(measuredFlowArcs().length) startFlow(); else stopFlow(); }
   window.__syncFlow=syncFlow; window.__measuredFlowArcs=measuredFlowArcs;
+  // Deterministic clock-step for headless verification (RAF is throttled in headless). Advances the
+  // SAME _flowT the RAF loop uses and re-renders the SAME particleLayer — a faithful proxy for motion.
+  window.__stepFlow=(n)=>{ _flowT+=(n||30)*0.018; overlay.setProps({layers:_curLayers.concat(particleLayer())}); window.__flowT=_flowT; };
 
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0||L.lazy;   // lazy layers enabled before load

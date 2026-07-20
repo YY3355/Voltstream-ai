@@ -1,61 +1,55 @@
-# GOAL — MAP DESIGN ELEVATION (engineering UI → product design)
+# GOAL — MAP ANIMATION PASS (make the map feel alive; ONLY measured data or pure decoration)
 
-Pure visual/UX + ONE context-data add (HIFLD transmission lines). All in dashboard_live.html's
-Map card + initMap (+ small app.py endpoint for the data add). Do NOT touch other tabs/engines.
-Judged by EYES: screenshot at state zoom + metro zoom every iteration.
+Supervised. Max 14 iterations. ONE task/iteration, ONE commit/task, pause+report after each.
+Never commit red. Same check red 3x = mark blocked + stop. Re-read this + PROGRESS every iteration.
 
-## Current state (pre-loop, from code read)
-- Map: mapbox-gl v3.9.0 + deck.gl 9.0.35. dark-v11 style, flat (pitch 0), TX_VIEW center[-99.7,31.25]
-  zoom 5.55. Overlay=MapboxOverlay(interleaved:false). Z_ORDER=['county','hubs','batteries','plants',
-  'cities','locational','constraints'] + always-on county-outline at bottom. Fade animation (_op/
-  animateFade). Flow particles: ScatterplotLayer dots along MEASURED snapshot arcs (already ●-style).
-- Batteries: ScatterplotLayer (flat circles, radius ~ sqrt MW). County: fill GeoJsonLayer + outline.
-- Sidebar (.map-side): #layer-insight (per-active-layer stat), #county-panel (battery MW bar — DO NOT
-  TOUCH data), #scope-details. Banner #map-wxbanner (wind belt). #alert-strip (loadAlerts).
-- Design tokens: --mono IBM Plex Mono, --sans IBM Plex Sans; colors amber/green/red/blue/violet.
-- Endpoints available for briefing: /api/rt (RT prices), /api/constraintarcs (90d + live), /api/map
-  (DART), /api/countyweather (wind_signal + hottest), alerts via loadAlerts.
+## HARD CONSTRAINTS (violating any = RED even if it renders)
+1. Particles/flow animation ONLY on MEASURED constraint arcs (NP6-86-CD, both-ends crosswalk-matched).
+   NEVER on HIFLD transmission lines — no particles, no directional motion, no "energy flowing" on
+   unmeasured geometry. Transmission = context = STATIC.
+2. Every animated data channel maps to a measured field: arc width = flow MW; arc speed = utilization
+   (flow/limit); arc color = shadow-price tier (thresholds stated in code comments w/ units). Wind
+   arrows = Open-Meteo direction/speed at county centroids.
+3. Pure decoration ONLY where it can't be read as data: battery breathing, city glow, camera easing,
+   layer fades, sidebar number transitions. NO drifting clouds / moving rain (reads as radar we lack).
+4. Still banned: price heatmaps from 4 hubs, invented coords, estimated transfer arcs, "predicted
+   spike in N min" text. NEVER delete honesty labels / caveats / match-rate displays.
+5. Motion budget: at rest <=10% of viewport animating. Busy rest-state screenshot = RED.
 
-## Tasks (commit each; screenshots each)
-### PHASE A — depth & atmosphere
-- **T1 CAMERA + ATMOSPHERE**: default pitch ~40-45°; Mapbox fog + sky (subtle, dark); optional gentle
-  terrain (mapbox-dem, low exaggeration); CSS soft vignette over the canvas. Reads as 3 planes.
-- **T2 3D BATTERIES**: batteries → deck.gl ColumnLayer, height = real MW (honest extrusion), muted
-  green, small footprint. Flat discs at low zoom, columns as you zoom in (zoom-switch). Still pickable.
-- **T3 ZOOM-TIERED REVEAL**: at state zoom show ONLY anchors — Houston/Dallas/Austin/San Antonio
-  designed labels (rounded, subtle glow, NOT raw mapbox labels), 5 largest batteries, top congestion
-  corridor. Rest fades in with zoom (Google-Maps principle). Radii on the 4/5/7/10/14 scale.
-### PHASE B — hierarchy & motion
-- **T4 TRANSMISSION CONTEXT (data add)**: fetch HIFLD transmission lines Texas subset → cache
-  data_archive/geo/tx_lines.geojson; app.py /api/txlines serves it. Render voltage-tiered: 69kV thin
-  gray → 138 blue → 230 teal → 345 cyan → 500 white, subtle opacity. Label verbatim: "transmission
-  context (HIFLD geometry) — constraint status shown only by the measured SCED arcs." Off by default,
-  one toggle.
-- **T5 PALETTE DISCIPLINE**: 4 semantic colors — blue grid infra, green batteries, red congestion
-  ONLY, amber weather-heat — everything else muted/gray. Counties: gradient opacity + soft hover glow
-  (not flat fill).
-- **T6 ARC PARTICLES**: moving dots along MEASURED arcs (●──►), density by utilization. Measured arcs
-  ONLY (verify rule holds). (Largely present — refine to dot style + density, confirm measured-only.)
-- **T7 SIDEBAR AS BRIEFING**: top of sidebar = "Right now": live RT price by hub (biggest mover
-  highlighted), top congestion corridor (90d + live-now), wind-belt state, hottest county, active
-  alerts count. From EXISTING endpoints. NO new claims, NO "recommended dispatch" language.
-- **T8 MOTION + TYPO**: layers fade, tooltips slide, anchors pulse once on load, sidebar expands
-  smoothly. Typography pass: one font family, small/consistent/muted — kill the dev-dashboard look.
+## ENV
+conda run -n volt; ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean; kill stale :8020; warm /api/dart + risk;
+headless Chrome via CDP (scratchpad/cdp.py); verify vs committed 7/16 intraday replay snapshot
+(deterministic — no live API in the loop).
 
-## Definition of done
-- 3 planes read (terrain/fog → infra → intelligence); pitched camera; batteries extruded by MW.
-- State zoom = calm anchors only; detail fades in with zoom; transmission tiers distinguishable.
-- 4-color palette; particles = measured-arc dots only; sidebar "Right now" briefing from real data.
-- Batteries pickable; anchors legible in 3s; all caveat tooltips reachable; other tabs untouched.
-- Pushed when green; redeploy Fly.
+## VERIFICATION (maker != checker — spawn fresh-eyes subagent per task)
+a) Load Map tab in headless Chrome, wait ~5s for layers.
+b) FRAME PAIR (2 screenshots ~2s apart, same camera). Pixel-diff masked to the layer under test:
+   motion INSIDE intended layer, NEVER on HIFLD transmission (static-transmission gate EVERY task).
+c) Standing gate: all animated layers OFF -> map perfectly still except Mapbox base.
+d) Arc data spot-check: read flow/limit/shadow from fixture JSON for one arc; confirm rendered
+   width/speed-class/color-tier match the mapping in code. Pretty arc + wrong number = RED.
+e) Log screenshots + diff summary in PROGRESS.md.
 
-## Verify (CDP + SCREENSHOTS — visual, every iteration)
-- Screenshots: state zoom, metro zoom (Houston), each phase's layers on. CDP: batteries pickObject
-  ok; deck layers present; measured-arc particles only (flowArcs all type=reported_constraint_flow);
-  caveat tooltips in DOM; other tabs render.
+## TASKS (in order)
+1. Arc particles on measured constraint arcs ONLY — ~2px, ~30% opacity, understated. width=MW,
+   speed=utilization, color=shadow-price tier (green/yellow/orange/red). Verify b+d+static gate.
+2. Constraint entrance sequence for a newly-binding constraint from replay: fade in -> particles
+   start -> width eases to MW -> label+shadow price appear. Verify: drive replay, 4 timed shots.
+3. Transmission de-emphasis: opacity -25%, 345kV brightest -> 69kV near-invisible, zoom-tiered like
+   roads, ZERO animation. Verify: before/after; arcs+cities dominate eye path, not transmission.
+4. Battery breathing: soft slow scale/opacity pulse on battery markers. Verify: frame-pair motion
+   confined to battery markers.
+5. City anchors: custom glow+label for Dallas/Houston/Austin/San Antonio/Permian; suppress default
+   Mapbox labels at those 5 only. Constant soft glow. Verify: screenshot.
+6. Camera easing: all interactions easeTo()/flyTo(); grep jumpTo/instant setCenter in handlers = RED;
+   CDP-click a hub, screenshot mid-flight.
+7. Layer fade transitions ~300ms on toggle. Verify: toggle via CDP, capture mid-transition partial opacity.
+8. Sidebar "Right now" numbers roll/fade on change (no instant swaps). Verify: mutate via replay tick, mid-transition shot.
+9. Wind arrows: subtle per-county arrows from existing Open-Meteo cache, zoom-gated, static/very slow.
+   Verify: spot-check 3 counties' arrow bearings vs cached values.
+10. Rest-state audit: full-map at rest; fresh-eyes subagent describes cold -> "calm, alive" not "busy";
+    <=10% animated; caveats/tooltips present; static-transmission gate final pass.
 
-## Guardrails
-- Max 18 iterations. Supervised. One task = one commit. Green commits only.
-- NO fabricated data: HIFLD = geometry context ONLY (constraint status stays with measured SCED arcs);
-  particles measured-arcs only; no "recommended dispatch" in the briefing. Do NOT touch #county-panel
-  data / /api/countyheat or other tabs. Keep every honesty caveat reachable.
+## DONE / SCOPE
+No new datasets, no AI, no backend work. All 10 green -> fresh-clone test -> push + Fly redeploy.
+Final report: done+verified list w/ commit hashes, anything blocked and why.
