@@ -12,7 +12,15 @@ Static-transmission gate + standing gate run EVERY task.
   localized to arc diagonal). Direct proof: __stepFlow -> all 10 particles moved along arc. Gates:
   standing=0px, transmission pure-gap=0px (step-diff=1741px = AA edges tracing STATIC line geometry,
   not motion). Screenshots: t1_particles_{a,diff}, txgate2. commit PENDING.
-- [todo] 2 — constraint entrance sequence (fade->particles->width ease->label+shadow) from replay.
+- [done] 2 — constraint entrance sequence for NEWLY-binding measured constraints. idSet diffs current
+  vs previous frame's reported_constraint_flow ids -> startEntrance(newIds). entranceF=easeOutCubic
+  (1 for existing arcs). constraint-live: width=flowWidth*entranceF (eases in), color alpha*=entranceF
+  (fade in). constraint-label TextLayer = $shadow_price, alpha gated entranceF>0.7 (appears LAST). Only
+  touches constraint-live/constraint-label (measured); txlines untouched. VERIFIED (fresh-eyes GREEN):
+  code + 4-point probe re-derived (entProg 0.1/0.4/0.72/1.0 -> width 1.76/5.10/6.36/6.50, alpha
+  41/118/147/150, labelAlpha 0/67/221/238) + /api/intraday spot-check (ESCOND_GANSO1_1 flow116.4/
+  shadow45.59 -> green, label $46) + images (ent_0 faint-thin-nolabel, ent_3 full-bright-$46). Gates:
+  standing=0px, transmission static (code: entrance never touches txlines). commit PENDING.
 - [todo] 3 — transmission de-emphasis (-25% opacity, 345 bright->69 faint, zoom-tiered, ZERO anim).
 - [todo] 4 — battery breathing (soft slow pulse, confined to battery markers).
 - [todo] 5 — city anchors glow+label (Dallas/Houston/Austin/San Antonio/Permian), suppress default labels at 5.

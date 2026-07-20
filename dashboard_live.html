@@ -1560,6 +1560,7 @@ async function initMap(){
         arcCov=(arc&&arc.coverage)||{}, arcRoad=(arc&&arc.roadmap_unmatched)||[], arcLabels=(arc&&arc.labels)||{};
   let arcLive=null, arcLiveOn=false;   // live-now snapshot (lazy-fetched on toggle)
   let intradayOn=false, intradayArcs=null;   // intraday replay (Task C) — a selected SCED snapshot
+  let _prevArcIds=new Set();                  // T2: constraint ids in the previous frame (for entrance diff)
   const rich=hubs.filter(p=>p.sign==='rich').length;
   hero.innerHTML=`<div class="big"><span class="lab">ERCOT hubs · live DART</span><span class="val">${hubs.length}</span></div>`
     +`<div class="delta" style="color:var(--mut);border-color:var(--line);background:var(--panel2)">${rich} rich / ${hubs.length-rich} cheap &mdash; DA vs RT</div>`;
@@ -1698,11 +1699,21 @@ async function initMap(){
       const snap = snapshotArcs();                               // live-now OR intraday-selected snapshot
       if(snap){                                                  // measured SCED snapshot (has direction/flow)
         const maxFlow=Math.max(...snap.map(a=>a.flow_mw||0),1);   // T1 mapping: arc WIDTH = flow MW
+        const _et=Math.round(_entProg()*100);                    // entrance clock -> updateTriggers so accessors re-run
         out.push(new deck.ArcLayer({id:'constraint-live',data:snap,pickable:true,
           getSourcePosition:a=>a.source,getTargetPosition:a=>a.target,
-          getSourceColor:a=>[...shadowTier(a.shadow_price),150],getTargetColor:a=>[...shadowTier(a.shadow_price),195],   // COLOR = shadow-price tier
-          getWidth:a=>1.5+Math.sqrt((a.flow_mw||0)/maxFlow)*5,widthMinPixels:1.5,widthMaxPixels:7,getHeight:0.3,onClick:pop,   // WIDTH = flow MW (speed=utilization lives in the particles)
-          updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn],getWidth:[snap.length],getSourceColor:[snap.length]}}));
+          getSourceColor:a=>{const c=shadowTier(a.shadow_price); return [c[0],c[1],c[2],Math.round(150*entranceF(a))];},   // COLOR = shadow tier · alpha fades in (T2)
+          getTargetColor:a=>{const c=shadowTier(a.shadow_price); return [c[0],c[1],c[2],Math.round(195*entranceF(a))];},
+          getWidth:a=>(1.5+Math.sqrt((a.flow_mw||0)/maxFlow)*5)*entranceF(a),widthMinPixels:0.5,widthMaxPixels:7,getHeight:0.3,onClick:pop,   // WIDTH = flow MW, eases in on entrance
+          updateTriggers:{getSourcePosition:[snap.length,intradayOn,arcLiveOn],getWidth:[snap.length,_et],getSourceColor:[snap.length,_et],getTargetColor:[snap.length,_et]}}));
+        if(deck.TextLayer){                                      // T2: shadow-price label, fades in AFTER the width settles (entranceF > 0.7)
+          out.push(new deck.TextLayer({id:'constraint-label',data:snap,pickable:false,
+            getPosition:a=>[(a.source[0]+a.target[0])/2,(a.source[1]+a.target[1])/2],
+            getText:a=>`$${Math.round(a.shadow_price||0)}`,getSize:11,fontFamily:'monospace',getTextAnchor:'middle',getAlignmentBaseline:'center',
+            getColor:a=>{const f=entranceF(a),al=Math.round(238*Math.max(0,Math.min(1,(f-0.7)/0.3))); return [238,242,248,al];},
+            getPixelOffset:[0,-11],outlineWidth:2,outlineColor:[8,12,18,255],
+            updateTriggers:{getColor:[snap.length,_et]}}));
+        }
       } else {                                                   // aggregate: 90d binding frequency
         const mx=Math.max(...arcAgg.map(a=>a.bind_pct),1);
         out.push(new deck.ArcLayer({id:'constraint-arcs',data:arcAgg,pickable:true,
@@ -1807,6 +1818,22 @@ async function initMap(){
   // SAME _flowT the RAF loop uses and re-renders the SAME particleLayer — a faithful proxy for motion.
   window.__stepFlow=(n)=>{ _flowT+=(n||30)*0.018; overlay.setProps({layers:_curLayers.concat(particleLayer())}); window.__flowT=_flowT; };
 
+  // T2: entrance choreography for a NEWLY-binding constraint (a constraint id present this replay
+  // frame but not the previous one): fade in + width eases 0->flow MW, particles ride it, then the
+  // shadow-price label fades in AFTER the width settles. Existing arcs stay steady. Time-driven in
+  // production; __setEntrance(p) overrides the clock (0..1) for deterministic headless verification.
+  let _entIds=new Set(), _entT0=0, _entRAF=null, _entOverride=null; const ENT_DUR=800;   // ms
+  function _entProg(){ return _entOverride!=null ? _entOverride : Math.max(0,Math.min(1,(performance.now()-_entT0)/ENT_DUR)); }
+  function entranceF(arc){ if(!arc||!_entIds.has(arc.constraint)) return 1; const x=_entProg(); return 1-Math.pow(1-x,3); }   // easeOutCubic
+  function startEntrance(newIds){ _entIds=new Set(newIds); _entT0=performance.now(); _entOverride=null;
+    if(!_entIds.size) return;
+    if(_entRAF) cancelAnimationFrame(_entRAF);
+    const tick=()=>{ if(REG.constraints.on) refreshLayers();
+      if(_entProg()<1 && _entOverride==null){ _entRAF=requestAnimationFrame(tick); } else { _entRAF=null; } };
+    tick(); }
+  window.__setEntrance=p=>{ _entOverride=p; if(REG.constraints.on) refreshLayers(); window.__entProg=_entProg(); };
+  window.__entranceIds=()=>[..._entIds];
+
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
   $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0||L.lazy;   // lazy layers enabled before load
     const cav=(LAYER_CAVEATS[k]||'').replace(/"/g,'&quot;');
@@ -1892,8 +1919,12 @@ async function initMap(){
       const hhmm=t.slice(11,16), n=intradayArcs.length;
       $('intraday-label').innerHTML=`${hhmm} &middot; ${n} arc${n===1?'':'s'} binding`;
       window.__intradayTs=t; window.__intradayArcCount=n; window.__intradayIdx=_idIdx;
+      // T2: which measured constraints are NEW this frame? -> play their entrance sequence.
+      const curIds=new Set(intradayArcs.filter(a=>a.type==='reported_constraint_flow'&&a.constraint).map(a=>a.constraint));
+      const newIds=[...curIds].filter(id=>!_prevArcIds.has(id));
+      _prevArcIds=curIds; window.__newBinding=newIds.length;
       if(REG.constraints.on){ refreshLayers(); if(map.loaded&&map.loaded()) map.triggerRepaint(); }
-      syncFlow();
+      syncFlow(); startEntrance(newIds);
     }
     $('intraday-on').addEventListener('change',async e=>{
       intradayOn=e.target.checked;
