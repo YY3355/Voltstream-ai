@@ -66,7 +66,12 @@ Static-transmission gate + standing gate run EVERY task.
   GREEN): code (no clock dep, no fabricated fallback) + spot-check 3 counties (Midland185/Dallas175/
   Harris189, getAngle==-(deg+180)) + live re-fetch == stored deg (real, not fabricated) + zoom-gate
   (0@z5, 254@z8) + STATIC gate (254 arrows, 0 moved px) + image. commit PENDING.
-- [todo] 10 — rest-state audit (calm+alive, <=10% animated, gates pass).
+- [done] 10 — rest-state audit (verification-only). Rest frame-pair = 0 moved px (0% animated, all
+  motion gated behind toggles/one-shot load). Honesty intact: banner caveat, briefing LIVE·READ-ONLY,
+  9 scope caveats + 9 per-layer ⓘ (incl. wind), legend, EIA-860M/Open-Meteo/Census meta. Final
+  static-transmission gate: 21px/0.001% (AA jitter on fixed geometry, no anim code). Fresh-eyes COLD
+  read: "calm and controlled, not busy" — GREEN. No red flags (no price heatmap/invented data/predicted
+  spike/transmission flow). commit PENDING.
 - [todo] DEPLOY — fresh-clone test, push, Fly redeploy.
 
 ## Log
