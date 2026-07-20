@@ -1420,7 +1420,9 @@ function countyWxTip(f){ const p=f.properties||f; if(p.temp_f==null) return `<di
   return `<div class="h">${p.NAME} County</div>`
     +`<div><b>${p.temp_f}&deg;F</b>${p.wind_mph!=null?` &middot; ${p.wind_mph} mph wind`:''}${p.raining?` &middot; <span style="color:#4aa8e0">raining</span> (${p.precip_mm} mm)`:''}</div>`
     +`<span class="pr">county-centroid reading &mdash; one measurement per county; varies within a large county</span>`; }
-function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='locational'?locTip(o)
+function txTip(f){ const p=f.properties||f; return `<div class="h">${p.kv} kV transmission</div>`
+  +`<span class="pr">HIFLD geometry &mdash; constraint status is shown only by the measured SCED arcs</span>`; }
+function tipFor(id,o){ return id==='dart-hubs'?hubTip(o):id==='batteries'?battTip(o):id==='plants'?plantTip(o):id==='county'?countyWxTip(o):id==='txlines'?txTip(o):id==='locational'?locTip(o)
   :id==='constraint-arcs'||id==='top-corridor'?arcTip(o):id==='constraint-live'?liveArcTip(o):id==='constraint-nodes'?arcNodeTip(o):cityTip(o); }
 function techColor(tech){ const t=(tech||'').toLowerCase();
   if(t.includes('gas')) return [245,166,35,205];
@@ -1601,8 +1603,16 @@ async function initMap(){
     county:cwLabel||"County outlines are real boundaries; fill is each county's OWN live Open-Meteo reading at its centroid (blue cool -> red hot), blue where it is raining. County-centroid readings — one real measurement per county; weather varies within large counties.",
     locational:"Perfect-foresight decade-revenue CEILING by hub ($/MW-year). Hub-level (regional), energy-only, history — not a forecast.",
     constraints:"Measured ERCOT SCED constraints (NP6-86-CD). Only lines whose BOTH endpoints resolve to a real substation are drawn (~39% of stations). A congested-grid layer, not a complete power-flow map.",
+    txlines:"transmission context (HIFLD geometry) — constraint status shown only by the measured SCED arcs.",
   };
   const SCOPE_EXTRA="Data centers and city-level load are deliberately absent — no authoritative public dataset. Nothing here predicts prices.";
+  // T4: HIFLD transmission-line CONTEXT — lazy-loaded on first toggle (~5MB, off by default),
+  // voltage-tiered. GEOMETRY ONLY: where lines are, never their loading/congestion (that stays with
+  // the measured SCED arcs). 500kV white -> 345 cyan -> 230 teal -> 138 blue -> 69 gray, subtle.
+  let txlinesFC={type:'FeatureCollection',features:[]}, txlinesLoaded=false;
+  const kvColor=kv=> kv>=450?[236,241,248,150] : kv>=300?[92,214,234,140] : kv>=200?[64,184,178,120]
+    : kv>=100?[92,150,220,105] : [140,150,165,85];
+  const kvWidth=kv=> kv>=450?2.4 : kv>=300?1.8 : kv>=200?1.3 : kv>=100?1.0 : 0.7;
   // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set.
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
@@ -1637,6 +1647,9 @@ async function initMap(){
       stroked:false,filled:true,
       getFillColor:f=>{const c=f.properties.fill; return c?[c[0],c[1],c[2],150]:[70,74,82,26];},   // per-county temp/rain fill ~59%
       onClick:pop})},
+    txlines:{label:'Transmission (HIFLD)',sw:'#5896dc',data:txlinesFC.features,on:false,lazy:true,make:()=>new deck.GeoJsonLayer({id:'txlines',data:txlinesFC,pickable:true,
+      stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:f=>kvWidth(f.properties.kv),lineWidthMinPixels:0.5,lineWidthMaxPixels:3,
+      getLineColor:f=>kvColor(f.properties.kv),onClick:pop})},
     locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
       const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
       return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
@@ -1669,7 +1682,7 @@ async function initMap(){
   // T1: explicit z-order — county weather FILL renders at the BOTTOM so every marker/arc draws
   // (and picks) ON TOP of it; a battery/plant/hub/arc under a county polygon is never swallowed.
   // deck picks the topmost drawn layer at a pixel, so draw order == pick priority.
-  const Z_ORDER=['county','hubs','batteries','plants','cities','locational','constraints'];
+  const Z_ORDER=['county','txlines','hubs','batteries','plants','cities','locational','constraints'];
   function renderKeys(){ const ord=Z_ORDER.concat(Object.keys(REG).filter(k=>!Z_ORDER.includes(k)));
     return ord.filter(k=>REG[k]&&(REG[k].on||_op[k]>0.02)&&REG[k].data.length); }
   // T2: county OUTLINES are permanent basemap geography — always drawn, at the very bottom, thin +
@@ -1750,7 +1763,7 @@ async function initMap(){
   window.__syncFlow=syncFlow; window.__measuredFlowArcs=measuredFlowArcs;
 
   // layer-control checkboxes (disabled + greyed when a layer has no cached data)
-  $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0;
+  $('map-controls').innerHTML=Object.keys(REG).map(k=>{const L=REG[k],has=L.data.length>0||L.lazy;   // lazy layers enabled before load
     const cav=(LAYER_CAVEATS[k]||'').replace(/"/g,'&quot;');
     return `<label class="${L.on&&has?'':'off'}${has?'':' disabled'}" title="${has?'':'no data cached — run geo_data.py fetch'}">`
       +`<input type="checkbox" id="lyr-${k}" ${L.on&&has?'checked':''} ${has?'':'disabled'}>`
@@ -1768,6 +1781,13 @@ async function initMap(){
     cb.addEventListener('change',()=>{ REG[k].on=cb.checked; cb.closest('label').classList.toggle('off',!cb.checked); startFade();   // fade, don't pop
       if(k==='locational'){ const pb=$('loc-playback'); if(pb) pb.style.display=cb.checked?'block':'none'; }
       if(k==='constraints'){ const ab=$('arc-banner'); if(ab) ab.style.display=cb.checked?'block':'none'; syncFlow(); }
+      if(k==='txlines' && cb.checked && !txlinesLoaded){    // T4: lazy-fetch the ~5MB HIFLD geometry on first toggle
+        txlinesLoaded=true; const lab=cb.closest('label'); lab.style.opacity='.55';
+        fetch('/api/txlines').then(r=>r.json()).then(d=>{ txlinesFC={type:'FeatureCollection',features:(d&&d.features)||[]};
+          REG.txlines.data=txlinesFC.features; lab.style.opacity='';
+          const ct=lab.querySelector('.ct'); if(ct) ct.textContent=txlinesFC.features.length;
+          window.__txlines=txlinesFC.features.length; refreshLayers(); updateInsight(); })
+        .catch(()=>{ lab.style.opacity=''; txlinesLoaded=false; }); }
       updateInsight(); });});
 
   // T4: sidebar carries context — a compact summary stat for each ACTIVE layer.
@@ -1913,6 +1933,7 @@ async function initMap(){
     +`<span><i style="background:#58a6ff"></i>city (size=pop)</span>`
     +`<span><i style="border:1px solid rgba(228,233,240,.55);background:transparent"></i>county outline (all 254, always on)</span>`
     +`<span><i style="background:linear-gradient(90deg,#285ab4,#3ca0a0,#e6aa3c,#d23c32)"></i>county weather (per-county temp: cool→hot)</span><span><i style="background:#4aa8e0"></i>rain</span>`
+    +`<span><i style="background:linear-gradient(90deg,#8c96a5,#5c96dc,#40b8b2,#5cd6ea,#ecf1f8)"></i>transmission kV (69→500: gray→blue→teal→cyan→white)</span>`
     +`<span><i style="background:#22d3ee"></i>decade revenue (fill+size=$/MW-yr, use the year slider)</span>`
     +`<span><i style="background:#5bd6ea"></i>transmission arcs (width=bind freq, brightness=shadow $)</span>`;
   // #map-scope box removed from the canvas (T2) — its content now lives in the sidebar

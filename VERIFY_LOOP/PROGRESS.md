@@ -22,8 +22,13 @@ Max 18 iterations. Supervised. Screenshots EVERY iteration (state zoom + metro z
   Radii compressed to 4/5/7/10/14 tiers (verified hubs {7,12,16}, batteries {14}). Top congestion
   corridor = persistent subtle red ArcLayer of the #1 90d-binding aggregate arc (measured; arcTip
   caveat). Verified: 4 anchors present+legible, battReveal 5/189, top-corridor layer present. commit PENDING.
-- [todo] T4 — HIFLD transmission lines TX subset → tx_lines.geojson + /api/txlines; voltage-tiered
-  render; off by default; honest label.
+- [done] T4 — HIFLD transmission CONTEXT. Fetched HIFLD Electric Power Transmission Lines (TX bbox,
+  69kV+, 6965 lines) -> data_archive/geo/tx_lines.geojson (4.8MB, 3dp coords, kv only; force-added +
+  .dockerignore allow). app.py /api/txlines serves it (200, count 6965, verbatim label). Dashboard:
+  REG.txlines OFF by default, LAZY-fetched on first toggle (toggle enabled pre-load via lazy flag),
+  voltage-tiered GeoJsonLayer (69 gray/138 blue/230 teal/345 cyan/500 white, subtle), txTip caveat,
+  legend gradient. Verified: endpoint 200/6965/label; toggle enabled; lazy-load populated 6965; 6
+  distinct kv tiers w/ distinct colors; metro screenshot = tiered grid web around Dallas. commit PENDING.
 - [todo] T5 — 4-color palette (blue infra / green batt / red congestion / amber heat); counties
   gradient opacity + hover glow.
 - [todo] T6 — arc particles = measured-arc dots, density by utilization (confirm measured-only).

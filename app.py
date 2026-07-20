@@ -486,6 +486,32 @@ def api_countyweather():
         return {"available": False, "error": f"county weather failed ({e})", "features": []}
 
 
+_TXLINES_GEO = {"v": None}
+
+
+@app.get("/api/txlines")
+def api_txlines():
+    """Transmission CONTEXT layer: real HIFLD transmission-line geometry (Texas bbox, 69kV+),
+    voltage-tiered for the map. GEOMETRY ONLY — this is where the lines are, not their live loading.
+    Constraint/congestion status is shown ONLY by the measured ERCOT SCED arcs, never inferred here.
+    Source: HIFLD 'Electric Power Transmission Lines' (public ArcGIS FeatureServer). Cached geojson."""
+    import json
+    if _TXLINES_GEO["v"] is None:
+        path = os.path.join(os.path.dirname(__file__), "data_archive", "geo", "tx_lines.geojson")
+        if not os.path.exists(path):
+            return {"available": False, "error": "tx_lines.geojson missing", "features": []}
+        with open(path) as f:
+            _TXLINES_GEO["v"] = json.load(f)
+    fc = _TXLINES_GEO["v"]
+    return {
+        "available": True, "type": "FeatureCollection", "features": fc.get("features", []),
+        "count": len(fc.get("features", [])),
+        "label": ("transmission context (HIFLD geometry) — constraint status shown only by the "
+                  "measured SCED arcs."),
+        "source": "HIFLD Electric Power Transmission Lines (public), Texas bbox, 69kV+",
+    }
+
+
 @app.get("/api/weather")
 def api_weather():
     """Weather layer for the Map tab: live conditions + 48h forecast at each of ERCOT's eight

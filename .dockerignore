@@ -33,3 +33,4 @@ VERIFY_LOOP/
 !journal/ledger.csv
 !data_archive/geo/
 !data_archive/geo/tx_counties.geojson
+!data_archive/geo/tx_lines.geojson
