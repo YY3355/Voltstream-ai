@@ -21,7 +21,12 @@ Static-transmission gate + standing gate run EVERY task.
   41/118/147/150, labelAlpha 0/67/221/238) + /api/intraday spot-check (ESCOND_GANSO1_1 flow116.4/
   shadow45.59 -> green, label $46) + images (ent_0 faint-thin-nolabel, ent_3 full-bright-$46). Gates:
   standing=0px, transmission static (code: entrance never touches txlines). commit PENDING.
-- [todo] 3 — transmission de-emphasis (-25% opacity, 345 bright->69 faint, zoom-tiered, ZERO anim).
+- [done] 3 — transmission de-emphasis. kvBase alphas 500=118/345=100/230=70/138=45/69=20 (~21% below
+  prior 150 max; 69kV near-invisible). kvMinZoom roads-like reveal (345/500 @0, 230@5.6, 138@6.4,
+  69@7.4), kvColor fades tier in over 1 zoom level; rebuild on zoomend via _mapZoom. ZERO animation
+  (getLineColor deps only kv+_mapZoom-discrete; updateTriggers=round(_mapZoom*10)). VERIFIED (fresh-eyes
+  GREEN): code + tier data re-derived (z4.8: only 345/500; z8.2: 69→16/138→45/230→70/345→100/500→118) +
+  before/after (t4_txlines bright -> t3_metro recessive, anchors dominate) + no-anim gate. commit PENDING.
 - [todo] 4 — battery breathing (soft slow pulse, confined to battery markers).
 - [todo] 5 — city anchors glow+label (Dallas/Houston/Austin/San Antonio/Permian), suppress default labels at 5.
 - [todo] 6 — camera easing everywhere (no jumpTo in handlers).

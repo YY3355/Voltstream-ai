@@ -1643,9 +1643,15 @@ async function initMap(){
   // voltage-tiered. GEOMETRY ONLY: where lines are, never their loading/congestion (that stays with
   // the measured SCED arcs). 500kV white -> 345 cyan -> 230 teal -> 138 blue -> 69 gray, subtle.
   let txlinesFC={type:'FeatureCollection',features:[]}, txlinesLoaded=false;
-  const kvColor=kv=> kv>=450?[236,241,248,150] : kv>=300?[92,214,234,140] : kv>=200?[64,184,178,120]
-    : kv>=100?[92,150,220,105] : [140,150,165,85];
-  const kvWidth=kv=> kv>=450?2.4 : kv>=300?1.8 : kv>=200?1.3 : kv>=100?1.0 : 0.7;
+  let _mapZoom=TX_VIEW.zoom;   // T3: transmission is zoom-tiered like roads; track the live zoom
+  // T3 de-emphasis: ~25% dimmer overall, 345/500kV brightest, 69kV near-invisible. Base tier RGBA:
+  const kvBase=kv=> kv>=450?[236,241,248,118] : kv>=300?[96,214,234,100] : kv>=200?[64,184,178,70]
+    : kv>=100?[86,128,182,45] : [110,118,132,20];   // 69kV alpha 20 ≈ near-invisible
+  // Roads-like reveal: backbone (345/500) always visible; lower tiers fade in as you zoom in.
+  const kvMinZoom=kv=> kv>=300?0 : kv>=200?5.6 : kv>=100?6.4 : 7.4;
+  const kvColor=(kv,z)=>{ const c=kvBase(kv); const vis=Math.max(0,Math.min(1,((z==null?_mapZoom:z)-kvMinZoom(kv))/1.0));
+    return [c[0],c[1],c[2],Math.round(c[3]*vis)]; };   // hidden below its zoom threshold, fades in over ~1 zoom level
+  const kvWidth=kv=> kv>=450?2.2 : kv>=300?1.7 : kv>=200?1.1 : kv>=100?0.8 : 0.6;
   // layer registry — checkboxes flip .on; refreshLayers() rebuilds the visible deck layer set.
   // make() may return one layer or an array (weather = markers + wind labels); flattened below.
   const REG={
@@ -1686,8 +1692,8 @@ async function initMap(){
         return [c[0],c[1],c[2],a];},
       onClick:pop})},
     txlines:{label:'Transmission (HIFLD)',sw:'#5896dc',data:txlinesFC.features,on:false,lazy:true,make:()=>new deck.GeoJsonLayer({id:'txlines',data:txlinesFC,pickable:true,
-      stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:f=>kvWidth(f.properties.kv),lineWidthMinPixels:0.5,lineWidthMaxPixels:3,
-      getLineColor:f=>kvColor(f.properties.kv),onClick:pop})},
+      stroked:true,filled:false,lineWidthUnits:'pixels',getLineWidth:f=>kvWidth(f.properties.kv),lineWidthMinPixels:0.4,lineWidthMaxPixels:2.5,
+      getLineColor:f=>kvColor(f.properties.kv,_mapZoom),updateTriggers:{getLineColor:[Math.round(_mapZoom*10)]},onClick:pop})},
     locational:{label:'Decade revenue (play)',sw:'#22d3ee',data:locAll,on:false,make:()=>{
       const y=locYears[locIdx], frame=(locFrames[String(y)]||[]).map(p=>({...p,_year:y}));   // this year's frame
       return new deck.ScatterplotLayer({id:'locational',data:frame,pickable:true,
@@ -1772,7 +1778,7 @@ async function initMap(){
     if(c!==_battCol){ _battCol=c; window.__battCol=c; if(REG.batteries.on) refreshLayers(); } });
   window.__battCol=_battCol;
   // T3: re-reveal batteries by zoom (top-5 at state -> more as you zoom). zoomend = once per settle.
-  map.on('zoomend',()=>{ if(REG.batteries.on) refreshLayers(); window.__battShown=battReveal().length; });
+  map.on('zoomend',()=>{ _mapZoom=map.getZoom(); if(REG.batteries.on||REG.txlines.on) refreshLayers(); window.__battShown=battReveal().length; });
   window.__battShown=battReveal().length;
   // fade animation: ease each layer's opacity toward its on/off target, rebuild until settled
   let _fadeRAF=null;
