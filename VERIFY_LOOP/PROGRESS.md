@@ -46,7 +46,12 @@ Static-transmission gate + standing gate run EVERY task.
   comments). VERIFIED (fresh-eyes GREEN): code + call-spy (hub click -> easeTo dur1200, jumpOrSet
   false, camera 4.8/-99.1 -> 6.8/-95.37 Houston). Mid-flight screenshot = headless caveat (mapbox
   easeTo completes <80ms headless; animates in real browser). commit PENDING.
-- [todo] 7 — layer fade transitions ~300ms on toggle.
+- [done] 7 — layer fade transitions. Converted per-frame *0.2 factor -> TIME-based FADE_MS=300
+  easeInOutQuad per layer (frame-rate independent); startFade records _fadeFrom/_fadeT0 per toggled
+  layer; buildLayers clones opacity=_op[k] so intermediate opacity renders. __setLayerOp freeze hook.
+  VERIFIED (fresh-eyes GREEN): code (300ms time-based, easeInOut, records start, renderKeys keeps
+  fading-out layer alive) + freeze proof (set county 0.4 -> deck props.opacity 0.4; battery 0.25) +
+  mid-fade screenshot (county 30% visibly faint). Headless real-time-capture caveat noted. commit PENDING.
 - [todo] 8 — sidebar "Right now" numbers roll/fade on change.
 - [todo] 9 — wind arrows per-county from Open-Meteo cache, zoom-gated, static/slow.
 - [todo] 10 — rest-state audit (calm+alive, <=10% animated, gates pass).

@@ -1797,17 +1797,24 @@ async function initMap(){
   // T3: re-reveal batteries by zoom (top-5 at state -> more as you zoom). zoomend = once per settle.
   map.on('zoomend',()=>{ _mapZoom=map.getZoom(); if(REG.batteries.on||REG.txlines.on) refreshLayers(); window.__battShown=battReveal().length; });
   window.__battShown=battReveal().length;
-  // fade animation: ease each layer's opacity toward its on/off target, rebuild until settled
-  let _fadeRAF=null;
-  function animateFade(){ let moving=false;
-    Object.keys(REG).forEach(k=>{ const tgt=REG[k].on?1:0;
-      if(Math.abs(_op[k]-tgt)>0.02){ _op[k]+=(tgt-_op[k])*0.2; moving=true; } else _op[k]=tgt; });
-    refreshLayers();
-    window.__fading=moving;
+  // T7: layer fade transitions — a precise, frame-rate-INDEPENDENT ~300ms easeInOut per layer on
+  // toggle (was a per-frame 0.2 factor that varied with fps). Each layer eases its opacity from where
+  // it was to its on/off target over FADE_MS; refreshLayers() rebuilds until all settle.
+  let _fadeRAF=null; const FADE_MS=300; const _fadeT0={}, _fadeFrom={};   // per-layer fade start time + start opacity
+  const _easeInOut=p=> p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
+  function animateFade(){ let moving=false; const now=performance.now();
+    Object.keys(REG).forEach(k=>{ if(_fadeT0[k]===undefined) return; const tgt=REG[k].on?1:0;
+      const p=Math.min(1,(now-_fadeT0[k])/FADE_MS); _op[k]=_fadeFrom[k]+(tgt-_fadeFrom[k])*_easeInOut(p);
+      if(p>=1){ _op[k]=tgt; delete _fadeT0[k]; } else moving=true; });
+    refreshLayers(); window.__fading=moving;
     if(moving){ _fadeRAF=requestAnimationFrame(animateFade); } else { _fadeRAF=null; }
   }
-  function startFade(){ if(!_fadeRAF) animateFade(); }
-  window.__layerOp=()=>({..._op});
+  function startFade(){ const now=performance.now();
+    Object.keys(REG).forEach(k=>{ const tgt=REG[k].on?1:0; if(_op[k]!==tgt){ _fadeFrom[k]=_op[k]; _fadeT0[k]=now; } });
+    if(!_fadeRAF) animateFade(); }
+  window.__layerOp=()=>({..._op}); window.__fadeMs=FADE_MS;
+  // deterministic freeze for headless verification (RAF is throttled): render a layer mid-fade.
+  window.__setLayerOp=(k,v)=>{ _op[k]=Math.max(0,Math.min(1,v)); refreshLayers(); return _op[k]; };
 
   // ── Task B: animated particles along MEASURED snapshot arcs only (never the aggregate) ──
   // Particles ride the flow arc from source->target in the MEASURED direction; density + speed
