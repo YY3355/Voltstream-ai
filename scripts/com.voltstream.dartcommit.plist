@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference copy. Install with:
+    cp scripts/com.voltstream.dartcommit.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.voltstream.dartcommit.plist
+  Automates the DART journal COMMIT leg daily at 16:00 ET (Mac is in America/New_York, so Hour=16 == ET).
+  StartCalendarInterval => launchd runs a MISSED job on wake if the Mac was asleep at 16:00.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.voltstream.dartcommit</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/mikeoc/Documents/voltstream-ai/scripts/auto_commit.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>16</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Only run at the scheduled time / on kickstart — not on every (re)load. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- launchd-level capture (script self-logs to journal/auto.log; these catch pre-exec failures).
+         Both paths match the *.log gitignore rule. -->
+    <key>StandardOutPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.err.log</string>
+</dict>
+</plist>
