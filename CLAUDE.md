@@ -88,3 +88,35 @@ cooptimize / vpp · `rt` → rt_engine · `curve`,`swap` → forward_curve · `r
 same day — the git history is the audit trail, no hindsight); `settle` scores past calls into
 `journal/ledger.csv`; `report` summarizes. Not live trading: virtual fills at settlement, no
 execution/fees/risk limits. `journal/` IS tracked in git (the audit trail); `dart_cache/` is not.
+
+## launchd auto-commit (the COMMIT leg only — settle/report stay MANUAL)
+
+The `commit` leg is automated by a **launchd agent** (`com.voltstream.dartcommit`) that runs daily
+at **16:00 ET** (DA posts ~14:30 ET; 16:00 = safe margin). launchd, NOT cron, because launchd runs a
+MISSED job on wake if the Mac was asleep. **`settle` + `report` are the judgment leg and stay manual.**
+
+- **`scripts/auto_commit.sh`** — the logic (versioned source of truth): `cd` repo →
+  `conda run -n volt python dart_journal.py commit` → if output says "already committed" exit 0 (a
+  manual run earlier that day is fine, no dup) → else `git add journal && git commit -m "DART calls
+  (auto) <tomorrow>" && git push` (push uses the osxkeychain cred). All output + a timestamp is
+  appended to `journal/auto.log` (gitignored via `*.log`). Full tool paths + explicit exit codes
+  (no `set -e`) because launchd has a minimal env.
+- **The TCC catch (important):** a launchd-spawned process is denied access to `~/Documents` by
+  macOS TCC — git/python against the repo fail with **"Operation not permitted"** (exit 126 / EPERM).
+  Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`:
+  - **`~/Library/Application Support/VoltStream/dart_auto_commit_launcher.sh`** (canonical copy;
+    reference/source in-repo at `scripts/dart_auto_commit_launcher.sh`) is a thin launcher that lives
+    OUTSIDE `~/Documents` (so launchd can exec it) and just `source`s `scripts/auto_commit.sh`.
+  - The plist runs this launcher **directly** (`ProgramArguments = [launcher]`, not `[/bin/bash,
+    launcher]`), so macOS attributes the FDA grant to the launcher file alone.
+  - **You must grant it Full Disk Access once:** System Settings → Privacy & Security → Full Disk
+    Access → `+` → Cmd+Shift+G → `~/Library/Application Support/VoltStream/` → select the launcher.
+    Without this, the job loads fine but every run fails "Operation not permitted".
+- **Plist:** `~/Library/LaunchAgents/com.voltstream.dartcommit.plist` (reference copy
+  `scripts/com.voltstream.dartcommit.plist`). `StartCalendarInterval` Hour 16 Minute 0 (Mac is in
+  `America/New_York`, so Hour=16 == 16:00 ET), `RunAtLoad false`.
+  - Manage: `launchctl bootstrap gui/$(id -u) <plist>` / `bootout` / `kickstart -k
+    gui/$(id -u)/com.voltstream.dartcommit` (kickstart = run now). After editing `auto_commit.sh`,
+    no reinstall needed (launcher sources it); after editing the launcher, re-copy it to `~/Library`.
+  - Logs: `journal/auto.log` (the run log) + `journal/launchd.{out,err}.log` (launchd-level; catch
+    TCC/pre-exec failures). All gitignored.

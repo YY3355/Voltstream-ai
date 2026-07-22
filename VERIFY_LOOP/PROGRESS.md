@@ -15,6 +15,20 @@ Supervised. Max 8 iterations. One task = one commit. settle/report stay MANUAL.
   (2) re-kickstart -> already-committed exit 0, no dup (HEAD unchanged);
   (3) bootout/bootstrap -> survives, kickstart still works.
 
+- [blocked-on-user] 2 — TCC hit: launchd kickstart failed exit 126, launchd.err.log =
+  "Operation not permitted" reading the repo. DIAGNOSED decisive: launchd-spawned process denied
+  ~/Documents by macOS TCC (diag from ~/Library => git-read + ls of repo "Operation not permitted";
+  moving script out does NOT help — the git/python WORK is blocked). tccutil can't grant, only reset.
+  User chose Option 2 (targeted FDA on a dedicated launcher). BUILT + statically verified:
+  * scripts/dart_auto_commit_launcher.sh (repo source) -> installed to
+    ~/Library/Application Support/VoltStream/dart_auto_commit_launcher.sh (+x); sources the versioned
+    scripts/auto_commit.sh (single source of truth, no drift).
+  * plist ProgramArguments = [launcher] DIRECTLY (not /bin/bash) so FDA attributes to the launcher alone.
+  * CLAUDE.md "launchd auto-commit" section documents launcher path + TCC/FDA setup for future sessions.
+  Verified: bash -n launcher+script OK, plutil -lint OK, agent bootstraps/enables + print shows it points
+  at the launcher. END-TO-END (real kickstart -> commit+push) PENDING the user's one-time FDA grant.
+  Setup committed as a static-green checkpoint.
+
 ## Log
 - init — GOAL+PROGRESS written. Facts: cmd_commit prints "already committed ... not overwriting" /
   "committed <path>: N ..."; conda /Applications/ana/anaconda3/bin/conda; git /usr/bin/git; HTTPS remote

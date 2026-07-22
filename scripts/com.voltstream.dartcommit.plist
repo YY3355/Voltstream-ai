@@ -6,16 +6,21 @@
     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.voltstream.dartcommit.plist
   Automates the DART journal COMMIT leg daily at 16:00 ET (Mac is in America/New_York, so Hour=16 == ET).
   StartCalendarInterval => launchd runs a MISSED job on wake if the Mac was asleep at 16:00.
+
+  TCC: the job runs via the FDA-granted LAUNCHER (below), NOT /bin/bash directly, so macOS attributes
+  the Full Disk Access grant to the launcher alone. The launcher sources scripts/auto_commit.sh from
+  the repo. Without the FDA grant, a launchd job cannot read ~/Documents ("Operation not permitted").
+  See CLAUDE.md ("launchd auto-commit").
 -->
 <plist version="1.0">
 <dict>
     <key>Label</key>
     <string>com.voltstream.dartcommit</string>
 
+    <!-- Run the launcher DIRECTLY (not via /bin/bash) so the FDA grant attaches to the launcher file. -->
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
-        <string>/Users/mikeoc/Documents/voltstream-ai/scripts/auto_commit.sh</string>
+        <string>/Users/mikeoc/Library/Application Support/VoltStream/dart_auto_commit_launcher.sh</string>
     </array>
 
     <key>StartCalendarInterval</key>
@@ -30,7 +35,8 @@
     <key>RunAtLoad</key>
     <false/>
 
-    <!-- launchd-level capture (script self-logs to journal/auto.log; these catch pre-exec failures).
+    <!-- launchd-level capture (the script self-logs to journal/auto.log; these catch pre-exec /
+         TCC failures, e.g. "Operation not permitted" if Full Disk Access is not granted).
          Both paths match the *.log gitignore rule. -->
     <key>StandardOutPath</key>
     <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.out.log</string>
