@@ -36,6 +36,15 @@ Supervised. Max 8 iterations. One task = one commit. settle/report stay MANUAL.
   Verified: install script builds+signs (codesign Identifier=com.voltstream.dartcommit adhoc), Info.plist
   + LaunchAgent plutil OK, agent bootstraps + print points at the .app exec. END-TO-END still PENDING the
   user's FDA grant on DartAutoCommit.app.
+- FDA granted to the .app, but kickstart still exit 1: launchd.err.log "Operation not permitted"
+  reading the repo script. ROOT CAUSE: a SHELL-SCRIPT bundle exec is run by /bin/bash, so TCC
+  attributes to /bin/bash, not the .app -> grant never applies (compiled cprobe confirmed the
+  attribution model). FIX: bundle exec must be a COMPILED Mach-O. Rebuilt with scripts/dartcommit_stub.c
+  (posix_spawn /bin/bash auto_commit.sh, waits, returns its rc; children inherit the .app FDA). Removed
+  obsolete scripts/dart_auto_commit_launcher.sh. install_dartcommit_app.sh now compiles+signs; clean
+  bundle verified (Mach-O arm64, codesign --verify --strict OK). CLAUDE.md updated (compiled stub +
+  re-sign-invalidates-grant caveat). NOTE: rebuild re-signed the bundle => new cdhash => the earlier FDA
+  grant is now STALE; user must remove + re-add the .app in FDA. END-TO-END pending that re-grant.
 
 ## Log
 - init — GOAL+PROGRESS written. Facts: cmd_commit prints "already committed ... not overwriting" /

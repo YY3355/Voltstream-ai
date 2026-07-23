@@ -103,20 +103,24 @@ MISSED job on wake if the Mac was asleep. **`settle` + `report` are the judgment
   (no `set -e`) because launchd has a minimal env.
 - **The TCC catch (important):** a launchd-spawned process is denied access to `~/Documents` by
   macOS TCC — git/python against the repo fail with **"Operation not permitted"** (exit 126 / EPERM).
-  Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`. The FDA picker won't
-  accept a bare `.sh`, so the job is wrapped in a minimal signed `.app`:
+  Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`. Two catches drove the
+  design: the FDA picker won't accept a bare `.sh`, AND a shell-script bundle executable is attributed
+  by TCC to `/bin/bash` (so the `.app`'s grant wouldn't apply). So the job is a signed `.app` with a
+  **compiled** executable:
   - **`~/Library/Application Support/VoltStream/DartAutoCommit.app`** — an ad-hoc-signed bundle whose
-    executable (`Contents/MacOS/dart_auto_commit`) lives OUTSIDE `~/Documents` (so launchd can exec it)
-    and just `source`s `scripts/auto_commit.sh`. Built by **`scripts/install_dartcommit_app.sh`** from
-    the in-repo sources (`scripts/dart_auto_commit_launcher.sh` = the executable, and
-    `scripts/DartAutoCommit-Info.plist` = the Info.plist).
-  - The plist runs the bundle's executable **directly** (not via `/bin/bash`), so macOS attributes the
-    FDA grant to the `DartAutoCommit.app` bundle alone.
-  - **You must grant it Full Disk Access once:** System Settings → Privacy & Security → Full Disk
-    Access → `+` → select `~/Library/Application Support/VoltStream/DartAutoCommit.app` (a `.app`
-    selects normally). Without this, the job loads fine but every run fails "Operation not permitted".
-  - After editing the executable/Info.plist, re-run `scripts/install_dartcommit_app.sh` (re-signs);
-    editing only `auto_commit.sh` needs no rebuild (the bundle sources it live).
+    executable `Contents/MacOS/dart_auto_commit` is a tiny **compiled Mach-O stub**
+    (`scripts/dartcommit_stub.c`) that just runs `/bin/bash scripts/auto_commit.sh` and returns its exit
+    code. A real binary gets the bundle's FDA grant; the bash/git/python it spawns inherit it.
+    `auto_commit.sh` stays the single source of truth. Built by **`scripts/install_dartcommit_app.sh`**
+    (compiles the stub + ad-hoc signs) from `scripts/dartcommit_stub.c` + `scripts/DartAutoCommit-Info.plist`.
+  - The plist runs the bundle's executable **directly**, so macOS attributes the FDA grant to
+    `DartAutoCommit.app` alone.
+  - **You must grant it Full Disk Access:** System Settings → Privacy & Security → Full Disk Access →
+    `+` → select `~/Library/Application Support/VoltStream/DartAutoCommit.app` (a `.app` selects
+    normally). Without this, the job loads fine but every run fails "Operation not permitted".
+  - **Rebuilding re-signs → invalidates the FDA grant** (new cdhash), so after any
+    `install_dartcommit_app.sh` run you must remove the stale FDA entry and re-add the `.app`. Editing
+    only `auto_commit.sh` needs NO rebuild (the stub runs it live) and keeps the grant.
 - **Plist:** `~/Library/LaunchAgents/com.voltstream.dartcommit.plist` (reference copy
   `scripts/com.voltstream.dartcommit.plist`). `StartCalendarInterval` Hour 16 Minute 0 (Mac is in
   `America/New_York`, so Hour=16 == 16:00 ET), `RunAtLoad false`.

@@ -2,12 +2,19 @@
 # ---------------------------------------------------------------------------
 # install_dartcommit_app.sh — (re)build the DartAutoCommit.app wrapper in ~/Library.
 #
-# macOS Full Disk Access won't accept a bare .sh, so the DART auto-commit runs as the
-# executable of a minimal .app bundle (which the FDA picker accepts). This assembles that
-# bundle from the repo sources and ad-hoc signs it so TCC has a stable identity for the grant.
+# macOS Full Disk Access won't accept a bare .sh, AND a shell-script bundle executable
+# is attributed to /bin/bash (so the .app's FDA grant wouldn't apply). So the bundle's
+# executable is a COMPILED Mach-O stub (scripts/dartcommit_stub.c) that just runs
+# /bin/bash scripts/auto_commit.sh — a real binary gets the bundle's grant, and the
+# bash/git/python it spawns inherit it. The bundle is ad-hoc signed so TCC has a code
+# identity to bind the grant to.
+#
+# NOTE: re-signing changes the bundle's cdhash, which INVALIDATES an existing Full Disk
+# Access grant. After (re)building you must (re)grant FDA to the .app. Editing only
+# scripts/auto_commit.sh needs NO rebuild (the stub runs it live) and keeps the grant.
 #
 # After running this:
-#   1. Grant the .app Full Disk Access:
+#   1. Grant the .app Full Disk Access (remove any stale entry first, then re-add):
 #        System Settings > Privacy & Security > Full Disk Access > + >
 #        ~/Library/Application Support/VoltStream/DartAutoCommit.app
 #   2. (Re)load the launchd agent:
@@ -19,18 +26,19 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 APP="$HOME/Library/Application Support/VoltStream/DartAutoCommit.app"
 MACOS="$APP/Contents/MacOS"
 
+# clean rebuild so no stale files break the signature
+rm -rf "$APP"
 mkdir -p "$MACOS"
 cp "$HERE/DartAutoCommit-Info.plist" "$APP/Contents/Info.plist"
-cp "$HERE/dart_auto_commit_launcher.sh" "$MACOS/dart_auto_commit"
-chmod +x "$MACOS/dart_auto_commit"
 
-# Ad-hoc sign so the FDA grant binds to a stable code identity (unsigned still works, but the
-# grant can drop if the bundle changes). Non-fatal if codesign is unavailable.
-if codesign --force --sign - "$APP" 2>/dev/null; then
-  echo "signed (ad-hoc): $APP"
-else
-  echo "warn: codesign unavailable/failed — app is unsigned (FDA still works)"
-fi
+# compile the stub as the bundle executable (must match CFBundleExecutable = dart_auto_commit)
+cc -O2 -o "$MACOS/dart_auto_commit" "$HERE/dartcommit_stub.c"
 
+# ad-hoc sign the whole bundle so the FDA grant binds to a code identity
+codesign --force --sign - "$APP"
+codesign --verify --strict "$APP" && echo "signed + verified: $APP"
+
+file "$MACOS/dart_auto_commit"
 echo "built: $APP"
 echo "executable: $MACOS/dart_auto_commit"
+echo "NEXT: (re)grant Full Disk Access to the .app, then reload the launchd agent."
