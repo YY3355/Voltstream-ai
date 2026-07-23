@@ -10,10 +10,18 @@ Supervised. Max 8 iterations. One task = one commit. settle/report stay MANUAL.
   -lint OK, conda selftest runs via full path (no calls file made), grep matches real msg, launchd
   .logs gitignored, fresh path preserved. Fresh-eyes subagent GREEN on all 6 (exit-codes, msg/date,
   launchd-env, gitignore, plist, no-hang). Caveat: no timeout on cold DART pull (warm cache mitigates). commit PENDING.
-- [todo] 2 — install ~/Library/LaunchAgents/com.voltstream.dartcommit.plist + launchctl load. END-TO-END:
-  (1) kickstart -> real calls_2026-07-23.json + git push land + auto.log records;
-  (2) re-kickstart -> already-committed exit 0, no dup (HEAD unchanged);
-  (3) bootout/bootstrap -> survives, kickstart still works.
+- [DONE] 2 — installed plist + DartAutoCommit.app (compiled stub) + FDA grant. END-TO-END VERIFIED
+  (date rolled to 2026-07-23 mid-session, so tomorrow = 2026-07-24):
+  (1) PASS kickstart -> real journal/calls_2026-07-24.json (4 hubs, 51 nonzero ±1 calls), commit
+      0d75441 "DART calls (auto) 2026-07-24" (msg date == filename), push landed 11d80c5..0d75441,
+      auto.log ends "committed + pushed — exit 0". Calls file tracked + on origin/main.
+  (2) PASS re-kickstart -> "already committed ... not overwriting" -> exit 0, HEAD+remote unchanged
+      (0d75441), single calls file (no dup).
+  (3) PASS bootout -> unloaded; bootstrap+enable -> reloaded, schedule intact (Hour 16 Min 0), program
+      = the .app stub; post-reload kickstart exit 0 (already-committed), HEAD unchanged.
+  KEY LEARNING (now in CLAUDE.md): launchd job vs ~/Documents TCC needs a targeted FDA grant on a
+  signed .app whose executable is a COMPILED Mach-O (a script exec is attributed to /bin/bash and the
+  grant never applies); children inherit the grant. Rebuild re-signs -> must re-grant FDA.
 
 - [blocked-on-user] 2 — TCC hit: launchd kickstart failed exit 126, launchd.err.log =
   "Operation not permitted" reading the repo. DIAGNOSED decisive: launchd-spawned process denied
