@@ -103,15 +103,20 @@ MISSED job on wake if the Mac was asleep. **`settle` + `report` are the judgment
   (no `set -e`) because launchd has a minimal env.
 - **The TCC catch (important):** a launchd-spawned process is denied access to `~/Documents` by
   macOS TCC — git/python against the repo fail with **"Operation not permitted"** (exit 126 / EPERM).
-  Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`:
-  - **`~/Library/Application Support/VoltStream/dart_auto_commit_launcher.sh`** (canonical copy;
-    reference/source in-repo at `scripts/dart_auto_commit_launcher.sh`) is a thin launcher that lives
-    OUTSIDE `~/Documents` (so launchd can exec it) and just `source`s `scripts/auto_commit.sh`.
-  - The plist runs this launcher **directly** (`ProgramArguments = [launcher]`, not `[/bin/bash,
-    launcher]`), so macOS attributes the FDA grant to the launcher file alone.
+  Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`. The FDA picker won't
+  accept a bare `.sh`, so the job is wrapped in a minimal signed `.app`:
+  - **`~/Library/Application Support/VoltStream/DartAutoCommit.app`** — an ad-hoc-signed bundle whose
+    executable (`Contents/MacOS/dart_auto_commit`) lives OUTSIDE `~/Documents` (so launchd can exec it)
+    and just `source`s `scripts/auto_commit.sh`. Built by **`scripts/install_dartcommit_app.sh`** from
+    the in-repo sources (`scripts/dart_auto_commit_launcher.sh` = the executable, and
+    `scripts/DartAutoCommit-Info.plist` = the Info.plist).
+  - The plist runs the bundle's executable **directly** (not via `/bin/bash`), so macOS attributes the
+    FDA grant to the `DartAutoCommit.app` bundle alone.
   - **You must grant it Full Disk Access once:** System Settings → Privacy & Security → Full Disk
-    Access → `+` → Cmd+Shift+G → `~/Library/Application Support/VoltStream/` → select the launcher.
-    Without this, the job loads fine but every run fails "Operation not permitted".
+    Access → `+` → select `~/Library/Application Support/VoltStream/DartAutoCommit.app` (a `.app`
+    selects normally). Without this, the job loads fine but every run fails "Operation not permitted".
+  - After editing the executable/Info.plist, re-run `scripts/install_dartcommit_app.sh` (re-signs);
+    editing only `auto_commit.sh` needs no rebuild (the bundle sources it live).
 - **Plist:** `~/Library/LaunchAgents/com.voltstream.dartcommit.plist` (reference copy
   `scripts/com.voltstream.dartcommit.plist`). `StartCalendarInterval` Hour 16 Minute 0 (Mac is in
   `America/New_York`, so Hour=16 == 16:00 ET), `RunAtLoad false`.

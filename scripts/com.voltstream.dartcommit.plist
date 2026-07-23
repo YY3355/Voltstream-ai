@@ -7,20 +7,21 @@
   Automates the DART journal COMMIT leg daily at 16:00 ET (Mac is in America/New_York, so Hour=16 == ET).
   StartCalendarInterval => launchd runs a MISSED job on wake if the Mac was asleep at 16:00.
 
-  TCC: the job runs via the FDA-granted LAUNCHER (below), NOT /bin/bash directly, so macOS attributes
-  the Full Disk Access grant to the launcher alone. The launcher sources scripts/auto_commit.sh from
-  the repo. Without the FDA grant, a launchd job cannot read ~/Documents ("Operation not permitted").
-  See CLAUDE.md ("launchd auto-commit").
+  TCC: the job runs via the FDA-granted DartAutoCommit.app executable (below), NOT /bin/bash, so
+  macOS attributes the Full Disk Access grant to that bundle alone. A .app is used because the FDA
+  picker won't accept a bare .sh. The bundle executable sources scripts/auto_commit.sh from the repo.
+  Without the FDA grant, a launchd job cannot read ~/Documents ("Operation not permitted").
+  Build the bundle with scripts/install_dartcommit_app.sh. See CLAUDE.md ("launchd auto-commit").
 -->
 <plist version="1.0">
 <dict>
     <key>Label</key>
     <string>com.voltstream.dartcommit</string>
 
-    <!-- Run the launcher DIRECTLY (not via /bin/bash) so the FDA grant attaches to the launcher file. -->
+    <!-- Run the .app's executable DIRECTLY so the FDA grant attaches to the DartAutoCommit.app bundle. -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/mikeoc/Library/Application Support/VoltStream/dart_auto_commit_launcher.sh</string>
+        <string>/Users/mikeoc/Library/Application Support/VoltStream/DartAutoCommit.app/Contents/MacOS/dart_auto_commit</string>
     </array>
 
     <key>StartCalendarInterval</key>

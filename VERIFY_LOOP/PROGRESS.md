@@ -28,6 +28,14 @@ Supervised. Max 8 iterations. One task = one commit. settle/report stay MANUAL.
   Verified: bash -n launcher+script OK, plutil -lint OK, agent bootstraps/enables + print shows it points
   at the launcher. END-TO-END (real kickstart -> commit+push) PENDING the user's one-time FDA grant.
   Setup committed as a static-green checkpoint.
+- FDA picker rejects a bare .sh -> user asked to wrap in a .app. BUILT: minimal ad-hoc-signed
+  DartAutoCommit.app (~/Library/Application Support/VoltStream/), executable Contents/MacOS/dart_auto_commit
+  sources scripts/auto_commit.sh. Reproducible from repo: scripts/install_dartcommit_app.sh +
+  scripts/dart_auto_commit_launcher.sh (exec source) + scripts/DartAutoCommit-Info.plist. plist
+  ProgramArguments -> the .app executable (direct, so FDA attributes to the bundle). CLAUDE.md updated.
+  Verified: install script builds+signs (codesign Identifier=com.voltstream.dartcommit adhoc), Info.plist
+  + LaunchAgent plutil OK, agent bootstraps + print points at the .app exec. END-TO-END still PENDING the
+  user's FDA grant on DartAutoCommit.app.
 
 ## Log
 - init — GOAL+PROGRESS written. Facts: cmd_commit prints "already committed ... not overwriting" /

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Info.plist for DartAutoCommit.app — the FDA-grantable wrapper around the DART auto-commit.
+     Installed by scripts/install_dartcommit_app.sh to
+     ~/Library/Application Support/VoltStream/DartAutoCommit.app/Contents/Info.plist -->
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>DartAutoCommit</string>
+    <key>CFBundleDisplayName</key>
+    <string>VoltStream DART Auto-Commit</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.voltstream.dartcommit</string>
+    <key>CFBundleExecutable</key>
+    <string>dart_auto_commit</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <!-- background agent: no Dock icon, no UI -->
+    <key>LSBackgroundOnly</key>
+    <true/>
+    <key>LSUIElement</key>
+    <true/>
+</dict>
+</plist>
