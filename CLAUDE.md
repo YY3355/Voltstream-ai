@@ -89,18 +89,52 @@ same day — the git history is the audit trail, no hindsight); `settle` scores 
 `journal/ledger.csv`; `report` summarizes. Not live trading: virtual fills at settlement, no
 execution/fees/risk limits. `journal/` IS tracked in git (the audit trail); `dart_cache/` is not.
 
-## launchd auto-commit (the COMMIT leg only — settle/report stay MANUAL)
+## launchd daily rhythm (commit + settle automated; report stays MANUAL)
 
-The `commit` leg is automated by a **launchd agent** (`com.voltstream.dartcommit`) that runs daily
-at **16:00 ET** (DA posts ~14:30 ET; 16:00 = safe margin). launchd, NOT cron, because launchd runs a
-MISSED job on wake if the Mac was asleep. **`settle` + `report` are the judgment leg and stay manual.**
+Three launchd agents run the DART book's daily rhythm. **`report` is the only manual leg** (the
+judgment call — Mike reads it). launchd, NOT cron, because launchd runs a MISSED job on the next
+wake if the Mac was asleep. All times are local ET (Mac TZ = `America/New_York`), logged UTC+local.
 
-- **`scripts/auto_commit.sh`** — the logic (versioned source of truth): `cd` repo →
-  `conda run -n volt python dart_journal.py commit` → if output says "already committed" exit 0 (a
-  manual run earlier that day is fine, no dup) → else `git add journal && git commit -m "DART calls
-  (auto) <tomorrow>" && git push` (push uses the osxkeychain cred). All output + a timestamp is
-  appended to `journal/auto.log` (gitignored via `*.log`). Full tool paths + explicit exit codes
-  (no `set -e`) because launchd has a minimal env.
+| Agent | When (ET) | JOB | Script | Does |
+|---|---|---|---|---|
+| `com.voltstream.dartcommit`   | 16:00 | (unset→commit) | `auto_commit.sh` | commit+push tomorrow's calls |
+| `com.voltstream.dartsettle`   | 09:00 | `settle`        | `auto_settle.sh` | catch-up settle past days, commit+push ledger |
+| `com.voltstream.dartwatchdog` | 18:30 | `watchdog`      | `watchdog.sh`    | health check; alert if the rhythm broke |
+
+- **One `.app`, three jobs — the dispatcher.** All three agents run the SAME FDA-granted stub
+  (`DartAutoCommit.app`, which execs `/bin/bash scripts/auto_commit.sh`). `auto_commit.sh`'s header
+  dispatches on the **`JOB`** env var (set in each agent's plist `EnvironmentVariables`): unset→commit,
+  `settle`→`exec auto_settle.sh`, `watchdog`→`exec watchdog.sh`. `environ` passes through the compiled
+  stub, and `exec` stays under the .app's TCC grant — so **adding a job needs NO .app rebuild, NO FDA
+  re-grant**, only a new plist + shell script. (Prefer this over rebuilding the stub.)
+- **Jobs & helpers** (all in `scripts/`): `auto_commit.sh` (commit leg + dispatcher entry),
+  `auto_settle.sh` (settle leg, pure arithmetic — NO LLM), `watchdog.sh`+`watchdog_check.py` (health),
+  `notify.sh` (ntfy.sh push), `joblog.sh` (sourced: `emit_job_row`). Each job resolves siblings via an
+  absolute `SCRIPT_DIR` (captured before it `cd`s away), writes UTC+local log lines, and (via an EXIT
+  trap) one structured row to **`journal/jobs.jsonl`** (gitignored): `{job, asof_date, started, ended,
+  status, error, commit_sha}`. No `set -e` — exit codes are explicit and the trap always logs.
+- **Notifications** (`notify.sh`): commit-push success (date + n calls), settle success (days + P&L
+  delta + cumulative), and ANY failure (loud, `high` priority, from the trap). Set **`NTFY_TOPIC`** to
+  a ntfy.sh topic to turn them on (unset = silent no-op). `DRY_RUN=1` prints instead of sending.
+  notify.sh is best-effort — it can never fail a job.
+- **Provenance / regime:** every auto calls file is stamped `model_version` (git blob SHA of the
+  signal-logic files `dart_journal.py`+`dart_engine.py`), `generated_by:"auto"`, `generated_at` (UTC).
+  Regime = manual ≤2026-07-22, auto ≥2026-07-24; history is never rewritten (see README "Ledger regime").
+- **Env seams (tests NEVER touch the real book):** `CODE_DIR` (python cwd / real signal files),
+  `JOURNAL_REPO` (git tree the journal lives in), `JOURNAL_REMOTE` (push target), `JOURNAL_DIR`
+  (python journal path), `DART_ASOF` (injectable "now", never backdates), `DART_FIXTURE` (realized-DART
+  CSV → no network). A **hard guard** refuses (`exit 3`) if `DART_FIXTURE` is set but the repo is the
+  real one. Test harness: `tests/mk_temp_journal.sh` (temp journal repo + bare remote + faithful
+  .gitignore), `tests/seed_calls.py` + `tests/fixtures/dart_hist.csv` (each settled day = +$7.00).
+  Verify a job in a temp env, e.g.:
+  ```bash
+  eval "$(bash tests/mk_temp_journal.sh)"
+  CODE_DIR="$PWD" JOURNAL_REPO="$WORK" JOURNAL_REMOTE="$BARE" DART_ASOF=2026-07-22 \
+    DART_FIXTURE="$PWD/tests/fixtures/dart_hist.csv" DRY_RUN=1 NTFY_TOPIC=t bash scripts/auto_commit.sh
+  ```
+- **Scheduling caveat:** launchd only fires while the Mac is awake/on. `StartCalendarInterval` re-runs
+  a missed job on the next wake, but a multi-day laptop-off stretch = missed days BY DESIGN (a commit
+  after its window logs a MISSED day, never backdates). Always-on (Fly) is the future fix.
 - **The TCC catch (important):** a launchd-spawned process is denied access to `~/Documents` by
   macOS TCC — git/python against the repo fail with **"Operation not permitted"** (exit 126 / EPERM).
   Fix = a **targeted Full Disk Access grant**, NOT a broad grant to `/bin/bash`. Two catches drove the
@@ -121,11 +155,15 @@ MISSED job on wake if the Mac was asleep. **`settle` + `report` are the judgment
   - **Rebuilding re-signs → invalidates the FDA grant** (new cdhash), so after any
     `install_dartcommit_app.sh` run you must remove the stale FDA entry and re-add the `.app`. Editing
     only `auto_commit.sh` needs NO rebuild (the stub runs it live) and keeps the grant.
-- **Plist:** `~/Library/LaunchAgents/com.voltstream.dartcommit.plist` (reference copy
-  `scripts/com.voltstream.dartcommit.plist`). `StartCalendarInterval` Hour 16 Minute 0 (Mac is in
-  `America/New_York`, so Hour=16 == 16:00 ET), `RunAtLoad false`.
-  - Manage: `launchctl bootstrap gui/$(id -u) <plist>` / `bootout` / `kickstart -k
-    gui/$(id -u)/com.voltstream.dartcommit` (kickstart = run now). After editing `auto_commit.sh`,
-    no reinstall needed (launcher sources it); after editing the launcher, re-copy it to `~/Library`.
-  - Logs: `journal/auto.log` (the run log) + `journal/launchd.{out,err}.log` (launchd-level; catch
-    TCC/pre-exec failures). All gitignored.
+- **Plists:** reference copies in `scripts/com.voltstream.dart{commit,settle,watchdog}.plist`; installed
+  copies in `~/Library/LaunchAgents/`. Each is `StartCalendarInterval` (local ET) + `RunAtLoad false`;
+  settle/watchdog add `EnvironmentVariables.JOB`. Install a new one:
+  ```bash
+  cp scripts/com.voltstream.dartsettle.plist ~/Library/LaunchAgents/
+  launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.voltstream.dartsettle.plist
+  ```
+  - Manage: `launchctl bootstrap gui/$(id -u) <plist>` / `bootout gui/$(id -u)/<label>` /
+    `kickstart -k gui/$(id -u)/<label>` (kickstart = run now). Editing a `scripts/*.sh` needs NO
+    reinstall (the stub runs them live); only rebuilding the `.app` needs a re-grant.
+  - Logs (all gitignored): `journal/auto.log`, `settle.log`, `watchdog.log` (per-job run logs);
+    `journal/jobs.jsonl` (structured rows); `journal/launchd.{out,err}.log` (launchd-level).
