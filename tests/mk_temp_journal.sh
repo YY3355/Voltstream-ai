@@ -11,8 +11,11 @@ BARE="$(mktemp -d)/remote.git"
 "$GIT" -C "$WORK" config user.name "Test Harness"
 mkdir -p "$WORK/journal"
 echo "throwaway test journal" > "$WORK/journal/.keep"
+# mirror the real repo's journal ignore rules so the test is faithful: the runtime log files
+# (jobs.jsonl, *.log) must NOT be committed, else `git add journal` makes every run non-idempotent.
+printf 'journal/jobs.jsonl\njournal/*.log\n' > "$WORK/.gitignore"
 for f in "$@"; do cp "$f" "$WORK/journal/"; done
-"$GIT" -C "$WORK" add journal
+"$GIT" -C "$WORK" add .gitignore journal
 "$GIT" -C "$WORK" commit -q -m "init test journal"
 "$GIT" init -q --bare "$BARE"
 "$GIT" -C "$WORK" remote add origin "$BARE"

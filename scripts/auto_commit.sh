@@ -20,6 +20,19 @@
 # ---------------------------------------------------------------------------
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Applications/ana/anaconda3/bin:$PATH"
+
+# ---- dispatch -------------------------------------------------------------------------------
+# This file is the DartAutoCommit.app stub's fixed entry point. Non-commit jobs (set via JOB in
+# the launchd plist's EnvironmentVariables) are routed to their scripts, reusing the ONE
+# FDA-granted .app — no rebuild, no re-grant. `exec` keeps the same process under the .app's TCC
+# grant. Default JOB=commit falls through to the commit leg below.
+case "${JOB:-commit}" in
+  commit) : ;;
+  settle)   exec /bin/bash "$(dirname "$0")/auto_settle.sh" ;;
+  *) echo "auto_commit: unknown JOB=$JOB" >&2; exit 2 ;;
+esac
+# ---------------------------------------------------------------------------------------------
+
 CONDA="/Applications/ana/anaconda3/bin/conda"
 GIT="/usr/bin/git"
 CODE_DIR="${CODE_DIR:-$HOME/Documents/voltstream-ai}"   # real code (signal files) — python runs here
@@ -27,6 +40,13 @@ REPO="${JOURNAL_REPO:-$CODE_DIR}"                        # git tree holding the 
 JPATH="$REPO/journal"                                    # absolute journal dir
 LOG="$JPATH/auto.log"
 JOBS_LOG="$JPATH/jobs.jsonl"
+
+# Constraint-4 guardrail: a fixture (test) run must target a TEMP journal, never the real book.
+# Catches an empty/unset JOURNAL_REPO silently falling through to the real repo.
+if [ -n "${DART_FIXTURE:-}" ] && [ "$REPO" = "$HOME/Documents/voltstream-ai" ]; then
+  echo "REFUSING: DART_FIXTURE set but JOURNAL_REPO is not a temp journal (REPO=$REPO)" >&2
+  exit 3
+fi
 
 source "$(dirname "$0")/joblog.sh"
 

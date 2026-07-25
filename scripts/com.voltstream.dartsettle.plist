@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference copy. Install with:
+    cp scripts/com.voltstream.dartsettle.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.voltstream.dartsettle.plist
+  Auto-settle leg, daily ~09:00 ET (after the prior day's RT prices are final). Runs the SAME
+  FDA-granted DartAutoCommit.app stub as the commit leg, but sets JOB=settle so auto_commit.sh
+  dispatches to auto_settle.sh — one FDA grant covers all jobs, no rebuild. StartCalendarInterval
+  re-runs a missed job on the next wake. See CLAUDE.md ("launchd auto-commit").
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.voltstream.dartsettle</string>
+
+    <!-- same .app executable as the commit agent; JOB=settle routes it -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/mikeoc/Library/Application Support/VoltStream/DartAutoCommit.app/Contents/MacOS/dart_auto_commit</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>JOB</key>
+        <string>settle</string>
+    </dict>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.err.log</string>
+</dict>
+</plist>

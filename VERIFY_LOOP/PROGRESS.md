@@ -17,7 +17,15 @@ Supervised. Max 10 iterations. ONE task/commit. settle=arithmetic, no LLM in com
         Non-blocking: cd-fail where $REPO/journal itself is unreachable can't write the row (inherent).
         commit <pending>.
         LAUNCHD ENV-PASSTHROUGH CONFIRMED → tasks 3/5 need NO rebuild, NO FDA re-grant.
-- [ ] 3 — Auto-settle job (JOB=settle agent ~09:00 ET, catch-up loop, commit+push+log).
+- [x] 3 — Auto-settle job scripts/auto_settle.sh (dispatched from auto_commit.sh on JOB=settle;
+        com.voltstream.dartsettle plist ~09:00 ET, reuses the FDA .app — NO rebuild). Catch-up settle
+        (pure arithmetic), commit+push ledger, jobs.jsonl row. Added constraint-4 GUARD (fixture run
+        must target temp journal, else exit 3) after a test misfire showed empty JOURNAL_REPO falls
+        through to real (no data harmed — hub mismatch — cleaned up stray gitignored files). Fixed
+        harness: temp repo now carries a faithful .gitignore (jobs.jsonl/*.log) so idempotency is real.
+        VERIFIED: self (3-day backlog→+21, idempotent, JOB=settle kickstart via launchd) + fresh-eyes
+        GREEN 6/6 (P&L hand-recomputed, idempotent, never-backdate skips no-data day, no LLM, guard,
+        real untouched). commit <pending>. Real settle agent NOT installed — Mike's live action.
 - [ ] 4 — Notifications scripts/notify.sh (ntfy.sh, NTFY_TOPIC, DRY_RUN).
 - [ ] 5 — Watchdog (JOB=watchdog agent ~18:30 ET) reads jobs.jsonl.
 - [ ] 6 — Report: equity curve + regime note + backlog flag.
