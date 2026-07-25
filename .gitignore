@@ -16,6 +16,8 @@ env/
 *.db
 *.sqlite3
 *.log
+# structured job-run log for the daily-rhythm agents — local runtime state, not the audit trail
+journal/jobs.jsonl
 .DS_Store
 .claude/settings.local.json
 models/*.pkl

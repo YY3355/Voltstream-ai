@@ -1,65 +1,93 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------
-# auto_commit.sh — automate the DART journal's COMMIT leg ONLY.
-# (settle + report stay MANUAL — that's the judgment leg.)
+# auto_commit.sh — the DART journal's COMMIT leg (generate + commit + push tomorrow's calls).
+# Run by launchd (com.voltstream.dartcommit) daily at 16:00 ET via the DartAutoCommit.app stub.
 #
-# Run by launchd (com.voltstream.dartcommit) daily at 16:00 ET. It:
-#   1. generates tomorrow's calls   -> journal/calls_<tomorrow>.json
-#   2. commits + pushes them         (git push uses the existing osxkeychain credential)
-# If the calls were already committed earlier today (a manual run), it exits 0 cleanly.
-# All output + a timestamp is appended to journal/auto.log (gitignored via *.log).
+#   1. generate tomorrow's calls   -> journal/calls_<tomorrow>.json  (stamped: model_version/auto/UTC)
+#   2. commit + push them          (git push uses the existing osxkeychain credential)
+# Already committed earlier today -> clean exit 0. All output + UTC/local timestamp -> journal/auto.log.
+# One structured row per run -> journal/jobs.jsonl (via the EXIT trap, so EVERY path is recorded).
 #
-# NOTE: no `set -e` — several steps intentionally return non-zero (grep miss,
-# `git diff --quiet`), and we handle exit codes explicitly.
+# Test seams (constraint 4 — never touch the real book in tests):
+#   CODE_DIR       where dart_journal.py lives / python cwd  (default ~/Documents/voltstream-ai)
+#   JOURNAL_REPO   git working tree the journal is committed in (default = CODE_DIR)
+#   JOURNAL_REMOTE git push target                          (default: the repo's configured origin)
+#   DART_ASOF      injectable 'now' (YYYY-MM-DD)            -> python (never backdates)
+#   DART_FIXTURE   realized-DART CSV (no network)           -> python
+#
+# NOTE: no `set -e` — several steps intentionally return non-zero (grep miss, `git diff --quiet`);
+# exit codes are handled explicitly, and the EXIT trap always writes the jobs.jsonl row.
 # ---------------------------------------------------------------------------
 
-# launchd gives a minimal environment: set an explicit PATH and use full tool paths.
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Applications/ana/anaconda3/bin:$PATH"
 CONDA="/Applications/ana/anaconda3/bin/conda"
 GIT="/usr/bin/git"
-REPO="$HOME/Documents/voltstream-ai"
-LOG="$REPO/journal/auto.log"
+CODE_DIR="${CODE_DIR:-$HOME/Documents/voltstream-ai}"   # real code (signal files) — python runs here
+REPO="${JOURNAL_REPO:-$CODE_DIR}"                        # git tree holding the journal
+JPATH="$REPO/journal"                                    # absolute journal dir
+LOG="$JPATH/auto.log"
+JOBS_LOG="$JPATH/jobs.jsonl"
 
-# dart_journal.py uses relative paths (journal/) — must run from the repo root.
-cd "$REPO" || { echo "$(date '+%F %T %Z') FATAL: cd $REPO failed" >>"$LOG" 2>&1; exit 1; }
+source "$(dirname "$0")/joblog.sh"
 
-# From here, append everything (stdout+stderr) to the gitignored log.
+# --- structured job-log row: set as we go, written once by the EXIT trap -------------------
+JOB="commit"
+ASOF="${DART_ASOF:-$(date +%F)}"
+# tomorrow derived FROM asof, so the commit message always matches the calls file it writes
+TOMORROW="$(date -j -v+1d -f '%Y-%m-%d' "$ASOF" '+%Y-%m-%d' 2>/dev/null || date -v+1d +%F)"
+STARTED="$(date +%FT%T%z)"
+STATUS="unknown"; ERROR=""; COMMIT_SHA=""
+mkdir -p "$JPATH"
+write_row() { emit_job_row "$JOBS_LOG" "$JOB" "$ASOF" "$STARTED" "$STATUS" "$ERROR" "$COMMIT_SHA"; }
+trap write_row EXIT
+
+# git ops run in the journal repo
+cd "$REPO" || { STATUS="failure"; ERROR="cd $REPO failed"
+  echo "$(date '+%F %T %z') FATAL: cd $REPO failed" >>"$LOG" 2>&1; exit 1; }
+
 exec >>"$LOG" 2>&1
 echo ""
-echo "===== $(date '+%F %T %Z') auto_commit START (pid $$) ====="
+echo "===== auto_commit START  local=$(date '+%F %T %z')  utc=$(date -u '+%F %T')Z  (pid $$) ====="
 
-# 1) generate tomorrow's calls (DART pull is disk-cached in dart_cache/)
-OUT="$("$CONDA" run -n volt python dart_journal.py commit 2>&1)"
+# 1) generate tomorrow's calls — python runs in CODE_DIR (so signal files + git hash-object resolve),
+#    writing into this repo's journal via JOURNAL_DIR. DART_ASOF/DART_FIXTURE pass through the env.
+OUT="$(cd "$CODE_DIR" && JOURNAL_DIR="$JPATH" "$CONDA" run -n volt python dart_journal.py commit 2>&1)"
 RC=$?
 echo "$OUT"
 echo "[dart_journal commit rc=$RC]"
 
 # 2a) already committed earlier today -> nothing to do, clean exit
 if echo "$OUT" | grep -qi "already committed"; then
-  echo "===== END: already committed today — exit 0 (no duplicate) ====="
+  STATUS="already-committed"
+  echo "===== END: already committed today — exit 0 (no duplicate)  utc=$(date -u '+%F %T')Z ====="
   exit 0
 fi
 
 # 2b) generation failed -> surface it, do NOT commit
 if [ "$RC" -ne 0 ]; then
-  echo "===== END: commit generation FAILED (rc=$RC) — exit 1 ====="
+  STATUS="failure"; ERROR="commit generation rc=$RC: $(echo "$OUT" | tail -1)"
+  echo "===== END: commit generation FAILED (rc=$RC) — exit 1  utc=$(date -u '+%F %T')Z ====="
   exit 1
 fi
 
 # 3) commit + push the new calls file
 "$GIT" add journal
 if "$GIT" diff --cached --quiet -- journal; then
-  echo "===== END: nothing new staged under journal/ — exit 0 ====="
+  STATUS="noop"
+  echo "===== END: nothing new staged under journal/ — exit 0  utc=$(date -u '+%F %T')Z ====="
   exit 0
 fi
-"$GIT" commit -m "DART calls (auto) $(date -v+1d +%F)"
+"$GIT" commit -m "DART calls (auto) $TOMORROW"
 echo "[git commit rc=$?]"
-"$GIT" push
+COMMIT_SHA="$("$GIT" rev-parse HEAD)"
+"$GIT" push ${JOURNAL_REMOTE:+"$JOURNAL_REMOTE" HEAD}
 PUSH_RC=$?
 echo "[git push rc=$PUSH_RC]"
 if [ "$PUSH_RC" -ne 0 ]; then
-  echo "===== END: committed locally but PUSH FAILED (rc=$PUSH_RC) — exit 1 ====="
+  STATUS="failure"; ERROR="push rc=$PUSH_RC (commit $COMMIT_SHA is local-only)"
+  echo "===== END: committed locally but PUSH FAILED (rc=$PUSH_RC) — exit 1  utc=$(date -u '+%F %T')Z ====="
   exit 1
 fi
-echo "===== END: committed + pushed — exit 0 ====="
+STATUS="success"
+echo "===== END: committed + pushed $COMMIT_SHA — exit 0  utc=$(date -u '+%F %T')Z ====="
 exit 0
