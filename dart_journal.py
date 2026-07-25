@@ -159,18 +159,54 @@ def cmd_settle():
         print("now run:  git add journal && git commit -m 'DART settlement'")
 
 
+def _sparkline(vals):
+    blocks = "▁▂▃▄▅▆▇█"
+    lo, hi = min(vals), max(vals)
+    rng = (hi - lo) or 1.0
+    return "".join(blocks[int((v - lo) / rng * (len(blocks) - 1))] for v in vals)
+
+
+def _unsettled_backlog():
+    """Committed call-days (date < today) with no ledger rows yet — the always-visible backlog."""
+    if not os.path.isdir(JDIR):
+        return []
+    done = set()
+    if os.path.exists(LEDGER):
+        done = set(pd.read_csv(LEDGER)["date"].astype(str).unique())
+    today = _asof().strftime("%Y-%m-%d")
+    return sorted(f[6:16] for f in os.listdir(JDIR)
+                  if f.startswith("calls_") and f[6:16] < today and f[6:16] not in done)
+
+
 def cmd_report():
+    backlog = _unsettled_backlog()
     if not os.path.exists(LEDGER):
-        print("no ledger yet — commit calls today, settle tomorrow"); return
+        print("no ledger yet — commit calls today, settle tomorrow")
+        if backlog:
+            print(f"  ⚠ committed but UNSETTLED ({len(backlog)}): {', '.join(backlog)}   (run: settle)")
+        return
     df = pd.read_csv(LEDGER)
-    daily = df.groupby("date")["pnl"].sum()
+    daily = df.groupby("date")["pnl"].sum().sort_index()
+    cum = daily.cumsum()
     hit = float((df["position"] * df["dart"] > 0).mean())
     print(f"DART paper book — {df['date'].nunique()} settled days, {len(df)} positions")
+    # one book, honestly labeled — same rule throughout, only the trigger changed
+    print("  regime: manual execution of the rule through 2026-07-22 · same rule auto-committed")
+    print("          from 2026-07-24 (each auto calls file stamped model_version / generated_at UTC).")
     print(f"  cumulative P&L : ${df['pnl'].sum():+.2f}   (1 MW hour clips, no fees/execution)")
     print(f"  hit rate       : {100*hit:.1f}%")
     print(f"  best / worst day: ${daily.max():+.2f} / ${daily.min():+.2f}")
     print(f"  by hub: " + ", ".join(f"{h} ${v:+.1f}" for h, v in df.groupby('hub')['pnl'].sum().items()))
+    # equity curve = cumulative P&L over the settled days
+    print(f"  equity curve   : {_sparkline(list(cum))}   (${cum.iloc[0]:+.2f} → ${cum.iloc[-1]:+.2f})")
+    for d, c in cum.items():
+        print(f"      {d}  day ${daily[d]:+7.2f}   cum ${c:+8.2f}")
     print("  NOT real trading: virtual fills at settlement, no execution/fees/risk limits.")
+    # backlog is ALWAYS visible at the bottom — committed-but-unsettled days never hide
+    if backlog:
+        print(f"  ⚠ committed but UNSETTLED ({len(backlog)}): {', '.join(backlog)}   (run: settle)")
+    else:
+        print("  ✓ all committed past days are settled.")
 
 
 if __name__ == "__main__":

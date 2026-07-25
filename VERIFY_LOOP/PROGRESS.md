@@ -38,7 +38,11 @@ Supervised. Max 10 iterations. ONE task/commit. settle=arithmetic, no LLM in com
         conda-stderr-noise leaking into the alert (capture stdout only). VERIFIED self (healthy/missing/
         failed/backlog>1/backlog==1 grace/settled-excluded + JOB=watchdog kickstart) + fresh-eyes GREEN
         7/7 (incl. exact >1 threshold, clean message, launchd path). commit <pending>.
-- [ ] 6 — Report: equity curve + regime note + backlog flag.
+- [x] 6 — Report: cmd_report now prints regime note (manual ≤7/22 / auto ≥7/24, stamped), an equity
+        curve (sparkline + per-day day/cum), the honesty footer, and an always-visible committed-but-
+        UNSETTLED backlog flag (⚠ / ✓) using strict date<today. Read-only, no LLM. VERIFIED self (fixture
+        cum +7→+14, real ledger -22.80 + backlog 21/22/24) + fresh-eyes GREEN 6/6 (equity math, backlog
+        boundary, regime/footer, no-ledger path, read-only, real-data). commit <pending>.
 - [ ] 7 — Docs (CLAUDE.md agents/env/caveat) + PROGRESS final state.
 
 ## Append-only log
