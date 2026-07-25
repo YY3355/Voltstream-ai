@@ -33,6 +33,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 case "${JOB:-commit}" in
   commit) : ;;
   settle)   exec /bin/bash "$SCRIPT_DIR/auto_settle.sh" ;;
+  watchdog) exec /bin/bash "$SCRIPT_DIR/watchdog.sh" ;;
   *) echo "auto_commit: unknown JOB=$JOB" >&2; exit 2 ;;
 esac
 # ---------------------------------------------------------------------------------------------

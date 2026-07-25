@@ -32,7 +32,12 @@ Supervised. Max 10 iterations. ONE task/commit. settle=arithmetic, no LLM in com
         notify on routine no-ops (already-committed / settle noop). FIXED: NOTIFY/joblog/dispatch now use
         an absolute SCRIPT_DIR (relative $0 broke after the job cd'd away). VERIFIED self + fresh-eyes
         GREEN 6/6 incl. launchd-path kickstart showing the settle notice. commit <pending>.
-- [ ] 5 — Watchdog (JOB=watchdog agent ~18:30 ET) reads jobs.jsonl.
+- [x] 5 — Watchdog scripts/watchdog.sh + watchdog_check.py (JOB=watchdog agent ~18:30 ET; dispatched
+        via the same stub). Reads jobs.jsonl + journal: alerts HIGH if today's commit missing/failed OR
+        settle backlog >1 day; healthy=SILENT. Read-only (no commit/push), no LLM, guard present. FIXED
+        conda-stderr-noise leaking into the alert (capture stdout only). VERIFIED self (healthy/missing/
+        failed/backlog>1/backlog==1 grace/settled-excluded + JOB=watchdog kickstart) + fresh-eyes GREEN
+        7/7 (incl. exact >1 threshold, clean message, launchd path). commit <pending>.
 - [ ] 6 — Report: equity curve + regime note + backlog flag.
 - [ ] 7 — Docs (CLAUDE.md agents/env/caveat) + PROGRESS final state.
 

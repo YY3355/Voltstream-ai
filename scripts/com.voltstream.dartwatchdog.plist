@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference copy. Install with:
+    cp scripts/com.voltstream.dartwatchdog.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.voltstream.dartwatchdog.plist
+  Daily health check ~18:30 ET (after both the 16:00 commit and the 09:00 settle should have run).
+  Runs the SAME FDA-granted DartAutoCommit.app stub with JOB=watchdog -> auto_commit.sh dispatches to
+  watchdog.sh. Notifies loudly if today's commit is missing/failed or the settle backlog > 1 day;
+  healthy = silent. See CLAUDE.md ("launchd auto-commit").
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.voltstream.dartwatchdog</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/mikeoc/Library/Application Support/VoltStream/DartAutoCommit.app/Contents/MacOS/dart_auto_commit</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>JOB</key>
+        <string>watchdog</string>
+    </dict>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>18</integer>
+        <key>Minute</key>
+        <integer>30</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/mikeoc/Documents/voltstream-ai/journal/launchd.err.log</string>
+</dict>
+</plist>
