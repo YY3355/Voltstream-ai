@@ -25,16 +25,24 @@ import sys
 import numpy as np
 import pandas as pd
 
-JDIR = "journal"
+JDIR = os.environ.get("JOURNAL_DIR", "journal")   # tests point this at a temp dir
 LEDGER = os.path.join(JDIR, "ledger.csv")
 THRESH = 1.0     # $/MWh trailing bias needed to take a position
 TRAIL_DAYS = 10
+# The signal-logic files. model_version = their git blob SHAs, so it changes iff the
+# rule (build_calls) or its data source (fetch_live) changes — not on unrelated commits.
+SIGNAL_FILES = ["dart_journal.py", "dart_engine.py"]
 
 
 # ----------------------- pure, fixture-testable core -----------------------
-def build_calls(dart_hist: pd.DataFrame, for_date: str):
+def build_calls(dart_hist: pd.DataFrame, for_date: str,
+                model_version="unknown", generated_by="manual", generated_at=None):
     """dart_hist: hourly DataFrame (index=timestamps, cols=hubs) of realized DART.
-    Returns the calls dict for `for_date` from trailing hour-of-day mean bias."""
+    Returns the calls dict for `for_date` from trailing hour-of-day mean bias.
+
+    Regime stamps (constraint 1): every file carries the model_version (git SHA of the
+    signal-logic files at generation time), generated_by ("auto" = systematic rule, not
+    hand-picked), and generated_at (UTC ISO). Pure: caller supplies the stamps."""
     calls = {}
     for hub in dart_hist.columns:
         bias = dart_hist[hub].groupby(dart_hist.index.hour).mean()
@@ -43,8 +51,13 @@ def build_calls(dart_hist: pd.DataFrame, for_date: str):
             b = float(bias.get(hour, 0.0))
             pos[str(hour)] = 1 if b > THRESH else (-1 if b < -THRESH else 0)
         calls[hub] = pos
+    if generated_at is None:
+        generated_at = pd.Timestamp.now(tz="UTC").isoformat(timespec="seconds")
     return {"for_date": for_date,
             "created_at": pd.Timestamp.now().isoformat(timespec="seconds"),
+            "generated_at": generated_at,      # UTC ISO — when the rule produced this file
+            "generated_by": generated_by,      # "auto" (systematic) | "manual"
+            "model_version": model_version,    # git blob SHA(s) of the signal-logic files
             "strategy": f"trailing {TRAIL_DAYS}d hour-of-day DART bias, threshold ${THRESH}/MWh, 1 MW",
             "positions": calls}
 
@@ -68,7 +81,30 @@ def score_calls(calls: dict, realized_dart: pd.DataFrame):
 
 
 # ----------------------- live plumbing (Mac) -----------------------
+def model_version():
+    """Combined short git blob SHA of the signal-logic files. 'unknown' if git is unavailable.
+    Impure (shells to git) — kept out of the pure core so build_calls stays fixture-testable."""
+    import subprocess
+    try:
+        out = subprocess.run(["git", "hash-object", *SIGNAL_FILES],
+                             capture_output=True, text=True, check=True).stdout.split()
+        return "+".join(s[:12] for s in out) if out else "unknown"
+    except Exception:
+        return "unknown"
+
+
+def _asof():
+    """Injectable 'now' as a normalized date. DART_ASOF (YYYY-MM-DD) for tests; else real now().
+    Never backdate in production — this seam exists so the checker can drive a fixed date."""
+    v = os.environ.get("DART_ASOF")
+    return (pd.Timestamp(v) if v else pd.Timestamp.now()).normalize()
+
+
 def _dart_history(days):
+    # test seam: a CSV of realized hourly DART (index=timestamp, cols=hubs) — no network.
+    fx = os.environ.get("DART_FIXTURE")
+    if fx:
+        return pd.read_csv(fx, index_col=0, parse_dates=True).dropna(how="all")
     from dart_engine import fetch_live
     da, rt = fetch_live(days=days)
     hubs = [h for h in da.columns if h in rt.columns]
@@ -78,12 +114,15 @@ def _dart_history(days):
 
 def cmd_commit():
     os.makedirs(JDIR, exist_ok=True)
-    tomorrow = (pd.Timestamp.now().normalize() + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+    tomorrow = (_asof() + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
     path = os.path.join(JDIR, f"calls_{tomorrow}.json")
     if os.path.exists(path):
         print(f"calls for {tomorrow} already committed ({path}) — not overwriting"); return
     hist = _dart_history(TRAIL_DAYS)
-    calls = build_calls(hist, tomorrow)
+    calls = build_calls(hist, tomorrow,
+                        model_version=model_version(),
+                        generated_by=os.environ.get("GENERATED_BY", "auto"),
+                        generated_at=pd.Timestamp.now(tz="UTC").isoformat(timespec="seconds"))
     with open(path, "w") as f:
         json.dump(calls, f, indent=1)
     n = sum(1 for h in calls["positions"].values() for v in h.values() if v != 0)
@@ -97,7 +136,7 @@ def cmd_settle():
     done = set()
     if os.path.exists(LEDGER):
         done = set(pd.read_csv(LEDGER)["date"].astype(str).unique())
-    today = pd.Timestamp.now().normalize().strftime("%Y-%m-%d")
+    today = _asof().strftime("%Y-%m-%d")
     pending = [f for f in sorted(os.listdir(JDIR)) if f.startswith("calls_")
                and f[6:16] < today and f[6:16] not in done]
     if not pending:
@@ -150,10 +189,16 @@ if __name__ == "__main__":
         dart = pd.DataFrame(index=hrs)
         dart["HB_A"] = rng.normal(0, 0.3, 240) + np.where(np.isin(hrs.hour, range(6, 11)), 2.0, 0.0)
         dart["HB_B"] = rng.normal(0, 0.3, 240) - np.where(np.isin(hrs.hour, range(18, 22)), 2.0, 0.0)
-        calls = build_calls(dart[dart.index < "2026-06-29"], "2026-06-29")
+        calls = build_calls(dart[dart.index < "2026-06-29"], "2026-06-29",
+                            model_version="testsha123", generated_by="auto",
+                            generated_at="2026-06-28T12:00:00+00:00")
         assert calls["positions"]["HB_A"]["7"] == 1, "should sell DA where DA runs rich"
         assert calls["positions"]["HB_B"]["19"] == -1, "should buy DA where DA runs cheap"
         assert calls["positions"]["HB_A"]["14"] == 0, "no bias -> flat"
+        # regime stamps (constraint 1) must be embedded
+        assert calls["model_version"] == "testsha123", "model_version stamp"
+        assert calls["generated_by"] == "auto", "generated_by stamp"
+        assert calls["generated_at"] == "2026-06-28T12:00:00+00:00", "generated_at (UTC ISO) stamp"
         rows = score_calls(calls, dart)
         pnl = sum(r["pnl"] for r in rows)
         assert pnl > 0, "aligned-bias fixture should score positive"

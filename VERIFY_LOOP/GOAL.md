@@ -1,41 +1,76 @@
-# GOAL — automate the DART journal COMMIT leg via a launchd agent (settle/report stay MANUAL)
+# GOAL — complete the daily-rhythm system around the launchd auto-commit leg
 
-Only the COMMIT leg is automated. settle + report are the judgment leg and stay manual. A macOS
-launchd agent runs the commit daily at 16:00 ET (DA posts ~14:30 ET; 16:00 = safe margin).
-launchd (NOT cron) because launchd runs MISSED jobs on wake if the Mac was asleep.
+Settle automated, failures loud, record honest. Build the rhythm around the EXISTING commit leg
+(scripts/auto_commit.sh → DartAutoCommit.app compiled stub → FDA grant, daily 16:00 ET). Supervised,
+max 10 iterations, ONE task/commit, pause+report after each. Never commit red. Same check red 3x = blocked.
 
-## Facts (verified from the repo)
-- `python dart_journal.py commit` (cmd_commit): writes journal/calls_<tomorrow>.json; if it already
-  exists prints "calls for <d> already committed (<path>) — not overwriting" and RETURNS (writes nothing).
-  Success prints "committed <path>: N hub-hour positions for <d>".
-- conda: /Applications/ana/anaconda3/bin/conda (full path — launchd has no shell profile).
-- git: /usr/bin/git. Remote: HTTPS github.com/YY3355/Voltstream-ai.git -> push uses osxkeychain cred.
-- Mac timezone = America/New_York (ET), so launchd Hour=16 == 16:00 ET.
-- journal/ IS tracked (calls_*.json committed). journal/auto.log is ALREADY gitignored (*.log rule).
-- dart_cache/ warm -> commit's DART pull is fast. Tomorrow = 2026-07-23 (no calls file yet = fresh path free).
+## Hard constraints (violating any = RED even if it runs)
+1. REGIME DECLARATION — one book, systematic, honestly labeled. journal/ ≤2026-07-22 = manual execution
+   of the rules; ≥2026-07-24 = same rules, auto-committed. Every auto-generated calls file from now on
+   embeds: `model_version` (git SHA of the signal-logic files at gen time), `generated_by:"auto"`,
+   `generated_at` (UTC ISO). NEVER rewrite/amend already-pushed history — 07-24/07-25 files stay as-is;
+   regime note lives in README + ledger header; stamps apply GOING FORWARD (07-26+).
+2. Never backdate. Commit-leg run after its valid window logs a MISSED day. Settle only settles days
+   whose data exists. Git timestamps stay meaningful.
+3. Settle is arithmetic: deterministic, NO LLM anywhere in commit or settle paths.
+4. Tests NEVER touch real journal/, real ledger, or push to origin. Journal path + remote come from env
+   (JOURNAL_DIR, JOURNAL_REMOTE); tests use temp dirs + a throwaway local bare repo as remote.
+   Notifications DRY_RUN=1 in tests.
+5. Preserve the FDA chain. Prefer editing shell scripts the existing stub invokes over rebuilding the
+   .app. If a rebuild is unavoidable: STOP, report, include re-grant steps — never silently ship a job
+   TCC will kill.
+6. Times: schedule local via launchd; every log line records UTC + local. README notes: launchd only
+   runs while Mac awake/on; StartCalendarInterval catches missed runs on wake, but multi-day laptop-off
+   = missed days BY DESIGN; Fly migration is the future fix.
 
-## Deliverables
-1. scripts/auto_commit.sh (+ chmod +x): cd repo; `<conda> run -n volt python dart_journal.py commit`;
-   if output has "already committed" -> exit 0 (manual run earlier that day is fine); else
-   `git add journal && git commit -m "DART calls (auto) $(date -v+1d +%F)" && git push`.
-   Append ALL output + timestamp to journal/auto.log (gitignored). Full tool paths + PATH for launchd.
-2. ~/Library/LaunchAgents/com.voltstream.dartcommit.plist: StartCalendarInterval Hour 16 Minute 0,
-   runs /bin/bash scripts/auto_commit.sh. Keep a reference copy in scripts/ for reproducibility.
+## Facts discovered (repo truth)
+- Signal-logic files = dart_journal.py (build_calls) + dart_engine.py (fetch_live). model_version =
+  their git blob SHAs (git hash-object), so it changes iff signal logic changes.
+- dart_journal.py: build_calls (pure), score_calls (pure), cmd_commit/cmd_settle/cmd_report (live).
+  JDIR="journal" hardcoded → make env-overridable (JOURNAL_DIR). _dart_history → live network via
+  dart_engine.fetch_live → add DART_FIXTURE seam for tests. Add DART_ASOF seam for injectable "now".
+- Live settle backlog (ledger ends 07-16): unsettled past days w/ calls = 07-21, 07-22, 07-24
+  (07-23 has NO calls file = missed day; 07-25 = today). Catch-up loop DISCOVERS them (no hardcoding).
+- Commit stub: DartAutoCommit.app/Contents/MacOS/dart_auto_commit (compiled) → posix_spawn /bin/bash
+  scripts/auto_commit.sh with `environ` passed through → launchd plist EnvironmentVariables reach the
+  shell. => route new jobs by JOB env in each new plist, REUSING the one FDA .app (no rebuild). VERIFY
+  env-passthrough via kickstart before relying on it. Fallback = dispatcher rebuild + re-grant (report).
+- Env seams: JOURNAL_DIR, DART_ASOF, DART_FIXTURE (python); JOB, JOURNAL_REPO, JOURNAL_REMOTE, DRY_RUN,
+  NTFY_TOPIC (shell). jobs.jsonl gitignored (*.log won't match → add explicit rule or name .jsonl ignored).
 
-## Definition of done (== the user's verify)
-(1) launchctl load + kickstart manually -> a REAL calls_<tomorrow>.json + git push LAND, auto.log records it.
-(2) the already-committed path exits 0 without a duplicate commit/push.
-(3) unload / reload survives (job re-registers; kickstart still works).
-Push happens for real (this is the point). Keychain cred used for push.
+## Tasks (in order — ONE per iteration/commit)
+1. Regime declaration + stamping: gen path embeds model_version/generated_by/generated_at; README
+   "Ledger regime" section + ledger header note (manual ≤7/22, auto ≥7/24, virtual fills/no fees footer).
+   Add python env seams (JOURNAL_DIR, DART_ASOF, DART_FIXTURE) needed to test in a temp journal.
+   Verify: fixture gen carries stamps; README/ledger text present; git log untouched for old files.
+2. Structured job log: append-only journal/jobs.jsonl (gitignored) {job,asof_date,started,ended,status,
+   error,commit_sha}; auto_commit.sh writes it. Verify: commit-leg twice in fixture env → 1 success + 1
+   already-committed row, valid JSON lines, UTC+local timestamps.
+3. Auto-settle job scripts/auto_settle.sh via EXISTING stub (JOB=settle env in a new launchd agent
+   ~09:00 ET): settles ALL unsettled past days it has data for (catch-up loop), updates ledger,
+   commits+pushes, logs jobs.jsonl. Verify: fixture backlog of 3 → all settle one run, hand-derived P&L
+   matches, idempotent 2nd run, kickstart path exercised (env-passthrough confirmed).
+4. Notifications scripts/notify.sh: ntfy.sh (NTFY_TOPIC env, silent no-op if unset, DRY_RUN prints):
+   commit push success (date+n calls), settle success (day(s)+P&L delta+cumulative), ANY failure (loud+
+   error). Verify: DRY_RUN output per event; failure path fires on injected error.
+5. Watchdog scripts/watchdog.sh (JOB=watchdog agent ~18:30 ET): reads jobs.jsonl — today's commit
+   missing/failed OR settle backlog >1 day → notify loud; healthy = silent. Verify: fixture log missing
+   run → fires; healthy → silent; kickstart path exercised.
+6. Report update: `report` prints equity curve from settled days + regime note + honesty footer; flags
+   committed-but-unsettled days at bottom (backlog always visible). Verify: fixture ledger → correct
+   output incl backlog flag.
+7. Docs: CLAUDE.md launchd section (all agents, dispatcher/JOB env, env vars, DRY_RUN, laptop-awake
+   caveat); PROGRESS.md final state.
 
-## Verify (fresh eyes — separate maker from checker)
-- bash -n + shellcheck (if avail) on the script; plutil -lint on the plist.
-- launchctl bootstrap/enable + kickstart; read auto.log; `git log`/`git ls-remote` to confirm push landed.
-- Re-kickstart for the already-committed exit-0 path; confirm HEAD unchanged (no dup).
-- launchctl bootout + bootstrap again; launchctl print shows it; kickstart works.
+## Verification discipline (maker ≠ checker)
+- Fresh-eyes subagent per task; independently drives the job with injected DART_ASOF + DART_FIXTURE in a
+  temp JOURNAL_DIR + throwaway bare remote; inspects files/stamps/commits/remote/log rows.
+- Settle math spot-check: checker re-derives one position's P&L by hand from fixture DA/RT. Pretty
+  ledger + wrong number = RED.
+- Idempotency: every job twice; 2nd run = no dup commits/rows/notifications.
+- Ships a new/changed launchd agent → NOT green until the kickstart (launchd-invoked) path is exercised.
 
-## Guardrails
-- Supervised. Max 8 iterations. One task = one commit. Never commit red.
-- The launchd job does a REAL git push (intended). Do NOT automate settle/report. Do NOT commit auto.log
-  or launchd out/err logs (gitignored). Keep the plist out of the repo tree (lives in ~/Library/LaunchAgents),
-  reference copy in scripts/ only.
+## Out of scope this loop
+No briefing job, news, RAG, forecasting, Fly changes. When all green: pause with (a) exact LIVE commands
+for Mike to clear the real settle backlog, (b) any FDA re-grant steps IF a rebuild happened. Live
+backlog clearing + any real-journal action = MIKE's hands, not mine.

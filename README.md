@@ -34,6 +34,26 @@
 - **Forward-curve levels are illustrative** (methodology is real; drop in CME settlements and it's market-calibrated). **No traded-options pricer on purpose** — pricing against an invented vol surface would be worse than not building it.
 - **The toy DCOPF is a 3-bus learning model**; the constraints monitor reads what SCED computed — it is not a grid model (no topology, no shift factors).
 
+## Ledger regime (one book, systematic, honestly labeled)
+
+The DART paper book is a **single continuous book** running one fixed rule (trailing hour-of-day DART
+bias, threshold $1/MWh, 1 MW clips). What changed is only *who pulls the trigger*, and the record says so:
+
+- **Through 2026-07-22** — the rule, executed **manually** (calls committed by hand before settlement).
+- **From 2026-07-24 on** — the **same rule**, now **auto-committed** at 16:00 ET by the launchd job.
+  Every auto-generated calls file embeds its provenance: `model_version` (git SHA of the signal-logic
+  files at generation time), `generated_by:"auto"`, and `generated_at` (UTC ISO).
+
+Already-pushed history is never rewritten — the pre-stamp files (07-24, 07-25) stay exactly as committed;
+the stamps apply going forward. Settlement is pure arithmetic against realized DA-RT prices, appended to
+an immutable ledger. **Virtual fills at settlement, no execution/fees/credit/risk limits** — a discipline
+record, not a profit claim.
+
+**Scheduling caveat:** the jobs are macOS launchd agents, so they only run while the Mac is awake/on.
+`StartCalendarInterval` re-runs a missed job on the next wake, but a multi-day laptop-off stretch = missed
+days *by design* (a commit-leg run after its valid window logs a MISSED day rather than backdating).
+Moving the rhythm to always-on infrastructure (Fly) is the future fix.
+
 ## Stack
 
 Python · FastAPI · cvxpy + HiGHS (MILP/LP) · scikit-learn (gradient-boosted quantile forecasting) · scipy · pandas/numpy · gridstatus + ERCOT Public API · SQLite · vanilla HTML/SVG dashboard.

@@ -11,6 +11,8 @@ env/
 *.csv
 # the DART paper-book ledger IS the git-audited track record — must be tracked
 !journal/*.csv
+# deterministic test fixtures are tracked so checkers/CI need no generate step
+!tests/fixtures/*.csv
 *.db
 *.sqlite3
 *.log
