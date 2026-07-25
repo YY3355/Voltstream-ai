@@ -21,6 +21,10 @@
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Applications/ana/anaconda3/bin:$PATH"
 
+# resolve our own dir to an ABSOLUTE path up front — the job cd's away later, so sibling scripts
+# (joblog.sh, notify.sh, auto_settle.sh) must be referenced absolutely, not via a relative $0.
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 # ---- dispatch -------------------------------------------------------------------------------
 # This file is the DartAutoCommit.app stub's fixed entry point. Non-commit jobs (set via JOB in
 # the launchd plist's EnvironmentVariables) are routed to their scripts, reusing the ONE
@@ -28,7 +32,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Applications/ana/anaconda3/bin:$PATH
 # grant. Default JOB=commit falls through to the commit leg below.
 case "${JOB:-commit}" in
   commit) : ;;
-  settle)   exec /bin/bash "$(dirname "$0")/auto_settle.sh" ;;
+  settle)   exec /bin/bash "$SCRIPT_DIR/auto_settle.sh" ;;
   *) echo "auto_commit: unknown JOB=$JOB" >&2; exit 2 ;;
 esac
 # ---------------------------------------------------------------------------------------------
@@ -48,7 +52,7 @@ if [ -n "${DART_FIXTURE:-}" ] && [ "$REPO" = "$HOME/Documents/voltstream-ai" ]; 
   exit 3
 fi
 
-source "$(dirname "$0")/joblog.sh"
+source "$SCRIPT_DIR/joblog.sh"
 
 # --- structured job-log row: set as we go, written once by the EXIT trap -------------------
 JOB="commit"
@@ -57,9 +61,16 @@ ASOF="${DART_ASOF:-$(date +%F)}"
 TOMORROW="$(date -j -v+1d -f '%Y-%m-%d' "$ASOF" '+%Y-%m-%d' 2>/dev/null || date -v+1d +%F)"
 STARTED="$(date +%FT%T%z)"
 STATUS="unknown"; ERROR=""; COMMIT_SHA=""
+NOTIFY="$SCRIPT_DIR/notify.sh"
 mkdir -p "$JPATH"
-write_row() { emit_job_row "$JOBS_LOG" "$JOB" "$ASOF" "$STARTED" "$STATUS" "$ERROR" "$COMMIT_SHA"; }
-trap write_row EXIT
+finish() {
+  emit_job_row "$JOBS_LOG" "$JOB" "$ASOF" "$STARTED" "$STATUS" "$ERROR" "$COMMIT_SHA"
+  # loud on ANY failure (incl. an unexpected exit) — success is notified inline
+  if [ "$STATUS" = "failure" ] || [ "$STATUS" = "unknown" ]; then
+    bash "$NOTIFY" high "DART commit FAILED" "${ERROR:-unexpected exit (status=$STATUS)}"
+  fi
+}
+trap finish EXIT
 
 # git ops run in the journal repo
 cd "$REPO" || { STATUS="failure"; ERROR="cd $REPO failed"
@@ -109,5 +120,7 @@ if [ "$PUSH_RC" -ne 0 ]; then
   exit 1
 fi
 STATUS="success"
+NCALLS="$(echo "$OUT" | grep -oE '[0-9]+ hub-hour positions' | grep -oE '^[0-9]+')"
+bash "$NOTIFY" default "DART calls committed" "$TOMORROW: ${NCALLS:-?} calls"
 echo "===== END: committed + pushed $COMMIT_SHA — exit 0  utc=$(date -u '+%F %T')Z ====="
 exit 0

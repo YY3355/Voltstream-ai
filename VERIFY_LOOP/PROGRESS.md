@@ -26,7 +26,12 @@ Supervised. Max 10 iterations. ONE task/commit. settle=arithmetic, no LLM in com
         VERIFIED: self (3-day backlog→+21, idempotent, JOB=settle kickstart via launchd) + fresh-eyes
         GREEN 6/6 (P&L hand-recomputed, idempotent, never-backdate skips no-data day, no LLM, guard,
         real untouched). commit <pending>. Real settle agent NOT installed — Mike's live action.
-- [ ] 4 — Notifications scripts/notify.sh (ntfy.sh, NTFY_TOPIC, DRY_RUN).
+- [x] 4 — Notifications scripts/notify.sh (ntfy.sh; NTFY_TOPIC unset=silent no-op; DRY_RUN=1 prints;
+        always exit 0 — can't fail a job). Wired: commit success (date+n calls), settle success (days+
+        P&L delta+cumulative, from ledger arithmetic), ANY failure loud via the EXIT trap (high). No
+        notify on routine no-ops (already-committed / settle noop). FIXED: NOTIFY/joblog/dispatch now use
+        an absolute SCRIPT_DIR (relative $0 broke after the job cd'd away). VERIFIED self + fresh-eyes
+        GREEN 6/6 incl. launchd-path kickstart showing the settle notice. commit <pending>.
 - [ ] 5 — Watchdog (JOB=watchdog agent ~18:30 ET) reads jobs.jsonl.
 - [ ] 6 — Report: equity curve + regime note + backlog flag.
 - [ ] 7 — Docs (CLAUDE.md agents/env/caveat) + PROGRESS final state.

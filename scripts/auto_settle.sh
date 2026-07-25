@@ -13,6 +13,8 @@
 # ---------------------------------------------------------------------------
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Applications/ana/anaconda3/bin:$PATH"
+# resolve our own dir absolutely before the job cd's away (sibling scripts referenced via this)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 CONDA="/Applications/ana/anaconda3/bin/conda"
 GIT="/usr/bin/git"
 CODE_DIR="${CODE_DIR:-$HOME/Documents/voltstream-ai}"
@@ -28,15 +30,21 @@ if [ -n "${DART_FIXTURE:-}" ] && [ "$REPO" = "$HOME/Documents/voltstream-ai" ]; 
   exit 3
 fi
 
-source "$(dirname "$0")/joblog.sh"
+source "$SCRIPT_DIR/joblog.sh"
 
 JOB="settle"
 ASOF="${DART_ASOF:-$(date +%F)}"
 STARTED="$(date +%FT%T%z)"
 STATUS="unknown"; ERROR=""; COMMIT_SHA=""
+NOTIFY="$SCRIPT_DIR/notify.sh"
 mkdir -p "$JPATH"
-write_row() { emit_job_row "$JOBS_LOG" "$JOB" "$ASOF" "$STARTED" "$STATUS" "$ERROR" "$COMMIT_SHA"; }
-trap write_row EXIT
+finish() {
+  emit_job_row "$JOBS_LOG" "$JOB" "$ASOF" "$STARTED" "$STATUS" "$ERROR" "$COMMIT_SHA"
+  if [ "$STATUS" = "failure" ] || [ "$STATUS" = "unknown" ]; then
+    bash "$NOTIFY" high "DART settle FAILED" "${ERROR:-unexpected exit (status=$STATUS)}"
+  fi
+}
+trap finish EXIT
 
 cd "$REPO" || { STATUS="failure"; ERROR="cd $REPO failed"
   echo "$(date '+%F %T %z') FATAL: cd $REPO failed" >>"$LOG" 2>&1; exit 1; }
@@ -79,5 +87,9 @@ if [ "$PUSH_RC" -ne 0 ]; then
   exit 1
 fi
 STATUS="success"
+# P&L delta (this run's settled days) + cumulative (whole ledger) — pure arithmetic from the ledger
+DELTA="$(echo "$OUT" | grep -oE 'day P&L \$[-+0-9.]+' | grep -oE '[-+][0-9.]+' | awk '{s+=$1} END{printf "%+.2f", s+0}')"
+CUM="$(awk -F, 'NR>1{s+=$6} END{printf "%+.2f", s+0}' "$JPATH/ledger.csv")"
+bash "$NOTIFY" default "DART settled" "${SETTLED:-days}: P&L \$$DELTA (cum \$$CUM)"
 echo "===== END: settled [$SETTLED] + pushed $COMMIT_SHA — exit 0  utc=$(date -u '+%F %T')Z ====="
 exit 0
