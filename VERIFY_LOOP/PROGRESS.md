@@ -20,7 +20,13 @@ Never commit red. Same check red 3x = blocked.
         Note: offline data_clean curve months are ~stale (front past->T floors 1d); use future month live.
         VERIFIED self + fresh-eyes GREEN 6/6 (F==curve block, window echoed, put-call parity <1e-6 both
         models, verbatim refusal, honest label, robust/read-only). commit <pending>.
-- [ ] 4 — Structuring panel (Quant): ATM card + Greeks + provenance + battery-vega tie-in. Screenshot.
+- [x] 4 — Structuring panel (Quant card #7 c-struct) + struct() renderer + LOADERS. ATM call/put per
+        hub (front FUTURE month, Bachelier, peak) with value + Greeks + per-hub vol_source; shared
+        provenance strip (model_policy/curve_version/month/asof + "model value ... not a market quote");
+        vega tie-in ("Battery MC vega=+0.038 ... the battery is long exactly what this option prices").
+        SCREENSHOT taken + viewed (renders in house style). VERIFIED self + fresh-eyes GREEN 6/6 (populates
+        4 hubs, DOM==API to the cent, provenance visible, vega phrase, honesty labels, lazy-load hygiene).
+        commit <pending>.
 - [ ] 5 — Climatology build → clim_result.json snapshot; honest date-range label.
 - [ ] 6 — Desk table tab: per-hour today+tomorrow, Clim P(RT>DA), q05/50/95, n, Your Call, 3 reserved —. Screenshot.
 - [ ] 7 — Fresh-clone test + Fly deploy; verify /api/vol, /api/option, desk table on deployed app.

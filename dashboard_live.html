@@ -537,6 +537,18 @@
       <div class="coopt-take" id="hedge-take" style="margin:12px 0 2px;padding:10px 12px;border-left:3px solid var(--green);background:#0c1a12;font-style:italic;color:var(--ink)"></div>
       <div class="coopt-note" id="hedge-note"></div>
     </div>
+
+    <div class="card lit" id="c-struct" style="--accent:var(--amber)">
+      <div class="lid"><span class="num">7</span>
+        <span class="title">Structuring Desk &mdash; ATM Options under Realized Vol</span>
+        <span class="live-dot" style="margin-left:auto">option</span></div>
+      <p class="coopt-sub">ATM call &amp; put per hub for the front delivery month, priced off the bootstrapped forward curve (its F, its version) with <b>realized</b> volatility measured from the price archive. These are <b>model values, not market quotes</b> &mdash; there is no traded ERCOT vanilla to calibrate to. Normal (Bachelier) model, the honest convention for power that can settle negative. Every card shows its full provenance.</p>
+      <div class="coopt-hero" id="struct-hero"></div>
+      <div id="struct-cards"></div>
+      <div id="struct-prov" style="margin-top:8px"></div>
+      <div id="struct-vega" style="margin-top:10px"></div>
+      <div class="coopt-note" id="struct-note">Realized power vol is extreme (ERCOT prices spike and go negative), so these model premia are large &mdash; that magnitude is the honest output of realized vol, not a market price. Same engine (/api/option) prices any hub/month/strike/type; policy is governed (Black-76 refuses F&le;0, Bachelier for near/below-zero).</div>
+    </div>
   </div>
   </section>
   <section class="section" id="sec-learning" data-sec="learning">
@@ -2127,11 +2139,63 @@ async function loadAlerts(){
 }
 let _alertPoll=false;
 let _coInterval=false;
+function _optFmt(x,d){ return (x==null||isNaN(x))?'—':(+x).toFixed(d); }
+async function struct(){
+  const hero=$('struct-hero'); hero.innerHTML='<span class="thinking">pricing ATM structures…</span>';
+  let curve; try{ curve=await (await fetch('/api/curve')).json(); }
+  catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(curve.error||!curve.months){ hero.innerHTML=`<span class="none">${curve.error||'no curve'}</span>`; return; }
+  const today=new Date().toISOString().slice(0,7);
+  const front=curve.months.find(m=>m>today)||curve.months[0];   // front = nearest FUTURE delivery month
+  const hubs=['HB_HOUSTON','HB_NORTH','HB_SOUTH','HB_WEST'], pol='bachelier';
+  let res;
+  try{
+    res=await Promise.all(hubs.map(async h=>{
+      const [c,p]=await Promise.all([
+        fetch(`/api/option?hub=${h}&month=${front}&type=call&policy=${pol}&bucket=peak`).then(r=>r.json()),
+        fetch(`/api/option?hub=${h}&month=${front}&type=put&policy=${pol}&bucket=peak`).then(r=>r.json())]);
+      return {hub:h,c,p};
+    }));
+  }catch(e){ hero.innerHTML='<span class="none">option pricing unreachable</span>'; return; }
+  const ok=res.filter(r=>r.c&&!r.c.error&&r.p&&!r.p.error);
+  if(!ok.length){ hero.innerHTML=`<span class="none">${(res[0]&&res[0].c&&res[0].c.error)||'no prices'}</span>`; return; }
+  const Fs=ok.map(r=>r.c.F), T=ok[0].c.T;
+  hero.innerHTML=
+    `<div class="big"><span class="lab">Front delivery month</span><span class="val">${front}</span></div>`
+    +`<div class="delta">Bachelier ATM · T≈${(T*12).toFixed(1)} mo · realized vol, not implied</div>`
+    +`<div class="mini"><div><span class="l">Hubs</span><b>${ok.length}</b></div>`
+    +`<div><span class="l">Peak F</span><b>$${Math.min(...Fs).toFixed(0)}–$${Math.max(...Fs).toFixed(0)}</b></div>`
+    +`<div><span class="l">Model</span><b>Bachelier</b></div></div>`;
+  let rows=`<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px">`;
+  ok.forEach(r=>{ const c=r.c,p=r.p, short=r.hub.replace('HB_','');
+    rows+=`<div style="border:1px solid #223;border-radius:8px;padding:9px 11px;background:#0c1420">`
+      +`<div style="display:flex;justify-content:space-between;align-items:baseline">`
+        +`<b style="color:var(--amber);font-family:'IBM Plex Mono'">${short}</b>`
+        +`<span style="color:var(--dim);font-size:11px">F $${(+c.F).toFixed(2)} · ATM</span></div>`
+      +`<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;font-family:'IBM Plex Mono';font-size:12px">`
+        +`<div><span style="color:#3fb950">call</span> <b>$${(+c.value).toFixed(2)}</b><br>`
+          +`<span style="color:var(--dim)">Δ ${_optFmt(c.delta,2)} · vega ${_optFmt(c.vega,2)}<br>Γ ${_optFmt(c.gamma,4)} · θ ${_optFmt(c.theta,1)}</span></div>`
+        +`<div><span style="color:#f85149">put</span> <b>$${(+p.value).toFixed(2)}</b><br>`
+          +`<span style="color:var(--dim)">Δ ${_optFmt(p.delta,2)} · vega ${_optFmt(p.vega,2)}<br>Γ ${_optFmt(p.gamma,4)} · θ ${_optFmt(p.theta,1)}</span></div></div>`
+      +`<div style="color:var(--dim);font-size:10px;margin-top:6px;border-top:1px solid #1a2432;padding-top:4px">vol_source: ${c.vol_source}</div></div>`;
+  });
+  $('struct-cards').innerHTML=rows+`</div>`;
+  const pv=ok[0].c;
+  $('struct-prov').innerHTML=`<div style="font-family:'IBM Plex Mono';font-size:11px;color:var(--dim);border-left:3px solid var(--amber);padding:6px 10px;background:#12100a">`
+    +`<b style="color:var(--ink)">provenance</b> &middot; model_policy: <b>${pv.model_policy}</b> &middot; curve_version: <b>${pv.curve_version}</b> &middot; month: <b>${pv.month}</b> &middot; asof: ${pv.asof} &middot; <i>model value under realized vol — not a market quote</i></div>`;
+  $('struct-vega').innerHTML='<span class="thinking">linking battery vega…</span>';
+  try{ const risk=await (await fetch('/api/risk')).json();
+    const v=risk.vega, ov=risk.optionality_value, vs=(v>=0?'+':'')+(+v).toFixed(3);
+    $('struct-vega').innerHTML=`<div style="padding:10px 12px;border-left:3px solid var(--amber);background:#1a140c;font-style:italic;color:var(--ink)">`
+      +`Battery Monte-Carlo <b>vega = ${vs}</b> (positive → long volatility${ov!=null?`; optionality value $${(+ov).toFixed(2)}`:''}). `
+      +`<b>The battery is long exactly what this option prices.</b> Buying this vol doubles the asset’s existing exposure; selling it is the structural hedge.</div>`;
+  }catch(e){ $('struct-vega').innerHTML='<span class="none" style="color:var(--dim)">battery vega tie-in unavailable (risk engine)</span>'; }
+}
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); },
   map(){ initMap(); loadAlerts(); if(!_alertPoll){ _alertPoll=true; setInterval(loadAlerts,60000); } },
-  quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); },
+  quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); struct(); },
   learning(){ dcopf(); constraints(); },
 };
 function openSection(sec){
