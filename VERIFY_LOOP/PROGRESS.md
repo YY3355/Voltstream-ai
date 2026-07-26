@@ -12,7 +12,14 @@ Never commit red. Same check red 3x = blocked.
         VERIFIED self (200, multi-hub sane, bad-input no-500, cache) + fresh-eyes GREEN 7/7 (finite, n_obs
         reproduced to the cent, no fabricated 250d cone, magnitude, honest labels, robust, no-LLM/read-only).
         Known cosmetic: vol_engine.py:63 FutureWarning on each call (left as-is). commit <pending>.
-- [ ] 3 — /api/option governed pricer (curve F + task-2 vol; ≤0 forward => black76 refusal, offer bachelier).
+- [x] 3 — /api/option governed pricer. F = forward-curve monthly block (cached _forward_curve + sha
+        curve_version passed through); vol = realized (task-2 path, caller picks window, echoed in
+        vol_source: black76 uses log_vol, bachelier uses normal_vol). policy DECLARED. F<=0 or K<=0 =>
+        black76 refusal returned VERBATIM + offer_bachelier (shared ValueError path); bachelier any sign.
+        Provenance block (model_policy/vol_source/curve_version/asof/F/K/T) + honest label everywhere.
+        Note: offline data_clean curve months are ~stale (front past->T floors 1d); use future month live.
+        VERIFIED self + fresh-eyes GREEN 6/6 (F==curve block, window echoed, put-call parity <1e-6 both
+        models, verbatim refusal, honest label, robust/read-only). commit <pending>.
 - [ ] 4 — Structuring panel (Quant): ATM card + Greeks + provenance + battery-vega tie-in. Screenshot.
 - [ ] 5 — Climatology build → clim_result.json snapshot; honest date-range label.
 - [ ] 6 — Desk table tab: per-hour today+tomorrow, Clim P(RT>DA), q05/50/95, n, Your Call, 3 reserved —. Screenshot.

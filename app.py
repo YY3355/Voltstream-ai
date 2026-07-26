@@ -553,6 +553,23 @@ def api_countyheat():
 
 _FORECAST_CACHE = {}   # hub -> (monotonic_ts, result); GBM fit is seconds, cache ~30 min
 _VOL_CACHE = {}        # (hub,bucket) -> (monotonic_ts, result); realized-vol read of the archive
+_CURVE_CACHE = {}      # data_dir -> (monotonic_ts, curve_result, version)
+
+
+def _forward_curve():
+    """Cached forward-curve build + a content-hash version string (pass-through provenance)."""
+    import time, json, hashlib
+    from forward_curve import build_forward_curve
+    dd = os.environ.get("ERCOT_DATA_DIR", "data")
+    hit = _CURVE_CACHE.get(dd)
+    if hit and time.monotonic() - hit[0] < 1800:
+        return hit[1], hit[2]
+    r = build_forward_curve(dd)
+    payload = json.dumps({"months": r["months"], "blocks": r["blocks"],
+                          "level_source": r["level_source"]}, sort_keys=True, default=str)
+    version = "fc-" + hashlib.sha1(payload.encode()).hexdigest()[:10]
+    _CURVE_CACHE[dd] = (time.monotonic(), r, version)
+    return r, version
 
 
 @app.get("/api/forecast")
@@ -629,6 +646,68 @@ def api_vol(hub: str = "HB_HOUSTON", bucket: str = "peak"):
         return return_val
     except Exception as e:
         return {"error": f"vol unavailable for {hub}/{bucket}: {e}", "hub": hub, "bucket": bucket}
+
+
+@app.get("/api/option")
+def api_option(hub: str = "HB_HOUSTON", month: str = "", strike: float = None,
+               type: str = "call", policy: str = "black76", bucket: str = "peak",
+               window: int = 60, market: str = "rt"):
+    """Governed vanilla pricer — a MODEL VALUE under realized vol, NOT a market quote.
+
+    F is the monthly block from the existing bootstrapped forward curve (its version string is passed
+    through). vol is realized vol from the archive (task-2 path; caller picks the window, echoed in
+    vol_source). model policy is DECLARED: black76 (lognormal) or bachelier (normal). If a forward is
+    <= 0 (or strike <= 0), black76 RETURNS ITS REFUSAL VERBATIM and flags offer_bachelier — prices are
+    never silently shifted. Defaults: front month, ATM strike, peak bucket, RT vol, 60d window.
+    """
+    import desk_data, vol_engine, options_engine
+    from datetime import datetime, timezone
+    import pandas as pd
+    hub = (hub or "HB_HOUSTON").upper()
+    type = (type or "call").lower(); policy = (policy or "black76").lower()
+    bucket = (bucket or "peak").lower(); market = (market or "rt").lower()
+    label = "model value under realized vol — not a market quote."
+    try:
+        curve, version = _forward_curve()
+        months = curve["months"]
+        month = month or months[0]
+        if month not in curve["blocks"]:
+            return {"error": f"month {month} not in curve (available: {months})",
+                    "hub": hub, "months": months, "label": label}
+        F = float(curve["blocks"][month][bucket])
+        K = float(strike) if strike is not None else F        # default ATM
+        T = max((pd.Period(month, freq="M").start_time - pd.Timestamp.now()).days, 1) / 365.0
+
+        daily, vmeta = desk_data.daily_bucket(hub, market, bucket)
+        vr = vol_engine.realized_vol(daily, window_days=window, label=f"{hub} {market} {bucket}")
+        vol_source = (f"realized {market} {bucket} vol, {window}d window ({hub}); "
+                      f"n_obs={vr.n_obs}; {vr.convention_note}")
+        provenance = {"model_policy": policy, "curve_version": version,
+                      "curve_level_source": curve["level_source"], "vol_source": vol_source,
+                      "vol_window_days": window, "vol_market": market, "vol_n_obs": vr.n_obs,
+                      "F": F, "K": K, "T_years": round(T, 4), "hub": hub, "month": month,
+                      "bucket": bucket, "asof": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+
+        if policy == "black76":
+            if vr.log_vol is None:
+                return {"error": "log_vol unavailable (too few positive days) — use policy=bachelier",
+                        "offer_bachelier": True, **provenance, "label": label}
+            try:
+                res = options_engine.black76(type, F, K, T, vr.log_vol, vol_source=vol_source)
+            except ValueError as e:                            # F<=0 or K<=0 -> refuse VERBATIM
+                return {"error": str(e), "refused_by": "black76", "offer_bachelier": True,
+                        **provenance, "label": label}
+        elif policy == "bachelier":
+            res = options_engine.bachelier(type, F, K, T, vr.normal_vol, vol_source=vol_source)
+        else:
+            return {"error": f"policy must be black76|bachelier, got {policy!r}", **provenance,
+                    "label": label}
+
+        out = res.to_dict()
+        out.update({**provenance, "label": label})
+        return out
+    except Exception as e:
+        return {"error": f"option pricing failed: {e}", "hub": hub, "month": month, "label": label}
 
 
 @app.get("/api/dcopf")
