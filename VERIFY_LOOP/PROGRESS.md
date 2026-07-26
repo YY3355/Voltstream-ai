@@ -40,7 +40,14 @@ Never commit red. Same check red 3x = blocked.
         "roadmap, not built". No "Model" prob label (Clim P(RT>DA) header). SCREENSHOT taken + viewed.
         VERIFIED self + fresh-eyes GREEN 6/6 (contract, NO journal write [md5 identical], your_call==journal,
         renders, tooltip/no-Model, honest —/lazy-load). commit <pending>.
-- [ ] 7 — Fresh-clone test + Fly deploy; verify /api/vol, /api/option, desk table on deployed app.
+- [x] 7 — Fresh-clone test (deep snapshots stand alone, no caches: /api/vol snapshot + /api/desk clim +
+        /api/option all served from a clean checkout) + Fly REDEPLOY to existing machine (7845467b249768,
+        v17->19, NO new machines/volumes/regions/scale). First deploy hit a snapshot-bug: .dockerignore
+        `*.json` excluded clim/vol_result.json (not in the ! exceptions) — the raw-clone test missed it
+        (didn't build the image). FIXED: added !clim_result.json + !vol_result.json + absolute paths in
+        app.py; redeployed. LIVE voltstream-ercot.fly.dev VERIFIED: /api/vol source='committed deep
+        snapshot' 250d cone, /api/desk 2018-2026 climatology 24/24 real ClimP, /api/option prices, desk
+        table renders with real Clim P(RT>DA)%. commit <pending>. LOOP COMPLETE.
 
 ## Deep-archive upgrade (pre-task-7, Mike-requested) — evidence + rebuild
 - (a) deployed serves climatology from COMMITTED clim_result.json (app.py reads it; build_climatology
