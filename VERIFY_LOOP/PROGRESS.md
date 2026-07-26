@@ -27,7 +27,12 @@ Never commit red. Same check red 3x = blocked.
         SCREENSHOT taken + viewed (renders in house style). VERIFIED self + fresh-eyes GREEN 6/6 (populates
         4 hubs, DOM==API to the cent, provenance visible, vega phrase, honesty labels, lazy-load hygiene).
         commit <pending>.
-- [ ] 5 — Climatology build → clim_result.json snapshot; honest date-range label.
+- [x] 5 — build_clim.py → clim_result.json snapshot (committed, decade/hedge pattern, repo root NOT
+        journal/). Per-hub DART climatology from real archive DA/RT hourly PAIRS (~720h/hub, span
+        2026-06-25..07-24). HONEST: pairs only cover the rolling window, labeled "NOT a decade";
+        MIN_SAMPLES=30 hard rule -> 0/192 cells sufficient (all "—"), the correct thin-data outcome, not
+        fabricated. Logs hours+range. VERIFIED self + fresh-eyes GREEN 6/6 (honest range, no fabricated
+        cells, n reproduced independently=720, DART math <1e-9, root/not-journal, no-LLM). commit <pending>.
 - [ ] 6 — Desk table tab: per-hour today+tomorrow, Clim P(RT>DA), q05/50/95, n, Your Call, 3 reserved —. Screenshot.
 - [ ] 7 — Fresh-clone test + Fly deploy; verify /api/vol, /api/option, desk table on deployed app.
 

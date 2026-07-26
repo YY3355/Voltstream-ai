@@ -1,0 +1,842 @@
+{
+ "kind": "climatology_baseline",
+ "coverage_note": "Empirical (month,hour) P(RT>DA) and DART quantiles from archived ERCOT settlements. Coverage is the hourly DA/RT PAIR span below \u2014 the rolling archive window, NOT a decade. Cells with n<30 samples are insufficient and render '\u2014' downstream. No conditioning on weather/load/wind/day-type \u2014 this is the CLIMATOLOGY BASELINE the eval-harnessed model must beat.",
+ "pair_coverage": {
+  "start": "2026-06-25",
+  "end": "2026-07-24",
+  "note": "hourly DA/RT overlap only; DA cache ~30d, RT rolling store deeper"
+ },
+ "totals": {
+  "paired_hours": 2811,
+  "cells": 192,
+  "cells_sufficient": 0
+ },
+ "hubs": {
+  "HB_HOUSTON": {
+   "label": "HB_HOUSTON",
+   "kind": "climatology_baseline",
+   "n_hours_total": 720,
+   "date_range": [
+    "2026-06-25",
+    "2026-07-24"
+   ],
+   "min_samples_rule": 30,
+   "note": "empirical (month,hour) frequencies from archived settlements; NOT a conditioned forecast model; baseline for eval harness",
+   "asof": "2026-07-26T00:39:31+00:00",
+   "cells": {
+    "6-0": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-1": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-2": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-3": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-4": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-5": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-6": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-7": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-8": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-9": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-10": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-11": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-12": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-13": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-14": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-15": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-16": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-17": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-18": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-19": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-20": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-21": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-22": {
+     "n": 6,
+     "insufficient": true
+    },
+    "6-23": {
+     "n": 6,
+     "insufficient": true
+    },
+    "7-0": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-1": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-2": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-3": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-4": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-5": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-6": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-7": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-8": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-9": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-10": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-11": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-12": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-13": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-14": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-15": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-16": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-17": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-18": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-19": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-20": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-21": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-22": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-23": {
+     "n": 24,
+     "insufficient": true
+    }
+   }
+  },
+  "HB_NORTH": {
+   "label": "HB_NORTH",
+   "kind": "climatology_baseline",
+   "n_hours_total": 697,
+   "date_range": [
+    "2026-06-25",
+    "2026-07-24"
+   ],
+   "min_samples_rule": 30,
+   "note": "empirical (month,hour) frequencies from archived settlements; NOT a conditioned forecast model; baseline for eval harness",
+   "asof": "2026-07-26T00:39:31+00:00",
+   "cells": {
+    "6-0": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-1": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-2": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-3": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-4": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-5": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-6": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-7": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-8": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-9": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-10": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-11": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-12": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-13": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-14": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-15": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-16": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-17": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-18": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-19": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-20": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-21": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-22": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-23": {
+     "n": 6,
+     "insufficient": true
+    },
+    "7-0": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-1": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-2": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-3": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-4": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-5": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-6": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-7": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-8": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-9": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-10": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-11": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-12": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-13": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-14": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-15": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-16": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-17": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-18": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-19": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-20": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-21": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-22": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-23": {
+     "n": 24,
+     "insufficient": true
+    }
+   }
+  },
+  "HB_SOUTH": {
+   "label": "HB_SOUTH",
+   "kind": "climatology_baseline",
+   "n_hours_total": 697,
+   "date_range": [
+    "2026-06-25",
+    "2026-07-24"
+   ],
+   "min_samples_rule": 30,
+   "note": "empirical (month,hour) frequencies from archived settlements; NOT a conditioned forecast model; baseline for eval harness",
+   "asof": "2026-07-26T00:39:31+00:00",
+   "cells": {
+    "6-0": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-1": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-2": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-3": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-4": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-5": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-6": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-7": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-8": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-9": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-10": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-11": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-12": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-13": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-14": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-15": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-16": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-17": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-18": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-19": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-20": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-21": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-22": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-23": {
+     "n": 6,
+     "insufficient": true
+    },
+    "7-0": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-1": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-2": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-3": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-4": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-5": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-6": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-7": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-8": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-9": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-10": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-11": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-12": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-13": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-14": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-15": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-16": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-17": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-18": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-19": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-20": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-21": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-22": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-23": {
+     "n": 24,
+     "insufficient": true
+    }
+   }
+  },
+  "HB_WEST": {
+   "label": "HB_WEST",
+   "kind": "climatology_baseline",
+   "n_hours_total": 697,
+   "date_range": [
+    "2026-06-25",
+    "2026-07-24"
+   ],
+   "min_samples_rule": 30,
+   "note": "empirical (month,hour) frequencies from archived settlements; NOT a conditioned forecast model; baseline for eval harness",
+   "asof": "2026-07-26T00:39:32+00:00",
+   "cells": {
+    "6-0": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-1": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-2": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-3": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-4": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-5": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-6": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-7": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-8": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-9": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-10": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-11": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-12": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-13": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-14": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-15": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-16": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-17": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-18": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-19": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-20": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-21": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-22": {
+     "n": 5,
+     "insufficient": true
+    },
+    "6-23": {
+     "n": 6,
+     "insufficient": true
+    },
+    "7-0": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-1": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-2": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-3": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-4": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-5": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-6": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-7": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-8": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-9": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-10": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-11": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-12": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-13": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-14": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-15": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-16": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-17": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-18": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-19": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-20": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-21": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-22": {
+     "n": 24,
+     "insufficient": true
+    },
+    "7-23": {
+     "n": 24,
+     "insufficient": true
+    }
+   }
+  }
+ },
+ "built_at": "2026-07-26T00:39:32+00:00",
+ "fly_caveat": "committed snapshot (like decade_result.json). Fly's ephemeral volume won't hold the DA/RT caches, so the deployed app reads THIS snapshot rather than rebuilding."
+}
