@@ -666,7 +666,7 @@ let _dpState=null;   // {dp,fc} for the hover tooltip — reads the raw solution
 function dispatchSVG(dp,fc){
   _dpState={dp,fc};
   const M='font-family="IBM Plex Mono"';
-  const W=600,H=344,P={l:56,r:60,t:14,b:28},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const W=600,H=338,P={l:56,r:60,t:14,b:23},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
   const gap=16,pph=84,pTop=P.t,pBot=P.t+pph,dTop=pBot+gap,dBot=H-P.b;   // price panel over dispatch panel
   // ---- PRICE panel: the P50 series Bolt optimized against (cyan) + realized actual (faint) ----
   const p50=fc.p50,actual=fc.actual,pmn=Math.min(...p50,...actual),pmx=Math.max(...p50,...actual);
@@ -704,9 +704,12 @@ function dispatchSVG(dp,fc){
   let rax=`<line x1="${W-P.r}" y1="${dTop}" x2="${W-P.r}" y2="${dBot}" stroke="#2a3645"/>`;
   [cap,cap*0.5,0].forEach(v=>{const y=Ysoc(v);rax+=`<line x1="${W-P.r}" y1="${y.toFixed(1)}" x2="${(W-P.r+3)}" y2="${y.toFixed(1)}" stroke="#2a3645"/><text x="${W-P.r+6}" y="${(y+3).toFixed(1)}" fill="#3fb95099" font-size="9" ${M}>${+v.toFixed(0)}</text>`;});
   rax+=`<text x="${W-13}" y="${cy.toFixed(1)}" transform="rotate(90 ${W-13} ${cy.toFixed(1)})" text-anchor="middle" fill="#3fb950" font-size="9" ${M}>Stored energy (kWh)</text>`;
-  let xl='';[[0,'00:00'],[48,'12:00'],[95,'24:00']].forEach(([i,t])=>xl+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${t}</text>`);
+  // time axis — ticks every 4h + subtle vertical gridlines across both panels (sub-hourly via hover)
+  let xl='',grid='';
+  for(let i=0;i<n;i+=16){const x=X(i);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${(fc.hours[i]||'').slice(0,5)}</text>`;}
+  {const x=X(n-1);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>24:00</text>`;}
   let hov='',hw=(W-P.l-P.r)/n;for(let i=0;i<n;i++)hov+=`<rect x="${(X(i)-hw/2).toFixed(1)}" y="${pTop}" width="${hw.toFixed(1)}" height="${(dBot-pTop).toFixed(1)}" fill="transparent" onmousemove="dpTip(evt,${i})" onmouseleave="dpTipHide()"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="1.8"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="${threatened?'#f85149':'#6b4a4a'}" stroke-width="${threatened?1.6:1}" stroke-dasharray="4 3"/>${violMark}${violFlag}${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="1.8"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="${threatened?'#f85149':'#6b4a4a'}" stroke-width="${threatened?1.6:1}" stroke-dasharray="4 3"/>${violMark}${violFlag}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
