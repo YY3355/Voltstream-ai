@@ -33,7 +33,13 @@ Never commit red. Same check red 3x = blocked.
         MIN_SAMPLES=30 hard rule -> 0/192 cells sufficient (all "—"), the correct thin-data outcome, not
         fabricated. Logs hours+range. VERIFIED self + fresh-eyes GREEN 6/6 (honest range, no fabricated
         cells, n reproduced independently=720, DART math <1e-9, root/not-journal, no-LLM). commit <pending>.
-- [ ] 6 — Desk table tab: per-hour today+tomorrow, Clim P(RT>DA), q05/50/95, n, Your Call, 3 reserved —. Screenshot.
+- [x] 6 — /api/desk + Desk Table panel (Trading card #4 c-desk) + desk() renderer + LOADERS. Per-hour
+        today+tomorrow: DA (real from cache, "—" until DAM — honest, offline cache stale so all "—"),
+        Clim P(RT>DA)+DART q05/50/95+n from clim snapshot ("—" where n<30 = all here), Your Call from
+        dart_journal (READ-ONLY, matches exactly), 3 reserved model_p/load/wind cols "—" with ⓘ tooltip
+        "roadmap, not built". No "Model" prob label (Clim P(RT>DA) header). SCREENSHOT taken + viewed.
+        VERIFIED self + fresh-eyes GREEN 6/6 (contract, NO journal write [md5 identical], your_call==journal,
+        renders, tooltip/no-Model, honest —/lazy-load). commit <pending>.
 - [ ] 7 — Fresh-clone test + Fly deploy; verify /api/vol, /api/option, desk table on deployed app.
 
 ## Append-only log

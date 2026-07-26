@@ -401,6 +401,16 @@
       <div id="journal-chart"></div>
       <div class="coopt-note" id="journal-note"></div>
     </div>
+
+    <div class="card lit" id="c-desk" style="--accent:var(--cyan)">
+      <div class="lid"><span class="num">4</span>
+        <span class="title">Desk Table &mdash; Per-Hour Climatology Baseline (today + tomorrow)</span>
+        <span class="live-dot" style="margin-left:auto">desk</span></div>
+      <p class="coopt-sub">The per-hour view a desk reads before the day: real Day-Ahead price (or &mdash; until the DAM publishes), the <b>climatology baseline</b> &mdash; Clim&nbsp;P(RT&gt;DA) and DART quantiles measured from the archive, shown only where n&nbsp;&ge;&nbsp;30 (else &mdash;, never a flimsy number) &mdash; your committed paper-book call, and three columns <b>reserved</b> for the eval-harnessed forecast model and ERCOT forecast products. This is the honest baseline that future model must beat; the word &ldquo;Model&rdquo; labels nothing here.</p>
+      <div class="coopt-hero" id="desk-hero"></div>
+      <div id="desk-tables"></div>
+      <div class="coopt-note" id="desk-note"></div>
+    </div>
   </div>
   </section>
   <section class="section" id="sec-map" data-sec="map">
@@ -2139,6 +2149,50 @@ async function loadAlerts(){
 }
 let _alertPoll=false;
 let _coInterval=false;
+async function desk(){
+  const hero=$('desk-hero'); hero.innerHTML='<span class="thinking">building desk table…</span>';
+  let d; try{ d=await (await fetch('/api/desk?hub=HB_HOUSTON')).json(); }
+  catch(e){ hero.innerHTML='<span class="none">backend unreachable</span>'; return; }
+  if(d.error){ hero.innerHTML=`<span class="none">${d.error}</span>`; return; }
+  const cl=d.climatology;
+  hero.innerHTML=
+    `<div class="big"><span class="lab">Hub · desk view</span><span class="val">${d.hub.replace('HB_','')}</span></div>`
+    +`<div class="delta">Clim baseline ${cl.date_range[0]}…${cl.date_range[1]} · ${cl.n_hours_total}h · shown only where n≥${cl.min_samples_rule}</div>`
+    +`<div class="mini"><div><span class="l">Days</span><b>${d.days.length}</b></div>`
+    +`<div><span class="l">DA</span><b>${d.days.map(x=>x.da_published?'live':'—').join(' / ')}</b></div>`
+    +`<div><span class="l">Baseline</span><b>climatology</b></div></div>`;
+  const iTip="reserved for eval-harnessed forecast model / ERCOT forecast products — roadmap, not built";
+  const iMark=`<span title="${iTip}" style="cursor:help;color:var(--amber)">ⓘ</span>`;
+  const dash='<span style="color:#3a4658">—</span>';
+  const pfmt=x=>x==null?dash:(100*x).toFixed(0)+'%';
+  const qfmt=x=>x==null?dash:(x>=0?'+':'')+(+x).toFixed(1);
+  let html='';
+  d.days.forEach(day=>{
+    html+=`<div style="margin-top:12px;color:var(--dim);font-family:'IBM Plex Mono';font-size:12px">${day.date}${day.da_published?'':' · DA not published yet'}</div>`
+      +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-family:'IBM Plex Mono';font-size:11px;margin-top:4px">`
+      +`<tr style="color:var(--dim);text-align:right">`
+      +`<th style="text-align:left;padding:3px 6px">HE</th><th style="padding:3px 6px">DA $</th>`
+      +`<th style="padding:3px 6px">Clim P(RT&gt;DA)</th><th style="padding:3px 6px">q05</th><th style="padding:3px 6px">q50</th><th style="padding:3px 6px">q95</th>`
+      +`<th style="padding:3px 6px">n</th><th style="padding:3px 6px">Your Call</th>`
+      +`<th style="padding:3px 6px">model_p ${iMark}</th><th style="padding:3px 6px">load ${iMark}</th><th style="padding:3px 6px">wind ${iMark}</th></tr>`;
+    day.rows.forEach(r=>{
+      const call=r.your_call==='long'?'<span style="color:#3fb950">long</span>':r.your_call==='short'?'<span style="color:#f85149">short</span>':dash;
+      html+=`<tr style="text-align:right;border-top:1px solid #1a2432;color:var(--ink)">`
+        +`<td style="text-align:left;padding:2px 6px;color:var(--dim)">${r.hour+1}</td>`
+        +`<td style="padding:2px 6px">${r.da_price==null?dash:'$'+(+r.da_price).toFixed(2)}</td>`
+        +`<td style="padding:2px 6px">${pfmt(r.clim_p_rt_gt_da)}</td>`
+        +`<td style="padding:2px 6px;color:var(--dim)">${qfmt(r.clim_dart_q05)}</td>`
+        +`<td style="padding:2px 6px">${qfmt(r.clim_dart_q50)}</td>`
+        +`<td style="padding:2px 6px;color:var(--dim)">${qfmt(r.clim_dart_q95)}</td>`
+        +`<td style="padding:2px 6px;color:var(--dim)">${r.n_samples||dash}</td>`
+        +`<td style="padding:2px 6px">${call}</td>`
+        +`<td style="padding:2px 6px">${dash}</td><td style="padding:2px 6px">${dash}</td><td style="padding:2px 6px">${dash}</td></tr>`;
+    });
+    html+=`</table></div>`;
+  });
+  $('desk-tables').innerHTML=html;
+  $('desk-note').innerHTML=`${d.coverage_note} ${d.reserved_note}`;
+}
 function _optFmt(x,d){ return (x==null||isNaN(x))?'—':(+x).toFixed(d); }
 async function struct(){
   const hero=$('struct-hero'); hero.innerHTML='<span class="thinking">pricing ATM structures…</span>';
@@ -2193,7 +2247,7 @@ async function struct(){
 }
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
-  trading(){ rt(); dart(); journal(); },
+  trading(){ rt(); dart(); journal(); desk(); },
   map(){ initMap(); loadAlerts(); if(!_alertPoll){ _alertPoll=true; setInterval(loadAlerts,60000); } },
   quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); struct(); },
   learning(){ dcopf(); constraints(); },

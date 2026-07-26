@@ -710,6 +710,76 @@ def api_option(hub: str = "HB_HOUSTON", month: str = "", strike: float = None,
         return {"error": f"option pricing failed: {e}", "hub": hub, "month": month, "label": label}
 
 
+def _desk_da_prices(hub, day):
+    """{hour: DA price} for hub+day from the DA cache; {} if that day's DAM isn't published/cached."""
+    import glob
+    import pandas as pd
+    p = os.path.join(os.environ.get("PRICE_CACHE_DIR", "dart_cache"), f"DAY_AHEAD_HOURLY_{day}.pkl")
+    if not os.path.exists(p):
+        return {}
+    try:
+        df = pd.read_pickle(p)
+    except Exception:
+        return {}
+    d = df[df["Location"].astype(str).str.upper() == hub.upper()]
+    out = {}
+    for _, r in d.iterrows():
+        out[int(pd.to_datetime(r["Interval Start"]).hour)] = round(float(r["SPP"]), 2)
+    return out
+
+
+def _desk_your_call(hub, day):
+    """{hour: 'long'|'short'} from the dart_journal calls file — READ ONLY (never writes journal/)."""
+    import json
+    p = os.path.join("journal", f"calls_{day}.json")
+    if not os.path.exists(p):
+        return {}
+    try:
+        pos = json.load(open(p)).get("positions", {}).get(hub, {})
+    except Exception:
+        return {}
+    return {int(h): ("long" if v > 0 else "short") for h, v in pos.items() if v != 0}
+
+
+@app.get("/api/desk")
+def api_desk(hub: str = "HB_HOUSTON"):
+    """Per-hour desk table for today + tomorrow: real DA (from cache, '—' until DAM publishes),
+    the CLIMATOLOGY baseline (Clim P(RT>DA) + DART q05/q50/q95 + n — '—' where n<30, never a flimsy
+    number), your committed dart_journal call, and three RESERVED '—' columns (model_p/load/wind) held
+    for the future eval-harnessed forecast model / ERCOT forecast products. NOT a forecast: the word
+    'Model' never labels a probability here. Reads the committed clim snapshot + caches; never writes."""
+    import json
+    from datetime import datetime, timezone
+    import pandas as pd
+    from desk_climatology import desk_rows
+    hub = (hub or "HB_HOUSTON").upper()
+    try:
+        clim_all = json.load(open("clim_result.json"))
+    except Exception as e:
+        return {"error": f"climatology snapshot unavailable ({e}); run build_clim.py", "hub": hub}
+    clim = clim_all.get("hubs", {}).get(hub)
+    if not clim:
+        return {"error": f"no climatology for {hub}", "hub": hub}
+    today = pd.Timestamp.now().normalize()
+    days = []
+    for d in (today, today + pd.Timedelta(days=1)):
+        dstr = d.strftime("%Y-%m-%d")
+        da = _desk_da_prices(hub, dstr)
+        rows = desk_rows(clim, month=int(d.month), da_prices=da, journal_calls=_desk_your_call(hub, dstr))
+        days.append({"date": dstr, "da_published": bool(da), "rows": rows})
+    return {
+        "hub": hub,
+        "days": days,
+        "climatology": {"kind": clim["kind"], "date_range": clim["date_range"],
+                        "n_hours_total": clim["n_hours_total"], "min_samples_rule": clim["min_samples_rule"]},
+        "coverage_note": clim_all.get("coverage_note", ""),
+        "reserved_note": ("model_p / load_fcst / wind_fcst are reserved for the eval-harnessed forecast "
+                          "model / ERCOT forecast products — roadmap, not built."),
+        "columns_note": "Clim P(RT>DA) is a measured climatology, NOT a model. DA is real or '—' until DAM.",
+        "asof": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+
+
 @app.get("/api/dcopf")
 def api_dcopf():
     """Toy 3-bus DC optimal power flow: nodal prices (LMPs) and congestion as duals.
