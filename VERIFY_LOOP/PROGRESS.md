@@ -10,7 +10,9 @@ the Docker-image local gate + explicit go. Never commit red.
         the clipped 0kW/{cap}kWh fragments. Verified: headless screenshot (clean left axis) + DOM (both
         titles + tick sets present). commit <pending>. NEEDS Mike's real-browser sign-off (visual).
         (Bars keep charge-up/discharge-down for now — T2 flips to discharge-up per convention.)
-- [ ] 2 — Legend + sign convention (all series incl. blue charge).
+- [~] 2 — Sign flip DONE (render-layer only): discharge +/up amber, charge -/down blue; legend updated
+        (all 4 series incl. blue charge + dashed reserve floor); footer sign note. Arrays untouched.
+        Screenshot confirms. commit <pending>. Real-browser sign-off pending.
 - [ ] 3 — Price series (LMP the optimizer consumed) + per-interval tooltip from solution arrays.
 - [ ] 4 — Stepped SoC (step-after) + capacity line + REAL reserve-violation flag if it crosses.
 - [ ] 5 — Annotation cleanup (labels to right margin; reserve red only when threatened/breached).
@@ -20,6 +22,16 @@ the Docker-image local gate + explicit go. Never commit red.
 ## Checklist — app-wide
 - [ ] 9 — Typography split (sans for text, mono for numbers/times/prices/status); per-tab screenshot.
 - [ ] 10 — Axis/legend audit of every other chart (fix only).
+
+## Run mode (Mike) — BATCH 2→10, no deploy
+- Run tasks 2-8 then 9-10 straight through; each commits its own headless screenshot (working check).
+- SIGN FLIP (T2): render-layer ONLY. Solution arrays keep solver-native magnitudes; discharge=+/up
+  (energy to grid = earning) applied at DRAW time. Tooltips/KPIs consume RAW arrays. Footer sign note.
+- T4 STOP CONDITION: if the stepped SoC reveals a REAL reserve violation in the arrays -> render + flag
+  "Reserve violation: X kWh, N intervals" per contract, do NOT touch the MILP (solver = out of scope),
+  REPORT the finding, keep going. Optimizer fix decided separately.
+- END: NO deploy. Mike clicks every tab on :8020 (visual sign-off; headless doesn't count) -> Docker-
+  image local gate (build+run container, curl) -> then explicit go.
 
 ## Append-only log
 - init (2026-07-26) — New loop from GRAPH_POLISH_RECIPE.md (dropped in by Mike). Prior loop

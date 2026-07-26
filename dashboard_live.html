@@ -329,7 +329,8 @@
     <div class="card" id="c-dp">
       <div class="lid"><span class="num">1</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
       <div id="dp-chart"></div>
-      <div class="legend"><span><i style="background:var(--blue)"></i>charge</span><span><i style="background:var(--amber)"></i>discharge</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="background:var(--red)"></i>backup floor</span></div>
+      <div class="legend"><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
+      <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
     </div>
 
@@ -663,10 +664,11 @@ function dispatchSVG(dp){
   const zone=(H-P.t-P.b),cy=P.t+zone/2,hh=zone/2;                     // power 0 at vertical centre
   const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
   const cap=dp.capacity_kwh,Ypow=v=>cy-(v/pmax)*hh,Ysoc=v=>H-P.b-(v/cap)*zone,bw=Math.max(1,(W-P.l-P.r)/n-0.4);
-  // dispatch bars from the 0-line (current convention: charge up / discharge down — flipped in T2)
+  // dispatch bars — SIGN CONVENTION (display only): discharge = +/up (energy to grid = earning, amber);
+  // charge = -/down (blue). Solution arrays stay solver-native unsigned magnitudes; sign is applied here.
   let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
-    if(dp.charge_kw[i]>0.01){const y=Ypow(dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}
-    if(dp.discharge_kw[i]>0.01){const y=Ypow(-dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}}
+    if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}
+    if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}}
   const soc=dp.soc_kwh.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ysoc(v).toFixed(1)}`).join(' '),yr=Ysoc(dp.reserve_kwh);
   // LEFT axis — Power (kW), signed, full height, 5 ticks
   let lax=`<line x1="${P.l}" y1="${P.t}" x2="${P.l}" y2="${(H-P.b).toFixed(1)}" stroke="#2a3645"/>`
