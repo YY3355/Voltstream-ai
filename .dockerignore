@@ -6,6 +6,8 @@ __pycache__
 *.json
 !models/rl_dispatch_model.json
 !decade_result.json
+!clim_result.json
+!vol_result.json
 !hedge_result.json
 !geo_result.json
 !locational_result.json

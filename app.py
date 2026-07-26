@@ -619,7 +619,7 @@ def api_vol(hub: str = "HB_HOUSTON", bucket: str = "peak"):
     # deployed /data volume can't reach); fall back to a live read of the thin rolling store.
     snap = None
     try:
-        snap = json.load(open("vol_result.json")).get("hubs", {}).get(hub, {}).get("markets", {})
+        snap = json.load(open(os.path.join(os.path.dirname(__file__), "vol_result.json"))).get("hubs", {}).get(hub, {}).get("markets", {})
     except Exception:
         snap = None
     try:
@@ -765,7 +765,7 @@ def api_desk(hub: str = "HB_HOUSTON"):
     from desk_climatology import desk_rows
     hub = (hub or "HB_HOUSTON").upper()
     try:
-        clim_all = json.load(open("clim_result.json"))
+        clim_all = json.load(open(os.path.join(os.path.dirname(__file__), "clim_result.json")))
     except Exception as e:
         return {"error": f"climatology snapshot unavailable ({e}); run build_clim.py", "hub": hub}
     clim = clim_all.get("hubs", {}).get(hub)
