@@ -83,7 +83,16 @@ def compute_state(reserve_kwh: float = 10.0):
                      "action_now": ("DISCHARGE" if net0 > 0.1 else "CHARGE" if net0 < -0.1 else "HOLD"),
                      "revenue_forecast": round(settled, 2),
                      "revenue_perfect": round(perfect["revenue"], 2),
-                     "capture_pct": round(100 * settled / perfect["revenue"]) if perfect["revenue"] else 0},
+                     "capture_pct": round(100 * settled / perfect["revenue"]) if perfect["revenue"] else 0,
+                     # solve provenance surfaced from the actual solution / config (not a new source)
+                     "status": sched["status"],
+                     "initial_soc_kwh": bat.initial_soc_kwh,
+                     "max_power_kw": bat.max_power_kw,
+                     "round_trip_efficiency": bat.round_trip_efficiency,
+                     "dt_hours": dt,
+                     "hub": "HB_HOUSTON",
+                     "price_source": "P50 forecast (GBM) of HB_HOUSTON RT settlement, "
+                                     f"decided pre-dispatch; settled at realized RT ({str(target)})"},
         "notices": [{"id": n["id"], "title": n["title"], "type": n["type"]} for n in NOTICES],
         "_rel_band": rel_band,
     }

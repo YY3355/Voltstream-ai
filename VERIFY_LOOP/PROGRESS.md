@@ -13,7 +13,11 @@ the Docker-image local gate + explicit go. Never commit red.
 - [~] 2 — Sign flip DONE (render-layer only): discharge +/up amber, charge -/down blue; legend updated
         (all 4 series incl. blue charge + dashed reserve floor); footer sign note. Arrays untouched.
         Screenshot confirms. commit <pending>. Real-browser sign-off pending.
-- [ ] 3 — Price series (LMP the optimizer consumed) + per-interval tooltip from solution arrays.
+- [~] 3 — Price panel + tooltip DONE. Synchronized LMP($/MWh) panel ABOVE dispatch: P50 (the series Bolt
+        optimized against, cyan) + actual settled (faint). Per-interval hover tooltip: time, P50/actual,
+        action ±kW (net from raw arrays), SoC before→after (initial→soc[i]), interval rev = net×actual×dt.
+        Surfaced status/initial_soc/max_power/eff/dt in the dispatch dict (existing solve data, not a new
+        source). VERIFIED: tooltip interval revenues sum to \$0.634 ≈ realized KPI \$0.64. commit <pending>.
 - [ ] 4 — Stepped SoC (step-after) + capacity line + REAL reserve-violation flag if it crosses.
 - [ ] 5 — Annotation cleanup (labels to right margin; reserve red only when threatened/breached).
 - [ ] 6 — Run header + real solver status + collapsible assumptions block from solve config.
