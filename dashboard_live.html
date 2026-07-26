@@ -682,7 +682,15 @@ function dispatchSVG(dp,fc){
   let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
     if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}
     if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}}
-  const soc=dp.soc_kwh.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ysoc(v).toFixed(1)}`).join(' '),yr=Ysoc(dp.reserve_kwh);
+  // SoC as a STEP-AFTER line (each interval-end value held across its interval — discrete, no interp)
+  let soc=`M${X(0).toFixed(1)} ${Ysoc(dp.soc_kwh[0]).toFixed(1)}`;
+  for(let i=1;i<n;i++)soc+=`L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i-1]).toFixed(1)}L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i]).toFixed(1)}`;
+  const yr=Ysoc(dp.reserve_kwh);
+  // subtle capacity line + REAL reserve-violation flag (never clamp: show soc below the floor if it happens)
+  const capLine=`<line x1="${P.l}" y1="${Ysoc(cap).toFixed(1)}" x2="${W-P.r}" y2="${Ysoc(cap).toFixed(1)}" stroke="#3fb950" stroke-width="1" stroke-dasharray="1 4" opacity=".45"/>`;
+  const viol=[];for(let i=0;i<n;i++)if(dp.soc_kwh[i]<dp.reserve_kwh-0.05)viol.push(i);
+  const violMark=viol.map(i=>`<circle cx="${X(i).toFixed(1)}" cy="${Ysoc(dp.soc_kwh[i]).toFixed(1)}" r="2.5" fill="#f85149"/>`).join('');
+  const violFlag=viol.length?`<rect x="${P.l}" y="${dTop+2}" width="${(W-P.l-P.r)}" height="14" fill="#f8514922"/><text x="${((P.l+W-P.r)/2).toFixed(1)}" y="${dTop+12}" text-anchor="middle" fill="#f85149" font-size="10" ${M}>&#9888; Reserve violation: ${(dp.reserve_kwh-Math.min(...viol.map(i=>dp.soc_kwh[i]))).toFixed(1)} kWh below floor, ${viol.length} intervals</text>`:'';
   let lax=`<line x1="${P.l}" y1="${dTop}" x2="${P.l}" y2="${dBot}" stroke="#2a3645"/><line x1="${P.l}" y1="${cy.toFixed(1)}" x2="${W-P.r}" y2="${cy.toFixed(1)}" stroke="#2a3645" stroke-dasharray="2 2"/>`;
   [pmax,pmax/2,0,-pmax/2,-pmax].forEach(v=>{const y=Ypow(v);lax+=`<line x1="${(P.l-3)}" y1="${y.toFixed(1)}" x2="${P.l}" y2="${y.toFixed(1)}" stroke="#2a3645"/><text x="${P.l-6}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${v>0?'+':''}${+v.toFixed(1)}</text>`;});
   lax+=`<text x="13" y="${cy.toFixed(1)}" transform="rotate(-90 13 ${cy.toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>Power (kW)</text>`;
@@ -691,7 +699,7 @@ function dispatchSVG(dp,fc){
   rax+=`<text x="${W-13}" y="${cy.toFixed(1)}" transform="rotate(90 ${W-13} ${cy.toFixed(1)})" text-anchor="middle" fill="#3fb950" font-size="9" ${M}>Stored energy (kWh)</text>`;
   let xl='';[[0,'00:00'],[48,'12:00'],[95,'24:00']].forEach(([i,t])=>xl+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${t}</text>`);
   let hov='',hw=(W-P.l-P.r)/n;for(let i=0;i<n;i++)hov+=`<rect x="${(X(i)-hw/2).toFixed(1)}" y="${pTop}" width="${hw.toFixed(1)}" height="${(dBot-pTop).toFixed(1)}" fill="transparent" onmousemove="dpTip(evt,${i})" onmouseleave="dpTipHide()"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${price}${lax}${rax}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#f85149" stroke-width="1.3" stroke-dasharray="4 3"/>${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="1.8"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#f85149" stroke-width="1.3" stroke-dasharray="4 3"/>${violMark}${violFlag}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;

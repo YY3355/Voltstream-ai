@@ -18,7 +18,11 @@ the Docker-image local gate + explicit go. Never commit red.
         action ±kW (net from raw arrays), SoC before→after (initial→soc[i]), interval rev = net×actual×dt.
         Surfaced status/initial_soc/max_power/eff/dt in the dispatch dict (existing solve data, not a new
         source). VERIFIED: tooltip interval revenues sum to \$0.634 ≈ realized KPI \$0.64. commit <pending>.
-- [ ] 4 — Stepped SoC (step-after) + capacity line + REAL reserve-violation flag if it crosses.
+- [~] 4 — Stepped SoC (step-after staircase) + subtle 25 kWh capacity line + conditional reserve-
+        violation flag (red banner + red dots, only when soc<reserve). STOP-CONDITION FINDING: NO real
+        violation — min SoC 10.0 = reserve, 0 intervals below (MILP enforces soc>=reserve). Flag stays
+        off; MILP untouched. Note: SoC is physically piecewise-LINEAR within intervals (constant power);
+        step-after is the requested discreteness rendering — flagged for Mike's sign-off. commit <pending>.
 - [ ] 5 — Annotation cleanup (labels to right margin; reserve red only when threatened/breached).
 - [ ] 6 — Run header + real solver status + collapsible assumptions block from solve config.
 - [ ] 7 — KPI strip + insight banner (numbers from solution; capture-rate = rev ÷ PF-ceiling).
