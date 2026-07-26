@@ -655,17 +655,30 @@ function forecastSVG(fc){
   const pk=fc.peak_idx;
   return `<svg viewBox="0 0 ${W} ${H}">${ax}<polygon points="${band}" fill="rgba(88,166,255,.18)"/><path d="${line(fc.actual)}" fill="none" stroke="#c9d4e1" stroke-width="1" opacity=".7"/><path d="${line(fc.p50)}" fill="none" stroke="#58a6ff" stroke-width="2"/><circle cx="${X(pk)}" cy="${Y(fc.p50[pk])}" r="3.5" fill="#f5a623"/><text x="${X(pk)}" y="${Y(fc.p50[pk])-7}" text-anchor="middle" fill="#f5a623" font-size="9" font-family="IBM Plex Mono">peak ${fc.peak_time}</text></svg>`;
 }
+function _niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v)))||1; const m=v/p;
+  return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p; }
 function dispatchSVG(dp){
-  const W=560,H=240,P={l:40,r:34,t:12,b:24},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
-  const pmax=Math.max(1,...dp.charge_kw,...dp.discharge_kw),zone=(H-P.t-P.b),y0=P.t+zone*0.46,ph=zone*0.40;
-  const cap=dp.capacity_kwh,Ysoc=v=>H-P.b-(v/cap)*zone,bw=Math.max(1,(W-P.l-P.r)/n-0.4);
+  const M='font-family="IBM Plex Mono"';
+  const W=580,H=252,P={l:56,r:60,t:16,b:30},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
+  const zone=(H-P.t-P.b),cy=P.t+zone/2,hh=zone/2;                     // power 0 at vertical centre
+  const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
+  const cap=dp.capacity_kwh,Ypow=v=>cy-(v/pmax)*hh,Ysoc=v=>H-P.b-(v/cap)*zone,bw=Math.max(1,(W-P.l-P.r)/n-0.4);
+  // dispatch bars from the 0-line (current convention: charge up / discharge down — flipped in T2)
   let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
-    if(dp.charge_kw[i]>0.01){const h=dp.charge_kw[i]/pmax*ph;bars+=`<rect x="${x.toFixed(1)}" y="${(y0-h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}
-    if(dp.discharge_kw[i]>0.01){const h=dp.discharge_kw[i]/pmax*ph;bars+=`<rect x="${x.toFixed(1)}" y="${y0.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}}
+    if(dp.charge_kw[i]>0.01){const y=Ypow(dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}
+    if(dp.discharge_kw[i]>0.01){const y=Ypow(-dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}}
   const soc=dp.soc_kwh.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Ysoc(v).toFixed(1)}`).join(' '),yr=Ysoc(dp.reserve_kwh);
-  const axis=`<line x1="${P.l}" y1="${y0}" x2="${W-P.r}" y2="${y0}" stroke="#2a3645"/><text x="${P.l-6}" y="${y0+3}" text-anchor="end" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">0kW</text><text x="${W-P.r+4}" y="${Ysoc(cap)+8}" fill="#3fb950" font-size="9" font-family="IBM Plex Mono">${cap}kWh</text>`;
-  let xl='';[[0,'00:00'],[48,'12:00'],[95,'24:00']].forEach(([i,t])=>xl+=`<text x="${X(i)}" y="${H-7}" text-anchor="middle" fill="#5d6b7d" font-size="9" font-family="IBM Plex Mono">${t}</text>`);
-  return `<svg viewBox="0 0 ${W} ${H}">${axis}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/><line x1="${P.l}" y1="${yr}" x2="${W-P.r}" y2="${yr}" stroke="#f85149" stroke-width="1.3" stroke-dasharray="4 3"/><text x="${W-P.r}" y="${yr-4}" text-anchor="end" fill="#f85149" font-size="9" font-family="IBM Plex Mono">backup floor ${dp.reserve_kwh}kWh</text>${xl}</svg>`;
+  // LEFT axis — Power (kW), signed, full height, 5 ticks
+  let lax=`<line x1="${P.l}" y1="${P.t}" x2="${P.l}" y2="${(H-P.b).toFixed(1)}" stroke="#2a3645"/>`
+    +`<line x1="${P.l}" y1="${cy.toFixed(1)}" x2="${W-P.r}" y2="${cy.toFixed(1)}" stroke="#2a3645" stroke-dasharray="2 2"/>`;
+  [pmax,pmax/2,0,-pmax/2,-pmax].forEach(v=>{const y=Ypow(v);lax+=`<line x1="${(P.l-3)}" y1="${y.toFixed(1)}" x2="${P.l}" y2="${y.toFixed(1)}" stroke="#2a3645"/><text x="${P.l-6}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${v>0?'+':''}${+v.toFixed(2)}</text>`;});
+  lax+=`<text x="13" y="${cy.toFixed(1)}" transform="rotate(-90 13 ${cy.toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>Power (kW)</text>`;
+  // RIGHT axis — Stored energy (kWh), full height, 5 ticks
+  let rax=`<line x1="${W-P.r}" y1="${P.t}" x2="${W-P.r}" y2="${(H-P.b).toFixed(1)}" stroke="#2a3645"/>`;
+  [cap,cap*0.75,cap/2,cap*0.25,0].forEach(v=>{const y=Ysoc(v);rax+=`<line x1="${W-P.r}" y1="${y.toFixed(1)}" x2="${(W-P.r+3)}" y2="${y.toFixed(1)}" stroke="#2a3645"/><text x="${W-P.r+6}" y="${(y+3).toFixed(1)}" fill="#3fb95099" font-size="9" ${M}>${+v.toFixed(1)}</text>`;});
+  rax+=`<text x="${W-13}" y="${cy.toFixed(1)}" transform="rotate(90 ${W-13} ${cy.toFixed(1)})" text-anchor="middle" fill="#3fb950" font-size="9" ${M}>Stored energy (kWh)</text>`;
+  let xl='';[[0,'00:00'],[48,'12:00'],[95,'24:00']].forEach(([i,t])=>xl+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${t}</text>`);
+  return `<svg viewBox="0 0 ${W} ${H}">${lax}${rax}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#f85149" stroke-width="1.3" stroke-dasharray="4 3"/>${xl}</svg>`;
 }
 
 async function init(){
