@@ -29,7 +29,7 @@ the Docker-image local gate + explicit go. Never commit red.
 - [~] 8 — Time axis DONE: ticks every 4h (00:00..24:00 from fc.hours) + subtle vertical gridlines across both panels (behind data), tightened bottom margin; sub-hourly via hover only. DOM shows all 7 ticks. commit <pending>. ALL 8 Bolt-chart tasks done — decision-grade.
 ## Checklist — app-wide
 - [~] 9 — Typography split DONE (CSS, class-based -> uniform): titles, nav tabs, tagline, coopt-note, kv labels, hero labels, legend flipped mono->sans; numbers/times/prices/statuses (.kv b, .num, .meta, .state, sysstrip, chart SVG) stay mono. Verified copilot/assetopt/quant tabs: clean split, no layout breaks. commit <pending>.
-- [ ] 10 — Axis/legend audit of every other chart (fix only).
+- [~] 10 — Axis/legend audit DONE (fix-only). Audited named charts: DART overlay (already $/MWh+ticks; legend has DA/RT+DART pos/neg) — added >=3 ticks (+/-$mx/0) + $/MWh unit to DART spread + hour-of-day charts. Confirmed existing legends+units: curve (on/off-peak), swap (strike/fwd), risk (P&L), hedge (ratio+legend), decade ($/MW). Exhaustive per-chart sweep of remaining panels = Mike real-browser pass. commit <pending>.
 
 ## Run mode (Mike) — BATCH 2→10, no deploy
 - Run tasks 2-8 then 9-10 straight through; each commits its own headless screenshot (working check).

@@ -1181,7 +1181,9 @@ function dartSpreadSVG(d){
   a.forEach((v,i)=>{const y=Y(v),h=Math.abs(z-y);
     svg+=`<rect x="${(X(i)-bw/2).toFixed(1)}" y="${(v>=0?y:z).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${v>=0?'#22d3ee':'#f0a35e'}" opacity=".85"/>`;});
   svg+=`<text x="${P.l-8}" y="${(z+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">0</text>`
-    +`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${mx.toFixed(0)}</text>`;
+    +`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">+$${mx.toFixed(0)}</text>`
+    +`<text x="${P.l-8}" y="${(Y(-mx)-1).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">-$${mx.toFixed(0)}</text>`
+    +`<text x="${P.l-8}" y="9" text-anchor="end" fill="#7e8da0" font-size="8" font-family="IBM Plex Mono">$/MWh</text>`;
   return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
 }
 function dartHodSVG(d){
@@ -1193,7 +1195,10 @@ function dartHodSVG(d){
   hp.forEach((o,i)=>{const y=Y(o.dart),h=Math.abs(z-y);
     svg+=`<rect x="${(X(i)+1).toFixed(1)}" y="${(o.dart>=0?y:z).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="1" fill="${o.dart>=0?'#22d3ee':'#f0a35e'}" opacity=".85"/>`;
     if(o.hour%3===0) svg+=`<text x="${(X(i)+bw/2+1).toFixed(1)}" y="${H-P.b+14}" text-anchor="middle" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">${o.hour}</text>`;});
-  svg+=`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">$${mx.toFixed(1)}</text>`
+  svg+=`<text x="${P.l-8}" y="${(Y(mx)+7).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">+$${mx.toFixed(1)}</text>`
+    +`<text x="${P.l-8}" y="${(z+3).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">0</text>`
+    +`<text x="${P.l-8}" y="${(Y(-mx)-1).toFixed(1)}" text-anchor="end" fill="#5d6b7d" font-size="8" font-family="IBM Plex Mono">-$${mx.toFixed(1)}</text>`
+    +`<text x="${P.l-8}" y="9" text-anchor="end" fill="#7e8da0" font-size="8" font-family="IBM Plex Mono">$/MWh</text>`
     +`<text x="${(W-P.r).toFixed(1)}" y="${H-P.b+14}" text-anchor="end" fill="#7e8da0" font-size="8" font-family="IBM Plex Mono">hour of day</text>`;
   return `<svg viewBox="0 0 ${W} ${H}">${svg}</svg>`;
 }
