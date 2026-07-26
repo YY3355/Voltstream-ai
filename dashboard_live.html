@@ -327,11 +327,13 @@
   <section class="section" id="sec-assetopt" data-sec="assetopt">
   <div class="flow">
     <div class="card" id="c-dp">
-      <div class="lid"><span class="num">1</span><span class="title">Bolt Optimizer</span><span class="state skip" id="s-dp">idle</span></div>
+      <div class="lid"><span class="num">1</span><span class="title">Day-ahead dispatch optimization</span><span class="state skip" id="s-dp">idle</span></div>
+      <div id="dp-runhdr" class="coopt-sub" style="font-size:11px;margin:1px 0 7px;color:var(--dim)"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
       <div class="legend"><span><i style="background:var(--cyan)"></i>LMP (P50 optimized against)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
       <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
+      <details id="dp-assump" style="margin-top:6px"><summary style="cursor:pointer;font-size:11px;color:var(--dim)">Assumptions &amp; solve config</summary><div id="dp-assump-body" style="font-size:11px;color:var(--dim);margin-top:5px;line-height:1.6"></div></details>
     </div>
 
     <div class="card lit" id="c-coopt" style="--accent:var(--blue)">
@@ -728,6 +730,13 @@ async function init(){
     $('fc-chart').innerHTML=forecastSVG(S.forecast);
     $('fc-kv').innerHTML=`<div><span class="l">PEAK P50</span><b>$${S.forecast.peak_price}</b>/MWh</div><div><span class="l">@ TIME</span><b>${S.forecast.peak_time}</b></div><div><span class="l">SPREAD</span><b>${S.forecast.rel_band_pct}%</b></div>`;
     $('dp-chart').innerHTML=dispatchSVG(S.dispatch, S.forecast);
+    { const D=S.dispatch;
+      const stMap={optimal:'Optimal solution found',optimal_inaccurate:'Optimal (reduced tolerance)',infeasible:'Infeasible',infeasible_inaccurate:'Infeasible',unbounded:'Unbounded'};
+      const stTxt=stMap[D.status]||D.status, ok=D.status==='optimal';
+      $('dp-runhdr').innerHTML=`${S.target_date} · ${D.hub} · ${D.capacity_kwh} kWh / ${D.max_power_kw} kW battery · last optimized ${new Date(S.computed_at).toLocaleString()} · <b style="color:${ok?'var(--green)':'var(--amber)'}">${stTxt}</b>`;
+      const sd=$('s-dp'); if(sd){ sd.className='state '+(ok?'on':'skip'); sd.textContent=D.status; }
+      const hz=(D.charge_kw.length*D.dt_hours);
+      $('dp-assump-body').innerHTML=`round-trip efficiency <b>${(D.round_trip_efficiency*100).toFixed(0)}%</b> · max power <b>±${D.max_power_kw} kW</b> · usable capacity <b>${D.capacity_kwh} kWh</b> · backup reserve <b>${D.reserve_kwh} kWh</b> · starting SoC <b>${D.initial_soc_kwh} kWh</b><br>horizon <b>${hz} h</b> (${D.charge_kw.length} × ${D.dt_hours*60} min) · price source: ${D.price_source}<br>objective: <b>gross energy-arbitrage revenue only</b> — no degradation, fees, or ancillary terms in the MILP · solver: HiGHS (MILP via cvxpy)`; }
     $('dp-kv').innerHTML=`<div><span class="l">ACTION NOW</span><b>${S.dispatch.action_now}</b></div><div><span class="l">CAPTURE</span><b>${S.dispatch.capture_pct}%</b></div><div><span class="l">REV</span><b>$${S.dispatch.revenue_forecast}</b></div>`;
     const st=$('sysstrip'); if(st){ st.innerHTML=
       `<span class="pill"><i>data</i><b>${S.source}</b></span>`

@@ -14,7 +14,7 @@ Open:  http://localhost:8000
 """
 import os
 import time
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
 import numpy as np
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
@@ -68,6 +68,7 @@ def compute_state(reserve_kwh: float = 10.0):
         "reserve": reserve_kwh,
         "source": data_source(),
         "target_date": str(target),
+        "computed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),  # when this solve ran
         "forecast": {"hours": hours,
                      "p10": [round(float(x), 1) for x in p10],
                      "p50": [round(float(x), 1) for x in p50],
