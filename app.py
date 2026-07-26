@@ -552,6 +552,7 @@ def api_countyheat():
 
 
 _FORECAST_CACHE = {}   # hub -> (monotonic_ts, result); GBM fit is seconds, cache ~30 min
+_VOL_CACHE = {}        # (hub,bucket) -> (monotonic_ts, result); realized-vol read of the archive
 
 
 @app.get("/api/forecast")
@@ -576,6 +577,58 @@ def api_forecast(hub: str = "HB_HOUSTON"):
         return out
     except Exception as e:
         return {"error": f"day-ahead forecast unavailable for {hub}: {e}", "hub": hub}
+
+
+@app.get("/api/vol")
+def api_vol(hub: str = "HB_HOUSTON", bucket: str = "peak"):
+    """REALIZED volatility from VoltStream's own price archive — NOT implied vol.
+
+    No power-option quotes are available to us, so there is no market vol surface here; this is an
+    input estimate measured from archived ERCOT settlements, not a market price of risk. For the given
+    hub and bucket (peak = HE 07-22 / offpeak = rest, ALL days — declared in the payload) it returns
+    realized_vol at 20/60/250d + a vol cone, for BOTH DA and RT daily bucket-average series. Depth is
+    whatever the archive holds — n_obs and excluded-day counts are reported, never hidden or fabricated.
+    """
+    import time, logging, desk_data, vol_engine
+    from datetime import datetime, timezone
+    hub = (hub or "HB_HOUSTON").upper()
+    bucket = (bucket or "peak").lower()
+    key = (hub, bucket)
+    hit = _VOL_CACHE.get(key)
+    if hit and time.monotonic() - hit[0] < 1800:
+        return hit[1]
+    log = logging.getLogger("uvicorn.error")
+    try:
+        markets = {}
+        for market in ("da", "rt"):
+            daily, meta = desk_data.daily_bucket(hub, market, bucket)
+            if len(daily) < 3:
+                markets[market] = {**meta, "error": f"archive too thin ({len(daily)} days)"}
+                log.info(f"/api/vol {hub} {market} {bucket}: too thin ({len(daily)} days)")
+                continue
+            windows = [vol_engine.realized_vol(daily, window_days=w,
+                                               label=f"{hub} {market} {bucket}").to_dict()
+                       for w in (20, 60, 250)]
+            cone = vol_engine.vol_cone(daily, windows=(20, 60, 250), label=f"{hub} {market} {bucket}")
+            full = vol_engine.realized_vol(daily, label=f"{hub} {market} {bucket}")
+            log.info(f"/api/vol {hub} {market} {bucket}: n_days={meta['n_days']} n_obs={full.n_obs} "
+                     f"normal_vol=${full.normal_vol:,.1f}/sqrt-yr excluded_nonpos={full.n_excluded_nonpos}")
+            markets[market] = {**meta, "n_obs_full": full.n_obs, "mean_price": full.mean_price,
+                               "n_excluded_nonpos": full.n_excluded_nonpos,
+                               "normal_vol_full": full.normal_vol, "log_vol_full": full.log_vol,
+                               "windows": windows, "cone": cone}
+        return_val = {
+            "hub": hub, "bucket": bucket, "bucket_definition": desk_data.BUCKET_DEF,
+            "label": ("realized, not implied — no option quotes available. Measured from archived "
+                      "ERCOT settlements; an input estimate, not a market price of risk."),
+            "convention": "normal_vol = $/MWh per sqrt-yr (Bachelier); log_vol excludes non-positive days",
+            "markets": markets,
+            "asof": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        }
+        _VOL_CACHE[key] = (time.monotonic(), return_val)
+        return return_val
+    except Exception as e:
+        return {"error": f"vol unavailable for {hub}/{bucket}: {e}", "hub": hub, "bucket": bucket}
 
 
 @app.get("/api/dcopf")

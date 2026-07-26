@@ -5,6 +5,15 @@ Env: `conda run -n volt`; `ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean` for CSV mode;
 warm /api/dart + /api/risk before render checks; headless-Chrome/CDP render per tab; screenshots for
 every visual task.
 
+## Run mode (Mike, this session)
+Tasks 2→6 run LOOSE (autonomous, fresh-eyes verify + commit each). PAUSE before task 7.
+
+## Hard operational constraints (NON-NEGOTIABLE)
+- **Never write into `journal/`** — it is the git-audited book. No autonomous loop touches it under any
+  circumstances (reading dart_journal calls for "Your Call" is read-only and fine; writing is forbidden).
+- **No new Fly resources EVER** — no machines, volumes, regions, or scale changes. Task 7 is a REDEPLOY
+  to the existing `voltstream-ercot` app only, and only after Mike's explicit go.
+
 ## Honesty contract (NON-NEGOTIABLE — echo in commit messages)
 - Realized vol labeled "realized, not implied — no option quotes available" everywhere it renders.
 - Option values labeled "model value under realized vol — not a market quote."

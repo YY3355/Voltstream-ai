@@ -5,7 +5,13 @@ Never commit red. Same check red 3x = blocked.
 
 ## Checklist
 - [x] 1 — Drop in vol_engine/options_engine/desk_climatology + test_fixtures; fixtures GREEN in conda.
-- [ ] 2 — /api/vol (price_store DA/RT, peak/offpeak, realized_vol 20/60/250d + cone) + sanity gate.
+- [x] 2 — /api/vol?hub=&bucket= + desk_data.py. RT from price_store rolling (cached, 48d), DA from
+        dart_cache DA-hourly (30d); peak=HE07-22/offpeak=rest (declared in payload). Per market:
+        realized_vol 20/60/250 + vol_cone (omits data-thin windows honestly). Excluded-nonpos in payload
+        + logged. Real depth only (n_obs==n_days-1). SANITY Houston RT peak $163.4/sqrt-yr (in [10,10000]).
+        VERIFIED self (200, multi-hub sane, bad-input no-500, cache) + fresh-eyes GREEN 7/7 (finite, n_obs
+        reproduced to the cent, no fabricated 250d cone, magnitude, honest labels, robust, no-LLM/read-only).
+        Known cosmetic: vol_engine.py:63 FutureWarning on each call (left as-is). commit <pending>.
 - [ ] 3 — /api/option governed pricer (curve F + task-2 vol; ≤0 forward => black76 refusal, offer bachelier).
 - [ ] 4 — Structuring panel (Quant): ATM card + Greeks + provenance + battery-vega tie-in. Screenshot.
 - [ ] 5 — Climatology build → clim_result.json snapshot; honest date-range label.
