@@ -41,6 +41,17 @@ the Docker-image local gate + explicit go. Never commit red.
 - END: NO deploy. Mike clicks every tab on :8020 (visual sign-off; headless doesn't count) -> Docker-
   image local gate (build+run container, curl) -> then explicit go.
 
+## FINAL STATE — batch 2→10 complete, NOT deployed
+- All 10 tasks committed + pushed (41edcc3 T1 … 73737a6 T10). Bolt chart is decision-grade; app-wide
+  typography split + DART axis/legend fixes done. Every rendered number from solver arrays/archive;
+  gross-only revenue (no degradation term); real solver status; sign flip is display-only; nothing clamped.
+- T4 finding: NO reserve violation (min SoC = reserve, MILP respects the floor). MILP untouched (out of scope).
+- PENDING (Mike's hands, in order): (1) real-browser click-through of every tab on :8020 = visual sign-off;
+  (2) then the Docker-image local gate (build+run container, curl endpoints); (3) then explicit go -> fly
+  deploy (existing machine only). NO deploy happened this loop.
+- Flags for sign-off: step-after SoC is a discreteness choice (SoC is physically piecewise-linear);
+  run-header prose keeps embedded data in sans while KPI values are mono.
+
 ## Append-only log
 - init (2026-07-26) — New loop from GRAPH_POLISH_RECIPE.md (dropped in by Mike). Prior loop
   (structuring desk) DONE + deployed live. Wrote GOAL. NEW gates: Docker-image pre-deploy + Mike's
