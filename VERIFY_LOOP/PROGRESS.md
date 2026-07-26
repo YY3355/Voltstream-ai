@@ -23,7 +23,7 @@ the Docker-image local gate + explicit go. Never commit red.
         violation — min SoC 10.0 = reserve, 0 intervals below (MILP enforces soc>=reserve). Flag stays
         off; MILP untouched. Note: SoC is physically piecewise-LINEAR within intervals (constant power);
         step-after is the requested discreteness rendering — flagged for Mike's sign-off. commit <pending>.
-- [ ] 5 — Annotation cleanup (labels to right margin; reserve red only when threatened/breached).
+- [~] 5 — Annotation cleanup DONE: capacity+reserve labels at right-axis margin, small+muted; reserve line + label turn prominent red +warn ONLY when threatened (minSoc<=reserve*1.1) or breached, else muted gray. Here threatened=true (minSoc=reserve). DOM-verified. commit <pending>.
 - [ ] 6 — Run header + real solver status + collapsible assumptions block from solve config.
 - [ ] 7 — KPI strip + insight banner (numbers from solution; capture-rate = rev ÷ PF-ceiling).
 - [ ] 8 — Time axis + grid (4h ticks, gridlines, tighten margin).
