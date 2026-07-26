@@ -1,0 +1,1657 @@
+{
+ "kind": "realized_vol_snapshot",
+ "label": "realized, not implied \u2014 no option quotes available",
+ "bucket_def": "peak = hours-ending 07-22 (clock 06:00-21:59), all days; offpeak = the rest",
+ "hubs": {
+  "HB_HOUSTON": {
+   "hub": "HB_HOUSTON",
+   "markets": {
+    "rt": {
+     "peak": {
+      "n_days": 3127,
+      "windows": [
+       {
+        "label": "HB_HOUSTON rt peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 174.5268169894233,
+        "log_vol": 4.176896702308578,
+        "mean_price": 32.24843702758882,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON rt peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 181.93144168441748,
+        "log_vol": 4.7019620720752044,
+        "mean_price": 33.30591615437159,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON rt peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 372.7092481706967,
+        "log_vol": 8.85963980945244,
+        "mean_price": 31.999347588217432,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_HOUSTON rt peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3107,
+         "min": 48.589449959923805,
+         "p25": 215.32823519635053,
+         "median": 382.2133716099076,
+         "p75": 813.5588300521074,
+         "max": 39406.98122854642,
+         "current": 174.52681698822002
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3067,
+         "min": 106.40852082709476,
+         "p25": 344.8433788552649,
+         "median": 556.2457161002287,
+         "p75": 945.3771152865515,
+         "max": 22369.101061914167,
+         "current": 181.93144168312313
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3007,
+         "min": 162.89403347448803,
+         "p25": 445.18993565713015,
+         "median": 668.9027492282169,
+         "p75": 1738.1751236413666,
+         "max": 15853.492804660547,
+         "current": 347.2310803282445
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2877,
+         "min": 301.6150931397291,
+         "p25": 605.8675997788874,
+         "median": 1023.9304520809014,
+         "p75": 3438.6509846201066,
+         "max": 10973.767003131237,
+         "current": 372.7092481706525
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2627,
+         "min": 405.1838441876176,
+         "p25": 824.6430499326552,
+         "median": 2578.1584636581106,
+         "p75": 3057.3473560161106,
+         "max": 7878.855566203523,
+         "current": 413.44253125112925
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:56+00:00"
+      },
+      "start": "2018-01-01",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 4
+     },
+     "offpeak": {
+      "n_days": 3128,
+      "windows": [
+       {
+        "label": "HB_HOUSTON rt offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 157.7136850277094,
+        "log_vol": 4.233740435658174,
+        "mean_price": 31.519955357142855,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON rt offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 195.35198119687925,
+        "log_vol": 4.9295714850810635,
+        "mean_price": 31.009477459016395,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON rt offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 410.4201049406069,
+        "log_vol": 6.879734187871511,
+        "mean_price": 31.46414224691449,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_HOUSTON rt offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3108,
+         "min": 12.846321483716816,
+         "p25": 82.95138562131615,
+         "median": 126.87720284120974,
+         "p75": 208.8249181099688,
+         "max": 40665.09402934887,
+         "current": 157.7136850259841
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3068,
+         "min": 18.73302744030803,
+         "p25": 94.56944897956647,
+         "median": 154.47232252687888,
+         "p75": 253.4793097245409,
+         "max": 23077.28912245239,
+         "current": 195.351981196872
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3008,
+         "min": 23.916822972721388,
+         "p25": 100.63346943808443,
+         "median": 179.0580402238068,
+         "p75": 255.52896535850988,
+         "max": 16250.696189076147,
+         "current": 180.5200667419609
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2878,
+         "min": 68.46498672003678,
+         "p25": 131.63352172307407,
+         "median": 198.3724503565577,
+         "p75": 344.5622319873398,
+         "max": 11234.591022416573,
+         "current": 410.42010494045644
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2628,
+         "min": 99.75520024129527,
+         "p25": 166.42258056731225,
+         "median": 268.9973222336932,
+         "p75": 351.0055560158499,
+         "max": 7940.016150396926,
+         "current": 328.1848023302464
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:56+00:00"
+      },
+      "start": "2017-12-31",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 24
+     }
+    },
+    "da": {
+     "peak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_HOUSTON da peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 218.6994731593372,
+        "log_vol": 4.538556558981897,
+        "mean_price": 34.498244047619046,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON da peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 149.89674209103256,
+        "log_vol": 3.5225368862166357,
+        "mean_price": 33.54695696721311,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON da peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 667.9307107166702,
+        "log_vol": 6.26629107260048,
+        "mean_price": 35.0087375498008,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_HOUSTON da peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 31.465150130454298,
+         "p25": 109.80409264925383,
+         "median": 194.83543059953726,
+         "p75": 453.3143452780626,
+         "max": 33869.62670939438,
+         "current": 218.6994731598373
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 50.94376901239009,
+         "p25": 183.5141494933795,
+         "median": 310.7055277134921,
+         "p75": 772.035731601283,
+         "max": 19221.54733804026,
+         "current": 149.8967420913449
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 67.65195197185395,
+         "p25": 254.3745160330119,
+         "median": 536.7804437221575,
+         "p75": 1111.7503516766185,
+         "max": 13535.673671278795,
+         "current": 267.9728333698833
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 166.54155057943717,
+         "p25": 395.0784690365622,
+         "median": 784.8092203750521,
+         "p75": 2153.6972398386956,
+         "max": 9374.600974636773,
+         "current": 667.9307107165989
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 273.3354223088443,
+         "p25": 725.5756375767073,
+         "median": 1546.4229487520179,
+         "p75": 2195.0605106215144,
+         "max": 6631.277863655004,
+         "current": 512.6939348474366
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:56+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     },
+     "offpeak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_HOUSTON da offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 93.17682777179263,
+        "log_vol": 2.7214746174844464,
+        "mean_price": 31.57101190476191,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON da offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 103.95609591897075,
+        "log_vol": 3.2706523133337475,
+        "mean_price": 29.87040983606557,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       },
+       {
+        "label": "HB_HOUSTON da offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 1098.0834260968315,
+        "log_vol": 5.814097887392127,
+        "mean_price": 35.05682270916335,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:56+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_HOUSTON da offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 9.322151377854974,
+         "p25": 43.83093930097661,
+         "median": 71.4649624612553,
+         "p75": 111.94819742827733,
+         "max": 36359.9836337604,
+         "current": 93.17682777420737
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 12.779138151403972,
+         "p25": 48.41560298219417,
+         "median": 79.13773771841173,
+         "p75": 122.48950684466595,
+         "max": 20633.760552529067,
+         "current": 103.9560959191484
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 17.445607469609396,
+         "p25": 50.601513145806216,
+         "median": 81.43669673299163,
+         "p75": 165.369211359792,
+         "max": 14528.953037029074,
+         "current": 165.32620021371125
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 33.963285740600604,
+         "p25": 61.00675111396822,
+         "median": 124.42408113296233,
+         "p75": 318.35182186128185,
+         "max": 10044.120760553003,
+         "current": 1098.08342609677
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 41.313524172048844,
+         "p25": 110.29439916007749,
+         "median": 233.0901933843383,
+         "p75": 780.0090274249003,
+         "max": 7096.0376073938905,
+         "current": 779.7518783062716
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:56+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     }
+    }
+   },
+   "label": "realized, not implied \u2014 no option quotes available",
+   "source": "merged: RT decade + data/ + store (RT); DAM bundle decade (DA)"
+  },
+  "HB_NORTH": {
+   "hub": "HB_NORTH",
+   "markets": {
+    "rt": {
+     "peak": {
+      "n_days": 365,
+      "windows": [
+       {
+        "label": "HB_NORTH rt peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 172.91547531127608,
+        "log_vol": 4.815667093390921,
+        "mean_price": 30.373306878306884,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH rt peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 470.12601137034164,
+        "log_vol": 10.925497009332304,
+        "mean_price": 30.174850011384336,
+        "start": "2026-04-11",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH rt peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 1,
+        "normal_vol": 559.2448741256749,
+        "log_vol": 13.25923166308152,
+        "mean_price": 31.195632410832857,
+        "start": "2025-09-19",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_NORTH rt peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 345,
+         "min": 56.06418011759644,
+         "p25": 200.26669213002577,
+         "median": 252.10367951500322,
+         "p75": 363.76978428550944,
+         "max": 1625.1742762421288,
+         "current": 172.9154753112824
+        },
+        {
+         "window_days": 60,
+         "n_samples": 305,
+         "min": 177.97048017720215,
+         "p25": 258.985351786356,
+         "median": 338.1904481533526,
+         "p75": 516.5173707859725,
+         "max": 958.8811817099504,
+         "current": 470.1260113703411
+        },
+        {
+         "window_days": 120,
+         "n_samples": 245,
+         "min": 221.48188394735698,
+         "p25": 281.99194713070096,
+         "median": 528.2895935337268,
+         "p75": 705.7190441947234,
+         "max": 751.9431255022653,
+         "current": 382.52215222756763
+        },
+        {
+         "window_days": 250,
+         "n_samples": 115,
+         "min": 515.2678269103621,
+         "p25": 517.2156924577423,
+         "median": 522.695802028208,
+         "p75": 558.24296788722,
+         "max": 560.4079050829298,
+         "current": 559.2448741256751
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 1
+     },
+     "offpeak": {
+      "n_days": 390,
+      "windows": [
+       {
+        "label": "HB_NORTH rt offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 154.84729670047884,
+        "log_vol": 4.242911538352427,
+        "mean_price": 31.48367559523809,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH rt offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 423.96209129983515,
+        "log_vol": 8.50060802549629,
+        "mean_price": 30.792090588065584,
+        "start": "2026-04-17",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH rt offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 623.0342885352686,
+        "log_vol": 9.59186114619426,
+        "mean_price": 33.37197418711456,
+        "start": "2025-10-07",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_NORTH rt offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 370,
+         "min": 70.96700192302191,
+         "p25": 126.36413891634426,
+         "median": 203.51554116297137,
+         "p75": 498.5578209973908,
+         "max": 1732.6206343784272,
+         "current": 154.84729670047946
+        },
+        {
+         "window_days": 60,
+         "n_samples": 330,
+         "min": 117.79428702979074,
+         "p25": 222.70155371244562,
+         "median": 423.4915901012685,
+         "p75": 671.4101013543777,
+         "max": 1099.3445555808391,
+         "current": 423.962091299834
+        },
+        {
+         "window_days": 120,
+         "n_samples": 270,
+         "min": 144.07344669152045,
+         "p25": 230.7310908062382,
+         "median": 480.6450321246242,
+         "p75": 760.4088624564023,
+         "max": 843.0205027495409,
+         "current": 483.3483539479772
+        },
+        {
+         "window_days": 250,
+         "n_samples": 140,
+         "min": 464.1636388884421,
+         "p25": 543.4329800784126,
+         "median": 586.1972532773207,
+         "p75": 622.5262790443104,
+         "max": 623.0342885352686,
+         "current": 623.0342885352686
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     }
+    },
+    "da": {
+     "peak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_NORTH da peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 246.6648669908779,
+        "log_vol": 5.208941840001505,
+        "mean_price": 33.52779761904762,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH da peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 166.95576766334682,
+        "log_vol": 4.211934877945333,
+        "mean_price": 30.537336065573772,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH da peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 826.2086681698479,
+        "log_vol": 8.158534876379443,
+        "mean_price": 33.94404631474104,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_NORTH da peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 37.203570072588676,
+         "p25": 117.3081518649627,
+         "median": 211.35398924719078,
+         "p75": 465.707857432735,
+         "max": 33900.71169975605,
+         "current": 246.66486699063594
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 56.85500599348467,
+         "p25": 197.0459105405405,
+         "median": 318.5668539897307,
+         "p75": 773.9941086534004,
+         "max": 19239.26374174705,
+         "current": 166.9557676635832
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 76.37859915359772,
+         "p25": 263.45459201460085,
+         "median": 551.571120459085,
+         "p75": 1159.3975370453427,
+         "max": 13548.073378113046,
+         "current": 296.4265593852601
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 178.43618164159267,
+         "p25": 401.0557877377471,
+         "median": 825.1997268007767,
+         "p75": 2154.644966979515,
+         "max": 9383.118337451839,
+         "current": 826.2086681698212
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 305.30856690491214,
+         "p25": 758.7674355534872,
+         "median": 1548.0882388496489,
+         "p75": 2215.1650591839634,
+         "max": 6637.825218208162,
+         "current": 618.4177696302291
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     },
+     "offpeak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_NORTH da offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 92.14697625252579,
+        "log_vol": 2.702055057462631,
+        "mean_price": 31.50255952380953,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH da offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 106.90383297769587,
+        "log_vol": 3.3747464189084346,
+        "mean_price": 29.786454918032785,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_NORTH da offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 1357.8726761721368,
+        "log_vol": 6.38116364597733,
+        "mean_price": 36.99381331815595,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_NORTH da offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 10.093424574150749,
+         "p25": 46.521985540932924,
+         "median": 76.9568397299255,
+         "p75": 118.65140255299809,
+         "max": 36386.326620158725,
+         "current": 92.14697625198586
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 12.959471301815205,
+         "p25": 51.80225042989964,
+         "median": 83.88462171750305,
+         "p75": 134.43257413329013,
+         "max": 20648.698118372668,
+         "current": 106.9038329795227
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 18.702739857139626,
+         "p25": 53.43125068042574,
+         "median": 86.8816148053235,
+         "p75": 189.418162294053,
+         "max": 14539.507593896336,
+         "current": 178.1042595373955
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 36.95725979321,
+         "p25": 64.80901730696465,
+         "median": 148.3033818585047,
+         "p75": 342.41333399106094,
+         "max": 10051.424373986887,
+         "current": 1357.8726761721953
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 44.49699621591568,
+         "p25": 131.27688192197624,
+         "median": 252.98383356078364,
+         "p75": 965.553823017785,
+         "max": 7101.358030815234,
+         "current": 963.423781652448
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     }
+    }
+   },
+   "label": "realized, not implied \u2014 no option quotes available",
+   "source": "merged: RT decade + data/ + store (RT); DAM bundle decade (DA)"
+  },
+  "HB_SOUTH": {
+   "hub": "HB_SOUTH",
+   "markets": {
+    "rt": {
+     "peak": {
+      "n_days": 365,
+      "windows": [
+       {
+        "label": "HB_SOUTH rt peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 246.203207711994,
+        "log_vol": 6.616187172314252,
+        "mean_price": 28.620097671012847,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH rt peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 507.972488028398,
+        "log_vol": 10.445325702023766,
+        "mean_price": 31.781337415430652,
+        "start": "2026-04-11",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH rt peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 486.3960509088041,
+        "log_vol": 13.943615780756764,
+        "mean_price": 32.568018550796815,
+        "start": "2025-09-19",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_SOUTH rt peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 345,
+         "min": 55.7957905846681,
+         "p25": 168.15545170783517,
+         "median": 245.4267403445163,
+         "p75": 355.74962519560637,
+         "max": 1055.871604104091,
+         "current": 246.20320771199354
+        },
+        {
+         "window_days": 60,
+         "n_samples": 305,
+         "min": 139.42330938936203,
+         "p25": 223.61121905306095,
+         "median": 496.7844393731599,
+         "p75": 545.7543313624936,
+         "max": 750.8462622924835,
+         "current": 507.9724880283977
+        },
+        {
+         "window_days": 120,
+         "n_samples": 245,
+         "min": 197.7029810343144,
+         "p25": 373.31224904904127,
+         "median": 461.1419858709654,
+         "p75": 565.6397115907347,
+         "max": 588.3564544372831,
+         "current": 384.4974220265471
+        },
+        {
+         "window_days": 250,
+         "n_samples": 115,
+         "min": 424.6784907280573,
+         "p25": 429.2726378717466,
+         "median": 430.7387213537856,
+         "p75": 482.52119238161265,
+         "max": 486.3960509088042,
+         "current": 486.3960509088042
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     },
+     "offpeak": {
+      "n_days": 391,
+      "windows": [
+       {
+        "label": "HB_SOUTH rt offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 166.77552228139,
+        "log_vol": 4.400770229105985,
+        "mean_price": 31.263392857142858,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH rt offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 374.9836272489391,
+        "log_vol": 7.516090405810484,
+        "mean_price": 31.938616826886758,
+        "start": "2026-04-18",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH rt offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 584.5878855372123,
+        "log_vol": 8.817585871941956,
+        "mean_price": 33.70264423673493,
+        "start": "2025-10-08",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_SOUTH rt offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 371,
+         "min": 68.23249947888824,
+         "p25": 104.23039610517766,
+         "median": 167.56893552319644,
+         "p75": 614.1270423926256,
+         "max": 1459.190772511253,
+         "current": 166.7755222813898
+        },
+        {
+         "window_days": 60,
+         "n_samples": 331,
+         "min": 98.55874910527194,
+         "p25": 194.96371204615244,
+         "median": 458.89752771859537,
+         "p75": 609.2164324739283,
+         "max": 997.6495275931684,
+         "current": 374.98362724893923
+        },
+        {
+         "window_days": 120,
+         "n_samples": 271,
+         "min": 122.71216057866607,
+         "p25": 210.1952438518448,
+         "median": 440.0806690786616,
+         "p75": 725.1722206494455,
+         "max": 787.9462217837573,
+         "current": 427.892079539261
+        },
+        {
+         "window_days": 250,
+         "n_samples": 141,
+         "min": 462.6783803102303,
+         "p25": 518.1398041001626,
+         "median": 554.2433324720108,
+         "p75": 583.4466346798259,
+         "max": 584.5878855372122,
+         "current": 584.5878855372122
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     }
+    },
+    "da": {
+     "peak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_SOUTH da peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 199.02791618428023,
+        "log_vol": 4.882572650680363,
+        "mean_price": 30.51083333333333,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH da peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 141.98658927526765,
+        "log_vol": 3.848652337448535,
+        "mean_price": 29.799713114754102,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH da peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 677.8329624397177,
+        "log_vol": 7.07377248798269,
+        "mean_price": 34.11255976095617,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_SOUTH da peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 30.494560471712404,
+         "p25": 110.3458513928065,
+         "median": 201.68783776344486,
+         "p75": 439.29238037735104,
+         "max": 33802.16710608807,
+         "current": 199.02791618595714
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 51.15136626569523,
+         "p25": 182.90965646899352,
+         "median": 320.4750024154721,
+         "p75": 758.7473218521977,
+         "max": 19183.30992567394,
+         "current": 141.9865892748005
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 67.66226282031894,
+         "p25": 253.4960059437554,
+         "median": 540.3404298817186,
+         "p75": 1116.8047373410843,
+         "max": 13508.77145141236,
+         "current": 258.7307700297356
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 180.83341060776849,
+         "p25": 387.229584495117,
+         "median": 788.5781668734924,
+         "p75": 2150.7505077704404,
+         "max": 9355.948233546047,
+         "current": 677.8329624397792
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 278.1728238763646,
+         "p25": 704.9571235111521,
+         "median": 1543.496773463064,
+         "p75": 2141.333990468769,
+         "max": 6618.437859065738,
+         "current": 518.9804050302397
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 0
+     },
+     "offpeak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_SOUTH da offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 95.93536009903447,
+        "log_vol": 2.807492988786012,
+        "mean_price": 31.431369047619043,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH da offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 101.29593357010428,
+        "log_vol": 3.1735995964318042,
+        "mean_price": 29.851393442622953,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       },
+       {
+        "label": "HB_SOUTH da offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 1147.968854055323,
+        "log_vol": 6.149610857211604,
+        "mean_price": 35.603938531587936,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:57+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_SOUTH da offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 10.320093727260437,
+         "p25": 45.790650874217775,
+         "median": 72.84282321502049,
+         "p75": 115.43282934910962,
+         "max": 36326.857681356145,
+         "current": 95.93536010342166
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 13.580851766345772,
+         "p25": 49.07983837766257,
+         "median": 80.12640906627396,
+         "p75": 127.49485729311594,
+         "max": 20614.952223029322,
+         "current": 101.29593357040328
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 16.758552652709824,
+         "p25": 51.56386822770003,
+         "median": 81.08208409417341,
+         "p75": 162.29005413643165,
+         "max": 14515.708294803611,
+         "current": 156.9005884331811
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 34.34030851003872,
+         "p25": 63.20228486217722,
+         "median": 124.78757196867613,
+         "p75": 281.8047283064765,
+         "max": 10034.976328948724,
+         "current": 1147.9688540554057
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 40.76844987356613,
+         "p25": 103.69564727829876,
+         "median": 208.01614747950387,
+         "p75": 814.4649825234081,
+         "max": 7089.711449573601,
+         "current": 814.5011469087732
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:57+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 3
+     }
+    }
+   },
+   "label": "realized, not implied \u2014 no option quotes available",
+   "source": "merged: RT decade + data/ + store (RT); DAM bundle decade (DA)"
+  },
+  "HB_WEST": {
+   "hub": "HB_WEST",
+   "markets": {
+    "rt": {
+     "peak": {
+      "n_days": 367,
+      "windows": [
+       {
+        "label": "HB_WEST rt peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 224.42223836614485,
+        "log_vol": 8.158385067457445,
+        "mean_price": 29.0345525085034,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST rt peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 6,
+        "normal_vol": 485.08875129422677,
+        "log_vol": 17.525234408663977,
+        "mean_price": 23.606280371779864,
+        "start": "2026-04-13",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST rt peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 18,
+        "normal_vol": 607.3631465316162,
+        "log_vol": 21.04541692590061,
+        "mean_price": 28.39635553025991,
+        "start": "2025-09-22",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_WEST rt peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 347,
+         "min": 123.72436660900351,
+         "p25": 260.59918401992786,
+         "median": 366.8337165792646,
+         "p75": 520.2778782804273,
+         "max": 1596.0380200719824,
+         "current": 224.42223836614437
+        },
+        {
+         "window_days": 60,
+         "n_samples": 307,
+         "min": 190.16882254144747,
+         "p25": 308.1365637108454,
+         "median": 462.7123562596194,
+         "p75": 588.1562065592111,
+         "max": 995.2332884862524,
+         "current": 485.0887512942279
+        },
+        {
+         "window_days": 120,
+         "n_samples": 247,
+         "min": 259.9101053522577,
+         "p25": 326.5664559657964,
+         "median": 546.2760668313745,
+         "p75": 753.1794588052787,
+         "max": 782.7056024069866,
+         "current": 449.2194739222238
+        },
+        {
+         "window_days": 250,
+         "n_samples": 117,
+         "min": 552.1652002361889,
+         "p25": 554.7341564439356,
+         "median": 573.4879607845843,
+         "p75": 605.5101011790947,
+         "max": 607.4382942815278,
+         "current": 607.3631465316162
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:58+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 19
+     },
+     "offpeak": {
+      "n_days": 392,
+      "windows": [
+       {
+        "label": "HB_WEST rt offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 181.76595949328632,
+        "log_vol": 4.744362175302641,
+        "mean_price": 33.2134375,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST rt offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 1,
+        "normal_vol": 474.2706208558132,
+        "log_vol": 15.311797250902996,
+        "mean_price": 31.79365065562048,
+        "start": "2026-04-18",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST rt offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 7,
+        "normal_vol": 732.7472624557396,
+        "log_vol": 20.827791402054224,
+        "mean_price": 33.62858705888349,
+        "start": "2025-10-09",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_WEST rt offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 372,
+         "min": 94.46610123471903,
+         "p25": 186.4134511778515,
+         "median": 304.4136434971223,
+         "p75": 655.3820495210882,
+         "max": 1946.9279057242538,
+         "current": 181.76595949328456
+        },
+        {
+         "window_days": 60,
+         "n_samples": 332,
+         "min": 143.6341655909829,
+         "p25": 241.90428798446888,
+         "median": 541.412755903465,
+         "p75": 759.2627975613957,
+         "max": 1246.898520226791,
+         "current": 474.27062085581224
+        },
+        {
+         "window_days": 120,
+         "n_samples": 272,
+         "min": 186.14364810353473,
+         "p25": 226.75086321815456,
+         "median": 569.9096394144984,
+         "p75": 896.5046823637745,
+         "max": 968.5595122731141,
+         "current": 569.5381189623961
+        },
+        {
+         "window_days": 250,
+         "n_samples": 142,
+         "min": 545.7877040260539,
+         "p25": 636.4098787175217,
+         "median": 689.5666437446089,
+         "p75": 732.3695968682234,
+         "max": 733.457872268762,
+         "current": 732.7472624557398
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:58+00:00"
+      },
+      "start": "2025-05-21",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 7
+     }
+    },
+    "da": {
+     "peak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_WEST da peak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 257.2447009078888,
+        "log_vol": 7.1508061968099526,
+        "mean_price": 32.13488095238095,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST da peak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 235.81313950708105,
+        "log_vol": 13.139999315670535,
+        "mean_price": 25.46803278688525,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST da peak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 13,
+        "normal_vol": 914.3587966134392,
+        "log_vol": 16.532234018211508,
+        "mean_price": 30.45101593625498,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_WEST da peak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 46.902561885606794,
+         "p25": 168.98705517283827,
+         "median": 311.86888181582043,
+         "p75": 533.8561966287598,
+         "max": 33863.69172175903,
+         "current": 257.24470090799537
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 88.28846784895279,
+         "p25": 276.907201857109,
+         "median": 397.136515466938,
+         "p75": 856.3824454362041,
+         "max": 19219.004423748753,
+         "current": 235.81313950697742
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 114.0794830588349,
+         "p25": 345.4933474290236,
+         "median": 558.2792676343424,
+         "p75": 1266.8965411556696,
+         "max": 13534.533161734875,
+         "current": 364.8769576150673
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 209.3657341462246,
+         "p25": 441.5395356561288,
+         "median": 907.4519319215362,
+         "p75": 2156.8194339128772,
+         "max": 9374.685059280317,
+         "current": 914.3587966134348
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 366.83421326065667,
+         "p25": 812.2776349481226,
+         "median": 1552.6884050235444,
+         "p75": 2244.3963584911044,
+         "max": 6637.128784879785,
+         "current": 695.7498538119046
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:58+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 25
+     },
+     "offpeak": {
+      "n_days": 3126,
+      "windows": [
+       {
+        "label": "HB_WEST da offpeak",
+        "window_days": 20,
+        "n_obs": 20,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 106.20977335977156,
+        "log_vol": 3.0178181003667994,
+        "mean_price": 33.20130952380952,
+        "start": "2026-07-04",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST da offpeak",
+        "window_days": 60,
+        "n_obs": 60,
+        "n_excluded_nonpos": 0,
+        "normal_vol": 140.60273990164475,
+        "log_vol": 4.743851845367088,
+        "mean_price": 30.442950819672134,
+        "start": "2026-05-25",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       },
+       {
+        "label": "HB_WEST da offpeak",
+        "window_days": 250,
+        "n_obs": 250,
+        "n_excluded_nonpos": 1,
+        "normal_vol": 1455.8208238188063,
+        "log_vol": 16.585777931098264,
+        "mean_price": 36.76365608992601,
+        "start": "2025-11-16",
+        "end": "2026-07-24",
+        "convention_note": "realized vol from archived settlements; NOT implied. annualization=365d. log_vol excludes non-positive prices (count shown).",
+        "asof": "2026-07-26T01:28:58+00:00"
+       }
+      ],
+      "cone": {
+       "label": "HB_WEST da offpeak",
+       "windows": [
+        {
+         "window_days": 20,
+         "n_samples": 3106,
+         "min": 12.229831621763125,
+         "p25": 72.40979082333725,
+         "median": 128.82447342768546,
+         "p75": 226.36147309541917,
+         "max": 36371.5742522223,
+         "current": 106.20977336035405
+        },
+        {
+         "window_days": 60,
+         "n_samples": 3066,
+         "min": 15.762592859674916,
+         "p25": 83.42090930646188,
+         "median": 136.95408622580737,
+         "p75": 253.34370039560145,
+         "max": 20640.391721955264,
+         "current": 140.60273990020946
+        },
+        {
+         "window_days": 120,
+         "n_samples": 3006,
+         "min": 22.72362751291016,
+         "p25": 95.44281936684467,
+         "median": 143.483279465867,
+         "p75": 286.26054798968653,
+         "max": 14533.902079246123,
+         "current": 239.45204604185818
+        },
+        {
+         "window_days": 250,
+         "n_samples": 2876,
+         "min": 63.57041000134665,
+         "p25": 100.22960019787106,
+         "median": 226.0919022629347,
+         "p75": 402.62063388025,
+         "max": 10047.891779414298,
+         "current": 1455.8208238188715
+        },
+        {
+         "window_days": 500,
+         "n_samples": 2626,
+         "min": 67.94041000177327,
+         "p25": 203.82149805349576,
+         "median": 308.9059346439034,
+         "p75": 1041.6604644438619,
+         "max": 7100.550065654114,
+         "current": 1039.9045171859832
+        }
+       ],
+       "convention": "normal ($/MWh/sqrt-yr)",
+       "asof": "2026-07-26T01:28:58+00:00"
+      },
+      "start": "2018-01-02",
+      "end": "2026-07-24",
+      "n_excluded_nonpos": 43
+     }
+    }
+   },
+   "label": "realized, not implied \u2014 no option quotes available",
+   "source": "merged: RT decade + data/ + store (RT); DAM bundle decade (DA)"
+  }
+ },
+ "built_at": "2026-07-26T01:28:58+00:00",
+ "note": "committed vol snapshot from the merged deep archive; /api/vol prefers this over the thin live store."
+}

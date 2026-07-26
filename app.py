@@ -606,7 +606,7 @@ def api_vol(hub: str = "HB_HOUSTON", bucket: str = "peak"):
     realized_vol at 20/60/250d + a vol cone, for BOTH DA and RT daily bucket-average series. Depth is
     whatever the archive holds — n_obs and excluded-day counts are reported, never hidden or fabricated.
     """
-    import time, logging, desk_data, vol_engine
+    import time, json, logging, desk_data, vol_engine
     from datetime import datetime, timezone
     hub = (hub or "HB_HOUSTON").upper()
     bucket = (bucket or "peak").lower()
@@ -615,30 +615,41 @@ def api_vol(hub: str = "HB_HOUSTON", bucket: str = "peak"):
     if hit and time.monotonic() - hit[0] < 1800:
         return hit[1]
     log = logging.getLogger("uvicorn.error")
+    # prefer the committed DEEP snapshot (built offline from the merged decade archive, which the
+    # deployed /data volume can't reach); fall back to a live read of the thin rolling store.
+    snap = None
+    try:
+        snap = json.load(open("vol_result.json")).get("hubs", {}).get(hub, {}).get("markets", {})
+    except Exception:
+        snap = None
     try:
         markets = {}
         for market in ("da", "rt"):
-            daily, meta = desk_data.daily_bucket(hub, market, bucket)
+            sb = (snap or {}).get(market, {}).get(bucket) if snap else None
+            if sb and "windows" in sb:
+                markets[market] = {**sb, "source": "committed deep snapshot (vol_result.json, "
+                                   "merged decade archive)"}
+                continue
+            daily, meta = desk_data.daily_bucket(hub, market, bucket)   # live fallback
             if len(daily) < 3:
                 markets[market] = {**meta, "error": f"archive too thin ({len(daily)} days)"}
-                log.info(f"/api/vol {hub} {market} {bucket}: too thin ({len(daily)} days)")
                 continue
             windows = [vol_engine.realized_vol(daily, window_days=w,
                                                label=f"{hub} {market} {bucket}").to_dict()
                        for w in (20, 60, 250)]
-            cone = vol_engine.vol_cone(daily, windows=(20, 60, 250), label=f"{hub} {market} {bucket}")
+            cone = vol_engine.vol_cone(daily, windows=(20, 60, 120, 250, 500), label=f"{hub} {market} {bucket}")
             full = vol_engine.realized_vol(daily, label=f"{hub} {market} {bucket}")
-            log.info(f"/api/vol {hub} {market} {bucket}: n_days={meta['n_days']} n_obs={full.n_obs} "
+            log.info(f"/api/vol {hub} {market} {bucket} (live): n_days={meta['n_days']} "
                      f"normal_vol=${full.normal_vol:,.1f}/sqrt-yr excluded_nonpos={full.n_excluded_nonpos}")
-            markets[market] = {**meta, "n_obs_full": full.n_obs, "mean_price": full.mean_price,
+            markets[market] = {**meta, "n_days": meta["n_days"], "windows": windows, "cone": cone,
                                "n_excluded_nonpos": full.n_excluded_nonpos,
-                               "normal_vol_full": full.normal_vol, "log_vol_full": full.log_vol,
-                               "windows": windows, "cone": cone}
+                               "source": "live rolling store (thin)"}
         return_val = {
             "hub": hub, "bucket": bucket, "bucket_definition": desk_data.BUCKET_DEF,
             "label": ("realized, not implied — no option quotes available. Measured from archived "
                       "ERCOT settlements; an input estimate, not a market price of risk."),
             "convention": "normal_vol = $/MWh per sqrt-yr (Bachelier); log_vol excludes non-positive days",
+            "source": "committed deep snapshot" if snap else "live rolling store",
             "markets": markets,
             "asof": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         }

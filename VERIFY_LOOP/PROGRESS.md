@@ -42,6 +42,21 @@ Never commit red. Same check red 3x = blocked.
         renders, tooltip/no-Model, honest —/lazy-load). commit <pending>.
 - [ ] 7 — Fresh-clone test + Fly deploy; verify /api/vol, /api/option, desk table on deployed app.
 
+## Deep-archive upgrade (pre-task-7, Mike-requested) — evidence + rebuild
+- (a) deployed serves climatology from COMMITTED clim_result.json (app.py reads it; build_climatology
+  never called in server; tracked + not dockerignored). (b) Fly /data ~23 DA+23 RT days from 2026-07-03
+  (~3wk) via read-only fly ssh — shallower than local.
+- Found NP4-190-CD "DAM Settlement Point Prices" with 102 monthly bundles 2018-01..2026-06 (DA decade,
+  analog of the RT SPP decade). RT decade already cached (data_archive/decade/, HB_HOUSTON 2018+).
+- Backfilled the DA decade (scripts/backfill_dam.py -> data_archive/dam_decade/, gitignored). DAM parser
+  validated to the CENT vs independent dart_cache DA. scripts/build_snapshots.py merges RT (decade+data/+
+  store) ∩ DA (dam_decade+dart_cache) -> clim_result.json + vol_result.json.
+- REBUILT NUMBERS: pair span 2018-01-02..2026-07-24. cells_sufficient 455/1152 (HB_HOUSTON 288/288 all,
+  n~272/cell; NORTH 70, SOUTH 49, WEST 48 — RT-limited to data/ 1yr, honest per-hub). vol cone 250d
+  n_obs=250, 2877 samples (HB_HOUSTON both markets). /api/vol now PREFERS vol_result.json (deep) over the
+  thin live store; /api/desk serves the deep clim (HB_HOUSTON 24/24 real Clim P(RT>DA)). Screenshot taken.
+- Gate MET (sufficient cells>0 AND cone real depth) -> proceed to fresh-clone + hold fly command for Mike.
+
 ## Append-only log
 - init (2026-07-25) — New loop from LOOP_RECIPE.md (dropped in by Mike). Prior loop (daily-rhythm) done
   + pushed (HEAD was 09048b3). Wrote GOAL from the recipe.
