@@ -28,7 +28,7 @@ the Docker-image local gate + explicit go. Never commit red.
 - [~] 7 — KPI strip + insight banner DONE. KPIs above chart (all from solution arrays): GROSS revenue $0.64 (no net — no degradation in MILP, per contract), CAPTURE RATE 70% w/ tooltip (realized ÷ PF-ceiling $0.91, same 24h), EQUIV CYCLES 2.05 (dischargeE/cap), FINAL SoC 12.5, VIOLATIONS 0. Insight banner COMPUTED from charge/discharge windows+avg prices ($25 low->$40 high). Verified numbers vs arrays. commit <pending>.
 - [~] 8 — Time axis DONE: ticks every 4h (00:00..24:00 from fc.hours) + subtle vertical gridlines across both panels (behind data), tightened bottom margin; sub-hourly via hover only. DOM shows all 7 ticks. commit <pending>. ALL 8 Bolt-chart tasks done — decision-grade.
 ## Checklist — app-wide
-- [ ] 9 — Typography split (sans for text, mono for numbers/times/prices/status); per-tab screenshot.
+- [~] 9 — Typography split DONE (CSS, class-based -> uniform): titles, nav tabs, tagline, coopt-note, kv labels, hero labels, legend flipped mono->sans; numbers/times/prices/statuses (.kv b, .num, .meta, .state, sysstrip, chart SVG) stay mono. Verified copilot/assetopt/quant tabs: clean split, no layout breaks. commit <pending>.
 - [ ] 10 — Axis/legend audit of every other chart (fix only).
 
 ## Run mode (Mike) — BATCH 2→10, no deploy
