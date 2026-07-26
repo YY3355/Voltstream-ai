@@ -329,8 +329,10 @@
     <div class="card" id="c-dp">
       <div class="lid"><span class="num">1</span><span class="title">Day-ahead dispatch optimization</span><span class="state skip" id="s-dp">idle</span></div>
       <div id="dp-runhdr" class="coopt-sub" style="font-size:11px;margin:1px 0 7px;color:var(--dim)"></div>
+      <div class="kv" id="dp-kpi" style="margin-bottom:7px"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
       <div class="legend"><span><i style="background:var(--cyan)"></i>LMP (P50 optimized against)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
+      <div id="dp-insight" style="margin-top:7px;padding:8px 11px;border-left:3px solid var(--amber);background:#1a140c;font-size:12px;color:var(--ink);line-height:1.5"></div>
       <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
       <details id="dp-assump" style="margin-top:6px"><summary style="cursor:pointer;font-size:11px;color:var(--dim)">Assumptions &amp; solve config</summary><div id="dp-assump-body" style="font-size:11px;color:var(--dim);margin-top:5px;line-height:1.6"></div></details>
@@ -737,7 +739,20 @@ async function init(){
       const sd=$('s-dp'); if(sd){ sd.className='state '+(ok?'on':'skip'); sd.textContent=D.status; }
       const hz=(D.charge_kw.length*D.dt_hours);
       $('dp-assump-body').innerHTML=`round-trip efficiency <b>${(D.round_trip_efficiency*100).toFixed(0)}%</b> · max power <b>±${D.max_power_kw} kW</b> · usable capacity <b>${D.capacity_kwh} kWh</b> · backup reserve <b>${D.reserve_kwh} kWh</b> · starting SoC <b>${D.initial_soc_kwh} kWh</b><br>horizon <b>${hz} h</b> (${D.charge_kw.length} × ${D.dt_hours*60} min) · price source: ${D.price_source}<br>objective: <b>gross energy-arbitrage revenue only</b> — no degradation, fees, or ancillary terms in the MILP · solver: HiGHS (MILP via cvxpy)`; }
-    $('dp-kv').innerHTML=`<div><span class="l">ACTION NOW</span><b>${S.dispatch.action_now}</b></div><div><span class="l">CAPTURE</span><b>${S.dispatch.capture_pct}%</b></div><div><span class="l">REV</span><b>$${S.dispatch.revenue_forecast}</b></div>`;
+    { const D=S.dispatch, fc=S.forecast, dt=D.dt_hours, N=D.charge_kw.length;
+      const chI=[],dsI=[]; for(let i=0;i<N;i++){ if(D.charge_kw[i]>0.1)chI.push(i); if(D.discharge_kw[i]>0.1)dsI.push(i); }
+      const sumE=(arr,idx)=>idx.reduce((s,i)=>s+arr[i]*dt,0), avgP=idx=>idx.length?idx.reduce((s,i)=>s+fc.p50[i],0)/idx.length:0;
+      const chE=sumE(D.charge_kw,chI), dsE=sumE(D.discharge_kw,dsI), cycles=dsE/D.capacity_kwh, finalSoc=D.soc_kwh[N-1];
+      let viol=0; for(let i=0;i<N;i++) if(D.soc_kwh[i]<D.reserve_kwh-0.05) viol++;
+      const capTip=`capture rate = realized gross revenue ($${D.revenue_forecast}) ÷ perfect-foresight ceiling ($${D.revenue_perfect}), same ${N*dt}h horizon`;
+      $('dp-kpi').innerHTML=
+         `<div><span class="l">GROSS REVENUE</span><b>$${D.revenue_forecast}</b></div>`
+        +`<div title="${capTip}"><span class="l">CAPTURE RATE &#9432;</span><b>${D.capture_pct}%</b></div>`
+        +`<div><span class="l">EQUIV CYCLES</span><b>${cycles.toFixed(2)}</b></div>`
+        +`<div><span class="l">FINAL SoC</span><b>${finalSoc.toFixed(1)} kWh</b></div>`
+        +`<div><span class="l">VIOLATIONS</span><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b></div>`;
+      const win=idx=>idx.length?`${fc.hours[idx[0]]}–${fc.hours[idx[idx.length-1]]}`:'—';
+      $('dp-insight').innerHTML=`Charges <b>${chE.toFixed(1)} kWh</b> when prices are low (avg $${avgP(chI).toFixed(0)}/MWh, ${win(chI)}) and discharges <b>${dsE.toFixed(1)} kWh</b> into higher prices (avg $${avgP(dsI).toFixed(0)}/MWh, ${win(dsI)}) &mdash; <b>${cycles.toFixed(2)} equivalent cycles</b>, capturing <b>${D.capture_pct}%</b> of the perfect-foresight ceiling. Gross energy-arbitrage revenue <b>$${D.revenue_forecast}</b>, settled at realized prices.`; }
     const st=$('sysstrip'); if(st){ st.innerHTML=
       `<span class="pill"><i>data</i><b>${S.source}</b></span>`
       +`<span class="pill"><i>target</i>${S.target_date}</span>`
