@@ -331,7 +331,7 @@
       <div id="dp-runhdr" class="coopt-sub" style="font-size:11px;margin:1px 0 7px;color:var(--dim)"></div>
       <div class="kv" id="dp-kpi" style="margin-bottom:7px"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
-      <div class="legend"><span><i style="background:var(--cyan)"></i>LMP (P50 optimized against)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
+      <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
       <div id="dp-insight" style="margin-top:7px;padding:8px 11px;border-left:3px solid var(--amber);background:#1a140c;font-size:12px;color:var(--ink);line-height:1.5"></div>
       <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
@@ -676,8 +676,8 @@ function dispatchSVG(dp,fc){
     +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.6"/>`
     +`<line x1="${P.l}" y1="${pTop}" x2="${P.l}" y2="${pBot}" stroke="#2a3645"/>`
     +`<text x="13" y="${((pTop+pBot)/2).toFixed(1)}" transform="rotate(-90 13 ${((pTop+pBot)/2).toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>LMP ($/MWh)</text>`
-    +`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#22d3ee" font-size="8.5" ${M}>P50 forecast (optimized against)</text>`
-    +`<text x="${W-P.r}" y="${pTop+19}" text-anchor="end" fill="#7e8da0" font-size="8.5" ${M}>actual (settled)</text>`;
+    +`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
+    +`<text x="${W-P.r}" y="${pTop+19}" text-anchor="end" fill="#7e8da0" font-size="8.5" ${M}>actual settled (ref)</text>`;
   [pmx,(pmx+pmn)/2,pmn].forEach(v=>{price+=`<text x="${P.l-6}" y="${(Yp(v)+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${Math.round(v)}</text>`;});
   // ---- DISPATCH panel: bars (discharge +/up amber, charge -/down blue) + SoC + reserve ----
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
