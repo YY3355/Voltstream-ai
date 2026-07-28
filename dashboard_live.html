@@ -709,7 +709,10 @@ function dispatchSVG(dp,fc){
   for(let i=0;i<n;i+=16){const x=X(i);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${(fc.hours[i]||'').slice(0,5)}</text>`;}
   {const x=X(n-1);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>24:00</text>`;}
   let hov='',hw=(W-P.l-P.r)/n;for(let i=0;i<n;i++)hov+=`<rect x="${(X(i)-hw/2).toFixed(1)}" y="${pTop}" width="${hw.toFixed(1)}" height="${(dBot-pTop).toFixed(1)}" fill="transparent" onmousemove="dpTip(evt,${i})" onmouseleave="dpTipHide()"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="1.8"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="${threatened?'#f85149':'#6b4a4a'}" stroke-width="${threatened?1.6:1}" stroke-dasharray="4 3"/>${violMark}${violFlag}${xl}${hov}</svg>`;
+  // bar interval stated from the ACTUAL payload cadence (dt_hours), never assumed
+  const intv=Math.round((dp.dt_hours||0.25)*60), horizon=+(n*(dp.dt_hours||0.25)).toFixed(0);
+  const intvLabel=`<text x="${P.l+4}" y="${dTop+9}" fill="#5d6b7d" font-size="8.5" ${M}>bars: ${intv}-min intervals · ${horizon}h horizon</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="1.8"/><line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="${threatened?'#f85149':'#6b4a4a'}" stroke-width="${threatened?1.6:1}" stroke-dasharray="4 3"/>${violMark}${violFlag}${intvLabel}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;

@@ -1,59 +1,34 @@
-# GOAL — Decision-Grade Charts (Bolt optimizer first, then app-wide pass)
+# GOAL — BOLT CHART REDESIGN (panel 1, Asset Optimization): static log → operational display
 
-Full spec: GRAPH_POLISH_RECIPE.md. Supervised verify-loop, max 10 iterations, ONE task = ONE commit.
-Env: conda volt on :8020, ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean, kill stale port, warm dart+risk.
+Pure UI + ONE honest data overlay (the price input). Screenshots EVERY iteration (default + hover).
+Supervised, max 12 iterations, ONE task = ONE commit. Push when green, redeploy. Other panels untouched.
+Env: conda volt on :8020, ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean. Real-browser sign-off is Mike's;
+headless screenshot is the working check. Docker-gate intent before deploy.
 
-## NEW procedural rules (banked lessons)
-- VISUAL check per commit = headless screenshot (the working check). FINAL sign-off on ANYTHING
-  visual is Mike's REAL-BROWSER eyeball — headless has lied before (T4/T5 lesson). So: screenshot +
-  commit, but flag "needs Mike's real-browser sign-off" for visual tasks; don't call visual "done".
-- PRE-DEPLOY GATE (hard): before any `fly deploy`, BUILD + RUN the Docker image LOCALLY and curl the
-  endpoints against the container (catches .dockerignore/COPY gaps the raw-clone test misses — last
-  loop's snapshot-bug), THEN hold for Mike's explicit go. No deploy without the container gate + go.
+## Honesty (non-negotiable)
+- Every rendered number from the /api/state solution arrays. Nothing hand-written.
+- The price overlay is the series the plan was SOLVED ON (from the payload), labeled "price input
+  ($/MWh)" — an INPUT/given, NOT presented as a forward-looking forecast. (Reality: the plan solved on
+  the P50 series; label it as the input it is, and note P50 in the tooltip — do not imply it predicts.)
+- Never clip/clamp. Reserve floor rendered truthfully. Bar interval STATED from the actual cadence
+  (verify dt from payload — 96 intervals × 0.25h = 15-min; confirm, don't assume).
 
-## Honesty contract (NON-NEGOTIABLE)
-- Every rendered number (tooltips, KPIs, insight banner) comes from the actual solver solution arrays
-  or archived prices. Nothing hand-written / canned.
-- NEVER visually clip/clamp data to hide a constraint crossing. Render it AND flag: "Reserve
-  violation: X kWh, N intervals." A stepped line (T4) fixes interpolation artifacts truthfully.
-- "Gross vs net revenue" ONLY if degradation cost is actually a term in the MILP objective. If not:
-  "Gross energy revenue" alone + say so in the assumptions block. No invented degradation number.
-- Optimizer status = the REAL HiGHS/cvxpy status string mapped to plain language, never hardcoded.
-- Insight banner text COMPUTED from the solution (charge/discharge windows + price context), not canned.
-- Price series shown = the actual series the optimizer consumed (DA or RT — say which), same as-of.
+## Tasks
+- T1 AXES: explicit left y-axis kW (charge/discharge bars, labeled ticks), explicit right y-axis kWh
+  (SoC). Subtle gridlines. STATE the bar interval on the chart ("15-min intervals" — from the payload).
+- T2 PRICE CONTEXT: price series Bolt optimized against as a thin muted line (own scale, right side or a
+  slim subpanel above), labeled "price input ($/MWh)" — the payload's solved-on series, NOT a forecast.
+  Charge bars sit in price valleys, discharge on peaks — the chart explains itself.
+- T3 HIERARCHY: thicken bars (min 3-4px + slight gap, distinguishable when busy); SoC line the hero
+  (2px bright green); price line muted; backup floor UNMISSABLE — solid red 1.5px + "backup floor 10 kWh"
+  tag pinned at the line's right end + faint red shaded zone below it.
+- T4 OPERATIONAL FEEL: hover crosshair showing time + all values (kW, SoC, price) in a tooltip; a "now"
+  vertical marker if the plan covers the current time; ACTION NOW / CAPTURE / REV moved into a header
+  strip on the chart with current-hour values highlighted; CAPTURE gets a one-line ⓘ (realized vs
+  perfect-foresight ceiling).
+- T5 ANNOTATIONS: auto-callouts on the 2-3 LARGEST events only (biggest discharge run, biggest charge
+  run) — small labels "discharge 3.2 kWh @ $41 avg". Cap at 3, no clutter.
 
-## Tasks — Bolt optimizer chart (priority order)
-1. Axes + units: L axis Power kW (bars), R axis Stored energy kWh (SoC), 3-5 ticks + titles each; kill
-   clipped left-edge label fragments. Screenshot.
-2. Legend + sign convention: discharge +/up amber, charge -/down blue, SoC green, reserve floor dashed
-   red; explicit legend for ALL series incl. blue; legend adjacent. Screenshot.
-3. Price series: add the LMP line the optimizer consumed (synchronized panel above bars preferred).
-   Per-interval tooltip: time, LMP, action ±kW, SoC before/after, interval revenue = dispatch×price×Δt
-   (all from solution arrays). Screenshot.
-4. Stepped SoC (step-after) to match discrete intervals; subtle 25 kWh capacity line; if stepped SoC
-   still crosses reserve, render the REAL violation flag. Screenshot.
-5. Annotation cleanup: capacity+reserve labels to right-axis margin, small+muted; reserve red/prominent
-   only when threatened (within 10%) or breached. Screenshot.
-6. Run header + status: "Day-ahead dispatch optimization · <date> · <hub> · <kWh>/<kW> battery · Last
-   optimized <ts> · <real solver status>". Collapsible assumptions block (eff, max power, reserve,
-   start SoC, market/price source, horizon) from the actual solve config. Screenshot.
-7. KPI strip + insight banner: KPI row (Net|Gross revenue per contract, capture rate, equiv cycles,
-   final SoC, violations). capture rate tooltip = revenue ÷ perfect-foresight revenue same horizon
-   (reuse the existing PF-ceiling concept, cite it). Insight banner computed from solution. Screenshot.
-8. Time axis + grid: ticks every 4h, subtle vertical gridlines, tighten bottom margin; sub-hourly via
-   hover only. Screenshot.
-
-## Tasks — app-wide pass (mechanical)
-9. Typography split: sans-serif for nav/titles/labels/explanatory text; monospace ONLY for numbers,
-   times, prices, statuses. One CSS pass; verify no layout breaks per tab (screenshot each tab).
-10. Axis/legend audit of every other chart (decade playback, hedge, vol cone, DART monitor, desk-table
-    sparklines): axis titles + units + >=3 ticks + complete legend. FIX ONLY, no redesigns/new data.
-    Screenshot each.
-
-## Verify discipline
-Fresh-eyes subagent per task where it adds signal (data-honesty, numbers-from-solution). Screenshot
-each visual task (headless working check). Never commit red. Same check red 3x = blocked.
-
-## OUT OF SCOPE (do not drift)
-New data sources, new endpoints, map/deck.gl (T4/T5 stay blocked), animation, panel redesigns beyond
-the listed fixes, ANY deploy without the Docker-image gate + explicit go.
+## Verify each
+Screenshots at default + hover. Axes labeled; interval stated matches actual cadence; price line present
++ labeled as input; floor unmissable; other panels untouched. Numbers reproduce from arrays. Never red.
