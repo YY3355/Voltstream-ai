@@ -666,8 +666,10 @@ let _dpState=null;   // {dp,fc} for the hover tooltip — reads the raw solution
 function dispatchSVG(dp,fc){
   _dpState={dp,fc};
   const M='font-family="IBM Plex Mono"';
-  const W=600,H=338,P={l:56,r:60,t:14,b:23},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1);
-  const gap=16,pph=84,pTop=P.t,pBot=P.t+pph,dTop=pBot+gap,dBot=H-P.b;   // price panel over dispatch panel
+  const W=600,H=368,P={l:56,r:60,t:14,b:23},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1),dt=dp.dt_hours||0.25;
+  const hdrH=30,gap=16,pph=84,pTop=P.t+hdrH,pBot=pTop+pph,dTop=pBot+gap,dBot=H-P.b;   // header strip · price panel · dispatch panel
+  _dpState.geo={l:P.l,r:W-P.r,n,pTop,dBot};
+  const intv=Math.round(dt*60),horizon=+(n*dt).toFixed(0);
   // ---- PRICE panel: the P50 series Bolt optimized against (cyan) + realized actual (faint) ----
   const p50=fc.p50,actual=fc.actual,pmn=Math.min(...p50,...actual),pmx=Math.max(...p50,...actual);
   const Yp=v=>pBot-((v-pmn)/((pmx-pmn)||1))*(pBot-pTop);
@@ -713,9 +715,28 @@ function dispatchSVG(dp,fc){
   {const x=X(n-1);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>24:00</text>`;}
   let hov='',hw=(W-P.l-P.r)/n;for(let i=0;i<n;i++)hov+=`<rect x="${(X(i)-hw/2).toFixed(1)}" y="${pTop}" width="${hw.toFixed(1)}" height="${(dBot-pTop).toFixed(1)}" fill="transparent" onmousemove="dpTip(evt,${i})" onmouseleave="dpTipHide()"/>`;
   // bar interval stated from the ACTUAL payload cadence (dt_hours), never assumed
-  const intv=Math.round((dp.dt_hours||0.25)*60), horizon=+(n*(dp.dt_hours||0.25)).toFixed(0);
   const intvLabel=`<text x="${P.l+4}" y="${dTop-4}" fill="#5d6b7d" font-size="8.5" ${M}>bars: ${intv}-min intervals · ${horizon}h horizon</text>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${intvLabel}${xl}${hov}</svg>`;
+  // ---- on-chart HEADER STRIP: the operational trio, ACTION NOW as the highlighted hero ----
+  const aRaw=(dp.action_now||'').toUpperCase();
+  const aCol=aRaw.startsWith('DISCHARGE')?'#f5a623':aRaw.startsWith('CHARGE')?'#58a6ff':'#8b98a8';
+  const hyL=P.t+8,hyV=P.t+23,acX=P.l,cpX=P.l+178,rvX=P.l+330;
+  let hdr=`<rect x="${acX-6}" y="${P.t}" width="158" height="27" rx="4" fill="#161d29" stroke="${aCol}" stroke-opacity=".55"/>`
+    +`<text x="${acX+2}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>ACTION NOW</text>`
+    +`<text x="${acX+2}" y="${hyV}" fill="${aCol}" font-size="13" font-weight="bold" ${M}>${dp.action_now}</text>`
+    +`<text x="${cpX}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>CAPTURE</text>`
+    +`<text x="${cpX}" y="${hyV}" fill="#e6edf3" font-size="13" font-weight="bold" ${M}>${dp.capture_pct}%</text>`
+    +`<g style="cursor:help"><circle cx="${cpX+52}" cy="${hyV-4}" r="6" fill="#1c2531" stroke="#3a4655"/><text x="${cpX+52}" y="${hyV-1}" text-anchor="middle" fill="#8b98a8" font-size="8.5" ${M}>i</text><title>Capture = realized gross revenue ($${dp.revenue_forecast}) ÷ perfect-foresight ceiling ($${dp.revenue_perfect}), same ${horizon}h horizon</title></g>`
+    +`<text x="${rvX}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>REV (gross)</text>`
+    +`<text x="${rvX}" y="${hyV}" fill="#3fb950" font-size="13" font-weight="bold" ${M}>$${dp.revenue_forecast}</text>`;
+  // "now" vertical marker — ONLY if the plan's date is today (browser-local ~ market); day-ahead plans won't show it
+  let nowMark='';
+  try{ const td=(typeof S!=='undefined'&&S)?S.target_date:null,now=new Date(),pad=x=>String(x).padStart(2,'0');
+    const ld=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+    if(td===ld){ const ni=Math.min(n-1,Math.max(0,Math.floor((now.getHours()*60+now.getMinutes())/(dt*60)))),x=X(ni);
+      nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/><text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
+  }catch(e){}
+  const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
@@ -730,8 +751,10 @@ function dpTip(evt,i){
   el.style.display='block';
   el.style.left=Math.min(r.width-180,evt.clientX-r.left+12)+'px';
   el.style.top=(evt.clientY-r.top+10)+'px';
+  const cx=$('dp-cross');   // move the vertical crosshair to the hovered interval (SVG user coords)
+  if(cx&&_dpState.geo){const g=_dpState.geo,x=g.l+i*(g.r-g.l)/(g.n-1);cx.setAttribute('x1',x.toFixed(1));cx.setAttribute('x2',x.toFixed(1));cx.setAttribute('opacity','0.55');}
 }
-function dpTipHide(){const el=$('dp-tip');if(el)el.style.display='none';}
+function dpTipHide(){const el=$('dp-tip');if(el)el.style.display='none';const cx=$('dp-cross');if(cx)cx.setAttribute('opacity','0');}
 
 async function init(){
   try{
@@ -754,10 +777,9 @@ async function init(){
       const chE=sumE(D.charge_kw,chI), dsE=sumE(D.discharge_kw,dsI), cycles=dsE/D.capacity_kwh, finalSoc=D.soc_kwh[N-1];
       let viol=0; for(let i=0;i<N;i++) if(D.soc_kwh[i]<D.reserve_kwh-0.05) viol++;
       const capTip=`capture rate = realized gross revenue ($${D.revenue_forecast}) ÷ perfect-foresight ceiling ($${D.revenue_perfect}), same ${N*dt}h horizon`;
+      // ACTION NOW / CAPTURE / REV now live in the on-chart header strip; keep the secondary stats here
       $('dp-kpi').innerHTML=
-         `<div><span class="l">GROSS REVENUE</span><b>$${D.revenue_forecast}</b></div>`
-        +`<div title="${capTip}"><span class="l">CAPTURE RATE &#9432;</span><b>${D.capture_pct}%</b></div>`
-        +`<div><span class="l">EQUIV CYCLES</span><b>${cycles.toFixed(2)}</b></div>`
+         `<div><span class="l">EQUIV CYCLES</span><b>${cycles.toFixed(2)}</b></div>`
         +`<div><span class="l">FINAL SoC</span><b>${finalSoc.toFixed(1)} kWh</b></div>`
         +`<div><span class="l">VIOLATIONS</span><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b></div>`;
       const win=idx=>idx.length?`${fc.hours[idx[0]]}–${fc.hours[idx[idx.length-1]]}`:'—';
