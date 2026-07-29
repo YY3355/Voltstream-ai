@@ -714,6 +714,24 @@ function dispatchSVG(dp,fc){
   for(let i=0;i<n;i+=16){const x=X(i);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>${(fc.hours[i]||'').slice(0,5)}</text>`;}
   {const x=X(n-1);grid+=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#1a2432" stroke-width="0.7"/>`;xl+=`<text x="${x.toFixed(1)}" y="${H-9}" text-anchor="middle" fill="#5d6b7d" font-size="9" ${M}>24:00</text>`;}
   let hov='',hw=(W-P.l-P.r)/n;for(let i=0;i<n;i++)hov+=`<rect x="${(X(i)-hw/2).toFixed(1)}" y="${pTop}" width="${hw.toFixed(1)}" height="${(dBot-pTop).toFixed(1)}" fill="transparent" onmousemove="dpTip(evt,${i})" onmouseleave="dpTipHide()"/>`;
+  // ---- T5: auto-callouts on the 2-3 LARGEST events (biggest discharge run, biggest charge run) ----
+  const findRuns=arr=>{const R=[];let s=-1;for(let i=0;i<=n;i++){const on=i<n&&arr[i]>0.01;
+      if(on&&s<0)s=i; else if(!on&&s>=0){const j0=s,j1=i-1;let en=0,pk=j0,pkv=-1,ps=0;
+        for(let k=j0;k<=j1;k++){en+=arr[k]*dt;ps+=fc.p50[k];if(arr[k]>pkv){pkv=arr[k];pk=k;}}
+        R.push({i0:j0,i1:j1,e:en,avgP:ps/(j1-j0+1),pk});s=-1;}}return R;};
+  const dR=findRuns(dp.discharge_kw).sort((a,b)=>b.e-a.e),cR=findRuns(dp.charge_kw).sort((a,b)=>b.e-a.e);
+  const chosen=[];
+  if(dR[0])chosen.push({...dR[0],t:'discharge',col:'#f5a623',isD:true});
+  if(cR[0])chosen.push({...cR[0],t:'charge',col:'#58a6ff',isD:false});
+  const rest=[...dR.slice(1).map(r=>({...r,t:'discharge',col:'#f5a623',isD:true})),...cR.slice(1).map(r=>({...r,t:'charge',col:'#58a6ff',isD:false}))].sort((a,b)=>b.e-a.e);
+  // optional 3rd callout: the largest remaining sizable run whose label won't collide with a same-side one
+  for(const cand of rest){ if(chosen.length>=3)break; if(cand.e<0.5*Math.min(...chosen.map(c=>c.e)))break;
+    if(!chosen.some(c=>c.isD===cand.isD&&Math.abs(X(c.pk)-X(cand.pk))<105))chosen.push(cand); }
+  const callouts=chosen.map(c=>{const kw=c.isD?dp.discharge_kw[c.pk]:dp.charge_kw[c.pk];
+      const by=c.isD?Ypow(kw):Ypow(-kw),ly=c.isD?by-6:by+13,txt=`${c.t} ${c.e.toFixed(1)} kWh @ $${Math.round(c.avgP)} avg`;
+      const half=txt.length*2.55,ax=Math.max(P.l+half,Math.min(W-P.r-half,X(c.pk)));
+      return `<line x1="${X(c.pk).toFixed(1)}" y1="${(c.isD?ly+1:ly-7).toFixed(1)}" x2="${X(c.pk).toFixed(1)}" y2="${by.toFixed(1)}" stroke="${c.col}" stroke-width="0.6" opacity=".45"/>`
+        +`<text x="${ax.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" fill="${c.col}" font-size="8" ${M}>${txt}</text>`;}).join('');
   // bar interval stated from the ACTUAL payload cadence (dt_hours), never assumed
   const intvLabel=`<text x="${P.l+4}" y="${dTop-4}" fill="#5d6b7d" font-size="8.5" ${M}>bars: ${intv}-min intervals · ${horizon}h horizon</text>`;
   // ---- on-chart HEADER STRIP: the operational trio, ACTION NOW as the highlighted hero ----
@@ -736,7 +754,7 @@ function dispatchSVG(dp,fc){
       nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/><text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
