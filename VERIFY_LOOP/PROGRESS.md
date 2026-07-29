@@ -6,7 +6,7 @@ Price overlay = the payload's solved-on series labeled "price input" (NOT a fore
 ## Checklist
 - [~] 1 — Axes DONE (kW left/kWh right + ticks + subtle grid already present) + STATED bar interval on chart "bars: 15-min intervals · 24h horizon", computed from dp.dt_hours (verified 96×0.25h=15min from payload, not assumed). Screenshot ok; label slightly near top grid -> reposition in T3. commit <pending>.
 - [x] 2 — Price-input overlay DONE: series label now "price input ($/MWh) — plan solved on this" + "actual settled (ref)"; legend + tooltip carry P50 provenance. Charge bars sit in the low-price valley, discharge on the peak (visible). Screenshot ok. commit <pending>.
-- [ ] 3 — Hierarchy: thick bars, SoC hero, muted price, UNMISSABLE floor (tag + red shaded zone).
+- [x] 3 — Hierarchy DONE: bars thicker (min 3.2px + ~0.7 gap); SoC hero 2px bright green; price input muted (1.3px, .8 op); backup floor UNMISSABLE — solid red 1.5px + faint red no-go zone below + "backup floor 10 kWh" tag pinned right (warns when threatened, honest). Interval label moved into panel gap. Screenshot ok. commit <pending>.
 - [ ] 4 — Operational: hover crosshair tooltip (kW/SoC/price) + "now" marker + on-chart header strip.
 - [ ] 5 — Auto-callouts on the 2-3 largest charge/discharge runs (cap 3).
 
