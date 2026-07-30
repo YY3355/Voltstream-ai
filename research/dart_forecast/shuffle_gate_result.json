@@ -1,0 +1,44 @@
+{
+  "kind": "dart_shuffle_gate",
+  "stamp": {
+    "git_sha": "163e2d91424f43eee9ebac74e4bcaf2ce0eb46b1",
+    "generated_at": "2026-07-30T04:25:26.163334+00:00",
+    "seed": 42,
+    "span": null,
+    "n_samples": null,
+    "target": "dart = DA - RT ($/MWh)",
+    "taus": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "spike_T": 20.0
+  },
+  "hub": "HB_HOUSTON",
+  "n_eval_folds": 78,
+  "n": 56931,
+  "tol": 0.02,
+  "shuffled_mean_pinball": 11.0264,
+  "climatology_mean_pinball": 10.8251,
+  "real_model_mean_pinball": 9.2264,
+  "shuffled_vs_clim_pct": 1.86,
+  "real_vs_clim_pct": -14.77,
+  "shuffled_per_q": {
+    "0.10": 10.630512472909109,
+    "0.25": 11.50353633041538,
+    "0.50": 11.8942724132078,
+    "0.75": 11.264028531986352,
+    "0.90": 9.839456649950735
+  },
+  "clim_per_q": {
+    "0.10": 10.70416811944869,
+    "0.25": 11.508942428663646,
+    "0.50": 11.703154242269882,
+    "0.75": 10.809440671602466,
+    "0.90": 9.399585648123752
+  },
+  "gate_pass": true,
+  "verdict": "PASS (shuffled does not beat climatology)"
+}
