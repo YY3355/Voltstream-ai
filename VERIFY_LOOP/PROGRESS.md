@@ -1,51 +1,24 @@
-# Progress — Probabilistic DART forecast research (harness-first)
+# Progress — Bolt dispatch chart (focal point · causality · honest band)
 
-Supervised. Max 14 iterations. ONE task = ONE commit. Never commit red. Same check red 3× = blocked.
-Maker ≠ checker: a fresh-eyes subagent verifies each task. ⏸ PAUSE after Task 5 and at the end.
-Artifacts → research/dart_forecast/. Tests never touch journal/ or push. No LLM in the pipeline.
+Supervised. Max 12 iterations. ONE task = ONE commit. Pause + report each task. Never commit red;
+same check red 3× = blocked. Maker ≠ checker: fresh-eyes subagent describes the chart COLD each task.
+Scope: Asset Optimization tab (dispatchSVG/dpTip/dp-kpi + CSS) + Task 0 (research/) + docs. No deploy.
 
 ## Checklist
-- [ ] 0 — Setup: GOAL.md + PROGRESS.md + data-landscape scout (schemas, timing, spans per hub).
-- [ ] 1 — Dataset assembly (per-hub hourly frame, target dart=DA−RT, features+available_at, spans+drops).
-- [ ] 2 — Walk-forward splitter (expanding, monthly, embargo ≥1d, strict chronology).
-- [ ] 3 — Leakage guard + SABOTAGE test (plant dart_tomorrow → rejected).
-- [ ] 4 — Metrics + report core (pinball, coverage, spike Brier/reliability; JSON+md writers).
-- [ ] 5 — Baselines end-to-end (zero-spread, persistence, climatology) → baselines_result.json + plots. ⏸ PAUSE.
-- [ ] 6 — LightGBM quantile models per hub.
-- [ ] 7 — Conformal calibration (coverage before/after).
-- [ ] 8 — SHUFFLED-TARGET GATE (must not beat baselines OOS).
-- [ ] 9 — Calibration + results plots (PNGs).
-- [ ] 10 — Economic overlay (labeled, copied signal rules).
-- [ ] 11 — RESEARCH NOTE.
+- [ ] 0 — Research-note correction: locational/ repoint + N/S/W re-run — determine + fix/apply.
+- [ ] 1 — Focal hierarchy (bars+SoC hero; price/grid/KPI/floor recede; reserve zone ≤8%).
+- [ ] 2 — Price→dispatch causality (shared-x guides + dispatch windows on price panel).
+- [ ] 3 — Annotations integrated (≤2 pinned callouts, rest to hover, zero over-data overlap).
+- [ ] 4 — Now/historical honesty (marker only if plan_date==today, else badge).
+- [ ] 5 — Heuristic baseline (naive TOU one-cycle; KPI context triple).
+- [ ] 6 — Action card (templated from arrays; optional spike-head P; no forecast verbs).
+- [ ] 7 — Confidence band + settled-actual (RT_q=DA−DART_q from committed conformal artifacts; else absent).
+- [ ] 8 — Entrance motion (bars grow/line draws/SoC eases ≤1s; reduced-motion; Mike's real-browser gate).
+- [ ] 9 — Rest-state + responsive audit (calm, one focal point, no overlaps at 3 widths).
+- [ ] 10 — Docs (CLAUDE.md deploy explicit-go rule + runtime gap; PROGRESS final).
 
 ## Append-only log
-- init (2026-07-29) — New research loop from Mike's spec. Overwrote the prior Bolt-loop GOAL/PROGRESS.
-  Standing constraints carried in: never write journal/, no deploy, no signal.py edits, no map/UI.
-  Next: scout the data landscape (price_store, dart_cache, DA decade, weather_data, NP6-86-CD, clim
-  snapshot conventions, signal rules to COPY for Task 10) before Task 1.
-
-- T4 note (2026-07-29) — LEAK CAUGHT during T4 design: the static clim_result.json snapshot is built
-  on the FULL decade (incl. test periods), so its quantiles are lookahead if used as model FEATURES or
-  as a BASELINE. Fix: climatology must be recomputed PER-FOLD from TRAIN data only (reuse the
-  month-hour binning convention + min-samples rule, NOT the snapshot values). Action: T5 builds
-  train-only fold_climatology(); the static clim_* columns are EXCLUDED from model inputs (kept in the
-  frame for reference only). Metrics spike event = dart < -T (RT - DA > T, "RT spike above DA"),
-  T stated in code (SPIKE_T). Quantiles per spec: 0.10/0.25/0.50/0.75/0.90.
-
-- ADJUSTMENTS from Mike after T5 pause (2026-07-29):
-  (A) CUTOFF CORRECTION [committed]: information cutoff now matches the LIVE 16:00 ET / 15:00 CT commit
-      EXACTLY (was a more-conservative uniform Dg-2). Features use data <= decision_time; freshest
-      same-hour = Dg-1 for delivery H<=14 else Dg-2. dataset.py + leakage_guard.py updated; Houston
-      n 74,382->74,373. VERIFIED by checker: per-hour persistence exact both branches, no feature past
-      decision_time, trail reconstruction matches, lag48 fixed-Dg-2 distinct from persist, suite 5/5.
-  (B) metrics+blend [committed]: $100 spike head added (base rate 1.37%, 891 events, 41/89 folds <5 -> flagged); log-loss added (exposes persistence hard-call miscalibration LL 2.82 vs clim 0.30); per-fold event counts. Blend clim_persist honestly UNDERPERFORMS climatology (pinball 13.54 vs 11.10) â persistence too weak a DART signal. Houston cutoff-corrected persistence 18.67. VERIFIED e-9 (blend formula, $100 Brier/LL/counts, event flags).
-      spike probs (no misleading q10-q90 interpolation). Blend baseline 'clim_persist' (clim spread,
-      level nudged 0.5x toward persistence). [in progress]
-  (C) note framing: model results as Delta vs climatology (%, per quantile, per spike head).
-
-## LOOP COMPLETE (2026-07-30) — all 11 tasks green + independently verified. ⏸ PAUSED for Mike.
-Headline: LightGBM quantile model beats train-only climatology by 14.8% mean pinball on HB_HOUSTON
-(2020-2026, decision-time-clean), gains in the upper tail (q90 -46.7%) + spike log-loss (-32%/$20,
--50%/$100); shuffled-target gate confirms the edge is real (+1.9% when labels permuted). Conformal
-reaches nominal coverage. Honest negatives: blend underperforms; model does NOT beat climatology on
-the naive sign-rule overlay (value is in the tail, not the sign). NOTHING promoted to signal.py.
+- init (2026-07-30) — New chart loop from Mike's spec. Overwrote the DART-research GOAL/PROGRESS.
+  Connects the just-built research model (research/dart_forecast/) to the Bolt chart's honest band.
+  Standing constraints: no other tabs/map/signal.py/deploy; motion sign-off is Mike's real browser.
+  Next: Task 0 — determine whether the locational/ repoint + N/S/W re-run happened, then fix or apply.

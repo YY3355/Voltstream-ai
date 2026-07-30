@@ -1,6 +1,6 @@
 # DART forecast — baseline results (walk-forward, no model yet)
 
-- git SHA `fa6c18db310190942a4e2177c7094129918e4d5d` · seed 42 · target **dart = DA - RT ($/MWh)** · quantiles [0.1, 0.25, 0.5, 0.75, 0.9] · spike heads $[20.0, 100.0]
+- git SHA `437f80aaa7c8f16eb26d79009ca8d640285b2e42` · seed 42 · target **dart = DA - RT ($/MWh)** · quantiles [0.1, 0.25, 0.5, 0.75, 0.9] · spike heads $[20.0, 100.0]
 - clim_persist = climatology spread, level nudged 0.5x toward persistence
 - PER-FOLD train-only (month,hour) quantiles; NOT the full-decade snapshot
 - ⚠ HB_NORTH/SOUTH/WEST: ~28-day RT coverage, single holdout, small-sample — NEVER averaged into a headline with Houston.
@@ -27,68 +27,68 @@ Spike heads (direct probabilities):
 - spike@\$20: base rate 0.0467, total events 3030 across 89 folds. ⚠ 2/89 folds have <5 events (scores hollow there)
 - spike@\$100: base rate 0.0137, total events 891 across 89 folds. ⚠ 41/89 folds have <5 events (scores hollow there)
 
-## HB_NORTH  _(small sample — never averaged with Houston)_
-_single 50/50 chronological holdout (small sample — NOT comparable to Houston) · n_test=336 · span 2026-07-01..2026-07-28_
+## HB_NORTH
+_walk-forward, 89 monthly folds, embargo 1d · n_test=64944 · span 2018-01-04..2026-06-30_
 
 | baseline | mean pinball | q10 | q25 | q50 | q75 | q90 | 10–90 cov |
 |---|---|---|---|---|---|---|
-| zero_spread | 3.426 | 2.590 | 2.903 | 3.426 | 3.949 | 4.263 | 0.000 |
-| persistence | 4.952 | 5.011 | 4.989 | 4.952 | 4.915 | 4.893 | 0.000 |
-| climatology | 2.781 | 2.047 | 2.831 | 3.354 | 3.205 | 2.467 | 0.723 |
-| clim_persist | 3.219 | 2.486 | 3.361 | 3.822 | 3.586 | 2.838 | 0.708 |
+| zero_spread | 11.806 | 11.112 | 11.372 | 11.806 | 12.240 | 12.501 | 0.000 |
+| persistence | 18.244 | 18.243 | 18.243 | 18.244 | 18.245 | 18.245 | 0.000 |
+| climatology | 10.770 | 10.451 | 11.301 | 11.580 | 10.924 | 9.594 | 0.693 |
+| clim_persist | 13.184 | 12.426 | 13.620 | 14.080 | 13.558 | 12.237 | 0.653 |
 
 Spike heads (direct probabilities):
 
 | baseline | Brier@$20 | logloss@$20 | Brier@$100 | logloss@$100 |
 |---|---|---|---|---|
-| zero_spread | 0.0268 | 0.925 | 0.0000 | 0.000 |
-| persistence | 0.0506 | 1.748 | 0.0000 | 0.000 |
-| climatology | 0.0266 | 0.159 | 0.0000 | 0.000 |
-| clim_persist | 0.0266 | 0.159 | 0.0000 | 0.000 |
+| zero_spread | 0.0462 | 1.595 | 0.0126 | 0.435 |
+| persistence | 0.0821 | 2.835 | 0.0224 | 0.774 |
+| climatology | 0.0437 | 0.289 | 0.0125 | 0.165 |
+| clim_persist | 0.0437 | 0.289 | 0.0125 | 0.165 |
 
-- spike@\$20: base rate 0.0268, total events 9 across 1 folds.
-- spike@\$100: base rate 0.0000, total events 0 across 1 folds. ⚠ 1/1 folds have <5 events (scores hollow there)
+- spike@\$20: base rate 0.0462, total events 3000 across 89 folds. ⚠ 2/89 folds have <5 events (scores hollow there)
+- spike@\$100: base rate 0.0126, total events 818 across 89 folds. ⚠ 38/89 folds have <5 events (scores hollow there)
 
-## HB_SOUTH  _(small sample — never averaged with Houston)_
-_single 50/50 chronological holdout (small sample — NOT comparable to Houston) · n_test=336 · span 2026-07-01..2026-07-28_
+## HB_SOUTH
+_walk-forward, 89 monthly folds, embargo 1d · n_test=64944 · span 2018-01-04..2026-06-30_
 
 | baseline | mean pinball | q10 | q25 | q50 | q75 | q90 | 10–90 cov |
 |---|---|---|---|---|---|---|
-| zero_spread | 3.631 | 2.990 | 3.230 | 3.631 | 4.032 | 4.272 | 0.000 |
-| persistence | 5.216 | 5.123 | 5.158 | 5.216 | 5.274 | 5.309 | 0.000 |
-| climatology | 2.818 | 2.506 | 3.202 | 3.455 | 2.920 | 2.004 | 0.699 |
-| clim_persist | 3.438 | 2.898 | 3.743 | 4.160 | 3.672 | 2.720 | 0.661 |
+| zero_spread | 11.344 | 10.547 | 10.846 | 11.344 | 11.843 | 12.142 | 0.000 |
+| persistence | 17.512 | 17.511 | 17.511 | 17.512 | 17.513 | 17.514 | 0.000 |
+| climatology | 10.362 | 9.901 | 10.795 | 11.141 | 10.591 | 9.380 | 0.691 |
+| clim_persist | 12.662 | 11.862 | 13.042 | 13.521 | 13.055 | 11.828 | 0.653 |
 
 Spike heads (direct probabilities):
 
 | baseline | Brier@$20 | logloss@$20 | Brier@$100 | logloss@$100 |
 |---|---|---|---|---|
-| zero_spread | 0.0417 | 1.439 | 0.0000 | 0.000 |
-| persistence | 0.0714 | 2.467 | 0.0000 | 0.000 |
-| climatology | 0.0417 | 1.439 | 0.0000 | 0.000 |
-| clim_persist | 0.0417 | 1.439 | 0.0000 | 0.000 |
+| zero_spread | 0.0451 | 1.559 | 0.0125 | 0.432 |
+| persistence | 0.0798 | 2.755 | 0.0221 | 0.765 |
+| climatology | 0.0428 | 0.274 | 0.0124 | 0.156 |
+| clim_persist | 0.0428 | 0.274 | 0.0124 | 0.156 |
 
-- spike@\$20: base rate 0.0417, total events 14 across 1 folds.
-- spike@\$100: base rate 0.0000, total events 0 across 1 folds. ⚠ 1/1 folds have <5 events (scores hollow there)
+- spike@\$20: base rate 0.0451, total events 2932 across 89 folds. ⚠ 1/89 folds have <5 events (scores hollow there)
+- spike@\$100: base rate 0.0125, total events 813 across 89 folds. ⚠ 37/89 folds have <5 events (scores hollow there)
 
-## HB_WEST  _(small sample — never averaged with Houston)_
-_single 50/50 chronological holdout (small sample — NOT comparable to Houston) · n_test=336 · span 2026-07-01..2026-07-28_
+## HB_WEST
+_walk-forward, 89 monthly folds, embargo 1d · n_test=64944 · span 2018-01-04..2026-06-30_
 
 | baseline | mean pinball | q10 | q25 | q50 | q75 | q90 | 10–90 cov |
 |---|---|---|---|---|---|---|
-| zero_spread | 3.454 | 2.711 | 2.989 | 3.454 | 3.919 | 4.198 | 0.000 |
-| persistence | 5.222 | 5.255 | 5.242 | 5.222 | 5.201 | 5.189 | 0.000 |
-| climatology | 2.702 | 2.025 | 2.857 | 3.375 | 3.050 | 2.202 | 0.735 |
-| clim_persist | 3.288 | 2.535 | 3.475 | 4.037 | 3.688 | 2.707 | 0.664 |
+| zero_spread | 12.448 | 11.742 | 12.006 | 12.448 | 12.889 | 13.154 | 0.000 |
+| persistence | 19.214 | 19.212 | 19.213 | 19.214 | 19.214 | 19.215 | 0.000 |
+| climatology | 11.247 | 10.853 | 11.897 | 12.209 | 11.402 | 9.875 | 0.695 |
+| clim_persist | 13.751 | 12.865 | 14.280 | 14.822 | 14.164 | 12.622 | 0.648 |
 
 Spike heads (direct probabilities):
 
 | baseline | Brier@$20 | logloss@$20 | Brier@$100 | logloss@$100 |
 |---|---|---|---|---|
-| zero_spread | 0.0238 | 0.822 | 0.0030 | 0.103 |
-| persistence | 0.0476 | 1.645 | 0.0060 | 0.206 |
-| climatology | 0.0237 | 0.141 | 0.0030 | 0.103 |
-| clim_persist | 0.0237 | 0.141 | 0.0030 | 0.103 |
+| zero_spread | 0.0562 | 1.942 | 0.0135 | 0.467 |
+| persistence | 0.0991 | 3.424 | 0.0242 | 0.837 |
+| climatology | 0.0527 | 0.311 | 0.0134 | 0.168 |
+| clim_persist | 0.0527 | 0.311 | 0.0134 | 0.168 |
 
-- spike@\$20: base rate 0.0238, total events 8 across 1 folds.
-- spike@\$100: base rate 0.0030, total events 1 across 1 folds. ⚠ 1/1 folds have <5 events (scores hollow there)
+- spike@\$20: base rate 0.0562, total events 3651 across 89 folds. ⚠ 1/89 folds have <5 events (scores hollow there)
+- spike@\$100: base rate 0.0135, total events 878 across 89 folds. ⚠ 32/89 folds have <5 events (scores hollow there)

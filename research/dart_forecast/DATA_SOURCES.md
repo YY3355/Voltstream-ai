@@ -22,7 +22,8 @@ as a probability `P(RT − DA > T)` — a quantile/probability forecast, not a s
 | What | Path | Shape / key | Span | Hubs |
 |---|---|---|---|---|
 | DA hourly (decade) | `data_archive/dam_decade/{2018..2026}.pkl` | DataFrame, DatetimeIndex (naive), cols=4 hubs | 2018-01-02 → 2026-07-01 (74,463 h) | **all 4** |
-| RT 15-min (decade) | `data_archive/decade/{2017..2026}.pkl` | Series `HB_HOUSTON_rt_spp` (naive) | 2018-01-01 → 2026-06-30 (297,846×15min → 74,473 h, 9 NaN) | **Houston only** |
+| RT 15-min (decade, Houston) | `data_archive/decade/{2017..2026}.pkl` | Series `HB_HOUSTON_rt_spp` (naive) | 2018-01-01 → 2026-06-30 (297,846×15min) | Houston |
+| RT 15-min (decade, ALL hubs) | `data_archive/locational/{hub}.pkl` | Series `{hub}_rt_spp` (naive), 15-min | 2017-12-31 → 2026-06-30 (297,846 each) | **all 4** (repoint source, Task 0) |
 | DA hourly (recent) | `dart_cache/DAY_AHEAD_HOURLY_*.pkl` | df, `Location`/`SPP`, tz=US/Central | 2026-06-29 → 2026-07-28 (30 d) | all hubs |
 | RT 15-min (recent) | `dart_cache/REAL_TIME_15_MIN_*.pkl` | df, tz=US/Central | 2026-06-29 → 2026-07-28 (30 d) | all hubs |
 | RT archive (settled) | `data_archive/archive_cache/NP6-905-CD_*.pkl` | df, 96 rows/day = 1 hub | 2026-06-07 → 2026-07-28 (52 d) | Houston (sampled) |
@@ -31,10 +32,12 @@ as a probability `P(RT − DA > T)` — a quantile/probability forecast, not a s
 
 ### Verified per-hub PAIRED (DA∩RT) span
 - **HB_HOUSTON**: **74,439 h, 2018-01-02 → 2026-06-30, all 9 years** — first-class.
-- **HB_NORTH / HB_SOUTH / HB_WEST**: DA is decade, but RT decade store is Houston-only. Per
-  `clim_result.json` their paired RT is ~1 yr (2025-05-21 → 2026-07-24, 8,759 h). Task 1 will
-  assemble their RT from committed stores and REPORT the actual span + drop counts. They carry the
-  small-sample label (constraint 5) and are NEVER averaged into a headline with Houston. If raw RT
+- **HB_NORTH / HB_SOUTH / HB_WEST**: **UPDATE (Task 0 repoint):** RT is now a decade for these hubs via
+  `data_archive/locational/{hub}.pkl` (was ~28-day `dart_cache`). Paired frame = 74,373 h each,
+  2018-01-04 → 2026-06-30 — same as Houston. Baselines re-run as the full decade walk-forward. They are
+  no longer small-sample; per-hub numbers are still reported separately, never averaged with Houston.
+  (Original note preserved for history:) DA is decade; the older RT decade store `data_archive/decade/`
+  was Houston-only, so before the repoint N/S/W were ~28-day. If raw RT
   proves too thin for modeling, they get baselines + climatology only — stated plainly.
 
 ## Timezone

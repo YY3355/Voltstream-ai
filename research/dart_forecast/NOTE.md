@@ -24,11 +24,15 @@ Sign convention (canonical): **`dart = DA − RT`**, positive = DA settled rich 
 | Hub | Paired DA∩RT span | n (model frame) | Drops (dropped **and** counted) | Status |
 |---|---|---|---|---|
 | **HB_HOUSTON** | 2018-01-04 → 2026-06-30 (decade) | **74,373** | 34 incomplete/nonfinite pairs + 66 warm-up | first-class |
-| HB_NORTH / SOUTH / WEST | 2026-07 only (~28 days) | 672 each | 0 bad pairs + 48 warm-up | ⚠ small-sample |
+| HB_NORTH / SOUTH / WEST | 2018-01-04 → 2026-06-30 (decade) | **74,373** each | 34 pairs + 66 warm-up each | decade (baselines) |
 
-DA is a decade for all four hubs (`data_archive/dam_decade/`); the **RT decade store is Houston-only**
-(`data_archive/decade/`), so NORTH/SOUTH/WEST are RT-limited to ~28 days from committed caches. They
-carry a small-sample label and are **never averaged into a headline with Houston.** Data hygiene: no
+DA is a decade for all four hubs (`data_archive/dam_decade/`). RT is now a decade for **all four**
+hubs via `data_archive/locational/{hub}.pkl` (the RT decade store) — NORTH/SOUTH/WEST were repointed
+from the old ~28-day `dart_cache` source to this decade store (Task 0). Houston is **byte-identical**
+between `data_archive/decade/` and the locational store (max abs diff 0.0 over 297,846 15-min points),
+so Houston's frame is unchanged; N/S/W are genuine, distinct hubs (corr ~0.995 with Houston, real basis
+spreads, e.g. Houston−West mean +$3.12). N/S/W baselines are now the full decade walk-forward (89
+folds), not a 28-day holdout. Data hygiene: no
 NaN/Inf coercion — bad rows dropped+counted; trailing features that are simply not-yet-warmed are kept
 as model-native missing, never imputed. Full provenance in `DATA_SOURCES.md`; per-hub drop counts in
 `dataset_meta.json`.
@@ -80,6 +84,13 @@ have <5 events — flagged hollow; log-loss, not Brier, is the informative tail 
 LightGBM quantile models, **HB_HOUSTON, 78 eval folds, n=56,931 (2020-01→2026-06)**; hyperparameters
 tuned on an inner validation carved from a **pre-2020 block that is provably disjoint from every eval
 test row** (checker: intersection = 0). Reported as Δ% vs climatology recomputed on the *same* folds.
+
+> **On the n = 64,944 → 56,931 difference:** the baselines (§4) score all 89 walk-forward folds
+> (2019-02→2026-06, n=64,944); the MODEL scores only the 78 folds with test_start ≥ 2020-01-01
+> (n=56,931) because the entire pre-2020 span is reserved as the hyperparameter-tuning block and is
+> held disjoint from every model-eval test fold. The ~7,000-row gap is those reserved 2019 folds — it
+> is the tuning/eval separation, **not** feature warm-up. Model Δ% is always computed against the
+> climatology recomputed on the model's own 78 folds, so the comparison is like-for-like.
 
 | metric | model | climatology | **Δ vs climatology** |
 |---|---|---|---|
@@ -151,9 +162,11 @@ $2,973/MWh, 8 hours |dart|>100).
 
 ## 9. Limitations (read before trusting any number)
 
-1. **Hub-sample asymmetry.** Only HB_HOUSTON has a decade of paired DA/RT. NORTH/SOUTH/WEST are ~28-day,
-   baselines/climatology only, never merged with Houston. Multi-hub modeling needs an RT backfill
-   (explicitly out of this loop's scope).
+1. **Hub coverage (asymmetry resolved for baselines).** After the Task-0 locational repoint, all four
+   hubs have a decade of paired DA/RT; N/S/W baselines are the full decade walk-forward (climatology
+   mean pinball: HOU 11.10, NORTH 10.77, SOUTH 10.36, WEST 11.25). Only HB_HOUSTON has an ML MODEL so
+   far — the LightGBM model (§5) was not re-fit per hub in this loop; N/S/W remain baselines-only until
+   a per-hub model run. Per-hub numbers are still reported separately, never averaged into one figure.
 2. **Weather / net-load features are NOT in the model.** They are registered-deferred. Doing them
    right needs Open-Meteo's Historical **Forecast** API (archived forecasts, 2022+); using weather
    *actuals* as forecast stand-ins is lookahead and any such run must be labeled
@@ -180,7 +193,8 @@ $2,973/MWh, 8 hours |dart|>100).
 - Forecast-sourced **wind / net-load** features (Open-Meteo archived forecasts, 2022+), properly
   `available_at`-stamped.
 - **RTC+B regime-aware** evaluation: a separate post-2025 model/holdout, and a regime feature.
-- Multi-hub once NORTH/SOUTH/WEST RT is backfilled (congestion/basis structure).
+- Per-hub ML MODELS for NORTH/SOUTH/WEST (the decade RT is now available post-repoint; only baselines
+  were re-run this loop) — then congestion/basis structure across hubs.
 - Spike-specialised models and conformalized spike probabilities for the $100 tail.
 
 ## 11. Reproducibility

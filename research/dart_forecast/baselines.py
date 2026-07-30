@@ -149,7 +149,7 @@ def main():
         if fr is None or len(fr) < 60:
             report["hubs"][hub] = {"status": "insufficient", "n": 0 if fr is None else len(fr)}
             continue
-        small = hub != "HB_HOUSTON"
+        small = bool(meta.get("small_sample", len(fr) < 8760))   # n-based (post locational repoint)
         report["small_sample"][hub] = small
         if not small:
             splits = sp.walk_forward_splits(fr.index, embargo_days=1, min_train_days=365)

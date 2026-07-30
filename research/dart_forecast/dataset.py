@@ -74,23 +74,19 @@ def load_rt_hourly() -> pd.DataFrame:
     hh = pd.concat(hous).sort_index() if hous else pd.Series(dtype=float)
     hh = hh[~hh.index.duplicated(keep="last")].resample("1h").mean()
     cols = {RT_DECADE_HUB: hh}
-    # Other hubs from dart_cache RT 15-min (long-format), resampled hourly
-    rec = {h: [] for h in HUBS if h != RT_DECADE_HUB}
-    for f in sorted(glob.glob(os.path.join(REPO, "dart_cache/REAL_TIME_15_MIN_*.pkl"))):
-        d = pd.read_pickle(f)
-        tcol = "Interval Start" if "Interval Start" in d.columns else "Time"
-        d = d.copy()
-        d["ts"] = _naive(pd.to_datetime(d[tcol]))
-        d["hub"] = d["Location"].astype(str).str.upper()
-        for h in rec:
-            sub = d[d["hub"] == h]
-            if len(sub):
-                rec[h].append(sub.set_index("ts")["SPP"])
-    for h, parts in rec.items():
-        if parts:
-            s = pd.concat(parts).sort_index()
-            s = s[~s.index.duplicated(keep="last")].resample("1h").mean()
-            cols[h] = s
+    # NORTH/SOUTH/WEST RT: REPOINTED to the decade LOCATIONAL store (data_archive/locational/{hub}.pkl,
+    # 15-min RT SPP 2018-2026), replacing the old ~28-day dart_cache source. Houston is verified
+    # byte-identical between data_archive/decade/ and locational/ (Task 0 check), so Houston's path is
+    # left untouched here and its assembled frame is unchanged.
+    for h in HUBS:
+        if h == RT_DECADE_HUB:
+            continue
+        p = os.path.join(REPO, f"data_archive/locational/{h}.pkl")
+        if os.path.exists(p):
+            s = pd.read_pickle(p)
+            if isinstance(s, pd.Series) and len(s):
+                s.index = _naive(s.index)
+                cols[h] = s[~s.index.duplicated(keep="last")].resample("1h").mean()
     return pd.DataFrame(cols).sort_index()
 
 def load_clim() -> dict:
@@ -286,7 +282,7 @@ def build_hub_frame(hub: str, da: pd.DataFrame | None = None,
         "target": "dart = DA - RT ($/MWh)", "seed": SEED, "git_sha": git_sha(),
         "features_realized": list(cf.columns) + [c for c in rows if c != "dart"],
         "feature_groups_deferred": list(DEFERRED_GROUPS),
-        "small_sample": hub != "HB_HOUSTON",
+        "small_sample": int(len(frame)) < 8760,   # <1yr of paired hours (n-based, not hub-name)
     }
     return frame, meta
 
