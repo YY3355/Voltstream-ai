@@ -1,0 +1,2990 @@
+{
+  "kind": "dart_baselines",
+  "stamp": {
+    "git_sha": "2a4920a80af94fc9e4fba46b68056136d8fa41b9",
+    "generated_at": "2026-07-30T02:59:25.632370+00:00",
+    "seed": 42,
+    "span": null,
+    "n_samples": null,
+    "target": "dart = DA - RT ($/MWh)",
+    "taus": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "spike_T": 20.0
+  },
+  "climatology_note": "PER-FOLD train-only (month,hour) quantiles; NOT the full-decade snapshot",
+  "hub_order": [
+    "HB_HOUSTON",
+    "HB_NORTH",
+    "HB_SOUTH",
+    "HB_WEST"
+  ],
+  "small_sample": {
+    "HB_HOUSTON": false,
+    "HB_NORTH": true,
+    "HB_SOUTH": true,
+    "HB_WEST": true
+  },
+  "spans": {
+    "HB_HOUSTON": "2018-01-04..2026-06-30",
+    "HB_NORTH": "2026-07-01..2026-07-28",
+    "HB_SOUTH": "2026-07-01..2026-07-28",
+    "HB_WEST": "2026-07-01..2026-07-28"
+  },
+  "methods": {
+    "zero_spread": {
+      "HB_HOUSTON": {
+        "n": 64952,
+        "quantiles": {
+          "n": 64952,
+          "pinball": {
+            "0.10": 11.498251535749478,
+            "0.25": 11.757117977506466,
+            "0.50": 12.188562047101449,
+            "0.75": 12.62000611669643,
+            "0.90": 12.878872558453423
+          },
+          "coverage_below": {
+            "0.10": 0.3693188816356694,
+            "0.25": 0.3693188816356694,
+            "0.50": 0.3693188816356694,
+            "0.75": 0.3693188816356694,
+            "0.90": 0.3693188816356694
+          },
+          "pinball_mean": 12.188562047101449,
+          "interval_coverage_10_90": 0.00010777189309028205
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.046649833723364946,
+          "brier": 0.046649833723364946,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 64952,
+              "mean_pred": 0.0,
+              "emp_freq": 0.046649833723364946
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_NORTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.5895520833333334,
+            "0.25": 2.903355654761905,
+            "0.50": 3.426361607142857,
+            "0.75": 3.94936755952381,
+            "0.90": 4.26317113095238
+          },
+          "coverage_below": {
+            "0.10": 0.37797619047619047,
+            "0.25": 0.37797619047619047,
+            "0.50": 0.37797619047619047,
+            "0.75": 0.37797619047619047,
+            "0.90": 0.37797619047619047
+          },
+          "pinball_mean": 3.4263616071428573,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.026785714285714284,
+          "brier": 0.026785714285714284,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.0,
+              "emp_freq": 0.026785714285714284
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_SOUTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.9896458333333333,
+            "0.25": 3.2300967261904763,
+            "0.50": 3.630848214285714,
+            "0.75": 4.0315997023809516,
+            "0.90": 4.272050595238095
+          },
+          "coverage_below": {
+            "0.10": 0.30952380952380953,
+            "0.25": 0.30952380952380953,
+            "0.50": 0.30952380952380953,
+            "0.75": 0.30952380952380953,
+            "0.90": 0.30952380952380953
+          },
+          "pinball_mean": 3.6308482142857144,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.041666666666666664,
+          "brier": 0.041666666666666664,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.0,
+              "emp_freq": 0.041666666666666664
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_WEST": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.7105,
+            "0.25": 2.9893191964285717,
+            "0.50": 3.4540178571428575,
+            "0.75": 3.918716517857143,
+            "0.90": 4.197535714285714
+          },
+          "coverage_below": {
+            "0.10": 0.38392857142857145,
+            "0.25": 0.38392857142857145,
+            "0.50": 0.38392857142857145,
+            "0.75": 0.38392857142857145,
+            "0.90": 0.38392857142857145
+          },
+          "pinball_mean": 3.454017857142857,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.023809523809523808,
+          "brier": 0.023809523809523808,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.0,
+              "emp_freq": 0.023809523809523808
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      }
+    },
+    "persistence": {
+      "HB_HOUSTON": {
+        "n": 64952,
+        "quantiles": {
+          "n": 64952,
+          "pinball": {
+            "0.10": 19.113088916943795,
+            "0.25": 19.11327666327955,
+            "0.50": 19.113589573839143,
+            "0.75": 19.11390248439874,
+            "0.90": 19.11409023073449
+          },
+          "coverage_below": {
+            "0.10": 0.5113160487744797,
+            "0.25": 0.5113160487744797,
+            "0.50": 0.5113160487744797,
+            "0.75": 0.5113160487744797,
+            "0.90": 0.5113160487744797
+          },
+          "pinball_mean": 19.113589573839143,
+          "interval_coverage_10_90": 4.618795418154945e-05
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.046649833723364946,
+          "brier": 0.08364638502278605,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 61921,
+              "mean_pred": 0.0,
+              "emp_freq": 0.0438623407244715
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 3031,
+              "mean_pred": 1.0,
+              "emp_freq": 0.10359617288023755
+            }
+          ]
+        }
+      },
+      "HB_NORTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 5.215084821428571,
+            "0.25": 5.190100446428572,
+            "0.50": 5.148459821428572,
+            "0.75": 5.106819196428572,
+            "0.90": 5.081834821428572
+          },
+          "coverage_below": {
+            "0.10": 0.5297619047619048,
+            "0.25": 0.5297619047619048,
+            "0.50": 0.5297619047619048,
+            "0.75": 0.5297619047619048,
+            "0.90": 0.5297619047619048
+          },
+          "pinball_mean": 5.148459821428572,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.026785714285714284,
+          "brier": 0.050595238095238096,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 328,
+              "mean_pred": 0.0,
+              "emp_freq": 0.027439024390243903
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 8,
+              "mean_pred": 1.0,
+              "emp_freq": 0.0
+            }
+          ]
+        }
+      },
+      "HB_SOUTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 5.581052827380953,
+            "0.25": 5.629975818452381,
+            "0.50": 5.711514136904762,
+            "0.75": 5.793052455357143,
+            "0.90": 5.841975446428571
+          },
+          "coverage_below": {
+            "0.10": 0.49404761904761907,
+            "0.25": 0.49404761904761907,
+            "0.50": 0.49404761904761907,
+            "0.75": 0.49404761904761907,
+            "0.90": 0.49404761904761907
+          },
+          "pinball_mean": 5.711514136904762,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.041666666666666664,
+          "brier": 0.08333333333333333,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 322,
+              "mean_pred": 0.0,
+              "emp_freq": 0.043478260869565216
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 14,
+              "mean_pred": 1.0,
+              "emp_freq": 0.0
+            }
+          ]
+        }
+      },
+      "HB_WEST": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 5.471120535714285,
+            "0.25": 5.460357142857144,
+            "0.50": 5.4424181547619055,
+            "0.75": 5.424479166666667,
+            "0.90": 5.413715773809524
+          },
+          "coverage_below": {
+            "0.10": 0.5327380952380952,
+            "0.25": 0.5327380952380952,
+            "0.50": 0.5327380952380952,
+            "0.75": 0.5327380952380952,
+            "0.90": 0.5327380952380952
+          },
+          "pinball_mean": 5.4424181547619055,
+          "interval_coverage_10_90": 0.0
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.023809523809523808,
+          "brier": 0.047619047619047616,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 328,
+              "mean_pred": 0.0,
+              "emp_freq": 0.024390243902439025
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 8,
+              "mean_pred": 1.0,
+              "emp_freq": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "climatology": {
+      "HB_HOUSTON": {
+        "n": 64952,
+        "quantiles": {
+          "n": 64952,
+          "pinball": {
+            "0.10": 10.884850076723325,
+            "0.25": 11.699968876054625,
+            "0.50": 11.906255597081948,
+            "0.75": 11.185593024464218,
+            "0.90": 9.818287923517879
+          },
+          "coverage_below": {
+            "0.10": 0.15325163197438108,
+            "0.25": 0.32288459169848505,
+            "0.50": 0.5261269860820298,
+            "0.75": 0.7117563739376771,
+            "0.90": 0.8470408917354354
+          },
+          "pinball_mean": 11.0989910995684,
+          "interval_coverage_10_90": 0.6938046557457815
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.046649833723364946,
+          "brier": 0.044129684931973626,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 59806,
+              "mean_pred": 0.028940228210823298,
+              "emp_freq": 0.04176838444303247
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 4688,
+              "mean_pred": 0.1280470612384055,
+              "emp_freq": 0.09790955631399317
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 458,
+              "mean_pred": 0.2288261592846746,
+              "emp_freq": 0.15938864628820962
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_NORTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.0465223214285717,
+            "0.25": 2.831354166666667,
+            "0.50": 3.3541443452380952,
+            "0.75": 3.2045461309523815,
+            "0.90": 2.466589285714286
+          },
+          "coverage_below": {
+            "0.10": 0.13988095238095238,
+            "0.25": 0.27976190476190477,
+            "0.50": 0.5119047619047619,
+            "0.75": 0.7142857142857143,
+            "0.90": 0.8630952380952381
+          },
+          "pinball_mean": 2.7806312500000003,
+          "interval_coverage_10_90": 0.7232142857142857
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.026785714285714284,
+          "brier": 0.026635133219954647,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.002976190476190476,
+              "emp_freq": 0.026785714285714284
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_SOUTH": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.5059813988095243,
+            "0.25": 3.2023679315476192,
+            "0.50": 3.4551860119047624,
+            "0.75": 2.919627976190476,
+            "0.90": 2.004407738095238
+          },
+          "coverage_below": {
+            "0.10": 0.1636904761904762,
+            "0.25": 0.2648809523809524,
+            "0.50": 0.45535714285714285,
+            "0.75": 0.7023809523809523,
+            "0.90": 0.8630952380952381
+          },
+          "pinball_mean": 2.817514211309524,
+          "interval_coverage_10_90": 0.6994047619047619
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.041666666666666664,
+          "brier": 0.041666666666666664,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.0,
+              "emp_freq": 0.041666666666666664
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      },
+      "HB_WEST": {
+        "n": 336,
+        "quantiles": {
+          "n": 336,
+          "pinball": {
+            "0.10": 2.024933035714286,
+            "0.25": 2.8567671130952386,
+            "0.50": 3.375424107142857,
+            "0.75": 3.0502232142857144,
+            "0.90": 2.201549107142857
+          },
+          "coverage_below": {
+            "0.10": 0.15476190476190477,
+            "0.25": 0.27976190476190477,
+            "0.50": 0.5208333333333334,
+            "0.75": 0.7321428571428571,
+            "0.90": 0.8898809523809523
+          },
+          "pinball_mean": 2.70177931547619,
+          "interval_coverage_10_90": 0.7351190476190477
+        },
+        "spike": {
+          "T": 20.0,
+          "base_rate": 0.023809523809523808,
+          "brier": 0.023676658163265304,
+          "reliability": [
+            {
+              "bin": [
+                0.0,
+                0.1
+              ],
+              "n": 336,
+              "mean_pred": 0.002976190476190476,
+              "emp_freq": 0.023809523809523808
+            },
+            {
+              "bin": [
+                0.1,
+                0.2
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.2,
+                0.3
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.3,
+                0.4
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.4,
+                0.5
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.5,
+                0.6
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.6,
+                0.7
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.7,
+                0.8
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.8,
+                0.9
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            },
+            {
+              "bin": [
+                0.9,
+                1.0
+              ],
+              "n": 0,
+              "mean_pred": null,
+              "emp_freq": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "hubs": {
+    "HB_HOUSTON": {
+      "status": "ok",
+      "small_sample": false,
+      "scheme": "walk-forward, 89 monthly folds, embargo 1d",
+      "n_test": 64952,
+      "span": [
+        "2018-01-04 00:00:00",
+        "2026-06-30 23:00:00"
+      ],
+      "rt_coverage": [
+        "2017-12-31 23:00:00",
+        "2026-06-30 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 34,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 57
+      },
+      "results": {
+        "zero_spread": {
+          "n": 64952,
+          "quantiles": {
+            "n": 64952,
+            "pinball": {
+              "0.10": 11.498251535749478,
+              "0.25": 11.757117977506466,
+              "0.50": 12.188562047101449,
+              "0.75": 12.62000611669643,
+              "0.90": 12.878872558453423
+            },
+            "coverage_below": {
+              "0.10": 0.3693188816356694,
+              "0.25": 0.3693188816356694,
+              "0.50": 0.3693188816356694,
+              "0.75": 0.3693188816356694,
+              "0.90": 0.3693188816356694
+            },
+            "pinball_mean": 12.188562047101449,
+            "interval_coverage_10_90": 0.00010777189309028205
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.046649833723364946,
+            "brier": 0.046649833723364946,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 64952,
+                "mean_pred": 0.0,
+                "emp_freq": 0.046649833723364946
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        },
+        "persistence": {
+          "n": 64952,
+          "quantiles": {
+            "n": 64952,
+            "pinball": {
+              "0.10": 19.113088916943795,
+              "0.25": 19.11327666327955,
+              "0.50": 19.113589573839143,
+              "0.75": 19.11390248439874,
+              "0.90": 19.11409023073449
+            },
+            "coverage_below": {
+              "0.10": 0.5113160487744797,
+              "0.25": 0.5113160487744797,
+              "0.50": 0.5113160487744797,
+              "0.75": 0.5113160487744797,
+              "0.90": 0.5113160487744797
+            },
+            "pinball_mean": 19.113589573839143,
+            "interval_coverage_10_90": 4.618795418154945e-05
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.046649833723364946,
+            "brier": 0.08364638502278605,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 61921,
+                "mean_pred": 0.0,
+                "emp_freq": 0.0438623407244715
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 3031,
+                "mean_pred": 1.0,
+                "emp_freq": 0.10359617288023755
+              }
+            ]
+          }
+        },
+        "climatology": {
+          "n": 64952,
+          "quantiles": {
+            "n": 64952,
+            "pinball": {
+              "0.10": 10.884850076723325,
+              "0.25": 11.699968876054625,
+              "0.50": 11.906255597081948,
+              "0.75": 11.185593024464218,
+              "0.90": 9.818287923517879
+            },
+            "coverage_below": {
+              "0.10": 0.15325163197438108,
+              "0.25": 0.32288459169848505,
+              "0.50": 0.5261269860820298,
+              "0.75": 0.7117563739376771,
+              "0.90": 0.8470408917354354
+            },
+            "pinball_mean": 11.0989910995684,
+            "interval_coverage_10_90": 0.6938046557457815
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.046649833723364946,
+            "brier": 0.044129684931973626,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 59806,
+                "mean_pred": 0.028940228210823298,
+                "emp_freq": 0.04176838444303247
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 4688,
+                "mean_pred": 0.1280470612384055,
+                "emp_freq": 0.09790955631399317
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 458,
+                "mean_pred": 0.2288261592846746,
+                "emp_freq": 0.15938864628820962
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        }
+      },
+      "plot": "baselines_HB_HOUSTON.png"
+    },
+    "HB_NORTH": {
+      "status": "ok",
+      "small_sample": true,
+      "scheme": "single 50/50 chronological holdout (small sample \u2014 NOT comparable to Houston)",
+      "n_test": 336,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "results": {
+        "zero_spread": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.5895520833333334,
+              "0.25": 2.903355654761905,
+              "0.50": 3.426361607142857,
+              "0.75": 3.94936755952381,
+              "0.90": 4.26317113095238
+            },
+            "coverage_below": {
+              "0.10": 0.37797619047619047,
+              "0.25": 0.37797619047619047,
+              "0.50": 0.37797619047619047,
+              "0.75": 0.37797619047619047,
+              "0.90": 0.37797619047619047
+            },
+            "pinball_mean": 3.4263616071428573,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.026785714285714284,
+            "brier": 0.026785714285714284,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.0,
+                "emp_freq": 0.026785714285714284
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        },
+        "persistence": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 5.215084821428571,
+              "0.25": 5.190100446428572,
+              "0.50": 5.148459821428572,
+              "0.75": 5.106819196428572,
+              "0.90": 5.081834821428572
+            },
+            "coverage_below": {
+              "0.10": 0.5297619047619048,
+              "0.25": 0.5297619047619048,
+              "0.50": 0.5297619047619048,
+              "0.75": 0.5297619047619048,
+              "0.90": 0.5297619047619048
+            },
+            "pinball_mean": 5.148459821428572,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.026785714285714284,
+            "brier": 0.050595238095238096,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 328,
+                "mean_pred": 0.0,
+                "emp_freq": 0.027439024390243903
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 8,
+                "mean_pred": 1.0,
+                "emp_freq": 0.0
+              }
+            ]
+          }
+        },
+        "climatology": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.0465223214285717,
+              "0.25": 2.831354166666667,
+              "0.50": 3.3541443452380952,
+              "0.75": 3.2045461309523815,
+              "0.90": 2.466589285714286
+            },
+            "coverage_below": {
+              "0.10": 0.13988095238095238,
+              "0.25": 0.27976190476190477,
+              "0.50": 0.5119047619047619,
+              "0.75": 0.7142857142857143,
+              "0.90": 0.8630952380952381
+            },
+            "pinball_mean": 2.7806312500000003,
+            "interval_coverage_10_90": 0.7232142857142857
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.026785714285714284,
+            "brier": 0.026635133219954647,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.002976190476190476,
+                "emp_freq": 0.026785714285714284
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "HB_SOUTH": {
+      "status": "ok",
+      "small_sample": true,
+      "scheme": "single 50/50 chronological holdout (small sample \u2014 NOT comparable to Houston)",
+      "n_test": 336,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "results": {
+        "zero_spread": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.9896458333333333,
+              "0.25": 3.2300967261904763,
+              "0.50": 3.630848214285714,
+              "0.75": 4.0315997023809516,
+              "0.90": 4.272050595238095
+            },
+            "coverage_below": {
+              "0.10": 0.30952380952380953,
+              "0.25": 0.30952380952380953,
+              "0.50": 0.30952380952380953,
+              "0.75": 0.30952380952380953,
+              "0.90": 0.30952380952380953
+            },
+            "pinball_mean": 3.6308482142857144,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.041666666666666664,
+            "brier": 0.041666666666666664,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.0,
+                "emp_freq": 0.041666666666666664
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        },
+        "persistence": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 5.581052827380953,
+              "0.25": 5.629975818452381,
+              "0.50": 5.711514136904762,
+              "0.75": 5.793052455357143,
+              "0.90": 5.841975446428571
+            },
+            "coverage_below": {
+              "0.10": 0.49404761904761907,
+              "0.25": 0.49404761904761907,
+              "0.50": 0.49404761904761907,
+              "0.75": 0.49404761904761907,
+              "0.90": 0.49404761904761907
+            },
+            "pinball_mean": 5.711514136904762,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.041666666666666664,
+            "brier": 0.08333333333333333,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 322,
+                "mean_pred": 0.0,
+                "emp_freq": 0.043478260869565216
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 14,
+                "mean_pred": 1.0,
+                "emp_freq": 0.0
+              }
+            ]
+          }
+        },
+        "climatology": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.5059813988095243,
+              "0.25": 3.2023679315476192,
+              "0.50": 3.4551860119047624,
+              "0.75": 2.919627976190476,
+              "0.90": 2.004407738095238
+            },
+            "coverage_below": {
+              "0.10": 0.1636904761904762,
+              "0.25": 0.2648809523809524,
+              "0.50": 0.45535714285714285,
+              "0.75": 0.7023809523809523,
+              "0.90": 0.8630952380952381
+            },
+            "pinball_mean": 2.817514211309524,
+            "interval_coverage_10_90": 0.6994047619047619
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.041666666666666664,
+            "brier": 0.041666666666666664,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.0,
+                "emp_freq": 0.041666666666666664
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "HB_WEST": {
+      "status": "ok",
+      "small_sample": true,
+      "scheme": "single 50/50 chronological holdout (small sample \u2014 NOT comparable to Houston)",
+      "n_test": 336,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "results": {
+        "zero_spread": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.7105,
+              "0.25": 2.9893191964285717,
+              "0.50": 3.4540178571428575,
+              "0.75": 3.918716517857143,
+              "0.90": 4.197535714285714
+            },
+            "coverage_below": {
+              "0.10": 0.38392857142857145,
+              "0.25": 0.38392857142857145,
+              "0.50": 0.38392857142857145,
+              "0.75": 0.38392857142857145,
+              "0.90": 0.38392857142857145
+            },
+            "pinball_mean": 3.454017857142857,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.023809523809523808,
+            "brier": 0.023809523809523808,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.0,
+                "emp_freq": 0.023809523809523808
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        },
+        "persistence": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 5.471120535714285,
+              "0.25": 5.460357142857144,
+              "0.50": 5.4424181547619055,
+              "0.75": 5.424479166666667,
+              "0.90": 5.413715773809524
+            },
+            "coverage_below": {
+              "0.10": 0.5327380952380952,
+              "0.25": 0.5327380952380952,
+              "0.50": 0.5327380952380952,
+              "0.75": 0.5327380952380952,
+              "0.90": 0.5327380952380952
+            },
+            "pinball_mean": 5.4424181547619055,
+            "interval_coverage_10_90": 0.0
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.023809523809523808,
+            "brier": 0.047619047619047616,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 328,
+                "mean_pred": 0.0,
+                "emp_freq": 0.024390243902439025
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 8,
+                "mean_pred": 1.0,
+                "emp_freq": 0.0
+              }
+            ]
+          }
+        },
+        "climatology": {
+          "n": 336,
+          "quantiles": {
+            "n": 336,
+            "pinball": {
+              "0.10": 2.024933035714286,
+              "0.25": 2.8567671130952386,
+              "0.50": 3.375424107142857,
+              "0.75": 3.0502232142857144,
+              "0.90": 2.201549107142857
+            },
+            "coverage_below": {
+              "0.10": 0.15476190476190477,
+              "0.25": 0.27976190476190477,
+              "0.50": 0.5208333333333334,
+              "0.75": 0.7321428571428571,
+              "0.90": 0.8898809523809523
+            },
+            "pinball_mean": 2.70177931547619,
+            "interval_coverage_10_90": 0.7351190476190477
+          },
+          "spike": {
+            "T": 20.0,
+            "base_rate": 0.023809523809523808,
+            "brier": 0.023676658163265304,
+            "reliability": [
+              {
+                "bin": [
+                  0.0,
+                  0.1
+                ],
+                "n": 336,
+                "mean_pred": 0.002976190476190476,
+                "emp_freq": 0.023809523809523808
+              },
+              {
+                "bin": [
+                  0.1,
+                  0.2
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.2,
+                  0.3
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.3,
+                  0.4
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.4,
+                  0.5
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.5,
+                  0.6
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.6,
+                  0.7
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.7,
+                  0.8
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.8,
+                  0.9
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              },
+              {
+                "bin": [
+                  0.9,
+                  1.0
+                ],
+                "n": 0,
+                "mean_pred": null,
+                "emp_freq": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "small_sample_note": "HB_NORTH/SOUTH/WEST: ~28-day RT coverage, single holdout, small-sample \u2014 NEVER averaged into a headline with Houston."
+}
