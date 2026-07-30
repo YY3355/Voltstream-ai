@@ -31,69 +31,84 @@ MIN_SAMPLES = 30   # desk_climatology convention: below this a cell is insuffici
 OUT_DIR = os.path.join(ds.REPO, "research/dart_forecast")
 
 # ----------------------------- per-fold train-only climatology -----------------------------
-def fold_climatology(train_df: pd.DataFrame, taus=mx.TAUS, T=mx.SPIKE_T, min_samples=MIN_SAMPLES):
+def fold_climatology(train_df: pd.DataFrame, taus=mx.TAUS, Ts=mx.SPIKE_TS, min_samples=MIN_SAMPLES):
     d = pd.DataFrame({"dart": train_df["dart"].values,
                       "m": train_df.index.month, "h": train_df.index.hour})
     cell_q, cell_spike = {}, {}
     for (m, h), s in d.groupby(["m", "h"])["dart"]:
         if len(s) >= min_samples:
             cell_q[(m, h)] = {t: float(np.quantile(s, t)) for t in taus}
-            cell_spike[(m, h)] = float((s < -T).mean())
-    g_q = {t: float(np.quantile(d["dart"], t)) for t in taus}          # fallback (all train)
-    g_spike = float((d["dart"] < -T).mean())
-    return {"cell_q": cell_q, "cell_spike": cell_spike, "g_q": g_q, "g_spike": g_spike, "taus": taus}
+            cell_spike[(m, h)] = {T: float((s < -T).mean()) for T in Ts}      # DIRECT rate per threshold
+    g_q = {t: float(np.quantile(d["dart"], t)) for t in taus}                 # fallback (all train)
+    g_spike = {T: float((d["dart"] < -T).mean()) for T in Ts}
+    return {"cell_q": cell_q, "cell_spike": cell_spike, "g_q": g_q, "g_spike": g_spike,
+            "taus": taus, "Ts": Ts}
 
 def climatology_predict(clim, test_df: pd.DataFrame):
     m = test_df.index.month.values; h = test_df.index.hour.values
     n = len(test_df)
     qp = {t: np.empty(n) for t in clim["taus"]}
-    sp_ = np.empty(n)
+    sp_ = {T: np.empty(n) for T in clim["Ts"]}
     for i in range(n):
         key = (int(m[i]), int(h[i]))
-        cq = clim["cell_q"].get(key)
+        cq = clim["cell_q"].get(key); cs = clim["cell_spike"].get(key)
         for t in clim["taus"]:
             qp[t][i] = (cq[t] if cq else clim["g_q"][t])
-        sp_[i] = clim["cell_spike"].get(key, clim["g_spike"])
+        for T in clim["Ts"]:
+            sp_[T][i] = (cs[T] if cs else clim["g_spike"][T])
     return qp, sp_
 
 # ----------------------------- baseline predictors -----------------------------
-def predict_baselines(train_df, test_df, taus=mx.TAUS, T=mx.SPIKE_T):
+BLEND_W = 0.5   # blend weight: level nudged halfway from climatology-median toward persistence
+
+def predict_baselines(train_df, test_df, taus=mx.TAUS, Ts=mx.SPIKE_TS):
     n = len(test_df)
-    out = {}
-    # zero-spread
-    out["zero_spread"] = {"q": {t: np.zeros(n) for t in taus}, "spike_p": np.zeros(n)}
-    # persistence (point -> all quantiles; hard spike indicator)
     persist = test_df["dart_persist"].values.astype(float)
+    clim = fold_climatology(train_df, taus, Ts)
+    qp, sp_clim = climatology_predict(clim, test_df)
+    out = {}
+    # zero-spread: dart=0
+    out["zero_spread"] = {"q": {t: np.zeros(n) for t in taus},
+                          "spike_p": {T: np.zeros(n) for T in Ts}}
+    # persistence: point -> all quantiles; hard spike indicator per threshold
     out["persistence"] = {"q": {t: persist.copy() for t in taus},
-                          "spike_p": (persist < -T).astype(float)}
-    # climatology (train-only, per fold)
-    clim = fold_climatology(train_df, taus, T)
-    qp, sp_ = climatology_predict(clim, test_df)
-    out["climatology"] = {"q": qp, "spike_p": sp_}
+                          "spike_p": {T: (persist < -T).astype(float) for T in Ts}}
+    # climatology: train-only per fold; direct empirical spike rate per threshold
+    out["climatology"] = {"q": qp, "spike_p": sp_clim}
+    # BLEND (clim_persist): climatology SPREAD, LEVEL nudged toward persistence by BLEND_W of the
+    # persistence deviation from the climatology median. Quantiles shift; spike prob inherits the
+    # climatology's direct cell rate (the blend adjusts the central forecast, not the tail estimate).
+    shift = BLEND_W * (persist - qp[0.50])
+    out["clim_persist"] = {"q": {t: qp[t] + shift for t in taus}, "spike_p": sp_clim}
     return out
 
 # ----------------------------- walk-forward runner (pooled OOS) -----------------------------
-def run_hub(hub, frame, splits, taus=mx.TAUS, T=mx.SPIKE_T):
-    pooled = {b: {"q": {t: [] for t in taus}, "spike_p": [], "y": []}
-              for b in ("zero_spread", "persistence", "climatology")}
+BASELINES = ("zero_spread", "persistence", "climatology", "clim_persist")
+
+def run_hub(hub, frame, splits, taus=mx.TAUS, Ts=mx.SPIKE_TS):
+    pooled = {b: {"q": {t: [] for t in taus}, "spike_p": {T: [] for T in Ts}, "y": []}
+              for b in BASELINES}
+    per_fold_y = []
     for s in splits:
         tr = frame.iloc[s.train_pos]; te = frame.iloc[s.test_pos]
         y = te["dart"].values
-        preds = predict_baselines(tr, te, taus, T)
+        per_fold_y.append(y)
+        preds = predict_baselines(tr, te, taus, Ts)
         for b, p in preds.items():
             for t in taus:
                 pooled[b]["q"][t].append(p["q"][t])
-            pooled[b]["spike_p"].append(p["spike_p"])
+            for T in Ts:
+                pooled[b]["spike_p"][T].append(p["spike_p"][T])
             pooled[b]["y"].append(y)
     results = {}
     for b, acc in pooled.items():
         y = np.concatenate(acc["y"])
         qp = {t: np.concatenate(acc["q"][t]) for t in taus}
-        sp_ = np.concatenate(acc["spike_p"])
+        spmulti = {T: np.concatenate(acc["spike_p"][T]) for T in Ts}
         qres = mx.evaluate_quantiles(y, qp, taus)
-        spres = mx.evaluate_spike(y, sp_, T)
+        spres = mx.evaluate_spike_multi(y, spmulti, Ts)
         results[b] = {"n": int(y.size), "quantiles": qres, "spike": spres}
-    return results
+    return results, mx.fold_event_counts(per_fold_y, Ts)
 
 def small_hub_split(frame, frac_train=0.5):
     """Single chronological holdout for RT-limited hubs (~28d). Small-sample; not vs Houston."""
@@ -106,9 +121,10 @@ def small_hub_split(frame, frac_train=0.5):
                            n_train=k, n_test=n-k, fold_id=0)
 
 # ----------------------------- plots -----------------------------
+COLORS = {"zero_spread": "#888", "persistence": "#58a6ff", "climatology": "#3fb950", "clim_persist": "#f0a35e"}
 def plot_baselines(hub, results, taus, path):
     fig, ax = plt.subplots(1, 2, figsize=(11, 4))
-    colors = {"zero_spread": "#888", "persistence": "#58a6ff", "climatology": "#3fb950"}
+    colors = COLORS
     for b, r in results.items():
         pins = [r["quantiles"]["pinball"][f"{t:.2f}"] for t in taus]
         ax[0].plot([int(t*100) for t in taus], pins, "o-", label=b, color=colors.get(b))
@@ -141,12 +157,13 @@ def main():
         else:
             splits = [small_hub_split(fr)]
             scheme = "single 50/50 chronological holdout (small sample — NOT comparable to Houston)"
-        res = run_hub(hub, fr, splits, mx.TAUS, mx.SPIKE_T)
+        res, evc = run_hub(hub, fr, splits, mx.TAUS, mx.SPIKE_TS)
         report["hubs"][hub] = {"status": "ok", "small_sample": small, "scheme": scheme,
                                "n_test": sum(int(s.n_test) for s in splits),
                                "span": [str(fr.index.min()), str(fr.index.max())],
                                "rt_coverage": meta.get("rt_coverage"),
-                               "drop_counts": meta.get("drop_counts"), "results": res}
+                               "drop_counts": meta.get("drop_counts"),
+                               "spike_event_counts": evc, "results": res}
         report["spans"][hub] = f"{str(fr.index.min())[:10]}..{str(fr.index.max())[:10]}"
         for b, r in res.items():
             methods.setdefault(b, {})[hub] = {"n": r["n"], "quantiles": r["quantiles"], "spike": r["spike"]}
@@ -154,12 +171,14 @@ def main():
             p = plot_baselines(hub, res, mx.TAUS, os.path.join(OUT_DIR, f"baselines_{hub}.png"))
             report["hubs"][hub]["plot"] = os.path.basename(p)
     report["methods"] = methods
+    report["blend_note"] = f"clim_persist = climatology spread, level nudged {BLEND_W:g}x toward persistence"
     report["small_sample_note"] = ("HB_NORTH/SOUTH/WEST: ~28-day RT coverage, single holdout, "
                                     "small-sample — NEVER averaged into a headline with Houston.")
     mx.write_json(report, os.path.join(OUT_DIR, "baselines_result.json"))
-    mx.write_markdown(report, os.path.join(OUT_DIR, "baselines_report.md"),
-                      title="DART forecast — baseline results (walk-forward, no model yet)")
-    # console table (Houston headline)
+    _write_baseline_md(report, os.path.join(OUT_DIR, "baselines_report.md"))
+    _print_console(report)
+
+def _print_console(report):
     print("\n==== BASELINE RESULTS (pooled out-of-sample) ====")
     for hub in ds.HUBS:
         h = report["hubs"].get(hub, {})
@@ -167,14 +186,53 @@ def main():
             print(f"{hub}: {h.get('status')}"); continue
         print(f"\n{hub}  [{h['scheme']}]  n_test={h['n_test']}  span={report['spans'][hub]}"
               + ("   *** SMALL SAMPLE ***" if h["small_sample"] else ""))
-        print(f"  {'baseline':12s} {'meanPin':>8s} " + " ".join(f"q{int(t*100):>2d}" for t in mx.TAUS)
-              + f" {'10-90cov':>8s} {'spkBrier':>8s} {'spkBase':>7s}")
+        hdr = (f"  {'baseline':12s} {'meanPin':>7s} {'10-90cov':>8s}"
+               + "".join(f"  B@{int(T):<3d} LL@{int(T):<3d}" for T in mx.SPIKE_TS))
+        print(hdr)
         for b, r in h["results"].items():
-            q = r["quantiles"]; s = r["spike"]
-            pins = " ".join(f"{q['pinball'][f'{t:.2f}']:5.2f}" for t in mx.TAUS)
-            print(f"  {b:12s} {q['pinball_mean']:8.3f} {pins} {q['interval_coverage_10_90']:8.3f} "
-                  f"{s['brier']:8.4f} {s['base_rate']:7.4f}")
+            q = r["quantiles"]; sp = r["spike"]
+            cells = ""
+            for T in mx.SPIKE_TS:
+                s = sp[f"{T:.0f}"]
+                cells += f"  {s['brier']:6.4f} {s['log_loss']:6.3f}"
+            print(f"  {b:12s} {q['pinball_mean']:7.3f} {q['interval_coverage_10_90']:8.3f}{cells}")
+        for T in mx.SPIKE_TS:
+            e = h["spike_event_counts"][f"{T:.0f}"]
+            print(f"    spike@${int(T)}: base_rate={h['results']['climatology']['spike'][f'{T:.0f}']['base_rate']:.4f}"
+                  f"  total_events={e['total']}  folds_below_{mx.MIN_SPIKE_EVENTS}_events={e['folds_below_min']}/{e['n_folds']}")
     print("\nwrote baselines_result.json + baselines_report.md + plots")
+
+def _write_baseline_md(report, path):
+    st = report["stamp"]; L = ["# DART forecast — baseline results (walk-forward, no model yet)", ""]
+    L += [f"- git SHA `{st['git_sha']}` · seed {st['seed']} · target **{st['target']}** · quantiles {st['taus']} · spike heads ${mx.SPIKE_TS}",
+          f"- {report['blend_note']}", f"- {report['climatology_note']}", f"- ⚠ {report['small_sample_note']}", ""]
+    for hub in ds.HUBS:
+        h = report["hubs"].get(hub, {})
+        if h.get("status") != "ok":
+            continue
+        L += [f"## {hub}" + ("  _(small sample — never averaged with Houston)_" if h["small_sample"] else ""),
+              f"_{h['scheme']} · n_test={h['n_test']} · span {report['spans'][hub]}_", ""]
+        L += ["| baseline | mean pinball | " + " | ".join(f"q{int(t*100)}" for t in mx.TAUS)
+              + " | 10–90 cov |", "|" + "---|" * (len(mx.TAUS) + 2)]
+        for b, r in h["results"].items():
+            q = r["quantiles"]
+            pins = " | ".join(f"{q['pinball'][f'{t:.2f}']:.3f}" for t in mx.TAUS)
+            L.append(f"| {b} | {q['pinball_mean']:.3f} | {pins} | {q['interval_coverage_10_90']:.3f} |")
+        L += ["", "Spike heads (direct probabilities):", ""]
+        L += ["| baseline | " + " | ".join(f"Brier@${int(T)} | logloss@${int(T)}" for T in mx.SPIKE_TS) + " |",
+              "|" + "---|" * (1 + 2*len(mx.SPIKE_TS))]
+        for b, r in h["results"].items():
+            cells = " | ".join(f"{r['spike'][f'{T:.0f}']['brier']:.4f} | {r['spike'][f'{T:.0f}']['log_loss']:.3f}"
+                               for T in mx.SPIKE_TS)
+            L.append(f"| {b} | {cells} |")
+        L.append("")
+        for T in mx.SPIKE_TS:
+            e = h["spike_event_counts"][f"{T:.0f}"]; base = h["results"]["climatology"]["spike"][f"{T:.0f}"]["base_rate"]
+            flag = f" ⚠ {e['folds_below_min']}/{e['n_folds']} folds have <{mx.MIN_SPIKE_EVENTS} events (scores hollow there)" if e["folds_below_min"] else ""
+            L.append(f"- spike@\\${int(T)}: base rate {base:.4f}, total events {e['total']} across {e['n_folds']} folds.{flag}")
+        L.append("")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w").write("\n".join(L))
 
 if __name__ == "__main__":
     main()

@@ -38,7 +38,7 @@ Artifacts → research/dart_forecast/. Tests never touch journal/ or push. No LL
       same-hour = Dg-1 for delivery H<=14 else Dg-2. dataset.py + leakage_guard.py updated; Houston
       n 74,382->74,373. VERIFIED by checker: per-hour persistence exact both branches, no feature past
       decision_time, trail reconstruction matches, lag48 fixed-Dg-2 distinct from persist, suite 5/5.
-  (B) metrics: add $100 spike head (keep $20), log-loss + per-fold event counts + <5-event flag; direct
+  (B) metrics+blend [committed]: $100 spike head added (base rate 1.37%, 891 events, 41/89 folds <5 -> flagged); log-loss added (exposes persistence hard-call miscalibration LL 2.82 vs clim 0.30); per-fold event counts. Blend clim_persist honestly UNDERPERFORMS climatology (pinball 13.54 vs 11.10) â persistence too weak a DART signal. Houston cutoff-corrected persistence 18.67. VERIFIED e-9 (blend formula, $100 Brier/LL/counts, event flags).
       spike probs (no misleading q10-q90 interpolation). Blend baseline 'clim_persist' (clim spread,
       level nudged 0.5x toward persistence). [in progress]
   (C) note framing: model results as Delta vs climatology (%, per quantile, per spike head).
