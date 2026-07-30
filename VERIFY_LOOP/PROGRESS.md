@@ -14,3 +14,15 @@ Price overlay = the payload's solved-on series labeled "price input" (NOT a fore
 - init (2026-07-28) — New loop from Mike's spec. Prior loop (graph-polish) already gave the Bolt chart
   two panels + axes + tooltip + KPI strip; this loop redesigns to a cleaner operational display per T1-T5.
   Next: verify dt/interval from /api/state payload, then T1.
+
+## Verification — "other panels untouched" + the "0-bytes learning tab" chase
+- All light endpoints 200: state, cooptimize, vpp, rt, curve, swap, qse, dcopf, journal.
+- Tabs render populated: assetopt=27 svgs, trading=30, quant=35, learning=3 (CDP: 0 exceptions,
+  only a favicon 404). Bolt T1-T5 edits are isolated to dispatchSVG/dpTip/dp-kpi — nothing else moved.
+- The learning tab "0 bytes" was a HARNESS bug, not a page bug: `timeout` isn't a macOS binary, so
+  those standalone render commands exited 127 and never launched Chrome; the earlier batch just hit
+  the 2-min foreground shell wall on the 4th sequential render. Confirmed healthy via node+CDP.
+- NO NaN bug / NO poisoned data: /api/dcopf and /api/constraints have 0 non-finite numbers; the only
+  "NaN" string in any DOM is `isNaN(x)` in a defensive formatter that already renders '—' for bad
+  values. Nothing to fold into T1 — there is no shared root cause because there is no bug.
+- STATUS: T1-T5 green + committed. Holding for Mike's real-browser sign-off, then redeploy (Docker gate).
