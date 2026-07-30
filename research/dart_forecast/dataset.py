@@ -4,15 +4,14 @@ Target (CANONICAL for this research):  dart = DA - RT  ($/MWh), positive = DA se
 This matches dart_engine.py:56 and the live signal rules. The climatology snapshot
 (clim_result.json) uses the OPPOSITE sign (RT - DA) — see clim_features() for the tested adapter.
 
-Information timing (lookahead-free, uniform):
+Information timing (lookahead-free, EXACTLY the live decision):
   delivery_date Dg = date of the target hour (day "D+1" in the live notation).
-  calls are generated at decision_time = 15:00 CT on (Dg - 1 day) = day D (the live commit leg).
-  At decision_time, day D is only ~2/3 settled, so we use a UNIFORM conservative cutoff:
-  every lag/rolling/persistence feature uses ONLY data with date <= Dg - 2 (through the end of the
-  last FULLY-settled day, D-1). This is strictly lookahead-free for all 24 delivery hours; it is
-  marginally more conservative than the live system (which also sees partial day D for early hours),
-  so reported model skill is a slight LOWER bound — the safe direction. The DA curve for Dg is
-  allowed (the DAM clears before decision_time).
+  decision_time = 16:00 ET / 15:00 CT on (Dg - 1 day) = day D, the live commit leg. Features use ONLY
+  data with timestamp <= decision_time. The freshest same-hour datum is day Dg-1 for delivery hours
+  H<=14 (the 14:00 CT hour is complete by 15:00 CT) and day Dg-2 for H>=15 (not yet realized). This
+  MATCHES the live system exactly (its 15:00 CT pull sees the partial current day), so results
+  represent the ACTUAL decision, not a more-conservative D-2 approximation. The DA curve for Dg is
+  allowed (the DAM clears ~13:30 CT, before decision_time).
 
 No synthetic data. Bad rows are DROPPED and COUNTED per hub (constraint 3). Deterministic.
 Reads only committed stores (see DATA_SOURCES.md). NEVER writes journal/. No LLM.
@@ -134,15 +133,15 @@ FEATURE_REGISTRY = {
     "da_day_min":    {"group": "da_d1",   "available_at": "DAM clear day (Dg-1) <= decision_time"},
     "da_day_range":  {"group": "da_d1",   "available_at": "DAM clear day (Dg-1) <= decision_time"},
     # lagged / trailing DART & RT — settled data with date <= Dg-2 (end of day D-1)
-    "dart_persist":       {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_lag48":         {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_lag72":         {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_lag168":        {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_trail7_mean":   {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_trail7_std":    {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "dart_trail30_mean":  {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "rt_trail7_mean":     {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
-    "rt_trail7_std":      {"group": "lag", "available_at": "date <= Dg-2 (settled)"},
+    "dart_persist":       {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_lag48":         {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_lag72":         {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_lag168":        {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_trail7_mean":   {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_trail7_std":    {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "dart_trail30_mean":  {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "rt_trail7_mean":     {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
+    "rt_trail7_std":      {"group": "lag", "available_at": "<= decision_time (15:00 CT Dg-1; freshest same-hour Dg-1 for H<=14 else Dg-2)"},
     # climatology snapshot — static, month/hour keyed (sign-flipped)
     "clim_q05": {"group": "clim", "available_at": "static climatology"},
     "clim_q25": {"group": "clim", "available_at": "static climatology"},
@@ -211,14 +210,6 @@ def build_hub_frame(hub: str, da: pd.DataFrame | None = None,
     rt7m = piv_rt.rolling(7, min_periods=3).mean()
     rt7s = piv_rt.rolling(7, min_periods=3).std()
 
-    def at_cutoff(pivot_like, delivery_date, hour, back=2):
-        """value of a (date x hour) frame at (delivery_date - back days, hour)."""
-        src = delivery_date - pd.Timedelta(days=back)
-        try:
-            return pivot_like.at[src, hour]
-        except Exception:
-            return np.nan
-
     # assemble per delivery row
     dates = dd["date"].values
     hours = dd["hour"].values
@@ -233,28 +224,32 @@ def build_hub_frame(hub: str, da: pd.DataFrame | None = None,
     rows["da_day_max"]   = da_day["max"].reindex(ddates).values
     rows["da_day_min"]   = da_day["min"].reindex(ddates).values
     rows["da_day_range"] = rows["da_day_max"] - rows["da_day_min"]
-    # lag/persistence/trailing (vectorized via reindex on shifted date)
+    # lag/persistence/trailing at the EXACT live decision_time cutoff = 15:00 CT on Dg-1.
+    # The freshest same-hour datum <= cutoff is day Dg-1 for delivery hours H<=14 (settled by 15:00 CT)
+    # and day Dg-2 for H>=15 (not yet realized at 15:00). back = 1 (H<=14) else 2. This MATCHES the
+    # live 16:00-ET commit leg (fetch_live sees the partial current day through ~15:00 CT), so results
+    # represent the actual decision — not a more-conservative approximation.
     def col_at(pivot_like, back):
         shifted = pivot_like.copy(); shifted.index = shifted.index + pd.Timedelta(days=back)
         return shifted.reindex(ddates)
-    persist = col_at(piv_dart, 2)     # same-hour DART on Dg-2 (freshest fully-settled)
-    lag72   = col_at(piv_dart, 3)
-    lag168  = col_at(piv_dart, 7)
-    t7m_a, t7s_a, t30m_a = col_at(t7m, 2), col_at(t7s, 2), col_at(t30m, 2)
-    rt7m_a, rt7s_a = col_at(rt7m, 2), col_at(rt7s, 2)
-    hcol = pd.Series(hours, index=range(len(hours)))
     def gather(shift_frame):
         return np.array([shift_frame.iat[i, hours[i]] if 0 <= hours[i] < shift_frame.shape[1] else np.nan
                          for i in range(len(hours))])
-    rows["dart_persist"]      = gather(persist)
-    rows["dart_lag48"]        = rows["dart_persist"]                # 48h = Dg-2 same hour
-    rows["dart_lag72"]        = gather(lag72)
-    rows["dart_lag168"]       = gather(lag168)
-    rows["dart_trail7_mean"]  = gather(t7m_a)
-    rows["dart_trail7_std"]   = gather(t7s_a)
-    rows["dart_trail30_mean"] = gather(t30m_a)
-    rows["rt_trail7_mean"]    = gather(rt7m_a)
-    rows["rt_trail7_std"]     = gather(rt7s_a)
+    def gather_fresh(pivot_like):
+        """value at the freshest same-hour day <= decision_time: back=1 for H<=14 else back=2."""
+        g1 = gather(col_at(pivot_like, 1)); g2 = gather(col_at(pivot_like, 2))
+        return np.where(hours <= 14, g1, g2)
+    def gather_fixed(pivot_like, back):
+        return gather(col_at(pivot_like, back))
+    rows["dart_persist"]      = gather_fresh(piv_dart)              # live-matching freshest same-hour
+    rows["dart_lag48"]        = gather_fixed(piv_dart, 2)           # fixed 48h same hour (always Dg-2)
+    rows["dart_lag72"]        = gather_fixed(piv_dart, 3)
+    rows["dart_lag168"]       = gather_fixed(piv_dart, 7)
+    rows["dart_trail7_mean"]  = gather_fresh(t7m)                   # window ends at the freshest day
+    rows["dart_trail7_std"]   = gather_fresh(t7s)
+    rows["dart_trail30_mean"] = gather_fresh(t30m)
+    rows["rt_trail7_mean"]    = gather_fresh(rt7m)
+    rows["rt_trail7_std"]     = gather_fresh(rt7s)
     # calendar cyclic
     rows["is_weekend"] = (ddates.dayofweek.values >= 5).astype(int)
     rows["hour_sin"] = np.sin(2*np.pi*hours/24); rows["hour_cos"] = np.cos(2*np.pi*hours/24)

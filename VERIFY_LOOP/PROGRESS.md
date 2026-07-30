@@ -31,3 +31,14 @@ Artifacts → research/dart_forecast/. Tests never touch journal/ or push. No LL
   train-only fold_climatology(); the static clim_* columns are EXCLUDED from model inputs (kept in the
   frame for reference only). Metrics spike event = dart < -T (RT - DA > T, "RT spike above DA"),
   T stated in code (SPIKE_T). Quantiles per spec: 0.10/0.25/0.50/0.75/0.90.
+
+- ADJUSTMENTS from Mike after T5 pause (2026-07-29):
+  (A) CUTOFF CORRECTION [committed]: information cutoff now matches the LIVE 16:00 ET / 15:00 CT commit
+      EXACTLY (was a more-conservative uniform Dg-2). Features use data <= decision_time; freshest
+      same-hour = Dg-1 for delivery H<=14 else Dg-2. dataset.py + leakage_guard.py updated; Houston
+      n 74,382->74,373. VERIFIED by checker: per-hour persistence exact both branches, no feature past
+      decision_time, trail reconstruction matches, lag48 fixed-Dg-2 distinct from persist, suite 5/5.
+  (B) metrics: add $100 spike head (keep $20), log-loss + per-fold event counts + <5-event flag; direct
+      spike probs (no misleading q10-q90 interpolation). Blend baseline 'clim_persist' (clim spread,
+      level nudged 0.5x toward persistence). [in progress]
+  (C) note framing: model results as Delta vs climatology (%, per quantile, per spike head).

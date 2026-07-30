@@ -8,7 +8,7 @@ A feature is admissible ONLY if it is known at decision_time. This guard fails C
 decision_time(delivery_ts) = 15:00 CT on (delivery_date - 1 day)  [the live commit leg].
 Group available_at rules (all <= decision_time by construction for admissible groups):
   da_d1 : the DAM for the delivery day clears before decision_time -> available_at = decision_time.
-  lag   : settled data through end of day Dg-2 -> available_at = (Dg-2) 23:00.
+  lag   : freshest same-hour datum <= decision_time (Dg-1 for H<=14 else Dg-2) -> available_at = decision_time.
   clim  : static climatology snapshot -> available_at = -inf.
   cal   : deterministic calendar -> available_at = -inf.
 A LEAK group (e.g. a feature that needs the delivery day itself) has available_at = delivery_ts,
@@ -44,8 +44,7 @@ def _available_at(group: str, delivery_index) -> pd.Series:
     if group == "da_d1":
         return pd.Series(decision_time(idx), index=range(len(idx)))          # cleared by decision_time
     if group == "lag":
-        return pd.Series((idx.normalize() - pd.Timedelta(days=2)) + pd.Timedelta(hours=23),
-                         index=range(len(idx)))                              # end of Dg-2
+        return pd.Series(decision_time(idx), index=range(len(idx)))          # freshest datum <= decision_time
     if group in ("clim", "cal"):
         return pd.Series([pd.Timestamp.min] * len(idx), index=range(len(idx)))
     if group == "leak_delivery":
