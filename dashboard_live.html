@@ -690,6 +690,12 @@ function dispatchSVG(dp,fc){
     +`<text x="${P.l+6}" y="${pTop+19}" fill="#7e8da0" font-size="8.5" ${M}>actual settled (ref)</text>`
     +(aMax>pmx?`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>&#8593; settled peak $${Math.round(aMax)} @ ${(fc.hours[aMaxI]||'').slice(0,5)} (off-scale)</text>`:'');
   [pmx,(pmx+pmn)/2,pmn].forEach(v=>{price+=`<text x="${P.l-6}" y="${(Yp(v)+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${Math.round(v)}</text>`;});
+  // clamped settled segments SELF-DECLARE: a dotted ceiling over the off-scale range + a ▲ at the peak,
+  // so "off-scale" reads at a glance — a skimmer never mistakes the clamped $108 spike for the $66 top.
+  if(aMax>pmx){ const ci=[];for(let i=0;i<n;i++)if(actual[i]>pmx)ci.push(i);
+    const c0=ci[0],c1=ci[ci.length-1];
+    price+=`<line x1="${X(c0).toFixed(1)}" y1="${(pTop+1.5).toFixed(1)}" x2="${X(c1).toFixed(1)}" y2="${(pTop+1.5).toFixed(1)}" stroke="#8b98a8" stroke-width="1.2" stroke-dasharray="2 2" opacity=".9"/>`;
+    ci.forEach(i=>{price+=`<path d="M${(X(i)-3).toFixed(1)} ${(pTop+5).toFixed(1)} L${(X(i)+3).toFixed(1)} ${(pTop+5).toFixed(1)} L${X(i).toFixed(1)} ${(pTop-0.5).toFixed(1)} Z" fill="#8b98a8" opacity="${i===aMaxI?'1':'.55'}"/>`;}); }
   // ---- DISPATCH panel: bars (discharge +/up amber, charge -/down blue) + SoC + reserve ----
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
   const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
@@ -743,17 +749,23 @@ function dispatchSVG(dp,fc){
   const bandMin=3.0;   // only sustained windows get a highlight — keeps the causality legible, not striped
   const causality=dR.filter(r=>r.e>=bandMin).map(r=>mkBand(r,'#f5a623')).join('')
                  +cR.filter(r=>r.e>=bandMin).map(r=>mkBand(r,'#58a6ff')).join('');
+  // T3: at most 2 PINNED callouts (biggest discharge + biggest charge). They are edge-anchored to the
+  // clear top strip (above all discharge bars) / bottom strip (below all charge bars) so they NEVER
+  // cover bars; a dotted leader ties each to its window peak. All the dense per-window / per-interval
+  // detail lives in the hover tooltip (dpTip), not pinned on the plot.
   const chosen=[];
   if(dR[0])chosen.push({...dR[0],t:'discharge',col:'#f5a623',isD:true});
   if(cR[0])chosen.push({...cR[0],t:'charge',col:'#58a6ff',isD:false});
-  const rest=[...dR.slice(1).map(r=>({...r,t:'discharge',col:'#f5a623',isD:true})),...cR.slice(1).map(r=>({...r,t:'charge',col:'#58a6ff',isD:false}))].sort((a,b)=>b.e-a.e);
-  // optional 3rd callout: the largest remaining sizable run whose label won't collide with a same-side one
-  for(const cand of rest){ if(chosen.length>=3)break; if(cand.e<0.5*Math.min(...chosen.map(c=>c.e)))break;
-    if(!chosen.some(c=>c.isD===cand.isD&&Math.abs(X(c.pk)-X(cand.pk))<105))chosen.push(cand); }
-  const callouts=chosen.map(c=>{const kw=c.isD?dp.discharge_kw[c.pk]:dp.charge_kw[c.pk];
-      const by=c.isD?Ypow(kw):Ypow(-kw),ly=c.isD?by-6:by+13,txt=`${c.t} ${c.e.toFixed(1)} kWh @ $${Math.round(c.avgP)} avg`;
-      const half=txt.length*2.55,ax=Math.max(P.l+half,Math.min(W-P.r-half,X(c.pk)));
-      return `<line x1="${X(c.pk).toFixed(1)}" y1="${(c.isD?ly+1:ly-7).toFixed(1)}" x2="${X(c.pk).toFixed(1)}" y2="${by.toFixed(1)}" stroke="${c.col}" stroke-width="0.6" opacity=".45"/>`
+  // both summary labels sit in the BOTTOM strip — the only band reliably clear of BOTH the bars and the
+  // SoC plateau — so no label ever covers data. Colour (amber/blue) + the self-describing text identify
+  // them; a short dotted stub points up toward the window (it does not span across the bars).
+  const callouts=chosen.map((c,ci)=>{const txt=`${c.t} ${c.e.toFixed(1)} kWh @ $${Math.round(c.avgP)} avg`;
+      const half=txt.length*2.55;
+      // discharge label to the right half, charge to the left half, each clamped in-panel -> no mutual overlap
+      let ax=Math.max(P.l+2+half,Math.min(W-P.r-2-half,X(c.pk)));
+      ax=c.isD?Math.max(ax,(P.l+W-P.r)/2+half*0.2):Math.min(ax,(P.l+W-P.r)/2-half*0.2);
+      const ly=dBot-4;
+      return `<line x1="${ax.toFixed(1)}" y1="${(ly-9).toFixed(1)}" x2="${ax.toFixed(1)}" y2="${(ly-18).toFixed(1)}" stroke="${c.col}" stroke-width="0.6" opacity=".45" stroke-dasharray="2 2"/>`
         +`<text x="${ax.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" fill="${c.col}" font-size="8" ${M}>${txt}</text>`;}).join('');
   // bar interval stated from the ACTUAL payload cadence (dt_hours), never assumed
   const intvLabel=`<text x="${P.l+4}" y="${dTop-4}" fill="#5d6b7d" font-size="8.5" ${M}>bars: ${intv}-min intervals · ${horizon}h horizon</text>`;
