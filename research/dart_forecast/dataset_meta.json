@@ -1,0 +1,403 @@
+{
+  "kind": "dart_forecast_dataset_meta",
+  "target_sign_convention": "dart = DA - RT ($/MWh); positive = DA rich",
+  "decision_time": "15:00 CT on day D (Dg-1); uniform settled cutoff date <= Dg-2",
+  "git_sha": "f3302beb5283db44db963c8325eb9ab70903fbf6",
+  "seed": 42,
+  "feature_registry": {
+    "da": {
+      "group": "da_d1",
+      "available_at": "DAM clear day (Dg-1) <= decision_time"
+    },
+    "da_day_mean": {
+      "group": "da_d1",
+      "available_at": "DAM clear day (Dg-1) <= decision_time"
+    },
+    "da_day_max": {
+      "group": "da_d1",
+      "available_at": "DAM clear day (Dg-1) <= decision_time"
+    },
+    "da_day_min": {
+      "group": "da_d1",
+      "available_at": "DAM clear day (Dg-1) <= decision_time"
+    },
+    "da_day_range": {
+      "group": "da_d1",
+      "available_at": "DAM clear day (Dg-1) <= decision_time"
+    },
+    "dart_persist": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_lag48": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_lag72": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_lag168": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_trail7_mean": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_trail7_std": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "dart_trail30_mean": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "rt_trail7_mean": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "rt_trail7_std": {
+      "group": "lag",
+      "available_at": "date <= Dg-2 (settled)"
+    },
+    "clim_q05": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_q25": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_q50": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_q75": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_q95": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_dart_mean": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "clim_p_da_gt_rt": {
+      "group": "clim",
+      "available_at": "static climatology"
+    },
+    "hour": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "dow": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "month": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "is_weekend": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "hour_sin": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "hour_cos": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "doy_sin": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    },
+    "doy_cos": {
+      "group": "cal",
+      "available_at": "deterministic calendar"
+    }
+  },
+  "deferred_groups": {
+    "weather_wind": "Open-Meteo Historical FORECAST API (archived forecasts, coverage 2022+); net-load proxy. available_at = forecast issue <= decision_time. Added at Task 6.",
+    "constraint": "NP6-86-CD binding-constraint LAGGED aggregates (coverage 2026-06+). available_at = settled SCED <= Dg-2. Added at Task 6."
+  },
+  "hubs": {
+    "HB_HOUSTON": {
+      "hub": "HB_HOUSTON",
+      "status": "ok",
+      "n_raw_paired": 74439,
+      "n_samples": 74382,
+      "span": [
+        "2018-01-04 00:00:00",
+        "2026-06-30 23:00:00"
+      ],
+      "rt_coverage": [
+        "2017-12-31 23:00:00",
+        "2026-06-30 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 34,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 57
+      },
+      "feature_nan_counts": {
+        "dart_lag72": 33,
+        "dart_lag168": 129,
+        "dart_trail7_mean": 48,
+        "dart_trail7_std": 48,
+        "dart_trail30_mean": 216,
+        "rt_trail7_mean": 48,
+        "rt_trail7_std": 48
+      },
+      "nan_policy": "bad rows (nonfinite target/price pair) dropped+counted; trailing-feature NaN at warmup/DST edges kept as model-native missing, never imputed to a value",
+      "target": "dart = DA - RT ($/MWh)",
+      "seed": 42,
+      "git_sha": "f3302beb5283db44db963c8325eb9ab70903fbf6",
+      "features_realized": [
+        "clim_q05",
+        "clim_q25",
+        "clim_q50",
+        "clim_q75",
+        "clim_q95",
+        "clim_dart_mean",
+        "clim_p_da_gt_rt",
+        "da",
+        "hour",
+        "dow",
+        "month",
+        "da_day_mean",
+        "da_day_max",
+        "da_day_min",
+        "da_day_range",
+        "dart_persist",
+        "dart_lag48",
+        "dart_lag72",
+        "dart_lag168",
+        "dart_trail7_mean",
+        "dart_trail7_std",
+        "dart_trail30_mean",
+        "rt_trail7_mean",
+        "rt_trail7_std",
+        "is_weekend",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos"
+      ],
+      "feature_groups_deferred": [
+        "weather_wind",
+        "constraint"
+      ],
+      "small_sample": false
+    },
+    "HB_NORTH": {
+      "hub": "HB_NORTH",
+      "status": "ok",
+      "n_raw_paired": 720,
+      "n_samples": 672,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "feature_nan_counts": {
+        "dart_lag72": 24,
+        "dart_lag168": 120,
+        "dart_trail7_mean": 48,
+        "dart_trail7_std": 48,
+        "dart_trail30_mean": 216,
+        "rt_trail7_mean": 48,
+        "rt_trail7_std": 48
+      },
+      "nan_policy": "bad rows (nonfinite target/price pair) dropped+counted; trailing-feature NaN at warmup/DST edges kept as model-native missing, never imputed to a value",
+      "target": "dart = DA - RT ($/MWh)",
+      "seed": 42,
+      "git_sha": "f3302beb5283db44db963c8325eb9ab70903fbf6",
+      "features_realized": [
+        "clim_q05",
+        "clim_q25",
+        "clim_q50",
+        "clim_q75",
+        "clim_q95",
+        "clim_dart_mean",
+        "clim_p_da_gt_rt",
+        "da",
+        "hour",
+        "dow",
+        "month",
+        "da_day_mean",
+        "da_day_max",
+        "da_day_min",
+        "da_day_range",
+        "dart_persist",
+        "dart_lag48",
+        "dart_lag72",
+        "dart_lag168",
+        "dart_trail7_mean",
+        "dart_trail7_std",
+        "dart_trail30_mean",
+        "rt_trail7_mean",
+        "rt_trail7_std",
+        "is_weekend",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos"
+      ],
+      "feature_groups_deferred": [
+        "weather_wind",
+        "constraint"
+      ],
+      "small_sample": true
+    },
+    "HB_SOUTH": {
+      "hub": "HB_SOUTH",
+      "status": "ok",
+      "n_raw_paired": 720,
+      "n_samples": 672,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "feature_nan_counts": {
+        "dart_lag72": 24,
+        "dart_lag168": 120,
+        "dart_trail7_mean": 48,
+        "dart_trail7_std": 48,
+        "dart_trail30_mean": 216,
+        "rt_trail7_mean": 48,
+        "rt_trail7_std": 48
+      },
+      "nan_policy": "bad rows (nonfinite target/price pair) dropped+counted; trailing-feature NaN at warmup/DST edges kept as model-native missing, never imputed to a value",
+      "target": "dart = DA - RT ($/MWh)",
+      "seed": 42,
+      "git_sha": "f3302beb5283db44db963c8325eb9ab70903fbf6",
+      "features_realized": [
+        "clim_q05",
+        "clim_q25",
+        "clim_q50",
+        "clim_q75",
+        "clim_q95",
+        "clim_dart_mean",
+        "clim_p_da_gt_rt",
+        "da",
+        "hour",
+        "dow",
+        "month",
+        "da_day_mean",
+        "da_day_max",
+        "da_day_min",
+        "da_day_range",
+        "dart_persist",
+        "dart_lag48",
+        "dart_lag72",
+        "dart_lag168",
+        "dart_trail7_mean",
+        "dart_trail7_std",
+        "dart_trail30_mean",
+        "rt_trail7_mean",
+        "rt_trail7_std",
+        "is_weekend",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos"
+      ],
+      "feature_groups_deferred": [
+        "weather_wind",
+        "constraint"
+      ],
+      "small_sample": true
+    },
+    "HB_WEST": {
+      "hub": "HB_WEST",
+      "status": "ok",
+      "n_raw_paired": 720,
+      "n_samples": 672,
+      "span": [
+        "2026-07-01 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "rt_coverage": [
+        "2026-06-29 00:00:00",
+        "2026-07-28 23:00:00"
+      ],
+      "drop_counts": {
+        "incomplete_or_nonfinite_pair": 0,
+        "nonfinite_target": 0,
+        "core_feature_warmup": 48
+      },
+      "feature_nan_counts": {
+        "dart_lag72": 24,
+        "dart_lag168": 120,
+        "dart_trail7_mean": 48,
+        "dart_trail7_std": 48,
+        "dart_trail30_mean": 216,
+        "rt_trail7_mean": 48,
+        "rt_trail7_std": 48
+      },
+      "nan_policy": "bad rows (nonfinite target/price pair) dropped+counted; trailing-feature NaN at warmup/DST edges kept as model-native missing, never imputed to a value",
+      "target": "dart = DA - RT ($/MWh)",
+      "seed": 42,
+      "git_sha": "f3302beb5283db44db963c8325eb9ab70903fbf6",
+      "features_realized": [
+        "clim_q05",
+        "clim_q25",
+        "clim_q50",
+        "clim_q75",
+        "clim_q95",
+        "clim_dart_mean",
+        "clim_p_da_gt_rt",
+        "da",
+        "hour",
+        "dow",
+        "month",
+        "da_day_mean",
+        "da_day_max",
+        "da_day_min",
+        "da_day_range",
+        "dart_persist",
+        "dart_lag48",
+        "dart_lag72",
+        "dart_lag168",
+        "dart_trail7_mean",
+        "dart_trail7_std",
+        "dart_trail30_mean",
+        "rt_trail7_mean",
+        "rt_trail7_std",
+        "is_weekend",
+        "hour_sin",
+        "hour_cos",
+        "doy_sin",
+        "doy_cos"
+      ],
+      "feature_groups_deferred": [
+        "weather_wind",
+        "constraint"
+      ],
+      "small_sample": true
+    }
+  }
+}
