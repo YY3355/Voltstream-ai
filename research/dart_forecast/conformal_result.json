@@ -1,0 +1,158 @@
+{
+  "kind": "dart_conformal",
+  "stamp": {
+    "git_sha": "a08d79c625429e72db2471e9bcee29ccb79306c5",
+    "generated_at": "2026-07-30T04:07:53.672838+00:00",
+    "seed": 42,
+    "span": null,
+    "n_samples": null,
+    "target": "dart = DA - RT ($/MWh)",
+    "taus": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "spike_T": 20.0
+  },
+  "hub": "HB_HOUSTON",
+  "cal_days": 90,
+  "n_hour_blocks": 6,
+  "params": {
+    "num_leaves": 31,
+    "learning_rate": 0.05,
+    "n_estimators": 400
+  },
+  "method": "split-conformal CQR per hour-block; calibration = last 90d of train (pre-test)",
+  "intervals": {
+    "80": {
+      "nominal": 0.8,
+      "n": 56931,
+      "cov_before": 0.6942,
+      "cov_after": 0.7981,
+      "width_before": 57.735,
+      "width_after": 61.706,
+      "per_block": {
+        "0": {
+          "hours": "00-03",
+          "n": 9471,
+          "cov_before": 0.7055,
+          "cov_after": 0.7989,
+          "width_before": 24.199,
+          "width_after": 27.419,
+          "mean_radius": 1.614
+        },
+        "1": {
+          "hours": "04-07",
+          "n": 9492,
+          "cov_before": 0.7035,
+          "cov_after": 0.8097,
+          "width_before": 34.817,
+          "width_after": 38.053,
+          "mean_radius": 1.618
+        },
+        "2": {
+          "hours": "08-11",
+          "n": 9492,
+          "cov_before": 0.6694,
+          "cov_after": 0.8058,
+          "width_before": 33.099,
+          "width_after": 37.125,
+          "mean_radius": 2.016
+        },
+        "3": {
+          "hours": "12-15",
+          "n": 9492,
+          "cov_before": 0.6828,
+          "cov_after": 0.7776,
+          "width_before": 83.505,
+          "width_after": 87.362,
+          "mean_radius": 1.931
+        },
+        "4": {
+          "hours": "16-19",
+          "n": 9492,
+          "cov_before": 0.7005,
+          "cov_after": 0.7986,
+          "width_before": 122.037,
+          "width_after": 127.415,
+          "mean_radius": 2.68
+        },
+        "5": {
+          "hours": "20-23",
+          "n": 9492,
+          "cov_before": 0.7036,
+          "cov_after": 0.798,
+          "width_before": 48.678,
+          "width_after": 52.784,
+          "mean_radius": 2.053
+        }
+      }
+    },
+    "50": {
+      "nominal": 0.5,
+      "n": 56931,
+      "cov_before": 0.4054,
+      "cov_after": 0.5053,
+      "width_before": 21.343,
+      "width_after": 23.18,
+      "per_block": {
+        "0": {
+          "hours": "00-03",
+          "n": 9471,
+          "cov_before": 0.4222,
+          "cov_after": 0.5128,
+          "width_before": 10.16,
+          "width_after": 11.56,
+          "mean_radius": 0.701
+        },
+        "1": {
+          "hours": "04-07",
+          "n": 9492,
+          "cov_before": 0.4162,
+          "cov_after": 0.5084,
+          "width_before": 13.043,
+          "width_after": 14.528,
+          "mean_radius": 0.741
+        },
+        "2": {
+          "hours": "08-11",
+          "n": 9492,
+          "cov_before": 0.3864,
+          "cov_after": 0.5113,
+          "width_before": 11.469,
+          "width_after": 13.503,
+          "mean_radius": 1.017
+        },
+        "3": {
+          "hours": "12-15",
+          "n": 9492,
+          "cov_before": 0.3914,
+          "cov_after": 0.4896,
+          "width_before": 28.867,
+          "width_after": 30.714,
+          "mean_radius": 0.923
+        },
+        "4": {
+          "hours": "16-19",
+          "n": 9492,
+          "cov_before": 0.4019,
+          "cov_after": 0.5006,
+          "width_before": 45.235,
+          "width_after": 47.732,
+          "mean_radius": 1.247
+        },
+        "5": {
+          "hours": "20-23",
+          "n": 9492,
+          "cov_before": 0.4142,
+          "cov_after": 0.509,
+          "width_before": 19.257,
+          "width_after": 21.015,
+          "mean_radius": 0.879
+        }
+      }
+    }
+  }
+}
