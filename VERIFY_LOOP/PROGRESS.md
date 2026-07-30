@@ -1,28 +1,25 @@
-# Progress — Bolt chart redesign (operational display)
+# Progress — Probabilistic DART forecast research (harness-first)
 
-Supervised. Max 12 iterations. ONE task/commit. Screenshots every iter. Push+redeploy when green.
-Price overlay = the payload's solved-on series labeled "price input" (NOT a forecast). Never clip.
+Supervised. Max 14 iterations. ONE task = ONE commit. Never commit red. Same check red 3× = blocked.
+Maker ≠ checker: a fresh-eyes subagent verifies each task. ⏸ PAUSE after Task 5 and at the end.
+Artifacts → research/dart_forecast/. Tests never touch journal/ or push. No LLM in the pipeline.
 
 ## Checklist
-- [~] 1 — Axes DONE (kW left/kWh right + ticks + subtle grid already present) + STATED bar interval on chart "bars: 15-min intervals · 24h horizon", computed from dp.dt_hours (verified 96×0.25h=15min from payload, not assumed). Screenshot ok; label slightly near top grid -> reposition in T3. commit <pending>.
-- [x] 2 — Price-input overlay DONE: series label now "price input ($/MWh) — plan solved on this" + "actual settled (ref)"; legend + tooltip carry P50 provenance. Charge bars sit in the low-price valley, discharge on the peak (visible). Screenshot ok. commit <pending>.
-- [x] 3 — Hierarchy DONE: bars thicker (min 3.2px + ~0.7 gap); SoC hero 2px bright green; price input muted (1.3px, .8 op); backup floor UNMISSABLE — solid red 1.5px + faint red no-go zone below + "backup floor 10 kWh" tag pinned right (warns when threatened, honest). Interval label moved into panel gap. Screenshot ok. commit <pending>.
-- [x] 4 â Operational DONE: on-chart header strip ACTION NOW (hero, action-colored box) Â· CAPTURE % + ⓘ (title: realized ÷ perfect-foresight, same horizon) Â· REV gross; secondary KPIs (cycles/SoC/violations) kept in HTML row. Hover crosshair (dashed vertical, both panels) + tooltip time/price/kW/SoC/rev. "now" marker conditional on target_date==today (=absent, plan is 2026-05-18). Screenshots default+hover ok. commit <pending>.
-- [ ] 5 — Auto-callouts on the 2-3 largest charge/discharge runs (cap 3).
+- [ ] 0 — Setup: GOAL.md + PROGRESS.md + data-landscape scout (schemas, timing, spans per hub).
+- [ ] 1 — Dataset assembly (per-hub hourly frame, target dart=DA−RT, features+available_at, spans+drops).
+- [ ] 2 — Walk-forward splitter (expanding, monthly, embargo ≥1d, strict chronology).
+- [ ] 3 — Leakage guard + SABOTAGE test (plant dart_tomorrow → rejected).
+- [ ] 4 — Metrics + report core (pinball, coverage, spike Brier/reliability; JSON+md writers).
+- [ ] 5 — Baselines end-to-end (zero-spread, persistence, climatology) → baselines_result.json + plots. ⏸ PAUSE.
+- [ ] 6 — LightGBM quantile models per hub.
+- [ ] 7 — Conformal calibration (coverage before/after).
+- [ ] 8 — SHUFFLED-TARGET GATE (must not beat baselines OOS).
+- [ ] 9 — Calibration + results plots (PNGs).
+- [ ] 10 — Economic overlay (labeled, copied signal rules).
+- [ ] 11 — RESEARCH NOTE.
 
 ## Append-only log
-- init (2026-07-28) — New loop from Mike's spec. Prior loop (graph-polish) already gave the Bolt chart
-  two panels + axes + tooltip + KPI strip; this loop redesigns to a cleaner operational display per T1-T5.
-  Next: verify dt/interval from /api/state payload, then T1.
-
-## Verification — "other panels untouched" + the "0-bytes learning tab" chase
-- All light endpoints 200: state, cooptimize, vpp, rt, curve, swap, qse, dcopf, journal.
-- Tabs render populated: assetopt=27 svgs, trading=30, quant=35, learning=3 (CDP: 0 exceptions,
-  only a favicon 404). Bolt T1-T5 edits are isolated to dispatchSVG/dpTip/dp-kpi — nothing else moved.
-- The learning tab "0 bytes" was a HARNESS bug, not a page bug: `timeout` isn't a macOS binary, so
-  those standalone render commands exited 127 and never launched Chrome; the earlier batch just hit
-  the 2-min foreground shell wall on the 4th sequential render. Confirmed healthy via node+CDP.
-- NO NaN bug / NO poisoned data: /api/dcopf and /api/constraints have 0 non-finite numbers; the only
-  "NaN" string in any DOM is `isNaN(x)` in a defensive formatter that already renders '—' for bad
-  values. Nothing to fold into T1 — there is no shared root cause because there is no bug.
-- STATUS: T1-T5 green + committed. Holding for Mike's real-browser sign-off, then redeploy (Docker gate).
+- init (2026-07-29) — New research loop from Mike's spec. Overwrote the prior Bolt-loop GOAL/PROGRESS.
+  Standing constraints carried in: never write journal/, no deploy, no signal.py edits, no map/UI.
+  Next: scout the data landscape (price_store, dart_cache, DA decade, weather_data, NP6-86-CD, clim
+  snapshot conventions, signal rules to COPY for Task 10) before Task 1.

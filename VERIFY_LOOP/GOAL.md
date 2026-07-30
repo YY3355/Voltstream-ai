@@ -1,34 +1,60 @@
-# GOAL — BOLT CHART REDESIGN (panel 1, Asset Optimization): static log → operational display
+# GOAL — Probabilistic DART forecast RESEARCH (harness-first, honestly benchmarked)
 
-Pure UI + ONE honest data overlay (the price input). Screenshots EVERY iteration (default + hover).
-Supervised, max 12 iterations, ONE task = ONE commit. Push when green, redeploy. Other panels untouched.
-Env: conda volt on :8020, ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean. Real-browser sign-off is Mike's;
-headless screenshot is the working check. Docker-gate intent before deploy.
+Research loop. Outputs = metrics, plots, a research NOTE. **NO deploy. NO changes to signal.py or the
+live book. NO map/UI work.** Max 14 iterations, ONE task per iteration, ONE commit per task.
+PAUSE for Mike's review after Task 5 (harness gate) and at the end. Never commit red; same check red
+3× = blocked, stop. Promotion into signal.py is a FUTURE decision of Mike's, not this loop.
 
-## Honesty (non-negotiable)
-- Every rendered number from the /api/state solution arrays. Nothing hand-written.
-- The price overlay is the series the plan was SOLVED ON (from the payload), labeled "price input
-  ($/MWh)" — an INPUT/given, NOT presented as a forward-looking forecast. (Reality: the plan solved on
-  the P50 series; label it as the input it is, and note P50 in the tooltip — do not imply it predicts.)
-- Never clip/clamp. Reserve floor rendered truthfully. Bar interval STATED from the actual cadence
-  (verify dt from payload — 96 intervals × 0.25h = 15-min; confirm, don't assume).
+## Definition of done
+A walk-forward, leakage-guarded evaluation harness (proven able to FAIL cheats) + LightGBM quantile
+models with conformal calibration, benchmarked against first-class baselines, per hub, with a
+desk-auditable research note in `research/dart_forecast/`.
 
-## Tasks
-- T1 AXES: explicit left y-axis kW (charge/discharge bars, labeled ticks), explicit right y-axis kWh
-  (SoC). Subtle gridlines. STATE the bar interval on the chart ("15-min intervals" — from the payload).
-- T2 PRICE CONTEXT: price series Bolt optimized against as a thin muted line (own scale, right side or a
-  slim subpanel above), labeled "price input ($/MWh)" — the payload's solved-on series, NOT a forecast.
-  Charge bars sit in price valleys, discharge on peaks — the chart explains itself.
-- T3 HIERARCHY: thicken bars (min 3-4px + slight gap, distinguishable when busy); SoC line the hero
-  (2px bright green); price line muted; backup floor UNMISSABLE — solid red 1.5px + "backup floor 10 kWh"
-  tag pinned at the line's right end + faint red shaded zone below it.
-- T4 OPERATIONAL FEEL: hover crosshair showing time + all values (kW, SoC, price) in a tooltip; a "now"
-  vertical marker if the plan covers the current time; ACTION NOW / CAPTURE / REV moved into a header
-  strip on the chart with current-hour values highlighted; CAPTURE gets a one-line ⓘ (realized vs
-  perfect-foresight ceiling).
-- T5 ANNOTATIONS: auto-callouts on the 2-3 LARGEST events only (biggest discharge run, biggest charge
-  run) — small labels "discharge 3.2 kWh @ $41 avg". Cap at 3, no clutter.
+## HARD CONSTRAINTS (violating any = RED even if metrics look great)
+1. **HARNESS BEFORE MODEL.** No model trains until Tasks 1–5 are green. The harness must be proven
+   able to FAIL things (sabotage tests) before anything is allowed to pass.
+2. **INFORMATION TIMING.** `decision_time` = moment tomorrow's calls are generated (~16:00 ET /
+   15:00 CT today, for target day D+1 — matches the live commit leg). EVERY feature carries an
+   `available_at`; harness REJECTS any feature with `available_at > decision_time`. FORBIDDEN:
+   day-D+1 RT prices, day-D+1 actual weather, anything derived from them. Historical weather ACTUALS
+   as forecast stand-ins = lookahead → prefer Open-Meteo Historical FORECAST API (archived forecasts).
+   If only actuals exist for a span, that run is labeled in EVERY output it touches:
+   **"actuals-as-forecast UPPER BOUND — not achievable live."**
+3. **Data hygiene.** No NaN/Inf coercion to values. Bad rows are DROPPED and COUNTED; drop counts
+   reported per hub. Deterministic seeds everywhere. Every artifact stamps: git SHA, data span,
+   n_samples, seed.
+4. **Baselines are first-class.** zero-spread (DA=RT), persistence (same-hour yesterday's DART),
+   hourly climatology (reuse existing clim snapshot conventions). If a baseline beats the model, the
+   report SAYS SO VERBATIM in the headline. Never the words "profitable", "projected", or "predicts
+   spikes" — use "quantile forecast", "P(RT>threshold)", "vs baseline".
+5. **Per-hub honesty.** HB_HOUSTON has decade DA+RT; NORTH/SOUTH/WEST are ~1yr RT-limited → their
+   results carry a small-sample label and are NEVER averaged into a headline with Houston.
+6. **No LLM anywhere in the pipeline.** Tests never touch `journal/` or push. Artifacts → `research/dart_forecast/`.
 
-## Verify each
-Screenshots at default + hover. Axes labeled; interval stated matches actual cadence; price line present
-+ labeled as input; floor unmissable; other panels untouched. Numbers reproduce from arrays. Never red.
+## Sign convention (state once, use everywhere)
+`dart = DA − RT` ($/MWh). Positive dart = DA priced above RT (RT settled cheaper). Spike head of
+interest = RT exceeding DA by threshold T → `RT − DA > T` ⇔ `dart < −T`. T stated in code.
+
+## VERIFICATION (maker ≠ checker; fresh-eyes subagent per task)
+- Hand re-derivation: checker recomputes pinball loss for one hub/day/quantile and coverage for one
+  split from raw arrays, to 6 decimals vs harness output.
+- Harness verified by SABOTAGE (Tasks 3 & 5): must catch a planted leak and a shuffled-target model.
+  A harness that can't fail a cheat is not a harness.
+
+## TASKS
+1. Dataset assembly (per-hub hourly frame; target dart=DA−RT; features w/ available_at; per-hub span+drops).
+2. Walk-forward splitter (expanding, monthly retrain, strict temporal order, embargo ≥1 day).
+3. Leakage guard + SABOTAGE test (plant dart_tomorrow → guard must reject; test passes by failing the leak).
+4. Metrics + report core (pinball q10/25/50/75/90, coverage vs nominal, spike Brier + reliability; JSON+md).
+5. Baselines end-to-end through harness (zero-spread, persistence, climatology). ⏸ PAUSE — show baseline table.
+6. LightGBM quantile models per hub (Houston first-class; tune ONLY on validation inside train; seeds fixed).
+7. Conformal calibration (split-conformal per hub/hour-block; coverage before/after → nominal).
+8. SHUFFLED-TARGET GATE (retrain on permuted targets; must NOT beat baselines OOS; else blocked/stop).
+9. Calibration + results plots (reliability, PIT/coverage, pinball-vs-baseline, spike reliability; PNGs).
+10. Economic overlay (labeled, small-sample): model q-forecasts through COPIED signal rules → hypothetical
+    P&L vs baseline inputs; caveat block (virtual fills, no fees; 12-day incumbent +$1,577.23 @ 53.9%).
+11. RESEARCH NOTE (research/dart_forecast/NOTE.md) — desk-quant-auditable; findings at evidence strength.
+
+## Env
+`conda run -n volt`; `pip install lightgbm` (+matplotlib if missing) inside env. Data: price_store/
+dart_cache + DA decade + weather_data + NP6-86-CD per CLAUDE.md.
