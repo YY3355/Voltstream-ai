@@ -53,6 +53,8 @@
   .badge.hit{color:#fff;border-color:var(--violet);background:#1b1430;box-shadow:0 0 12px rgba(163,113,247,.25)}
   .kv{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;margin-top:4px}
   .kv b{color:#fff} .kv .l{font-family:var(--sans);color:var(--dim);display:block;font-size:10px;letter-spacing:.5px;margin-bottom:2px}
+  /* Bolt secondary-KPI strip recedes so the chart's bars+SoC stay the hero (Task 1 focal hierarchy) */
+  #dp-kpi{font-size:11px;opacity:.62} #dp-kpi b{color:#b3c0cf;font-weight:500}
   svg{width:100%;height:auto;display:block}
   .legend{font-family:var(--sans);font-size:10px;color:var(--mut);display:flex;gap:13px;flex-wrap:wrap;margin-top:7px}
   .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
@@ -674,8 +676,8 @@ function dispatchSVG(dp,fc){
   const p50=fc.p50,actual=fc.actual,pmn=Math.min(...p50,...actual),pmx=Math.max(...p50,...actual);
   const Yp=v=>pBot-((v-pmn)/((pmx-pmn)||1))*(pBot-pTop);
   const pl=a=>a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Yp(v).toFixed(1)}`).join(' ');
-  let price=`<path d="${pl(actual)}" fill="none" stroke="#5d6b7d" stroke-width="1" opacity=".5"/>`
-    +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.3" opacity=".8"/>`
+  let price=`<path d="${pl(actual)}" fill="none" stroke="#5d6b7d" stroke-width="1" opacity=".32"/>`
+    +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".5"/>`
     +`<line x1="${P.l}" y1="${pTop}" x2="${P.l}" y2="${pBot}" stroke="#2a3645"/>`
     +`<text x="13" y="${((pTop+pBot)/2).toFixed(1)}" transform="rotate(-90 13 ${((pTop+pBot)/2).toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>LMP ($/MWh)</text>`
     +`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
@@ -686,20 +688,24 @@ function dispatchSVG(dp,fc){
   const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
   const cap=dp.capacity_kwh,Ypow=v=>cy-(v/pmax)*hh,Ysoc=v=>dBot-(v/cap)*zone,bw=Math.max(3.2,(W-P.l-P.r)/n-0.7);
   let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
-    if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity=".9"/>`;}
-    if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".85"/>`;}}
+    if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity="1"/>`;}
+    if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".95"/>`;}}
   // SoC as a STEP-AFTER line (each interval-end value held across its interval — discrete, no interp)
   let soc=`M${X(0).toFixed(1)} ${Ysoc(dp.soc_kwh[0]).toFixed(1)}`;
   for(let i=1;i<n;i++)soc+=`L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i-1]).toFixed(1)}L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i]).toFixed(1)}`;
   const yr=Ysoc(dp.reserve_kwh);
   // subtle capacity line + REAL reserve-violation flag (never clamp: show soc below the floor if it happens)
   const minSoc=Math.min(...dp.soc_kwh),threatened=minSoc<=dp.reserve_kwh*1.1;   // within 10% or breached
-  const capLine=`<line x1="${P.l}" y1="${Ysoc(cap).toFixed(1)}" x2="${W-P.r}" y2="${Ysoc(cap).toFixed(1)}" stroke="#3fb950" stroke-width="1" stroke-dasharray="1 4" opacity=".45"/>`
+  const capLine=`<line x1="${P.l}" y1="${Ysoc(cap).toFixed(1)}" x2="${W-P.r}" y2="${Ysoc(cap).toFixed(1)}" stroke="#3fb950" stroke-width="1" stroke-dasharray="1 4" opacity=".28"/>`
     +`<text x="${W-P.r-4}" y="${(Ysoc(cap)+9).toFixed(1)}" text-anchor="end" fill="#3fb95077" font-size="8.5" ${M}>capacity ${cap} kWh</text>`;
   // backup floor made UNMISSABLE: faint red no-go zone below it + solid red line + pinned tag (never clamp)
   const floorZone=`<rect x="${P.l}" y="${yr.toFixed(1)}" width="${(W-P.l-P.r).toFixed(1)}" height="${(dBot-yr).toFixed(1)}" fill="#f85149" opacity=".07"/>`;
   const floorLine=`<line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#f85149" stroke-width="1.5"/>`;
-  const floorTag=`<text x="${W-P.r-4}" y="${(yr-4).toFixed(1)}" text-anchor="end" fill="#f85149" font-size="8.5" ${M}>backup floor ${dp.reserve_kwh} kWh${threatened?' &#9888;':''}</text>`;
+  // tag on a dark pill so the floor stays readable where it crosses the bars (line + tag carry the floor)
+  const ftLabel=`backup floor ${dp.reserve_kwh} kWh (SoC)${threatened?' &#9888;':''}`;
+  const ftW=ftLabel.length*4.7+8;
+  const floorTag=`<rect x="${(W-P.r-4-ftW).toFixed(1)}" y="${(yr-13).toFixed(1)}" width="${ftW.toFixed(1)}" height="12" rx="2" fill="#0d1117" opacity=".72"/>`
+    +`<text x="${W-P.r-8}" y="${(yr-4).toFixed(1)}" text-anchor="end" fill="#f85149" font-size="8.5" ${M}>${ftLabel}</text>`;
   const viol=[];for(let i=0;i<n;i++)if(dp.soc_kwh[i]<dp.reserve_kwh-0.05)viol.push(i);
   const violMark=viol.map(i=>`<circle cx="${X(i).toFixed(1)}" cy="${Ysoc(dp.soc_kwh[i]).toFixed(1)}" r="2.5" fill="#f85149"/>`).join('');
   const violFlag=viol.length?`<rect x="${P.l}" y="${dTop+2}" width="${(W-P.l-P.r)}" height="14" fill="#f8514922"/><text x="${((P.l+W-P.r)/2).toFixed(1)}" y="${dTop+12}" text-anchor="middle" fill="#f85149" font-size="10" ${M}>&#9888; Reserve violation: ${(dp.reserve_kwh-Math.min(...viol.map(i=>dp.soc_kwh[i]))).toFixed(1)} kWh below floor, ${viol.length} intervals</text>`:'';
