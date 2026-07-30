@@ -333,7 +333,7 @@
       <div id="dp-runhdr" class="coopt-sub" style="font-size:11px;margin:1px 0 7px;color:var(--dim)"></div>
       <div class="kv" id="dp-kpi" style="margin-bottom:7px"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
-      <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span></div>
+      <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span><span><i style="background:linear-gradient(90deg,#58a6ff55,#f5a62355);opacity:.9"></i>shaded = dispatch window (charge in valley / discharge on peak)</span></div>
       <div id="dp-insight" style="margin-top:7px;padding:8px 11px;border-left:3px solid var(--amber);background:#1a140c;font-size:12px;color:var(--ink);line-height:1.5"></div>
       <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
@@ -673,15 +673,22 @@ function dispatchSVG(dp,fc){
   _dpState.geo={l:P.l,r:W-P.r,n,pTop,dBot};
   const intv=Math.round(dt*60),horizon=+(n*dt).toFixed(0);
   // ---- PRICE panel: the P50 series Bolt optimized against (cyan) + realized actual (faint) ----
-  const p50=fc.p50,actual=fc.actual,pmn=Math.min(...p50,...actual),pmx=Math.max(...p50,...actual);
-  const Yp=v=>pBot-((v-pmn)/((pmx-pmn)||1))*(pBot-pTop);
+  const p50=fc.p50,actual=fc.actual,pmn=Math.min(...p50,...actual);
+  // Scale the price panel to the price-INPUT (p50) range the plan solved on, so the valleys & peaks
+  // that drive dispatch are legible (a lone settled spike to ~$108 otherwise flattens the $19-61 band).
+  // Settled-actual excursions above the panel are clamped in the DRAW ONLY and annotated with their true
+  // value — the number shown is real, the position is a scale choice (honest, not hidden, no data faked).
+  const pmx=Math.max(...p50)*1.08;
+  const Yp=v=>pBot-((Math.min(v,pmx)-pmn)/((pmx-pmn)||1))*(pBot-pTop);
   const pl=a=>a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Yp(v).toFixed(1)}`).join(' ');
+  const aMax=Math.max(...actual),aMaxI=actual.indexOf(aMax);
   let price=`<path d="${pl(actual)}" fill="none" stroke="#5d6b7d" stroke-width="1" opacity=".32"/>`
-    +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".5"/>`
+    +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".55"/>`
     +`<line x1="${P.l}" y1="${pTop}" x2="${P.l}" y2="${pBot}" stroke="#2a3645"/>`
     +`<text x="13" y="${((pTop+pBot)/2).toFixed(1)}" transform="rotate(-90 13 ${((pTop+pBot)/2).toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>LMP ($/MWh)</text>`
-    +`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
-    +`<text x="${W-P.r}" y="${pTop+19}" text-anchor="end" fill="#7e8da0" font-size="8.5" ${M}>actual settled (ref)</text>`;
+    +`<text x="${P.l+6}" y="${pTop+9}" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
+    +`<text x="${P.l+6}" y="${pTop+19}" fill="#7e8da0" font-size="8.5" ${M}>actual settled (ref)</text>`
+    +(aMax>pmx?`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>&#8593; settled peak $${Math.round(aMax)} @ ${(fc.hours[aMaxI]||'').slice(0,5)} (off-scale)</text>`:'');
   [pmx,(pmx+pmn)/2,pmn].forEach(v=>{price+=`<text x="${P.l-6}" y="${(Yp(v)+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${Math.round(v)}</text>`;});
   // ---- DISPATCH panel: bars (discharge +/up amber, charge -/down blue) + SoC + reserve ----
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
@@ -726,6 +733,16 @@ function dispatchSVG(dp,fc){
         for(let k=j0;k<=j1;k++){en+=arr[k]*dt;ps+=fc.p50[k];if(arr[k]>pkv){pkv=arr[k];pk=k;}}
         R.push({i0:j0,i1:j1,e:en,avgP:ps/(j1-j0+1),pk});s=-1;}}return R;};
   const dR=findRuns(dp.discharge_kw).sort((a,b)=>b.e-a.e),cR=findRuns(dp.charge_kw).sort((a,b)=>b.e-a.e);
+  // ---- T2: price->dispatch causality. Each significant dispatch window is softly highlighted on the
+  // PRICE panel (amber=discharge sits on the peak, blue=charge sits in the valley) + faint edge guides
+  // span BOTH panels so the shared x-alignment is explicit. Kept well below hero contrast. ----
+  const mkBand=(r,col)=>{const x0=X(r.i0)-bw/2,x1=X(r.i1)+bw/2,w=Math.max(2,x1-x0);
+    return `<rect x="${x0.toFixed(1)}" y="${pTop}" width="${w.toFixed(1)}" height="${(pBot-pTop).toFixed(1)}" fill="${col}" opacity=".11"/>`
+      +`<line x1="${x0.toFixed(1)}" y1="${pTop}" x2="${x0.toFixed(1)}" y2="${dBot}" stroke="${col}" stroke-width="0.5" opacity=".16"/>`
+      +`<line x1="${x1.toFixed(1)}" y1="${pTop}" x2="${x1.toFixed(1)}" y2="${dBot}" stroke="${col}" stroke-width="0.5" opacity=".16"/>`;};
+  const bandMin=3.0;   // only sustained windows get a highlight — keeps the causality legible, not striped
+  const causality=dR.filter(r=>r.e>=bandMin).map(r=>mkBand(r,'#f5a623')).join('')
+                 +cR.filter(r=>r.e>=bandMin).map(r=>mkBand(r,'#58a6ff')).join('');
   const chosen=[];
   if(dR[0])chosen.push({...dR[0],t:'discharge',col:'#f5a623',isD:true});
   if(cR[0])chosen.push({...cR[0],t:'charge',col:'#58a6ff',isD:false});
@@ -760,7 +777,7 @@ function dispatchSVG(dp,fc){
       nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/><text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
