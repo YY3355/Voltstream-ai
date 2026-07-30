@@ -15,8 +15,8 @@ adapter: `target_q[q] = −(clim_q[1−q])` (e.g. our q10 = −(clim's q90), our
 This adapter is unit-tested and the hand-re-derivation checker (Task 5) confirms it on real cells.
 
 ## Spike head of interest
-`RT − DA > T` (RT exceeds DA by threshold) ⇔ `dart < −T`. T stated in code (Task 4). Reported as
-`P(RT − DA > T)`, never "predicts spikes".
+`RT − DA > T` (RT exceeds DA by threshold) ⇔ `dart < −T`. T stated in code (Task 4). Reported strictly
+as a probability `P(RT − DA > T)` — a quantile/probability forecast, not a spike-prediction claim.
 
 ## Data stores (verified paths / shapes / spans)
 | What | Path | Shape / key | Span | Hubs |

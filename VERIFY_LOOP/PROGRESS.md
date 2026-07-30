@@ -42,3 +42,10 @@ Artifacts → research/dart_forecast/. Tests never touch journal/ or push. No LL
       spike probs (no misleading q10-q90 interpolation). Blend baseline 'clim_persist' (clim spread,
       level nudged 0.5x toward persistence). [in progress]
   (C) note framing: model results as Delta vs climatology (%, per quantile, per spike head).
+
+## LOOP COMPLETE (2026-07-30) — all 11 tasks green + independently verified. ⏸ PAUSED for Mike.
+Headline: LightGBM quantile model beats train-only climatology by 14.8% mean pinball on HB_HOUSTON
+(2020-2026, decision-time-clean), gains in the upper tail (q90 -46.7%) + spike log-loss (-32%/$20,
+-50%/$100); shuffled-target gate confirms the edge is real (+1.9% when labels permuted). Conformal
+reaches nominal coverage. Honest negatives: blend underperforms; model does NOT beat climatology on
+the naive sign-rule overlay (value is in the tail, not the sign). NOTHING promoted to signal.py.
