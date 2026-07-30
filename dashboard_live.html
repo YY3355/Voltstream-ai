@@ -782,11 +782,19 @@ function dispatchSVG(dp,fc){
     +`<text x="${rvX}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>REV (gross)</text>`
     +`<text x="${rvX}" y="${hyV}" fill="#3fb950" font-size="13" font-weight="bold" ${M}>$${dp.revenue_forecast}</text>`;
   // "now" vertical marker — ONLY if the plan's date is today (browser-local ~ market); day-ahead plans won't show it
+  // now/historical honesty: the "now" marker renders ONLY when the plan is for TODAY (browser-local);
+  // otherwise a quiet badge names the plan's date. Liveness is never manufactured.
   let nowMark='';
   try{ const td=(typeof S!=='undefined'&&S)?S.target_date:null,now=new Date(),pad=x=>String(x).padStart(2,'0');
     const ld=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
     if(td===ld){ const ni=Math.min(n-1,Math.max(0,Math.floor((now.getHours()*60+now.getMinutes())/(dt*60)))),x=X(ni);
-      nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/><text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
+      nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/>`
+        +`<circle cx="${x.toFixed(1)}" cy="${pTop.toFixed(1)}" r="2.2" fill="#e6edf3"/>`
+        +`<text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
+    else if(td){ const bx=W-P.r,bw2=(('historical plan — '+td).length)*4.55+18;   // quiet badge in the clear panel gap (right)
+      nowMark=`<rect x="${(bx-bw2).toFixed(1)}" y="${(dTop-13).toFixed(1)}" width="${bw2.toFixed(1)}" height="12" rx="6" fill="#1c2531" stroke="#3a4655" stroke-opacity=".6"/>`
+        +`<circle cx="${(bx-bw2+8).toFixed(1)}" cy="${(dTop-7).toFixed(1)}" r="2" fill="none" stroke="#7e8da0"/>`
+        +`<text x="${(bx-6).toFixed(1)}" y="${(dTop-4).toFixed(1)}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>historical plan — ${td}</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
   return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
