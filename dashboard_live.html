@@ -333,6 +333,7 @@
     <div class="card" id="c-dp">
       <div class="lid"><span class="num">1</span><span class="title">Day-ahead dispatch optimization</span><span class="state skip" id="s-dp">idle</span></div>
       <div id="dp-runhdr" class="coopt-sub" style="font-size:11px;margin:1px 0 7px;color:var(--dim)"></div>
+      <div id="dp-action" style="font-family:var(--mono);font-size:12.5px;margin:0 0 7px;padding:6px 10px;border-left:3px solid var(--cyan);background:#0e1620;color:var(--ink);line-height:1.45"></div>
       <div class="kv" id="dp-kpi" style="margin-bottom:7px"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
       <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span><span><i style="background:linear-gradient(90deg,#58a6ff55,#f5a62355);opacity:.9"></i>shaded = dispatch window (charge in valley / discharge on peak)</span></div>
@@ -876,7 +877,37 @@ async function init(){
         +`<div class="sec"><span class="l">FINAL SoC</span><b>${finalSoc.toFixed(1)} kWh</b></div>`
         +`<div class="sec"><span class="l">VIOLATIONS</span><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b></div>`;
       const win=idx=>idx.length?`${fc.hours[idx[0]]}–${fc.hours[idx[idx.length-1]]}`:'—';
-      $('dp-insight').innerHTML=`Charges <b>${chE.toFixed(1)} kWh</b> when prices are low (avg $${avgP(chI).toFixed(0)}/MWh, ${win(chI)}) and discharges <b>${dsE.toFixed(1)} kWh</b> into higher prices (avg $${avgP(dsI).toFixed(0)}/MWh, ${win(dsI)}) &mdash; <b>${cycles.toFixed(2)} equivalent cycles</b>, capturing <b>${D.capture_pct}%</b> of the perfect-foresight ceiling. Gross energy-arbitrage revenue <b>$${D.revenue_forecast}</b>, settled at realized prices.`; }
+      // strategy memo (computed): the two gaps that name the binding constraint. Same house style as the
+      // trading engine's "% of PF ceiling" claim. The load-bearing clause is data-gated (only when true).
+      const optGap=heur?(D.capture_pct-heur.pct):null, pfGap=100-D.capture_pct;
+      let memo='';
+      if(heur){ const verb=pfGap>=2*Math.max(optGap,1)?'dwarfs':'exceeds';
+        memo=pfGap>optGap
+          ? ` <b>The gap to perfect foresight (${pfGap} pts) ${verb} the gap to the naive heuristic (${optGap} pts) — the forecast, not the optimization, is the binding constraint.</b>`
+          : ` <b>Optimization is the larger lever here: ${optGap} pts over the naive heuristic vs ${pfGap} pts of headroom to perfect foresight.</b>`; }
+      $('dp-insight').innerHTML=`Charges <b>${chE.toFixed(1)} kWh</b> when prices are low (avg $${avgP(chI).toFixed(0)}/MWh, ${win(chI)}) and discharges <b>${dsE.toFixed(1)} kWh</b> into higher prices (avg $${avgP(dsI).toFixed(0)}/MWh, ${win(dsI)}) &mdash; <b>${cycles.toFixed(2)} equivalent cycles</b>, capturing <b>${D.capture_pct}%</b> of the perfect-foresight ceiling. Gross energy-arbitrage revenue <b>$${D.revenue_forecast}</b>, settled at realized prices.${memo}`;
+      // ACTION CARD: one templated sentence from the solution arrays only. No forecast verbs — it states
+      // numbers (the plan's own windows + price inputs), not intentions.
+      { const A=(D.action_now||'').toUpperCase(), pad=x=>String(x).padStart(2,'0'), t=new Date();
+        const isToday=(S.target_date===`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`);
+        const nowIdx=isToday?Math.min(N-1,Math.max(0,Math.floor((t.getHours()*60+t.getMinutes())/(dt*60)))):0;
+        const nowP=Math.round(fc.p50[nowIdx]), nowLabel=isToday?'now':`at ${fc.hours[nowIdx].slice(0,5)}`;
+        const runs=[]; let rs=-1; for(let i=0;i<=N;i++){const on=i<N&&D.discharge_kw[i]>0.1; if(on&&rs<0)rs=i; else if(!on&&rs>=0){runs.push([rs,i-1]);rs=-1;}}
+        const eRun=r=>D.discharge_kw.slice(r[0],r[1]+1).reduce((a,b)=>a+b,0);   // the discharge that matters:
+        const nextD=runs.filter(r=>r[1]>=nowIdx).sort((x,y)=>eRun(y)-eRun(x))[0];   // largest UPCOMING run
+        let sentence;
+        if(nextD){ const a=nextD[0],b=nextD[1],avgD=Math.round(fc.p50.slice(a,b+1).reduce((x,y)=>x+y,0)/(b-a+1)),wtxt=`${fc.hours[a].slice(0,5)}–${fc.hours[b].slice(0,5)}`;
+          sentence = A.startsWith('DISCHARGE') ? `<b>DISCHARGE</b> — delivering into $${nowP} price input ${nowLabel} · window ${wtxt} @ $${avgD} avg`
+            : A.startsWith('CHARGE') ? `<b>CHARGE</b> — buying at $${nowP} price input ${nowLabel} · next discharge ${wtxt} @ $${avgD} avg`
+            : `<b>HOLD</b> — next discharge ${wtxt} · price input $${avgD} vs $${nowP} ${nowLabel}`;
+        } else { sentence = `<b>${A||'HOLD'}</b> — no further discharge window · price input $${nowP} ${nowLabel}`; }
+        // OPTIONAL spike line — ONLY from a committed model artifact whose date MATCHES the plan's target
+        // day (same rule as the confidence band). A calibrated probability shown against the wrong day is
+        // a fabricated number, so a date mismatch (or missing artifact) means the line is ABSENT.
+        let spike=''; const band=(typeof S!=='undefined')?S.band:null;
+        if(band && band.date===S.target_date && typeof band.p_rt_gt_100_evening==='number'){
+          spike=` <span style="color:var(--dim)">·</span> P(RT&gt;$100) tonight: <b>${Math.round(band.p_rt_gt_100_evening*100)}%</b> <span style="color:var(--dim)">(research model ${band.model_version||''})</span>`; }
+        $('dp-action').innerHTML=sentence+spike; } }
     const st=$('sysstrip'); if(st){ st.innerHTML=
       `<span class="pill"><i>data</i><b>${S.source}</b></span>`
       +`<span class="pill"><i>target</i>${S.target_date}</span>`
