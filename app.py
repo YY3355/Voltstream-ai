@@ -159,6 +159,29 @@ def api_ask(body: Ask):
             "verdict": verdict, "why": why, "answer": answer, "answer_mode": mode}
 
 
+@app.get("/api/band")
+def api_band(date: str = ""):
+    """Serve the COMMITTED research confidence-band artifact for a plan date, VERBATIM. Zero computation,
+    zero fallback synthesis: a missing file or a date that does not match the artifact's own date returns
+    'no band' (404), which the chart renders as ABSENCE. The artifact is produced OUT-OF-SAMPLE by the
+    walk-forward fold whose test window contains the date (research/dart_forecast/make_band.py) and is
+    committed to the repo (like the *_result.json snapshots) so fresh-clone / Fly deploys still have it."""
+    import re, json
+    from fastapi.responses import JSONResponse
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date or ""):
+        return JSONResponse({"error": "bad date"}, status_code=400)
+    path = os.path.join(os.path.dirname(__file__), "research", "dart_forecast", f"band_{date}.json")
+    if not os.path.exists(path):
+        return JSONResponse({"error": "no band for this date"}, status_code=404)
+    try:
+        obj = json.load(open(path))
+    except Exception:
+        return JSONResponse({"error": "unreadable artifact"}, status_code=404)
+    if obj.get("date") != date:                       # verbatim serve, but the artifact must own the date
+        return JSONResponse({"error": "artifact date mismatch"}, status_code=404)
+    return JSONResponse(obj)                           # committed artifact, served as-is
+
+
 @app.get("/api/cooptimize")
 def api_cooptimize(reserve_kwh: float = 10.0, ancillary: bool = True):
     """Live energy+AS co-optimization. Recomputes on each call (reserve / AS toggle)."""

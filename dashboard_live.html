@@ -336,7 +336,7 @@
       <div id="dp-action" style="font-family:var(--mono);font-size:12.5px;margin:0 0 7px;padding:6px 10px;border-left:3px solid var(--cyan);background:#0e1620;color:var(--ink);line-height:1.45"></div>
       <div class="kv" id="dp-kpi" style="margin-bottom:7px"></div>
       <div id="dp-chart" style="position:relative"><div id="dp-tip" style="display:none;position:absolute;z-index:5;pointer-events:none;background:#0b1220ee;border:1px solid #2a3645;border-radius:5px;padding:5px 8px;font-family:'IBM Plex Mono';font-size:10px;color:var(--ink);white-space:nowrap;line-height:1.5"></div></div>
-      <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span><span><i style="background:linear-gradient(90deg,#58a6ff55,#f5a62355);opacity:.9"></i>shaded = dispatch window (charge in valley / discharge on peak)</span></div>
+      <div class="legend"><span><i style="background:var(--cyan)"></i>price input ($/MWh)</span><span><i style="background:var(--amber)"></i>discharge (+, to grid)</span><span><i style="background:var(--blue)"></i>charge (&minus;, from grid)</span><span><i style="background:var(--green)"></i>SoC</span><span><i style="border-top:2px dashed var(--red);width:12px;height:0;background:none"></i>reserve floor</span><span><i style="background:linear-gradient(90deg,#58a6ff55,#f5a62355);opacity:.9"></i>shaded = dispatch window (charge in valley / discharge on peak)</span><span><i style="background:#22d3ee;opacity:.28"></i>forecast band q10–q90 (research model RT = DA − DART, conformal)</span></div>
       <div id="dp-insight" style="margin-top:7px;padding:8px 11px;border-left:3px solid var(--amber);background:#1a140c;font-size:12px;color:var(--ink);line-height:1.5"></div>
       <div class="coopt-note" style="margin-top:4px;font-size:10px">Sign convention is display-only: discharge = positive/up (energy delivered to the grid &mdash; the revenue-earning action); charge = negative/down. The solver's dispatch arrays are unsigned magnitudes; the sign is applied at draw time.</div>
       <div class="kv" id="dp-kv"></div>
@@ -722,6 +722,18 @@ function dispatchSVG(dp,fc){
     const c0=ci[0],c1=ci[ci.length-1];
     price+=`<line x1="${X(c0).toFixed(1)}" y1="${(pTop+1.5).toFixed(1)}" x2="${X(c1).toFixed(1)}" y2="${(pTop+1.5).toFixed(1)}" stroke="#8b98a8" stroke-width="1.2" stroke-dasharray="2 2" opacity=".9"/>`;
     ci.forEach(i=>{price+=`<path d="M${(X(i)-3).toFixed(1)} ${(pTop+5).toFixed(1)} L${(X(i)+3).toFixed(1)} ${(pTop+5).toFixed(1)} L${X(i).toFixed(1)} ${(pTop-0.5).toFixed(1)} Z" fill="#8b98a8" opacity="${i===aMaxI?'1':'.55'}"/>`;}); }
+  // ---- CONFIDENCE BAND: RT quantiles (RT_q = DA - DART_q) from the committed research artifact, ONLY
+  // when it exists for THIS plan date. Absent (never faked/interpolated) otherwise. Drawn behind the
+  // price lines so the point price the plan solved on stays legible on top. ----
+  let bandEl='';
+  if(typeof S!=='undefined' && S.band && S.band.date===S.target_date && Array.isArray(S.band.rt_q50)){
+    const B=S.band, HB=B.hours.length, bx=h=>X(Math.min(n-1,h*4+2));
+    const poly=(lo,hi)=>{let s='';for(let h=0;h<HB;h++)s+=`${h?'L':'M'}${bx(h).toFixed(1)} ${Yp(B[hi][h]).toFixed(1)} `;for(let h=HB-1;h>=0;h--)s+=`L${bx(h).toFixed(1)} ${Yp(B[lo][h]).toFixed(1)} `;return s+'Z';};
+    bandEl=`<path d="${poly('rt_q10','rt_q90')}" fill="#22d3ee" opacity=".09"/>`
+      +`<path d="${poly('rt_q25','rt_q75')}" fill="#22d3ee" opacity=".13"/>`
+      +`<path d="${B.rt_q50.map((v,h)=>`${h?'L':'M'}${bx(h).toFixed(1)} ${Yp(v).toFixed(1)}`).join(' ')}" fill="none" stroke="#22d3ee" stroke-width="0.8" opacity=".5" stroke-dasharray="3 2"/>`
+      +`<text x="${P.l+6}" y="${pTop+29}" fill="#22d3ee" font-size="8" opacity=".9" ${M}>${B.label}</text>`;
+  }
   // ---- DISPATCH panel: bars (discharge +/up amber, charge -/down blue) + SoC + reserve ----
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
   const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
@@ -823,7 +835,7 @@ function dispatchSVG(dp,fc){
         +`<text x="${(bx-6).toFixed(1)}" y="${(dTop-4).toFixed(1)}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>historical plan — ${td}</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${bandEl}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
@@ -846,6 +858,8 @@ function dpTipHide(){const el=$('dp-tip');if(el)el.style.display='none';const cx
 async function init(){
   try{
     S=await (await fetch('/api/state')).json();
+    // committed research confidence band for THIS plan date (absent -> chart shows no band, never faked)
+    try{ const br=await fetch(`/api/band?date=${S.target_date}`); S.band=br.ok?await br.json():null; }catch(e){ S.band=null; }
     $('meta').innerHTML=`HB_HOUSTON · ${S.target_date} · <span class="live">● ${S.source}</span>`;
     $('src').textContent=S.source;
     $('fc-chart').innerHTML=forecastSVG(S.forecast);
@@ -905,8 +919,8 @@ async function init(){
         // day (same rule as the confidence band). A calibrated probability shown against the wrong day is
         // a fabricated number, so a date mismatch (or missing artifact) means the line is ABSENT.
         let spike=''; const band=(typeof S!=='undefined')?S.band:null;
-        if(band && band.date===S.target_date && typeof band.p_rt_gt_100_evening==='number'){
-          spike=` <span style="color:var(--dim)">·</span> P(RT&gt;$100) tonight: <b>${Math.round(band.p_rt_gt_100_evening*100)}%</b> <span style="color:var(--dim)">(research model ${band.model_version||''})</span>`; }
+        if(band && band.date===S.target_date && band.spike && typeof band.spike.p_evening==='number'){
+          spike=` <span style="color:var(--dim)">·</span> P(RT&minus;DA &gt; $${Math.round(band.spike.threshold||100)}) tonight: <b>${Math.round(band.spike.p_evening*100)}%</b> <span style="color:var(--dim)">(research model ${band.model_version||''})</span>`; }
         $('dp-action').innerHTML=sentence+spike; } }
     const st=$('sysstrip'); if(st){ st.innerHTML=
       `<span class="pill"><i>data</i><b>${S.source}</b></span>`
