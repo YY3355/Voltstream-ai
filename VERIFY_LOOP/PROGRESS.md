@@ -22,3 +22,16 @@ Scope: Asset Optimization tab (dispatchSVG/dpTip/dp-kpi + CSS) + Task 0 (researc
   Connects the just-built research model (research/dart_forecast/) to the Bolt chart's honest band.
   Standing constraints: no other tabs/map/signal.py/deploy; motion sign-off is Mike's real browser.
   Next: Task 0 — determine whether the locational/ repoint + N/S/W re-run happened, then fix or apply.
+
+## LOOP COMPLETE (2026-07-31) — Tasks 0-10 all green + independently verified. ⏸ Awaiting Mike.
+Bolt chart: static log -> operational decision-grade display. Highlights:
+- T0 repoint: N/S/W RT -> decade locational store (Houston byte-identical); baselines re-run.
+- T1 focal hierarchy · T2 price->dispatch causality (rescaled price + window shading) · T3 <=2 pinned
+  callouts to hover + self-declaring clamp · T4 now-marker/historical-badge honesty · T5 KPI context
+  triple (capture 70 · heuristic 50 · PF 100) + strategy memo · T6 action card from arrays + date-guarded
+  spike line · T7 HONEST OOS confidence band (RT=DA-DART, conformal, committed artifact, read-only route)
+  · T8 entrance motion (CSS-only, reduced-motion) · T9 clear/decision-grade cleanup · T10 docs.
+TWO OPEN HUMAN GATES (loop is PAUSED for both):
+  1. Mike's REAL-BROWSER MOTION sign-off (T8) — headless evidence only; his eyes are the verdict.
+  2. Final real-browser look (motion, hover, band readability). No deploy without his literal "deploy"
+     (and, ideally, colima installed so the Docker gate is real). Band model -> live optimizer = future.

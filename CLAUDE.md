@@ -56,6 +56,30 @@ ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean conda run -n volt python -m uvicorn app:a
    as background Bash tasks — a foreground shell has a 2-minute wall that kills stacked
    startup+fetch.)
 
+## Deploying to Fly (EXPLICIT-GO ONLY — never the loop's initiative)
+
+- **Deploy happens only on Mike's literal go.** No agent/loop ever runs `fly deploy` on its own
+  initiative — not "when green", not "to be helpful". Mike says "deploy" (or "signed off, deploy");
+  until then, a finished loop STOPS with screenshots + the sign-off checklist, nothing shipped.
+- **Redeploy to the EXISTING app only** (`voltstream-ercot`, region dfw). NEVER create Fly resources —
+  no new machines/volumes/regions/scale changes. `fly deploy --remote-only` (remote depot builder;
+  fly.toml already points at `Dockerfile.fly`). Local git push is not required for deploy (fly tars the
+  working dir, respecting `.dockerignore`) but push anyway to keep origin in sync. Move scratch dirs
+  OUT of the repo first — `*.py/*.html/*.png` under the working dir would otherwise be tarred into the image.
+- **The pre-deploy gate: fresh-clone / Docker-image build + run + curl.** Before any deploy, prove the
+  COMMITTED state actually serves: build the image, run the container, curl every endpoint. **CONTAINER-
+  RUNTIME GAP (important):** no `docker`/`podman`/`nerdctl`/`finch` is installed, so the literal Docker
+  gate CANNOT run. The v20/v21 ships used an intent-verification SUBSTITUTE — a fresh `git clone` booted
+  under the `volt` env, endpoints curled, plus a check that the changed files ship and no new snapshot
+  `.json/.csv` slipped in — which Mike explicitly accepted as a stand-in. **To make the gate REAL instead
+  of ceremonial, install colima before the next deploy:** `brew install colima docker && colima start`,
+  then the Docker build+run+curl gate actually executes. The runtime is the teeth; this rule is the paper.
+- **Committed-artifact snapshot rule.** Fly's volume is ephemeral and caches don't ship, so anything the
+  live app reads at runtime must be COMMITTED to the repo AND survive `.dockerignore` (which excludes
+  `*.json`/`*.csv` by default). Whitelist it (`!clim_result.json`, `!band_*.json`, …) or the fresh
+  clone / Fly image silently serves a stale-or-missing artifact (e.g. a bandless chart). This is the
+  exact snapshot bug the `*_result.json` / `band_*.json` committed-artifact pattern exists to prevent.
+
 ## Adding a new engine as a panel (the recurring pattern)
 
 1. **Source the module** — usually dropped in `~/Downloads`; copy it in:
