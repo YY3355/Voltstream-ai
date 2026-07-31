@@ -708,7 +708,7 @@ function dispatchSVG(dp,fc){
   const anim=!_dpEntered; _dpEntered=true;   // add animation classes only on the first appearance
   const M='font-family="IBM Plex Mono"';
   const W=600,H=368,P={l:56,r:60,t:14,b:23},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1),dt=dp.dt_hours||0.25;
-  const hdrH=30,gap=16,pph=84,pTop=P.t+hdrH,pBot=pTop+pph,dTop=pBot+gap,dBot=H-P.b;   // header strip · price panel · dispatch panel
+  const hdrH=16,gap=16,pph=84,pTop=P.t+hdrH,pBot=pTop+pph,dTop=pBot+gap,dBot=H-P.b;   // small top band (badge/marker) · price panel · dispatch panel
   _dpState.geo={l:P.l,r:W-P.r,n,pTop,dBot};
   const intv=Math.round(dt*60),horizon=+(n*dt).toFixed(0);
   // ---- PRICE panel: the P50 series Bolt optimized against (cyan) + realized actual (faint) ----
@@ -725,9 +725,7 @@ function dispatchSVG(dp,fc){
     +`<path${anim?' class="pdraw"':''} d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".55"/>`
     +`<line x1="${P.l}" y1="${pTop}" x2="${P.l}" y2="${pBot}" stroke="#2a3645"/>`
     +`<text x="13" y="${((pTop+pBot)/2).toFixed(1)}" transform="rotate(-90 13 ${((pTop+pBot)/2).toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>LMP ($/MWh)</text>`
-    +`<text x="${P.l+6}" y="${pTop+9}" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
-    +`<text x="${P.l+6}" y="${pTop+19}" fill="#7e8da0" font-size="8.5" ${M}>actual settled (ref)</text>`
-    +(aMax>pmx?`<text x="${W-P.r}" y="${pTop+9}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>&#8593; settled peak $${Math.round(aMax)} @ ${(fc.hours[aMaxI]||'').slice(0,5)} (off-scale)</text>`:'');
+    +(aMax>pmx?`<text x="${W-P.r}" y="${P.t+9}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>&#8593; settled peak $${Math.round(aMax)} @ ${(fc.hours[aMaxI]||'').slice(0,5)} (off-scale)</text>`:'');
   [pmx,(pmx+pmn)/2,pmn].forEach(v=>{price+=`<text x="${P.l-6}" y="${(Yp(v)+3).toFixed(1)}" text-anchor="end" fill="#7e8da0" font-size="9" ${M}>${Math.round(v)}</text>`;});
   // clamped settled segments SELF-DECLARE: a dotted ceiling over the off-scale range + a ▲ at the peak,
   // so "off-scale" reads at a glance — a skimmer never mistakes the clamped $108 spike for the $66 top.
@@ -745,7 +743,7 @@ function dispatchSVG(dp,fc){
     bandEl=`<path d="${poly('rt_q10','rt_q90')}" fill="#22d3ee" opacity=".09"/>`
       +`<path d="${poly('rt_q25','rt_q75')}" fill="#22d3ee" opacity=".13"/>`
       +`<path d="${B.rt_q50.map((v,h)=>`${h?'L':'M'}${bx(h).toFixed(1)} ${Yp(v).toFixed(1)}`).join(' ')}" fill="none" stroke="#22d3ee" stroke-width="0.8" opacity=".5" stroke-dasharray="3 2"/>`
-      +`<text x="${P.l+6}" y="${pTop+29}" fill="#22d3ee" font-size="8" opacity=".9" ${M}>${B.label}</text>`;
+      +`<text x="${P.l+6}" y="${pTop+9}" fill="#22d3ee" font-size="8" opacity=".9" ${M}>${B.label}</text>`;
   }
   // ---- DISPATCH panel: bars (discharge +/up amber, charge -/down blue) + SoC + reserve ----
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
@@ -762,15 +760,17 @@ function dispatchSVG(dp,fc){
   // subtle capacity line + REAL reserve-violation flag (never clamp: show soc below the floor if it happens)
   const minSoc=Math.min(...dp.soc_kwh),threatened=minSoc<=dp.reserve_kwh*1.1;   // within 10% or breached
   const capLine=`<line x1="${P.l}" y1="${Ysoc(cap).toFixed(1)}" x2="${W-P.r}" y2="${Ysoc(cap).toFixed(1)}" stroke="#3fb950" stroke-width="1" stroke-dasharray="1 4" opacity=".28"/>`
-    +`<text x="${W-P.r-4}" y="${(Ysoc(cap)+9).toFixed(1)}" text-anchor="end" fill="#3fb95077" font-size="8.5" ${M}>capacity ${cap} kWh</text>`;
+    +`<text x="${W-P.r-4}" y="${(Ysoc(cap)-4).toFixed(1)}" text-anchor="end" fill="#3fb95099" font-size="8.5" ${M}>capacity ${cap} kWh</text>`;
   // backup floor made UNMISSABLE: faint red no-go zone below it + solid red line + pinned tag (never clamp)
   const floorZone=`<rect x="${P.l}" y="${yr.toFixed(1)}" width="${(W-P.l-P.r).toFixed(1)}" height="${(dBot-yr).toFixed(1)}" fill="#f85149" opacity=".07"/>`;
   const floorLine=`<line x1="${P.l}" y1="${yr.toFixed(1)}" x2="${W-P.r}" y2="${yr.toFixed(1)}" stroke="#f85149" stroke-width="1.5"/>`;
   // tag on a dark pill so the floor stays readable where it crosses the bars (line + tag carry the floor)
+  // floor tag pinned at the LEFT end (early hours: fewest bars) on a dark pill, so it never sits on the
+  // dense evening dispatch (T9 fix). The red floor line + shaded no-go zone carry it across the panel.
   const ftLabel=`backup floor ${dp.reserve_kwh} kWh (SoC)${threatened?' &#9888;':''}`;
   const ftW=ftLabel.length*4.7+8;
-  const floorTag=`<rect x="${(W-P.r-4-ftW).toFixed(1)}" y="${(yr-13).toFixed(1)}" width="${ftW.toFixed(1)}" height="12" rx="2" fill="#0d1117" opacity=".72"/>`
-    +`<text x="${W-P.r-8}" y="${(yr-4).toFixed(1)}" text-anchor="end" fill="#f85149" font-size="8.5" ${M}>${ftLabel}</text>`;
+  const floorTag=`<rect x="${(P.l+2).toFixed(1)}" y="${(yr-11).toFixed(1)}" width="${ftW.toFixed(1)}" height="12" rx="2" fill="#0d1117" opacity=".72"/>`
+    +`<text x="${(P.l+6).toFixed(1)}" y="${(yr-2).toFixed(1)}" fill="#f85149" font-size="8.5" ${M}>${ftLabel}</text>`;
   const viol=[];for(let i=0;i<n;i++)if(dp.soc_kwh[i]<dp.reserve_kwh-0.05)viol.push(i);
   const violMark=viol.map(i=>`<circle cx="${X(i).toFixed(1)}" cy="${Ysoc(dp.soc_kwh[i]).toFixed(1)}" r="2.5" fill="#f85149"/>`).join('');
   const violFlag=viol.length?`<rect x="${P.l}" y="${dTop+2}" width="${(W-P.l-P.r)}" height="14" fill="#f8514922"/><text x="${((P.l+W-P.r)/2).toFixed(1)}" y="${dTop+12}" text-anchor="middle" fill="#f85149" font-size="10" ${M}>&#9888; Reserve violation: ${(dp.reserve_kwh-Math.min(...viol.map(i=>dp.soc_kwh[i]))).toFixed(1)} kWh below floor, ${viol.length} intervals</text>`:'';
@@ -823,16 +823,8 @@ function dispatchSVG(dp,fc){
   const intvLabel=`<text x="${P.l+4}" y="${dTop-4}" fill="#5d6b7d" font-size="8.5" ${M}>bars: ${intv}-min intervals · ${horizon}h horizon</text>`;
   // ---- on-chart HEADER STRIP: the operational trio, ACTION NOW as the highlighted hero ----
   const aRaw=(dp.action_now||'').toUpperCase();
-  const aCol=aRaw.startsWith('DISCHARGE')?'#f5a623':aRaw.startsWith('CHARGE')?'#58a6ff':'#8b98a8';
-  const hyL=P.t+8,hyV=P.t+23,acX=P.l,cpX=P.l+178,rvX=P.l+330;
-  let hdr=`<rect x="${acX-6}" y="${P.t}" width="158" height="27" rx="4" fill="#161d29" stroke="${aCol}" stroke-opacity=".55"/>`
-    +`<text x="${acX+2}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>ACTION NOW</text>`
-    +`<text x="${acX+2}" y="${hyV}" fill="${aCol}" font-size="13" font-weight="bold" ${M}>${dp.action_now}</text>`
-    +`<text x="${cpX}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>CAPTURE</text>`
-    +`<text x="${cpX}" y="${hyV}" fill="#e6edf3" font-size="13" font-weight="bold" ${M}>${dp.capture_pct}%</text>`
-    +`<g style="cursor:help"><circle cx="${cpX+52}" cy="${hyV-4}" r="6" fill="#1c2531" stroke="#3a4655"/><text x="${cpX+52}" y="${hyV-1}" text-anchor="middle" fill="#8b98a8" font-size="8.5" ${M}>i</text><title>Capture = realized gross revenue ($${dp.revenue_forecast}) ÷ perfect-foresight ceiling ($${dp.revenue_perfect}), same ${horizon}h horizon</title></g>`
-    +`<text x="${rvX}" y="${hyL}" fill="#7e8da0" font-size="8" ${M}>REV (gross)</text>`
-    +`<text x="${rvX}" y="${hyV}" fill="#3fb950" font-size="13" font-weight="bold" ${M}>$${dp.revenue_forecast}</text>`;
+  // header strip removed (T9): ACTION NOW / CAPTURE / REV are already the action card + KPI triple + insight
+  let hdr='';
   // "now" vertical marker — ONLY if the plan's date is today (browser-local ~ market); day-ahead plans won't show it
   // now/historical honesty: the "now" marker renders ONLY when the plan is for TODAY (browser-local);
   // otherwise a quiet badge names the plan's date. Liveness is never manufactured.
@@ -843,10 +835,10 @@ function dispatchSVG(dp,fc){
       nowMark=`<line x1="${x.toFixed(1)}" y1="${pTop}" x2="${x.toFixed(1)}" y2="${dBot}" stroke="#e6edf3" stroke-width="1" opacity=".55"/>`
         +`<circle cx="${x.toFixed(1)}" cy="${pTop.toFixed(1)}" r="2.2" fill="#e6edf3"/>`
         +`<text x="${x.toFixed(1)}" y="${pTop-3}" text-anchor="middle" fill="#e6edf3" font-size="8" ${M}>now</text>`; }
-    else if(td){ const bx=W-P.r,bw2=(('historical plan — '+td).length)*4.55+18;   // quiet badge in the clear panel gap (right)
-      nowMark=`<rect x="${(bx-bw2).toFixed(1)}" y="${(dTop-13).toFixed(1)}" width="${bw2.toFixed(1)}" height="12" rx="6" fill="#1c2531" stroke="#3a4655" stroke-opacity=".6"/>`
-        +`<circle cx="${(bx-bw2+8).toFixed(1)}" cy="${(dTop-7).toFixed(1)}" r="2" fill="none" stroke="#7e8da0"/>`
-        +`<text x="${(bx-6).toFixed(1)}" y="${(dTop-4).toFixed(1)}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>historical plan — ${td}</text>`; }
+    else if(td){ const bw2=(('historical plan — '+td).length)*4.55+18;   // quiet badge in the freed top band (left)
+      nowMark=`<rect x="${P.l}" y="${P.t}" width="${bw2.toFixed(1)}" height="12" rx="6" fill="#1c2531" stroke="#3a4655" stroke-opacity=".6"/>`
+        +`<circle cx="${(P.l+8).toFixed(1)}" cy="${(P.t+6).toFixed(1)}" r="2" fill="none" stroke="#7e8da0"/>`
+        +`<text x="${(P.l+15).toFixed(1)}" y="${(P.t+9).toFixed(1)}" fill="#8b98a8" font-size="8" ${M}>historical plan — ${td}</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
   return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${bandEl}${price}${lax}${rax}${capLine}${bars}<path${anim?' class="socdraw"':''} d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
@@ -934,7 +926,7 @@ async function init(){
         // a fabricated number, so a date mismatch (or missing artifact) means the line is ABSENT.
         let spike=''; const band=(typeof S!=='undefined')?S.band:null;
         if(band && band.date===S.target_date && band.spike && typeof band.spike.p_evening==='number'){
-          spike=` <span style="color:var(--dim)">·</span> P(RT&minus;DA &gt; $${Math.round(band.spike.threshold||100)}) tonight: <b>${Math.round(band.spike.p_evening*100)}%</b> <span style="color:var(--dim)">(research model ${band.model_version||''})</span>`; }
+          spike=` <span style="color:var(--dim)">·</span> P(RT&minus;DA &gt; $${Math.round(band.spike.threshold||100)}) tonight: <b>${Math.round(band.spike.p_evening*100)}%</b>`; }
         $('dp-action').innerHTML=sentence+spike; } }
     const st=$('sysstrip'); if(st){ st.innerHTML=
       `<span class="pill"><i>data</i><b>${S.source}</b></span>`
