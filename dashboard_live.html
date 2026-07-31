@@ -57,6 +57,17 @@
   /* KPI strip: the context triple (capture · heuristic · PF) reads as decision-grade; secondary stats recede */
   #dp-kpi{font-size:11px} #dp-kpi .ctx b{color:#e6edf3;font-weight:600}
   #dp-kpi .sec{opacity:.5} #dp-kpi .sec b{color:#b3c0cf;font-weight:500}
+  /* ENTRANCE MOTION (Task 8): one-shot on first render — bars grow from the zero line, price line draws,
+     SoC eases in. CSS/SVG transitions only (no JS per-frame rebuild), no ambient loops, all <=1s. */
+  @keyframes dpBarGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes dpDraw{to{stroke-dashoffset:0}}
+  #dp-chart .bd{transform-box:fill-box;transform-origin:bottom;animation:dpBarGrow .45s cubic-bezier(.2,.7,.3,1) both}
+  #dp-chart .bc{transform-box:fill-box;transform-origin:top;animation:dpBarGrow .45s cubic-bezier(.2,.7,.3,1) both}
+  #dp-chart .pdraw{stroke-dasharray:2200;stroke-dashoffset:2200;animation:dpDraw .7s ease-out .15s both}
+  #dp-chart .socdraw{stroke-dasharray:2200;stroke-dashoffset:2200;animation:dpDraw .65s ease-in-out .25s both}
+  @media (prefers-reduced-motion:reduce){
+    #dp-chart .bd,#dp-chart .bc,#dp-chart .pdraw,#dp-chart .socdraw{animation:none!important;stroke-dashoffset:0!important;transform:none!important}
+  }
   svg{width:100%;height:auto;display:block}
   .legend{font-family:var(--sans);font-size:10px;color:var(--mut);display:flex;gap:13px;flex-wrap:wrap;margin-top:7px}
   .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
@@ -691,8 +702,10 @@ function heuristicCapture(D, fc){
 function _niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v)))||1; const m=v/p;
   return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p; }
 let _dpState=null;   // {dp,fc} for the hover tooltip — reads the raw solution arrays, no re-derivation
+let _dpEntered=false; // entrance motion runs ONCE (first render); re-renders (e.g. slider) are static
 function dispatchSVG(dp,fc){
   _dpState={dp,fc};
+  const anim=!_dpEntered; _dpEntered=true;   // add animation classes only on the first appearance
   const M='font-family="IBM Plex Mono"';
   const W=600,H=368,P={l:56,r:60,t:14,b:23},n=dp.charge_kw.length,X=i=>P.l+i*(W-P.l-P.r)/(n-1),dt=dp.dt_hours||0.25;
   const hdrH=30,gap=16,pph=84,pTop=P.t+hdrH,pBot=pTop+pph,dTop=pBot+gap,dBot=H-P.b;   // header strip · price panel · dispatch panel
@@ -709,7 +722,7 @@ function dispatchSVG(dp,fc){
   const pl=a=>a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Yp(v).toFixed(1)}`).join(' ');
   const aMax=Math.max(...actual),aMaxI=actual.indexOf(aMax);
   let price=`<path d="${pl(actual)}" fill="none" stroke="#5d6b7d" stroke-width="1" opacity=".32"/>`
-    +`<path d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".55"/>`
+    +`<path${anim?' class="pdraw"':''} d="${pl(p50)}" fill="none" stroke="#22d3ee" stroke-width="1.1" opacity=".55"/>`
     +`<line x1="${P.l}" y1="${pTop}" x2="${P.l}" y2="${pBot}" stroke="#2a3645"/>`
     +`<text x="13" y="${((pTop+pBot)/2).toFixed(1)}" transform="rotate(-90 13 ${((pTop+pBot)/2).toFixed(1)})" text-anchor="middle" fill="#8b98a8" font-size="9" ${M}>LMP ($/MWh)</text>`
     +`<text x="${P.l+6}" y="${pTop+9}" fill="#22d3ee" font-size="8.5" ${M}>price input ($/MWh) — plan solved on this</text>`
@@ -738,9 +751,10 @@ function dispatchSVG(dp,fc){
   const zone=(dBot-dTop),cy=dTop+zone/2,hh=zone/2;
   const pmax=_niceMax(Math.max(1,...dp.charge_kw,...dp.discharge_kw));
   const cap=dp.capacity_kwh,Ypow=v=>cy-(v/pmax)*hh,Ysoc=v=>dBot-(v/cap)*zone,bw=Math.max(3.2,(W-P.l-P.r)/n-0.7);
+  const bAttr=(cls,i)=>anim?` class="${cls}" style="animation-delay:${(i/n*0.4).toFixed(2)}s"`:'';   // left-to-right stagger over 0.4s
   let bars='';for(let i=0;i<n;i++){const x=X(i)-bw/2;
-    if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity="1"/>`;}
-    if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".95"/>`;}}
+    if(dp.discharge_kw[i]>0.01){const y=Ypow(dp.discharge_kw[i]);bars+=`<rect${bAttr('bd',i)} x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(cy-y).toFixed(1)}" fill="#f5a623" opacity="1"/>`;}
+    if(dp.charge_kw[i]>0.01){const y=Ypow(-dp.charge_kw[i]);bars+=`<rect${bAttr('bc',i)} x="${x.toFixed(1)}" y="${cy.toFixed(1)}" width="${bw.toFixed(1)}" height="${(y-cy).toFixed(1)}" fill="#58a6ff" opacity=".95"/>`;}}
   // SoC as a STEP-AFTER line (each interval-end value held across its interval — discrete, no interp)
   let soc=`M${X(0).toFixed(1)} ${Ysoc(dp.soc_kwh[0]).toFixed(1)}`;
   for(let i=1;i<n;i++)soc+=`L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i-1]).toFixed(1)}L${X(i).toFixed(1)} ${Ysoc(dp.soc_kwh[i]).toFixed(1)}`;
@@ -835,7 +849,7 @@ function dispatchSVG(dp,fc){
         +`<text x="${(bx-6).toFixed(1)}" y="${(dTop-4).toFixed(1)}" text-anchor="end" fill="#8b98a8" font-size="8" ${M}>historical plan — ${td}</text>`; }
   }catch(e){}
   const cross=`<line id="dp-cross" x1="0" y1="${pTop}" x2="0" y2="${dBot}" stroke="#8b98a8" stroke-width="0.7" stroke-dasharray="3 3" opacity="0" pointer-events="none"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${bandEl}${price}${lax}${rax}${capLine}${bars}<path d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${grid}${floorZone}${causality}${bandEl}${price}${lax}${rax}${capLine}${bars}<path${anim?' class="socdraw"':''} d="${soc}" fill="none" stroke="#3fb950" stroke-width="2"/>${floorLine}${floorTag}${violMark}${violFlag}${callouts}${intvLabel}${hdr}${nowMark}${cross}${xl}${hov}</svg>`;
 }
 function dpTip(evt,i){
   if(!_dpState)return; const {dp,fc}=_dpState,dt=dp.dt_hours||0.25;
