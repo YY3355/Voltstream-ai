@@ -54,7 +54,9 @@
   .kv{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;margin-top:4px}
   .kv b{color:#fff} .kv .l{font-family:var(--sans);color:var(--dim);display:block;font-size:10px;letter-spacing:.5px;margin-bottom:2px}
   /* Bolt secondary-KPI strip recedes so the chart's bars+SoC stay the hero (Task 1 focal hierarchy) */
-  #dp-kpi{font-size:11px;opacity:.62} #dp-kpi b{color:#b3c0cf;font-weight:500}
+  /* KPI strip: the context triple (capture · heuristic · PF) reads as decision-grade; secondary stats recede */
+  #dp-kpi{font-size:11px} #dp-kpi .ctx b{color:#e6edf3;font-weight:600}
+  #dp-kpi .sec{opacity:.5} #dp-kpi .sec b{color:#b3c0cf;font-weight:500}
   svg{width:100%;height:auto;display:block}
   .legend{font-family:var(--sans);font-size:10px;color:var(--mut);display:flex;gap:13px;flex-wrap:wrap;margin-top:7px}
   .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
@@ -662,6 +664,29 @@ function forecastSVG(fc){
   const pk=fc.peak_idx;
   return `<svg viewBox="0 0 ${W} ${H}">${ax}<polygon points="${band}" fill="rgba(88,166,255,.18)"/><path d="${line(fc.actual)}" fill="none" stroke="#c9d4e1" stroke-width="1" opacity=".7"/><path d="${line(fc.p50)}" fill="none" stroke="#58a6ff" stroke-width="2"/><circle cx="${X(pk)}" cy="${Y(fc.p50[pk])}" r="3.5" fill="#f5a623"/><text x="${X(pk)}" y="${Y(fc.p50[pk])-7}" text-anchor="middle" fill="#f5a623" font-size="9" font-family="IBM Plex Mono">peak ${fc.peak_time}</text></svg>`;
 }
+// Naive TOU one-cycle heuristic — a COMPUTED baseline (the "compared to what" for the optimizer's capture).
+// RULES (naive, stated, no optimization): ONE BALANCED cycle, physically bounded by SoC, same end state
+// as the optimizer (returns to the starting SoC — no liquidating the initial buffer for an unfair edge).
+//   * charge_grid  = capacity - initial_soc  kWh (fill the battery to full)
+//   * deliver_grid = charge_grid * round_trip_eff  kWh (discharge the same energy back to the start SoC;
+//     round-trip loss means less is delivered than drawn)
+//   * greedily assign the charge energy to the CHEAPEST price-input (p50) intervals and the delivered
+//     energy to the PRICIEST p50 intervals, each interval capped at max_power*dt; windows chosen on p50
+//     (known at decision), SETTLED at ACTUAL prices. Every interval respects the power cap, so the plan
+//     never moves more energy than the battery holds.
+// Returns heuristic capture % = heuristic revenue / perfect-foresight ceiling (same metric as the optimizer).
+function heuristicCapture(D, fc){
+  const dt=D.dt_hours, maxP=D.max_power_kw, RTE=D.round_trip_efficiency, eInt=maxP*dt;
+  if(!(D.revenue_perfect>0)||!eInt||!fc||!fc.p50||!fc.actual) return null;
+  const chargeGrid=Math.max(0,(D.capacity_kwh||0)-(D.initial_soc_kwh||0));       // fill to capacity
+  const deliver=chargeGrid*RTE;                                                 // discharge back to start, round-trip loss
+  const idx=[...fc.p50.keys()];
+  const asc=[...idx].sort((a,b)=>fc.p50[a]-fc.p50[b]), desc=[...idx].sort((a,b)=>fc.p50[b]-fc.p50[a]);
+  const fill=(order,total)=>{let r=total,val=0,k=0;for(const i of order){if(r<=1e-9)break;const e=Math.min(eInt,r);val+=e*fc.actual[i]/1000;r-=e;k++;}return {val,k};};
+  const buy=fill(asc,chargeGrid), sell=fill(desc,deliver);
+  const rev=sell.val-buy.val;
+  return {pct:Math.round(100*rev/D.revenue_perfect), rev:+rev.toFixed(2), Kc:buy.k, Kd:sell.k};
+}
 function _niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v)))||1; const m=v/p;
   return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p; }
 let _dpState=null;   // {dp,fc} for the hover tooltip — reads the raw solution arrays, no re-derivation
@@ -838,11 +863,18 @@ async function init(){
       const chE=sumE(D.charge_kw,chI), dsE=sumE(D.discharge_kw,dsI), cycles=dsE/D.capacity_kwh, finalSoc=D.soc_kwh[N-1];
       let viol=0; for(let i=0;i<N;i++) if(D.soc_kwh[i]<D.reserve_kwh-0.05) viol++;
       const capTip=`capture rate = realized gross revenue ($${D.revenue_forecast}) ÷ perfect-foresight ceiling ($${D.revenue_perfect}), same ${N*dt}h horizon`;
-      // ACTION NOW / CAPTURE / REV now live in the on-chart header strip; keep the secondary stats here
+      // KPI strip = the CONTEXT TRIPLE ("compared to what"): Bolt capture vs a naive TOU heuristic vs the
+      // perfect-foresight ceiling (all computed per plan); the secondary stats follow, muted.
+      const heur=heuristicCapture(D, fc);
+      const pf=Math.round(100*D.revenue_perfect/D.revenue_perfect);        // perfect-foresight = ceiling (100% by definition)
+      const heurTip=heur?`naive TOU one-cycle baseline (balanced, same end SoC as the plan): charge to capacity over the ${heur.Kc} cheapest price-input intervals, discharge the same energy back over the ${heur.Kd} priciest, settled at actual (round-trip eff applied). Rev $${heur.rev} = ${heur.pct}% of the perfect-foresight ceiling.`:'';
       $('dp-kpi').innerHTML=
-         `<div><span class="l">EQUIV CYCLES</span><b>${cycles.toFixed(2)}</b></div>`
-        +`<div><span class="l">FINAL SoC</span><b>${finalSoc.toFixed(1)} kWh</b></div>`
-        +`<div><span class="l">VIOLATIONS</span><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b></div>`;
+         `<div class="ctx" title="${capTip}"><span class="l">CAPTURE · Bolt &#9432;</span><b>${D.capture_pct}%</b></div>`
+        +`<div class="ctx" title="${heurTip}"><span class="l">HEURISTIC · naive TOU &#9432;</span><b>${heur?heur.pct+'%':'—'}</b></div>`
+        +`<div class="ctx"><span class="l">PERFECT FORESIGHT</span><b>${pf}%</b></div>`
+        +`<div class="sec"><span class="l">EQUIV CYCLES</span><b>${cycles.toFixed(2)}</b></div>`
+        +`<div class="sec"><span class="l">FINAL SoC</span><b>${finalSoc.toFixed(1)} kWh</b></div>`
+        +`<div class="sec"><span class="l">VIOLATIONS</span><b style="color:${viol?'var(--red)':'var(--green)'}">${viol}</b></div>`;
       const win=idx=>idx.length?`${fc.hours[idx[0]]}–${fc.hours[idx[idx.length-1]]}`:'—';
       $('dp-insight').innerHTML=`Charges <b>${chE.toFixed(1)} kWh</b> when prices are low (avg $${avgP(chI).toFixed(0)}/MWh, ${win(chI)}) and discharges <b>${dsE.toFixed(1)} kWh</b> into higher prices (avg $${avgP(dsI).toFixed(0)}/MWh, ${win(dsI)}) &mdash; <b>${cycles.toFixed(2)} equivalent cycles</b>, capturing <b>${D.capture_pct}%</b> of the perfect-foresight ceiling. Gross energy-arbitrage revenue <b>$${D.revenue_forecast}</b>, settled at realized prices.`; }
     const st=$('sysstrip'); if(st){ st.innerHTML=
