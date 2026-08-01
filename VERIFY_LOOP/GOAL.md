@@ -1,56 +1,54 @@
-# GOAL — Bolt dispatch chart: one focal point, visible price→dispatch causality, honest uncertainty
+# GOAL — Expand the daily rhythm: (A) capture ERCOT's expiring forecast/outage products, (B) honest news
 
-Redesign the Asset Optimization Bolt chart so it has ONE focal point (bars + SoC hero), makes the
-price→dispatch causality visible, and shows an HONEST model uncertainty band. Scope: **Asset
-Optimization tab only** — `dispatchSVG` / `dpTip` / `dp-kpi` + its CSS — plus Task 0 (research-note
-correction) and final docs. **NO other tabs, NO map, NO signal.py, NO deploy.** Max 12 iterations,
-ONE task = ONE commit, pause + report each task. Never commit red; same check red 3× = blocked, stop.
+Capture the FUTURE TRAINING DATA (ERCOT's short-retention forecast + outage products) with full vintage
+stamping, append-only, into the daily rhythm; plus honest news ingestion + a daily digest. Max 12
+iterations, ONE task = ONE commit, pause + report each. Never commit red; 3× same red = blocked, stop.
 
 ## HARD CONSTRAINTS (violating any = RED)
-1. Every rendered number comes from solution arrays, model artifacts, or computed baselines — never
-   hardcoded, never generative text. Templated strings only.
-2. Confidence band = REAL MODEL OUTPUT ONLY: RT quantiles `RT_q = DA − DART_q` from the research
-   model's committed artifacts (conformal-adjusted, `research/dart_forecast/`). Label verbatim:
-   **"forecast band — research model vX · plan solves on point price"**. If artifacts are
-   missing/stale for the plan's date, the band is **ABSENT** — never interpolated, never faked.
-   Settled-actual RT renders gray ONLY where realized data exists.
-3. "Now" marker renders ONLY when `plan_date == today` (local); else a quiet badge
-   **"historical plan — <date>"**. Never manufacture liveness.
-4. Motion: ENTRANCE-ONLY (bars grow, price line draws, SoC eases ≤1s), no ambient loops, no per-frame
-   full re-renders (the T4 refreshLayers lesson); prefer CSS/SVG transitions; respect
-   `prefers-reduced-motion`. Liveliness is NOT green from headless alone — final motion sign-off is
-   Mike in a real browser (standing rule).
-5. Honesty labels, units, and gross-only KPI caveats survive every restyle. Deploy needs Mike's
-   explicit go, never the loop's.
+1. **VINTAGE STAMPING IS THE WHOLE POINT.** Every captured forecast file records: product id, forecast
+   TARGET period, publish/post time as reported by ERCOT, AND our capture timestamp (UTC). No vintage →
+   store with `vintage=unknown` FLAGGED and COUNTED. Never synthesize/backdate/infer a missing vintage.
+2. **Append-only archive.** Never overwrite a captured vintage; later revisions = additional vintages.
+   Idempotent: re-running a capture never duplicates or mutates existing files.
+3. **No LLM in the capture path.** News: headline + source + timestamp + link, dedupe by GUID/URL. ONE
+   optional LABELED LLM pass may add relevance tags / ≤1-line summary, ALWAYS rendered WITH the link
+   adjacent — never paraphrase with the source more than one click away.
+4. **Inspection before assumption (the locational lesson).** Do NOT guess product IDs / retention —
+   query the existing `ercot_catalog.py` SQLite (107 products) + the EMIL API to find them.
+5. **Tests = temp dirs + DRY_RUN only.** Live enablement (launchd install/reload) is a FINAL handoff
+   step for Mike, listed explicitly. jobs.jsonl logging + watchdog coverage + ntfy-on-failure for every
+   new job — a silent capture failure is destroyed training data.
+6. **No deploy, no map/chart work, no feature engineering, no harness changes in this loop.**
 
 ## VERIFICATION (maker ≠ checker, fresh-eyes subagent per task)
-Screenshot per task; the checker describes the chart COLD — hierarchy claims must appear in its
-UNPROMPTED description ("bars and SoC dominate", not prompted agreement). Data checks: one band
-quantile point re-derived from the model JSON by hand; one heuristic-capture number recomputed
-independently; one action-card string traced to its source arrays.
+Captured files re-opened + schema-validated; one product's one-day capture cross-checked vs an
+INDEPENDENT fetch path (query endpoint or MIS listing); vintage fields spot-checked vs ERCOT's own
+posted timestamps; idempotency = run twice, byte-identical archive.
 
 ## TASKS
-0. Research-note correction (separate commit, research/ scope): did the locational/ repoint + N/S/W
-   re-run happen? If yes → fix NOTE §9 stale claim + explain the n change. If no → apply the repoint
-   (Houston byte-identical check), re-run N/S/W baselines through the unchanged harness, update JSONs+note.
-1. Focal hierarchy: bars + SoC = hero (contrast up, SoC 2px); price/grid/KPI/floor recede; reserve
-   zone ≤8% opacity (line + tag carry it).
-2. Price→dispatch causality: faint vertical guides through charge/discharge windows across both
-   panels; dispatch windows softly highlighted on the price panel. Guides ≤ hero contrast.
-3. Annotations integrated: dense labels → hover; ≤2 pinned callouts, edge-anchored, never over bars.
-4. Now/historical honesty (constraint 3): today-fixture → marker; 2026-05-18 → badge, no marker.
-5. Heuristic baseline: naive TOU one-cycle dispatch (rules in comments); KPI = context triple
-   "capture X% · heuristic Y% · PF 100%", all computed per plan.
-6. Action card: one templated sentence from solution arrays only; optional "P(RT>$100) tonight: Z%"
-   from the spike head IF band present. No forecast verbs — state numbers, not intentions.
-7. Confidence band + settled-actual (constraint 2): soft band q10–q90 (q25–q75 inner), settled gray
-   line, legend + verbatim label; band ABSENT (not faked) when no artifact.
-8. Entrance motion (constraint 4): bars grow, line draws, SoC eases; stagger ≤1s; reduced-motion
-   honored; flag for Mike's real-browser gate.
-9. Rest-state + responsive audit: calm default, one focal point, no overlaps at 3 widths; caveats
-   present; cold checker verdict "clear, decision-grade" in its own words.
-10. Docs: CLAUDE.md explicit-go deploy rule + container-runtime gap; PROGRESS.md final state.
+1. INVENTORY (report, no code): wind power production forecast, load forecast (system + zonal), solar/
+   PVGR forecast, generation/transmission outage reports. Per product: ID, cadence, format, retention,
+   availability vs 15:00 CT decision. Flag fastest-expiring. ⏸ STOP + show the table before building.
+2. Capture module (forecast_store.py or extend ercot_archiver): pull each product on cadence into
+   data_archive/forecasts/<product>/..., constraints 1-2 enforced, per-file manifest row (SQLite/jsonl).
+3. Backfill what's still reachable inside each retention window. Report per-product: files, span, disk,
+   unknown-vintage count.
+4. Rhythm wiring: new launchd job(s) via the existing stub/dispatcher (prefer script edits over .app
+   rebuild — FDA grant), jobs.jsonl rows, watchdog extended for missed cadence, ntfy on failure.
+   DRY_RUN-tested; live install = handoff.
+5. Independent verification pass: one day, one product, field-by-field vs an independent path; vintage
+   timestamps vs ERCOT posted times.
+6. News store: ERCOT market notices + EIA (+ obvious ERCOT RSS) polled on schedule into SQLite
+   (constraint 3); /api/news read-only endpoint.
+7. "Right now" sidebar news block (map tab): headlines + source + age + link, cap ~6, zero layout
+   disruption, honest + calm. Headless screenshot; visual sign-off flagged for Mike.
+8. Daily digest: evening ntfy (or new ~17:30 CT) — top headlines w/ links + capture health (products
+   captured / misses). Templated; optional labeled LLM tag pass only.
+9. Docs: CLAUDE.md forecast-archive section (products, cadences, vintage rules, disk growth) + news
+   rules; PROGRESS.md final state.
 
-Env: `conda run -n volt`, `ERCOT_LIVE=0 ERCOT_DATA_DIR=data_clean`, kill stale :8020, warm endpoints,
-headless screenshots per task. When all green: STOP with screenshots + real-browser checklist for Mike.
-Promotion of the band's model into the live optimizer is a FUTURE decision.
+## Env
+`conda run -n volt`; ERCOT creds in `~/.zshenv` (non-interactive shells don't read .zshrc); respect the
+existing archiver's rate/request patterns. Read CLAUDE.md (launchd rhythm + deploy rules) before agents.
+When done: STOP with (a) live-enablement commands, (b) final inventory table, (c) disk-growth/month est.
+Open-Meteo historical-forecast backfill + the feature loop through the harness are NEXT loops, not this.
