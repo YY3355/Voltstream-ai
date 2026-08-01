@@ -11,10 +11,15 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       real capture (NP4-732 24 docs + NP1-346 snapshot) → re-run byte-identical (tree-sha unchanged,
       25=25 rows no dup); target span extracts (NP4-732 → +7day), honest none for snapshot; unk=0.
       Fresh-eyes subagent audit = 3/3 PASS (vintage/append-only/no-LLM). ✔ done
-- [~] 3 — Backfill: mechanism built+verified+committed (5a1808d). Staged trio→HIGH-8, resumable,
-      heartbeat. Trio sized live: 288 docs/day/product, ~120d retention → ~104k docs (~9h,~250MB);
-      HIGH-8 730d ~123k docs (~10h,~1.2GB); staged total ~19h. ⏸ awaiting Mike go to LAUNCH the run
-      + then the per-product earliest-vintage report.
+- [~] 3 — Backfill. PIVOT: archive per-day endpoint is ~0.5 docs/s HARD (server rate-limit; threaded
+      w=4 gave NO speedup) → 227k docs = ~5 DAYS, dead. Switched to MONTHLY BUNDLES (a9c4553): one
+      download/month, VINTAGE-FAITHFUL (bundle inner-filename postDatetime == archive postDatetime,
+      6/6 to the second; bundle CSV byte-equals archive CSV; idempotent; archive-path regression
+      clean). Bundles reach 2018 for most products. Inventory: 618 bundles, ~430k files, ~1.7GB,
+      ~30-60min. Spans: wind/solar-sys/load-by-model/HRUC=2018-01; solar-region=2022-06; unplanned=
+      2022-12; load-by-zone NP3-560 + trio = 2026-03 only (~4mo). Prior archive-doc backfill also
+      committed (d4b6aad) — used for the recent unbundled tail. ⏸ awaiting Mike go to LAUNCH bundle
+      backfill + tail decision (trio July tail = 288/day slow; defer to Task-4 daily job + July bundle).
 - [ ] 4 — Rhythm wiring (launchd via stub dispatcher, jobs.jsonl, watchdog missed-cadence, ntfy). DRY_RUN.
 - [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
 - [ ] 6 — News store (ERCOT notices + EIA + RSS -> SQLite) + /api/news read-only.

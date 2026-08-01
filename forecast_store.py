@@ -46,7 +46,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from ercot_archiver import _get, list_archive_docs, most_recent_day
+from ercot_archiver import _get, list_archive_docs, list_bundles, most_recent_day
 
 # ----------------------------- the confirmed capture set -----------------------------
 # HIGH-8 = the decision-time feature ingredients (>=2yr archive retention; ongoing + full backfill).
@@ -186,6 +186,7 @@ def _norm(c):
     return re.sub(r"[^a-z0-9]", "", str(c).lower())
 
 
+_TS_KEYS = {"intervalending", "intervalbeginning"}          # a single full-timestamp column
 _DATE_KEYS = {"deliverydate", "operday", "operatingdate", "date"}
 _HOUR_KEYS = {"hourending", "hourbeginning", "hourend", "hour"}
 
@@ -202,6 +203,11 @@ def _extract_target_span(df):
         return (None, None, "none")
     if not len(df):
         return (None, None, "empty")
+    tcol = _find_col(df, _TS_KEYS)                          # intra-hour products: IntervalEnding
+    if tcol is not None:
+        ts = pd.to_datetime(df[tcol], errors="coerce").dropna()
+        if len(ts):
+            return (ts.min().isoformat(), ts.max().isoformat(), "ok")
     dcol = _find_col(df, _DATE_KEYS)
     if not dcol:
         return (None, None, "none")
@@ -218,11 +224,12 @@ def _extract_target_span(df):
     return (ts.min().isoformat(), ts.max().isoformat(), "ok")
 
 
-# ----------------------------- file naming (vintage-stamped) -----------------------------
-def _doc_target(root, emil, doc, ext):
-    """(abs_path, vintage_status). Path embeds the vintage: <post-date>/<postDtCompact>__<docId>."""
-    post = doc.get("postDatetime")
-    docid = re.sub(r"[^0-9A-Za-z_-]", "", str(doc.get("docId", "nodoc"))) or "nodoc"
+# ----------------------------- file naming + shared store (vintage-stamped) -----------------------------
+def _doc_target(root, emil, post, docid, ext):
+    """(abs_path, vintage_status). Path embeds the vintage: <post-date>/<postDtCompact>__<docId>.
+    A doc captured via the per-day archive path and the same doc seen in a monthly bundle resolve to
+    the IDENTICAL path (same docId, same compacted postDatetime) -> cross-method idempotency."""
+    docid = re.sub(r"[^0-9A-Za-z_-]", "", str(docid or "nodoc")) or "nodoc"
     if post:
         day = str(post)[:10]
         stamp = re.sub(r"[^0-9T]", "", str(post))[:15]                # 20260731T145500
@@ -231,6 +238,38 @@ def _doc_target(root, emil, doc, ext):
         day, stamp, vint = "novintage", "NOVINTAGE", "unknown"
     path = os.path.join(root, emil, day, f"{stamp}__{docid}{ext}")
     return path, vint
+
+
+def _store_doc(conn, emil, docid, post, raw, root, res, dry_run=False):
+    """Write ONE captured doc (raw bytes + its vintage) append-only and index it. Shared by the
+    per-day archive path and the bundle path so both enforce constraints 1-2 identically. `post` is
+    ERCOT's reported post time (None -> vintage_status='unknown', COUNTED, never synthesized)."""
+    ext = ".zip" if raw[:2] == b"PK" else ".csv"
+    path, vint = _doc_target(root, emil, post, docid, ext)
+    if vint == "unknown":
+        res["unknown_vintage"] += 1
+    df = _parse_raw(raw)
+    tstart, tend, tstatus = _extract_target_span(df)
+    if dry_run:
+        res["new"] += 1
+        return
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    if not os.path.exists(path):                    # append-only: never overwrite a vintage
+        with open(path, "wb") as f:
+            f.write(raw)
+    conn.execute(
+        """INSERT OR IGNORE INTO captures
+           (doc_id, emil, post_datetime, vintage_status, target_start, target_end,
+            target_status, captured_at_utc, rel_path, sha256, n_bytes, n_rows,
+            source_lag_days, product_name, family)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+        (str(docid), emil, (post or None), vint, tstart, tend, tstatus,
+         datetime.now(timezone.utc).isoformat(timespec="seconds"),
+         os.path.relpath(path, root), hashlib.sha256(raw).hexdigest(), len(raw),
+         (len(df) if df is not None else None), _meta(emil).get("lag_days", 0),
+         _meta(emil).get("name", ""), _meta(emil).get("family", "")))
+    conn.commit()
+    res["new"] += 1
 
 
 # ----------------------------- capture -----------------------------
@@ -261,34 +300,8 @@ def capture_product(emil, day=None, dry_run=False, conn=None):
         except Exception:
             res["errors"] += 1
             continue
-        ext = ".zip" if raw[:2] == b"PK" else ".csv"
-        path, vint = _doc_target(root, emil, doc, ext)
-        if vint == "unknown":
-            res["unknown_vintage"] += 1
-        df = _parse_raw(raw)
-        tstart, tend, tstatus = _extract_target_span(df)
-        if dry_run:
-            res["new"] += 1
-            seen.add(docid)
-            continue
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        if not os.path.exists(path):                    # append-only: never overwrite a vintage
-            with open(path, "wb") as f:
-                f.write(raw)
-        conn.execute(
-            """INSERT OR IGNORE INTO captures
-               (doc_id, emil, post_datetime, vintage_status, target_start, target_end,
-                target_status, captured_at_utc, rel_path, sha256, n_bytes, n_rows,
-                source_lag_days, product_name, family)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-            (docid, emil, doc.get("postDatetime"), vint, tstart, tend, tstatus,
-             datetime.now(timezone.utc).isoformat(timespec="seconds"),
-             os.path.relpath(path, root), hashlib.sha256(raw).hexdigest(), len(raw),
-             (len(df) if df is not None else None), _meta(emil).get("lag_days", 0),
-             _meta(emil).get("name", ""), _meta(emil).get("family", "")))
-        conn.commit()
+        _store_doc(conn, emil, docid, doc.get("postDatetime"), raw, root, res, dry_run=dry_run)
         seen.add(docid)
-        res["new"] += 1
     if own:
         conn.close()
     return res
@@ -361,6 +374,134 @@ def backfill_product(emil, days=730, end=None, conn=None, heartbeat=True):
     if own:
         conn.close()
     return tot
+
+
+# ----------------------------- bundle backfill (one download per MONTH; deep history) -----------------------------
+# A monthly bundle is a zip of that month's per-doc entries. Each inner entry filename embeds the
+# docId and ERCOT's post time: <docId>.<cdr|rpt>.<reportid>.<0s>.<YYYYMMDD>.<HHMMSS>.<NAME>[_csv].zip
+# The .YYYYMMDD.HHMMSS. was VERIFIED byte-for-byte equal to the archive endpoint's postDatetime
+# (docId 1209420401 -> 2026-03-29T18:42:00), so it is the true vintage, READ (not synthesized).
+# Bundles reach far past the per-day archive retention (e.g. NP4-732 wind to 2018) and collapse a
+# whole month into ONE download — the fix for the ~0.5 doc/s archive-endpoint rate floor.
+_ENTRY_RE = re.compile(r"^(\d+)\.[A-Za-z]+\.\d+\.\d+\.(\d{8})\.(\d{6})\.")
+
+
+def _parse_entry_name(name):
+    """(docid, post_iso) parsed from a bundle inner-entry filename, or (None, None) if it doesn't
+    match — never guesses a vintage."""
+    m = _ENTRY_RE.match(os.path.basename(name))
+    if not m:
+        return None, None
+    d, t = m.group(2), m.group(3)
+    return m.group(1), f"{d[:4]}-{d[4:6]}-{d[6:8]}T{t[:2]}:{t[2:4]}:{t[4:6]}"
+
+
+def capture_bundle(emil, bundle, conn=None, seen=None, root=None):
+    """Capture every per-doc entry in one monthly bundle (one download for a whole month). Same
+    vintage-stamping + append-only + idempotency as the per-day path (shared _store_doc)."""
+    own = conn is None
+    conn = conn or _connect()
+    root = root or forecast_root()
+    if seen is None:
+        seen = _seen_docids(conn, emil)
+    res = {"emil": emil, "bundle": bundle["name"], "entries": 0, "new": 0, "skipped": 0,
+           "unknown_vintage": 0, "errors": 0, "unparsed_name": 0}
+    try:
+        z = zipfile.ZipFile(io.BytesIO(_get(bundle["href"], timeout=300).content))
+    except Exception:
+        res["errors"] += 1
+        if own:
+            conn.close()
+        return res
+    res["entries"] = len(z.namelist())
+    for name in z.namelist():
+        docid, post = _parse_entry_name(name)
+        if docid is None:                        # unreadable vintage -> store unknown & COUNT it
+            docid = "sha_" + hashlib.sha256(name.encode()).hexdigest()[:16]
+            post = None
+            res["unparsed_name"] += 1
+        if docid in seen:
+            res["skipped"] += 1
+            continue
+        try:
+            entry = z.read(name)
+        except Exception:
+            res["errors"] += 1
+            continue
+        _store_doc(conn, emil, docid, post, entry, root, res)
+        seen.add(docid)
+    if own:
+        conn.close()
+    return res
+
+
+def _bundles_done_path(emil):
+    return os.path.join(forecast_root(), emil, ".bundles_done.json")
+
+
+def _load_bundles_done(emil):
+    p = _bundles_done_path(emil)
+    if os.path.exists(p):
+        try:
+            return set(json.load(open(p)))
+        except Exception:
+            return set()
+    return set()
+
+
+def _mark_bundle_done(emil, name):
+    p = _bundles_done_path(emil)
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    s = _load_bundles_done(emil)
+    s.add(name)
+    json.dump(sorted(s), open(p, "w"))
+
+
+def backfill_bundles(emil, conn=None, heartbeat=True):
+    """Capture every monthly bundle for `emil` (deep history, fast). Resumable: a COMPLETED past
+    month's bundle is recorded and skipped without re-download; the current month's bundle is never
+    marked done (it still grows). Returns totals."""
+    own = conn is None
+    conn = conn or _connect()
+    seen = _seen_docids(conn, emil)
+    done = _load_bundles_done(emil)
+    cur_month = pd.Timestamp.now().strftime("%Y-%m")
+    bundles = list_bundles(emil)
+    tot = {"emil": emil, "bundles_total": len(bundles), "bundles_captured": 0,
+           "bundles_skipped_done": 0, "new": 0, "skipped": 0, "unknown_vintage": 0, "errors": 0}
+    for i, b in enumerate(bundles, 1):
+        if b["name"] in done:
+            tot["bundles_skipped_done"] += 1
+            continue
+        month = b["name"].rsplit("_", 1)[-1]              # e.g. 2026-06
+        r = capture_bundle(emil, b, conn=conn, seen=seen)
+        for k in ("new", "skipped", "unknown_vintage", "errors"):
+            tot[k] += r[k]
+        tot["bundles_captured"] += 1
+        if r["errors"] == 0 and month < cur_month:       # immutable past month
+            _mark_bundle_done(emil, b["name"])
+            done.add(b["name"])
+        if heartbeat:
+            print(f"progress: {emil} bundle {b['name']} entries={r['entries']} "
+                  f"new={r['new']} skip={r['skipped']} err={r['errors']} ({i}/{len(bundles)})",
+                  flush=True)
+    if own:
+        conn.close()
+    return tot
+
+
+def backfill_bundles_all(tier="ALL"):
+    """Bundle-backfill every product in `tier` (deep history, fast). Then the recent unbundled tail
+    is filled separately via backfill_product (the per-day archive path)."""
+    conn = _connect()
+    out = []
+    for e in products_for(tier):
+        print(f"--- {e} ---", flush=True)
+        r = backfill_bundles(e, conn=conn)
+        print("TOTAL", r, flush=True)
+        out.append(r)
+    conn.close()
+    return out
 
 
 def backfill_staged(trio_days=400, high_days=730):
@@ -474,6 +615,11 @@ if __name__ == "__main__":
         trio = int(sys.argv[2]) if len(sys.argv) > 2 else 400
         high = int(sys.argv[3]) if len(sys.argv) > 3 else 730
         backfill_staged(trio, high)
+    elif cmd == "backfill-bundles":
+        print(backfill_bundles(sys.argv[2]))
+    elif cmd == "backfill-bundles-all":
+        tier = sys.argv[2] if len(sys.argv) > 2 else "ALL"
+        backfill_bundles_all(tier)
     elif cmd == "report":
         for r in report():
             print(f"{r['emil']:12} files={r['files']:>6} earliest={r['earliest_vintage']} "
