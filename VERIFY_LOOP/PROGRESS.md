@@ -37,7 +37,12 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       (re-ingest 0 new), undated item kept w/ NULL date (not fabricated). Live poll DEFERRED (ERCOT
       budget) — tiny live smoke of each source at enablement. Poll schedule wired in T8. ✔ done (fixtures)
 - [ ] 7 — "Right now" sidebar news block (map tab), cap ~6, calm. Screenshot; Mike visual sign-off.
-- [ ] 8 — Daily digest (evening ntfy: headlines + links + capture health). Templated + optional LLM tag.
+- [x] 8 — digest.py compose_digest (templated, NO LLM): top-N headlines (source+age+link adjacent,
+      constraint 3) + capture-health line (latest capture jobs.jsonl row + docs-today + LOUD unknown-
+      vintage flag -> ntfy priority high). auto_digest.sh (JOB=digest, 17:30 ET plist): news poll ->
+      compose -> ONE ntfy push. Wires the T6 news poll schedule. JOURNAL_DIR seam added (capture+digest,
+      no real-journal pollution in tests). DRY_RUN-tested: dispatch->compose->parse->notify->jobs.jsonl
+      all correct, ASCII-clean. ✔ done (DRY_RUN)
 - [ ] 9 — Docs (CLAUDE.md forecast-archive + news rules; PROGRESS final).
 
 ## Append-only log
