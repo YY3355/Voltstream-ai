@@ -7,7 +7,10 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
 ## Checklist
 - [x] 0 — Setup: GOAL.md + PROGRESS.md; read CLAUDE.md (launchd rhythm + deploy); inspect ercot_catalog + archiver. ✔ done
 - [x] 1 — INVENTORY (report only) → VERIFY_LOOP/INVENTORY.md. Probed retention live (t-365/t-730). ⏸ PAUSE for Mike. ✔ done
-- [ ] 2 — Capture module (vintage-stamped, append-only, idempotent, per-file manifest).
+- [x] 2 — forecast_store.py: vintage-stamped, append-only, idempotent, SQLite manifest. Verified:
+      real capture (NP4-732 24 docs + NP1-346 snapshot) → re-run byte-identical (tree-sha unchanged,
+      25=25 rows no dup); target span extracts (NP4-732 → +7day), honest none for snapshot; unk=0.
+      Fresh-eyes subagent audit = 3/3 PASS (vintage/append-only/no-LLM). ✔ done
 - [ ] 3 — Backfill within retention; per-product files/span/disk/unknown-vintage counts.
 - [ ] 4 — Rhythm wiring (launchd via stub dispatcher, jobs.jsonl, watchdog missed-cadence, ntfy). DRY_RUN.
 - [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
@@ -25,3 +28,9 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
   intra-hour 5-min (NP4-751/752, NP3-562) are the fastest-expiring (<1yr, 0 docs at t-365). Vintage =
   postDatetime (publish) + row target period + our capture UTC — all three available. Format CSV-in-zip.
   Recommended HIGH set = 8 products. ⏸ PAUSED for Mike to confirm capture set before Task 2 builds.
+- Set decision (Mike) — HIGH-8 ongoing+backfill; MED only if same code path (it is — generic), opt-in
+  via capture-all MED, no heroics; intra-hour trio = backfill-all-now + DAILY batch (never 5-min),
+  report disk/mo before enabling its ongoing job; NP1-346 lag_days=3 recorded in manifest; Task 3 to
+  report per-product earliest reachable vintage.
+- T2 (2026-08-01) — forecast_store.py built + verified + audited (3/3). Registry = HIGH-8 + PERISHABLE-3
+  (PRODUCTS), MED-6 ridable (MED_PRODUCTS, opt-in). Idempotency proven byte-identical. commit next.
