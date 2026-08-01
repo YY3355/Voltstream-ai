@@ -184,6 +184,19 @@
   #layer-insight .li .lk{color:var(--mut);font-size:9px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px}
   #layer-insight .li b{color:var(--amber)}
   #layer-insight .li-empty{color:var(--dim);font-family:var(--mono);font-size:10px;font-style:italic;padding:2px}
+  /* T7 (this loop): "Right now" energy-news block — read-only, calm, source+link always adjacent */
+  #news-now{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+  #news-now .nh{font-family:var(--mono);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--mut);padding:8px 11px 7px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  #news-now .nh .nt{color:var(--dim);font-size:8.5px;letter-spacing:.5px;text-transform:none}
+  #news-now a.ni{display:block;padding:7px 11px;border-bottom:1px solid #141c26;text-decoration:none}
+  #news-now a.ni:last-child{border-bottom:none}
+  #news-now a.ni:hover{background:#111a29}
+  #news-now .nt2{font-family:var(--sans);font-size:11px;line-height:1.35;color:#cdd8e4}
+  #news-now a.ni:hover .nt2{color:#fff}
+  #news-now .nm{font-family:var(--mono);font-size:8.5px;color:var(--mut);margin-top:3px;letter-spacing:.4px}
+  #news-now .nm .dim{color:var(--dim)}
+  #news-now .ne{color:var(--dim);font-family:var(--mono);font-size:10px;font-style:italic;padding:9px 11px}
   #scope-details{border:1px solid var(--line);border-radius:10px;background:var(--panel);font-family:var(--mono);font-size:10px}
   #scope-details summary{cursor:pointer;padding:8px 11px;color:var(--mut);font-size:11px;list-style:none;user-select:none}
   #scope-details summary::-webkit-details-marker{display:none}
@@ -480,6 +493,7 @@
           <div id="briefing"></div>
           <div id="layer-insight"></div>
           <div id="county-panel"></div>
+          <div id="news-now"></div>
           <details id="scope-details"><summary>Data &amp; scope</summary><div id="scope-body"></div></details>
         </div>
       </div>
@@ -2501,10 +2515,30 @@ async function struct(){
       +`<b>The battery is long exactly what this option prices.</b> Buying this vol doubles the asset’s existing exposure; selling it is the structural hedge.</div>`;
   }catch(e){ $('struct-vega').innerHTML='<span class="none" style="color:var(--dim)">battery vega tie-in unavailable (risk engine)</span>'; }
 }
+// ── T7: "Right now" energy-news sidebar (read-only). Renders /api/news: headline + source + age,
+//    the whole row a link to the source (never a paraphrase without the source one click away). ──
+let _newsPoll=false;
+function _escHtml(s){ return String(s==null?'':s).replace(/[&<>"']/g, c=>(
+  {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+async function newsNow(){
+  const el=$('news-now'); if(!el) return;
+  let d; try{ d=await (await fetch('/api/news?n=6')).json(); }
+  catch(e){ el.innerHTML='<div class="nh">Right now</div><div class="ne">news unavailable</div>'; return; }
+  const items=(d&&d.items)||[]; const now=Date.now();
+  const age=p=>{ if(!p) return ''; const h=(now-new Date(p).getTime())/3.6e6;
+    return h<1?'just now':h<48?Math.round(h)+'h ago':Math.round(h/24)+'d ago'; };
+  const rows=items.map(it=>{ const a=age(it.published_utc);
+    const tag=it.tags?` <span class="dim">[${_escHtml(it.tags)}]</span>`:'';   // labeled LLM enrichment, if any
+    return `<a class="ni" href="${_escHtml(it.url)}" target="_blank" rel="noopener">`
+      +`<div class="nt2">${_escHtml(it.title)}${tag}</div>`
+      +`<div class="nm">${_escHtml(it.source)}${a?' &middot; '+a:''}</div></a>`; }).join('');
+  el.innerHTML='<div class="nh">Right now<span class="nt">energy headlines</span></div>'
+    +(rows||'<div class="ne">no headlines yet</div>');
+}
 const LOADERS={
   assetopt(){ coopt(); vpp(); if(!_coInterval){ _coInterval=true; setInterval(coopt,60000); } },
   trading(){ rt(); dart(); journal(); desk(); },
-  map(){ initMap(); loadAlerts(); if(!_alertPoll){ _alertPoll=true; setInterval(loadAlerts,60000); } },
+  map(){ initMap(); loadAlerts(); newsNow(); if(!_alertPoll){ _alertPoll=true; setInterval(loadAlerts,60000); } if(!_newsPoll){ _newsPoll=true; setInterval(newsNow,600000); } },
   quant(){ curve(); swap(); risk(); qse(); decade(); hedge(); struct(); },
   learning(){ dcopf(); constraints(); },
 };

@@ -36,7 +36,11 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       read-only (TestClient 200, newest-first, llm=None). Fixture-verified: RSS+Atom parse, dedupe
       (re-ingest 0 new), undated item kept w/ NULL date (not fabricated). Live poll DEFERRED (ERCOT
       budget) — tiny live smoke of each source at enablement. Poll schedule wired in T8. ✔ done (fixtures)
-- [ ] 7 — "Right now" sidebar news block (map tab), cap ~6, calm. Screenshot; Mike visual sign-off.
+- [x] 7 — "Right now" news block in the map sidebar (#news-now): reads /api/news, each row = headline
+      (linked, target=_blank) + source + age, cap 6, HTML-escaped, 10-min refresh. Calm styling matching
+      the briefing/layer-insight panels, zero layout disruption. Undated item shown w/o fabricated time.
+      Headless screenshot verified renders (5 fixture headlines w/ source+age). ⏸ Mike visual sign-off.
+      ✔ done (screenshot)
 - [x] 8 — digest.py compose_digest (templated, NO LLM): top-N headlines (source+age+link adjacent,
       constraint 3) + capture-health line (latest capture jobs.jsonl row + docs-today + LOUD unknown-
       vintage flag -> ntfy priority high). auto_digest.sh (JOB=digest, 17:30 ET plist): news poll ->
