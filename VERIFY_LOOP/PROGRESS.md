@@ -29,7 +29,14 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       notify all correct; watchdog 4 states pass (not-live/ok/stale/failed). Trio ongoing ~61MB/mo
       raw (~101MB 4KB-blocks), HIGH-8 ~50MB/mo — modest, trio ongoing OK to enable. Live install =
       Mike handoff (final). ✔ done (DRY_RUN)
-- [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
+- [~] 5 — Independent verification. CAUGHT the 66%-unknown bug (pre-2025 9-digit filename time vs my
+      6-digit regex). Fixed: regex 6|9-digit; vintage_source + vintage_precision cols (mechanical gate);
+      manifest-driven purge (deleted==expected==329,625, asserted, no glob); atomic write (tmp+replace,
+      no partial files on disk-full). Post-fix: unknown=0, earliest 2018-01 for wind sys+region / solar
+      sys / load-by-model. FRESH cross-check histogram: pre-2025 n=72 (84.7% exact, 100% within-1s, max
+      1s); 2025+ n=96 (100% exact). BLOCKER: re-run hit DISK FULL (98%, NP3-565=4.1GB) — NP3-233 +
+      NP1-346 pre-2025 incomplete; +1 orphan partial to clean. ⏸ Mike disk decision (trim NP3-565?) then
+      complete the 2 products + re-verify. Code fix committed; archive completion is the ops step.
 - [x] 6 — news_store.py: stdlib RSS 2.0 + Atom parse (no feedparser in volt), SQLite data_archive/
       news.db, dedupe by guid/URL (PK+INSERT OR IGNORE), NO LLM in store path (llm_model NULL);
       optional labeled enrich() reserved (summary/tags separate cols, always w/ link). /api/news

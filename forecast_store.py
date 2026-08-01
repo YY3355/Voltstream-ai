@@ -142,6 +142,16 @@ def _connect():
         product_name     TEXT,
         family           TEXT
     )""")
+    # self-migrating provenance columns (older manifests predate them):
+    #   vintage_source    'archive_postDatetime' (canonical JSON postDatetime, exact)
+    #                     | 'bundle_filename' (ERCOT's per-file timestamp from the bundle entry name)
+    #   vintage_precision 'exact' (== postDatetime to the second) | 'within_1s' (<=1s off — 9-digit
+    #                     pre-2025 bundle filenames) — the feature loop gates on THIS, not the docs.
+    for coldef in ("vintage_source TEXT", "vintage_precision TEXT"):
+        try:
+            conn.execute(f"ALTER TABLE captures ADD COLUMN {coldef}")
+        except sqlite3.OperationalError:
+            pass
     conn.execute("CREATE INDEX IF NOT EXISTS ix_captures_emil ON captures(emil)")
     conn.commit()
     return conn
@@ -240,34 +250,49 @@ def _doc_target(root, emil, post, docid, ext):
     return path, vint
 
 
-def _store_doc(conn, emil, docid, post, raw, root, res, dry_run=False):
+def _store_doc(conn, emil, docid, post, raw, root, res, dry_run=False,
+               vintage_source=None, vintage_precision=None):
     """Write ONE captured doc (raw bytes + its vintage) append-only and index it. Shared by the
     per-day archive path and the bundle path so both enforce constraints 1-2 identically. `post` is
-    ERCOT's reported post time (None -> vintage_status='unknown', COUNTED, never synthesized)."""
+    ERCOT's reported post time (None -> vintage_status='unknown', COUNTED, never synthesized).
+    vintage_source/precision carry the provenance so the feature loop can gate on precision."""
     ext = ".zip" if raw[:2] == b"PK" else ".csv"
     path, vint = _doc_target(root, emil, post, docid, ext)
     if vint == "unknown":
         res["unknown_vintage"] += 1
+        vintage_source = vintage_source or None
+        vintage_precision = None                    # no vintage -> no precision claim
     df = _parse_raw(raw)
     tstart, tend, tstatus = _extract_target_span(df)
     if dry_run:
         res["new"] += 1
         return
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    if not os.path.exists(path):                    # append-only: never overwrite a vintage
-        with open(path, "wb") as f:
-            f.write(raw)
+    # Atomic write (tmp + os.replace) so a failed/interrupted write (e.g. disk full) never leaves a
+    # truncated file at the vintage path. We only reach here for docs NOT yet in the manifest (the
+    # seen/docid check upstream enforces append-only), so overwriting a leftover partial is correct.
+    if not os.path.exists(path):
+        tmp = path + ".tmp"
+        try:
+            with open(tmp, "wb") as f:
+                f.write(raw)
+            os.replace(tmp, path)
+        except OSError:
+            if os.path.exists(tmp):
+                os.remove(tmp)                      # clean the partial tmp; propagate the error
+            raise
     conn.execute(
         """INSERT OR IGNORE INTO captures
            (doc_id, emil, post_datetime, vintage_status, target_start, target_end,
             target_status, captured_at_utc, rel_path, sha256, n_bytes, n_rows,
-            source_lag_days, product_name, family)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            source_lag_days, product_name, family, vintage_source, vintage_precision)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
         (str(docid), emil, (post or None), vint, tstart, tend, tstatus,
          datetime.now(timezone.utc).isoformat(timespec="seconds"),
          os.path.relpath(path, root), hashlib.sha256(raw).hexdigest(), len(raw),
          (len(df) if df is not None else None), _meta(emil).get("lag_days", 0),
-         _meta(emil).get("name", ""), _meta(emil).get("family", "")))
+         _meta(emil).get("name", ""), _meta(emil).get("family", ""),
+         vintage_source, vintage_precision))
     conn.commit()
     res["new"] += 1
 
@@ -300,7 +325,8 @@ def capture_product(emil, day=None, dry_run=False, conn=None):
         except Exception:
             res["errors"] += 1
             continue
-        _store_doc(conn, emil, docid, doc.get("postDatetime"), raw, root, res, dry_run=dry_run)
+        _store_doc(conn, emil, docid, doc.get("postDatetime"), raw, root, res, dry_run=dry_run,
+                   vintage_source="archive_postDatetime", vintage_precision="exact")
         seen.add(docid)
     if own:
         conn.close()
@@ -383,17 +409,22 @@ def backfill_product(emil, days=730, end=None, conn=None, heartbeat=True):
 # (docId 1209420401 -> 2026-03-29T18:42:00), so it is the true vintage, READ (not synthesized).
 # Bundles reach far past the per-day archive retention (e.g. NP4-732 wind to 2018) and collapse a
 # whole month into ONE download — the fix for the ~0.5 doc/s archive-endpoint rate floor.
-_ENTRY_RE = re.compile(r"^(\d+)\.[A-Za-z]+\.\d+\.\d+\.(\d{8})\.(\d{6})\.")
+# The time field is 6 digits (HHMMSS, 2025+) OR 9 digits (HHMMSS + 3-digit millis, pre-2025) — match
+# both and slice the first 6 (seconds precision, matching the archive endpoint's postDatetime).
+_ENTRY_RE = re.compile(r"^(\d+)\.[A-Za-z]+\.\d+\.\d+\.(\d{8})\.(\d{6,9})\.")
 
 
 def _parse_entry_name(name):
-    """(docid, post_iso) parsed from a bundle inner-entry filename, or (None, None) if it doesn't
-    match — never guesses a vintage."""
+    """(docid, post_iso, precision) parsed from a bundle inner-entry filename, or (None, None, None)
+    if it doesn't match — never guesses a vintage. precision: a 6-digit time (HHMMSS, 2025+) is
+    'exact' (verified == postDatetime); a 9-digit time (HHMMSS+millis, pre-2025) is 'within_1s'
+    (cross-check: ==postDatetime to the second in ~94% of cases, <=1s in 100%)."""
     m = _ENTRY_RE.match(os.path.basename(name))
     if not m:
-        return None, None
+        return None, None, None
     d, t = m.group(2), m.group(3)
-    return m.group(1), f"{d[:4]}-{d[4:6]}-{d[6:8]}T{t[:2]}:{t[2:4]}:{t[4:6]}"
+    precision = "exact" if len(t) == 6 else "within_1s"
+    return m.group(1), f"{d[:4]}-{d[4:6]}-{d[6:8]}T{t[:2]}:{t[2:4]}:{t[4:6]}", precision
 
 
 def capture_bundle(emil, bundle, conn=None, seen=None, root=None):
@@ -415,7 +446,7 @@ def capture_bundle(emil, bundle, conn=None, seen=None, root=None):
         return res
     res["entries"] = len(z.namelist())
     for name in z.namelist():
-        docid, post = _parse_entry_name(name)
+        docid, post, precision = _parse_entry_name(name)
         if docid is None:                        # unreadable vintage -> store unknown & COUNT it
             docid = "sha_" + hashlib.sha256(name.encode()).hexdigest()[:16]
             post = None
@@ -428,7 +459,8 @@ def capture_bundle(emil, bundle, conn=None, seen=None, root=None):
         except Exception:
             res["errors"] += 1
             continue
-        _store_doc(conn, emil, docid, post, entry, root, res)
+        _store_doc(conn, emil, docid, post, entry, root, res,
+                   vintage_source="bundle_filename", vintage_precision=precision)
         seen.add(docid)
     if own:
         conn.close()
@@ -596,16 +628,63 @@ def report():
     root = forecast_root()
     rows = conn.execute(
         """SELECT emil, COUNT(*), MIN(post_datetime), MAX(post_datetime), SUM(n_bytes),
-                  SUM(vintage_status='unknown'), MIN(source_lag_days)
+                  SUM(vintage_status='unknown'), MIN(source_lag_days),
+                  SUM(vintage_precision='exact'), SUM(vintage_precision='within_1s')
            FROM captures GROUP BY emil ORDER BY emil""").fetchall()
     conn.close()
     out = []
-    for emil, n, pmin, pmax, nbytes, unk, lag in rows:
+    for emil, n, pmin, pmax, nbytes, unk, lag, exact, within1 in rows:
         out.append({"emil": emil, "files": n, "earliest_vintage": str(pmin)[:10],
                     "latest_vintage": str(pmax)[:10], "disk_mb": round((nbytes or 0) / 1e6, 1),
                     "unknown_vintage": unk or 0, "lag_days": lag or 0,
+                    "exact": exact or 0, "within_1s": within1 or 0,
                     "name": _meta(emil).get("name", "")})
     return out
+
+
+def purge_unknown():
+    """Manifest-driven cleanup of a bad run (constraint: exact, no glob). Select the vintage_status=
+    'unknown' rows, delete EXACTLY their files, assert deleted+missing == expected, then drop those
+    rows. Also backfills vintage_source/precision on kept 'ok' rows (archive path stores post_datetime
+    with '.mmm' millis, bundle path without -> a clean discriminator; all kept rows are exact), removes
+    emptied novintage/ dirs, and resets every .bundles_done.json so a re-run reprocesses. Returns a
+    summary dict."""
+    conn = _connect()
+    root = forecast_root()
+    rows = conn.execute("SELECT rel_path FROM captures WHERE vintage_status='unknown'").fetchall()
+    expected = len(rows)
+    deleted = missing = 0
+    empty_dirs = set()
+    for (rel,) in rows:
+        p = os.path.join(root, rel)
+        if os.path.exists(p):
+            os.remove(p)
+            deleted += 1
+            empty_dirs.add(os.path.dirname(p))
+        else:
+            missing += 1
+    assert deleted + missing == expected, f"delete accounting off: {deleted}+{missing} != {expected}"
+    conn.execute("DELETE FROM captures WHERE vintage_status='unknown'")
+    conn.execute("""UPDATE captures SET
+        vintage_source = CASE WHEN post_datetime LIKE '%.%' THEN 'archive_postDatetime'
+                              ELSE 'bundle_filename' END,
+        vintage_precision = 'exact'
+        WHERE vintage_status='ok' AND vintage_source IS NULL""")
+    conn.commit()
+    conn.close()
+    for d in empty_dirs:                            # rmdir only if now-empty (never recursive)
+        try:
+            if not os.listdir(d):
+                os.rmdir(d)
+        except OSError:
+            pass
+    reset = 0
+    for e in ALL_PRODUCTS:                          # re-run must reprocess the deleted bundles
+        p = _bundles_done_path(e)
+        if os.path.exists(p):
+            os.remove(p)
+            reset += 1
+    return {"expected": expected, "deleted": deleted, "missing": missing, "bundles_done_reset": reset}
 
 
 # ----------------------------- CLI -----------------------------
@@ -643,7 +722,9 @@ if __name__ == "__main__":
         for r in report():
             print(f"{r['emil']:12} files={r['files']:>6} earliest={r['earliest_vintage']} "
                   f"latest={r['latest_vintage']} disk={r['disk_mb']:>7}MB unk={r['unknown_vintage']} "
-                  f"lag={r['lag_days']}d  {r['name'][:40]}")
+                  f"exact={r['exact']:>6} w1s={r['within_1s']:>6} lag={r['lag_days']}d  {r['name'][:34]}")
+    elif cmd == "purge-unknown":
+        print(purge_unknown())
     elif cmd == "reindex":
         print(f"reindexed {reindex()} files")
     elif cmd == "status":
