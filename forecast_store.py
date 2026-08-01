@@ -490,6 +490,21 @@ def backfill_bundles(emil, conn=None, heartbeat=True):
     return tot
 
 
+def capture_recent_days(days=2, tier="ALL"):
+    """The daily-rhythm capture: archive-capture the last `days` complete post-days for every
+    product in `tier` (idempotent; a day already fully captured is skipped without a network call).
+    `days`>=2 self-heals a missed run / a laptop-asleep gap. Returns per-product totals."""
+    conn = _connect()
+    out = []
+    for e in products_for(tier):
+        print(f"--- {e} ---", flush=True)
+        r = backfill_product(e, days, conn=conn)
+        print("TOTAL", r, flush=True)
+        out.append(r)
+    conn.close()
+    return out
+
+
 def backfill_bundles_all(tier="ALL"):
     """Bundle-backfill every product in `tier` (deep history, fast). Then the recent unbundled tail
     is filled separately via backfill_product (the per-day archive path)."""
@@ -620,6 +635,10 @@ if __name__ == "__main__":
     elif cmd == "backfill-bundles-all":
         tier = sys.argv[2] if len(sys.argv) > 2 else "ALL"
         backfill_bundles_all(tier)
+    elif cmd == "capture-recent-days":
+        days = int(sys.argv[2]) if len(sys.argv) > 2 else 2
+        tier = sys.argv[3] if len(sys.argv) > 3 else "ALL"
+        capture_recent_days(days, tier)
     elif cmd == "report":
         for r in report():
             print(f"{r['emil']:12} files={r['files']:>6} earliest={r['earliest_vintage']} "

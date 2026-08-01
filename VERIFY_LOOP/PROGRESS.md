@@ -20,7 +20,15 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       2022-12; load-by-zone NP3-560 + trio = 2026-03 only (~4mo). Prior archive-doc backfill also
       committed (d4b6aad) — used for the recent unbundled tail. ⏸ awaiting Mike go to LAUNCH bundle
       backfill + tail decision (trio July tail = 288/day slow; defer to Task-4 daily job + July bundle).
-- [ ] 4 — Rhythm wiring (launchd via stub dispatcher, jobs.jsonl, watchdog missed-cadence, ntfy). DRY_RUN.
+- [x] 4 — Rhythm wiring. JOB=capture added to auto_commit.sh dispatcher -> auto_capture.sh (daily
+      06:00 ET): archive-capture last CAPTURE_DAYS(=2) complete days ALL 11 products + bundle top-up,
+      into gitignored data_archive/forecasts (commits nothing). jobs.jsonl row (job=capture), LOUD
+      ntfy on failure / SILENT on success (digest covers it). watchdog_check.py extended: capture-
+      freshness alert, GATED on capture-live so no false alarm pre-enablement. New plist
+      com.voltstream.dartcapture.plist. DRY_RUN-tested offline (no ERCOT): dispatch+log+jobs.jsonl+
+      notify all correct; watchdog 4 states pass (not-live/ok/stale/failed). Trio ongoing ~61MB/mo
+      raw (~101MB 4KB-blocks), HIGH-8 ~50MB/mo — modest, trio ongoing OK to enable. Live install =
+      Mike handoff (final). ✔ done (DRY_RUN)
 - [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
 - [ ] 6 — News store (ERCOT notices + EIA + RSS -> SQLite) + /api/news read-only.
 - [ ] 7 — "Right now" sidebar news block (map tab), cap ~6, calm. Screenshot; Mike visual sign-off.

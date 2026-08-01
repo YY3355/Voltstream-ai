@@ -2,7 +2,10 @@
 
 Reads journal/jobs.jsonl + the journal and decides whether the rhythm is healthy:
   - today's COMMIT leg must have a row for `today` with status success | already-committed,
-  - the SETTLE backlog (past call-days with no ledger rows) must be <= 1 day.
+  - the SETTLE backlog (past call-days with no ledger rows) must be <= 1 day,
+  - the FORECAST CAPTURE leg must have a good row for `today` — but ONLY once capture is live
+    (>=1 capture row ever), so this never false-alarms before the capture job is enabled. A silent
+    capture miss is destroyed training data, so a missed/failed capture-for-today is an alert.
 
 Prints an alert string and exits 1 if UNHEALTHY; prints a one-line healthy summary and exits 0 if OK.
 Seams: JOURNAL_DIR (journal path), DART_ASOF (injectable 'today').
@@ -41,14 +44,23 @@ if os.path.exists(ledger_path):
     settled = set(pd.read_csv(ledger_path)["date"].astype(str))
 backlog = [d for d in past if d not in settled]
 
+# 3) forecast-capture freshness — only checked once capture is live (>=1 capture row ever), so it
+#    can't false-alarm before enablement. Missed/failed capture-for-today = destroyed training data.
+capture_rows = [r for r in rows if r.get("job") == "capture"]
+capture_today = [r for r in capture_rows if r.get("asof_date") == today]
+capture_ok = any(r.get("status") in ("success", "dry-run", "noop") for r in capture_today)
+
 alerts = []
 if not commit_ok:
     alerts.append(f"commit leg for {today}: " + ("commit FAILED" if commit_today else "no run recorded"))
 if len(backlog) > 1:
     alerts.append(f"settle backlog {len(backlog)} days ({backlog[0]}..{backlog[-1]})")
+if capture_rows and not capture_ok:
+    alerts.append(f"forecast capture for {today}: " + ("FAILED" if capture_today else "no run recorded"))
 
 if alerts:
     print("; ".join(alerts))
     sys.exit(1)
-print(f"healthy: commit {today} ok, settle backlog {len(backlog)} day(s)")
+cap_note = f", capture {today} ok" if capture_rows else ", capture not-yet-live"
+print(f"healthy: commit {today} ok, settle backlog {len(backlog)} day(s){cap_note}")
 sys.exit(0)
