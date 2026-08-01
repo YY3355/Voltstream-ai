@@ -35,8 +35,10 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       no partial files on disk-full). Post-fix: unknown=0, earliest 2018-01 for wind sys+region / solar
       sys / load-by-model. FRESH cross-check histogram: pre-2025 n=72 (84.7% exact, 100% within-1s, max
       1s); 2025+ n=96 (100% exact). BLOCKER: re-run hit DISK FULL (98%, NP3-565=4.1GB) — NP3-233 +
-      NP1-346 pre-2025 incomplete; +1 orphan partial to clean. ⏸ Mike disk decision (trim NP3-565?) then
-      complete the 2 products + re-verify. Code fix committed; archive completion is the ops step.
+      NP1-346 pre-2025 incomplete; +1 orphan partial to clean. Resolution: zstd tested (1.08x/1.51x
+      <3x, rejected); NP3-233 + NP1-346 COMPLETED (2018-01 / 2022-12), orphan cleaned; disk guard added.
+      Archive now COMPLETE: 494,964 docs, unknown=0, deep to 2018. ✔ done. ⏸ NP3-565 4GB relocation to an
+      external volume awaits Mike's ARCHIVE_DIR path (ops, not a verification gap).
 - [x] 6 — news_store.py: stdlib RSS 2.0 + Atom parse (no feedparser in volt), SQLite data_archive/
       news.db, dedupe by guid/URL (PK+INSERT OR IGNORE), NO LLM in store path (llm_model NULL);
       optional labeled enrich() reserved (summary/tags separate cols, always w/ link). /api/news
@@ -54,7 +56,9 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       compose -> ONE ntfy push. Wires the T6 news poll schedule. JOURNAL_DIR seam added (capture+digest,
       no real-journal pollution in tests). DRY_RUN-tested: dispatch->compose->parse->notify->jobs.jsonl
       all correct, ASCII-clean. ✔ done (DRY_RUN)
-- [ ] 9 — Docs (CLAUDE.md forecast-archive + news rules; PROGRESS final).
+- [x] 9 — Docs: CLAUDE.md += forecast-archive section (products, two paths, admissibility sentence
+      verbatim w/ n's + materiality clause, vintage_source/precision, disk guard, zstd-rejected) + news/
+      digest section; launchd table += capture/digest rows; dispatcher three→five jobs. PROGRESS final. ✔ done
 
 ## Append-only log
 - init (2026-08-01) — New capture/news loop from Mike's spec. Overwrote the Bolt-chart GOAL/PROGRESS.
@@ -71,3 +75,9 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
   report per-product earliest reachable vintage.
 - T2 (2026-08-01) — forecast_store.py built + verified + audited (3/3). Registry = HIGH-8 + PERISHABLE-3
   (PRODUCTS), MED-6 ridable (MED_PRODUCTS, opt-in). Idempotency proven byte-identical. commit next.
+- FINAL (2026-08-01) — All 9 tasks done. Archive: 494,964 vintage-stamped docs, unknown=0, deep to
+  2018-01 (wind/solar/load-model/HRUC), 2022-12 (unplanned), 2026-03 (intra-hour trio + load-by-zone).
+  Rhythm: capture (06:00) + digest (17:30) legs on the stub dispatcher, disk-guarded, watchdog-covered.
+  News store + /api/news + sidebar block + digest, all no-LLM-in-store. Everything DRY_RUN/fixture/temp
+  tested; LIVE ENABLEMENT (launchd install of 2 plists + news source URLs + NP3-565 relocation) = Mike
+  handoff. NO deploy this loop.

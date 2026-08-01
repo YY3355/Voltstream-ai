@@ -124,13 +124,16 @@ wake if the Mac was asleep. All times are local ET (Mac TZ = `America/New_York`)
 | `com.voltstream.dartcommit`   | 16:00 | (unset→commit) | `auto_commit.sh` | commit+push tomorrow's calls |
 | `com.voltstream.dartsettle`   | 09:00 | `settle`        | `auto_settle.sh` | catch-up settle past days, commit+push ledger |
 | `com.voltstream.dartwatchdog` | 18:30 | `watchdog`      | `watchdog.sh`    | health check; alert if the rhythm broke |
+| `com.voltstream.dartcapture`  | 06:00 | `capture`       | `auto_capture.sh`| capture prior day(s) + bundle top-up into `data_archive/forecasts` (disk-guarded) |
+| `com.voltstream.dartdigest`   | 17:30 | `digest`        | `auto_digest.sh` | poll news + send the evening digest push |
 
-- **One `.app`, three jobs — the dispatcher.** All three agents run the SAME FDA-granted stub
+- **One `.app`, five jobs — the dispatcher.** All agents run the SAME FDA-granted stub
   (`DartAutoCommit.app`, which execs `/bin/bash scripts/auto_commit.sh`). `auto_commit.sh`'s header
   dispatches on the **`JOB`** env var (set in each agent's plist `EnvironmentVariables`): unset→commit,
-  `settle`→`exec auto_settle.sh`, `watchdog`→`exec watchdog.sh`. `environ` passes through the compiled
-  stub, and `exec` stays under the .app's TCC grant — so **adding a job needs NO .app rebuild, NO FDA
-  re-grant**, only a new plist + shell script. (Prefer this over rebuilding the stub.)
+  `settle`→`exec auto_settle.sh`, `watchdog`→`exec watchdog.sh`, `capture`→`exec auto_capture.sh`,
+  `digest`→`exec auto_digest.sh`. `environ` passes through the compiled stub, and `exec` stays under the
+  .app's TCC grant — so **adding a job needs NO .app rebuild, NO FDA re-grant**, only a new plist + shell
+  script. (Prefer this over rebuilding the stub. The capture + digest legs were added this way.)
 - **Jobs & helpers** (all in `scripts/`): `auto_commit.sh` (commit leg + dispatcher entry),
   `auto_settle.sh` (settle leg, pure arithmetic — NO LLM), `watchdog.sh`+`watchdog_check.py` (health),
   `notify.sh` (ntfy.sh push), `joblog.sh` (sourced: `emit_job_row`). Each job resolves siblings via an
@@ -189,5 +192,65 @@ wake if the Mac was asleep. All times are local ET (Mac TZ = `America/New_York`)
   - Manage: `launchctl bootstrap gui/$(id -u) <plist>` / `bootout gui/$(id -u)/<label>` /
     `kickstart -k gui/$(id -u)/<label>` (kickstart = run now). Editing a `scripts/*.sh` needs NO
     reinstall (the stub runs them live); only rebuilding the `.app` needs a re-grant.
-  - Logs (all gitignored): `journal/auto.log`, `settle.log`, `watchdog.log` (per-job run logs);
-    `journal/jobs.jsonl` (structured rows); `journal/launchd.{out,err}.log` (launchd-level).
+  - Logs (all gitignored): `journal/auto.log`, `settle.log`, `watchdog.log`, `capture.log`,
+    `digest.log` (per-job run logs); `journal/jobs.jsonl` (structured rows);
+    `journal/launchd.{out,err}.log` (launchd-level).
+
+## The forecast/outage archive (`forecast_store.py`) — the future training data
+
+Vintage-stamped, append-only capture of ERCOT's forecast + outage products (the decision-time-clean
+inputs the feature loop will train on) into `data_archive/forecasts/<EMIL>/<post-date>/<postDtCompact>__<docId>.{zip,csv}`
++ a SQLite index `manifest.db`. All gitignored — the archive lives on disk like `dart_cache/` (the
+launchd rhythm runs locally). ~495k docs, deep to 2018-01 for most products.
+
+- **Products.** HIGH-8 (feature ingredients): wind `NP4-732`/`NP4-742`, solar `NP4-737`/`NP4-745`, load
+  `NP3-560`/`NP3-565`, outage `NP3-233` (HRUC) + `NP1-346` (unplanned). Intra-hour trio (perishable,
+  <1yr retention, ~120d): `NP4-751`/`NP4-752`/`NP3-562`. MED-6 ride the same path (opt-in via
+  `capture-all MED`). `NP1-346` is a **3-day-lagged snapshot** (`lag_days=3` in the manifest) — a lagged
+  input at decision time, NEVER a forward forecast; the feature loop's available_at gate must honor it.
+- **Two capture paths, one store.** (1) Monthly **bundles** (`backfill_bundles`) — one download per
+  month, reaching back to **2018** (far past the per-day archive's ~2yr retention); the primary backfill.
+  (2) The per-day **archive endpoint** (`capture_product`) for the recent unbundled tail —
+  rate-limited to **~0.5 doc/s** (server-bound; concurrency does NOT help), so it is only for the
+  ~1-month tail, never bulk. Both share `_store_doc` → identical vintage-stamp + append-only +
+  idempotency; a doc seen by either path resolves to the same on-disk path (cross-method idempotent).
+- **VINTAGE IS THE POINT (admissibility).** Every doc records product id + forecast target period +
+  ERCOT's post time + our capture UTC. The post time is ERCOT's own per-file timestamp embedded in the
+  archive filename. Cross-checked against the archive endpoint's `postDatetime` (n=72 pre-2025, n=96
+  2025+): exact to the second for 100% of 2025+ docs and 85% of pre-2025 docs, and within 1 second in
+  100% of cases (max observed offset 1s). For pre-2024 history — which predates the archive endpoint's
+  ~2-year retention and thus has no `postDatetime` to compare against — it is the sole ERCOT-reported
+  post time, carried with `vintage_precision='within_1s'`. **A ≤1s vintage error is immaterial for
+  hourly products consumed at a 15:00 CT daily decision.** (The 9-digit pre-2025 filename time carries
+  millis; 6-digit 2025+ is HHMMSS and matches `postDatetime` exactly.) Columns: `vintage_source` ∈
+  {`archive_postDatetime` (exact), `bundle_filename`}, `vintage_precision` ∈ {`exact`, `within_1s`} — the
+  feature loop gates on precision MECHANICALLY, not by reading docs. A missing post time is stored
+  `vintage_status='unknown'`, FLAGGED + COUNTED, never synthesized (target 0; currently 0).
+- **Append-only + idempotent + no-LLM.** Never overwrite a vintage; a later revision = a new docId = an
+  additional vintage. Idempotency = skip-seen by docId + `INSERT OR IGNORE` (doc_id PK) + atomic write
+  (tmp + `os.replace`, so a disk-full / interrupted write never leaves a truncated file). Re-run is
+  byte-identical. NO LLM anywhere in the capture path. `purge-unknown` is manifest-driven + asserts
+  `deleted+missing == expected` (no glob deletion in the archive).
+- **Disk + the guard.** ~7.6 GB (NP3-565 load-by-model alone ~4 GB — its all-models × weather-zone CSVs
+  are huge; do NOT trim its depth — load is the #1 price driver). Ongoing daily capture ~110 MB/mo (trio
+  ~61 MB/mo raw). **Disk guard:** `auto_capture.sh` skips-and-alerts when free < `FORECAST_MIN_FREE_GB`
+  (default 10) so the trading rhythm's commit/settle git writes never fail on a full disk; the watchdog
+  alerts on low disk. `ARCHIVE_DIR` relocates the whole archive (e.g. to an external volume) with one env
+  var. zstd recompression was tested and REJECTED (per-doc 1.08x / batched 1.51x — ERCOT's per-doc zips
+  already deflate the CSVs ~2.5x); relocation is the disk fix, not compression.
+- **CLI:** `capture-recent-days N [TIER]`, `backfill-bundles[-all] [TIER]`, `capture[-all]`, `report`
+  (per-product files / earliest vintage / disk / precision), `purge-unknown`, `reindex`.
+
+## News + daily digest (`news_store.py`, `digest.py`)
+
+- **News store.** Stdlib RSS 2.0 + Atom (no feedparser in `volt`) → `data_archive/news.db`, deduped by
+  GUID/URL (PK + `INSERT OR IGNORE`). The store path is pure: headline + source + timestamp + link, **NO
+  LLM** (`llm_model` stays NULL). An optional labeled `enrich()` may add a ≤1-line summary / tags in
+  SEPARATE columns, always rendered WITH the link adjacent — never a paraphrase with the source more than
+  one click away. Unparseable feed dates → `published_utc` NULL + raw kept (flagged, never fabricated).
+  `/api/news` is read-only; the map sidebar `#news-now` block renders it (cap 6, calm, source+age+link).
+  `SOURCES` (EIA + ERCOT notices) URLs are confirmed at enablement; the live poll is a launchd step.
+- **Digest.** `digest.py compose_digest` builds a TEMPLATED evening push (top headlines w/ links +
+  capture-health line: latest capture status + docs-today + a LOUD unknown-vintage flag → ntfy priority
+  high). NO LLM in the compose. `auto_digest.sh` (JOB=digest, 17:30 ET) polls news → composes → one ntfy
+  push; this also drives the news poll schedule. `JOURNAL_DIR` seam keeps tests off the real journal.
