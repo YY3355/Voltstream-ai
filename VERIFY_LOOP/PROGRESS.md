@@ -11,7 +11,10 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       real capture (NP4-732 24 docs + NP1-346 snapshot) → re-run byte-identical (tree-sha unchanged,
       25=25 rows no dup); target span extracts (NP4-732 → +7day), honest none for snapshot; unk=0.
       Fresh-eyes subagent audit = 3/3 PASS (vintage/append-only/no-LLM). ✔ done
-- [ ] 3 — Backfill within retention; per-product files/span/disk/unknown-vintage counts.
+- [~] 3 — Backfill: mechanism built+verified+committed (5a1808d). Staged trio→HIGH-8, resumable,
+      heartbeat. Trio sized live: 288 docs/day/product, ~120d retention → ~104k docs (~9h,~250MB);
+      HIGH-8 730d ~123k docs (~10h,~1.2GB); staged total ~19h. ⏸ awaiting Mike go to LAUNCH the run
+      + then the per-product earliest-vintage report.
 - [ ] 4 — Rhythm wiring (launchd via stub dispatcher, jobs.jsonl, watchdog missed-cadence, ntfy). DRY_RUN.
 - [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
 - [ ] 6 — News store (ERCOT notices + EIA + RSS -> SQLite) + /api/news read-only.

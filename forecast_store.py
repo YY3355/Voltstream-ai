@@ -36,6 +36,7 @@ CLI:
 """
 import hashlib
 import io
+import json
 import os
 import re
 import sqlite3
@@ -301,6 +302,83 @@ def capture_all(tier="ALL", day=None, dry_run=False):
     return out
 
 
+# ----------------------------- backfill (staged, resumable, heartbeat) -----------------------------
+# A completed past day is immutable, so once fully captured it is recorded in <root>/<EMIL>/
+# .backfilled.json and skipped WITHOUT a network call on resume — a re-run continues where it
+# stopped (e.g. after a laptop sleep) instead of restarting. Idempotency still holds doc-by-doc.
+def _done_path(emil):
+    return os.path.join(forecast_root(), emil, ".backfilled.json")
+
+
+def _load_done(emil):
+    p = _done_path(emil)
+    if os.path.exists(p):
+        try:
+            return set(json.load(open(p)))
+        except Exception:
+            return set()
+    return set()
+
+
+def _mark_done(emil, day):
+    os.makedirs(os.path.dirname(_done_path(emil)), exist_ok=True)
+    d = _load_done(emil)
+    d.add(day)
+    json.dump(sorted(d), open(_done_path(emil), "w"))
+
+
+def backfill_product(emil, days=730, end=None, conn=None, heartbeat=True):
+    """Backfill `days` of complete post-days for `emil`, OLDEST-first (grab the rolling-off edge
+    first). Resumable: days already fully captured are skipped without a network call. Prints a
+    `progress: <emil> <day> ...` heartbeat so a resumed run shows where it stands. Returns totals."""
+    own = conn is None
+    conn = conn or _connect()
+    end = (pd.Timestamp(end).normalize() if end else pd.Timestamp.now().normalize())
+    today = pd.Timestamp.now().normalize().strftime("%Y-%m-%d")
+    done = _load_done(emil)
+    day_list = [(end - pd.Timedelta(days=k)).strftime("%Y-%m-%d") for k in range(days, -1, -1)]
+    tot = {"emil": emil, "days_total": len(day_list), "days_captured": 0, "days_skipped_done": 0,
+           "new": 0, "skipped_docs": 0, "unknown_vintage": 0, "errors": 0, "no_doc_days": 0}
+    for i, day in enumerate(day_list, 1):
+        if day in done:
+            tot["days_skipped_done"] += 1
+            continue
+        r = capture_product(emil, day=day, conn=conn)
+        tot["new"] += r["new"]
+        tot["skipped_docs"] += r["skipped"]
+        tot["unknown_vintage"] += r["unknown_vintage"]
+        tot["errors"] += r["errors"]
+        tot["days_captured"] += 1
+        if r["listed"] == 0:
+            tot["no_doc_days"] += 1
+        # mark a COMPLETE past day done only if no doc errored (so a partial day is retried later)
+        if r["errors"] == 0 and day < today:
+            _mark_done(emil, day)
+            done.add(day)
+        if heartbeat:
+            print(f"progress: {emil} {day} new={r['new']} skip={r['skipped']} "
+                  f"listed={r['listed']} err={r['errors']} ({i}/{len(day_list)})", flush=True)
+    if own:
+        conn.close()
+    return tot
+
+
+def backfill_staged(trio_days=400, high_days=730):
+    """The Task-3 run: STAGE 1 = the perishable intra-hour trio (backfill everything reachable, they
+    roll off a <1yr cliff), then STAGE 2 = HIGH-8 at full 730d. One resumable pass over one conn."""
+    conn = _connect()
+    print(f"=== STAGE 1: intra-hour trio (perishable, {trio_days}d reach) ===", flush=True)
+    for e in products_for("PERISHABLE"):
+        print(f"--- {e} ---", flush=True)
+        print("TOTAL", backfill_product(e, trio_days, conn=conn), flush=True)
+    print(f"=== STAGE 2: HIGH-8 @ {high_days}d ===", flush=True)
+    for e in products_for("HIGH"):
+        print(f"--- {e} ---", flush=True)
+        print("TOTAL", backfill_product(e, high_days, conn=conn), flush=True)
+    conn.close()
+    print("=== BACKFILL COMPLETE ===", flush=True)
+
+
 # ----------------------------- reindex + status -----------------------------
 def reindex():
     """Rebuild the manifest from the files on disk (the files are the source of truth). Preserves
@@ -355,6 +433,25 @@ def status():
     return rows
 
 
+def report():
+    """Task-3 deliverable, per product: files, EARLIEST reachable vintage (the training-span floor
+    the feature loop inherits), vintage span, disk, unknown-vintage count, lag_days."""
+    conn = _connect()
+    root = forecast_root()
+    rows = conn.execute(
+        """SELECT emil, COUNT(*), MIN(post_datetime), MAX(post_datetime), SUM(n_bytes),
+                  SUM(vintage_status='unknown'), MIN(source_lag_days)
+           FROM captures GROUP BY emil ORDER BY emil""").fetchall()
+    conn.close()
+    out = []
+    for emil, n, pmin, pmax, nbytes, unk, lag in rows:
+        out.append({"emil": emil, "files": n, "earliest_vintage": str(pmin)[:10],
+                    "latest_vintage": str(pmax)[:10], "disk_mb": round((nbytes or 0) / 1e6, 1),
+                    "unknown_vintage": unk or 0, "lag_days": lag or 0,
+                    "name": _meta(emil).get("name", "")})
+    return out
+
+
 # ----------------------------- CLI -----------------------------
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
@@ -369,6 +466,19 @@ if __name__ == "__main__":
         tier = sys.argv[2] if len(sys.argv) > 2 else "ALL"
         for r in capture_all(tier, dry_run=dry):
             print(r)
+    elif cmd == "backfill":
+        emil = sys.argv[2]
+        days = int(sys.argv[3]) if len(sys.argv) > 3 else 730
+        print(backfill_product(emil, days))
+    elif cmd == "backfill-staged":
+        trio = int(sys.argv[2]) if len(sys.argv) > 2 else 400
+        high = int(sys.argv[3]) if len(sys.argv) > 3 else 730
+        backfill_staged(trio, high)
+    elif cmd == "report":
+        for r in report():
+            print(f"{r['emil']:12} files={r['files']:>6} earliest={r['earliest_vintage']} "
+                  f"latest={r['latest_vintage']} disk={r['disk_mb']:>7}MB unk={r['unknown_vintage']} "
+                  f"lag={r['lag_days']}d  {r['name'][:40]}")
     elif cmd == "reindex":
         print(f"reindexed {reindex()} files")
     elif cmd == "status":
