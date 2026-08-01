@@ -13,6 +13,7 @@ Seams: JOURNAL_DIR (journal path), DART_ASOF (injectable 'today').
 import glob
 import json
 import os
+import shutil
 import sys
 import pandas as pd
 
@@ -48,7 +49,18 @@ backlog = [d for d in past if d not in settled]
 #    can't false-alarm before enablement. Missed/failed capture-for-today = destroyed training data.
 capture_rows = [r for r in rows if r.get("job") == "capture"]
 capture_today = [r for r in capture_rows if r.get("asof_date") == today]
-capture_ok = any(r.get("status") in ("success", "dry-run", "noop") for r in capture_today)
+# 'skipped-lowdisk' counts as a recorded run (the low-disk alert below is the real signal)
+capture_ok = any(r.get("status") in ("success", "dry-run", "noop", "skipped-lowdisk")
+                 for r in capture_today)
+
+# 4) disk headroom — the capture is the big writer; if free space is below the floor it pauses,
+#    which both gaps the training data AND is the early warning that commit/settle could fail.
+min_free = float(os.environ.get("FORECAST_MIN_FREE_GB", "10"))
+adir = os.environ.get("ARCHIVE_DIR", "data_archive")
+try:
+    free_gib = shutil.disk_usage(adir if os.path.exists(adir) else ".").free / (1024 ** 3)
+except Exception:
+    free_gib = None
 
 alerts = []
 if not commit_ok:
@@ -57,10 +69,13 @@ if len(backlog) > 1:
     alerts.append(f"settle backlog {len(backlog)} days ({backlog[0]}..{backlog[-1]})")
 if capture_rows and not capture_ok:
     alerts.append(f"forecast capture for {today}: " + ("FAILED" if capture_today else "no run recorded"))
+if free_gib is not None and free_gib < min_free:
+    alerts.append(f"low disk: {free_gib:.1f}GiB free (< {min_free:.0f} floor) — capture paused; protect commit/settle")
 
 if alerts:
     print("; ".join(alerts))
     sys.exit(1)
 cap_note = f", capture {today} ok" if capture_rows else ", capture not-yet-live"
-print(f"healthy: commit {today} ok, settle backlog {len(backlog)} day(s){cap_note}")
+disk_note = f", disk {free_gib:.0f}GiB free" if free_gib is not None else ""
+print(f"healthy: commit {today} ok, settle backlog {len(backlog)} day(s){cap_note}{disk_note}")
 sys.exit(0)

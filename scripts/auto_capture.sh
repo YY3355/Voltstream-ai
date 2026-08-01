@@ -56,6 +56,21 @@ exec >>"$LOG" 2>&1
 echo ""
 echo "===== auto_capture START  local=$(date '+%F %T %z')  utc=$(date -u '+%F %T')Z  (pid $$) ====="
 
+# DISK GUARD: the capture is the big writer. If free space is below the floor, SKIP-AND-ALERT
+# instead of writing — the trading rhythm (commit/settle git writes) must NEVER die on a full disk.
+# A deliberate low-disk skip is NOT a failure (status skipped-lowdisk, exit 0).
+MIN_FREE_GB="${FORECAST_MIN_FREE_GB:-10}"
+CHECK_DIR="${ARCHIVE_DIR:-$CODE_DIR/data_archive}"; [ -d "$CHECK_DIR" ] || CHECK_DIR="$CODE_DIR"
+FREE_GB="$(free_gib "$CHECK_DIR")"
+if [ -n "$FREE_GB" ] && [ "$FREE_GB" -lt "$MIN_FREE_GB" ]; then
+  STATUS="skipped-lowdisk"; ERROR="free ${FREE_GB}GB < ${MIN_FREE_GB}GB"
+  echo "SKIP: free ${FREE_GB}GB < ${MIN_FREE_GB}GB floor — capture skipped to protect the trading rhythm"
+  bash "$NOTIFY" high "Forecast capture SKIPPED (low disk)" \
+    "free ${FREE_GB}GB < ${MIN_FREE_GB}GB floor - capture paused so commit/settle never fail on a full disk"
+  echo "===== END: skipped-lowdisk — exit 0  utc=$(date -u '+%F %T')Z ====="
+  exit 0
+fi
+
 # DRY_RUN: exercise the wiring only — NO ERCOT pull (the backfill owns the budget; tests are offline)
 if [ "${DRY_RUN:-}" = "1" ]; then
   echo "[DRY_RUN] would: capture-recent-days $DAYS ALL + backfill-bundles-all ALL into ${ARCHIVE_DIR:-data_archive}/forecasts"
