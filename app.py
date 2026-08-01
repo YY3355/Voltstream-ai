@@ -346,6 +346,17 @@ def api_risk():
         return {"error": f"risk engine failed ({e})"}
 
 
+@app.get("/api/news")
+def api_news(n: int = 6):
+    """Read-only energy-news headlines for the 'right now' sidebar: headline + source + time + link
+    (+ optional LABELED LLM summary/tags). Pure read of the news store — no fetch, no LLM here."""
+    from news_store import recent
+    try:
+        return {"items": recent(min(max(n, 1), 20))}
+    except Exception as e:
+        return {"error": f"news store unavailable ({e})", "items": []}
+
+
 @app.get("/api/qse")
 def api_qse():
     """Dynamic QSE loop experiment: cost of stale telemetry + MW/MWh coordination.

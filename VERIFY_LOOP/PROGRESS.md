@@ -30,7 +30,12 @@ No deploy / no map-chart / no feature-eng / no harness changes this loop.
       raw (~101MB 4KB-blocks), HIGH-8 ~50MB/mo — modest, trio ongoing OK to enable. Live install =
       Mike handoff (final). ✔ done (DRY_RUN)
 - [ ] 5 — Independent verification (one product/day field-by-field + vintage vs ERCOT posted).
-- [ ] 6 — News store (ERCOT notices + EIA + RSS -> SQLite) + /api/news read-only.
+- [x] 6 — news_store.py: stdlib RSS 2.0 + Atom parse (no feedparser in volt), SQLite data_archive/
+      news.db, dedupe by guid/URL (PK+INSERT OR IGNORE), NO LLM in store path (llm_model NULL);
+      optional labeled enrich() reserved (summary/tags separate cols, always w/ link). /api/news
+      read-only (TestClient 200, newest-first, llm=None). Fixture-verified: RSS+Atom parse, dedupe
+      (re-ingest 0 new), undated item kept w/ NULL date (not fabricated). Live poll DEFERRED (ERCOT
+      budget) — tiny live smoke of each source at enablement. Poll schedule wired in T8. ✔ done (fixtures)
 - [ ] 7 — "Right now" sidebar news block (map tab), cap ~6, calm. Screenshot; Mike visual sign-off.
 - [ ] 8 — Daily digest (evening ntfy: headlines + links + capture health). Templated + optional LLM tag.
 - [ ] 9 — Docs (CLAUDE.md forecast-archive + news rules; PROGRESS final).
