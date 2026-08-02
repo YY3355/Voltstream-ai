@@ -1,0 +1,247 @@
+{
+  "fetched_at_utc": "2026-08-02T22:43:00+00:00",
+  "base": "https://data.kardashevlabs.org",
+  "user_agent": "VoltStream-audit/1.0 (independent scoring; contact mikeoc)",
+  "days_param": 90,
+  "attestation": "raw forecasts AS SERVED BY the Kardashev API on the fetch date; no independent verification of their values \u2014 we score them against OUR settlement record.",
+  "files": [
+    {
+      "file": "history_HB_BUSAVG.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_BUSAVG&days=90",
+      "http_status": 200,
+      "bytes": 406742,
+      "sha256": "195873f2e22acde0d354f6230b9e95b021d099ba3dbc846a44a88d1150ad585d",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_HOUSTON.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_HOUSTON&days=90",
+      "http_status": 200,
+      "bytes": 405941,
+      "sha256": "8c0c24c7c421ace0a6eca618148640902d3ee4b2cab69f39bf82da2329b27c2a",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_HUBAVG.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_HUBAVG&days=90",
+      "http_status": 200,
+      "bytes": 406190,
+      "sha256": "b13b31c26441136da8072ade096dc23d8fa9f498e2b027abe07ae34d808cb191",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_NORTH.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_NORTH&days=90",
+      "http_status": 200,
+      "bytes": 406652,
+      "sha256": "34cf28d047fb1b4e51669106023786a689adb9b8004b4d0060347fc817702951",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_PAN.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_PAN&days=90",
+      "http_status": 200,
+      "bytes": 405695,
+      "sha256": "c1afe213f303ec0b5feaafa5be64722e7a02d27e7c734b007a069f63f4a891e6",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_SOUTH.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_SOUTH&days=90",
+      "http_status": 200,
+      "bytes": 406573,
+      "sha256": "662c679d31b3de9e9e5b3e9da5527ae43091e8dacbe5599d27d519644b2dd04e",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_HB_WEST.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=HB_WEST&days=90",
+      "http_status": 200,
+      "bytes": 405965,
+      "sha256": "6f5ef5034600e7c0b0b5f98bef5aca851b01b7ee3d6a644cb43d95551b6dc8c9",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_AEN.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_AEN&days=90",
+      "http_status": 200,
+      "bytes": 405408,
+      "sha256": "7c94db37bc24ef1438d7122dc423a2cb98903703b185d5e3432d902c339f987d",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_CPS.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_CPS&days=90",
+      "http_status": 200,
+      "bytes": 406197,
+      "sha256": "a4bda2c04f20552727bbea6e7eed3f45f74591b2bda1534c9775cc84260c1bc6",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_HOUSTON.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_HOUSTON&days=90",
+      "http_status": 200,
+      "bytes": 405842,
+      "sha256": "7d8c2ca8bc75214e035aa4b77afd87af43e217dc32e238f16ddf20ccf76c8710",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_LCRA.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_LCRA&days=90",
+      "http_status": 200,
+      "bytes": 405095,
+      "sha256": "b7f9c88ad4b07959eea763e351d136b1891676ad85d5d41a8c7e3c6c5b4a26c1",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_NORTH.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_NORTH&days=90",
+      "http_status": 200,
+      "bytes": 406058,
+      "sha256": "d7168526fbe5ffa3e8efd652e7f3b7b6d21fe6ed744a25844ad732fc234d33fc",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_RAYBN.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_RAYBN&days=90",
+      "http_status": 200,
+      "bytes": 406583,
+      "sha256": "0e42fe757a08144d6601186326eddc820f3eb3788e91622fe1e38da489f55231",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_SOUTH.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_SOUTH&days=90",
+      "http_status": 200,
+      "bytes": 406333,
+      "sha256": "ca6d6e366a2f32b29f062a7a4c56a60b4b528210d7609498e7e3906b50405a3f",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "history_LZ_WEST.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/history?node_id=LZ_WEST&days=90",
+      "http_status": 200,
+      "bytes": 404561,
+      "sha256": "265409959c6b9ecfc4dc8861c36e8bfaf7c7c6163c5e9754e9a9471363d7b06c",
+      "n_records": 1437,
+      "ts_first": "2026-07-08T07:00:00+00:00",
+      "ts_last": "2026-08-02T19:00:00+00:00",
+      "n_issuances": 27,
+      "models": [
+        "tft-2026q3",
+        "tft-v2-2026q3"
+      ]
+    },
+    {
+      "file": "latest.json",
+      "url": "https://data.kardashevlabs.org/forecast/spread/latest",
+      "http_status": 200,
+      "bytes": 12665,
+      "sha256": "3b93b9f137444225205142414493909b62b37a96b79e41cf83b8a4c32b520e7e"
+    },
+    {
+      "file": "openapi.json",
+      "http_status": 200,
+      "bytes": 85206,
+      "sha256": "0b5c6089799bb2e4928340089ed005a0c174725019e47a0b2a298a902aff55f5"
+    }
+  ]
+}
