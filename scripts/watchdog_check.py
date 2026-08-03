@@ -72,6 +72,14 @@ if capture_rows and not capture_ok:
 if free_gib is not None and free_gib < min_free:
     alerts.append(f"low disk: {free_gib:.1f}GiB free (< {min_free:.0f} floor) — capture paused; protect commit/settle")
 
+# 5) Kardashev witness freshness — gated on live (>=1 kardashev row ever), so no false alarm pre-enablement
+kardashev_rows = [r for r in rows if r.get("job") == "kardashev"]
+kardashev_today = [r for r in kardashev_rows if r.get("asof_date") == today]
+kardashev_ok = any(r.get("status") in ("success", "success-localonly", "already-captured", "dry-run", "noop")
+                   for r in kardashev_today)
+if kardashev_rows and not kardashev_ok:
+    alerts.append(f"kardashev witness for {today}: " + ("FAILED" if kardashev_today else "no run recorded"))
+
 if alerts:
     print("; ".join(alerts))
     sys.exit(1)

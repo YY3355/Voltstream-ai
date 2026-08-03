@@ -26,7 +26,12 @@ No LLM in scoring. No harness/signal.py/deploy/UI. Independence = OUR stores are
         crush climatology in the tail (0.60 vs 0.20 cover; pinball 6.4/8.3 vs 9.2). PIT shows the leak is
         downside: tail PIT_p10 0.26-0.28 (nom 0.10) = under-predict big-move magnitude. v2's width buys
         calm coverage not tail (0.616~=0.600). n's beside all; tail n~160, no significance. ✔ done
-- [ ] 5 — Capture rhythm addition: daily /latest fetch into archive (their published-at + our capture UTC); jobs.jsonl+watchdog; DRY_RUN.
+- [x] 5 — Witness capture. capture_latest.py fetches /latest daily -> witness/latest_<date>.json +
+        witness_log.jsonl (vintage = their issued_at + our capture UTC; append-only, idempotent).
+        auto_kardashev.sh (JOB=kardashev, 16:30 ET plist) captures + git-commits the witness (immutable
+        timestamp = attestation) + jobs.jsonl + ntfy. watchdog freshness (gated on live). DRY_RUN-tested;
+        real capture seeded today (60 recs, their issued_at 08-01). Idempotent re-run=already-captured;
+        watchdog 3 states pass. Live install = handoff. ✔ done
 - [ ] 6 — DRAFT NOTE.md (method, independence, sign proof, tables w/ n's, tail finding, limitations). DRAFT, not for publication.
 
 ## Append-only log

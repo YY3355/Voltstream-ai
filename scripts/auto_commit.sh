@@ -36,6 +36,7 @@ case "${JOB:-commit}" in
   watchdog) exec /bin/bash "$SCRIPT_DIR/watchdog.sh" ;;
   capture)  exec /bin/bash "$SCRIPT_DIR/auto_capture.sh" ;;
   digest)   exec /bin/bash "$SCRIPT_DIR/auto_digest.sh" ;;
+  kardashev) exec /bin/bash "$SCRIPT_DIR/auto_kardashev.sh" ;;
   *) echo "auto_commit: unknown JOB=$JOB" >&2; exit 2 ;;
 esac
 # ---------------------------------------------------------------------------------------------
