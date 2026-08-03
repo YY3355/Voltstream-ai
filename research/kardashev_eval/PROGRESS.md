@@ -21,7 +21,11 @@ No LLM in scoring. No harness/signal.py/deploy/UI. Independence = OUR stores are
         zero(3.26/3.45), persistence(3.62/3.61). v1 sharper+under-covers, v2 wider+well-calibrated.
         CHECKER (independent subagent, no score.py) re-derived HB_HOUSTON/07-20/tft-v2: pinball
         0.976/2.691/0.794 + coverage 3/3 — EXACT match to maker. ✔ done
-- [ ] 4 — Tail focus: calm vs top-decile |spread|; reliability bins where events>=5.
+- [x] 4 — Tail focus (tail.py, TAIL.md). Split at top-decile |spread| >= $13.09 (168 tail hrs). Coverage
+        COLLAPSES calm->tail: v1 0.787->0.600, v2 0.869->0.616 (holds on avg, NOT in the tail). But both
+        crush climatology in the tail (0.60 vs 0.20 cover; pinball 6.4/8.3 vs 9.2). PIT shows the leak is
+        downside: tail PIT_p10 0.26-0.28 (nom 0.10) = under-predict big-move magnitude. v2's width buys
+        calm coverage not tail (0.616~=0.600). n's beside all; tail n~160, no significance. ✔ done
 - [ ] 5 — Capture rhythm addition: daily /latest fetch into archive (their published-at + our capture UTC); jobs.jsonl+watchdog; DRY_RUN.
 - [ ] 6 — DRAFT NOTE.md (method, independence, sign proof, tables w/ n's, tail finding, limitations). DRAFT, not for publication.
 

@@ -77,7 +77,10 @@ def build_climatology(train_start="2026-05-01", train_end="2026-07-07"):
     return clim
 
 
-def main():
+def build_scored():
+    """Join their frozen forecasts to OUR realized spread + baselines. Returns (df, H, excluded):
+    df = all timing-valid deduped rows with realized; H = head-to-head subset (realized + persistence-
+    prior + climatology all defined). Shared by score.main() and tail.py so both use ONE join."""
     real = build_realized()
     clim = build_climatology()
     their = {hub: json.load(open(os.path.join(SNAP, f"history_{hub}.json"))) for hub in HUBS}
@@ -120,6 +123,11 @@ def main():
     excluded["no_persistence"] = int((~df["persist"].notna()).sum())
     excluded["no_clim"] = int((df["persist"].notna() & df["clim"].isna()).sum())
     H = df[ok].copy()                                                      # head-to-head coordinates
+    return df, H, excluded
+
+
+def main():
+    df, H, excluded = build_scored()
 
     def quantile_block(sub, label, qcols):
         """Score a probabilistic forecast (3 quantile columns) on subframe `sub`."""
