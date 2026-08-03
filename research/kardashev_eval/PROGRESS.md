@@ -32,7 +32,16 @@ No LLM in scoring. No harness/signal.py/deploy/UI. Independence = OUR stores are
         timestamp = attestation) + jobs.jsonl + ntfy. watchdog freshness (gated on live). DRY_RUN-tested;
         real capture seeded today (60 recs, their issued_at 08-01). Idempotent re-run=already-captured;
         watchdog 3 states pass. Live install = handoff. ✔ done
-- [ ] 6 — DRAFT NOTE.md (method, independence, sign proof, tables w/ n's, tail finding, limitations). DRAFT, not for publication.
+- [x] 6 — DRAFT NOTE.md: method + independence, sign/alignment proof, per-model results tables w/ n's,
+        tail finding, limitations (incl. verbatim store-seam line + API-as-served), reproduce-it section.
+        Every number re-verified against live score.py/tail.py. Marked DRAFT/NOT FOR PUBLICATION. ✔ done
+
+## FINAL (2026-08-02) — all 6 tasks done, 9 commits. Independent audit of Kardashev RT-DA spread forecasts.
+Findings: both models beat all baselines on pinball; tft sharper+under-covers (0.767), tft-v2 wider+well-
+calibrated (0.840); coverage collapses in the top-decile tail (~0.60) but still crushes climatology (0.20)
+there, leak is downside (PIT_p10 0.26-0.28). Checker-verified. NOTE.md is DRAFT for Ashutosh. Handoff:
+send Ashutosh NOTE.md + the research/kardashev_eval/ scripts+frozen snapshot; enablement of the daily
+witness job (com.voltstream.kardashev.plist) listed below.
 
 ## Append-only log
 - init (2026-08-02) — New loop from Mike's spec. GOAL/PROGRESS written. Recon: OUR price stores present
