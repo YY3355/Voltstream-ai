@@ -14,7 +14,13 @@ No LLM in scoring. No harness/signal.py/deploy/UI. Independence = OUR stores are
         their [P10,P90]->dart [-P90,-P10]. tz: their ts=UTC hour-start, CDT=UTC-5. RT=NP6-905 (HE 1-24,
         4x15m), DA=dart_cache DAY_AHEAD (CDT hour-begin). Deep locational/dam_decade end ~07-01 (pre-
         window) -> window rides our gridstatus caches (still ours). ⏸ STOP — show Mike before scoring. ✔
-- [ ] 3 — Join + score: pinball per quantile, coverage vs 80% (P10-P90), our baselines on identical coords. Checker re-derives 1.
+- [x] 3 — Join + score (score.py). Realized spread=RT-DA from dart_cache (both, cent-validated). Per-
+        model, baselines on each model's own coords, n beside every metric, dedup latest-issuance/hour
+        (collapsed 2672 exact-dup rows), 120 unsettled excluded, untimely=0. RESULTS: tft-2026q3 n=1576
+        pin_avg 1.789 cover 0.767; tft-v2 n=1380 pin_avg 2.224 cover 0.840. Both beat clim(2.19/2.30),
+        zero(3.26/3.45), persistence(3.62/3.61). v1 sharper+under-covers, v2 wider+well-calibrated.
+        CHECKER (independent subagent, no score.py) re-derived HB_HOUSTON/07-20/tft-v2: pinball
+        0.976/2.691/0.794 + coverage 3/3 — EXACT match to maker. ✔ done
 - [ ] 4 — Tail focus: calm vs top-decile |spread|; reliability bins where events>=5.
 - [ ] 5 — Capture rhythm addition: daily /latest fetch into archive (their published-at + our capture UTC); jobs.jsonl+watchdog; DRY_RUN.
 - [ ] 6 — DRAFT NOTE.md (method, independence, sign proof, tables w/ n's, tail finding, limitations). DRAFT, not for publication.
