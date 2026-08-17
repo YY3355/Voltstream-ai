@@ -15,6 +15,7 @@ model that recomputes on demand. It is NOT ERCOT's 5-minute SCED engine.
 """
 import os
 import time
+import numpy as np
 import pandas as pd
 
 SETTLEMENT_POINT = os.environ.get("ERCOT_SP", "HB_HOUSTON")
@@ -118,9 +119,16 @@ def get_as_prices(index):
     try:
         d = _pull_as_gridstatus(index)
         if d and len(d) == len(AS_CANON):
-            _cache["as"] = (time.time(), d)
-            print(f"[ercot_live] live AS pull OK — real MCPCs for {', '.join(d.keys())}")
-            return d
+            # DATA GUARD: a "successful" pull can still be all-NaN when today's AS isn't cleared
+            # yet (values coerce to NaN and survive ffill/bfill). Non-finite MCPCs would make cvxpy
+            # raise "Problem data contains NaN or Inf", so treat that as unavailable -> synthetic.
+            if all(np.isfinite(np.asarray(v, dtype=float)).all() for v in d.values()):
+                _cache["as"] = (time.time(), d)
+                print(f"[ercot_live] live AS pull OK — real MCPCs for {', '.join(d.keys())}")
+                return d
+            n_bad = int(sum((~np.isfinite(np.asarray(v, dtype=float))).sum() for v in d.values()))
+            print(f"[ercot_live] live AS pull returned {n_bad} non-finite MCPCs "
+                  f"(today likely not cleared yet); using synthetic AS prices")
     except Exception as e:
         print(f"[ercot_live] live AS pull failed ({e}); using synthetic AS prices")
     return None
