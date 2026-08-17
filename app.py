@@ -191,7 +191,7 @@ def api_cooptimize(reserve_kwh: float = 10.0, ancillary: bool = True):
     real_as = get_as_prices(idx)
     if real_as is not None:
         asp = {k: (real_as[k][-len(energy):]) for k in real_as}
-        as_source = "real ERCOT MCPC, day-ahead (gridstatus)"
+        as_source = f"real ERCOT MCPC — {str(idx[0])[:10]} (latest complete day, gridstatus)"
     else:
         asp = make_as_prices(energy)
         as_source = "synthetic placeholder"
@@ -233,7 +233,7 @@ def api_vpp():
     real_as = get_as_prices(idx)
     if real_as is not None:
         asp = {k: (real_as[k][-len(energy):]) for k in real_as}
-        as_source = "real ERCOT MCPC, day-ahead (gridstatus)"
+        as_source = f"real ERCOT MCPC — {str(idx[0])[:10]} (latest complete day, gridstatus)"
     else:
         asp = make_as_prices(energy)
         as_source = "synthetic placeholder"

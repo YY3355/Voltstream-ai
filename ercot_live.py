@@ -55,9 +55,14 @@ def _pull_energy_gridstatus() -> pd.Series:
 def _pull_as_gridstatus(index) -> dict:
     """Real ERCOT AS clearing prices (MCPC), $/MW, aligned onto `index`."""
     from gridstatus import Ercot
-    df = Ercot().get_as_prices(date="today")
+    # Fetch AS for the SAME day as the (latest-complete) energy index, not "today": get_prices()'s
+    # last 96 intervals are the last COMPLETE day, so "today"'s AS is the wrong day (and gridstatus
+    # returns naive-UTC stamps). Both mismatches made the reindex map nothing -> all-NaN -> cvxpy.
+    day = pd.DatetimeIndex(index)[0].strftime("%Y-%m-%d")
+    df = Ercot().get_as_prices(date=day)
     tcol = next((c for c in df.columns if c.lower() in ("interval start", "time")), df.columns[0])
-    t = pd.to_datetime(df[tcol].values)
+    # gridstatus stamps are naive-UTC; convert to naive America/Chicago to match the CT energy index
+    t = pd.DatetimeIndex(pd.to_datetime(df[tcol].values)).tz_localize("UTC").tz_convert("America/Chicago").tz_localize(None)
     out = {}
     for canon in AS_CANON:
         match = next((c for c in df.columns if _AS_MATCH[canon](c.lower())), None)
