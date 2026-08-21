@@ -10,8 +10,13 @@ listed in excluded_from_pass3.json. Recomputed from _validation each run (re-run
 ## Checklist
 - [x] 0 — Read KB_LOOP_RECIPE.md + loop-architecture PDF (archetype: synthesis loop, HEAT RATE dedup,
       non-negotiables, final /energy_knowledge_base layout). Trusted/excluded split = 857/54. GOAL/PROGRESS. ✔
-- [ ] 1 — DESIGN + DRY GROUPING (no LLM): kb_synthesize.py grouping stage; normalize topics; merge_plan.json
-      + summary (857 -> N canonical, top-10 groups). Verify 5 groups no-false-merge. ⏸ STOP.
+- [x] 1 — DESIGN + DRY GROUPING (no LLM). Exact-match under-merged (15); switched to curated SEED list
+      (28 concepts, canonical->variants, longest-match + WHOLE-WORD). 857 -> 733 canonical (26 seed
+      concepts / 24 multi-item merges / 707 honest singletons). Head leads as expected: mark-to-market 13,
+      VaR 12, wheeling 12, black-scholes/spark-spread/weather-deriv 9, heat rate 7. Gate artifact
+      merge_plan_review.md (seed list + assigned topics). Verified 6 groups no-false-merge: var variant
+      safe (no variance/variability), implied heat rate SEPARATE from heat rate, spark/dark/crack never
+      cross. excluded_from_pass3.json (54). LMP genuinely absent (confirmed). ⏸ STOP for Mike's review.
 - [ ] 2 — PILOT MERGE (claude -p) Part 4 (ch16-25). Marker-verify 5 canonical objects (provenance, no new
       material, ≥1 distinct pair unmerged). Contradictions. ⏸ STOP.
 - [ ] 3 — FULL SYNTHESIS (on go): all chapters + global pass. Resumable.

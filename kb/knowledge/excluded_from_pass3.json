@@ -1,0 +1,492 @@
+{
+ "n": 54,
+ "note": "UNSUPPORTED/UNCLEAR \u2014 excluded from Pass 3, not deleted; re-run Pass 3 after clearing the review queue to fold cleared items in.",
+ "items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 5,
+   "topic": "Congestion and locational marginal price (LMP)",
+   "chapter": 1,
+   "pages": "32-32",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 4,
+   "topic": "Wind power intermittency and cube-law energy relationship",
+   "chapter": 1,
+   "pages": "54",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 5,
+   "topic": "Wind turbine mechanical stress and wake turbulence",
+   "chapter": 1,
+   "pages": "54",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 1,
+   "topic": "Credit Exposure",
+   "chapter": 1,
+   "pages": "67",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 2,
+   "topic": "Present value sensitivity to interest rate changes",
+   "chapter": 2,
+   "pages": "105",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 5,
+   "topic": "Risk in exploration and production",
+   "chapter": 3,
+   "pages": "120-121",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 6,
+   "topic": "Tax and royalty contract",
+   "chapter": 3,
+   "pages": "121",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 1,
+   "topic": "Why fracking grew quickly (product mix, resource abundance, cost)",
+   "chapter": 3,
+   "pages": "129",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 2,
+   "topic": "Natural gas pricing conventions and price behavior",
+   "chapter": 4,
+   "pages": "133-133",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 3,
+   "topic": "Natural gas energy-content units and conversions",
+   "chapter": 4,
+   "pages": "134-134",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 7,
+   "topic": "Natural gas processing and quality standards",
+   "chapter": 4,
+   "pages": "140",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 5,
+   "topic": "Zone Rates vs. Postage Stamp Rates",
+   "chapter": 4,
+   "pages": "144-144",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 5,
+   "topic": "Why natural gas storage is operationally necessary",
+   "chapter": 4,
+   "pages": "148-149",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 6,
+   "topic": "Economics of natural gas storage facility siting",
+   "chapter": 4,
+   "pages": "149",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 3,
+   "topic": "Nondiscriminatory power auctions and the clearing/marginal price",
+   "chapter": 5,
+   "pages": "171",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 4,
+   "topic": "Locational Marginal Price (LMP) and out-of-merit dispatch",
+   "chapter": 5,
+   "pages": "176",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 6,
+   "topic": "Power Purchase Agreements (PPAs)",
+   "chapter": 5,
+   "pages": "180",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 8,
+   "topic": "Importance and cyclic predictability of electrical demand forecasting",
+   "chapter": 5,
+   "pages": "180-181",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 2,
+   "topic": "Drivers of where crude oil flows (transport cost, politics, regulation)",
+   "chapter": 6,
+   "pages": "215",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 4,
+   "topic": "Common units for trading crude oil (barrel, tonne, conversion)",
+   "chapter": 6,
+   "pages": "216",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 5,
+   "topic": "Describing crude oil: density (API gravity) and sulfur content (sweet vs. sour)",
+   "chapter": 6,
+   "pages": "216-217",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 5,
+   "topic": "Crude oil trading units: barrels vs. metric tonnes",
+   "chapter": 6,
+   "pages": "221",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 7,
+   "topic": "Crude oil shipping and vessel size constraints",
+   "chapter": 6,
+   "pages": "222",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 9,
+   "topic": "Downstream processing and cracking",
+   "chapter": 6,
+   "pages": "222-223",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 3,
+   "topic": "Heating Oil Seasonal Demand Pattern",
+   "chapter": 6,
+   "pages": "232",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 7,
+   "topic": "Physical Crude Oil Priced off Futures (Reversed Price Discovery)",
+   "chapter": 6,
+   "pages": "234",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 4,
+   "topic": "Physical/operating constraints of coal as a solid fuel",
+   "chapter": 7,
+   "pages": "247-247",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 3,
+   "topic": "Flue gas desulfurization (lime/limestone scrubbers)",
+   "chapter": 7,
+   "pages": "254",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 1,
+   "topic": "NGL liquefaction, compaction, and storage/transport behavior",
+   "chapter": 9,
+   "pages": "276",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 8,
+   "topic": "Natural gasoline (pentanes+): uses including dilbit",
+   "chapter": 9,
+   "pages": "278",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 10,
+   "topic": "NGL purity grades: pipeline grade vs. fractionation grade",
+   "chapter": 9,
+   "pages": "279",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 2,
+   "topic": "Why variation/dispersion matters alongside the average",
+   "chapter": 12,
+   "pages": "309-310",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 3,
+   "topic": "Mean absolute deviation",
+   "chapter": 12,
+   "pages": "310",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 4,
+   "topic": "Variance (sigma squared)",
+   "chapter": 12,
+   "pages": "310-311",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 4,
+   "topic": "Portfolio diversification benefit of combining imperfectly correlated strategies",
+   "chapter": 12,
+   "pages": "317-318",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 4,
+   "topic": "Payoff diagrams: forward contract vs call option",
+   "chapter": 13,
+   "pages": "336-338",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 5,
+   "topic": "Random walk",
+   "chapter": 14,
+   "pages": "352-352",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 6,
+   "topic": "Stochastic process",
+   "chapter": 14,
+   "pages": "352-352",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 4,
+   "topic": "Three unknown parameters in spread option valuation",
+   "chapter": 15,
+   "pages": "384",
+   "has_formula": false,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 5,
+   "topic": "Spark spread option",
+   "chapter": 18,
+   "pages": "425",
+   "has_formula": true,
+   "verdict": "UNCLEAR"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 2,
+   "topic": "Valuation date vs. expiration date for a tolling option",
+   "chapter": 18,
+   "pages": "434",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 2,
+   "topic": "Wind energy's cube-law relationship to wind speed",
+   "chapter": 21,
+   "pages": "462-463",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 4,
+   "topic": "Turbine wake effects and wind farm maintenance burden",
+   "chapter": 21,
+   "pages": "463-464",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 5,
+   "topic": "Capacity factor for wind generation",
+   "chapter": 21,
+   "pages": "464-465",
+   "has_formula": true,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 2,
+   "topic": "Baseload plants and effectively free overnight power for storage",
+   "chapter": 23,
+   "pages": "477-477",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 3,
+   "topic": "Final LCOE per MWh: adding operating costs and netting revenue",
+   "chapter": 24,
+   "pages": "488",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 4,
+   "topic": "Limitations of LCOE as a price estimate",
+   "chapter": 24,
+   "pages": "488",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 5,
+   "topic": "Regulatory use of LCOE and the EIA Annual Energy Outlook",
+   "chapter": 24,
+   "pages": "488-489",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 4,
+   "topic": "Spinning reserve and nonspinning reserve",
+   "chapter": 25,
+   "pages": "495",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch26/chunk_000.json",
+   "idx": 1,
+   "topic": "Pipelines as continuous-operation, insurance-like businesses",
+   "chapter": 26,
+   "pages": "506-506",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 1,
+   "topic": "Maximum pressure as a facility design constraint",
+   "chapter": 27,
+   "pages": "528",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 4,
+   "topic": "Why New Aquifer Storage Development Is Unlikely",
+   "chapter": 27,
+   "pages": "534",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 13,
+   "topic": "Storage Facility as an Enabler of Delivery-Insurance Trades",
+   "chapter": 27,
+   "pages": "536",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 5,
+   "topic": "LNG Safety Concerns and Facility Siting",
+   "chapter": 28,
+   "pages": "541-541",
+   "has_formula": false,
+   "verdict": "UNSUPPORTED"
+  }
+ ]
+}
