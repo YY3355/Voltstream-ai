@@ -1,0 +1,257 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Power plant generation technologies",
+   "category": "Power Markets",
+   "subcategory": "Generation",
+   "type": "concept",
+   "definition": "An overview of how different power plant types convert an energy source into electricity, mostly by spinning a generator with steam or directly with a moving force.",
+   "core_idea": "Most generation (fossil, nuclear, geothermal) works by using heat to make steam that spins an electromagnet-based generator; wind, hydro, and solar are the main exceptions that either spin the generator directly (wind, hydro) or skip rotation entirely (solar).",
+   "key_points": [
+    "Fossil fuel plants (oil, gas, coal) burn fuel to create steam that spins a generator; all fossil fuels emit CO2 when burned.",
+    "Coal generation produces roughly 2-3x the pollution of the other fossil fuels.",
+    "Nuclear plants use fission to boil water into steam; a pound of highly enriched uranium is roughly equivalent to a million gallons of gasoline in energy content, but enriched uranium faces supply shortages and disposal/storage difficulty.",
+    "Geothermal plants use naturally occurring underground steam and are efficient but geographically limited to specific locations.",
+    "Wind turbines spin generator windings directly using wind force rather than steam.",
+    "Hydroelectric dams spin generators using falling or flowing water.",
+    "Solar facilities convert sunlight directly to electricity without a spinning generator."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Fuel choice drives emissions profile and plant economics discussed later in heat rate and dispatch order concepts."
+   ],
+   "trading_implications": [
+    "Generation mix (coal vs. gas vs. renewables) underlies supply-side fundamentals that drive locational and time-of-day price behavior."
+   ],
+   "common_misunderstandings": [
+    "Not all power plants use steam turbines \u2014 wind, hydro, and solar bypass the heat-to-steam process entirely."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heat rate",
+    "Cogeneration"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "30-30",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Electrical Generation"
+   }
+  },
+  {
+   "topic": "Cogeneration (topping and bottoming cycle plants)",
+   "category": "Power Markets",
+   "subcategory": "Generation",
+   "type": "market_mechanic",
+   "definition": "Cogeneration is the practice of capturing and selling the steam byproduct of electricity generation instead of venting it, so a plant produces both power and usable heat.",
+   "core_idea": "Reusing waste steam as a saleable product lowers a plant's effective operating cost, and the order in which heat vs. electricity is produced defines whether it is a topping or bottoming cycle plant.",
+   "key_points": [
+    "Cogeneration plants sell both electricity and steam/heat, which reduces net operating cost versus a plant that only sells power.",
+    "Topping cycle plants generate electricity first, then use the leftover exhaust steam for heating.",
+    "Bottoming cycle plants generate heat first for an industrial process, then use the leftover heat to run a steam generator for electricity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to heat rate, since cogeneration changes a plant's effective economics even if fuel-to-electricity efficiency is unchanged."
+   ],
+   "trading_implications": [
+    "Cogeneration economics can make a plant willing to run at lower power prices than a pure generation asset because of the added steam revenue stream."
+   ],
+   "common_misunderstandings": [
+    "Cogeneration plants are not purely electricity assets \u2014 their dispatch economics depend on steam/heat sales too, so evaluating them on power price alone is incomplete."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power plant generation technologies",
+    "Heat rate"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "30-30",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Electrical Generation"
+   }
+  },
+  {
+   "topic": "Heat rate",
+   "category": "Power Markets",
+   "subcategory": "Generation",
+   "type": "formula",
+   "definition": "Heat rate measures how efficiently a power plant converts fuel into electricity, expressed as fuel energy input needed per unit of electrical output.",
+   "core_idea": "A lower heat rate means a plant needs less fuel input to produce the same electrical output, i.e., it is more efficient.",
+   "key_points": [
+    "Heat rate is expressed as a ratio of heat (fuel) input to electrical work output.",
+    "Common units are Btu/kWh or MMBtu/MWh.",
+    "Lower heat rate = more efficient plant."
+   ],
+   "formulas": [
+    {
+     "name": "Heat rate",
+     "formula": "Heat rate = Fuel energy input / Electrical energy output",
+     "variables": {
+      "Fuel energy input": "Btu or MMBtu of fuel burned",
+      "Electrical energy output": "kWh or MWh of electricity produced"
+     }
+    }
+   ],
+   "relationships": [
+    "Heat rate is a core input to plant dispatch cost and is later used to convert fuel prices into an implied power price (spark spread type logic)."
+   ],
+   "trading_implications": [
+    "Plant heat rate determines fuel cost per MWh generated, which underlies merit-order dispatch and marginal price setting in the grid."
+   ],
+   "common_misunderstandings": [
+    "A 'lower' heat rate is better (more efficient), which can be counterintuitive since lower numbers usually connote worse performance in other contexts."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power plant generation technologies",
+    "Congestion and locational marginal price"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "30-30",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Electrical Generation"
+   }
+  },
+  {
+   "topic": "Transmission vs. distribution and the power grid",
+   "category": "Power Markets",
+   "subcategory": "Transmission",
+   "type": "definition",
+   "definition": "Transmission is the bulk, long-distance movement of power at high voltage from a power plant to a substation; distribution is the shorter, low-voltage movement of power from a substation to end consumers.",
+   "core_idea": "The power grid links generation, transmission lines, and substations into an interconnected network whose redundancy \u2014 multiple routing paths between any two points \u2014 is what prevents a single failed line from causing a blackout.",
+   "key_points": [
+    "Transmission = bulk transfer at high voltage, plant to substation.",
+    "Distribution = transfer at lower voltage, substation to consumers.",
+    "The grid's redundancy (multiple paths between locations) prevents overload on any single line and protects against single-point-of-failure blackouts.",
+    "Most lines are overhead on poles; buried lines are used in some urban areas but are less reliable and harder to maintain, and are uncommon in suburban/rural areas.",
+    "Higher voltage reduces transmission losses (power dissipated as heat) but increases danger, so voltage/routing choices trade off safety, reliability, and efficiency.",
+    "Transformers step voltage up for long-distance transmission and step it back down for local distribution."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Transmission losses and congestion connect to locational marginal pricing and FTRs."
+   ],
+   "trading_implications": [
+    "Grid topology and line capacity constraints are the physical root cause of congestion pricing and the need for FTR hedges."
+   ],
+   "common_misunderstandings": [
+    "Burying power lines, while common in cities for aesthetics/safety, actually reduces reliability and maintainability rather than improving it."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Congestion and locational marginal price",
+    "AC and DC power"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "30-31",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Electrical Transmission and Distribution"
+   }
+  },
+  {
+   "topic": "AC vs. DC power transmission",
+   "category": "Power Markets",
+   "subcategory": "Transmission",
+   "type": "concept",
+   "definition": "AC (alternating current) and DC (direct current) are the two ways electrical energy propagates through a wire: DC moves via the physical drift of electrons, AC moves via an electromagnetic shockwave created by oscillating the field.",
+   "core_idea": "AC dominates modern transmission because its voltage is easy to step up or down, but it requires all generators on a grid to oscillate in precise synchronization, whereas DC avoids synchronization but suffers voltage drop past each load point, making grid-wide voltage hard to predict.",
+   "key_points": [
+    "Both AC and DC are created by placing a conductive wire in an electromagnetic field, pushing electrons from the negative to positive side.",
+    "DC power is the direct motion of electrons down the wire.",
+    "AC power is an electromagnetic shockwave (created by electron collisions when the field/charge oscillates) that propagates much faster than individual electrons move.",
+    "AC's advantage: voltage is easy to scale up or down, simplifying transmission system design.",
+    "AC's challenge: every generator on the grid must oscillate in exact synchrony, or shockwaves from different generators collide and cancel out; this synchronization problem grows harder as more generators are added.",
+    "DC's issue: voltage declines on the line after each point where power is drawn off, making voltage hard to predict across a grid with variable demand.",
+    "DC's advantage: DC generators don't need to synchronize with other power plants."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why real-world grids (including ERCOT) are AC systems requiring frequency synchronization."
+   ],
+   "trading_implications": [
+    "Not directly a trading mechanic, but explains a physical constraint (synchronization) behind grid reliability events that can drive price volatility."
+   ],
+   "common_misunderstandings": [
+    "AC power is not the electrons themselves moving long distances \u2014 it's a shockwave/electromagnetic wave propagating through the electrons, which is why it travels far faster than electron drift speed."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transmission vs. distribution and the power grid"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "31-32",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 AC and DC Power"
+   }
+  },
+  {
+   "topic": "Congestion and locational marginal price (LMP)",
+   "category": "Power Markets",
+   "subcategory": "Congestion",
+   "type": "market_mechanic",
+   "definition": "Locational marginal price (LMP) is the price of power at a specific grid location, which diverges from the grid-wide price when transmission lines connecting cheap generation to demand become overloaded and force out-of-order (more expensive) generators to run.",
+   "core_idea": "With unlimited transmission capacity, power would cost the same everywhere (set by the most recently activated/marginal generator), but when lines congest, only customers in the congested area bear the extra cost of activating pricier, closer-in generation.",
+   "key_points": [
+    "Absent transmission constraints, price is uniform across the grid and equals the cost of the last (marginal) generator dispatched.",
+    "During peak demand, lines from low-cost generation to load can become overloaded, forcing more expensive, closer generators online out of normal cost order.",
+    "The extra cost from this reordering is charged only to consumers in the congested location, not spread across the whole grid \u2014 this location-specific price is the LMP.",
+    "Most of the U.S. is moving toward LMP-based cost allocation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Congestion and LMP directly motivate the existence of financial transmission rights (FTRs) as a hedging instrument."
+   ],
+   "trading_implications": [
+    "Traders/consumers exposed to a node with frequent congestion face basis risk versus the broader hub price, which is the risk FTRs are designed to hedge."
+   ],
+   "common_misunderstandings": [
+    "LMP differences are not arbitrary pricing \u2014 they specifically reflect the cost of activating out-of-merit-order generation to relieve a physical line overload."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transmission vs. distribution and the power grid",
+    "Financial transmission rights (FTRs)"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "32-32",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Congestion"
+   }
+  },
+  {
+   "topic": "Financial transmission rights (FTRs) and FTR options",
+   "category": "Derivatives",
+   "subcategory": "Transmission congestion hedging",
+   "type": "definition",
+   "definition": "An FTR is a bilateral contract where two parties settle on the difference in price between two grid nodes, letting a power buyer hedge the risk of paying a higher congestion-driven price at their delivery point versus a reference node.",
+   "core_idea": "FTRs let market participants hedge locational basis risk created by congestion; because the payment obligation under a plain FTR can run either direction, FTR options exist to let a buyer pay an upfront premium to cap their downside instead of taking on a two-way obligation.",
+   "key_points": [
+    "FTRs are contracts between two counterparties who take opposite sides of an obligation to pay/receive the price difference between two nodes.",
+    "If there is no congestion, the two nodes' prices match and no payment is owed.",
+    "If there is congestion, one party pays the other; either party can end up owing depending on how prices diverge.",
+    "FTR options let a party pay an upfront premium to avoid the obligation to pay under the FTR later \u2014 effectively insurance against adverse congestion pricing.",
+    "The purpose of FTRs is to help customers manage price risk from buying power at a major hub node while ultimately paying a congestion-driven price at their actual location."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to congestion and LMP \u2014 FTRs exist because of the node-to-node price divergence congestion creates."
+   ],
+   "trading_implications": [
+    "FTRs (and FTR options) are the standard hedge for locational basis risk between a hub and a delivery node; an FTR is a swap-like symmetric obligation while an FTR option is a capped-downside, premium-paid hedge."
+   ],
+   "common_misunderstandings": [
+    "A plain FTR is not one-directional insurance \u2014 either party can end up paying, unlike an FTR option where the premium payer's downside is capped."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Congestion and locational marginal price (LMP)"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "32-33",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Congestion"
+   }
+  }
+ ]
+}

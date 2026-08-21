@@ -1,0 +1,288 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Natural gas heat-energy units and conversions",
+   "category": "Natural Gas",
+   "subcategory": "Units of Measurement",
+   "type": "definition",
+   "definition": "Because raw natural gas composition varies, the market measures it by the heat energy it releases when burned rather than by volume or weight.",
+   "core_idea": "Natural gas is priced and traded in heat-content terms (Btu/MMBtu) rather than physical volume, with Bcf used mainly to describe storage capacity, and Joules as the non-US equivalent unit.",
+   "key_points": [
+    "Btu (British Thermal Unit) is the standard US measure of heat energy; gas is commonly traded in MMBtu (millions of Btus).",
+    "Bcf (billion cubic feet) is a volume measure used mainly to describe the size of gas storage facilities.",
+    "Roughly 1 million MMBtu are contained in 1 Bcf of natural gas.",
+    "Joules (and kJ/MJ) are the heat-energy unit used in most of the world outside the US.",
+    "1 Btu equals approximately 1054.35 Joules."
+   ],
+   "formulas": [
+    {
+     "name": "Bcf to MMBtu (approximate)",
+     "formula": "1 Bcf \u2248 1,000,000 MMBtu",
+     "variables": {
+      "Bcf": "billion cubic feet of natural gas",
+      "MMBtu": "million British Thermal Units"
+     }
+    },
+    {
+     "name": "Btu to Joule conversion",
+     "formula": "1 Btu = 1054.35 J",
+     "variables": {
+      "Btu": "British Thermal Unit",
+      "J": "Joule"
+     }
+    }
+   ],
+   "relationships": [
+    "Heat-energy pricing is why gas contracts are quoted per MMBtu rather than per cubic foot or per pound."
+   ],
+   "trading_implications": [
+    "Any cross-border or cross-unit gas comparison (e.g., US MMBtu pricing vs. a Joule-denominated market) requires converting through the Btu-Joule relationship."
+   ],
+   "common_misunderstandings": [
+    "Bcf is a volume/capacity measure (used for storage), not itself a heat-energy measure like Btu/MMBtu; the two are only linked via the approximate conversion factor."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "MMBtu pricing conventions",
+    "gas storage capacity"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "26-27",
+    "section_hint": "1.1 An Overview of the Energy Markets - Common Units (natural gas)"
+   }
+  },
+  {
+   "topic": "Structure of regional electricity markets",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Because electricity is hard to store and expensive to move long distances, there is no single national power market \u2014 instead a patchwork of separate regional markets, each with its own supply/demand balance, rules, and pricing.",
+   "core_idea": "Electricity's physical constraints (limited storage, transmission cost/loss) force power trading into regional markets that must continuously balance supply and demand, producing a highly volatile spot market.",
+   "key_points": [
+    "Electricity cannot be easily stored, so supply must be matched to demand in real time.",
+    "Long-distance transmission is expensive, which fragments the US into distinct regional grids/markets rather than one national market.",
+    "Each regional market has its own characteristics and regulatory regime.",
+    "Constant supply/demand matching produces high volatility in the spot market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This regional fragmentation is the reason inter-regional price differences (and wheeling opportunities) can persist."
+   ],
+   "trading_implications": [
+    "A trader must understand the specific regional market's auction rules and constraints rather than assuming a uniform national power price."
+   ],
+   "common_misunderstandings": [
+    "Unlike other commodities, power markets are inherently local/regional, not a single fungible national market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "wheeling",
+    "day-ahead and real-time auctions",
+    "clearing price"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "27-28",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   }
+  },
+  {
+   "topic": "Day-ahead/real-time auctions, forward markets, and the clearing price",
+   "category": "Power Markets",
+   "subcategory": "Price Formation",
+   "type": "market_mechanic",
+   "definition": "Regional daily power auctions (hourly, day-ahead, and five-minute real-time) set the physical clearing price for electricity; separately, forward markets at major hubs are where most speculative trading occurs, spanning from the rest of the current month out to about five years.",
+   "core_idea": "Physical power price is set auction-by-auction through merit-order bidding, while financial/speculative activity mostly happens in a separate forward market tied to hub prices.",
+   "key_points": [
+    "Daily auctions let producers sell power to consumers on the local grid, typically hourly on a day-ahead basis or in five-minute increments in real time.",
+    "Forward markets, based on prices at major hubs, are where most speculative power trading occurs, separate from the daily physical auctions.",
+    "Forward trade horizons typically range from the remainder of the current month out to roughly five years.",
+    "On delivery day, all producers and consumers in a local market generally receive/pay the same clearing price per megawatt.",
+    "In deregulated markets, the clearing price comes from bids (price/volume schedules) submitted by producers.",
+    "Plants are dispatched from lowest-cost to highest-cost until demand is met (merit-order dispatch).",
+    "The clearing price is set by the cost of the last (marginal) plant activated to meet demand \u2014 the marginal price of power \u2014 and that plant is the marginal power plant."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Clearing price = marginal price of power = cost of the marginal (last-dispatched) power plant.",
+    "Merit-order dispatch (lowest to highest cost) directly determines which plant is marginal."
+   ],
+   "trading_implications": [
+    "Understanding which plant is likely to be marginal (its fuel/cost) is central to forecasting the clearing price.",
+    "Speculative strategies concentrate in hub-based forward products rather than the physical daily auctions."
+   ],
+   "common_misunderstandings": [
+    "The clearing price is not an average of all bids \u2014 it is set specifically by the cost of the marginal (last needed) unit, and (in general) that same price applies to all participants that day."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "merit-order dispatch",
+    "hub-based forward trading",
+    "regional power markets"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "27-28",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   }
+  },
+  {
+   "topic": "Load variability and peak/off-peak power products",
+   "category": "Power Markets",
+   "subcategory": "Product Definitions",
+   "type": "market_mechanic",
+   "definition": "Electrical demand shifts constantly and cyclically by season, day of week, and time of day, so power is traded as many distinct products (defined by location, time period, and hours) rather than a single commodity, using a shorthand of days\u00d7hours.",
+   "core_idea": "Because demand changes minute-to-minute and follows daily/weekly/seasonal cycles, and electricity cannot be stored, power is split into many differentiated products described by a weekdays\u00d7hours shorthand (e.g., peak vs. off-peak).",
+   "key_points": [
+    "Demand changes constantly (every device switched on/off shifts load) and must be balanced in real time since power can't be stored.",
+    "Power usage is cyclical by season, day of week, and time of day \u2014 e.g., daytime power differs from nighttime power, and August power differs from January power.",
+    "This cyclicality means there isn't one electricity product but hundreds, differentiated by location, month/season, and time of day.",
+    "Peak hours are typically daytime, roughly 7 a.m. to 11 p.m.; off-peak hours are nighttime.",
+    "Products are described in weekdays\u00d7hours shorthand: 7x24 = all week, all hours; peak power is 5x16 (weekdays only) or 7x16 (including weekends).",
+    "If weekends are excluded from a 5x16 peak product, a separate 2x16 product covers weekend peak hours.",
+    "Off-peak is typically 7x8, or an 'off-peak wrap' combining the 2x16 weekend-peak hours with 7x8 nighttime hours.",
+    "Exact peak/off-peak hour definitions vary slightly by region."
+   ],
+   "formulas": [],
+   "relationships": [
+    "2x16 + 7x8 = the off-peak wrap product.",
+    "5x16 (weekday peak) + 2x16 (weekend peak) covers the same hours as 7x16."
+   ],
+   "trading_implications": [
+    "Traders must specify which of the many location/time-of-day/hour products they mean; peak and off-peak (and weekday vs. weekend peak) trade as genuinely separate products with separate prices."
+   ],
+   "common_misunderstandings": [
+    "There is no single 'price of electricity' for a region \u2014 peak, off-peak, weekend-peak, and seasonal variants are distinct products, and regional definitions of peak/off-peak hours are not standardized nationally."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "regional electricity markets",
+    "clearing price",
+    "hub-based forward trading"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "28",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   }
+  },
+  {
+   "topic": "Wheeling and inter-regional power price differences",
+   "category": "Power Markets",
+   "subcategory": "Trading Strategy",
+   "type": "trading_strategy",
+   "definition": "Wheeling is the transport of electricity from one regional grid to another; because regional markets have distinct supply/demand conditions, price differences between adjacent grids can make wheeling profitable even after accounting for transmission losses.",
+   "core_idea": "Regional power markets can have very different prices (e.g., cheap hydro-driven power in the Pacific Northwest), and moving that power to a higher-priced adjacent market can be profitable despite line losses.",
+   "key_points": [
+    "Transporting power between grids is called wheeling.",
+    "The Pacific Northwest's abundant hydro capacity can produce extremely cheap electricity when river flow is high.",
+    "After major spring snowmelt, Pacific Northwest power prices can fall to zero or negative, because dams cannot simply be shut off and other generators must be incentivized (via negative prices) to shut down.",
+    "Despite significant power loss in long-distance transport, wheeling this cheap Pacific Northwest power into Northern California can still be profitable."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regional price divergence (driven by local generation mix, e.g. hydro availability) is the source of wheeling profitability."
+   ],
+   "trading_implications": [
+    "Traders can exploit price spreads between adjacent regional grids by wheeling power, provided the spread exceeds transmission losses and costs.",
+    "Seasonal hydro conditions (e.g., spring snowmelt) can create predictable windows of very cheap or negative-priced power in hydro-heavy regions."
+   ],
+   "common_misunderstandings": [
+    "Negative prices in this context are not a market malfunction \u2014 they are a deliberate incentive mechanism to get inflexible generators (like must-run dams) to reduce output when supply exceeds demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "regional electricity markets",
+    "transmission losses"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "28",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   }
+  },
+  {
+   "topic": "Electricity units: megawatt vs. megawatt-hour",
+   "category": "Power Markets",
+   "subcategory": "Units of Measurement",
+   "type": "definition",
+   "definition": "A megawatt (MW) measures power \u2014 the rate at which electrical work is done or can be produced/carried; a megawatt-hour (MWh) measures energy \u2014 the amount of work done, equal to power sustained over a period of time.",
+   "core_idea": "MW is analogous to a car's speed (a rate), while MWh is analogous to the distance traveled (power multiplied by time), and the distinction between power and energy units is fundamental to how electricity is measured and traded.",
+   "key_points": [
+    "Power is the rate at which work can be done, analogous to a car's speed.",
+    "Energy is an amount of work done, analogous to distance traveled.",
+    "A megawatt (MW) measures the power a plant can produce or a transmission line can carry.",
+    "A megawatt-hour (MWh) measures energy, calculated as power (MW) multiplied by a duration in hours."
+   ],
+   "formulas": [
+    {
+     "name": "Energy from power and time",
+     "formula": "Energy (MWh) = Power (MW) \u00d7 Time (hours)",
+     "variables": {
+      "MWh": "megawatt-hours, a measure of energy",
+      "MW": "megawatts, a measure of power",
+      "hours": "duration over which the power is sustained"
+     }
+    }
+   ],
+   "relationships": [
+    "MWh (energy traded/billed) is derived from MW (capacity/rate) via the time dimension."
+   ],
+   "trading_implications": [
+    "Contracts and bills for power are ultimately settled in energy (MWh) terms, even though plant and line capacity is described in power (MW) terms."
+   ],
+   "common_misunderstandings": [
+    "MW and MWh are not interchangeable \u2014 confusing a plant's power rating (MW) with the energy (MWh) it delivers over time is a basic but common error."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "clearing price",
+    "generation capacity"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "28-29",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity, Common Units"
+   }
+  },
+  {
+   "topic": "Physics analogy for voltage, current, and transmission loss",
+   "category": "Power Markets",
+   "subcategory": "Physical Fundamentals",
+   "type": "concept",
+   "definition": "Electricity (the flow of charged particles, typically electrons, through a conductor) behaves analogously to water flowing through a river: voltage is like water pressure and current is like the volume/size of flow; for a fixed amount of power, voltage and current are inversely related, and transmission losses (like evaporation) increase with current and line length.",
+   "core_idea": "Because transmission losses rise with current (not voltage), grids convert power to high voltage/low current for long-distance transport and step voltage back down before delivery to consumers, minimizing wasted energy.",
+   "key_points": [
+    "Electricity is generated by using a spinning magnet (motivating force) with conductive wire (electron supply) in a closed circuit \u2014 electromagnetism links magnetic fields and electric current.",
+    "Voltage is analogous to water pressure in a river; electrical current is analogous to the size/flow of the channel.",
+    "For a fixed amount of power, voltage and current are inversely proportional \u2014 narrowing the current (like a hose nozzle) raises voltage.",
+    "Power lost during transmission is proportional to the line's length and to the current (speed of electrical flow); high-voltage/low-current lines lose less power than low-voltage/high-current lines.",
+    "Because of this, power grids convert electricity to high voltage for long-distance transmission, then step it down to lower voltage just before delivery to consumers.",
+    "Electrical power must flow in a closed loop (in and out of every point); if the flow stops, an electromagnetic field builds up, which can discharge dangerously when reconnected."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Voltage and current are inversely related for a given power level.",
+    "Transmission loss scales with both line length and current, motivating the high-voltage/low-current design of long-distance lines."
+   ],
+   "trading_implications": [
+    "Transmission loss characteristics help explain regional price basis and why wheeling power over long distances incurs real physical (not just financial) costs."
+   ],
+   "common_misunderstandings": [
+    "Higher voltage does not itself cause more loss \u2014 it's higher current that increases losses; grids deliberately raise voltage (lowering current) for long-distance transport for exactly this reason."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "wheeling",
+    "regional electricity markets"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "29",
+    "section_hint": "1.1 An Overview of the Energy Markets - The Physics of Electricity"
+   }
+  }
+ ]
+}

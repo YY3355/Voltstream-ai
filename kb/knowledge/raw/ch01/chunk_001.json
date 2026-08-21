@@ -1,0 +1,345 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Energy value chain: find, move, convert, deliver",
+   "category": "Energy Markets",
+   "subcategory": "Industry Structure",
+   "type": "concept",
+   "definition": "The energy business is organized around a chain of activities: locating and extracting a fuel source, transporting it to where it will be used, and converting it into a usable product for delivery to end customers.",
+   "core_idea": "Every energy commodity moves through a similar sequence \u2014 exploration/extraction (or manufacturing/construction for renewables like solar panels or dams), transport in a form suited to the fuel (pipeline gas, LNG by ship, coal by rail/truck, oil by tanker/pipeline), and finally conversion/distribution to consumers by utilities or grid operators.",
+   "key_points": [
+    "Exploration and drilling companies locate and extract fuel; solar substitutes panel manufacturing, hydro substitutes dam construction",
+    "Natural gas moves via pressurized pipeline or is liquefied for ship transport and must be re-gasified afterward",
+    "Coal moves by truck/rail; oil moves by tanker ship and liquid pipeline; solar needs no transport step",
+    "Electricity is generated at power plants and delivered over a grid maintained by a Transmission System Operator",
+    "Gas is moved from transcontinental pipelines into local utility distribution networks; petroleum is refined then trucked/piped to end points"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into TSO/RTO/ISO grid structure",
+    "Distinct fuel logistics explain why gas, oil, coal, and power markets trade differently"
+   ],
+   "trading_implications": [
+    "Transport/conversion bottlenecks (e.g., LNG liquefaction/regasification capacity, pipeline capacity) are natural points of price divergence between locations"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transmission System Operator",
+    "Natural gas transport",
+    "Henry Hub"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "22-22",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Regulated vs. deregulated markets",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "A regulated market is one where a government-appointed commission oversees a state-sanctioned monopoly over part of the energy market; a deregulated market removes that legislative monopoly to allow competing participants, though substantial government oversight typically remains.",
+   "core_idea": "Deregulation is about permitting competition, not eliminating regulation \u2014 most deregulated power markets remain heavily regulated in practice.",
+   "key_points": [
+    "Regulated market: public utility/public service commission oversees a state monopoly",
+    "Deregulated market: legislative barriers to competition are removed",
+    "Deregulated markets still carry substantial government oversight"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why RTO/ISO markets allow free electricity trading but remain rule-heavy"
+   ],
+   "trading_implications": [
+    "Market rules and participant eligibility vary by jurisdiction even within deregulated markets, so local rules must be checked per grid"
+   ],
+   "common_misunderstandings": [
+    "Deregulated does not mean unregulated \u2014 significant oversight persists"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "TSO",
+    "RTO/ISO",
+    "Power Marketer"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "22-23",
+    "section_hint": "Common Terms box"
+   }
+  },
+  {
+   "topic": "TSO, ISO, and RTO definitions",
+   "category": "Power Markets",
+   "subcategory": "Grid Operators",
+   "type": "definition",
+   "definition": "A Transmission System Operator (TSO) manages a power grid; when it is unaffiliated with local government it is called an Independent System Operator (ISO); an ISO whose footprint crosses state lines is also called a Regional Transmission Operator (RTO).",
+   "core_idea": "TSO is the generic term for any grid operator, while ISO/RTO describe operators running deregulated, free-trading grids, with RTO specifically denoting multi-state coverage.",
+   "key_points": [
+    "TSOs are sometimes run directly by local governments",
+    "An ISO is a TSO independent of local government",
+    "An RTO is an ISO whose grid spans multiple states",
+    "Most electricity trading happens on RTO/ISO-run deregulated grids",
+    "The book uses 'TSO' generically for any grid operator and 'RTO/ISO' for deregulated-market operators"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regulated vs deregulated markets",
+    "ERCOT functions as this kind of grid operator"
+   ],
+   "trading_implications": [
+    "Grid operator type/affiliation signals how much local-government vs market-based rule-making governs trading"
+   ],
+   "common_misunderstandings": [
+    "ISO and RTO are sometimes used loosely; RTO specifically implies crossing state boundaries"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulated vs deregulated markets"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "23-23",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Deregulation reshaped who owns power plants",
+   "category": "Power Markets",
+   "subcategory": "Market History",
+   "type": "concept",
+   "definition": "Before deregulation, only utility-owned power plants could sell into the grid; after deregulation, any party could build, generate, and sell power, and utilities shifted toward operating transmission rather than generation.",
+   "core_idea": "Deregulation separated grid ownership (retained by utilities/TSOs) from generation ownership (opened to traders and independent operators), which created an actual market for electricity as a tradable commodity.",
+   "key_points": [
+    "Pre-deregulation: only utility-owned plants could sell power to the grid",
+    "Post-deregulation: any party can build a plant and offer power for sale",
+    "Utilities pivoted toward running transmission grids rather than power plants",
+    "Power plants increasingly came to be owned by traders and run by specialized operating companies"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regulated vs deregulated markets",
+    "Power Marketer"
+   ],
+   "trading_implications": [
+    "The existence of independent, trader-owned generation is what makes an electricity trading market possible at all"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "TSO/ISO/RTO",
+    "Power Marketer"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "23-24",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Long vs. short exposure, and why 'buy' terminology is misleading for forwards",
+   "category": "Trading",
+   "subcategory": "Core Terminology",
+   "type": "definition",
+   "definition": "A trader is 'long' an asset if they benefit when its price rises, and 'short' if they benefit when its price falls; these terms are used instead of 'buy'/'sell' because a future purchase obligation can create either exposure depending on whether the price is fixed.",
+   "core_idea": "Agreeing today to buy an asset at a fixed future price is a long position (benefits from price increases, since the price is already locked in), while agreeing to buy at an unfixed future price is effectively a short-like exposure (benefits from price declines, since a lower future price means paying less).",
+   "key_points": [
+    "Long: benefits from price appreciation",
+    "Short: benefits from price decline",
+    "A fixed-price forward purchase = long exposure to the price",
+    "An unfixed-price forward purchase = benefits when price falls, so 'buying' isn't automatically 'long'",
+    "Traders use long/short specifically to avoid the ambiguity of buy/sell language"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Power Marketer",
+    "Bilateral/OTC vs exchange trading"
+   ],
+   "trading_implications": [
+    "Always evaluate whether a forward commitment fixes price before labeling the exposure long or short",
+    "The direction of price benefit, not the buy/sell action, defines long/short"
+   ],
+   "common_misunderstandings": [
+    "Assuming 'agreeing to buy in the future' always means long exposure \u2014 it only does if price is fixed"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bilateral vs exchange trading"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "23-24",
+    "section_hint": "Common Terms box"
+   }
+  },
+  {
+   "topic": "Bilateral (OTC) trading vs. exchange trading",
+   "category": "Trading",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Energy transactions can be arranged directly between two counterparties (bilateral or over-the-counter trading) or routed through an intermediary such as an exchange (e.g., NYMEX or ICE).",
+   "core_idea": "Financial trading in energy grew up alongside physical trading because producers, utilities, industrial consumers, and speculators all need contracts to raise capital, guarantee supply, hedge output, or take price views, and they can satisfy that need either directly with a counterparty or via an exchange.",
+   "key_points": [
+    "Bilateral/OTC trading is done directly between two parties without an intermediary",
+    "Exchange trading uses an intermediary organization",
+    "NYMEX and ICE are named as common venues for energy products",
+    "Motivations for entering transactions include funding exploration/construction, guaranteeing fuel/power supply, hedging plant fuel purchases and power sales, locking in future power costs, and speculation"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Long vs short",
+    "Power Marketer"
+   ],
+   "trading_implications": [
+    "Choice of bilateral vs exchange venue affects counterparty risk and standardization of the trade"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power Marketer",
+    "Long/Short"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "24-24",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Natural gas composition: dry vs. wet",
+   "category": "Natural Gas",
+   "subcategory": "Physical Fundamentals",
+   "type": "definition",
+   "definition": "Natural gas is a colorless, odorless fossil fuel gas mixture composed mainly of methane, often with ethane, propane, butane, and trace gases like nitrogen and carbon dioxide; it is termed 'dry' when it is nearly pure methane and 'wet' when it carries substantial amounts of the other hydrocarbons.",
+   "core_idea": "Natural gas's exact composition varies by location, and the dry/wet distinction reflects how much non-methane hydrocarbon content the gas carries.",
+   "key_points": [
+    "Primarily methane (CH4), often with ethane (C2H6), propane (C3H8), butane (C4H10)",
+    "Composition varies by location and may include nitrogen, CO2, and other trace gases",
+    "Dry gas = almost pure methane; wet gas = substantial other hydrocarbons",
+    "Valued as a comparatively clean, inexpensive fuel \u2014 the dominant fuel for U.S. power generators built in the past 20 years (as of writing)"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Hydraulic fracturing / fracking",
+    "Henry Hub"
+   ],
+   "trading_implications": [
+    "Wet vs dry gas composition affects the value of extracted liquids, relevant to producer economics discussed alongside fracking"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fracking",
+    "Henry Hub",
+    "Burner tip"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "24-24",
+    "section_hint": "Natural Gas"
+   }
+  },
+  {
+   "topic": "Burner tip and natural gas hubs / Henry Hub",
+   "category": "Natural Gas",
+   "subcategory": "Infrastructure",
+   "type": "definition",
+   "definition": "The 'burner tip' refers to the end user of natural gas (a legacy term from old gas-appliance dispersing heads); a natural gas hub is an interconnection point between major pipelines, and Henry Hub \u2014 located on the U.S. Gulf Coast between New Orleans and Houston \u2014 is the most important such hub, serving as the delivery point for the NYMEX natural gas futures contract and the national benchmark price.",
+   "core_idea": "Gas moves from extraction wells through pipelines to consumers, and Henry Hub's role as both the NYMEX delivery point and pricing benchmark makes it the reference location for natural gas prices nationwide.",
+   "key_points": [
+    "Burner tip = end user of natural gas, a nickname surviving from obsolete gas-appliance hardware",
+    "Natural gas hubs sit at interconnections between major pipelines",
+    "Henry Hub is located on the Gulf Coast between New Orleans and Houston",
+    "Henry Hub is the NYMEX natural gas futures delivery location and the U.S. benchmark price reference"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas transport",
+    "Forward vs spot behavior for gas"
+   ],
+   "trading_implications": [
+    "Henry Hub pricing is the reference point for basis/locational pricing of natural gas elsewhere in the country"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas composition",
+    "NYMEX"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "24-25",
+    "section_hint": "Natural Gas"
+   }
+  },
+  {
+   "topic": "Natural gas forward vs. spot market behavior and the storage arbitrage limit",
+   "category": "Natural Gas",
+   "subcategory": "Price Behavior",
+   "type": "market_mechanic",
+   "definition": "Natural gas forward prices show a strong, predictable seasonal pattern that tracks consumer heating demand (high in winter, falling sharply each spring), while spot prices lack this predictability and are driven by prevailing supply and demand; despite the different behaviors, the two markets cannot be arbitraged against each other without access to a physical storage facility.",
+   "core_idea": "Even though buying cheap spot gas, storing it, and selling it forward is theoretically profitable when the two markets diverge, executing that trade requires physical delivery and storage capability that most market participants don't have, so the forward/spot gap persists.",
+   "key_points": [
+    "Forward prices have a well-defined seasonal shape mirroring winter heating demand",
+    "Spot prices are unpredictable and driven by current supply/demand rather than seasonal expectation",
+    "Storage-based arbitrage (buy spot, store, sell forward) is possible in principle",
+    "That arbitrage requires physical trading capability \u2014 taking delivery and storing large gas volumes \u2014 that many participants lack, which limits convergence between the two markets"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Henry Hub pricing",
+    "Natural gas composition"
+   ],
+   "trading_implications": [
+    "A trading desk without physical storage access cannot capture forward/spot divergence directly",
+    "Seasonal forward curve shape is a structural feature of gas markets tied to heating demand, not noise"
+   ],
+   "common_misunderstandings": [
+    "Assuming forward/spot arbitrage is freely available to any trader \u2014 it is gated by physical storage access"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub",
+    "Storage economics"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "25-25",
+    "section_hint": "Natural Gas"
+   }
+  },
+  {
+   "topic": "Hydraulic fracturing (fracking) and its market impact",
+   "category": "Natural Gas",
+   "subcategory": "Production/Supply",
+   "type": "concept",
+   "definition": "Hydraulic fracturing is an extraction technique that has made natural gas much cheaper to produce from certain rock formations, and it tends to yield a higher proportion of lighter, more valuable hydrocarbons (methane, propane, naphtha) than other extraction methods.",
+   "core_idea": "Fracking's economic significance is amplified because large shale deposits amenable to the technique are located in politically stable regions such as the United States, supporting abundant and reliable supply.",
+   "key_points": [
+    "Fracking substantially lowered extraction cost from certain rock formations",
+    "Produces a larger share of lighter, higher-value hydrocarbons than other extraction technologies",
+    "Large shale deposits suited to fracking are concentrated in politically stable regions like the U.S."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas composition (dry/wet)",
+    "Supply-driven spot price behavior"
+   ],
+   "trading_implications": [
+    "Fracking-driven supply abundance and political stability of source regions are structural, supply-side reasons to expect lower and steadier gas price risk"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas composition"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "25-25",
+    "section_hint": "Natural Gas"
+   }
+  }
+ ]
+}

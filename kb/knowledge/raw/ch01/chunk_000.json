@@ -1,0 +1,203 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Structure of the energy market",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "The energy market is a chain of distinct sub-industries (exploration/production, transportation, generation, conversion, and distribution) that together move fuel and power from the ground to end consumers.",
+   "core_idea": "Because the market is fragmented into specialized sub-industries, most participants only ever see one slice of it, but each slice has its own quirks that a trader still needs to understand alongside the big picture.",
+   "key_points": [
+    "Sub-industries include finding/developing raw fuel sources, transporting them (pipeline, ship), generating power (plants, wind, solar), converting raw materials into finished products, and distributing to consumers (utilities, gas stations).",
+    "The energy sector touches nearly every part of the broader economy.",
+    "The core of the market is drilling for fuel, building power plants, and running power lines.",
+    "The primary commodities are petroleum, natural gas, and electricity, with coal, carbon emissions, nuclear, solar, and wind as secondary/related commodities.",
+    "Deregulation turned energy from a purely industrial/operational business into a major financial market on par with stocks and bonds, drawing in Wall Street participation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the physical-vs-financial and spot-vs-forward distinctions discussed later in the chapter."
+   ],
+   "trading_implications": [
+    "A trader benefits from understanding both their own niche and how the overall chain connects, since events in one sub-industry (e.g., outages, transport constraints) ripple into others."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical vs financial contracts",
+    "Spot vs forward markets"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "18-19",
+    "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   }
+  },
+  {
+   "topic": "Physical trades vs financial trades",
+   "category": "Derivatives",
+   "subcategory": "Contract Types",
+   "type": "definition",
+   "definition": "A physical trade requires an actual delivery or receipt of the underlying commodity (e.g., barrels of crude); a financial trade settles purely in cash with no physical movement of the commodity.",
+   "core_idea": "Energy markets split trades into physical and financial types because commodities like oil and gas are hard to transport and store, making physical settlement a distinct and more operationally demanding activity than pure cash settlement.",
+   "key_points": [
+    "Physical contracts transfer ownership of an actual commodity between parties.",
+    "Financial contracts transfer only cash and let investors get price exposure without ever handling the commodity.",
+    "The author states physical trading is both more complex and potentially more financially rewarding than financial trading."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical trading complexity is a major driver of arbitrage opportunities described later in the chunk (operational risk substituting for financial risk)."
+   ],
+   "trading_implications": [
+    "Traders who are equipped to handle physical logistics (e.g., taking delivery) can access profit opportunities that pure financial traders cannot."
+   ],
+   "common_misunderstandings": [
+    "It would be a mistake to focus only on financial markets since many of their features only make sense in light of underlying physical market mechanics."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Arbitrage",
+    "Liquidity"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "19-20",
+    "section_hint": "1.1 An Overview of the Energy Markets - Summary / Common Terms"
+   }
+  },
+  {
+   "topic": "Spot market vs forward market divide",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "The spot (cash) market covers transactions for immediate delivery, while the forward market covers agreements for delivery at a future date; in energy, unlike in stocks or bonds, these two markets are not closely linked.",
+   "core_idea": "Because electricity and heat cannot be stored economically and are costly to move long distances, they must be produced close to where they're consumed, which forces the market to split into localized spot markets and a separate, more national forward market that don't behave as a single continuous curve.",
+   "key_points": [
+    "Electricity and heat generally can't be stored and must be generated on demand.",
+    "This non-storability and high transmission cost push power/heat generation to be local to consumption.",
+    "The resulting market split: many small local spot markets focused on current activity, versus a broader forward market reflecting national expectations.",
+    "The link between spot and forward prices that exists in stocks/bonds (via storage/carry) does not hold the same way in power because you cannot buy electricity now, store it, and deliver it later."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This non-storability is also why spot markets are described as complicated/local-regulation-heavy while forward markets are the most liquid segment."
+   ],
+   "trading_implications": [
+    "Traders can't rely on simple cash-and-carry arbitrage logic between energy spot and forward prices the way they might in financial markets."
+   ],
+   "common_misunderstandings": [
+    "One should not assume energy spot and forward prices are tightly linked the way stock/bond spot and forward prices are."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical trades vs financial trades",
+    "Liquidity"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "19-20",
+    "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   }
+  },
+  {
+   "topic": "Arbitrage and operational vs financial risk",
+   "category": "Trading Strategy",
+   "subcategory": "Arbitrage",
+   "type": "concept",
+   "definition": "Arbitrage is making a risk-free profit by simultaneously buying one security and selling another; energy markets have more such opportunities than typical financial markets, but they often carry operational risk (e.g., logistics of delivery) instead of pure financial risk.",
+   "core_idea": "Access to more energy markets increases a trader's potential profit opportunities, and while true risk-free arbitrage is rare in most financial markets, energy markets present more of these opportunities because the 'risk-free' part is often replaced by real-world operational challenges.",
+   "key_points": [
+    "A common assumption in option pricing is that arbitrage opportunities don't exist, or don't persist long if they do.",
+    "In energy, apparent arbitrage may require solving operational problems, like arranging delivery of large quantities of physical product, which substitutes for financial risk.",
+    "Access to more markets generally raises a trader's potential profit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the physical vs financial trade distinction, since operational risk in arbitrage often stems from physical delivery logistics."
+   ],
+   "trading_implications": [
+    "A trader evaluating an apparent arbitrage in energy should account for the operational burden (e.g., delivery logistics) as a real risk, not treat the trade as truly risk-free."
+   ],
+   "common_misunderstandings": [
+    "Energy 'arbitrage' opportunities may look risk-free on paper but can carry meaningful operational risk in practice."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical trades vs financial trades",
+    "Liquidity"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "20",
+    "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   }
+  },
+  {
+   "topic": "Liquidity: liquid vs illiquid markets/assets",
+   "category": "Risk",
+   "subcategory": "Market Liquidity",
+   "type": "definition",
+   "definition": "Liquidity describes how easy it is to find a trading counterparty and how cheap it is to trade; a liquid market/asset has ready counterparties and low trading cost, while an illiquid market/asset is hard to trade and relatively costly to transact in.",
+   "core_idea": "Difficulty finding trading partners is a distinct complication in energy markets, and the ease or cost of finding a counterparty is what traders mean by liquidity.",
+   "key_points": [
+    "A liquid asset (e.g., a U.S. government bond) can be bought or sold on short notice.",
+    "An illiquid asset (e.g., a nuclear power plant) may have real value but be hard to sell quickly at a fair price.",
+    "The most liquid parts of the energy market are the forward financial markets, in contrast to the more complicated spot markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties to the spot-vs-forward market split: spot markets tend to be less liquid/more locally constrained than forward financial markets."
+   ],
+   "trading_implications": [
+    "Traders should expect higher transaction costs and more difficulty exiting positions in illiquid energy markets/assets compared to liquid ones."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot market vs forward market divide",
+    "Arbitrage and operational vs financial risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "20",
+    "section_hint": "1.1 An Overview of the Energy Markets - Common Terms"
+   }
+  },
+  {
+   "topic": "Why physical spot market knowledge is required despite forward market liquidity",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Although the forward financial markets are the most liquid and easiest to trade, many of their pricing features can't be understood without first understanding the underlying, more complex physical spot markets.",
+   "core_idea": "It's tempting for traders to focus only on the simpler, more liquid financial/forward markets, but the author argues this is a mistake because financial market behavior is ultimately explained by physical spot market constraints.",
+   "key_points": [
+    "Spot markets are complicated: full of local regulation and physical constraints.",
+    "Forward financial markets are the most liquid part of the energy market.",
+    "Ignoring the physical markets in favor of financial markets is called out explicitly as a mistake.",
+    "The complexity of physical spot markets is described as the defining feature of energy trading -- individually simple issues, but many of them to track."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds directly on the spot-vs-forward market divide and liquidity concepts."
+   ],
+   "trading_implications": [
+    "A trader should not skip learning the physical/spot market mechanics even if they only intend to trade financial/forward instruments."
+   ],
+   "common_misunderstandings": [
+    "Assuming the forward financial market can be understood in isolation from physical market fundamentals."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot market vs forward market divide",
+    "Liquidity: liquid vs illiquid markets/assets"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "20-21",
+    "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   }
+  }
+ ]
+}

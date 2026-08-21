@@ -12,8 +12,11 @@ same check ×3 = stop. Pause + report after every task. Engine=claude-cli (subsc
 - [x] 2 — DRY-RUN: 129 chunks; read ch01 (prose) + ch14 (option pricing) previews. Coherent sections,
       chapter/page-tagged, paragraph-boundary (occasional mid-sentence prose split, NO mid-formula/table
       split seen), source tags correct. dry_run/ gitignored (raw verbatim book text — don't commit source).
-- [ ] 3 — PILOT --max-chunks 5: real claude -p; marker-verify 5 JSONs (schema/rewritten/no-invented-
-      formulas/source-tags/skip); report timing. ⏸ STOP for go.
+- [x] 3 — PILOT --max-chunks 5. claude -p path works, 5/5 done, 0 errors, ~63s/chunk (5m16s) ->
+      ~2h15m for full 129 (subscription, rate-limit window is the constraint; resumable). Marker-verify
+      (checker) ALL PASS: (a) schema valid, (b) rewritten (verbatim guard wired, 0 flags), (c) all 5
+      formulas trace to source — NO inventions (1054.35 J, 7.2-7.5 bbl/tonne, heat rate, MWh=MW*h,
+      Bcf/MMBtu), (d) source ch/pages correct, (e) skips sensible. ⏸ STOP — full run on explicit go.
 - [ ] 4 — FULL RUN (explicit go): resumable; done/error counts; retry errored once.
 - [ ] 5 — REPORT pdf: cross-check figures vs processing_state.json; caveat says Pass1/unvalidated.
 

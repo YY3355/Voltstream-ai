@@ -1,0 +1,325 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Day-ahead vs. real-time bidding strategy for generators",
+   "category": "Power Markets",
+   "subcategory": "Day-Ahead and Real-Time Auctions",
+   "type": "trading_strategy",
+   "definition": "A generator bidding into a two-settlement power market must choose how much of its output to commit in the day-ahead auction versus holding back capacity to sell into the real-time auction.",
+   "core_idea": "Real-time prices can offer bigger upside, but holding capacity back to sell real-time carries the risk of not being dispatched at all; a plant's physical flexibility (start-up speed, ramping ability, fuel efficiency) largely determines which strategy is viable.",
+   "key_points": [
+    "The day-ahead and real-time auctions are run and cleared separately.",
+    "Selling into real-time offers potentially greater profit but higher risk of the capacity going unused.",
+    "A unit not selected in the day-ahead auction can still bid into real-time.",
+    "Because real-time delivery is physical, mainly fast-starting or excess-capacity units can realistically participate there.",
+    "As a result most capacity clears day-ahead, and real-time mainly balances short-term fluctuations and unexpected demand."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Day-ahead market allocation",
+    "Real-time balancing market",
+    "Generator startup cost and minimum up-time constraints"
+   ],
+   "trading_implications": [
+    "Bidding strategy should be tailored to a unit's technical constraints rather than treated as a uniform choice across the fleet.",
+    "Flexible/fast-start assets have an option value in real-time that inflexible baseload assets do not."
+   ],
+   "common_misunderstandings": [
+    "Assuming the real-time market is where most power is transacted \u2014 the author states most capacity is actually allocated day-ahead, with real-time used for balancing."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "ISO auction mechanics",
+    "Offer curves",
+    "Ancillary/balancing services"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "34",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 day-ahead/real-time auctions"
+   }
+  },
+  {
+   "topic": "What petroleum/oil is",
+   "category": "Oil",
+   "subcategory": "Fuel Fundamentals",
+   "type": "definition",
+   "definition": "Petroleum is a liquid fossil fuel: decayed organic matter buried under heat and pressure over geologic time converts into a mixture of hydrocarbons, some of which are liquid at normal temperature and pressure.",
+   "core_idea": "\"Petroleum\" is a generic term covering crude oil as extracted plus every product later refined from it; \"crude oil\" specifically means the unrefined liquid as it comes out of the ground.",
+   "key_points": [
+    "Fossil-fuel hydrocarbon mixtures can be gas, liquid, or solid depending on composition.",
+    "Crude oil is the raw, undistilled extracted liquid; distillation splits it into named products (gasoline, heating oil, etc.).",
+    "Petroleum's high energy density per unit volume makes it a favored transportation fuel versus gaseous hydrocarbons (e.g., propane) and easier to handle in an engine than solid hydrocarbons (e.g., coal)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas (gaseous hydrocarbons)",
+    "Coal (solid hydrocarbons)",
+    "Refined petroleum products"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Using \"petroleum\" and \"crude oil\" interchangeably \u2014 the author distinguishes crude oil (unrefined) from petroleum (the whole crude-plus-refined-products family)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Distillation",
+    "Crack spread"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "34-35",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Oil"
+   }
+  },
+  {
+   "topic": "Crude oil trade geography and refining location",
+   "category": "Oil",
+   "subcategory": "Crude Oil Markets",
+   "type": "market_mechanic",
+   "definition": "Crude oil trading is structured around the physical separation between producing regions (Middle East, South America) and consuming regions (North America, Europe, Asia-Pacific), which drives a large global crude transport trade.",
+   "core_idea": "Major refiners have historically preferred locating refineries near consumers rather than near producers, so crude oil is transported long distances and refined near where it will be sold; this makes crude the dominant globally-traded petroleum product while refined product prices stay mostly regional.",
+   "key_points": [
+    "Major consumers: industrialized North America, Europe, Asia-Pacific.",
+    "Major exporters: less-developed producing regions, chiefly Middle East and South America.",
+    "Refiners bear the cost/risk of transporting crude rather than siting refineries near production.",
+    "International trade in refined products (gasoline, diesel) exists but is much smaller than crude oil trade.",
+    "Refined product prices are set locally/regionally by local regulation, supply, and demand rather than a single global price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crude oil benchmarks (WTI, Brent)",
+    "Regional refined product pricing"
+   ],
+   "trading_implications": [
+    "Because refined products are priced regionally, crude oil benchmarks (not refined-product benchmarks) are the primary globally-traded reference prices."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "WTI",
+    "Brent",
+    "Persian Gulf crude"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "35",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   }
+  },
+  {
+   "topic": "Major crude oil benchmarks: WTI, Brent, Persian Gulf",
+   "category": "Oil",
+   "subcategory": "Crude Oil Benchmarks",
+   "type": "definition",
+   "definition": "WTI and Brent are the two liquid, tradable crude oil benchmark contracts; Persian Gulf crude is a third common reference but has no comparably liquid futures contract, only spot prices from Oman and Dubai.",
+   "core_idea": "The industry references crude quality and price mainly through a small set of benchmarks, of which only WTI (U.S. production) and Brent (North Atlantic seaborne delivery) have active liquid contract markets.",
+   "key_points": [
+    "WTI: benchmark for crude produced in the United States.",
+    "Brent: benchmark for crude delivered by ship in the northern Atlantic.",
+    "Persian Gulf crude: referenced via Oman and Dubai spot prices, no equivalent liquid futures contract.",
+    "WTI and Brent are both classified as light, sweet (\"premium\") crude oils."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crude oil quality classification (light/heavy, sweet/sour)"
+   ],
+   "trading_implications": [
+    "Liquidity differences mean WTI/Brent serve as tradable price references while Persian Gulf crude pricing relies on spot assessments rather than futures hedging."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Premium crude",
+    "Sweet vs. sour crude"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "35",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   }
+  },
+  {
+   "topic": "Crude oil trading units: barrel and tonne",
+   "category": "Oil",
+   "subcategory": "Units and Conversions",
+   "type": "concept",
+   "definition": "Crude oil is traded by volume (barrels) in the U.S. and by weight (tonnes) in Europe, with an approximate conversion between the two that varies by crude type.",
+   "core_idea": "Because different crude oils have different densities, there is no single exact barrel-to-tonne conversion factor \u2014 it must be looked up per crude type, ranging roughly from 7.2 (Persian Gulf) to 7.5 (premium light crude like WTI/Brent) barrels per tonne.",
+   "key_points": [
+    "1 barrel = 42 U.S. gallons \u2248 159 liters.",
+    "1 tonne (metric ton) = 1,000 kg \u2248 2,204.6 lbs.",
+    "Rough rule of thumb: ~7.5 barrels per tonne of crude oil.",
+    "Actual ratio depends on crude composition/density: ~7.2 bbl/tonne for Persian Gulf crude up to ~7.5 bbl/tonne for premium light crude (WTI, Brent)."
+   ],
+   "formulas": [
+    {
+     "name": "Approximate barrel-tonne conversion",
+     "formula": "1 tonne \u2248 7.2\u20137.5 barrels (crude-specific)",
+     "variables": {
+      "barrel": "42 US gallons / ~159 liters",
+      "tonne": "1,000 kg / ~2,204.6 lbs"
+     }
+    }
+   ],
+   "relationships": [
+    "Crude oil density/quality classification"
+   ],
+   "trading_implications": [
+    "Converting volumes between U.S. (barrel-quoted) and European (tonne-quoted) markets requires using the correct crude-specific ratio, not a single universal constant."
+   ],
+   "common_misunderstandings": [
+    "Assuming one fixed barrels-per-tonne number applies to all crude oils \u2014 the author states the ratio varies with crude composition."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Light vs. heavy crude",
+    "WTI",
+    "Brent"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "35-36",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Common Units"
+   }
+  },
+  {
+   "topic": "Crude oil quality: density and sulfur classification",
+   "category": "Oil",
+   "subcategory": "Crude Oil Quality",
+   "type": "concept",
+   "definition": "Crude oils are characterized along two quality dimensions: density (light vs. heavy) and sulfur content (sweet vs. sour), which together determine value.",
+   "core_idea": "Light, sweet crude is the most valuable and easiest to refine into high-value products like gasoline, while heavy or sour crude requires more processing and carries a pollution/cost penalty from sulfur removal.",
+   "key_points": [
+    "Light (low-density) crude has more light hydrocarbons that convert easily into high-value products like gasoline; it visibly flows more freely.",
+    "Heavy crude has more low-value components requiring extra downstream processing; it is more viscous.",
+    "Sweet crude has low sulfur content; sour crude has high sulfur content.",
+    "High sulfur is undesirable because it is a pollutant removable only via expensive processing.",
+    "Light, sweet crudes (e.g., WTI, Brent) are the most valuable and are termed \"premium\" crude oils."
+   ],
+   "formulas": [],
+   "relationships": [
+    "WTI and Brent as premium benchmarks",
+    "Distillation/refining economics"
+   ],
+   "trading_implications": [
+    "Crude quality (density + sulfur) directly affects refining cost and product yield, which feeds into pricing differentials between crude grades."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Refined petroleum products"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "36",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   }
+  },
+  {
+   "topic": "Distillation of crude oil into refined products",
+   "category": "Oil",
+   "subcategory": "Refining",
+   "type": "concept",
+   "definition": "Distillation is the process of separating crude oil's mixed hydrocarbons into distinct refined products by heating the mixture so each hydrocarbon vaporizes at its own characteristic temperature, then condensing each vapor separately.",
+   "core_idea": "Refining crude oil is a joint-production process: a refiner cannot make only gasoline \u2014 the same run necessarily also yields diesel, heating oil, asphalt, and other distillates in some proportion, often requiring multiple distillation passes to reach product purity.",
+   "key_points": [
+    "Each hydrocarbon in crude turns to gas at a different temperature, enabling separation by staged heating and cooling.",
+    "Vaporized fractions are captured and re-condensed into separate liquid products.",
+    "Multiple distillation passes may be needed to get a sufficiently pure end product.",
+    "Producing more of one distillate (e.g., gasoline) necessarily means producing more of the others as well (diesel, heating oil, asphalt, etc.)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crack spread",
+    "Crude oil quality (light/heavy, sweet/sour)"
+   ],
+   "trading_implications": [
+    "Because product mix is not independently adjustable, a refiner responding to a shortage in one product (e.g., gasoline) simultaneously affects supply/price of the others."
+   ],
+   "common_misunderstandings": [
+    "Thinking a refiner can freely dial up single-product output (e.g., pure gasoline) without producing the other distillates."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gasoline",
+    "Diesel",
+    "Heating oil",
+    "Asphalt"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "36-37",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Distillation and Crack Spreads"
+   }
+  },
+  {
+   "topic": "The crack spread relationship between crude and refined products",
+   "category": "Oil",
+   "subcategory": "Refining Economics",
+   "type": "concept",
+   "definition": "The crack spread describes the linked-but-distinct price relationships between crude oil and its refined products: crude price moves push all refined product prices in the same direction, while joint production tends to create a negative correlation among the refined products themselves.",
+   "core_idea": "Rising crude oil prices raise the cost of all refined products together, but because distillation is a joint process, increasing output of one product to meet a shortage (e.g., gasoline) tends to oversupply the others, pushing their prices down relative to the shortage product.",
+   "key_points": [
+    "Crude oil price increases raise the price of all refined products (a shared cost link).",
+    "Distillation's joint-production nature creates a separate, often negative-correlation link among refined product prices (e.g., a gasoline shortage response can glut other distillates).",
+    "This crude-to-refined-product price relationship as a whole is termed the crack spread."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distillation process",
+    "Crude oil pricing"
+   ],
+   "trading_implications": [
+    "The crack spread is a distinct risk/trading factor separate from outright crude price risk, since refined product prices can diverge from each other even as they move together with crude."
+   ],
+   "common_misunderstandings": [
+    "Assuming refined product prices always move together \u2014 the text notes they can be negatively correlated with each other even while all being tied positively to crude."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Distillation",
+    "Gasoline",
+    "Diesel",
+    "Refining margins"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "37",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Distillation and Crack Spreads"
+   }
+  },
+  {
+   "topic": "Coal as a generation fuel: benefits and drawbacks",
+   "category": "Coal",
+   "subcategory": "Fuel Fundamentals",
+   "type": "concept",
+   "definition": "Coal is a solid hydrocarbon fuel that is abundant, easy to store, and cheap to extract relative to the power it generates, but it is the most polluting fossil fuel, producing significant CO2 and SO2 emissions.",
+   "core_idea": "Coal's low cost and logistical simplicity make it attractive for electricity generation, but its heavy carbon and sulfur emissions have made it increasingly unpopular and subject to competitive/regulatory pressure.",
+   "key_points": [
+    "Coal is widely available globally and inexpensive to extract relative to its power output.",
+    "Easy to store compared to other fuels.",
+    "Major source of CO2 and SO2 emissions \u2014 its principal drawback.",
+    "Pollution concerns have driven declining consumer/public acceptance of coal generation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Competing generation fuels (implied: natural gas, renewables)"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Emissions",
+    "Fuel cost comparison for generation"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "37",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Coal"
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "chunks": {
+  "ch01_chunk000": "done",
+  "ch01_chunk001": "done",
+  "ch01_chunk002": "done",
+  "ch01_chunk003": "done",
+  "ch01_chunk004": "done"
+ },
+ "usage": {
+  "in": 0,
+  "out": 0
+ },
+ "engine": "claude-cli"
+}
