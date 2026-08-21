@@ -34,6 +34,13 @@
     "chapter": 32,
     "pages": "576-577",
     "section_hint": "6.4 Model Risk \u2014 Summary/Introduction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -63,6 +70,13 @@
     "chapter": 32,
     "pages": "576-577",
     "section_hint": "6.4 Model Risk \u2014 SR 11-7 quotation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 32,
     "pages": "577-578",
     "section_hint": "6.4 Model Risk \u2014 causes of model risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -133,6 +154,13 @@
     "chapter": 32,
     "pages": "577-578",
     "section_hint": "6.4 Model Risk \u2014 complexity discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -168,6 +196,13 @@
     "chapter": 32,
     "pages": "578-580",
     "section_hint": "6.4 Model Risk \u2014 Model Documentation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -202,6 +237,13 @@
     "chapter": 32,
     "pages": "580-581",
     "section_hint": "6.4 Model Risk \u2014 Using Models Appropriately"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

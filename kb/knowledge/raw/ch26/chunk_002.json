@@ -35,6 +35,13 @@
     "chapter": 26,
     "pages": "517-518",
     "section_hint": "5.1 Natural Gas Transportation \u2014 glossary of charges"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 26,
     "pages": "517-518",
     "section_hint": "5.1 Natural Gas Transportation \u2014 glossary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 26,
     "pages": "518",
     "section_hint": "Transportation Contracts Between Buyers and Sellers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -133,6 +154,13 @@
     "chapter": 26,
     "pages": "518-520",
     "section_hint": "Trading Example \u2014 Pipelines as Insurance Providers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 26,
     "pages": "520-521",
     "section_hint": "Trading Example \u2014 Short Term Interruptible Trades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -198,6 +233,13 @@
     "chapter": 26,
     "pages": "521",
     "section_hint": "Footnote on force majeure"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   }
  ]

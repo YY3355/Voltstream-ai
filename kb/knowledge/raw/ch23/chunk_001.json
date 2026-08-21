@@ -36,6 +36,13 @@
     "chapter": 23,
     "pages": "482-483",
     "section_hint": "Trading Example\u2014Compressed Air"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 23,
     "pages": "483",
     "section_hint": "Expected Profitability"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text confirms overnight purchase is non-discretionary (storage always charges) framing and notes the approach only needs forecasting the off-peak/peak price relationship, consistent with the 'simple m",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 23,
     "pages": "483",
     "section_hint": "Expected Profitability / Figure 4.8.5"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 23,
     "pages": "483",
     "section_hint": "Expected Profitability"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -174,6 +202,13 @@
     "chapter": 23,
     "pages": "483-484",
     "section_hint": "Trading Example\u2014Pumped Hydropower"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -211,6 +246,13 @@
     "chapter": 23,
     "pages": "484-485",
     "section_hint": "Trading Example\u2014Pumped Hydropower / The Risks, Results"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   }
  ]

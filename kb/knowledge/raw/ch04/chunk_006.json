@@ -37,6 +37,13 @@
     "chapter": 4,
     "pages": "164-165",
     "section_hint": "2.1 Natural Gas - Midwest region"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -76,6 +83,13 @@
     "chapter": 4,
     "pages": "165-166",
     "section_hint": "2.1 Natural Gas - Eastern Gas Region"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -116,6 +130,13 @@
     "chapter": 4,
     "pages": "166-167",
     "section_hint": "2.1 Natural Gas - Texas and Gulf Coast"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -153,6 +174,13 @@
     "chapter": 4,
     "pages": "167-168",
     "section_hint": "2.1 Natural Gas - Southeast"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   }
  ]

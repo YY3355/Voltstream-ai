@@ -32,6 +32,13 @@
     "chapter": 27,
     "pages": "527-528",
     "section_hint": "5.2 Natural Gas Storage \u2014 Withdrawal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 27,
     "pages": "528",
     "section_hint": "5.2 Natural Gas Storage \u2014 Physical Constraints"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only describes storage geology (impermeable underground area, analogy to pressurized containers/wells) and never discusses maximum pressure trade-offs, withdrawal speed, structural risk, o",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 27,
     "pages": "528-530",
     "section_hint": "5.2 Natural Gas Storage \u2014 Facility Inventory"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -143,6 +164,13 @@
     "chapter": 27,
     "pages": "528-529",
     "section_hint": "5.2 Natural Gas Storage \u2014 Geology"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -178,6 +206,13 @@
     "chapter": 27,
     "pages": "529",
     "section_hint": "5.2 Natural Gas Storage \u2014 Geology"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -215,6 +250,13 @@
     "chapter": 27,
     "pages": "529-530",
     "section_hint": "5.2 Natural Gas Storage \u2014 Depleted Gas Reservoirs"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -253,6 +295,13 @@
     "chapter": 27,
     "pages": "530-531",
     "section_hint": "5.2 Natural Gas Storage \u2014 Salt Caverns"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   }
  ]

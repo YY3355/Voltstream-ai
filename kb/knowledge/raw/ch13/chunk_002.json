@@ -31,6 +31,13 @@
     "chapter": 13,
     "pages": "334-334",
     "section_hint": "3.4 Financial Options - introduction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states investment decisions can be modeled as financial options and gives the power plant example verbatim (option to burn fuel, exercised when profitable).",
+    "checked_at": "2026-08-21T14:56:03+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 13,
     "pages": "334-335",
     "section_hint": "3.4 Financial Options - options on forwards"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:56:03+00:00"
    }
   },
   {
@@ -100,6 +114,13 @@
     "chapter": 13,
     "pages": "334-335",
     "section_hint": "3.4 Financial Options - American/European"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:56:03+00:00"
    }
   },
   {
@@ -137,6 +158,13 @@
     "chapter": 13,
     "pages": "335-336",
     "section_hint": "3.4 Financial Options - A Zero Sum Game"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:56:03+00:00"
    }
   },
   {
@@ -180,6 +208,13 @@
     "chapter": 13,
     "pages": "336-338",
     "section_hint": "Payoff Diagrams; Figures 3.4.3-3.4.4"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source describes the option payoff as 'half the payoff of a forward' and defines in/out of the money, but never states the max(Underlying-Strike,0) formula, nor the cited numeric examples ($8 MMBtu fo",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -225,6 +260,13 @@
     "chapter": 13,
     "pages": "337-339",
     "section_hint": "Payoff Diagrams; Figures 3.4.5-3.4.8"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -268,6 +310,13 @@
     "chapter": 13,
     "pages": "339-343",
     "section_hint": "Put/Call Parity; Figures 3.4.9-3.4.11"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   }
  ]

@@ -34,6 +34,13 @@
     "chapter": 11,
     "pages": "294-295",
     "section_hint": "3.2 Physical Properties \u2014 Distillation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:11+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 11,
     "pages": "294-295",
     "section_hint": "3.2 Physical Properties \u2014 Distillation Requires a Tremendous Amount of Energy for Heating and Cooling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:11+00:00"
    }
   },
   {
@@ -114,6 +128,13 @@
     "chapter": 11,
     "pages": "295-296",
     "section_hint": "3.2 Physical Properties \u2014 Physics of Gas"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text supports all key points (pressure equalization, compression/expansion temperature effects, condensation of trace gases, ideal gas law as layman approximation with PV=nRT shown in referenced Figur",
+    "checked_at": "2026-08-21T14:55:17+00:00"
    }
   },
   {
@@ -148,6 +169,13 @@
     "chapter": 11,
     "pages": "296-297",
     "section_hint": "3.2 Physical Properties \u2014 Gas Pipelines"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:17+00:00"
    }
   },
   {
@@ -184,6 +212,13 @@
     "chapter": 11,
     "pages": "297-300",
     "section_hint": "3.2 Physical Properties \u2014 Air Conditioning and Refrigeration"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:17+00:00"
    }
   }
  ]

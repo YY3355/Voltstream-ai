@@ -32,6 +32,13 @@
     "chapter": 5,
     "pages": "183",
     "section_hint": "2.2 Electricity - hot weather demand"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 5,
     "pages": "183-184",
     "section_hint": "2.2 Electricity - seasonality, weather, and demand"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -95,6 +109,13 @@
     "chapter": 5,
     "pages": "184",
     "section_hint": "2.2 Electricity - Figure 2.2.8 temperature vs demand"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -129,6 +150,13 @@
     "chapter": 5,
     "pages": "184-185",
     "section_hint": "2.2 Electricity - how power is traded"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -165,6 +193,13 @@
     "chapter": 5,
     "pages": "185",
     "section_hint": "2.2 Electricity - peak/off-peak shorthand"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -195,6 +230,13 @@
     "chapter": 5,
     "pages": "185",
     "section_hint": "2.2 Electricity - technology and demand"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -227,6 +269,13 @@
     "chapter": 5,
     "pages": "185",
     "section_hint": "2.2 Electricity - Generation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -257,6 +306,13 @@
     "chapter": 5,
     "pages": "185-186",
     "section_hint": "2.2 Electricity - Generation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -290,6 +346,13 @@
     "chapter": 5,
     "pages": "185-186",
     "section_hint": "2.2 Electricity - Generation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:46+00:00"
    }
   },
   {
@@ -331,6 +394,13 @@
     "chapter": 5,
     "pages": "186",
     "section_hint": "2.2 Electricity - Generation, heat rate"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states fossil fuel plants are marginal producers so they disproportionately set clearing price, defines heat rate as ratio of heat input to work output (Btu/kWh or MMBtu/MWh), and notes lower h",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -359,6 +429,13 @@
     "chapter": 5,
     "pages": "186-187",
     "section_hint": "2.2 Electricity - Generators"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -400,6 +477,13 @@
     "chapter": 5,
     "pages": "187",
     "section_hint": "2.2 Electricity - Generators, circuits, Ohm's Law"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   }
  ]

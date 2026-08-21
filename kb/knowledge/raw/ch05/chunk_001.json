@@ -33,6 +33,13 @@
     "chapter": 5,
     "pages": "174-175",
     "section_hint": "2.2 Electricity \u2014 market participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 5,
     "pages": "174-175",
     "section_hint": "2.2 Electricity \u2014 market participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 5,
     "pages": "175-176",
     "section_hint": "2.2 Electricity \u2014 Electrical Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -130,6 +151,13 @@
     "chapter": 5,
     "pages": "175-176",
     "section_hint": "2.2 Electricity \u2014 Electrical Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -164,6 +192,13 @@
     "chapter": 5,
     "pages": "176",
     "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text is cut off before introducing LMP or the location-specific pricing concept; no mention of LMP, out-of-merit dispatch cost isolation, or splitting cost to affected locations appears in the ",
+    "checked_at": "2026-08-21T14:52:28+00:00"
    }
   },
   {
@@ -198,6 +233,13 @@
     "chapter": 5,
     "pages": "176",
     "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:28+00:00"
    }
   },
   {
@@ -232,6 +274,13 @@
     "chapter": 5,
     "pages": "176-177",
     "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:28+00:00"
    }
   }
  ]

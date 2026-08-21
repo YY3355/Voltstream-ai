@@ -36,6 +36,13 @@
     "chapter": 25,
     "pages": "493-494",
     "section_hint": "4.10 Secondary Electricity Markets - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:32+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 25,
     "pages": "494",
     "section_hint": "4.10 Secondary Electricity Markets - intro narrative"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source text supports capacity markets/ancillary services/PPAs as mechanisms to fund underutilized generation for uncertain demand, though the specific peak-magnitude and price-spike unpopularity detai",
+    "checked_at": "2026-08-21T14:59:36+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 25,
     "pages": "494-495",
     "section_hint": "Ancillary Services Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:36+00:00"
    }
   },
   {
@@ -138,6 +159,13 @@
     "chapter": 25,
     "pages": "495",
     "section_hint": "Ancillary Services Markets - Regulation Up/Down"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text establishes ancillary services compensate generators for adjusting output to match demand/frequency needs in deregulated markets, consistent with the reg up/down definition, though the exact reg ",
+    "checked_at": "2026-08-21T14:59:40+00:00"
    }
   },
   {
@@ -171,6 +199,13 @@
     "chapter": 25,
     "pages": "495",
     "section_hint": "Ancillary Services Markets - Spinning/Nonspinning Reserve"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page only introduces ancillary services markets generally; it never mentions spinning/nonspinning reserve, synchronization, or the 10-minute/30-60-minute timing claims.",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -202,6 +237,13 @@
     "chapter": 25,
     "pages": "495",
     "section_hint": "Frequency Response"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -234,6 +276,13 @@
     "chapter": 25,
     "pages": "495-497",
     "section_hint": "Capacity Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -262,6 +311,13 @@
     "chapter": 25,
     "pages": "494",
     "section_hint": "Summary - Power Purchase Agreements"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -294,6 +350,13 @@
     "chapter": 25,
     "pages": "494",
     "section_hint": "Summary - Financial Transmission Rights"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -327,6 +390,13 @@
     "chapter": 25,
     "pages": "494",
     "section_hint": "Summary - Renewable Energy Certificates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   }
  ]

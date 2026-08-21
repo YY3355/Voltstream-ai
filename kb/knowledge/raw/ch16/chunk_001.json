@@ -37,6 +37,13 @@
     "chapter": 16,
     "pages": "392-393",
     "section_hint": "4.1 Spatial Load Forecasting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -75,6 +82,13 @@
     "chapter": 16,
     "pages": "393-394",
     "section_hint": "4.1 Spatial Load Forecasting - Base Load Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -110,6 +124,13 @@
     "chapter": 16,
     "pages": "394-395",
     "section_hint": "4.1 Spatial Load Forecasting - Temperature"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -147,6 +168,13 @@
     "chapter": 16,
     "pages": "395-396",
     "section_hint": "4.1 Spatial Load Forecasting - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -181,6 +209,13 @@
     "chapter": 16,
     "pages": "396-397",
     "section_hint": "4.1 Spatial Load Forecasting - Month"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -213,6 +248,13 @@
     "chapter": 16,
     "pages": "397-398",
     "section_hint": "4.1 Spatial Load Forecasting - Forecasts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   }
  ]

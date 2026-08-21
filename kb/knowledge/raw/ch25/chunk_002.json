@@ -36,6 +36,13 @@
     "chapter": 25,
     "pages": "502-503",
     "section_hint": "Renewable Energy Certificates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -67,6 +74,13 @@
     "chapter": 25,
     "pages": "502-504",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -102,6 +116,13 @@
     "chapter": 25,
     "pages": "503",
     "section_hint": "Renewable Energy Certificates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -135,6 +156,13 @@
     "chapter": 25,
     "pages": "503-504",
     "section_hint": "Renewable Portfolio Standards"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -164,6 +192,13 @@
     "chapter": 25,
     "pages": "504",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -192,6 +227,13 @@
     "chapter": 25,
     "pages": "504",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   }
  ]

@@ -36,6 +36,13 @@
     "chapter": 4,
     "pages": "142-142",
     "section_hint": "Pipeline Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 4,
     "pages": "142-142",
     "section_hint": "Pipeline Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 4,
     "pages": "142-143",
     "section_hint": "Henry Hub Futures Contract"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 4,
     "pages": "143-144",
     "section_hint": "Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -179,6 +207,13 @@
     "chapter": 4,
     "pages": "143-144",
     "section_hint": "Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -209,6 +244,13 @@
     "chapter": 4,
     "pages": "144-144",
     "section_hint": "Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNCLEAR",
+    "judge_reason": "Source text only lists transportation contract charge terms; it contains no mention of zone rates or postage stamp rates.",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -245,6 +287,13 @@
     "chapter": 4,
     "pages": "144-146",
     "section_hint": "Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   }
  ]

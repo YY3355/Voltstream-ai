@@ -30,6 +30,13 @@
     "chapter": 6,
     "pages": "237-238",
     "section_hint": "2.3 Oil \u2014 Calendar Month Average"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 6,
     "pages": "237-238",
     "section_hint": "2.3 Oil \u2014 Posting Plus"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 6,
     "pages": "238-239",
     "section_hint": "2.3 Oil \u2014 Crack Spreads"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -145,6 +166,13 @@
     "chapter": 6,
     "pages": "238-239",
     "section_hint": "2.3 Oil \u2014 Crack Spreads"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -179,6 +207,13 @@
     "chapter": 6,
     "pages": "239-239",
     "section_hint": "2.3 Oil \u2014 Exchange Traded Spreads"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -211,6 +246,13 @@
     "chapter": 6,
     "pages": "239-240",
     "section_hint": "2.3 Oil \u2014 Ethanol"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   }
  ]

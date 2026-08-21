@@ -34,6 +34,13 @@
     "chapter": 14,
     "pages": "354-355",
     "section_hint": "3.5 Option Pricing \u2014 Lognormal Versus Normal Price Distributions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 14,
     "pages": "355-356",
     "section_hint": "3.5 Option Pricing \u2014 The Fat Tail Problem"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 14,
     "pages": "355-356",
     "section_hint": "3.5 Option Pricing \u2014 The Fat Tail Problem"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -126,6 +147,13 @@
     "chapter": 14,
     "pages": "356",
     "section_hint": "3.5 Option Pricing \u2014 Interest Rate Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -162,6 +190,13 @@
     "chapter": 14,
     "pages": "356-358",
     "section_hint": "3.5 Option Pricing \u2014 Arbitrage-Free Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -194,6 +229,13 @@
     "chapter": 14,
     "pages": "357-358",
     "section_hint": "3.5 Option Pricing \u2014 Arbitrage-Free Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -225,6 +267,13 @@
     "chapter": 14,
     "pages": "358-359",
     "section_hint": "3.5 Option Pricing \u2014 Extending Arbitrage Pricing over Longer Periods"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -252,6 +301,13 @@
     "chapter": 14,
     "pages": "359-360",
     "section_hint": "3.5 Option Pricing \u2014 The Black Scholes Formula"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   }
  ]

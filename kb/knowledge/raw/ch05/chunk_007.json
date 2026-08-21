@@ -37,6 +37,13 @@
     "chapter": 5,
     "pages": "207-208",
     "section_hint": "2.2 Electricity - Mid-Atlantic (PJM)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -78,6 +85,13 @@
     "chapter": 5,
     "pages": "208-209",
     "section_hint": "2.2 Electricity - Midcontinent (MISO)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -117,6 +131,13 @@
     "chapter": 5,
     "pages": "209-210",
     "section_hint": "2.2 Electricity - New York (NYISO)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -155,6 +176,13 @@
     "chapter": 5,
     "pages": "210-211",
     "section_hint": "2.2 Electricity - New England (ISO-NE)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -197,6 +225,13 @@
     "chapter": 5,
     "pages": "211-213",
     "section_hint": "2.2 Electricity - Texas (ERCOT)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   }
  ]

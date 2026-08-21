@@ -29,6 +29,13 @@
     "chapter": 7,
     "pages": "256",
     "section_hint": "2.4 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 7,
     "pages": "256",
     "section_hint": "2.4 Coal - Coal Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -96,6 +110,13 @@
     "chapter": 7,
     "pages": "256-257",
     "section_hint": "2.4 Coal - Coal Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -124,6 +145,13 @@
     "chapter": 7,
     "pages": "256-257",
     "section_hint": "2.4 Coal - Coal Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -157,6 +185,13 @@
     "chapter": 7,
     "pages": "257-258",
     "section_hint": "2.4 Coal - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -191,6 +226,13 @@
     "chapter": 7,
     "pages": "258-259",
     "section_hint": "2.4 Coal - Location of Coal Deposits"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -220,6 +262,13 @@
     "chapter": 7,
     "pages": "259",
     "section_hint": "2.4 Coal - Energy Independence Versus Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -250,6 +299,13 @@
     "chapter": 7,
     "pages": "259-260",
     "section_hint": "2.4 Coal - Coal-Producing Region: Appalachian Mountains"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -281,6 +337,13 @@
     "chapter": 7,
     "pages": "260-261",
     "section_hint": "2.4 Coal - Coal-Producing Region: Wyoming"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   }
  ]

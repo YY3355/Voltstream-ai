@@ -32,6 +32,13 @@
     "chapter": 1,
     "pages": "46-49",
     "section_hint": "Options and Volatility (lead-in to Deltas, Gammas, and Other Greeks)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 1,
     "pages": "46-47",
     "section_hint": "Deltas, Gammas, and Other Greeks"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -127,6 +141,13 @@
     "chapter": 1,
     "pages": "47-48",
     "section_hint": "Spread Options"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -164,6 +185,13 @@
     "chapter": 1,
     "pages": "48-49",
     "section_hint": "Electricity Models / Forecasting the Supply of Electricity: The Generation Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -202,6 +230,13 @@
     "chapter": 1,
     "pages": "48-49",
     "section_hint": "Forecasting Demand for Electricity: Spatial Load Forecasting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   }
  ]

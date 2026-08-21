@@ -32,6 +32,13 @@
     "chapter": 2,
     "pages": "93-93",
     "section_hint": "Common Terms \u2014 Initial Margin"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -78,6 +85,13 @@
     "chapter": 2,
     "pages": "93-94",
     "section_hint": "Common Terms \u2014 Daily Margin"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text confirms daily mark-to-market, single official settlement price for both sides, closing/reopening equivalence, direct transfer between margin accounts, contrast with OTC forwards, and the $0.15\u00d71",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -110,6 +124,13 @@
     "chapter": 2,
     "pages": "93-94",
     "section_hint": "Common Terms \u2014 Margin Call"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -144,6 +165,13 @@
     "chapter": 2,
     "pages": "94-94",
     "section_hint": "Common Terms \u2014 Margin Call / Exchange Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -180,6 +208,13 @@
     "chapter": 2,
     "pages": "94-94",
     "section_hint": "Key Concepts \u2014 Futures"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -226,6 +261,13 @@
     "chapter": 2,
     "pages": "94-95",
     "section_hint": "Exchange for Physical"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -257,6 +299,13 @@
     "chapter": 2,
     "pages": "95-96",
     "section_hint": "Exchange for Principal Transaction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   }
  ]

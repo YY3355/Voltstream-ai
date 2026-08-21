@@ -34,6 +34,13 @@
     "chapter": 14,
     "pages": "372-373",
     "section_hint": "3.5 Option Pricing \u2014 Changes in Volatility (Vega)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 14,
     "pages": "372-373",
     "section_hint": "3.5 Option Pricing \u2014 The Passage of Time (Theta)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -100,6 +114,13 @@
     "chapter": 14,
     "pages": "372-373",
     "section_hint": "3.5 Option Pricing \u2014 Interest Rates (Rho)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -137,6 +158,13 @@
     "chapter": 14,
     "pages": "372-373",
     "section_hint": "3.5 Option Pricing \u2014 footnote 2"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -164,6 +192,13 @@
     "chapter": 14,
     "pages": "372-373",
     "section_hint": "3.5 Option Pricing \u2014 footnote 1"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   }
  ]

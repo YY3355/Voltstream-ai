@@ -44,6 +44,13 @@
     "chapter": 12,
     "pages": "314-315",
     "section_hint": "3.3 Statistics - Estimating Variance and Standard Deviation from Sampled Data"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly states sample-based estimation underestimates true variance/volatility, corrects by dividing by n-1 instead of n (Figures 3.3.15/3.3.16), and gives the n=1,001 example showing neglig",
+    "checked_at": "2026-08-21T14:55:52+00:00"
    }
   },
   {
@@ -79,6 +86,13 @@
     "chapter": 12,
     "pages": "315-316",
     "section_hint": "3.3 Statistics - Exponentially Weighted Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:52+00:00"
    }
   },
   {
@@ -114,6 +128,13 @@
     "chapter": 12,
     "pages": "316-317",
     "section_hint": "3.3 Statistics - Exponentially Weighted Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:52+00:00"
    }
   },
   {
@@ -162,6 +183,13 @@
     "chapter": 12,
     "pages": "317-318",
     "section_hint": "3.3 Statistics - Risk/Reward Measures"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:52+00:00"
    }
   },
   {
@@ -197,6 +225,13 @@
     "chapter": 12,
     "pages": "317-318",
     "section_hint": "3.3 Statistics - Risk/Reward Measures"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source pages show only exponential weighting/decay and reward-to-risk (Sharpe/Information Ratio) content; no mention of combining strategies, correlation-based diversification, or the natural gas rise",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -232,6 +267,13 @@
     "chapter": 12,
     "pages": "318-320",
     "section_hint": "3.3 Statistics - Correlation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   }
  ]

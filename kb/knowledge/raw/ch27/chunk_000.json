@@ -28,6 +28,13 @@
     "chapter": 27,
     "pages": "522-522",
     "section_hint": "5.2 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -60,6 +67,13 @@
     "chapter": 27,
     "pages": "522-523",
     "section_hint": "5.2 Summary / Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -90,6 +104,13 @@
     "chapter": 27,
     "pages": "523-524",
     "section_hint": "5.2 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -124,6 +145,13 @@
     "chapter": 27,
     "pages": "524-525",
     "section_hint": "5.2 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -155,6 +183,13 @@
     "chapter": 27,
     "pages": "525-526",
     "section_hint": "Inserting and Removing Gas from a Storage Facility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -185,6 +220,13 @@
     "chapter": 27,
     "pages": "522-523",
     "section_hint": "5.2 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   }
  ]

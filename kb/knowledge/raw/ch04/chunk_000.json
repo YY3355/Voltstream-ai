@@ -33,6 +33,13 @@
     "chapter": 4,
     "pages": "133-134",
     "section_hint": "2.1 Natural Gas \u2014 physical perspective"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -70,6 +77,13 @@
     "chapter": 4,
     "pages": "133-134",
     "section_hint": "2.1 Natural Gas \u2014 summary and key topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 4,
     "pages": "133-133",
     "section_hint": "2.1 Natural Gas \u2014 key topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNCLEAR",
+    "judge_reason": "Source text cuts off mid-sentence in the Key Topics list before reaching any content on Henry Hub, spread pricing, weather-driven spot, or futures cyclicality/cost-of-carry, so those specific claims c",
+    "checked_at": "2026-08-21T14:50:57+00:00"
    }
   },
   {
@@ -163,6 +184,13 @@
     "chapter": 4,
     "pages": "134-134",
     "section_hint": "2.1 Natural Gas \u2014 physical perspective, units"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers natural gas background (Henry Hub pricing, composition, history) but contains no mention of Btu content, MMBtu, Bcf, or therm conversions.",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -196,6 +224,13 @@
     "chapter": 4,
     "pages": "134-134",
     "section_hint": "2.1 Natural Gas \u2014 transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -230,6 +265,13 @@
     "chapter": 4,
     "pages": "134-135",
     "section_hint": "2.1 Natural Gas \u2014 transportation, liquefaction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -264,6 +306,13 @@
     "chapter": 4,
     "pages": "135-135",
     "section_hint": "2.1 Natural Gas \u2014 Comparing Gasoline to Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -301,6 +350,13 @@
     "chapter": 4,
     "pages": "135-136",
     "section_hint": "2.1 Natural Gas \u2014 Major Market Participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   }
  ]

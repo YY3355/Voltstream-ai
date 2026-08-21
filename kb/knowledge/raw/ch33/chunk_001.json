@@ -34,6 +34,13 @@
     "chapter": 33,
     "pages": "595",
     "section_hint": "6.5 Hedging - Costless Collar"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -73,6 +80,13 @@
     "chapter": 33,
     "pages": "595-596",
     "section_hint": "6.5 Hedging - \"Costless\" Doesn't Mean Free"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -109,6 +123,13 @@
     "chapter": 33,
     "pages": "596",
     "section_hint": "6.5 Hedging - Minimum Variance Hedge Ratio"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -149,6 +170,13 @@
     "chapter": 33,
     "pages": "596-597",
     "section_hint": "6.5 Hedging - Hedge Accounting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -180,6 +208,13 @@
     "chapter": 33,
     "pages": "596-597",
     "section_hint": "6.5 Hedging - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -212,6 +247,13 @@
     "chapter": 33,
     "pages": "597-599",
     "section_hint": "6.5 Hedging - Hedge Effectiveness Tests"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

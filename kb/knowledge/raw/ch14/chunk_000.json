@@ -37,6 +37,13 @@
     "chapter": 14,
     "pages": "346-347",
     "section_hint": "3.5 Option Pricing \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 14,
     "pages": "346",
     "section_hint": "3.5 Option Pricing \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -104,6 +118,13 @@
     "chapter": 14,
     "pages": "346-347",
     "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 14,
     "pages": "347",
     "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 14,
     "pages": "347",
     "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -201,6 +236,13 @@
     "chapter": 14,
     "pages": "347-348",
     "section_hint": "3.5 Option Pricing \u2014 History of Option Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -236,6 +278,13 @@
     "chapter": 14,
     "pages": "348-349",
     "section_hint": "3.5 Option Pricing \u2014 Arbitrage-Free Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   }
  ]

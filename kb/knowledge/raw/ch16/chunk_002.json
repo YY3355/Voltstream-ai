@@ -30,6 +30,13 @@
     "chapter": 16,
     "pages": "399-401",
     "section_hint": "4.1 Spatial Load Forecasting - Weekdays, Weekends, and Holidays"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -61,6 +68,13 @@
     "chapter": 16,
     "pages": "399-402",
     "section_hint": "4.1 Spatial Load Forecasting - Hour of Day"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -92,6 +106,13 @@
     "chapter": 16,
     "pages": "402-403",
     "section_hint": "4.1 Spatial Load Forecasting - Creating a Model"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -135,6 +156,13 @@
     "chapter": 16,
     "pages": "402-403",
     "section_hint": "4.1 Spatial Load Forecasting - Creating a Model / Figure 4.1.11"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -166,6 +194,13 @@
     "chapter": 16,
     "pages": "403",
     "section_hint": "4.1 Spatial Load Forecasting - Creating a Model / Error Analysis"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -197,6 +232,13 @@
     "chapter": 16,
     "pages": "403",
     "section_hint": "4.1 Spatial Load Forecasting - Error Analysis / Figure 4.1.12"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -230,6 +272,13 @@
     "chapter": 16,
     "pages": "403-405",
     "section_hint": "4.1 Spatial Load Forecasting - Error Analysis, possible causes"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   }
  ]

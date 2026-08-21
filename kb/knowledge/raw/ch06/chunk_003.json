@@ -28,6 +28,13 @@
     "chapter": 6,
     "pages": "231",
     "section_hint": "2.3 Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   },
   {
@@ -61,6 +68,13 @@
     "chapter": 6,
     "pages": "231-232",
     "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   },
   {
@@ -92,6 +106,13 @@
     "chapter": 6,
     "pages": "231-232",
     "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   },
   {
@@ -126,6 +147,13 @@
     "chapter": 6,
     "pages": "232",
     "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNCLEAR",
+    "judge_reason": "Source text supports winter residential heating concentrated in the northeastern US but cuts off mid-sentence before covering summer price lows, stockpiling behavior, storage capacity limits, or the f",
+    "checked_at": "2026-08-21T14:53:58+00:00"
    }
   },
   {
@@ -156,6 +184,13 @@
     "chapter": 6,
     "pages": "232-233",
     "section_hint": "2.3 Oil \u2014 Oil Futures"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:58+00:00"
    }
   },
   {
@@ -185,6 +220,13 @@
     "chapter": 6,
     "pages": "233",
     "section_hint": "2.3 Oil \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source page defines Futures Contract verbatim as claimed (agreement traded on exchange, fixed price, future delivery/payment); spot/physical/financial definitions are cut off by the page break but mat",
+    "checked_at": "2026-08-21T14:54:10+00:00"
    }
   },
   {
@@ -216,6 +258,13 @@
     "chapter": 6,
     "pages": "233-234",
     "section_hint": "2.3 Oil \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states multiple contracts per commodity differ by delivery date, describes CLZ7-style naming (contract/month/year), matching the item; expiration-timing details aren't in this excerpt but nothi",
+    "checked_at": "2026-08-21T14:54:15+00:00"
    }
   },
   {
@@ -246,6 +295,13 @@
     "chapter": 6,
     "pages": "234",
     "section_hint": "2.3 Oil \u2014 Physical Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only defines spot/physical/financial transactions and futures contract naming; it never states crude oil is priced off futures rather than physical spot as claimed",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -279,6 +335,13 @@
     "chapter": 6,
     "pages": "234-235",
     "section_hint": "2.3 Oil \u2014 Physical Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -323,6 +386,13 @@
     "chapter": 6,
     "pages": "235-236",
     "section_hint": "2.3 Oil \u2014 Physical Trading"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   }
  ]

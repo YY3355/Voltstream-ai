@@ -34,6 +34,13 @@
     "chapter": 6,
     "pages": "245-245",
     "section_hint": "2.3 OIL"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 6,
     "pages": "245-245",
     "section_hint": "2.3 OIL"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 6,
     "pages": "245-245",
     "section_hint": "2.3 OIL"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -130,6 +151,13 @@
     "chapter": 6,
     "pages": "245-245",
     "section_hint": "2.3 OIL"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   }
  ]

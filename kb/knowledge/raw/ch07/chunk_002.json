@@ -30,6 +30,13 @@
     "chapter": 7,
     "pages": "253",
     "section_hint": "2.4 Coal \u2014 acid rain risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 7,
     "pages": "253-254",
     "section_hint": "2.4 Coal \u2014 sulfur forms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -100,6 +114,13 @@
     "chapter": 7,
     "pages": "253",
     "section_hint": "2.4 Coal \u2014 coal washing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -134,6 +155,13 @@
     "chapter": 7,
     "pages": "254",
     "section_hint": "2.4 Coal \u2014 flue gas desulfurization"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers coal plant economies of scale and AC/DC transmission history; it contains no mention of flue gas desulfurization, lime scrubbers, or sulfur removal percentages.",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -167,6 +195,13 @@
     "chapter": 7,
     "pages": "254",
     "section_hint": "Coal and the Power Grid"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -198,6 +233,13 @@
     "chapter": 7,
     "pages": "254",
     "section_hint": "Coal and the Power Grid \u2014 AC/DC history"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -236,6 +278,13 @@
     "chapter": 7,
     "pages": "254-255",
     "section_hint": "Coal Mining \u2014 surface mining"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   }
  ]

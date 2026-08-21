@@ -31,6 +31,13 @@
     "chapter": 14,
     "pages": "367",
     "section_hint": "3.5 Option Pricing - Implied Volatility intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -61,6 +68,13 @@
     "chapter": 14,
     "pages": "367-368",
     "section_hint": "3.5 Option Pricing - Asian Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -96,6 +110,13 @@
     "chapter": 14,
     "pages": "367-368",
     "section_hint": "3.5 Option Pricing - Asian Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -130,6 +151,13 @@
     "chapter": 14,
     "pages": "368",
     "section_hint": "3.5 Option Pricing - Asian Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -165,6 +193,13 @@
     "chapter": 14,
     "pages": "368-369",
     "section_hint": "3.5 Option Pricing - Implied Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -200,6 +235,13 @@
     "chapter": 14,
     "pages": "369",
     "section_hint": "3.5 Option Pricing - Greeks"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -231,6 +273,13 @@
     "chapter": 14,
     "pages": "369-370",
     "section_hint": "3.5 Option Pricing - Velocity (Delta)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -265,6 +314,13 @@
     "chapter": 14,
     "pages": "370-371",
     "section_hint": "3.5 Option Pricing - Acceleration (Gamma)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   }
  ]

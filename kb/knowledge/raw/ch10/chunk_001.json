@@ -35,6 +35,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 CO2 Emissions and Fuel Type"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -71,6 +78,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 Nitrogen Oxides"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 Sulfur Oxides"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -141,6 +162,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 Particulate Pollution: Heavy Metals"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -174,6 +202,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 Particulate Pollution: Fly Ash/Soot"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -209,6 +244,13 @@
     "chapter": 10,
     "pages": "287-289",
     "section_hint": "3.1 Pollution \u2014 Toxic Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   }
  ]

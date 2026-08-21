@@ -34,6 +34,13 @@
     "chapter": 7,
     "pages": "250",
     "section_hint": "2.4 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 7,
     "pages": "250",
     "section_hint": "2.4 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 7,
     "pages": "250",
     "section_hint": "2.4 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -142,6 +163,13 @@
     "chapter": 7,
     "pages": "250-251",
     "section_hint": "2.4 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -181,6 +209,13 @@
     "chapter": 7,
     "pages": "251",
     "section_hint": "2.4 Coal \u2014 Types of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -219,6 +254,13 @@
     "chapter": 7,
     "pages": "251",
     "section_hint": "2.4 Coal \u2014 Types of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -254,6 +296,13 @@
     "chapter": 7,
     "pages": "251",
     "section_hint": "2.4 Coal \u2014 Types of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -291,6 +340,13 @@
     "chapter": 7,
     "pages": "251-252",
     "section_hint": "2.4 Coal \u2014 Types of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -328,6 +384,13 @@
     "chapter": 7,
     "pages": "252",
     "section_hint": "2.4 Coal \u2014 Types of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -366,6 +429,13 @@
     "chapter": 7,
     "pages": "252",
     "section_hint": "2.4 Coal \u2014 Sulfur Content of Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   }
  ]

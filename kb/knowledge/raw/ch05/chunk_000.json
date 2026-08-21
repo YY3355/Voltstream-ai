@@ -35,6 +35,13 @@
     "chapter": 5,
     "pages": "169-170",
     "section_hint": "2.2 Electricity - Summary/Introduction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 5,
     "pages": "170",
     "section_hint": "2.2 Electricity - Market operators"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text matches definition and key points: TSO term, ISOs single-state exempt from federal jurisdiction, RTOs multi-state under federal jurisdiction, many RTOs began as ISOs and kept the name.",
+    "checked_at": "2026-08-21T14:52:15+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 5,
     "pages": "170-171",
     "section_hint": "2.2 Electricity - Regulated vs deregulated markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:15+00:00"
    }
   },
   {
@@ -142,6 +163,13 @@
     "chapter": 5,
     "pages": "171",
     "section_hint": "2.2 Electricity - Auction mechanics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only defines regulated vs. deregulated markets; it contains no mention of bidding, dispatch order, clearing price, or marginal price as claimed in the item.",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -179,6 +207,13 @@
     "chapter": 5,
     "pages": "171-172",
     "section_hint": "2.2 Electricity - Day-ahead and real-time auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   },
   {
@@ -214,6 +249,13 @@
     "chapter": 5,
     "pages": "172-173",
     "section_hint": "2.2 Electricity - Market participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:24+00:00"
    }
   }
  ]

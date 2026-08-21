@@ -34,6 +34,13 @@
     "chapter": 3,
     "pages": "124-125",
     "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:33+00:00"
    }
   },
   {
@@ -63,6 +70,13 @@
     "chapter": 3,
     "pages": "124-125",
     "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:33+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 3,
     "pages": "125-126",
     "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:33+00:00"
    }
   },
   {
@@ -142,6 +163,13 @@
     "chapter": 3,
     "pages": "126",
     "section_hint": "1.3 Exploration and Production \u2014 Gas and Oil Wells"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text confirms gas/oil naming convention based on gas-to-oil ratio calculation, though the specific 100,000 ft3/BBL threshold value isn't visible in this excerpt (likely on the cut-off remainder of the",
+    "checked_at": "2026-08-21T14:50:37+00:00"
    }
   },
   {
@@ -181,6 +209,13 @@
     "chapter": 3,
     "pages": "126-127",
     "section_hint": "1.3 Exploration and Production \u2014 Oil Sands (Heavy Oil)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:37+00:00"
    }
   }
  ]

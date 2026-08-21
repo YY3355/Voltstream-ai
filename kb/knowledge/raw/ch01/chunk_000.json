@@ -32,6 +32,13 @@
     "chapter": 1,
     "pages": "18-19",
     "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 1,
     "pages": "19-20",
     "section_hint": "1.1 An Overview of the Energy Markets - Summary / Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 1,
     "pages": "19-20",
     "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -132,6 +153,13 @@
     "chapter": 1,
     "pages": "20",
     "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -163,6 +191,13 @@
     "chapter": 1,
     "pages": "20",
     "section_hint": "1.1 An Overview of the Energy Markets - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -197,6 +232,13 @@
     "chapter": 1,
     "pages": "20-21",
     "section_hint": "1.1 An Overview of the Energy Markets - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   }
  ]

@@ -31,6 +31,13 @@
     "chapter": 21,
     "pages": "468-468",
     "section_hint": "4.6 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -60,6 +67,13 @@
     "chapter": 21,
     "pages": "468-468",
     "section_hint": "4.6 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -93,6 +107,13 @@
     "chapter": 21,
     "pages": "468-468",
     "section_hint": "4.6 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -128,6 +149,13 @@
     "chapter": 21,
     "pages": "468-468",
     "section_hint": "4.6 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -159,6 +187,13 @@
     "chapter": 21,
     "pages": "468-468",
     "section_hint": "4.6 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   }
  ]

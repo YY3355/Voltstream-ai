@@ -32,6 +32,13 @@
     "chapter": 33,
     "pages": "600-602",
     "section_hint": "6.5 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 33,
     "pages": "600-602",
     "section_hint": "6.5 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -104,6 +118,13 @@
     "chapter": 33,
     "pages": "600-602",
     "section_hint": "6.5 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

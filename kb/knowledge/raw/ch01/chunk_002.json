@@ -51,6 +51,13 @@
     "chapter": 1,
     "pages": "26-27",
     "section_hint": "1.1 An Overview of the Energy Markets - Common Units (natural gas)"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "All key points and both formulas (1 Bcf \u2248 1 million MMBtu; 1 Btu = 1054.35 J) are directly stated in the source text on Btu, Bcf, and Joule.",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -86,6 +93,13 @@
     "chapter": 1,
     "pages": "27-28",
     "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -126,6 +140,13 @@
     "chapter": 1,
     "pages": "27-28",
     "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -166,6 +187,13 @@
     "chapter": 1,
     "pages": "28",
     "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -201,6 +229,13 @@
     "chapter": 1,
     "pages": "28",
     "section_hint": "1.1 An Overview of the Energy Markets - Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -245,6 +280,13 @@
     "chapter": 1,
     "pages": "28-29",
     "section_hint": "1.1 An Overview of the Energy Markets - Electricity, Common Units"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   },
   {
@@ -282,6 +324,13 @@
     "chapter": 1,
     "pages": "29",
     "section_hint": "1.1 An Overview of the Energy Markets - The Physics of Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:17+00:00"
    }
   }
  ]

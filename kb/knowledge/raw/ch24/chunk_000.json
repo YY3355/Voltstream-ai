@@ -37,6 +37,13 @@
     "chapter": 24,
     "pages": "486-487",
     "section_hint": "Purpose / Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 24,
     "pages": "487",
     "section_hint": "Common Uses for LCOE Analysis"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -102,6 +116,13 @@
     "chapter": 24,
     "pages": "487-488",
     "section_hint": "Figures 4.9.1-4.9.2 (WACC, capital recovery factor)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:08+00:00"
    }
   },
   {
@@ -133,6 +154,13 @@
     "chapter": 24,
     "pages": "488",
     "section_hint": "Figure 4.9.3 (Levelized cost of entry)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers only WACC and CRF (Figures 4.9.1-4.9.2); it never mentions operating costs, maintenance, fuel, or netting other revenue against capital recovery as claimed.",
+    "checked_at": "2026-08-21T14:59:17+00:00"
    }
   },
   {
@@ -163,6 +191,13 @@
     "chapter": 24,
     "pages": "488",
     "section_hint": "closing caveat before regulatory use"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text discusses CONE/WACC/CRF revenue-requirement calculation, not LCOE limitations or regional/tax/transmission/regulatory factors claimed in the item.",
+    "checked_at": "2026-08-21T14:59:24+00:00"
    }
   },
   {
@@ -190,6 +225,13 @@
     "chapter": 24,
     "pages": "488-489",
     "section_hint": "Figure 4.9.4 (U.S. average levelized costs)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text describes CONE/DCF/LCOE methodology only; it never mentions the EIA or the Annual Energy Outlook publishing cost figures.",
+    "checked_at": "2026-08-21T14:59:32+00:00"
    }
   }
  ]

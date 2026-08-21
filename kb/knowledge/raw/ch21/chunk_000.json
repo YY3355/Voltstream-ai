@@ -28,6 +28,13 @@
     "chapter": 21,
     "pages": "461-462",
     "section_hint": "4.6 Wind Power - Summary/intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:29+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 21,
     "pages": "461-463",
     "section_hint": "Key Topics / Wind Energy"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:29+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 21,
     "pages": "462-463",
     "section_hint": "Wind Energy"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text on these pages contains no cube-law formula or any statement relating wind energy to the cube of wind speed.",
+    "checked_at": "2026-08-21T14:58:33+00:00"
    }
   },
   {
@@ -137,6 +158,13 @@
     "chapter": 21,
     "pages": "462-463",
     "section_hint": "Wind"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:33+00:00"
    }
   },
   {
@@ -168,6 +196,13 @@
     "chapter": 21,
     "pages": "463-464",
     "section_hint": "Installation and Maintenance"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text is about wind farm siting/land availability and cube-law wind energy; contains nothing about turbine wake turbulence, downwind stress, farm layout/aesthetics, or maintenance logistics.",
+    "checked_at": "2026-08-21T14:58:37+00:00"
    }
   },
   {
@@ -212,6 +247,13 @@
     "chapter": 21,
     "pages": "464-465",
     "section_hint": "Typical Wind Production"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source pages contain no capacity-factor definition, formula, or the 876,000 MWh/35%/40% figures at all \u2014 text is about wind variability and turbine maintenance.",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -244,6 +286,13 @@
     "chapter": 21,
     "pages": "465-467",
     "section_hint": "Typical Wind Production"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   }
  ]

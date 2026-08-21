@@ -36,6 +36,13 @@
     "chapter": 12,
     "pages": "307-308",
     "section_hint": "3.3 Statistics \u2014 Calculus and Statistics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:17+00:00"
    }
   },
   {
@@ -74,6 +81,13 @@
     "chapter": 12,
     "pages": "308-309",
     "section_hint": "3.3 Statistics \u2014 Mode, Median, and Mean"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:17+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 12,
     "pages": "309-310",
     "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers mode/median/mean central tendency only; it never discusses variation/dispersion, volatility, standard deviation, mean absolute deviation, or variance as claimed in the item.",
+    "checked_at": "2026-08-21T14:55:29+00:00"
    }
   },
   {
@@ -147,6 +168,13 @@
     "chapter": 12,
     "pages": "310",
     "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers mode/median/mean only; no mention of mean absolute deviation, its formula, or its calculus tractability critique.",
+    "checked_at": "2026-08-21T14:55:33+00:00"
    }
   },
   {
@@ -192,6 +220,13 @@
     "chapter": 12,
     "pages": "310-311",
     "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source pages cover only mean/median/mode and an intro sentence to variation; no variance definition, sigma-squared notation, or formula appears in the given text.",
+    "checked_at": "2026-08-21T14:55:44+00:00"
    }
   },
   {
@@ -235,6 +270,13 @@
     "chapter": 12,
     "pages": "311-313",
     "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states standard deviation is the square root of variance, restores original units (dollars vs dollars-squared), and is called RMS in science/engineering and volatility in finance, matching the ",
+    "checked_at": "2026-08-21T14:55:48+00:00"
    }
   }
  ]

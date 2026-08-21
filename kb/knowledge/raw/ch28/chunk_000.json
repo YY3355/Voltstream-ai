@@ -34,6 +34,13 @@
     "chapter": 28,
     "pages": "539-540",
     "section_hint": "5.3 Liquefied Natural Gas - Summary/Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source confirms -260\u00b0F liquefaction at standard atmospheric pressure, 1/610th volume reduction, ship-based transport enabled by compactness, and small-scale transport not cost-effective while cargo sh",
+    "checked_at": "2026-08-21T15:00:48+00:00"
    }
   },
   {
@@ -67,6 +74,13 @@
     "chapter": 28,
     "pages": "539-539",
     "section_hint": "5.3 Liquefied Natural Gas - Summary/Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:48+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 28,
     "pages": "539-540",
     "section_hint": "5.3 Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:48+00:00"
    }
   },
   {
@@ -134,6 +155,13 @@
     "chapter": 28,
     "pages": "540-541",
     "section_hint": "5.3 Liquefied Natural Gas - process steps"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:48+00:00"
    }
   },
   {
@@ -167,6 +195,13 @@
     "chapter": 28,
     "pages": "540-541",
     "section_hint": "5.3 Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:48+00:00"
    }
   },
   {
@@ -200,6 +235,13 @@
     "chapter": 28,
     "pages": "541-541",
     "section_hint": "5.3 Liquefied Natural Gas - Concerns"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only covers LNG's three-step process (liquefaction, transportation, regasification) and does not mention facility safety debate, catastrophic risk, methane's non-toxic/non-explosive proper",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -231,6 +273,13 @@
     "chapter": 28,
     "pages": "541-542",
     "section_hint": "5.3 Liquefied Natural Gas - Peak Shaving Units"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   }
  ]

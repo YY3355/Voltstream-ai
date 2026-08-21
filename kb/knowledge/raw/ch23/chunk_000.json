@@ -34,6 +34,13 @@
     "chapter": 23,
     "pages": "476-476",
     "section_hint": "4.8 Electricity Storage \u2014 Summary / Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -76,6 +83,13 @@
     "chapter": 23,
     "pages": "476-477",
     "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text states 25% efficiency example directly implying 4x needed spread; item's inference (breakeven ratio = 1/efficiency, and gross-only, ignoring install/maintenance) is a reasonable derivable restate",
+    "checked_at": "2026-08-21T14:58:46+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 23,
     "pages": "477-477",
     "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text discusses general storage arbitrage and round-trip efficiency losses; it contains no mention of nuclear/coal baseload plants, ramping/reheating costs, or overnight power becoming effective",
+    "checked_at": "2026-08-21T14:58:58+00:00"
    }
   },
   {
@@ -135,6 +156,13 @@
     "chapter": 23,
     "pages": "477-477",
     "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly frames storage's value as buying cheap overnight power and reselling later at high prices, illustrating the core claim that valuation hinges on the assumed operating/dispatch profile",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 23,
     "pages": "477-478",
     "section_hint": "4.8 Electricity Storage \u2014 Batteries"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -203,6 +238,13 @@
     "chapter": 23,
     "pages": "478-479",
     "section_hint": "4.8 Electricity Storage \u2014 Electric Cars and the Power Grid"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -232,6 +274,13 @@
     "chapter": 23,
     "pages": "479-479",
     "section_hint": "4.8 Electricity Storage \u2014 Compressed Air"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -261,6 +310,13 @@
     "chapter": 23,
     "pages": "479-480",
     "section_hint": "4.8 Electricity Storage \u2014 Flywheels"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   },
   {
@@ -288,6 +344,13 @@
     "chapter": 23,
     "pages": "480-481",
     "section_hint": "4.8 Electricity Storage \u2014 Pumped Hydropower"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:03+00:00"
    }
   }
  ]

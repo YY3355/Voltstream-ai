@@ -35,6 +35,13 @@
     "chapter": 2,
     "pages": "81-82",
     "section_hint": "1.2 Trading Markets \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 2,
     "pages": "82",
     "section_hint": "1.2 Trading Markets \u2014 Real Assets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 2,
     "pages": "82",
     "section_hint": "1.2 Trading Markets \u2014 Financial Assets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -133,6 +154,13 @@
     "chapter": 2,
     "pages": "82-83",
     "section_hint": "1.2 Trading Markets \u2014 Derivatives"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -171,6 +199,13 @@
     "chapter": 2,
     "pages": "83-84",
     "section_hint": "1.2 Trading Markets \u2014 Derivatives (defining features)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   }
  ]

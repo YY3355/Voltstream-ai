@@ -32,6 +32,13 @@
     "chapter": 2,
     "pages": "104-105",
     "section_hint": "1.2 Trading Markets \u2014 interest rate curve"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -59,6 +66,13 @@
     "chapter": 2,
     "pages": "105",
     "section_hint": "1.2 Trading Markets \u2014 parallel shift"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:10+00:00"
    }
   },
   {
@@ -90,6 +104,13 @@
     "chapter": 2,
     "pages": "105",
     "section_hint": "1.2 Trading Markets \u2014 present value example"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page discusses yield curve shapes and parallel shifts, not a present value example or any $1,000/$621/$784 figures.",
+    "checked_at": "2026-08-21T14:50:16+00:00"
    }
   },
   {
@@ -122,6 +143,13 @@
     "chapter": 2,
     "pages": "105-106",
     "section_hint": "1.2 Trading Markets \u2014 interest rate risk in energy contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:16+00:00"
    }
   },
   {
@@ -156,6 +184,13 @@
     "chapter": 2,
     "pages": "106-107",
     "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Negative Prices"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:16+00:00"
    }
   },
   {
@@ -189,6 +224,13 @@
     "chapter": 2,
     "pages": "107",
     "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Cyclical Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:16+00:00"
    }
   },
   {
@@ -223,6 +265,13 @@
     "chapter": 2,
     "pages": "107-109",
     "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Illiquidity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:16+00:00"
    }
   }
  ]

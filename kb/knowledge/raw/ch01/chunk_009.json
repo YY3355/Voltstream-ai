@@ -33,6 +33,13 @@
     "chapter": 1,
     "pages": "53",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -67,6 +74,13 @@
     "chapter": 1,
     "pages": "53",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -101,6 +115,13 @@
     "chapter": 1,
     "pages": "53",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly states wheeling deals let traders buy an option based on construction costs rather than financial premiums, that this is cheaper when construction costs are affordable, and that the ",
+    "checked_at": "2026-08-21T14:49:37+00:00"
    }
   },
   {
@@ -138,6 +159,13 @@
     "chapter": 1,
     "pages": "53-54",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Solar Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:37+00:00"
    }
   },
   {
@@ -179,6 +207,13 @@
     "chapter": 1,
     "pages": "54",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers only solar power and the opening of wind power (turbines since 1970s, wind farms in high-wind areas) but never states or implies the cube-law energy relationship.",
+    "checked_at": "2026-08-21T14:49:45+00:00"
    }
   },
   {
@@ -212,6 +247,13 @@
     "chapter": 1,
     "pages": "54",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text ends after introducing wind turbines/farms and 'sustained high winds' location; it contains no content on torque/mechanical stress, maintenance costs, or wake turbulence between turbines.",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -243,6 +285,13 @@
     "chapter": 1,
     "pages": "54",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -277,6 +326,13 @@
     "chapter": 1,
     "pages": "54-55",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   }
  ]

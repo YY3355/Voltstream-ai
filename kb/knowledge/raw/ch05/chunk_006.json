@@ -31,6 +31,13 @@
     "chapter": 5,
     "pages": "198",
     "section_hint": "2.2 ELECTRICITY - Texas Interconnection"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -67,6 +74,13 @@
     "chapter": 5,
     "pages": "198-199",
     "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -104,6 +118,13 @@
     "chapter": 5,
     "pages": "199-200",
     "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -136,6 +157,13 @@
     "chapter": 5,
     "pages": "200",
     "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -173,6 +201,13 @@
     "chapter": 5,
     "pages": "200-201",
     "section_hint": "2.2 ELECTRICITY - Eastern Interconnect"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -204,6 +239,13 @@
     "chapter": 5,
     "pages": "201",
     "section_hint": "2.2 ELECTRICITY - Eastern Interconnect"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -237,6 +279,13 @@
     "chapter": 5,
     "pages": "201-202",
     "section_hint": "2.2 ELECTRICITY - California (CAISO)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -272,6 +321,13 @@
     "chapter": 5,
     "pages": "202-204",
     "section_hint": "2.2 ELECTRICITY - Desert Southwest"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -307,6 +363,13 @@
     "chapter": 5,
     "pages": "204-205",
     "section_hint": "2.2 ELECTRICITY - Pacific Northwest"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -338,6 +401,13 @@
     "chapter": 5,
     "pages": "205-206",
     "section_hint": "2.2 ELECTRICITY - Mid-Atlantic (PJM ISO)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   }
  ]

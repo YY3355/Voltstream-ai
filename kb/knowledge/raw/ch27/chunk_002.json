@@ -33,6 +33,13 @@
     "chapter": 27,
     "pages": "532",
     "section_hint": "5.2 Natural Gas Storage \u2014 salt beds"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 27,
     "pages": "532-533",
     "section_hint": "5.2 Natural Gas Storage \u2014 salt caverns"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -90,6 +104,13 @@
     "chapter": 27,
     "pages": "532-533",
     "section_hint": "5.2 Natural Gas Storage \u2014 salt caverns"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -120,6 +141,13 @@
     "chapter": 27,
     "pages": "533-534",
     "section_hint": "5.2 Natural Gas Storage \u2014 Aquifers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:31+00:00"
    }
   },
   {
@@ -146,6 +174,13 @@
     "chapter": 27,
     "pages": "534",
     "section_hint": "5.2 Natural Gas Storage \u2014 Aquifers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "The provided source page is an unrelated New Jersey storage trading example and contains no mention of aquifer facilities, cushion/base gas economics, cheap natural gas history, or U.S. government dri",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -175,6 +210,13 @@
     "chapter": 27,
     "pages": "534",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -200,6 +242,13 @@
     "chapter": 27,
     "pages": "534",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -226,6 +275,13 @@
     "chapter": 27,
     "pages": "534",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -250,6 +306,13 @@
     "chapter": 27,
     "pages": "534-535",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -279,6 +342,13 @@
     "chapter": 27,
     "pages": "534-535",
     "section_hint": "Trading Example \u2014 Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -304,6 +374,13 @@
     "chapter": 27,
     "pages": "535",
     "section_hint": "Trading Example \u2014 The Risks"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -329,6 +406,13 @@
     "chapter": 27,
     "pages": "535",
     "section_hint": "Trading Example \u2014 The Risks"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -353,6 +437,13 @@
     "chapter": 27,
     "pages": "535-536",
     "section_hint": "Trading Example \u2014 Executing the Trade"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:39+00:00"
    }
   },
   {
@@ -380,6 +471,13 @@
     "chapter": 27,
     "pages": "536",
     "section_hint": "Trading Example \u2014 The Results"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page text is unrelated (natural gas storage-vs-5-year-average figure reference), contains no mention of delivery-insurance trades or premiums.",
+    "checked_at": "2026-08-21T15:00:44+00:00"
    }
   },
   {
@@ -403,6 +501,13 @@
     "chapter": 27,
     "pages": "536",
     "section_hint": "Natural Gas Storage Reports"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:44+00:00"
    }
   }
  ]

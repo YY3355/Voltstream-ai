@@ -34,6 +34,13 @@
     "chapter": 7,
     "pages": "246-247",
     "section_hint": "2.4 Coal \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 7,
     "pages": "247-247",
     "section_hint": "2.4 Coal \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -101,6 +115,13 @@
     "chapter": 7,
     "pages": "247-247",
     "section_hint": "2.4 Coal \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -131,6 +152,13 @@
     "chapter": 7,
     "pages": "247-247",
     "section_hint": "2.4 Coal \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -163,6 +191,13 @@
     "chapter": 7,
     "pages": "247-247",
     "section_hint": "2.4 Coal \u2014 main text"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source pages are about coal's electrical generation dominance and low trading volume; they contain no discussion of coal as a solid fuel, firebox feeding mechanisms, or shutdown/burn-out behavior.",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -196,6 +231,13 @@
     "chapter": 7,
     "pages": "248-248",
     "section_hint": "2.4 Coal \u2014 Coal Pipelines"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   },
   {
@@ -229,6 +271,13 @@
     "chapter": 7,
     "pages": "248-249",
     "section_hint": "2.4 Coal \u2014 Coal Pipelines"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:30+00:00"
    }
   }
  ]

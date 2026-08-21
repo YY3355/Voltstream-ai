@@ -33,6 +33,13 @@
     "chapter": 19,
     "pages": "437-438",
     "section_hint": "4.4 Wheeling Power \u2014 Purpose/Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 19,
     "pages": "437-439",
     "section_hint": "4.4 Wheeling Power \u2014 main text and Figure 4.4.1"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 19,
     "pages": "437-438",
     "section_hint": "4.4 Wheeling Power \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -134,6 +155,13 @@
     "chapter": 19,
     "pages": "438-440",
     "section_hint": "4.4 Wheeling Power \u2014 option framing and closing valuation discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -168,6 +196,13 @@
     "chapter": 19,
     "pages": "438-440",
     "section_hint": "4.4 Wheeling Power \u2014 trade-off discussion and Examples of Wheeling Trades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   }
  ]

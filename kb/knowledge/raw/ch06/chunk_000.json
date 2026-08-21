@@ -35,6 +35,13 @@
     "chapter": 6,
     "pages": "214-215",
     "section_hint": "2.3 Oil \u2014 Summary / intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -70,6 +77,13 @@
     "chapter": 6,
     "pages": "214-215",
     "section_hint": "2.3 Oil \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 6,
     "pages": "215",
     "section_hint": "Crude Oil Market Participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers only petroleum's origin, refining, and regional product pricing; it contains nothing about import/export nations, geographic flow logic, the 1973 OPEC embargo, or low-sulfur fuel re",
+    "checked_at": "2026-08-21T14:53:02+00:00"
    }
   },
   {
@@ -143,6 +164,13 @@
     "chapter": 6,
     "pages": "215-216",
     "section_hint": "Crude Oil Market Participants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:02+00:00"
    }
   },
   {
@@ -200,6 +228,13 @@
     "chapter": 6,
     "pages": "216",
     "section_hint": "Common Units"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text discusses crude oil market participants and trade flows but contains no mention of barrels, gallons, tonnes, or any unit conversions.",
+    "checked_at": "2026-08-21T14:53:07+00:00"
    }
   },
   {
@@ -235,6 +270,13 @@
     "chapter": 6,
     "pages": "216-217",
     "section_hint": "Descriptions of Crude Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text covers market participants and units, not API gravity/density or sweet-sour sulfur classification; only a tangential note on sulfur being a pollutant tying to price appears, but 'API gravi",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   }
  ]

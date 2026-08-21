@@ -32,6 +32,13 @@
     "chapter": 26,
     "pages": "511-512",
     "section_hint": "5.1 Natural Gas Transportation, intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states injections/removals cannot stop for being uneconomical and pipelines may need to keep running with no consumers/storage due to restart time, matching all claims.",
+    "checked_at": "2026-08-21T15:00:09+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 26,
     "pages": "511-513",
     "section_hint": "5.1 Natural Gas Transportation, Compressor Stations"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:09+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 26,
     "pages": "511-512",
     "section_hint": "5.1 Natural Gas Transportation, Compressor Stations"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:09+00:00"
    }
   },
   {
@@ -137,6 +158,13 @@
     "chapter": 26,
     "pages": "513-514",
     "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:09+00:00"
    }
   },
   {
@@ -170,6 +198,13 @@
     "chapter": 26,
     "pages": "514-515",
     "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text confirms displacement/commingling, pressure-driven flow rate, impossibility of full recovery when starting empty vs. near-full pipelines enabling near-instant transport, and operators' incentive ",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -196,6 +231,13 @@
     "chapter": 26,
     "pages": "515",
     "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   },
   {
@@ -221,6 +263,13 @@
     "chapter": 26,
     "pages": "516",
     "section_hint": "5.1 Natural Gas Transportation, Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:15+00:00"
    }
   }
  ]

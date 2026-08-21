@@ -33,6 +33,13 @@
     "chapter": 6,
     "pages": "241-241",
     "section_hint": "2.3 Oil - Ethanol"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 6,
     "pages": "241-241",
     "section_hint": "2.3 Oil - Ethanol production"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -110,6 +124,13 @@
     "chapter": 6,
     "pages": "242-242",
     "section_hint": "2.3 Oil - The Corn Crush"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -140,6 +161,13 @@
     "chapter": 6,
     "pages": "242-243",
     "section_hint": "2.3 Oil - Biodiesel"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -171,6 +199,13 @@
     "chapter": 6,
     "pages": "243-243",
     "section_hint": "2.3 Oil - Biodiesel blend grades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -202,6 +237,13 @@
     "chapter": 6,
     "pages": "243-244",
     "section_hint": "2.3 Oil - Renewable Identification Numbers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -236,6 +278,13 @@
     "chapter": 6,
     "pages": "244-244",
     "section_hint": "2.3 Oil - RIN Price Spikes"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   },
   {
@@ -268,6 +317,13 @@
     "chapter": 6,
     "pages": "244-244",
     "section_hint": "2.3 Oil - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:26+00:00"
    }
   }
  ]

@@ -32,6 +32,13 @@
     "chapter": 2,
     "pages": "85-85",
     "section_hint": "1.2 Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 2,
     "pages": "85-86",
     "section_hint": "1.2 Trading Markets \u2014 Long and Short Rather Than Buy and Sell"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -102,6 +116,13 @@
     "chapter": 2,
     "pages": "85-86",
     "section_hint": "1.2 Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -141,6 +162,13 @@
     "chapter": 2,
     "pages": "86-87",
     "section_hint": "Bilateral, Over the Counter, and Exchange Trading \u2014 Bilateral and OTC Trades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -174,6 +202,13 @@
     "chapter": 2,
     "pages": "87-87",
     "section_hint": "Bilateral and OTC Trades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -206,6 +241,13 @@
     "chapter": 2,
     "pages": "87-88",
     "section_hint": "Bilateral, Over the Counter, and Exchange Trading \u2014 Exchanges"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   }
  ]

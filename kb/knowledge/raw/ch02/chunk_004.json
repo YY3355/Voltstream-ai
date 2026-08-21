@@ -37,6 +37,13 @@
     "chapter": 2,
     "pages": "89-90",
     "section_hint": "1.2 Trading Markets \u2014 exchange characteristics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -74,6 +81,13 @@
     "chapter": 2,
     "pages": "90-91",
     "section_hint": "1.2 Trading Markets \u2014 Types of Financial Instruments"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -114,6 +128,13 @@
     "chapter": 2,
     "pages": "90-91",
     "section_hint": "1.2 Trading Markets \u2014 Features of Futures, Forwards, and Commodity Swaps"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -148,6 +169,13 @@
     "chapter": 2,
     "pages": "91",
     "section_hint": "1.2 Trading Markets \u2014 Futures"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   },
   {
@@ -186,6 +214,13 @@
     "chapter": 2,
     "pages": "91-92",
     "section_hint": "1.2 Trading Markets \u2014 Futures, margin"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:04+00:00"
    }
   }
  ]

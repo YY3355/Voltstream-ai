@@ -44,6 +44,13 @@
     "chapter": 5,
     "pages": "193-194",
     "section_hint": "2.2 Electricity \u2014 Heat rate"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source text and referenced Figure 2.2.14 describe heat rate as fuel input per unit electricity output with the 7-14 MMBtu/MWh range and efficiency examples matching the item's claims.",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -84,6 +91,13 @@
     "chapter": 5,
     "pages": "193-194",
     "section_hint": "2.2 Electricity \u2014 Market implied heat rate"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -131,6 +145,13 @@
     "chapter": 5,
     "pages": "194",
     "section_hint": "2.2 Electricity \u2014 Spark spreads"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -162,6 +183,13 @@
     "chapter": 5,
     "pages": "194-195",
     "section_hint": "2.2 Electricity \u2014 Transmission and Distribution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -193,6 +221,13 @@
     "chapter": 5,
     "pages": "195",
     "section_hint": "2.2 Electricity \u2014 Transmission and Distribution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -225,6 +260,13 @@
     "chapter": 5,
     "pages": "195-196",
     "section_hint": "2.2 Electricity \u2014 Transmission and Distribution (three-phase power)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -256,6 +298,13 @@
     "chapter": 5,
     "pages": "196",
     "section_hint": "2.2 Electricity \u2014 Transmission and Distribution (synchronization)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   },
   {
@@ -292,6 +341,13 @@
     "chapter": 5,
     "pages": "196-197",
     "section_hint": "2.2 Electricity \u2014 Regional Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:54+00:00"
    }
   }
  ]

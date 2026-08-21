@@ -37,6 +37,13 @@
     "chapter": 19,
     "pages": "445-446",
     "section_hint": "4.4 Wheeling Power \u2014 Trading Example: Wheeling Trade"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -76,6 +83,13 @@
     "chapter": 19,
     "pages": "446-447",
     "section_hint": "4.4 Wheeling Power \u2014 Spread Trades Compared to Wheeling Trades"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -114,6 +128,13 @@
     "chapter": 19,
     "pages": "447",
     "section_hint": "4.4 Wheeling Power \u2014 Spread Trades Versus Wheeling Trades"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -148,6 +169,13 @@
     "chapter": 19,
     "pages": "445-446",
     "section_hint": "4.4 Wheeling Power \u2014 Trading Example: Wheeling Trade"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -187,6 +215,13 @@
     "chapter": 19,
     "pages": "447-448",
     "section_hint": "4.4 Wheeling Power \u2014 Trading Example: Location Spread Trade"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   }
  ]

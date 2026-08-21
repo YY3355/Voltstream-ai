@@ -34,6 +34,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Trading and Marketing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Trading and Marketing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Trading and Marketing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -131,6 +152,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Trading and Marketing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -167,6 +195,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Trading and Marketing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -201,6 +236,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Spot and Forward Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -242,6 +284,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Spot and Forward Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -278,6 +327,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Swing Swaps and Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -309,6 +365,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Bidweek"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -341,6 +404,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Forward Prices"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -379,6 +449,13 @@
     "chapter": 4,
     "pages": "152-156",
     "section_hint": "Price Certainty"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   }
  ]

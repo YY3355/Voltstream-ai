@@ -31,6 +31,13 @@
     "chapter": 1,
     "pages": "60-60",
     "section_hint": "Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -59,6 +66,13 @@
     "chapter": 1,
     "pages": "60-60",
     "section_hint": "Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -94,6 +108,13 @@
     "chapter": 1,
     "pages": "60-61",
     "section_hint": "Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -123,6 +144,13 @@
     "chapter": 1,
     "pages": "61-61",
     "section_hint": "Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -152,6 +180,13 @@
     "chapter": 1,
     "pages": "61-61",
     "section_hint": "Natural Gas Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -182,6 +217,13 @@
     "chapter": 1,
     "pages": "61-62",
     "section_hint": "Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -212,6 +254,13 @@
     "chapter": 1,
     "pages": "62-62",
     "section_hint": "Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -242,6 +291,13 @@
     "chapter": 1,
     "pages": "62-62",
     "section_hint": "Liquefied Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -272,6 +328,13 @@
     "chapter": 1,
     "pages": "62-62",
     "section_hint": "Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -301,6 +364,13 @@
     "chapter": 1,
     "pages": "62-62",
     "section_hint": "Risk Management \u2014 Mark-to-Market Accounting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   }
  ]

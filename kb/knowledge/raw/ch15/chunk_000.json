@@ -34,6 +34,13 @@
     "chapter": 15,
     "pages": "374-375",
     "section_hint": "3.6 Spread Options - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -63,6 +70,13 @@
     "chapter": 15,
     "pages": "375-376",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -91,6 +105,13 @@
     "chapter": 15,
     "pages": "374-374",
     "section_hint": "Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text states spread options cannot be exactly priced with standard formulas but can be closely approximated; the item correctly notes the specific approximation formula isn't given in this excerpt.",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -124,6 +145,13 @@
     "chapter": 15,
     "pages": "376-377",
     "section_hint": "Modeling a Spread"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -157,6 +185,13 @@
     "chapter": 15,
     "pages": "377-378",
     "section_hint": "Modeling a Spread"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -194,6 +229,13 @@
     "chapter": 15,
     "pages": "375-378",
     "section_hint": "Prices and Correlation Estimates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -227,6 +269,13 @@
     "chapter": 15,
     "pages": "378-378",
     "section_hint": "Prices and Correlation Estimates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -257,6 +306,13 @@
     "chapter": 15,
     "pages": "377-377",
     "section_hint": "Modeling a Spread"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   },
   {
@@ -292,6 +348,13 @@
     "chapter": 15,
     "pages": "379-380",
     "section_hint": "What Does an Actual Spread Look Like?"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:33+00:00"
    }
   }
  ]

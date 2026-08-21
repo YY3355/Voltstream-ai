@@ -34,6 +34,13 @@
     "chapter": 22,
     "pages": "473-473",
     "section_hint": "4.7 Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 22,
     "pages": "473-473",
     "section_hint": "4.7 Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -97,6 +111,13 @@
     "chapter": 22,
     "pages": "473-474",
     "section_hint": "4.7 Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -132,6 +153,13 @@
     "chapter": 22,
     "pages": "474-474",
     "section_hint": "Thorium Cycle"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -162,6 +190,13 @@
     "chapter": 22,
     "pages": "474-474",
     "section_hint": "Problems with Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -193,6 +228,13 @@
     "chapter": 22,
     "pages": "474-475",
     "section_hint": "Problems with Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -222,6 +264,13 @@
     "chapter": 22,
     "pages": "475-475",
     "section_hint": "Problems with Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   },
   {
@@ -253,6 +302,13 @@
     "chapter": 22,
     "pages": "475-475",
     "section_hint": "Problems with Nuclear Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:41+00:00"
    }
   }
  ]

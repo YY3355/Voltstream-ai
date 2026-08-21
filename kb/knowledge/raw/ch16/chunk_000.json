@@ -35,6 +35,13 @@
     "chapter": 16,
     "pages": "388-389",
     "section_hint": "4.1 Spatial Load Forecasting \u2014 Purpose/Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 16,
     "pages": "389",
     "section_hint": "4.1 Spatial Load Forecasting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -97,6 +111,13 @@
     "chapter": 16,
     "pages": "389",
     "section_hint": "4.1 Spatial Load Forecasting \u2014 Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -130,6 +151,13 @@
     "chapter": 16,
     "pages": "389-391",
     "section_hint": "4.1 Spatial Load Forecasting \u2014 Forecasting / Consumer Type and Location"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -165,6 +193,13 @@
     "chapter": 16,
     "pages": "390",
     "section_hint": "4.1 Spatial Load Forecasting \u2014 Expected or Worst-Case Scenario?"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   },
   {
@@ -194,6 +229,13 @@
     "chapter": 16,
     "pages": "391",
     "section_hint": "4.1 Spatial Load Forecasting \u2014 Consumer Type and Location"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:40+00:00"
    }
   }
  ]

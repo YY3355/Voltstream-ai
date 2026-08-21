@@ -30,6 +30,13 @@
     "chapter": 1,
     "pages": "56-56",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -59,6 +66,13 @@
     "chapter": 1,
     "pages": "56-56",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -87,6 +101,13 @@
     "chapter": 1,
     "pages": "56-56",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -124,6 +145,13 @@
     "chapter": 1,
     "pages": "56-57",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -158,6 +186,13 @@
     "chapter": 1,
     "pages": "57-58",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -188,6 +223,13 @@
     "chapter": 1,
     "pages": "58-58",
     "section_hint": "Natural Gas Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -225,6 +267,13 @@
     "chapter": 1,
     "pages": "58-59",
     "section_hint": "Natural Gas Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -253,6 +302,13 @@
     "chapter": 1,
     "pages": "58-59",
     "section_hint": "Natural Gas Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -285,6 +341,13 @@
     "chapter": 1,
     "pages": "59-59",
     "section_hint": "Natural Gas Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   }
  ]

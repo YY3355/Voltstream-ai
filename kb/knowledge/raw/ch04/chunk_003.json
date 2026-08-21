@@ -33,6 +33,13 @@
     "chapter": 4,
     "pages": "147",
     "section_hint": "2.1 Natural Gas \u2014 LNG transportation/regasification"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -90,6 +97,13 @@
     "chapter": 4,
     "pages": "147-148",
     "section_hint": "2.1 Natural Gas \u2014 Basis Prices / Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -125,6 +139,13 @@
     "chapter": 4,
     "pages": "148",
     "section_hint": "2.1 Natural Gas \u2014 Basis Positions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -162,6 +183,13 @@
     "chapter": 4,
     "pages": "148",
     "section_hint": "2.1 Natural Gas \u2014 Actual Prices Versus Basis Prices"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -190,6 +218,13 @@
     "chapter": 4,
     "pages": "148",
     "section_hint": "2.1 Natural Gas \u2014 How a Pipeline Operates"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:58+00:00"
    }
   },
   {
@@ -226,6 +261,13 @@
     "chapter": 4,
     "pages": "148-149",
     "section_hint": "2.1 Natural Gas \u2014 Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source pages cover basis trading and pipeline pressure mechanics only; nothing about storage buffering supply/demand, restart times, or aboveground vs underground storage appears in the given text.",
+    "checked_at": "2026-08-21T14:52:05+00:00"
    }
   },
   {
@@ -258,6 +300,13 @@
     "chapter": 4,
     "pages": "149",
     "section_hint": "2.1 Natural Gas \u2014 Storage"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text is about Henry Hub futures contracts and pipeline compressor mechanics; it contains no content about storage facility siting, count (~400), or pumping-equipment economics.",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   },
   {
@@ -293,6 +342,13 @@
     "chapter": 4,
     "pages": "149-151",
     "section_hint": "2.1 Natural Gas \u2014 Distribution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:11+00:00"
    }
   }
  ]

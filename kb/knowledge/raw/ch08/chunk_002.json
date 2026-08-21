@@ -30,6 +30,13 @@
     "chapter": 8,
     "pages": "271",
     "section_hint": "2.5 Emissions Markets \u2014 carbon capture intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -59,6 +66,13 @@
     "chapter": 8,
     "pages": "271",
     "section_hint": "2.5 Emissions Markets \u2014 carbon capture intro"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -89,6 +103,13 @@
     "chapter": 8,
     "pages": "271-272",
     "section_hint": "Limitations to Cap and Trade Systems"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -120,6 +141,13 @@
     "chapter": 8,
     "pages": "271-272",
     "section_hint": "Limitations to Cap and Trade Systems"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -152,6 +180,13 @@
     "chapter": 8,
     "pages": "272",
     "section_hint": "Limitations to Cap and Trade Systems"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -181,6 +216,13 @@
     "chapter": 8,
     "pages": "272-273",
     "section_hint": "Carbon Taxes"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -209,6 +251,13 @@
     "chapter": 8,
     "pages": "273",
     "section_hint": "Carbon Taxes"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -241,6 +290,13 @@
     "chapter": 8,
     "pages": "273",
     "section_hint": "Trading Carbon Emissions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -272,6 +328,13 @@
     "chapter": 8,
     "pages": "273",
     "section_hint": "Trading Carbon Emissions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -303,6 +366,13 @@
     "chapter": 8,
     "pages": "274",
     "section_hint": "Carbon Equivalents and Other Pollutants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   }
  ]

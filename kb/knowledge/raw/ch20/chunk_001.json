@@ -31,6 +31,13 @@
     "chapter": 20,
     "pages": "454-455",
     "section_hint": "Photovoltaic Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:22+00:00"
    }
   },
   {
@@ -60,6 +67,13 @@
     "chapter": 20,
     "pages": "454-455",
     "section_hint": "Photovoltaic Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly describes p-type as doped missing electrons (positive), n-type as doped with excess electrons, and electrons freed in n-type moving toward the positive p-type side to create directio",
+    "checked_at": "2026-08-21T14:58:26+00:00"
    }
   },
   {
@@ -88,6 +102,13 @@
     "chapter": 20,
     "pages": "455",
     "section_hint": "Photovoltaic Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:26+00:00"
    }
   },
   {
@@ -122,6 +143,13 @@
     "chapter": 20,
     "pages": "455-456",
     "section_hint": "Solar Panel System Size"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:26+00:00"
    }
   },
   {
@@ -157,6 +185,13 @@
     "chapter": 20,
     "pages": "456",
     "section_hint": "Thermal Solar Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:26+00:00"
    }
   },
   {
@@ -191,6 +226,13 @@
     "chapter": 20,
     "pages": "456",
     "section_hint": "Thermal Solar Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:26+00:00"
    }
   },
   {
@@ -236,6 +278,13 @@
     "chapter": 20,
     "pages": "456-457",
     "section_hint": "Solar Production Volume"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly states equator/dry-climate solar production comparison (Arizona vs New Jersey) and defines capacity factor with the same 100-KW/70-KW/70% example.",
+    "checked_at": "2026-08-21T14:58:29+00:00"
    }
   }
  ]

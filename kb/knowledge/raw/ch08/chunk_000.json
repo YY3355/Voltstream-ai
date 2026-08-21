@@ -29,6 +29,13 @@
     "chapter": 8,
     "pages": "262-263",
     "section_hint": "2.5 Emissions Markets \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -61,6 +68,13 @@
     "chapter": 8,
     "pages": "262-263",
     "section_hint": "2.5 Emissions Markets \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -95,6 +109,13 @@
     "chapter": 8,
     "pages": "263-264",
     "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -125,6 +146,13 @@
     "chapter": 8,
     "pages": "263-264",
     "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:36+00:00"
    }
   },
   {
@@ -153,6 +181,13 @@
     "chapter": 8,
     "pages": "263-264",
     "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text states no one can afford to pay for others' electricity costs, calls it the primary reason international emissions talks deadlocked, and says neither industrialized nor developing country consume",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -177,6 +212,13 @@
     "chapter": 8,
     "pages": "264",
     "section_hint": "Why Is Global Warming Dangerous?"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -207,6 +249,13 @@
     "chapter": 8,
     "pages": "264-265",
     "section_hint": "History"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -240,6 +289,13 @@
     "chapter": 8,
     "pages": "264-265",
     "section_hint": "History"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -273,6 +329,13 @@
     "chapter": 8,
     "pages": "265-266",
     "section_hint": "The Kyoto Protocol"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   }
  ]

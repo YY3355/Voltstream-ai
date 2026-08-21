@@ -30,6 +30,13 @@
     "chapter": 8,
     "pages": "267",
     "section_hint": "2.5 Emissions Markets (intro)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 8,
     "pages": "267-268",
     "section_hint": "Reducing Carbon Emissions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -101,6 +115,13 @@
     "chapter": 8,
     "pages": "267-269",
     "section_hint": "Reducing Carbon Emissions / Emissions Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -132,6 +153,13 @@
     "chapter": 8,
     "pages": "268",
     "section_hint": "Public Goods and Common Land"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -163,6 +191,13 @@
     "chapter": 8,
     "pages": "268",
     "section_hint": "Public Goods and Common Land"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -198,6 +233,13 @@
     "chapter": 8,
     "pages": "268-269",
     "section_hint": "Emissions Trading Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -231,6 +273,13 @@
     "chapter": 8,
     "pages": "269",
     "section_hint": "Distributing Rights"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -265,6 +314,13 @@
     "chapter": 8,
     "pages": "269-270",
     "section_hint": "Emissions Credits"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   }
  ]

@@ -33,6 +33,13 @@
     "chapter": 3,
     "pages": "128-129",
     "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:37+00:00"
    }
   },
   {
@@ -63,6 +70,13 @@
     "chapter": 3,
     "pages": "129",
     "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "The provided source text discusses environmental pollution, shale oil processing, and deepwater drilling only\u2014none of the claims about product mix, resource location, or cost competitiveness with Midd",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -97,6 +111,13 @@
     "chapter": 3,
     "pages": "129",
     "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -127,6 +148,13 @@
     "chapter": 3,
     "pages": "129",
     "section_hint": "1.3 Exploration and Production \u2014 Shale Oil (Shale Rock Processing)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -160,6 +188,13 @@
     "chapter": 3,
     "pages": "129-130",
     "section_hint": "1.3 Exploration and Production \u2014 Deepwater Drilling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -190,6 +225,13 @@
     "chapter": 3,
     "pages": "130",
     "section_hint": "1.3 Exploration and Production \u2014 Deepwater Drilling"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -228,6 +270,13 @@
     "chapter": 3,
     "pages": "130-131",
     "section_hint": "1.3 Exploration and Production \u2014 Oil and Gas Reserves"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   },
   {
@@ -289,6 +338,13 @@
     "chapter": 3,
     "pages": "131-132",
     "section_hint": "1.3 Exploration and Production \u2014 Barrel of Oil Equivalent (BOE) Conversions"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:42+00:00"
    }
   }
  ]

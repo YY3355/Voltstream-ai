@@ -33,6 +33,13 @@
     "chapter": 6,
     "pages": "219-220",
     "section_hint": "Oil exploration / seismology"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 6,
     "pages": "219-220",
     "section_hint": "Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 6,
     "pages": "220",
     "section_hint": "Crude Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   },
   {
@@ -129,6 +150,13 @@
     "chapter": 6,
     "pages": "220",
     "section_hint": "Crude Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   },
   {
@@ -167,6 +195,13 @@
     "chapter": 6,
     "pages": "220-221",
     "section_hint": "Crude Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:18+00:00"
    }
   },
   {
@@ -216,6 +251,13 @@
     "chapter": 6,
     "pages": "221",
     "section_hint": "Crude Oil Concepts"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text explains the barrel-vs-tonne convention and density-dependent conversion but contains no numeric formulas (42 gallons/BBL, ~7.5 BBL/MT); those figures aren't present in the excerpt.",
+    "checked_at": "2026-08-21T14:53:23+00:00"
    }
   },
   {
@@ -248,6 +290,13 @@
     "chapter": 6,
     "pages": "221-222",
     "section_hint": "Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:23+00:00"
    }
   },
   {
@@ -279,6 +328,13 @@
     "chapter": 6,
     "pages": "222",
     "section_hint": "Transportation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text cuts off mid-sentence right as the Transportation section begins and contains no mention of tankers, ship size, port draft, or the Suez/Panama canals.",
+    "checked_at": "2026-08-21T14:53:34+00:00"
    }
   },
   {
@@ -308,6 +364,13 @@
     "chapter": 6,
     "pages": "222-223",
     "section_hint": "Refining"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:34+00:00"
    }
   },
   {
@@ -352,6 +415,13 @@
     "chapter": 6,
     "pages": "222-223",
     "section_hint": "Refining"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only covers barrel/tonne conversion factors and crude transportation logistics; it contains no mention of cracking, downstream processing, sulfur removal, octane, gasoline yield percentage",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   },
   {
@@ -385,6 +455,13 @@
     "chapter": 6,
     "pages": "223-224",
     "section_hint": "Refining"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   },
   {
@@ -417,6 +494,13 @@
     "chapter": 6,
     "pages": "223-224",
     "section_hint": "Refining"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:53:41+00:00"
    }
   }
  ]

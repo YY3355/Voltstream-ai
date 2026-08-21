@@ -37,6 +37,13 @@
     "chapter": 29,
     "pages": "551-552",
     "section_hint": "6.1 Mark-to-Market Accounting \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -71,6 +78,13 @@
     "chapter": 29,
     "pages": "551-552",
     "section_hint": "6.1 Mark-to-Market Accounting \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 29,
     "pages": "552-554",
     "section_hint": "6.1 Mark-to-Market Accounting \u2014 Disorderly Transactions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 29,
     "pages": "553-554",
     "section_hint": "6.1 Mark-to-Market Accounting \u2014 Disorderly Transactions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -174,6 +202,13 @@
     "chapter": 29,
     "pages": "554-555",
     "section_hint": "6.1 Mark-to-Market Accounting \u2014 Fair Value Hierarchy"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   }
  ]

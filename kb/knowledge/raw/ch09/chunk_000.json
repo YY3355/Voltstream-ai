@@ -31,6 +31,13 @@
     "chapter": 9,
     "pages": "275-276",
     "section_hint": "2.6 Natural Gas Liquids \u2014 Summary/Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:40+00:00"
    }
   },
   {
@@ -62,6 +69,13 @@
     "chapter": 9,
     "pages": "276",
     "section_hint": "2.6 Natural Gas Liquids \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only defines the five NGLs and their gaseous state at STP; it contains no mention of liquefaction via compression, the ~270x volume reduction, methane/cryogenic comparison, or storage/tran",
+    "checked_at": "2026-08-21T14:54:47+00:00"
    }
   },
   {
@@ -94,6 +108,13 @@
     "chapter": 9,
     "pages": "276",
     "section_hint": "2.6 Natural Gas Liquids \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source confirms NGLs (ethane, propane, butane, iso-butane, pentane) are gaseous hydrocarbons from shale/petroleum gas processing; while LPG's propane/butane definition and refinery-separation detail a",
+    "checked_at": "2026-08-21T14:54:52+00:00"
    }
   },
   {
@@ -123,6 +144,13 @@
     "chapter": 9,
     "pages": "276-277",
     "section_hint": "C1 Natural Gas Versus C5+ Natural Gasoline"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:52+00:00"
    }
   },
   {
@@ -156,6 +184,13 @@
     "chapter": 9,
     "pages": "277",
     "section_hint": "Hydrocarbon Gas Liquids"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:52+00:00"
    }
   },
   {
@@ -188,6 +223,13 @@
     "chapter": 9,
     "pages": "277",
     "section_hint": "Propane"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source confirms propane as an NGL/LPG fuel used for cooking/grilling and notes olefins (from cracking, alongside ethane/naphtha) as petrochemical feedstock, consistent with the item's claims.",
+    "checked_at": "2026-08-21T14:54:56+00:00"
    }
   },
   {
@@ -220,6 +262,13 @@
     "chapter": 9,
     "pages": "277",
     "section_hint": "Ethane"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:56+00:00"
    }
   },
   {
@@ -252,6 +301,13 @@
     "chapter": 9,
     "pages": "277-278",
     "section_hint": "Butanes"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:54:56+00:00"
    }
   },
   {
@@ -282,6 +338,13 @@
     "chapter": 9,
     "pages": "278",
     "section_hint": "Natural Gasoline (Pentanes+)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page provided covers propane, ethane, and butanes only; no text about natural gasoline/pentanes+, naphtha blending, denatured ethanol, or dilbit/Canada export appears.",
+    "checked_at": "2026-08-21T14:55:00+00:00"
    }
   },
   {
@@ -310,6 +373,13 @@
     "chapter": 9,
     "pages": "278-279",
     "section_hint": "NGL Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:00+00:00"
    }
   },
   {
@@ -341,6 +411,13 @@
     "chapter": 9,
     "pages": "279",
     "section_hint": "NGL Trading"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text is about NGL hubs (Mont Belvieu/Conway) and physical/financial trading, with no mention of pipeline grade vs. fractionation grade purity levels or a price premium for purer product.",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -373,6 +450,13 @@
     "chapter": 9,
     "pages": "279-281",
     "section_hint": "NGL Trading \u2014 pipeline grade quality standards"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   }
  ]

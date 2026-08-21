@@ -34,6 +34,13 @@
     "chapter": 1,
     "pages": "22-22",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 1,
     "pages": "22-23",
     "section_hint": "Common Terms box"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:48:57+00:00"
    }
   },
   {
@@ -103,6 +117,13 @@
     "chapter": 1,
     "pages": "23-23",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text confirms TSOs run by local governments, ISO = TSO unaffiliated with local govt, RTO = ISO crossing state boundaries, and RTO/ISO used for deregulated-market operators.",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -136,6 +157,13 @@
     "chapter": 1,
     "pages": "23-24",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -172,6 +200,13 @@
     "chapter": 1,
     "pages": "23-24",
     "section_hint": "Common Terms box"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -205,6 +240,13 @@
     "chapter": 1,
     "pages": "24-24",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -239,6 +281,13 @@
     "chapter": 1,
     "pages": "24-24",
     "section_hint": "Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -272,6 +321,13 @@
     "chapter": 1,
     "pages": "24-25",
     "section_hint": "Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -308,6 +364,13 @@
     "chapter": 1,
     "pages": "25-25",
     "section_hint": "Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   },
   {
@@ -339,6 +402,13 @@
     "chapter": 1,
     "pages": "25-25",
     "section_hint": "Natural Gas"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:03+00:00"
    }
   }
  ]

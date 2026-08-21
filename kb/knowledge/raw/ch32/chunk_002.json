@@ -31,6 +31,13 @@
     "chapter": 32,
     "pages": "590-590",
     "section_hint": "6.4 Model Risk - Model Overlays and Reserves"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -65,6 +72,13 @@
     "chapter": 32,
     "pages": "590-590",
     "section_hint": "6.4 Model Risk - Model Overlays and Reserves / Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -96,6 +110,13 @@
     "chapter": 32,
     "pages": "590-590",
     "section_hint": "6.4 Model Risk - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

@@ -37,6 +37,13 @@
     "chapter": 4,
     "pages": "137",
     "section_hint": "2.1 Natural Gas \u2014 marketers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -73,6 +80,13 @@
     "chapter": 4,
     "pages": "137-138",
     "section_hint": "2.1 Natural Gas \u2014 The Physical Natural Gas Business"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 4,
     "pages": "138",
     "section_hint": "2.1 Natural Gas \u2014 Exploration and Extraction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -141,6 +162,13 @@
     "chapter": 4,
     "pages": "138-139",
     "section_hint": "2.1 Natural Gas \u2014 Exploration and Extraction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:06+00:00"
    }
   },
   {
@@ -172,6 +200,13 @@
     "chapter": 4,
     "pages": "139",
     "section_hint": "2.1 Natural Gas \u2014 Porosity and Permeability"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source confirms porosity refers to pore holes storing gas and permeability (connectedness) as separate factor for extraction, matching the item's definition and key points.",
+    "checked_at": "2026-08-21T14:51:14+00:00"
    }
   },
   {
@@ -203,6 +238,13 @@
     "chapter": 4,
     "pages": "139",
     "section_hint": "2.1 Natural Gas \u2014 Porosity and Permeability"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Text supports that porous+permeable rock has connected pores allowing gas flow, implying permeability = interconnectedness enabling fluid movement, distinct from porosity (storage space); the coffee c",
+    "checked_at": "2026-08-21T14:51:39+00:00"
    }
   },
   {
@@ -235,6 +277,13 @@
     "chapter": 4,
     "pages": "139",
     "section_hint": "2.1 Natural Gas \u2014 Porosity and Permeability"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Page describes gas trapped in porous rock needing pore interconnection to flow to a well, consistent with the item's fracking definition, though the specific fracking mechanism (fluid injection/explos",
+    "checked_at": "2026-08-21T14:51:46+00:00"
    }
   },
   {
@@ -275,6 +324,13 @@
     "chapter": 4,
     "pages": "140",
     "section_hint": "2.1 Natural Gas \u2014 Processing"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page covers reservoir pressure/porosity/permeability geology, not gas processing, impurity removal, or the 1,035 Btu/scf \u00b15% spec.",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   },
   {
@@ -306,6 +362,13 @@
     "chapter": 4,
     "pages": "140-141",
     "section_hint": "2.1 Natural Gas \u2014 Processing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:51:51+00:00"
    }
   }
  ]

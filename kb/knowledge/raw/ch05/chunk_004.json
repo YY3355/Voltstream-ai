@@ -33,6 +33,13 @@
     "chapter": 5,
     "pages": "188",
     "section_hint": "2.2 Electricity"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 5,
     "pages": "188-189",
     "section_hint": "2.2 Electricity \u2014 Steam Turbine Plants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 5,
     "pages": "188-189",
     "section_hint": "2.2 Electricity \u2014 Steam Turbine Plants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -132,6 +153,13 @@
     "chapter": 5,
     "pages": "189-190",
     "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -162,6 +190,13 @@
     "chapter": 5,
     "pages": "190",
     "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -190,6 +225,13 @@
     "chapter": 5,
     "pages": "190",
     "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -225,6 +267,13 @@
     "chapter": 5,
     "pages": "190-191",
     "section_hint": "2.2 Electricity \u2014 Gas Turbine"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   },
   {
@@ -260,6 +309,13 @@
     "chapter": 5,
     "pages": "191-192",
     "section_hint": "2.2 Electricity \u2014 Natural Gas Combined Cycle Plants"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:52:50+00:00"
    }
   }
  ]

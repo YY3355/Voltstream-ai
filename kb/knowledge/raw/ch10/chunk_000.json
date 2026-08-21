@@ -32,6 +32,13 @@
     "chapter": 10,
     "pages": "282-283",
     "section_hint": "3.1 Pollution \u2014 Summary/Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 10,
     "pages": "283-284",
     "section_hint": "3.1 Pollution \u2014 Major Types of Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -102,6 +116,13 @@
     "chapter": 10,
     "pages": "283-284",
     "section_hint": "3.1 Pollution \u2014 Key Topics narrative"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -136,6 +157,13 @@
     "chapter": 10,
     "pages": "284-285",
     "section_hint": "3.1 Pollution \u2014 Combustion Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 10,
     "pages": "285-286",
     "section_hint": "3.1 Pollution \u2014 Carbon Oxides"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:05+00:00"
    }
   }
  ]

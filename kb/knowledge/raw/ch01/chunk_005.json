@@ -34,6 +34,13 @@
     "chapter": 1,
     "pages": "38-38",
     "section_hint": "1.1 An Overview of the Energy Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -70,6 +77,13 @@
     "chapter": 1,
     "pages": "38-39",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 1,
     "pages": "39-39",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -129,6 +150,13 @@
     "chapter": 1,
     "pages": "39-39",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -161,6 +189,13 @@
     "chapter": 1,
     "pages": "39-39",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -194,6 +229,13 @@
     "chapter": 1,
     "pages": "39-40",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Natural Gas Liquids"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -226,6 +268,13 @@
     "chapter": 1,
     "pages": "39-40",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Natural Gas Liquids"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -257,6 +306,13 @@
     "chapter": 1,
     "pages": "40-40",
     "section_hint": "Technical Primer \u2014 Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -289,6 +345,13 @@
     "chapter": 1,
     "pages": "40-40",
     "section_hint": "Technical Primer \u2014 Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -321,6 +384,13 @@
     "chapter": 1,
     "pages": "40-41",
     "section_hint": "Technical Primer \u2014 Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -351,6 +421,13 @@
     "chapter": 1,
     "pages": "41-41",
     "section_hint": "Technical Primer \u2014 Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -381,6 +458,13 @@
     "chapter": 1,
     "pages": "41-41",
     "section_hint": "Technical Primer \u2014 Pollution"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   }
  ]

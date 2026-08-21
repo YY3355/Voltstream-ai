@@ -32,6 +32,13 @@
     "chapter": 14,
     "pages": "350-350",
     "section_hint": "3.5 Option Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 14,
     "pages": "350-351",
     "section_hint": "3.5 Option Pricing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:08+00:00"
    }
   },
   {
@@ -97,6 +111,13 @@
     "chapter": 14,
     "pages": "351-351",
     "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "The source directly discusses replicating portfolios (holding the underlying to replicate an option's payoff) as the basis for option pricing, supporting the definition and core idea even though the w",
+    "checked_at": "2026-08-21T14:57:16+00:00"
    }
   },
   {
@@ -125,6 +146,13 @@
     "chapter": 14,
     "pages": "351-352",
     "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:16+00:00"
    }
   },
   {
@@ -154,6 +182,13 @@
     "chapter": 14,
     "pages": "351-352",
     "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:16+00:00"
    }
   },
   {
@@ -184,6 +219,13 @@
     "chapter": 14,
     "pages": "352-352",
     "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text never mentions random walks, dimensionality, or the binomial tree at all.",
+    "checked_at": "2026-08-21T14:57:23+00:00"
    }
   },
   {
@@ -212,6 +254,13 @@
     "chapter": 14,
     "pages": "352-352",
     "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text discusses option pricing models and price distribution assumptions but never mentions 'stochastic process', coin flips, dice rolls, martingales, or random walks.",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -244,6 +293,13 @@
     "chapter": 14,
     "pages": "352-352",
     "section_hint": "3.5 Option Pricing \u2014 Replicating Portfolios"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -282,6 +338,13 @@
     "chapter": 14,
     "pages": "352-353",
     "section_hint": "3.5 Option Pricing \u2014 Models of Future Prices"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   },
   {
@@ -318,6 +381,13 @@
     "chapter": 14,
     "pages": "353-353",
     "section_hint": "3.5 Option Pricing \u2014 Models of Future Prices (Figure 3.5.1 / 3.5.2)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:28+00:00"
    }
   }
  ]

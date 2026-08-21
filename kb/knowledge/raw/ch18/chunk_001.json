@@ -34,6 +34,13 @@
     "chapter": 18,
     "pages": "428-430",
     "section_hint": "4.3 Tolling Agreements \u2014 Physical Model of a Power Plant"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -71,6 +78,13 @@
     "chapter": 18,
     "pages": "428-429",
     "section_hint": "4.3 Tolling Agreements \u2014 Underlying Instruments"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 18,
     "pages": "428-429",
     "section_hint": "4.3 Tolling Agreements \u2014 Underlying Instruments"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -148,6 +169,13 @@
     "chapter": 18,
     "pages": "429-430",
     "section_hint": "4.3 Tolling Agreements \u2014 Physical Model of a Power Plant"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -180,6 +208,13 @@
     "chapter": 18,
     "pages": "430-431",
     "section_hint": "4.3 Tolling Agreements \u2014 Optimal Operating Mode"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -216,6 +251,13 @@
     "chapter": 18,
     "pages": "431-432",
     "section_hint": "4.3 Tolling Agreements \u2014 Operating Scenarios and Day/Night Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -251,6 +293,13 @@
     "chapter": 18,
     "pages": "432",
     "section_hint": "4.3 Tolling Agreements \u2014 Correlation Between Electricity and Fuel Prices"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   }
  ]

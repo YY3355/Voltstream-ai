@@ -34,6 +34,13 @@
     "chapter": 29,
     "pages": "548-548",
     "section_hint": "6.1 Mark-to-Market Accounting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -67,6 +74,13 @@
     "chapter": 29,
     "pages": "548-548",
     "section_hint": "Relationship with Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -101,6 +115,13 @@
     "chapter": 29,
     "pages": "548-548",
     "section_hint": "Relationship with Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 29,
     "pages": "548-549",
     "section_hint": "Relationship with Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -175,6 +203,13 @@
     "chapter": 29,
     "pages": "549-549",
     "section_hint": "Relationship with Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -213,6 +248,13 @@
     "chapter": 29,
     "pages": "549-550",
     "section_hint": "Relationship with Risk Management"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -245,6 +287,13 @@
     "chapter": 29,
     "pages": "549-549",
     "section_hint": "Key Concept"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -281,6 +330,13 @@
     "chapter": 29,
     "pages": "550-550",
     "section_hint": "Fair Value Accounting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -315,6 +371,13 @@
     "chapter": 29,
     "pages": "550-550",
     "section_hint": "Fair Value Accounting"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   }
  ]

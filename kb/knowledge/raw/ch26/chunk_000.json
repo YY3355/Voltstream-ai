@@ -34,6 +34,13 @@
     "chapter": 26,
     "pages": "506-507",
     "section_hint": "5.1 Natural Gas Transportation - Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:47+00:00"
    }
   },
   {
@@ -69,6 +76,13 @@
     "chapter": 26,
     "pages": "506-506",
     "section_hint": "5.1 Natural Gas Transportation - Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only contains the chapter purpose/summary (pipelines are for-profit, gas is hard to transport otherwise) and cuts off at the 'Key Topics' heading \u2014 it never mentions an insurance analogy, ",
+    "checked_at": "2026-08-21T14:59:59+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 26,
     "pages": "507-509",
     "section_hint": "5.1 Natural Gas Transportation - Pipeline Operations"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:59+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 26,
     "pages": "507-508",
     "section_hint": "5.1 Natural Gas Transportation - Pipeline Terminology"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:59+00:00"
    }
   },
   {
@@ -176,6 +204,13 @@
     "chapter": 26,
     "pages": "508-508",
     "section_hint": "5.1 Natural Gas Transportation - Common Terms"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:59:59+00:00"
    }
   }
  ]

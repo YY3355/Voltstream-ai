@@ -31,6 +31,13 @@
     "chapter": 32,
     "pages": "583-585",
     "section_hint": "6.4 Model Risk \u2014 Testing the Model"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 32,
     "pages": "583-585",
     "section_hint": "6.4 Model Risk \u2014 Testing the Model"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -100,6 +114,13 @@
     "chapter": 32,
     "pages": "585-587",
     "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -128,6 +149,13 @@
     "chapter": 32,
     "pages": "585-586",
     "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -161,6 +189,13 @@
     "chapter": 32,
     "pages": "586-588",
     "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -191,6 +226,13 @@
     "chapter": 32,
     "pages": "588-589",
     "section_hint": "6.4 Model Risk \u2014 Bad Market Data"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -221,6 +263,13 @@
     "chapter": 32,
     "pages": "588-589",
     "section_hint": "6.4 Model Risk \u2014 Bad Market Data"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

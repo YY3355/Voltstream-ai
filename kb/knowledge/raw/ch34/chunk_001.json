@@ -36,6 +36,13 @@
     "chapter": 34,
     "pages": "610-610",
     "section_hint": "6.6 Weather Derivatives \u2014 modeling assumptions (trend adjustment)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   },
   {
@@ -70,6 +77,13 @@
     "chapter": 34,
     "pages": "610-610",
     "section_hint": "6.6 Weather Derivatives \u2014 modeling assumptions (data truncation)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:01:07+00:00"
    }
   }
  ]

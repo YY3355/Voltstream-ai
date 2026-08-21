@@ -35,6 +35,13 @@
     "chapter": 1,
     "pages": "67",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Value at Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:55+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 1,
     "pages": "67",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source page discusses VAR limitations and asymmetric P&L, not credit exposure, bankruptcy recovery, or debt priority claimed by the item.",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -98,6 +112,13 @@
     "chapter": 1,
     "pages": "67-68",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -132,6 +153,13 @@
     "chapter": 1,
     "pages": "68",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -167,6 +195,13 @@
     "chapter": 1,
     "pages": "68",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -197,6 +232,13 @@
     "chapter": 1,
     "pages": "68-69",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -229,6 +271,13 @@
     "chapter": 1,
     "pages": "69",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -261,6 +310,13 @@
     "chapter": 1,
     "pages": "69",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -295,6 +351,13 @@
     "chapter": 1,
     "pages": "69-70",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   },
   {
@@ -329,6 +392,13 @@
     "chapter": 1,
     "pages": "70",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:50:03+00:00"
    }
   }
  ]

@@ -37,6 +37,13 @@
     "chapter": 13,
     "pages": "326-327",
     "section_hint": "3.4 Financial Options \u2014 Summary / Key Topics"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -73,6 +80,13 @@
     "chapter": 13,
     "pages": "327-328",
     "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 13,
     "pages": "327",
     "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -136,6 +157,13 @@
     "chapter": 13,
     "pages": "328",
     "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 13,
     "pages": "328",
     "section_hint": "3.4 Financial Options \u2014 Figure 3.4.1 discussion"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   },
   {
@@ -199,6 +234,13 @@
     "chapter": 13,
     "pages": "328-329",
     "section_hint": "3.4 Financial Options \u2014 Intrinsic and Extrinsic Value"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:56+00:00"
    }
   }
  ]

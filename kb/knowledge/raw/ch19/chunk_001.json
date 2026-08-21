@@ -33,6 +33,13 @@
     "chapter": 19,
     "pages": "441-441",
     "section_hint": "4.4 Wheeling Power - introduction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -66,6 +73,13 @@
     "chapter": 19,
     "pages": "441-441",
     "section_hint": "4.4 Wheeling Power - introduction"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -102,6 +116,13 @@
     "chapter": 19,
     "pages": "441-442",
     "section_hint": "4.4 Wheeling Power - Modeling Electrical Flows"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -138,6 +159,13 @@
     "chapter": 19,
     "pages": "441-442",
     "section_hint": "4.4 Wheeling Power - Modeling Electrical Flows"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -181,6 +209,13 @@
     "chapter": 19,
     "pages": "442-442",
     "section_hint": "4.4 Wheeling Power - Long-Distance AC Transmission"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states heat loss is proportional to the square of current, and that reducing current (by increasing voltage) is the primary way to reduce transmission losses, matching all claims and the formul",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -214,6 +249,13 @@
     "chapter": 19,
     "pages": "442-443",
     "section_hint": "4.4 Wheeling Power - Transformers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   },
   {
@@ -254,6 +296,13 @@
     "chapter": 19,
     "pages": "443-444",
     "section_hint": "4.4 Wheeling Power - Long-Distance DC Transmission"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:13+00:00"
    }
   }
  ]

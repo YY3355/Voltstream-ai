@@ -38,6 +38,13 @@
     "chapter": 1,
     "pages": "34",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 day-ahead/real-time auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:25+00:00"
    }
   },
   {
@@ -71,6 +78,13 @@
     "chapter": 1,
     "pages": "34-35",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Oil"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:25+00:00"
    }
   },
   {
@@ -106,6 +120,13 @@
     "chapter": 1,
     "pages": "35",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:25+00:00"
    }
   },
   {
@@ -138,6 +159,13 @@
     "chapter": 1,
     "pages": "35",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:25+00:00"
    }
   },
   {
@@ -182,6 +210,13 @@
     "chapter": 1,
     "pages": "35-36",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Common Units"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source states 42 gallons/159 liters per barrel, tonne=1000kg/~2204.6 lbs, rough 7.5 bbl/tonne rule, and range 7.2 (Persian Gulf) to 7.5 (WTI/Brent) bbl/tonne \u2014 all matching the item.",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -216,6 +251,13 @@
     "chapter": 1,
     "pages": "36",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Crude Oil Markets"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -253,6 +295,13 @@
     "chapter": 1,
     "pages": "36-37",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Distillation and Crack Spreads"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -289,6 +338,13 @@
     "chapter": 1,
     "pages": "37",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Distillation and Crack Spreads"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -319,6 +375,13 @@
     "chapter": 1,
     "pages": "37",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Coal"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   }
  ]

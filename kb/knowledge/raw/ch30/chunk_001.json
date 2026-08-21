@@ -32,6 +32,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -103,6 +117,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -142,6 +163,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -178,6 +206,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK \u2014 Weaknesses of VAR"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -210,6 +245,13 @@
     "chapter": 30,
     "pages": "562-565",
     "section_hint": "6.2 VALUE AT RISK \u2014 Stress Testing"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   }
  ]

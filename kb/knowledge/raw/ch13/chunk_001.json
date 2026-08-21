@@ -40,6 +40,13 @@
     "chapter": 13,
     "pages": "330",
     "section_hint": "3.4 Financial Options \u2014 Calculating Extrinsic Value"
+   },
+   "_validation": {
+    "formula_in_source": false,
+    "pages_ok": true,
+    "judge_verdict": "SUPPORTED",
+    "judge_reason": "Source explicitly gives the $1.5M expected value, $1M intrinsic value, and states extrinsic value = whole lottery ticket value minus intrinsic value, yielding $500,000.",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -72,6 +79,13 @@
     "chapter": 13,
     "pages": "330",
     "section_hint": "3.4 Financial Options \u2014 Calculating Extrinsic Value"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -105,6 +119,13 @@
     "chapter": 13,
     "pages": "330",
     "section_hint": "3.4 Financial Options \u2014 Calculating Extrinsic Value"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -139,6 +160,13 @@
     "chapter": 13,
     "pages": "331",
     "section_hint": "3.4 Financial Options \u2014 Early Exercise"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -169,6 +197,13 @@
     "chapter": 13,
     "pages": "331",
     "section_hint": "3.4 Financial Options \u2014 Early Exercise"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -202,6 +237,13 @@
     "chapter": 13,
     "pages": "331",
     "section_hint": "3.4 Financial Options \u2014 Early Exercise"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -232,6 +274,13 @@
     "chapter": 13,
     "pages": "331-332",
     "section_hint": "3.4 Financial Options \u2014 Typical Payoff from Trading Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -265,6 +314,13 @@
     "chapter": 13,
     "pages": "332",
     "section_hint": "3.4 Financial Options \u2014 Bid/Ask Spreads"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -297,6 +353,13 @@
     "chapter": 13,
     "pages": "332-333",
     "section_hint": "3.4 Financial Options \u2014 Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   },
   {
@@ -328,6 +391,13 @@
     "chapter": 13,
     "pages": "333",
     "section_hint": "3.4 Financial Options \u2014 Why Traders Use Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:55:59+00:00"
    }
   }
  ]

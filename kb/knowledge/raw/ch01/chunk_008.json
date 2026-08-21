@@ -32,6 +32,13 @@
     "chapter": 1,
     "pages": "50-51",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 1,
     "pages": "50-51",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -99,6 +113,13 @@
     "chapter": 1,
     "pages": "50-51",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -129,6 +150,13 @@
     "chapter": 1,
     "pages": "51",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -160,6 +188,13 @@
     "chapter": 1,
     "pages": "51",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -198,6 +233,13 @@
     "chapter": 1,
     "pages": "51-52",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   },
   {
@@ -223,6 +265,13 @@
     "chapter": 1,
     "pages": "52",
     "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling Power"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:49:32+00:00"
    }
   }
  ]

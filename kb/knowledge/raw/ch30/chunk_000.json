@@ -34,6 +34,13 @@
     "chapter": 30,
     "pages": "557-558",
     "section_hint": "6.2 Value at Risk \u2014 Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -68,6 +75,13 @@
     "chapter": 30,
     "pages": "557-559",
     "section_hint": "6.2 Value at Risk \u2014 Summary / A High-Level Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -104,6 +118,13 @@
     "chapter": 30,
     "pages": "558-560",
     "section_hint": "6.2 Value at Risk \u2014 A High-Level Summary"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   },
   {
@@ -140,6 +161,13 @@
     "chapter": 30,
     "pages": "560-561",
     "section_hint": "6.2 Value at Risk \u2014 Calculating VAR"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T15:00:57+00:00"
    }
   }
  ]

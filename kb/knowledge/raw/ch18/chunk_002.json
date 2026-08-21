@@ -34,6 +34,13 @@
     "chapter": 18,
     "pages": "433-434",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -64,6 +71,13 @@
     "chapter": 18,
     "pages": "433-434",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:57:57+00:00"
    }
   },
   {
@@ -96,6 +110,13 @@
     "chapter": 18,
     "pages": "434",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": false,
+    "judge_verdict": "UNSUPPORTED",
+    "judge_reason": "Source text only describes calculating expiration-date profit by averaging profitable spreads and multiplying by dispatch rate; it never defines a 'valuation date', never discusses retained flexibilit",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -128,6 +149,13 @@
     "chapter": 18,
     "pages": "434-435",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -168,6 +196,13 @@
     "chapter": 18,
     "pages": "434-435",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -201,6 +236,13 @@
     "chapter": 18,
     "pages": "435",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -232,6 +274,13 @@
     "chapter": 18,
     "pages": "435",
     "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -268,6 +317,13 @@
     "chapter": 18,
     "pages": "435-436",
     "section_hint": "4.3 Tolling Agreements \u2014 Dangers to Using Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   },
   {
@@ -302,6 +358,13 @@
     "chapter": 18,
     "pages": "436",
     "section_hint": "4.3 Tolling Agreements \u2014 Dangers to Using Options"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:58:09+00:00"
    }
   }
  ]
