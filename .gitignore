@@ -26,3 +26,6 @@ models/*.pt
 dart_cache/
 # ERCOT catalog + archiver outputs (re-fetchable; may hold large raw JSON)
 data_archive/
+
+# KB: raw verbatim book-text previews (regenerable; don't commit source)
+kb/knowledge/dry_run/
