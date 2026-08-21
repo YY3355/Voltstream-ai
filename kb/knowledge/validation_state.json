@@ -1,0 +1,160 @@
+{
+ "items": {
+  "ch17/chunk_000.json#0": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#1": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#2": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#3": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#4": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#5": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_000.json#6": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#0": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#1": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#2": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#3": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#4": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#5": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_001.json#6": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_002.json#0": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_002.json#1": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_002.json#2": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_002.json#3": {
+   "pages_ok": true,
+   "formula_in_source": true,
+   "judge_verdict": null,
+   "has_formula": true
+  },
+  "ch17/chunk_002.json#4": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#0": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#1": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#2": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#3": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#4": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  },
+  "ch17/chunk_003.json#5": {
+   "pages_ok": true,
+   "formula_in_source": true,
+   "judge_verdict": null,
+   "has_formula": true
+  },
+  "ch17/chunk_003.json#6": {
+   "pages_ok": true,
+   "formula_in_source": null,
+   "judge_verdict": null,
+   "has_formula": false
+  }
+ }
+}

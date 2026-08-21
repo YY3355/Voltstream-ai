@@ -33,6 +33,13 @@
     "chapter": 17,
     "pages": "411",
     "section_hint": "4.2 The Generation Stack \u2014 bid clustering on the margin"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -70,6 +77,13 @@
     "chapter": 17,
     "pages": "411",
     "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -103,6 +117,13 @@
     "chapter": 17,
     "pages": "411-412",
     "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -137,6 +158,13 @@
     "chapter": 17,
     "pages": "412",
     "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -170,6 +198,13 @@
     "chapter": 17,
     "pages": "412",
     "section_hint": "4.2 The Generation Stack \u2014 Active Versus Passive Bidding Strategies"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -202,6 +237,13 @@
     "chapter": 17,
     "pages": "412-413",
     "section_hint": "4.2 The Generation Stack \u2014 Active Versus Passive Bidding Strategies"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -235,6 +277,13 @@
     "chapter": 17,
     "pages": "413",
     "section_hint": "4.2 The Generation Stack \u2014 Optimal Bidding Strategies"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   }
  ]

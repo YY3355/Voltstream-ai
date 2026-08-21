@@ -38,6 +38,13 @@
     "chapter": 17,
     "pages": "414-415",
     "section_hint": "4.2 The Generation Stack \u2014 Game Theory"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -76,6 +83,13 @@
     "chapter": 17,
     "pages": "415-416",
     "section_hint": "4.2 The Generation Stack \u2014 Variable Generation"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -107,6 +121,13 @@
     "chapter": 17,
     "pages": "416",
     "section_hint": "4.2 The Generation Stack \u2014 Variable Generation (Figure 4.2.6)"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -153,6 +174,13 @@
     "chapter": 17,
     "pages": "416-418",
     "section_hint": "4.2 The Generation Stack \u2014 Estimating Break-Even Costs Using Heat Rates"
+   },
+   "_validation": {
+    "formula_in_source": true,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -185,6 +213,13 @@
     "chapter": 17,
     "pages": "418-419",
     "section_hint": "4.2 The Generation Stack \u2014 Day-Ahead and Real-Time Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   }
  ]

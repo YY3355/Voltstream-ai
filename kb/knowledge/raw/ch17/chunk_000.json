@@ -32,6 +32,13 @@
     "chapter": 17,
     "pages": "406-407",
     "section_hint": "4.2 The Generation Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -61,6 +68,13 @@
     "chapter": 17,
     "pages": "407-408",
     "section_hint": "4.2 The Generation Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -92,6 +106,13 @@
     "chapter": 17,
     "pages": "407-408",
     "section_hint": "4.2 The Generation Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -125,6 +146,13 @@
     "chapter": 17,
     "pages": "406-409",
     "section_hint": "4.2 The Generation Stack \u2014 Summary / The Dispatch Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -158,6 +186,13 @@
     "chapter": 17,
     "pages": "407-408",
     "section_hint": "The Mechanics of Day-Ahead and Real-Time Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -190,6 +225,13 @@
     "chapter": 17,
     "pages": "408",
     "section_hint": "The Mechanics of Day-Ahead and Real-Time Auctions"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   },
   {
@@ -222,6 +264,13 @@
     "chapter": 17,
     "pages": "408-410",
     "section_hint": "The Dispatch Stack"
+   },
+   "_validation": {
+    "formula_in_source": null,
+    "pages_ok": true,
+    "judge_verdict": null,
+    "judge_reason": "deterministic pass (provisional)",
+    "checked_at": "2026-08-21T14:20:31+00:00"
    }
   }
  ]

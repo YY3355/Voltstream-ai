@@ -6,9 +6,11 @@ Pause + report after every task. Judge engine=claude-cli. NO app.py. Annotate+fl
 ## Checklist
 - [x] 0 — Scope confirmed (A validation, not synthesis). Recipe kb/KB_PASS2_RECIPE.md + GOAL/PROGRESS from
       Mike's paste-ready spec. ✔
-- [ ] 1 — Build kb_validate.py (deterministic formula_in_source + pages_ok; claude -p judge on FAIL ->
-      SUPPORTED/UNSUPPORTED/UNCLEAR; _validation annotate in place + validation_state.json). PILOT on ch17
-      (Generation Stack, formula-dense); marker-verify a few verdicts by hand. ⏸ STOP for Mike's review.
+- [x] 1 — Built kb_validate.py + piloted ch17. 26/26 items validated, all deterministic-pass (0 flags ->
+      0 judge calls; genuinely clean chapter). Marker-verify: (1) both ch17 formulas' tokens all in source
+      (true pass), (2) pages_ok CAN fail (corrupt->False), (3) judge smoke-tested both ways: real+real
+      pages=SUPPORTED, real+wrong pages=UNSUPPORTED (correct, no rubber-stamp, no formula rewrite).
+      Annotate-in-place + state work; content untouched. ⏸ STOP for Mike's review before full run.
 - [ ] 2 — FULL RUN (on go): all 911 items, resumable; verdict counts.
 - [ ] 3 — REPORT + review queue (UNSUPPORTED + UNCLEAR, formulas-first).
 
