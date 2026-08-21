@@ -1,0 +1,206 @@
+[
+ {
+  "n": 1,
+  "title": "1.1 AN OVERVIEW OF THE ENERGY MARKETS",
+  "start_page": 18,
+  "end_page": 72
+ },
+ {
+  "n": 2,
+  "title": "1.2 TRADING MARKETS",
+  "start_page": 73,
+  "end_page": 117
+ },
+ {
+  "n": 3,
+  "title": "1.3 EXPLORATION AND PRODUCTION",
+  "start_page": 118,
+  "end_page": 132
+ },
+ {
+  "n": 4,
+  "title": "2.1 NATURAL GAS",
+  "start_page": 133,
+  "end_page": 168
+ },
+ {
+  "n": 5,
+  "title": "2.2 ELECTRICITY",
+  "start_page": 169,
+  "end_page": 213
+ },
+ {
+  "n": 6,
+  "title": "2.3 OIL",
+  "start_page": 214,
+  "end_page": 245
+ },
+ {
+  "n": 7,
+  "title": "2.4 COAL",
+  "start_page": 246,
+  "end_page": 261
+ },
+ {
+  "n": 8,
+  "title": "2.5 EMISSIONS MARKETS",
+  "start_page": 262,
+  "end_page": 274
+ },
+ {
+  "n": 9,
+  "title": "2.6 NATURAL GAS LIQUIDS",
+  "start_page": 275,
+  "end_page": 281
+ },
+ {
+  "n": 10,
+  "title": "3.1 POLLUTION",
+  "start_page": 282,
+  "end_page": 289
+ },
+ {
+  "n": 11,
+  "title": "3.2 PHYSICAL PROPERTIES",
+  "start_page": 290,
+  "end_page": 300
+ },
+ {
+  "n": 12,
+  "title": "3.3 STATISTICS",
+  "start_page": 301,
+  "end_page": 325
+ },
+ {
+  "n": 13,
+  "title": "3.4 FINANCIAL OPTIONS",
+  "start_page": 326,
+  "end_page": 345
+ },
+ {
+  "n": 14,
+  "title": "3.5 OPTION PRICING",
+  "start_page": 346,
+  "end_page": 373
+ },
+ {
+  "n": 15,
+  "title": "3.6 SPREAD OPTIONS",
+  "start_page": 374,
+  "end_page": 387
+ },
+ {
+  "n": 16,
+  "title": "4.1 SPATIAL LOAD FORECASTING",
+  "start_page": 388,
+  "end_page": 405
+ },
+ {
+  "n": 17,
+  "title": "4.2 THE GENERATION STACK",
+  "start_page": 406,
+  "end_page": 422
+ },
+ {
+  "n": 18,
+  "title": "4.3 TOLLING AGREEMENTS",
+  "start_page": 423,
+  "end_page": 436
+ },
+ {
+  "n": 19,
+  "title": "4.4 WHEELING POWER",
+  "start_page": 437,
+  "end_page": 448
+ },
+ {
+  "n": 20,
+  "title": "4.5 SOLAR POWER",
+  "start_page": 449,
+  "end_page": 460
+ },
+ {
+  "n": 21,
+  "title": "4.6 WIND POWER",
+  "start_page": 461,
+  "end_page": 468
+ },
+ {
+  "n": 22,
+  "title": "4.7 NUCLEAR POWER",
+  "start_page": 469,
+  "end_page": 475
+ },
+ {
+  "n": 23,
+  "title": "4.8 ELECTRICITY STORAGE",
+  "start_page": 476,
+  "end_page": 485
+ },
+ {
+  "n": 24,
+  "title": "4.9 LEVELIZED COST OF ENTRY",
+  "start_page": 486,
+  "end_page": 492
+ },
+ {
+  "n": 25,
+  "title": "4.10 SECONDARY ELECTRICITY MARKETS",
+  "start_page": 493,
+  "end_page": 505
+ },
+ {
+  "n": 26,
+  "title": "5.1 NATURAL GAS TRANSPORTATION",
+  "start_page": 506,
+  "end_page": 521
+ },
+ {
+  "n": 27,
+  "title": "5.2 NATURAL GAS STORAGE",
+  "start_page": 522,
+  "end_page": 538
+ },
+ {
+  "n": 28,
+  "title": "5.3 LIQUEFIED NATURAL GAS",
+  "start_page": 539,
+  "end_page": 543
+ },
+ {
+  "n": 29,
+  "title": "6.1 MARK-TO-MARKET ACCOUNTING",
+  "start_page": 544,
+  "end_page": 556
+ },
+ {
+  "n": 30,
+  "title": "6.2 VALUE AT RISK",
+  "start_page": 557,
+  "end_page": 565
+ },
+ {
+  "n": 31,
+  "title": "6.3 COUNTERPARTY CREDIT RISK",
+  "start_page": 566,
+  "end_page": 575
+ },
+ {
+  "n": 32,
+  "title": "6.4 MODEL RISK",
+  "start_page": 576,
+  "end_page": 590
+ },
+ {
+  "n": 33,
+  "title": "6.5 HEDGING",
+  "start_page": 591,
+  "end_page": 602
+ },
+ {
+  "n": 34,
+  "title": "6.6 WEATHER DERIVATIVES",
+  "start_page": 603,
+  "end_page": 610
+ }
+]

@@ -6,7 +6,9 @@ same check ×3 = stop. Pause + report after every task. Engine=claude-cli (subsc
 ## Checklist
 - [x] 0 — Setup: assembled kb/ from ~/Downloads/files(5) scripts + files(3) recipe; deps installed
       (pypdf 6.16.1, reportlab 5.0.1); book path confirmed with Mike; GOAL/PROGRESS written. ✔
-- [ ] 1 — PROBE: chapter map vs TOC; fix chapters.json if needed; report chunk count. ⏸ STOP for go.
+- [x] 1 — PROBE. Auto-detect found 0 chapters (heuristic miss). Built kb/knowledge/chapters.json from
+      the PDF's embedded outline (34 numbered sections 1.1-6.6, p18-610). Re-probe: map = TOC (manual-
+      trusted), 129 chunks planned. 11/684 near-empty pages (1.6%) -> NOT scanned, no OCR. ⏸ STOP for go.
 - [ ] 2 — DRY-RUN: previews coherent (not shredded)? show one.
 - [ ] 3 — PILOT --max-chunks 5: real claude -p; marker-verify 5 JSONs (schema/rewritten/no-invented-
       formulas/source-tags/skip); report timing. ⏸ STOP for go.
