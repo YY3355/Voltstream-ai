@@ -1,83 +1,21 @@
-# Progress — Daily-rhythm expansion: forecast/outage capture + honest news
+# Progress — Book → KB Pass 1 extraction
 
-Supervised. Max 12 iterations. ONE task = ONE commit. Pause + report each. Never commit red; 3× red = blocked.
-Maker ≠ checker: fresh-eyes subagent per task. Tests = temp dirs + DRY_RUN; live install = Mike handoff.
-No deploy / no map-chart / no feature-eng / no harness changes this loop.
+Supervised. Max 10 iterations. ONE task = ONE commit. Verify fresh-eyes (marker≠maker). Never commit red;
+same check ×3 = stop. Pause + report after every task. Engine=claude-cli (subscription). No app.py edits.
 
 ## Checklist
-- [x] 0 — Setup: GOAL.md + PROGRESS.md; read CLAUDE.md (launchd rhythm + deploy); inspect ercot_catalog + archiver. ✔ done
-- [x] 1 — INVENTORY (report only) → VERIFY_LOOP/INVENTORY.md. Probed retention live (t-365/t-730). ⏸ PAUSE for Mike. ✔ done
-- [x] 2 — forecast_store.py: vintage-stamped, append-only, idempotent, SQLite manifest. Verified:
-      real capture (NP4-732 24 docs + NP1-346 snapshot) → re-run byte-identical (tree-sha unchanged,
-      25=25 rows no dup); target span extracts (NP4-732 → +7day), honest none for snapshot; unk=0.
-      Fresh-eyes subagent audit = 3/3 PASS (vintage/append-only/no-LLM). ✔ done
-- [~] 3 — Backfill. PIVOT: archive per-day endpoint is ~0.5 docs/s HARD (server rate-limit; threaded
-      w=4 gave NO speedup) → 227k docs = ~5 DAYS, dead. Switched to MONTHLY BUNDLES (a9c4553): one
-      download/month, VINTAGE-FAITHFUL (bundle inner-filename postDatetime == archive postDatetime,
-      6/6 to the second; bundle CSV byte-equals archive CSV; idempotent; archive-path regression
-      clean). Bundles reach 2018 for most products. Inventory: 618 bundles, ~430k files, ~1.7GB,
-      ~30-60min. Spans: wind/solar-sys/load-by-model/HRUC=2018-01; solar-region=2022-06; unplanned=
-      2022-12; load-by-zone NP3-560 + trio = 2026-03 only (~4mo). Prior archive-doc backfill also
-      committed (d4b6aad) — used for the recent unbundled tail. ⏸ awaiting Mike go to LAUNCH bundle
-      backfill + tail decision (trio July tail = 288/day slow; defer to Task-4 daily job + July bundle).
-- [x] 4 — Rhythm wiring. JOB=capture added to auto_commit.sh dispatcher -> auto_capture.sh (daily
-      06:00 ET): archive-capture last CAPTURE_DAYS(=2) complete days ALL 11 products + bundle top-up,
-      into gitignored data_archive/forecasts (commits nothing). jobs.jsonl row (job=capture), LOUD
-      ntfy on failure / SILENT on success (digest covers it). watchdog_check.py extended: capture-
-      freshness alert, GATED on capture-live so no false alarm pre-enablement. New plist
-      com.voltstream.dartcapture.plist. DRY_RUN-tested offline (no ERCOT): dispatch+log+jobs.jsonl+
-      notify all correct; watchdog 4 states pass (not-live/ok/stale/failed). Trio ongoing ~61MB/mo
-      raw (~101MB 4KB-blocks), HIGH-8 ~50MB/mo — modest, trio ongoing OK to enable. Live install =
-      Mike handoff (final). ✔ done (DRY_RUN)
-- [~] 5 — Independent verification. CAUGHT the 66%-unknown bug (pre-2025 9-digit filename time vs my
-      6-digit regex). Fixed: regex 6|9-digit; vintage_source + vintage_precision cols (mechanical gate);
-      manifest-driven purge (deleted==expected==329,625, asserted, no glob); atomic write (tmp+replace,
-      no partial files on disk-full). Post-fix: unknown=0, earliest 2018-01 for wind sys+region / solar
-      sys / load-by-model. FRESH cross-check histogram: pre-2025 n=72 (84.7% exact, 100% within-1s, max
-      1s); 2025+ n=96 (100% exact). BLOCKER: re-run hit DISK FULL (98%, NP3-565=4.1GB) — NP3-233 +
-      NP1-346 pre-2025 incomplete; +1 orphan partial to clean. Resolution: zstd tested (1.08x/1.51x
-      <3x, rejected); NP3-233 + NP1-346 COMPLETED (2018-01 / 2022-12), orphan cleaned; disk guard added.
-      Archive now COMPLETE: 494,964 docs, unknown=0, deep to 2018. ✔ done. ⏸ NP3-565 4GB relocation to an
-      external volume awaits Mike's ARCHIVE_DIR path (ops, not a verification gap).
-- [x] 6 — news_store.py: stdlib RSS 2.0 + Atom parse (no feedparser in volt), SQLite data_archive/
-      news.db, dedupe by guid/URL (PK+INSERT OR IGNORE), NO LLM in store path (llm_model NULL);
-      optional labeled enrich() reserved (summary/tags separate cols, always w/ link). /api/news
-      read-only (TestClient 200, newest-first, llm=None). Fixture-verified: RSS+Atom parse, dedupe
-      (re-ingest 0 new), undated item kept w/ NULL date (not fabricated). Live poll DEFERRED (ERCOT
-      budget) — tiny live smoke of each source at enablement. Poll schedule wired in T8. ✔ done (fixtures)
-- [x] 7 — "Right now" news block in the map sidebar (#news-now): reads /api/news, each row = headline
-      (linked, target=_blank) + source + age, cap 6, HTML-escaped, 10-min refresh. Calm styling matching
-      the briefing/layer-insight panels, zero layout disruption. Undated item shown w/o fabricated time.
-      Headless screenshot verified renders (5 fixture headlines w/ source+age). ⏸ Mike visual sign-off.
-      ✔ done (screenshot)
-- [x] 8 — digest.py compose_digest (templated, NO LLM): top-N headlines (source+age+link adjacent,
-      constraint 3) + capture-health line (latest capture jobs.jsonl row + docs-today + LOUD unknown-
-      vintage flag -> ntfy priority high). auto_digest.sh (JOB=digest, 17:30 ET plist): news poll ->
-      compose -> ONE ntfy push. Wires the T6 news poll schedule. JOURNAL_DIR seam added (capture+digest,
-      no real-journal pollution in tests). DRY_RUN-tested: dispatch->compose->parse->notify->jobs.jsonl
-      all correct, ASCII-clean. ✔ done (DRY_RUN)
-- [x] 9 — Docs: CLAUDE.md += forecast-archive section (products, two paths, admissibility sentence
-      verbatim w/ n's + materiality clause, vintage_source/precision, disk guard, zstd-rejected) + news/
-      digest section; launchd table += capture/digest rows; dispatcher three→five jobs. PROGRESS final. ✔ done
+- [x] 0 — Setup: assembled kb/ from ~/Downloads/files(5) scripts + files(3) recipe; deps installed
+      (pypdf 6.16.1, reportlab 5.0.1); book path confirmed with Mike; GOAL/PROGRESS written. ✔
+- [ ] 1 — PROBE: chapter map vs TOC; fix chapters.json if needed; report chunk count. ⏸ STOP for go.
+- [ ] 2 — DRY-RUN: previews coherent (not shredded)? show one.
+- [ ] 3 — PILOT --max-chunks 5: real claude -p; marker-verify 5 JSONs (schema/rewritten/no-invented-
+      formulas/source-tags/skip); report timing. ⏸ STOP for go.
+- [ ] 4 — FULL RUN (explicit go): resumable; done/error counts; retry errored once.
+- [ ] 5 — REPORT pdf: cross-check figures vs processing_state.json; caveat says Pass1/unvalidated.
 
 ## Append-only log
-- init (2026-08-01) — New capture/news loop from Mike's spec. Overwrote the Bolt-chart GOAL/PROGRESS.
-  Next: read CLAUDE.md launchd rhythm + deploy rules; inspect ercot_catalog.py SQLite (107 products) +
-  ercot_archiver + EMIL API; then Task 1 INVENTORY (report only, PAUSE before building).
-- T0/T1 (2026-08-01) — Setup + inventory done. Probed live archive: hourly forecast/outage products
-  (NP4-732/742, NP4-737/745, NP3-560/565/566, NP3-233, NP1-346) have ≥2yr retention (docs at t-730);
-  intra-hour 5-min (NP4-751/752, NP3-562) are the fastest-expiring (<1yr, 0 docs at t-365). Vintage =
-  postDatetime (publish) + row target period + our capture UTC — all three available. Format CSV-in-zip.
-  Recommended HIGH set = 8 products. ⏸ PAUSED for Mike to confirm capture set before Task 2 builds.
-- Set decision (Mike) — HIGH-8 ongoing+backfill; MED only if same code path (it is — generic), opt-in
-  via capture-all MED, no heroics; intra-hour trio = backfill-all-now + DAILY batch (never 5-min),
-  report disk/mo before enabling its ongoing job; NP1-346 lag_days=3 recorded in manifest; Task 3 to
-  report per-product earliest reachable vintage.
-- T2 (2026-08-01) — forecast_store.py built + verified + audited (3/3). Registry = HIGH-8 + PERISHABLE-3
-  (PRODUCTS), MED-6 ridable (MED_PRODUCTS, opt-in). Idempotency proven byte-identical. commit next.
-- FINAL (2026-08-01) — All 9 tasks done. Archive: 494,964 vintage-stamped docs, unknown=0, deep to
-  2018-01 (wind/solar/load-model/HRUC), 2022-12 (unplanned), 2026-03 (intra-hour trio + load-by-zone).
-  Rhythm: capture (06:00) + digest (17:30) legs on the stub dispatcher, disk-guarded, watchdog-covered.
-  News store + /api/news + sidebar block + digest, all no-LLM-in-store. Everything DRY_RUN/fixture/temp
-  tested; LIVE ENABLEMENT (launchd install of 2 plists + news source URLs + NP3-565 relocation) = Mike
-  handoff. NO deploy this loop.
+- setup (2026-08-21) — kb/ not in repo; found scripts across ~/Downloads/files(3,4,5) zips (all today).
+  Canonical = files(5)/kb_extract.py (350L) + files(5)/kb_report.py (153L) + files(3)/KB_LOOP_RECIPE.md
+  (only copy). Mike confirmed the book + pointed to these zips. Book:
+  /Users/mikeoc/Downloads/_OceanofPDF.com_Energy_Trading_and_Investing_-_Davis_W_Edwards.pdf (27.6MB).
+  Next: commit baseline, then T1 PROBE (pause for go).
