@@ -1,0 +1,298 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Spread Options",
+   "category": "Derivatives",
+   "subcategory": "Exotic Options",
+   "type": "concept",
+   "definition": "An option whose payoff depends on the difference (spread) between two underlying asset prices, paying off when that spread exceeds some level, rather than depending on a single asset's price against a fixed strike.",
+   "core_idea": "A spread option behaves like a standard option but with two underlying prices instead of one, effectively acting like an option with a variable strike price. Spread options are widely used to price physical energy deals because so much of energy trading profit depends on a price differential (location, time, or conversion) relative to a cost.",
+   "key_points": [
+    "Payoff is driven by the difference between two asset prices exceeding a threshold, analogous to a normal option payoff but with two underlying assets.",
+    "Can be thought of as an option with a variable strike price rather than a fixed one.",
+    "Common in energy markets because profitability there often hinges on a location spread minus transport cost, a time spread minus storage cost, or a fuel-to-power spread minus conversion cost.",
+    "Spread options cannot be exactly priced with standard option pricing formulas but can be closely approximated."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Generalization of a standard (vanilla) option to two underlying assets.",
+    "Underlies pricing of physical energy deals such as transport, storage, and conversion economics."
+   ],
+   "trading_implications": [
+    "Used to value physical deals: location spreads (transport), time spreads (storage), and product conversion spreads (e.g., fuel into electricity)."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Vanilla Options",
+    "Kirk's Approximation",
+    "Crack Spread",
+    "Spark Spread"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "374-375",
+    "section_hint": "3.6 Spread Options - Summary"
+   }
+  },
+  {
+   "topic": "Exotic vs. Vanilla Options",
+   "category": "Derivatives",
+   "subcategory": "Option Classification",
+   "type": "definition",
+   "definition": "A vanilla option is a plain option (e.g., one whose underlying asset price can be modeled with a lognormal distribution) that can typically be priced with the Black-Scholes formula. An exotic option is any option that does not meet the assumptions of the Black-Scholes model, i.e., cannot be constructed from simple put and call options.",
+   "core_idea": "The key distinction between vanilla and exotic options is the assumptions needed to model their price; exotic option formulas typically require more variables, and those variables may not behave the same way as in standard models.",
+   "key_points": [
+    "Exotic option: any option that can't be replicated with standard put or call options / doesn't meet Black-Scholes assumptions.",
+    "Vanilla option: a normal option with no special features, usually priced with Black-Scholes.",
+    "Spread options are a type of exotic option because they involve two underlying assets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Spread options are a specific case of exotic options."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread Options",
+    "Black-Scholes Model"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "375-376",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Kirk's Approximation",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Methods",
+   "type": "concept",
+   "definition": "A commonly used method that modifies the Black-Scholes formula to approximate the value of a spread option.",
+   "core_idea": "Because spread options cannot be exactly priced with standard option formulas, practitioners use approximation techniques like Kirk's approximation to adapt Black-Scholes for two-asset spread payoffs.",
+   "key_points": [
+    "Named as one of the key topics of the chapter but the specific formula is not given in this excerpt.",
+    "Positioned as a practical workaround for the fact that spreads don't fit lognormal, single-asset option pricing assumptions."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Modification of the Black-Scholes formula for spread options."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; formula details not provided in this excerpt",
+   "related_topics": [
+    "Spread Options",
+    "Black-Scholes Model"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "374-374",
+    "section_hint": "Key Topics"
+   }
+  },
+  {
+   "topic": "Statistical Modeling of Spreads vs. Asset Prices",
+   "category": "Derivatives",
+   "subcategory": "Spread Option Modeling",
+   "type": "concept",
+   "definition": "Spreads between two prices differ fundamentally from individual asset prices: they can be zero or negative, so the lognormal distribution and percent-return concepts typically used for asset prices don't apply. Spreads are more commonly modeled with a normal distribution, or by using the ratio of the two prices (which behaves more like a lognormal distribution, e.g., tends not to go negative).",
+   "core_idea": "Because individual commodity prices are almost always positive and are well described by a lognormal distribution, but spreads frequently cross zero, spread option models require different distributional assumptions than single-asset option models.",
+   "key_points": [
+    "Asset prices are typically modeled as never going below zero but able to rise a lot (lognormal-like); this doesn't fit spreads.",
+    "Percent return is undefined for a spread that starts at zero, since that produces a division-by-zero error.",
+    "Spreads are commonly modeled with a normal distribution rather than lognormal.",
+    "An alternative approach models the ratio of the two prices instead of the difference, since the ratio behaves more like a lognormal distribution (e.g., stays non-negative)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguishes spread modeling from standard single-asset lognormal option pricing (contrast with vanilla option assumptions)."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming a spread can be modeled the same way as a single commodity price (lognormal, never negative) is incorrect \u2014 spreads can be zero or negative."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread Options",
+    "Lognormal Distribution",
+    "Normal Distribution"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "376-377",
+    "section_hint": "Modeling a Spread"
+   }
+  },
+  {
+   "topic": "Mean Reversion vs. Martingale Behavior in Spreads",
+   "category": "Derivatives",
+   "subcategory": "Spread Option Modeling",
+   "type": "concept",
+   "definition": "A modeling assumption about how a spread evolves over time: a martingale process (like a coin flip) has no memory of the past, while a mean-reverting process tends to return to a central trend over time.",
+   "core_idea": "Spreads can fall into either behavioral category, but whenever a conversion relationship links the two underlying assets (e.g., crude oil into gasoline), the spread tends to oscillate around the cost of that conversion because competitive forces pull prices back together over the long run, even though short-term supply/demand shocks can temporarily widen the spread.",
+   "key_points": [
+    "Not all price/spread series behave the same way statistically \u2014 some trend, some mean-revert.",
+    "A conversion relationship between two assets (e.g., crack spread: crude oil vs. gasoline) tends to make the spread oscillate around the conversion cost.",
+    "Short-term supply and demand issues can temporarily push the spread away from that equilibrium.",
+    "Over the long run, competition (e.g., between refineries) tends to bring the spread back toward the conversion cost."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies to conversion-linked spreads such as the crack spread and, by extension, the spark spread."
+   ],
+   "trading_implications": [
+    "Modeling a conversion-linked spread as mean-reverting around the conversion cost may better reflect real market behavior than assuming random-walk (martingale) behavior."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack Spread",
+    "Spark Spread",
+    "Spread Options"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "377-378",
+    "section_hint": "Modeling a Spread"
+   }
+  },
+  {
+   "topic": "Correlation Risk in Spread Options",
+   "category": "Risk",
+   "subcategory": "Correlation Estimation",
+   "type": "risk",
+   "definition": "The risk that arises because spread option value depends heavily on the correlation between the two underlying asset prices, and this correlation is difficult to estimate reliably in energy markets.",
+   "core_idea": "Correlation estimation is hard in energy markets because price data is often unavailable, and when available it is often spot price data, which is more volatile and less correlated than forward price data; misestimating correlation is described as the easiest way to get spread option valuation wrong, and it must be monitored for the entire life of a trade, not just at initiation.",
+   "key_points": [
+    "Correlation between the two underlying assets largely determines spread option value.",
+    "Historical data may be misleading, and there often isn't a liquid enough market to observe what correlation others are using.",
+    "Available price data is often spot price data, which is more volatile and less correlated than forward price data, complicating estimation.",
+    "Incorrectly estimating correlation is called the single easiest way to mess up spread option valuation.",
+    "Correlation risk must be monitored continuously over the life of the trade, not only at trade initiation.",
+    "Managing a spread options portfolio requires infrastructure to examine correlations between products."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly affects spread width, which affects option value (see Volatility, Correlation, and Spread Width)."
+   ],
+   "trading_implications": [
+    "A spread options desk needs dedicated infrastructure to monitor correlation on an ongoing basis, not just at trade inception.",
+    "Whichever side (buyer or seller) estimates correlation more accurately will systematically profit relative to the other."
+   ],
+   "common_misunderstandings": [
+    "Treating correlation estimation as a one-time task at trade initiation rather than an ongoing monitoring requirement."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread Options",
+    "Volatility and Correlation"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "375-378",
+    "section_hint": "Prices and Correlation Estimates"
+   }
+  },
+  {
+   "topic": "Volatility, Correlation, and Spread Width",
+   "category": "Risk",
+   "subcategory": "Correlation Estimation",
+   "type": "concept",
+   "definition": "Relationship describing how asset price volatility and correlation between two assets jointly determine how wide the spread between them tends to be.",
+   "core_idea": "Higher volatility in the underlying assets tends to widen the spread, while higher correlation between the two assets narrows it because the assets move more like a single asset; this dispersion directly affects who benefits in a spread option trade.",
+   "key_points": [
+    "When asset prices are more volatile, the spread tends to be wider.",
+    "When two assets are highly correlated, they behave almost like the same asset, producing a narrow spread.",
+    "An option buyer benefits from a wide dispersion of possible spreads, since an unusual (wide) spread never causes the buyer a loss.",
+    "An option seller benefits from a tight dispersion of spreads; outlying (wide) results hurt the seller, whose gain is capped at the premium but whose losses are unbounded."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into Correlation Risk in Spread Options \u2014 dispersion (driven by volatility and correlation) determines option profitability for each side of the trade."
+   ],
+   "trading_implications": [
+    "Option buyers want to identify situations of underestimated volatility/dispersion; option sellers want tight, well-correlated spreads.",
+    "Misjudging correlation/dispersion causes consistent losses to a counterparty who estimates it better."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation Risk in Spread Options",
+    "Spread Options"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "378-378",
+    "section_hint": "Prices and Correlation Estimates"
+   }
+  },
+  {
+   "topic": "Crack Spread (Conversion-Linked Spread Example)",
+   "category": "Derivatives",
+   "subcategory": "Commodity Spreads",
+   "type": "example",
+   "definition": "A spread relating the price of crude oil to a refined product made from it, such as gasoline.",
+   "core_idea": "The crack spread illustrates a conversion-linked spread: crude oil and gasoline prices are tied together by the physical ability to convert one into the other, so while short-term supply/demand shocks can pull the spread away from the conversion cost, refinery competition tends to bring it back over the long run.",
+   "key_points": [
+    "Crack spread = relationship between crude oil price and a refined product (e.g., gasoline) price.",
+    "The conversion relationship (refining crude into gasoline) links the two prices.",
+    "Short-term supply/demand issues can temporarily widen or move the spread.",
+    "Refinery competition tends to restore the spread toward the conversion cost over the long run."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Example of Mean Reversion vs. Martingale Behavior in Spreads."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark Spread",
+    "Mean Reversion vs. Martingale Behavior in Spreads"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "377-377",
+    "section_hint": "Modeling a Spread"
+   }
+  },
+  {
+   "topic": "Spark Spread and Heat Rate (PJM-West Example)",
+   "category": "Power Markets",
+   "subcategory": "Spark Spread",
+   "type": "example",
+   "definition": "The spark spread is the difference between the price of electricity and the price of the natural gas fuel used to generate it; it captures the economics of a power plant's option to burn fuel and produce electricity.",
+   "core_idea": "A power plant effectively holds an option to convert fuel into electricity, and its operational efficiency (heat rate) can be approximated by comparing electricity price to fuel price in a region; historically in PJM-West (Jan 2000-Jun 2002), it took on average 9.5 MMBtu of natural gas to equal the cost of 1 MWh of electricity, and the resulting spark spread (using that 9.5 MMBtu/MWh conversion) oscillated around zero, sometimes positive and sometimes negative.",
+   "key_points": [
+    "Spark spread = price of electricity minus price of natural gas fuel (in equivalent units).",
+    "A power plant's profit comes from effectively holding an option to burn gas and produce power.",
+    "Regional heat rate approximates plant operational efficiency by comparing electricity and fuel prices.",
+    "Example: PJM-West, Jan 2000-Jun 2002, average heat rate of 9.5 MMBtu of natural gas per MWh of electricity.",
+    "Natural gas and peak electricity prices were observed to be correlated in this data.",
+    "Using the 9.5 MMBtu/MWh conversion, the resulting spark spread oscillated around zero, at times positive and at times negative."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates the general Spread Options concept and the conversion-linked/mean-reverting spread behavior described for the crack spread."
+   ],
+   "trading_implications": [
+    "The spark spread underlies the economic logic of power plant dispatch: the plant effectively exercises its 'option' to burn fuel and generate power when the spark spread is favorable."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; the 9.5 MMBtu/MWh figure and Jan 2000-Jun 2002 PJM-West period are the author's specific historical example",
+   "related_topics": [
+    "Crack Spread",
+    "Spread Options",
+    "Mean Reversion vs. Martingale Behavior in Spreads"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "379-380",
+    "section_hint": "What Does an Actual Spread Look Like?"
+   }
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Generation-Load Balance and Grid Stability",
+   "category": "Power Markets",
+   "subcategory": "Grid Physics",
+   "type": "concept",
+   "definition": "Voltage (production), current, and load (demand) on a power system are physically linked; a grid stays stable only when generation is kept matched to demand.",
+   "core_idea": "Because grid operators cannot directly throttle how much electricity consumers use, they must continuously adjust production to track demand. Too little generation causes brownouts; too much overloads transmission wires, which heat up and can melt, causing a blackout.",
+   "key_points": [
+    "Excess current heats transmission wires; enough heat causes the wire to melt",
+    "Grid operators balance the system by adjusting supply, not demand, since demand isn't directly controllable",
+    "Undergeneration relative to demand causes brownouts",
+    "Overgeneration relative to demand can overheat lines and cause blackouts"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Brownouts and blackouts are opposite failure modes of the same generation/demand mismatch problem"
+   ],
+   "trading_implications": [
+    "Explains the physical necessity of real-time balancing and frequency-responsive dispatch in power markets"
+   ],
+   "common_misunderstandings": [
+    "Blackouts aren't only caused by too little power \u2014 producing too much relative to demand can also force an outage by melting lines"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Real-time balancing markets",
+    "Grid frequency regulation"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "188",
+    "section_hint": "2.2 Electricity"
+   }
+  },
+  {
+   "topic": "Steam Turbine Power Generation",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "The dominant global generation technology (roughly 80% of world power), in which water is boiled into superheated steam that expands through a turbine, spinning an attached generator; the steam then condenses back to water in a condenser and is recycled to the boiler.",
+   "core_idea": "A steam turbine is essentially an electric fan run in reverse \u2014 steam pressure spins the turbine instead of electricity spinning a fan \u2014 and turbine speed directly determines power output.",
+   "key_points": [
+    "About 80% of world electricity generation uses steam turbines",
+    "Simpler turbine designs are cheaper to build and operate but less efficient; more complex designs are more efficient but costlier to maintain",
+    "Cycle: boiler heats water to steam -> steam expands past turbine -> turbine spins generator -> spent steam condenses in condenser -> water returns to boiler",
+    "Faster turbine spin produces more electrical power"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis for cogeneration and combined-cycle designs described later in the chunk"
+   ],
+   "trading_implications": [
+    "Efficiency/cost tradeoff across turbine complexity contributes to the spread of heat rates seen across a generation fleet"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cogeneration",
+    "Combined cycle plants",
+    "Heat rates"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "188-189",
+    "section_hint": "2.2 Electricity \u2014 Steam Turbine Plants"
+   }
+  },
+  {
+   "topic": "Cold-Start Economics and Continuous Operation",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "concept",
+   "definition": "Reheating already-hot condensed water back into steam takes far less energy than heating cold water from scratch, so most of a steam turbine's fuel consumption occurs during startup rather than continuous running.",
+   "core_idea": "Because a cold start is the most fuel-intensive part of operating a steam turbine, plant operators often find it cheaper to keep a unit running \u2014 even accepting a loss during low-demand periods \u2014 than to shut down and later restart it.",
+   "key_points": [
+    "Boiling water that is already near its boiling point requires much less added heat than boiling cold water",
+    "Startup/heat-up is the most fuel-consuming phase of steam turbine operation",
+    "Operators may choose to run at a loss during low-demand periods specifically to avoid cold-start costs"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to must-run/unit-commitment behavior in generation fleets"
+   ],
+   "trading_implications": [
+    "Helps explain why some steam-turbine generators are willing to run through periods of low or negative prices rather than cycle off"
+   ],
+   "common_misunderstandings": [
+    "A generator accepting a short-term loss isn't necessarily behaving irrationally \u2014 it can be avoiding a costlier cold restart"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Unit commitment",
+    "Must-run generation"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "188-189",
+    "section_hint": "2.2 Electricity \u2014 Steam Turbine Plants"
+   }
+  },
+  {
+   "topic": "Cogeneration",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "A cogeneration plant captures heat that would otherwise be discarded (typically the hot water used to cool a steam turbine's condenser) and sells it as useful output alongside electricity.",
+   "core_idea": "Cogeneration doesn't make electrical generation itself more efficient, but by monetizing waste heat it increases total plant revenue for the same fuel input, which can be viewed as effectively lowering the plant's fuel cost.",
+   "key_points": [
+    "Condenser cooling water is normally discarded into a river or evaporated via a cooling tower once it becomes hot",
+    "If that hot water is instead sold/used for an external purpose, the plant produces both electricity and hot water",
+    "Cogeneration adds an income source without improving generation efficiency, effectively reducing net fuel cost"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Topping cycle and bottoming cycle are the two named forms of cogeneration"
+   ],
+   "trading_implications": [
+    "Lower effective fuel cost can let a cogeneration plant bid more competitively into power markets"
+   ],
+   "common_misunderstandings": [
+    "Cogeneration improves plant economics, not the electrical conversion efficiency itself"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Topping cycle cogeneration",
+    "Bottoming cycle cogeneration"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "189-190",
+    "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   }
+  },
+  {
+   "topic": "Practical Constraints on Cogeneration",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "risk",
+   "definition": "Three practical barriers limit where cogeneration is viable: a local buyer for the heat must exist, the heat must be physically transportable to that buyer, and serving that buyer imposes operating constraints on the power plant.",
+   "core_idea": "Even where a heat buyer exists, that buyer typically needs a stable, reliable supply of superheated water \u2014 which conflicts with a power plant's preference to avoid producing power (and thus heat) during periods when it is unprofitable to do so.",
+   "key_points": [
+    "There may be no local demand for superheated hot water at all",
+    "Delivering the heat generally requires the buyer to build adjacent to the plant or requires a dedicated pipeline",
+    "An industrial buyer's need for a stable heat supply can obligate the plant to keep running even when power prices make that unprofitable"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Constrains when the benefits of cogeneration described in the source's cogeneration concept are actually realizable"
+   ],
+   "trading_implications": [
+    "Cogeneration plants may face a tension between power-market price signals and contractual steam-supply obligations"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cogeneration"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "190",
+    "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   }
+  },
+  {
+   "topic": "Topping Cycle vs. Bottoming Cycle Cogeneration",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "definition",
+   "definition": "Topping cycle cogeneration uses waste heat from the condenser (produced after generating power) for an external purpose; bottoming cycle cogeneration instead uses heat from an external industrial process to supply or reduce the plant's own boiler fuel needs.",
+   "core_idea": "The two terms distinguish the direction of the heat exchange: topping cycle exports the plant's waste heat outward, while bottoming cycle imports outside process heat inward to cut the plant's own fuel use.",
+   "key_points": [
+    "Topping cycle: condenser waste heat is reused externally after power generation",
+    "Bottoming cycle: heat from an external industrial process feeds the plant's boiler, reducing or eliminating its fuel needs"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Both are subtypes of cogeneration"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cogeneration",
+    "Combined cycle plants"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "190",
+    "section_hint": "2.2 Electricity \u2014 Cogeneration"
+   }
+  },
+  {
+   "topic": "Gas Turbine Power Generation",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "A gas turbine ignites a mixture of natural gas and air to create superheated gas directly (similar to a jet engine), which spins the turbine and generator without ever producing steam.",
+   "core_idea": "Gas turbines are less efficient than steam turbines because the spent combustion gas can't be reused, but they are simpler and cheaper to build and maintain, and because there is no water-heating delay they can reach full output almost immediately after startup.",
+   "key_points": [
+    "Combustion gas directly spins the turbine; no boiler or steam cycle is involved",
+    "Less efficient than a steam turbine because waste gas cannot be recycled",
+    "Simpler and cheaper to build and maintain than a steam turbine",
+    "Can start producing power at peak efficiency almost immediately, unlike a steam turbine's lengthy heat-up",
+    "Commonly used for plants that must start quickly or adjust output frequently"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Gas turbine exhaust heat is reused in combined cycle plants"
+   ],
+   "trading_implications": [
+    "Fast-start, flexible-output profile makes gas turbines natural candidates for peaking capacity and ancillary/regulation services"
+   ],
+   "common_misunderstandings": [
+    "Lower fuel efficiency doesn't make gas turbines uneconomic \u2014 their speed and flexibility are the value driver for certain roles"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Combined cycle plants",
+    "Peaking generation"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "190-191",
+    "section_hint": "2.2 Electricity \u2014 Gas Turbine"
+   }
+  },
+  {
+   "topic": "Natural Gas Combined Cycle Plants",
+   "category": "Power Markets",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "A combined cycle plant pairs a gas turbine with a steam turbine, using the gas turbine's hot exhaust \u2014 too hot to spin another gas turbine but well suited to boiling water \u2014 to raise steam that drives the steam turbine.",
+   "core_idea": "By capturing exhaust heat that a standalone gas turbine would otherwise waste, a combined cycle plant is more efficient and produces less pollution per megawatt than either a gas turbine or steam turbine plant alone, though it is mechanically more complex than either.",
+   "key_points": [
+    "Gas turbine exhaust gas is too hot and non-expanding to drive a second gas turbine, but effective for boiling water",
+    "The steam turbine stage of a combined cycle plant operates like a standalone steam turbine, including reuse of its own hot-water byproduct",
+    "Combined cycle plants are more complex than single-technology plants but achieve higher efficiency from less wasted heat",
+    "A combined cycle plant that also cogenerates hot water is described as highly efficient with minimal pollution per megawatt"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Analogous in structure to bottoming cycle cogeneration, but using a gas turbine's own exhaust rather than an external industrial process",
+    "Can still layer on cogeneration via the steam turbine's condenser heat"
+   ],
+   "trading_implications": [
+    "Higher efficiency typically positions combined cycle units favorably in heat-rate/merit-order rankings versus simple-cycle gas or steam plants"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gas turbine",
+    "Steam turbine plants",
+    "Bottoming cycle cogeneration",
+    "Heat rates"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "191-192",
+    "section_hint": "2.2 Electricity \u2014 Natural Gas Combined Cycle Plants"
+   }
+  }
+ ]
+}

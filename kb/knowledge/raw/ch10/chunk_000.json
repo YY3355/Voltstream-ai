@@ -1,0 +1,175 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Two origins of combustion pollution",
+   "category": "Environmental/Emissions",
+   "subcategory": "Pollution sources",
+   "type": "concept",
+   "definition": "Fossil fuel pollution comes from two distinct sources: impurities physically trapped inside the fuel that are released when it burns, and gases that are an unavoidable byproduct of the combustion (oxidation) reaction itself.",
+   "core_idea": "Impurity-based pollutants (ash, sulfur, nitrogen, heavy metals) can be reduced by choosing cleaner fuel, but reaction-based byproducts like CO2 and water cannot be eliminated because producing them is literally how the fuel releases its energy.",
+   "key_points": [
+    "Impurity pollution originates from substances embedded in the fuel itself (e.g., fly ash, sulfur, nitrogen, heavy metals) and can be mitigated by using fuel with fewer impurities.",
+    "Reaction pollution (CO2 and water) is intrinsic to combustion as an oxidation process and cannot be avoided while still generating energy from the fuel.",
+    "Greenhouse gases themselves are not a direct health hazard and are generally safe in normal quantities, but large aggregate releases can alter global climate."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies the distinction between locally-controllable pollution and globally cumulative pollution described elsewhere in the chunk."
+   ],
+   "trading_implications": [
+    "Regulatory and abatement strategies differ by pollutant type: fuel-quality standards address impurity pollution, while CO2 requires aggregate/market-based mechanisms (e.g., emissions pricing) since it can't be engineered out of combustion."
+   ],
+   "common_misunderstandings": [
+    "Greenhouse gases are not toxic or hazardous to individual health the way heavy metals or fly ash are; their risk is cumulative and climatic, not acute."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Major types of pollution",
+    "Local vs regional vs global pollution scope"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "282-283",
+    "section_hint": "3.1 Pollution \u2014 Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "Major pollutant categories from power plant combustion",
+   "category": "Environmental/Emissions",
+   "subcategory": "Pollutant types",
+   "type": "definition",
+   "definition": "The author identifies six named byproducts of fossil fuel combustion: carbon dioxide, carbon monoxide, nitrogen oxides, sulfur oxides, heavy metals, and fly ash/soot, distinguishing which arise from the oxidation reaction versus from impurities in the fuel.",
+   "core_idea": "Power plants produce five main pollutant categories (CO2, NOx, SOx, heavy metals, fly ash/soot); the first three come from the oxidation chemistry of combustion, while heavy metals and fly ash come from particles physically trapped in the fuel.",
+   "key_points": [
+    "Carbon dioxide (CO2): a nontoxic, odorless, naturally-occurring atmospheric gas and a core byproduct of burning any plant-based fuel; large volumes strengthen the greenhouse effect.",
+    "Carbon monoxide (CO): forms from incomplete combustion (insufficient oxygen); it is poisonous because it binds strongly to hemoglobin and interferes with breathing; it can also combine with NOx or SOx to form acid rain.",
+    "Nitrogen oxides (NOx, commonly NO2): a mix of nitrogen and oxygen compounds and a major contributor to acid rain.",
+    "Sulfur oxides (SOx, commonly SO2): a mix of sulfur and oxygen compounds and a major contributor to acid rain.",
+    "Heavy metals (e.g., mercury, lead, plutonium): highly toxic, trapped in the original fuel and released on combustion; they accumulate in living organisms and are difficult for the body to eliminate.",
+    "Fly ash/soot: inert particulate matter (fine sand grains or unburned coal) trapped in the fuel; small enough to be inhaled, causing lung damage and diseases such as silicosis."
+   ],
+   "formulas": [],
+   "relationships": [
+    "CO2, NOx, and SOx result from the oxidation process of combustion itself; heavy metals and fly ash/soot result from impurities physically trapped in the fuel."
+   ],
+   "trading_implications": [
+    "Different pollutants are regulated differently (e.g., particulate/metal controls at the plant vs. aggregate CO2 accounting), which can affect compliance costs and fuel choice for generators."
+   ],
+   "common_misunderstandings": [
+    "CO2 and CO are easily conflated, but CO2 is a normal, nontoxic combustion product while CO specifically signals incomplete combustion and is acutely poisonous."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Two origins of combustion pollution",
+    "Carbon oxides: CO2 versus CO"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "283-284",
+    "section_hint": "3.1 Pollution \u2014 Major Types of Pollution"
+   }
+  },
+  {
+   "topic": "Local, regional, and global scope of pollution impact",
+   "category": "Environmental/Emissions",
+   "subcategory": "Pollution scale",
+   "type": "concept",
+   "definition": "Different pollutants matter at different geographic scales: greenhouse gases are a global, cumulative problem; acid rain is a regional problem that weakens with distance from its source; and directly toxic substances (heavy metals) are a local health hazard in any quantity.",
+   "core_idea": "A single power plant's CO2 or acid-rain-forming emissions are individually insignificant, but the combined output of many plants can become environmentally or medically significant, making these fundamentally aggregate/cumulative problems rather than single-source problems.",
+   "key_points": [
+    "CO2 from one plant is not significant on its own, but aggregate emissions from all power plants can be enough to affect global climate.",
+    "A small amount of acid rain is not dangerous (water is naturally slightly acidic), but unlike water, most acids don't evaporate, so they can accumulate regionally to harmful levels over time.",
+    "Acid rain intensity declines with distance from its source, making it a regional rather than global issue, but still a cumulative one when multiple plants contribute to the same region.",
+    "Heavy metals are treated differently: any amount released into the air is considered a health hazard, unlike CO2 or acid rain where small quantities are benign."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the impurity-vs-reaction pollution distinction by adding a geographic/cumulative dimension to how each pollutant type causes harm."
+   ],
+   "trading_implications": [
+    "Explains why CO2 is addressed via global/aggregate mechanisms (e.g., cap-and-trade or carbon pricing) while SOx/NOx controls are often regional, and heavy metal emissions are subject to strict per-source limits regardless of volume."
+   ],
+   "common_misunderstandings": [
+    "It's tempting to judge a pollutant's danger by a single source's output, but for CO2 and acid rain the danger only emerges in aggregate across many sources, not from any one plant in isolation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Two origins of combustion pollution",
+    "Major pollutant categories from power plant combustion"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "283-284",
+    "section_hint": "3.1 Pollution \u2014 Key Topics narrative"
+   }
+  },
+  {
+   "topic": "Combustion as a bond-breaking oxidation reaction",
+   "category": "Fossil Fuel Chemistry",
+   "subcategory": "Combustion mechanics",
+   "type": "concept",
+   "definition": "Combustion is described as an oxidation reaction in which existing chemical bonds in a fuel are broken and replaced with oxygen bonds; because oxygen bonds are generally lower-energy than the bonds they replace, this exchange is exothermic and releases heat.",
+   "core_idea": "Fuels burn by breaking their internal chemical bonds (e.g., carbon-carbon or carbon-hydrogen) and forming new bonds with oxygen, and it is this bond-replacement process that releases the heat used for useful work like power generation.",
+   "key_points": [
+    "Replacing most chemical bonds with oxygen bonds is exothermic, releasing heat as the byproduct that combustion harnesses.",
+    "Example: burning coal breaks carbon-carbon bonds and forms carbon-oxygen bonds.",
+    "Methane (CH4) has four carbon-hydrogen bonds; combining methane with oxygen breaks these bonds and produces heat, carbon dioxide, and water.",
+    "Most combustion needs an initial energy input (e.g., a spark) to break the first bonds; if the resulting heat is sufficient to break further bonds, the reaction becomes self-sustaining until fuel is exhausted.",
+    "A substance is combustible only if it has bonds that can be profitably replaced by oxygen bonds; water (H2O) is not combustible because breaking one hydrogen-oxygen bond to form another yields no net energy gain, regardless of temperature."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains mechanistically why carbon dioxide and water are unavoidable combustion byproducts, as described in the pollution-sources item."
+   ],
+   "trading_implications": [
+    "Reinforces why CO2 output scales with the amount of carbon-based fuel combusted, a basic driver behind fuel-switching and emissions-intensity comparisons across generation types."
+   ],
+   "common_misunderstandings": [
+    "Combustion isn't just 'fuel catching fire' \u2014 it specifically requires bonds whose replacement with oxygen bonds is energetically favorable; not every substance that contains oxygen-linkable atoms (e.g., water) can sustain combustion."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Carbon oxides: CO2 versus CO"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "284-285",
+    "section_hint": "3.1 Pollution \u2014 Combustion Pollution"
+   }
+  },
+  {
+   "topic": "Carbon oxides: CO2 versus CO",
+   "category": "Environmental/Emissions",
+   "subcategory": "Combustion byproducts",
+   "type": "risk",
+   "definition": "Of the carbon-based combustion byproducts, carbon dioxide is a normal, nontoxic result of complete combustion whose concern is purely climatic, while carbon monoxide results from incomplete combustion (insufficient oxygen) and is acutely toxic to humans.",
+   "core_idea": "Carbon dioxide and water are the primary hydrocarbon combustion byproducts and aren't pollutants in the traditional toxicity sense (water isn't a pollutant at all); the real health-hazard byproduct is carbon monoxide, which forms specifically when combustion is oxygen-starved.",
+   "key_points": [
+    "Water and carbon dioxide are the primary byproducts of hydrocarbon combustion; water is not considered a pollutant at all.",
+    "Carbon dioxide is colorless, odorless, and nontoxic, and would not be considered a pollutant except for its effect on global climate.",
+    "Carbon monoxide is highly toxic precisely because it is highly reactive, and forms when combustion is incomplete due to insufficient oxygen."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly ties back to the major-pollutant-categories item, elaborating the distinction between CO2 and CO first introduced there."
+   ],
+   "trading_implications": [
+    "Because CO2 is climate-relevant rather than acutely toxic, its regulatory treatment (aggregate, market-based) differs from CO, NOx, and SOx, which are handled as direct health/air-quality hazards."
+   ],
+   "common_misunderstandings": [
+    "CO2 is often lumped in with 'toxic emissions,' but the source is explicit that it poses no direct health threat \u2014 the same byproduct as normal breathing or exercise \u2014 unlike carbon monoxide."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Major pollutant categories from power plant combustion",
+    "Combustion as a bond-breaking oxidation reaction"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "285-286",
+    "section_hint": "3.1 Pollution \u2014 Carbon Oxides"
+   }
+  }
+ ]
+}

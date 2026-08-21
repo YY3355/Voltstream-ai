@@ -1,0 +1,321 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Single-price convention for symmetric assets and liabilities",
+   "category": "Risk",
+   "subcategory": "Mark-to-Market Accounting",
+   "type": "concept",
+   "definition": "When an asset and its offsetting liability exist (e.g., ownership of an undelivered barrel of oil vs. the obligation to deliver it), market convention typically prices both sides using the same reference price, even though this is only an approximation.",
+   "core_idea": "Using one price for both an asset and its mirror-image liability simplifies valuation but glosses over real-world frictions that would affect an actual transaction.",
+   "key_points": [
+    "A single quoted price (e.g., 'the price of a barrel of oil') is used loosely to value both the asset and the corresponding liability.",
+    "This single-price approach is an approximation, not a precise transaction price.",
+    "An actual trade would need to reflect bid/ask spread, transaction costs, and, if settlement isn't in cash, counterparty credit quality."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into fair value / exit price concepts",
+    "Underlies mark-to-market valuation generally"
+   ],
+   "trading_implications": [
+    "Marked values from a single reference price can overstate realizable value once spread, costs, and credit quality are factored in."
+   ],
+   "common_misunderstandings": [
+    "Treating the quoted 'price' as the exact price achievable in a real transaction rather than an approximation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fair value accounting",
+    "Exit price",
+    "Credit risk"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "548-548",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  },
+  {
+   "topic": "Mark-to-market as the price input for risk management triggers",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "market_mechanic",
+   "definition": "Mark-to-market accounting supplies the prices that risk management systems use to decide when to force actions such as liquidation.",
+   "core_idea": "Risk limits can be triggered directly by a price level (e.g., a stop-loss) or indirectly through a derived metric like volatility that reacts to price moves.",
+   "key_points": [
+    "Mark-to-market prices are the primary input into risk-management trigger mechanisms.",
+    "Direct trigger example: a stop-loss forces liquidation once price falls below a set level.",
+    "Indirect trigger example: a risk limit tied to volatility, which rises when prices move sharply."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on mark-to-market pricing",
+    "Connects to margin and capital requirements"
+   ],
+   "trading_implications": [
+    "A trader's exposure to forced liquidation depends on how the firm's risk system translates marked prices into triggers (direct vs. volatility-based)."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Stop-loss",
+    "Volatility-based risk limits",
+    "Margin calls"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "548-548",
+    "section_hint": "Relationship with Risk Management"
+   }
+  },
+  {
+   "topic": "Mark-to-market as a fraud-prevention mechanism",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "concept",
+   "definition": "Mark-to-market accounting was largely adopted to stop accounting fraud by requiring participants to value positions using current, externally observable prices rather than self-determined ones.",
+   "core_idea": "Sourcing prices from independent brokers, exchanges, or data providers removes a trader's ability to manipulate their own book's valuation to smooth reported earnings.",
+   "key_points": [
+    "A primary historical motivation for mark-to-market was curbing accounting fraud.",
+    "Prices are typically pulled from independent brokers, exchanges, or similar data providers.",
+    "This independence prevents traders from marking their own books and smoothing earnings."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Trade-off against systemic risk introduced by reliance on visible prices"
+   ],
+   "trading_implications": [
+    "Traders lose discretion to self-mark positions, shifting earnings volatility onto the books in real time rather than allowing it to be smoothed."
+   ],
+   "common_misunderstandings": [
+    "Assuming mark-to-market is purely a valuation technique with no regulatory/fraud-prevention motivation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Accounting fraud",
+    "Independent price sources",
+    "Fair value accounting"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "548-548",
+    "section_hint": "Relationship with Risk Management"
+   }
+  },
+  {
+   "topic": "Systemic risk created by mark-to-market's reliance on thin trading",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "risk",
+   "definition": "Because only a small fraction of an asset class trades on any given day, a handful of transactions can set the marked value for an entire industry, and since margin and bank capital rules also key off these prices, problems can cascade quickly.",
+   "core_idea": "Solving fraud risk via mark-to-market introduces a new risk: exposure to distorted or unrepresentative prices, which can trigger market panics, sudden liquidity disappearance, and even bank failures.",
+   "key_points": [
+    "Only a fraction of total outstanding assets trade in any given day, so marked prices rest on a thin sample of transactions.",
+    "Named downsides include increased likelihood of market panics, temporary liquidity disappearance, and bank failures.",
+    "Margin requirements and bank capital requirements both use marked prices as a primary input, so a price shock can cascade rapidly across the system.",
+    "A localized issue can escalate into a major crisis because of this cascading dependency."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on independent-price-sourcing behavior of mark-to-market",
+    "Connects to margin calls and bank liquidity requirements"
+   ],
+   "trading_implications": [
+    "Risk managers should treat marked prices from illiquid periods with caution, since they may not reflect a representative transaction volume.",
+    "A firm's margin or capital position can move sharply on a price print that reflects only a small trade volume."
+   ],
+   "common_misunderstandings": [
+    "Assuming a mark-to-market price is always representative of the true, deep-market value of an asset class."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Market panics",
+    "Liquidity risk",
+    "Bank capital requirements",
+    "Margin calls"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "548-549",
+    "section_hint": "Relationship with Risk Management"
+   }
+  },
+  {
+   "topic": "Illustrative example: an irrational end-of-day trade forcing a market-wide markdown",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "example",
+   "definition": "A hypothetical scenario where a trader, wanting to finish a large sale before a holiday weekend and running low on willing buyers, accepts a much lower price on the last block of a transaction late in the trading day; because it is the final reported trade, it becomes the mark used by everyone holding that asset.",
+   "core_idea": "A single trader's non-distressed, time-pressured decision can become the price that forces a substantial paper loss across all holders of the asset, even though the broader market was functioning normally.",
+   "key_points": [
+    "The trader sells the final portion of a large position at a discount near market close to avoid trading during a vacation.",
+    "Because it lands at end of day, this trade is likely to be the last reported price for the asset.",
+    "Everyone holding the asset must then mark their books to this final, discounted price.",
+    "The author notes the trade wasn't evidence of market distress -- it was a normal transaction between willing counterparties, just one that didn't maximize the seller's profit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates the systemic-risk problem of thin trading volume setting the mark"
+   ],
+   "trading_implications": [
+    "End-of-day or pre-holiday illiquidity can let a single trade set a mark that misrepresents the broader market's equilibrium price.",
+    "Holders of an asset can suffer a mark-to-market loss driven by one counterparty's scheduling convenience rather than by fundamental repricing."
+   ],
+   "common_misunderstandings": [
+    "Interpreting a large, off-market final trade as a sign of genuine market distress rather than an idiosyncratic, liquidity-driven event."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Liquidity risk",
+    "End-of-day pricing",
+    "Market contagion"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "549-549",
+    "section_hint": "Relationship with Risk Management"
+   }
+  },
+  {
+   "topic": "Mark-to-market contagion through bank liquidity rules and margin calls",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "risk",
+   "definition": "A drop in a marked asset's value can force forced-selling chains: a bank required to hold minimum liquid assets may need to sell other holdings to raise cash, and traders posting that asset as collateral may face margin calls requiring them to raise cash or sell assets, often at inconvenient times such as holiday weekends.",
+   "core_idea": "Because mark-to-market losses can trigger regulatory liquidity requirements and margin calls simultaneously across many participants, a single price move can snowball into a multi-market sell-off or crash.",
+   "key_points": [
+    "A bank facing a regulator-mandated minimum liquid-asset level may need to sell other assets if one holding's marked value drops.",
+    "Traders using the devalued asset as collateral can face margin calls, forcing them to raise cash or sell assets -- difficult over a holiday weekend.",
+    "Forced selling to cover these calls can itself push prices down further, crossing into other markets.",
+    "The author frames this as a mechanism by which a mark-to-market driven price move can escalate into a broader market crash."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the systemic-risk item above",
+    "Follows from the illustrative end-of-day trade example"
+   ],
+   "trading_implications": [
+    "Positions collateralized by a thinly-traded asset carry hidden liquidity risk: a single adverse mark can trigger margin calls timed badly (e.g., holiday weekends).",
+    "Cross-market contagion risk should be considered when an asset serves as collateral or counts toward regulatory liquidity buffers."
+   ],
+   "common_misunderstandings": [
+    "Assuming a mark-to-market loss stays contained to the position or firm that experienced it, rather than propagating via collateral and liquidity-rule linkages."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Margin calls",
+    "Bank liquidity requirements",
+    "Market contagion",
+    "Systemic risk"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "549-550",
+    "section_hint": "Relationship with Risk Management"
+   }
+  },
+  {
+   "topic": "Key Concept: the fraud/systemic-risk trade-off of mark-to-market, and its effect on trader input",
+   "category": "Risk",
+   "subcategory": "Relationship with Risk Management",
+   "type": "concept",
+   "definition": "The author's summary point: mark-to-market reduces fraud by separating financial reporting from trading, but that same separation raises the odds of forced liquidations and market crashes, and can lead to major business decisions being made without the traders who best understand current market conditions.",
+   "core_idea": "Mark-to-market's core trade-off is fraud prevention versus systemic fragility, compounded by a governance side effect where the reporting/trading barrier can exclude trader judgment from critical decisions.",
+   "key_points": [
+    "Benefit: creates a barrier between financial reporting and trading that curbs fraud risk.",
+    "Cost: raises the probability of systemic problems like forced liquidations and market crashes.",
+    "Side effect: the same reporting/trading barrier can result in critical business decisions being made without input from the traders closest to the market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Synthesizes the fraud-prevention and systemic-risk items above"
+   ],
+   "trading_implications": [
+    "Risk managers should stay alert not just to price-driven liquidation risk, but to the possibility that trading expertise is being excluded from decisions made purely off reported marks."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Accounting fraud",
+    "Systemic risk",
+    "Forced liquidation"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "549-549",
+    "section_hint": "Key Concept"
+   }
+  },
+  {
+   "topic": "Fair value accounting definitions: FASB ASC 820 and IASB IFRS 13",
+   "category": "Risk",
+   "subcategory": "Fair Value Accounting",
+   "type": "definition",
+   "definition": "In the U.S., the Financial Accounting Standards Board defines fair value under Accounting Standards Codification 820 (ASC 820); internationally, the International Accounting Standards Board defines it under International Financial Reporting Standards topic 13 (IFRS 13). Both define fair value as an exit price -- the price to liquidate a position under normal market conditions.",
+   "core_idea": "The two major accounting regimes converge on defining mark-to-market's target value as an 'exit price,' the price obtainable to liquidate under typical market conditions, and both rank the reliability of that estimate via a fair value hierarchy.",
+   "key_points": [
+    "FASB (US) defines fair value in ASC 820.",
+    "IASB (international) defines fair value in IFRS 13.",
+    "The two standards' definitions are similar in substance.",
+    "Fair value is defined as an exit price: the price to liquidate a transaction under typical/normal market conditions.",
+    "Both standards use a fair value hierarchy to communicate how accurate/reliable a given fair value estimate is."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Provides the accounting basis requiring firms to use mark-to-market",
+    "Related to primary market / highest-and-best-use valuation rules"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Conflating 'fair value' with 'the price a firm believes an asset is worth' rather than the specific accounting definition of an achievable exit price."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exit price",
+    "Fair value hierarchy",
+    "ASC 820",
+    "IFRS 13"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "550-550",
+    "section_hint": "Fair Value Accounting"
+   }
+  },
+  {
+   "topic": "Choosing the exit price: primary market vs. highest and best use",
+   "category": "Risk",
+   "subcategory": "Fair Value Accounting",
+   "type": "market_mechanic",
+   "definition": "When an asset or liability could be liquidated in more than one venue, accounting standards say to use the primary market's price if one venue accounts for the majority of trading; otherwise, use the venue/approach that maximizes the asset's value, known as the highest and best use or most advantageous market.",
+   "core_idea": "Fair value accounting resolves ambiguity about which market's price to use by defaulting to the dominant trading venue, and falling back to the value-maximizing venue when no single market dominates.",
+   "key_points": [
+    "If a primary market exists (one venue handling the majority of trading), its prices should be used for the exit price.",
+    "If no primary market exists, accounting standards direct companies to use the approach maximizing the asset's value.",
+    "This value-maximizing approach is termed the 'highest and best use' or 'most advantageous market.'"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies the exit-price definition from ASC 820 / IFRS 13"
+   ],
+   "trading_implications": [
+    "Where an asset trades across multiple venues, the accounting-mandated exit price may not equal the price achievable in the venue a trader would actually use."
+   ],
+   "common_misunderstandings": [
+    "Assuming any convenient market's price can be used for fair value, rather than following the primary-market-first, most-advantageous-market-otherwise rule."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exit price",
+    "Fair value hierarchy",
+    "Market liquidity"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "550-550",
+    "section_hint": "Fair Value Accounting"
+   }
+  }
+ ]
+}

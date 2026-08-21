@@ -1,0 +1,187 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Mechanisms that drive hydrocarbons to the surface",
+   "category": "Natural Gas",
+   "subcategory": "Exploration and Production",
+   "type": "concept",
+   "definition": "Three physical mechanisms explain why oil and gas migrate upward through rock toward the surface once they exist underground: overpressure, heat, and buoyancy.",
+   "core_idea": "As organic matter decays into shorter hydrocarbon chains it becomes less dense and takes up more volume, raising local pressure; subsurface heat further expands these fluids; and because hydrocarbons are lighter than surrounding rock, water, and decaying matter, buoyancy pushes them upward. Together these forces are what make a well flow once it's drilled.",
+   "key_points": [
+    "Overpressure: decay of long hydrocarbon chains into shorter, less dense ones increases local pressure.",
+    "Heat: hydrocarbons expand as temperature rises, and deeper earth is hotter than the surface, so heat pushes fuel upward.",
+    "Buoyancy: hydrocarbons are less dense than rock, water, or decaying plant matter, so they float upward through permeable material.",
+    "A well's own driving pressure is what brings fuel to the surface without external lift in early production."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underground pressure decline over a well's life is the same pressure phenomenon that initially drives production."
+   ],
+   "trading_implications": [
+    "Because natural well pressure declines over time, production from a given well is front-loaded, which affects supply forecasting and decline-curve-based output expectations."
+   ],
+   "common_misunderstandings": [
+    "It is not just heat or just buoyancy alone; the author frames all three mechanisms as acting together."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Reservoir formation and trapping",
+    "Traditional well drilling",
+    "Production decline"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "124-125",
+    "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   }
+  },
+  {
+   "topic": "Reservoir trapping and exploration targeting",
+   "category": "Natural Gas",
+   "subcategory": "Exploration and Production",
+   "type": "concept",
+   "definition": "A hydrocarbon reservoir only accumulates where an impermeable rock layer sits above a source of decaying organic material, trapping the migrating fuel instead of letting it disperse to the surface.",
+   "core_idea": "Without a sealing rock barrier, oil and gas would simply leak away over geologic time; the presence of the right rock formation is therefore what geologists search for, using seismic mapping to build 3D underground images before confirming a prospect with a test well.",
+   "key_points": [
+    "An impermeable rock cap over decaying plant material is required to form a trappable reservoir.",
+    "Seismic waves are used to build three-dimensional maps of candidate underground formations.",
+    "Test wells are drilled into promising formations to confirm the actual presence of fuel before further development."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on the same overpressure/heat/buoyancy migration mechanisms; the rock cap is what stops that migration at a producible depth."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mechanisms that drive hydrocarbons to the surface",
+    "Traditional well drilling"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "124-125",
+    "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   }
+  },
+  {
+   "topic": "Traditional well construction",
+   "category": "Natural Gas",
+   "subcategory": "Exploration and Production",
+   "type": "concept",
+   "definition": "A traditional well is built by drilling a borehole (roughly 6 inches to 3 feet / 12 cm to 1 m in diameter) with a rotating drill bit suspended on a drill string, then lining the hole with progressively smaller steel casings cemented in place, and finally perforating the casing at the target formation to let fuel flow in.",
+   "core_idea": "The drill string carries both rotational torque and drilling fluid (a clay/water/chemical mix) to cool the bit, clear rock cuttings, and manage underground pressure; casing and cement provide structural support and isolate different pressure zones as the well goes deeper, with modern wells using up to five levels of progressively smaller pipe before a perforating gun opens the final casing to the reservoir.",
+   "key_points": [
+    "Borehole diameter: roughly 6 inches to 3 feet (12 cm to 1 m).",
+    "Drill string transfers torque and drilling fluid to the drill bit.",
+    "Drilling fluid cools the bit, removes cuttings, and helps maintain proper downhole pressure.",
+    "Steel casing is cemented into the borehole for structural stability and to separate pressure zones.",
+    "Modern wells may use up to five levels of progressively smaller casing/drill bit as depth increases.",
+    "A perforating gun punches holes through casing and cement at the target layer to let fuel enter the well.",
+    "Traditional drilling works best for lower-density crude oil or natural gas that flows easily; underground pressure can be boosted later by pumping or additives as natural pressure declines."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Well pressure decline over time links to the same overpressure/heat/buoyancy forces that initially drove production."
+   ],
+   "trading_implications": [
+    "Traditional drilling is best suited to lighter, more easily flowing crude or gas, which is relevant to distinguishing conventional supply from heavy-oil supply that needs different extraction economics."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mechanisms that drive hydrocarbons to the surface",
+    "Gas-oil ratio classification",
+    "Oil sands / heavy oil"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "125-126",
+    "section_hint": "1.3 Exploration and Production \u2014 Traditional Wells"
+   }
+  },
+  {
+   "topic": "Gas-oil ratio classification of wells",
+   "category": "Natural Gas",
+   "subcategory": "Exploration and Production",
+   "type": "definition",
+   "definition": "Wells that produce a mixture of oil and gas are labeled 'gas well' or 'oil well' based on the ratio of gas volume produced to oil volume produced, using a conventional threshold of 100,000 cubic feet of gas per barrel of oil.",
+   "core_idea": "Because virtually all wells produce some mixture of both oil and gas, the gas-to-oil ratio (GOR) is used as a naming convention rather than a strict physical category: below the threshold the well is called an oil well, above it a gas well.",
+   "key_points": [
+    "Gas-oil ratio = volume of natural gas produced (ft3) divided by volume of crude oil produced (BBL) over a given period.",
+    "Oil well: gas-oil ratio less than 100,000 ft3/BBL.",
+    "Gas well: gas-oil ratio greater than 100,000 ft3/BBL.",
+    "All wells generally produce both gas and oil in some proportion; the label just reflects which dominates."
+   ],
+   "formulas": [
+    {
+     "name": "Gas-oil ratio (GOR)",
+     "formula": "GOR = Gas produced (ft3) / Oil produced (BBL)",
+     "variables": {
+      "Gas produced": "cubic feet (ft3) of natural gas produced over a period",
+      "Oil produced": "barrels (BBL) of crude oil produced over the same period",
+      "100,000 ft3/BBL": "conventional dividing line between classifying a well as oil vs. gas"
+     }
+    }
+   ],
+   "relationships": [
+    "Applies to output from traditional wells described in the surrounding text."
+   ],
+   "trading_implications": [
+    "GOR labeling affects how a well's output is categorized for market/production reporting purposes, even though actual output is mixed."
+   ],
+   "common_misunderstandings": [
+    "A 'gas well' or 'oil well' label does not mean the well produces only one fuel type \u2014 it reflects a ratio threshold, not exclusivity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Traditional well construction"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "126",
+    "section_hint": "1.3 Exploration and Production \u2014 Gas and Oil Wells"
+   }
+  },
+  {
+   "topic": "Oil sands / heavy oil extraction",
+   "category": "Natural Gas",
+   "subcategory": "Exploration and Production",
+   "type": "concept",
+   "definition": "Heavy crude oil is too viscous (ranging from molasses-like to solid at room temperature) to flow to the surface under natural pressure like traditional wells, so it requires strip mining (if near-surface) or steam injection to liquefy it underground before extraction.",
+   "core_idea": "Traditional drilling only works for lighter, shorter-chain hydrocarbons that flow easily; heavy oil needs either surface mining or high-temperature steam injection, both of which are far more energy-, water-, and resource-intensive and more environmentally destructive, and heavy oil also needs more downstream processing to become usable fuel \u2014 but heavy oil reserves are roughly twice as abundant globally as light oil reserves and often sit near the surface in politically stable regions, so the main constraints on developing them are water access and environmental considerations rather than resource scarcity or location.",
+   "key_points": [
+    "Heavy crude viscosity ranges from molasses-like to solid at room temperature.",
+    "Near-surface heavy oil deposits can be strip mined, similar to coal mining.",
+    "Deeper heavy oil deposits are extracted by injecting high-temperature steam to melt the oil into a liquid.",
+    "Heavy oil extraction requires far more energy and water than traditional drilling and is generally more environmentally destructive.",
+    "Heavy oil requires more processing than light crude to convert into gasoline or diesel.",
+    "Heavy oil reserves are roughly double the world's light oil reserves.",
+    "Many heavy oil reserves are located near the surface in politically stable regions, unlike hard-to-locate light crude.",
+    "The primary limiting factors for heavy oil development are access to water (for steam) and environmental considerations, not resource scarcity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with traditional well production described earlier, which depends on natural underground pressure to flow lighter fuels to the surface."
+   ],
+   "trading_implications": [
+    "Heavy oil's abundance and near-surface, politically stable locations make it a strategically attractive supply source despite higher production costs and lower desirability versus light crude.",
+    "Water availability and environmental permitting, rather than geological discovery, are the practical constraints on heavy oil supply growth."
+   ],
+   "common_misunderstandings": [
+    "Heavy oil is less desirable/more costly to produce, but this is due to processing intensity and resource requirements, not scarcity \u2014 reserves are actually larger than light oil."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Traditional well construction",
+    "Shale Gas (Hydraulic Fracking)"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "126-127",
+    "section_hint": "1.3 Exploration and Production \u2014 Oil Sands (Heavy Oil)"
+   }
+  }
+ ]
+}

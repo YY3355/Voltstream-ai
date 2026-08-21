@@ -1,0 +1,379 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Natural Gas Liquids (NGLs): definition and composition",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "definition",
+   "definition": "NGLs are combustible hydrocarbons heavier than methane but lighter than naphtha/gasoline, remaining gaseous at standard temperature and pressure while liquefying much more readily than methane.",
+   "core_idea": "There are five NGLs \u2014 ethane, propane, butane, isobutane, and pentane \u2014 occurring comingled with crude oil and raw natural gas underground, and they occupy a weight band between methane and naphtha/gasoline.",
+   "key_points": [
+    "The five NGLs: ethane (C2), propane (C3), butane (C4), isobutane (IC4), pentane (C5).",
+    "Pentanes mixed with slightly heavier hydrocarbons are called 'pentanes plus' or 'natural gasoline.'",
+    "NGLs are abundant in shale deposits and are a major byproduct of natural gas fracking."
+   ],
+   "formulas": [],
+   "relationships": [
+    "NGLs sit between methane (natural gas) and naphtha/gasoline on the hydrocarbon weight spectrum"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "NGLs should not be confused with LNG (liquefied natural gas, which is pure methane cryogenically cooled)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LPG",
+    "natural gasoline",
+    "shale gas fracking"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "275-276",
+    "section_hint": "2.6 Natural Gas Liquids \u2014 Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "NGL liquefaction, compaction, and storage/transport behavior",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "concept",
+   "definition": "Heavier NGLs such as propane and butane liquefy under only moderate compression, unlike methane which requires cryogenic cooling to liquefy.",
+   "core_idea": "Once liquefied, NGLs occupy roughly 270 times less volume than in gas form, which is why they can be economically stored and transported as pressurized liquids and then released as gas at the point of use.",
+   "key_points": [
+    "Liquefaction is achieved via moderate pressure alone (no deep cooling needed, unlike methane/LNG).",
+    "Liquid NGLs are ~270x more compact than their gaseous form.",
+    "Typical residential use: pressurized propane storage that evaporates into gas when a valve is opened (e.g., a backyard grill)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrast with methane, which needs cryogenic liquefaction (LNG) rather than simple compression"
+   ],
+   "trading_implications": [
+    "Ease of liquefaction under moderate pressure makes NGLs cheaper to store/transport than natural gas, supporting a more mobile, hub-based physical market."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LPG",
+    "NGL trading hubs"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "276",
+    "section_hint": "2.6 Natural Gas Liquids \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Where NGLs come from and LPG definition",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "definition",
+   "definition": "NGLs are commonly dissolved within crude oil or natural gas and are separated out at natural-gas-processing plants (from gas) or at refineries (from crude oil).",
+   "core_idea": "Liquefied petroleum gas (LPG) is a specific term for a mixture of the two heaviest common NGLs, propane and butane.",
+   "key_points": [
+    "NGLs are abundant in shale deposits developed via fracking.",
+    "Separation occurs at gas-processing plants (from natural gas) or refineries (from crude oil).",
+    "LPG = a propane/butane mixture, a subset term within the broader NGL category."
+   ],
+   "formulas": [],
+   "relationships": [
+    "LPG is a specific propane+butane blend within the broader NGL family"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "LPG is not synonymous with all NGLs \u2014 it specifically refers to the propane/butane mix."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Butanes",
+    "Propane",
+    "shale gas fracking"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "276",
+    "section_hint": "2.6 Natural Gas Liquids \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Natural gas (C1) versus natural gasoline (C5+)",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "definition",
+   "definition": "Despite similar-sounding names, natural gas (C1, methane, the lightest hydrocarbon) and natural gasoline (C5+, heavier hydrocarbons resembling low-octane naphtha) are very different substances.",
+   "core_idea": "The 'C1 vs C5+' framing is used to head off confusion between methane-based natural gas and the pentane-plus product called natural gasoline.",
+   "key_points": [
+    "C1 = methane = natural gas, the lightest hydrocarbon gas.",
+    "C5+ = natural gasoline = heavier hydrocarbons, similar to low-octane naphtha."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gasoline is the pentanes-plus fraction of NGLs, distinct from methane-based natural gas"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "The similarity in names ('natural gas' vs 'natural gasoline') invites confusion despite the substances being chemically very different."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gasoline (pentanes+)"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "276-277",
+    "section_hint": "C1 Natural Gas Versus C5+ Natural Gasoline"
+   }
+  },
+  {
+   "topic": "Hydrocarbon gas liquids: alkanes versus alkenes",
+   "category": "Natural Gas",
+   "subcategory": "Hydrocarbon Gas Liquids",
+   "type": "concept",
+   "definition": "NGLs belong to the broader category of hydrocarbon gas liquids (HGLs), which splits into alkanes (paraffins \u2014 the NGLs proper) and alkenes (olefins \u2014 petrochemical feedstock products).",
+   "core_idea": "Alkanes have single covalent bonds between carbon atoms while alkenes have one or more double bonds, giving alkenes fewer hydrogen atoms for the same carbon count; alkenes serve as feedstock for plastics, artificial rubber, paints, and solvents.",
+   "key_points": [
+    "Alkanes (paraffins) = the conventional NGLs.",
+    "Alkenes (olefins) = feedstock products for plastics/rubber/paint/solvent manufacturing.",
+    "Chemical distinction: alkenes have double carbon-carbon bonds and thus fewer hydrogen atoms than alkanes with the same carbon count."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alkanes and alkenes are both HGLs but differ in bonding and downstream use"
+   ],
+   "trading_implications": [
+    "There is no major trading market for refinery/petrochemical feedstocks (alkenes) \u2014 from a trading perspective it's mostly enough to know they exist."
+   ],
+   "common_misunderstandings": [
+    "Alkenes/olefins are sometimes lumped in with tradeable NGLs, but the author notes they aren't meaningfully traded as a market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Propane",
+    "Ethane"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "277",
+    "section_hint": "Hydrocarbon Gas Liquids"
+   }
+  },
+  {
+   "topic": "Propane: uses and demand base",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "concept",
+   "definition": "Propane is primarily a heating and vehicular fuel, widely used residentially where natural gas service isn't available, and secondarily a petrochemical feedstock.",
+   "core_idea": "Propane demand spans residential heating/cooking/drying, backup generators, farm and industrial equipment (forklifts, welders, tractors), and \u2014 as a secondary use \u2014 petrochemical cracking alongside ethane and naphtha to make ethylene, propylene, and other olefins.",
+   "key_points": [
+    "Residential: heating, cooking, clothes drying, grills, backup generators where natural gas isn't piped in.",
+    "Industrial/agricultural: forklifts, electric welders, tractors.",
+    "Secondary use: petrochemical cracker feedstock (with ethane and naphtha) for ethylene/propylene/olefins."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Shares petrochemical cracker feedstock role with ethane and naphtha"
+   ],
+   "trading_implications": [
+    "Propane's demand base is broader and more diversified (residential, industrial, petrochemical) than ethane's, which the text implies supports a more active trading market."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ethane",
+    "LPG",
+    "NGL trading hubs"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "277",
+    "section_hint": "Propane"
+   }
+  },
+  {
+   "topic": "Ethane: limited trading market",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "market_mechanic",
+   "definition": "Ethane is used almost exclusively to produce ethylene (a plastics feedstock), and its trading market is very limited.",
+   "core_idea": "Because ethane demand is nearly all petrochemical and it's hard to transport except by dedicated pipeline, many NGL processors don't bother separating it from methane, leaving it in the interstate natural gas pipeline stream instead.",
+   "key_points": [
+    "Ethane's demand is concentrated almost entirely in petrochemicals (ethylene production).",
+    "Transport outside dedicated pipelines is difficult, constraining the tradeable market.",
+    "Processors often leave ethane unseparated, letting it flow into the natural gas pipeline system rather than extracting it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with propane's broader, more diversified demand base"
+   ],
+   "trading_implications": [
+    "Very limited liquid trading market for ethane compared to other NGLs.",
+    "Processor decisions to leave ethane unseparated affect how much ethane volume ever reaches an NGL market versus staying blended into pipeline gas."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Propane",
+    "Hydrocarbon gas liquids"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "277",
+    "section_hint": "Ethane"
+   }
+  },
+  {
+   "topic": "Butanes and isobutane",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "concept",
+   "definition": "Most butane is blended with either propane (forming LPG) or gasoline; isobutane is a less-common variant used mainly to raise gasoline octane.",
+   "core_idea": "Because isobutane is less common than normal butane but has a specific octane-boosting use, it's slightly more valuable, so normal butane is often converted into isobutane to meet that demand.",
+   "key_points": [
+    "Normal butane blended with propane = liquid petroleum gas (LPG).",
+    "Normal butane is also blended into gasoline.",
+    "Isobutane primarily raises gasoline octane and is less common/more valuable than normal butane.",
+    "Normal butane is often converted into isobutane."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Butane blended with propane forms LPG"
+   ],
+   "trading_implications": [
+    "Isobutane's scarcity relative to normal butane supports a value premium, incentivizing butane-to-isobutane conversion."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LPG",
+    "Propane"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "277-278",
+    "section_hint": "Butanes"
+   }
+  },
+  {
+   "topic": "Natural gasoline (pentanes+): uses including dilbit",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "concept",
+   "definition": "Natural gasoline (pentanes+) resembles low-octane naphtha and is commonly blended into gasoline or fuel ethanol, and used as a diluent for heavy crude oil.",
+   "core_idea": "About half of U.S. natural gasoline production is exported to Canada, where it's mixed with heavy crude oil (forming 'dilbit,' diluted bitumen) to lower its viscosity so it can move more easily through pipelines and rail cars.",
+   "key_points": [
+    "Blended into gasoline as a naphtha-like component.",
+    "Added to fuel ethanol in the U.S. specifically to make it undrinkable (denaturing).",
+    "~50% of U.S. natural gasoline output is exported to Canada as a heavy-crude diluent, producing dilbit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gasoline is the C5+ / pentanes-plus fraction distinct from C1 natural gas"
+   ],
+   "trading_implications": [
+    "A meaningful share of U.S. natural gasoline supply is tied to Canadian oil-sands diluent demand, linking this NGL's market to heavy-crude transport economics."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "C1 Natural Gas Versus C5+ Natural Gasoline"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "278",
+    "section_hint": "Natural Gasoline (Pentanes+)"
+   }
+  },
+  {
+   "topic": "NGL trading hubs and physical vs. financial trading",
+   "category": "Natural Gas",
+   "subcategory": "NGL Trading",
+   "type": "market_mechanic",
+   "definition": "Most NGL trading occurs at hub locations with dense pipeline and refinery connectivity, chiefly Mont Belvieu, Texas (near Houston) and Conway, Kansas.",
+   "core_idea": "NGLs trade both physically (seller-to-buyer product transfer) and financially (derivatives cash-settled against an index price).",
+   "key_points": [
+    "Mont Belvieu, TX and Conway, KS are the two largest NGL trading hubs.",
+    "Trading occurs both physically and via financial/derivative index-settled contracts."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Hub concentration around pipeline/refinery-dense regions (especially the Gulf Coast) is central to how NGL price discovery and liquidity form."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "NGL purity grades",
+    "Pipeline quality standards"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "278-279",
+    "section_hint": "NGL Trading"
+   }
+  },
+  {
+   "topic": "NGL purity grades: pipeline grade vs. fractionation grade",
+   "category": "Natural Gas",
+   "subcategory": "NGL Trading",
+   "type": "market_mechanic",
+   "definition": "NGLs trade at different purity levels, with pipeline grade and fractionation grade being the two main categories, concentrated mostly around the U.S. Gulf Coast where pipelines connect to many refineries.",
+   "core_idea": "The more purified grade commands a modest price premium because less-purified product carries more heavy-hydrocarbon content.",
+   "key_points": [
+    "Two main purity grades: pipeline grade and fractionation grade.",
+    "The less-purified grade contains more heavy hydrocarbons, which the text ties to the purer grade's slight price premium.",
+    "This grading market is concentrated around the U.S. Gulf Coast refinery/pipeline complex."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct from the pipeline GTC quality/safety standards, which govern what's allowed in the pipeline stream rather than trading grade"
+   ],
+   "trading_implications": [
+    "Purity grade affects price \u2014 buyers/sellers must specify which grade is being transacted."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The source's wording on which grade is more expensive is oddly phrased ('fractionation grade... more expensive than the more purified products'); interpreted here as the more-purified grade carrying the premium, consistent with the stated reason (less-purified product has more heavy hydrocarbons). Flagged as an inference resolving apparent ambiguity in the source phrasing, not a verbatim claim.",
+   "related_topics": [
+    "NGL trading hubs",
+    "Pipeline quality standards (GTC)"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "279",
+    "section_hint": "NGL Trading"
+   }
+  },
+  {
+   "topic": "Pipeline quality standards (GTC) and condensation risk",
+   "category": "Natural Gas",
+   "subcategory": "NGL Trading",
+   "type": "risk",
+   "definition": "Pipeline-grade NGLs must meet quality standards set in each pipeline's tariff 'General Terms and Conditions' (GTC), which vary by pipeline design, interconnects, and end consumer.",
+   "core_idea": "These standards exist to prevent heavier hydrocarbons from condensing into liquid inside the pipeline, which is hard to remove (pipelines are airtight, so trapped liquid won't evaporate) and can corrode equipment since NGLs act as solvents.",
+   "key_points": [
+    "Common GTC clauses: Btu content limits, minimum dew-point temperature (below which liquid condenses at pipeline pressure), pollutant/nonfuel gas limits, particulate/liquid limits.",
+    "Standards vary pipeline-to-pipeline based on design, interconnections, and intended consumer.",
+    "Condensed NGLs trapped in an airtight pipeline won't evaporate on their own and are corrosive as solvents, risking damage to the pipeline and ancillary equipment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties to purity grading, since less-purified/pipeline-grade product carries more heavy hydrocarbons that risk condensation"
+   ],
+   "trading_implications": [
+    "Physical delivery obligations must meet the specific receiving pipeline's GTC spec, which can differ contract to contract."
+   ],
+   "common_misunderstandings": [
+    "Condensed liquids in a pipeline don't simply evaporate away \u2014 being trapped in an airtight system, they persist and can cause corrosion damage."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "NGL purity grades: pipeline grade vs. fractionation grade"
+   ],
+   "source": {
+    "chapter": 9,
+    "pages": "279-281",
+    "section_hint": "NGL Trading \u2014 pipeline grade quality standards"
+   }
+  }
+ ]
+}

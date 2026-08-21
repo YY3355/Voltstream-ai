@@ -1,0 +1,423 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Seismic exploration for oil traps",
+   "category": "Oil",
+   "subcategory": "Exploration",
+   "type": "concept",
+   "definition": "Seismology-based exploration estimates subsurface rock structure by sending sound/energy waves into the ground and analyzing the timing and strength of the echoes.",
+   "core_idea": "Because different rock types transmit energy at different speeds, engineers can infer rock layer type and depth from how sound waves echo back, helping locate likely oil/gas traps before drilling.",
+   "key_points": [
+    "Seismology studies how energy waves (sound, earthquakes) pass through the Earth.",
+    "Engineers generate sound waves and measure the timing/strength of the returning echo to infer rock type and depth.",
+    "Seismology is not exact \u2014 even confirming a trapped liquid exists may still require drilling a well to identify what the liquid actually is."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Used to locate oil traps, which are defined by permeability/porosity of surrounding rock"
+   ],
+   "trading_implications": [
+    "Exploration uncertainty (seismology is imprecise) contributes to upstream supply risk that can affect crude price volatility."
+   ],
+   "common_misunderstandings": [
+    "Seismology only indicates likely rock/trap structure, not confirmed presence or composition of oil \u2014 drilling is still required for certainty."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Oil trap",
+    "Porosity",
+    "Permeability"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "219-220",
+    "section_hint": "Oil exploration / seismology"
+   }
+  },
+  {
+   "topic": "Oil trap and related rock properties",
+   "category": "Oil",
+   "subcategory": "Geology terminology",
+   "type": "definition",
+   "definition": "A trap is an impermeable rock layer sitting above a porous, permeable rock layer, which allows oil/gas to accumulate rather than escape; porosity and permeability describe how much fluid a rock can hold and how easily it can move through it.",
+   "core_idea": "Oil accumulates where a permeable, porous reservoir rock is sealed beneath an impermeable cap rock (the trap); porosity measures storage capacity while permeability measures how connected/flowable that storage is.",
+   "key_points": [
+    "Trap: impermeable rock layer located above a porous, permeable rock layer.",
+    "Porosity: ratio of empty (pore) space in a rock to the rock's total volume.",
+    "Permeability: how easily liquid/gas passes through rock, driven by how connected the pores are.",
+    "A rock can be highly porous yet impermeable if its pores are not interconnected.",
+    "Associated gas: natural gas produced from the same well as oil."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Porosity and permeability together determine whether a rock layer can serve as an oil reservoir beneath a trap"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "High porosity does not imply high permeability \u2014 a porous rock can still be impermeable if pores are disconnected."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seismic exploration for oil traps"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "219-220",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Crude oil as a market benchmark",
+   "category": "Oil",
+   "subcategory": "Market structure",
+   "type": "concept",
+   "definition": "Crude oil is the world's most traded commodity, which gives it outsized influence as a price benchmark across the broader energy sector even where a direct fundamental link is weak.",
+   "core_idea": "Because crude oil trading volume dwarfs other energy commodities, its price movements are treated as a market-wide signal and often move other energy prices even absent a direct supply/demand connection.",
+   "key_points": [
+    "Crude oil is the single most traded commodity in the world.",
+    "This trading dominance makes crude oil prices highly influential across energy markets generally.",
+    "Crude oil prices can materially move other energy commodities even when there is no real underlying connection between them."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crude oil price acts as a sentiment/benchmark driver for other energy commodities"
+   ],
+   "trading_implications": [
+    "Traders in other energy commodities should watch crude oil price moves as a market-wide sentiment signal, independent of direct fundamentals."
+   ],
+   "common_misunderstandings": [
+    "A large price impact from crude oil does not imply a real fundamental (supply/demand) link to the affected commodity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Sweet vs sour crude",
+    "Light vs heavy crude"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "220",
+    "section_hint": "Crude Oil"
+   }
+  },
+  {
+   "topic": "Sweet vs. sour crude classification",
+   "category": "Oil",
+   "subcategory": "Crude oil quality grading",
+   "type": "definition",
+   "definition": "Crude oil is classified as sweet or sour based on its sulfur content, since sulfur becomes a pollutant (sulfuric acid precursor) when the oil is combusted.",
+   "core_idea": "Sulfur content in crude oil determines a sweet/sour label, which matters because burning sulfur-bearing oil produces sulfur oxides that combine with water to form sulfuric acid, a pollutant.",
+   "key_points": [
+    "Sweet crude: sulfur content below 0.5 percent.",
+    "Sour crude: sulfur content above 0.5 percent.",
+    "During combustion, sulfur reacts with oxygen to form sulfur oxides, which combine with combustion water to form sulfuric acid."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sweet/sour classification is independent of the light/heavy (API gravity) classification, and both jointly describe crude quality (e.g., 'light sweet crude')"
+   ],
+   "trading_implications": [
+    "Sweet crude is generally easier/cheaper to refine into clean fuels, so sulfur content is a key driver of price differentials between crude grades."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Light vs heavy crude / API gravity",
+    "Premium crude"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "220",
+    "section_hint": "Crude Oil"
+   }
+  },
+  {
+   "topic": "Light vs. heavy crude and API gravity",
+   "category": "Oil",
+   "subcategory": "Crude oil quality grading",
+   "type": "concept",
+   "definition": "API gravity is the standard scale for classifying crude oil density; higher API gravity means a lighter (less dense) crude, and lighter crudes generally yield more valuable refined products.",
+   "core_idea": "Crude oil density is measured on the API gravity scale, and because lighter fractions like gasoline and jet fuel are worth more than heavy fractions like fuel oil and asphalt, crudes with higher API gravity (lighter) tend to be more valuable.",
+   "key_points": [
+    "Higher API gravity corresponds to less dense liquid.",
+    "Liquids with API gravity above 10 degrees float on water; below 10 degrees they sink.",
+    "Light crude: API gravity of 38 degrees or more.",
+    "Medium crude: API gravity between 22 and 38 degrees.",
+    "Heavy crude: API gravity of 22 degrees or less.",
+    "Condensate: API gravity above 45 degrees.",
+    "In general, light crudes are more valuable than heavier crudes or condensate.",
+    "Less dense refined products (jet fuel, gasoline) are more valuable than denser ones (heavy fuel oil, asphalt), which is why crude with more light-component content is worth more."
+   ],
+   "formulas": [],
+   "relationships": [
+    "API gravity classification combines with sulfur content (sweet/sour) to fully describe a crude grade, e.g. light sweet crude"
+   ],
+   "trading_implications": [
+    "API gravity is a direct driver of crude oil pricing and grade differentials, since it predicts the refined product yield mix a refiner can extract."
+   ],
+   "common_misunderstandings": [
+    "Condensate (API gravity above 45) is a distinct category from 'light crude,' not merely the lightest sub-tier of light crude."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Sweet vs sour crude classification",
+    "Refining"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "220-221",
+    "section_hint": "Crude Oil"
+   }
+  },
+  {
+   "topic": "Crude oil trading units: barrels vs. metric tonnes",
+   "category": "Oil",
+   "subcategory": "Units and conversions",
+   "type": "market_mechanic",
+   "definition": "Crude oil is traded by volume (barrels) in the United States and by weight (metric tonnes) in Europe and Asia, and because density varies by crude grade, converting between the two units is not a fixed universal factor.",
+   "core_idea": "Regional convention splits crude oil quoting between volume-based barrels (US) and weight-based metric tonnes (Europe/Asia), and since denser oil takes less volume per unit of weight, investors face a real conversion complexity when comparing quotes across regions.",
+   "key_points": [
+    "US convention: crude oil traded in barrels (BBL).",
+    "European/Asian convention: crude oil traded in metric tonnes (MT).",
+    "Denser crude requires less volume for a given weight, so the barrels-per-tonne conversion factor depends on the crude's density/grade.",
+    "This unit difference is a real practical obstacle for investors comparing or converting prices across regions."
+   ],
+   "formulas": [
+    {
+     "name": "Gallons per barrel",
+     "formula": "1 BBL = 42 gallons",
+     "variables": {
+      "BBL": "barrel of oil"
+     }
+    },
+    {
+     "name": "Barrels per metric tonne (light crude, approximate)",
+     "formula": "1 MT \u2248 7.5 BBL (light crude)",
+     "variables": {
+      "MT": "metric tonne",
+      "BBL": "barrel"
+     }
+    }
+   ],
+   "relationships": [
+    "Conversion factor between BBL and MT depends on crude density (API gravity)"
+   ],
+   "trading_implications": [
+    "Investors must convert carefully between BBL-quoted and MT-quoted markets, and the conversion factor is only an approximation that varies by crude grade/density, not a fixed constant."
+   ],
+   "common_misunderstandings": [
+    "The ~7.5 barrels-per-tonne figure is specifically an approximation for light crude, not a universal conversion for all crude grades."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Light vs heavy crude and API gravity"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "221",
+    "section_hint": "Crude Oil Concepts"
+   }
+  },
+  {
+   "topic": "Why crude oil is transported unrefined to its destination",
+   "category": "Oil",
+   "subcategory": "Transportation and logistics",
+   "type": "concept",
+   "definition": "Crude oil is shipped in its raw form and only refined near its final destination, a business model driven by refinery economics, labor availability, local demand/regulatory optimization, and safety/political risk.",
+   "core_idea": "Refineries are multibillion-dollar, multi-decade assets that outlive any single oil field, need a skilled workforce best found near cities, benefit from being close to the customers whose demand/regulations they must match, and are sited for safety and political stability \u2014 all of which favor building refineries near demand rather than near the oil field.",
+   "key_points": [
+    "Refineries can cost billions of dollars and have expected lifespans over 50 years, so a refinery typically outlives any single oil field feeding it.",
+    "Oil fields are often in remote locations, while refineries need a highly trained workforce more easily found near major cities.",
+    "Refineries sited near their customers can tailor output to local demand and comply with local regulations.",
+    "Refineries are also sited to protect worker and investor safety, including avoiding locations at risk of violence or nationalization by unfriendly governments."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This logistics pattern explains why crude oil, rather than refined products, moves via pipeline and ship over long distances"
+   ],
+   "trading_implications": [
+    "Refinery location decisions (near demand centers, in stable jurisdictions) shape regional crude oil flows and can be a factor in long-term crude transportation/logistics analysis."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crude oil transport vessels",
+    "Refining"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "221-222",
+    "section_hint": "Transportation"
+   }
+  },
+  {
+   "topic": "Crude oil shipping and vessel size constraints",
+   "category": "Oil",
+   "subcategory": "Transportation and logistics",
+   "type": "market_mechanic",
+   "definition": "Crude oil typically moves by pipeline to a port and then by tanker ship to a refinery; larger tankers are more cost-effective, but physical constraints like canal width/depth and port draft cap the maximum usable ship size.",
+   "core_idea": "Economies of scale favor larger crude tankers, but real physical bottlenecks \u2014 dock water depth and canal dimensions such as the Suez and Panama Canals \u2014 cap how large a ship can be used, producing a range of tanker classes.",
+   "key_points": [
+    "Standard flow: pipeline to port facility, then tanker ship to refinery.",
+    "Larger ships are more cost-effective for transporting crude oil.",
+    "Physical constraints (dock water depth, canal width/depth such as Suez and Panama) limit maximum ship size.",
+    "These constraints result in a variety of different crude oil transport vessel types/classes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Vessel size constraints interact with refinery siting decisions to shape global crude logistics"
+   ],
+   "trading_implications": [
+    "Canal or port capacity constraints can act as logistical bottlenecks affecting crude oil flow costs and regional price differentials."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Why crude oil is transported unrefined to its destination"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "222",
+    "section_hint": "Transportation"
+   }
+  },
+  {
+   "topic": "Simple distillation of crude oil",
+   "category": "Oil",
+   "subcategory": "Refining",
+   "type": "concept",
+   "definition": "Simple distillation separates crude oil into fractions by progressively heating it so each component boils off at its own characteristic temperature, and the resulting vapors are captured and cooled back into liquid products.",
+   "core_idea": "Because each crude oil component has a distinct boiling point, raising crude oil's temperature step by step causes different products to vaporize in sequence, which are then condensed to yield separated refined fractions.",
+   "key_points": [
+    "Distillation separates crude oil into fractions by boiling it at progressively higher temperatures.",
+    "Each component boils off at a slightly different temperature.",
+    "Vaporized fractions are captured and cooled to return them to liquid form as separated products."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Simple distillation is the first refining step, often followed by downstream/cracking processing to further increase value"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Downstream processing and cracking",
+    "Joint production of refined products"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "222-223",
+    "section_hint": "Refining"
+   }
+  },
+  {
+   "topic": "Downstream processing and cracking",
+   "category": "Oil",
+   "subcategory": "Refining",
+   "type": "concept",
+   "definition": "Downstream processing splits (cracks) heavier distillation fractions into lighter, more valuable products, removes sulfur, and boosts gasoline octane, substantially increasing both the value and volume yield of a barrel of crude.",
+   "core_idea": "Post-distillation processing converts less valuable heavy fractions into more valuable light fractions via cracking, alongside sulfur removal and octane enhancement, which can roughly double a refinery's gasoline yield share and expand total output volume beyond the original barrel size.",
+   "key_points": [
+    "Cracking splits heavier, less valuable products into lighter, more valuable ones.",
+    "Downstream processing also removes sulfur from oil and increases the octane of gasoline.",
+    "Example given: simple distillation alone might yield about 20 percent gasoline from a barrel, while downstream processing can raise that to roughly 50 percent.",
+    "By cracking heavier products into lighter ones, downstream processing typically expands a 42-gallon barrel of crude oil into about 45 gallons of finished products."
+   ],
+   "formulas": [
+    {
+     "name": "Refining volume gain (approximate)",
+     "formula": "42 gallons crude \u2192 ~45 gallons finished products (via cracking/downstream processing)",
+     "variables": {
+      "42 gallons": "one barrel of crude oil input",
+      "~45 gallons": "approximate finished product output after cracking"
+     }
+    }
+   ],
+   "relationships": [
+    "Downstream processing follows simple distillation and materially changes the product mix described in the typical refined-product mix chart"
+   ],
+   "trading_implications": [
+    "A refinery's ability to shift output mix via cracking (e.g., toward more gasoline) is constrained \u2014 increasing one product's output still produces the other co-products, risking oversupply of those other products."
+   ],
+   "common_misunderstandings": [
+    "The volume expansion from ~42 to ~45 gallons reflects processing (cracking) gains, not that mass or energy is being created \u2014 it's a result of converting the product mix toward less dense forms."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Simple distillation of crude oil",
+    "Joint production of refined products",
+    "Premium crude"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "222-223",
+    "section_hint": "Refining"
+   }
+  },
+  {
+   "topic": "Joint (fixed-ratio) production of refined products",
+   "category": "Oil",
+   "subcategory": "Refining",
+   "type": "market_mechanic",
+   "definition": "Refining crude oil into gasoline necessarily also produces every other refined product simultaneously, so a refiner cannot isolate output to just one product without risking oversupply of the co-products.",
+   "core_idea": "Because distillation and cracking of a barrel of crude yields a whole slate of products at once, a refiner responding to high gasoline prices by increasing throughput also increases output of all other refined products, which can flood those other product markets.",
+   "key_points": [
+    "It is impossible to produce a single refined product (e.g., gasoline only) without producing the others at the same time.",
+    "Increasing refinery output to capture higher gasoline prices raises supply of all other refined products too.",
+    "This can create a risk of glutting the market for the refinery's other (non-target) products."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the distillation/cracking process producing a full product slate from each barrel"
+   ],
+   "trading_implications": [
+    "Gasoline price rallies can indirectly pressure other refined product prices lower as refiners ramp output to capture gasoline margins, a cross-product effect worth tracking in refined products trading."
+   ],
+   "common_misunderstandings": [
+    "A refiner cannot simply 'dial in' higher gasoline output in isolation \u2014 the joint-product nature of distillation means all co-products scale together."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Downstream processing and cracking",
+    "Simple distillation of crude oil"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "223-224",
+    "section_hint": "Refining"
+   }
+  },
+  {
+   "topic": "Premium crude oil",
+   "category": "Oil",
+   "subcategory": "Crude oil quality grading",
+   "type": "definition",
+   "definition": "Premium crude is a grade of crude oil that yields a high proportion of lighter, more valuable products through simple distillation alone, and commands a higher price than lower-quality crude as a result.",
+   "core_idea": "Because the actual product mix from crude oil varies by source, crude that naturally distills into a high share of light (valuable) products is labeled premium and priced higher than crude lacking that composition.",
+   "key_points": [
+    "Every barrel of crude oil contains a different underlying mix of raw materials, so actual refined output varies substantially from the 'typical' mix.",
+    "Premium crude converts into a high proportion of lighter products via simple distillation.",
+    "Premium crude oils are priced higher than lower-quality crude oil."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Premium crude designation relates to, but is described separately from, the light/heavy (API gravity) and sweet/sour classifications"
+   ],
+   "trading_implications": [
+    "Crude grade differentials in pricing partly reflect how 'premium' (light-product-rich) a given crude's natural distillation yield is."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Downstream processing and cracking",
+    "Light vs heavy crude and API gravity",
+    "Sweet vs sour crude classification"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "223-224",
+    "section_hint": "Refining"
+   }
+  }
+ ]
+}

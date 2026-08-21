@@ -1,0 +1,190 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Distillation as a Separation Method",
+   "category": "Refining & Processing",
+   "subcategory": "Distillation",
+   "type": "concept",
+   "definition": "Distillation is a physical separation process that exploits the fact that each substance in a mixture has its own distinct boiling point, allowing components to be pulled out one at a time rather than filtered or chemically separated.",
+   "core_idea": "A boiler heats a mixture until the component whose boiling point has been reached vaporizes and exits through tubing; a condenser then cools that vapor back into a purified liquid. Stepping the target temperature through different boiling points lets a mixture be broken into pure products.",
+   "key_points": [
+    "A distillation unit has two core parts: a boiler that heats the mixture to a target boiling point, and a condenser that cools the resulting vapor back into liquid.",
+    "At a given boiling point, only the matching substance turns to gas and leaves the boiler; other components stay behind in the liquid mixture.",
+    "Once a liquid reaches its boiling point, additional heat converts more of it to vapor rather than raising its temperature further, as long as the vapor can escape.",
+    "Distillation is described as the primary method for separating a fuel mixture into pure products such as gasoline and ethanol."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins refining processes that convert mixed feedstocks into distinct, separately traded fuel products"
+   ],
+   "trading_implications": [
+    "Because each fuel product requires its own distillation step, the energy cost of running boilers and condensers is a structural input to refined-product economics \u2014 relevant to margin analysis between crude/feedstock and finished fuels."
+   ],
+   "common_misunderstandings": [
+    "Continuing to heat a liquid that is already at its boiling point does not make it hotter; it only speeds up the liquid-to-gas conversion, a common intuitive error."
+   ],
+   "author_states_vs_inference": "Core distillation mechanics are the author's claims; the refined-product margin framing in trading_implications is my inference, not stated in this excerpt.",
+   "related_topics": [
+    "Refining margins",
+    "Crack spread",
+    "Natural gas liquids"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "294-295",
+    "section_hint": "3.2 Physical Properties \u2014 Distillation"
+   }
+  },
+  {
+   "topic": "Energy Cost of Distillation at Scale",
+   "category": "Refining & Processing",
+   "subcategory": "Distillation",
+   "type": "concept",
+   "definition": "Distillation's major drawback is the large amount of energy needed to heat every unit of liquid to its boiling point and then cool it back down, repeated across the full volume of fuel produced worldwide.",
+   "core_idea": "Because essentially all gasoline and ethanol in use has passed through a heat-then-cool distillation cycle, and global fuel consumption is enormous (illustrated by extrapolating from the tank sizes of cars on a single street to cars worldwide), the aggregate energy embedded in producing fuel via distillation is immense.",
+   "key_points": [
+    "Every gallon of gasoline or ethanol in circulation has been heated to its boiling point and cooled back down at least once during distillation.",
+    "The scale of this energy use is illustrated by estimating fuel volume from cars on one street and extrapolating to global car fuel consumption."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distillation energy cost is a structural input cost underlying refined fuel supply"
+   ],
+   "trading_implications": [
+    "The scale of energy embedded in distillation implies refining costs are sensitive to the price of the energy used to run boilers and condensers, a structural driver of refined-product margins."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The scale illustration and the energy-drawback claim are the author's; the margin-sensitivity trading implication is my inference.",
+   "related_topics": [
+    "Refining margins",
+    "Crack spread"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "294-295",
+    "section_hint": "3.2 Physical Properties \u2014 Distillation Requires a Tremendous Amount of Energy for Heating and Cooling"
+   }
+  },
+  {
+   "topic": "Gas Pressure, Volume, and Temperature Interdependence (Ideal Gas Law)",
+   "category": "Natural Gas",
+   "subcategory": "Gas Physics",
+   "type": "formula",
+   "definition": "Unlike solids or liquids, a gas's volume changes readily with outside conditions, and its pressure, volume, and temperature are mutually interdependent \u2014 none can change without affecting the others. The ideal gas law gives an approximate, layman-level description of this relationship for gases whose molecular collisions are treated as perfectly elastic.",
+   "core_idea": "Gas moves from high-pressure to low-pressure areas until pressure equalizes (the mechanism behind both straws and pipelines), and compressing a gas raises its temperature while letting it expand lowers its temperature. The ideal gas law formalizes how pressure, volume, and temperature move together, e.g., at constant volume, a temperature rise forces a pressure rise.",
+   "key_points": [
+    "Gas expands to fill its container unless constrained, and flows from high-pressure to low-pressure regions until equalized; a larger pressure differential moves gas faster.",
+    "Compressing a gas raises its temperature; letting it disperse or expand lowers its temperature.",
+    "Cooling a gas below the boiling point of any trace component can cause that component to condense into liquid \u2014 relevant since fuel gases like methane are rarely pure and carry trace gases.",
+    "Holding volume constant, raising a gas's temperature forces its pressure to rise, and vice versa, since the ideal gas law is an equality.",
+    "The ideal gas law is presented as a reasonable, layman-level approximation, not an exact model \u2014 it assumes perfectly elastic molecular collisions.",
+    "General relationships noted: gas in a contained area gets hotter as its pressure increases (and cooler as pressure decreases); cooling a gas lets more of it fit in the same volume at constant pressure."
+   ],
+   "formulas": [
+    {
+     "name": "Ideal Gas Law",
+     "formula": "PV = nRT",
+     "variables": {
+      "P": "pressure",
+      "V": "volume",
+      "n": "amount of gas (moles)",
+      "R": "ideal gas constant",
+      "T": "temperature"
+     }
+    }
+   ],
+   "relationships": [
+    "Explains why pipeline compressors change both pressure and temperature simultaneously",
+    "Explains liquid dropout risk in pipelines and gas processing"
+   ],
+   "trading_implications": [
+    "Trace-gas condensation risk ties gas composition/quality to pipeline operability, relevant to quality specifications embedded in physical gas transport contracts."
+   ],
+   "common_misunderstandings": [
+    "Pressure, volume, and temperature cannot be treated independently \u2014 changing one always affects the others under the ideal gas law."
+   ],
+   "author_states_vs_inference": "The P-V-T relationships and the description of the ideal gas law are the author's; the pipeline quality-spec trading implication is my inference. Note: PV=nRT is the standard equation the source names and diagrams (Figure 3.2.2) rather than spells out in prose.",
+   "related_topics": [
+    "Gas pipeline compression",
+    "Natural gas liquids",
+    "Gas quality specifications"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "295-296",
+    "section_hint": "3.2 Physical Properties \u2014 Physics of Gas"
+   }
+  },
+  {
+   "topic": "Gas Pipeline Compression: Corrosion and Liquid Dropout Risk",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Operations",
+   "type": "market_mechanic",
+   "definition": "Gas pipelines move gas using compressor stations that create a pressure differential \u2014 a vacuum on one side and high pressure on the other \u2014 functioning like a long chain of fans; because compression changes pressure, it also changes gas temperature at each stage.",
+   "core_idea": "As gas is compressed, its temperature rises, increasing corrosion risk if the gas is chemically reactive; as gas then moves away from the compressor and cools en route to the next one, part of the mixture can condense into liquid, which accumulates in the pipe (an airtight system) unless actively removed.",
+   "key_points": [
+    "A pipeline is effectively a long chain of compressor stations linked by pipe segments.",
+    "Compression raises gas temperature, which raises corrosion risk for chemically reactive gas components.",
+    "As gas cools while moving toward the next compressor, part of the mixture can condense into liquid.",
+    "Because pipelines are airtight, condensed liquid does not simply re-evaporate and can build up over time unless removed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Direct consequence of the pressure-temperature relationship described by the ideal gas law",
+    "Creates the need for liquid removal/dehydration equipment along pipeline routes"
+   ],
+   "trading_implications": [
+    "Liquid dropout and corrosion risk are physical constraints shaping pipeline maintenance, gas quality specs, and deliverability \u2014 relevant to transport reliability that underlies basis and locational price risk."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "Compressor mechanics, corrosion, and liquid dropout are the author's claims; the basis/locational-risk trading framing is my inference.",
+   "related_topics": [
+    "Ideal gas law",
+    "Natural gas liquids",
+    "Pipeline basis risk"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "296-297",
+    "section_hint": "3.2 Physical Properties \u2014 Gas Pipelines"
+   }
+  },
+  {
+   "topic": "Vapor-Compression Cooling Cycle (Air Conditioning and Refrigeration)",
+   "category": "Energy Consumption & End Use",
+   "subcategory": "Cooling Systems",
+   "type": "concept",
+   "definition": "Cooling systems, from household air conditioners to industrial natural gas liquefaction, work by cycling a working fluid between gas and liquid phases through a compressor, condenser, and evaporator so the fluid absorbs heat in one place and radiates it elsewhere.",
+   "core_idea": "The working fluid is compressed \u2014 raising its pressure and temperature \u2014 so it can radiate heat outside through the condenser, then its pressure is dropped through a narrow opening into the low-pressure evaporator, where it boils into a cold gas that absorbs heat from indoors before returning to the compressor to repeat the cycle.",
+   "key_points": [
+    "Three main components: compressor and condenser (typically located outside) and evaporator (typically inside), connected by circulating working fluid.",
+    "Compressor stage: warm gas from indoors is compressed into a very hot gas, since compression raises temperature; exposing it to outside air lets it start cooling.",
+    "Condenser stage: fan-assisted metal fins radiate the hot fluid's heat into outside air, cooling it enough to condense into a liquid that is sent indoors.",
+    "Evaporator stage: the still-warm liquid is forced through a narrow opening into a low-pressure container; liquids boil more easily at low pressure, so the fluid vaporizes and absorbs heat from the indoor environment in the process.",
+    "The now-warmed cold gas from the evaporator is drawn back into the compressor to restart the cycle.",
+    "Air conditioning is framed as a major, energy-intensive modern (20th-century) technology, unlike heating, which is ancient."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies the same compression/expansion pressure-temperature relationship described for gases generally",
+    "Shares its working-fluid phase-change cycle with industrial natural gas liquefaction"
+   ],
+   "trading_implications": [
+    "Cooling demand driven by this energy-intensive cycle is a major driver of electricity load, relevant to seasonal power demand and price patterns such as summer peak load in ERCOT."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The three-stage cooling cycle description is the author's; the ERCOT summer-peak-load framing in trading_implications is my inference.",
+   "related_topics": [
+    "Ideal gas law",
+    "Electricity demand seasonality",
+    "Natural gas liquefaction"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "297-300",
+    "section_hint": "3.2 Physical Properties \u2014 Air Conditioning and Refrigeration"
+   }
+  }
+ ]
+}

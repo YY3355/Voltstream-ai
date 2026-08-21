@@ -1,0 +1,191 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Game Theory in generator bidding",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack / Bidding Strategy",
+   "type": "concept",
+   "definition": "Game Theory is a branch of mathematics used to analyze how rational participants (players) make decisions in situations where each player's outcome depends on the choices of others; it is applied to model how generators bid into power auctions.",
+   "core_idea": "Optimal generator bidding is forward-looking rather than purely reactive to the current price, because avoiding unnecessary shutdown/restart costs can justify taking a loss in one period to save startup costs later; Game Theory concepts (utility maximization, Nash Equilibrium) formalize this kind of multi-period, competitive decision-making.",
+   "key_points": [
+    "A player's 'utility' is the benefit or loss they receive from playing the game; every player seeks to maximize their own utility.",
+    "A Nash Equilibrium is the stable pattern that results when all players' utility-maximizing decisions converge.",
+    "Optimal bidding strategies often incorporate predictions of future decisions (own and rivals'), not just a reaction to the current price, since restarting a shut-down steam turbine is costly.",
+    "Game Theory is often criticized as overly self-interested/harsh, but the author argues the real problem is usually that the 'game' itself was defined incorrectly (missing players or incentives), illustrated by a restaurant-tipping example where an unwitnessed-seeming interaction actually had an additional observer (the client).",
+    "Day-ahead and real-time power auctions are structured so that the equilibrium (optimal) bidding strategy for a generator is to bid its own true cost of production, and this is generally what is observed in practice."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to unit commitment / thermal cycling economics (startup and shutdown costs).",
+    "Connects to day-ahead and real-time auction design."
+   ],
+   "trading_implications": [
+    "A generator may rationally bid below its short-run marginal cost (take a loss) in some hours specifically to avoid a costly shutdown/restart cycle later.",
+    "Bidding strategy simulations that only look at current prices miss this dynamic; multi-period, game-theoretic reasoning is needed."
+   ],
+   "common_misunderstandings": [
+    "Assuming Game Theory always prescribes purely selfish, harsh behavior; in practice, poor outcomes often stem from mis-specifying who the real players/observers are, not from the framework itself."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Nash Equilibrium",
+    "Unit commitment",
+    "Marginal-cost bidding",
+    "Day-ahead and real-time auctions"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "414-415",
+    "section_hint": "4.2 The Generation Stack \u2014 Game Theory"
+   }
+  },
+  {
+   "topic": "Variable (intermittent) generation and price-taking behavior",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack / Renewable Integration",
+   "type": "market_mechanic",
+   "definition": "Variable generation refers to power sources\u2014solar, wind, hydro, and cross-grid imports/exports\u2014whose output is driven by external conditions rather than by dispatch decisions, and which often cannot be shut down on short notice or guarantee delivery once scheduled.",
+   "core_idea": "Because variable generators cannot reliably control their own output or reduce non-delivery risk, they typically bid at zero cost and simply accept whatever price the market clears at, making them price takers whose share of the generation stack shifts throughout the day.",
+   "key_points": [
+    "Solar output tracks sunlight availability, peaking around midday and falling off in early morning/late evening.",
+    "Once power is scheduled to be imported from another grid, it generally can't be cancelled; solar, wind, and hydro likewise can't easily shut down on short notice or guarantee delivery.",
+    "Because they can't control output or guarantee delivery, these suppliers bid zero cost and are paid the market clearing price set by other participants (price takers).",
+    "Day-ahead predictions of variable output are usually fairly accurate, but accuracy degrades over longer horizons; hydro output, for example, depends on rainfall that is well known a day ahead but much less predictable a month or two out.",
+    "Even over short spans like a week or two, variable production can change substantially (illustrated by PJM output on two different days in August 2005, Figure 4.2.5)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to marginal-generator price sensitivity (small supply shifts affecting price)."
+   ],
+   "trading_implications": [
+    "Shifts in variable generation change which unit is marginal, which is a major reason the same demand level at different times can clear at very different prices.",
+    "This makes it difficult to reverse-engineer the true generation stack purely from published ISO/RTO load and price data."
+   ],
+   "common_misunderstandings": [
+    "Assuming price differences between periods with identical demand must reflect demand-side factors, when they may instead be driven by shifts in variable (renewable/hydro/import) supply."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Price takers",
+    "Marginal generator",
+    "Solar/wind/hydro generation"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "415-416",
+    "section_hint": "4.2 The Generation Stack \u2014 Variable Generation"
+   }
+  },
+  {
+   "topic": "Marginal supply sensitivity of power prices",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack / Price Formation",
+   "type": "example",
+   "definition": "Because the generation stack is steep near the margin, even small changes in available supply can shift which unit is marginal and cause disproportionately large price moves.",
+   "core_idea": "A relatively small quantity of added or removed supply near the top of the stack can move the market clearing price by a large amount, since the marginal generators being displaced set the price for the whole market.",
+   "key_points": [
+    "During August 2005 in PJM, power prices were around $80/MWh.",
+    "A supply change of about 4,000 MWh was shown to move power prices by $10 or more (Figure 4.2.6), illustrating the steepness of the stack near the marginal generators active at that time."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from variable generation shifting the top of the generation stack."
+   ],
+   "trading_implications": [
+    "Small, seemingly minor changes in supply (e.g., from variable generation) can be a major driver of intraday price volatility."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variable generation",
+    "Generation stack",
+    "Marginal generator"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "416",
+    "section_hint": "4.2 The Generation Stack \u2014 Variable Generation (Figure 4.2.6)"
+   }
+  },
+  {
+   "topic": "Implied market heat rate",
+   "category": "Power Markets",
+   "subcategory": "Heat Rate / Fuel-Price Relationship",
+   "type": "formula",
+   "definition": "The implied market heat rate is the ratio of the average power price to the average natural gas price in a given market on a given day, used to express the generation stack in heat-rate terms instead of dollar terms.",
+   "core_idea": "Since natural gas is commonly the marginal fuel setting power prices, and gas prices are fixed for a given day (fuel must be scheduled and paid for in advance), dividing power price by gas price normalizes the generation stack, letting analysts see how much of a power price change is attributable to fuel-price movement versus other factors.",
+   "key_points": [
+    "Auction bids and load producers' break-even costs are not publicly disclosed (bids are private, and generation-stack composition is only released years later by the ISO/RTO), so historical prices and heat rates are used to estimate the stack instead.",
+    "A generation stack can be expressed either as prices or as heat rates by dividing prices by the day's natural gas price.",
+    "If implied heat rates stay unchanged between two periods, the price ratio between power and gas is constant, meaning the fuel-price change fully explains the power-price change.",
+    "In the source's August 2005 example, natural gas rose from $8.02 to $12.70/MMBtu alongside a large power price increase, but on the portion of the stack where gas was the marginal fuel, market heat rates barely changed between the two days (Figures 4.2.8-4.2.9) \u2014 indicating the gas price move, not a stack shift, explained the power price move on that segment."
+   ],
+   "formulas": [
+    {
+     "name": "Implied Market Heat Rate",
+     "formula": "Implied Heat Rate = Average Power Price / Average Natural Gas Price",
+     "variables": {
+      "Average Power Price": "$/MWh, average power price in a specific geographic market over a period (e.g., a day)",
+      "Average Natural Gas Price": "$/MMBtu, average natural gas price in the same market/period"
+     }
+    }
+   ],
+   "relationships": [
+    "Connects to generation stack and marginal-fuel bidding for fuel-dependent producers."
+   ],
+   "trading_implications": [
+    "Implied heat rate is a diagnostic for decomposing a power price move into a fuel-price-driven component vs. a generation-stack-shift component.",
+    "Useful for estimating/predicting power prices from historical price relationships and current fuel prices, given that actual auction bids and plant economics are not public."
+   ],
+   "common_misunderstandings": [
+    "Treating the generation stack derived from heat rates as a direct measurement rather than an estimation proxy, since the true underlying bids are never publicly disclosed in real time."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Natural gas prices",
+    "Marginal fuel",
+    "Heat rate stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "416-418",
+    "section_hint": "4.2 The Generation Stack \u2014 Estimating Break-Even Costs Using Heat Rates"
+   }
+  },
+  {
+   "topic": "Day-ahead vs real-time auction structure",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "ISO/RTO power markets run two sequential auctions \u2014 day-ahead and real-time \u2014 that rely on nearly identical generation stacks and bidding dynamics, with the day-ahead auction locking in most generation capacity and the real-time auction handling the remaining balancing volume.",
+   "core_idea": "Even though the real-time auction has fewer participants than the day-ahead auction, similar bidding behavior tends to produce similar generation stacks and prices across both markets, with real-time prices tracking day-ahead prices closely most of the time but occasionally spiking higher.",
+   "key_points": [
+    "Most generation capacity commitments are settled in the day-ahead market; the real-time market provides a smaller amount of balancing supply.",
+    "The real-time auction has fewer participants than the day-ahead auction but exhibits similar bidding dynamics, leading to similar generation stacks.",
+    "A comparison of real-time and day-ahead prices over two days (Figure 4.2.10) shows the two auction prices staying close together most of the time, with real-time occasionally running higher."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the generation stack and generator bidding strategy concepts discussed earlier in the section."
+   ],
+   "trading_implications": [
+    "Because day-ahead and real-time prices are usually close but can diverge (real-time spiking higher), the relationship between the two markets is a natural basis for spread-based strategies."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Real-time market",
+    "Day-ahead market"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "418-419",
+    "section_hint": "4.2 The Generation Stack \u2014 Day-Ahead and Real-Time Auctions"
+   }
+  }
+ ]
+}

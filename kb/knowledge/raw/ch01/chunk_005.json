@@ -1,0 +1,387 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Coal as a thinly-traded commodity",
+   "category": "Power Markets",
+   "subcategory": "Coal",
+   "type": "market_mechanic",
+   "definition": "Because coal is cheap relative to its bulk, shipping it very far adds a large percentage to its delivered cost, so most coal is consumed within a couple hundred miles of the mine, usually by a nearby power plant.",
+   "core_idea": "Coal's economics push mines and power plants to co-locate, which leaves few independent buyers and sellers and makes coal a commodity that matters enormously to power generation but is not itself a heavily traded financial product.",
+   "key_points": [
+    "Transportation cost is a much larger share of delivered coal cost than for other fossil fuels because the underlying commodity price is low.",
+    "Most coal is used within roughly a couple hundred miles of the mine.",
+    "Mines and power plants are often co-located, reducing the number of arm's-length market participants.",
+    "Coal is central to electricity generation but not a heavily traded financial product on its own."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Electrical generation demand",
+    "Natural gas price competition (fracking)"
+   ],
+   "trading_implications": [
+    "Limited open-market liquidity in coal means it is less useful than gas or power as a hedging or trading instrument, even though it strongly influences power prices."
+   ],
+   "common_misunderstandings": [
+    "That coal, being a major generation fuel, must also be a liquid, widely traded financial commodity like natural gas or crude oil."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas fracking and coal displacement",
+    "Electrical generation fuel mix"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "38-38",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Cap and trade vs. carbon taxes",
+   "category": "Emissions Markets",
+   "subcategory": "Policy mechanisms",
+   "type": "market_mechanic",
+   "definition": "Governments have mainly used two tools to limit pollution: a direct tax on emissions, and a cap-and-trade system that caps total allowed production of a pollutant and requires tradable licenses to produce it.",
+   "core_idea": "Of the two common pollution-control tools, only cap and trade creates an actual trading market, since it converts the right to pollute into a tradable license.",
+   "key_points": [
+    "Taxes and cap-and-trade are described as the two most popular ways to limit pollution.",
+    "Only cap-and-trade produces a genuine trading market, because it issues tradable licenses rather than simply pricing emissions.",
+    "Under cap-and-trade, every producer of the regulated substance must hold a license for their production.",
+    "Making licenses freely tradable lets low-cost abaters profit by cutting pollution and selling surplus licenses, while others buy licenses to keep polluting.",
+    "Shrinking the license supply over time is meant to push the cheapest emissions reductions to happen first."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Carbon dioxide emissions",
+    "Coal-fired generation economics"
+   ],
+   "trading_implications": [
+    "Cap-and-trade licenses are themselves a financial instrument that can be bought, sold, and used to profit from switching to cleaner technology."
+   ],
+   "common_misunderstandings": [
+    "That an emissions tax also creates a trading market \u2014 the author is explicit that only cap-and-trade does."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "License allocation methods",
+    "Carbon tracking and enforcement"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "38-39",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   }
+  },
+  {
+   "topic": "Distributing emissions licenses is inherently contested",
+   "category": "Emissions Markets",
+   "subcategory": "Cap and trade design",
+   "type": "risk",
+   "definition": "Cap-and-trade systems create a valuable new asset (the pollution license) out of nothing, so how that asset is initially handed out \u2014 via auction, historical usage, or population share \u2014 is a major point of contention with no clean solution.",
+   "core_idea": "Because emissions licenses have real market value the moment they're created, the initial allocation method is a zero-sum political and economic fight, and every allocation approach has real drawbacks.",
+   "key_points": [
+    "Emissions markets manufacture a valuable good (the license) essentially from nothing, which drives intense debate over its initial distribution.",
+    "Public auctions, historical-usage-based allocation, and population-based allocation are the three approaches named, each with drawbacks."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Cap and trade vs. carbon taxes"
+   ],
+   "trading_implications": [
+    "The chosen allocation method affects who holds initial license inventory and therefore who can profit first from trading it \u2014 relevant to understanding why incumbents often favor historical-usage allocation."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade vs. carbon taxes"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "39-39",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   }
+  },
+  {
+   "topic": "Carbon tracking and enforcement is difficult",
+   "category": "Emissions Markets",
+   "subcategory": "Cap and trade design",
+   "type": "risk",
+   "definition": "Carbon dioxide is produced and absorbed by an enormous range of everyday activities, from breathing to gardening, making it impractical for governments to monitor, license, or credit all CO2-related activity.",
+   "core_idea": "Because CO2 sources and sinks are diffuse and pervasive, comprehensive monitoring and enforcement of carbon markets is fundamentally hard, which undermines cap-and-trade's effectiveness.",
+   "key_points": [
+    "Countless activities produce CO2 (e.g., breathing, burning fuel) and countless others remove it (e.g., planting, carbon storage injection).",
+    "It is not feasible for governments to monitor or issue licenses/credits for all of these activities.",
+    "This measurement gap is presented as a core enforcement problem for carbon markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Cap and trade vs. carbon taxes"
+   ],
+   "trading_implications": [
+    "Enforcement gaps create risk around the credibility and integrity of carbon credits/licenses traded in these markets."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Distributing emissions licenses is inherently contested"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "39-39",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   }
+  },
+  {
+   "topic": "Cheap fracked natural gas undercut U.S. carbon legislation",
+   "category": "Emissions Markets",
+   "subcategory": "Natural gas vs. coal",
+   "type": "market_mechanic",
+   "definition": "Because coal historically generated electricity far more cheaply than alternatives despite its pollution, it was the main target of emissions policy; the fracking boom made natural gas cheaper than coal, achieving much of that policy's goal without the legislation itself.",
+   "core_idea": "The rise of cheap fracked natural gas displaced coal economically, largely accomplishing U.S. carbon legislation's central aim (removing coal from the generation mix) at little or no cost to consumers, which in turn reduced political momentum for carbon legislation.",
+   "key_points": [
+    "Coal historically produced power far more cheaply than alternative fuels despite higher pollution.",
+    "Fracking made natural gas cheaper than coal, undercutting coal's cost advantage.",
+    "Since removing coal as a major generation fuel was emissions legislation's primary goal, market-driven gas-for-coal substitution achieved much of that goal without formal legislation.",
+    "This substitution is described as happening at little or no cost to consumers."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal as a thinly-traded commodity",
+    "Cap and trade vs. carbon taxes"
+   ],
+   "trading_implications": [
+    "Natural gas prices relative to coal are a key driver of the generation fuel mix and, indirectly, of carbon policy momentum."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Liquids"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "39-39",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Emissions Markets"
+   }
+  },
+  {
+   "topic": "Natural gas liquids (NGLs) defined",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "definition",
+   "definition": "NGLs are combustible gases heavier than methane but still light enough to remain gaseous at standard temperature and pressure; the five NGLs are ethane, propane, butane, iso-butane, and pentane.",
+   "core_idea": "NGLs sit between methane and liquid petroleum products in weight, and are named individually: ethane, propane, butane, iso-butane, and pentane.",
+   "key_points": [
+    "NGLs are heavier than methane (natural gas) but light enough to be gaseous at standard conditions.",
+    "The five NGLs named are ethane, propane, butane, iso-butane, and pentane.",
+    "Liquefied petroleum gas (LPG) refers specifically to a mixture of the two heaviest common NGLs, propane and butane."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crude oil production",
+    "Natural gas processing",
+    "Shale/fracking"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Treating 'NGL' and 'LPG' as synonyms \u2014 LPG is specifically a propane/butane mixture, a subset of NGLs."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "NGL liquefaction, storage and transport",
+    "Cheap fracked natural gas undercut U.S. carbon legislation"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "39-40",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Natural Gas Liquids"
+   }
+  },
+  {
+   "topic": "NGL liquefaction, storage, transport, and sourcing",
+   "category": "Natural Gas",
+   "subcategory": "Natural Gas Liquids",
+   "type": "concept",
+   "definition": "Heavier NGLs such as propane and butane liquefy easily under only moderate compression, shrinking roughly 270-fold in volume, which lets them be stored and moved as liquids and released as gas on demand; they are recovered from raw natural gas at processing plants or from crude oil at refineries.",
+   "core_idea": "NGLs' ability to liquefy under modest pressure makes them practical to store, ship, and dispense (e.g., a grill propane tank), and they are commonly recovered as a byproduct of natural gas processing and oil refining, especially from shale plays developed via fracking.",
+   "key_points": [
+    "Compression liquefies NGLs like propane and butane far more easily than methane.",
+    "Liquefied NGLs occupy roughly 1/270th the volume of the gaseous form.",
+    "Only moderate pressure is needed for this compression, enabling practical liquid storage and transport.",
+    "A common consumer use is grill/cooking fuel: propane is stored liquefied under pressure and evaporates to gas when a valve is opened.",
+    "NGLs are commonly dissolved within crude oil or natural gas and are abundant in shale deposits accessed via fracking.",
+    "NGLs are separated out at natural gas processing plants (from gas) or at refineries (from crude oil)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas liquids (NGLs) defined",
+    "Cheap fracked natural gas undercut U.S. carbon legislation"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas liquids (NGLs) defined"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "39-40",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Natural Gas Liquids"
+   }
+  },
+  {
+   "topic": "Two general categories of combustion pollution",
+   "category": "Risk",
+   "subcategory": "Environmental / Combustion byproducts",
+   "type": "concept",
+   "definition": "Combustion pollution splits into two broad categories: impurities/particles trapped in the fuel that get released when it burns, and greenhouse gases, which are an intrinsic, unavoidable byproduct of the combustion chemistry itself.",
+   "core_idea": "The author frames fuel-borne particulate contamination and intrinsic greenhouse-gas production as the two fundamentally different types of pollution from burning fossil fuels \u2014 one is a fuel-purity issue, the other is unavoidable chemistry.",
+   "key_points": [
+    "First category: impurities or small particles trapped in the fuel, released on combustion.",
+    "Second category: greenhouse gases, an intrinsic part of the combustion process itself.",
+    "Greenhouse gases are described as not a direct health hazard and generally safe in themselves, but capable of altering global climate when released in large quantities."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Carbon dioxide formation from combustion",
+    "Fly ash and soot as particulate pollution"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming greenhouse gases are toxic like other pollutants \u2014 the author distinguishes them as non-hazardous to health individually, with the risk being climate-scale accumulation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade vs. carbon taxes"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "40-40",
+    "section_hint": "Technical Primer \u2014 Pollution"
+   }
+  },
+  {
+   "topic": "Carbon dioxide is an unavoidable product of burning organic fuel",
+   "category": "Risk",
+   "subcategory": "Environmental / Combustion chemistry",
+   "type": "concept",
+   "definition": "Combustion breaks the long carbon chains in organic fuels by combining carbon with oxygen, a self-sustaining exothermic reaction once ignited, which necessarily produces carbon dioxide; large-scale CO2 release can strengthen the greenhouse effect.",
+   "core_idea": "Because almost all fuels are carbon-based, and combustion chemically requires combining carbon with oxygen, it is essentially impossible to burn a fuel without generating CO2.",
+   "key_points": [
+    "Organic fuels are long chains of carbon molecules; combustion breaks these chains by combining carbon with oxygen.",
+    "Combustion needs an initial spark but then is self-sustaining, producing more heat than needed to start it.",
+    "CO2 is odorless and nontoxic on its own.",
+    "It is essentially impossible to burn carbon-based fuels \u2014 which is nearly all fuels \u2014 without producing CO2.",
+    "Large volumes of released CO2 can strengthen the greenhouse effect."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Two general categories of combustion pollution"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Thinking CO2 itself is toxic \u2014 the author notes it is odorless and nontoxic; the risk is the climate-scale greenhouse effect, not direct toxicity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Two general categories of combustion pollution"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "40-40",
+    "section_hint": "Technical Primer \u2014 Pollution"
+   }
+  },
+  {
+   "topic": "Acid rain from nitrogen and sulfur oxides",
+   "category": "Risk",
+   "subcategory": "Environmental / Combustion byproducts",
+   "type": "concept",
+   "definition": "Combustion also produces nitrogen and sulfur oxides \u2014 from atmospheric nitrogen and trace sulfur trapped in fossil fuels \u2014 which combine with water to form acid rain, a regional hazard to vegetation and wildlife when concentrated.",
+   "core_idea": "Nitrogen and sulfur oxides released by combustion react with water to create acid rain, which is normally mild but becomes locally poisonous when acid accumulates heavily in one area.",
+   "key_points": [
+    "Nitrogen oxides come from atmospheric nitrogen; sulfur oxides come from trace sulfur trapped in fossil fuels.",
+    "These oxides combine with water to form acid rain.",
+    "Acid rain is characterized as a regional problem that can kill vegetation and wildlife.",
+    "Most rain is slightly acidic already; the hazard arises when large amounts of acid concentrate in a small area."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Two general categories of combustion pollution"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming all acid rain is dangerous \u2014 the author notes most rain is mildly acidic and only concentrated buildup is poisonous."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heavy metal contamination from combustion",
+    "Fly ash and soot as particulate pollution"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "40-41",
+    "section_hint": "Technical Primer \u2014 Pollution"
+   }
+  },
+  {
+   "topic": "Heavy metal contamination from combustion",
+   "category": "Risk",
+   "subcategory": "Environmental / Combustion byproducts",
+   "type": "risk",
+   "definition": "Fossil fuels often contain trapped heavy metals such as mercury, lead, and plutonium, which are released during combustion and, because they do not decay in the body, can accumulate to toxic levels in humans and wildlife.",
+   "core_idea": "Heavy metals released by burning fossil fuels are dangerous specifically because they bioaccumulate rather than break down, so toxicity is a function of cumulative exposure over time.",
+   "key_points": [
+    "Mercury, lead, and plutonium are named as heavy metals commonly trapped in fossil fuels.",
+    "These metals are released during combustion.",
+    "They do not decay once accumulated in the body.",
+    "Sufficient accumulation is toxic to both humans and wildlife."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Two general categories of combustion pollution"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Acid rain from nitrogen and sulfur oxides",
+    "Fly ash and soot as particulate pollution"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "41-41",
+    "section_hint": "Technical Primer \u2014 Pollution"
+   }
+  },
+  {
+   "topic": "Fly ash and soot as inhaled particulate pollution",
+   "category": "Risk",
+   "subcategory": "Environmental / Combustion byproducts",
+   "type": "risk",
+   "definition": "Fly ash and soot are general terms for inert particulate matter left in fossil fuels \u2014 typically fine grains of sand or unburned coal \u2014 which, when airborne, can lodge in the lungs and cause breathing problems and diseases such as silicosis.",
+   "core_idea": "Fly ash and soot are unburned or incombustible particulate residue that poses a health risk primarily through inhalation rather than chemical toxicity.",
+   "key_points": [
+    "Fly ash and soot are described as inert particulate matter trapped in fossil fuels.",
+    "They are commonly very small grains of sand or incompletely burned coal.",
+    "When suspended in air, these particles easily lodge in the lungs.",
+    "This can cause breathing problems and diseases such as silicosis."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Two general categories of combustion pollution"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Acid rain from nitrogen and sulfur oxides",
+    "Heavy metal contamination from combustion"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "41-41",
+    "section_hint": "Technical Primer \u2014 Pollution"
+   }
+  }
+ ]
+}

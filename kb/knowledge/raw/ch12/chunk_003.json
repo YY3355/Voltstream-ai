@@ -1,0 +1,178 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Correlation coefficient: definition and interpretation",
+   "category": "Risk",
+   "subcategory": "Statistics",
+   "type": "concept",
+   "definition": "A correlation coefficient is a number between -1 and +1 that measures how strongly two data series move in relation to each other.",
+   "core_idea": "A value of +1 means the two series move identically together, -1 means they move exactly opposite (one rises as the other falls), and 0 means there is no discernible relationship between the two series' movements.",
+   "key_points": [
+    "Range is bounded between -1 and +1.",
+    "+1 = perfect positive relationship (series behave identically).",
+    "-1 = perfect inverse relationship (one rises as the other falls).",
+    "0 = no relationship; the two series move up and down randomly relative to each other, sometimes together and sometimes opposed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into hedge selection and correlation-based valuation, but see the hedging caveat below."
+   ],
+   "trading_implications": [
+    "Used to identify candidate price series (e.g., a proxy hub) for hedging or relative-value analysis."
+   ],
+   "common_misunderstandings": [
+    "A correlation coefficient describes co-movement, not whether the absolute price levels are close or trending the same direction over time."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation and outlier sensitivity",
+    "Correlated does not mean a good hedge"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "321-322",
+    "section_hint": "3.3 Statistics - correlation coefficient"
+   }
+  },
+  {
+   "topic": "Correlation is driven by outlier observations",
+   "category": "Risk",
+   "subcategory": "Statistics",
+   "type": "concept",
+   "definition": "The mechanics of the correlation calculation mean that values close to the mean contribute little, while extreme (outlier) values dominate the result.",
+   "core_idea": "Because the correlation calculation multiplies each series' deviations from its own mean, any value near the mean (or a zero deviation) cancels out its pair, while large deviations multiply into large numbers \u2014 so a handful of outlier prices can determine the measured correlation between two series.",
+   "key_points": [
+    "Each series has its mean subtracted before the values from the two series are multiplied together.",
+    "A near-zero deviation on either side effectively zeroes out that observation's contribution.",
+    "Large deviations from the mean produce large products, so they dominate the result.",
+    "For volatile energy prices in particular, a small number of outlier days can determine the overall correlation reading."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains why correlation can look strong even when it is driven by a few shared price spikes rather than consistent co-movement."
+   ],
+   "trading_implications": [
+    "A trader should check which observations are driving a correlation estimate rather than trusting the summary statistic alone, especially for volatile commodities."
+   ],
+   "common_misunderstandings": [
+    "Assuming a high correlation coefficient reflects consistent day-to-day agreement between series, when it may really reflect agreement only on a few extreme days."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation coefficient: definition and interpretation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "322",
+    "section_hint": "3.3 Statistics - correlation coefficient mechanics"
+   }
+  },
+  {
+   "topic": "Correlated does not mean a good hedge",
+   "category": "Risk",
+   "subcategory": "Hedging",
+   "type": "risk",
+   "definition": "High correlation between two price series does not guarantee they are trending in the same direction or that a hedge built on one will track losses/gains in the other over time.",
+   "core_idea": "Energy prices are often cyclical and highly correlated with each other because they share seasonal/weather drivers, but two series can be highly correlated in their day-to-day swings while their overall price levels drift apart over years \u2014 making a correlation-based hedge dangerously misleading if no one checks the underlying trend.",
+   "key_points": [
+    "Energy prices are commonly highly correlated simply because they are all cyclical, not because they trend together.",
+    "The text gives an illustrative case with r = 0.5 where two series are correlated but moving in opposite overall directions.",
+    "A correlation estimate can stay high indefinitely even as absolute price levels between the two series diverge, because correlation captures co-movement of swings (e.g., both peak on hot summer days), not the level or trend of prices.",
+    "The danger is trusting the correlation statistic without ever looking at the actual underlying price data over time."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the outlier-driven nature of correlation: shared weather-driven peaks/troughs can sustain high correlation even as trends diverge."
+   ],
+   "trading_implications": [
+    "Before using one location's futures as a proxy hedge for another location's exposure, check not just the correlation coefficient but the actual historical price trend/spread between the two series.",
+    "A hedge that looks statistically sound at initiation can silently accumulate large basis losses over years if the two locations' underlying supply/demand fundamentals diverge."
+   ],
+   "common_misunderstandings": [
+    "Believing a high correlation coefficient at trade inception is sufficient evidence that a cross-location hedge will remain effective over the life of the position."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation coefficient: definition and interpretation",
+    "PJM-East/PJM-West hedge case study"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "322-323",
+    "section_hint": "3.3 Statistics - Correlated Does Not Mean a Good Hedge"
+   }
+  },
+  {
+   "topic": "PJM-East/PJM-West basis hedge case study",
+   "category": "Power Markets",
+   "subcategory": "Hedging",
+   "type": "example",
+   "definition": "A worked example (steel producer, 1990) illustrating how a correlation-based proxy hedge between two power price zones can fail over a long horizon as the zones' fundamentals diverge.",
+   "core_idea": "A PJM-East steel producer, lacking exchange-traded futures for its own zone, hedged 25 years of electricity exposure using PJM-West futures because the two zones' prices were highly correlated (both peak on the same hot summer days due to shared weather); over the following decade PJM-East prices rose sharply due to regional population/demand growth while PJM-West prices fell, and because correlation stayed high throughout, no one investigated the diverging price levels until the hedge had accumulated a large loss.",
+   "key_points": [
+    "Setup: PJM-East (near Washington, D.C./Baltimore) had no exchange-traded futures; PJM-West (western MD/WV/PA) did.",
+    "The producer bought $500 million notional of PJM-West forwards ($20 million/year for 25 years) after confirming high correlation between the two zones.",
+    "Over the next 10 years, Baltimore-Washington population/commercial growth pushed PJM-East prices up, while PJM-West, without similar growth, saw prices decline.",
+    "Correlation stayed high the whole time because both zones share weather (peaks on hot summer days) even as absolute price levels diverged.",
+    "The day-to-day correlation masked the multi-year trend divergence, so the widening gap went unnoticed until the hedge had produced a large loss."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Concrete illustration of \"Correlated does not mean a good hedge.\""
+   ],
+   "trading_implications": [
+    "Long-dated proxy hedges across locations need periodic review of the actual price/basis trend, not just an initial or ongoing correlation check, since correlation reflects co-movement of swings, not convergence of price levels."
+   ],
+   "common_misunderstandings": [
+    "Assuming that because two zones' prices peak and trough together (weather-driven correlation), the zones' price levels will also stay close together over time."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlated does not mean a good hedge"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "322-323",
+    "section_hint": "3.3 Statistics - Correlated Does Not Mean a Good Hedge, steel producer example"
+   }
+  },
+  {
+   "topic": "Monte Carlo simulation for valuation modeling",
+   "category": "Derivatives",
+   "subcategory": "Valuation Methods",
+   "type": "concept",
+   "definition": "Monte Carlo modeling values assets or answers probability questions by running a very large number of randomized simulated scenarios and aggregating the outcomes, rather than solving an exact probability/valuation equation analytically.",
+   "core_idea": "When a problem has too many permutations to solve analytically (the author's example: computing the odds of winning solitaire), Monte Carlo methods substitute brute-force repeated simulation for closed-form math, using computer time to run huge numbers of randomized trials and tallying the results; the same logic underlies energy asset valuation models.",
+   "key_points": [
+    "Motivation: some problems (e.g., the exact win probability of solitaire) are provably solvable/unsolvable in individual cases but have too many permutations for an exact overall probability formula.",
+    "Monte Carlo substitutes simulation (playing many games / running many scenarios) for exact math.",
+    "There is no single universal Monte Carlo method \u2014 each simulation must be custom-modeled for its specific problem.",
+    "Four common steps: (1) develop random inputs, (2) generate the simulation from those inputs, (3) calculate the result of each simulation run, (4) aggregate results across many runs.",
+    "Random-input generation is described as as much an art as a science.",
+    "Once inputs are randomized, generating the simulation itself is typically a deterministic process.",
+    "Aggregation commonly involves running 10,000 or more simulations before summarizing results.",
+    "Energy asset valuation is cited as a common real-world application of Monte Carlo modeling."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Statistical concepts like correlation and mean/outlier behavior underpin how inputs and results in a Monte Carlo model are generated and interpreted."
+   ],
+   "trading_implications": [
+    "Monte Carlo models are used to price/value energy assets where analytical (closed-form) solutions are impractical due to complex, path-dependent, or highly permutational payoffs."
+   ],
+   "common_misunderstandings": [
+    "Expecting a single standardized Monte Carlo procedure applicable to any asset \u2014 each application requires its own custom simulation design."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation coefficient: definition and interpretation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "323-325",
+    "section_hint": "3.3 Statistics - Monte Carlo Testing"
+   }
+  }
+ ]
+}

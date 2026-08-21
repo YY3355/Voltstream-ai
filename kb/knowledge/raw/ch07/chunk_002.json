@@ -1,0 +1,242 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Geographic risk gradient of acid rain from coal plants",
+   "category": "Coal",
+   "subcategory": "Environmental Impact",
+   "type": "concept",
+   "definition": "Acid rain exposure risk from coal mining and coal power generation is not uniform \u2014 it is concentrated near the source and fades with distance.",
+   "core_idea": "Populations located near coal mines and power plants, downwind of plant emissions, or downstream of related discharges face the greatest acid rain risk, with severity declining as distance from the source increases; the author notes acid rain is not harmful at low concentrations.",
+   "key_points": [
+    "Highest-risk locations: near the mine/plant, downwind of it, or downstream from it",
+    "Risk magnitude decreases with distance from the source",
+    "Acid rain is not considered dangerous in small concentrations"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the motivation for sulfur removal via coal washing and flue gas desulfurization"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Acid rain risk is not an all-or-nothing hazard \u2014 it scales with proximity and concentration"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "sulfur in coal",
+    "flue gas desulfurization"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "253",
+    "section_hint": "2.4 Coal \u2014 acid rain risk"
+   }
+  },
+  {
+   "topic": "Two chemical forms of sulfur in coal",
+   "category": "Coal",
+   "subcategory": "Coal Composition & Pollution Control",
+   "type": "concept",
+   "definition": "Sulfur in coal exists in two distinct forms \u2014 pyrite (iron-bound) and organic sulfur (carbon-bound) \u2014 and each requires a different removal technique.",
+   "core_idea": "Most coal sulfur is bound with iron as pyrite crystals ('fool's gold') physically scattered through the coal, while the remainder is chemically bonded to the coal's carbon as organic sulfur; because the two forms are held differently, pyrite can be mechanically separated before combustion but organic sulfur can only be addressed after combustion, via stack scrubbers.",
+   "key_points": [
+    "Pyrite is the more common sulfur form, an iron-sulfur mineral distinct from the coal matrix",
+    "Organic sulfur is chemically bonded to the coal's carbon and cannot be physically separated",
+    "Pyrite is removable pre-combustion; organic sulfur removal requires post-combustion exhaust scrubbing"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Pyrite removal \u2192 coal washing",
+    "Organic sulfur removal \u2192 flue gas desulfurization"
+   ],
+   "trading_implications": [
+    "Sulfur form/content affects processing and compliance costs baked into delivered coal economics"
+   ],
+   "common_misunderstandings": [
+    "Not all sulfur in coal can be removed the same way \u2014 the removal method depends on which chemical form is present"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "coal washing",
+    "flue gas desulfurization",
+    "acid rain"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "253-254",
+    "section_hint": "2.4 Coal \u2014 sulfur forms"
+   }
+  },
+  {
+   "topic": "Coal washing (pyrite removal)",
+   "category": "Coal",
+   "subcategory": "Pre-combustion Processing",
+   "type": "market_mechanic",
+   "definition": "Coal washing is a density-based separation process that removes pyrite from crushed coal before it is burned.",
+   "core_idea": "Because pyrite is denser than coal, crushing the coal and submerging it in water causes coal to float and pyrite to sink, allowing pyrite to be separated out; the technique itself is simple, but since the coal must be dehydrated before burning, washing can add substantial cost unless the coal was already going to be crushed and slurried anyway.",
+   "key_points": [
+    "Relies on the density difference between coal and pyrite",
+    "Coal floats to the top of the water; pyrite sinks",
+    "Post-wash dehydration is required before the coal can be burned, and this can be costly",
+    "Incremental cost can be low if the coal is already crushed and moved via water slurry pipeline"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Complements flue gas desulfurization, which handles the organic sulfur that washing cannot remove"
+   ],
+   "trading_implications": [
+    "Coal transported by slurry pipeline may have a lower effective cost to desulfurize via washing, affecting relative economics versus other coal sources/transport modes"
+   ],
+   "common_misunderstandings": [
+    "Washing only removes pyrite-bound sulfur; it does nothing for organic sulfur"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "pyrite",
+    "organic sulfur",
+    "flue gas desulfurization"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "253",
+    "section_hint": "2.4 Coal \u2014 coal washing"
+   }
+  },
+  {
+   "topic": "Flue gas desulfurization (lime/limestone scrubbers)",
+   "category": "Coal",
+   "subcategory": "Emissions Control",
+   "type": "concept",
+   "definition": "Flue gas desulfurization (FGD) is a post-combustion process that removes sulfur dioxide from coal plant exhaust using lime-based scrubbers.",
+   "core_idea": "A lime-and-water mist sprayed across the top of the smokestack reacts with rising sulfur oxide gas to form solid gypsum, capturing a large share of the plant's sulfur emissions; the source states lime scrubbers can remove between 90 and 97 percent of emitted sulfur, but the equipment is expensive to install and maintain, requires internal ledges to catch falling gypsum residue, and needs regular cleanout that typically takes the plant offline.",
+   "key_points": [
+    "Lime is a base that neutralizes the acidic sulfur oxide gas",
+    "The reaction byproduct is solid gypsum",
+    "Lime scrubbers can remove 90-97 percent of sulfur emissions, per the source",
+    "Smokestacks need built-in ledges/shelves to catch falling gypsum residue",
+    "Residue must be cleaned out regularly, generally requiring periodic plant downtime"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Addresses organic sulfur, which coal washing cannot remove"
+   ],
+   "trading_implications": [
+    "FGD maintenance downtime reduces plant availability/capacity factor, relevant to outage scheduling and generation availability modeling"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "coal washing",
+    "sulfur forms in coal",
+    "acid rain"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "254",
+    "section_hint": "2.4 Coal \u2014 flue gas desulfurization"
+   }
+  },
+  {
+   "topic": "Economies of scale vs. transmission complexity trade-off in coal generation",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics & Transmission",
+   "type": "concept",
+   "definition": "Large coal power plants gain fuel-efficiency economies of scale, but this benefit requires extensive long-distance transmission infrastructure, creating a cost trade-off.",
+   "core_idea": "Bigger coal plants need less fuel per unit of electricity produced, which historically drove the industry toward large centralized plants (a scale benefit nuclear power shares); but large centralized plants require elaborate long-distance transmission systems, and the source states that transmission systems become more expensive and less reliable as they grow more complex.",
+   "key_points": [
+    "Larger coal plants require less fuel per unit of electricity generated",
+    "Nuclear power shares a similar economy-of-scale benefit",
+    "Large centralized plants require elaborate long-distance transmission networks",
+    "Simple transmission systems are relatively inexpensive and reliable; complex ones become progressively more expensive and less reliable",
+    "Transmission complexity grew over time as electrical appliance use and population density increased"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to the historical AC vs. DC transmission choice that enabled large centralized plants"
+   ],
+   "trading_implications": [
+    "The historical scale-vs-transmission trade-off underlies modern grid congestion and reliability cost drivers relevant to transmission-constrained markets"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "AC/DC transmission history",
+    "transmission grid reliability"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "254",
+    "section_hint": "Coal and the Power Grid"
+   }
+  },
+  {
+   "topic": "AC vs. DC transmission (Edison vs. Westinghouse)",
+   "category": "Power Markets",
+   "subcategory": "Transmission History",
+   "type": "concept",
+   "definition": "The historical competition between Edison's direct current (DC) system and Westinghouse's alternating current (AC) system, resolved in favor of AC because it allowed voltage to be transformed up or down.",
+   "core_idea": "Edison's DC system suffered from voltage drop over distance with no efficient way to step voltage up or down, which meant generators had to be small and located near end-users; Westinghouse's AC system (based on Tesla's design) used transformers to repeatedly step voltage up or down, letting a single large plant serve a wide area and multiple customer voltage needs, which is why AC became the universal transmission standard.",
+   "key_points": [
+    "DC transmission loses voltage over distance with no efficient step up/down mechanism",
+    "DC's limitation implied small, local generation near end-users",
+    "AC, using transformers, can step voltage up or down multiple times along the transmission path",
+    "AC let one large plant serve a wide area and serve both high-voltage industrial and low-voltage residential customers",
+    "The greater efficiency of large generation plants tipped the outcome toward AC becoming the universal standard"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins the economies-of-scale-vs-transmission trade-off"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "economies of scale in generation",
+    "transmission grid complexity"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "254",
+    "section_hint": "Coal and the Power Grid \u2014 AC/DC history"
+   }
+  },
+  {
+   "topic": "Surface (strip) mining of coal",
+   "category": "Coal",
+   "subcategory": "Coal Mining Methods",
+   "type": "concept",
+   "definition": "Surface mining, or strip mining, extracts coal located close to the earth's surface by clearing topsoil and rock before excavating the coal.",
+   "core_idea": "Strip mining removes topsoil/groundcover with standard earth-moving equipment and the underlying rock layer via explosives followed by excavation; it is simpler and requires fewer workers than underground mining (though underground coal is typically higher quality), is driven economically by the ratio of coal recovered to earth removed, and is typically followed by contouring, topsoil replacement, and replanting to restore the land \u2014 practices that have reduced its historically poor environmental reputation.",
+   "key_points": [
+    "Used when coal deposits are close to the surface",
+    "Topsoil/groundcover removed with standard earth-moving equipment (e.g., bulldozers)",
+    "Rock layer requires explosives to crack before excavation",
+    "Uses equipment similar to standard excavation equipment, at very large scale",
+    "Simpler and needs fewer miners than underground mining, but the highest-quality coal tends to be deep underground",
+    "Primary economics: coal quantity available vs. amount of earth that must be removed",
+    "Post-mining restoration is now generally required: contouring, topsoil replacement, replanting",
+    "Common in the Midwestern and Western United States"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with underground mining, which the source begins to introduce as the method used when coal is too deep for surface mining"
+   ],
+   "trading_implications": [
+    "Regional differences in mining method (surface vs. underground) affect coal cost and quality, relevant to delivered coal price/quality differentials by supply region"
+   ],
+   "common_misunderstandings": [
+    "Cheaper, simpler surface mining does not imply the coal obtained is of comparable quality to deeper, underground-mined coal"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "underground mining",
+    "coal quality"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "254-255",
+    "section_hint": "Coal Mining \u2014 surface mining"
+   }
+  }
+ ]
+}

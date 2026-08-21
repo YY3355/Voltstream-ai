@@ -1,0 +1,287 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Underground coal mining method and hazards",
+   "category": "Coal",
+   "subcategory": "Production & Mining",
+   "type": "concept",
+   "definition": "Underground coal mining carves a network of rooms out of a coal seam using continuous mining machines that cut along coal faces roughly 50 feet long.",
+   "core_idea": "Modern underground mining is heavily mechanized but still dangerous because material is physically excavated from beneath the surface, creating an ongoing risk of ground collapse whether the collapse is intentional or accidental.",
+   "key_points": [
+    "Continuous mining machines cut coal along faces approximately 50 feet in length",
+    "Removing underground material creates constant collapse risk, whether the collapse is deliberate (to preempt future problems) or accidental",
+    "Surface land above a collapsed mine is damaged and must be restored",
+    "Most U.S. underground mining is concentrated in the Appalachian Mountains east of the Mississippi River"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with western U.S. surface/strip mining used in Wyoming"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Appalachian coal region",
+    "Wyoming coal region"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "256",
+    "section_hint": "2.4 Coal"
+   }
+  },
+  {
+   "topic": "Structural limits on coal trading",
+   "category": "Coal",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Coal trading accessible to individual investors is effectively restricted to high-grade coal worth shipping long distances, since low-grade coal is almost always consumed near its mine site.",
+   "core_idea": "Unlike natural gas, coal has no meaningful market for trading transportation/location spreads or for speculating on quality-grade spreads, because long-distance coal transport is rare and low-grade coal stays local.",
+   "key_points": [
+    "Only high-grade coal that justifies long-distance transport is realistically tradable by individual investors",
+    "There is no active way to speculate on price differences between coal grades",
+    "Low-grade coal is almost never transported far; it is consumed near the mine",
+    "There is no active financial market for trading coal by location, unlike natural gas where transportation/basis trades are common",
+    "Because almost no one wants to move coal long distances, overall coal transportation trading volume is limited"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with natural gas transportation/basis trading"
+   ],
+   "trading_implications": [
+    "Coal grade-spread and location-spread speculation is not practically available the way it is in gas markets"
+   ],
+   "common_misunderstandings": [
+    "Assuming coal trades with location/transport flexibility similar to natural gas"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal pricing terminology",
+    "Global coal reserve geography"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "256",
+    "section_hint": "2.4 Coal - Coal Trading"
+   }
+  },
+  {
+   "topic": "Weak correlation between coal and electricity prices",
+   "category": "Coal",
+   "subcategory": "Price Relationships",
+   "type": "concept",
+   "definition": "Even though coal's primary use is electricity generation, coal and power prices are generally not correlated because power prices are set by the marginal (most expensive) fuel in a region, not the cheapest.",
+   "core_idea": "Electricity prices are typically driven by the most expensive fuel used in a region rather than by coal, so the coal-power price relationship is weak except in limited cases.",
+   "key_points": [
+    "Coal is primarily used for electrical generation, but coal and electricity prices are usually not correlated except in limited cases",
+    "Electricity prices are generally set by the most expensive fuel in a region, not the cheapest fuel (which is often coal)",
+    "Only investors who own coal-fired power plants can actually capture value from the coal-to-electricity price spread"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Relates to merit-order/marginal-fuel price setting in power markets"
+   ],
+   "trading_implications": [
+    "The coal-electricity spread is effectively only monetizable by owners of coal-fired generation assets, not general market participants"
+   ],
+   "common_misunderstandings": [
+    "Assuming coal prices and electricity prices move together because coal is a major generation fuel"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Structural limits on coal trading"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "256-257",
+    "section_hint": "2.4 Coal - Coal Trading"
+   }
+  },
+  {
+   "topic": "Coal price volatility and storage characteristics",
+   "category": "Coal",
+   "subcategory": "Price Behavior",
+   "type": "concept",
+   "definition": "Coal is historically less volatile than other energy commodities on a per-energy-unit basis, partly because it is relatively easy to store and therefore does not show a strong seasonal price pattern.",
+   "core_idea": "Coal's ease of storage removes much of the seasonal price swing seen in other energy commodities, and its price per unit of energy tends to run well below both natural gas and diesel.",
+   "key_points": [
+    "Coal has historically been less volatile than other energy commodities when compared on a price-per-energy basis",
+    "Because coal is relatively easy to store, it lacks a strong seasonal price trend",
+    "Coal prices tend to run substantially lower than natural gas and diesel prices"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with seasonal price behavior of natural gas"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weak correlation between coal and electricity prices"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "256-257",
+    "section_hint": "2.4 Coal - Coal Trading"
+   }
+  },
+  {
+   "topic": "Coal pricing terminology",
+   "category": "Coal",
+   "subcategory": "Pricing Terminology",
+   "type": "definition",
+   "definition": "Coal markets use four distinct price concepts depending on who is transacting and whether transportation and affiliation are involved.",
+   "core_idea": "Coal pricing separates the exchange-based price available to outside investors from prices that only apply to affiliated parties, unaffiliated large buyers/sellers, or end consumers paying delivery costs.",
+   "key_points": [
+    "Spot price: the price of a cash transaction at the futures delivery point, typically set through exchange-based trading (like the forward price)",
+    "Captive price: the price used when coal moves between two branches of the same company or between affiliated companies; an unaffiliated party cannot access this price, and such affiliations between coal miners and coal-fired generators are common",
+    "Open market price: the prevailing price for coal traded between large, unaffiliated producers and consumers",
+    "Delivered price: the actual price a coal consumer pays once transportation costs are added"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Captive pricing arises from the common affiliation between coal miners and coal-fired power generators"
+   ],
+   "trading_implications": [
+    "An individual investor cannot access captive pricing, only exchange-based spot/forward pricing"
+   ],
+   "common_misunderstandings": [
+    "Treating captive price as representative of the broader coal market when it only applies between affiliated parties"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Structural limits on coal trading"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "257-258",
+    "section_hint": "2.4 Coal - Common Terms"
+   }
+  },
+  {
+   "topic": "Global coal reserve geography and Atlantic vs. Pacific trade markets",
+   "category": "Coal",
+   "subcategory": "Global Market Structure",
+   "type": "concept",
+   "definition": "World coal reserves are concentrated in the Northern Hemisphere (notably the U.S. and Siberia), with relative scarcity in Western Europe, South America, and Africa; because transport cost is such a large share of coal's delivered cost, international trade splits into an Atlantic market and a larger Pacific market.",
+   "core_idea": "About 80% of coal produced worldwide is consumed near its mine, and the high relative cost of transport divides the remaining international trade into two separate regional markets, with the Pacific market handling roughly two-thirds of global coal trade.",
+   "key_points": [
+    "Coal reserves are concentrated in the Northern Hemisphere, particularly the United States and Siberia",
+    "Western Europe, South America, and Africa have relatively little coal",
+    "About 80 percent of coal produced worldwide is used close to where it is mined",
+    "High transportation cost as a share of total coal cost splits international trading into an Atlantic market and a Pacific market",
+    "Atlantic market importers include the United Kingdom, Germany, and Spain",
+    "Pacific market importers include Japan, Korea, and parts of China",
+    "About two-thirds of international coal trading occurs in the Pacific market"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains why coal transportation/location trading is limited compared to natural gas"
+   ],
+   "trading_implications": [
+    "Regional split means coal trading strategies must be regionally specific (Atlantic vs. Pacific) rather than globally unified"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Structural limits on coal trading"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "258-259",
+    "section_hint": "2.4 Coal - Location of Coal Deposits"
+   }
+  },
+  {
+   "topic": "Energy independence versus pollution tradeoff",
+   "category": "Coal",
+   "subcategory": "Policy & Economics",
+   "type": "concept",
+   "definition": "For countries such as the United States, China, and India, which hold large coal reserves but comparatively small petroleum and natural gas reserves, energy independence and pollution reduction goals conflict because coal is cheap and locally available but highly polluting.",
+   "core_idea": "Large coal-rich nations face a policy tension: coal's low cost, local abundance, and the political stability of relying on a domestic fuel make it attractive even though it remains a heavily polluting energy source.",
+   "key_points": [
+    "The U.S., China, and India have abundant coal deposits but comparatively small petroleum and natural gas reserves",
+    "Coal remains a highly polluting fuel",
+    "Coal's low cost and local availability make it attractive for cost and political-stability reasons despite its pollution profile",
+    "This creates a conflict between energy-independence goals and pollution-reduction goals in national energy policy"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies to the coal-rich nations discussed in the reserve geography item"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Global coal reserve geography and Atlantic vs. Pacific trade markets"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "259",
+    "section_hint": "2.4 Coal - Energy Independence Versus Pollution"
+   }
+  },
+  {
+   "topic": "Appalachian coal-producing region",
+   "category": "Coal",
+   "subcategory": "Producing Regions",
+   "type": "example",
+   "definition": "The Appalachian Mountains in the eastern United States are a major high-quality coal region, producing roughly a third of North America's total coal output primarily through large underground mines.",
+   "core_idea": "Appalachian mining is dominated by deep underground operations that form extensive cave complexes, yielding high-quality bituminous coal and anthracite, with West Virginia and Pennsylvania as the region's largest and longest-established producing states.",
+   "key_points": [
+    "Appalachian mines produce about one-third of North America's total coal output",
+    "The region produces high-quality bituminous coal and anthracite",
+    "West Virginia and Pennsylvania are the largest coal-producing states in the region, with a long mining history",
+    "Unlike western strip mines (open to the sky), Appalachian mines are dug deep underground, forming extensive cave complexes"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with the Wyoming surface-mining region"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Underground coal mining method and hazards",
+    "Wyoming coal-producing region"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "259-260",
+    "section_hint": "2.4 Coal - Coal-Producing Region: Appalachian Mountains"
+   }
+  },
+  {
+   "topic": "Wyoming coal-producing region",
+   "category": "Coal",
+   "subcategory": "Producing Regions",
+   "type": "example",
+   "definition": "The western United States, centered on Wyoming, is the single largest coal-producing region in the country, characterized by extremely large surface mines working thick coal seams (sometimes 40-50 feet deep) close to the surface.",
+   "core_idea": "Wyoming's surface mines produce low-sulfur, low-ash sub-bituminous coal that fuels power plants across the central U.S., and the region alone accounts for roughly half of total U.S. coal production, including some of the world's largest surface mines.",
+   "key_points": [
+    "The western U.S., centered in Wyoming, is the largest coal-producing region in the country",
+    "Coal seams there are sometimes 40 to 50 feet thick and lie close to the surface, enabling extremely large surface mines",
+    "Wyoming mines produce low-sulfur, low-ash sub-bituminous coal used to fuel power plants throughout the central United States",
+    "Some of the largest surface mines in the world are located in this region",
+    "The region accounts for about half of total U.S. coal production"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with the Appalachian underground-mining region"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Appalachian coal-producing region",
+    "Underground coal mining method and hazards"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "260-261",
+    "section_hint": "2.4 Coal - Coal-Producing Region: Wyoming"
+   }
+  }
+ ]
+}

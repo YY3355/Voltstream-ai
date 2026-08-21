@@ -1,0 +1,283 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Wheeling and locational price arbitrage",
+   "category": "Power Markets",
+   "subcategory": "Transmission Economics",
+   "type": "market_mechanic",
+   "definition": "Wheeling is the practice of moving low-cost power into a high-price area over transmission, trading off generation cost savings against the cost of the transmission itself.",
+   "core_idea": "Wheeling models compare the cost of transmitting power against the price differential between a cheap-power region and an expensive-power region; if the spread exceeds transmission cost, moving power (or building the line/plant to enable it) is profitable.",
+   "key_points": [
+    "The purpose of wheeling is to move low-cost power to high-price areas, which can lower consumer costs and was a major driver of electricity market deregulation.",
+    "Wheeling models are used to evaluate building new high-efficiency power plants or new long-distance transmission lines.",
+    "Some generation types (cogeneration, hydroelectric, solar) are location-constrained, and their lower generation cost must outweigh the cost of transmitting the power from that fixed location."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Deregulation of electricity markets",
+    "Locational price spreads",
+    "Transmission line investment decisions"
+   ],
+   "trading_implications": [
+    "A wheeling opportunity exists when the price differential between two locations exceeds the cost of transmitting power between them."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Interconnections",
+    "Transmission costs",
+    "Deregulation"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "53",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   }
+  },
+  {
+   "topic": "Inter-interconnect wheeling as an embedded option",
+   "category": "Power Markets",
+   "subcategory": "Transmission Economics",
+   "type": "trading_strategy",
+   "definition": "Transmitting power between grids within one of the three major U.S. interconnections (Eastern, Western, ERCOT) can function like an option: a fixed cost is paid to reserve transmission capacity, and the payoff depends on whether the price divergence between the two locations' marginal fuels shows up.",
+   "core_idea": "Because different regions have different marginal generating fuels, renting transmission capacity between them behaves like a call option on the price divergence between those fuels, with the capacity rental cost acting as the option premium.",
+   "key_points": [
+    "The U.S. has three major interconnected grid groups: Eastern Interconnect (east of the Rockies), Western Interconnect (west of the Rockies), and ERCOT (Texas); power can be moved between constituent grids within each group.",
+    "Example given: buying power in the Midwest (coal-on-the-margin) and transmitting it to the Gulf Coast (natural-gas-on-the-margin) profits from divergence between coal and gas prices.",
+    "This structure resembles an option: a fixed cost is paid up front to rent transmission capacity, with a payoff that depends on realized price divergence."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Marginal fuel price divergence",
+    "Transmission capacity rental",
+    "Option payoff structures"
+   ],
+   "trading_implications": [
+    "Traders can use physical transmission capacity purchases to get option-like exposure to fuel price divergence between regions with different marginal generation fuels."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wheeling",
+    "ERCOT interconnection",
+    "Options"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "53",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   }
+  },
+  {
+   "topic": "Physical assets as a cheaper substitute for financial options",
+   "category": "Derivatives",
+   "subcategory": "Physical vs. Financial Optionality",
+   "type": "trading_strategy",
+   "definition": "Because financial option premiums can be very expensive, a trader can sometimes obtain equivalent exposure more cheaply by investing in physical infrastructure (like transmission or generation capacity) whose construction cost is lower than the premium for the equivalent financial option.",
+   "core_idea": "Physical wheeling deals let a trader buy optionality priced off construction/rental cost rather than financial option premiums, and the trader can later lock in profit by selling the equivalent financial option once the physical position is in place.",
+   "key_points": [
+    "Wheeling deals let traders acquire option-like exposure priced by equipment/construction cost rather than by the market price of a financial option.",
+    "If construction costs are low relative to the financial option's value, the physical route is a cheaper way to obtain the same financial exposure.",
+    "A trader can lock in a riskless profit by later selling the equivalent financial option and keeping the difference between the two costs."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Option premiums",
+    "Physical infrastructure investment",
+    "Arbitrage"
+   ],
+   "trading_implications": [
+    "Compare the cost of a physical build/rental versus the market premium of the equivalent financial option before choosing how to express a trade view."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wheeling",
+    "Options",
+    "Physical trading"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "53",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling"
+   }
+  },
+  {
+   "topic": "Solar power: PV vs. thermal",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "concept",
+   "definition": "Solar power splits into photovoltaic (PV), which converts sunlight directly into electricity via panels, and thermal solar, which uses sunlight to produce heat that can drive steam turbines or directly displace heating electricity.",
+   "core_idea": "PV output depends on panel technology and sunlight intensity, while thermal solar's key advantage is that heat is comparatively easy to store, letting thermal facilities generate around the clock even though they only collect energy during daylight.",
+   "key_points": [
+    "PV panel output depends on equipment type and sunlight intensity.",
+    "Accurately estimating expected PV output is critical: underestimating makes solar look uneconomical and gets it passed over, while overestimating causes power shortfalls relative to the project's economic goals.",
+    "Thermal solar installations range from small systems (e.g., heating outdoor pools) to full electrical generation facilities.",
+    "Thermal solar's ability to store heat lets facilities operate around the clock despite only collecting solar energy during the day.",
+    "Solar radiation varies with weather, sun position, and daylight hours, and is further affected by panel angle, efficiency at handling direct vs. diffuse light, and surrounding environment.",
+    "Regional/national historical solar radiation averages are used to analyze and estimate solar installations."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Renewable generation estimation",
+    "Steam turbine generation",
+    "Locational siting constraints"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Both overly conservative and overly optimistic output estimates are problematic in different ways \u2014 it isn't just a matter of being 'safe' with low estimates."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind power",
+    "Renewable energy forecasting",
+    "Wheeling and locational siting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "53-54",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Solar Power"
+   }
+  },
+  {
+   "topic": "Wind power intermittency and cube-law energy relationship",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "concept",
+   "definition": "Wind power output is highly irregular because wind speed itself is unpredictable and because the energy contained in wind scales with the cube of wind speed, so fast gusts carry disproportionately more energy than steady breezes.",
+   "core_idea": "Because energy scales as roughly the cube of wind speed, small changes in wind speed produce large swings in available power, making wind generation swing between periods of abundant output and periods of little to no output.",
+   "key_points": [
+    "Wind turbines (in use since the 1970s) are typically grouped into wind farms sited in areas with sustained high winds.",
+    "Wind energy is proportional to the cube of wind speed, so fast gusts contain far more energy than slow steady wind.",
+    "This produces irregular bursts of power rather than a steady output profile."
+   ],
+   "formulas": [
+    {
+     "name": "Wind power / speed relationship (qualitative)",
+     "formula": "Energy \u221d (wind speed)^3",
+     "variables": {
+      "wind speed": "speed of the wind (the source states the cubic relationship qualitatively, without giving a full formula)"
+     }
+    }
+   ],
+   "relationships": [
+    "Renewable intermittency",
+    "Power forecasting"
+   ],
+   "trading_implications": [
+    "Wind generation's output volatility (driven by the cube relationship) is a key input to forecasting and hedging renewable output."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Solar power",
+    "Renewable forecasting",
+    "Wind turbine mechanical stress"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "54",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   }
+  },
+  {
+   "topic": "Wind turbine mechanical stress and wake turbulence",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "risk",
+   "definition": "Wind turbines face high maintenance costs because sustained high winds put torque and stress on the turbine structure, and this problem is compounded in wind farms where turbulence from upwind turbines creates chaotic airflow over downwind turbines.",
+   "core_idea": "A single, isolated wind turbine experiences fairly predictable airflow, but in a wind farm the wake turbulence from upwind units creates unpredictable stress on downwind units, increasing the risk of structural deformation or sudden equipment failure.",
+   "key_points": [
+    "Prolonged high winds place substantial torque on a turbine's frame, which can cause structural breakdown/deformation over time.",
+    "This effect is worse when turbines are clustered close together.",
+    "Turbulence from upwind turbines' blades causes chaotic, unpredictable airflow over downwind turbines, raising the risk of sudden equipment failure."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Wind farm layout/siting",
+    "Equipment maintenance cost",
+    "Operational risk"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Wind turbine risk isn't only about average wind speed \u2014 turbine density/proximity itself introduces an additional turbulence-driven failure risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind power intermittency",
+    "Renewable generation maintenance costs"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "54",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   }
+  },
+  {
+   "topic": "Consumer opposition to wind farms",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "definition",
+   "definition": "The two most common objections to wind farms cited by the author are the risk they pose to migratory birds, since turbines are often sited on migration corridors with steady winds, and aesthetic objections to their visual impact on natural landscapes.",
+   "core_idea": "Wind farm siting choices that are optimal for wind resource (migration corridors with sustained wind) create environmental conflict (bird strikes) and separately draw aesthetic opposition, both of which are cited as social/regulatory friction for wind development.",
+   "key_points": [
+    "Wind turbines are often placed on migratory bird corridors because those areas have steady sustained winds, leading to bird deaths from blade strikes.",
+    "Environmental groups worry that widespread wind power adoption could significantly reduce wild bird populations.",
+    "A separate objection is purely aesthetic \u2014 opposition to wind farms altering scenic natural landscapes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Wind farm siting",
+    "Environmental/regulatory risk",
+    "Renewable project development"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind power intermittency",
+    "Renewable project siting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "54",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wind Power"
+   }
+  },
+  {
+   "topic": "Nuclear power thermal efficiency",
+   "category": "Power Markets",
+   "subcategory": "Conventional / Alternative Generation",
+   "type": "concept",
+   "definition": "Nuclear power plants generate electricity the same basic way as coal plants \u2014 producing superheated steam to drive turbines \u2014 and, like coal plants, become more efficient at converting heat to electricity the higher their operating temperature.",
+   "core_idea": "Operating temperature is a key efficiency driver for both nuclear and coal steam-turbine plants: lower-temperature plants convert roughly 25% of heat energy to electricity, while larger, hotter plants can convert 50-60%.",
+   "key_points": [
+    "Nuclear power is not renewable but is presented as an alternative to fossil-fuel-based electricity generation.",
+    "Both coal and nuclear plants produce superheated steam to drive electrical turbines.",
+    "Higher operating temperature increases thermal-to-electrical conversion efficiency.",
+    "A low-temperature plant might convert about 25% of heat energy to electricity; a larger, hotter plant might convert 50-60%."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal-fired generation",
+    "Thermal efficiency",
+    "Steam turbine generation"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Nuclear plants are sometimes assumed to be a totally different generation technology from coal, but the source frames them as sharing the same steam-turbine efficiency dynamics."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal power generation",
+    "Plant thermal efficiency"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "54-55",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Nuclear Power"
+   }
+  }
+ ]
+}

@@ -1,0 +1,295 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Hydraulic fracturing (fracking)",
+   "category": "Oil & Gas",
+   "subcategory": "Exploration & Production",
+   "type": "concept",
+   "definition": "A production technique that frees hydrocarbons trapped in the pore spaces of impermeable rock (shale) by fracturing the rock, typically by pumping water or another fluid underground and using pressure/compression waves to crack the formation so hydrocarbons can migrate to the surface.",
+   "core_idea": "Unlike traditional drilling, which taps hydrocarbons already pooled in permeable reservoir rock under an impermeable cap, fracking manufactures permeability in rock where hydrocarbons are otherwise locked in place.",
+   "key_points": [
+    "Traditional wells target reservoirs formed where migrating hydrocarbons are trapped under an impermeable rock layer.",
+    "Fracking targets hydrocarbons trapped directly inside impermeable rock (shale) rather than pooled reservoirs.",
+    "The rock must be fractured before hydrocarbons can flow, distinguishing it from conventional drilling.",
+    "Fractures are commonly created by injecting hydraulic fluid to propagate compression waves from explosions into the formation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with traditional/conventional drilling",
+    "Contrasted with shale oil (mining) processing"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Fracking is not the same process as conventional drilling with an extra step; the underlying geology being targeted (hydrocarbons locked in impermeable rock vs. pooled in permeable rock) is different."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Shale oil processing",
+    "Traditional drilling",
+    "Deepwater drilling"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "128-129",
+    "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   }
+  },
+  {
+   "topic": "Why fracking grew quickly (product mix, resource abundance, cost)",
+   "category": "Oil & Gas",
+   "subcategory": "Exploration & Production",
+   "type": "concept",
+   "definition": "Three structural reasons fracking expanded rapidly: it yields a higher share of lighter, higher-value hydrocarbons (e.g., methane, propane, naphtha); the shale deposits it accesses are large and located in politically stable regions such as the U.S.; and its extraction cost is competitive with low-cost conventional Middle East production.",
+   "core_idea": "Fracking combined a favorable product slate, abundant and politically low-risk resource location, and cost competitiveness, which together drove its rapid technological and commercial growth.",
+   "key_points": [
+    "Tends to produce a larger proportion of lighter, more valuable hydrocarbons than other extraction technologies.",
+    "Major shale deposits sit in politically stable regions, notably the United States.",
+    "Extraction cost from shale is competitive with low-cost conventional producers in the Middle East."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Supports growth of U.S. natural gas and light hydrocarbon supply"
+   ],
+   "trading_implications": [
+    "Political stability and cost competitiveness of shale supply reduce the political-risk premium historically associated with hydrocarbon supply concentrated in less stable regions."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hydraulic fracturing (fracking)"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "129",
+    "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   }
+  },
+  {
+   "topic": "Environmental profile of fracking",
+   "category": "Oil & Gas",
+   "subcategory": "Environmental / Risk",
+   "type": "risk",
+   "definition": "Fracking carries both an environmental benefit (displacing coal with cheaper, cleaner natural gas, lowering air pollution and carbon emissions) and an environmental risk (releasing pollutants such as sulfur and heavy metals that were trapped in shale formations, which requires water treatment to protect drinking water).",
+   "core_idea": "Cheap fracked natural gas displacing coal was a major driver of falling U.S. carbon emissions, but the same process can mobilize pollutants trapped in shale that must be removed from water before it reaches drinking supplies.",
+   "key_points": [
+    "Cheap natural gas from fracking displaced coal as the lowest-cost generation fuel across much of the U.S.",
+    "This displacement was a primary driver of a roughly 12 percent decrease in U.S. carbon emissions from 2005 to 2015.",
+    "Pollution (e.g., sulfur, heavy metals) trapped alongside hydrocarbons in shale can be released by fracking.",
+    "Water used in fracking must be treated to remove this pollution before it can contaminate drinking water."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas vs. coal generation economics",
+    "Fracking process (fluid injection)"
+   ],
+   "trading_implications": [
+    "Cheap fracked gas supply has structurally pressured coal generation economics in the U.S. power stack."
+   ],
+   "common_misunderstandings": [
+    "Fracking's environmental impact is not purely negative or purely positive \u2014 the source presents a genuine mix of emissions benefit and water-contamination risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hydraulic fracturing (fracking)"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "129",
+    "section_hint": "1.3 Exploration and Production \u2014 Hydraulic Fracking"
+   }
+  },
+  {
+   "topic": "Shale oil (shale rock processing)",
+   "category": "Oil & Gas",
+   "subcategory": "Exploration & Production",
+   "type": "concept",
+   "definition": "An alternative shale-extraction method that mines the shale rock out of the ground first, then crushes it in a processing plant to extract hydrocarbons, as opposed to fracturing the rock in place.",
+   "core_idea": "The mining-and-crushing technology for extracting hydrocarbons from shale has existed for over 200 years but is rarely economically viable because more cost-effective extraction methods (like fracking) exist.",
+   "key_points": [
+    "Differs from fracking in that the shale is physically removed from the ground before processing, rather than fractured in place.",
+    "The crushing technology has existed for more than 200 years.",
+    "Rarely economically viable given more cost-effective alternatives."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative to hydraulic fracturing"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Shale oil processing and fracking are both ways to get hydrocarbons out of shale but are not the same technique \u2014 one mines and crushes rock, the other fractures rock in place."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hydraulic fracturing (fracking)"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "129",
+    "section_hint": "1.3 Exploration and Production \u2014 Shale Oil (Shale Rock Processing)"
+   }
+  },
+  {
+   "topic": "Deepwater drilling: definition and physical challenges",
+   "category": "Oil & Gas",
+   "subcategory": "Exploration & Production",
+   "type": "concept",
+   "definition": "Offshore drilling in water deeper than 500 feet (150 meters) is classified as deepwater drilling. Water pressure increases by roughly one atmosphere every 10 meters, so at 500 feet depth pressure is about 16 times sea-level pressure \u2014 beyond human survivability without specialized equipment; the deepest projects reach about 10,000 feet (2,900 meters).",
+   "core_idea": "Deepwater drilling is defined purely by a depth threshold (500 ft), beyond which extreme pressure forces all operations to be remote/robotic and introduces engineering and equipment risks not present in shallower drilling.",
+   "key_points": [
+    "Deepwater drilling begins at water depths greater than 500 feet (150 meters).",
+    "Pressure increases roughly one atmosphere per 10 meters of depth.",
+    "At 500 feet, pressure is about 16x sea-level pressure, exceeding what humans can survive unaided.",
+    "The deepest projects reach roughly 10,000 feet (2,900 meters), about three times the human deep-diving record.",
+    "Lack of human operators at depth means routine tasks (e.g., equipment maintenance) must be done remotely via robotic drones, which is inherently harder.",
+    "Additional hazards include hurricanes, shifting sea-floor sediments, currents that shift the drill string, and unpredictable (higher or lower) pressures in sub-seafloor sediment layers.",
+    "High pressure raises equipment failure risk (steel pipes, electronics) and increases the chance of gas bubbling out of crude oil due to top-to-bottom pressure differences in the pipe.",
+    "Longer pipes and welded pipe joints increase the surface area/points where a weak spot or failure can occur."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with traditional (shallower/onshore) drilling"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Deepwater drilling as a price sentiment indicator"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "129-130",
+    "section_hint": "1.3 Exploration and Production \u2014 Deepwater Drilling"
+   }
+  },
+  {
+   "topic": "Deepwater drilling activity as an oil-price sentiment indicator",
+   "category": "Oil & Gas",
+   "subcategory": "Market Signals",
+   "type": "market_mechanic",
+   "definition": "Because deepwater drilling is substantially more complex, riskier, and more expensive than traditional drilling, the amount of deepwater drilling activity is highly sensitive to oil prices and is often used as a leading indicator of industry sentiment about future oil prices.",
+   "core_idea": "Deepwater projects are only economic at higher oil prices given their elevated cost and risk, so a pickup or pullback in deepwater activity signals how the industry expects prices to move.",
+   "key_points": [
+    "Deepwater drilling is more complicated and more expensive than traditional drilling due to more numerous and more severe problems that are also harder to fix.",
+    "Deepwater drilling activity levels are very sensitive to oil price.",
+    "Industry participants treat deepwater activity as a leading indicator of price sentiment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Deepwater drilling technical challenges (pressure, remote operations)"
+   ],
+   "trading_implications": [
+    "Rising deepwater drilling activity can be read as a bullish signal on industry price expectations; falling activity can be read as bearish."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Deepwater drilling: definition and physical challenges"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "130",
+    "section_hint": "1.3 Exploration and Production \u2014 Deepwater Drilling"
+   }
+  },
+  {
+   "topic": "Oil and gas reserve classification: proven, probable, possible, resources",
+   "category": "Oil & Gas",
+   "subcategory": "Reserves & Resources",
+   "type": "definition",
+   "definition": "Because the true quantity of hydrocarbons underground is never precisely known, industry describes reserves probabilistically: Proven reserves have roughly 90%+ certainty of being produced under current technology/economics/politics; Probable reserves have 50-90% probability; Possible reserves have 10-50% probability; Resources refers to the total hydrocarbon volume physically present in a field regardless of whether it's economical or currently technologically feasible to extract (largely an estimate/guess).",
+   "core_idea": "Reserve figures are confidence-weighted estimates of recoverable volume, not measured facts, and even the underlying resource-in-place figure is largely a guess since a well's true content is generally unknown until the well is exhausted.",
+   "key_points": [
+    "Proven reserves: ~90% certainty of production under current technology and current economic/political conditions.",
+    "Probable reserves: 50-90% probability of production under current conditions.",
+    "Possible reserves: 10-50% probability of production under current conditions.",
+    "Resources: total hydrocarbon volume present in a field, irrespective of economic viability or current extraction technology; estimating resources is largely a guess.",
+    "Even after a well is exhausted (can no longer produce), it typically still contains hydrocarbons \u2014 remaining pressure is just insufficient to bring them to the surface.",
+    "Reserve estimates are conditional on current technology, economics, and political conditions and change with commodity prices: higher prices make more reserves economical (increasing reserves), lower prices reduce economically recoverable reserves.",
+    "Equivalent probabilistic notation: P90 = 90-100% chance of recovery (a near-certain amount across many wells); P50 = 50-100% chance (the average expected recovery across many wells); P10 = 10-100% chance (an unlikely but possible recoverable amount)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Reserve quantity depends on commodity price level",
+    "P90/P50/P10 as alternate notation for proven/probable/possible-style confidence bands"
+   ],
+   "trading_implications": [
+    "Reported reserves are not fixed physical facts \u2014 they rise and fall with the price outlook, so reserve figures should be read as price-conditional estimates, not constants."
+   ],
+   "common_misunderstandings": [
+    "Reserves are not a measured, fixed quantity of oil in the ground; they are a probability-weighted, price- and technology-conditional estimate of what can be economically recovered.",
+    "An exhausted well is not necessarily an empty well \u2014 it may still hold hydrocarbons that simply can't reach the surface under current pressure."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Barrel of oil equivalent (BOE) conversions"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "130-131",
+    "section_hint": "1.3 Exploration and Production \u2014 Oil and Gas Reserves"
+   }
+  },
+  {
+   "topic": "Barrel of oil equivalent (BOE) and tonne of oil equivalent (TOE) conversions",
+   "category": "Oil & Gas",
+   "subcategory": "Reserves & Resources",
+   "type": "formula",
+   "definition": "Standard approximate conversion factors used to express reserves of different fuel types (oil, natural gas, etc.) in a single common unit, the barrel of oil equivalent (BOE) or tonne of oil equivalent (TOE), since some fuels (e.g., methane, propane) exist as gas and must be normalized against oil-equivalent units for aggregate reserve reporting.",
+   "core_idea": "BOE/TOE are standardized energy-equivalent units that let reserves of oil and gas be added together and reported as one aggregate figure, commonly expressed at the billion-barrel (BBOE) scale.",
+   "key_points": [
+    "1 billion barrels of oil equivalent is abbreviated 1 BBOE.",
+    "Fossil fuel reserves are commonly reported in BOE (or TOE) units so different fuel types can be aggregated.",
+    "Natural gas reserves are converted into BOE using approximate energy/volume equivalence factors."
+   ],
+   "formulas": [
+    {
+     "name": "BOE to natural gas energy content",
+     "formula": "1 BOE \u2248 5.8 million Btu of natural gas",
+     "variables": {
+      "BOE": "barrel of oil equivalent",
+      "Btu": "British thermal unit"
+     }
+    },
+    {
+     "name": "BOE to natural gas volume",
+     "formula": "1 BOE \u2248 5,800 cubic feet of natural gas",
+     "variables": {
+      "BOE": "barrel of oil equivalent",
+      "cf": "cubic feet"
+     }
+    },
+    {
+     "name": "TOE to BOE",
+     "formula": "1 TOE \u2248 6.84 BOE",
+     "variables": {
+      "TOE": "tonne of oil equivalent",
+      "BOE": "barrel of oil equivalent"
+     }
+    },
+    {
+     "name": "TOE to energy content",
+     "formula": "1 TOE \u2248 41,865 MJ",
+     "variables": {
+      "TOE": "tonne of oil equivalent",
+      "MJ": "megajoules"
+     }
+    }
+   ],
+   "relationships": [
+    "Used alongside proven/probable/possible reserve classification for aggregate reserve reporting"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Oil and gas reserve classification: proven, probable, possible, resources"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "131-132",
+    "section_hint": "1.3 Exploration and Production \u2014 Barrel of Oil Equivalent (BOE) Conversions"
+   }
+  }
+ ]
+}

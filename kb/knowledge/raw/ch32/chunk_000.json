@@ -1,0 +1,208 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Model Risk (definition and scope)",
+   "category": "Risk",
+   "subcategory": "Model Risk",
+   "type": "definition",
+   "definition": "Model risk is the danger that the methodology or assumptions behind a valuation, pricing, or risk model are no longer valid, so the model's outputs stop reflecting reality.",
+   "core_idea": "Because energy models tend to be complex and stay in use for a long time, errors in design, assumptions, or data can go unnoticed until they cause real financial losses; this makes model risk an especially common problem in energy trading.",
+   "key_points": [
+    "Bad assumptions, poor parameter estimates, or flawed market data can lead to major financial losses.",
+    "Poor assumptions and badly designed models cause risk-management problems across all financial markets, not just energy.",
+    "Energy models are especially prone to this because of their complexity and the extended periods over which they remain in use.",
+    "The main U.S. regulatory reference for model risk is the Federal Reserve's SR 11-7 guidance to banks, which the author treats as broadly applicable to energy market models too."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sits under general risk management; grounded in Federal Reserve SR 11-7 guidance"
+   ],
+   "trading_implications": [
+    "Traders who rely on a model's pricing, valuation, or risk output can be exposed to losses if the model breaks quietly without anyone noticing."
+   ],
+   "common_misunderstandings": [
+    "Model risk is not only about coding bugs \u2014 it also covers a technically sound model being used in the wrong context."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "SR 11-7 model definition",
+    "model complexity trade-off",
+    "model documentation and governance"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "576-577",
+    "section_hint": "6.4 Model Risk \u2014 Summary/Introduction"
+   }
+  },
+  {
+   "topic": "SR 11-7's Definition of a Model",
+   "category": "Risk",
+   "subcategory": "Model Risk / Regulatory Guidance",
+   "type": "definition",
+   "definition": "Per Federal Reserve SR 11-7, a model is a quantitative method or system that applies statistical, economic, financial, or mathematical techniques and assumptions to turn input data into quantitative estimates, built from three parts: an input component, a processing component, and a reporting component.",
+   "core_idea": "SR 11-7 gives a deliberately broad definition of 'model' so that virtually any quantitative decision-support tool \u2014 including ones with partly qualitative or judgment-based inputs \u2014 falls under model-risk governance as long as its output is quantitative.",
+   "key_points": [
+    "The input component supplies assumptions and data; the processing component transforms inputs into estimates; the reporting component turns estimates into usable business information.",
+    "The definition covers models used for business strategy, decision-making, risk identification/measurement, valuation, stress testing, capital adequacy assessment, client asset management, limit compliance, and regulatory reporting/disclosure.",
+    "Models with inputs that are partially or wholly qualitative or based on expert judgment still count as models under SR 11-7, provided the output itself is quantitative."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis for the documentation and appropriate-use practices discussed later in the chapter"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source (paraphrase of quoted Federal Reserve SR 11-7 attachment text)",
+   "related_topics": [
+    "model risk",
+    "model documentation"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "576-577",
+    "section_hint": "6.4 Model Risk \u2014 SR 11-7 quotation"
+   }
+  },
+  {
+   "topic": "Two Root Causes of Model Risk",
+   "category": "Risk",
+   "subcategory": "Model Risk",
+   "type": "risk",
+   "definition": "The Federal Reserve traces model risk to two root causes: the model itself may contain fundamental errors, or a fundamentally sound model may be used incorrectly or outside the context it was designed for.",
+   "core_idea": "Even a correctly built model can carry high model risk if it is applied in a setting its simplifying assumptions don't fit, so correctness of design and appropriateness of use are two separate risks that both need managing.",
+   "key_points": [
+    "Fundamental errors can enter at any stage of building a model: choice of theory, sample design, numerical methods, selection of inputs, or system implementation.",
+    "Shortcuts or approximations adopted to make a hard problem tractable can quietly undermine the reliability of the model's outputs.",
+    "Output quality is bounded by the quality of the input data and assumptions \u2014 bad inputs or wrong assumptions produce inaccurate outputs regardless of how well the model itself is built.",
+    "Misuse can be deliberate, such as applying an existing model to a new product or market, or unintentional, such as market conditions or customer behavior drifting away from what the model assumes.",
+    "Decision-makers need to understand a model's limitations \u2014 both its inherent shortcomings/approximations and the restricted scope its assumptions imply \u2014 to avoid using it inconsistently with its original intent."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the complexity trade-off and to documentation/appropriate-use practices as mitigations"
+   ],
+   "trading_implications": [
+    "A model built for one market or product can generate misleading trading signals if reused elsewhere without re-validating its assumptions."
+   ],
+   "common_misunderstandings": [
+    "A model producing accurate outputs consistent with its design does not mean it is safe to use in any context \u2014 misapplication alone can create high model risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "model risk",
+    "model complexity trade-off",
+    "using models appropriately"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "577-578",
+    "section_hint": "6.4 Model Risk \u2014 causes of model risk"
+   }
+  },
+  {
+   "topic": "Model Complexity vs. Model Risk Trade-off",
+   "category": "Risk",
+   "subcategory": "Model Risk",
+   "type": "concept",
+   "definition": "There is an inherent trade-off between how simple a model is, and thus how easily it can be understood and checked by people, versus how completely it captures the real-world factors that drive outcomes.",
+   "core_idea": "Simple models are easy to scrutinize but may omit factors needed to describe reality; complex models capture more factors but are harder for people to verify, and it is often unclear exactly when a complex model has quietly stopped working.",
+   "key_points": [
+    "All models are simplified versions of reality; something important can be left out, or something unnecessary can be included.",
+    "Simple models benefit from being checkable by a wide range of people, which is itself a way to guard against model risk.",
+    "Complex models incorporate more factors but are harder to understand, so it is unrealistic to expect people to verify parts of a model they don't understand.",
+    "With complex models, it is often unclear exactly when the model stops working correctly."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into why fundamental design errors happen and why documentation/plain-English explanation matter"
+   ],
+   "trading_implications": [
+    "Firms should weigh the benefit of added model sophistication against a reduced ability of staff to independently verify or catch failures."
+   ],
+   "common_misunderstandings": [
+    "Adding more factors/complexity to a model is not automatically safer \u2014 it can increase model risk by making failures harder to detect."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "model risk",
+    "model documentation and governance"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "577-578",
+    "section_hint": "6.4 Model Risk \u2014 complexity discussion"
+   }
+  },
+  {
+   "topic": "Model Documentation and Governance Practices",
+   "category": "Risk",
+   "subcategory": "Model Risk Mitigation",
+   "type": "risk",
+   "definition": "A set of governance practices \u2014 maintaining a model inventory, assigning unique IDs and named owners, and requiring documentation plus senior approval \u2014 meant to make model risk manageable and accountable.",
+   "core_idea": "Managing model risk starts with organizational discipline: knowing what models exist, documenting them to a minimum standard, and giving each one a clear owner and a formal, senior-level approval process rather than informal adoption.",
+   "key_points": [
+    "Keep an up-to-date inventory of every model used in the firm, updated whenever a model is put into use or retired.",
+    "Assign each model a unique ID so there is no confusion about which model is which when it breaks or needs maintenance.",
+    "Require every model to meet a minimum documentation standard and be approved by an appropriate party before it is used.",
+    "Assign a named model owner responsible for maintaining the model and confirming, at least annually, that the model is still in use.",
+    "Having a senior person at the firm review each model, in consultation with quantitative staff, is materially stronger governance than informal or undocumented adoption of a model."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Operationalizes the reduction of model risk described earlier; pairs with 'using models appropriately'"
+   ],
+   "trading_implications": [
+    "A trading desk relying on a model that lacks a named owner, documentation, or formal approval is itself carrying an elevated, avoidable risk."
+   ],
+   "common_misunderstandings": [
+    "The author explicitly contrasts an informally adopted model ('a summer intern said it was OK') with one formally reviewed and compared to alternatives by senior/quant staff \u2014 informal usage history is not a substitute for governance."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "model risk",
+    "using models appropriately"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "578-580",
+    "section_hint": "6.4 Model Risk \u2014 Model Documentation"
+   }
+  },
+  {
+   "topic": "Using Models Appropriately",
+   "category": "Risk",
+   "subcategory": "Model Risk Mitigation",
+   "type": "concept",
+   "definition": "Ensuring a model is used correctly requires a plain-English explanation of what it does, scrutiny of its three components (inputs, processing, outputs), and clarity on any restrictions its developers placed on its use.",
+   "core_idea": "Appropriate use of a model depends on everyone who touches it \u2014 quants, traders, engineers, and leadership \u2014 sharing a plain-language understanding of its purpose, and on knowing its theoretical basis, assumptions, restrictions, and whether the people who built or approved it were qualified to do so.",
+   "key_points": [
+    "A plain English description of a model helps ensure mathematicians, traders, software staff, and company leaders all share a common understanding of its purpose.",
+    "Reviewing a model's inputs, outputs, and processing component separately tends to surface where trouble is most likely to occur.",
+    "Example given: switching to a cheaper data vendor for model inputs can silently remove data-quality checks the original vendor performed, so equivalent checks need to be re-established.",
+    "Key context for judging whether a model is being used appropriately includes any restrictions its developers placed on it, its theoretical foundation, its underlying assumptions, and whether the people who developed and reviewed it were authorized and qualified to do so."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly addresses the 'model used incorrectly' cause of model risk; builds on documentation practices"
+   ],
+   "trading_implications": [
+    "Before relying on a model's output for a trading decision, confirm the model is being used within its designed scope and that its input data pipeline has not quietly degraded (e.g., via a cheaper data vendor)."
+   ],
+   "common_misunderstandings": [
+    "A cheaper or replacement data source can look like a cost saving while actually removing quality controls the model's outputs depended on."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "model risk",
+    "model documentation and governance"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "580-581",
+    "section_hint": "6.4 Model Risk \u2014 Using Models Appropriately"
+   }
+  }
+ ]
+}

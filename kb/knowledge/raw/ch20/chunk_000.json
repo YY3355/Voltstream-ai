@@ -1,0 +1,209 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Two forms of solar power: photovoltaic vs. thermal",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "concept",
+   "definition": "Solar power comes in two distinct forms: photovoltaic (PV), where semiconductor panels convert sunlight directly into DC electricity (invertible to AC), and thermal solar, where sunlight is captured as heat and used directly (space/water heating) or to drive a steam turbine for electricity.",
+   "core_idea": "PV and thermal solar both start from sunlight but diverge in mechanism \u2014 PV skips a heat stage and generates electricity electronically, while thermal solar routes energy through a heat-storage/steam-turbine path.",
+   "key_points": [
+    "PV panels use specialized semiconductors that release electrons when exposed to sunlight, producing DC power.",
+    "Thermal solar instead uses mirrors/collectors to concentrate heat, which can drive steam turbines, heat buildings, power air conditioners, or heat pools.",
+    "A key advantage of thermal solar is that heat is comparatively easy to store, letting facilities that captured heat during the day deliver output around the clock (though only using heat captured while the sun was up).",
+    "PV is the technology most commonly meant when people say 'solar power.'"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Thermal solar's heat-storage advantage parallels battery storage's role of shifting delivery away from the generation window, but via stored heat rather than stored electricity."
+   ],
+   "trading_implications": [
+    "Thermal solar's storable-heat characteristic can smooth or shift output relative to real-time sunlight, unlike PV which is more directly tied to instantaneous irradiance."
+   ],
+   "common_misunderstandings": [
+    "Assuming 'solar power' always means PV panels \u2014 thermal solar is a materially different technology with different output characteristics (notably storage-driven, around-the-clock potential)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Battery storage",
+    "Renewable intermediation",
+    "Government renewable incentive programs"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "449-450",
+    "section_hint": "4.5 Solar Power \u2014 Purpose/Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "Estimation risk in solar project sizing",
+   "category": "Risk",
+   "subcategory": "Renewable Project Economics",
+   "type": "risk",
+   "definition": "Because a solar installation's economics hinge on correctly forecasting how much power it will produce, both under- and over-estimating output create distinct failure modes for a project.",
+   "core_idea": "Solar output forecasts sit on a knife's edge: too conservative an estimate makes a viable project look uneconomical and it gets shelved for other technologies, while too optimistic an estimate leads to a shortfall that fails to meet the installation's economic targets.",
+   "key_points": [
+    "Overly conservative production estimates can cause solar to be passed over in favor of other generation technologies even when it would have been viable.",
+    "Overly optimistic production estimates create a power shortfall relative to the economic goals set for the installation.",
+    "Historical, government-collected regional/national solar radiation averages are the standard tool used to make these estimates, because insolation varies with weather, sun position, and day length throughout the year."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties to government renewable-incentive programs mentioned in the chapter purpose, since incentives shape whether marginal projects proceed."
+   ],
+   "trading_implications": [
+    "Investment/financing decisions for solar projects are directly sensitive to the quality of the underlying irradiance forecast \u2014 this is the core diligence item for evaluating a proposed installation."
+   ],
+   "common_misunderstandings": [
+    "Treating solar output forecasting as a minor engineering detail rather than the critical determinant of whether a project is even worth building."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Government renewable energy programs",
+    "Solar radiation / insolation averages"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "449-450",
+    "section_hint": "4.5 Solar Power \u2014 Purpose/Summary"
+   }
+  },
+  {
+   "topic": "Geographic and atmospheric drivers of solar resource quality",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation Siting",
+   "type": "concept",
+   "definition": "The efficiency of any solar collector depends heavily on location: how much atmosphere sunlight must pass through (a function of latitude and altitude) and how much particulate matter (water vapor, clouds, dust) is suspended in the air.",
+   "core_idea": "Dry, high-altitude locations near the equator receive the most usable solar energy because sunlight travels through less atmosphere and encounters less particulate scattering/absorption, which is why regions like the U.S. Desert Southwest or the Mediterranean are favored over places like the Great Lakes region or Northern Europe.",
+   "key_points": [
+    "Less atmosphere for sunlight to pass through means more energy reaches a solar collector.",
+    "Water vapor, clouds, and dust particles all reduce the amount of sunlight reaching the ground.",
+    "The combined effect of direct-sunlight availability and particulate matter explains regional favorability differences (e.g., Desert Southwest vs. Great Lakes in the U.S.; Mediterranean vs. Northern Europe)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into the estimation-risk topic \u2014 historical regional solar radiation averages are how this siting variability gets quantified for project analysis."
+   ],
+   "trading_implications": [
+    "Geographic siting is a first-order input to expected capacity factor and therefore to the economics of any solar investment or PPA."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Solar radiation / insolation averages",
+    "Estimation risk in solar project sizing"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "450-451",
+    "section_hint": "4.5 Solar Power \u2014 main body"
+   }
+  },
+  {
+   "topic": "Concentrated solar power and the collector-vs-panel trade-off",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "trading_strategy",
+   "definition": "Concentrated solar power (CSP) redirects sunlight collected over a large area onto a small focal point (often via a parabolic mirror) to intensify the energy delivered to a single collector, as an alternative to simply covering the same area with more solar panels.",
+   "core_idea": "For a given plot of land, a developer faces a design trade-off between filling the space with multiple standard solar panels versus installing a single large concentrator feeding one panel \u2014 there is no universally correct choice, since it depends on the specific installation's constraints.",
+   "key_points": [
+    "The mechanism is analogous to a magnifying glass concentrating light from a wide area onto a small spot.",
+    "Example given: a 10-by-10-foot plot could either hold four 5-by-5-foot solar panels (filling the space with panels) or one 10-by-10-foot concentrator feeding a single panel.",
+    "Neither approach is universally superior \u2014 the source frames it explicitly as a trade-off decision made case by case."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly connects to solar tracking systems, since concentrators benefit most from precise, adjustable sun-facing."
+   ],
+   "trading_implications": [
+    "This is fundamentally a capex/design decision affecting an installation's cost structure and output profile, relevant to evaluating or structuring investment in a specific solar project."
+   ],
+   "common_misunderstandings": [
+    "Assuming concentrators are always more efficient or preferable to flat panel arrays \u2014 the source presents it as installation-specific, not a strict improvement."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Solar tracking systems",
+    "Conversion efficiency"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "451-452",
+    "section_hint": "4.5 Solar Power \u2014 Concentrated Solar Power"
+   }
+  },
+  {
+   "topic": "Solar tracking and orientation trade-offs",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "concept",
+   "definition": "Facing a solar collector toward the sun increases the sunlight it captures \u2014 in the Northern Hemisphere this means mounting units facing south at a slight upward angle \u2014 and a motorized tracking base that follows the sun's path through the sky further increases capture, at the cost of added installation and maintenance expense.",
+   "core_idea": "Orientation and tracking both raise energy output, but tracking in particular introduces a capex/opex cost (motors, moving parts) that must be weighed against the incremental energy gained, and this trade-off matters more for concentrating collectors than for standard flat panels.",
+   "key_points": [
+    "Static orientation toward the sun (south-facing, slight upward tilt, in the Northern Hemisphere) improves capture with no moving parts.",
+    "Motorized tracking bases that follow the sun increase energy output further but add installation and maintenance cost.",
+    "Precise facing/tracking matters most for concentrating collectors (where the mirror's focal point shifts if not adjusted for the sun's position) and matters less, though still somewhat, for ordinary panel arrays."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to concentrated solar power, where a mirror's focal point breaks if the mirror doesn't track the sun."
+   ],
+   "trading_implications": [
+    "Tracking-vs-fixed-mount is a capex/output trade-off relevant when underwriting or comparing solar installation designs."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Concentrated solar power and the collector-vs-panel trade-off"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "452",
+    "section_hint": "4.5 Solar Power \u2014 Concentrated Solar Power"
+   }
+  },
+  {
+   "topic": "Conversion efficiency of a solar unit",
+   "category": "Power Markets",
+   "subcategory": "Renewable Generation",
+   "type": "definition",
+   "definition": "Conversion efficiency is the fraction of absorbed solar energy that a collector turns into usable output energy \u2014 most solar collectors can only absorb certain wavelengths, and much incoming light is reflected or otherwise lost before it can be converted.",
+   "core_idea": "A solar installation's total output depends on two separate factors multiplying together: how much solar energy is available/absorbed at the site, and how efficiently the unit converts that absorbed energy into useful energy.",
+   "key_points": [
+    "Conversion efficiency is described as a ratio of energy produced to energy absorbed.",
+    "Solar collectors are limited to certain usable wavelengths; light outside that range is reflected or absorbed without being converted.",
+    "Both site solar-energy availability and unit conversion efficiency jointly determine an installation's output \u2014 they are separate levers, not one combined figure."
+   ],
+   "formulas": [
+    {
+     "name": "Conversion efficiency (conceptual)",
+     "formula": "conversion efficiency = energy produced / energy absorbed",
+     "variables": {
+      "energy produced": "useful energy output of the solar unit",
+      "energy absorbed": "solar energy absorbed by the collector before conversion losses"
+     }
+    }
+   ],
+   "relationships": [
+    "Combines with site solar-resource quality (geographic/atmospheric factors) to determine total installation output."
+   ],
+   "trading_implications": [
+    "Rated conversion efficiency is a key spec for comparing solar equipment/technologies when underwriting an installation's expected output."
+   ],
+   "common_misunderstandings": [
+    "Confusing conversion efficiency (produced vs. absorbed) with an all-in efficiency that already accounts for how much ambient sunlight was captured/absorbed in the first place."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Concentrated solar power and the collector-vs-panel trade-off",
+    "Geographic and atmospheric drivers of solar resource quality"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "452",
+    "section_hint": "4.5 Solar Power \u2014 Concentrated Solar Power"
+   }
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "LCOE as a fundamental-analysis upper bound on long-horizon power prices",
+   "category": "Power Markets",
+   "subcategory": "Fundamental Analysis / Price Forecasting",
+   "type": "concept",
+   "definition": "Levelized cost of entry (LCOE) is the break-even price a developer needs to justify building a new generating unit; it is used to estimate an equilibrium ceiling for electricity prices over very long forecast horizons.",
+   "core_idea": "If market prices rise above LCOE, new generation becomes economic to build, and the resulting supply increase pushes prices back down, so LCOE functions as a supply-and-demand-based upper bound in long-term fundamental price forecasts.",
+   "key_points": [
+    "Applies specifically to very long time horizons, not short-term price forecasting",
+    "Relies on a supply/demand feedback argument: price above LCOE incentivizes new build, which adds supply and caps price",
+    "In periods of continuously rising demand, new generation must be built, and its costs effectively set the market price",
+    "Calculated by spreading the cost of building a unit over its expected life, then dividing by expected generation volume to get a price per unit of output"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Mathematically similar to annuity calculations used in finance/MBA coursework"
+   ],
+   "trading_implications": [
+    "Provides a long-horizon ceiling estimate useful for fundamental price forecasts",
+    "Used as a benchmark in PPA price negotiation and capacity market price estimation"
+   ],
+   "common_misunderstandings": [
+    "LCOE is an approximation, not a precise price prediction \u2014 actual investment decisions are also shaped by project-specific technological and regional factors"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "WACC",
+    "Capital recovery factor",
+    "Capacity markets",
+    "PPAs",
+    "REC markets"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "486-487",
+    "section_hint": "Purpose / Summary"
+   }
+  },
+  {
+   "topic": "Common applications of LCOE analysis",
+   "category": "Power Markets",
+   "subcategory": "Applications",
+   "type": "market_mechanic",
+   "definition": "LCOE analysis is used across several commercial and regulatory contexts beyond raw long-term price forecasting.",
+   "core_idea": "Because LCOE captures the full annualized cost of building and running a generating asset, it serves as a comparable benchmark across technologies and as an input to price negotiations and market-clearing estimates.",
+   "key_points": [
+    "Negotiating power purchase agreement (PPA) prices",
+    "Developing fundamental (cost-based) price forecasts",
+    "Estimating capacity market clearing prices",
+    "Estimating future renewable energy certificate (REC) market prices",
+    "Comparing the overall cost-competitiveness of different generating technologies on a like-for-like basis (cost to build and operate over a typical life span and duty cycle)"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "A trader or structurer can use technology-specific LCOE estimates to sanity-check PPA offers or capacity price bids"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "PPAs",
+    "Capacity markets",
+    "REC markets"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "487",
+    "section_hint": "Common Uses for LCOE Analysis"
+   }
+  },
+  {
+   "topic": "LCOE calculation mechanics: CONE, DCF, WACC, and CRF",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "concept",
+   "definition": "LCOE is built up like an annuity calculation: the cost of new entry (CONE) is spread across the asset's expected life via a discounted cash flow (DCF) analysis, using a developer's required return (WACC, denoted r) and the resulting capital recovery factor (CRF), to produce a required daily revenue figure.",
+   "core_idea": "The construction cost (CONE) is converted into an annual/daily revenue requirement by first determining the return needed to attract capital (WACC) and then computing what fraction of the investment must be recovered each year to achieve that return (CRF), analogous to computing an annuity payment.",
+   "key_points": [
+    "CONE (cost of new entry) is the key input representing the capital cost to construct the new unit",
+    "A discounted cash flow (DCF) analysis spreads CONE over the facility's expected life to produce a revenue requirement in $/MW-day",
+    "WACC (weighted average cost of capital, denoted r) represents the return needed to incentivize a typical developer to build",
+    "CRF (capital recovery factor) calculates the percent of the initial investment that must be earned back each year to achieve the target WACC return",
+    "The overall approach is mathematically analogous to calculating an annuity payment"
+   ],
+   "formulas": [],
+   "relationships": [
+    "WACC feeds into the CRF calculation",
+    "CRF feeds into the final LCOE calculation"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; note the specific numeric formula expressions are given only in referenced figures (4.9.1, 4.9.2) not reproduced in this text excerpt, so they are omitted here",
+   "related_topics": [
+    "Discounted cash flow analysis",
+    "Annuity calculations",
+    "Cost of new entry (CONE)"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "487-488",
+    "section_hint": "Figures 4.9.1-4.9.2 (WACC, capital recovery factor)"
+   }
+  },
+  {
+   "topic": "Final LCOE per MWh: adding operating costs and netting revenue",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "concept",
+   "definition": "The final LCOE (expressed per MWh of production) takes the capital recovery requirement and adds annual fixed and variable operating costs, then subtracts other revenue sources to arrive at the net unmet revenue that power sales alone must cover.",
+   "core_idea": "LCOE is not just capital recovery \u2014 it layers in ongoing operating expenses, maintenance, and fuel costs, and offsets them against other revenue streams, to find the minimum price needed per MWh to make the project economic.",
+   "key_points": [
+    "Operating expenses, maintenance, and fuel purchase costs all increase the annual money required from the unit",
+    "Other revenue sources, such as power sales, are subtracted from the requirement",
+    "The result is expressed as a levelized cost per megawatt-hour of production"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the capital recovery factor output from the WACC/CRF step"
+   ],
+   "trading_implications": [
+    "Useful for estimating the minimum power price a given generation technology needs to be economic, once fuel and O&M are accounted for"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; specific formula expression is given only in referenced Figure 4.9.3, not reproduced in this text excerpt",
+   "related_topics": [
+    "Capital recovery factor",
+    "Cost of new entry (CONE)"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "488",
+    "section_hint": "Figure 4.9.3 (Levelized cost of entry)"
+   }
+  },
+  {
+   "topic": "Limitations of LCOE as a price estimate",
+   "category": "Power Markets",
+   "subcategory": "Risk / Limitations",
+   "type": "risk",
+   "definition": "LCOE is a convenient approximation of new-build economics, but actual investment decisions depend on project-specific technological and regional factors the generic calculation does not capture.",
+   "core_idea": "Real-world generation investment decisions diverge from a generic LCOE estimate because of local market structure, tax treatment, transmission access, and regulation.",
+   "key_points": [
+    "The existing generation mix already in a region affects project economics",
+    "Tax treatment affects the economics of specific projects",
+    "Availability of transmission access affects feasibility and cost",
+    "Local regulations can materially change project economics"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Treating LCOE as a precise, universally applicable price rather than a stylized approximation that omits region- and technology-specific factors"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fundamental analysis",
+    "Capacity markets"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "488",
+    "section_hint": "closing caveat before regulatory use"
+   }
+  },
+  {
+   "topic": "Regulatory use of LCOE and the EIA Annual Energy Outlook",
+   "category": "Power Markets",
+   "subcategory": "Regulatory Applications",
+   "type": "example",
+   "definition": "Government agencies apply LCOE-style methodologies for regulatory purposes, and publish supporting data; for example, the U.S. Energy Information Administration (EIA) publishes construction and maintenance cost figures for generation technologies in its Annual Energy Outlook.",
+   "core_idea": "Public data releases like the EIA's Annual Energy Outlook can supply the cost inputs (e.g., construction and maintenance costs) needed to run an LCOE calculation.",
+   "key_points": [
+    "Government agencies use LCOE-style methodology for regulatory analysis",
+    "The EIA's Annual Energy Outlook publishes construction and maintenance cost estimates by generation technology, which can serve as LCOE inputs"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "EIA published cost data is a usable external input source for building an independent LCOE estimate"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cost of new entry (CONE)"
+   ],
+   "source": {
+    "chapter": 24,
+    "pages": "488-489",
+    "section_hint": "Figure 4.9.4 (U.S. average levelized costs)"
+   }
+  }
+ ]
+}

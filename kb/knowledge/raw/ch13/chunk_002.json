@@ -1,0 +1,274 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Real options: using options theory to analyze discretionary investments",
+   "category": "Derivatives",
+   "subcategory": "Options Applications",
+   "type": "concept",
+   "definition": "Investment decisions that involve a choice about whether to act (rather than an obligation to act) can be modeled using option theory, because the decision-maker retains the right, not the requirement, to proceed.",
+   "core_idea": "Building a power plant effectively hands the operator an option to convert fuel into electricity, exercised only when doing so is profitable, so option analysis is a natural framework for this and similar discretionary investments.",
+   "key_points": [
+    "A power plant gives its operator the choice, not the obligation, to burn fuel and produce electricity.",
+    "The operator only 'exercises' by running the plant when production is profitable.",
+    "Any investment decision with embedded discretion can be analyzed using option logic."
+   ],
+   "formulas": [],
+   "relationships": [
+    "real options valuation",
+    "plant dispatch economics"
+   ],
+   "trading_implications": [
+    "Physical assets with dispatch flexibility can be valued using option-pricing style frameworks rather than a single static NPV estimate."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "real options",
+    "power plant dispatch"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "334-334",
+    "section_hint": "3.4 Financial Options - introduction"
+   }
+  },
+  {
+   "topic": "Options on forwards/futures deliver the contract, not the physical commodity",
+   "category": "Derivatives",
+   "subcategory": "Options - Underlying Structure",
+   "type": "market_mechanic",
+   "definition": "Most energy options are written on forward or futures contracts, so exercising the option (even early) hands over the forward/futures position rather than the underlying physical commodity.",
+   "core_idea": "Because the deliverable of an energy option is a forward or futures contract, early exercise only trades the option for the forward \u2014 actual physical delivery, if any, still waits for that forward's own expiration.",
+   "key_points": [
+    "Exercising an option on a forward delivers the forward contract itself, not the physical commodity.",
+    "Any eventual physical delivery only occurs later, at the underlying forward contract's expiration.",
+    "This structure reduces the practical value of exercising an option early."
+   ],
+   "formulas": [],
+   "relationships": [
+    "American vs European options",
+    "forward contracts"
+   ],
+   "trading_implications": [
+    "Early exercise rarely helps since it only swaps the option for the underlying forward, not for the physical commodity itself."
+   ],
+   "common_misunderstandings": [
+    "Assuming exercising a futures option triggers immediate physical delivery."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "forward contracts",
+    "futures contracts",
+    "early exercise"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "334-335",
+    "section_hint": "3.4 Financial Options - options on forwards"
+   }
+  },
+  {
+   "topic": "American vs European options",
+   "category": "Derivatives",
+   "subcategory": "Options - Style",
+   "type": "definition",
+   "definition": "An American option can be exercised at any time up to expiration; a European option can only be exercised at expiration.",
+   "core_idea": "Although American options technically allow earlier exercise, this distinction rarely matters much for energy options on forwards/futures, since reselling an option is almost always more profitable than exercising it early.",
+   "key_points": [
+    "American option: exercisable any time before expiration.",
+    "European option: exercisable only at expiration.",
+    "Because options on forwards/futures reduce the benefit of early exercise, whether an option is American or European is usually not economically significant in this market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "options on forwards/futures",
+    "early exercise value"
+   ],
+   "trading_implications": [
+    "Traders generally prefer to resell an option rather than exercise it early, regardless of its style."
+   ],
+   "common_misunderstandings": [
+    "Assuming American-style optionality is always a major value driver \u2014 for forward/futures-based energy options it is usually immaterial."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "early exercise",
+    "option resale value"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "334-335",
+    "section_hint": "3.4 Financial Options - American/European"
+   }
+  },
+  {
+   "topic": "Options trading as a zero sum game",
+   "category": "Derivatives",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Options trading is zero sum: one trader's profit is exactly matched by another trader's loss, because option payments are direct transfers between counterparties rather than newly created value.",
+   "core_idea": "Because option gains come directly out of a counterparty's pocket rather than from broad value creation, sustainably profitable options trading requires being smarter or luckier than the people on the other side, and this Darwinian dynamic tends to push chronic losers out of the business.",
+   "key_points": [
+    "Option payoffs are direct transfers between the option writer and buyer; total gains equal total losses.",
+    "This differs from equities, where price appreciation \u2014 partly driven by broad economic growth \u2014 can create wealth for many holders at once.",
+    "Example given: if one seller trades a stock at $10 above the prior trade, the value of every outstanding share (e.g., one million shares) rises together, creating $10 million of wealth without a corresponding loser on that trade.",
+    "Stock markets can also fall broadly so that everyone loses together; neither market structure is inherently 'better,' just different.",
+    "Trading is described as Darwinian \u2014 traders who consistently lose money tend to be pushed out, leaving comparatively skilled or lucky survivors."
+   ],
+   "formulas": [],
+   "relationships": [
+    "option pricing",
+    "equity market pricing contrast"
+   ],
+   "trading_implications": [
+    "An options trader should expect counterparties to be relatively skilled, since persistent losers tend to exit the market.",
+    "Don't expect options markets to generate aggregate wealth the way broad equity appreciation can."
+   ],
+   "common_misunderstandings": [
+    "Treating options markets as capable of generating aggregate wealth the way rising equity markets do."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "stock market pricing mechanics",
+    "trader survivorship"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "335-336",
+    "section_hint": "3.4 Financial Options - A Zero Sum Game"
+   }
+  },
+  {
+   "topic": "Payoff diagrams: forward contract vs call option",
+   "category": "Derivatives",
+   "subcategory": "Payoff Diagrams",
+   "type": "concept",
+   "definition": "A payoff diagram plots a position's final profit or loss at expiration against the underlying price; a forward's payoff is a straight line, while a call option's payoff is only the profitable half of that line.",
+   "core_idea": "A forward's payoff moves one-for-one with the underlying price in both directions, while a call option's payoff is flat at zero below the strike and rises dollar-for-dollar above the strike, since the holder simply won't exercise an unprofitable option.",
+   "key_points": [
+    "Forward payoff is linear and symmetric: losses below the contract price, gains above it (example: buying 100 MMBtu at $8 loses money below $8, profits above $8).",
+    "Call option payoff is zero below the strike price and rises above it, because the buyer chooses not to exercise when unprofitable.",
+    "Example given: a $100-strike call is worth $200 if the underlying settles at $300, and worth $0 if it settles at $50.",
+    "'In the money' = underlying price above strike (call has value); 'out of the money' = underlying price below strike (call expires worthless)."
+   ],
+   "formulas": [
+    {
+     "name": "Call option gross payoff at expiration",
+     "formula": "Payoff = max(Underlying Price - Strike Price, 0)",
+     "variables": {
+      "Underlying Price": "settlement price of the forward/futures contract at expiration",
+      "Strike Price": "the option's exercise price"
+     }
+    }
+   ],
+   "relationships": [
+    "forward contract payoff",
+    "option premium and breakeven"
+   ],
+   "trading_implications": [
+    "A long call has payoff capped at zero on the downside (before considering premium paid) and uncapped upside proportional to how far the underlying rises above the strike."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "in the money",
+    "out of the money",
+    "strike price"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "336-338",
+    "section_hint": "Payoff Diagrams; Figures 3.4.3-3.4.4"
+   }
+  },
+  {
+   "topic": "Option premium shifts the payoff and sets the breakeven price",
+   "category": "Derivatives",
+   "subcategory": "Payoff Diagrams",
+   "type": "formula",
+   "definition": "Because buying an option costs a premium, the buyer's net payoff is the gross exercise payoff minus that premium, which pushes the true breakeven above the strike price by the amount of the premium.",
+   "core_idea": "A call buyer needs the underlying price to exceed not just the strike but the strike plus premium before showing a net profit, while the option writer keeps the premium as profit whenever the option expires worthless or only modestly in the money.",
+   "key_points": [
+    "Net profit equals the gross payoff at expiration minus the premium paid to buy the option.",
+    "The option writer keeps the premium as profit whenever the option expires out of the money.",
+    "If the option expires in the money, the buyer's gross payoff must exceed the premium before the position is net profitable.",
+    "Example given: a $100-strike call costing a $20 premium only becomes net profitable for the buyer above $120."
+   ],
+   "formulas": [
+    {
+     "name": "Call breakeven price",
+     "formula": "Breakeven Price = Strike Price + Premium",
+     "variables": {
+      "Strike Price": "the option's exercise price",
+      "Premium": "price paid to purchase the option"
+     }
+    }
+   ],
+   "relationships": [
+    "call option payoff",
+    "option writer profit"
+   ],
+   "trading_implications": [
+    "Buying an option requires the underlying to clear strike-plus-premium, not just the strike, to be profitable net of cost.",
+    "Selling options generates premium income by default whenever the underlying stays on the writer's favorable side of the strike."
+   ],
+   "common_misunderstandings": [
+    "Equating 'in the money at expiration' with an actual net profit for the buyer \u2014 being in the money only means gross payoff is positive, not that the premium has been recovered."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "call option payoff",
+    "premium"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "337-339",
+    "section_hint": "Payoff Diagrams; Figures 3.4.5-3.4.8"
+   }
+  },
+  {
+   "topic": "Put/call parity and synthetic options",
+   "category": "Derivatives",
+   "subcategory": "Put/Call Parity",
+   "type": "concept",
+   "definition": "Put/call parity is the pricing link that arises because buying a call and selling a put (same underlying, strike, and expiration) replicates a forward contract's payoff, forcing arbitrage-driven equality between corresponding put and call premiums.",
+   "core_idea": "Because combinations of puts, calls, and forwards can replicate one another's payoffs, arbitrage forces same-strike/expiration call and put premiums (and their implied volatilities) into alignment, within the bid-ask spread.",
+   "key_points": [
+    "Buying a call and selling a put (same underlying, strike, expiration) creates a synthetic long forward.",
+    "Other combinations create synthetic puts (e.g., short forward plus long call) or synthetic calls, generally called synthetic options.",
+    "Combining a long call and a long put (same strike/expiration) creates a straddle, which loses money if the price stays flat but profits from a large move in either direction.",
+    "If call and put premiums for the same underlying/strike/expiration diverge beyond the bid-ask spread, a trader can build the opposite synthetic position and lock in an arbitrage profit.",
+    "Implications: (1) properly combined puts and calls are interchangeable in a portfolio, (2) same-underlying/strike/expiration put and call premiums must be equal, (3) their implied volatilities must also be equal."
+   ],
+   "formulas": [],
+   "relationships": [
+    "synthetic forward",
+    "synthetic put",
+    "straddle",
+    "arbitrage",
+    "implied volatility"
+   ],
+   "trading_implications": [
+    "Arbitrage should keep same-strike put and call prices aligned outside the bid-ask spread, so persistent mispricings are unlikely to last.",
+    "Straddles express a view on the magnitude of a price move rather than its direction."
+   ],
+   "common_misunderstandings": [
+    "Believing put and call prices for the same strike/expiration can diverge freely without arbitrage consequences.",
+    "Treating a straddle as a directional bet, when it actually pays off on large moves in either direction and loses on flat prices."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "synthetic forward",
+    "synthetic put",
+    "straddle",
+    "implied volatility"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "339-343",
+    "section_hint": "Put/Call Parity; Figures 3.4.9-3.4.11"
+   }
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Calendar Month Average (CMA) pricing",
+   "category": "Oil Markets",
+   "subcategory": "Pricing Mechanisms",
+   "type": "market_mechanic",
+   "definition": "A pricing method that sets a month's price as the average of the prompt (nearest-to-expiry) futures contract's daily price over that calendar month, rolling to the next contract mid-month if the prompt contract expires before the month ends.",
+   "core_idea": "Because futures contracts expire before a calendar month is over, a CMA price for that month can blend two different contract months \u2014 the expiring contract for the early part of the month and the newly-prompt contract for the rest.",
+   "key_points": [
+    "CMA averages the prompt futures contract's price over the days of a calendar month",
+    "When the prompt contract expires partway through the month, the CMA switches to the next contract for the remaining days",
+    "Example given: if a January contract expires two-thirds of the way through December, December's CMA blends the January contract price for the first two-thirds of the month and the February contract price for the last third"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis for the localized P-Plus pricing structure"
+   ],
+   "trading_implications": [
+    "Parties pricing off CMA are exposed to whichever contract is prompt on each day, so their effective price mixes two contract months in expiry-transition months"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Posting Plus (P-Plus)",
+    "Futures contract expiration"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "237-238",
+    "section_hint": "2.3 Oil \u2014 Calendar Month Average"
+   }
+  },
+  {
+   "topic": "Posting Plus (P-Plus)",
+   "category": "Oil Markets",
+   "subcategory": "Pricing Mechanisms",
+   "type": "market_mechanic",
+   "definition": "A localized variant of CMA pricing used for WTI or West Texas Sour (WTS) crude delivered to Cushing, OK (the NYMEX WTI delivery point), which indexes off a major producer's posted price instead of NYMEX WTI futures.",
+   "core_idea": "The 'plus' is nominally the cost of moving crude from the wellhead to the Cushing delivery point, but because wellhead-to-delivery differentials are fairly stable in practice, P-Plus contracts end up behaving much like ordinary CMA contracts.",
+   "key_points": [
+    "Applies to WTI or WTS crude purchases delivered to Cushing, OK, the NYMEX WTI futures delivery point",
+    "The 'plus' theoretically represents wellhead-to-delivery-point transportation cost",
+    "In practice, wellhead-to-Cushing price differentials are fairly consistent, so P-Plus contracts function similarly to CMA contracts",
+    "Key structural difference from CMA: the index price is a major oil producer's posted price rather than the NYMEX WTI futures price"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Localized application of Calendar Month Average (CMA) pricing"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Calendar Month Average (CMA) pricing",
+    "Cushing, OK delivery point",
+    "WTI",
+    "WTS"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "237-238",
+    "section_hint": "2.3 Oil \u2014 Posting Plus"
+   }
+  },
+  {
+   "topic": "Crack spread \u2014 definition and refining economics",
+   "category": "Oil Markets",
+   "subcategory": "Refining Spreads",
+   "type": "concept",
+   "definition": "The crack spread is the difference between the wholesale price of finished petroleum products and the price of the crude oil used to make them; it approximates a refiner's profit margin from processing crude into refined products.",
+   "core_idea": "Crack spreads act as a market-driven signal of refining profitability: when the spread is too narrow to be profitable, refiners cut production, which tightens product supply and pushes finished product prices back up.",
+   "key_points": [
+    "Cracking is the refining process of separating and transforming crude oil into commercially saleable products",
+    "Because most refined products are not exported internationally (unlike crude oil), crack spreads vary substantially by region, set by local supply and demand for finished products",
+    "If the spread between finished products and crude oil is too narrow to be profitable, refiners cut back production until finished product prices rise enough to restore a profit"
+   ],
+   "formulas": [
+    {
+     "name": "Crack Spread",
+     "formula": "Crack Spread = Price(Refined Products) - Price(Crude Oil)",
+     "variables": {
+      "Price(Refined Products)": "wholesale price of finished petroleum products (e.g., gasoline, diesel/heating oil)",
+      "Price(Crude Oil)": "price of the crude oil feedstock"
+     }
+    }
+   ],
+   "relationships": [
+    "Underlies both refiner hedging and speculative crack-spread trading"
+   ],
+   "trading_implications": [
+    "A typical crack-spread trade is to buy (go long) a spread that is currently too narrow for refiners to profit from, expecting production cutbacks to widen the spread as product prices rise",
+    "Because crude and refined product prices tend to move up and down together, holding a crack spread has limited net exposure to outright crude oil price moves"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Refiner hedging",
+    "Gasoline/heating oil spread trades",
+    "WTI",
+    "Brent"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "238-239",
+    "section_hint": "2.3 Oil \u2014 Crack Spreads"
+   }
+  },
+  {
+   "topic": "Crack spread ratios, benchmark crudes, and refiner hedging",
+   "category": "Oil Markets",
+   "subcategory": "Refining Spreads",
+   "type": "trading_strategy",
+   "definition": "Standard crack-spread trades combine crude oil, gasoline (RBOB), and diesel/heating oil futures in a stated ratio X:Y:Z (crude:gasoline:diesel contracts), with 3:2:1 the most common and 2:1:1 and 5:3:2 also used.",
+   "core_idea": "Refiners are natural crack-spread traders because they carry price risk between buying crude and selling finished products; different regional benchmark crudes also vary in composition, not just price, which affects the profitable product mix a refiner can extract.",
+   "key_points": [
+    "Regional benchmark crudes: WTI Crude in North America, Brent Crude in Europe",
+    "Crude oils differ in composition as well as price \u2014 premium crudes like WTI or Nigerian Bonny Light yield a higher percentage of light, gasoline-like products from simple distillation than lower-quality crudes",
+    "Refiners must optimize which crude oils they run to produce the most profitable regional mix of refined products",
+    "Refiners face price risk between when they buy crude and when they can sell finished products, so they hedge by trading crude, gasoline, and diesel/heating oil futures to lock in a sales margin ahead of time",
+    "Crack spreads also let major consumers of refined products lock in a spread without taking on large outright crude price exposure",
+    "The crack ratio is abbreviated X:Y:Z (crude oil : gasoline : diesel contracts); 3:2:1 is most common, with 2:1:1 and 5:3:2 also fairly common",
+    "Refiners are naturally long the crack spread (they benefit when refined products appreciate relative to crude) and can eliminate that exposure by selling/going short the crack spread"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the basic crack spread definition"
+   ],
+   "trading_implications": [
+    "Being long the crack spread benefits from refined products rising relative to crude \u2014 the refiner's natural, unhedged position",
+    "Selling (going short) the crack spread benefits when crude oil prices rise or refined product prices decline, and is used by refiners to offset their natural long exposure",
+    "A variant spread trade speculates on the relationship between gasoline and heating oil directly rather than against crude"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "RBOB gasoline",
+    "Diesel/heating oil",
+    "WTI",
+    "Brent",
+    "Refiner hedging"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "238-239",
+    "section_hint": "2.3 Oil \u2014 Crack Spreads"
+   }
+  },
+  {
+   "topic": "Exchange-traded crack spreads",
+   "category": "Oil Markets",
+   "subcategory": "Derivatives",
+   "type": "market_mechanic",
+   "definition": "Crack spreads can be traded either by assembling positions in the individual crude oil, gasoline, and diesel futures legs, or as a single packaged instrument (crack spread futures or options) listed directly on an exchange.",
+   "core_idea": "Because a crack spread position is inherently less risky than any single outright leg, exchanges allow it to be margined and traded as one combined instrument, which is more capital-efficient than legging in with separate futures trades.",
+   "key_points": [
+    "Every exchange futures trade requires margin sized to the risk of that trade",
+    "Building a crack spread from separate crude, gasoline, and diesel futures legs can tie up substantial capital across multiple margin positions",
+    "The combined crack spread is much less risky than holding any single underlying commodity outright, so less capital is required when it is margined as one unit",
+    "Exchanges commonly offer crack spread trading directly alongside markets for the underlying commodities",
+    "Crack spread futures and crack spread options are available on exchanges, replicating the same economic exposure as legging in manually",
+    "Exchange-listed crack instruments have lower margin requirements and execute all underlying legs simultaneously"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative execution method for the crack spread trades described above"
+   ],
+   "trading_implications": [
+    "Trading the exchange-listed crack instrument reduces margin/capital requirements and execution risk compared to manually legging into crude, gasoline, and diesel futures separately"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Futures margin"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "239-239",
+    "section_hint": "2.3 Oil \u2014 Exchange Traded Spreads"
+   }
+  },
+  {
+   "topic": "Ethanol as an alternative fuel",
+   "category": "Alternative Fuels",
+   "subcategory": "Biofuels",
+   "type": "concept",
+   "definition": "Ethanol is a clear, colorless alcohol fuel produced by fermenting and distilling starch-containing crops (e.g., corn, sugarcane); fuel-grade ethanol is denatured so it cannot be consumed as a beverage, avoiding alcohol-beverage regulation.",
+   "core_idea": "Ethanol is marketed as a renewable, lower-emission alternative to petroleum fuel, but its net environmental benefit is uncertain because growing and processing the feedstock itself consumes petroleum and generates pollution, and it also costs more to transport than gasoline.",
+   "key_points": [
+    "Produced by fermenting and distilling almost any starch-containing crop",
+    "Chemically identical to the alcohol in intoxicating beverages, but fuel ethanol is denatured to make it unsuitable for drinking",
+    "Positioned as a renewable fuel that produces fewer greenhouse emissions than fossil fuel",
+    "Its net benefit is unclear: farm equipment and fertilizer used to grow feedstock crops both require petroleum and generate pollution",
+    "Ethanol has lower energy density than gasoline",
+    "As a result of its properties, transporting ethanol is relatively more expensive than transporting gasoline"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Ethanol is often assumed to straightforwardly cut petroleum demand and pollution, but the author notes this is unclear given the petroleum inputs and pollution from farming its feedstock"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Renewable fuels",
+    "Gasoline"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "239-240",
+    "section_hint": "2.3 Oil \u2014 Ethanol"
+   }
+  }
+ ]
+}

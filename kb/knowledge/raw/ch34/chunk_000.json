@@ -1,0 +1,271 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Weather Derivatives: Purpose and Volumetric Risk",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "concept",
+   "definition": "Weather derivatives are financial contracts whose payout is determined by measured weather outcomes (such as average temperature or rainfall) rather than by the price or delivery of a commodity.",
+   "core_idea": "Utilities and insurers use weather derivatives to hedge volumetric risk \u2014 the tendency for customers to consume more of an energy product exactly when prices are high and less when prices are low, which forces the utility to buy extra supply at expensive prices and unload surplus supply cheaply.",
+   "key_points": [
+    "Payoff is linked to a weather index, most commonly average temperature, but also rainfall, snowfall, or hurricane data",
+    "Contracts are typically bilaterally negotiated between counterparties seeking protection from, or exposure to, a weather outcome",
+    "Typical users are utilities and insurance companies",
+    "Weather creates a combined volume-and-price risk that ordinary financial hedges struggle to address: an unusually cold winter both drains gas storage (more heating demand) and pushes gas prices higher as utilities compete for dwindling reserves"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Weather derivatives are distinct from price hedges because weather affects both consumption volume and price simultaneously"
+   ],
+   "trading_implications": [
+    "A pure price hedge (e.g., a gas swap) does not protect a utility against volumetric risk, so weather derivatives fill a separate hedging need"
+   ],
+   "common_misunderstandings": [
+    "Weather risk is not simply a price risk; it is a coupled volume-and-price risk that standard commodity derivatives don't fully cover"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Volumetric Risk",
+    "Natural Gas Storage",
+    "Utility Hedging",
+    "Insurance"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "603-604",
+    "section_hint": "6.6 Weather Derivatives \u2014 Purpose/Summary"
+   }
+  },
+  {
+   "topic": "Weather Derivatives vs. Insurance",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "concept",
+   "definition": "A comparison of how weather derivatives differ from traditional insurance products despite serving a similar protective purpose.",
+   "core_idea": "Weather derivatives are designed for higher-probability, less extreme outcomes than insurance, which is built for rare, catastrophic losses.",
+   "key_points": [
+    "Weather derivatives tend to cover events with a reasonably high probability of occurring",
+    "Weather derivatives tend to cover less extreme events than insurance \u2014 e.g., insurance might cover a flood or hurricane loss expected roughly once every 100 years, while a weather derivative might cover a smaller loss (like rainfall 10% above average) that could recur several times within a 10-year span"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Weather derivatives and insurance both transfer weather-related loss risk, but differ in the probability and severity of the covered event"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Weather derivatives should not be assumed to function like catastrophe insurance \u2014 they target frequent, moderate deviations, not rare disasters"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Insurance",
+    "Weather Derivatives Overview"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "604",
+    "section_hint": "6.6 Weather Derivatives \u2014 Figure 6.6.1"
+   }
+  },
+  {
+   "topic": "Weather Derivative Structures: Swap vs. Option",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "market_mechanic",
+   "definition": "The two contractual forms weather derivatives commonly take, each with a different risk and payment profile.",
+   "core_idea": "A weather swap puts both counterparties at risk with no upfront payment, while a weather option requires the buyer to pay a premium so that only the seller bears risk; premiums on weather options tend to be large relative to the payout, and many contracts cap the maximum gain or loss.",
+   "key_points": [
+    "In a swap, both parties are at risk and there is no cost to enter the contract",
+    "In an option, the buyer pays a premium to the seller and only the seller is at risk",
+    "The option premium is typically quite large \u2014 often around 20 percent of the maximum payout",
+    "It is fairly common for weather derivatives to cap the maximum profit or loss"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Swap/option structure mirrors other derivative types but with unusually high premium-to-payout ratios for options"
+   ],
+   "trading_implications": [
+    "The high premium (~20% of max payout) reflects the difficulty of precisely modeling weather outcomes and should be weighed against the capped payout when evaluating option economics"
+   ],
+   "common_misunderstandings": [
+    "Unlike many financial options where premiums are a small fraction of notional exposure, weather option premiums are proportionally large"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Options",
+    "Swaps",
+    "Premium Pricing"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "604-605",
+    "section_hint": "6.6 Weather Derivatives \u2014 contract forms"
+   }
+  },
+  {
+   "topic": "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "formula",
+   "definition": "HDD and CDD are daily measures of how far the average temperature deviates from a reference baseline, used as the underlying index for most weather derivatives.",
+   "core_idea": "HDDs accumulate on cold days when heating is needed (temperature below baseline), and CDDs accumulate on hot days when cooling is needed (temperature above baseline); the daily values are summed over a contract period and compared to a strike to determine payoff.",
+   "key_points": [
+    "HDD and CDD contracts are the most common form of weather derivative",
+    "Common baseline temperatures are 65\u00b0F in the United States and 18\u00b0C in Europe",
+    "Example: an 85\u00b0F average daily temperature against a 65\u00b0F baseline contributes 20 CDD",
+    "Daily HDD/CDD values are accumulated over the contract period and compared against a strike to compute the payoff"
+   ],
+   "formulas": [
+    {
+     "name": "Heating Degree Day",
+     "formula": "HDD = Max(Baseline \u2013 Average Temperature, 0)",
+     "variables": {
+      "Baseline": "reference temperature, commonly 65\u00b0F (US) or 18\u00b0C (Europe)",
+      "Average Temperature": "observed daily average temperature at the reference station"
+     }
+    },
+    {
+     "name": "Cooling Degree Day",
+     "formula": "CDD = Max(Average Temperature \u2013 Baseline, 0)",
+     "variables": {
+      "Baseline": "reference temperature, commonly 65\u00b0F (US) or 18\u00b0C (Europe)",
+      "Average Temperature": "observed daily average temperature at the reference station"
+     }
+    }
+   ],
+   "relationships": [
+    "HDD/CDD accumulated over a period is compared to a contract Strike to compute the payoff of an HDD/CDD weather derivative"
+   ],
+   "trading_implications": [
+    "Payoff sensitivity depends on the chosen baseline and reference weather station, both of which are specified in the contract"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather Contract Terms",
+    "Temperature Modeling"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "605",
+    "section_hint": "6.6 Weather Derivatives \u2014 Heating and Cooling Degree Days"
+   }
+  },
+  {
+   "topic": "Worked Example: HDD Contract Payoff Calculation",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "example",
+   "definition": "An illustrative walk-through of how an HDD contract's payoff is derived from daily temperature observations.",
+   "core_idea": "For a contract paying, say, $1,000 per HDD above a 100 HDD strike for a given week, the calculation requires: obtaining each day's average temperature from the contractually specified official source and location, converting each day into an HDD using the contract's baseline, and summing the daily HDDs across the period before comparing to the strike.",
+   "key_points": [
+    "The contract specifies the official weather data source, the location, and the baseline temperature used for the HDD calculation",
+    "An HDD is generated for each degree the daily average temperature falls below the baseline",
+    "The period (e.g., weekly) HDD total is the sum of the daily HDD values",
+    "The accumulated HDD is then compared against the contract's strike to determine the payoff"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies the HDD formula from 'Heating Degree Days (HDD) and Cooling Degree Days (CDD)' over a defined period"
+   ],
+   "trading_implications": [
+    "Accurate payoff estimation requires knowing the exact reference station, baseline, and period defined in the trade confirmation, not just a general HDD formula"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+    "Weather Contract Terms"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "605-606",
+    "section_hint": "6.6 Weather Derivatives \u2014 Figure 6.6.2"
+   }
+  },
+  {
+   "topic": "Standard Terms in a Weather Derivative Confirmation",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "definition",
+   "definition": "A glossary of the standard fields found in a weather derivative trade confirmation, analogous to confirmations for other derivatives traded under master netting agreements.",
+   "core_idea": "A weather derivative confirmation documents the parties, key dates, the weather index and station(s) used, the baseline/strike/notional mechanics, the payoff formula, and the maximum payment amounts, mirroring the structured documentation used for other OTC derivatives.",
+   "key_points": [
+    "Buyer/Seller: in an option, the buyer pays the premium and the seller receives it; in a swap, the parties may not be labeled buyer/seller and their responsibilities are described directly",
+    "Trade Date: the date the parties agreed to the transaction; Effective Date: when payoff calculations begin; Termination Date: when payoff calculations end",
+    "HDD Reference Level: the baseline temperature used for the HDD calculation",
+    "Strike: the quantity of HDD compared against the accumulated HDD to determine payoff",
+    "Notional Amount: a monetary quantity multiplied by a contract-defined factor to compute payoff, e.g. Payoff = (Notional Amount) \u00d7 Max(Strike \u2013 Accumulated HDD, 0)",
+    "Maximum Transaction Payment Amount: caps the total money at risk (e.g., limits what the seller must pay the buyer in an option); swaps can cap exposure for both sides",
+    "Premium and Premium Payment Date: the amount the buyer pays the seller to enter the trade (often zero in a swap) and when it is due",
+    "Reference Weather Station: the station(s) whose observations define the weather index; if multiple stations are used, the contract specifies the combination method (e.g., a weighted average)",
+    "Weather Index Unit: describes the underlying weather commodity/measure the derivative is based on",
+    "Transaction Type: a high-level description of the trade for the reader, with full detail spelled out elsewhere in the contract"
+   ],
+   "formulas": [
+    {
+     "name": "Generic HDD option payoff",
+     "formula": "Payoff = (Notional Amount) * Max(Strike \u2013 Accumulated HDD, 0)",
+     "variables": {
+      "Notional Amount": "monetary multiplier defined in the contract",
+      "Strike": "HDD quantity that triggers payoff",
+      "Accumulated HDD": "sum of daily HDD over the contract period"
+     }
+    }
+   ],
+   "relationships": [
+    "These terms collectively define how the HDD/CDD formulas in the contract translate into an actual cash payoff"
+   ],
+   "trading_implications": [
+    "Reviewing all of these fields (not just the strike and notional) is necessary to fully understand a weather derivative's risk exposure, since caps and station definitions materially affect payout"
+   ],
+   "common_misunderstandings": [
+    "The 'Transaction Type' field is only a high-level summary for convenience; the binding terms are elsewhere in the contract"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+    "Weather Derivative Structures: Swap vs. Option"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "606-608",
+    "section_hint": "6.6 Weather Derivatives \u2014 Weather Contracts / Common Terms"
+   }
+  },
+  {
+   "topic": "Valuing Weather Derivatives from Historical Data",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "concept",
+   "definition": "Unlike most forward prices, which are set by trading markets (nonstorable products) or cost-of-carry/storage (storable products), the pre-expiration expected payoff of a weather derivative is typically estimated from historical weather observations.",
+   "core_idea": "Because weather data tend to trend over time rather than reliably reverting to a stable average, it is difficult to define a single reliable 'expected temperature' for pricing a weather derivative ahead of expiration.",
+   "key_points": [
+    "Most forward commodity prices come from active trading markets (nonstorable energy products) or from buying-and-storing economics (stocks, bonds, storable commodities)",
+    "Weather derivative valuation instead relies on analyzing historical weather data since there is no equivalent traded forward market for weather itself",
+    "Historical weather data appears to trend rather than consistently revert to an expected value",
+    "This trending behavior makes it hard to specify a dependable 'expected temperature' for the following year"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts weather derivative valuation with standard forward-pricing methods used elsewhere in energy trading"
+   ],
+   "trading_implications": [
+    "Pricing models that assume mean-reverting historical averages may misstate expected weather derivative payoffs given the observed trending behavior of weather data"
+   ],
+   "common_misunderstandings": [
+    "It is tempting to assume a long-run historical average temperature is a reliable proxy for next year's expected temperature, but the source notes weather data does not consistently revert to such an average"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+    "Forward Pricing"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "608-609",
+    "section_hint": "6.6 Weather Derivatives \u2014 Temperature Modeling"
+   }
+  }
+ ]
+}

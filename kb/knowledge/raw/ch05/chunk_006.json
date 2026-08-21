@@ -1,0 +1,344 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Texas Interconnection (ERCOT)",
+   "category": "Power Markets",
+   "subcategory": "Texas Interconnection",
+   "type": "definition",
+   "definition": "The Texas Interconnect is the smallest of the U.S. power interconnections and sits entirely inside Texas, coordinated by a single ISO (ERCOT) rather than a patchwork of utilities and RTOs.",
+   "core_idea": "ERCOT is a self-contained grid with only limited DC tie capacity to the Eastern Interconnect and Mexico, which is why it is often treated as electrically isolated from the rest of the country.",
+   "key_points": [
+    "Smallest of the North American interconnections, entirely within Texas",
+    "Single ISO (ERCOT) coordinates the whole footprint",
+    "DC lines connect to the Eastern Interconnect and Mexican grids, but their capacity is limited"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Eastern Interconnect",
+    "Mexican power grids"
+   ],
+   "trading_implications": [
+    "Limited DC tie capacity constrains how much power/price arbitrage can flow between ERCOT and neighboring grids, reinforcing ERCOT as a largely self-contained price zone"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Eastern Interconnect",
+    "Western Interconnect"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "198",
+    "section_hint": "2.2 ELECTRICITY - Texas Interconnection"
+   }
+  },
+  {
+   "topic": "Western Interconnection overview and hydro dependence",
+   "category": "Power Markets",
+   "subcategory": "Western Interconnection",
+   "type": "market_mechanic",
+   "definition": "The Western Interconnect spans a chain of regional grids from the Pacific Northwest through California to the Desert Southwest, with trading activity centered on power flows into and out of California.",
+   "core_idea": "Because hydroelectric generation supplies roughly 70% of Washington and Oregon's power, small changes in water flow drive outsized swings in regional power supply and, by extension, prices across the Western Interconnect.",
+   "key_points": [
+    "Seven major trading locations exist across the western U.S.",
+    "Geography (Rocky Mountains) and California's central position shape regional power flow",
+    "Pacific Northwest (MIDC) and the Colorado River near Las Vegas (Mead) are major hydroelectric sources",
+    "During peak usage periods, power generally flows toward California",
+    "Hydro supplies ~70% of Washington/Oregon power, so small water-flow changes cause large supply swings"
+   ],
+   "formulas": [],
+   "relationships": [
+    "California (CAISO)",
+    "Pacific Northwest",
+    "Desert Southwest"
+   ],
+   "trading_implications": [
+    "Hydrology (snowpack, rainfall) becomes a key driver of regional power price forecasting, not just demand/weather"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pacific Northwest",
+    "California (CAISO)",
+    "Desert Southwest"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "198-199",
+    "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   }
+  },
+  {
+   "topic": "Seasonal reversal of Pacific Northwest / California power flows",
+   "category": "Power Markets",
+   "subcategory": "Western Interconnection",
+   "type": "market_mechanic",
+   "definition": "The direction of power flow between the Pacific Northwest, California, and the Desert Southwest changes with the season depending on which region has surplus generation versus peak demand.",
+   "core_idea": "In spring, snowmelt-driven hydro surplus in the Pacific Northwest flows to higher-demand Northern California; in summer, California imports from both the Northwest and the Desert Southwest to cover peak load; in fall, mild California temperatures combined with continued desert heat can reverse the flow so California exports power to Nevada/Arizona.",
+   "key_points": [
+    "Spring: Pacific Northwest snowmelt produces more hydro power than can be used locally, so it is transmitted mainly to Northern California",
+    "Summer: California often imports power from both the Pacific Northwest and the Desert Southwest to meet peak demand",
+    "Fall: mild California temperatures versus still-hot Las Vegas/Phoenix can reverse the flow, with California exporting to the desert areas",
+    "The direction of flow can change at any time based on the relative temperatures of the regions"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Pacific Northwest",
+    "California (CAISO)",
+    "Desert Southwest"
+   ],
+   "trading_implications": [
+    "Traders need region-by-region temperature/weather forecasts (not just California's) to anticipate the direction of interregional flow and its price impact",
+    "Seasonal hydrology forecasts (snowpack) are a leading indicator for spring/summer Northwest-to-California flow volumes"
+   ],
+   "common_misunderstandings": [
+    "Power flow direction between these regions is not fixed \u2014 it is commonly assumed California is always an importer, but it can become a net exporter to the desert in the fall"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Western Interconnection overview and hydro dependence",
+    "Desert Southwest"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "199-200",
+    "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   }
+  },
+  {
+   "topic": "California's marginal fuel and regional natural gas supply split",
+   "category": "Power Markets",
+   "subcategory": "California (CAISO)",
+   "type": "market_mechanic",
+   "definition": "Because natural-gas-fired plants are typically the marginal (price-setting) generators in California, the state's power prices are tied to gas supply, which comes from two distinct sources depending on region.",
+   "core_idea": "Southern California draws its marginal gas supply from the Rocky Mountains and West Texas, while Northern California draws from western Canada, so a price divergence between those two gas supply basins can create corresponding divergence in regional power prices.",
+   "key_points": [
+    "Natural-gas-fired plants are usually the marginal producers of power in California",
+    "Southern part of the region gets gas from the Rocky Mountains and West Texas",
+    "Northern part gets gas from western Canada",
+    "Divergent fuel prices between the two source basins can affect regional power price differentials"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural gas basis/regional pricing",
+    "California (CAISO) NP-15/SP-15 zones"
+   ],
+   "trading_implications": [
+    "Gas basis spreads between Rockies/West Texas and western Canada are a useful signal for anticipated NP-15 vs SP-15 power price divergence"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "California (CAISO) NP-15/SP-15/ZP-26 zones"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "200",
+    "section_hint": "2.2 ELECTRICITY - Western Interconnection"
+   }
+  },
+  {
+   "topic": "Eastern Interconnect structure: RTO/ISOs and regulated utilities",
+   "category": "Power Markets",
+   "subcategory": "Eastern Interconnection",
+   "type": "definition",
+   "definition": "The Eastern Interconnect covers the eastern half of the U.S. as a mix of organized RTO/ISO markets and traditionally regulated utilities, and is less geographically constrained than the Western Interconnect.",
+   "core_idea": "PJM and MISO are the two largest RTO/ISOs in North America, alongside SPP, NYISO, and ISO-NE, with MISO-Indiana Hub and PJM Western Hub standing out as the most liquid trading points in the region.",
+   "key_points": [
+    "Eastern Interconnect is a combination of RTO/ISOs and regulated utilities, less dominated by geography than the West",
+    "PJM (originally Pennsylvania-New Jersey-Maryland Interconnection) and MISO are the two largest RTO/ISOs in North America",
+    "Other RTO/ISOs in the region: SPP, NYISO, ISO-NE",
+    "Most liquid trading locations: MISO-Indiana Hub (formerly Cin-Hub/Cinergy Hub) and PJM Western Hub (PJM-W)"
+   ],
+   "formulas": [],
+   "relationships": [
+    "PJM ISO",
+    "MISO",
+    "SPP",
+    "NYISO",
+    "ISO-NE"
+   ],
+   "trading_implications": [
+    "Indiana Hub and PJM-W are the reference liquid benchmarks for Eastern Interconnect power trading"
+   ],
+   "common_misunderstandings": [
+    "MISO-Indiana Hub is a renamed successor to what was historically called Cin-Hub or Cinergy Hub"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mid-Atlantic (PJM ISO)"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "200-201",
+    "section_hint": "2.2 ELECTRICITY - Eastern Interconnect"
+   }
+  },
+  {
+   "topic": "Eastern Interconnect trading drivers: fuel mix and regional climate",
+   "category": "Power Markets",
+   "subcategory": "Eastern Interconnection",
+   "type": "trading_strategy",
+   "definition": "Trading opportunities in the Eastern Interconnect commonly arise from differences in generation fuel mix (coal vs. natural gas) between regions and from north-south differences in seasonal weather patterns.",
+   "core_idea": "Some of the most significant trades pit coal-heavy regions against gas-heavy regions, while others exploit the fact that the southern Eastern Interconnect has a long summer/mild winter climate whereas the north has cold winters and a shorter cooling season.",
+   "key_points": [
+    "Key trades occur between regions relying on coal-fired generation and regions relying on natural-gas-fired generation",
+    "Southern part of the Eastern Interconnect: extended summer, mild winters",
+    "Northern part: cold winters, shorter summer air-conditioning season"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Eastern Interconnect structure"
+   ],
+   "trading_implications": [
+    "Coal-vs-gas generation mix differentials across regions create fuel-switching-driven power price spread trades",
+    "North-south seasonal demand asymmetry (winter heating vs. summer cooling) creates weather-driven regional spread opportunities"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Eastern Interconnect structure: RTO/ISOs and regulated utilities"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "201",
+    "section_hint": "2.2 ELECTRICITY - Eastern Interconnect"
+   }
+  },
+  {
+   "topic": "CAISO zones: NP-15, SP-15, ZP-26",
+   "category": "Power Markets",
+   "subcategory": "California (CAISO)",
+   "type": "definition",
+   "definition": "California's power market is divided by the Path 15 transmission line into two primary pricing zones, NP-15 (north) and SP-15 (south), plus a third, less critical zone, ZP-26, that interconnects to both.",
+   "core_idea": "NP-15 covers the northern Bay Area and can import low-cost hydro from the Columbia River basin when water is available, otherwise relying on Canadian-supplied gas plants; SP-15 covers southern California and imports gas/solar power from Arizona and hydropower from Nevada, with its own gas plants fed from the Rockies and West Texas; ZP-26 is a lower-population zone with excess generation capacity connecting the other two.",
+   "key_points": [
+    "Path 15 is the major transmission line that bisects the state and gives the NP-15/SP-15 zones their names",
+    "NP-15 (north of Path 15, includes San Francisco Bay area): imports low-cost hydro from the Columbia River basin (Oregon) when rainfall/snowmelt allow; otherwise natural gas (supplied mainly from western Canada) sets price",
+    "SP-15 (south of Path 15, most of southern California): major importer of power from Arizona (natural gas and solar) and Nevada (Colorado River hydropower); its own gas plants are fed from Rocky Mountain and West Texas supply",
+    "ZP-26 is a large but less important zone with low population and excess generation capacity, connecting to both NP-15 and SP-15"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Pacific Northwest",
+    "Desert Southwest",
+    "California's marginal fuel and gas supply split"
+   ],
+   "trading_implications": [
+    "NP-15 vs SP-15 basis reflects differing import sources (Northwest hydro vs. Arizona/Nevada supply) and differing marginal gas basins"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "California's marginal fuel and regional natural gas supply split"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "201-202",
+    "section_hint": "2.2 ELECTRICITY - California (CAISO)"
+   }
+  },
+  {
+   "topic": "Desert Southwest power market and trading hubs",
+   "category": "Power Markets",
+   "subcategory": "Desert Southwest",
+   "type": "definition",
+   "definition": "The Desert Southwest is a moderate-winter, hot-summer region that typically runs a generation surplus (mainly natural gas, with some coal and hydro, plus strong solar potential) and exports power to Southern California, trading through three major hubs.",
+   "core_idea": "Palo Verde (near Phoenix, at a major nuclear plant/switching yard) is the benchmark hub for the northern part of the region and a key gateway to California; Mead (near Las Vegas, at Hoover Dam/Lake Mead) is the primary delivery point for southern Nevada hydropower; Four Corners (northwestern New Mexico) sits at the junction of several major transmission lines.",
+   "key_points": [
+    "Region has moderate winters and long hot summers, usually generation-surplus and a major exporter to Southern California",
+    "Natural gas is the most common marginal fuel, given abundant regional reserves; coal and hydropower are also present",
+    "Abundant sunlight makes the region attractive for solar generation",
+    "Three major hubs: Palo Verde, Mead, Four Corners",
+    "Palo Verde: ~45 miles west of Phoenix, at a major nuclear plant/switching yard, hosts many California transmission lines, and is the benchmark for power delivered to Colorado and Wyoming",
+    "Mead: outskirts of Las Vegas, at Lake Mead/Hoover Dam, primary delivery point for southern Nevada power",
+    "Four Corners: northwestern New Mexico, at the interconnection of several major transmission lines"
+   ],
+   "formulas": [],
+   "relationships": [
+    "California (CAISO)",
+    "Western Interconnection overview"
+   ],
+   "trading_implications": [
+    "Palo Verde is the standard benchmark price point for trades into California and the northern part of the Desert Southwest region"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "CAISO zones: NP-15, SP-15, ZP-26"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "202-204",
+    "section_hint": "2.2 ELECTRICITY - Desert Southwest"
+   }
+  },
+  {
+   "topic": "Pacific Northwest power market and trading hubs",
+   "category": "Power Markets",
+   "subcategory": "Pacific Northwest",
+   "type": "definition",
+   "definition": "The Pacific Northwest is a hydro-dominated region (about two-thirds of its electricity from hydroelectric production) that typically sells surplus power into California and the Southwest, with its supply heavily dependent on precipitation and snowmelt.",
+   "core_idea": "The Cascade Mountains split the region into a temperate, densely populated western side (Seattle, Portland) and a cold-winter/hot-summer eastern side bordering the Northern Plains; Mid-Columbia (MIDC) is the hydroelectric delivery hub on the Columbia River, and Cal-Oregon Border (COB) is the major switching station linking the region's transmission lines near the California border.",
+   "key_points": [
+    "About two-thirds of Pacific Northwest electricity comes from hydroelectric production, so surplus power availability depends heavily on precipitation",
+    "Water flow in this region directly affects California power prices",
+    "Cascade Mountain snowmelt is a major source of river water",
+    "West of the Cascades: temperate climate, major population centers (Seattle, Portland)",
+    "East of the Cascades: cold winters, hot summers, transitioning into the Northern Plains",
+    "MIDC (Mid-Columbia): delivery hub for hydroelectric plants on the Columbia River",
+    "COB (Cal-Oregon Border): major switching station in southern Oregon adjacent to California, interconnecting several major transmission lines"
+   ],
+   "formulas": [],
+   "relationships": [
+    "California (CAISO)",
+    "Western Interconnection overview"
+   ],
+   "trading_implications": [
+    "Precipitation/snowpack forecasts for the Pacific Northwest are a direct input to anticipating California power price movements via MIDC/COB flows"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seasonal reversal of Pacific Northwest / California power flows"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "204-205",
+    "section_hint": "2.2 ELECTRICITY - Pacific Northwest"
+   }
+  },
+  {
+   "topic": "Mid-Atlantic region and PJM ISO",
+   "category": "Power Markets",
+   "subcategory": "Eastern Interconnection",
+   "type": "definition",
+   "definition": "PJM ISO originated as one of the first independent power grids in the densely populated mid-Atlantic region (Washington D.C., Baltimore, Philadelphia) and has since expanded well beyond its founding states.",
+   "core_idea": "Named for its original member states (Pennsylvania, New Jersey, Maryland), PJM has grown to include West Virginia, Delaware, large parts of Ohio, parts of northern Illinois, and Virginia, making it one of the largest and most liquid electricity markets, with several active internal trading hubs.",
+   "key_points": [
+    "Mid-Atlantic region includes major population centers: Washington D.C., Baltimore, Philadelphia",
+    "PJM ISO was one of the first independent power grids, named for Pennsylvania, New Jersey, and Maryland",
+    "PJM has expanded to include West Virginia, Delaware, large parts of Ohio, parts of northern Illinois, and Virginia",
+    "PJM is one of the largest and most liquid electricity markets, with a number of active trading hubs"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Eastern Interconnect structure: RTO/ISOs and regulated utilities"
+   ],
+   "trading_implications": [
+    "PJM's size and liquidity make it a core reference market for Eastern Interconnect power trading strategies"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Eastern Interconnect structure: RTO/ISOs and regulated utilities"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "205-206",
+    "section_hint": "2.2 ELECTRICITY - Mid-Atlantic (PJM ISO)"
+   }
+  }
+ ]
+}

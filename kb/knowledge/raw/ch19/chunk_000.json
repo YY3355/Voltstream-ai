@@ -1,0 +1,174 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Wheeling (long-distance power transmission trading)",
+   "category": "Power Markets",
+   "subcategory": "Transmission & Congestion",
+   "type": "market_mechanic",
+   "definition": "Wheeling is the practice of physically moving electricity from a low-price region to a high-price region over transmission lines, typically leased from a third-party owner, in order to capture the price spread between the two markets.",
+   "core_idea": "Because neighboring power markets often price electricity very differently, a trader who can move power from the cheap market to the expensive one can profit; deregulated markets let private capital identify and fund these opportunities rather than a central planner.",
+   "key_points": [
+    "Wheeling exploits regional price differences rather than any single market's price level.",
+    "The trader (or line owner) buys power at the cheap end and delivers it for sale at the expensive end.",
+    "Wheeling is presented as an illustration of how deregulated markets efficiently allocate energy resources across regions."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on regional price divergence driven by differing marginal generation fuels, weather, or demand."
+   ],
+   "trading_implications": [
+    "Profitability rises with the size and persistence of the price gap between the two connected regions."
+   ],
+   "common_misunderstandings": [
+    "Wheeling is not a purely financial arbitrage \u2014 it requires actual physical delivery of power, unlike a financial hedge that can be settled in either market independently."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Locational price spreads",
+    "Marginal fuel/generation stack",
+    "Transmission investment"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "437-438",
+    "section_hint": "4.4 Wheeling Power \u2014 Purpose/Summary"
+   }
+  },
+  {
+   "topic": "Why regional power prices diverge",
+   "category": "Power Markets",
+   "subcategory": "Price Formation",
+   "type": "concept",
+   "definition": "Regional electricity prices are usually set by the operating cost of the most recently activated (marginal) generator in that region, so two adjoining regions can have very different prices if their marginal generator uses different fuel.",
+   "core_idea": "A region where the marginal unit is gas-fired can price very differently from a neighboring region where the marginal unit is coal-fired, and this gap is the underlying driver of wheeling economics.",
+   "key_points": [
+    "Marginal-fuel differences between regions are cited as a primary cause of price divergence.",
+    "Weather patterns and differing consumer demand levels are also cited as drivers of regional price differences.",
+    "High-priced regions can pay roughly twice the average power price of low-priced regions, with the gap potentially widening further during peak demand."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins the profitability driver described in [[Wheeling (long-distance power transmission trading)]]."
+   ],
+   "trading_implications": [
+    "A wheeling trade between a coal-marginal region and a gas-marginal region is effectively a bet on the relative volatility/level of gas versus coal prices."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Marginal cost pricing",
+    "Generation stack",
+    "Natural gas vs. coal price volatility"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "437-439",
+    "section_hint": "4.4 Wheeling Power \u2014 main text and Figure 4.4.1"
+   }
+  },
+  {
+   "topic": "Wheeling requires a physical spot-market leg",
+   "category": "Power Markets",
+   "subcategory": "Physical vs. Financial Trading",
+   "type": "market_mechanic",
+   "definition": "At least one side of a wheeling trade \u2014 buying the low-cost power and delivering it into the other region \u2014 must occur in the physical spot market; it cannot be replicated with financial contracts alone.",
+   "core_idea": "This distinguishes wheeling from purely financial trades, because a financial contract executed in one market cannot be used to satisfy a delivery obligation in a different, physically separate market.",
+   "key_points": [
+    "Wheeling combines a physical delivery obligation with the economic bet on the price spread.",
+    "This physical requirement is what ties wheeling profits to actual transmission capacity rather than to a purely paper position."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with financial-only hedging/spread trades that don't require physical transport."
+   ],
+   "trading_implications": [
+    "Wheeling profits are capped by actual transmission line capacity, not just by the size of the price spread."
+   ],
+   "common_misunderstandings": [
+    "A wheeling trade cannot be fully replicated or hedged with financial instruments alone because of the physical delivery requirement."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical settlement",
+    "Spot market",
+    "Transmission capacity constraints"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "437-438",
+    "section_hint": "4.4 Wheeling Power \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Wheeling valued as a spread option on transmission capacity",
+   "category": "Derivatives",
+   "subcategory": "Real Options",
+   "type": "concept",
+   "definition": "A wheeling arrangement can be modeled financially as a series of spread options: the up-front cost of renting/building the line is like an option premium, the variable transport costs (line losses, other variable expenses) are like a strike price, and the payoff each period depends on the price difference between the two regions.",
+   "core_idea": "Renting a transmission line gives the trader the ongoing option, but not the obligation, to transport power whenever the regional price spread exceeds the variable transport cost, so the line's economic value equals the sum of these periodic spread-option payoffs compared against its rental/construction cost.",
+   "key_points": [
+    "Up-front line rental/construction cost is analogous to an option premium.",
+    "Variable transport costs (line losses, variable expenses) are analogous to a strike price.",
+    "Profit potential depends on the price difference between the two connected regions each time the transport decision can be made.",
+    "The trade is economically justified when option value from these periodic spread opportunities exceeds the line's rental or construction cost."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on [[Why regional power prices diverge]] as the source of the spread payoff."
+   ],
+   "trading_implications": [
+    "Line capacity should be transported only in periods when the regional price spread exceeds variable transport costs \u2014 otherwise the option is left unexercised for that period.",
+    "Valuation of a prospective wheeling investment can be approached as pricing a strip of spread options rather than a single price bet."
+   ],
+   "common_misunderstandings": [
+    "The line rental cost is typically set by construction/maintenance cost, not by the economic (option) value of the line \u2014 so a cheaply-built line in a high-spread corridor can be a much better deal than its rental price implies."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread options",
+    "Real options valuation",
+    "Transmission investment economics"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "438-440",
+    "section_hint": "4.4 Wheeling Power \u2014 option framing and closing valuation discussion"
+   }
+  },
+  {
+   "topic": "Trade-offs and drivers behind long-distance transmission investment",
+   "category": "Power Markets",
+   "subcategory": "Transmission Investment",
+   "type": "concept",
+   "definition": "Long-distance wheeling trades off transmission losses and increased failure points against siting constraints that force certain generation types to be built far from consumers, and private wheeling investment is the deregulated market's mechanism for deciding when building new transmission is worthwhile.",
+   "core_idea": "Some generation technologies (cogeneration needing a steam host, nuclear plants sited away from population, hydro tied to river/dam locations) cannot be built near demand centers, so long-distance transmission is sometimes unavoidable despite its line losses and reliability costs; private wheeling investment funds the transmission needed to connect these areas, and prices should converge as enough capacity gets built.",
+   "key_points": [
+    "Long-distance transmission loses a substantial amount of power and adds more points of failure than a compact grid.",
+    "Certain generator types have siting restrictions (gas cogeneration near steam users, nuclear away from communities, hydro at a dam site) that force long-distance transmission to be used anyway.",
+    "In a deregulated market, private wheeling investment funds the transmission lines connecting low-cost generation to high-priced demand regions, and investors earn the resulting spread profits.",
+    "As sufficient transmission capacity is built between low- and high-price regions, prices are expected to converge, with the market itself determining the appropriate level of transmission investment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains the investment-decision context for the option framing in [[Wheeling valued as a spread option on transmission capacity]]."
+   ],
+   "trading_implications": [
+    "As more wheeling capacity gets built along a corridor, the price spread \u2014 and thus the profitability of further wheeling trades there \u2014 should shrink over time."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generator siting constraints",
+    "Transmission losses",
+    "Market-driven infrastructure investment",
+    "Price convergence"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "438-440",
+    "section_hint": "4.4 Wheeling Power \u2014 trade-off discussion and Examples of Wheeling Trades"
+   }
+  }
+ ]
+}

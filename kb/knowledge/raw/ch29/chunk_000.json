@@ -1,0 +1,187 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Mark-to-Market Accounting",
+   "category": "Accounting & Reporting",
+   "subcategory": "Fair Value Accounting",
+   "type": "definition",
+   "definition": "Mark-to-market (MTM) accounting values a financial instrument at its current market price rather than at its original cost, so unrealized gains and losses show up in reported value as prices move.",
+   "core_idea": "Because every derivative (futures, swaps, options) is required to use MTM, it becomes the default valuation standard across energy trading, and since MTM accounting policy effectively defines what counts as 'the price,' it ripples into any downstream use of prices, including risk management and financial reporting.",
+   "key_points": [
+    "MTM applies to financial/derivative instruments \u2014 futures, swaps, and options are typically all subject to it.",
+    "It is the most common valuation standard in energy trading because most energy transactions are structured as derivatives.",
+    "The accounting policy defining 'trading price' has a cascade effect: risk management and financial reporting both consume that price definition, sometimes producing unexpected consequences.",
+    "MTM is intuitive: an asset bought at $100 that now trades at $120 shows an immediate $20 profit under MTM, versus no recognized gain under historical cost until sale.",
+    "For instruments that trade regularly, the MTM price is usually just the last reported trade price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with historical cost accounting (used for physical, non-tradable assets) and hedge accounting (used for derivatives hedging physical assets)."
+   ],
+   "trading_implications": [
+    "Reported P&L on a trading book moves directly with price marks rather than only at realized sale, which is why the definition/source of 'the price' matters so much to risk and financial reporting."
+   ],
+   "common_misunderstandings": [
+    "Typically there is little discretion in which accounting method to apply \u2014 accounting rules specify the required method, it isn't a trader/firm choice."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Historical Cost Accounting",
+    "Hedge Accounting",
+    "Fair Value"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  },
+  {
+   "topic": "Historical Cost Accounting",
+   "category": "Accounting & Reporting",
+   "subcategory": "Fair Value Accounting",
+   "type": "definition",
+   "definition": "Historical cost accounting values an asset at its original acquisition price and, with a few exceptions, keeps it recorded at that price until the asset is actually sold.",
+   "core_idea": "It is the primary alternative to mark-to-market and is most commonly applied to physical assets like buildings and equipment that can't easily be traded; because the recorded value never updates, it can become misleading for long-dated assets whose true market value has drifted.",
+   "key_points": [
+    "Used mainly for physical investments (buildings, equipment) that aren't easily traded.",
+    "Asset value is held at purchase price until actual sale, with a few exceptions.",
+    "Can be misleading for long-dated assets since their carried value isn't regularly refreshed.",
+    "Which method applies (MTM vs. historical cost) is usually dictated by accounting rules, not a discretionary choice."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Primary alternative to mark-to-market accounting; hedge accounting is a separate alternative for derivatives hedging physical assets."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Hedge Accounting"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  },
+  {
+   "topic": "Difficulty applying MTM to energy contracts",
+   "category": "Accounting & Reporting",
+   "subcategory": "Fair Value Accounting",
+   "type": "concept",
+   "definition": "Even where MTM is the required standard, actually pricing an energy contract at fair market value can be difficult when there's no real trading market for it or when the contract can't be reassigned to another party.",
+   "core_idea": "Illiquid markets may have no willing counterparty for a specific commodity/location, and some contracts \u2014 like a power purchase agreement tied to one physical generation facility \u2014 bundle non-tradable items (capacity, ancillary services) in a way that may only be transferable together with the physical unit itself, forcing accountants to judge which accounting treatment actually applies.",
+   "key_points": [
+    "Some markets are illiquid enough that there's no counterparty willing to transact a given commodity at a given location.",
+    "A contract may not be easily assignable to another party even if a willing buyer exists.",
+    "Example: a PPA specifying a particular generation facility may obligate purchase of non-tradable items (capacity, ancillary services) alongside power, and may not be sellable without selling the physical unit too.",
+    "This creates gray areas where accountants must determine which accounting rules apply to a given contract.",
+    "Hedge accounting is a third alternative to MTM and historical cost, used specifically for derivatives employed to hedge physical assets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Relates to Mark-to-Market Accounting and Historical Cost Accounting as the set of possible treatments; hedge accounting is the third option, not detailed in this chunk."
+   ],
+   "trading_implications": [
+    "A contract's tradability/assignability \u2014 not just its label as a derivative \u2014 determines whether a clean MTM price is even obtainable."
+   ],
+   "common_misunderstandings": [
+    "Being structured as a derivative doesn't guarantee a contract has a real, liquid market to mark against."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Power Purchase Agreement",
+    "Liquidity",
+    "Hedge Accounting"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  },
+  {
+   "topic": "Fair Value and core accounting terms",
+   "category": "Accounting & Reporting",
+   "subcategory": "Fair Value Accounting",
+   "type": "definition",
+   "definition": "Fair value is the amount of cash that would be required to liquidate (settle) an asset or liability under current market conditions; mark-to-market is one specific application of this broader fair-value approach.",
+   "core_idea": "Fair value accounting rests on the premise that an item can actually be transferred for cash: something you'd be paid to hand over is an asset, something you'd have to pay someone to take off your hands is a liability, and the ease/cost of making that conversion to cash is its liquidity.",
+   "key_points": [
+    "Mark (verb): to record something for accounting purposes.",
+    "Market: a mechanism (exchange or brokerage) that lets participants convert assets or liabilities into cash.",
+    "Asset: a financial instrument a third party would pay money to take ownership of.",
+    "Liability: a financial instrument that requires paying someone to take ownership of it.",
+    "Liquidation: the act of converting an asset or liability into cash.",
+    "Liquidity: how easily and cheaply something converts to cash \u2014 liquid instruments convert quickly and cheaply, illiquid ones do not.",
+    "Fair value is found by multiplying the quantity of an asset by its price per unit."
+   ],
+   "formulas": [
+    {
+     "name": "Fair Value",
+     "formula": "Fair Value = Quantity \u00d7 Price per unit",
+     "variables": {
+      "Quantity": "amount of the asset/liability held",
+      "Price per unit": "current market price for one unit"
+     }
+    }
+   ],
+   "relationships": [
+    "Fair value accounting is the umbrella category that mark-to-market accounting falls under."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Liquidity"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  },
+  {
+   "topic": "Earnings manipulation risk via MTM on illiquid assets",
+   "category": "Risk",
+   "subcategory": "Accounting / Market Integrity",
+   "type": "risk",
+   "definition": "Because MTM relies on trading market prices, it is only safe for liquid markets with enough trading activity to keep prices rational; for illiquid assets, traders can potentially manipulate reported P&L by transacting at artificial prices.",
+   "core_idea": "The author illustrates this with two traders at rival firms who, to avoid reporting losses to their risk committee, each buy a small amount of an illiquid asset the other holds at an inflated price \u2014 letting the counterparty mark a profit \u2014 without ever having to trade with each other directly; doing this across many small, illiquid positions can be hard to detect.",
+   "key_points": [
+    "MTM is only reliable in liquid markets with enough trading volume to produce rational prices.",
+    "For illiquid assets, it can be necessary to supplement market prices with pricing models as a second check.",
+    "That second check both limits the risk of transacting at illogical prices and limits traders' ability to manipulate MTM to smooth earnings.",
+    "Example scheme: two traders each buy a small amount of an illiquid asset the OTHER holds, at a high price, letting each mark a profit on their own illiquid holding without directly trading with each other.",
+    "The trade size needed to set the price can be very small, and spreading this across many illiquid, unowned assets can make the manipulation hard to catch.",
+    "This type of abuse is mitigated by comparing trades/marks against a modeled price rather than relying on market price alone."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties back to Mark-to-Market Accounting's dependence on real trading markets, and to the fair value hierarchy accounting has developed for illiquid/heavily modeled prices."
+   ],
+   "trading_implications": [
+    "Risk committees and firms should require a modeled-price cross-check for illiquid marks, not just the latest trade, to prevent traders from using small collusive trades to manage reported earnings and avoid loss-driven trading curtailment or bonus impacts."
+   ],
+   "common_misunderstandings": [
+    "A reported MTM profit isn't proof of real economic value if the market behind it is illiquid and the price was set by a small, possibly collusive trade."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Liquidity",
+    "Fair Value"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  }
+ ]
+}

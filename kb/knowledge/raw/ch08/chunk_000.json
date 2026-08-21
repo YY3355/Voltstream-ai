@@ -1,0 +1,279 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Cap and trade vs. carbon taxes",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Mechanisms",
+   "type": "concept",
+   "definition": "Two main policy tools exist to curb pollution: taxing emissions directly, or capping total allowed emissions and letting participants trade licenses within that cap. Only the cap and trade approach creates an actual trading market.",
+   "core_idea": "A tax fixes the price of polluting but leaves the total quantity uncertain; cap and trade fixes the total quantity (the cap) and lets the market discover the price via tradable licenses.",
+   "key_points": [
+    "Taxes and cap and trade are described as the two most common ways governments try to limit pollution.",
+    "Cap and trade is the only one of the two that functions as a trading market, since it creates a tradable license/permit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Cap and trade licenses function like tradable commodities, similar to other emissions permits."
+   ],
+   "trading_implications": [
+    "Cap and trade systems create a new tradable instrument (pollution licenses/credits) that did not previously exist as an asset class."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade mechanics",
+    "Kyoto Protocol"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "262-263",
+    "section_hint": "2.5 Emissions Markets \u2014 Summary"
+   }
+  },
+  {
+   "topic": "How a cap and trade system works",
+   "category": "Emissions Markets",
+   "subcategory": "Market Mechanics",
+   "type": "market_mechanic",
+   "definition": "A cap and trade system sets a ceiling on total allowable output of a pollutant and requires every producer of that pollutant to hold a license covering their production; licenses can be freely bought and sold.",
+   "core_idea": "Because licenses are tradable, producers who can cheaply switch to cleaner methods can sell their surplus licenses for a profit, while producers who can't switch must buy licenses \u2014 this channels emissions reductions toward whoever can achieve them most cheaply, and shrinking the license supply over time pushes the cheapest reductions to happen first.",
+   "key_points": [
+    "A hard cap guarantees pollution stays below a defined level, unlike a tax which only changes incentives.",
+    "Tradability lets low-cost abaters profit by selling licenses to high-cost abaters, so the market \u2014 not a regulator \u2014 determines who reduces emissions first.",
+    "Regulators can tighten the system over time by reducing the total number of licenses issued, which forces further reductions starting with the cheapest ones.",
+    "The two central design problems for any cap and trade system are: how to allocate/distribute the initial licenses, and how to enforce compliance."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins the Kyoto Protocol's international/national emissions allocation structure."
+   ],
+   "trading_implications": [
+    "Creates arbitrage-like opportunity: entities with cheap abatement technology can generate income by selling excess licenses rather than using them."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade vs. carbon taxes",
+    "Kyoto Protocol"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "262-263",
+    "section_hint": "2.5 Emissions Markets \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Coal, cost, and the emissions markets' real target",
+   "category": "Emissions Markets",
+   "subcategory": "Fuel Mix / Policy Rationale",
+   "type": "concept",
+   "definition": "Emissions markets are, in practice, aimed primarily at coal-fired generation, because coal has historically been by far the cheapest way to generate electricity despite being the most polluting fuel.",
+   "core_idea": "Because coal is so much cheaper than alternatives, removing it entirely from the generation mix would sharply raise electricity prices, so emissions policy has to balance environmental goals against the risk of making power unaffordable.",
+   "key_points": [
+    "Coal historically generated electricity far more cheaply than alternative fuels, which is why it dominates the generation stack in many regions.",
+    "The author frames 'affordable power' as effectively synonymous with coal power, given coal's abundance (cited reserves in the US, former Soviet Union, China, and India) and low mining cost.",
+    "Completely removing coal from generation would cause a large increase in electricity prices; the stated goal of emissions markets is to manage the transition away from coal at a manageable cost rather than eliminate it abruptly.",
+    "A price increase on the order of 5-10x today's electricity prices is characterized as economically catastrophic \u2014 severe enough to risk tipping the economy into depression and killing political support for further reform."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains why natural gas fracking (see related item) was able to achieve emissions-policy goals informally by displacing coal on cost grounds alone."
+   ],
+   "trading_implications": [
+    "Coal-to-gas switching economics are a direct driver of emissions-credit demand/supply and of power price levels."
+   ],
+   "common_misunderstandings": [
+    "It would be a misunderstanding to think emissions markets aim to eliminate coal entirely quickly; the author frames the goal as managing the cost/pace of the shift away from coal, not eliminating it outright."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas fracking and displacement of coal",
+    "Cost burden and political deadlock"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "263-264",
+    "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   }
+  },
+  {
+   "topic": "Natural gas fracking displaced coal and defused carbon legislation",
+   "category": "Emissions Markets",
+   "subcategory": "Fuel Mix / Policy Outcome",
+   "type": "example",
+   "definition": "The drop in natural gas prices from fracking made efficient gas-fired generation cheap enough to displace many coal generators on pure economics, achieving much of what carbon legislation intended without the legislation itself passing.",
+   "core_idea": "Market-driven fuel switching (cheap gas out-competing coal) accomplished a large share of the emissions-reduction goal that formal cap and trade or carbon legislation was designed to achieve, effectively substituting for policy in the US.",
+   "key_points": [
+    "Fracking substantially lowered natural gas costs, enabling gas generation to displace less efficient coal units.",
+    "Since removing coal from the generation stack was the primary underlying goal of emissions legislation, this displacement achieved much of that goal 'for free' \u2014 without a carbon law being enacted.",
+    "The author states this development 'largely derailed' formal carbon legislation efforts in the United States, since the market solved much of the problem on its own."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows directly from coal's cost advantage being the core reason coal is hard to displace by policy alone."
+   ],
+   "trading_implications": [
+    "Natural gas price declines can substitute for emissions-policy tightening as a driver of coal retirements and emissions-credit demand."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal, cost, and the emissions markets' real target"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "263-264",
+    "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   }
+  },
+  {
+   "topic": "Why the cost burden of emissions reduction is politically deadlocking",
+   "category": "Emissions Markets",
+   "subcategory": "Policy / Political Economy",
+   "type": "concept",
+   "definition": "International climate negotiations have stalled largely because reducing carbon emissions is expensive, and no country or bloc is willing to bear that cost \u2014 nor can it simply be shifted onto someone else.",
+   "core_idea": "Stripped of diplomatic language, the core sticking point in emissions negotiations is a dispute over who pays for more expensive electricity, since neither industrialized nor developing countries can absorb heating/electricity costs many times higher than today's.",
+   "key_points": [
+    "The author argues there is no feasible way to make 'someone else' bear the cost of higher electricity prices, and that this is the central reason international emissions talks have deadlocked.",
+    "Both industrialized-country and developing-country consumers are described as unable to afford electricity/heating costs an order of magnitude above current levels."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly connects to the national-allocation disputes under the Kyoto Protocol."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kyoto Protocol",
+    "National positions on emissions allocation"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "263-264",
+    "section_hint": "2.5 Emissions Markets \u2014 general discussion"
+   }
+  },
+  {
+   "topic": "Why global warming is treated as dangerous",
+   "category": "Emissions Markets",
+   "subcategory": "Background / Motivation",
+   "type": "concept",
+   "definition": "The main harm attributed to climate change in this context is disruption of the sunlight/rainfall balance that arable farmland depends on, which threatens food production for a growing global population.",
+   "core_idea": "Because ecosystems (plants and animals) are adapted to specific regional climate conditions, a regional climate shift tends to kill off local species rather than simply relocate them, and there is no practical way to relocate affected human populations to newly-suitable regions either.",
+   "key_points": [
+    "Crops depend on a specific balance of sunlight and rainfall; disruption of that balance is described as generally harmful.",
+    "If a region's climate changes, local plant and animal life is likely to die out rather than adapt in place.",
+    "Even if another region's climate becomes suitable for the displaced species/crops, the author notes there is no easy way to physically relocate the people who depended on the original region."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [],
+   "source": {
+    "chapter": 8,
+    "pages": "264",
+    "section_hint": "Why Is Global Warming Dangerous?"
+   }
+  },
+  {
+   "topic": "Origins of international climate negotiations (UN, c. 1990)",
+   "category": "Emissions Markets",
+   "subcategory": "History",
+   "type": "definition",
+   "definition": "International discussions on limiting greenhouse gases began around 1990 after scientists observed rising regional temperatures, coordinated through the United Nations with the goal of binding treaties capping emissions at 1990 levels.",
+   "core_idea": "The UN's coordinating role existed because unilateral emissions cuts by a single country are largely ineffective if other countries don't cut in parallel, but the talks ultimately broke down over disagreement about who should bear the cost of cutting emissions.",
+   "key_points": [
+    "Global warming became a prominent topic around 1990 as observed temperature records showed gradual increases in many regions.",
+    "The stated original goal was binding international treaties limiting greenhouse gas emissions back to 1990 levels.",
+    "The UN's involvement is explained by the free-rider logic: one country cutting emissions alone does little good if others don't also slow their output.",
+    "The talks ultimately failed to produce a binding international compromise, primarily due to disagreement over which parties should pay for emissions reductions."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the later, more specific national disputes described under the EU, Russia, and China/India positions, and leads into the Kyoto Protocol."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "National positions on emissions allocation",
+    "Kyoto Protocol"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "264-265",
+    "section_hint": "History"
+   }
+  },
+  {
+   "topic": "National positions in emissions allocation disputes",
+   "category": "Emissions Markets",
+   "subcategory": "History / Policy",
+   "type": "example",
+   "definition": "Different blocs proposed emissions frameworks that each happened to favor their own economic position: the EU proposed taxing high-polluting countries to pay efficient ones; Russia pushed for caps set at 1990 historical levels; China and India pushed for per-capita emissions allocations; industrialized countries (US, EU, Russia, Japan) agreed among themselves to a 5% cut below 1990 levels.",
+   "core_idea": "Each bloc's proposed allocation rule tended to maximize its own emissions rights or economic advantage, which the author presents as the underlying reason a global compromise proved unreachable.",
+   "key_points": [
+    "The EU, having relatively efficient power plants, favored a scheme taxing high-polluting countries and transferring proceeds to efficient ones.",
+    "Russia advocated capping rights at 1990 historical levels; because Russia's economy (and thus emissions) had collapsed roughly 30% below 1990 levels by the mid-1990s negotiations, this would have given it large surplus emissions rights to resell \u2014 described as 'hot air' surplus capacity.",
+    "China and India, the world's largest and fourth-largest carbon emitters respectively at the time, advocated per-capita emissions targets, which \u2014 given their large populations \u2014 would let them keep building coal plants while still holding sellable surplus credits.",
+    "The US, EU, Russia, and Japan (as industrialized countries) agreed among themselves to cut emissions to 5% below 1990 levels, but the author notes this would still be insufficient to halt climate change if developing countries kept building highly polluting coal plants.",
+    "Despite the UN failing to reach a binding global agreement, many countries voluntarily followed most UN suggestions, resulting in uneven implementation of carbon emission schemes worldwide."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the cost-allocation deadlock described above; feeds into the Kyoto Protocol's difficulty setting binding national allocations."
+   ],
+   "trading_implications": [
+    "A country's realized emissions relative to any negotiated baseline (e.g., Russia's post-Soviet collapse vs. a 1990 baseline) can create large surplus tradable allowances unrelated to actual abatement effort."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Origins of international climate negotiations (UN, c. 1990)",
+    "Kyoto Protocol"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "264-265",
+    "section_hint": "History"
+   }
+  },
+  {
+   "topic": "The Kyoto Protocol (1997)",
+   "category": "Emissions Markets",
+   "subcategory": "History / Policy",
+   "type": "definition",
+   "definition": "The Kyoto Protocol, signed in 1997, was the first global agreement establishing a cap and trade framework with both international and national emissions limits; it was approved in principle by nearly every country but never became a binding agreement in practice.",
+   "core_idea": "Kyoto's cap and trade structure was widely endorsed conceptually, but setting the actual national allocation levels turned into an intractable political fight, centered on whether the US should have to abandon coal-based generation so that other nations could build their own coal plants.",
+   "key_points": [
+    "Kyoto created the first cap and trade system operating at both an international and national level for greenhouse gases.",
+    "Nearly universal approval 'in principle' did not translate into a binding agreement.",
+    "The central disagreement in setting national allocations was framed as: should the US be required to give up coal power so developing nations can build coal plants of their own.",
+    "Two competing allocation philosophies were in tension: setting carbon limits on a per-person basis, versus the view that no region should build highly polluting technology regardless of its current per-capita emissions.",
+    "The author frames the underlying dispute, again, as fundamentally about who bears the cost of more expensive electricity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds directly on the cap and trade mechanics and the national-allocation disputes described earlier in the section."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Approval 'in principle' by most countries should not be mistaken for a binding treaty \u2014 the text is explicit that Kyoto did not become binding."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "How a cap and trade system works",
+    "National positions in emissions allocation disputes"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "265-266",
+    "section_hint": "The Kyoto Protocol"
+   }
+  }
+ ]
+}

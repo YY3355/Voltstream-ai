@@ -1,0 +1,357 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Exchange for Physical (EFP) negotiated terms",
+   "category": "Derivatives",
+   "subcategory": "Exchange for Physical",
+   "type": "market_mechanic",
+   "definition": "The set of terms two counterparties must agree on when converting a futures position into a physical delivery obligation via an EFP.",
+   "core_idea": "An EFP requires the parties to pin down how the futures settlement price maps to an actual physical transaction: what price adjustment applies, where and when the commodity moves, and how much is delivered.",
+   "key_points": [
+    "Index price is simply the futures settlement price used as the pricing anchor.",
+    "Differential (basis price) is a negotiated adjustment \u2014 positive, negative, or zero \u2014 that reconciles the futures price to the value of the specific physical commodity being delivered.",
+    "Invoice price is index price plus differential; it is the actual amount the buyer pays the seller for the physical delivery.",
+    "Delivery point, volume, and delivery date are all separately negotiated as part of the EFP, and volume/date can be expressed as totals, per-day rates, or a count of underlying futures contracts."
+   ],
+   "formulas": [
+    {
+     "name": "Invoice Price",
+     "formula": "Invoice Price = Index Price + Differential",
+     "variables": {
+      "Index Price": "settlement price of the futures contract",
+      "Differential": "negotiated basis adjustment between futures and physical value"
+     }
+    }
+   ],
+   "relationships": [
+    "Differential reflects basis risk between the futures contract and the specific physical commodity/location delivered."
+   ],
+   "trading_implications": [
+    "A trader using an EFP to take physical delivery must negotiate basis, location, timing, and volume separately from the futures price itself \u2014 the futures price alone is not the delivered cost."
+   ],
+   "common_misunderstandings": [
+    "Assuming the futures settlement price is the same as what will actually be paid for physical delivery; the differential can move the invoice price materially away from the index price."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forwards",
+    "Basis risk",
+    "Futures contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Exchange for Physical"
+   }
+  },
+  {
+   "topic": "Forwards vs. futures",
+   "category": "Derivatives",
+   "subcategory": "Forwards & Swaps",
+   "type": "definition",
+   "definition": "A forward is a physically settled contract that is economically similar to a futures contract but is negotiated directly (bilaterally/OTC) between two counterparties rather than cleared on an exchange.",
+   "core_idea": "Forwards give traders the same ability as futures to lock in a future price, location, and time, but without exchange clearing \u2014 trading customization for counterparty credit exposure.",
+   "key_points": [
+    "Forwards are bilateral/OTC, not exchange-cleared.",
+    "Because there is no clearinghouse, each party bears direct credit risk that the other side will fail to perform.",
+    "In theory forwards can be fully customized for illiquid or unique products, but in practice most are standardized, following terms similar to futures."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Forwards are the bilateral counterpart to exchange-cleared futures; an OTC clearing service can convert a forward into a future by inserting the exchange as counterparty."
+   ],
+   "trading_implications": [
+    "Choosing a forward over a future trades exchange credit protection for contract customization (location, volume, delivery schedule)."
+   ],
+   "common_misunderstandings": [
+    "Treating forwards as interchangeable with futures in terms of counterparty risk \u2014 forwards carry direct bilateral credit risk that futures do not."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Futures contracts",
+    "Commodity swaps",
+    "OTC clearing"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Forwards and Swaps"
+   }
+  },
+  {
+   "topic": "Commodity swap",
+   "category": "Derivatives",
+   "subcategory": "Forwards & Swaps",
+   "type": "definition",
+   "definition": "A commodity swap is essentially a forward contract that settles financially (in cash) instead of through physical delivery of the commodity.",
+   "core_idea": "In energy markets, 'swap' most commonly refers to a cash-settled forward \u2014 the same price-lock mechanics as a forward, but no physical commodity changes hands.",
+   "key_points": [
+    "General definition of 'swap' is broad (any agreement to exchange something in the future), but in energy trading it specifically denotes a cash-settled forward.",
+    "If traders don't want physical delivery, they use a swap instead of a forward.",
+    "The term 'swap' can mean different things in other financial markets outside energy."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Commodity swap relates to forwards as the cash-settled counterpart of a physically settled contract."
+   ],
+   "trading_implications": [
+    "Traders who want price exposure without logistics/delivery obligations use swaps rather than forwards."
+   ],
+   "common_misunderstandings": [
+    "Assuming 'swap' always means the same instrument across markets \u2014 its meaning is context-dependent, and in energy it specifically implies cash settlement of a forward-like trade."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forwards",
+    "Financial settlement"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Forwards and Swaps"
+   }
+  },
+  {
+   "topic": "Key features of forwards and swaps",
+   "category": "Derivatives",
+   "subcategory": "Forwards & Swaps",
+   "type": "concept",
+   "definition": "A set of structural characteristics common to bilaterally negotiated forward and swap contracts.",
+   "core_idea": "Because forwards and swaps are private, uncleared contracts, exiting or unwinding them requires dealing with the same original counterparty, and credit and margin arrangements are handled directly between the two parties.",
+   "key_points": [
+    "Being private contracts, offsetting or exiting a position requires transacting again with the original counterparty (no exchange to novate to).",
+    "All bilateral contracts carry credit risk \u2014 the counterparty must actually meet its obligations.",
+    "These contracts are typically struck at zero value (strike price = prevailing price at inception), so usually no cash changes hands until delivery/settlement.",
+    "Margin posting is optional and, when used, is agreed in advance under a master agreement.",
+    "Forwards typically run through to actual physical delivery rather than being unwound early; if delivery isn't wanted, a swap is used instead."
+   ],
+   "formulas": [],
+   "relationships": [
+    "These features distinguish forwards/swaps from exchange-cleared futures, which have daily margining, a clearinghouse counterparty, and easy offsetting."
+   ],
+   "trading_implications": [
+    "Traders using forwards/swaps must actively manage bilateral credit exposure and cannot easily lay off risk to a third party without a new offsetting trade with the same counterparty."
+   ],
+   "common_misunderstandings": [
+    "Assuming forward/swap positions can be exited as freely as exchange-traded futures positions."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit risk",
+    "Master agreements",
+    "Futures contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Forwards and Swaps"
+   }
+  },
+  {
+   "topic": "ISDA master agreement and netting",
+   "category": "Derivatives",
+   "subcategory": "Legal/Documentation",
+   "type": "market_mechanic",
+   "definition": "A standardized legal framework (per the ISDA master agreement) under which bilateral trades between two counterparties are documented, including a master netting clause that treats all transactions between the parties as a single contract.",
+   "core_idea": "Standardized documentation lets most forward/swap trades be recorded quickly as short-form addenda to a pre-negotiated master agreement, and the netting clause protects both parties in a counterparty bankruptcy by preventing selective enforcement of individual trades.",
+   "key_points": [
+    "Most forwards, despite being theoretically customizable, follow standardized terms similar to futures contracts.",
+    "The master netting clause bundles all trades between two parties into a single contract, so a bankruptcy court cannot enforce favorable trades while disclaiming unfavorable ones (cherry-picking).",
+    "New trades are usually documented as short-form transactions (addenda to the master agreement); long-form transactions \u2014 where all terms are spelled out \u2014 are used only when the two parties have never traded before, and are far less common."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Master agreement documentation underlies the credit-risk management features of forwards and swaps."
+   ],
+   "trading_implications": [
+    "Trading under an established ISDA master agreement with netting reduces bankruptcy-related counterparty risk and speeds up trade documentation via short-form confirms."
+   ],
+   "common_misunderstandings": [
+    "Believing each individual forward/swap trade is a fully separate legal contract \u2014 under a master netting agreement they are treated as one contract for bankruptcy purposes."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit risk",
+    "Key features of forwards and swaps",
+    "OTC clearing"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Forwards and Swaps"
+   }
+  },
+  {
+   "topic": "Mitigating forward credit risk: margin and OTC clearing",
+   "category": "Derivatives",
+   "subcategory": "Credit Risk Management",
+   "type": "market_mechanic",
+   "definition": "Two mechanisms traders use to reduce bilateral counterparty credit risk in forward trading: requiring margin/credit guarantees, or routing the trade through an exchange-based OTC clearing service.",
+   "core_idea": "Traders can either directly collateralize their counterparty exposure (margin, bank credit lines) or use an OTC clearing service where the exchange steps in as counterparty to both sides, effectively turning the forward into a cleared future.",
+   "key_points": [
+    "Requiring margin or evidence of a bank credit line reduces reliance on trusting the counterparty's creditworthiness.",
+    "With OTC clearing, the two traders still negotiate the trade themselves but then register it with an exchange.",
+    "Once registered, the exchange becomes the counterparty to each trader, which converts the credit profile of the forward into that of a future."
+   ],
+   "formulas": [],
+   "relationships": [
+    "OTC clearing bridges bilateral forwards and exchange-cleared futures."
+   ],
+   "trading_implications": [
+    "A trader worried about counterparty default on a forward can negotiate margin terms up front or clear the trade through an exchange service to gain clearinghouse credit protection while keeping bilateral price negotiation."
+   ],
+   "common_misunderstandings": [
+    "Assuming forwards are permanently stuck with bilateral credit risk \u2014 clearing services let market participants convert them into cleared, futures-like exposures after the fact."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forwards",
+    "Futures contracts",
+    "Credit risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Forwards and Swaps"
+   }
+  },
+  {
+   "topic": "Options: calls, puts, and premium",
+   "category": "Derivatives",
+   "subcategory": "Options",
+   "type": "concept",
+   "definition": "An option is a derivative contract giving its buyer the right, but not the obligation, to buy (call) or sell (put) an underlying asset at a fixed price at a future date, in exchange for an up-front premium.",
+   "core_idea": "Unlike futures, forwards, and swaps, an option buyer can choose not to exercise, which caps the buyer's downside at the premium paid while preserving upside participation.",
+   "key_points": [
+    "A call option is the right to buy; a put option is the right to sell.",
+    "The premium is paid up front by the buyer when purchasing the option, and can be expensive.",
+    "For the option buyer, risk is limited to losing the premium; otherwise the buyer profits.",
+    "As a rule of thumb, option buyers frequently lose small amounts (the premium) but occasionally realize large profits; option sellers earn a steady stream of small premiums but face occasional large losses \u2014 the payout profiles are mirror images of each other."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Options differ from futures/forwards/swaps specifically in that exercise is optional for the buyer, changing the risk/reward shape versus a fixed obligation."
+   ],
+   "trading_implications": [
+    "Buying options is a way to set a worst-case price for an asset while retaining upside, at the cost of the premium; selling options generates regular premium income but exposes the seller to potentially large tail losses."
+   ],
+   "common_misunderstandings": [
+    "Confusing an option's limited-loss profile for the buyer with the seller's risk profile \u2014 the seller does not have the same limited downside."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forwards",
+    "Commodity swaps",
+    "Futures contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Options"
+   }
+  },
+  {
+   "topic": "Time value of money and interest rates",
+   "category": "Risk",
+   "subcategory": "Time Value of Money",
+   "type": "concept",
+   "definition": "The principle that money available today is generally worth more than the same nominal amount promised in the future, because it can be invested or spent immediately; interest rates quantify this relationship between present and future value.",
+   "core_idea": "Interest rates translate between present value (cash today) and future value (cash at a later date), and the 'right' rate to use reflects the market's consensus expected return, which itself is shaped by the likelihood of actually being repaid.",
+   "key_points": [
+    "Given a guaranteed choice between equal payments now vs. later, rational actors prefer payment now because they can invest or spend it immediately.",
+    "When future payments are larger than present ones, the decision depends on comparing the larger future payment against the expected investment return achievable on the smaller present payment.",
+    "A stated interest rate expresses the equivalence between a present amount and a larger future amount (the author's example: 10% annual rate implies $100 today \u2248 $110 in a year, and conversely $100 a year from now is worth about $91 today)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Time value of money underlies the pricing logic connecting present and future cash flows, which the author distinguishes from an individual's own required return (IRR) and from the market consensus rate (interest rate)."
+   ],
+   "trading_implications": [
+    "When comparing cash flows that occur at different times (e.g., valuing a forward or evaluating a payment plan), a trader must discount/compound cash flows using an appropriate interest rate rather than comparing nominal amounts directly."
+   ],
+   "common_misunderstandings": [
+    "Comparing nominal dollar amounts across different time periods without adjusting for the time value of money."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Individual rate of return (IRR)",
+    "Interest rate benchmarks",
+    "Present value",
+    "Future value"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Time Value of Money"
+   }
+  },
+  {
+   "topic": "Individual rate of return (IRR) vs. market interest rate",
+   "category": "Risk",
+   "subcategory": "Time Value of Money",
+   "type": "definition",
+   "definition": "An individual's expected rate of return on their own investments is their individual rate of return (IRR); the interest rate is the aggregate consensus of all market participants' IRRs.",
+   "core_idea": "Interest rates observed in the market are essentially a collective aggregation of individual investors' expected returns, used as the benchmark for time-value-of-money comparisons.",
+   "key_points": [
+    "IRR is personal/individual \u2014 it reflects one investor's own expected return from their investment opportunities.",
+    "The market interest rate emerges as the consensus across all participants' individual rates of return."
+   ],
+   "formulas": [],
+   "relationships": [
+    "IRR feeds into the broader market interest rate, which is then used generally as the time-value-of-money benchmark."
+   ],
+   "trading_implications": [
+    "A trader's personal discount rate (IRR) may differ from the quoted market interest rate, affecting how they individually value future cash flows relative to the broader market."
+   ],
+   "common_misunderstandings": [
+    "Treating 'interest rate' and 'individual rate of return' as synonyms; the former is a market consensus, the latter is specific to one participant."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Time value of money",
+    "Interest rate benchmarks"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Time Value of Money"
+   }
+  },
+  {
+   "topic": "Credit quality and interest rate benchmarks",
+   "category": "Risk",
+   "subcategory": "Time Value of Money",
+   "type": "concept",
+   "definition": "Interest rates vary primarily based on the creditworthiness of the borrower \u2014 the likelihood that the debtor will actually repay \u2014 with more reliable borrowers commanding lower rates.",
+   "core_idea": "Because there isn't one universal interest rate, the market prices many different rates depending on repayment risk, with very low-risk borrowers (like the U.S. government) setting benchmark low rates, and interbank lending rates like LIBOR serving as another common reference.",
+   "key_points": [
+    "The main driver of differences between interest rates is the likelihood the borrower meets its obligations (credit risk of the debtor).",
+    "Lower default risk correlates with a lower interest rate.",
+    "U.S. Treasury rates reflect the rate the U.S. government pays to borrow \u2014 treated as a very low-risk benchmark.",
+    "LIBOR (London Interbank Offered Rate) is another widely used benchmark, representing the rate at which major banks lend to one another."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This is a specific application of time value of money \u2014 the discount rate used depends on the credit risk of the specific cash flow's payer."
+   ],
+   "trading_implications": [
+    "When valuing a future payment or contract, traders should select a discount/interest rate appropriate to the actual counterparty's credit quality rather than using a single generic rate."
+   ],
+   "common_misunderstandings": [
+    "Assuming a single 'interest rate' applies uniformly across all borrowers regardless of their creditworthiness."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Time value of money",
+    "Credit risk",
+    "Individual rate of return (IRR)"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Time Value of Money"
+   }
+  }
+ ]
+}

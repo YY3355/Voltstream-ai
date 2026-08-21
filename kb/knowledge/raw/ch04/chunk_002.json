@@ -1,0 +1,251 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Natural Gas Pipeline Transportation",
+   "category": "Natural Gas",
+   "subcategory": "Transportation & Infrastructure",
+   "type": "concept",
+   "definition": "Pipelines are the dominant way natural gas is moved, and they solve the commodity's low energy density by supplying a continuous stream of gas at moderate pressure rather than shipping it in dense, discrete batches.",
+   "core_idea": "Because methane carries less energy per unit volume than heavier hydrocarbons like propane or butane, pipelines compensate by delivering gas continuously under moderate pressure instead of trying to compress it into a denser form for shipment.",
+   "key_points": [
+    "Methane's low energy density per volume is the core physical challenge pipeline transport is built around.",
+    "Pipelines operate at moderate pressure and supply gas continuously rather than in discrete high-density shipments.",
+    "Interstate pipeline operators are for-profit businesses that also function much like public utilities.",
+    "FERC regulates interstate pipelines: limiting new construction, capping chargeable rates, and requiring nondiscriminatory access.",
+    "Service ranges from guaranteed delivery (most expensive) down to various nonguaranteed tiers, priced according to reliability."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regulated by FERC",
+    "Contrasts with LNG shipping for long-distance/overseas transport"
+   ],
+   "trading_implications": [
+    "Service-level tiers (firm vs nonguaranteed) create a reliability/cost tradeoff shippers must weigh when planning deliveries"
+   ],
+   "common_misunderstandings": [
+    "Natural gas is not shipped in compact high-density batches like liquid fuels; pipeline transport instead relies on continuous flow because of the gas's inherently low energy density"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Hubs and Citygates",
+    "Firm vs. Interruptible Transportation Contracts",
+    "Liquefied Natural Gas (LNG) Process"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "142-142",
+    "section_hint": "Pipeline Transportation"
+   }
+  },
+  {
+   "topic": "Natural Gas Hubs and Citygates",
+   "category": "Natural Gas",
+   "subcategory": "Market Infrastructure",
+   "type": "definition",
+   "definition": "A hub is any location where two or more pipelines interconnect; a citygate is a specific type of hub where an interstate pipeline hands gas off to a local distribution network. Most natural gas trading happens at these interconnection points.",
+   "core_idea": "Because pipelines physically interconnect at hubs and citygates, these points naturally become the centers of price discovery and trading activity for natural gas.",
+   "key_points": [
+    "A hub is any location where two or more pipelines connect.",
+    "A citygate is a hub type specifically where interstate pipelines connect into local distribution networks.",
+    "Most natural gas trading occurs at hubs or citygates rather than at wellheads or arbitrary pipeline points.",
+    "Henry Hub, located on the U.S. Gulf Coast roughly between New Orleans and Houston, is the most important natural gas hub in North America."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Henry Hub is a specific, dominant example of a hub",
+    "Citygates link interstate pipelines to local distribution"
+   ],
+   "trading_implications": [
+    "Traders concentrate liquidity and price discovery at hubs/citygates rather than diffuse pipeline segments"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub Benchmark and NYMEX Futures Contract",
+    "Natural Gas Pipeline Transportation"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "142-142",
+    "section_hint": "Pipeline Transportation"
+   }
+  },
+  {
+   "topic": "Henry Hub Benchmark and NYMEX Futures Contract",
+   "category": "Natural Gas",
+   "subcategory": "Benchmarks & Derivatives",
+   "type": "market_mechanic",
+   "definition": "Henry Hub is both a physical interconnection of 13 pipelines on the Louisiana Gulf Coast and the delivery point for the NYMEX natural gas futures contract, making it the dominant price benchmark for U.S. natural gas.",
+   "core_idea": "Unlike broad-market benchmarks such as the S&P 500 that average many components, the Henry Hub natural gas benchmark is the actual price at one specific physical location, and most other natural gas (and even electricity) forward prices are built heavily off this single contract.",
+   "key_points": [
+    "Henry Hub sits at the interconnection of 13 major pipelines near the Louisiana Gulf Coast.",
+    "It is the designated delivery location for the NYMEX natural gas futures contract.",
+    "It functions as the primary U.S. natural gas price index, comparable in importance to the S&P 500 for equities.",
+    "Key distinction from an equity index: Henry Hub is a single-location transaction price, not an average across many locations or instruments.",
+    "Most natural gas forward prices, and many electricity forward prices, are heavily derived from this contract."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins forward curves for both gas and electricity",
+    "Its physical role as an interconnection hub is what makes it useful as a financial benchmark"
+   ],
+   "trading_implications": [
+    "Basis trades are commonly structured as the spread between a local hub/citygate price and the Henry Hub benchmark",
+    "Electricity forward pricing often references Henry Hub gas prices given gas-fired generation's influence on power prices"
+   ],
+   "common_misunderstandings": [
+    "Henry Hub is not an averaged index like a stock index \u2014 it is literally the price at one physical location"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Hubs and Citygates"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "142-143",
+    "section_hint": "Henry Hub Futures Contract"
+   }
+  },
+  {
+   "topic": "Firm vs. Interruptible Transportation Contracts",
+   "category": "Natural Gas",
+   "subcategory": "Transportation Contracts",
+   "type": "market_mechanic",
+   "definition": "Pipeline transportation capacity is sold either as firm (capacity guaranteed to be available) or interruptible (capacity available only when firm-contract holders aren't using all of their reserved capacity).",
+   "core_idea": "Firm transportation guarantees pipeline space at a premium, publicly-tariffed price, while interruptible transportation offers cheaper, opportunistic access that the pipeline can curtail whenever firm customers need their reserved capacity.",
+   "key_points": [
+    "Firm contracts guarantee that capacity will be available.",
+    "Interruptible contracts only allow flow when firm customers aren't using all of their reserved capacity, at a price negotiated with the pipeline.",
+    "Firm transportation pricing is public: regulated pipelines must publish a tariff, obtainable from the pipeline or the regulator.",
+    "Example: a gas-fired generator with firm capacity may only need it during extreme weather, letting the pipeline resell the unused capacity as interruptible service; a storage facility might use interruptible transport to fill up when pipeline usage is low and sell out of storage when usage is high."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Interruptible capacity is unused firm capacity resold by the pipeline",
+    "Connects to storage arbitrage business models"
+   ],
+   "trading_implications": [
+    "Storage operators can use cheap interruptible transport to buy into storage during low-usage periods and sell during high-usage periods, monetizing the price/capacity spread",
+    "Firm transport costs are publicly known via tariffs and can be modeled precisely, unlike negotiated interruptible pricing"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Transportation Contract Fee Terms",
+    "Zone Rates vs. Postage Stamp Rates"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "143-144",
+    "section_hint": "Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Natural Gas Transportation Contract Fee Terms",
+   "category": "Natural Gas",
+   "subcategory": "Transportation Contracts",
+   "type": "definition",
+   "definition": "A standard set of named charges and terms used in pipeline transportation contracts to structure how shippers pay for capacity and gas movement.",
+   "core_idea": "Pipeline transportation pricing is built from several standard components \u2014 a fixed reservation fee, a variable commodity fee, small regulatory/inflation add-ons, an in-kind allowance for gas lost as compressor fuel, and location-based price adjusters \u2014 that together define the full cost of moving gas.",
+   "key_points": [
+    "Reservation charge: fixed monthly fee to reserve pipeline capacity.",
+    "Commodity charge: variable fee, quoted per unit of gas transported.",
+    "ACA (Annual Cost Adjustment) charge: small fee adjusting transport costs for inflation.",
+    "GRI (Gas Research Institute) charge: small fixed U.S. fee funding the nonprofit Gas Research Institute.",
+    "Fuel usage: gas lost in transport, typically taken in kind as payment to power the compressors that move the gas.",
+    "Receipt adder: fixed price adjustment setting the receipt-point price relative to a nearby benchmark.",
+    "Delivery adder: fixed price adjustment setting the delivery-point price relative to a nearby benchmark.",
+    "Volume: the contracted quantity of gas to be transported."
+   ],
+   "formulas": [],
+   "relationships": [
+    "These terms together define the effective full-cycle cost of a firm or interruptible transportation contract"
+   ],
+   "trading_implications": [
+    "Receipt/delivery adders let traders translate a hub benchmark price into the effective price at a specific receipt or delivery point (basis)",
+    "Fuel usage reduces delivered volume relative to injected volume, a shrinkage cost to factor into netback calculations"
+   ],
+   "common_misunderstandings": [
+    "Fuel usage is not a cash charge \u2014 it is gas physically consumed/lost in transit, generally used as in-kind payment for compressor power"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Firm vs. Interruptible Transportation Contracts",
+    "Zone Rates vs. Postage Stamp Rates",
+    "Henry Hub Benchmark and NYMEX Futures Contract"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "143-144",
+    "section_hint": "Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Zone Rates vs. Postage Stamp Rates",
+   "category": "Natural Gas",
+   "subcategory": "Transportation Contracts",
+   "type": "definition",
+   "definition": "Two pipeline pricing structures for transportation cost: zone rates charge based on which zones gas moves between on a multi-zone pipeline, while a postage stamp rate is a single flat fee to move gas anywhere on a single-zone pipeline.",
+   "core_idea": "Pipelines either divide their system into priced zones, where cost depends on the zone pair gas moves between, or treat the whole system as one zone with a flat 'postage stamp' fee regardless of distance.",
+   "key_points": [
+    "Not all pipelines are divided into zones; some charge one flat rate across the whole system.",
+    "Zone rates: the tariff lists the cost to move gas between specific zone pairs.",
+    "Postage stamp rate: a single fixed cost to transport gas anywhere on that (single-zone) pipeline, regardless of distance."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Part of the tariff structure alongside other transportation contract charges"
+   ],
+   "trading_implications": [
+    "On a postage-stamp pipeline, internal distance doesn't affect transport cost, which can make certain receipt/delivery point combinations relatively more attractive than on a zoned system"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Transportation Contract Fee Terms"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "144-144",
+    "section_hint": "Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Liquefied Natural Gas (LNG) Process",
+   "category": "Natural Gas",
+   "subcategory": "Transportation & Infrastructure",
+   "type": "concept",
+   "definition": "LNG is the second major method (alongside pipelines) for moving natural gas in bulk: cooling the gas to about -263\u00b0F (-160\u00b0C) shrinks its volume roughly 610-fold so it can be shipped by tanker, after which it is reheated back into gas at the destination.",
+   "core_idea": "Because pipelines cannot economically cross oceans, LNG converts gas into a compact liquid for ship transport, at the cost of heavy insulation and a three-stage process \u2014 liquefaction, transportation, and regasification \u2014 that is only cost-effective at large scale.",
+   "key_points": [
+    "Liquefying natural gas requires cooling it to about -263\u00b0F / -160\u00b0C.",
+    "As a liquid, natural gas occupies only about 1/610 of its gaseous volume.",
+    "The extreme cold requires heavy insulation, which is only cost-effective at large scale (e.g., tanker ships).",
+    "After transport, the LNG must be regasified (reheated) before use.",
+    "The three main steps are liquefaction, transportation, and regasification.",
+    "Liquefaction occurs in a multistage sequence of cooling units called a 'train,' and this stage also separates out heavier hydrocarbons from the gas.",
+    "Liquefaction plants are typically linked to producing regions by short-range pipelines."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative to pipeline transport for long-distance/overseas movement",
+    "Liquefaction's hydrocarbon separation echoes earlier gas-processing steps in the source"
+   ],
+   "trading_implications": [
+    "LNG enables gas arbitrage between geographically disconnected markets (e.g., Henry Hub vs. overseas hubs) that pipelines cannot physically bridge",
+    "The scale economics of insulation and cooling mean LNG projects are large and capital-intensive, favoring sustained large volumes over small shipments"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Pipeline Transportation"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "144-146",
+    "section_hint": "Liquefied Natural Gas"
+   }
+  }
+ ]
+}

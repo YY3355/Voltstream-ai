@@ -1,0 +1,106 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Fair value leveling example: Henry Hub vs. Texas gas basis",
+   "category": "Risk",
+   "subcategory": "Mark-to-Market Accounting",
+   "type": "example",
+   "definition": "A worked example showing how the level 1/2/3 fair-value hierarchy applies to natural gas prices and derivatives, using Henry Hub as the level 1 benchmark and Texas basis-priced gas as level 2.",
+   "core_idea": "Henry Hub is the primary U.S. natural gas price benchmark and futures delivery point, so its prices and futures are level 1. Texas gas is priced as a basis spread to Henry Hub (broker-quoted, typically a couple of cents), making that spread a level 2 input and any swap settling in Texas a level 2 security because it blends a level 1 input with a level 2 input.",
+   "key_points": [
+    "Henry Hub is the delivery point for U.S. natural gas futures and the national benchmark price.",
+    "Prices observed directly at Henry Hub are level 1 inputs; futures settling there are level 1 securities.",
+    "Texas natural gas is priced as a spread (basis) to Henry Hub, typically within a couple of cents.",
+    "That basis spread is quoted primarily by brokers, which makes it a level 2 input.",
+    "A swap settling in Texas is a level 2 security because it combines a level 1 input (Henry Hub price) with a level 2 input (the basis spread)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on the level 1/2/3 fair-value input hierarchy defined elsewhere in this section."
+   ],
+   "trading_implications": [
+    "Valuing Texas-delivered gas positions requires both a Henry Hub reference price and a broker-quoted basis, so the valuation is only as reliable as the basis quote source."
+   ],
+   "common_misunderstandings": [
+    "A security is not automatically level 1 just because it references a level 1 price if any part of its valuation also relies on a level 2 (or lower) input."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fair value hierarchy",
+    "Basis risk",
+    "Natural gas futures"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "556-556",
+    "section_hint": "6.1 MARK-TO-MARKET ACCOUNTING"
+   }
+  },
+  {
+   "topic": "Basis spread stays level 2 even when zero",
+   "category": "Risk",
+   "subcategory": "Mark-to-Market Accounting",
+   "type": "concept",
+   "definition": "A rule clarifying that the leveling of an input is based on its data source, not on its observed value at a given valuation date.",
+   "core_idea": "A Texas gas swap remains a level 2 security even if its basis spread to Henry Hub happens to equal zero on the valuation date, because level 1 status requires that all pricing data come directly from the primary market, not merely that the numeric value coincides with a level 1 price.",
+   "key_points": [
+    "A basis spread of zero at valuation does not upgrade a security to level 1.",
+    "Level 1 classification requires all data inputs to come directly from the primary market, not just a matching value."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Refines the Henry Hub / Texas basis leveling example in this same section."
+   ],
+   "trading_implications": [
+    "Firms cannot reclassify a swap's fair-value level opportunistically based on a temporarily favorable (zero) basis reading."
+   ],
+   "common_misunderstandings": [
+    "Assuming a spread value of zero means the input source itself has become a level 1 (primary market) source."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fair value hierarchy",
+    "Basis risk"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "556-556",
+    "section_hint": "6.1 MARK-TO-MARKET ACCOUNTING"
+   }
+  },
+  {
+   "topic": "Leveling determination is a firm management judgment",
+   "category": "Risk",
+   "subcategory": "Mark-to-Market Accounting",
+   "type": "concept",
+   "definition": "A statement that classifying a security's fair-value level is a discretionary determination made by each firm rather than a fixed, universal rule.",
+   "core_idea": "Each firm's management decides how to level a given security, and that determination depends on what market data the firm itself has access to, so the same security could be leveled differently across firms and can change over time as data access changes.",
+   "key_points": [
+    "The level assigned to a security is determined by each firm's own management.",
+    "The determination depends on the market data the firm has access to.",
+    "This designation can change over time as data access changes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies generally to the level 1/2/3 hierarchy illustrated by the Henry Hub / Texas basis example."
+   ],
+   "trading_implications": [
+    "Two firms holding economically identical positions could report different fair-value levels depending on their respective market data access."
+   ],
+   "common_misunderstandings": [
+    "Assuming fair-value leveling is an objective, firm-independent classification rather than a management judgment call."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fair value hierarchy",
+    "Financial reporting judgment"
+   ],
+   "source": {
+    "chapter": 29,
+    "pages": "556-556",
+    "section_hint": "6.1 MARK-TO-MARKET ACCOUNTING"
+   }
+  }
+ ]
+}

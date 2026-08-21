@@ -1,0 +1,307 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Physical nature and composition of natural gas",
+   "category": "Natural Gas",
+   "subcategory": "Fundamentals",
+   "type": "concept",
+   "definition": "Natural gas is a nonrenewable fossil fuel that exists as a colorless, odorless gas mixture at room temperature, used mainly for heating and power generation.",
+   "core_idea": "Natural gas is mostly methane but can carry varying amounts of ethane, propane, butane, and non-hydrocarbon gases like nitrogen and CO2, so its composition \u2014 and therefore its heat content per unit volume \u2014 is not fixed.",
+   "key_points": [
+    "Primary component is methane (CH4); commonly present alongside ethane (C2H6), propane (C3H8), and butane (C4H10)",
+    "'Dry' gas is nearly pure methane; 'wet' gas carries significant amounts of the heavier hydrocarbons",
+    "Can also contain non-hydrocarbon gases such as nitrogen and carbon dioxide",
+    "Because composition varies, it is traded in heat-energy units (Btu, Joules) rather than volume units like cubic feet"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Composition variability is the reason gas is priced/traded by energy content rather than volume"
+   ],
+   "trading_implications": [
+    "Traders must think in energy-content terms (Btu/MMBtu) rather than raw volume when comparing gas across sources of differing composition"
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas is a pure, uniform substance (pure methane) rather than a variable hydrocarbon mixture"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Energy unit conversions (Btu, MMBtu, Bcf, therm)",
+    "Dry vs wet gas processing"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "133-134",
+    "section_hint": "2.1 Natural Gas \u2014 physical perspective"
+   }
+  },
+  {
+   "topic": "Pipeline infrastructure and captive demand",
+   "category": "Natural Gas",
+   "subcategory": "Infrastructure and Transportation",
+   "type": "market_mechanic",
+   "definition": "Natural gas relies on an extensive, capital-intensive network of pipelines to move gas from producing regions to consumers, and this sunk infrastructure creates structural, durable demand.",
+   "core_idea": "Once pipeline networks and household/utility hookups are built, replacing them with infrastructure for a different fuel is prohibitively expensive, which locks in consumers as a 'captive audience' and cements natural gas's long-term role in heating and power.",
+   "key_points": [
+    "Transcontinental pipelines move gas between regions; local pipelines handle final delivery to consumers within a limited area",
+    "A low-price period in the 1970s-1980s spurred a natural gas infrastructure construction boom",
+    "Demand growth later pushed prices up, but the already-built infrastructure kept consumers reliant on gas",
+    "Once pipelines exist, transportation costs for gas become small relative to other fuels",
+    "Nearly all U.S. fossil-fuel power plants built since 1990 can burn natural gas, tying electricity prices closely to gas prices"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sunk pipeline/appliance infrastructure -> inelastic, captive residential and power-generation demand",
+    "Natural gas price levels are structurally linked to electricity prices because of the prevalence of gas-capable power plants"
+   ],
+   "trading_implications": [
+    "Structural, infrastructure-driven demand makes natural gas consumption relatively inelastic in the short-to-medium term, which matters for weather-driven demand spikes",
+    "Strong gas-to-power linkage means gas price moves are a key driver of electricity price moves"
+   ],
+   "common_misunderstandings": [
+    "Believing natural gas is still 'extremely cheap' as it was decades ago; the author notes this is no longer true despite that reputation persisting"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas as a fuel for power generation",
+    "Historical price cycles"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "133-134",
+    "section_hint": "2.1 Natural Gas \u2014 summary and key topics"
+   }
+  },
+  {
+   "topic": "Natural gas pricing conventions and price behavior",
+   "category": "Natural Gas",
+   "subcategory": "Price Formation",
+   "type": "market_mechanic",
+   "definition": "Natural gas is typically priced as a differential (spread) to a benchmark index rather than as an outright price, and its spot and futures prices behave differently from typical financial/commodity assets.",
+   "core_idea": "In North America the benchmark reference point is Henry Hub, a major Gulf Coast pipeline interconnection; spot prices are strongly weather-driven, and futures prices move in cyclical patterns rather than tracking spot through a simple cost-of-carry relationship.",
+   "key_points": [
+    "Gas prices are quoted as a spread relative to an index, with Henry Hub as the primary North American benchmark",
+    "Spot prices are heavily influenced by weather",
+    "Futures prices exhibit cyclicality",
+    "Unlike stocks, bonds, or gold, natural gas futures prices are not tied to spot prices via a standard cost-of-carry relationship"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Henry Hub acts as the reference point that regional/local gas prices are quoted against as a basis/spread"
+   ],
+   "trading_implications": [
+    "Cost-of-carry / storage-arbitrage models used for financial assets do not reliably price natural gas futures relative to spot",
+    "Weather forecasts are a primary input for anticipating natural gas spot price moves"
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas futures can be priced off spot plus a standard carrying-cost model, the way futures are priced for stocks, bonds, or gold"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub basis trading",
+    "Weather-driven demand",
+    "Futures curve seasonality"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "133-133",
+    "section_hint": "2.1 Natural Gas \u2014 key topics"
+   }
+  },
+  {
+   "topic": "Natural gas energy-content units and conversions",
+   "category": "Natural Gas",
+   "subcategory": "Units and Measurement",
+   "type": "formula",
+   "definition": "Standard approximate conversions used to express natural gas quantities in heat-energy terms rather than volume, since composition (and thus energy content per volume) varies.",
+   "core_idea": "Dry natural gas has roughly a fixed Btu content per cubic foot, which lets volume-based figures (like Bcf) be translated into energy-based figures (like MMBtu), and consumer billing uses a smaller derived unit, the therm.",
+   "key_points": [
+    "These are approximate figures for dry (nearly pure methane) gas specifically \u2014 wet gas with heavier hydrocarbons would have different energy content per volume",
+    "A therm is the standard consumer billing unit, equal to one-tenth of an MMBtu"
+   ],
+   "formulas": [
+    {
+     "name": "Dry gas heat content",
+     "formula": "1 cubic foot of dry natural gas \u2248 1,000 Btu",
+     "variables": {
+      "Btu": "British Thermal Unit, a unit of heat energy",
+      "cubic foot": "unit of gas volume at standard conditions"
+     }
+    },
+    {
+     "name": "Volume-to-energy conversion",
+     "formula": "1 Bcf (billion cubic feet) \u2248 1,000,000 MMBtu",
+     "variables": {
+      "Bcf": "billion cubic feet of natural gas",
+      "MMBtu": "million Btu"
+     }
+    },
+    {
+     "name": "Therm definition",
+     "formula": "1 therm = 100,000 Btu = 0.1 MMBtu",
+     "variables": {
+      "therm": "standard consumer natural gas billing unit",
+      "Btu": "British Thermal Unit"
+     }
+    }
+   ],
+   "relationships": [
+    "These conversions link the volume-based units used in production/transport (Bcf) to the energy-based units used in trading (MMBtu) and retail billing (therms)"
+   ],
+   "trading_implications": [
+    "Wholesale gas trading and consumer billing use different unit conventions (MMBtu vs. therms), so conversion is needed when comparing prices across the value chain"
+   ],
+   "common_misunderstandings": [
+    "Treating natural gas volumes (e.g., cubic feet) as directly comparable across different gas streams without accounting for varying Btu content per unit volume"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dry vs wet gas composition",
+    "Henry Hub pricing in $/MMBtu"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "134-134",
+    "section_hint": "2.1 Natural Gas \u2014 physical perspective, units"
+   }
+  },
+  {
+   "topic": "Why natural gas is transported by pipeline rather than pressurized containers",
+   "category": "Natural Gas",
+   "subcategory": "Infrastructure and Transportation",
+   "type": "concept",
+   "definition": "Methane's low energy density per unit volume, relative to heavier hydrocarbons, makes pipeline transport the practical choice over pressurized container shipping.",
+   "core_idea": "Because methane holds relatively little heat energy per unit of volume compared to longer-chain hydrocarbons like propane or butane, moving it in pressurized metal containers would require impractically large containers, so pipelines are used instead.",
+   "key_points": [
+    "Propane and butane contain enough energy density to be practically shipped in pressurized metal containers",
+    "Methane requires a much larger container to hold an equivalent amount of heat energy, making container transport impractical at scale",
+    "Pipelines solve this by allowing continuous transport without needing to contain large volumes under pressure in discrete vessels"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Low energy density of methane -> reliance on pipeline infrastructure rather than tanker/cylinder transport"
+   ],
+   "trading_implications": [
+    "Regions without pipeline access to a given supply source face a structurally different (and often costlier) transport option: liquefaction/LNG shipping"
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas could be economically shipped in pressurized tanks the way propane or butane are"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG as an alternative transport method",
+    "Dry vs wet gas"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "134-134",
+    "section_hint": "2.1 Natural Gas \u2014 transportation"
+   }
+  },
+  {
+   "topic": "Liquefied natural gas (LNG)",
+   "category": "Natural Gas",
+   "subcategory": "Infrastructure and Transportation",
+   "type": "concept",
+   "definition": "LNG is natural gas that has been supercooled into liquid form to increase its energy density for transport or storage, typically converted back to gas before reaching end consumers.",
+   "core_idea": "Liquefaction (cooling gas to about \u2212263\u00b0F) makes natural gas dense enough to transport economically over long ocean distances where pipelines aren't feasible, and it can also serve as a storage method, but it is generally regasified before delivery since consumers lack equipment to handle supercooled liquid.",
+   "key_points": [
+    "Liquefaction requires cooling natural gas to approximately \u2212263\u00b0F",
+    "Liquids are much denser than gases, so LNG holds substantially more heat energy per unit volume than gaseous natural gas",
+    "LNG's main use is long-distance ocean transport where pipeline construction is impractical; it is also sometimes used for storage",
+    "Natural gas is almost always converted back to gas form before final delivery through local distribution pipelines"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Liquefaction trades off increased energy density against the cost/complexity of supercooling and specialized handling equipment"
+   ],
+   "trading_implications": [
+    "LNG shipping enables natural gas trade between regions not connected by pipeline (e.g., intercontinental trade), effectively globalizing what is otherwise a regionally-bound commodity"
+   ],
+   "common_misunderstandings": [
+    "Assuming LNG is delivered to end consumers in liquid form; in practice it is regasified before local distribution"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline transport rationale",
+    "Energy density comparisons"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "134-135",
+    "section_hint": "2.1 Natural Gas \u2014 transportation, liquefaction"
+   }
+  },
+  {
+   "topic": "Energy density comparison: gasoline vs. natural gas",
+   "category": "Natural Gas",
+   "subcategory": "Units and Measurement",
+   "type": "example",
+   "definition": "A worked comparison of storage volume needed for equivalent heat energy from gasoline versus natural gas in various forms (atmospheric, compressed, liquefied).",
+   "core_idea": "Gasoline is far more energy-dense by volume than natural gas at atmospheric pressure, and even substantial compression or liquefaction does not fully close that gap.",
+   "key_points": [
+    "One gallon of gasoline contains about 124,000 Btu and occupies about 0.13 cubic feet",
+    "The same amount of energy in natural gas at standard atmospheric pressure requires about 100 cubic feet of storage",
+    "At about 250 times atmospheric pressure (roughly comparable to scuba tank compression levels of 200-300x), natural gas still needs about three times the storage volume of gasoline, plus a heavy pressurized cylinder",
+    "As supercooled liquid (LNG), natural gas holds about two-thirds the energy per volume of gasoline"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates numerically why natural gas transport/storage logistics (pipeline, compression, or liquefaction) differ fundamentally from liquid fuels like gasoline"
+   ],
+   "trading_implications": [
+    "Explains why natural gas vehicles/storage face practical volume/weight penalties compared to liquid fuels, relevant to any gas-as-transport-fuel economics"
+   ],
+   "common_misunderstandings": [
+    "Assuming compression alone (e.g., to scuba-tank-like pressures) brings natural gas storage density close to gasoline; the source shows it still needs roughly 3x the volume even at ~250x atmospheric pressure"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Liquefaction",
+    "Pipeline transport rationale"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "135-135",
+    "section_hint": "2.1 Natural Gas \u2014 Comparing Gasoline to Natural Gas"
+   }
+  },
+  {
+   "topic": "Natural gas value chain and market participants",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "The natural gas business is divided into distinct physical roles from extraction to final delivery, plus a separate financial/trading function.",
+   "core_idea": "Natural gas moves through exploration, drilling/extraction, processing, transport (pipeline or tanker), storage, and local distribution, with most physical companies specializing in only one or two of these stages; trading itself is a distinct function handled by natural gas marketers.",
+   "key_points": [
+    "Exploration companies locate underground natural gas reserves",
+    "Drilling companies extract gas and move it to processing facilities",
+    "Processing plants remove impurities and separate the raw gas into component hydrocarbons, yielding dry gas (methane)",
+    "Dry gas is transported to consuming regions via interstate pipeline or tanker ship, then stored until needed",
+    "Local distribution pipelines make final delivery to the end consumer",
+    "Most physical-side companies specialize narrowly because each stage is technically complex",
+    "The skills required for physical natural gas operations differ substantially from those needed to trade/speculate on the financial commodity, so trading is handled by natural gas marketers"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical value-chain specialization is distinct from and does not overlap with financial trading expertise"
+   ],
+   "trading_implications": [
+    "Natural gas marketers, not upstream/midstream physical operators, are the relevant counterparties/participants for financial trading and speculation in natural gas"
+   ],
+   "common_misunderstandings": [
+    "Assuming the same companies that extract, process, or transport natural gas are also the primary financial traders of the commodity"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub as pricing benchmark",
+    "Pipeline infrastructure"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "135-136",
+    "section_hint": "2.1 Natural Gas \u2014 Major Market Participants"
+   }
+  }
+ ]
+}

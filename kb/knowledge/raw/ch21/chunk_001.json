@@ -1,0 +1,165 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Site-specific variability of wind output",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "concept",
+   "definition": "Wind generation output depends heavily on the exact physical location of a turbine, not just the general region \u2014 nearby sites can have very different wind resource quality.",
+   "core_idea": "Terrain features (e.g., a hilltop versus the sheltered side of the same hill) can produce sharply different wind speeds at locations only a short distance apart, so wind resource assessment must be done at the individual turbine/site level rather than assumed uniform across a project area.",
+   "key_points": [
+    "Two nearby locations can have materially different wind conditions due to terrain (e.g., hilltop vs. hillside shelter).",
+    "This makes wind output forecasting and siting more granular/site-specific than for some other generation types."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Affects capacity factor estimates used in wind project economics"
+   ],
+   "trading_implications": [
+    "Forecast error for a specific wind farm can't be assumed to track a regional average; site-level historical output data is more reliable than nearby-site proxies."
+   ],
+   "common_misunderstandings": [
+    "Assuming that wind conditions are roughly uniform across a small geographic area."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wake effect and turbine spacing",
+    "Wind capacity factor"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "468-468",
+    "section_hint": "4.6 Wind Power"
+   }
+  },
+  {
+   "topic": "Wake effect and wind farm layout",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "concept",
+   "definition": "When one turbine sits downwind of another, it receives turbulent, disrupted airflow rather than clean wind, which lowers its output and increases mechanical stress.",
+   "core_idea": "The upwind turbine disturbs the wind flow reaching downwind turbines, so wind farm layouts are typically arranged in lines or otherwise spaced out to minimize this interference between units.",
+   "key_points": [
+    "A downwind turbine experiences chaotic/disrupted airflow caused by the turbine upwind of it.",
+    "Wind farms are commonly organized in lines or spread out specifically to reduce this inter-turbine disruption."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to overall wind farm capacity factor and turbine spacing decisions"
+   ],
+   "trading_implications": [
+    "Physical layout constraints limit how densely a wind farm can be built on a given parcel, which caps nameplate capacity per unit of land."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Site-specific variability of wind output"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "468-468",
+    "section_hint": "4.6 Wind Power"
+   }
+  },
+  {
+   "topic": "Public opposition to wind power: bird mortality and aesthetics",
+   "category": "Power Markets",
+   "subcategory": "Wind Power \u2014 Siting & Environmental Issues",
+   "type": "risk",
+   "definition": "The two most common sources of consumer/community opposition to wind farms are harm to migratory birds and objections to the visual appearance of turbines.",
+   "core_idea": "Turbines are often sited on migratory bird corridors because those corridors have the steady winds turbines need, which puts them at risk of collision with spinning blades; separately, some communities object to wind farms simply because they consider them visually unappealing.",
+   "key_points": [
+    "Steady, sustained winds along bird migration corridors make those corridors attractive turbine sites, creating overlap with bird flight paths.",
+    "Birds can be struck and killed by turbine blades in these areas.",
+    "Environmental groups worry that widespread wind adoption could significantly harm wild bird populations.",
+    "Aesthetic objections (turbines viewed as unattractive) are a separate, non-environmental driver of local opposition."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Siting decisions",
+    "Permitting/regulatory risk for wind projects"
+   ],
+   "trading_implications": [
+    "Community and environmental opposition is a project development/siting risk that can delay or block new wind capacity, which is relevant context when assessing future wind supply growth."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind farm siting",
+    "Transmission constraints on wind power"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "468-468",
+    "section_hint": "4.6 Wind Power"
+   }
+  },
+  {
+   "topic": "Transmission overload risk from correlated wind ramp-up",
+   "category": "Power Markets",
+   "subcategory": "Wind Power \u2014 Transmission & Grid Integration",
+   "type": "risk",
+   "definition": "Wind power is often constrained by limited long-distance transmission capacity, and because turbines in a region tend to start producing together when wind picks up, the shared transmission lines can become congested/overloaded.",
+   "core_idea": "Remote wind farms depend on costly long-distance transmission lines to reach load; because wind across a region tends to rise simultaneously, all turbines can ramp up output together and overload that shared transmission path, similar to a rush-hour traffic jam limiting how much generation can actually reach consumers.",
+   "key_points": [
+    "Long-distance transmission to remote wind sites is expensive to build and maintain.",
+    "Wind output across a region tends to rise together, so many turbines can start producing at the same time.",
+    "This simultaneous ramp-up can overload the transmission lines carrying that power to load, creating congestion analogous to rush-hour traffic."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Congestion pricing / locational price separation",
+    "Curtailment risk"
+   ],
+   "trading_implications": [
+    "Correlated regional wind ramps can drive transmission congestion, which is a relevant driver of locational basis and congestion cost between a wind-heavy zone and load centers.",
+    "Curtailment risk during high-wind periods should be considered when evaluating expected wind output that actually reaches the grid."
+   ],
+   "common_misunderstandings": [
+    "Assuming turbine-level output alone determines delivered power, without accounting for transmission capacity limits."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Public opposition to wind power",
+    "Backup generation for wind ramp-down"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "468-468",
+    "section_hint": "4.6 Wind Power"
+   }
+  },
+  {
+   "topic": "Fast-start backup generation needed for wind ramp-down",
+   "category": "Power Markets",
+   "subcategory": "Wind Power \u2014 Transmission & Grid Integration",
+   "type": "risk",
+   "definition": "Because regional wind output can also drop off simultaneously across many turbines, the grid needs backup generation capable of starting and stopping very quickly to replace that lost output.",
+   "core_idea": "When wind stops blowing across a region, many turbines can stop producing at once, forcing the grid to bring fast-start backup generation on- and off-line quickly; balancing is harder if that backup generation isn't located near the wind farms, since wind units themselves are typically sited in remote areas while fast-start units usually are not.",
+   "key_points": [
+    "Wind output can fall off simultaneously across many turbines in a region when wind conditions change.",
+    "This requires backup (fast-start) generation to rapidly come on- and off-line to offset the loss.",
+    "Fast-start generators are typically not located in the same remote areas as wind farms, which complicates balancing power flows across the grid."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Grid balancing/reserves requirements",
+    "Transmission overload risk from correlated wind ramp-up"
+   ],
+   "trading_implications": [
+    "Wind's simultaneous ramp-down risk supports the case for flexible, quick-response capacity (e.g., fast-start gas peakers or battery storage) sited to help balance the grid when wind output drops."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transmission overload risk from correlated wind ramp-up"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "468-468",
+    "section_hint": "4.6 Wind Power"
+   }
+  }
+ ]
+}

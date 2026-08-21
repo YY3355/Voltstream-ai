@@ -1,0 +1,177 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Tradability requirements: assignability, liquidity, fungibility",
+   "category": "Trading Markets",
+   "subcategory": "Market Structure Fundamentals",
+   "type": "concept",
+   "definition": "For an asset or liability to be tradable in a meaningful sense, it generally needs three properties: it can be legally transferred to another party (assignability), it can be converted to or from cash within a reasonable time without a large cost (liquidity), and it can be swapped for another unit of the same type without loss of value (fungibility).",
+   "core_idea": "Tradability isn't binary \u2014 an asset can technically change hands but still fail to be a useful market instrument if legal transfer, quick conversion to cash, or interchangeability with like units is missing.",
+   "key_points": [
+    "Assignability: the legal ability to transfer an asset or liability to someone else (e.g., a resale license requirement can block this even for a standardized good).",
+    "Liquidity: ability to convert an asset/liability to or from cash in a reasonable time without significant cost; a common benchmark is completing a round-trip (buy and sell) within a single business day while losing no more than about 10% of value.",
+    "Fungibility: the ability of an asset to be interchanged with similar assets of the same type; non-fungible assets (e.g., a unique piece of framed art, real property, patents) carry subjective value tied to their unique characteristics, which slows sales and makes pricing harder.",
+    "Liquid markets typically show low transaction costs, low volatility, and the ability to execute near a fair price; illiquid markets require either a long search for a counterparty or accepting an unfavorable price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Liquidity and fungibility both support (but are distinct from) assignability as separate prerequisites for a well-functioning trading market.",
+    "The same ~10% value-retention benchmark used to define liquidity reappears later as the accounting threshold for 'readily convertible to cash' (RCC) status required of a derivative's underlying asset."
+   ],
+   "trading_implications": [
+    "Illiquid or non-fungible assets (art, property, patents) are harder to price and slower to sell, so they trade in narrower, more negotiated markets rather than standardized exchanges."
+   ],
+   "common_misunderstandings": [
+    "Being legally sellable (assignable) does not automatically make an asset liquid or fungible \u2014 all three properties are independently necessary for full tradability."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Real assets",
+    "Derivatives",
+    "Readily convertible to cash (RCC)"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "81-82",
+    "section_hint": "1.2 Trading Markets \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Real assets",
+   "category": "Trading Markets",
+   "subcategory": "Asset Types",
+   "type": "definition",
+   "definition": "Real assets are properties whose value comes from their physical substance or attributes (tangible), though a small subset \u2014 such as patents, trademarks, and artwork \u2014 have value without physical form (intangible).",
+   "core_idea": "In energy markets, real assets are mostly tangible (oil, land, drilling equipment, refineries, power lines, generation facilities) and trade in spot markets in a limited, largely one-directional way because storing and transporting them is complex.",
+   "key_points": [
+    "Tangible real assets in energy: oil, land, drilling equipment, refineries, power lines, power generation facilities.",
+    "Intangible real assets are less common in energy markets: examples given are patents, advertising trademarks, and works of art.",
+    "Real asset transactions tend to be one-directional \u2014 a buyer purchases to use the asset, not to resell it.",
+    "Most commodity trading activity actually happens in derivatives markets rather than the physical (real asset) spot market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with financial assets, which are created by issuers rather than existing as physical/tangible property.",
+    "Real assets serve as the underlying asset for most energy derivatives (e.g., crude oil, electricity)."
+   ],
+   "trading_implications": [
+    "Because physical storage/transport is complex, liquidity and active trading concentrate in derivatives on real assets rather than the real assets themselves."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Derivatives",
+    "Underlying asset",
+    "Financial assets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "82",
+    "section_hint": "1.2 Trading Markets \u2014 Real Assets"
+   }
+  },
+  {
+   "topic": "Financial assets: stocks and bonds",
+   "category": "Trading Markets",
+   "subcategory": "Asset Types",
+   "type": "definition",
+   "definition": "Financial assets represent ownership of real assets or of the cash flows real assets generate, and are distinguished from real assets by being created by an issuer rather than existing as physical property.",
+   "core_idea": "The two dominant financial asset types are stocks (ownership shares in a company) and bonds (a fixed-term loan to a company that must be repaid with interest); the author notes these are important markets but not the book's focus.",
+   "key_points": [
+    "Stock: a financial instrument giving an ownership share in a company.",
+    "Bond: a debt investment representing a loan to a company, repaid after a fixed period plus any accrued interest.",
+    "Financial assets are created by issuers, unlike real assets which exist independent of an issuing party."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted directly with real assets in the same section."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Real assets",
+    "Derivatives"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "82",
+    "section_hint": "1.2 Trading Markets \u2014 Financial Assets"
+   }
+  },
+  {
+   "topic": "Derivatives: definition and role",
+   "category": "Derivatives",
+   "subcategory": "Fundamentals",
+   "type": "definition",
+   "definition": "A derivative is a financial contract whose value is derived from the value of some other asset (the underlying asset). Trading a derivative transfers only the contract and its obligations, not the underlying commodity itself \u2014 physical delivery, if any, happens only when the contract is exercised.",
+   "core_idea": "Most energy trading activity is really the transfer of paper obligations about the future (futures, forwards, swaps, options) rather than the movement of physical commodities; the underlying asset is commonly a real asset like crude oil or electricity, but can also be another derivative (e.g., an option on a forward).",
+   "key_points": [
+    "Common derivative types named: futures, forwards, swaps, option contracts.",
+    "The value of a derivative equals the price someone will pay to have the contract (the obligation) transferred to them.",
+    "An underlying asset can itself be a derivative \u2014 e.g., an option written on a forward contract."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on the underlying asset being tradable per the assignability/liquidity/fungibility framework \u2014 formalized in accounting as 'readily convertible to cash' (RCC)."
+   ],
+   "trading_implications": [
+    "Because only the contract changes hands (not the commodity) until exercise, derivatives let traders take positions on price without managing physical logistics."
+   ],
+   "common_misunderstandings": [
+    "Trading a crude oil futures contract does not move physical crude oil at trade time \u2014 delivery only occurs upon exercise of the contract."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Real assets",
+    "Underlying asset",
+    "Readily convertible to cash (RCC)",
+    "Notional quantity"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "82-83",
+    "section_hint": "1.2 Trading Markets \u2014 Derivatives"
+   }
+  },
+  {
+   "topic": "Defining features of a derivative contract",
+   "category": "Derivatives",
+   "subcategory": "Fundamentals",
+   "type": "concept",
+   "definition": "Accounting guidance identifies several required features of a derivative: a readily-convertible-to-cash (tradable) underlying asset, formation via a bilateral agreement between two parties (buyer/seller or 'Party A'/'Party B'), zero net wealth creation (only a wealth transfer/payoff between the two parties), a finite life span ending at an expiration date, and a payoff whose size/direction depends on something not yet known when the contract was created.",
+   "core_idea": "A derivative is fully defined by its written contract: who owes what to whom, under what triggering condition, by when \u2014 and it always requires both a buyer and a seller since it only transfers wealth rather than creating it.",
+   "key_points": [
+    "Readily convertible to cash (RCC): the accounting term for an underlying asset that can be both bought and sold in a reasonable time without losing more than about 10% of its value in transaction costs.",
+    "Derivatives are created by mutual agreement (trading) between two parties who sign a contract defining all terms; where 'buyer'/'seller' don't fit, the parties are called 'Party A' and 'Party B.'",
+    "A derivative transfers wealth between buyer and seller (a payoff) but never creates wealth outright.",
+    "Derivatives are often created at zero value initially, then fluctuate between being an asset (benefits the holder, who'd be paid to give it up) and a liability (holder must pay to be released from it).",
+    "Every derivative has a limited life span, ending at its expiration date/expiry, shortly after which the parties settle by cash payment or physical delivery.",
+    "Contracts specify relative obligations via a notional quantity (the fixed amount of the underlying) and the price of the underlying."
+   ],
+   "formulas": [],
+   "relationships": [
+    "RCC operationalizes the general 'liquidity' benchmark (10% value retention on a round trip) specifically for accounting classification of derivative underlyings."
+   ],
+   "trading_implications": [
+    "Because a derivative can swing between asset and liability status, its holder's exposure changes sign over the contract's life even without any new trade.",
+    "The zero-sum nature of payoffs means every derivative position implies an exact offsetting position on the other side of the trade."
+   ],
+   "common_misunderstandings": [
+    "A derivative does not generate new wealth for the market as a whole \u2014 any gain to one party is exactly matched by a loss to the counterparty."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Tradability requirements: assignability, liquidity, fungibility",
+    "Notional quantity",
+    "Expiration/expiry"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "83-84",
+    "section_hint": "1.2 Trading Markets \u2014 Derivatives (defining features)"
+   }
+  }
+ ]
+}

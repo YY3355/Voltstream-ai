@@ -1,0 +1,271 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Solving for implied volatility",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "Implied volatility is the volatility input that, when plugged into an option pricing model like Black-Scholes, reproduces the option's observed market price.",
+   "core_idea": "Because volatility can't be directly observed (unlike rates, prices, strikes, and expirations), it's backed out by iteratively guessing a volatility value, computing the model price, and comparing to the actual traded price until the two match.",
+   "key_points": [
+    "All other Black-Scholes inputs are observable or easily estimated from the market or contract terms.",
+    "Volatility is the one input that must be inferred rather than observed.",
+    "The standard method is numerical: guess sigma, solve Black-Scholes, compare to market price, and refine the guess iteratively."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into Black-Scholes/Black 76 option pricing",
+    "Underlies the volatility smile"
+   ],
+   "trading_implications": [
+    "Traders quote and trade options in terms of implied volatility rather than dollar premium in many markets."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes model",
+    "Volatility smile"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "367",
+    "section_hint": "3.5 Option Pricing - Implied Volatility intro"
+   }
+  },
+  {
+   "topic": "Asian (average price) options",
+   "category": "Derivatives",
+   "subcategory": "Exotic Options",
+   "type": "definition",
+   "definition": "An Asian option settles against the average price of the underlying over a defined period, rather than a single price observed at expiration.",
+   "core_idea": "Averaging prices over time dampens the impact of any single day's price manipulation or abnormal move, making the option's settlement more resistant to gaming near expiration.",
+   "key_points": [
+    "Also called average price options.",
+    "Commonly used in markets like crude oil where reducing sensitivity to expiration-day manipulation or noise is valuable."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with standard European options"
+   ],
+   "trading_implications": [
+    "Chosen specifically to reduce settlement risk from price manipulation or one-off spikes on the expiration date."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Volatility",
+    "Black 76 model"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "367-368",
+    "section_hint": "3.5 Option Pricing - Asian Options"
+   }
+  },
+  {
+   "topic": "Why Asian options have lower implied volatility",
+   "category": "Derivatives",
+   "subcategory": "Exotic Options",
+   "type": "concept",
+   "definition": "Averaging a series of random prices produces a result with less dispersion (lower volatility) than any single price drawn from that same series.",
+   "core_idea": "Because the settlement is an average rather than a single spot observation, the effective volatility priced into an Asian option is lower than that of an equivalent European option, making it cheaper for buyers and safer for sellers.",
+   "key_points": [
+    "The statistical reduction in dispersion from averaging is the mechanical reason Asian options price with lower implied volatility.",
+    "Lower volatility pricing translates to lower premiums than a comparable European option.",
+    "This also makes the position less risky from the seller's perspective."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows from Asian option payoff definition",
+    "Affects premium relative to European options"
+   ],
+   "trading_implications": [
+    "Buyers pay less for Asian options than for comparable standard options because of the reduced effective volatility.",
+    "Sellers of Asian options take on less risk than sellers of comparable European options."
+   ],
+   "common_misunderstandings": [
+    "One might assume an average-price option should price the same as a European option with the same underlying and strike; the averaging mechanically lowers effective volatility, so it does not."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Asian (average price) options",
+    "Lognormal distribution"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "367-368",
+    "section_hint": "3.5 Option Pricing - Asian Options"
+   }
+  },
+  {
+   "topic": "Valuing Asian options",
+   "category": "Derivatives",
+   "subcategory": "Exotic Options",
+   "type": "concept",
+   "definition": "Asian options are approximated using a modified Black 76 formula with an adjusted volatility input, since the true distribution of an averaged price series is not exactly lognormal.",
+   "core_idea": "The average of several lognormal price distributions is not itself lognormal, so exact closed-form pricing isn't possible, but a modified Black 76 approach with adjusted volatility gives a reasonably good approximation outside the delivery/averaging period.",
+   "key_points": [
+    "Outside the delivery month, an adjusted-volatility version of Black 76 is used as an approximation.",
+    "Within the delivery month, part of the averaging period's prices are already known/observed, so the model must calculate the expected dispersion of the remaining unobserved prices.",
+    "As more of the averaging period's prices become known during the delivery month, expected volatility declines rapidly."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on Black 76 model",
+    "Related to implied volatility adjustment"
+   ],
+   "trading_implications": [
+    "Risk on an Asian option should be expected to fall quickly as the delivery/averaging month progresses and more of the settlement prices are locked in."
+   ],
+   "common_misunderstandings": [
+    "The author notes the average of lognormal distributions is not itself lognormal \u2014 an exact analytic solution isn't available, only an approximation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black 76 model",
+    "Implied volatility"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "368",
+    "section_hint": "3.5 Option Pricing - Asian Options"
+   }
+  },
+  {
+   "topic": "Volatility smile",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "The volatility smile is the pattern seen when implied volatility is plotted against strike price: out-of-the-money and in-the-money options tend to show higher implied volatility than at-the-money options.",
+   "core_idea": "Because the assumption that prices are lognormally distributed breaks down most for options with extreme strikes or long maturities, the market prices these options with higher volatility than at-the-money options to compensate for that extra model risk, producing the smile shape when graphed.",
+   "key_points": [
+    "All corrections for imperfections in the option model (e.g., inaccuracy of the lognormal assumption) show up as adjustments to the volatility input, since every other input is directly observable.",
+    "Options with high or low strikes, or very long maturities, are most affected by the lognormal assumption being inaccurate.",
+    "These options are priced with different (typically higher) volatility than at-the-money options to account for that risk.",
+    "Implied volatility is observed in the market by backing out volatility from the Black Scholes equation using actual traded option prices and known inputs."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on implied volatility calculation",
+    "Related to lognormal price distribution assumption"
+   ],
+   "trading_implications": [
+    "Traders should expect deep out-of-the-money or long-dated options to trade at higher implied volatility than at-the-money options, not the same flat volatility."
+   ],
+   "common_misunderstandings": [
+    "Assuming a single flat volatility should apply across all strikes; the smile reflects that the lognormal assumption is worse at extreme strikes/maturities."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Solving for implied volatility",
+    "Lognormal distribution"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "368-369",
+    "section_hint": "3.5 Option Pricing - Implied Volatility"
+   }
+  },
+  {
+   "topic": "The Greeks (overview)",
+   "category": "Risk",
+   "subcategory": "Option Sensitivities",
+   "type": "concept",
+   "definition": "The Greeks are a standard set of sensitivity measures describing how an option or portfolio's value responds to changes in an underlying factor.",
+   "core_idea": "Each Greek answers a specific risk question (e.g., how much P&L results from a price move, a volatility change, time passing, or a rate change) and is always expressed as a relationship between an asset's value and some underlying driver, never as a standalone number.",
+   "key_points": [
+    "Delta: P&L from a change in the price of the underlying asset.",
+    "Gamma: the change in delta itself as the underlying price changes.",
+    "Vega: P&L from a change in the underlying's volatility.",
+    "Theta: P&L from the passage of time, usually measured per day.",
+    "Rho: P&L from a change in the interest rate.",
+    "A Greek is always a comparison between two things \u2014 an asset and the underlying it's sensitive to \u2014 not a stand-alone figure like a price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Delta and Gamma are first and second derivatives of price with respect to the underlying"
+   ],
+   "trading_implications": [
+    "Traders use the Greeks to answer practical risk questions, such as expected gain/loss if a price trend continues or if a low-probability event becomes more likely."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Delta",
+    "Gamma",
+    "Black Scholes model"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "369",
+    "section_hint": "3.5 Option Pricing - Greeks"
+   }
+  },
+  {
+   "topic": "Delta",
+   "category": "Risk",
+   "subcategory": "Option Sensitivities",
+   "type": "concept",
+   "definition": "Delta measures how much a portfolio's or option's value changes for a given change in the underlying's price; it is the first derivative of price with respect to the underlying.",
+   "core_idea": "Delta is the most commonly used Greek, analogous to velocity in a car trip: just as velocity is the first derivative of distance with respect to time, delta is the first derivative of an option's value with respect to the underlying's price.",
+   "key_points": [
+    "Delta can relate a portfolio's value to a broad benchmark (e.g., a stock portfolio to the S&P 500) or an option's value to its specific underlying.",
+    "The car-trip analogy: distance traveled relates to time similarly to how an option's value relates to the underlying price, with delta playing the role of velocity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "First derivative of price with respect to underlying",
+    "Gamma is the derivative of delta"
+   ],
+   "trading_implications": [
+    "Delta is the primary measure traders use to gauge directional exposure to the underlying."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "The Greeks (overview)",
+    "Gamma"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "369-370",
+    "section_hint": "3.5 Option Pricing - Velocity (Delta)"
+   }
+  },
+  {
+   "topic": "Gamma",
+   "category": "Risk",
+   "subcategory": "Option Sensitivities",
+   "type": "concept",
+   "definition": "Gamma measures how much an option's delta changes as the underlying's price changes; it is the second derivative of price with respect to the underlying, analogous to acceleration.",
+   "core_idea": "Although less directly informative than delta, gamma is closely watched by risk managers because it captures how a portfolio's risk profile itself shifts \u2014 becoming more or less exposed \u2014 when the underlying makes a large move.",
+   "key_points": [
+    "Gamma is often considered more important than delta from a risk management standpoint.",
+    "It indicates whether a portfolio will become riskier or less risky as the market moves substantially.",
+    "Continuing the car-trip analogy, gamma is to delta what acceleration is to velocity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Second derivative of price with respect to underlying",
+    "Derivative of delta"
+   ],
+   "trading_implications": [
+    "Risk managers scrutinize gamma to understand exposure during large or fast underlying price moves, not just small incremental ones."
+   ],
+   "common_misunderstandings": [
+    "Assuming delta alone captures risk exposure; gamma reveals how that exposure itself changes under large market moves."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Delta",
+    "The Greeks (overview)"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "370-371",
+    "section_hint": "3.5 Option Pricing - Acceleration (Gamma)"
+   }
+  }
+ ]
+}

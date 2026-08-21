@@ -1,0 +1,413 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Opacity of OTC energy pricing",
+   "category": "Trading Markets",
+   "subcategory": "OTC Markets",
+   "type": "market_mechanic",
+   "definition": "Because most energy deals are private bilateral contracts rather than exchange trades, neither counterparty is required to disclose the price, and traders often prefer to keep pricing confidential for competitive reasons.",
+   "core_idea": "Real transaction prices in OTC energy markets are largely hidden, so third-party price services rely on survey-based estimates rather than actual trade data, and those estimates can be unreliable in thin markets.",
+   "key_points": [
+    "Energy trades off an exchange are private contracts with no obligation to publish prices.",
+    "Traders frequently treat pricing data as competitively sensitive and resist disclosure.",
+    "Price-reporting firms publish indicative prices built from surveys, not confirmed trade prices.",
+    "FERC has cracked down on traders historically submitting misleading survey data to manipulate reported prices.",
+    "In regions with little recent trading activity, estimating a realistic execution price remains difficult.",
+    "A highly motivated buyer can push an actual trade price well above prior estimates; a highly motivated seller can push it well below."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why spread trading and hedging are common risk-management responses to unreliable pricing.",
+    "Connects to counterparty credit risk in OTC contracts."
+   ],
+   "trading_implications": [
+    "Published indicative prices should be treated as a rough guide, not an executable quote, especially in illiquid regions.",
+    "A trader's own urgency (or a counterparty's) can move the effective execution price away from published estimates."
+   ],
+   "common_misunderstandings": [
+    "Indicative OTC price estimates are not the same as actual executed trade prices."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Liquidity",
+    "FERC regulation",
+    "OTC contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - OTC pricing"
+   }
+  },
+  {
+   "topic": "Outright position",
+   "category": "Trading Markets",
+   "subcategory": "Trade Types",
+   "type": "definition",
+   "definition": "An outright position is a directional bet on a single commodity's price \u2014 for example, betting that electricity prices will rise or fall relative to current expectations of future prices.",
+   "core_idea": "Taking an outright position means being exposed to the absolute price direction of one commodity, as opposed to the relative relationship between two commodities.",
+   "key_points": [
+    "An outright trade is a single-commodity directional bet.",
+    "Contrasted directly with spread trades, which bet on the relationship between two related products instead of absolute direction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with spread trades"
+   ],
+   "trading_implications": [
+    "Outright positions carry full exposure to commodity price volatility and therefore typically require more margin than an equivalent spread position."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread trades",
+    "Margin"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "topic": "Spread trades",
+   "category": "Trading Markets",
+   "subcategory": "Trade Types",
+   "type": "trading_strategy",
+   "definition": "A spread trade is the simultaneous purchase and sale of two related products \u2014 such as buying natural gas while selling power, or buying gas in one region while selling it in another \u2014 designed to isolate the trader's exposure to the price relationship between the two rather than to overall price direction.",
+   "core_idea": "By trading two correlated instruments at once, a trader profits or loses based on how the relationship between the two prices moves, largely insulated from moves in the general price level.",
+   "key_points": [
+    "Buying gas and selling power lets a trader profit if power prices rise faster than the fuel cost used to generate that power.",
+    "Buying gas in a producing region and selling it in a consuming region (e.g., Louisiana vs. New York) lets a trader profit if the consuming region's price rises relative to the producing region's price.",
+    "In both cases the trader's risk is concentrated on the price relationship, not the absolute level of energy prices.",
+    "Spread trades make up a very high proportion of energy trading volume compared to other markets.",
+    "The combined volatility of a simultaneous purchase and sale of related commodities is typically much lower than that of an outright position.",
+    "Because margin requirements scale with position risk, spread trades are often cheaper to hold than an equivalent outright position.",
+    "Offsetting a trade in one instrument with a trade in a related instrument is the definition of hedging.",
+    "Because spread trading is so common, the most frequently used spreads have their own specific names."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Spread trading is a form of hedging.",
+    "Lower spread volatility drives lower margin costs relative to outright positions."
+   ],
+   "trading_implications": [
+    "Spread trades let a trader express a view on a price relationship while reducing exposure to broad commodity price swings.",
+    "Lower margin cost makes spread trades attractive relative to outright positions of similar notional size."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hedging",
+    "Margin",
+    "Spark spread",
+    "Dark spread"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "topic": "Named commodity spreads (spark, dark, crack, frac)",
+   "category": "Derivatives",
+   "subcategory": "Spread Products",
+   "type": "definition",
+   "definition": "Four commonly named spread trades, each approximating the operating margin of a specific type of conversion facility by pricing the difference between an input fuel and its output product(s).",
+   "core_idea": "Because certain fuel-to-product conversions recur constantly in energy markets, the market has standardized names for the associated spreads, and each spread approximates the gross profit of the corresponding physical plant.",
+   "key_points": [
+    "Spark spread: electricity price minus natural gas price; approximates the profit a gas-fired power plant earns burning gas to make power. Gas plants are the price setter for power in many regions.",
+    "Dark spread: electricity price minus coal price, not netting out emissions costs; approximates the profit of a coal-fired power plant. Coal plants set power prices in some regions, and dark spreads are often traded alongside CO2 emissions.",
+    "Crack spread: refined petroleum product prices (commonly gasoline and heating oil) minus crude oil price; most often a three-commodity spread; approximates a refinery's profitability.",
+    "Frac spread: propane price minus natural gas price; approximates the profit from extracting propane out of a natural gas stream, since gas wells are propane's primary source."
+   ],
+   "formulas": [
+    {
+     "name": "Spark spread",
+     "formula": "Spark spread = Electricity price - Natural gas price",
+     "variables": {
+      "Electricity price": "$/MWh",
+      "Natural gas price": "gas-equivalent cost per MWh"
+     }
+    },
+    {
+     "name": "Dark spread",
+     "formula": "Dark spread = Electricity price - Coal price",
+     "variables": {
+      "Electricity price": "$/MWh",
+      "Coal price": "coal-equivalent cost per MWh, excludes emissions cost"
+     }
+    },
+    {
+     "name": "Crack spread",
+     "formula": "Crack spread = Refined product price(s) - Crude oil price",
+     "variables": {
+      "Refined product price(s)": "e.g. gasoline, heating oil",
+      "Crude oil price": "input crude cost"
+     }
+    },
+    {
+     "name": "Frac spread",
+     "formula": "Frac spread = Propane price - Natural gas price",
+     "variables": {
+      "Propane price": "$/unit",
+      "Natural gas price": "$/unit"
+     }
+    }
+   ],
+   "relationships": [
+    "All four are specific instances of the general spread-trade concept.",
+    "Dark spreads are commonly paired with carbon dioxide emissions trading."
+   ],
+   "trading_implications": [
+    "These spreads are traded directly as a proxy for plant operating margins, letting traders take a view on generation/refining economics without owning physical assets."
+   ],
+   "common_misunderstandings": [
+    "Dark spread as commonly quoted does not net out emissions costs, so it overstates a coal plant's true economic margin where carbon costs apply."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spread trades",
+    "Power plant economics",
+    "Emissions trading"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "topic": "Hedging",
+   "category": "Risk",
+   "subcategory": "Risk Management",
+   "type": "risk",
+   "definition": "Hedging means taking an offsetting position to reduce the risk of an existing position, typically used when the original position cannot be or should not be liquidated directly.",
+   "core_idea": "When a trader is stuck holding a position (often an illiquid OTC contract) that can't easily be closed out, they can neutralize its price risk by taking an opposite position in a different, correlated instrument, such as an exchange-traded contract.",
+   "key_points": [
+    "Hedging is generally used to lock in profit or eliminate risk on a position that can't practically be unwound.",
+    "Example given: a long position established via an OTC transaction is hard to exit directly, so the trader takes an opposite position in an exchange-traded instrument instead.",
+    "Extended example: a marketer contracts to supply gas to a Florida power plant at a fixed price for 10 years, creating large exposure if gas prices rise before the marketer lines up a firm gas supply.",
+    "The marketer hedges that rising-price risk using natural gas futures, even though the futures don't physically deliver gas to the required location.",
+    "The hedge works because most natural gas delivery locations are highly correlated with each other in the futures market, so a futures position still protects against a broad rise in gas prices even without matching physical delivery."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Hedging is the general risk-management purpose that spread trades often serve.",
+    "Relies on price correlation between the hedge instrument and the underlying exposure \u2014 connects to the concept of basis risk."
+   ],
+   "trading_implications": [
+    "A hedge instrument does not need to match the underlying position's exact delivery location or terms to be effective, as long as prices are highly correlated.",
+    "Hedging is chosen over liquidation specifically when unwinding the original position isn't feasible or desirable."
+   ],
+   "common_misunderstandings": [
+    "A hedge doesn't need to be a mirror-image, deliverable substitute for the original position \u2014 correlation, not physical matching, is what makes it effective."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Basis",
+    "Spread trades",
+    "Futures",
+    "Counterparty credit risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Hedging"
+   }
+  },
+  {
+   "topic": "Basis - divergent meaning in energy markets",
+   "category": "Derivatives",
+   "subcategory": "Basis",
+   "type": "concept",
+   "definition": "In most financial markets, basis means the difference between a spot price and a forward price of the same commodity at the same location. In energy markets that time-based definition doesn't hold well because the spot-to-forward relationship is not stable.",
+   "core_idea": "Energy prices follow strong seasonal patterns (expensive in summer and winter, cheap in spring and fall), so the gap between spot and forward prices for the same commodity swings cyclically through the year rather than behaving as a stable, predictable basis.",
+   "key_points": [
+    "Standard financial-market usage: basis = cash/spot price minus forward price.",
+    "Energy markets lack a stable spot-forward price relationship, so this time-based basis concept is less useful there.",
+    "The expected gap between, say, a three-month forward price and the spot price varies by season.",
+    "Energy is typically expensive in summer and winter and cheap in spring and fall, making the spot/forward relationship cyclical along with the underlying prices."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the contrast with the energy-specific (locational) meaning of basis used in natural gas markets."
+   ],
+   "trading_implications": [
+    "Traders can't treat energy basis the way they would in other asset classes; seasonal cyclicality has to be accounted for separately."
+   ],
+   "common_misunderstandings": [
+    "The word \"basis\" carries a different practical meaning in energy trading than in other financial markets \u2014 it doesn't reduce to a simple, stable time-based cash-forward gap."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seasonality",
+    "Forward curve",
+    "Locational basis"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Basis"
+   }
+  },
+  {
+   "topic": "Locational basis in natural gas markets",
+   "category": "Natural Gas",
+   "subcategory": "Basis",
+   "type": "concept",
+   "definition": "In natural gas (and energy markets generally), basis refers to the price difference between two physical trading locations, most commonly the difference between a specific delivery point and the Henry Hub, the sole liquid NYMEX settlement location.",
+   "core_idea": "Because futures only deliver to one physical point, traders use the term basis to describe how much a given location's price differs from the futures delivery price, and basis swaps let them convert a Henry Hub-referenced position into exposure at a different physical location.",
+   "key_points": [
+    "Henry Hub is described as the only liquid natural gas trading location and is the NYMEX futures settlement point.",
+    "Basis swaps let users combine NYMEX futures with a swap that exchanges the Henry Hub price for the price at a different physical location.",
+    "Because futures have only a single delivery point, \"basis\" in energy/gas trading most commonly means the price gap between a specific location and that futures delivery point."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the general point that energy-market basis is locational rather than time-based.",
+    "Basis swaps connect futures exposure (single delivery point) to a trader's actual physical location need."
+   ],
+   "trading_implications": [
+    "A trader needing gas at a location other than Henry Hub can combine NYMEX futures with a basis swap to get location-specific price exposure."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub",
+    "NYMEX",
+    "Basis swaps",
+    "Hedging"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Basis"
+   }
+  },
+  {
+   "topic": "Actual (physical commodity term)",
+   "category": "Trading Markets",
+   "subcategory": "Common Terminology",
+   "type": "definition",
+   "definition": "\"Actual\" designates the physical commodity itself, used to distinguish it from financial contracts referencing that commodity.",
+   "core_idea": "Since most energy trading happens in forward/financial form, traders need a specific word to flag that a deal involves the real physical commodity rather than a paper contract.",
+   "key_points": [
+    "Used to differentiate physical delivery from financial contracts on the same commodity.",
+    "Example usage given: barrels of oil sitting on a tanker, described as \"actuals.\""
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with financial/forward contracts",
+    "Related to cash market"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cash market",
+    "Physical delivery"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Common Terms"
+   }
+  },
+  {
+   "topic": "Cash market",
+   "category": "Trading Markets",
+   "subcategory": "Common Terminology",
+   "type": "definition",
+   "definition": "A cash market is one where cash is exchanged for immediate delivery of a commodity; the terms physical market, cash market, and spot market are treated as interchangeable.",
+   "core_idea": "Cash/physical/spot market are three names for the same thing: a market for immediate-delivery transactions.",
+   "key_points": [
+    "Cash market = physical market = spot market, per the author.",
+    "Defined by immediacy of delivery against cash payment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Synonymous with physical market and spot market",
+    "Related to \"actual\""
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot market",
+    "Physical market",
+    "Actual"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Common Terms"
+   }
+  },
+  {
+   "topic": "Counterparty credit risk",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "risk",
+   "definition": "Counterparty credit risk is the financial risk that a trading partner will be unable to meet its financial obligations, and it grows as a trade becomes more profitable to the party holding the exposure.",
+   "core_idea": "Credit risk on a trade isn't static \u2014 it scales with how profitable the position is, because the more money the losing counterparty owes, the harder it becomes for them to pay.",
+   "key_points": [
+    "Credit risk varies directly with trade profitability: the more profitable a position is for one side, the greater the risk the other side can't pay.",
+    "An unprofitable contract (from your perspective) carries very little counterparty credit risk, since you're the one owing money and will have to pay regardless of the counterparty's solvency."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to credit default swaps as a mitigation tool"
+   ],
+   "trading_implications": [
+    "Traders should expect credit exposure to grow as a favorable position becomes more in-the-money, not stay fixed at trade inception."
+   ],
+   "common_misunderstandings": [
+    "Credit risk is not a fixed property of a contract at initiation \u2014 it moves with the contract's mark-to-market profitability."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Default Swap",
+    "OTC contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Common Terms"
+   }
+  },
+  {
+   "topic": "Credit Default Swap (CDS)",
+   "category": "Risk",
+   "subcategory": "Credit Derivatives",
+   "type": "definition",
+   "definition": "A credit default swap lets a lower-credit-quality party effectively buy \"credit insurance\" by swapping their credit risk exposure for that of a higher-credit-quality counterparty, though the CDS itself doesn't remove credit risk entirely.",
+   "core_idea": "A CDS transfers credit exposure to a third party rather than eliminating it \u2014 the buyer is still exposed if the CDS issuer itself defaults.",
+   "key_points": [
+    "CDS trades exchange the credit quality associated with a risk for that of a better-rated counterparty.",
+    "CDS trades do not eliminate credit risk outright \u2014 there remains a chance the CDS issuer itself fails to pay."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Mitigation tool related to counterparty credit risk"
+   ],
+   "trading_implications": [
+    "Using a CDS to manage credit exposure introduces new counterparty risk on the CDS issuer, so it shifts rather than removes risk."
+   ],
+   "common_misunderstandings": [
+    "Buying a CDS does not fully eliminate credit risk; it substitutes the original counterparty's credit risk for the CDS issuer's."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Counterparty credit risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Common Terms"
+   }
+  }
+ ]
+}

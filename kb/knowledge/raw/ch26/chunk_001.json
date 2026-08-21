@@ -1,0 +1,227 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Continuous injection/withdrawal requirement for pipeline operation",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Operations",
+   "type": "concept",
+   "definition": "A pipeline only functions because gas is continuously injected at the high-pressure (supply) end and continuously withdrawn at the low-pressure (consumer) end; if either side stops for economic reasons, the pressure differential collapses and the pipeline stops moving gas.",
+   "core_idea": "Because pipeline flow depends entirely on maintaining a pressure gradient, operators may have to keep injecting and withdrawing gas even when it looks uneconomical, since restarting a stalled pipeline takes significant time.",
+   "key_points": [
+    "Gas only flows from high-pressure zones to low-pressure zones",
+    "Injections and withdrawals cannot be halted purely because they are unprofitable at a given moment without risking pipeline shutdown",
+    "Restarting a pipeline after a stoppage takes time, so it may need to keep running even with no active consumer demand and no available storage"
+   ],
+   "relationships": [
+    "Compressor stations maintain this pressure differential",
+    "Explains why pipeline operators rely on interruptible customers to keep pressure up"
+   ],
+   "trading_implications": [
+    "Pipeline operators have structural reasons to keep moving gas regardless of short-term economics, which affects how reliably interruptible capacity is offered"
+   ],
+   "common_misunderstandings": [
+    "Assuming pipeline flow can be freely started and stopped like a valve, without consequence for the broader network"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Compressor stations",
+    "Firm vs interruptible transportation service"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "511-512",
+    "section_hint": "5.1 Natural Gas Transportation, intro"
+   }
+  },
+  {
+   "topic": "Compressor stations",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Infrastructure",
+   "type": "concept",
+   "definition": "Mechanical facilities spaced along a pipeline that create the pressure differentials needed to push gas forward, functioning like a heart pumping blood through the network.",
+   "core_idea": "A compressor station works like a household fan: it draws gas in on a low-pressure side and discharges it on a high-pressure side, and chaining many such stations together in series keeps gas flowing continuously down the pipeline.",
+   "key_points": [
+    "Simple mental model: a fan pulls gas in (low pressure zone) on one side and pushes it out (high pressure zone) on the other",
+    "Stations are typically spaced roughly every 50 miles along a pipeline",
+    "A modern station usually runs several compressor units in parallel",
+    "Gas path through a station: suction header, then a scrubber system, then compression/cooling stages, then discharge into the next pipeline segment",
+    "Gas moves between segments by flowing from one station's high-pressure discharge to the next station's low-pressure suction",
+    "All stations on a pipeline must operate in coordination or the whole pipeline stops working; most are automated and coordinated by a central computer"
+   ],
+   "relationships": [
+    "Depends on the continuous injection/withdrawal requirement",
+    "Cooling stages tie into compression heating/corrosion effects"
+   ],
+   "trading_implications": [
+    "Physical pipeline capacity is not a single uniform pipe but a chain of segments bounded by compressor stations, which is relevant to understanding where physical constraints or outages could occur"
+   ],
+   "common_misunderstandings": [
+    "Thinking of a pipeline as one continuous unregulated pipe rather than a series of pressure-managed segments"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Continuous injection/withdrawal requirement",
+    "Compression heating and cooling effects"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "511-513",
+    "section_hint": "5.1 Natural Gas Transportation, Compressor Stations"
+   }
+  },
+  {
+   "topic": "Compression heating, cooling, and impurity removal",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Infrastructure",
+   "type": "concept",
+   "definition": "Compressing gas raises its temperature; since cold gas is denser than hot gas, cooling the gas after compression lets more gas mass be moved at a given pipeline pressure, and also reduces corrosion caused by trace impurities.",
+   "core_idea": "Compressor stations cool gas after compression both to increase the effective transport capacity of the pipeline and to limit corrosion from the trace non-methane gases that are always present in natural gas.",
+   "key_points": [
+    "Compression inherently increases gas temperature",
+    "Colder gas is denser, so at a constant operating pressure more gas can be transported if it is kept cool",
+    "Cooler gas causes less corrosion in the pipeline",
+    "Natural gas is never pure methane and always carries trace amounts of other gases, some of which are corrosive",
+    "Compressor stations include scrubbing systems to remove these trace impurities and particulates/liquids before compression, preventing mechanical breakdowns"
+   ],
+   "relationships": [
+    "Part of the compressor station process described above"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming compression is a purely mechanical pressure-boosting step with no thermal or gas-quality side effects"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Compressor stations"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "511-512",
+    "section_hint": "5.1 Natural Gas Transportation, Compressor Stations"
+   }
+  },
+  {
+   "topic": "Firm vs. interruptible transportation service",
+   "category": "Natural Gas",
+   "subcategory": "Transportation Contracts",
+   "type": "market_mechanic",
+   "definition": "Firm service guarantees pipeline capacity availability except for force majeure events and costs a premium; interruptible service is cheaper, offered on a best-efforts basis, and can be curtailed for valid operational reasons, most commonly to keep the pipeline's pressure balanced.",
+   "core_idea": "Shippers trade off cost against reliability: firm service buys guaranteed capacity via a reservation charge, while interruptible service is cheap but can be shut off whenever the pipeline operator needs to balance flow or serve a firm shipper's actual delivery.",
+   "key_points": [
+    "Firm service: guaranteed except for force majeure; relatively expensive",
+    "Interruptible service: best-efforts basis, relatively cheap, can be interrupted for any valid reason, most commonly pipeline balancing",
+    "A firm shipper pays a reservation charge to guarantee available capacity but is not obligated to actually inject gas into the pipeline",
+    "When a firm shipper isn't using its reserved capacity (e.g., an unusually warm winter reducing heating demand), the pipeline operator sells cheaper interruptible service to other parties to keep the line pressurized",
+    "When the firm shipper does want to deliver, interruptible customers are shut off first",
+    "Public utilities delivering residential heat, and power plants/industrial facilities, tend to prefer firm service for reliability",
+    "Storage facilities may prefer interruptible service because they want to buy gas cheaply during low-demand periods, which is exactly when interruptible contracts tend to be active"
+   ],
+   "relationships": [
+    "Builds on the pipeline continuity requirement",
+    "Interacts with pipeline fullness economics"
+   ],
+   "trading_implications": [
+    "Storage operators can use interruptible contracts to buy gas cheaply during low-demand windows without paying the firm-service reliability premium",
+    "Knowing which counterparties hold firm vs. interruptible contracts helps anticipate whose gas flows get curtailed first when the pipeline needs to balance"
+   ],
+   "common_misunderstandings": [
+    "Assuming interruptible service is simply a discount version of firm service rather than a fundamentally lower-priority, curtailable claim on capacity"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gas commingling and pipeline fullness economics",
+    "Continuous injection/withdrawal requirement"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "513-514",
+    "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Gas commingling and pipeline fullness economics",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Operations",
+   "type": "concept",
+   "definition": "Gas injected into a pipeline mixes with the gas already there and moves according to pressure gradients rather than as a discrete tracked parcel, so the molecules withdrawn at a delivery point are not literally the same molecules injected upstream; how well injected volumes can be matched by withdrawals elsewhere depends heavily on how full the pipeline already is.",
+   "core_idea": "Pipeline 'transportation' is really a displacement process: in a nearly full pipeline, injecting gas at one point and withdrawing roughly the same volume elsewhere can happen almost immediately, but in a nearly empty pipeline the injected gas spreads throughout the line and cannot practically be fully recovered at the intended delivery point.",
+   "key_points": [
+    "The rate gas flows depends on the pressure difference between two points; higher-pressure gas moves faster",
+    "In a multi-segment pipeline, gas injected at one point disperses across the system rather than traveling as a discrete unit to a specific exit",
+    "If the pipeline is already nearly full, simultaneous injection and withdrawal at different points can approximate near-instant transportation because the system is close to equilibrium",
+    "If the pipeline starts nearly empty, injected gas spreads throughout its length, making it practically impossible to withdraw the full injected quantity at the intended point",
+    "Pipeline operators therefore have a strong incentive to keep pipelines nearly full, though not at true maximum capacity (which would prevent further injection) and not at very low pressure either"
+   ],
+   "relationships": [
+    "Explains why pipeline operators need interruptible buyers/sellers to manage fullness"
+   ],
+   "trading_implications": [
+    "Gas nominated for delivery at a specific point is a claim on volume, not on specific molecules, which is part of why pipeline balancing and fullness management matter operationally"
+   ],
+   "common_misunderstandings": [
+    "Assuming pipeline transportation moves a specific parcel of gas directly from injection point to withdrawal point, like cargo on a train"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Firm vs. interruptible transportation service"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "514-515",
+    "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Pipeline tariffs",
+   "category": "Natural Gas",
+   "subcategory": "Regulation",
+   "type": "definition",
+   "definition": "A tariff is the publicly filed fee schedule a regulated pipeline charges for its services, obtainable from either the pipeline company or its regulating agency.",
+   "core_idea": "Nearly every pipeline available for public use in the U.S. is regulated and required to publish its charges in a public tariff document.",
+   "key_points": [
+    "Applies to regulated pipelines, which covers essentially all pipelines available for public use in the U.S.",
+    "Tariffs can be obtained from the pipeline company or the regulating agency"
+   ],
+   "relationships": [
+    "Contains charges such as the Annual Cost Adjustment"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Annual Cost Adjustment (ACA) charge"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "515",
+    "section_hint": "5.1 Natural Gas Transportation, Transportation Contracts"
+   }
+  },
+  {
+   "topic": "Annual Cost Adjustment (ACA) charge",
+   "category": "Natural Gas",
+   "subcategory": "Common Terms",
+   "type": "definition",
+   "definition": "The ACA is a small tariff charge added to pipeline transportation costs to adjust for inflation.",
+   "core_idea": "A minor, inflation-linked line-item fee within a pipeline's published tariff.",
+   "key_points": [
+    "Adjusts transportation costs for inflation"
+   ],
+   "relationships": [
+    "Listed as part of a pipeline's tariff"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline tariffs"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "516",
+    "section_hint": "5.1 Natural Gas Transportation, Common Terms"
+   }
+  }
+ ]
+}

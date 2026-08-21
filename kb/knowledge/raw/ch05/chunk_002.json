@@ -1,0 +1,341 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Node, zone, and hub pricing under SMD",
+   "category": "Power Markets",
+   "subcategory": "Market Structure / LMP",
+   "type": "concept",
+   "definition": "Under the Standard Market Design (SMD), power prices are calculated at three levels of granularity: nodes (specific physical delivery points), zones (geographic aggregations of nodes), and hubs (aggregations of selected nodes across multiple zones).",
+   "core_idea": "The systemwide power clearing price is the same everywhere, but congestion and line-loss charges vary by location, so nodal, zonal, and hub prices diverge from each other and from the clearing price depending on where you sit on the grid.",
+   "key_points": [
+    "Node price = price at a specific electrical bus (interface where power enters/leaves the transmission grid); generators are paid the nodal price at their delivery point.",
+    "Zone price = average of all nodal prices within a defined geographic area; used for buyers/customers because it requires less detailed metering.",
+    "Hub price = average of selected nodal prices spanning several zones; serves as the grid's benchmark price and is the price used extensively in forward market trading.",
+    "In most ISO/RTO regions the systemwide clearing price and the hub price are treated as synonymous."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Node/zone/hub pricing is the basis for Financial Transmission Rights (FTRs), which hedge the price difference between hub and node.",
+    "Hub prices anchor forward market contracts."
+   ],
+   "trading_implications": [
+    "A generator's realized revenue is its nodal price, which can differ materially from the hub price traders use for forward hedges \u2014 creating basis risk that FTRs are designed to manage.",
+    "Customers billed at zone price face a different (averaged) exposure than a generator paid at a single node."
+   ],
+   "common_misunderstandings": [
+    "The clearing price for power is uniform grid-wide, but this does NOT mean realized prices are uniform \u2014 congestion and losses make node/zone/hub prices diverge from that clearing price and from each other."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Financial Transmission Rights",
+    "LMP",
+    "forward market hub trading"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "178",
+    "section_hint": "2.2 Electricity \u2014 node/zone/hub pricing"
+   }
+  },
+  {
+   "topic": "Financial Transmission Rights (FTRs)",
+   "category": "Derivatives",
+   "subcategory": "Congestion / Basis Risk Management",
+   "type": "definition",
+   "definition": "An FTR is a tradable contract between two counterparties who take opposite sides of an obligation to pay or receive the difference in power price between two specific nodes.",
+   "core_idea": "FTRs let a party that bought or sold power at a hub, but must actually deliver/receive at a specific node, hedge the risk that congestion causes the node price to diverge from the hub price.",
+   "key_points": [
+    "If there is no congestion between the two nodes, prices are identical and no payment changes hands.",
+    "If there is congestion, one party pays the other the price difference \u2014 the direction of payment can go either way and is not fixed to a single side.",
+    "FTRs are used to manage the mismatch between paying/receiving a hub price and actually delivering/receiving power at a node."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to node/zone/hub price structure and to LMPs.",
+    "FTR options are a variant of the base FTR obligation contract."
+   ],
+   "trading_implications": [
+    "A trader who is long power at a hub but must deliver at a specific node should consider an FTR to hedge basis/congestion risk between the two points.",
+    "Because payment direction under an FTR obligation can flip, a party wanting to avoid ever paying should prefer the option form over the obligation form."
+   ],
+   "common_misunderstandings": [
+    "FTRs are not insurance against price moves generally \u2014 they specifically hedge the price difference between two nodes caused by congestion, not absolute price risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "node/zone/hub pricing",
+    "LMP",
+    "FTR options"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "178",
+    "section_hint": "2.2 Electricity \u2014 FTRs"
+   }
+  },
+  {
+   "topic": "FTR Options",
+   "category": "Derivatives",
+   "subcategory": "Congestion / Basis Risk Management",
+   "type": "definition",
+   "definition": "An FTR option is a variant of the FTR contract where one party pays an up-front premium to avoid ever having to pay congestion charges, rather than taking on a two-way obligation.",
+   "core_idea": "Buying an FTR option functions like buying insurance against higher prices caused by congestion \u2014 the buyer's downside is capped at the premium paid, unlike a standard obligation-style FTR where either side can end up paying.",
+   "key_points": [
+    "Structured as an option rather than an obligation: buyer pays a premium up front.",
+    "Protects the buyer only from paying on congestion charges (asymmetric protection vs. the two-way obligation FTR)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Derived from / structured as a variant of the base FTR obligation contract."
+   ],
+   "trading_implications": [
+    "Preferred over a standard FTR obligation when a party wants defined, capped downside (premium only) rather than open-ended two-way congestion payment risk."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Financial Transmission Rights"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "178",
+    "section_hint": "2.2 Electricity \u2014 FTR options"
+   }
+  },
+  {
+   "topic": "Regulated power markets and integrated utilities",
+   "category": "Power Markets",
+   "subcategory": "Regulation / Market Structure",
+   "type": "market_mechanic",
+   "definition": "In regulated (non-deregulated) power grids, a monopoly utility that owns both transmission and generation (an integrated utility) is typically the sole supplier of power to consumers within its service area, overseen by a government commission that sets consumer prices.",
+   "core_idea": "Because the integrated utility is the sole supplier, there is little or no wholesale market inside the service area; any trading happens only at the import/export interconnection points with neighboring systems.",
+   "key_points": [
+    "The overseeing body is usually called a public utility commission or public service commission.",
+    "Trading nodes at the edges of a regulated utility's territory typically have names describing the interconnection, e.g., 'Into-Southern Company' or 'Into-Dominion'.",
+    "The commission determines the consumer electricity prices the utility may charge."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with deregulated SMD markets that use node/zone/hub LMP pricing and active wholesale trading."
+   ],
+   "trading_implications": [
+    "Wholesale trading opportunities in a regulated market are effectively limited to the utility's import/export interface points, not internal delivery points."
+   ],
+   "common_misunderstandings": [
+    "Not all power grids are deregulated \u2014 deregulated wholesale market mechanics (nodal LMPs, hub trading) don't apply inside a regulated integrated utility's service territory."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "rate base",
+    "public utility commission",
+    "node/zone/hub pricing"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "178-179",
+    "section_hint": "2.2 Electricity \u2014 Regulated Markets"
+   }
+  },
+  {
+   "topic": "Rate base and the utility rate-setting mechanism",
+   "category": "Power Markets",
+   "subcategory": "Regulation",
+   "type": "market_mechanic",
+   "definition": "Regulated utilities are compensated via a fee approved to earn a fixed return on the 'rate base' \u2014 the cumulative value of prudently made investments in generation, transmission, and distribution infrastructure \u2014 with rates and approved investments set periodically in commission proceedings called rate cases, and published in a pricing document called a tariff.",
+   "core_idea": "Because utility profit is a fixed percentage return on invested capital (the rate base) rather than a margin on efficiency, the utility's main lever for increasing profit is spending more on infrastructure, not cutting costs.",
+   "key_points": [
+    "Rate base = the value of investments the utility has prudently made into generation, transmission, and distribution assets.",
+    "A rate case is a periodic meeting between the utility commission and the utility that authorizes the allowed rate of return and approves new additions to the rate base before the next meeting.",
+    "A tariff is the published pricing structure a retailer/utility charges a customer for energy consumption, and it documents the fee/rate base information.",
+    "Because profit scales with rate-base spending, more consumer usage \u2192 more assets the utility can justify building \u2192 greater shareholder profit.",
+    "Regulated utilities have no direct financial incentive to find cheaper ways to operate or to encourage conservation; they instead tend to prioritize customer satisfaction and reliability."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Set by the public utility commission via rate cases; documented in tariffs."
+   ],
+   "trading_implications": [
+    "This structure means regulated utility profitability is driven by capital investment approvals, not by commodity price movements or operating efficiency \u2014 a different fundamental driver than merchant/deregulated generators."
+   ],
+   "common_misunderstandings": [
+    "It's a common misread to assume regulated utilities are incentivized like competitive businesses to cut costs \u2014 the rate-base mechanism instead rewards additional capital spending."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "public utility commission",
+    "integrated utilities",
+    "PPA",
+    "avoided cost"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "179",
+    "section_hint": "2.2 Electricity \u2014 Regulated Markets / Rate Base"
+   }
+  },
+  {
+   "topic": "Public Utility Commission / Public Service Commission role",
+   "category": "Power Markets",
+   "subcategory": "Regulation",
+   "type": "concept",
+   "definition": "Public Utility Commissions (PUCs) are the government bodies, typically staffed by politically appointed commissioners, that approve utility rates and investments.",
+   "core_idea": "Commissioners, who may lack deep engineering or energy market expertise, must balance short-term voter-popular pressures (like lower prices) against long-term needs (like infrastructure investment for future reliability).",
+   "key_points": [
+    "Commissioners are typically political appointees and may have limited engineering or energy market knowledge.",
+    "PUCs must weigh short-term political considerations (cutting consumer prices) against long-term considerations (infrastructure investment for future supply stability)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Runs rate cases that set the rate base return and approved investments for integrated/regulated utilities."
+   ],
+   "trading_implications": [
+    "Regulatory/political dynamics at the PUC level (not just fundamentals) can drive whether and when infrastructure investment \u2014 and thus rate base growth \u2014 occurs."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "rate base",
+    "rate case",
+    "regulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "179-180",
+    "section_hint": "2.2 Electricity \u2014 Public Utility Commission/Public Service Commission"
+   }
+  },
+  {
+   "topic": "Power Purchase Agreements (PPAs)",
+   "category": "Power Markets",
+   "subcategory": "Contracts",
+   "type": "definition",
+   "definition": "A PPA is a legal contract in which a regulated utility agrees to buy power from a third-party generator at a fixed price for a predetermined number of years, typically to outsource construction/operation of generation requiring specialized expertise.",
+   "core_idea": "PPAs let regulated utilities incentivize construction of specialized generation (commonly solar, wind, geothermal) without owning the asset themselves, with the contract tied to the physical unit rather than a particular owner.",
+   "key_points": [
+    "PPAs are typically linked to the physical generating facility; if the facility is sold, the PPA transfers with it to the new owner.",
+    "PPAs are most commonly used to incentivize construction of specialized technologies like solar, wind, or geothermal generation.",
+    "Because PPAs are usually signed at the time a unit is first built, contracted prices tend to be proportional to the cost of constructing the generation unit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "One of two mechanisms (alongside avoided-cost compensation) by which regulated utilities source generation from third parties without owning it."
+   ],
+   "trading_implications": [
+    "PPA pricing can be read as a proxy for the construction cost of the underlying generation technology at the time of signing."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "avoided cost",
+    "rate base",
+    "regulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "180",
+    "section_hint": "2.2 Electricity \u2014 Power Purchase Agreement (PPA)"
+   }
+  },
+  {
+   "topic": "Avoided cost compensation",
+   "category": "Power Markets",
+   "subcategory": "Contracts",
+   "type": "definition",
+   "definition": "Avoided cost is the compensation basis regulated utilities are required to pay third-party generators (when required to purchase from them under certain rules) \u2014 equal to what the utility would have itself paid to generate that power.",
+   "core_idea": "When a regulated utility is obligated to buy power from a qualifying third-party generator, it pays a price benchmarked to its own cost of self-generation, rather than a freely negotiated market price.",
+   "key_points": [
+    "Applies when a utility is required to purchase power from third-party generators meeting certain requirements.",
+    "The payment equals the utility's own avoided cost of generating that power itself."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative to PPAs as a mechanism for regulated utilities to source third-party generation."
+   ],
+   "trading_implications": [
+    "Avoided-cost generators' revenue is benchmarked to the incumbent utility's generation cost structure, not to a competitive market price."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "PPA",
+    "regulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "180",
+    "section_hint": "2.2 Electricity \u2014 Avoided Cost"
+   }
+  },
+  {
+   "topic": "Importance and cyclic predictability of electrical demand forecasting",
+   "category": "Power Markets",
+   "subcategory": "Fundamentals / Load Forecasting",
+   "type": "concept",
+   "definition": "Because electricity cannot be stored and power auctions dispatch plants to meet expected demand, accurately forecasting future load is essential both for grid-balancing auctions and for individual power plant operators' fuel and maintenance scheduling.",
+   "core_idea": "Demand for power fluctuates constantly and can't be met purely reactively, but it is fairly predictable because it follows cyclic patterns by season, day of week, and time of day, which is what makes forward planning (fuel procurement, maintenance scheduling, dispatch decisions) feasible.",
+   "key_points": [
+    "Electricity cannot be stored, so supply must be continuously balanced against constantly changing demand via day-ahead and real-time auctions.",
+    "Auctions/grid operators must plan ahead (not just react) to ensure enough plants are active or on standby \u2014 over-building standby capacity is costly, so accurate forecasts control cost.",
+    "Power plant operators need weeks of lead time to line up fuel supplies and must decide maintenance timing and continuous-vs-cycling operation based on demand forecasts.",
+    "In competitive markets, accurate demand forecasting is essential to a power plant's profitability.",
+    "Demand is cyclic \u2014 it varies predictably by season, day of week, and time of day \u2014 but the specific load profile differs by region."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins the day-ahead and real-time auction infrastructure and dispatch order."
+   ],
+   "trading_implications": [
+    "Load forecast accuracy is a direct driver of both grid-level dispatch cost and individual plant profitability/fuel procurement decisions."
+   ],
+   "common_misunderstandings": [
+    "Balancing supply and demand can't be purely reactive despite electricity demand changing instantaneously \u2014 the auction/dispatch system must forecast ahead."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "day-ahead and real-time auctions",
+    "dispatch order",
+    "cold-weather demand pattern"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "180-181",
+    "section_hint": "2.2 Electricity \u2014 Electrical Demand"
+   }
+  },
+  {
+   "topic": "Cold-weather dual-peak demand pattern",
+   "category": "Power Markets",
+   "subcategory": "Fundamentals / Load Forecasting",
+   "type": "concept",
+   "definition": "In cold weather (daily highs below 60\u00b0F), regional power demand shows two distinct daily peaks: a morning peak (~6 a.m., as homes/offices heat up for the day) and an evening peak (as people return home).",
+   "core_idea": "The timing of heating-driven demand peaks stays fairly constant regardless of exact temperature, but colder weather raises overall usage \u2014 especially overnight \u2014 and sharpens the morning and evening peaks.",
+   "key_points": [
+    "Two peaks in cold weather: a morning peak around 6 a.m. (heating homes/offices for the day) and an evening peak (people arriving home).",
+    "The timing of when people use heating is fairly constant across a range of cold temperatures, even though colder days use more total power.",
+    "Colder weather generally increases overnight power usage and produces more sharply defined peaks at the start and end of the day.",
+    "Load profiles differ by region, but this cold-weather dual-peak shape is described as typical for the pattern discussed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "An example of the seasonal/time-of-day cyclicality that makes load forecasting tractable."
+   ],
+   "trading_implications": [
+    "Forecasters/traders in cold-weather regions should expect demand (and price) risk to concentrate around the two peak windows (early morning and evening) rather than uniformly through the day."
+   ],
+   "common_misunderstandings": [
+    "More power used on colder days does not mean the peak timing shifts \u2014 the author notes peak timing is fairly constant even as magnitude and overnight usage rise with colder temperatures."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "load forecasting",
+    "seasonal demand cyclicality"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "181-182",
+    "section_hint": "2.2 Electricity \u2014 Electrical Demand (Figure 2.2.5, cold weather hourly demand)"
+   }
+  }
+ ]
+}

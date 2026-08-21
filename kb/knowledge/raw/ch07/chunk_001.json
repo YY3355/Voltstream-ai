@@ -1,0 +1,372 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Coal pipeline transportation trade-offs",
+   "category": "Commodities",
+   "subcategory": "Coal Logistics",
+   "type": "concept",
+   "definition": "New coal pipeline technologies aim to reduce the water used in slurry transport, but introduce a new cost: the coal must be dried before use, and drying by burning some of the coal raises both emissions and transport cost.",
+   "core_idea": "Compressed 'coal log' pipelines cut water use dramatically versus slurry pipelines and leave residual water cleaner, but they shift the problem from water consumption to a drying step that itself burns fuel and adds emissions and cost.",
+   "key_points": [
+    "Compressed coal-log pipelines can move three to four tons of coal per ton of water used, versus traditional slurry pipelines.",
+    "Coal-log pipelines leave the water cleaner than slurry pipelines do.",
+    "Transported coal must be dried before it can be burned as fuel.",
+    "Burning some of the coal is the most effective way to dry it, which increases carbon emissions and transportation cost."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Trade-off between water-use efficiency and drying-related emissions/cost."
+   ],
+   "trading_implications": [
+    "Physical logistics costs (drying, transport) are a real cost layer that affects delivered coal economics, distinct from mine-mouth price."
+   ],
+   "common_misunderstandings": [
+    "Reducing water usage in coal transport is not a free efficiency gain; it trades one input cost/environmental cost (water) for another (drying emissions and expense)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal slurry pipelines",
+    "Coal drying",
+    "Carbon emissions"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "250",
+    "section_hint": "2.4 Coal"
+   }
+  },
+  {
+   "topic": "Limited international coal trade and low price volatility",
+   "category": "Commodities",
+   "subcategory": "Coal Market Structure",
+   "type": "market_mechanic",
+   "definition": "Because coal power plants are usually sited near an abundant local supply and transportation costs are a large share of delivered coal price, long-distance and international coal trade is generally uneconomical, which keeps coal prices comparatively stable.",
+   "core_idea": "Coal's cost structure is dominated by transportation, so plants source locally under long-term contracts rather than trading it internationally, and this local, contract-based structure makes coal prices much less volatile than other fossil fuels.",
+   "key_points": [
+    "Coal power plants are typically built close to an abundant local coal supply.",
+    "Transportation costs make up a substantial share of delivered coal price, so imported coal is usually much more expensive than local coal.",
+    "It is generally uneconomical to transport coal over long distances, limiting international trade.",
+    "Coal prices are much less volatile than the prices of other fossil fuels, partly as a result of this limited long-distance trade."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Transportation-cost share of price drives the limited-trade outcome, which in turn drives lower price volatility."
+   ],
+   "trading_implications": [
+    "Coal is less suited to global arbitrage trading than oil or natural gas because delivered economics are dominated by local transport cost rather than a globally arbitraged commodity price."
+   ],
+   "common_misunderstandings": [
+    "Coal is not a globally fungible commodity in the way oil is; 'the price of coal' is much more locationally specific."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal pricing",
+    "Transportation cost",
+    "Fossil fuel price volatility"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "250",
+    "section_hint": "2.4 Coal"
+   }
+  },
+  {
+   "topic": "Coal procurement and supplier lock-in for power plants",
+   "category": "Commodities",
+   "subcategory": "Coal Market Structure",
+   "type": "market_mechanic",
+   "definition": "Coal-fired power plants that run continuously typically sign long-term supply contracts with nearby mines, stockpile supply because it is easy to store, but rarely resell surplus coal because there are few interested counterparties, and they invest heavily in optimizing transportation logistics, which makes switching suppliers difficult on short notice.",
+   "core_idea": "The combination of easy stockpiling, a thin resale market, and heavily optimized point-to-point transportation logistics locks coal power plants into their existing local suppliers.",
+   "key_points": [
+    "Major coal consumers are power plants that operate continuously year-round.",
+    "These plants sign long-term supply contracts with nearby coal mines.",
+    "Stockpiling coal is fairly straightforward for power plants.",
+    "Reselling unused coal is difficult because there are few counterparties interested in trading coal.",
+    "Power plants spend significant effort optimizing transportation from local suppliers to minimize that cost component.",
+    "This optimization makes it difficult to switch to a different supplier on short notice."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Thin secondary market + logistics optimization reinforces long-term single-supplier relationships."
+   ],
+   "trading_implications": [
+    "Coal supply relationships behave more like fixed physical logistics contracts than a liquid traded commodity, limiting short-term switching or trading flexibility."
+   ],
+   "common_misunderstandings": [
+    "Unlike natural gas or power, coal is not easily resold once purchased, so surplus inventory is not a simple source of trading liquidity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Long-term supply contracts",
+    "Coal stockpiling",
+    "Coal trading liquidity"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "250",
+    "section_hint": "2.4 Coal"
+   }
+  },
+  {
+   "topic": "Drivers of coal price: fuel substitution and environmental legislation",
+   "category": "Commodities",
+   "subcategory": "Coal Pricing",
+   "type": "concept",
+   "definition": "Coal prices are primarily influenced by the price of competing fossil fuels and by environmental/carbon regulation; higher oil and gas prices make coal relatively more attractive and push its price up, while market-based emissions and pollution regulations specifically target coal to make it economically less attractive.",
+   "core_idea": "Coal price sits at the intersection of fuel-switching economics (it becomes more attractive, and its price rises, when oil and gas are expensive) and environmental policy (which deliberately raises the cost of coal-based generation because coal is heavily used and highly polluting), though coal typically remains cheaper than oil and gas even after price increases.",
+   "key_points": [
+    "Prolonged high oil and natural gas prices make coal relatively more attractive for power generation.",
+    "As other fuel prices rise, coal becomes comparatively more economical, increasing coal usage and coal prices.",
+    "Even after price increases, coal generally remains much cheaper than oil and natural gas.",
+    "Market-based carbon/pollution reduction approaches are a major influence on coal price because coal is heavily used and highly polluting, making it the primary regulatory target.",
+    "Environmental initiatives typically reduce coal usage by making coal-based generation more expensive, since coal's main appeal is being the cheaper generation fuel."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Fuel-switching economics (oil/gas price vs. coal price) and environmental regulation are the two dominant, partly opposing forces on coal demand and price."
+   ],
+   "trading_implications": [
+    "Coal price/usage can be modeled as a function of relative fossil fuel prices (substitution effect) and the regulatory cost imposed on carbon/pollution, rather than coal supply-demand fundamentals alone."
+   ],
+   "common_misunderstandings": [
+    "A rise in coal price due to fuel switching does not mean coal loses its cost advantage \u2014 it generally stays cheaper than oil and gas even when its price rises."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fuel switching",
+    "Carbon regulation",
+    "Coal-fired generation economics"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "250-251",
+    "section_hint": "2.4 Coal"
+   }
+  },
+  {
+   "topic": "Classification of coal by rank: lignite, sub-bituminous, bituminous, anthracite",
+   "category": "Commodities",
+   "subcategory": "Coal Types",
+   "type": "definition",
+   "definition": "Coal used as fuel is classified into four main ranks by carbon content and heat energy \u2014 lignite, sub-bituminous, bituminous, and anthracite \u2014 with higher-carbon ranks generally containing more heat energy but being harder to ignite; other very high-carbon forms such as graphite and diamonds are technically coal but are not usable as fuel.",
+   "core_idea": "There is a fundamental trade-off in coal fuel quality: as carbon content and heat energy rise from lignite to anthracite (and theoretically to graphite/diamond), ease of ignition falls, so extremely high-quality carbon forms become impractical to burn.",
+   "key_points": [
+    "Coal is classified for fuel purposes mainly by carbon content and heat energy output.",
+    "The four fuel-grade coal types, in ascending order of carbon/energy content, are lignite, sub-bituminous, bituminous, and anthracite.",
+    "Graphite and diamond are nearly 100% carbon and technically coal, but are not practical fuels because they are hard to ignite.",
+    "Low-quality coal ignites easily but has lower energy content; higher-quality coal is harder to ignite but has substantially more energy content.",
+    "Extremely high-quality coal (e.g., graphite/diamond) has very high potential heat energy but is nearly impossible to ignite under normal conditions.",
+    "Coal types also vary in the type and amount of pollution they produce."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ignition ease is inversely related to carbon content/energy density across the coal ranks."
+   ],
+   "trading_implications": [
+    "Different coal grades are not interchangeable fuels; heat content and pollution profile differences affect delivered value and regulatory cost, so contracts should specify grade."
+   ],
+   "common_misunderstandings": [
+    "Higher carbon content does not automatically make a substance a usable fuel coal \u2014 ignitability matters as much as energy content (graphite/diamond illustrate this limit)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Lignite",
+    "Sub-bituminous coal",
+    "Bituminous coal",
+    "Anthracite",
+    "Coal heat content"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "251",
+    "section_hint": "2.4 Coal \u2014 Types of Coal"
+   }
+  },
+  {
+   "topic": "Lignite (brown coal)",
+   "category": "Commodities",
+   "subcategory": "Coal Types",
+   "type": "definition",
+   "definition": "Lignite, also called brown coal or 'burnable earth,' is the lowest-energy fuel coal, roughly 30% carbon with high moisture content, soft and crumbly, prone to spontaneous combustion if not stored carefully, used almost exclusively for local power generation because its low energy density makes long-distance transport inefficient.",
+   "core_idea": "Lignite's main economic role is as a cheap, locally-burned power fuel; its low density, high moisture, high pollutant content, and combustion risk make it unsuited to storage, transport, or international trade.",
+   "key_points": [
+    "Lignite contains about 30 percent carbon and has very high moisture content.",
+    "It is often soft and crumbly in texture.",
+    "Low energy density makes it inefficient to transport long distances, so it is almost never traded internationally.",
+    "It is subject to spontaneous combustion unless stored carefully.",
+    "Its only commercial use is power generation by nearby power plants.",
+    "Compared to black coal, lignite has an especially high proportion of pollutants, making its use politically charged.",
+    "Its main value proposition is providing a low-cost source of electricity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Lowest rank of the four fuel coal types; sits below sub-bituminous coal in carbon content and energy."
+   ],
+   "trading_implications": [
+    "Lignite is essentially a non-tradable, local-only fuel \u2014 pricing and logistics analysis should treat it as tied to specific nearby power plants rather than a broader market."
+   ],
+   "common_misunderstandings": [
+    "Lignite's low cost does not mean low risk \u2014 it carries both a high pollution profile and spontaneous-combustion storage risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal classification",
+    "Coal pollution",
+    "Local power generation"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "251",
+    "section_hint": "2.4 Coal \u2014 Types of Coal"
+   }
+  },
+  {
+   "topic": "Sub-bituminous coal",
+   "category": "Commodities",
+   "subcategory": "Coal Types",
+   "type": "definition",
+   "definition": "Sub-bituminous coal sits between lignite and bituminous coal in properties, with about 40% carbon content, more heat energy and less moisture than lignite, making it somewhat more efficient to transport, though international trade remains relatively small; it is used almost exclusively as a power-generation fuel and accounts for a little under half of North American coal production.",
+   "core_idea": "Sub-bituminous coal is a mid-rank fuel coal, better than lignite but still primarily a domestic/regional power-generation fuel rather than an internationally traded commodity.",
+   "key_points": [
+    "Sub-bituminous coal has about 40 percent carbon content, higher than lignite.",
+    "It typically has less moisture than lignite and contains more heat energy.",
+    "It is slightly more efficient to transport over long distances than lignite, but international trade is still relatively small.",
+    "A little less than half of North American coal production is sub-bituminous.",
+    "It is used almost exclusively as a fuel for electrical power generation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ranks above lignite and below bituminous coal in carbon content, energy content, and transportability."
+   ],
+   "trading_implications": [
+    "Represents a major share of North American coal supply relevant to power generation, but like lignite is mostly a domestic-use fuel rather than an internationally traded one."
+   ],
+   "author_states_vs_inference": "all from source",
+   "common_misunderstandings": [],
+   "related_topics": [
+    "Coal classification",
+    "Lignite",
+    "Bituminous coal",
+    "North American coal production"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "251",
+    "section_hint": "2.4 Coal \u2014 Types of Coal"
+   }
+  },
+  {
+   "topic": "Bituminous coal",
+   "category": "Commodities",
+   "subcategory": "Coal Types",
+   "type": "definition",
+   "definition": "Bituminous coal, formed under high temperature and pressure, is about 70% carbon, the most abundant coal type in North America (about half of usage), contains two to three times the heat energy of lignite, and is actively traded internationally for both power generation and industrial raw material use.",
+   "core_idea": "Bituminous coal is the dominant North American coal grade and the one with a meaningful international trading market, used both as a power fuel and as an industrial input.",
+   "key_points": [
+    "Bituminous coal is about 70 percent carbon, formed by high temperature and pressure.",
+    "It is the most abundant coal type in North America.",
+    "It contains two to three times the heat energy of lignite.",
+    "There is active international trade in bituminous coal.",
+    "It is used both for power generation and as a source of industrial raw materials.",
+    "It is usually black but can be dark brown, often showing bright/dark striations.",
+    "About half of the coal used in North America is bituminous."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ranks above sub-bituminous and below anthracite in carbon content; the only fuel-grade coal type described as having active international trade."
+   ],
+   "trading_implications": [
+    "Bituminous coal is the fuel-coal grade most relevant to international trading activity, unlike lignite and sub-bituminous coal which are largely domestic."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal classification",
+    "Sub-bituminous coal",
+    "Anthracite",
+    "Industrial raw materials"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "251-252",
+    "section_hint": "2.4 Coal \u2014 Types of Coal"
+   }
+  },
+  {
+   "topic": "Anthracite coal",
+   "category": "Commodities",
+   "subcategory": "Coal Types",
+   "type": "definition",
+   "definition": "Anthracite is the highest-grade fuel coal, about 95% carbon with a hard glossy black surface, difficult to ignite but burns with a steady flame, has low moisture and produces relatively little pollution; it has roughly the same heat energy as bituminous coal, is much less common, and its high price makes it uneconomical for power plant use.",
+   "core_idea": "Anthracite is the cleanest and highest-carbon fuel coal, but its difficulty of ignition, scarcity, and cost put it outside the economics of typical power plant use despite comparable heat content to bituminous coal.",
+   "key_points": [
+    "Anthracite is about 95 percent carbon with a hard, glossy black surface.",
+    "It ignites with difficulty but produces a steady flame once lit.",
+    "It has low moisture content and produces relatively little pollution compared to other coal grades.",
+    "Its heat energy is approximately the same as bituminous coal.",
+    "It is much less common than bituminous coal.",
+    "Its high price makes it uneconomical to use in power plants."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Highest rank of the four fuel coal types; comparable heat content to bituminous coal despite much higher carbon content."
+   ],
+   "trading_implications": [
+    "Despite being the 'best' fuel coal by carbon/pollution profile, anthracite's price and scarcity exclude it from typical power-generation economics, so it should not be assumed to compete directly with bituminous coal for that use."
+   ],
+   "common_misunderstandings": [
+    "Higher carbon/quality grade (anthracite) does not translate into more heat energy than bituminous coal \u2014 the text states the two are approximately equal in heat energy."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal classification",
+    "Bituminous coal",
+    "Coal pollution"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "252",
+    "section_hint": "2.4 Coal \u2014 Types of Coal"
+   }
+  },
+  {
+   "topic": "Sulfur content classification and acid rain risk",
+   "category": "Commodities",
+   "subcategory": "Coal Environmental Classification",
+   "type": "concept",
+   "definition": "Coal is also classified by sulfur content, since burning sulfur releases sulfur oxides that combine with water to form sulfuric acid \u2014 one of the main components of acid rain along with carbonic and nitric acid \u2014 and coal-related liquid runoff is also generally acidic; power plants burning high-sulfur coal tend to have higher maintenance costs than those burning low-sulfur coal, and sulfur oxide pollution is described as a localized problem that becomes harmful only once it accumulates past a critical threshold.",
+   "core_idea": "Sulfur content is a second major coal classification axis distinct from carbon rank, mattering because sulfur combustion drives acid rain and acidic runoff, raises plant maintenance costs, and causes localized ecological damage once pollutant concentration passes a critical buildup threshold.",
+   "key_points": [
+    "Burning sulfur produces sulfur oxides that combine with water to form sulfuric acid.",
+    "Sulfuric acid, along with carbonic and nitric acid, is a main component of acid rain.",
+    "Liquid runoff from coal mining or coal-burning facilities is generally somewhat acidic, not just rainfall.",
+    "Power plants using high-sulfur coal generally have higher maintenance costs than those using low-sulfur coal.",
+    "Sulfur oxide emissions are described as a localized pollution problem.",
+    "Small quantities of sulfuric acid are not harmful, but over time it can build up to a critical mass where species begin dying off."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sulfur content is a second, independent classification dimension for coal alongside carbon-based rank (lignite/sub-bituminous/bituminous/anthracite)."
+   ],
+   "trading_implications": [
+    "Low-sulfur coal commands an operating-cost advantage (lower plant maintenance) distinct from its carbon-rank pricing, so sulfur content is a separate factor in coal valuation and contract specification."
+   ],
+   "common_misunderstandings": [
+    "Acid damage from coal is not limited to rainfall \u2014 general liquid runoff from coal facilities is also acidic and harmful; and the harm from sulfuric acid buildup is threshold-based (localized), not a simple linear function of any acid present."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Acid rain",
+    "Coal maintenance costs",
+    "Localized pollution",
+    "Coal classification"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "252",
+    "section_hint": "2.4 Coal \u2014 Sulfur Content of Coal"
+   }
+  }
+ ]
+}

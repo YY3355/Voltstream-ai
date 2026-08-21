@@ -1,0 +1,242 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Option pricing models and vanilla vs. exotic options",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Option prices are calculated using mathematical models rather than looked up directly; the dominant family is Black Scholes genre models, which price so-called 'vanilla' options, while options requiring assumptions outside that standard set need more complex 'exotic' models.",
+   "core_idea": "Option models work by mathematically replicating an option's payoff through a strategy of trading the underlying asset plus a risk-free investment (dynamic hedging). Choosing the right model matters more than being able to derive one from scratch \u2014 most practitioners just need to pick an appropriate model and supply correct inputs.",
+   "key_points": [
+    "Most real-world option pricing uses variants of the Black Scholes formula ('Black Scholes genre models').",
+    "Options priceable by Black Scholes genre models are called 'vanilla options'.",
+    "Options needing nonstandard assumptions about price behavior are called 'exotic options' and require more complex models.",
+    "Dynamic hedging is the underlying mechanism: replicate an option's payoff by trading the underlying asset and a risk-free instrument over time.",
+    "In practice it is usually unnecessary to rebuild a model from first principles \u2014 the key skill is selecting the correct model and its required inputs.",
+    "Every option formula implicitly asserts 'this works if assumptions X, Y, Z hold'; the user must verify those assumptions apply to their specific case, and switch models if they don't."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Vanilla options relate to Black Scholes genre models; exotic options require alternative/nonstandard models."
+   ],
+   "trading_implications": [
+    "Before applying a standard option formula, a trader should check whether its underlying assumptions actually hold for the asset/market in question.",
+    "If standard assumptions fail, a different (exotic) model must be found rather than forcing the vanilla formula."
+   ],
+   "common_misunderstandings": [
+    "That building or deeply understanding a model from scratch is necessary to price options in practice \u2014 the author states it usually is not."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dynamic hedging",
+    "Black-Scholes formula",
+    "Exotic options"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "346-347",
+    "section_hint": "3.5 Option Pricing \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Asymmetric option payoff and volatility",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Because an option's payoff is asymmetric (limited downside for the buyer, unlimited upside), option value is closely tied to the volatility of the underlying asset rather than to its expected direction.",
+   "core_idea": "A large price move that is equally likely to go up or down still benefits the option buyer more than the seller, because the buyer's losses are capped at the premium paid while gains are not capped. This means option buyers benefit from volatility/large moves, while option sellers benefit from price stability.",
+   "key_points": [
+    "Option payoffs are asymmetric: buyer's downside is limited to the cost of the option, upside is theoretically unlimited.",
+    "Even a 50/50 chance up-or-down price move favors the option buyer over the seller due to this asymmetry.",
+    "Option buyers benefit from large price moves (high volatility); option sellers benefit from price stability (low volatility)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Volatility of the underlying is a central driver of option value due to payoff asymmetry."
+   ],
+   "trading_implications": [
+    "An option buyer's edge increases with underlying volatility regardless of direction.",
+    "An option seller (writer) is effectively exposed to volatility risk and benefits when prices stay stable."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option writing risk",
+    "Dynamic hedging"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "346",
+    "section_hint": "3.5 Option Pricing \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Why options can't be priced like insurance",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Options resemble insurance contracts economically but must be priced differently, because insurance relies on slowly-changing historical statistical tables while the underlying assets behind options can change behavior dramatically over short periods.",
+   "core_idea": "Insurance pricing works because the probabilities it relies on shift slowly, giving underwriters time to detect trend changes; option pricing cannot rely on historical statistical probabilities in the same way because the underlying market's behavior can shift abruptly, and even skilled professionals cannot reliably predict markets.",
+   "key_points": [
+    "Insurance pricing is based on statistical tables of future probabilities that change slowly, allowing underwriters years to detect trend shifts.",
+    "Option underlyings can change behavior dramatically over short periods, unlike the risks insurance is priced against.",
+    "Using historical statistical probabilities (an insurance-style approach) to price options is described as 'a sure-fire way to lose money.'",
+    "Historical prices are not accurate predictors of future prices, and this holds even for highly skilled financial professionals.",
+    "The shift away from statistical/historical pricing toward dynamic hedging (replicating payoffs via frequent trading in the underlying) is described as the option pricing revolution."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates dynamic hedging as the alternative to historical/statistical pricing."
+   ],
+   "trading_implications": [
+    "Do not price options purely from historical statistical frequency of price moves; use models built on replication/hedging logic instead."
+   ],
+   "common_misunderstandings": [
+    "That options can be safely priced the way insurance is priced, using historical statistical tables \u2014 the author explicitly warns this loses money."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dynamic hedging",
+    "Option pricing models"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "346-347",
+    "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Complexity tradeoff in option model design",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "There is a tradeoff between model complexity and accessibility: highly complex models are understood by very few people, while simpler models (even with known flaws) are broadly understood, and broad understanding reduces the chance of a model failing disastrously.",
+   "core_idea": "A good option model balances comprehensibility against realism of assumptions. It is often more effective to address a simple model's weaknesses by improving observation/monitoring than to replace it with a more complex model, because models are not a substitute for understanding the underlying market reality.",
+   "key_points": [
+    "Highly complex models are understood by only a few people, which the author frames as a risk factor.",
+    "Simple models, despite flaws, are more broadly understood, and wider understanding reduces disastrous failure risk.",
+    "A good option model balances understandability against realistic assumptions about price behavior.",
+    "It is often easier/preferable to fix a simple model's weaknesses through better observation than to build a more complicated model.",
+    "Option models are not a substitute for understanding what is actually happening in the market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to vanilla vs. exotic model choice: simplicity/comprehensibility is itself a selection criterion, not just accuracy."
+   ],
+   "trading_implications": [
+    "When choosing between a simple and complex model, consider organizational/market-wide understanding of the model as a risk factor, not just statistical fit."
+   ],
+   "common_misunderstandings": [
+    "That more complex/realistic models are always better \u2014 the author argues broad comprehensibility has independent risk-reduction value."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Vanilla vs exotic options",
+    "Option pricing models"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "347",
+    "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Option writing as the market's limiting factor",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "The scarce side of the options market is sellers (writers), not buyers, because buying an option has no downside beyond its cost while writing an option means accepting open-ended risk.",
+   "core_idea": "Because option buyers face no risk beyond the premium paid, there is always ample demand to buy options; the real constraint on market activity is finding someone willing to write (sell) options and bear the associated risk. A fair option price is defined as one that fully compensates the writer for the risk taken on.",
+   "key_points": [
+    "Option buyer demand is essentially unlimited since the only downside to owning an option is its cost.",
+    "The scarce resource in the options market is willing option writers/sellers, who take on open-ended risk.",
+    "The goal of option pricing, and the definition of a 'fair' option price, is a price that fully compensates the writer for the risk assumed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties back to the asymmetric payoff concept: buyer's limited risk vs. writer's unlimited risk."
+   ],
+   "trading_implications": [
+    "Fair-value option pricing should be evaluated from the writer's risk-compensation perspective, not merely from buyer demand."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Asymmetric option payoff and volatility"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "347",
+    "section_hint": "3.5 Option Pricing \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "History of option pricing theory: Bachelier and Black-Scholes-Merton",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing History",
+   "type": "concept",
+   "definition": "Modern option pricing mathematics traces to two breakthroughs: Louis Bachelier's 1900 use of Brownian motion to model stock price movement, and the Black-Scholes-Merton framework of the late 1960s/early 1970s that combined dynamic hedging, price diffusion, and put/call parity into a usable continuous-time formula.",
+   "core_idea": "Although commodity options had been traded in European markets for thousands of years, quantitative option pricing began with Bachelier's 1900 doctoral thesis applying Brownian motion (a random-walk diffusion process) to stock price movement, and matured decades later when Fischer Black, Myron Scholes, and Robert Merton combined dynamic hedging, diffusion, and put/call parity into the Black Scholes formula, which made option pricing accessible and earned a Nobel Prize.",
+   "key_points": [
+    "Commodity options were traded in European financial markets for several thousand years before the mathematics of pricing them was formalized.",
+    "Louis Bachelier published 'Th\u00e9orie de la sp\u00e9culation' in 1900, applying Brownian motion (random-walk diffusion) to model stock price movement \u2014 the first major mathematical breakthrough in option pricing.",
+    "Brownian motion is defined as a diffusion process where a moving particle (or price) diverges from its starting point via a random walk.",
+    "Bachelier's work provided a theoretical framework for modeling price movement even without being able to predict exact future prices.",
+    "Fischer Black, Myron Scholes, and Robert Merton, working in the late 1960s\u2013early 1970s, combined dynamic hedging, price diffusion, and put/call parity into a continuous-time framework, producing the easy-to-use Black Scholes formula.",
+    "The Black Scholes formula was the second major breakthrough, opening option trading to a mass audience and contributing to a Nobel Prize."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Bachelier's Brownian motion work is a precursor to the Black Scholes formula."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes genre models",
+    "Dynamic hedging"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "347-348",
+    "section_hint": "3.5 Option Pricing \u2014 History of Option Pricing"
+   }
+  },
+  {
+   "topic": "Arbitrage-free pricing",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Arbitrage-free pricing is the principle that two assets worth the same amount throughout their lives and at expiration must be priced identically at all times, since otherwise a trader could buy the cheaper one, sell the more expensive one, and lock in a risk-free profit.",
+   "core_idea": "Option pricing commonly assumes arbitrage opportunities either don't exist or are quickly eliminated by alert traders exploiting them, forcing prices back into an arbitrage-free relationship. The author notes there is little practical difference between the 'strong form' of this assumption (arbitrage never exists) and the 'weak form' (arbitrage exists but doesn't last), as long as someone acts on the opportunity.",
+   "key_points": [
+    "Arbitrage is defined as making a risk-free profit by simultaneously buying one security and selling another.",
+    "A common option-pricing assumption is that arbitrage opportunities do not exist, or that alert traders quickly eliminate them.",
+    "Arbitrage-free pricing: if two assets have identical value throughout their lives and at expiration, their prices should be identical at all times; otherwise a risk-free profit could be made by buying one and selling the other.",
+    "This is an assumption, since traders are technically free to transact at any price \u2014 it holds in practice as long as someone acts to exploit any pricing gap.",
+    "The author treats the 'strong form' (arbitrage never exists) and 'weak form' (arbitrage opportunities exist but don't persist) of this assumption as practically equivalent."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins Black Scholes genre model assumptions."
+   ],
+   "trading_implications": [
+    "Pricing discrepancies between equivalent assets should be viewed as temporary arbitrage opportunities that the market will close."
+   ],
+   "common_misunderstandings": [
+    "That the no-arbitrage assumption requires arbitrage to literally never occur \u2014 the author clarifies the weak form (temporary arbitrage, quickly closed) is functionally equivalent."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Put/call parity",
+    "Black Scholes genre models"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "348-349",
+    "section_hint": "3.5 Option Pricing \u2014 Arbitrage-Free Pricing"
+   }
+  }
+ ]
+}

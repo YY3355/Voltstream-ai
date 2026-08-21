@@ -1,0 +1,159 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Midwest natural gas market structure",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets - Midwest",
+   "type": "market_mechanic",
+   "definition": "A profile of how supply, demand, storage, and pipeline connectivity shape the Midwest U.S. natural gas market.",
+   "core_idea": "Midwest gas demand is driven almost entirely by winter residential heating because coal, not gas, dominates regional power generation, and heavy storage infrastructure with government-mandated winter delivery obligations backstops that seasonal demand.",
+   "key_points": [
+    "Demand is strongly seasonal (winter heating) rather than year-round, unlike regions where gas also fuels power plants.",
+    "Coal is the primary power-generation fuel in the Midwest, so summer gas demand is comparatively low.",
+    "The region has extensive storage and local distribution networks, and some jurisdictions can compel storage operators to release gas to residential customers ahead of commercial use during winter.",
+    "Large pipelines link the Midwest mainly to Canadian and Rocky Mountain supply basins, with supplemental Gulf Coast gas when available.",
+    "Midwest basis prices track NYMEX (Henry Hub) futures only loosely, reflecting import access from multiple supply sources."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regional power-generation fuel mix determines whether gas demand is seasonal-only or year-round."
+   ],
+   "trading_implications": [
+    "Government-mandated winter release obligations can effectively withdraw storage gas from the commercial market at the coldest, highest-demand times.",
+    "Looser correlation to Henry Hub implies basis trades here carry more idiosyncratic (supply-source-driven) risk than in tightly correlated regions."
+   ],
+   "common_misunderstandings": [
+    "One might assume gas demand tracks power demand everywhere; in the Midwest it does not, because coal supplies most power generation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Basis price",
+    "Henry Hub",
+    "NYMEX natural gas futures"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "164-165",
+    "section_hint": "2.1 Natural Gas - Midwest region"
+   }
+  },
+  {
+   "topic": "Eastern (East Coast) natural gas market structure",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets - East Coast",
+   "type": "market_mechanic",
+   "definition": "A profile of the mid-Atlantic to New England natural gas market, characterized by year-round demand, thin storage, and historically elevated basis prices.",
+   "core_idea": "Because the East Coast burns gas for both heating and power generation and has limited storage, especially in New England, it has experienced the highest basis prices in the country, though nearby Appalachian shale supply has been compressing that premium outside the coldest months.",
+   "key_points": [
+    "Gas demand is year-round because it serves both residential heating and electricity generation, unlike winter-only-demand regions.",
+    "New England in particular has very cold winters combined with limited storage capacity.",
+    "Limited regional storage plus high winter heating-and-power demand has historically pushed East Coast basis prices to the highest levels in the U.S.",
+    "Large Appalachian shale gas production (West Virginia/Pennsylvania border) has sharply reduced regional prices in all but the coldest months.",
+    "The East Coast remains a heavy importer of Gulf Coast gas despite the growth in local Appalachian supply."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Low storage capacity plus high seasonal demand concentration amplifies basis price spikes.",
+    "Growth of a nearby low-cost supply basin (Appalachia) compresses basis in an import-dependent region."
+   ],
+   "trading_implications": [
+    "Winter basis risk/premium in the East Coast is structurally higher than in storage-rich regions, given thin local storage.",
+    "The rise of Appalachian shale supply has been narrowing East Coast basis premiums except during extreme cold, changing the historical basis-trading picture."
+   ],
+   "common_misunderstandings": [
+    "Assuming East Coast basis premiums remain as extreme as historically observed; local shale supply growth has been eroding that premium outside peak cold periods."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Basis price",
+    "Natural gas storage",
+    "Appalachian shale gas",
+    "Gulf Coast natural gas exports"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "165-166",
+    "section_hint": "2.1 Natural Gas - Eastern Gas Region"
+   }
+  },
+  {
+   "topic": "Texas/Gulf Coast natural gas market structure",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets - Texas/Gulf Coast",
+   "type": "market_mechanic",
+   "definition": "A profile of the Texas/Gulf Coast region as the dominant North American natural gas producing and exporting hub, and the location of the Henry Hub NYMEX settlement point.",
+   "core_idea": "The Texas/Gulf Coast is a net-exporting, production-heavy region whose mild winters limit heating demand but whose abundant local supply has made it heavily reliant on gas for electricity, and whose basis prices are tightly correlated to NYMEX futures because Henry Hub itself sits in the region.",
+   "key_points": [
+    "The region is a net exporter and the most important natural-gas-producing region in North America, with most exports flowing to the East Coast and Midwest.",
+    "Abundant local supply has made the region heavily dependent on natural gas as a power-generation fuel.",
+    "Mild winters mean limited seasonal heating-driven demand.",
+    "The region has substantial storage, used mainly to help exporting pipelines balance gas leaving processing plants against demand from other regions, rather than to meet local seasonal demand.",
+    "Basis prices are highly correlated with NYMEX futures because the Henry Hub settlement point is physically located in western Louisiana, within this region."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical proximity to the NYMEX settlement point (Henry Hub) explains the region's tight basis correlation to futures prices.",
+    "Storage here functions as a supply-balancing tool for export pipelines rather than as a seasonal-demand buffer."
+   ],
+   "trading_implications": [
+    "Basis trades in this region carry comparatively low basis risk relative to NYMEX futures given the physical proximity to Henry Hub.",
+    "As the primary export source to the Midwest and East Coast, supply disruptions here have outsized effects on basis in those importing regions."
+   ],
+   "common_misunderstandings": [
+    "Assuming all U.S. regional storage serves the same seasonal-demand-buffering purpose; in the Gulf Coast, storage primarily balances export pipeline flows rather than meeting local winter demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub",
+    "NYMEX natural gas futures",
+    "Basis price",
+    "Natural gas storage",
+    "Natural gas exports"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "166-167",
+    "section_hint": "2.1 Natural Gas - Texas and Gulf Coast"
+   }
+  },
+  {
+   "topic": "Southeast U.S. natural gas market structure",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets - Southeast",
+   "type": "market_mechanic",
+   "definition": "A profile of the southeastern U.S. natural gas market, defined by summer-peaking electricity-driven demand, very limited storage, and emerging LNG export/storage infrastructure.",
+   "core_idea": "The rural, agricultural Southeast uses gas mainly for electricity generation, with demand peaking in summer due to air-conditioning load rather than winter heating, and has very little storage capacity, though new LNG terminals are being built to add export capacity and serve as storage.",
+   "key_points": [
+    "Natural gas is used primarily to generate electricity in the Southeast, with demand peaking in summer as hot weather drives air-conditioning load.",
+    "Mild winters limit residential heating demand for gas.",
+    "The region has very limited storage capacity.",
+    "LNG terminals under construction (e.g., Elba Island) are intended both to export natural gas and to provide additional storage facilities for the region."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regional demand seasonality (summer peak vs. winter peak) is set by the dominant end use of gas (power generation for cooling vs. heating)."
+   ],
+   "trading_implications": [
+    "Very limited storage combined with summer-peaking demand suggests the Southeast is prone to tighter summer balances and potential price spikes during peak cooling demand.",
+    "New LNG terminal capacity (export + storage) is likely to change the region's supply-demand balance and basis dynamics going forward."
+   ],
+   "common_misunderstandings": [
+    "Assuming all U.S. regions peak in winter demand for gas; the Southeast (like Texas/Gulf Coast) instead peaks in summer because of air-conditioning-driven power demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG terminals",
+    "Natural gas storage",
+    "Regional demand seasonality",
+    "Electricity generation fuel mix"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "167-168",
+    "section_hint": "2.1 Natural Gas - Southeast"
+   }
+  }
+ ]
+}

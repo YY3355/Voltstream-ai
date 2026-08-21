@@ -1,0 +1,299 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "LNG transportation losses (boil-off)",
+   "category": "Natural Gas",
+   "subcategory": "LNG Value Chain",
+   "type": "concept",
+   "definition": "Even well-insulated LNG tankers lose some cargo in transit because a portion of the liquefied methane warms back into gas during the voyage.",
+   "core_idea": "LNG boil-off is an inherent transport loss that shippers try to minimize through ship design and scale rather than eliminate entirely.",
+   "key_points": [
+    "Boil-off happens even in the best-insulated LNG tankers.",
+    "Larger cargo volumes, faster transit times, and cryogenic reliquefaction systems that refreeze the boiled-off gas all reduce the loss.",
+    "After transport, LNG goes to a regasification facility where it is warmed back to gas and conditioned to local pipeline specs before injection."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Precedes pipeline injection; follows liquefaction and ocean transport in the LNG chain."
+   ],
+   "trading_implications": [
+    "Boil-off is a physical shrinkage cost that affects the economics of LNG cargoes and should be accounted for separately from commercial fees."
+   ],
+   "common_misunderstandings": [
+    "Insulation does not fully stop boil-off; it only slows the rate of loss."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG liquefaction",
+    "Regasification",
+    "Pipeline injection standards"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "147",
+    "section_hint": "2.1 Natural Gas \u2014 LNG transportation/regasification"
+   }
+  },
+  {
+   "topic": "Basis price vs. index price vs. all-in price",
+   "category": "Natural Gas",
+   "subcategory": "Pricing Terminology",
+   "type": "definition",
+   "definition": "Natural gas is customarily quoted relative to the Henry Hub benchmark: the index price is the Henry Hub price, the basis price is the location-specific spread to that benchmark, and the all-in (actual) price is what a physical buyer actually pays at a given location.",
+   "core_idea": "Because gas is traded relative to Henry Hub, the word 'price' is ambiguous \u2014 traders default to meaning the basis, while end users/utility operators default to meaning the all-in price \u2014 even though the delivered cost to the consumer is identical either way it's described.",
+   "key_points": [
+    "Index price = the Henry Hub price, the primary US natural gas benchmark.",
+    "Basis price = spread between the actual (all-in) price at a location and the index price; e.g., Henry Hub $3.52 and Waha Hub $3.70 implies a Waha basis of $0.18.",
+    "All-in price = index price + basis price = the actual physical delivered price at a location.",
+    "A trader asked for 'the price' will typically quote the basis; a utility operator asked the same question will typically mean the all-in price.",
+    "The terminology exists because Henry-Hub-priced futures are the primary trading vehicle, and the basis functions like an implied cost of moving gas from Henry Hub to the other location."
+   ],
+   "formulas": [
+    {
+     "name": "Basis price",
+     "formula": "Basis = Actual (all-in) price at location \u2212 Index price (Henry Hub)",
+     "variables": {
+      "Basis": "$/MMBtu spread quoted by traders for a specific hub",
+      "Actual (all-in) price": "$/MMBtu physical delivered price at the location",
+      "Index price": "$/MMBtu Henry Hub benchmark price"
+     }
+    },
+    {
+     "name": "All-in price",
+     "formula": "All-in price = Index price + Basis price",
+     "variables": {
+      "All-in price": "$/MMBtu actual physical price at a location",
+      "Index price": "$/MMBtu Henry Hub benchmark price",
+      "Basis price": "$/MMBtu spread for the location"
+     }
+    }
+   ],
+   "relationships": [
+    "Underlies the structure of basis positions and basis swaps described next."
+   ],
+   "trading_implications": [
+    "Always clarify whether a quoted 'price' is a basis or an all-in price to avoid costly miscommunication.",
+    "Basis prices function economically like an implied transportation cost from Henry Hub to the delivery point."
+   ],
+   "common_misunderstandings": [
+    "Assuming 'the price' always means the all-in price \u2014 traders often mean the basis instead.",
+    "Thinking the way a price is quoted changes what the consumer actually pays \u2014 it does not; it's purely a description convention."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Henry Hub",
+    "Basis positions",
+    "Basis swaps"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "147-148",
+    "section_hint": "2.1 Natural Gas \u2014 Basis Prices / Common Terms"
+   }
+  },
+  {
+   "topic": "Actual (all-in) position vs. basis position",
+   "category": "Natural Gas",
+   "subcategory": "Position Types",
+   "type": "market_mechanic",
+   "definition": "An actual (all-in) position is exposure to the outright physical price of gas at one location; a basis position is exposure only to the spread between two locations' prices.",
+   "core_idea": "Because a basis price is itself a spread, holding a basis position means being simultaneously exposed to two locations rather than to an outright price level.",
+   "key_points": [
+    "An actual/all-in position: e.g., a trader physically owning gas at a location is exposed to that location's outright price.",
+    "A basis position: exposure to the difference between the basis location's price and the index (Henry Hub) location's price.",
+    "A long basis position at a location (e.g., Waha) is economically equivalent to physically owning gas at that location while being obligated to deliver gas at Henry Hub."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis positions are built from the same basis-price definition as the pricing terminology item.",
+    "Basis positions are typically executed via a Henry Hub futures trade plus a basis swap."
+   ],
+   "trading_implications": [
+    "A long basis position isolates locational spread risk without taking outright Henry Hub price risk, since the position nets against an implied Henry Hub delivery obligation."
+   ],
+   "common_misunderstandings": [
+    "Confusing a basis position (spread exposure, two locations) with an actual position (outright exposure, one location)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Basis price",
+    "Basis swaps",
+    "Henry Hub futures"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "148",
+    "section_hint": "2.1 Natural Gas \u2014 Basis Positions"
+   }
+  },
+  {
+   "topic": "Two-trade structure: Henry Hub futures + basis swap",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Physical natural gas trading is typically executed as two separate trades \u2014 a liquid, standardized Henry Hub futures trade, followed by a basis swap that converts the Henry Hub exposure into exposure at the desired delivery location.",
+   "core_idea": "The market is structured around a highly liquid, standardized Henry Hub futures contract precisely to make it easy to find counterparties, with the harder-to-trade locational piece handled separately via a basis swap.",
+   "key_points": [
+    "Henry Hub futures are exchange-traded, standardized contracts that are very liquid \u2014 large volumes trade quickly with minimal transaction costs.",
+    "It is much harder to find counterparties willing to trade at other, non-Henry-Hub locations directly.",
+    "Exchange-traded Henry Hub futures eliminate counterparty credit risk concerns and allow trades to be netted.",
+    "Traders execute the bulk of their volume at Henry Hub first, then complete the locational piece once a suitable basis counterparty is found."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Combines the index price (Henry Hub futures) with the basis price (basis swap) to reconstruct an all-in locational exposure."
+   ],
+   "trading_implications": [
+    "Expect better liquidity and tighter costs trading Henry Hub futures than trading directly at illiquid delivery points.",
+    "Locational (basis) trades may face longer time-to-execution due to thinner counterparty availability."
+   ],
+   "common_misunderstandings": [
+    "Assuming all natural gas locations trade with Henry-Hub-like liquidity \u2014 most do not."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Basis price",
+    "Basis positions",
+    "Counterparty credit risk",
+    "Futures netting"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "148",
+    "section_hint": "2.1 Natural Gas \u2014 Actual Prices Versus Basis Prices"
+   }
+  },
+  {
+   "topic": "How natural gas pipelines physically move gas",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Infrastructure",
+   "type": "concept",
+   "definition": "Pipelines move gas by maintaining a pressure differential \u2014 high pressure at the inlet and low pressure at the outlet \u2014 with intermediate compressor stations on long pipelines acting like fans to keep gas flowing.",
+   "core_idea": "Gas flow through a pipeline is driven purely by engineered pressure gradients, reinforced periodically by compressor stations over long distances.",
+   "key_points": [
+    "Flow is created by high pressure at one end and low pressure at the other end of the pipe.",
+    "Long pipelines use intermediate compressor stations to re-establish the pressure gradient along the route."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the operational-continuity requirement that motivates natural gas storage."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Interstate pipelines"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "148",
+    "section_hint": "2.1 Natural Gas \u2014 How a Pipeline Operates"
+   }
+  },
+  {
+   "topic": "Why natural gas storage is operationally necessary",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "Storage exists to reconcile the fact that pipelines must flow continuously and can take days to restart, while consumer demand for gas is variable rather than constant.",
+   "core_idea": "Storage acts as a buffer at both ends of a pipeline: at the supply end it absorbs disruptions from refineries, and at the demand end it matches steady pipeline flow to variable consumer usage.",
+   "key_points": [
+    "Interstate pipelines can run thousands of miles and, once stopped, may take several days to return to full capacity \u2014 so they effectively cannot shut down completely.",
+    "Consumer demand is not steady around the clock, unlike required pipeline flow.",
+    "Storage at the start of a pipeline cushions against refinery-side supply interruptions.",
+    "Storage at the end of a pipeline cushions against variable consumer demand.",
+    "In gaseous form, natural gas has low energy density, making large-scale aboveground storage impractical \u2014 most gaseous storage is in underground reservoirs; aboveground storage is typically done only in liquefied, insulated form."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows directly from the continuous-flow requirement of pipeline operation."
+   ],
+   "trading_implications": [
+    "Storage availability and level are structurally tied to how much cushion exists against pipeline disruptions and demand swings \u2014 relevant context for gas price volatility."
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas is commonly stored aboveground in gaseous, pressurized form \u2014 this is not practical due to low energy density; aboveground storage is usually liquefied."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline operation",
+    "LNG storage",
+    "Underground storage reservoirs"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "148-149",
+    "section_hint": "2.1 Natural Gas \u2014 Storage"
+   }
+  },
+  {
+   "topic": "Economics of natural gas storage facility siting",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "The number and location of natural gas storage facilities is limited by geology and by economics: sites need to be near refineries, major pipeline hubs, or end-use areas, and large enough to justify the fixed cost of pipeline hookup and pumping equipment.",
+   "core_idea": "There are only about 400 natural gas storage facilities in North America because suitable large underground reservoirs are geographically limited and small facilities can't achieve economy of scale on their pumping equipment costs.",
+   "key_points": [
+    "Storage reservoirs are commonly located near refineries, pipeline-hub connection points, or near end-use demand.",
+    "Facilities need enough size to justify the cost of connecting to a pipeline; more pipeline connections also add coordination complexity.",
+    "Much of the cost of a storage facility comes from the pumping equipment needed to inject gas, and that equipment cost is largely fixed regardless of facility size \u2014 so small facilities lack the volume to achieve a reasonable economy of scale.",
+    "As a result, there are only roughly 400 natural gas storage facilities in North America."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains a structural constraint underlying the storage-need concept described above."
+   ],
+   "trading_implications": [
+    "Storage capacity is geographically and economically constrained, which can concentrate storage-driven price effects (e.g., injection/withdrawal season dynamics) at a limited number of hubs."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline hubs",
+    "Economy of scale"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "149",
+    "section_hint": "2.1 Natural Gas \u2014 Storage"
+   }
+  },
+  {
+   "topic": "Local distribution networks and the citygate price",
+   "category": "Natural Gas",
+   "subcategory": "Distribution",
+   "type": "concept",
+   "definition": "Most end customers receive gas via a local distribution company's network of small pipes rather than directly from interstate pipelines; the retail price customers pay combines the citygate price (interstate-pipeline gas delivered to the local utility) plus a local delivery charge.",
+   "core_idea": "Local distribution is expensive to maintain because it must connect every home and business regardless of individual profitability, so delivery charges \u2014 commonly about half of the total retail natural gas cost \u2014 make up a large share of what consumers pay.",
+   "key_points": [
+    "Local distribution companies operate the network of small pipes that reach individual homes/businesses, distinct from interstate pipelines.",
+    "These networks must maintain universal connections regardless of profitability of any single connection, driving up maintenance costs.",
+    "Retail natural gas bills combine the citygate price (interstate-delivered gas price to the local utility) with a local delivery charge.",
+    "Local delivery charges commonly make up about half of the total retail cost of natural gas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Citygate price sits downstream of the all-in/index/basis pricing structure described earlier, at the point interstate gas is handed to the local utility."
+   ],
+   "trading_implications": [
+    "Retail price movements can be driven as much by local delivery-charge structure as by wholesale (index/basis) price movements."
+   ],
+   "common_misunderstandings": [
+    "Assuming the retail price consumers pay is just the wholesale (citygate) commodity price \u2014 roughly half is typically the local delivery charge."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "All-in price",
+    "Interstate pipelines",
+    "Citygate price"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "149-151",
+    "section_hint": "2.1 Natural Gas \u2014 Distribution"
+   }
+  }
+ ]
+}

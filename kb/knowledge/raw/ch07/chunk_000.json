@@ -1,0 +1,235 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Coal as a fuel: characteristics and role",
+   "category": "Coal",
+   "subcategory": "Fuel Overview",
+   "type": "concept",
+   "definition": "Coal is a solid hydrocarbon rock, mined from the ground, that is cheap to produce relative to the electrical power it generates and easy to store, but is also the most polluting of the fossil fuels in terms of carbon and sulfur emissions.",
+   "core_idea": "Coal's combination of low cost and storability makes it attractive for power generation, but its heavy pollution footprint creates a persistent tension between cheap electricity and environmental goals.",
+   "key_points": [
+    "Coal is a solid hydrocarbon fuel, found worldwide, that is relatively inexpensive to produce per unit of electricity generated.",
+    "It is easy to store because it does not evaporate or leak like liquid or gaseous fuels.",
+    "It is the largest source of CO2 and SO2 emissions among fossil fuels, which has made it politically and publicly unpopular.",
+    "The tradeoff between cheap coal power and reduced emissions has repeatedly stalled global climate negotiations, since many countries want to keep using their own coal plants while wanting others to stop."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal competes with natural gas (especially fracked gas) as a cheaper, cleaner-burning alternative for power generation."
+   ],
+   "trading_implications": [
+    "Coal's low cost per unit of power makes it a persistent baseline generation source even where policy disfavors it."
+   ],
+   "common_misunderstandings": [
+    "Coal's low fuel cost does not mean it is the cheapest fuel to use everywhere once transportation and pollution costs/regulations are factored in."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas fracking",
+    "Carbon emissions policy",
+    "Electrical generation economics"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "246-247",
+    "section_hint": "2.4 Coal \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Coal's dominant use is electrical generation",
+   "category": "Coal",
+   "subcategory": "Demand / End Use",
+   "type": "concept",
+   "definition": "The overwhelming majority of mined coal is consumed by power plants to generate electricity, rather than by industrial uses such as steelmaking or plastics feedstock.",
+   "core_idea": "Coal demand is essentially a proxy for electrical generation demand, since over 90% of North American coal use and roughly half of global electrical generation capacity ties back to coal-fired power.",
+   "key_points": [
+    "Over 90 percent of coal consumed in North America goes to electrical power generation.",
+    "Industrial uses of coal (e.g., steelmaking, plastics raw materials) exist but represent a much smaller market than power generation.",
+    "About half of North American electrical power historically has come from coal plants.",
+    "Globally, coal accounts for over half of the world's electrical generation capacity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal demand is closely tied to electrical grid generation mix and to industrial demand for steel/plastics feedstock to a much smaller degree."
+   ],
+   "trading_implications": [
+    "Because coal demand is concentrated almost entirely in power generation, coal market analysis largely reduces to analyzing electricity generation trends."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electrical generation economics",
+    "Coal as a fuel: characteristics and role"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "247-247",
+    "section_hint": "2.4 Coal \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Coal is a thinly traded financial market",
+   "category": "Coal",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Because coal is low-value relative to its weight, transportation cost dominates its delivered price, which confines most coal trade to a couple hundred miles between mine and power plant and limits the number of market participants.",
+   "core_idea": "Coal's economics push mines and power plants to co-locate, which shrinks the pool of open-market buyers and sellers and makes coal far less actively traded as a financial commodity than oil or natural gas.",
+   "key_points": [
+    "Transportation makes up a much higher share of coal's delivered cost than it does for other fossil fuels, because the underlying commodity price is low.",
+    "Most coal is consumed within roughly a couple hundred miles of where it is mined.",
+    "Coal mines and coal-fired power plants are frequently located near each other.",
+    "As a result, relatively few parties buy or sell coal on the open market, and coal is not a heavily traded financial product."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with oil and natural gas, which support more active, geographically dispersed financial trading markets."
+   ],
+   "trading_implications": [
+    "Limited liquidity and few open-market participants mean coal offers fewer opportunities for financial trading compared to oil or natural gas.",
+    "Coal transactions are more likely to be structured around long-term physical supply arrangements between a specific mine and plant than through open-market trading."
+   ],
+   "common_misunderstandings": [
+    "Coal being cheap per unit does not mean it is cheap to trade or transport long distances \u2014 transportation cost is proportionally large precisely because the base commodity price is low."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal pipelines",
+    "Coal as a fuel: characteristics and role"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "247-247",
+    "section_hint": "2.4 Coal \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Economy of scale in coal-fired generation shaped the grid",
+   "category": "Coal",
+   "subcategory": "Generation Economics",
+   "type": "concept",
+   "definition": "Large, centralized coal-fired power plants are cheaper to operate per unit of output than small ones, and this economy of scale is a major reason the electrical grid developed around centralized generation with extensive transmission networks.",
+   "core_idea": "Coal plant economics favor bigness, and that preference for scale is a structural driver behind the historical shape of the power grid (large centralized plants plus long transmission lines) rather than a distributed generation model.",
+   "key_points": [
+    "Big, centralized coal plants are cheaper to run than small coal plants (economy of scale).",
+    "The grid's current architecture \u2014 centralized generation plus extensive transmission \u2014 is attributed in large part to this coal-driven economy of scale."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Links coal plant scale economics to overall grid/transmission architecture."
+   ],
+   "trading_implications": [
+    "Understanding why the grid is centralized helps explain transmission constraints and locational price dynamics that persist even as generation mix shifts away from coal."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal as a fuel: characteristics and role",
+    "Coal is a thinly traded financial market"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "247-247",
+    "section_hint": "2.4 Coal \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Physical/operating constraints of coal as a solid fuel",
+   "category": "Coal",
+   "subcategory": "Fuel Handling",
+   "type": "concept",
+   "definition": "Because coal is solid rather than liquid or gaseous, it requires physical mechanisms to move it into a firebox and cannot be shut off instantly the way a gas or oil fire can, since already-burning coal continues to burn for a period after fuel supply or engine shutdown.",
+   "core_idea": "Coal's solid form makes it mechanically harder to feed and slower to start up or shut down than liquid or gaseous fuels, which is part of why it is cheaper (fewer engineering uses) but also less flexible operationally.",
+   "key_points": [
+    "Solid fuel cannot be moved by suction/pump the way liquid fuel can; something must physically convey coal into the firebox.",
+    "Coal fires are harder to start and stop than oil or natural gas fires.",
+    "Natural gas and oil engines can be turned off simply by cutting fuel supply; coal already burning keeps burning for a while even after the engine is shut down.",
+    "Coal's more limited range of practical uses (compared to liquid fuels usable in internal combustion engines) is one reason it is cheaper.",
+    "Coal mining is generally less complex than oil or natural gas drilling, and output can often be increased with added labor/technology ('brute force'), another reason coal tends to be cheap."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts coal's handling/startup characteristics with oil and natural gas."
+   ],
+   "trading_implications": [
+    "Coal plants have less operational flexibility to ramp up/down quickly compared to gas plants, which matters for dispatch and grid balancing roles."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal as a fuel: characteristics and role"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "247-247",
+    "section_hint": "2.4 Coal \u2014 main text"
+   }
+  },
+  {
+   "topic": "Coal transport methods and coal pipelines",
+   "category": "Coal",
+   "subcategory": "Transportation",
+   "type": "market_mechanic",
+   "definition": "Coal is most commonly transported by train, and also by barge or truck; where distances are long, specialized coal pipelines can move crushed coal as a water slurry or as compressed logs suspended in water.",
+   "core_idea": "Coal is relatively easy to store and transport compared to other fossil fuels since it can simply be piled up, and where rail/barge/truck are impractical over long distances, purpose-built slurry or log pipelines can substitute.",
+   "key_points": [
+    "Coal can be stacked in a pile without evaporating or leaking, unlike liquid fuels.",
+    "Train is the most common method of coal transport; barges and trucks are also fairly common.",
+    "Coal generally moves from mine to power plant, so there is not a large consumer-facing distribution system for coal.",
+    "Coal pipelines are an alternative for very long distances between mine and destination.",
+    "Two main coal pipeline technologies: slurry pipelines (coal crushed into small pieces and mixed into liquid solution) and log pipelines (coal compressed into logs suspended in water)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal pipelines exist as an alternative to rail cars and barges when distance is a major factor."
+   ],
+   "trading_implications": [
+    "Where power plants are far from mining regions but transmission needs pin the plant location, pipeline economics can determine whether that geography is viable."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal is a thinly traded financial market",
+    "Coal pipeline environmental costs"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "248-248",
+    "section_hint": "2.4 Coal \u2014 Coal Pipelines"
+   }
+  },
+  {
+   "topic": "Coal pipeline environmental costs: water use",
+   "category": "Coal",
+   "subcategory": "Environmental Impact",
+   "type": "example",
+   "definition": "Coal slurry pipelines require large volumes of water \u2014 roughly a 1:1 ratio of coal to water \u2014 and the used water becomes difficult to clean afterward, which is a significant environmental concern, especially in water-scarce regions.",
+   "core_idea": "Slurry pipelines solve coal's long-distance transport problem but create a serious secondary environmental cost through heavy water consumption and contamination, illustrated by the Mojave Generating Station pipeline being shut down after complaints from local tribes.",
+   "key_points": [
+    "Coal slurry pipelines use approximately a 1:1 ratio of coal to water.",
+    "The water used in slurry pipelines becomes very difficult to clean after use.",
+    "A large coal-fired power plant burning around 1,000 tons of coal per day implies significant annual water usage for a slurry pipeline feeding it.",
+    "Water usage is especially problematic in regions with limited water supplies.",
+    "Example: the 273-mile coal slurry pipeline supplying the Mojave Generating Station in Laughlin, Nevada used about a billion gallons of water a year before being shut down following complaints from local Indian tribes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to broader theme of coal's pollution/environmental unpopularity despite its cost advantages."
+   ],
+   "trading_implications": [
+    "Environmental/regulatory risk (e.g., water-rights disputes) can shut down coal transport infrastructure, illustrating a real operational risk for coal-dependent plants relying on pipelines."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal transport methods and coal pipelines",
+    "Coal as a fuel: characteristics and role"
+   ],
+   "source": {
+    "chapter": 7,
+    "pages": "248-249",
+    "section_hint": "2.4 Coal \u2014 Coal Pipelines"
+   }
+  }
+ ]
+}

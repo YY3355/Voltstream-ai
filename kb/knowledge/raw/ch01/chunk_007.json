@@ -1,0 +1,208 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Option payoffs are asymmetric, which links option value to volatility",
+   "category": "Derivatives",
+   "subcategory": "Options",
+   "type": "concept",
+   "definition": "Because an option's payout is asymmetric (the buyer's downside is capped while upside is not), the buyer and seller of an option are affected differently by volatility.",
+   "core_idea": "A large price move, even one with equal odds of going up or down, benefits an option buyer more than it benefits the seller, since the buyer's losses are capped but gains are not \u2014 so buyers want volatility and sellers want price stability.",
+   "key_points": [
+    "Option payoffs are asymmetric: the buyer's potential loss is limited (to the premium paid), but potential profit is not",
+    "A 50/50 chance of a big move still favors the option buyer over the seller because of this asymmetry",
+    "Option buyers benefit from large price moves in either direction; option sellers benefit when prices stay stable"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why volatility is priced into options, connecting to the Greeks (esp. Vega) discussed next"
+   ],
+   "trading_implications": [
+    "Sellers of options need to be compensated through premium for taking on volatility exposure",
+    "Volatility itself becomes a distinct, tradable risk factor separate from price direction"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "The Greeks",
+    "Spread options",
+    "Volatility trading"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "46-49",
+    "section_hint": "Options and Volatility (lead-in to Deltas, Gammas, and Other Greeks)"
+   }
+  },
+  {
+   "topic": "The Greeks: standardized option sensitivity measures",
+   "category": "Derivatives",
+   "subcategory": "Options Risk Sensitivities",
+   "type": "concept",
+   "definition": "The Greeks are a standard set of sensitivity measures, each named after a Greek letter, that quantify how an option's (or asset's) value responds to a change in one specific underlying factor.",
+   "core_idea": "Sensitivity analysis lets a trader isolate how much P&L would result from a specific kind of change \u2014 in price, volatility, time, or interest rates \u2014 so risk can be decomposed factor by factor instead of only viewed as a single aggregate exposure.",
+   "key_points": [
+    "A Greek is never a standalone number like a price \u2014 it is always a comparison of how one asset's value responds to changes in an underlying",
+    "Delta: the P&L that results when the underlying's price changes",
+    "Gamma: the change in Delta itself when the underlying's price changes",
+    "Vega: the P&L that results when the underlying's volatility changes",
+    "Theta: the P&L that results from the passage of time (commonly measured per day)",
+    "Rho: the P&L that results when the interest rate changes"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Vega formalizes the volatility sensitivity described in the option/volatility discussion just before this section"
+   ],
+   "trading_implications": [
+    "Traders use the Greeks to answer targeted 'what happens if X moves' questions about a position without repricing the whole book",
+    "Because Greeks isolate individual risk factors, they let a portfolio's exposure be managed factor-by-factor (e.g., hedging Delta separately from Vega)"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Options",
+    "Volatility",
+    "Delta hedging",
+    "Spread options"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "46-47",
+    "section_hint": "Deltas, Gammas, and Other Greeks"
+   }
+  },
+  {
+   "topic": "Spread options and why they dominate energy derivatives",
+   "category": "Derivatives",
+   "subcategory": "Spread Options",
+   "type": "concept",
+   "definition": "A spread option is an option whose payoff depends on the difference between two asset prices exceeding a strike level, rather than a single asset price exceeding a strike \u2014 equivalent to a normal option with a variable strike price.",
+   "core_idea": "Spread options are especially common in energy markets because so much of energy trading and physical operations is really about capturing the spread between two prices (location, time, or input/output) relative to the cost of bridging that spread, and because correlation between the two underlying prices \u2014 not just their individual volatilities \u2014 dominates how these options are valued.",
+   "key_points": [
+    "Can be structured as an option directly on the spread (spread treated as the 'price'), or by folding the second asset's price into an effective strike",
+    "Prevalent in energy because deals commonly hinge on: price here vs. price there vs. transportation cost (location), price now vs. price later vs. storage cost (time), and fuel price vs. power price vs. conversion cost (input/output)",
+    "Valuing a spread option is materially harder than valuing a single-asset option because the correlation between the two underlying assets becomes the single most important valuation input",
+    "Correlation between two highly correlated assets produces very different spread behavior than correlation between uncorrelated assets",
+    "Correlation is difficult to estimate: historical data can be misleading, and there usually isn't a liquid enough market to infer what correlation other market participants are using",
+    "Correlation risk must be actively monitored for the entire life of the trade, not just estimated once at trade inception"
+   ],
+   "formulas": [
+    {
+     "name": "Spread option call payoff (spread expressed as the option's price)",
+     "formula": "Call_Payoff = (Asset_Price1 - Asset_Price2) - Strike_Price",
+     "variables": {
+      "Asset_Price1": "price of the first underlying asset",
+      "Asset_Price2": "price of the second underlying asset",
+      "Strike_Price": "strike level applied to the spread"
+     }
+    },
+    {
+     "name": "Spread option call payoff (second asset folded into strike)",
+     "formula": "Call_Payoff = Asset_Price - (Asset_Price2 + Strike_Price)",
+     "variables": {
+      "Asset_Price": "price of the first underlying asset",
+      "Asset_Price2": "price of the second underlying asset",
+      "Strike_Price": "strike level applied before combining with Asset_Price2"
+     }
+    }
+   ],
+   "relationships": [
+    "Generalizes single-asset option payoff logic to two underlyings"
+   ],
+   "trading_implications": [
+    "Firms trading spread options need infrastructure specifically for monitoring correlation risk between products",
+    "Misestimating correlation is called out as the single easiest way to mis-value an option position"
+   ],
+   "common_misunderstandings": [
+    "Assuming a spread option can be valued like two independent single-asset options, when correlation between the two legs is actually the dominant valuation driver"
+   ],
+   "related_topics": [
+    "Location spreads",
+    "Storage economics",
+    "Fuel-to-power conversion spreads",
+    "Correlation risk",
+    "The Greeks"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "47-48",
+    "section_hint": "Spread Options"
+   }
+  },
+  {
+   "topic": "Electricity price formation via merit-order auctions",
+   "category": "Power Markets",
+   "subcategory": "Market Design / Dispatch Auctions",
+   "type": "market_mechanic",
+   "definition": "ISOs set electricity prices through non-discriminatory auctions: power plants submit bids, the ISO dispatches the lowest bidders first, and every dispatched plant is paid the same clearing price \u2014 the price bid by the marginal (last-needed) plant.",
+   "core_idea": "Because all winning generators receive the same uniform clearing price regardless of their own bid, the plants that sit at the margin \u2014 the last one turned on or the next one that would be turned off \u2014 are disproportionately influential in setting the market price.",
+   "key_points": [
+    "Power plants submit quotes/bids to the ISO to be selected for operation",
+    "Plants are dispatched from lowest bid to highest bid until demand is met; plants are continually activated and deactivated as demand changes",
+    "Every operating plant is paid the same price: the price set by the marginal plant (the last one activated, or the next one that would be deactivated)",
+    "Most power markets run two auctions: a day-ahead auction the day before delivery, plus real-time auctions to cover unexpected shortfalls",
+    "Marginal plants \u2014 those right at the activation/deactivation threshold \u2014 are the most influential in setting the market-clearing price"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the more detailed 'generation stack' discussion of bidding strategy that follows"
+   ],
+   "trading_implications": [
+    "Traders track which plants are near the margin, since their bidding behavior drives the clearing price",
+    "Understanding the bid stack (merit order) helps anticipate when and how prices will move"
+   ],
+   "common_misunderstandings": [
+    "Assuming generators are paid their own bid price (pay-as-bid) rather than the uniform marginal clearing price"
+   ],
+   "related_topics": [
+    "Generation stack",
+    "Day-ahead market",
+    "Real-time market",
+    "Spatial load forecasting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "48-49",
+    "section_hint": "Electricity Models / Forecasting the Supply of Electricity: The Generation Stack"
+   }
+  },
+  {
+   "topic": "Spatial load forecasting, base load, and peak demand",
+   "category": "Power Markets",
+   "subcategory": "Demand Forecasting",
+   "type": "concept",
+   "definition": "Spatial load forecasting predicts where and when electricity demand ('load') will occur; because electricity cannot be stored, supply must be generated to match forecasted demand in real time.",
+   "core_idea": "Grid operators rely on short-term load forecasts to schedule generation and maintenance and on long-term forecasts to plan infrastructure, with two key demand benchmarks \u2014 base load (the always-on minimum) and peak demand (the maximum) \u2014 anchoring both operational and trading decisions.",
+   "key_points": [
+    "'Load' is used synonymously with electricity demand throughout this discussion",
+    "Most regions have a relatively constant baseline demand; most short-term variability in demand comes from weather",
+    "Over long time frames (e.g., a decade), economic growth and residential trends also become significant demand drivers",
+    "Short-term load forecasts are used to schedule power plant operation and maintenance",
+    "Long-term load forecasts are used to plan new transmission lines, new power plants, and other infrastructure",
+    "Base load power is the minimum amount of power that must be supplied to the grid at any time; it sets a floor on how many plants must run continuously year-round",
+    "Peak demand is the maximum amount of power expected to be required at any time",
+    "Grid operators use peak demand estimates for capacity planning; traders use the same estimates to anticipate how often and when price spikes will occur"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds directly into the merit-order/generation stack pricing mechanic \u2014 demand forecasts determine how far up the bid stack the ISO must dispatch"
+   ],
+   "trading_implications": [
+    "Peak demand forecasts help traders anticipate the frequency and timing of price spikes"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Base load power",
+    "Peak demand",
+    "Weather-driven demand"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "48-49",
+    "section_hint": "Forecasting Demand for Electricity: Spatial Load Forecasting"
+   }
+  }
+ ]
+}

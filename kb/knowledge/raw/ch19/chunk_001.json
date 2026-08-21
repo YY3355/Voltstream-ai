@@ -1,0 +1,260 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Wheeling as a low-cost alternative to buying financial options",
+   "category": "Power Markets",
+   "subcategory": "Transmission / Wheeling",
+   "type": "trading_strategy",
+   "definition": "Wheeling lets a trader gain the same economic exposure as a financial option, but by paying the construction/rental cost of a physical transmission line instead of an option premium.",
+   "core_idea": "Because renting or building transmission capacity can be cheaper than the market price of an equivalent financial option, physical wheeling deals can be a lower-cost way to capture the same price exposure across two locations.",
+   "key_points": [
+    "Physical investment (paying for line construction/rental) can replicate the payoff of a financial option at lower cost when construction costs are affordable relative to option premiums.",
+    "This illustrates a broader theme in physical commodity trading: physical infrastructure can substitute for financial derivatives when the physical route is cheaper."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Transmission rental cost is generally set proportional to the cost of building and maintaining the line."
+   ],
+   "trading_implications": [
+    "A trader comparing a locational spread option to a wheeling deal should weigh the option premium against the cost of securing transmission capacity.",
+    "When line construction/rental costs are low relative to the option premium, physical wheeling is the more capital-efficient way to express the same view."
+   ],
+   "common_misunderstandings": [
+    "It would be a mistake to assume wheeling is only an operational/logistics tool; the author frames it explicitly as an alternative way to acquire the financial exposure normally bought via options."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Locational spread options",
+    "Transmission rights",
+    "Congestion pricing"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "441-441",
+    "section_hint": "4.4 Wheeling Power - introduction"
+   }
+  },
+  {
+   "topic": "Regulation of transmission rental pricing",
+   "category": "Power Markets",
+   "subcategory": "Transmission / Regulation",
+   "type": "market_mechanic",
+   "definition": "Where a single operator controls transmission in a region, regulators typically require nondiscriminatory pricing for line rental rather than allowing a competitive auction for scarce capacity.",
+   "core_idea": "Because a lone transmission owner otherwise holds monopoly power over a scarce resource, regulation forces nondiscriminatory pricing and pushes the operator to expand capacity (and recover that cost from the investor groups needing it) rather than let price ration access.",
+   "key_points": [
+    "Single-operator regions are prone to regulatory oversight to prevent monopoly pricing on line rental.",
+    "The regulatory logic favors capacity expansion funded by the requesting parties over a bidding war for existing scarce capacity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Rental price is tied to build/maintenance cost, which in turn is shaped by regulatory nondiscrimination requirements when there is a single operator."
+   ],
+   "trading_implications": [
+    "Traders should expect rental costs for transmission to track regulated, cost-based rates rather than scarcity-driven market prices in single-operator regions."
+   ],
+   "common_misunderstandings": [
+    "One might expect scarce transmission capacity to be allocated by competitive auction like other scarce resources; the author notes regulators instead favor mandated capacity expansion."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wheeling",
+    "Transmission cost recovery",
+    "Utility regulation"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "441-441",
+    "section_hint": "4.4 Wheeling Power - introduction"
+   }
+  },
+  {
+   "topic": "Electrical flow follows physics, not operator intent (loop flow / congestion)",
+   "category": "Power Markets",
+   "subcategory": "Grid Operations / Congestion",
+   "type": "concept",
+   "definition": "Power moves along the path(s) of least electrical resistance across the whole grid, not necessarily along the direct contractual path, so a grid operator must ensure spare capacity on every line the power could conceivably flow across.",
+   "core_idea": "In a three-node grid, power intended to move from A to B may instead spill over a secondary path (A to C to B) if the direct line is loaded, and since the operator cannot dictate the exact physical path, it must keep sufficient headroom on all potentially affected lines to prevent overload.",
+   "key_points": [
+    "Resistance on each line changes throughout the day based on local consumption, which changes how power actually flows.",
+    "Every transmission line has a maximum power-carrying limit; exceeding it risks equipment failure ('meltdown').",
+    "Because flow paths aren't fully controllable, the operator must reserve adequate capacity on every line that could carry a given import, not just the 'intended' direct line.",
+    "If sufficient capacity isn't available on the needed paths, imported power may fail to reach its destination even though a contract calls for delivery."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Line loading/congestion determines whether power can actually follow a direct A-to-B path or is forced onto alternate paths like A-to-C-to-B."
+   ],
+   "trading_implications": [
+    "A wheeling deal's physical feasibility depends on grid-wide congestion, not just capacity on the single line nominally being 'rented'.",
+    "Congestion risk should be assessed across all plausible flow paths between source and sink, not only the shortest contractual path."
+   ],
+   "common_misunderstandings": [
+    "It is a misunderstanding to assume power takes the contractually intended route; physically it follows least-resistance paths across the network."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Line congestion",
+    "Transmission capacity planning",
+    "Locational price differences"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "441-442",
+    "section_hint": "4.4 Wheeling Power - Modeling Electrical Flows"
+   }
+  },
+  {
+   "topic": "Wheeling's economic purpose can be undone by transmission shortfalls",
+   "category": "Power Markets",
+   "subcategory": "Grid Operations / Congestion",
+   "type": "risk",
+   "definition": "Wheeling low-cost power into a high-demand region typically involves decommissioning local generation that the import is meant to replace; if transmission capacity to deliver the import isn't available, the region must fall back on expensive peaking generation, which can erase the economic benefit of the import.",
+   "core_idea": "Once local generation is decommissioned in favor of imported low-cost power, it cannot be restarted on short notice, so any failure of the transmission path to deliver that power forces reliance on costly peaking units, and even a couple of days of peaker use can wipe out the savings the import was meant to capture.",
+   "key_points": [
+    "Imported power is usually meant to displace (not supplement) existing local generation capacity.",
+    "Decommissioned local units cannot be quickly restarted if the import fails to arrive.",
+    "Fast-starting peaking generators are the fallback when imported power can't reach demand, and they are high-cost.",
+    "A short period (the author cites 'a couple of days') of peaker reliance can eliminate the entire economic benefit of the wheeling deal."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Transmission capacity availability directly determines whether decommissioning local generation in favor of imports is economically safe."
+   ],
+   "trading_implications": [
+    "Wheeling deals carry a delivery-failure risk that is asymmetric: the downside (peaker costs) can exceed the upside (import savings) if transmission capacity proves insufficient.",
+    "Risk assessment for a wheeling trade should include the probability and cost of a transmission shortfall, not just the price spread being captured."
+   ],
+   "common_misunderstandings": [
+    "It would be a mistake to view wheeling risk as purely a price risk; the author emphasizes an operational risk where local generation is already offline when the import fails to arrive."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Peaking generation",
+    "Generation displacement",
+    "Transmission reliability"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "441-442",
+    "section_hint": "4.4 Wheeling Power - Modeling Electrical Flows"
+   }
+  },
+  {
+   "topic": "AC transmission losses scale with the square of current",
+   "category": "Power Markets",
+   "subcategory": "Transmission / Physics",
+   "type": "concept",
+   "definition": "Long-distance power transmission is typically done via overhead high-voltage AC lines; some transmitted power converts to heat, with the heat loss proportional to the square of the current, so raising voltage (to lower current for the same power) is the primary way to cut losses.",
+   "core_idea": "Because resistive losses scale with current squared, transmission systems minimize losses by using transformers to push current down and voltage up for the same amount of delivered power.",
+   "key_points": [
+    "Overhead high-voltage AC lines are the most common long-distance transmission method.",
+    "Heat loss during transmission increases with the square of the current on the line.",
+    "Reducing current is the primary lever for reducing transmission losses; increasing voltage is the primary way to reduce current.",
+    "Voltage and current together determine how much power a line carries."
+   ],
+   "formulas": [
+    {
+     "name": "Resistive (I\u00b2) transmission loss relationship",
+     "formula": "Loss \u221d I^2",
+     "variables": {
+      "I": "current flowing on the transmission line"
+     }
+    }
+   ],
+   "relationships": [
+    "Higher voltage (via transformers) enables lower current for the same delivered power, which reduces I\u00b2-driven heat losses."
+   ],
+   "trading_implications": [
+    "Long-distance wheeling economics depend on line loss characteristics, which are driven by the voltage/current design of the line, not just distance alone."
+   ],
+   "common_misunderstandings": [
+    "It's easy to assume losses scale linearly with current; the author states the relationship is with the square of current, so small current reductions yield outsized loss reductions."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transformers",
+    "HVDC transmission",
+    "Line losses"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "442-442",
+    "section_hint": "4.4 Wheeling Power - Long-Distance AC Transmission"
+   }
+  },
+  {
+   "topic": "Transformers require AC and rely on magnetic induction between two windings",
+   "category": "Power Markets",
+   "subcategory": "Transmission / Physics",
+   "type": "concept",
+   "definition": "A transformer converts power between current and voltage levels while keeping total power roughly constant, using magnetic induction between a primary winding (connected to the AC source) and a secondary winding (connected to the load), typically wound around a shared iron core; this only works with AC, which is why AC transmission is more common than DC.",
+   "core_idea": "Transformers exploit the fact that changing electrical current creates a magnetic field and a changing magnetic field induces a current, so an AC current in the primary winding induces a current in the secondary winding at a different voltage/current ratio set by the relative number of winding turns on each side.",
+   "key_points": [
+    "Transformers work only on AC power lines, which is a key reason AC transmission dominates over DC.",
+    "A simple iron-core transformer has an iron frame guiding magnetic flux, connecting a primary winding (source side) and secondary winding (load side).",
+    "The primary winding's magnetic flux induces current in the secondary winding.",
+    "The voltage ratio between the two sides depends on the relative number of times each side's wire is wound around the core."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Winding turns ratio between primary and secondary determines the voltage transformation; transformers keep total power roughly constant while trading off voltage and current."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "One might think transformers could be used on DC lines too; the author is explicit that transformers only function on AC, which is a structural reason DC power lines can't be voltage-stepped by transformers."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "AC transmission losses",
+    "HVDC transmission",
+    "Grid interconnection"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "442-443",
+    "section_hint": "4.4 Wheeling Power - Transformers"
+   }
+  },
+  {
+   "topic": "HVDC transmission: lower losses and cost for long distances, but poor multi-endpoint flexibility",
+   "category": "Power Markets",
+   "subcategory": "Transmission / Physics",
+   "type": "concept",
+   "definition": "High voltage direct current (HVDC) lines are often lower cost and lose less power than AC over very long distances (and are used to link unsynchronized grids or cross long underwater stretches), but they require costly AC conversion at endpoints, can't use transformers, and don't support multiple endpoints well because tapping power anywhere drops voltage across the whole line.",
+   "core_idea": "HVDC trades AC's flexibility (transformers, easy multi-endpoint interconnection) for lower transmission losses and cost over extreme distances, which is why the author says it's typically used only for long-distance, point-to-point links where AC losses would otherwise dominate conversion losses.",
+   "key_points": [
+    "HVDC lines are often lower cost and lower loss than AC lines for very long distances, and are used for cross-grid synchronization mismatches and long underwater routes.",
+    "DC power must be converted back to AC at the endpoint; this conversion can cost 5-10 percent of the power.",
+    "HVDC is impractical/dangerous in residential settings, and voltage cannot be stepped up/down with a transformer on DC.",
+    "Because DC voltage isn't held constant by transformers, drawing power off at any point along a DC line drops the voltage across the entire line, making multiple endpoints difficult.",
+    "As a result, HVDC lines are mostly built as long-distance, point-to-point connections rather than an interconnected grid.",
+    "Rerouting power delivered via HVDC (e.g., from one East Coast endpoint to another) generally requires converting to AC first and using the AC grid; only the DC origin point offers rerouting flexibility.",
+    "A fully direct (point-to-point) transmission grid connecting every generator to every user would be operationally unmanageable at scale, which is part of why AC's interconnected-grid model remains dominant despite HVDC's efficiency advantages for specific long-distance links."
+   ],
+   "formulas": [],
+   "relationships": [
+    "HVDC's transmission-loss advantage must be weighed against its ~5-10% AC conversion loss; the author states HVDC is favored only when AC transmission losses would exceed this conversion cost.",
+    "Multi-endpoint voltage-drop behavior on DC lines is a direct consequence of transformers being unusable on DC."
+   ],
+   "trading_implications": [
+    "Wheeling deals over HVDC infrastructure are best suited to simple point-to-point flows; multi-destination wheeling is structurally harder over DC than AC."
+   ],
+   "common_misunderstandings": [
+    "It would be wrong to assume HVDC is strictly better because of lower transmission losses; conversion losses and multi-endpoint inflexibility are real trade-offs the author highlights."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "AC transmission",
+    "Transformers",
+    "Grid interconnection",
+    "Underwater/cross-grid interconnects"
+   ],
+   "source": {
+    "chapter": 19,
+    "pages": "443-444",
+    "section_hint": "4.4 Wheeling Power - Long-Distance DC Transmission"
+   }
+  }
+ ]
+}

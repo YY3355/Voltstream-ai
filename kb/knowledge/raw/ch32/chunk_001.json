@@ -1,0 +1,227 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Model observation as a risk control",
+   "category": "Risk",
+   "subcategory": "Model Risk Management",
+   "type": "concept",
+   "definition": "Ongoing observation of a model in production is often more practical than trying to design a model that can never fail.",
+   "core_idea": "Because model problems typically develop gradually over months or years before they cause a financial loss, having people continuously watch model behavior lets issues surface and get reported before they become costly, making observation a more achievable control than trying to prevent every possible flaw at design time.",
+   "key_points": [
+    "Preventing every possible model flaw up front is harder than watching for problems once the model is running",
+    "Financial losses from model problems are usually preceded by a long lead time (months to years) during which the issue could have been caught",
+    "Institutionalizing timely reporting and review of anomalies by the people who depend on the model is essential to making observation work"
+   ],
+   "relationships": [
+    "Complements formal model testing (backtesting, stress testing, benchmarking, stability testing)"
+   ],
+   "trading_implications": [
+    "Risk teams should build monitoring/alerting around live model outputs, not rely solely on periodic revalidation"
+   ],
+   "common_misunderstandings": [
+    "A model that passed testing at launch is sometimes assumed not to need continued watching"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Core model testing techniques",
+    "Model maintenance procedures"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "583-585",
+    "section_hint": "6.4 Model Risk \u2014 Testing the Model"
+   }
+  },
+  {
+   "topic": "Core model testing techniques",
+   "category": "Risk",
+   "subcategory": "Model Testing",
+   "type": "concept",
+   "definition": "Four complementary methods for validating a model's soundness: backtesting, stress testing, benchmarking, and stability testing.",
+   "core_idea": "Each technique probes a different weakness: backtesting checks fit against real historical data, stress testing checks behavior under extreme or unusual scenarios that may never have occurred historically, benchmarking checks reasonableness against alternative models or intuition, and stability testing checks that small input changes don't cause disproportionately large output swings.",
+   "key_points": [
+    "Backtesting: run the model against as much historical data as possible to confirm it performs as expected over that period",
+    "Stress testing: simulate extreme conditions and unusual combinations of events (a financial crisis, a major counterparty's bankruptcy, an unusually cold winter or hot summer, a natural disaster) that may not appear anywhere in the historical record",
+    "Benchmarking: compare the model's output to alternative models, trader intuition, or historically observed payouts for similar instruments",
+    "Stability testing: confirm that small changes in inputs produce correspondingly small changes in outputs; this is a desirable property because it lets the model be used safely even with input values never previously observed",
+    "Unstable or chaotic models \u2014 ones that produce large, unpredictable output changes from small input changes \u2014 are much harder to manage"
+   ],
+   "relationships": [
+    "Works alongside ongoing observation of a live model"
+   ],
+   "trading_implications": [
+    "A model that fails stability testing needs extra safeguards before being trusted with novel inputs",
+    "Benchmarking against trader intuition can catch model risk that a purely quantitative backtest misses"
+   ],
+   "common_misunderstandings": [
+    "Stress testing is sometimes conflated with backtesting, but stress testing specifically targets scenarios that may never have occurred historically"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Model observation as a risk control",
+    "Model maintenance procedures"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "583-585",
+    "section_hint": "6.4 Model Risk \u2014 Testing the Model"
+   }
+  },
+  {
+   "topic": "Assumption risk from long model lifespans",
+   "category": "Risk",
+   "subcategory": "Model Maintenance",
+   "type": "risk",
+   "definition": "The risk that a model's foundational assumptions about how a market operates become invalid over time as real-world conditions shift.",
+   "core_idea": "Models are simplifications calibrated to historical, typical behavior, and energy infrastructure investments can last decades, so the regulatory, demographic, and technological environment a model assumed can change enough to invalidate its core assumptions \u2014 and if the basic assumptions are wrong, every downstream conclusion the model produces is likely wrong too.",
+   "key_points": [
+    "Models simplify reality and are based on typical historical behavior, with no guarantee that behavior remains predictive going forward",
+    "Real life has exceptions to nearly every rule, and it isn't always clear in advance where those exceptions will occur",
+    "The most dangerous failure mode is getting a basic assumption about market operation wrong, since it corrupts every conclusion built on top of it",
+    "Long-lived physical assets (power plants, pipelines, gas wells) mean pricing models tied to them can stay in use for decades, well past the point their original assumptions still hold",
+    "Employee turnover compounds the problem: the people who understood the original assumptions, and who could recognize when they'd broken down, are often gone before problems surface"
+   ],
+   "relationships": [
+    "Mitigated by model maintenance procedures (documentation counters the turnover problem)"
+   ],
+   "trading_implications": [
+    "Models supporting long-lived asset valuations need periodic assumption reviews, not just periodic recalibration of parameters"
+   ],
+   "common_misunderstandings": [
+    "A model that has worked well for years is sometimes assumed to stay valid indefinitely; the author's point is closer to the opposite \u2014 durability increases the chance its assumptions have quietly broken down"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Daylight saving time example",
+    "Model maintenance procedures"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "585-587",
+    "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   }
+  },
+  {
+   "topic": "Daylight saving time and Indiana electricity demand",
+   "category": "Risk",
+   "subcategory": "Model Maintenance",
+   "type": "example",
+   "definition": "A real-world illustration of a model's underlying assumption silently reversing as the environment around it changed.",
+   "core_idea": "A mid-1970s study found that shifting clocks for daylight saving in summer slightly reduced energy use by extending evening daylight; when Indiana finally adopted daylight saving roughly thirty years later, the state instead saw a noticeable increase in power consumption, which was attributed to air conditioning \u2014 largely absent in the 1970s \u2014 having since become the dominant summer electricity use, so extra evening daylight now drove more cooling demand instead of less lighting demand.",
+   "key_points": [
+    "1970s study concluded daylight saving time modestly cut energy use, at a time when lighting was the dominant driver of summer electricity use",
+    "About thirty years later, Indiana's actual switch to daylight saving produced a measurable increase in power consumption instead",
+    "The reversal is attributed to the intervening widespread adoption of air conditioning, which shifted the dominant driver of electricity demand from lighting to cooling",
+    "The case shows a model's real-world conclusion can flip sign entirely as the underlying drivers of the system change, with no error in the original analysis itself"
+   ],
+   "relationships": [
+    "Illustrates assumption risk from long model lifespans"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The air-conditioning explanation for the reversal is presented as the likely/thought cause, not stated as definitively proven",
+   "related_topics": [
+    "Assumption risk from long model lifespans"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "585-586",
+    "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   }
+  },
+  {
+   "topic": "Model maintenance procedures",
+   "category": "Risk",
+   "subcategory": "Model Maintenance",
+   "type": "concept",
+   "definition": "A set of governance practices modeling teams can use to keep models understandable and reliable as they age and change hands.",
+   "core_idea": "Because models routinely outlive the developers who built them, structured documentation and version-control practices are needed so later owners can understand, safely update, and validate a model rather than treating it as a black box.",
+   "key_points": [
+    "Model ID: a unique identifier for each model so it can be tracked and its source code located, important when a group maintains hundreds of models",
+    "Model Owner: a named person responsible for a model's upkeep, since an unowned model tends to get lost or go stale",
+    "Change Log: a record of what changed at each update and why, so future owners understand the reasoning behind past decisions",
+    "Source Code Control: versioning old copies of the model so an update that introduces an error can be rolled back to a known-good version",
+    "Test Case: a fixed set of known inputs and outputs used to confirm the model still behaves as originally intended after any update",
+    "Interactions List: a tracked record of which other models feed into or consume outputs from this model, since updating one model can unintentionally break related models; the list itself must be kept current"
+   ],
+   "relationships": [
+    "Mitigates the employee-turnover and assumption-drift risk described for long-lived models"
+   ],
+   "trading_implications": [
+    "Teams lacking these controls are more likely to introduce silent errors during routine model updates"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Assumption risk from long model lifespans",
+    "Core model testing techniques"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "586-588",
+    "section_hint": "6.4 Model Risk \u2014 Maintaining Models"
+   }
+  },
+  {
+   "topic": "Illiquid trading point / benchmark proxy risk",
+   "category": "Risk",
+   "subcategory": "Market Data Quality",
+   "type": "risk",
+   "definition": "The risk of approximating an illiquid physical trading location's price using a nearby liquid benchmark.",
+   "core_idea": "Many physical energy trading points trade infrequently, so between actual trades there may be no fresh price available; the common workaround is to approximate the illiquid location's price off a nearby liquid benchmark, but the historical relationship between the two can break down without warning.",
+   "key_points": [
+    "A trade's price is known at the moment it happens, but future prices depend on whether other participants trade at that same location",
+    "If a location doesn't trade regularly, a meaningful amount of time can pass before another real price is observed there",
+    "The standard workaround is to proxy illiquid locations off a nearby liquid benchmark",
+    "This proxy relationship is sometimes a reasonable assumption and sometimes fails when the expected relationship between the benchmark and the location breaks down"
+   ],
+   "relationships": [
+    "Related to parameter estimation risk as another consequence of limited market data"
+   ],
+   "trading_implications": [
+    "Positions or valuations at illiquid points carry basis risk to the benchmark used as a proxy"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Parameter estimation risk from limited data"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "588-589",
+    "section_hint": "6.4 Model Risk \u2014 Bad Market Data"
+   }
+  },
+  {
+   "topic": "Parameter estimation risk from limited data",
+   "category": "Risk",
+   "subcategory": "Market Data Quality",
+   "type": "risk",
+   "definition": "The risk that model parameters requiring hard-to-observe inputs, such as correlations, end up chosen somewhat arbitrarily when adequate market data doesn't exist.",
+   "core_idea": "Some model parameters \u2014 for example, the correlation between two assets that a spread option's value depends on \u2014 can't be reliably estimated when there isn't enough liquid price history, so in practice such parameters are commonly set fairly arbitrarily at model creation, and a poorly chosen one can cause the model's output to change dramatically if revisited.",
+   "key_points": [
+    "Limited market data restricts the ability to reliably estimate certain model parameters",
+    "Example given: a spread option's dependence on the correlation between two underlying assets, which can't be determined without adequate price data",
+    "In practice, a handful of parameters commonly end up chosen fairly arbitrarily when a model is first built",
+    "A poorly chosen parameter of this kind can cause the model's output to change dramatically if corrected or revisited later"
+   ],
+   "relationships": [
+    "Connects to illiquid trading point risk as another symptom of limited market data"
+   ],
+   "trading_implications": [
+    "Arbitrarily-set correlation or similar parameters should be flagged and periodically reviewed rather than treated as fixed inputs"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Illiquid trading point / benchmark proxy risk"
+   ],
+   "source": {
+    "chapter": 32,
+    "pages": "588-589",
+    "section_hint": "6.4 Model Risk \u2014 Bad Market Data"
+   }
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Master Netting Agreements",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "market_mechanic",
+   "definition": "A master netting agreement is a contract that requires a bankruptcy court to net together all of a defaulting counterparty's offsetting trade exposures and treat them as one combined exposure, rather than settling each trade separately.",
+   "core_idea": "Because a default on any single obligation is treated as a default on all obligations with that counterparty, netting collapses many gross exposures into one net exposure, reducing the amount at risk in a bankruptcy.",
+   "key_points": [
+    "Default on any one obligation triggers default treatment across all obligations with that counterparty.",
+    "Without a netting agreement, a bankruptcy court will only enforce the money the bankrupt party actually owes \u2014 it will not offset that against money the bankrupt party is owed.",
+    "Netting agreements materially reduce credit exposure between trading counterparties by converting many gross claims into a single net claim."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Reduces effective exposure that CVA/DVA calculations must cover"
+   ],
+   "trading_implications": [
+    "Firms should insist on master netting agreements before building up bilateral trading volume with a counterparty, since exposure without netting is measured gross, not net."
+   ],
+   "common_misunderstandings": [
+    "Assuming offsetting trades automatically net against each other in bankruptcy \u2014 without a netting agreement, only the bankrupt party's payables are subject to court enforcement, not a netted position."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ring Fencing",
+    "Structural Subordination",
+    "CVA/DVA"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Master Netting Agreements"
+   }
+  },
+  {
+   "topic": "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "definition",
+   "definition": "A set of standard corporate-structure terms used to assess counterparty risk: a parent company holds a controlling stock interest in another company; a holding company is a parent whose main business is holding equity stakes in its subsidiaries; a subsidiary is a company at least 50% owned (voting-stock-controlled) by another company; an affiliate is a company with a substantial but non-majority stake in another, or two companies that share the same parent.",
+   "core_idea": "Because many energy companies are conglomerates built of multiple related entities, understanding whether a trading partner is a parent, subsidiary, or affiliate matters for figuring out who is actually legally on the hook for an obligation.",
+   "key_points": [
+    "Conglomerate structures are common in energy partly because regulators (e.g., public utility commissions) require regulated utility businesses to be shielded from unregulated business lines.",
+    "Affiliate status (same-parent subsidiaries, or non-majority substantial ownership) does not by itself mean shared liability for obligations.",
+    "Knowing the exact corporate relationship of a trading counterparty is necessary to know who is legally liable if that counterparty defaults."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins Ring Fencing and Structural Subordination concepts"
+   ],
+   "trading_implications": [
+    "Credit assessment must identify which specific legal entity is the counterparty and its exact place in the corporate structure, since affiliates are not automatically liable for each other's obligations."
+   ],
+   "common_misunderstandings": [
+    "Assuming that because two companies are affiliates or share a parent, one is liable for the other's trading obligations \u2014 liability depends on the specific legal structure (cross-guarantees, ring fencing, etc.), not mere affiliation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ring Fencing",
+    "Structural Subordination"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Ring Fencing and Structural Subordination, Common Terms"
+   }
+  },
+  {
+   "topic": "Ring Fencing",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "market_mechanic",
+   "definition": "Ring fencing is a legal/economic separation of a regulated utility from its unregulated parent or holding company, which turns the parent into effectively a shareholder rather than a direct owner of the utility's assets.",
+   "core_idea": "Once ring fenced, the parent can collect dividends and sell its ownership stake in the subsidiary, but cannot directly seize or sell the subsidiary's assets, and usually cannot force a dividend increase without the utility regulator's approval.",
+   "key_points": [
+    "The parent cannot directly access cash or assets inside the ring-fenced utility (e.g., cannot sell an unused generation plant owned by the utility to fund the parent's other businesses).",
+    "The parent is still entitled to normal dividends from the ring-fenced subsidiary and can sell its equity stake in it.",
+    "Increasing the dividend paid out of the regulated utility typically requires the utility regulator's approval.",
+    "The parent cannot liquidate the ring-fenced subsidiary's assets to pay off the parent's own debts."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with cross-guarantee structures (best case for credit) and with structural subordination"
+   ],
+   "trading_implications": [
+    "When trading with a ring-fenced regulated-utility counterparty, its parent's financial distress is less likely to directly drain the utility's assets, which can make the utility a comparatively safer counterparty than its parent."
+   ],
+   "common_misunderstandings": [
+    "Assuming a parent company can freely tap a ring-fenced subsidiary's balance sheet in a crisis \u2014 the ring fence specifically blocks that."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Structural Subordination",
+    "Corporate Structure Terms"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Ring Fencing and Structural Subordination"
+   }
+  },
+  {
+   "topic": "Structural Subordination",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "risk",
+   "definition": "Structural subordination describes a conglomerate that operates through multiple organizational layers, such that in bankruptcy each subsidiary pays its own creditors first, and only leftover value flows up to the parent company.",
+   "core_idea": "Creditors that extend credit at the parent level sit behind each subsidiary's own creditors in priority of repayment, making parent-level credit exposure inherently weaker than exposure to the operating subsidiary itself.",
+   "key_points": [
+    "Each subsidiary settles its own creditors first out of its own assets before any residual value passes up to the parent.",
+    "Anyone holding credit exposure to the parent company has a low priority claim on assets that are actually owned by a subsidiary."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with cross-guarantee structures and with Ring Fencing"
+   ],
+   "trading_implications": [
+    "Extending credit to a parent holding company (rather than the operating subsidiary that actually generates cash flow) carries structurally weaker repayment priority in a bankruptcy."
+   ],
+   "common_misunderstandings": [
+    "Treating exposure to the parent company as equivalent to exposure to the operating subsidiary \u2014 the parent's claim on subsidiary assets is subordinate to the subsidiary's own creditors."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ring Fencing",
+    "Corporate Structure Terms"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Ring Fencing and Structural Subordination"
+   }
+  },
+  {
+   "topic": "The Tradeoff in Setting Credit Limits",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "concept",
+   "definition": "Credit risk management for a trading firm is a balancing act: a trading business exists to enter contracts where counterparties owe it money, so eliminating credit risk entirely is neither possible nor desirable, but unlimited exposure risks being pulled into a counterparty's bankruptcy.",
+   "core_idea": "Overly strict credit controls choke off trading volume and damage counterparty relationships, while overly loose controls expose the firm to being dragged down when a counterparty defaults or fails to perform \u2014 credit limits have to balance these two costs.",
+   "key_points": [
+    "A trading company's core purpose involves entering contracts that create receivables (money others owe it), which is inherently a source of credit risk.",
+    "Overly strict credit limits cause missed trading opportunities and strained relationships with counterparties.",
+    "Credit limits that are too loose risk the firm being pulled into a counterparty's bankruptcy or nonperformance.",
+    "There is no zero-risk option \u2014 the goal is managing the tradeoff, not eliminating credit risk."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates use of master netting agreements and CVA/DVA adjustments"
+   ],
+   "trading_implications": [
+    "Credit limits should be set as a deliberate balance between captured trading opportunity and default risk, not simply minimized."
+   ],
+   "common_misunderstandings": [
+    "Believing that tighter credit limits are always safer for the firm overall \u2014 in practice they trade default risk for lost business and relationship damage."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Master Netting Agreements",
+    "CVA/DVA"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Dangers of Limiting Credit Exposure"
+   }
+  },
+  {
+   "topic": "Credit Value Adjustment (CVA) and Debit Value Adjustment (DVA)",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "formula",
+   "definition": "CVA lowers the reported value of an asset (money owed to the company) to reflect the counterparty's risk of default; DVA lowers the reported value of a liability (money the company owes others) to reflect the company's own risk of default. Both are required financial-reporting adjustments under FASB guidance (ASC 820, Subtopic 10, Section 55, Paragraph 8), which requires fair value measurements to include a risk premium for cash-flow uncertainty.",
+   "core_idea": "Both adjustments treat value as a liquidation cost \u2014 what would have to be paid or received to transfer the asset or liability to another market participant today \u2014 and both are computed from the expected loss on the position given counterparty (or self) default risk.",
+   "key_points": [
+    "CVA adjusts assets owed to the reporting company downward for the counterparty's potential default.",
+    "DVA adjusts liabilities the company owes to others downward for the company's own potential default, reflecting that a creditor facing a company's possible bankruptcy might accept a discounted payoff to get paid before bankruptcy proceedings.",
+    "ASC 820 (FASB) requires that fair value measurements include a risk premium for cash-flow uncertainty; difficulty in estimating that premium is not a valid reason to omit it.",
+    "Expected loss is computed from exposure at each payment date, the probability of default (PD) at that date, and the percentage of money lost if default occurs."
+   ],
+   "formulas": [
+    {
+     "name": "Expected Loss (basis for CVA/DVA)",
+     "formula": "Expected Loss = Exposure \u00d7 PD \u00d7 Loss Percentage on Default",
+     "variables": {
+      "Exposure": "amount owed at a given payment date",
+      "PD": "probability of default at that payment date",
+      "Loss Percentage on Default": "percent of the exposure lost if a default occurs at that date"
+     }
+    }
+   ],
+   "relationships": [
+    "Builds on the concept of liquidation cost as the basis of fair value",
+    "Applies the credit-risk concepts underlying master netting and credit limits to financial reporting"
+   ],
+   "trading_implications": [
+    "Reported asset and liability values on a trading book are not pure mark-to-market; they are shaded by counterparty and own default risk via CVA/DVA, which affects reported P&L versus purely observed market prices."
+   ],
+   "common_misunderstandings": [
+    "Treating CVA/DVA as optional or immaterial when hard to estimate \u2014 ASC 820 explicitly states that difficulty of estimation is not sufficient grounds to exclude the risk adjustment.",
+    "Applying credit adjustments only to assets \u2014 DVA requires the same treatment be applied to the company's own liabilities based on its own default risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Master Netting Agreements",
+    "Credit Limit Tradeoff"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "571-575",
+    "section_hint": "6.3 Counterparty Credit Risk \u2014 Credit Risk, Valuation, and Financial Reporting"
+   }
+  }
+ ]
+}

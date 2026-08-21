@@ -1,0 +1,242 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Photovoltaic (PV) effect and solar cell operation",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "PV power generation relies on sunlight striking a semiconductor and dislodging electrons, which can then be captured as electrical current.",
+   "core_idea": "Photons hitting a semiconductor knock electrons out of their normal orbit (valence band) into a free-moving state (conduction band); wiring the semiconductor into a circuit turns that freed-electron field into usable current.",
+   "key_points": [
+    "The 'band gap' is the energy threshold needed to knock an electron from the valence band into the conduction band.",
+    "Photons below the band gap energy pass through the semiconductor unabsorbed and contribute nothing.",
+    "Photons above the band gap free an electron; any energy in excess of the band gap is wasted as heat rather than converted to electricity.",
+    "Individual solar cells are small but are wired together into arrays (solar panels) to scale output."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Band gap mismatch with photon energy is a core source of PV inefficiency, motivating multi-layer cell designs."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Not all sunlight striking a panel is convertible \u2014 photons either too weak (pass through) or too strong (excess becomes heat) are both partly or fully wasted."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Multi-junction solar cells",
+    "Solar panel DC-to-AC conversion"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "454-455",
+    "section_hint": "Photovoltaic Power"
+   }
+  },
+  {
+   "topic": "p-n junction doping for directional current flow",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "Solar cells use doped semiconductor layers (p-type and n-type) to force freed electrons to flow in a consistent direction, producing usable current rather than random electron motion.",
+   "core_idea": "A p-type layer (doped to be positively charged, missing electrons) is sandwiched with an n-type layer (doped with excess electrons); when sunlight frees an electron on the n-type side, it migrates toward the positive p-type side, creating a directional current.",
+   "key_points": [
+    "P-type semiconductors are doped with atoms lacking electrons, giving a net positive charge.",
+    "N-type semiconductors are doped with atoms carrying excess electrons, giving a net negative charge.",
+    "Free electrons naturally move away from negative charge and toward positive charge, which the p-n sandwich exploits to generate consistent current."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the basic PV effect (band gap excitation) described alongside it."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Photovoltaic effect",
+    "Multi-junction solar cells"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "454-455",
+    "section_hint": "Photovoltaic Power"
+   }
+  },
+  {
+   "topic": "Multi-layer (graded band gap) solar cells",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "Stacking semiconductor layers with progressively lower band gaps reduces the energy wasted as heat and raises overall conversion efficiency versus a single-layer cell.",
+   "core_idea": "A single band gap wastes energy from photons that are either below threshold (unabsorbed) or well above it (excess becomes heat); layering high-to-low band-gap materials lets more of the solar spectrum be captured usefully.",
+   "key_points": [
+    "First layer uses a high band-gap material, followed by progressively lower band-gap layers.",
+    "This staged approach is presented as a way to improve on the low efficiency of a simple single-layer solar cell."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly addresses the inefficiency mechanism described in the basic PV effect."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Photovoltaic effect",
+    "Band gap"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "455",
+    "section_hint": "Photovoltaic Power"
+   }
+  },
+  {
+   "topic": "Solar panel system sizing and DC-to-AC conversion loss",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "market_mechanic",
+   "definition": "Solar panels natively produce DC power, which must pass through an inverter to become grid-usable AC power; this conversion (plus other system losses) typically discards about a quarter of the generated energy.",
+   "core_idea": "Because panels are rated in either AC or DC terms, and inverter capacity caps how much DC can be converted, actual grid-delivered AC output is meaningfully lower than nameplate DC production.",
+   "key_points": [
+    "An inverter is required to convert panel DC output into grid-compatible AC power.",
+    "There is a maximum conversion capacity set by inverter size; a bigger inverter raises system output but adds installation cost.",
+    "Total system losses (conversion plus other losses) are typically around 25 percent.",
+    "Example given: 1 KW of DC production yields roughly 0.75 KW of AC power delivered to the grid."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains why nameplate DC capacity differs from realized AC capacity used in capacity factor calculations."
+   ],
+   "trading_implications": [
+    "System sizing decisions trade inverter cost against captured AC output, since inverter capacity \u2014 not panel DC rating \u2014 caps deliverable power."
+   ],
+   "common_misunderstandings": [
+    "A panel's DC rating is not what reaches the grid; roughly 25% is lost by the time power is delivered as AC."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity factor",
+    "Inverters"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "455-456",
+    "section_hint": "Solar Panel System Size"
+   }
+  },
+  {
+   "topic": "Thermal solar power and heat storage advantage",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "Thermal solar systems concentrate sunlight to generate high heat (e.g., melting salt for storage) rather than directly generating electricity, allowing energy to be stored and used later, including at night.",
+   "core_idea": "Unlike PV, which must use sunlight as it arrives, thermal solar can bank heat in an insulated storage medium during the day and release it for electricity generation (via steam turbines) or other uses whenever needed.",
+   "key_points": [
+    "Example: a high-temperature facility can heat salt to ~500\u00b0F, at which point it melts and can be held in insulated storage until needed.",
+    "Stored heat need not be used immediately, unlike PV output \u2014 this is presented as thermal solar's key advantage over PV.",
+    "Heat can serve purposes other than electricity generation: air conditioning, heating, cooking, sterilization, and dehydration.",
+    "Electricity is typically produced from stored heat via a steam turbine.",
+    "Because the sun's position moves through the day, thermal solar systems generally need tracking mechanisms to keep concentrated energy focused on the collection point."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with PV power's inability to store energy for later use."
+   ],
+   "trading_implications": [
+    "Thermal solar's storage capability lets it shift generation timing, which is valuable in markets where evening/night prices exceed daytime prices."
+   ],
+   "common_misunderstandings": [
+    "Thermal solar isn't only for electricity \u2014 it may be more valuable directed at other heat-driven uses instead of power generation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Steam turbine efficiency",
+    "Solar power concentrators"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "456",
+    "section_hint": "Thermal Solar Power"
+   }
+  },
+  {
+   "topic": "Steam turbine efficiency scales with operating temperature",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "For thermal solar-driven steam turbines, the fraction of heat energy converted to electricity rises significantly as operating temperature increases, making concentrated (higher-temperature) heat more valuable than a larger volume of lower-temperature heat.",
+   "core_idea": "A steam turbine's conversion efficiency is temperature-dependent, so achieving high concentration/temperature matters more than sheer volume of stored heat.",
+   "key_points": [
+    "Example given: a turbine operating at 500\u00b0F converts about 40 percent of heat energy into electricity.",
+    "Example given: a turbine operating at 1000\u00b0F converts about 60 percent of heat energy into electricity.",
+    "As a result, a smaller volume of liquid at 1000\u00b0F is more valuable than twice the volume at 500\u00b0F.",
+    "This is the reason thermal solar system design prioritizes achieving high concentrated temperatures via concentrators and tracking systems."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly motivates the emphasis on solar concentrators and tracking systems in thermal solar design."
+   ],
+   "trading_implications": [
+    "Values concentrated, higher-temperature thermal storage over larger quantities of lower-temperature storage when planning generation economics."
+   ],
+   "common_misunderstandings": [
+    "More stored heat volume does not compensate for lower temperature \u2014 efficiency losses at lower temperatures can outweigh volume advantages."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Thermal solar power",
+    "Solar power concentrators"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "456",
+    "section_hint": "Thermal Solar Power"
+   }
+  },
+  {
+   "topic": "Geographic drivers of solar production and capacity factor",
+   "category": "Power Markets",
+   "subcategory": "Solar Power",
+   "type": "concept",
+   "definition": "Solar output depends on installation type and location, with proximity to the equator and dry/arid climate both increasing production, and capacity factor measuring realized AC output against a unit's rated size.",
+   "core_idea": "Solar farms closer to the equator in dry climates produce more power because sunlight travels through less atmosphere and loses less energy, and this locational effect is one driver behind a unit's capacity factor.",
+   "key_points": [
+    "Dry, arid climates near the equator yield the highest solar production.",
+    "Greater distance from the equator means sunlight passes through more atmosphere, reducing the energy content that reaches the panel and lowering production.",
+    "Example comparison: a Desert Southwest (e.g., Arizona) solar farm would produce more power than one in the northeastern U.S. (e.g., New Jersey).",
+    "Capacity factor is the ratio of actual power delivered to the grid versus the unit's stated (rated) size.",
+    "Example given: a 100-KW installation delivering 70 KW of AC power has a 70 percent capacity factor.",
+    "A ~70 percent capacity factor is described as typical when a unit's size is stated relative to its DC output at midday."
+   ],
+   "formulas": [
+    {
+     "name": "Capacity factor",
+     "formula": "Capacity Factor = AC Power Delivered to Grid / Rated Unit Size",
+     "variables": {
+      "AC Power Delivered to Grid": "actual power output placed onto the grid, kW or MW",
+      "Rated Unit Size": "stated nameplate size of the installation, typically DC kW/MW at midday"
+     }
+    }
+   ],
+   "relationships": [
+    "Connects to DC-to-AC conversion losses, since capacity factor as defined here is measured in AC terms against a DC-based rating."
+   ],
+   "trading_implications": [
+    "Location selection (latitude, aridity) is a first-order driver of expected capacity factor and thus expected generation revenue."
+   ],
+   "common_misunderstandings": [
+    "A stated capacity factor of ~70% for solar is tied to comparing AC output against a midday DC rating, not an inherent universal solar constant."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Solar panel system sizing",
+    "DC-to-AC conversion loss"
+   ],
+   "source": {
+    "chapter": 20,
+    "pages": "456-457",
+    "section_hint": "Solar Production Volume"
+   }
+  }
+ ]
+}

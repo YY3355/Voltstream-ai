@@ -1,0 +1,142 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Weather Derivatives",
+   "category": "Derivatives",
+   "subcategory": "Weather Risk Products",
+   "type": "definition",
+   "definition": "A weather derivative is a financial contract whose payout depends on a weather variable rather than a traded commodity price, most commonly temperature but also rainfall, snowfall, or hurricane activity. These contracts are typically negotiated bilaterally between two counterparties rather than exchange-traded, and are used mainly by utilities and insurers to manage weather exposure.",
+   "core_idea": "Weather derivatives let a company monetize or hedge exposure to weather outcomes by tying payoff directly to a measured weather variable instead of a commodity price.",
+   "key_points": [
+    "Payoff is indexed to a weather measurement (temperature is the most common basis).",
+    "Can also be written on rainfall, snowfall, or hurricane-related data.",
+    "Usually bilaterally negotiated, not standardized exchange products.",
+    "Primary users are utilities and insurance companies."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct from but conceptually adjacent to insurance contracts (see 'Weather Derivatives vs. Insurance').",
+    "Addresses a risk type (combined volume and price risk) that standard commodity hedges don't cover."
+   ],
+   "trading_implications": [
+    "A utility could use a temperature-linked derivative to offset the revenue/cost impact of an unusually mild or extreme season, complementing commodity hedges."
+   ],
+   "common_misunderstandings": [
+    "Weather derivatives are not the same as insurance, even though both pay out based on external events."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather Risk (Volume and Price)",
+    "Insurance vs. Weather Derivatives",
+    "Natural Gas Storage"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "71-72",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Weather Risk: Combined Volume and Price Exposure",
+   "category": "Risk",
+   "subcategory": "Weather Risk",
+   "type": "risk",
+   "definition": "Weather is unusual as a risk factor for energy companies because a single weather event can simultaneously move both the quantity of energy needed (volume risk) and its price (price risk), making it hard to hedge with a standard financial instrument that typically addresses only one dimension.",
+   "core_idea": "An extreme weather event can drive up both consumption and price at the same time, compounding the financial impact in a way ordinary single-variable hedges can't fully offset.",
+   "key_points": [
+    "An unusually cold winter increases heating demand, which draws down stored natural gas faster than normal (volume effect).",
+    "The same cold snap can push natural gas prices higher as utilities compete for the dwindling supply of stored gas (price effect).",
+    "Because volume and price move together and are both driven by the same weather cause, standard financial hedges (which typically fix a price or a quantity separately) struggle to fully cover the combined exposure."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the use of weather derivatives as a complementary hedge alongside commodity price hedges.",
+    "Connects to natural gas storage dynamics during winter demand spikes."
+   ],
+   "trading_implications": [
+    "Risk managers at gas utilities need to consider combined volume-and-price scenarios (e.g., a cold winter) rather than hedging price and volume as independent risks."
+   ],
+   "common_misunderstandings": [
+    "Assuming a price hedge alone (e.g., a futures contract for a fixed quantity) fully protects against a weather-driven demand spike, when the volume actually needed also changes."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather Derivatives",
+    "Natural Gas Storage",
+    "Hedging"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "71-72",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Weather Derivatives vs. Insurance",
+   "category": "Derivatives",
+   "subcategory": "Weather Risk Products",
+   "type": "concept",
+   "definition": "While weather derivatives resemble insurance in that both pay out based on the occurrence of an external event, the author distinguishes them by probability and severity: weather derivatives typically cover events that occur with relatively high probability and cause comparatively modest losses, whereas insurance typically covers rare, high-severity events.",
+   "core_idea": "Weather derivatives target frequent, moderate-impact weather deviations, while insurance targets rare, catastrophic losses.",
+   "key_points": [
+    "Insurance example given: protection against flood or hurricane damage \u2014 a very large loss that might occur only about once every 100 years.",
+    "Weather derivative example given: protection for an airline against lost business if rainfall runs 10 percent above average \u2014 a smaller loss, but one that might recur several times within a 10-year period.",
+    "The distinction is about the probability/severity profile of the covered event, not the payout mechanism itself."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds directly on the definition of weather derivatives.",
+    "Uses insurance as a contrasting reference point rather than treating the two as identical."
+   ],
+   "trading_implications": [
+    "Firms choosing between weather derivatives and insurance should match the product to the frequency/severity profile of the risk being managed \u2014 derivatives for frequent moderate risk, insurance for rare catastrophic risk."
+   ],
+   "common_misunderstandings": [
+    "Treating weather derivatives as functionally identical to insurance; the author explicitly notes they differ in the probability and severity of the events they cover."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather Derivatives",
+    "Insurance",
+    "Risk Management"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "71-72",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Force Majeure Clause",
+   "category": "Risk",
+   "subcategory": "Contract Terms",
+   "type": "definition",
+   "definition": "Force majeure ('greater force' in French) is a standard contract clause that releases both parties from liability when extraordinary, uncontrollable events \u2014 such as war or natural disaster \u2014 prevent one or both from fulfilling their contractual obligations.",
+   "core_idea": "A force majeure clause protects contract counterparties from breach liability when performance is made impossible by events outside anyone's control.",
+   "key_points": [
+    "Common in energy and other commercial contracts.",
+    "Covers events like wars and natural disasters.",
+    "Applies specifically to events outside the control of either contracting party."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Relevant contract-risk concept alongside weather-driven disruptions discussed in this section."
+   ],
+   "trading_implications": [
+    "Traders and structurers should check whether a physical delivery or supply contract includes a force majeure clause, since it determines liability if extreme weather or disaster prevents performance."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Contract Risk",
+    "Weather Derivatives"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "71-72",
+    "section_hint": "1.1 An Overview of the Energy Markets (footnote)"
+   }
+  }
+ ]
+}

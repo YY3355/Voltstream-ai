@@ -1,0 +1,256 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Counterparty Credit Risk Overview",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "concept",
+   "definition": "The danger that a trading partner in a bilateral contract will be unable or unwilling to meet its contractual obligations.",
+   "core_idea": "Because much energy trading happens through direct bilateral contracts rather than a cleared exchange, each party is exposed to the other's ability to perform. This risk is analyzed in two separate dimensions: how much could be lost (exposure) and how likely a loss is (credit quality).",
+   "key_points": [
+    "Credit exposure measures the magnitude of potential loss from a counterparty.",
+    "Credit quality measures the likelihood that a counterparty defaults.",
+    "Credit limits that are too strict curtail business; limits that are too loose risk catastrophic loss from an unfulfilled obligation.",
+    "Obligor: a party legally obligated to perform (e.g., repay a debt).",
+    "Default: failure to meet a legal obligation, such as repaying debt.",
+    "Counterparty: the other party to a given contract, from one participant's perspective."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Credit exposure and credit quality together define overall counterparty credit risk."
+   ],
+   "trading_implications": [
+    "Firms set hard exposure limits per counterparty to bound worst-case loss while still permitting enough trading volume to run the business."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "Credit Quality",
+    "Bankruptcy Priority"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "566-566",
+    "section_hint": "6.3 Counterparty Credit Risk - Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "Credit Exposure, EAD, Recovery Rate, and LGD",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "definition",
+   "definition": "Credit exposure quantifies how much money could be lost if a counterparty defaults; it is refined using the concepts of exposure at default, recovery rate, and loss given default.",
+   "core_idea": "The simplest exposure estimate assumes total loss on every contract (EAD), which overstates the real loss because bankruptcy proceedings typically recover some money (recovery rate); the unrecovered portion is the loss given default (LGD).",
+   "key_points": [
+    "Exposure at Default (EAD): the amount that could be lost if a counterparty defaults and enters bankruptcy \u2014 treats the loss as complete, so it is an upper bound and tends to overstate real loss severity.",
+    "Recovery Rate: the percentage of exposure eventually recovered through bankruptcy proceedings; averages about 40% for unsecured debt.",
+    "Loss Given Default (LGD): equals one minus the recovery rate \u2014 the portion of exposure actually lost; averages about 60% for unsecured debt."
+   ],
+   "formulas": [
+    {
+     "name": "Loss Given Default",
+     "formula": "LGD = 1 - Recovery Rate",
+     "variables": {
+      "LGD": "fraction of exposure lost in default",
+      "Recovery Rate": "fraction of exposure recovered in bankruptcy"
+     }
+    }
+   ],
+   "relationships": [
+    "LGD is derived directly from recovery rate.",
+    "EAD is the base exposure figure that recovery rate/LGD refine into an expected loss estimate."
+   ],
+   "trading_implications": [
+    "Because most trading obligations are unsecured, firms should expect roughly 60% loss severity on defaulted exposure, not 100%, when sizing risk reserves."
+   ],
+   "common_misunderstandings": [
+    "Assuming EAD (100% loss) is the realistic loss estimate rather than an upper bound; actual expected loss should incorporate the recovery rate."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bankruptcy Priority",
+    "Probability of Default"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "567-567",
+    "section_hint": "Credit Exposure / Common Terms"
+   }
+  },
+  {
+   "topic": "Bankruptcy Priority Order",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "market_mechanic",
+   "definition": "The order in which different classes of creditors are repaid when a company goes bankrupt.",
+   "core_idea": "Trading counterparty claims are typically unsecured debt and sit low in the bankruptcy repayment priority, which materially affects how much of a credit exposure is actually recoverable.",
+   "key_points": [
+    "Priority order: employees owed wages are paid first.",
+    "Next, unpaid taxes are paid.",
+    "Next, senior debt holders (typically bondholders) are paid.",
+    "Next, trading partners as unsecured debt holders are paid.",
+    "Stockholders have the lowest priority of repayment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Low priority position of unsecured trading debt explains why recovery rates are only around 40%."
+   ],
+   "trading_implications": [
+    "Traders should recognize that most of their contractual exposure is unsecured and low-priority, reinforcing the need for collateral or netting to improve recovery position."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "Recovery Rate",
+    "Collateral"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "567-568",
+    "section_hint": "Credit Exposure - Bankruptcy priority (Figure 6.3.1)"
+   }
+  },
+  {
+   "topic": "Credit Quality and Probability of Default",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "concept",
+   "definition": "Credit quality is a forward-looking assessment of the probability that a counterparty will default on its obligations over some future period.",
+   "core_idea": "Because energy contracts often span years, credit quality must be estimated prospectively using ratings agencies, in-house research, and layered analysis of a counterparty's own clients, rather than solely from historical default data.",
+   "key_points": [
+    "Credit quality attempts to forecast default probability over a forward-looking horizon appropriate to the contract's life.",
+    "Ratings agencies provide credit ratings that can be supplemented by in-house research on key counterparties.",
+    "A trading partner's own credit risk depends in part on the credit quality of its clients (layered/cascading exposure).",
+    "A company is less likely to default when its large trades have moved in its favor, and more likely to default when trades have moved against it.",
+    "Probability of Default (PD): the likelihood that an obligor fails to make a scheduled payment or obligation by a given future date (e.g., by bond expiration or within a fixed window like the next month)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "PD is the quantitative expression of credit quality.",
+    "Credit quality interacts with exposure to determine overall counterparty risk."
+   ],
+   "trading_implications": [
+    "Traders should monitor mark-to-market direction on large positions with a counterparty, since adverse moves against that counterparty raise its default likelihood."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "CDS market",
+    "Enron bankruptcy"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "568-569",
+    "section_hint": "Credit Quality"
+   }
+  },
+  {
+   "topic": "Enron Bankruptcy as Cascading Credit Crisis",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "example",
+   "definition": "A historical example illustrating how the default of one dominant market participant can propagate credit-quality damage across the broader market.",
+   "core_idea": "Enron's bankruptcy froze its assets and obligations, and because it was counterparty (directly or indirectly) to nearly the whole energy trading market, the shock degraded the credit quality of many other trading firms simultaneously, even those without a direct trading relationship to Enron.",
+   "key_points": [
+    "Enron was the largest energy trader in the world and counterparty to nearly everyone in the market.",
+    "When Enron went bankrupt, it stopped meeting financial obligations, causing its direct counterparties to struggle to meet their own obligations.",
+    "This produced a cascading effect that dropped the credit quality of many energy trading firms at once, including firms with no direct exposure to Enron."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates systemic/contagion risk arising from concentrated counterparty exposure."
+   ],
+   "trading_implications": [
+    "Concentration risk in a single dominant counterparty can create systemic contagion; firms should consider indirect/second-order exposure, not just direct trading relationships."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Quality",
+    "Probability of Default"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "568-568",
+    "section_hint": "Credit Quality - Enron example"
+   }
+  },
+  {
+   "topic": "Estimating Probability of Default",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "concept",
+   "definition": "Methods used to estimate the probability that a given counterparty will default, given that direct observation is often impractical for trading portfolios.",
+   "core_idea": "Unlike consumer credit portfolios (e.g., credit cards) where enough defaults occur to observe rates directly or rely on published scores, trading counterparties default too rarely for direct observation, so PD is instead inferred from credit ratings or, for very large counterparties, from CDS market pricing.",
+   "key_points": [
+    "For large populations like credit card portfolios, default probabilities can be directly observed or sourced from published credit scores (e.g., FICO scores from Fair Isaac).",
+    "Trading portfolios typically have low default probabilities, making direct observation impractical.",
+    "Credit ratings are a common alternative method to estimate PD for trading counterparties.",
+    "The credit default swap (CDS) market can be used to estimate PD for large counterparties, but only those whose CDS products actually trade \u2014 limiting this method to entities like oil majors and large banks."
+   ],
+   "formulas": [],
+   "relationships": [
+    "CDS-market-implied PD estimation is an alternative to ratings-based PD estimation, applicable only to a narrower set of large counterparties."
+   ],
+   "trading_implications": [
+    "For most counterparties, firms must rely on published credit ratings rather than direct default observation or CDS pricing to gauge default risk."
+   ],
+   "common_misunderstandings": [
+    "Assuming CDS-based PD estimation is broadly applicable; it only works for counterparties large enough to have a traded CDS market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Probability of Default",
+    "Credit Default Swap"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "568-569",
+    "section_hint": "Credit Quality - Common Terms / PD estimation"
+   }
+  },
+  {
+   "topic": "Methods to Protect Against Counterparty Credit Risk",
+   "category": "Risk",
+   "subcategory": "Credit Risk",
+   "type": "trading_strategy",
+   "definition": "Practical mechanisms energy trading firms use to reduce or manage exposure to counterparty default.",
+   "core_idea": "Firms mitigate credit risk through counterparty due diligence, exposure/credit limits (often using payment netting), collateral, CDS-based insurance for weaker credits, and contractual protections such as cross-default clauses and master netting agreements.",
+   "key_points": [
+    "Know your trading partner: assess line of business, asset base, and business model before trading.",
+    "Limit the amount of credit extended to a partner via a credit limit that halts additional trading once net exposure is too large.",
+    "Netting payments and receipts allows only the net exposure to a counterparty to be monitored, rather than gross exposure.",
+    "Collateral (bonds, stocks, or other investments) can be pledged to guarantee performance; it is held in trust but remains the property of the pledging party until the obligation is resolved.",
+    "A high-risk counterparty lacking sufficient collateral may be required to buy CDS insurance, paying a fee to a lower-risk company to guarantee payment of its obligations \u2014 this shifts backing to a better-rated entity without eliminating credit risk entirely.",
+    "Cross-default clauses: contractual terms preventing a counterparty from selectively defaulting on one obligation while remaining current on others.",
+    "Master netting agreements are another contractual term used to limit credit risk (described as continuing in the source beyond this excerpt)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "These protective mechanisms directly reduce credit exposure and/or the effective probability/impact of default described in Credit Exposure and Credit Quality."
+   ],
+   "trading_implications": [
+    "Structuring trades with netting, collateral, or CDS backing can allow continued business with higher-risk counterparties while keeping effective exposure within acceptable limits."
+   ],
+   "common_misunderstandings": [
+    "CDS insurance eliminates credit risk \u2014 it does not; it substitutes reliance on a better-rated guarantor rather than removing risk entirely."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "Collateral",
+    "Credit Default Swap",
+    "Master Netting Agreement"
+   ],
+   "source": {
+    "chapter": 31,
+    "pages": "569-570",
+    "section_hint": "Protecting Against Credit Risk"
+   }
+  }
+ ]
+}

@@ -1,0 +1,259 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Withdrawal rate is limited by the storage/pipeline pressure differential",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Physical Operations",
+   "type": "concept",
+   "definition": "When gas is withdrawn from storage, a compressor creates suction to draw gas out and push it into the pipeline; the speed of that withdrawal depends on the pressure differential between the storage facility and the pipeline.",
+   "core_idea": "Once withdrawal reaches a perfect vacuum on the suction side, the pressure differential \u2014 and therefore the flow rate \u2014 stops increasing, so the storage facility's own pressure becomes the hard ceiling on how fast gas can be pulled out.",
+   "key_points": [
+    "A compressor pulls gas from storage into the pipeline by suction.",
+    "Flow speed is a function of the pressure differential between storage and pipeline, not the compressor alone.",
+    "A perfect vacuum caps the achievable differential, making storage pressure the binding constraint on withdrawal speed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties directly to the facility's maximum pressure constraint, which sets the upper bound on storage-side pressure and therefore withdrawal speed."
+   ],
+   "trading_implications": [
+    "Deliverability (how fast gas can actually be withdrawn to meet demand spikes) is physically capped by facility pressure, which matters for valuing storage optionality during high-demand periods."
+   ],
+   "common_misunderstandings": [
+    "Assuming withdrawal rate scales only with compressor power rather than being capped by the storage-pipeline pressure differential."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Maximum pressure constraint",
+    "Natural gas storage geology"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "527-528",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Withdrawal"
+   }
+  },
+  {
+   "topic": "Maximum pressure as a facility design constraint",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Physical Operations",
+   "type": "concept",
+   "definition": "The maximum pressure a storage facility can safely hold is one of its core physical constraints, trading off storage capacity and withdrawal speed against structural risk.",
+   "core_idea": "Higher operating pressure lets a facility hold more gas per unit volume and release it faster, but it also raises the risk of structural failure and gas escaping into the environment; because suitable storage sites are scarce, the achievable pressure is usually dictated by the site's geology rather than chosen freely.",
+   "key_points": [
+    "Higher pressure increases storable volume in a given space.",
+    "Higher pressure increases withdrawal speed.",
+    "Higher pressure increases structural stress and leak risk.",
+    "Available pressure is generally set by what geology can be found, not by what operators would prefer."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly limits the withdrawal-rate mechanic described in the pressure-differential concept.",
+    "Explains why salt caverns (which tolerate higher pressure) outperform depleted reservoirs and aquifers on flexibility."
+   ],
+   "trading_implications": [
+    "Facility-specific maximum pressure is a key input to assessing a storage asset's deliverability and therefore its value for balancing or arbitrage strategies."
+   ],
+   "common_misunderstandings": [
+    "Treating maximum pressure as an engineering choice rather than a constraint largely imposed by available geology."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Withdrawal rate limits",
+    "Salt caverns",
+    "Depleted gas reservoirs"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "528",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Physical Constraints"
+   }
+  },
+  {
+   "topic": "Three storage facility types and their cushion-gas requirements",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Facility Types",
+   "type": "concept",
+   "definition": "Natural gas storage is built in one of three geological settings \u2014 depleted gas reservoirs, salt caverns, or aquifers \u2014 each with a distinct cost, performance, and required cushion-gas profile.",
+   "core_idea": "Depleted reservoirs are the cheapest and most common option; salt caverns cost more to develop but deliver much higher performance (higher pressure tolerance, faster cycling); aquifers are used only where neither alternative is available and are the least efficient of the three.",
+   "key_points": [
+    "Depleted gas reservoirs: cheapest, most reliable, most historically abundant; require reserving about 50% of capacity as cushion gas.",
+    "Salt caverns: more expensive to build but highest performance (least leakage, strongest walls, highest pressure tolerance, most frequent cycling); require reserving about 33% of capacity as cushion.",
+    "Aquifers: used only when neither depleted reservoirs nor salt caverns are available; least desirable performance; require reserving about 80% of capacity as cushion.",
+    "Cushion gas is the portion of a facility's total capacity that must stay in place (working gas is the remainder available for injection/withdrawal cycles)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Cushion-gas ratios explain why salt caverns are preferred for high-cycling, price-sensitive strategies despite higher build cost.",
+    "Ties to the maximum-pressure concept: salt caverns' superior pressure tolerance is the source of their performance edge."
+   ],
+   "trading_implications": [
+    "A facility's cushion-gas ratio directly limits how much working (tradeable) gas volume it actually offers, which matters when valuing or leasing storage capacity.",
+    "Salt caverns' faster cycling ability makes them better suited to capturing frequent, erratic price swings than depleted reservoirs or aquifers."
+   ],
+   "common_misunderstandings": [
+    "Assuming a facility's nameplate capacity is all usable working gas \u2014 a large fraction is permanently reserved as cushion gas and never available for trading cycles."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physically unrecoverable gas",
+    "Maximum pressure constraint",
+    "Depleted gas reservoirs",
+    "Salt caverns"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "528-530",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Facility Inventory"
+   }
+  },
+  {
+   "topic": "Storage geology: porosity, permeability, and impermeable seals",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Geology",
+   "type": "definition",
+   "definition": "A storage facility is a porous, permeable underground rock volume where gas dissolves, sealed by a surrounding layer of impermeable rock that keeps it from escaping.",
+   "core_idea": "Porosity describes how much empty space (pores) a rock contains, while permeability describes whether those pores are interconnected; larger, better-connected pores let gas move in and out faster, and an impermeable cap rock \u2014 especially directly above the storage zone, since gas rises \u2014 is essential to contain it.",
+   "key_points": [
+    "Storage facilities are geologically similar to natural gas wells and other pressurized containers.",
+    "Reusing existing porous rock formations is both structurally sound and far cheaper than excavation, so finding a suitable existing reservoir is one of the biggest tasks in building a new facility.",
+    "Porosity = amount of pore space in a rock; permeability = whether pores are connected, allowing flow.",
+    "Larger and more interconnected pores increase the speed at which gas can enter or leave the facility.",
+    "The impermeable rock layer directly above the storage zone is especially critical because gas naturally rises."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why salt caverns (low permeability walls) leak far less than reservoirs or aquifers.",
+    "Connects to physically unrecoverable gas \u2014 gas embeds in pore walls even in a well-sealed facility."
+   ],
+   "trading_implications": [
+    "Geological quality (porosity/permeability/seal integrity) determines a facility's real-world deliverability, not just its stated capacity."
+   ],
+   "common_misunderstandings": [
+    "Confusing porosity (space present) with permeability (whether that space is connected enough to allow flow) \u2014 a rock can be porous but not permeable."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physically unrecoverable gas",
+    "Salt caverns",
+    "Depleted gas reservoirs"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "528-529",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Geology"
+   }
+  },
+  {
+   "topic": "Physically unrecoverable gas",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Geology",
+   "type": "definition",
+   "definition": "Physically unrecoverable gas is the portion of injected gas that becomes permanently embedded in the walls of a storage facility and can never be extracted, even after the facility is decommissioned.",
+   "core_idea": "Higher storage pressure pushes more gas into the surrounding rock walls, and if pressure rises enough the gas can eventually reach a permeable pathway and escape entirely; the pressure threshold at which this happens is unique to each facility's geology.",
+   "key_points": [
+    "Some gas embeds into facility walls in every storage facility and is never recoverable, even at facility closure.",
+    "Greater storage pressure increases the amount of gas pushed into the walls.",
+    "Beyond a facility-specific pressure threshold, gas can reach a permeable zone and leak out of the facility.",
+    "The escape threshold is determined by the specific local geology, so it differs facility to facility."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct from cushion gas, though depleted reservoirs' pre-existing unrecoverable gas from natural reservoir history offsets their need to inject additional cushion gas."
+   ],
+   "trading_implications": [
+    "Unrecoverable gas is a real economic cost of building/operating storage capacity, and became materially more significant as gas prices rose from the cheap-gas era of the early 1980s."
+   ],
+   "common_misunderstandings": [
+    "Treating cushion gas and physically unrecoverable gas as the same thing \u2014 cushion gas is a deliberately retained operating reserve, while unrecoverable gas is permanently lost into the rock regardless of operating strategy."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Storage geology",
+    "Depleted gas reservoirs",
+    "Cushion gas requirements"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "529",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Geology"
+   }
+  },
+  {
+   "topic": "Depleted gas reservoirs as storage facilities",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Facility Types",
+   "type": "concept",
+   "definition": "A depleted natural gas reservoir \u2014 an emptied natural gas field \u2014 can be refilled and reused as a storage facility, provided its location, pipeline proximity, and geology are suitable.",
+   "core_idea": "Depleted reservoirs are attractive because their geological characteristics are already well documented from years of production monitoring, much of the original extraction equipment can be reused to cut startup costs, and because gas has naturally resided there for millions of years there is little concern about induced geological instability.",
+   "key_points": [
+    "Physical characteristics (max pressure, geological stability) are already well known from prior years of well operation.",
+    "Existing extraction equipment can often be reused, lowering startup costs versus building fresh infrastructure.",
+    "Millions of years of natural gas presence in the reservoir minimizes concerns about geological side effects from reuse.",
+    "Because the reservoir already effectively contains unrecoverable gas from its natural history, no separate unrecoverable-gas barrier needs to be injected.",
+    "Historically the most abundant and cost-effective form of natural gas storage; alternatives must offer either better performance or a location advantage to compete."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with salt caverns (higher cost, higher performance) and aquifers (least desirable) as the other two facility types.",
+    "Ties to physically unrecoverable gas: no need to add an artificial unrecoverable-gas barrier since one already exists naturally."
+   ],
+   "trading_implications": [
+    "Being the cheapest, fastest-to-build option, depleted reservoirs set the baseline economics that competing storage types (salt caverns, aquifers) must beat on performance or location to justify their higher cost."
+   ],
+   "common_misunderstandings": [
+    "Assuming all depleted reservoirs are automatically suitable for conversion \u2014 the author notes not all reservoirs are suitable for refilling."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cushion gas requirements",
+    "Physically unrecoverable gas",
+    "Salt caverns"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "529-530",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Depleted Gas Reservoirs"
+   }
+  },
+  {
+   "topic": "Salt caverns and salt domes as storage facilities",
+   "category": "Natural Gas",
+   "subcategory": "Storage \u2014 Facility Types",
+   "type": "concept",
+   "definition": "Salt caverns are underground storage facilities created by dissolving out salt deposits, offering high-pressure tolerance, low leakage, and strong structural resistance compared to other storage types.",
+   "core_idea": "Salt caverns cost more to develop than depleted reservoirs but outperform them because their strong, low-leak walls tolerate much higher operating pressure, allowing gas to be cycled in and out more frequently \u2014 a major advantage for customers with erratic supply needs; the best sites are salt domes, geological formations up to several miles across and over a mile high, formed when a marine basin evaporated, was buried in sediment, and the lighter salt rose upward through it.",
+   "key_points": [
+    "Salt caverns are more expensive to develop than depleted reservoirs but have superior performance.",
+    "Very little gas leaks out; walls are extremely strong and damage-resistant.",
+    "Higher pressure tolerance allows more frequent injection/withdrawal cycling than other storage types.",
+    "Frequent cycling makes salt caverns well suited to customers with erratic (variable) supply demands.",
+    "Built by injecting water to dissolve a salt deposit, leaving a cavern behind (solution mining).",
+    "Salt domes \u2014 the best type of deposit for this purpose \u2014 can span several miles and exceed a mile in height, formed when an evaporated marine basin was covered in sediment and the lighter salt migrated upward into a dome shape."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Best performer of the three facility types on pressure tolerance and cycling speed (contrast with depleted reservoirs and aquifers).",
+    "Connects to the maximum-pressure and withdrawal-speed concepts: their superior pressure tolerance is what drives faster withdrawal and more frequent cycling."
+   ],
+   "trading_implications": [
+    "High cycling capability makes salt cavern storage particularly valuable for strategies that need to respond to frequent, erratic price or demand swings, despite higher development cost."
+   ],
+   "common_misunderstandings": [
+    "Assuming all salt deposits work equally well \u2014 the author specifically identifies salt domes as the best type of salt deposit for storage development."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Maximum pressure constraint",
+    "Cushion gas requirements",
+    "Depleted gas reservoirs"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "530-531",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Salt Caverns"
+   }
+  }
+ ]
+}

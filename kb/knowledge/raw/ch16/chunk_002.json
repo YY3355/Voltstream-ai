@@ -1,0 +1,236 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Day-type effects on electricity demand",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Electricity consumption on a given day depends systematically on whether it is a weekday, weekend, or holiday, because commercial and industrial activity (and therefore power use) drops when businesses are closed.",
+   "core_idea": "Weekday load is consistently higher than weekend/holiday load since offices, factories, and other non-residential consumers reduce or stop operations, removing a large chunk of demand.",
+   "key_points": [
+    "Weekday demand exceeds weekend/holiday demand across most systems.",
+    "PJM-West consumers used roughly 10% less power on weekends than on weekdays.",
+    "Day-of-week effects are typically incorporated into load models as a categorical or seasonal-style adjustment alongside temperature."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Interacts with hour-of-day and seasonal temperature effects to shape the full hourly load curve."
+   ],
+   "trading_implications": [
+    "Forecasting models for spot/day-ahead power should condition on day type (weekday/weekend/holiday), not just temperature, to avoid systematic bias on non-workdays."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hourly load shape",
+    "Load forecasting model building"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "399-401",
+    "section_hint": "4.1 Spatial Load Forecasting - Weekdays, Weekends, and Holidays"
+   }
+  },
+  {
+   "topic": "Hourly (diurnal) load shape varies by season and day type",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "The shape of the daily load curve changes with season because the underlying driver of consumption shifts between cooling and heating/occupancy behavior.",
+   "core_idea": "In summer, demand peaks in the early afternoon as air conditioning ramps with heat; in winter, demand peaks in the early morning (waking up) and early evening (arriving home), with a trough while people are at work or asleep.",
+   "key_points": [
+    "Summer (August) example: overnight usage is similar on weekdays and weekends, but weekday afternoon usage is much higher than weekend afternoon usage because offices are empty and unair-conditioned on weekends.",
+    "Winter (January) example: weekday demand spikes around a 7 a.m. morning peak, while weekend demand doesn't ramp up until later, peaking around 10 a.m. \u2014 attributed to people sleeping later on weekends.",
+    "Winter also shows a second peak in the early evening when people return home and raise thermostats, versus lowering them during work/sleep hours."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the weekday/weekend demand gap; both feed into a combined temperature + hour-of-day + day-type load model."
+   ],
+   "trading_implications": [
+    "Load forecasts and hourly price shape assumptions should use season-specific and day-type-specific hourly profiles rather than a single average daily shape."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Day-type effects on demand",
+    "Temperature-driven demand"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "399-402",
+    "section_hint": "4.1 Spatial Load Forecasting - Hour of Day"
+   }
+  },
+  {
+   "topic": "Building a simple load forecasting model from historical data",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "A practical approach to model-building starts with plotting historical load data, then fitting a deliberately simple first model before adding complexity.",
+   "core_idea": "Rather than trying to explain all demand drivers at once, a modeler should start with one relationship (e.g., load vs. temperature for a specific hour and day type), fully understand it, and only then expand the model to capture additional effects.",
+   "key_points": [
+    "Start by graphing historical load to see actual patterns before modeling.",
+    "A first model should be narrow in scope, e.g., load in a specific region, hour window, month, and day type.",
+    "Complexity is added incrementally only after the simple model is well understood."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Precedes error analysis, which determines what additional complexity the model needs."
+   ],
+   "trading_implications": [
+    "Analysts building proprietary load or price models should validate a minimal baseline model before layering in additional regressors, to isolate what each addition actually improves."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Error analysis",
+    "In-sample and out-of-sample testing"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "402-403",
+    "section_hint": "4.1 Spatial Load Forecasting - Creating a Model"
+   }
+  },
+  {
+   "topic": "Example linear load-vs-temperature model for PJM-West",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "formula",
+   "definition": "An illustrative simple linear regression relating afternoon summer load to temperature for one region and hour window.",
+   "core_idea": "For PJM-West load between 2 p.m. and 3 p.m. on August weekdays, the author fits a linear model where load has a fixed base level plus an increment per degree of temperature above a 72\u00b0F threshold.",
+   "key_points": [
+    "The model captures the basic relationship that power demand rises with temperature.",
+    "The author explicitly notes the model is not complete at this stage \u2014 it still needs error analysis to find where it performs poorly."
+   ],
+   "formulas": [
+    {
+     "name": "PJM-West 2-3 p.m. August weekday load model",
+     "formula": "Load (MWh) \u2248 32,850 + 750 \u00d7 (T \u2212 72), for T > 72\u00b0F",
+     "variables": {
+      "Load": "estimated regional load in MWh for the 2 p.m.-3 p.m. hour",
+      "32,850": "base load (MWh) at or below 72\u00b0F",
+      "750": "MWh increase per \u00b0F above 72",
+      "T": "temperature in \u00b0F"
+     }
+    }
+   ],
+   "relationships": [
+    "A first-pass model to be refined via error analysis into a more complete forecasting model."
+   ],
+   "trading_implications": [
+    "Such a simple temperature-slope model can serve as a first-order proxy for hourly demand sensitivity to weather, useful for sanity-checking more complex forecasts."
+   ],
+   "common_misunderstandings": [
+    "The model is only valid for the specific hour window, month, and day type it was fit on (2-3 p.m., August, weekdays) \u2014 it is not a general-purpose load model."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Building a simple load forecasting model",
+    "Error analysis"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "402-403",
+    "section_hint": "4.1 Spatial Load Forecasting - Creating a Model / Figure 4.1.11"
+   }
+  },
+  {
+   "topic": "Error analysis in load model development",
+   "category": "Risk",
+   "subcategory": "Model Validation",
+   "type": "concept",
+   "definition": "Error analysis is the systematic comparison of a model's predictions against actual observed load to find where and why the model is wrong.",
+   "core_idea": "Modeling is treated like scientific hypothesis testing: build an initial model, then actively try to find where it fails, and revise it iteratively until the errors are acceptably small or well understood.",
+   "key_points": [
+    "The error of a model is defined as the difference between actual observed load and the model's prediction.",
+    "The process is iterative: identify systematic error patterns, adjust the model, and repeat.",
+    "The goal of error analysis is to explain the specific cases where the model does not work well, not just to report an average error."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows creation of the initial simple model; motivates the in-sample/out-of-sample distinction and the search for specific error sources."
+   ],
+   "trading_implications": [
+    "Systematic, unexplained forecast errors are a signal that a trading/forecasting model is missing a real driver of demand and should not be trusted blindly for pricing decisions."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "In-sample and out-of-sample testing",
+    "Building a simple load forecasting model"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "403",
+    "section_hint": "4.1 Spatial Load Forecasting - Creating a Model / Error Analysis"
+   }
+  },
+  {
+   "topic": "In-sample vs. out-of-sample testing",
+   "category": "Risk",
+   "subcategory": "Model Validation",
+   "type": "definition",
+   "definition": "An in-sample test compares a model's predictions to the same data used to fit the model; an out-of-sample test compares predictions to data the model has not seen.",
+   "core_idea": "In-sample testing checks how well a model fits the data it was built from, while out-of-sample testing checks whether the model generalizes to new, unseen data.",
+   "key_points": [
+    "The author frames in-sample testing as the initial, more basic check performed first.",
+    "Out-of-sample testing is described as a later step, using data not used to build the model."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Part of the broader error analysis process."
+   ],
+   "trading_implications": [
+    "A model that performs well in-sample but poorly out-of-sample is likely overfit and unreliable for forward-looking trading or hedging decisions."
+   ],
+   "common_misunderstandings": [
+    "Good in-sample fit alone does not guarantee a model will predict future, unseen conditions well."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Error analysis in load model development"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "403",
+    "section_hint": "4.1 Spatial Load Forecasting - Error Analysis / Figure 4.1.12"
+   }
+  },
+  {
+   "topic": "Candidate sources of load model error",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Several hypothesized reasons a simple temperature-based load model might systematically misestimate demand, offered as examples of what error analysis should test.",
+   "core_idea": "The author lists three candidate explanations for model error: within-month behavioral drift, temperature-dependent bias (nonlinearity), and day-specific deviations within the weekday/weekend categories.",
+   "key_points": [
+    "Consumer behavior may shift within a month (e.g., late August differs from early August), similar to how May differs from August.",
+    "The model may be biased at temperature extremes \u2014 e.g., air conditioner efficiency may decline in extreme heat, requiring disproportionately more power to deliver the same cooling.",
+    "Some individual weekdays may behave differently from the weekday average \u2014 e.g., workers leaving early on Fridays could reduce demand at specific hours, though the author is uncertain whether this applies at 2 p.m. specifically."
+   ],
+   "formulas": [],
+   "relationships": [
+    "These are candidate hypotheses to be tested as part of error analysis on the simple linear load model."
+   ],
+   "trading_implications": [
+    "Before relying on a simple linear temperature model for pricing or hedging, an analyst should check for nonlinearity at temperature extremes and for day-specific (e.g., Friday) deviations, since both can produce systematic, exploitable forecast bias."
+   ],
+   "common_misunderstandings": [
+    "A linear load-temperature relationship is assumed to hold uniformly, but the author explicitly flags that efficiency losses at extreme heat could break linearity."
+   ],
+   "author_states_vs_inference": "The Friday early-departure effect and its relevance at 2 p.m. is explicitly presented by the author as uncertain/speculative, not confirmed.",
+   "related_topics": [
+    "Error analysis in load model development",
+    "Day-type effects on electricity demand"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "403-405",
+    "section_hint": "4.1 Spatial Load Forecasting - Error Analysis, possible causes"
+   }
+  }
+ ]
+}

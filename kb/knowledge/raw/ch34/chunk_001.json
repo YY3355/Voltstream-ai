@@ -1,0 +1,76 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Trend adjustment in weather derivative temperature modeling",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "concept",
+   "definition": "A modeling choice for weather derivatives in which historical temperature data is corrected for an apparent long-term warming or cooling drift before being used to estimate expected future temperatures, with the year the adjustment calculation begins being a separate and consequential choice.",
+   "core_idea": "Because no single objectively correct historical average temperature exists, analysts must decide whether to detrend the temperature history, and if so, from what starting year \u2014 and that starting-year choice alone can swing the resulting trend meaningfully.",
+   "key_points": [
+    "There is no historically observable 'true' average temperature for a location, so valuing or trading weather derivatives requires the analyst to make explicit modeling assumptions.",
+    "Trend adjustment is one such assumption: deciding whether to correct the historical temperature series for a long-term trend before using it as a baseline.",
+    "If trend adjustment is used, the choice of starting year for the calculation is itself a second important decision, since it can change the outcome substantially.",
+    "In the Paris temperature example, beginning the trend calculation in 1958 (an unusually warm year) produces a different trend result than beginning it in 1963 (an unusually cold year)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Paired with the data truncation decision as one of two key modeling assumptions for weather derivatives"
+   ],
+   "trading_implications": [
+    "Different reasonable choices of trend start-year can produce materially different expected-temperature baselines and therefore different valuations for the same weather derivative contract.",
+    "Traders/valuers should be aware of which start year a counterparty's or vendor's model uses, and consider testing sensitivity to that choice."
+   ],
+   "common_misunderstandings": [
+    "Assuming there is one objective, agreed-upon historical average temperature to model against.",
+    "Treating the trend start year as a neutral technical detail rather than a assumption that can swing results."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Data Truncation",
+    "Weather Derivatives",
+    "Historical Temperature Data"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "610-610",
+    "section_hint": "6.6 Weather Derivatives \u2014 modeling assumptions (trend adjustment)"
+   }
+  },
+  {
+   "topic": "Data truncation in weather derivative temperature modeling",
+   "category": "Derivatives",
+   "subcategory": "Weather Derivatives",
+   "type": "concept",
+   "definition": "A modeling decision about how many years of historical temperature data to include when building the baseline used to value or trade weather derivatives.",
+   "core_idea": "Visual inspection of long temperature records suggests the data alternates between multi-year stretches of relatively stable temperatures and stretches where temperatures are trending, implying older data may be less representative of current conditions and supporting the case for using a shorter, more recent data window.",
+   "key_points": [
+    "Besides trend adjustment, analysts must separately decide the length of the historical data set used to model temperature.",
+    "Visual inspection of historical records (illustrated with the Paris annual average temperature figure) shows apparent multi-year periods of stable temperatures alternating with periods of trending temperatures.",
+    "This pattern raises the possibility that older data in the series is less predictive of current/future temperatures than more recent data, which is a rationale for truncating (shortening) the data set used."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Paired with the trend adjustment decision as one of two key modeling assumptions for weather derivatives"
+   ],
+   "trading_implications": [
+    "Using a shorter, more recent data window versus the full historical record changes the modeled expected temperature baseline and therefore the fair value assigned to a weather derivative."
+   ],
+   "common_misunderstandings": [
+    "Assuming that including more historical data always produces a more accurate model, rather than recognizing older data may be less representative if the climate/period has structurally shifted."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Trend Adjustment",
+    "Weather Derivatives",
+    "Historical Temperature Data"
+   ],
+   "source": {
+    "chapter": 34,
+    "pages": "610-610",
+    "section_hint": "6.6 Weather Derivatives \u2014 modeling assumptions (data truncation)"
+   }
+  }
+ ]
+}

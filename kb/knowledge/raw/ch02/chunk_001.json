@@ -1,0 +1,199 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Local Fragmentation and Volatility of Electricity Spot Markets",
+   "category": "Power Markets",
+   "subcategory": "Spot Markets",
+   "type": "concept",
+   "definition": "Electricity spot markets are inherently local: because power must be delivered the instant it is demanded and cannot be substituted from a different geographic location without pre-arranged transmission, the market fractures into many separate local spot markets, each with its own rules and its own supply/demand balance.",
+   "core_idea": "Because actual demand isn't known in advance and supply has to be arranged ahead of time, an unexpected shift in local demand easily produces a shortage or glut, making local spot prices highly volatile and largely disconnected from neighboring markets.",
+   "key_points": [
+    "Consumers can draw power on demand at any time; the utility must meet it instantly with no ability to substitute power sourced elsewhere.",
+    "Because supply commitments must be arranged in advance, an unexpected demand swing can create a local shortage or surplus.",
+    "Each local spot market sets its own price from local supply and demand, so spot prices can be extremely volatile.",
+    "A price spike in one region (e.g., an unplanned plant outage forcing expensive backup generation) does not necessarily spread to a nearby region if real-time power transfer between the two is not possible \u2014 the two markets can move independently."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with forward-market pricing, which is driven by macroeconomics rather than short-term local imbalances",
+    "Related to regulated vs. deregulated market structure"
+   ],
+   "trading_implications": [
+    "Traders cannot assume price moves in one power market imply similar moves in an adjacent market; correlation across regions depends on whether real-time transfer capacity exists between them."
+   ],
+   "common_misunderstandings": [
+    "It is tempting to assume nearby markets move together the way liquid, transportable commodities do; for electricity this is often false because it cannot be moved/stored freely."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulated vs deregulated markets",
+    "Forward market volatility dampening",
+    "Volatility term structure"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "77-78",
+    "section_hint": "1.2 Trading Markets \u2014 the spot market"
+   }
+  },
+  {
+   "topic": "Regulated vs. Deregulated Power Markets",
+   "category": "Power Markets",
+   "subcategory": "Market Structure and Regulation",
+   "type": "definition",
+   "definition": "Local spot markets differ in how much government controls pricing. A regulated market has prices set by government legislation, typically administered through a government-sponsored monopoly overseen by a regulatory commission, with relatively little trading. A deregulated market allows competitive pricing and was largely designed to encourage trading.",
+   "core_idea": "The degree of government control over a local power market determines how much genuine trading activity that market supports.",
+   "key_points": [
+    "Every municipality can set its own rules governing the physical delivery of power within its boundaries.",
+    "Regulated markets: government-sponsored monopoly, commission oversight, little trading.",
+    "Deregulated markets: competitive pricing, designed to encourage trading."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Local regulation is presented as a companion feature to the local/fragmented nature of spot markets"
+   ],
+   "trading_implications": [
+    "Trading opportunity is concentrated in deregulated markets; regulated markets offer little room for active trading due to administered pricing."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Local fragmentation and volatility of spot markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "78",
+    "section_hint": "1.2 Trading Markets \u2014 spot market regulation"
+   }
+  },
+  {
+   "topic": "Forward Market Mechanics and Its Volatility-Reducing Role",
+   "category": "Power Markets",
+   "subcategory": "Forward Contracts",
+   "type": "market_mechanic",
+   "definition": "The forward market lets buyers and sellers agree on transaction terms ahead of the actual delivery date, giving both sides time to prepare for physical delivery or receipt. A forward trade is typically specified by five terms: the underlying instrument (the commodity and its minimum quality standard), the quantity to be delivered, the delivery price, the delivery date, and the delivery location.",
+   "core_idea": "Letting counterparties line up trades in advance reduces energy-price volatility because it gives producers and consumers time to arrange transport, storage, or backup supply rather than reacting to an immediate imbalance \u2014 this is also why the high volatility and weak cross-region correlation seen in spot markets tends to fade out in the forward market.",
+   "key_points": [
+    "Five defining elements of a forward trade: underlying instrument, quantity, delivery price, delivery date, delivery location.",
+    "Because energy is hard to store and transport, arranging trades ahead of time reduces uncertainty from short-term supply/demand imbalances.",
+    "With more lead time (e.g., a plant outage expected six months out), it is often possible to arrange cheaper backup generation instead of relying on units that can be started immediately \u2014 this is part of why distant forward prices track macroeconomic/seasonal expectations rather than short-term shocks.",
+    "Buying and reselling (trading) happens almost exclusively in the forward market; the exceptions are traders who can immediately deliver a physical asset, or who can buy and then store/relocate it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Volatility term structure (spot vs. forward)",
+    "Local fragmentation and volatility of spot markets"
+   ],
+   "trading_implications": [
+    "Most active trading activity (buying and reselling) is a forward-market phenomenon, not a spot-market one, except for traders positioned to take or move physical delivery immediately."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical and financial settlement",
+    "Volatility term structure"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "78",
+    "section_hint": "1.2 Trading Markets \u2014 forward markets"
+   }
+  },
+  {
+   "topic": "Volatility Term Structure: Spot Markets Are More Volatile Than Distant Forward Contracts",
+   "category": "Risk",
+   "subcategory": "Volatility Structure",
+   "type": "concept",
+   "definition": "Nearby (short-dated) futures/forward contracts exhibit higher volatility than contracts further from expiration, because near-term prices are driven by short-term, fast-moving supply and demand shifts, while distant forward prices are shaped mainly by longer-run seasonal expectations.",
+   "core_idea": "Volatility decreases the further out a contract's expiration is, since near-dated prices reflect immediate, hard-to-predict local conditions while far-dated prices reflect more stable seasonal/macro views.",
+   "key_points": [
+    "The 1st (nearest) contract month is the most volatile, with volatility declining for the 2nd, 3rd, etc. months out, per the source's referenced diagram.",
+    "Driver of the effect: spot/near-term prices respond to volatile short-term supply-demand variation; distant forward prices respond to steadier seasonal expectations."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Forward market mechanics and its volatility-reducing role",
+    "Local fragmentation and volatility of spot markets"
+   ],
+   "trading_implications": [
+    "When assessing price risk, expect nearer-dated positions to carry materially more volatility exposure than longer-dated ones."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward market mechanics"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "78",
+    "section_hint": "1.2 Trading Markets \u2014 'The Spot Market Has Higher Volatility' (Figure 1.2.1)"
+   }
+  },
+  {
+   "topic": "Physical Delivery vs. Financial Settlement of Forward/Futures Contracts",
+   "category": "Derivatives",
+   "subcategory": "Contract Settlement",
+   "type": "market_mechanic",
+   "definition": "A contract can be closed out either by physically transferring the commodity (physical delivery) or by cash-settling the price difference before delivery (financial settlement). Closing out a contract early works by the two counterparties entering an offsetting trade; under financial settlement they simply settle the price difference in cash rather than transferring the commodity.",
+   "core_idea": "Most market participants want price exposure, not the physical commodity, so historically fewer than 1% of futures contracts ever go to physical delivery \u2014 the rest are liquidated (offset) before expiration.",
+   "key_points": [
+    "Historically less than 1 percent of futures contracts go to physical delivery; the remainder are liquidated before being exercised.",
+    "Closing a contract = entering an offsetting trade with the counterparty; under financial settlement, the two sides simply exchange the cash difference in price.",
+    "Example given: a trucking company can hedge diesel exposure by buying crude oil forwards (a correlated, not identical, underlying) \u2014 if the oil/diesel price relationship holds and fuel prices rise, gains on the forward offset higher fuel costs; if fuel prices instead fall, the trucking company's fuel savings are largely offset by losses on the forward position. The company wants only the financial exposure, not the crude oil itself."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Forward market mechanics and its volatility-reducing role"
+   ],
+   "trading_implications": [
+    "Hedging with a correlated (rather than identical) underlying, e.g., crude oil forwards to hedge diesel exposure, locks in cost only to the extent the price relationship between the two commodities continues to hold."
+   ],
+   "common_misunderstandings": [
+    "A hedge using a correlated instrument isn't a guaranteed lock on costs \u2014 it depends on the correlation persisting; if it breaks or moves the 'wrong' direction, expected savings can be eroded by losses on the hedge."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward market mechanics",
+    "Financial instruments taxonomy"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "78-79",
+    "section_hint": "1.2 Trading Markets \u2014 physical and financial settlement"
+   }
+  },
+  {
+   "topic": "Taxonomy of Financial Instruments: Real Assets, Financial Assets, Derivatives",
+   "category": "Derivatives",
+   "subcategory": "Financial Instruments",
+   "type": "definition",
+   "definition": "Trading centers on financial instruments (securities), which fall into three types: real assets (physical commodities like crude oil, electricity, gold, plus legislatively created rights like carbon emissions rights), financial assets (contracts conferring an ownership interest in a company \u2014 stocks \u2014 a lien on a company \u2014 bonds \u2014 or currencies), and derivatives (contracts whose value is derived from other financial instruments). To count as a financial instrument, an asset must be tradable, meaning it can be legally assigned to someone else for a cash payment.",
+   "core_idea": "Nearly all energy market transactions take the form of derivatives rather than direct trades of the physical commodity or of financial assets.",
+   "key_points": [
+    "Real assets = physical commodities + legislatively created rights (e.g., carbon emissions rights).",
+    "Financial assets = ownership interest (stocks), a lien on a company (bonds), or currencies.",
+    "Derivatives = contracts that derive their value from other financial instruments; the vast majority of energy transactions fall in this category.",
+    "Tradability requirement: an asset must be legally assignable to another party for a cash payment to qualify as a financial instrument."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical delivery vs. financial settlement",
+    "Forward market mechanics"
+   ],
+   "trading_implications": [
+    "Because most energy exposure is taken via derivatives rather than physical assets, understanding the underlying instrument a derivative references is central to trading it."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical delivery vs. financial settlement"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "79-80",
+    "section_hint": "1.2 Trading Markets \u2014 Financial Instruments (Figure 1.2.2)"
+   }
+  }
+ ]
+}

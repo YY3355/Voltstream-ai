@@ -1,0 +1,204 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Pipeline transportation charge components",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "definition",
+   "definition": "The set of standard fee types that make up what a shipper pays a pipeline to move gas, as itemized in pipeline tariffs.",
+   "core_idea": "Pipeline transportation cost is built from several distinct charge types \u2014 some fixed, some variable, some paid in gas rather than cash \u2014 rather than a single price.",
+   "key_points": [
+    "Commodity charge: a variable, per-unit charge for the gas actually transported.",
+    "Reservation charge: a fixed monthly fee paid to reserve transportation capacity, independent of how much gas is actually shipped.",
+    "Fuel usage: gas physically lost/consumed in transit, commonly taken by the pipeline as in-kind payment to fuel the compressors that move the gas.",
+    "GRI charge: a small fixed U.S. pipeline charge that funds the nonprofit Gas Research Institute.",
+    "Receipt adder and delivery adder: fixed price adjustments that translate a nearby benchmark price into the price at the specific receipt point or delivery point, respectively.",
+    "Postage stamp rate: a single flat transportation charge that applies pipeline-wide on a pipeline with only one rate zone, regardless of actual distance shipped."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Delivery adder and receipt adder both key off a nearby benchmark price rather than being set independently."
+   ],
+   "trading_implications": [
+    "A shipper's all-in transport cost mixes fixed elements (reservation charge, GRI charge) with volumetric ones (commodity charge, fuel usage), so cost per unit shipped falls as utilization rises."
+   ],
+   "common_misunderstandings": [
+    "Fuel usage is not a cash fee \u2014 it is gas volume that never arrives, effectively paid in kind."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline tariffs",
+    "Rate zones"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "517-518",
+    "section_hint": "5.1 Natural Gas Transportation \u2014 glossary of charges"
+   }
+  },
+  {
+   "topic": "Tariffs, volume, and rate zones",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "definition",
+   "definition": "Tariffs are the public rate documents pipelines file describing their transportation charges; volume is the quantity of gas moved; zones are the geographic segments a pipeline is divided into for rate-setting purposes.",
+   "core_idea": "Pipeline transportation pricing is publicly documented (tariffs) and can vary by geographic segment of the pipeline (zones) rather than being uniform end to end.",
+   "key_points": [
+    "Tariffs are commonly public and can be found on the pipeline's own site or the relevant regulator's site (e.g., the eFERC site in the U.S.).",
+    "Volume refers simply to the quantity of gas transported.",
+    "Zones divide a pipeline into different geographic areas that can carry different rates; a 'postage stamp' pipeline is the special case of just one zone."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Zones are the mechanism by which a pipeline can charge differently from a simple single postage-stamp rate."
+   ],
+   "trading_implications": [
+    "Traders can look up actual pipeline rates directly from filed tariffs rather than relying on estimates."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline transportation charge components"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "517-518",
+    "section_hint": "5.1 Natural Gas Transportation \u2014 glossary"
+   }
+  },
+  {
+   "topic": "Buyer-seller gas contract tiers: interruptible, baseload, firm",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "market_mechanic",
+   "definition": "Three levels of commercial commitment used in contracts between gas buyers and sellers, distinct from (though similarly named to) pipeline transportation service tiers.",
+   "core_idea": "Buyer-seller gas contracts range from fully optional short-term deals to legally binding firm obligations, with an intermediate 'best effort' tier in between.",
+   "key_points": [
+    "Short term interruptible contracts: brief deals (days to end of month) where the trade only happens if the seller has supply, the buyer wants it, and transportation is available; neither party is obligated otherwise.",
+    "Baseload contracts: an interruptible-type contract where both sides make a 'best effort' to perform daily; may use firm transportation, interruptible transportation, or a mix, and rely on mutual trust rather than binding obligation.",
+    "Firm contracts: legally binding \u2014 the seller must deliver and the buyer must receive, with legal recourse for breach; firm buyer-seller contracts almost always pair with firm pipeline transportation contracts so the pipeline itself is obligated to reserve capacity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Firm buyer-seller contracts require firm pipeline transportation to back them; baseload and short-term interruptible contracts do not."
+   ],
+   "trading_implications": [
+    "The choice of contract tier trades off certainty of delivery against cost and flexibility.",
+    "Firm contracts carry real legal/financial exposure on nonperformance, unlike interruptible or baseload arrangements."
+   ],
+   "common_misunderstandings": [
+    "Baseload and firm sound similar in commitment but baseload is a 'best effort' understanding, not a legally binding obligation like firm."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline firm vs. interruptible transportation service"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "518",
+    "section_hint": "Transportation Contracts Between Buyers and Sellers"
+   }
+  },
+  {
+   "topic": "Investing in redundant compressors to grow firm-contract capacity",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "example",
+   "definition": "A worked example showing how a pipeline with unreliable compressors can increase profit by adding backup compressors, allowing it to safely sell more firm (vs. interruptible) capacity.",
+   "core_idea": "Because firm-contract nondelivery penalties vastly exceed firm-contract delivery revenue, a pipeline's profit is highly sensitive to reliability; investing in redundant compressors to raise reliability lets the pipeline sell more high-margin firm capacity instead of low-margin interruptible capacity, sharply increasing profit even after higher maintenance costs.",
+   "key_points": [
+    "Setup: 5 compressor stations in series, each up 85% of the time (1 week/year scheduled maintenance). The pipeline can tolerate a single down compressor (losing 20% capacity per offline unit) but fails when two adjacent compressors are down simultaneously.",
+    "Pricing: firm transportation pays $1/MMBtu delivered but costs the pipeline $12.50/MMBtu if undelivered; interruptible transportation pays $0.15/MMBtu delivered and costs nothing if undelivered.",
+    "Baseline: the pipeline was unable to operate at all 8% of days and ran at full capacity only 42.5% of the time; with 60% of capacity sold as firm and 91.7% of firm volume actually delivered, nondelivery penalties consumed essentially all the profit from delivered firm volume.",
+    "Strategy: add a second (mostly idle) compressor at each station to raise overall pipeline reliability, which allows more capacity to be safely sold as firm rather than interruptible.",
+    "Result: capacity generating $0.15 on 40% utilization shifted to capacity generating $1 on 80% utilization, roughly a 100x increase in profit, which more than offset doubled maintenance costs."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Firm/interruptible pricing asymmetry ties directly to the buyer-seller firm vs. interruptible contract distinction."
+   ],
+   "trading_implications": [
+    "Reliability investment can be evaluated as a real option: it converts low-margin interruptible sales into high-margin firm sales by shrinking the tail risk of nondelivery penalties.",
+    "Because nondelivery penalties are far larger than delivery revenue for firm contracts, small improvements in operating reliability can produce outsized profit swings."
+   ],
+   "common_misunderstandings": [
+    "It may look wasteful to add a compressor that is idle most of the time, but its value comes from reliability/optionality, not utilization."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Buyer-seller gas contract tiers: interruptible, baseload, firm"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "518-520",
+    "section_hint": "Trading Example \u2014 Pipelines as Insurance Providers"
+   }
+  },
+  {
+   "topic": "Swing contracts with interruptible transportation for opportunistic gas purchases",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "trading_strategy",
+   "definition": "A worked example of a chemical processor with a substitute feedstock (corn stover) using nonbinding swing contracts and interruptible transportation to buy natural gas only when it is cheapest.",
+   "core_idea": "A buyer with a flexible, substitutable feedstock can minimize gas cost by only buying on a nonbinding, as-available basis during low-demand periods, since firm transportation would be unnecessary (and wasteful) for a buyer who only wants gas when almost no one else does.",
+   "key_points": [
+    "Framing: regional gas markets act like an auction \u2014 the highest bidders get available supply at that moment, everyone else waits.",
+    "Processor's flexibility: it can substitute natural gas with corn stover (agricultural waste) as a methanol feedstock, so it only wants gas when it's cheap.",
+    "Because the processor only buys when prices (and thus overall demand) are low, this naturally coincides with times of low demand for pipeline transportation too \u2014 so firm transportation reservation is unnecessary.",
+    "Strategy: a swing contract \u2014 a nonbinding agreement to purchase gas on an as-available basis using nonguaranteed (interruptible) transportation.",
+    "Risk: low \u2014 the processor pays low prices in periods of little competing demand; the downside is that during high-demand periods, essentially no supply is available and the processor must fall back on corn stover instead.",
+    "Conclusion: pairing swing contracts with interruptible transportation is described as the lowest-cost way to buy physical gas, at the cost of supply certainty."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Swing contracts are a practical application of the short term interruptible contract tier described among buyer-seller contract types."
+   ],
+   "trading_implications": [
+    "Buyers with a substitutable input can structure purchasing around price/demand troughs rather than reserving guaranteed supply, trading supply certainty for lower average cost.",
+    "This strategy only works because the buyer has a real fallback (corn stover) for periods when gas is unavailable."
+   ],
+   "common_misunderstandings": [
+    "A swing/interruptible strategy is not a hedge against gas being unavailable \u2014 it deliberately accepts that risk in exchange for lower cost, relying on a substitute feedstock rather than guaranteed supply."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Buyer-seller gas contract tiers: interruptible, baseload, firm"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "520-521",
+    "section_hint": "Trading Example \u2014 Short Term Interruptible Trades"
+   }
+  },
+  {
+   "topic": "Force majeure clause",
+   "category": "Contracts / Legal",
+   "subcategory": "Contract Terms",
+   "type": "definition",
+   "definition": "A standard contract clause, from the French for 'greater force,' that releases both parties from liability when extraordinary, uncontrollable events (war, natural disaster, etc.) prevent performance.",
+   "core_idea": "Force majeure protects both counterparties from breach liability when performance becomes impossible due to events outside either party's control.",
+   "key_points": [
+    "Covers events like wars and natural disasters that are outside the control of either contracting party.",
+    "Its effect is to excuse one or both parties from fulfilling contract obligations under such circumstances."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Relevant to firm contracts, where nonperformance otherwise carries legal recourse."
+   ],
+   "trading_implications": [
+    "Even firm, legally binding contracts carry an escape valve for extraordinary disruptions, which matters when assessing counterparty delivery risk."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Buyer-seller gas contract tiers: interruptible, baseload, firm"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "521",
+    "section_hint": "Footnote on force majeure"
+   }
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Sample variance and standard deviation correction (n-1)",
+   "category": "Statistics",
+   "subcategory": "Volatility Estimation",
+   "type": "formula",
+   "definition": "When variance or standard deviation is estimated from a sample rather than the full population, dividing by the sample size n produces a value that consistently understates true volatility; dividing by n-1 instead corrects this bias.",
+   "core_idea": "Sampled data systematically underestimates true variance/volatility, so the standard fix is to divide the sum of squared deviations by n-1 rather than n when computing sample variance and standard deviation.",
+   "key_points": [
+    "Using the full-population formula (divide by n) on a sample understates actual variance and volatility.",
+    "The correction is to divide by n-1 instead of n.",
+    "For large samples (e.g., n=1,001) the n vs n-1 difference is negligible.",
+    "For small samples, the n-1 correction can materially change the result."
+   ],
+   "formulas": [
+    {
+     "name": "Sample variance (n-1 correction)",
+     "formula": "s^2 = sum((x_i - x_bar)^2) / (n - 1)",
+     "variables": {
+      "x_i": "individual observed value",
+      "x_bar": "sample mean",
+      "n": "number of observations in the sample"
+     }
+    }
+   ],
+   "relationships": [
+    "Feeds directly into standard deviation (square root of sample variance), which underlies volatility, Sharpe/Information ratios, and rolling/exponentially weighted volatility estimates."
+   ],
+   "trading_implications": [
+    "Risk managers estimating volatility from limited historical price samples should use the n-1 correction, especially with short lookback windows, to avoid systematically underestimating risk."
+   ],
+   "common_misunderstandings": [
+    "Assuming the n vs n-1 distinction is always immaterial; it matters for small sample sizes even though it's negligible for large ones."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exponentially weighted volatility",
+    "Rolling volatility windows",
+    "Sharpe Ratio"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "314-315",
+    "section_hint": "3.3 Statistics - Estimating Variance and Standard Deviation from Sampled Data"
+   }
+  },
+  {
+   "topic": "Rolling-window volatility and the outlier drop-off problem",
+   "category": "Statistics",
+   "subcategory": "Volatility Estimation",
+   "type": "concept",
+   "definition": "A rolling volatility estimate uses a fixed-length window of recent daily returns (e.g., the trailing year), adding one new observation and dropping the oldest each day; volatility is typically computed from the natural-log daily return, ln(price_t/price_t-1).",
+   "core_idea": "Because a rolling window gives every included observation equal weight, when a large historical price shock ages out of the window the estimated volatility can drop sharply overnight even though nothing unusual happened in current prices.",
+   "key_points": [
+    "Daily return is commonly calculated as the natural log of current price divided by previous price.",
+    "In a rolling window, one new observation enters and one leaves each period.",
+    "If the observation that leaves was a large outlier, volatility can fall dramatically even with no new market-moving event.",
+    "Example given: using a 7-day window around a 9.21% one-day crude oil jump (June 11, 1986), the volatility estimate fell from 3.5% to 2.1% the day after the jump aged out of the 7-day sample.",
+    "This matters because instruments like options are highly sensitive to volatility inputs, so a sudden drop in the volatility estimate (unrelated to any real change in market risk) can produce large, hard-to-explain P&L swings in an options portfolio."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the use of exponentially weighted volatility as an alternative that avoids the abrupt drop-off effect."
+   ],
+   "trading_implications": [
+    "Traders and risk managers should be prepared to explain P&L moves in vol-sensitive instruments that stem purely from an outlier aging out of a rolling-window estimate, not from any actual change in market conditions."
+   ],
+   "common_misunderstandings": [
+    "Interpreting a sudden fall in a rolling-window volatility estimate as evidence that the market has actually become calmer, when it may simply reflect an old outlier leaving the sample."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Sample variance and standard deviation correction (n-1)",
+    "Exponentially weighted volatility"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "315-316",
+    "section_hint": "3.3 Statistics - Exponentially Weighted Volatility"
+   }
+  },
+  {
+   "topic": "Exponentially weighted volatility (lambda decay)",
+   "category": "Statistics",
+   "subcategory": "Volatility Estimation",
+   "type": "concept",
+   "definition": "An alternative to equal-weighted rolling-window volatility that applies a decay factor (lambda, \u03bb) so more recent return observations count more heavily than older ones, with today (t=0) weighted 100% and weight declining progressively for older days.",
+   "core_idea": "Exponential weighting lets new large price moves affect the volatility estimate immediately while old observations fade out gradually rather than dropping out abruptly, avoiding the sudden jumps caused by simple rolling windows.",
+   "key_points": [
+    "Lambda (\u03bb) is the decay factor controlling how quickly weight falls off with age.",
+    "The current day's observation (t=0) gets full (100%) weighting; earlier days get progressively less weight.",
+    "A very large new observation immediately moves the volatility estimate, then its influence shrinks steadily over time (exponential decay) rather than vanishing abruptly.",
+    "Effectively caps the number of observations that meaningfully matter, since weights eventually become negligible.",
+    "At \u03bb=0.94, observations older than 75 days carry less than 1% of the weight of the most recent observation; at \u03bb=0.96 this threshold is 113 days; at \u03bb=0.98 it is 228 days."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Addresses the abrupt-drop-off weakness of simple equal-weighted rolling-window volatility."
+   ],
+   "trading_implications": [
+    "Choice of lambda is a tradeoff between responsiveness to new information (lower \u03bb) and stability/longer effective memory (higher \u03bb)."
+   ],
+   "common_misunderstandings": [
+    "Assuming exponentially weighted volatility ignores old data entirely rather than merely down-weighting it asymptotically toward negligible influence."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Rolling-window volatility and the outlier drop-off problem",
+    "Sample variance and standard deviation correction (n-1)"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "316-317",
+    "section_hint": "3.3 Statistics - Exponentially Weighted Volatility"
+   }
+  },
+  {
+   "topic": "Risk/reward ratios: Sharpe Ratio and Information Ratio",
+   "category": "Risk",
+   "subcategory": "Performance Measurement",
+   "type": "formula",
+   "definition": "A risk-adjusted performance measure that divides an investment's average return by the standard deviation (variability) of its returns; when both are measured net of a benchmark, this is commonly called a Sharpe Ratio or Information Ratio.",
+   "core_idea": "Neither average return nor volatility alone tells you whether an investment was good; dividing return by volatility (a reward-to-risk ratio) gives a single comparable measure, with higher ratios indicating better risk-adjusted performance.",
+   "key_points": [
+    "Sharpe Ratio and Information Ratio work the same way: average return (net of a benchmark) divided by variability of return (net of a benchmark).",
+    "Higher ratios are considered better investments.",
+    "These ratios rely on historical data being representative of future/actual performance; they are not predictions.",
+    "They can be distorted by changing market conditions or by accounting practices that artificially smooth earnings.",
+    "The ratio only behaves sensibly when returns are positive; when returns are negative, higher volatility actually produces a less negative (seemingly better) ratio, which is misleading."
+   ],
+   "formulas": [
+    {
+     "name": "Reward-to-risk ratio (Sharpe/Information Ratio)",
+     "formula": "Ratio = average return / standard deviation of returns",
+     "variables": {
+      "average return": "mean return of the investment, net of a benchmark if applicable",
+      "standard deviation of returns": "variability of the return series, net of the same benchmark"
+     }
+    }
+   ],
+   "relationships": [
+    "Built on the standard deviation concept described in the sample variance/volatility discussion.",
+    "Connects to portfolio diversification: combining imperfectly correlated strategies improves overall risk/reward versus any single strategy."
+   ],
+   "trading_implications": [
+    "Use average-return-to-volatility ratios cautiously as historical, backward-looking measures rather than guarantees of future performance.",
+    "Be alert to accounting smoothing or regime changes that can inflate a ratio's apparent attractiveness.",
+    "Do not trust the ratio at face value when returns are negative, since higher volatility mechanically improves (less negative) it."
+   ],
+   "common_misunderstandings": [
+    "Treating Sharpe/Information Ratio as a forward-looking prediction rather than a historical, data-dependent measure.",
+    "Not realizing that with negative returns, a higher-volatility strategy can show a better (less negative) ratio than a lower-volatility one, which is a distortion, not genuine outperformance."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Portfolio diversification benefit of combining strategies",
+    "Sample variance and standard deviation correction (n-1)"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "317-318",
+    "section_hint": "3.3 Statistics - Risk/Reward Measures"
+   }
+  },
+  {
+   "topic": "Portfolio diversification benefit of combining imperfectly correlated strategies",
+   "category": "Risk",
+   "subcategory": "Portfolio Construction",
+   "type": "example",
+   "definition": "Combining two or more trading strategies whose returns are not perfectly correlated reduces overall portfolio volatility below that of any individual strategy, and can even produce a risk-free profit in an extreme illustrative case.",
+   "core_idea": "Evaluating a single strategy's risk/reward in isolation is misleading; unless strategies are perfectly correlated, combining them lowers combined volatility, and in the author's stylized example, combining a strategy that profits on natural gas price rises with one that profits on price falls produces a guaranteed risk-free profit.",
+   "key_points": [
+    "Unless returns of different strategies are perfectly correlated, combining them always produces lower volatility than holding any single strategy alone.",
+    "Illustrative example: Strategy A makes $1 when natural gas rises and loses $0.98 when it falls; Strategy B makes $1 when natural gas falls and loses $0.99 when it rises.",
+    "Viewed alone, if the market is equally likely to rise or fall, Strategy A (the long strategy) is the better standalone choice.",
+    "However, combining both strategies together produces a risk-free profit regardless of market direction, illustrating the diversification benefit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the Sharpe/Information Ratio discussion by cautioning against evaluating a strategy's risk/reward in isolation from the rest of a portfolio."
+   ],
+   "trading_implications": [
+    "Evaluate candidate strategies for their marginal effect on total portfolio risk/reward, not solely on their standalone Sharpe/Information Ratio.",
+    "Look for strategies with low or negative correlation to existing book positions to reduce overall portfolio volatility."
+   ],
+   "common_misunderstandings": [
+    "Picking the single 'better' strategy based on standalone expected return/risk while ignoring that combining it with an oppositely-exposed strategy could produce a superior, lower-risk (or risk-free) combined outcome."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Risk/reward ratios: Sharpe Ratio and Information Ratio",
+    "Correlation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "317-318",
+    "section_hint": "3.3 Statistics - Risk/Reward Measures"
+   }
+  },
+  {
+   "topic": "Correlation between two price series",
+   "category": "Statistics",
+   "subcategory": "Correlation Analysis",
+   "type": "concept",
+   "definition": "Correlation describes a direct linear relationship between two variables \u2014 when two statistically correlated series move together, high values in one tend to coincide with high values in the other.",
+   "core_idea": "Energy traders often want to know whether two price series (e.g., natural gas prices in two regions, or peak electricity prices versus natural gas prices) move together; correlation assumes and measures the strength of a linear relationship between them.",
+   "key_points": [
+    "Correlation implies a direct linear relationship: when one series is high, the correlated series tends to also be high.",
+    "Example given: natural gas prices in New York and New Jersey are usually correlated.",
+    "Plotting two price series over time, or using a scatter diagram (one series vs. the other on the same day), are two visual ways to check for a relationship before quantifying it.",
+    "A scatter diagram can visually reveal that a straight line captures the primary relationship between two series (e.g., peak electricity prices and natural gas prices).",
+    "Correlation specifically assumes a linear (straight-line) relationship between the two data series.",
+    "The correlation coefficient, abbreviated r, is introduced as the standard single-number summary of the strength of this relationship, analogous to how average and standard deviation summarize a single data series (the chunk ends before defining r's calculation)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the portfolio diversification discussion: low correlation between strategies/assets is what produces diversification benefits."
+   ],
+   "trading_implications": [
+    "Checking correlation between related markets (e.g., regional gas prices, or power vs. gas prices) helps identify relationships useful for hedging, spread trading, or diversification."
+   ],
+   "common_misunderstandings": [
+    "Assuming correlation captures any kind of relationship between two series, when it specifically measures the strength of a linear (straight-line) relationship."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Portfolio diversification benefit of combining strategies"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "318-320",
+    "section_hint": "3.3 Statistics - Correlation"
+   }
+  }
+ ]
+}

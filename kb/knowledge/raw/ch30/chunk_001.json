@@ -1,0 +1,216 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "One-sided vs. two-sided VAR",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "definition",
+   "definition": "A classification of VAR methodology based on whether only the loss side of the P&L distribution is examined (one-sided) or both the profit and loss sides are examined (two-sided).",
+   "core_idea": "One-sided VAR looks only at the downside of the distribution and answers 'how much could I lose,' while two-sided VAR treats the distribution symmetrically as a volatility measure, producing the same VAR number regardless of whether the position is long or short.",
+   "key_points": [
+    "Risk managers differ on which convention to use, and firms vary in how they compute the underlying percentile.",
+    "Two-sided VAR forces a single VAR figure independent of long/short direction, making it primarily a volatility measure rather than a worst-case-loss measure.",
+    "One-sided VAR is the more commonly used convention because risk managers typically want VAR to represent worst-case loss or stress-event exposure, not general volatility."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Two-sided VAR is effectively a volatility measure and converges with the general concept of portfolio variance/volatility discussed alongside it."
+   ],
+   "trading_implications": [
+    "A desk reporting one-sided VAR is communicating worst-case downside risk, which is more directly actionable for setting loss limits than a two-sided figure."
+   ],
+   "common_misunderstandings": [
+    "Two-sided VAR does not distinguish between a long and short position's risk direction \u2014 it collapses both to the same number, which can obscure directional exposure."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Portfolio VAR",
+    "Stress Testing"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK"
+   }
+  },
+  {
+   "topic": "Portfolio VAR and diversification",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "concept",
+   "definition": "Combining VAR across multiple assets into a single portfolio-level figure, accounting for diversification effects rather than simply summing individual VARs.",
+   "core_idea": "Diversification reduces combined risk below the sum of individual risks because assets don't move in lockstep \u2014 losses in one position can be offset by gains or flat performance in another \u2014 so portfolio VAR must incorporate the relationship (correlation) between the assets, not just their individual sizes.",
+   "key_points": [
+    "Diversification benefit arises because extreme moves in different assets may partially cancel out rather than compounding.",
+    "The degree of diversification benefit depends entirely on the correlation between the assets being combined.",
+    "At one extreme (perfect positive correlation, e.g. two identical crude oil contracts), there is no diversification benefit and combined risk is simply additive (twice the risk of one contract).",
+    "At the other extreme (perfect negative correlation, e.g. offsetting buy and sell positions in the same commodity), the risks can fully cancel each other out."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Portfolio VAR depends on the correlation structure discussed in the variance-of-correlated-assets concept.",
+    "Contrasts with simple one-sided/two-sided VAR, which is typically discussed at the single-asset level."
+   ],
+   "trading_implications": [
+    "A trader combining positions should evaluate their correlation, not just their individual sizes, since highly correlated positions add risk roughly additively while offsetting positions can materially reduce portfolio VAR.",
+    "Holding two large but oppositely-directed positions in the same underlying (e.g. a buy and a sell agreement on crude oil) can largely neutralize price risk despite large notional size on each leg."
+   ],
+   "common_misunderstandings": [
+    "Portfolio VAR is not the simple sum of individual asset VARs except in the special case of perfect positive correlation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variance of correlated assets",
+    "Observed/simulated vs. parametric VAR"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   }
+  },
+  {
+   "topic": "Observed/simulated VAR vs. parametric VAR",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "market_mechanic",
+   "definition": "Two mathematical approaches for combining the VAR of multiple assets into a portfolio-level figure.",
+   "core_idea": "Observed/simulated VAR values a constructed portfolio directly against historical or simulated price paths and reads VAR off the resulting P&L distribution, while parametric VAR models each asset with a known statistical distribution (typically normal) and combines them analytically.",
+   "key_points": [
+    "Observed/simulated VAR: build the portfolio, value it across past data or a simulation of possible future price movements, and sample the resulting earnings distribution directly to find VAR.",
+    "Parametric VAR: model each asset's returns as a well-known distribution (commonly normal) and combine analytically.",
+    "Parametric VAR is convenient because a normal distribution requires only two parameters \u2014 mean and standard deviation.",
+    "In practice, the mean (average return) is often approximated as zero for financial assets, simplifying the parametric calculation further."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Parametric VAR's reliance on normal-distribution assumptions connects to the 'Weaknesses of VAR' item, since real P&L is often not normally distributed."
+   ],
+   "trading_implications": [
+    "Parametric VAR is computationally simpler and faster to update but inherits the normal-distribution assumption's blind spots for asymmetric or fat-tailed positions.",
+    "Observed/simulated VAR can capture non-normal, asymmetric portfolio behavior more faithfully but requires historical data or a simulation engine."
+   ],
+   "common_misunderstandings": [
+    "Assuming normally distributed returns (as parametric VAR does) is a simplifying assumption, not a universal fact about asset P&L \u2014 the author explicitly notes P&L is typically not normally distributed."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Portfolio VAR and diversification",
+    "Weaknesses of VAR"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   }
+  },
+  {
+   "topic": "Volatility and variance terminology",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "definition",
+   "definition": "Standard terminology linking volatility (standard deviation, \u03c3) and variance (\u03c3\u00b2) as used in portfolio risk calculations.",
+   "core_idea": "Volatility (\u03c3) is a synonym for a portfolio's standard deviation; variance (\u03c3\u00b2) is its square and is a synonym for mean square error.",
+   "key_points": [
+    "Volatility is abbreviated with lowercase sigma (\u03c3) and is synonymous with standard deviation.",
+    "Variance is the square of volatility, abbreviated sigma squared (\u03c3\u00b2), and is synonymous with mean square error.",
+    "Portfolio variance is calculated as the sum of the component assets' variances plus a correlation adjustment term (the author describes this conceptually without spelling out the full equation)."
+   ],
+   "formulas": [
+    {
+     "name": "Variance-volatility relationship",
+     "formula": "\u03c3\u00b2 = \u03c3 \u00d7 \u03c3",
+     "variables": {
+      "\u03c3": "volatility / standard deviation of the portfolio or asset",
+      "\u03c3\u00b2": "variance / mean square error"
+     }
+    }
+   ],
+   "relationships": [
+    "Underpins parametric VAR, which relies on mean and standard deviation to characterize a normal distribution.",
+    "The correlation adjustment referenced here is the mathematical basis for the diversification effects described in 'Portfolio VAR and diversification.'"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Portfolio VAR and diversification",
+    "Observed/simulated vs. parametric VAR"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   }
+  },
+  {
+   "topic": "Weaknesses of VAR: single-number abstraction and asymmetric payoffs",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "risk",
+   "definition": "Structural limitations of VAR as a single summary statistic, particularly its poor fit for portfolios with asymmetric P&L profiles.",
+   "core_idea": "Because VAR compresses portfolio risk into one number, it abstracts away the underlying shape of a portfolio's P&L distribution, which is often not normally distributed \u2014 assets with option-like, asymmetric payoffs are especially poorly represented.",
+   "key_points": [
+    "Real-world P&L is typically not normally distributed \u2014 the chance of making versus losing money is not equal.",
+    "Energy assets that behave like options often have asymmetric payoffs that a single VAR number does not capture well.",
+    "Example: a peaking power plant sits idle most of the year, accumulating small operational losses daily, but on a handful of hot summer afternoons it can be dispatched for large windfall profits.",
+    "This peaking-plant profile is an example of a portfolio that benefits from volatility, which a standard VAR figure is not designed to highlight."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to parametric VAR's normal-distribution assumption, which breaks down for exactly this kind of asymmetric payoff.",
+    "Motivates the use of stress testing alongside VAR."
+   ],
+   "trading_implications": [
+    "For option-like or asymmetric-payoff assets (e.g. peaking plants), relying on VAR alone can understate the value of volatility/optionality and should be supplemented with other analysis.",
+    "A portfolio that shows frequent small VAR-consistent losses may still be a good structural bet if its asymmetric upside (rare large windfalls) is being under-represented by the VAR metric."
+   ],
+   "common_misunderstandings": [
+    "A low or unremarkable VAR does not necessarily mean an asset is unattractive \u2014 asymmetric-payoff assets can be structurally valuable despite frequent small losses."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Observed/simulated vs. parametric VAR",
+    "Stress testing"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Weaknesses of VAR"
+   }
+  },
+  {
+   "topic": "Stress testing as a supplement to VAR",
+   "category": "Risk",
+   "subcategory": "Value at Risk",
+   "type": "market_mechanic",
+   "definition": "Additional scenario-based analysis used alongside VAR to cover risks that a single VAR number cannot capture.",
+   "core_idea": "Because VAR is a simplifying approximation that trades insight for ease of use, risk managers often run supplementary stress tests \u2014 scenario analyses of specific extreme events \u2014 to fill in gaps VAR misses.",
+   "key_points": [
+    "VAR's value comes precisely from being simple enough to implement and to be regularly reviewed by business leaders, but that simplicity means it cannot handle every type of portfolio well.",
+    "No single general model can address every special case, which is why VAR is limited rather than worthless.",
+    "Common stress tests examine specific scenarios, such as expected losses in a financial crisis or a natural disaster, and are often reported alongside daily VAR."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly addresses the gaps identified in 'Weaknesses of VAR: single-number abstraction and asymmetric payoffs.'"
+   ],
+   "trading_implications": [
+    "Risk desks should treat VAR as one input among several, pairing it with scenario/stress reporting for portfolios with known asymmetric or crisis-sensitive exposure."
+   ],
+   "common_misunderstandings": [
+    "Stress testing is not a replacement for VAR \u2014 the author frames it as an augmentation, since VAR remains useful precisely because of its simplicity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weaknesses of VAR: single-number abstraction and asymmetric payoffs"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Stress Testing"
+   }
+  }
+ ]
+}

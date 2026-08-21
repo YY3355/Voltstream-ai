@@ -1,0 +1,257 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Physical turbine characteristics and plant example drive model time-frame and structure",
+   "category": "Power Markets",
+   "subcategory": "Tolling Agreements / Asset Modeling",
+   "type": "concept",
+   "definition": "The physical operating characteristics of a plant's generation units determine both the time granularity a tolling valuation model should use and how the plant must be broken into discrete components.",
+   "core_idea": "Fast-starting gas turbines can be modeled at high frequency, while slow-ramping steam turbines that need sustained runtime to reach efficiency favor a longer time-frame model; a concrete example used is a combined-cycle gas plant with two efficient-but-slow steam turbines and two smaller, less-efficient gas turbines that both assist steam-turbine startup and run independently as peakers.",
+   "key_points": [
+    "Gas turbines start and stop quickly, so they can support fine time-granularity models.",
+    "Steam turbines take time to reach top efficiency and want to run for extended periods, favoring longer model time frames.",
+    "Example plant: 2 combined-cycle steam turbines (large, efficient, expensive to maintain, slow to respond) + 2 gas turbines (smaller, less efficient, used for steam-turbine startup heat and as standalone peakers during peak demand).",
+    "Combined-cycle turbines are approximated as having two modes: normal dispatch and maximum dispatch; maximum dispatch is less fuel-efficient but produces more power."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into the operating-scenario framework used to value tolling agreements"
+   ],
+   "trading_implications": [
+    "Mismatching model time-granularity to a unit's physical dispatch behavior risks misvaluing a tolling agreement's optionality"
+   ],
+   "common_misunderstandings": [
+    "Assuming one time-frame or one dispatch curve fits all turbine types in a plant"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spark spread",
+    "operating scenarios",
+    "heat rate"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "428-430",
+    "section_hint": "4.3 Tolling Agreements \u2014 Physical Model of a Power Plant"
+   }
+  },
+  {
+   "topic": "Non-fungibility of electricity across time/location creates hundreds of distinct exposures",
+   "category": "Power Markets",
+   "subcategory": "Risk Management",
+   "type": "concept",
+   "definition": "Each leg of a tolling agreement requires its own electricity and fuel price references tied to a specific time and location, because unlike storable commodities, power at one delivery period is not the same tradeable product as power at another.",
+   "core_idea": "Since electricity generally can't be stored and carried forward (you cannot buy May power and hold it to August), a long-dated tolling agreement can involve several hundred distinct underlying commodities rather than just 'power' and 'fuel,' and this breaks any attempt to aggregate risk into one number.",
+   "key_points": [
+    "Storage difficulty means energy products differ by delivery period even when nominally the same commodity (e.g., August electricity vs. May electricity).",
+    "A multi-year tolling agreement can involve several hundred separate traded commodities over its life.",
+    "It is meaningless to ask 'what's the exposure to the price of electricity' since there is no single electricity price.",
+    "Electricity prices across time/location have historically been uncorrelated, so assuming they move together is risky."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly informs why tolling risk cannot be aggregated leg-to-leg"
+   ],
+   "trading_implications": [
+    "Risk managers must track exposures per leg/instrument rather than netting into a single aggregate figure",
+    "Hedging must match the specific time/location product, not a generic power price"
+   ],
+   "common_misunderstandings": [
+    "Treating 'the price of electricity' as one meaningful number",
+    "Assuming all electricity prices move together"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spark spread",
+    "forward market products",
+    "tolling agreement legs"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "428-429",
+    "section_hint": "4.3 Tolling Agreements \u2014 Underlying Instruments"
+   }
+  },
+  {
+   "topic": "Standard forward power blocks referenced per tolling leg (peak/off-peak/weekend)",
+   "category": "Power Markets",
+   "subcategory": "Forward Markets",
+   "type": "market_mechanic",
+   "definition": "Each monthly leg of a tolling agreement is typically valued/hedged against the specific power block products actually traded in that local forward market.",
+   "core_idea": "Commonly traded forward power contracts are peak power (5\u00d716), off-peak power (7\u00d78), and weekend power (2\u00d716), so a single tolling leg often depends on several distinct instruments at once, which combined with time-of-year effects multiplies the number of largely uncorrelated exposures across the contract's life.",
+   "key_points": [
+    "5\u00d716 power = peak block (5 weekdays, 16 hours per day).",
+    "7\u00d78 power = off-peak block (7 days, 8 hours per day, i.e. nighttime).",
+    "2\u00d716 power = weekend block (2 days, 16 hours per day).",
+    "Each tolling leg can depend on a mix of these instruments rather than one flat power price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the non-fungibility/underlying-instruments concept within a single leg"
+   ],
+   "trading_implications": [
+    "Hedging a tolling leg requires trading the specific block products the local forward market offers, not a single generic power price"
+   ],
+   "common_misunderstandings": [
+    "Assuming a single power price index can hedge an entire monthly leg"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "tolling agreement legs",
+    "day/night operating scenarios"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "428-429",
+    "section_hint": "4.3 Tolling Agreements \u2014 Underlying Instruments"
+   }
+  },
+  {
+   "topic": "Spark spread vs. dispatch rate: the core profitability tradeoff",
+   "category": "Power Markets",
+   "subcategory": "Tolling Agreements / Valuation",
+   "type": "concept",
+   "definition": "A plant's total profitability is driven jointly by its per-unit profit (spark spread) and the quantity of electricity it produces (dispatch rate), and these two factors move against each other.",
+   "core_idea": "Running a plant harder generally requires less fuel-efficient operation (a higher heat rate), which shrinks the per-unit profit margin even as total output rises, so economic dispatch requires balancing spread against volume rather than maximizing either alone.",
+   "key_points": [
+    "Total profitability depends on per-unit profit (spark spread) combined with quantity produced (dispatch rate).",
+    "Higher production levels require more fuel per megawatt (worse heat rate), reducing per-unit profit as output increases.",
+    "Sometimes greater output is worth the lower per-unit margin; other times fuel efficiency matters more \u2014 valuation must find the optimal balance for each period."
+   ],
+   "formulas": [
+    {
+     "name": "Plant profitability (conceptual)",
+     "formula": "Total Profit \u2248 Spark Spread (per-unit profit) \u00d7 Dispatch Rate (quantity produced)",
+     "variables": {
+      "Spark Spread": "profit per MWh, driven by power price minus fuel cost via heat rate",
+      "Dispatch Rate": "quantity of electricity produced, MWh"
+     }
+    }
+   ],
+   "relationships": [
+    "Underpins why operating scenarios must be ranked/chosen by value, not by output or efficiency alone"
+   ],
+   "trading_implications": [
+    "Valuation requires solving for the profit-maximizing operating mode per period, not simply running at max output or max efficiency"
+   ],
+   "common_misunderstandings": [
+    "Assuming maximum output or maximum fuel efficiency alone is the optimal operating choice"
+   ],
+   "author_states_vs_inference": "The explicit formula grouping is our paraphrase of a relationship the author states in prose (spread \u00d7 quantity), not a labeled equation in the source",
+   "related_topics": [
+    "heat rate",
+    "operating scenarios",
+    "dispatch optimization"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "429-430",
+    "section_hint": "4.3 Tolling Agreements \u2014 Physical Model of a Power Plant"
+   }
+  },
+  {
+   "topic": "Operating scenarios simplify turbine-combination optimization",
+   "category": "Power Markets",
+   "subcategory": "Tolling Agreements / Valuation",
+   "type": "concept",
+   "definition": "Rather than optimizing each turbine individually, tolling models group plant configurations into a small number of 'operating scenarios' (e.g., all off, most-efficient units only, all units on) built by summing individual generator capabilities.",
+   "core_idea": "This simplification relies on the assumption that less-efficient turbines are always brought online after more-efficient ones (a merit-order assumption), letting valuation choose among a handful of aggregate scenarios per period instead of searching every turbine combination.",
+   "key_points": [
+    "Example scenarios: all units off, only the most efficient units running, all units running.",
+    "Scenario capability is computed by summing the individual generators' capabilities from a plant capability chart.",
+    "Assumption: less efficient turbines are never activated ahead of more efficient ones."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the plant physical description (steam + gas turbines); extended further by day/night-linked scenarios"
+   ],
+   "trading_implications": [
+    "Valuation reduces to selecting the highest-value scenario per period rather than an intractable combinatorial search"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "merit order",
+    "heat rate",
+    "day/night linked scenarios"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "430-431",
+    "section_hint": "4.3 Tolling Agreements \u2014 Optimal Operating Mode"
+   }
+  },
+  {
+   "topic": "Day/night linkage forces joint valuation of operating scenarios",
+   "category": "Power Markets",
+   "subcategory": "Tolling Agreements / Valuation",
+   "type": "concept",
+   "definition": "Because some turbines (particularly steam turbines) cannot be cheaply shut down and restarted, the profitability of an operating scenario must be evaluated jointly across linked day and night periods rather than optimized period-by-period.",
+   "core_idea": "A single dispatch decision can bind daytime and nighttime operation together \u2014 e.g., a steam turbine may need to keep running at reduced capacity overnight (at a loss) purely to be available for daytime profits \u2014 so scenario valuation must net the day gain against the night loss as one combined outcome; this necessitated two additional named scenarios, 'CC Max' and 'Peaking Only.'",
+   "key_points": [
+    "Steam turbines may be unable to fully shut down and quickly restart due to restart costs, forcing reduced-capacity overnight operation.",
+    "Nighttime and weekend power prices are generally much lower than daytime prices.",
+    "A plant may need to accept an overnight loss in order to capture daytime profit; the scenario's value must combine both periods since one decision drives both.",
+    "'CC Max' scenario: combined-cycle units run at maximum dispatch during the day, drop to their most efficient mode at night to minimize losses.",
+    "'Peaking Only' scenario: added for cases where nighttime prices are so low that running the steam turbines at all is unprofitable, so only the peaking gas turbines operate."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the operating-scenarios framework; reflects the 'no single power price' theme (day vs. night power as different products)"
+   ],
+   "trading_implications": [
+    "Valuation must treat linked day/night dispatch decisions as one joint bet rather than optimizing each period in isolation"
+   ],
+   "common_misunderstandings": [
+    "Assuming each time period (day, night) can be optimized independently when physical restart constraints link them"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "operating scenarios",
+    "peak/off-peak power",
+    "restart costs"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "431-432",
+    "section_hint": "4.3 Tolling Agreements \u2014 Operating Scenarios and Day/Night Power"
+   }
+  },
+  {
+   "topic": "Spark spread option value depends on correlated electricity/fuel random walks",
+   "category": "Derivatives",
+   "subcategory": "Spark Spread Option Pricing",
+   "type": "concept",
+   "definition": "A tolling agreement is effectively a spark-spread option, so its value depends on modeling assumptions about the future joint behavior of electricity and fuel prices.",
+   "core_idea": "Wider spreads (cheap fuel, expensive power) are favorable, but since prices can't be reliably forecast, models typically assume each commodity follows a random walk; because power prices are themselves influenced by fuel prices, these two random walks are correlated rather than independent, so the spark spread's behavior depends on that joint correlated process.",
+   "key_points": [
+    "Fuel is combusted to produce electricity, so a wide spark spread (cheap fuel, expensive power) means higher profit.",
+    "The future electricity/fuel price relationship is unknown at valuation time and must be assumed.",
+    "Standard modeling assumption: each asset follows a random walk, since future prices aren't reliably predictable.",
+    "Because power prices are affected by fuel prices, the two random walks are correlated, not independent, so the spark spread depends on this combined correlated behavior."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the non-fungibility/correlation theme raised for underlying instruments across time and location"
+   ],
+   "trading_implications": [
+    "Option-pricing models for tolling agreements must incorporate electricity-fuel correlation rather than modeling each commodity's price independently"
+   ],
+   "common_misunderstandings": [
+    "Modeling power and fuel prices as independent random walks, which would misstate the spark spread's volatility and value"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spark spread",
+    "random walk",
+    "option pricing"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "432",
+    "section_hint": "4.3 Tolling Agreements \u2014 Correlation Between Electricity and Fuel Prices"
+   }
+  }
+ ]
+}

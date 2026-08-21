@@ -17,7 +17,9 @@ same check ×3 = stop. Pause + report after every task. Engine=claude-cli (subsc
       (checker) ALL PASS: (a) schema valid, (b) rewritten (verbatim guard wired, 0 flags), (c) all 5
       formulas trace to source — NO inventions (1054.35 J, 7.2-7.5 bbl/tonne, heat rate, MWh=MW*h,
       Bcf/MMBtu), (d) source ch/pages correct, (e) skips sensible. ⏸ STOP — full run on explicit go.
-- [ ] 4 — FULL RUN (explicit go): resumable; done/error counts; retry errored once.
+- [x] 4 — FULL RUN. 129/129 chunks done, 0 errors (3 transient claude CLI rc=1 all succeeded on the
+      single retry — deleted their state entries + reran). Aggregate: 911 items, 77 formulas, 1 sensible
+      skip, 0 verbatim-flags (empty human-review queue). Subscription (not token-metered). ✔
 - [ ] 5 — REPORT pdf: cross-check figures vs processing_state.json; caveat says Pass1/unvalidated.
 
 ## Append-only log

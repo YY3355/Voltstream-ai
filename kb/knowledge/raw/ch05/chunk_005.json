@@ -1,0 +1,298 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Heat rate",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "formula",
+   "definition": "Heat rate measures how much fuel energy a power plant needs to consume to produce a unit of electricity, expressed in MMBtu of fuel per MWh of electricity generated.",
+   "core_idea": "A lower heat rate means a plant is more fuel-efficient, since it needs less fuel input per unit of power output; heat rate is the basic yardstick for comparing plant efficiency and for judging when a plant can run profitably.",
+   "key_points": [
+    "Units are MMBtu/MWh, or equivalently Btu/kWh after multiplying by 1,000 (e.g., 8.5 MMBtu/MWh = 8,500 Btu/kWh).",
+    "Typical heat rates range from about 7 to 14 MMBtu/MWh across the plant fleet.",
+    "Efficient natural-gas combined-cycle plants run close to 7 MMBtu/MWh.",
+    "Steam turbines (gas, coal, or nuclear) and modern gas turbines typically run near 10 MMBtu/MWh.",
+    "Higher heat rates (less efficient) are typical of older units or small units used for backup generation."
+   ],
+   "formulas": [
+    {
+     "name": "Heat rate",
+     "formula": "Heat Rate = Fuel Input (MMBtu) / Electricity Output (MWh)",
+     "variables": {
+      "Fuel Input": "MMBtu of fuel consumed by the plant",
+      "Electricity Output": "MWh of electricity produced",
+      "Heat Rate": "MMBtu/MWh (or Btu/kWh when scaled by 1,000)"
+     }
+    }
+   ],
+   "relationships": [
+    "Heat rate is the input used to compute market implied heat rate and spark spread."
+   ],
+   "trading_implications": [
+    "A plant with heat rate H can run profitably (before operating costs) when power price exceeds H times fuel price \u2014 this comparison is the basis of spark-spread trading."
+   ],
+   "common_misunderstandings": [
+    "Heat rate alone does not capture profitability; it must be compared against current fuel and power prices, and it excludes operating costs."
+   ],
+   "author_states_vs_inference": "The heat rate ratio and typical numeric ranges/unit conversion are the author's stated points; the algebraic formula expression (Fuel Input / Electricity Output) is inferred from the described units and example, not quoted verbatim from a figure.",
+   "related_topics": [
+    "Market implied heat rate",
+    "Spark spread"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "193-194",
+    "section_hint": "2.2 Electricity \u2014 Heat rate"
+   }
+  },
+  {
+   "topic": "Market implied heat rate",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "formula",
+   "definition": "The market implied heat rate is the ratio of the current power price to the current fuel price, expressed in the same MMBtu/MWh units as a plant's physical heat rate.",
+   "core_idea": "By comparing the market implied heat rate to a plant's actual heat rate, a trader can tell whether that plant class is currently profitable to run, since the two figures are directly comparable.",
+   "key_points": [
+    "Because comparing power-to-fuel price ratios against plant heat rates is so common, this ratio is given its own name.",
+    "Same units (MMBtu/MWh) as a physical plant heat rate, enabling direct comparison across plant efficiencies."
+   ],
+   "formulas": [
+    {
+     "name": "Market implied heat rate",
+     "formula": "Market Implied Heat Rate = Power Price / Fuel Price",
+     "variables": {
+      "Power Price": "current market price of electricity",
+      "Fuel Price": "current market price of fuel (e.g., natural gas)",
+      "Market Implied Heat Rate": "MMBtu/MWh"
+     }
+    }
+   ],
+   "relationships": [
+    "Compared directly against a plant's physical heat rate to judge which plant efficiencies are currently profitable."
+   ],
+   "trading_implications": [
+    "Traders track market implied heat rate by region to see which plant efficiency classes are economic to dispatch in that region."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Heat rate",
+    "Spark spread"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "193-194",
+    "section_hint": "2.2 Electricity \u2014 Market implied heat rate"
+   }
+  },
+  {
+   "topic": "Spark spread and its variants (dark spread, clean/green spread)",
+   "category": "Power Markets",
+   "subcategory": "Generation Economics",
+   "type": "formula",
+   "definition": "The spark spread is the theoretical gross profit a natural-gas generator could earn by buying fuel and selling power at prevailing market prices, based on the plant's heat rate; it excludes operating costs. The same concept applied to coal is called a dark spread, and versions that account for emissions credits are called clean or green spreads.",
+   "core_idea": "Spark spread translates the heat-rate/price relationship into a dollar profit estimate, giving a quick gauge of gross generation economics for gas plants; naming conventions extend the same idea to other fuels and to emissions-adjusted economics.",
+   "key_points": [
+    "Spark spread is a theoretical/gross profit estimate \u2014 it does not include operating costs.",
+    "Discussing multiple spark spreads requires specifying both the heat rate assumed and the pricing location, since both affect the result.",
+    "Dark spread is the coal-plant equivalent of a spark spread.",
+    "When emissions credit costs are folded into the estimate, the spread is called a 'clean' or 'green' spread (e.g., clean spark spread)."
+   ],
+   "formulas": [
+    {
+     "name": "Spark spread",
+     "formula": "Spark Spread = Power Price \u2212 (Heat Rate \u00d7 Fuel Price)",
+     "variables": {
+      "Power Price": "market price of electricity ($/MWh)",
+      "Heat Rate": "plant heat rate (MMBtu/MWh)",
+      "Fuel Price": "market price of fuel ($/MMBtu)",
+      "Spark Spread": "$/MWh theoretical gross margin, excluding operating costs"
+     }
+    }
+   ],
+   "relationships": [
+    "Built directly from heat rate and market implied heat rate concepts.",
+    "Dark spread and clean/green spread are named variants of the same underlying calculation."
+   ],
+   "trading_implications": [
+    "Traders use spark-spread displays segmented by heat rate and location to see which plant efficiency classes are profitable in each region.",
+    "Because spark spread excludes operating costs, it overstates a plant's true net profitability."
+   ],
+   "common_misunderstandings": [
+    "Spark spread is a gross/theoretical profit measure only \u2014 it is easy to mistake it for actual net plant profitability since operating costs are excluded."
+   ],
+   "author_states_vs_inference": "The named variants (dark spread, clean/green spread) and the exclusion of operating costs are directly from source; the explicit algebraic formula is inferred from the prose description of the spread as fuel-cost-adjusted power price, not quoted from a figure.",
+   "related_topics": [
+    "Heat rate",
+    "Market implied heat rate"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "194",
+    "section_hint": "2.2 Electricity \u2014 Spark spreads"
+   }
+  },
+  {
+   "topic": "Transmission, distribution, and the power grid",
+   "category": "Power Markets",
+   "subcategory": "Physical Infrastructure",
+   "type": "definition",
+   "definition": "Transmission is the bulk transfer of power from a power plant to a substation over high-voltage lines; distribution is the transfer of power from a substation to end consumers over much lower-voltage lines. The interconnected set of plants, transmission lines, and substations forms the power grid.",
+   "core_idea": "Higher voltage is more efficient for moving power long distances but more dangerous, which is why the grid splits into high-voltage transmission and low-voltage distribution segments linked by transformers/substations; the grid's redundant, interconnected structure protects reliability.",
+   "key_points": [
+    "Transformers and substations step voltage up or down between transmission and distribution segments.",
+    "The power grid's redundancy \u2014 multiple routing paths between any two points \u2014 prevents any single line from overloading and helps avoid blackouts from a single point of failure.",
+    "Most power lines are overhead, mounted on poles; buried lines are used in some urban areas but are less reliable and harder to maintain, so burying is uncommon in suburban/rural areas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Voltage choice for transmission vs. distribution is a trade-off among safety, reliability, and efficiency."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Buried lines might seem inherently 'better' or safer, but the author notes they are actually less reliable and harder to maintain than overhead lines."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Transmission losses and voltage trade-offs",
+    "Regional markets and wheeling"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "194-195",
+    "section_hint": "2.2 Electricity \u2014 Transmission and Distribution"
+   }
+  },
+  {
+   "topic": "Transmission losses and the voltage trade-off",
+   "category": "Power Markets",
+   "subcategory": "Physical Infrastructure",
+   "type": "concept",
+   "definition": "Power lost as heat during transmission is proportional to the current flowing on the line; raising voltage lowers current for the same power delivered, which reduces losses, but higher voltage lines are more dangerous and can't be sited everywhere.",
+   "core_idea": "Line losses create an engineering-economic trade-off: utilities want higher voltage to cut losses, but safety and siting constraints limit how high voltage can go in a given location.",
+   "key_points": [
+    "Transmission losses are proportional to current, not directly to power.",
+    "Increasing voltage reduces current (for a given power level), which reduces losses.",
+    "Higher-voltage lines are more dangerous, restricting where they can be used."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly connects to the choice between high-voltage transmission and low-voltage distribution."
+   ],
+   "trading_implications": [
+    "Transmission losses and voltage/siting constraints help explain persistent regional price differences that create wheeling opportunities."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Transmission, distribution, and the power grid",
+    "Regional markets and wheeling"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "195",
+    "section_hint": "2.2 Electricity \u2014 Transmission and Distribution"
+   }
+  },
+  {
+   "topic": "Three-phase AC power",
+   "category": "Power Markets",
+   "subcategory": "Physical Infrastructure",
+   "type": "concept",
+   "definition": "Power is almost always transmitted as three separate oscillating currents (phases) whose waveforms are offset from each other, such that at every point the net current and voltage sum to zero when the three phases are combined.",
+   "core_idea": "Because the three phases cancel out at every point in the circuit, current doesn't need to loop all the way around the grid back to its source \u2014 it can 'dead-end' and cancel locally, which avoids a single-break-shuts-down-everything failure mode like a series circuit.",
+   "key_points": [
+    "In any circuit, net current at every point must be zero \u2014 current can't disappear, so it must be cancelled, moved, or converted (e.g., to heat).",
+    "Three-phase power achieves this cancellation by construction, since the three offset waveforms sum to zero.",
+    "This lets the grid avoid behaving like a chain of serial circuits (e.g., old-style Christmas lights) where one break stops everything.",
+    "Transmission towers typically carry a multiple of three wires; six wires (two sets of three) is common to reduce electromagnetic field strength via smaller conductors.",
+    "Using multiple smaller conductors per phase is called bundling; it helps prevent ionization/corona \u2014 an electrical charge buildup in the air around very large conductors."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Three-phase cancellation is the physical reason all generators on a grid must be frequency-synchronized."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "One might assume power must flow in a complete loop back to its source; three-phase design specifically avoids requiring this."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Grid synchronization risk"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "195-196",
+    "section_hint": "2.2 Electricity \u2014 Transmission and Distribution (three-phase power)"
+   }
+  },
+  {
+   "topic": "Grid frequency synchronization as an operational risk",
+   "category": "Risk",
+   "subcategory": "Grid Reliability",
+   "type": "risk",
+   "definition": "All power plants feeding a shared AC grid must oscillate at exactly the same frequency and phase timing; mismatched frequencies or starting points cause line voltages to interfere destructively rather than cancel properly.",
+   "core_idea": "Frequency synchronization across all generators is a hard physical requirement of AC grids, and keeping it is a core, ongoing TSO responsibility \u2014 a failure risks short circuits, shocks, melted lines, or fires, and it's also a major obstacle to connecting separate grids together.",
+   "key_points": [
+    "If current isn't properly cancelled at every point, it must go somewhere \u2014 causing short circuits/shocks \u2014 or convert to heat, causing melted lines and fires.",
+    "Synchronizing frequency/phase across power plants is described as a major responsibility of each TSO.",
+    "Synchronization mismatches are also a major obstacle to integrating adjoining power grids."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows directly from the three-phase cancellation requirement."
+   ],
+   "trading_implications": [
+    "Synchronization difficulty helps explain why separate interconnects (Eastern, Western, ERCOT) remain largely isolated markets rather than one unified grid."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Three-phase AC power",
+    "Regional markets and wheeling"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "196",
+    "section_hint": "2.2 Electricity \u2014 Transmission and Distribution (synchronization)"
+   }
+  },
+  {
+   "topic": "Regional power markets and wheeling",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "The U.S. has three major synchronized power grids \u2014 the Eastern Interconnect, the Western Interconnect, and ERCOT (Texas) \u2014 within which power can move freely, but prices still vary regionally due to population, industry mix, and weather differences; wheeling is the long-distance transport of power between distinct markets to arbitrage those price differences.",
+   "core_idea": "Even though transmission lines within one interconnect are synchronized and allow power to move over long distances, regional demand and weather differences keep prices heterogeneous, and wheeling power from cheap to expensive regions is a real but loss-exposed trading opportunity.",
+   "key_points": [
+    "The three major U.S. interconnects are separated by the Rocky Mountains (Eastern vs. Western) with ERCOT (Texas) as a third, distinct interconnect.",
+    "All transmission lines within a single interconnect are synchronized, enabling long-distance power transport inside it.",
+    "Prices remain a regional phenomenon even within a synchronized interconnect because of differences in population, industry, and weather.",
+    "Wheeling \u2014 long-distance transmission between fundamentally different markets \u2014 is a source of trading opportunities but can be expensive due to large transmission losses over long distances.",
+    "Wheeling is only profitable if power can be sourced cheaply enough to cover those losses and still be sold profitably in the high-price region."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Wheeling economics depend on the transmission-loss/voltage trade-off discussed earlier."
+   ],
+   "trading_implications": [
+    "Regional price divergence within and across interconnects creates wheeling trade opportunities, but the trade must clear transmission losses to be profitable.",
+    "ERCOT's status as its own distinct interconnect (separate from Eastern/Western) is directly relevant to why ERCOT prices/dynamics can diverge from the rest of the U.S. grid."
+   ],
+   "common_misunderstandings": [
+    "Being on the same synchronized interconnect does not mean uniform prices \u2014 regional demand/weather/industry differences persist even with free electrical connectivity."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Transmission losses and the voltage trade-off",
+    "Grid frequency synchronization as an operational risk"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "196-197",
+    "section_hint": "2.2 Electricity \u2014 Regional Markets"
+   }
+  }
+ ]
+}

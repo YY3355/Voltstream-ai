@@ -1,0 +1,406 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Daily demand pattern in hot weather",
+   "category": "Power Markets",
+   "subcategory": "Demand/Load",
+   "type": "concept",
+   "definition": "The shape of the intraday electricity demand curve on warm days, and how that shape sharpens with temperature extremity.",
+   "core_idea": "On hot days demand climbs through the day and peaks in the mid-afternoon as air conditioning use is heaviest; this peak is much sharper on the hottest days than on milder ones.",
+   "key_points": [
+    "Demand builds steadily through the day on hot days",
+    "Peak occurs mid-afternoon, driven by air conditioning load",
+    "The peak is far more pronounced on the hottest days than on comfortable days",
+    "Milder days show a flatter, less pronounced demand curve"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Seasonal demand for power",
+    "Relationship between temperature and demand"
+   ],
+   "trading_implications": [
+    "Intraday shape of hot-day demand curves informs how peak-hour power products should be valued differently from off-peak"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Peak/off-peak hour definitions",
+    "Seasonal demand and shoulder months"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "183",
+    "section_hint": "2.2 Electricity - hot weather demand"
+   }
+  },
+  {
+   "topic": "Seasonal demand and shoulder months",
+   "category": "Power Markets",
+   "subcategory": "Demand/Load",
+   "type": "concept",
+   "definition": "How total electricity demand varies by season, and why spring/fall are called shoulder months.",
+   "core_idea": "Total power demand is substantially higher in summer and winter than in spring and fall, because the dominant source of demand variability is heating and cooling load rather than baseline industrial/commercial use.",
+   "key_points": [
+    "Summer and winter show distinct demand peaks; spring and fall (shoulder months) show much lower demand",
+    "A baseline level of demand persists year-round from standard industry operating hours, which don't vary much seasonally",
+    "Heating and cooling needs are the biggest variable component of electrical demand",
+    "Demand correlates with temperature; this correlation is also called load",
+    "Seasonal average load varies substantially by region because climates differ"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Daily demand pattern in hot weather",
+    "Temperature-demand relationship and 65\u00b0F threshold"
+   ],
+   "trading_implications": [
+    "Regional climate differences mean seasonal load profiles, and therefore power product valuation, differ by market"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity forward contract structure"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "183-184",
+    "section_hint": "2.2 Electricity - seasonality, weather, and demand"
+   }
+  },
+  {
+   "topic": "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold",
+   "category": "Power Markets",
+   "subcategory": "Demand/Load",
+   "type": "concept",
+   "definition": "The empirical relationship between ambient temperature and electricity demand, anchored around a comfort threshold near 65\u00b0F (18\u00b0C).",
+   "core_idea": "As temperatures move further above or below roughly 65\u00b0F/18\u00b0C, electricity demand rises; the most extreme demand peaks occur on the hottest and coldest days.",
+   "key_points": [
+    "Demand increases as temperature deviates (in either direction) from about 65\u00b0F / 18\u00b0C",
+    "The author illustrates this with mid-Atlantic peak demand events from 2004 to 2006, which occurred on the warmest and coldest days of those years"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Seasonal demand and shoulder months",
+    "Daily demand pattern in hot weather"
+   ],
+   "trading_implications": [
+    "Weather forecasts near the comfort threshold are a key input to short-term demand/load forecasting"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The 2004-2006 mid-Atlantic peak-day example is the author's specific illustrative data, not a universal constant",
+   "related_topics": [
+    "Seasonal demand and shoulder months"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "184",
+    "section_hint": "2.2 Electricity - Figure 2.2.8 temperature vs demand"
+   }
+  },
+  {
+   "topic": "Electricity forward contract structure (fragmented products)",
+   "category": "Power Markets",
+   "subcategory": "Trading Products",
+   "type": "market_mechanic",
+   "definition": "How electricity forward contracts are structured given that power demand is cyclical by time of day, month, and location.",
+   "core_idea": "There is no single uniform 'electricity' commodity \u2014 forwards are traded as hundreds of distinct products differentiated by delivery location, month or season, and time of day (day vs. night), and contracts are normally sized to a full month.",
+   "key_points": [
+    "Forward contracts are typically structured for delivery across an entire month",
+    "Contracts are commonly split into daytime and nighttime blocks within a month",
+    "Example products cited: August daytime power at Cinergy Hub, January nighttime power for delivery in Southern California",
+    "The cyclical nature of demand (time-of-day, seasonal) is why the market fragments into many separately traded products by location, month/season, and time of day"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Peak/off-peak hour definitions and shorthand notation"
+   ],
+   "trading_implications": [
+    "Traders must think in terms of location + month + peak/off-peak block rather than a single fungible electricity price",
+    "Cinergy Hub and SP15/SoCal are cited as example delivery points for month/day-night structured products"
+   ],
+   "common_misunderstandings": [
+    "Treating electricity as a single commodity consistent throughout the year is incorrect \u2014 it is really hundreds of distinct location/time-differentiated products"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seasonal demand and shoulder months"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "184-185",
+    "section_hint": "2.2 Electricity - how power is traded"
+   }
+  },
+  {
+   "topic": "Peak/off-peak hour definitions and shorthand notation",
+   "category": "Power Markets",
+   "subcategory": "Trading Products",
+   "type": "definition",
+   "definition": "Standard terminology and shorthand used to describe which hours/days a power product covers.",
+   "core_idea": "Electricity products specify delivery hours using a weekdays-by-hours shorthand; peak hours are generally daytime (7am-11pm) and off-peak are nighttime, with regional variation in exact definitions.",
+   "key_points": [
+    "Peak hours are typically 7 a.m. to 11 p.m.; off-peak hours are the remaining nighttime hours",
+    "Shorthand format is 'days-of-week x hours-per-day'",
+    "7x24 = all 7 days, 24 hours a day",
+    "Peak power products are commonly 5x16 (weekdays only) or 7x16 (including weekends)",
+    "When weekends are excluded from the peak product, a separate 2x16 product covers weekend peak hours",
+    "Off-peak nighttime power is typically 7x8, running from 11 p.m. to 7 a.m.",
+    "Exact hour definitions for peak/off-peak vary slightly by region"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Electricity forward contract structure (fragmented products)"
+   ],
+   "trading_implications": [
+    "Knowing the shorthand (7x24, 5x16, 7x16, 2x16, 7x8) is necessary to correctly interpret quoted power products"
+   ],
+   "common_misunderstandings": [
+    "Assuming peak/off-peak hour boundaries are identical across all regions \u2014 they are not, each region defines them slightly differently"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity forward contract structure"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "185",
+    "section_hint": "2.2 Electricity - peak/off-peak shorthand"
+   }
+  },
+  {
+   "topic": "Technology-driven shifts in electricity demand (air conditioning example)",
+   "category": "Power Markets",
+   "subcategory": "Demand/Load",
+   "type": "concept",
+   "definition": "How adoption of new technology can permanently reshape the level and pattern of electricity demand, illustrated by air conditioning.",
+   "core_idea": "Widespread adoption of air conditioning transformed summer electricity demand from relatively low to extremely high, which rendered many earlier energy-efficiency studies (from the 1960s-70s) outdated.",
+   "key_points": [
+    "Air conditioning adoption fundamentally changed the dynamic of the power market",
+    "Pre-AC-era energy efficiency studies from the 1960s and 1970s are now considered incorrect because they didn't anticipate this shift",
+    "Demand forecasts and predictions must be updated to reflect changes in technology adoption"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Daily demand pattern in hot weather"
+   ],
+   "trading_implications": [
+    "Long-run demand forecasting must account for technology adoption trends, not just historical weather-demand correlations"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seasonal demand and shoulder months"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "185",
+    "section_hint": "2.2 Electricity - technology and demand"
+   }
+  },
+  {
+   "topic": "Power generation technologies: fossil fuel plants",
+   "category": "Power Generation",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "Overview of how fossil fuel power plants generate electricity and their environmental impact.",
+   "core_idea": "Fossil fuel plants burn oil, natural gas, or coal to create steam that drives a generator; all produce CO2 and other greenhouse gases, with pollution per MWh depending on plant efficiency, and coal is the most polluting fossil fuel by a factor of two to three versus the others.",
+   "key_points": [
+    "Fossil fuel plants burn oil, natural gas, or coal to produce superheated steam that drives a generator",
+    "All fossil fuels produce greenhouse gases (e.g., CO2) when burned",
+    "More efficient plants use less fuel and thus produce less pollution per megawatt generated",
+    "Coal-fired generation is the most polluting fossil fuel, producing two to three times the pollution of oil or natural gas generation"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Heat rate and fossil plants as marginal price setters"
+   ],
+   "trading_implications": [
+    "Fuel choice and plant efficiency affect a plant's emissions profile, which is relevant to environmental/carbon cost considerations in dispatch economics"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Nuclear generation",
+    "Hydroelectric generation"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "185",
+    "section_hint": "2.2 Electricity - Generation"
+   }
+  },
+  {
+   "topic": "Power generation technologies: nuclear",
+   "category": "Power Generation",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "Overview of nuclear power generation and its tradeoffs.",
+   "core_idea": "Nuclear plants use fission to convert water into steam; nuclear fuel is extremely energy-dense (a pound of highly enriched uranium is roughly equivalent to a million gallons of gasoline), but enriched uranium faces supply shortages, environmental concerns, and difficult, unsafe long-term storage once discarded.",
+   "key_points": [
+    "Nuclear generators use nuclear fission to turn water into steam, similar in principle to fossil fuel plants",
+    "Nuclear fuel has very high energy density per unit weight (1 lb enriched uranium \u2248 1 million gallons of gasoline)",
+    "Enriched uranium supply is subject to severe shortages",
+    "Nuclear fuel presents environmental problems and is difficult to store safely once discarded"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Power generation technologies: fossil fuel plants"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power generation technologies: fossil fuel plants",
+    "Hydroelectric generation"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "185-186",
+    "section_hint": "2.2 Electricity - Generation"
+   }
+  },
+  {
+   "topic": "Power generation technologies: hydroelectric",
+   "category": "Power Generation",
+   "subcategory": "Generation Technology",
+   "type": "concept",
+   "definition": "Overview of hydroelectric power generation and its operational constraints.",
+   "core_idea": "Hydroelectric dams use flowing water directly to spin a turbine (no steam involved), trapping a river behind a dam to form a lake; the fall of water from lake level down to the river below drives the turbine, and in some cases operators cannot fully halt water flow without risking flooding downstream communities.",
+   "key_points": [
+    "Hydroelectric generation drives a turbine directly with flowing water rather than using steam",
+    "Dams typically trap river water to form a lake, with the river located several hundred feet below the lake level",
+    "Falling water through the dam spins a water-based turbine to generate electricity",
+    "Depending on river flow and lake capacity, operators may not be able to stop water flow without flooding nearby communities"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Power generation technologies: fossil fuel plants",
+    "Power generation technologies: nuclear"
+   ],
+   "trading_implications": [
+    "Operational flow constraints mean hydro output cannot always be freely dispatched down, which affects supply flexibility"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power generation technologies: fossil fuel plants",
+    "Power generation technologies: nuclear"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "185-186",
+    "section_hint": "2.2 Electricity - Generation"
+   }
+  },
+  {
+   "topic": "Heat rate and fossil fuel plants as marginal price setters",
+   "category": "Power Generation",
+   "subcategory": "Plant Efficiency / Price Formation",
+   "type": "formula",
+   "definition": "Heat rate measures how efficiently a power plant converts fuel into electricity, and why this matters for price formation.",
+   "core_idea": "Heat rate is the ratio of fuel (heat) input to electrical work output; a lower heat rate means a more efficient plant. Fossil fuel plants are typically the marginal producers of power, so in markets that clear at the marginal price, fossil plant heat rates have an outsized influence on the market clearing price of electricity.",
+   "key_points": [
+    "Heat rate expresses plant efficiency as heat input per unit of electrical output",
+    "A lower heat rate indicates a more efficient power plant",
+    "Fossil fuel plants are the most influential plant type for energy trading because they are marginal producers in most markets",
+    "In markets that set clearing price to the marginal price of power, fossil fuel plant heat rates disproportionately drive the electricity price"
+   ],
+   "formulas": [
+    {
+     "name": "Heat Rate",
+     "formula": "Heat Rate = Fuel Input (heat, e.g. Btu or MMBtu) / Electrical Output (e.g. kWh or MWh)",
+     "variables": {
+      "Fuel Input": "heat energy consumed, typically in Btu or MMBtu",
+      "Electrical Output": "electricity generated, typically in kWh or MWh"
+     }
+    }
+   ],
+   "relationships": [
+    "Power generation technologies: fossil fuel plants"
+   ],
+   "trading_implications": [
+    "Heat rate is central to valuing fossil plant economics (e.g., spark spread) since it converts fuel cost into an equivalent electricity cost",
+    "Because fossil plants are often marginal, their heat rates are a key driver of the market clearing price of electricity"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power generation technologies: fossil fuel plants"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "186",
+    "section_hint": "2.2 Electricity - Generation, heat rate"
+   }
+  },
+  {
+   "topic": "Electromagnetic induction principle behind generators",
+   "category": "Power Generation",
+   "subcategory": "Electrical Fundamentals",
+   "type": "concept",
+   "definition": "The basic physical principle of how electric generators produce current, and their reversibility with motors.",
+   "core_idea": "Electricity and magnetism are two aspects of the same underlying force (electromagnetism); spinning a coiled wire inside a magnetic field induces a current, and the same equipment run in reverse (applying voltage) acts as a motor.",
+   "key_points": [
+    "Magnetic fields generate electrical currents and electrical currents generate magnetic fields",
+    "Spinning a coiled wire inside magnets builds up a charge that can be drawn off as electricity, producing a steady current if the wire keeps spinning",
+    "Generators and motors use identical underlying technology; applying voltage to a generator's terminals instead causes its shaft to spin (i.e., it behaves as a motor)"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Circuit fundamentals and Ohm's Law"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Circuit fundamentals and Ohm's Law"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "186-187",
+    "section_hint": "2.2 Electricity - Generators"
+   }
+  },
+  {
+   "topic": "Circuit fundamentals and Ohm's Law",
+   "category": "Power Generation",
+   "subcategory": "Electrical Fundamentals",
+   "type": "formula",
+   "definition": "Basic definitions of an electrical circuit and the relationship between voltage, current, and resistance.",
+   "core_idea": "An electrical circuit is any closed loop containing a voltage source (e.g. generator or battery) and a load; voltage is the potential energy in an electromagnetic field, and current flows from low- to high-voltage areas until equalized (unless continually resupplied by a generator). Ohm's Law (v = iR) relates voltage, current, and resistance/load.",
+   "key_points": [
+    "A circuit is a closed loop of wire containing a voltage source and a load",
+    "A load is any device that consumes electricity (e.g. a light bulb)",
+    "Voltage (v) is the potential energy in an electromagnetic field; current (i) is the flow of electrons; resistance/load is abbreviated R",
+    "Electrons flow from low-voltage to high-voltage areas, equalizing voltage; in a battery this equalization means the battery is dead",
+    "A generator continually recreates voltage, so current keeps flowing indefinitely as long as it runs",
+    "Current speed depends on voltage and load/resistance; if current flows too fast the wire can overheat and potentially melt"
+   ],
+   "formulas": [
+    {
+     "name": "Ohm's Law",
+     "formula": "v = iR",
+     "variables": {
+      "v": "voltage",
+      "i": "current",
+      "R": "resistance (load)"
+     }
+    }
+   ],
+   "relationships": [
+    "Electromagnetic induction principle behind generators"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electromagnetic induction principle behind generators"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "187",
+    "section_hint": "2.2 Electricity - Generators, circuits, Ohm's Law"
+   }
+  }
+ ]
+}

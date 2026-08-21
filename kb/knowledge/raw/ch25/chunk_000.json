@@ -1,0 +1,333 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Secondary electricity markets overview",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "A set of markets that grew up around the core electricity market to handle problems the spot/forward energy market doesn't solve on its own.",
+   "core_idea": "Ancillary services, capacity markets, and PPAs exist to help grids reliably match uncertain, spiky consumer demand to generation; FTRs exist to let traders hedge congestion risk; RECs exist to let renewable generators monetize the environmental attribute of their output separately from the energy itself.",
+   "key_points": [
+    "Ancillary services, capacity markets, and PPAs are grouped together because they all address reliable delivery given uncertain demand.",
+    "FTRs are grouped separately because they address transmission congestion risk, not generation adequacy.",
+    "RECs are grouped separately again because they address renewable-attribute tracking/income, not reliability or congestion.",
+    "Consumer demand can swing 2-3x between peak events (heat waves, cold snaps) and normal periods, which is the root problem these markets respond to."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins ancillary services, capacity markets, PPAs, FTRs, and RECs as distinct sub-markets."
+   ],
+   "trading_implications": [
+    "A trader in a deregulated market may need exposure to several of these markets (not just energy) to fully hedge or monetize a generation or load position."
+   ],
+   "common_misunderstandings": [
+    "These are sometimes lumped together as one 'ancillary' catch-all, but the author distinguishes them by the specific problem each solves (reliability vs. congestion vs. renewable tracking)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ancillary Services",
+    "Capacity Markets",
+    "Power Purchase Agreements",
+    "Financial Transmission Rights",
+    "Renewable Energy Certificates"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "493-494",
+    "section_hint": "4.10 Secondary Electricity Markets - Summary"
+   }
+  },
+  {
+   "topic": "Why peak-driven pricing alone is an unpopular way to fund reliability",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "The economic problem that secondary markets like capacity markets exist to solve: how to pay generators who are needed only rarely, at peak, without relying solely on price spikes.",
+   "core_idea": "If grids build enough capacity for extreme peak demand, much of that capacity sits idle most of the year; the only way to make it economic through energy prices alone is to let prices spike sharply during peaks, which angers consumers, so grids instead created separate payment mechanisms (ancillary services, capacity, PPA markets) to compensate underutilized generation.",
+   "key_points": [
+    "Peak demand from extreme weather can be double or triple demand in normal periods.",
+    "Capacity built for peak events lies idle for extended periods otherwise, so someone must fund its construction/maintenance.",
+    "Allowing energy prices to spike during peak periods is one way to compensate owners of underused plants, but it produces unpopular high consumer bills.",
+    "As an alternative, markets developed ancillary services, capacity, and PPA mechanisms to compensate generators for meeting uncertain demand without relying purely on price spikes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the existence of ancillary services markets and capacity markets."
+   ],
+   "trading_implications": [
+    "Scarcity/peaker economics can show up either as energy price spikes or as separate capacity/ancillary payments depending on market design \u2014 the two are substitutes for compensating idle capacity."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity Markets",
+    "Ancillary Services"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "494",
+    "section_hint": "4.10 Secondary Electricity Markets - intro narrative"
+   }
+  },
+  {
+   "topic": "Ancillary services markets",
+   "category": "Power Markets",
+   "subcategory": "Grid Reliability",
+   "type": "market_mechanic",
+   "definition": "Markets that pay generators to hold back some of their capacity, or to be ready to ramp output, so the grid can balance rapidly changing consumer demand and variable renewable output in real time.",
+   "core_idea": "In deregulated markets, ancillary services markets compensate generators specifically for the ability to increase or decrease output on demand \u2014 a service distinct from and paid for separately from the energy itself.",
+   "key_points": [
+    "In regulated markets, the utility itself takes on the balancing responsibility rather than a market mechanism.",
+    "Failure to match generation to demand can cause blackouts (lines melting under excess load) or brownouts (voltage falling too low).",
+    "The grid cannot control consumer behavior (e.g., turning on a light or running laundry), so it relies on generators to flex output instead.",
+    "Not all generators can participate \u2014 participation requires meeting minimum performance/response requirements that vary by service type and by power grid.",
+    "The four most common ancillary service types are regulation up, regulation down, spinning reserve, and nonspinning reserve."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sits alongside capacity markets and PPAs as a grid-reliability mechanism.",
+    "Connected to frequency response: ancillary services are the tools used to keep grid frequency stable."
+   ],
+   "trading_implications": [
+    "Generators with fast-ramp capability have an additional revenue stream beyond energy sales by offering ancillary services."
+   ],
+   "common_misunderstandings": [
+    "Ancillary services are not just 'extra electricity' \u2014 they specifically compensate the capability/readiness to change output, not output itself."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulation Up",
+    "Regulation Down",
+    "Spinning Reserve",
+    "Nonspinning Reserve",
+    "Frequency Response"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "494-495",
+    "section_hint": "Ancillary Services Markets"
+   }
+  },
+  {
+   "topic": "Regulation up / regulation down",
+   "category": "Power Markets",
+   "subcategory": "Ancillary Services",
+   "type": "definition",
+   "definition": "Ancillary services used to hold grid frequency at 60 hertz by responding to automatic control signals that raise (reg up) or lower (reg down) a generator's output.",
+   "core_idea": "Regulation resources must be able to respond to automated dispatch signals very quickly (about a minute) to fine-tune output and keep grid frequency steady.",
+   "key_points": [
+    "Regulation Up: generator responds to signals to increase production, typically within about a minute.",
+    "Regulation Down: generator responds to signals to decrease production, typically within about a minute.",
+    "Regulation services are tied directly to maintaining 60 hertz frequency on the grid.",
+    "Exact performance requirements vary by power grid/ISO."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A subtype of ancillary services.",
+    "Directly tied to frequency response concept."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ancillary Services Markets",
+    "Frequency Response"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "495",
+    "section_hint": "Ancillary Services Markets - Regulation Up/Down"
+   }
+  },
+  {
+   "topic": "Spinning reserve and nonspinning reserve",
+   "category": "Power Markets",
+   "subcategory": "Ancillary Services",
+   "type": "definition",
+   "definition": "Reserve-type ancillary services that back up regulation resources: spinning reserve is standby capacity already synchronized to the grid but not currently feeding power in; nonspinning reserve is capacity that can synchronize and ramp up within a short window even though it isn't currently connected.",
+   "core_idea": "Reserve generation exists to relieve regulation units so those units can keep doing fast balancing work, with spinning reserve able to respond faster (already connected) than nonspinning reserve (needs time to come online).",
+   "key_points": [
+    "Reserve units are activated to take over for regulation resources, freeing regulation units to keep providing balancing services.",
+    "Spinning (synchronized) reserve: generator is operating/connected to the grid but not currently delivering power; typical startup to full power is about 10 minutes after activation.",
+    "Nonspinning reserve: unit can come online, roughly within 30 minutes to an hour.",
+    "Spinning reserve responds faster than nonspinning reserve because it's already synchronized to the grid."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Subtypes of ancillary services, complementary to regulation up/down."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Spinning reserve does not mean the unit is delivering power to the grid \u2014 it means it is synchronized/operating but held in reserve."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ancillary Services Markets",
+    "Regulation Up",
+    "Regulation Down"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "495",
+    "section_hint": "Ancillary Services Markets - Spinning/Nonspinning Reserve"
+   }
+  },
+  {
+   "topic": "AC grid frequency response",
+   "category": "Power Markets",
+   "subcategory": "Grid Reliability",
+   "type": "concept",
+   "definition": "The relationship between grid-wide generation/consumption balance and the AC system's oscillation frequency, and the corrective actions taken when frequency drifts.",
+   "core_idea": "System frequency depends on generation staying balanced with consumption; when frequency drops too low the grid must increase production or cut consumption, and when it rises too high generators must decrease production or consumption must increase \u2014 which is why ancillary services are framed around frequency maintenance.",
+   "key_points": [
+    "Frequency is the number of oscillations per second on the AC grid.",
+    "Low frequency signals a need to increase production or reduce consumption.",
+    "High frequency signals a need to decrease production or increase consumption.",
+    "Ancillary services are commonly discussed in terms of their role in maintaining system frequency."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains the purpose of regulation up/down and reserve ancillary services."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ancillary Services Markets",
+    "Regulation Up",
+    "Regulation Down"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "495",
+    "section_hint": "Frequency Response"
+   }
+  },
+  {
+   "topic": "Capacity markets",
+   "category": "Power Markets",
+   "subcategory": "Resource Adequacy",
+   "type": "market_mechanic",
+   "definition": "Markets that pay generators (a 'capacity payment') to commit to remaining available for a future operating period, ensuring the grid has enough resources to meet demand years ahead.",
+   "core_idea": "A capacity market typically runs an annual auction several years before the target operating period; winning generators commit to being operational through that period in exchange for a capacity payment, which gives grids forward visibility into resource adequacy and gives generators a stable revenue stream even if they run infrequently.",
+   "key_points": [
+    "A typical capacity market holds an annual auction, held years in advance of the operating period being secured.",
+    "Winners commit to stay operational through the covered period in exchange for a capacity payment.",
+    "Capacity payments incentivize new construction and discourage owners from retiring underutilized generation units.",
+    "Capacity markets provide a stable revenue stream for resources that mainly serve peak demand and otherwise run infrequently."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative/complement to relying on energy price spikes to fund peaking capacity."
+   ],
+   "trading_implications": [
+    "Owners of peaking or seasonal generation can rely on capacity payments as a revenue floor, distinct from energy market revenue."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ancillary Services Markets",
+    "Power Purchase Agreements"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "495-497",
+    "section_hint": "Capacity Markets"
+   }
+  },
+  {
+   "topic": "Power purchase agreements (PPAs)",
+   "category": "Power Markets",
+   "subcategory": "Renewable Procurement",
+   "type": "market_mechanic",
+   "definition": "Contracts in regulated markets where a regulated utility agrees to buy power from a third-party generator, used to secure a sufficient supply of renewable power.",
+   "core_idea": "PPAs let a regulated utility lock in renewable supply from third-party generators, functioning as one of the tools (alongside ancillary services and capacity markets) grids use to secure adequate generation resources.",
+   "key_points": [
+    "PPAs are described in the context of regulated markets, where the regulated utility signs directly with third-party generators.",
+    "Their stated purpose in this text is specifically to secure renewable power supply."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Grouped with ancillary services and capacity markets as demand/supply-adequacy tools."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity Markets",
+    "Renewable Energy Certificates"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "494",
+    "section_hint": "Summary - Power Purchase Agreements"
+   }
+  },
+  {
+   "topic": "Financial transmission rights (FTRs)",
+   "category": "Power Markets",
+   "subcategory": "Congestion Risk",
+   "type": "risk",
+   "definition": "Financial instruments that let market participants hedge the cost of congestion incurred when transmitting power across the grid between two points.",
+   "core_idea": "FTRs offset congestion costs for a specific delivery path on the grid, but because congestion can move in either direction relative to the position held, an FTR can produce either a positive or a negative outcome for its owner.",
+   "key_points": [
+    "FTRs are a hedge specifically for congestion costs, not general price risk.",
+    "They give participants a way to offset the cost of transmitting power over the grid.",
+    "In most cases, FTRs can result in either positive or negative outcomes to the holder \u2014 they are not a one-directional protection."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct from ancillary services/capacity/PPA group \u2014 addresses congestion risk rather than resource adequacy."
+   ],
+   "trading_implications": [
+    "A trader delivering power to a specific grid point can use FTRs to manage congestion cost exposure, but must recognize the position can lose money as well as hedge it."
+   ],
+   "common_misunderstandings": [
+    "FTRs are not a guaranteed one-way protection against congestion cost \u2014 outcomes can be negative for the holder."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Secondary electricity markets overview"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "494",
+    "section_hint": "Summary - Financial Transmission Rights"
+   }
+  },
+  {
+   "topic": "Renewable energy certificates (RECs)",
+   "category": "Power Markets",
+   "subcategory": "Renewable Procurement",
+   "type": "market_mechanic",
+   "definition": "Tradable credits that let owners of renewable generation sell the renewable attribute of their electricity separately from the electricity itself.",
+   "core_idea": "RECs give renewable generators a second income stream by letting them sell the environmental/renewable attribute of their power, and are commonly purchased by load-serving entities to satisfy renewable-acquisition obligations; they also let a grid track how much renewable generation has actually been delivered.",
+   "key_points": [
+    "RECs are often purchased by load-serving entities to meet obligations to acquire specified amounts of renewable energy.",
+    "RECs provide a second source of income to renewable generators such as wind and solar producers.",
+    "REC markets provide a way to track renewable contributions once power is placed onto the grid.",
+    "In a deregulated market, the REC market is described as a way to incentivize construction of new renewable generation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Complements PPAs as a renewable-generation revenue/procurement mechanism."
+   ],
+   "trading_implications": [
+    "Renewable generators can monetize RECs independently of their energy sales, and buyers (e.g., load-serving entities) may need to source RECs separately from energy to meet compliance obligations."
+   ],
+   "common_misunderstandings": [
+    "A REC represents the renewable attribute of power, not the power itself \u2014 a buyer of RECs is not necessarily buying the underlying electricity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power Purchase Agreements"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "494",
+    "section_hint": "Summary - Renewable Energy Certificates"
+   }
+  }
+ ]
+}

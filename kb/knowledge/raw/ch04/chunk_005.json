@@ -1,0 +1,317 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Spot vs. forward natural gas price volatility and seasonality",
+   "category": "Natural Gas",
+   "subcategory": "Spot vs Forward Markets",
+   "type": "concept",
+   "definition": "Forward natural gas prices follow a regular, predictable seasonal pattern, while spot prices move erratically because they reflect short-term, localized supply and demand shocks rather than a smooth seasonal curve.",
+   "core_idea": "Because forward markets have time to arrange transportation and adjust supply, they trade in a smooth seasonal pattern; spot markets react instantly to whatever is happening right now, so they are much noisier and more volatile.",
+   "key_points": [
+    "Forward prices show a regular, highly predictable seasonal trend.",
+    "Spot prices do not show the same seasonality and instead appear erratic.",
+    "Spot volatility tends to be higher than forward volatility."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Driven by the physical constraints on storing/transporting natural gas on short notice (see companion topic)."
+   ],
+   "trading_implications": [
+    "Risk models should not assume spot price behavior mirrors forward seasonality; spot exposure carries higher volatility risk than an equivalent forward position."
+   ],
+   "common_misunderstandings": [
+    "Assuming spot prices should track the same seasonal curve as forward prices."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Storage and transport constraints on natural gas",
+    "Spot correlation across locations"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Spot Prices"
+   }
+  },
+  {
+   "topic": "Physical constraints on storing and transporting natural gas",
+   "category": "Natural Gas",
+   "subcategory": "Spot vs Forward Markets",
+   "type": "concept",
+   "definition": "Natural gas cannot be costlessly moved between locations or stored by most end users, so once there isn't enough lead time to arrange transport, the price link between two locations breaks down.",
+   "core_idea": "Gas must be physically moved to where it's needed, and most market participants lack storage access, so on short notice buyers are forced to transact in whichever local market (forward or spot) is available on the day gas is needed, rather than arbitraging across time or location.",
+   "key_points": [
+    "Natural gas in one location can't be exchanged for gas in another location without physically moving it there.",
+    "If there isn't enough time to arrange transportation, the price linkage between source and destination locations disappears.",
+    "Storing natural gas requires specialized facilities that most market participants do not have access to.",
+    "Without storage access, buyers can't purchase gas cheaply on the spot market and hold it for later use.",
+    "Typical customers must buy either in the forward market or on the spot market on the day the gas is actually used."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Root cause of higher spot volatility and weaker spot-market cross-location correlation."
+   ],
+   "trading_implications": [
+    "Physical storage or transport access is itself a source of trading advantage/optionality unavailable to most participants."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot vs forward volatility and seasonality",
+    "Spot correlation across locations"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Spot Prices"
+   }
+  },
+  {
+   "topic": "Spot vs forward correlation across locations",
+   "category": "Natural Gas",
+   "subcategory": "Spot vs Forward Markets",
+   "type": "concept",
+   "definition": "In the forward market, prices at different locations stay highly correlated because there's time to arbitrage gas between them; in the spot market that arbitrage isn't possible, so cross-location correlation breaks down.",
+   "core_idea": "Forward-market correlation across locations is enforced by the threat of arbitrage (shipping gas from a cheap location to an expensive one), bounded only by transport and storage costs; the spot market has no such mechanism because neither supply nor demand can shift location on short notice.",
+   "key_points": [
+    "In the forward market, most natural gas prices at different locations are highly correlated because participants could otherwise profit by shifting gas between locations.",
+    "The only constraint on that forward arbitrage trade is the cost of transporting and storing the gas.",
+    "In the spot market, this arbitrage isn't possible \u2014 supply can't be moved in on short notice and demand can't be moved out.",
+    "Example given: most homeowners can't relocate to another state for a week just because gas prices are better there."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Companion effect to higher spot volatility; both stem from the physical constraints on storage/transport."
+   ],
+   "trading_implications": [
+    "Basis trades that rely on location-to-location correlation are more reliable in the forward market than in the spot market."
+   ],
+   "common_misunderstandings": [
+    "Assuming spot prices at different hubs will move together the way forward prices do."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Storage and transport constraints on natural gas",
+    "Basis price (common term)"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Spot Prices"
+   }
+  },
+  {
+   "topic": "Long-run natural gas supply as a function of price",
+   "category": "Natural Gas",
+   "subcategory": "Prices, Supply, and Demand",
+   "type": "concept",
+   "definition": "Over long time horizons, the usual supply-and-demand-sets-price logic reverses for natural gas: expected demand and price levels determine how much supply gets developed, because higher prices make previously uneconomical reserves worth extracting.",
+   "core_idea": "For exploration and development decisions, higher expected natural gas prices justify tapping harder-to-reach reserves and make new exploration a better investment, so in the long run supply follows price and demand rather than the other way around.",
+   "key_points": [
+    "Over very long time frames, treating natural gas prices as simply a function of supply and demand is misleading.",
+    "Higher prices make extraction from difficult-to-reach reserves more economical.",
+    "Higher prices also make new exploration a more attractive investment.",
+    "Exploration companies forecast delivery costs and add a target profit margin when planning supply.",
+    "Higher demand leads to higher prices, and those higher prices in turn make it economical to develop new supply."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Long-run supply dynamic contrasts with short-run spot market behavior, which is purely supply/demand driven and inelastic."
+   ],
+   "trading_implications": [
+    "Long-dated price forecasts should be built around expected demand, not current supply, since supply itself adjusts to price over time."
+   ],
+   "common_misunderstandings": [
+    "Treating natural gas supply as fixed/independent of price in long-run price modeling."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather-driven demand for natural gas"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Prices, Supply, and Demand"
+   }
+  },
+  {
+   "topic": "Weather as the primary national demand driver for natural gas",
+   "category": "Natural Gas",
+   "subcategory": "Demand and Weather",
+   "type": "concept",
+   "definition": "On a national level, temperature is the single largest driver of natural gas demand, with a roughly linear relationship between colder temperatures and higher consumption.",
+   "core_idea": "Natural gas demand is seasonal and temperature-driven: it's used for heating in winter and for generating electricity to run air conditioning in summer, making demand lowest in spring/fall and highest in the coldest winter months.",
+   "key_points": [
+    "Temperature is the single largest national factor affecting natural gas demand.",
+    "Winter demand comes from heating use.",
+    "Summer demand comes from gas-fired electricity generation used for air conditioning.",
+    "Demand is lowest in spring and fall and peaks during the coldest winter months.",
+    "There is a linear relationship between colder temperatures and increased natural gas consumption."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Predicting demand is largely a weather-forecasting exercise, which in turn feeds long-run supply decisions."
+   ],
+   "trading_implications": [
+    "Weather forecasts (especially cold-snap risk) are a primary input for natural gas demand and price forecasting."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Long-run natural gas supply as a function of price",
+    "Natural gas end users"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Demand and Weather"
+   }
+  },
+  {
+   "topic": "Natural gas end users: industrial, residential, and electrical generation",
+   "category": "Natural Gas",
+   "subcategory": "Users of Natural Gas",
+   "type": "concept",
+   "definition": "The three largest categories of natural gas consumers are industrial clients, residential clients, and power plants, with gas-fired power generation being the fastest-growing of the three since 1990.",
+   "core_idea": "Each user segment values natural gas for a different property (industrial: instant on/off with no wasted fuel; residential: home heating and appliances; power generation: lower emissions than coal/oil), and gas-fired generation has grown the fastest of the three since 1990.",
+   "key_points": [
+    "The three largest natural gas user groups are industrial clients, residential clients, and power plants.",
+    "Industrial users value natural gas because it ignites and extinguishes instantly, unlike coal which keeps burning and wastes fuel after a furnace is shut off; used for metal/glass manufacturing, cooking, dehumidification, and waste incineration.",
+    "About half of homes in North America use natural gas for heating, which is the largest residential use; other residential uses include kitchen ranges, water heaters, clothes dryers, and outdoor grills.",
+    "Gas-fired power plants are the fastest-growing user segment and most power plants built since 1990 are gas-fired.",
+    "Gas-fired power plants produce fewer greenhouse gas emissions than coal- or oil-fired plants.",
+    "Some gas power plants run year-round while seasonal plants typically shut down in winter when gas prices peak."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Electrical generation demand ties back to the weather-driven demand concept (summer AC load)."
+   ],
+   "trading_implications": [
+    "Seasonal power plants that idle in winter reduce gas demand from the power sector exactly when heating demand is highest, a partially offsetting dynamic worth modeling separately from residential/industrial demand."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Weather as the primary national demand driver for natural gas"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Users of Natural Gas"
+   }
+  },
+  {
+   "topic": "Natural gas common terms glossary",
+   "category": "Natural Gas",
+   "subcategory": "Terminology",
+   "type": "definition",
+   "definition": "A set of standard natural gas market terms: All-in Price, Basis Price, Burner Tip, Citygate, Dry Natural Gas, Hub, and Wet Natural Gas.",
+   "core_idea": "These terms describe how gas is priced at a location relative to a benchmark (all-in/basis price), where physical handoffs occur (citygate, burner tip, hub), and gas composition (dry vs. wet).",
+   "key_points": [
+    "All-in Price: the price of natural gas at a specific location, equal to the benchmark location's price plus the basis price.",
+    "Basis Price: the price difference between a specific location and the benchmark location (Henry Hub in the U.S.); driven by transportation costs and storage capability between the two areas.",
+    "Burner Tip: an end-user of natural gas.",
+    "Citygate: the point where the municipal distribution system takes possession of natural gas for delivery to retail customers.",
+    "Dry Natural Gas: natural gas that is almost pure methane.",
+    "Hub: an interconnection point between two or more natural gas pipelines.",
+    "Wet Natural Gas: natural gas containing substantial hydrocarbons other than methane, or substantial impurities."
+   ],
+   "formulas": [
+    {
+     "name": "All-in price",
+     "formula": "All-in Price = Benchmark (Henry Hub) Price + Basis Price",
+     "variables": {
+      "All-in Price": "delivered price at a specific location",
+      "Benchmark Price": "price at the benchmark hub (e.g. Henry Hub)",
+      "Basis Price": "price differential vs. the benchmark, driven by transport/storage costs"
+     }
+    }
+   ],
+   "relationships": [
+    "Basis price ties directly to the forward-market cross-location correlation concept."
+   ],
+   "trading_implications": [
+    "Basis trading is fundamentally a bet on transportation/storage cost dynamics between a location and the benchmark hub."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot vs forward correlation across locations",
+    "Western gas markets"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Western U.S. natural gas market characteristics",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets",
+   "type": "market_mechanic",
+   "definition": "The Western U.S. natural gas market is geographically isolated by the Rocky Mountains, heavily dependent on gas for electricity, weakly linked to Henry Hub pricing, and constrained by very limited storage.",
+   "core_idea": "Western gas demand is driven by hot-summer air conditioning load and competes with/depends on Pacific Northwest hydropower, while California's import-heavy market and the region's minimal storage capacity make prices prone to sharp swings and largely decoupled from NYMEX/Henry Hub basis.",
+   "key_points": [
+    "The Rocky Mountains separate the Western U.S. gas market from the rest of the country.",
+    "Electrical generators across the region rely on natural gas as a primary fuel; demand is especially high in the hot southern West Coast summers for air conditioning.",
+    "Hydroelectric power from the Pacific Northwest is the major competing power source, so precipitation and snowmelt can significantly affect regional gas prices during peak demand.",
+    "Most of the region has mild winters.",
+    "California is the largest natural gas user in the region and trading there centers on imports from Canada and the Desert Southwest.",
+    "Storage capacity in the region is extremely limited, which can cause sharp price movements during peak demand.",
+    "Western basis prices are not highly correlated with NYMEX (Henry Hub) futures because the region doesn't directly import gas from the Gulf Coast.",
+    "Substantial gas production occurs east of the Rockies (Wyoming, Utah, Colorado), but most of that gas flows to the Midwest rather than to West Coast population centers."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates the basis price concept and the weak cross-location correlation discussed for the spot market."
+   ],
+   "trading_implications": [
+    "Western basis trades should be modeled against regional hydro conditions and import flows rather than assuming a stable Henry Hub linkage.",
+    "Limited storage means Western price spikes during peak demand periods can be sharper and less predictable than in better-stored regions."
+   ],
+   "common_misunderstandings": [
+    "Assuming Western basis moves in step with Henry Hub the way better-connected regions do."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas common terms glossary",
+    "Spot vs forward correlation across locations"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Western Gas Markets"
+   }
+  },
+  {
+   "topic": "Midwestern U.S. natural gas market: winter consuming region",
+   "category": "Natural Gas",
+   "subcategory": "Regional Markets",
+   "type": "concept",
+   "definition": "The Midwest is described as an industrialized region with cold winters that is a major natural-gas-consuming region during the winter months.",
+   "core_idea": "Cold Midwestern winters drive it to be a major winter consumption region for natural gas, consistent with the earlier point that heating demand is the dominant seasonal driver.",
+   "key_points": [
+    "The Midwestern U.S. is an industrialized region with cold winters.",
+    "The Midwest is a major consuming region during the winter months."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the weather-driven demand concept to a specific region."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "Source text for this region is cut off mid-sentence in the provided chunk; only the points stated before the cutoff are included.",
+   "related_topics": [
+    "Weather as the primary national demand driver for natural gas",
+    "Western U.S. natural gas market characteristics"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Midwestern Gas Markets"
+   }
+  }
+ ]
+}

@@ -1,0 +1,409 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Salt Bed Storage Caverns",
+   "category": "Natural Gas",
+   "subcategory": "Storage - Salt Caverns",
+   "type": "concept",
+   "definition": "Salt bed caverns are an alternative to salt dome caverns, carved out of shallower, thinner salt formations (typically a couple hundred feet thick) by dissolving the salt with circulated water.",
+   "core_idea": "Salt beds are geologically inferior to domes for storage purposes \u2014 thinner and wider, so more prone to collapse, with more insoluble rock that slows gas movement, and generally costlier to build and maintain.",
+   "key_points": [
+    "Used in areas where well-formed salt domes are not available.",
+    "Much shallower and thinner than domes, roughly a couple hundred feet in height.",
+    "Wide, thin geometry makes salt bed caverns more prone to collapse than dome caverns.",
+    "Higher content of insoluble rock slows the rate at which gas can flow through the facility.",
+    "Generally more expensive to excavate and maintain than salt domes."
+   ],
+   "relationships": [
+    "Contrasts with salt dome caverns as the other primary salt-cavern storage type."
+   ],
+   "trading_implications": [
+    "Higher cost and slower gas flow likely reduce a salt-bed facility's cycling speed and deliverability compared to a dome facility, affecting its value for fast-turnaround trading strategies."
+   ],
+   "common_misunderstandings": [
+    "Treating all 'salt cavern' storage as interchangeable when domes and beds differ meaningfully in geometry, durability, flow rate, and cost."
+   ],
+   "author_states_vs_inference": "All points from source except the trading_implications line, which is inference.",
+   "related_topics": [
+    "Salt Dome Storage",
+    "Gas Storage Capacity"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "532",
+    "section_hint": "5.2 Natural Gas Storage \u2014 salt beds"
+   }
+  },
+  {
+   "topic": "Salt Cavern Pressure and Temperature Engineering",
+   "category": "Natural Gas",
+   "subcategory": "Storage - Salt Caverns",
+   "type": "concept",
+   "definition": "Salt caverns hold gas at high pressure \u2014 often about double a standard pipeline's pressure \u2014 which forces the use of heavier-grade, high-temperature- and corrosion-resistant pipes, fittings, and valves.",
+   "core_idea": "Because gas temperature rises with pressure, gas discharged from a highly pressurized salt cavern can be extremely hot, so all extraction equipment must be rated for both high pressure and high temperature/corrosion conditions.",
+   "key_points": [
+    "Salt caverns are often pressurized to roughly double standard pipeline pressure.",
+    "Extraction pipes and fittings must be heavier-grade than standard pipeline equipment as a result.",
+    "Gas temperature increases with pressure, so discharged gas can be very hot.",
+    "Pipes, fittings, and valves must be rated for high-temperature gas and resistant to the added corrosion that comes with it."
+   ],
+   "relationships": [
+    "A consequence of salt caverns' fast injection/withdrawal design that also drives their favorable economics."
+   ],
+   "trading_implications": [
+    "The specialized, heavier-grade equipment represents extra capital cost that must be weighed against salt caverns' superior cycling economics when valuing a facility."
+   ],
+   "author_states_vs_inference": "All points from source; trading_implications is inference.",
+   "related_topics": [
+    "Salt Cavern Storage Economics"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "532-533",
+    "section_hint": "5.2 Natural Gas Storage \u2014 salt caverns"
+   }
+  },
+  {
+   "topic": "Salt Cavern Storage Economics",
+   "category": "Natural Gas",
+   "subcategory": "Storage - Salt Caverns",
+   "type": "trading_strategy",
+   "definition": "Salt caverns are the most profitable natural gas storage type because their fast injection and withdrawal speed lets operators capture short-term supply shortages and price spikes.",
+   "core_idea": "The speed at which gas can move in and out of storage is the key profit driver; salt caverns' rapid cycling \u2014 especially paired with a fast-starting gas turbine generator \u2014 lets a trader monetize brief spikes in gas and electricity prices.",
+   "key_points": [
+    "Fast insertion/removal lets salt caverns benefit from short-term shortages in gas supply.",
+    "Combining salt cavern storage with a fast-starting gas turbine generator lets a trader also capture short-term electricity price spikes."
+   ],
+   "relationships": [
+    "Builds on the equipment requirements described for salt cavern pressure/temperature."
+   ],
+   "trading_implications": [
+    "Salt caverns suit trading strategies targeting short-duration price volatility, in contrast to storage types limited to slower, purely seasonal arbitrage."
+   ],
+   "author_states_vs_inference": "All points from source; trading_implications partly inference.",
+   "related_topics": [
+    "Salt Cavern Pressure and Temperature Engineering",
+    "Natural Gas Storage Arbitrage Bid Strategy"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "532-533",
+    "section_hint": "5.2 Natural Gas Storage \u2014 salt caverns"
+   }
+  },
+  {
+   "topic": "Aquifer Natural Gas Storage",
+   "category": "Natural Gas",
+   "subcategory": "Storage - Aquifers",
+   "type": "concept",
+   "definition": "Aquifers are water reservoirs repurposed to store natural gas; they are the least desirable and most expensive storage type, built only where they offer a strong geographic advantage over other options.",
+   "core_idea": "Aquifer storage has the lowest ratio of working gas to total volume and the slowest injection/withdrawal cycle of any storage type, and most of the gas placed into an aquifer facility is unrecoverable.",
+   "key_points": [
+    "Built only when a facility has a large geographic advantage \u2014 i.e., it's the only viable option in that location.",
+    "Lowest working-gas-to-total-volume ratio of any storage facility type.",
+    "Slowest injection/withdrawal cycle of any storage type.",
+    "Because no gas exists at construction, a large volume must be injected before operation, and unlike other storage types there is little room to draw down the cushion gas without impairing the facility's ability to function."
+   ],
+   "relationships": [
+    "Contrasts with salt cavern storage as a much lower-performance, higher-cost storage type."
+   ],
+   "trading_implications": [
+    "Aquifer storage capacity is poorly suited to fast-cycling or short-term arbitrage strategies given its slow deliverability."
+   ],
+   "author_states_vs_inference": "All points from source; trading_implications is inference.",
+   "related_topics": [
+    "Gas Storage Capacity \u2014 Base Gas vs Working Gas",
+    "Salt Cavern Storage Economics"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "533-534",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Aquifers"
+   }
+  },
+  {
+   "topic": "Why New Aquifer Storage Development Is Unlikely",
+   "category": "Natural Gas",
+   "subcategory": "Storage - Aquifers",
+   "type": "market_mechanic",
+   "definition": "New aquifer storage development is unlikely today because of both weak project economics and U.S. government restrictions on building in areas with usable drinking or irrigation water.",
+   "core_idea": "Existing aquifer facilities were only economical to build because natural gas was cheap when their large, unrecoverable cushion-gas volumes were injected; that economics doesn't work at current prices, and regulation further restricts where new facilities can be sited.",
+   "key_points": [
+    "All existing aquifer facilities were built during a period of relatively inexpensive natural gas.",
+    "Making the same unrecoverable base-gas investment at today's prices would be difficult to justify economically.",
+    "The U.S. government restricts new aquifer facilities in areas where the water is usable for human consumption or irrigation.",
+    "The combination of poor economics and regulatory restriction makes substantial new aquifer development unlikely."
+   ],
+   "relationships": [
+    "Explains the economic and regulatory backdrop behind the Aquifer Natural Gas Storage item."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Aquifer Natural Gas Storage"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534",
+    "section_hint": "5.2 Natural Gas Storage \u2014 Aquifers"
+   }
+  },
+  {
+   "topic": "Cycling (Storage Term)",
+   "category": "Natural Gas",
+   "subcategory": "Storage Terminology",
+   "type": "definition",
+   "definition": "Cycling is the number of times a storage facility can be fully emptied and refilled within a calendar year.",
+   "core_idea": "A facility's cycling capability determines whether it can serve both the summer and winter demand seasons or only one, since refilling takes a fixed amount of time.",
+   "key_points": [
+    "Many facilities are single-cycle \u2014 refilling takes long enough that they can't sell into both summer and winter.",
+    "If a single-cycle facility sold gas in summer, it wouldn't have time to refill before winter demand hits."
+   ],
+   "relationships": [
+    "Directly limits which seasonal trading strategies (see Natural Gas Storage Arbitrage Bid Strategy) are physically feasible."
+   ],
+   "trading_implications": [
+    "A facility's cycling rate is a hard physical constraint on any seasonal or short-term arbitrage strategy built around it."
+   ],
+   "author_states_vs_inference": "All from source; trading_implications is inference.",
+   "related_topics": [
+    "Deliverability (Storage Term)",
+    "Injection Capacity (Storage Term)",
+    "Natural Gas Storage Arbitrage Bid Strategy"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Deliverability (Storage Term)",
+   "category": "Natural Gas",
+   "subcategory": "Storage Terminology",
+   "type": "definition",
+   "definition": "Deliverability is a storage facility's ability to withdraw gas for sale, and it depends on how much gas is currently held in the facility.",
+   "core_idea": "Deliverability rises with the facility's fill level and is highest when the facility is nearly full.",
+   "key_points": [
+    "Deliverability depends on the current amount of gas in the facility.",
+    "Deliverability is at its highest when the facility is nearly full."
+   ],
+   "relationships": [
+    "Inverse relationship to Injection Capacity \u2014 deliverability peaks exactly when injection capacity is lowest."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Injection Capacity (Storage Term)",
+    "Gas Storage Capacity \u2014 Base Gas vs Working Gas"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Gas Storage Capacity \u2014 Base Gas vs Working Gas",
+   "category": "Natural Gas",
+   "subcategory": "Storage Terminology",
+   "type": "definition",
+   "definition": "A facility's total storage capacity splits into base gas, which is not normally removed, and working gas, which is added and withdrawn during the normal injection and delivery cycle.",
+   "core_idea": "Only the working-gas portion of a facility's capacity is actively traded; base gas is a cushion that is left in place to support operation.",
+   "key_points": [
+    "Base gas is not normally removed from the facility.",
+    "Working gas is the portion added during injection and removed during delivery."
+   ],
+   "relationships": [
+    "Explains why aquifers, which have the lowest working-gas-to-total-volume ratio, are the least flexible storage type."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Aquifer Natural Gas Storage",
+    "Deliverability (Storage Term)",
+    "Injection Capacity (Storage Term)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Injection Capacity (Storage Term)",
+   "category": "Natural Gas",
+   "subcategory": "Storage Terminology",
+   "type": "definition",
+   "definition": "Injection capacity is the speed at which gas can be placed back into a storage facility.",
+   "core_idea": "Injection capacity behaves oppositely to deliverability: it is highest when the facility is nearly empty and lowest when the facility is nearly full.",
+   "key_points": [
+    "The more gas already in the facility, the longer it takes to inject additional gas.",
+    "Injection capacity is lowest exactly when the facility is nearly full \u2014 the opposite condition from peak deliverability."
+   ],
+   "relationships": [
+    "Inverse relationship to Deliverability."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Deliverability (Storage Term)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534-535",
+    "section_hint": "Common Terms"
+   }
+  },
+  {
+   "topic": "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A worked example of valuing storage capacity for an auction bid by combining a seasonal trade (buy in spring/fall, sell in summer/winter) with a weekday/weekend trade (buy weekend, sell weekday), constrained by the facility's physical injection and withdrawal limits.",
+   "core_idea": "Because storage facilities can only cycle a limited number of times per year, valuing capacity means finding the combination of trades \u2014 seasonal, weekday/weekend, etc. \u2014 that maximizes profit within the facility's physical operating limits, since the trades can compete for the same capacity.",
+   "key_points": [
+    "Seasonal trade: buy in low-price spring and fall, sell in higher-price summer and winter; most facilities can only do one full cycle a year, but the example facility is high-performance and can cycle twice.",
+    "Weekday/weekend trade: buy gas on weekends and resell it on weekdays, using the two weekend days for injection.",
+    "Running the weekday/weekend trade alongside the seasonal trade leaves only 3 net days per week for the seasonal trade's injection/delivery instead of 7.",
+    "The two trades compete for the same physical injection/withdrawal capacity, so operational limits may make it infeasible to run both simultaneously year-round.",
+    "Valuing an auction bid requires optimizing across possible trade combinations to find the most profitable feasible mix."
+   ],
+   "relationships": [
+    "Draws directly on the Cycling, Deliverability, and Injection Capacity definitions."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Cycling (Storage Term)",
+    "Injection Capacity (Storage Term)",
+    "Deliverability (Storage Term)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "534-535",
+    "section_hint": "Trading Example \u2014 Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "Winner's Curse in Storage Capacity Auctions",
+   "category": "Risk",
+   "subcategory": "Auction / Bidding Risk",
+   "type": "risk",
+   "definition": "In a competitive storage-capacity auction, valuation error creates an asymmetric risk: bidding too high wins the auction but means overpaying, while bidding too low simply loses to another bidder without a matching direct loss.",
+   "core_idea": "The 'winner's curse' describes how, in an auction with valuation uncertainty, the winning bid tends to be the most optimistic (and often overpriced) one, because only over-optimistic bids win.",
+   "key_points": [
+    "Overpricing risk from a flawed valuation is realized directly as a loss \u2014 the trader wins and overpays.",
+    "Underpricing risk is not symmetric \u2014 a too-low bid simply loses the auction to a higher bidder rather than costing money.",
+    "Economists term this dynamic the 'winner's curse.'"
+   ],
+   "relationships": [
+    "A risk specific to the auction-based acquisition described in the Natural Gas Storage Arbitrage Bid Strategy example."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "535",
+    "section_hint": "Trading Example \u2014 The Risks"
+   }
+  },
+  {
+   "topic": "Seasonal Demand Regime Shift Risk in Gas Storage Valuation",
+   "category": "Risk",
+   "subcategory": "Market Structure Risk",
+   "type": "risk",
+   "definition": "A storage valuation built on historical seasonal price/demand patterns is exposed to the risk that those patterns shift permanently as the underlying drivers of gas demand evolve.",
+   "core_idea": "As new sources of demand emerge over time, the seasonal price pattern a storage strategy assumes can change structurally, undermining valuations based on older historical patterns.",
+   "key_points": [
+    "Example: in the mid-1980s there were very few natural-gas-fired power plants, so summer gas demand (and prices) were low relative to winter, heating-driven demand.",
+    "Roughly 25 years of natural-gas power plant buildout added a major new source of summer gas demand.",
+    "As a result, summer natural gas prices rose sharply, changing the seasonal pattern older storage valuations may have relied on."
+   ],
+   "relationships": [
+    "A risk factor for the same seasonal trade described in the Natural Gas Storage Arbitrage Bid Strategy example."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "535",
+    "section_hint": "Trading Example \u2014 The Risks"
+   }
+  },
+  {
+   "topic": "Physical Storage Ownership as an Operational Commitment",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "concept",
+   "definition": "Owning a physical natural gas storage facility is not a purely financial position \u2014 it requires hiring an operations team for the life of the contract to coordinate physical delivery and sale of gas.",
+   "core_idea": "Even when much of the trading exposure is hedged ahead of time in the futures market, physical storage ownership still carries an ongoing operational and staffing burden distinct from a financial trading position.",
+   "key_points": [
+    "The example cites a 20-year commitment to keep an operations staff in place.",
+    "Substantial daily housekeeping is required regardless of how much trading is pre-arranged via futures."
+   ],
+   "relationships": [
+    "Part of the execution stage of the Natural Gas Storage Arbitrage Bid Strategy example."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "535-536",
+    "section_hint": "Trading Example \u2014 Executing the Trade"
+   }
+  },
+  {
+   "topic": "Storage Facility as an Enabler of Delivery-Insurance Trades",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "Beyond direct arbitrage profit, owning a storage facility gives a trader physical delivery/receipt capability that can be used to sell other market participants insurance that their gas deliveries will occur.",
+   "core_idea": "A trader with storage access can collect an up-front premium for guaranteeing counterparties' gas deliveries; if a shortfall must be covered, the trader can draw on their own storage rather than being forced to buy replacement gas on a potentially spiking spot market.",
+   "key_points": [
+    "The trader earns an up-front premium for offering delivery-guarantee insurance to other market participants.",
+    "If a shortfall must be covered, storage access lets the trader avoid buying replacement gas on the (potentially skyrocketing) spot market."
+   ],
+   "relationships": [
+    "Presented as a side benefit beyond the core arbitrage value described in the Natural Gas Storage Arbitrage Bid Strategy example."
+   ],
+   "trading_implications": [
+    "Physical storage assets create optionality for ancillary trading businesses (e.g., delivery insurance) beyond the underlying storage arbitrage."
+   ],
+   "author_states_vs_inference": "All from source; trading_implications restates the source's own point.",
+   "related_topics": [
+    "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "536",
+    "section_hint": "Trading Example \u2014 The Results"
+   }
+  },
+  {
+   "topic": "EIA Weekly Natural Gas Storage Report",
+   "category": "Natural Gas",
+   "subcategory": "Market Data / Reporting",
+   "type": "market_mechanic",
+   "definition": "The U.S. Energy Information Agency (EIA) publishes a weekly report on the amount of natural gas in storage, consisting of a table of regional storage volumes and a chart comparing current total storage to the prior five years.",
+   "core_idea": "The EIA weekly storage report is the standard public data source traders use to track regional storage levels and how current storage compares to recent historical norms.",
+   "key_points": [
+    "The report has two main parts: a table showing storage volume by region, and a graph comparing current total storage to the past five years."
+   ],
+   "relationships": [
+    "Provides the public data traders would use when valuing storage capacity, as in the Natural Gas Storage Arbitrage Bid Strategy example."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "Gas Storage Capacity \u2014 Base Gas vs Working Gas"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "536",
+    "section_hint": "Natural Gas Storage Reports"
+   }
+  }
+ ]
+}

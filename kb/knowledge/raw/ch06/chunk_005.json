@@ -1,0 +1,274 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Ethanol as a transportation fuel: properties and drawbacks",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Ethanol",
+   "type": "concept",
+   "definition": "Ethanol is an alcohol-based fuel blended into gasoline that requires specially built or modified engines and pipelines because it is corrosive and absorbs water, and it is generally considered an inferior fuel to gasoline on most measures.",
+   "core_idea": "Ethanol's market popularity is driven less by fuel quality and more by concern over future petroleum scarcity, combined with the fact that it can be produced at scale today and much of the existing gasoline infrastructure can be retrofitted to handle it.",
+   "key_points": [
+    "Ethanol is corrosive and hygroscopic (absorbs water), requiring engines and pipelines to be specifically built or modified for it",
+    "Ethanol combustion produces roughly twice the ground-level ozone pollution of a comparable gasoline engine",
+    "Ethanol production consumes food crops, and given limited cropland this reduces food available for a growing population, raising food prices",
+    "By most comparisons ethanol is an inferior fuel to gasoline",
+    "Ethanol's popularity rests on expectations of future petroleum scarcity, current scalability of production, and the ability to retrofit existing gasoline infrastructure"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ethanol competes with food crops for agricultural land and resources"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Ethanol's widespread adoption could be mistaken for evidence it is a superior fuel; the author states the opposite -- it is inferior to gasoline by most comparisons, and its adoption is driven by scarcity concerns and infrastructure practicality, not fuel quality"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Corn crush spread",
+    "Biodiesel",
+    "Renewable Identification Numbers"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "241-241",
+    "section_hint": "2.3 Oil - Ethanol"
+   }
+  },
+  {
+   "topic": "Ethanol production process (fermentation)",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Ethanol",
+   "type": "market_mechanic",
+   "definition": "Ethanol is produced from starch-based crops using fermentation, the same basic process used to make alcoholic beverages.",
+   "core_idea": "Raw crop material is milled into meal, mixed with liquid and heated to dissolve it and kill bacteria, cooled and treated with enzymes to convert starch into sugar, then fermented with yeast into alcohol and carbon dioxide, and finally distilled to separate the alcohol.",
+   "key_points": [
+    "Raw materials are milled into a fine powder called meal",
+    "Liquid is added to the meal to form a slurry, which is heated to dissolve the meal and kill bacteria",
+    "The mixture is cooled and enzymes are added to convert starch into simpler sugars",
+    "Yeast is added to convert the sugars into alcohol and carbon dioxide",
+    "The alcohol is separated from remaining solids/liquids by distillation"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Corn crush spread",
+    "Ethanol as a transportation fuel"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "241-241",
+    "section_hint": "2.3 Oil - Ethanol production"
+   }
+  },
+  {
+   "topic": "The corn crush spread",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Ethanol",
+   "type": "trading_strategy",
+   "definition": "The corn crush spread is the price relationship between ethanol and the corn used to produce it, analogous to a refinery crack spread, arising because ethanol's price is anchored to the gasoline it displaces while corn's price floats with weather, crop conditions, and food demand.",
+   "core_idea": "Because blending mandates tie ethanol's value to the price of the gasoline it displaces (unless ethanol trades at a premium), while raw corn prices move independently with agricultural conditions, a tradable spread opens between ethanol value and corn cost -- and that spread has a self-correcting feedback loop through distiller buying.",
+   "key_points": [
+    "Government regulations require ethanol to be blended into gasoline at a fixed ratio",
+    "Unless ethanol is priced above gasoline, ethanol's price is effectively set by the value of the gasoline it displaces",
+    "Corn (the dominant U.S. ethanol feedstock) is affected by weather, crop conditions, and competing food demand, so its price moves independently of ethanol's",
+    "Corn represents about two-thirds of the cost of producing a gallon of ethanol",
+    "Byproducts of conversion are distiller's dried grains (potential livestock feed or biodiesel feedstock, but currently low-value) and carbon dioxide",
+    "When ethanol is expensive relative to corn, distillers buy more corn for conversion, which raises food/corn prices and pushes ethanol prices back down",
+    "Future crush spread calculations may need to select the cheapest-to-deliver raw material (corn, sugarcane, or petroleum-derived ethanol), or change entirely if a market for distiller's grains develops"
+   ],
+   "formulas": [
+    {
+     "name": "Corn-to-ethanol conversion ratio",
+     "formula": "1 bushel of corn \u2192 2.6 gallons of ethanol",
+     "variables": {
+      "bushel of corn": "raw feedstock unit",
+      "gallons of ethanol": "fuel output volume"
+     }
+    }
+   ],
+   "relationships": [
+    "Analogous in structure to the crack spread between crude oil and refined products"
+   ],
+   "trading_implications": [
+    "Traders can speculate on the crush spread the same way they would a refinery crack spread, taking positions on the relationship between ethanol and corn prices",
+    "Cheap corn combined with expensive ethanol creates an incentive for distillers to increase ethanol production, which mechanically narrows the spread over time"
+   ],
+   "common_misunderstandings": [
+    "The crush spread might look like a simple production margin, but the author notes ethanol's price is capped/anchored by the value of displaced gasoline under blending mandates, while corn's price floats independently -- so the spread is not driven by ethanol supply/demand alone"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Ethanol as a transportation fuel",
+    "Biodiesel"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "242-242",
+    "section_hint": "2.3 Oil - The Corn Crush"
+   }
+  },
+  {
+   "topic": "Biodiesel: composition, advantages, and drawbacks",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Biodiesel",
+   "type": "concept",
+   "definition": "Biodiesel is an alternative diesel-engine fuel made by removing glycerin from vegetable oils; it contains no petroleum, generally runs in unmodified diesel engines, and is commonly blended with petroleum diesel in ratios denoted \"Bxx\" (percent biodiesel by volume).",
+   "core_idea": "Biodiesel offers environmental and safety benefits over conventional diesel but suffers a fuel-economy penalty and, most importantly, remains substantially more expensive and limited in production volume.",
+   "key_points": [
+    "Biodiesel is produced by removing glycerin from vegetable oils and contains no petroleum",
+    "Most diesel engines can run biodiesel without modification",
+    "Blend labeling convention: \"Bxx\" where xx is the percent biodiesel by volume (e.g., B20 = 20% biodiesel)",
+    "Advantages: biodegradable, renewable, generally lower emissions than standard diesel, nontoxic, higher flashpoint making it safer to transport and store",
+    "Disadvantages: about a 10% reduction in fuel economy and power versus diesel, acts as a stronger solvent than diesel, very high biodiesel percentages may require special engines",
+    "The biggest limitation is cost: biodiesel can currently only be produced in limited amounts and is substantially more expensive than regular diesel"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Biodiesel blend grades",
+    "Ethanol as a transportation fuel"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "242-243",
+    "section_hint": "2.3 Oil - Biodiesel"
+   }
+  },
+  {
+   "topic": "Biodiesel blend grades: B2-B5, B100, B99.9",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Biodiesel",
+   "type": "definition",
+   "definition": "Common biodiesel blend grades differ in biodiesel percentage and have distinct practical and economic characteristics: B2-B5 are low-percentage trucking blends, B100 is pure biodiesel, and B99.9 is a near-pure blend structured around tax credit capture.",
+   "core_idea": "The specific blend percentage of biodiesel changes its practical use case (lubricity benefits at low blends, solvency risks at high blends) and, in the case of B99.9, its price relative to B100 due to how tax credits are captured.",
+   "key_points": [
+    "B2-B5: 2-5% biodiesel/95-98% diesel blends, popular in trucking because biodiesel's lubricating properties can improve engine performance and lengthen engine life",
+    "B100: pure biodiesel; it is a strong solvent that can loosen and dissolve sediment in storage tanks and may cause rubber and other components in older vehicles to fail",
+    "B99.9: biodiesel blended with a small amount of diesel so the blender (rather than the buyer) captures jurisdictional blending tax credits; because buyers of B99.9 don't get the credit, B99.9 trades at a discount to B100"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "B99.9 trades at a discount to B100 because the tax credit value accrues to the blender rather than being passed through to the buyer"
+   ],
+   "common_misunderstandings": [
+    "B99.9 might appear economically equivalent to B100 since it is nearly pure biodiesel, but the author notes it trades at a discount specifically because the blending step diverts the tax credit away from the buyer"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Biodiesel: composition, advantages, and drawbacks",
+    "Renewable Identification Numbers"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "243-243",
+    "section_hint": "2.3 Oil - Biodiesel blend grades"
+   }
+  },
+  {
+   "topic": "Renewable Identification Numbers (RINs)",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Compliance Instruments",
+   "type": "market_mechanic",
+   "definition": "A Renewable Identification Number (RIN) is a compliance identification number assigned to a unit of biofuel (such as ethanol or biodiesel) when it is created, which can be traded independently of the physical fuel to help obligated parties, typically oil refiners, meet renewable fuel standard requirements.",
+   "core_idea": "RINs decouple compliance with renewable fuel mandates from the physical fuel itself, letting refiners buy RINs on their own market instead of only meeting requirements through direct biofuel blending.",
+   "key_points": [
+    "Governments in many countries have passed renewable fuel standards requiring a certain amount of biofuel use",
+    "A RIN is generated when a batch of biofuel is created and tracks compliance with these standards",
+    "RINs can be traded independently of the physical fuel",
+    "Parties required to meet renewable fuel standards, typically oil refiners, can purchase RINs to satisfy their compliance obligations"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "RINs represent a distinct tradable compliance instrument separate from the physical biofuel market"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "RIN price spikes",
+    "Ethanol as a transportation fuel",
+    "Biodiesel: composition, advantages, and drawbacks"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "243-244",
+    "section_hint": "2.3 Oil - Renewable Identification Numbers"
+   }
+  },
+  {
+   "topic": "RIN price spikes under fixed-quantity biofuel mandates",
+   "category": "Oil & Refined Products",
+   "subcategory": "Biofuels - Compliance Instruments",
+   "type": "risk",
+   "definition": "RIN prices can spike when renewable fuel rules require refiners to use a fixed quantity of biofuel rather than a fixed percentage blended into conventional fuel, because a drop in total fuel demand can leave refiners unable to physically absorb more biofuel and forced instead to buy RINs.",
+   "core_idea": "If a mandate is quantity-based rather than percentage-based, an economic slowdown that reduces total fuel sales does not reduce the required biofuel volume; since engines are only rated for a certain maximum biofuel percentage, refiners already blending at that cap cannot use more biofuel physically and must instead purchase RINs, driving RIN prices up.",
+   "key_points": [
+    "RIN price spikes occur specifically under quantity-based (not percentage-based) biofuel mandates",
+    "In an economic slowdown, overall fuel consumption falls and refiners sell less fuel",
+    "Auto manufacturers only rate engines to handle a certain maximum biofuel percentage, capping how much biofuel can be physically blended in",
+    "If refiners are already blending at that maximum percentage, they cannot use more biofuel through blending alone",
+    "Refiners in this situation turn to purchasing RINs to meet the fixed-quantity requirement, which drives RIN prices higher"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on Renewable Identification Numbers as the compliance mechanism"
+   ],
+   "trading_implications": [
+    "RIN prices can be sensitive to macroeconomic fuel-demand swings when the underlying mandate is quantity-based, creating a risk factor distinct from the biofuel commodity market itself"
+   ],
+   "common_misunderstandings": [
+    "It might seem counterintuitive that lower overall fuel demand could spike RIN prices; the mechanism the author describes is that quantity-based mandates don't scale down with demand, while engine biofuel-percentage caps prevent refiners from closing the gap through blending alone"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Renewable Identification Numbers"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "244-244",
+    "section_hint": "2.3 Oil - RIN Price Spikes"
+   }
+  },
+  {
+   "topic": "Common oil market terminology: Brent Crude, Feedstock, Fuel Oils, Heating Oil",
+   "category": "Oil & Refined Products",
+   "subcategory": "Terminology",
+   "type": "definition",
+   "definition": "A glossary of common oil-market terms: Brent Crude (a light, sweet North Sea crude oil used as an international pricing benchmark), Feedstock (any crude oil entering a refinery), Fuel Oils (liquid fuels heavier than gasoline, classified into six numbered categories), and Heating Oil / No. 2 Fuel Oil (essentially diesel fuel, the second-largest fraction of a refined barrel after gasoline).",
+   "core_idea": "These are standard reference terms used throughout oil trading: Brent as a global benchmark grade, feedstock as the generic term for refinery input crude, and fuel oils/heating oil as classifications of refined output by weight and flow characteristics.",
+   "key_points": [
+    "Brent Crude is a light, sweet crude oil from the North Sea that serves as an international pricing benchmark",
+    "Feedstock refers to crude oil of any type entering a refinery",
+    "Fuel oils are liquid fuels heavier than gasoline, classified into six numbered categories, with lower-numbered oils flowing more easily than higher-numbered ones",
+    "The two most common fuel oil categories are No. 2 fuel oil (diesel) and heavy oil (No. 4 to No. 6 fuel oil)",
+    "Heating oil (No. 2 fuel oil) is essentially diesel fuel and is the second-largest fraction of a barrel of crude oil after gasoline",
+    "Most crude oil types yield roughly half as much heating oil as gasoline when refined"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feedstock is the input to refining; fuel oils and heating oil are refined outputs"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Ethanol as a transportation fuel",
+    "Biodiesel: composition, advantages, and drawbacks"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "244-244",
+    "section_hint": "2.3 Oil - Common Terms"
+   }
+  }
+ ]
+}

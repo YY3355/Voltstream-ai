@@ -1,0 +1,241 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Marginal bid clustering under uniform clearing price",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack / Merit Order",
+   "type": "concept",
+   "definition": "Because every cleared generator in a power auction is paid the same clearing price regardless of its own bid, a plant loses nothing by bidding just below a higher-cost competitor as long as that competitor (or someone else) ends up setting a higher price.",
+   "core_idea": "The single-clearing-price mechanism removes any penalty for underbidding a rival, so similarly-positioned generators cluster their bids near common price points, and only the handful of plants actually on the margin end up setting the market price.",
+   "key_points": [
+    "Uniform pricing means a generator doesn't need to be the top bidder to capture the clearing price, so there's no cost to bidding just under a higher-cost competitor.",
+    "This incentive causes generators with similar production costs to cluster their bids around the same price levels.",
+    "At any given time only a small number of plants are actually on the margin, so those few plants have outsized influence on the clearing price.",
+    "Because clustering behavior is predictable, it is often possible to infer which type of plant is currently setting the price by observing the stack."
+   ],
+   "relationships": [
+    "generation stack / merit order",
+    "uniform (pay-as-cleared) pricing"
+   ],
+   "trading_implications": [
+    "Watching which cost tier of plants clusters near the margin helps predict which unit type is setting price and how sensitive price is to small shifts in demand or outages."
+   ],
+   "common_misunderstandings": [
+    "Being the highest bidder does not mean earning more revenue \u2014 since everyone clears at the same price, rational bidders intentionally underbid the next higher-cost unit rather than bidding at their true willingness-to-accept."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "baseload/mid-merit/peaking classification",
+    "active vs passive bidding"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "411",
+    "section_hint": "4.2 The Generation Stack \u2014 bid clustering on the margin"
+   }
+  },
+  {
+   "topic": "Baseload generation units",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "definition",
+   "definition": "Baseload plants sit at the bottom of the generation stack, run nearly continuously all year, sell mainly into the day-ahead market, and are cheap to produce power from but often difficult or costly to shut down.",
+   "core_idea": "Hydro, nuclear, and coal plants are typically baseload: they run essentially full-time because shutting down is operationally impractical or expensive, so they bid low to avoid being taken offline rather than to chase price.",
+   "key_points": [
+    "Baseload units sit at the bottom of the stack, operate all year, and primarily sell in the day-ahead auction.",
+    "Hydro plants have no fuel cost and in some cases cannot shut down without risking flooding of nearby areas.",
+    "Nuclear plants require control rods to slow the reaction; without active cooling/control the reactor runs at maximum output, and shutting one down is costly.",
+    "Coal plants are easier to shut down than nuclear or hydro but become expensive to restart if allowed to cool completely.",
+    "Coal is described as costing more to run than other baseload sources, even though coal is the cheapest fossil fuel per unit of energy among fossil generators.",
+    "Because almost all baseload capacity runs continuously, these plants are rarely the marginal (price-setting) unit and bid low specifically to avoid being forced offline."
+   ],
+   "relationships": [
+    "hydro/nuclear/coal generation economics",
+    "generation stack position"
+   ],
+   "trading_implications": [
+    "Baseload output can generally be treated as price-inelastic in day-ahead scheduling; marginal price signals should be read from mid-merit or peaking units, not baseload."
+   ],
+   "common_misunderstandings": [
+    "Coal being the cheapest fossil fuel per unit of energy does not make it the cheapest baseload source overall \u2014 the author notes coal plants are still more costly to run than other baseload producers like hydro and nuclear."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "mid-merit generation",
+    "peaking generation",
+    "generation stack bid clustering"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "411",
+    "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   }
+  },
+  {
+   "topic": "Peaking generation units",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "definition",
+   "definition": "Peaking plants sit at the very top of the generation stack, exist to supply short bursts of power during periods of peak demand (e.g., summer afternoons), and are optimized for fast startup and low maintenance rather than fuel efficiency.",
+   "core_idea": "Because peakers may only run a few hundred hours a year and fuel efficiency is not a priority, they must charge high prices to recover costs, and they participate almost exclusively in the real-time market except when day-ahead prices are already very high.",
+   "key_points": [
+    "Peaking units sit at the top of the generation stack and serve short-term demand spikes such as summer-afternoon peaks.",
+    "They are built to start up quickly and be cheap to maintain, but conserving fuel is not a priority since they only run when prices are high enough to justify it.",
+    "Structurally many are simple, jet-engine-like designs: few moving parts, fuel ignited directly, and a lot of wasted heat.",
+    "Many peaking plants operate only a few hundred hours per year, so they need high per-hour prices to recover their costs.",
+    "Peakers operate almost entirely in the real-time market, appearing in the day-ahead market only when day-ahead prices are already extremely high."
+   ],
+   "relationships": [
+    "baseload generation",
+    "real-time vs day-ahead market participation"
+   ],
+   "trading_implications": [
+    "Peaking unit availability and cost structure are a key driver of real-time price spikes during high-demand periods; their unusual appearance in day-ahead bidding is itself a signal of expected extreme prices."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "baseload generation",
+    "mid-merit generation"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "411-412",
+    "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   }
+  },
+  {
+   "topic": "Mid-merit generation units",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "definition",
+   "definition": "Mid-merit plants sit between baseload and peaking units in the generation stack, and are commonly the plants that actually end up setting the clearing price because they are frequently on the margin.",
+   "core_idea": "Mid-merit capacity is either older baseload-style plants no longer economical to run full-time, or efficient gas plants built to cycle more easily than baseload units, and unlike baseload (always bids low) or peaking (always bids high), mid-merit bidding behavior varies a lot since these units are usually the ones setting price.",
+   "key_points": [
+    "Mid-merit plants occupy the middle of the generation stack, between baseload and peaking.",
+    "Some are aging, less efficient former baseload plants that are no longer economic to run continuously; others are efficient natural gas plants designed to cycle more easily than baseload units.",
+    "These units are commonly the ones on the margin and show much greater bidding variability than baseload (consistently low bids) or peaking (consistently high bids) units.",
+    "Mid-merit generators bid into both day-ahead and real-time markets and are usually the group that sets the clearing price of power."
+   ],
+   "relationships": [
+    "baseload generation",
+    "peaking generation",
+    "marginal price setting"
+   ],
+   "trading_implications": [
+    "Because mid-merit units typically set the clearing price, understanding their cost structure and variable bidding behavior is central to forecasting power prices."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "baseload generation",
+    "peaking generation",
+    "generation stack bid clustering"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "412",
+    "section_hint": "4.2 The Generation Stack \u2014 Baseload, Mid-Merit, and Peaking Suppliers"
+   }
+  },
+  {
+   "topic": "Active versus passive bidding strategy",
+   "category": "Power Markets",
+   "subcategory": "Bidding Strategy",
+   "type": "trading_strategy",
+   "definition": "Because every dispatched generator earns the same market clearing price, a plant can safely bid very low (passive) without losing revenue as long as some other participant sets a higher price; deliberately bidding to push the price up (active) is riskier because it raises the chance of not clearing at all.",
+   "core_idea": "The choice between active and passive bidding comes down to how much profit a plant would forgo if it failed to clear, which depends on the spread between the market price and the plant's own production cost.",
+   "key_points": [
+    "In a uniform-price auction there is no need to be the top bidder \u2014 a plant earns the clearing price regardless of how low it bid, provided someone else sets a higher price.",
+    "Actively bidding to try to raise the market price carries real risk: an aggressive bid can fail to clear, meaning the plant earns nothing for that period.",
+    "The decision to bid actively hinges on how much profit is at stake if the plant ends up inactive.",
+    "A plant's profit is the spread between the market price and its own cost of production, so low-cost plants risk giving up much more profit than high-cost plants by going inactive."
+   ],
+   "relationships": [
+    "uniform clearing price mechanism",
+    "generation stack cost position"
+   ],
+   "trading_implications": [
+    "Low-cost producers should generally favor passive, low bids to guarantee dispatch and protect their large profit margin.",
+    "Higher-cost, thinner-margin producers have comparatively less to lose from occasional non-dispatch, so they have more incentive to bid aggressively to try to move the price up."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "marginal bid clustering",
+    "generation stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "412",
+    "section_hint": "4.2 The Generation Stack \u2014 Active Versus Passive Bidding Strategies"
+   }
+  },
+  {
+   "topic": "Expected-value example: aggressive bidding trade-off by cost basis",
+   "category": "Power Markets",
+   "subcategory": "Bidding Strategy",
+   "type": "example",
+   "definition": "The author's numeric illustration comparing a near-zero-cost plant and a high-cost ($95) plant deciding whether to bid aggressively for a $1 price increase, given a 10% chance the aggressive bid leaves the plant undispatched.",
+   "core_idea": "For a plant with a large profit margin, the expected loss from occasionally not clearing outweighs the expected gain from a small price increase, while for a plant with a thin margin the same trade-off favors bidding aggressively.",
+   "key_points": [
+    "Setup: power price is roughly $100, and bidding aggressively can push the price up by $1 but carries a 10% chance of the plant not being dispatched at all.",
+    "Near-zero-cost plant: a 10% chance of losing the full $100 profit (~$10 expected loss) is weighed against an extra $1, 90% of the time (~$0.90 expected gain) \u2014 the trade-off does not favor aggressive bidding.",
+    "High-cost plant with a $95 cost basis (only $5 profit at $100 price): a 10% chance of losing that $5 profit (~$0.50 expected loss) is weighed against the same ~$0.90 expected gain from the price bump \u2014 here aggressive bidding is worthwhile.",
+    "The comparison shows the incentive to bid aggressively increases as a plant's built-in profit margin (price minus cost) shrinks."
+   ],
+   "relationships": [
+    "active vs passive bidding strategy",
+    "profit as price-minus-cost spread"
+   ],
+   "trading_implications": [
+    "Expect higher-cost, thinner-margin generators to be more willing to bid aggressively to move price, while very profitable low-cost generators tend to bid passively to protect guaranteed dispatch."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source (the specific dollar figures and probability are the author's illustrative example)",
+   "related_topics": [
+    "active vs passive bidding strategy",
+    "baseload vs peaking cost structure"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "412-413",
+    "section_hint": "4.2 The Generation Stack \u2014 Active Versus Passive Bidding Strategies"
+   }
+  },
+  {
+   "topic": "Split-bid (tranche) optimal bidding strategy",
+   "category": "Power Markets",
+   "subcategory": "Bidding Strategy",
+   "type": "trading_strategy",
+   "definition": "Rather than submitting one bid price for all of their capacity, generators commonly split their offer into multiple tranches \u2014 some priced at or below their own cost, and the rest priced just under the point where the next plant in the stack becomes profitable.",
+   "core_idea": "A low tranche near or below cost protects against costly unplanned shutdowns (especially for steam turbines that are expensive to restart), while a higher tranche is priced as high as possible without inviting the next-highest-cost competitor to undercut it.",
+   "key_points": [
+    "Many generators, especially steam turbines that are costly to bring back online, submit part of their capacity at or below their own production cost to avoid unnecessary stoppages.",
+    "The remaining capacity is typically bid as high as the market will bear, just under the price where the next plant in the stack would become profitable, to maximize profit without risking being undercut.",
+    "Example given: a plant profitable at $50, with the next plant in the stack becoming profitable at $60, might submit a low-priced tranche below $50 and a second tranche priced just under $60.",
+    "Executing this well requires detailed knowledge of the cost structure of nearby competitors in the stack, which is typically learned through experience rather than formal analysis.",
+    "As a result, plants tend to understand their local neighborhood of the generation stack well but have much less insight into parts of the stack far from their own cost position."
+   ],
+   "relationships": [
+    "marginal bid clustering",
+    "generation stack cost position"
+   ],
+   "trading_implications": [
+    "Expect generator offers to appear as multiple price tranches rather than a single bid; the price of a unit's top tranche can reveal its inferred estimate of the next-most-expensive competing plant's breakeven cost."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "marginal bid clustering",
+    "active vs passive bidding strategy"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "413",
+    "section_hint": "4.2 The Generation Stack \u2014 Optimal Bidding Strategies"
+   }
+  }
+ ]
+}

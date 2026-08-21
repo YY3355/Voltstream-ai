@@ -1,0 +1,210 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Definition of hedging",
+   "category": "Risk",
+   "subcategory": "Hedging Fundamentals",
+   "type": "definition",
+   "definition": "A hedge is a trading position taken specifically to offset the price risk of another investment, so that gains or losses on the hedge counteract gains or losses on the thing being protected.",
+   "core_idea": "The contract used to hedge is the 'hedging instrument'; the position or asset being protected is the 'hedged item'. A hedge transfers price risk from one party to another rather than eliminating it from the market.",
+   "key_points": [
+    "Hedging instrument = the contract used to hedge (e.g., a future or forward)",
+    "Hedged item = the underlying exposure being protected (e.g., expected power plant output)",
+    "Hedging is often used when closing out the underlying position directly would be undesirable, difficult, or impossible",
+    "A common driver is lender/bondholder requirements: e.g., a wind farm's creditors may require locked-in future revenue via forward sales to ensure debt payments can be met"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Hedge accounting",
+    "Modigliani-Miller Proposition on Hedging"
+   ],
+   "trading_implications": [
+    "Locking in a sale price via forwards guarantees revenue certainty but forfeits upside if prices later rise"
+   ],
+   "common_misunderstandings": [
+    "Hedging is not risk-free protection with no downside \u2014 it removes both the possibility of loss AND the possibility of gain"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Futures",
+    "Forwards",
+    "Hedge accounting"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "591-592",
+    "section_hint": "6.5 Hedging \u2014 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "Hedge accounting",
+   "category": "Risk",
+   "subcategory": "Accounting Treatment",
+   "type": "market_mechanic",
+   "definition": "A special accounting framework that lets a company avoid mark-to-market treatment of a hedged item that would normally be valued under different rules than its hedge, provided the hedge passes defined effectiveness tests.",
+   "core_idea": "Hedges frequently pair a tradable financial derivative (mark-to-market accounting) with a nontradable physical asset (different accounting rules), creating a valuation mismatch; hedge accounting resolves this mismatch if the hedge qualifies.",
+   "key_points": [
+    "Physical/nontradable assets (e.g., an oil well's future production) are typically valued differently than financial derivatives (e.g., futures, swaps)",
+    "Without hedge accounting, this mismatch could create accounting volatility even when the economic exposure is fully offset",
+    "Qualifying for hedge accounting requires passing 'hedge effectiveness tests'",
+    "The author describes these rules as generally beneficial to the hedger, conditional on passing the required tests"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Definition of hedging"
+   ],
+   "trading_implications": [
+    "Failing hedge effectiveness tests forces mark-to-market treatment of the hedge without matching treatment of the hedged item, creating reported earnings volatility"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-market accounting",
+    "Physical vs. financial asset valuation"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "591-592",
+    "section_hint": "6.5 Hedging \u2014 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "The hidden costs of hedging",
+   "category": "Risk",
+   "subcategory": "Hedging Fundamentals",
+   "type": "concept",
+   "definition": "Hedging is not free: it carries both explicit up-front costs and hidden opportunity costs, and the market structure for long-dated hedges can itself bias the prices producers receive.",
+   "core_idea": "Because relatively few counterparties want to take the other side of a long-term hedge, forward prices for long-dated energy hedges are not necessarily unbiased forecasts of future spot prices \u2014 long-term energy tends to be a buyers' market where buyers can demand cheap prices.",
+   "key_points": [
+    "Hedging can have explicit up-front costs and opportunity costs that are often not obvious",
+    "Producers often want to lock in prices to enable project financing with a safe, predictable cash flow",
+    "Few counterparties have an incentive to take the buy side of long-dated hedges, which skews long-term forward prices in buyers' favor",
+    "This means the hedged/locked-in price a producer achieves may be systematically less favorable than a true unbiased expectation of future prices"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Definition of hedging"
+   ],
+   "trading_implications": [
+    "Producers seeking long-term hedges to support project financing should expect forward prices skewed toward buyer-favorable levels, not neutral market expectations"
+   ],
+   "common_misunderstandings": [
+    "Forward prices for long-dated hedges are not automatically unbiased estimates of future spot prices"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward curve",
+    "Project finance"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "592",
+    "section_hint": "6.5 Hedging \u2014 main text"
+   }
+  },
+  {
+   "topic": "Governance risk from under-scrutinized hedges",
+   "category": "Risk",
+   "subcategory": "Risk Management",
+   "type": "risk",
+   "definition": "A hedge is equal in size and risk to the investment it offsets, but in practice it often receives far less organizational review and oversight than the original investment decision.",
+   "core_idea": "A major capital investment might get extensive committee-level review, while the equally large, directionally-opposite hedge position offsetting it may be designed by a single junior employee with only cursory senior-management review.",
+   "key_points": [
+    "A hedge carries the same magnitude of risk as the position it offsets",
+    "Investment decisions are typically reviewed by many stakeholders",
+    "Hedge design/execution can be delegated with much lighter review, creating an oversight gap",
+    "This asymmetry in scrutiny is itself identified as a risk management issue"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Definition of hedging"
+   ],
+   "trading_implications": [
+    "Firms should apply governance/review rigor to hedge construction proportional to its size, not just to the original investment"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Risk management issues"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "592",
+    "section_hint": "6.5 Hedging \u2014 main text"
+   }
+  },
+  {
+   "topic": "Modigliani-Miller Proposition on Hedging",
+   "category": "Risk",
+   "subcategory": "Hedging Theory",
+   "type": "concept",
+   "definition": "An academic theory holding that, in a frictionless market, corporate hedging does not increase the risk-adjusted present value of cash flows to shareholders, because investors could replicate the same hedge themselves.",
+   "core_idea": "If markets were frictionless, an investor wanting less risky cash flows could simply buy shares in an unhedged company and construct their own hedge, so there is little reason for investors to pay a premium for a company that hedges on their behalf. Since real markets have frictions, hedging can add value only to the extent it helps a firm avoid the costs of those frictions.",
+   "key_points": [
+    "Under the frictionless-market assumption, total risk-adjusted value to investors is unchanged by whether the firm hedges",
+    "Investors can synthesize their own hedge by buying shares in a non-hedging firm, reducing the value of firm-level hedging to them",
+    "Real markets are not frictionless: sources of friction include ease of borrowing, bankruptcy costs, transaction costs, and conflicting interests among shareholders, creditors, and managers",
+    "One way to quantify hedging's benefit is to compare the cost of the hedge to the cost of the market friction it avoids (e.g., bankruptcy costs)",
+    "The most commonly cited case where hedging adds real value is reducing bankruptcy risk, which in turn eases a firm's ability to borrow",
+    "A subsidiary may also benefit from hedging by reducing the friction of parent-company micromanagement",
+    "The authors' overall conclusion: hedging often enriches investment banks and distracts management more than it benefits shareholders, except where it addresses genuine market friction"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Definition of hedging",
+    "The hidden costs of hedging"
+   ],
+   "trading_implications": [
+    "Before hedging, a firm should identify which specific market friction (e.g., bankruptcy risk, borrowing constraints) the hedge is meant to mitigate, rather than assuming hedging is inherently value-adding"
+   ],
+   "common_misunderstandings": [
+    "Hedging does not automatically make a firm more valuable to shareholders \u2014 under idealized frictionless markets it adds no value at all, since investors could replicate it themselves"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Market frictions",
+    "Bankruptcy risk",
+    "Corporate finance theory"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "592-593",
+    "section_hint": "6.5 Hedging \u2014 Modigliani-Miller Proposition on Hedging"
+   }
+  },
+  {
+   "topic": "Common hedge structures: futures and costless collars",
+   "category": "Derivatives",
+   "subcategory": "Hedging Strategy",
+   "type": "trading_strategy",
+   "definition": "Although almost any derivative can be used to hedge, futures/forwards/swaps and costless collars are the two most commonly used structures in practice.",
+   "core_idea": "Futures, forwards, and commodity swaps are favored as hedging tools primarily because they can be entered into for free or for only a limited margin requirement, making them capital-efficient relative to other instruments.",
+   "key_points": [
+    "A variety of futures, forwards, and commodity swaps can serve as hedging instruments",
+    "Futures-type hedges are attractive because they typically require little or no up-front premium, only margin",
+    "Costless collars are cited as the other most common hedge structure, for the same low-capital-requirement reason"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Definition of hedging"
+   ],
+   "trading_implications": [
+    "Futures/forwards and costless collars are preferred hedge structures when a firm wants to minimize up-front cash outlay for the hedge"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; note the source text is truncated mid-description of futures-based hedges and does not elaborate on costless collar mechanics in this excerpt",
+   "related_topics": [
+    "Futures",
+    "Forwards",
+    "Commodity swaps",
+    "Collars"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "593-594",
+    "section_hint": "6.5 Hedging \u2014 Types of Hedges"
+   }
+  }
+ ]
+}

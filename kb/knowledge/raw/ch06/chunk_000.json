@@ -1,0 +1,241 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Petroleum vs. crude oil terminology",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "definition",
+   "definition": "Petroleum is the umbrella term for any hydrocarbon that is liquid at normal temperature and pressure, covering crude oil as well as everything refined from it (gasoline, heating oil, jet fuel, etc.). Crude oil specifically refers to petroleum in its unrefined state, as it comes out of the ground, before it has been separated in a refinery.",
+   "core_idea": "\"Petroleum\" and \"crude oil\" are not synonyms: petroleum is the broad category, crude oil is the raw input before distillation splits it into named products.",
+   "key_points": [
+    "Petroleum forms over millions of years as decaying plant matter is subjected to heat and pressure underground, yielding a mix of gas, liquid, and solid hydrocarbons.",
+    "Crude oil is not burned directly because its light fractions form explosive vapors and its heavy fractions resist ignition/flow.",
+    "Refineries use distillation to separate crude oil into more uniform, named components (gasoline, heating oil, etc.).",
+    "Petroleum's high energy density per unit volume makes it attractive versus hydrocarbon gases (e.g., propane) and easier to handle in engines than solid fuels like coal."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distillation output products (gasoline, heating oil) are downstream of crude oil",
+    "Crack spread depends on this refining relationship"
+   ],
+   "trading_implications": [
+    "Because crude oil must be refined before use, its price and refined-product prices are linked but not identical, creating the basis for crack-spread trading."
+   ],
+   "common_misunderstandings": [
+    "Treating \"petroleum\" and \"crude oil\" as interchangeable terms; petroleum is the broader category that includes refined products."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Refining",
+    "Crude oil market participants"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "214-215",
+    "section_hint": "2.3 Oil \u2014 Summary / intro"
+   }
+  },
+  {
+   "topic": "Global crude oil pricing vs. regional refined product pricing",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "market_mechanic",
+   "definition": "Crude oil trades in a single global market with roughly uniform pricing worldwide, supported by extensive transport and processing infrastructure. Refined products like gasoline and heating oil trade in smaller, regional markets because refineries are typically sited near their consumer markets and finished products are rarely shipped long distances.",
+   "core_idea": "Crude oil is a globally fungible commodity with one world price, while refined product prices are set by local supply and demand because refining capacity is built close to where the products are consumed.",
+   "key_points": [
+    "Refineries are located near consumer markets partly for worker safety and the perceived political stability of being near (but not necessarily in) production regions.",
+    "Because refined products aren't moved far after refining, regional supply/demand imbalances show up directly in regional refined-product prices.",
+    "International petroleum trading activity is concentrated in crude oil rather than in refined products.",
+    "Crude oil is described as the single most traded commodity in the world by both volume and value, giving it outsized influence as a benchmark for the broader energy sector, including electricity and heating costs."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Refined product regional pricing vs. crack spread economics for local refiners"
+   ],
+   "trading_implications": [
+    "A trader hedging refined product exposure needs to watch regional supply/demand, not just the global crude benchmark.",
+    "Crude oil benchmarks can be used as a general proxy for energy-sector price direction given their global scrutiny and high trading volume."
+   ],
+   "common_misunderstandings": [
+    "Assuming gasoline or heating oil prices move in lockstep worldwide the way crude oil prices roughly do; refined product prices are regional, not global."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crude oil market participants",
+    "Refiners and crack spread"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "214-215",
+    "section_hint": "2.3 Oil \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Drivers of where crude oil flows (transport cost, politics, regulation)",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "market_mechanic",
+   "definition": "Crude oil trade is dominated by the relationship between importing (industrialized) nations and exporting (often less developed, Middle East/South America) nations. The default rule is that oil flows to the nearest sufficiently-demanding market first, with transportation and storage costs as the primary determinant; but international politics and environmental regulation can override pure geographic logic.",
+   "core_idea": "Oil generally flows to the closest market that needs it, but political embargoes and product-quality regulations can redirect flows away from the nearest market.",
+   "key_points": [
+    "Largest crude oil importers: industrialized North America, Europe, and Asia-Pacific.",
+    "Largest net exporters: less developed nations in the Middle East and South America.",
+    "Default flow logic: ship to the nearest market first; if that market is already well-supplied, move to the next-closest market.",
+    "Political example: in 1973, OPEC countries refused to sell oil to Western Europe, the U.S., and Japan over their support for Israel, overriding normal nearest-market flows.",
+    "Regulatory example: U.S. low-sulfur fuel requirements make low-sulfur crude more valuable domestically, justifying shipping it long distances rather than sending it to a closer but less-regulated market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sulfur content / sweet vs. sour crude pricing",
+    "Regional refined product pricing"
+   ],
+   "trading_implications": [
+    "Traders must track geopolitical events and environmental regulation changes (e.g., sulfur limits) as they can redirect crude flows independent of simple distance/transport-cost logic."
+   ],
+   "common_misunderstandings": [
+    "Assuming oil always flows purely by shortest transport distance; political and regulatory factors can override that default."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Sweet vs. sour crude",
+    "Crude oil market participants"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "215",
+    "section_hint": "Crude Oil Market Participants"
+   }
+  },
+  {
+   "topic": "Crude oil market participant categories",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "market_mechanic",
+   "definition": "The petroleum market has five major participant types: producers (extract crude), refiners (convert crude into finished products and earn the crack spread), marketers (buy and resell petroleum products, ranging from hedge funds to gas station operators), governments (often own mineral rights outside the U.S., regulate trading, can use oil politically or nationalize assets), and consumers (end users, from industrial buyers to individual drivers).",
+   "core_idea": "Understanding who is on each side of an oil trade (producer, refiner, marketer, government, consumer) explains differing motives: producers extract, refiners capture a processing margin they typically hedge away, marketers seek resale profit, governments pursue policy/political goals, and consumers just need the end product.",
+   "key_points": [
+    "About half the world's crude supply is located in the Middle East, which \u2014 due to low regional population/demand \u2014 is the single largest exporting region.",
+    "Industrialized countries (e.g., the United States) can be major producers yet still be net importers because of high domestic demand.",
+    "Refiners' profit is proportional to the crack spread: the margin from buying a barrel of crude, splitting it into components via refining, and selling those components.",
+    "Refiners typically try to eliminate (hedge) their exposure to petroleum price movements rather than take directional price risk.",
+    "Outside the U.S., governments typically own mineral rights to petroleum and can also set trading rules, consumer protections, use oil as a political tool, or nationalize producer/refiner assets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Refiner economics tie to crack spread",
+    "Government ownership/regulation ties to political flow disruptions"
+   ],
+   "trading_implications": [
+    "Refiners are natural hedgers of crack spread exposure rather than outright crude price speculators.",
+    "Government actions (nationalization, export bans, policy use of oil) are a distinct risk category separate from normal supply/demand."
+   ],
+   "common_misunderstandings": [
+    "Assuming a country that produces a lot of oil must be a net exporter \u2014 industrialized producers like the U.S. can still be net importers due to high domestic demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Global crude pricing vs regional refined pricing"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "215-216",
+    "section_hint": "Crude Oil Market Participants"
+   }
+  },
+  {
+   "topic": "Common units for trading crude oil (barrel, tonne, conversion)",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "definition",
+   "definition": "Crude oil is traded by volume (barrels) in the United States and by weight (tonnes) in Europe. A barrel equals 42 U.S. gallons (about 159 liters); a tonne (metric ton) equals 1,000 kilograms (about 2,204.6 pounds). Converting between the two units requires a crude-specific ratio since the density of crude oil varies by type, though a rough rule of thumb of 7.5 barrels per tonne is commonly used.",
+   "core_idea": "Barrels and tonnes are not interchangeable at a single fixed ratio because crude oil density varies by grade, so the barrels-per-tonne conversion depends on which crude is being measured.",
+   "key_points": [
+    "U.S. convention: barrels (volume).",
+    "European convention: tonnes (weight/mass).",
+    "1 barrel = 42 U.S. gallons \u2248 159 liters.",
+    "1 tonne = 1,000 kg \u2248 2,204.6 lbs.",
+    "Rough approximation: ~7.5 barrels per tonne, but actual ratios range from about 7.2 barrels/tonne (Persian Gulf crude) to about 7.5 barrels/tonne (premium light crude such as WTI or Brent), reflecting density differences between crude grades."
+   ],
+   "formulas": [
+    {
+     "name": "Barrel definition",
+     "formula": "1 bbl = 42 US gallons \u2248 159 liters",
+     "variables": {
+      "bbl": "barrel, standard U.S. volume unit for petroleum"
+     }
+    },
+    {
+     "name": "Tonne definition",
+     "formula": "1 t = 1,000 kg \u2248 2,204.6 lbs",
+     "variables": {
+      "t": "tonne (metric ton), standard European mass unit for petroleum"
+     }
+    },
+    {
+     "name": "Approximate barrel-tonne conversion",
+     "formula": "1 tonne \u2248 7.5 barrels (rough average; ranges ~7.2 to ~7.5 bbl/tonne depending on crude density)",
+     "variables": {
+      "bbl/tonne": "barrels per tonne, varies by crude grade due to differing density"
+     }
+    }
+   ],
+   "relationships": [
+    "Conversion ratio depends on crude density/API gravity"
+   ],
+   "trading_implications": [
+    "When comparing U.S. barrel-quoted prices to European tonne-quoted prices, traders must use the correct grade-specific conversion ratio rather than a single universal constant, or risk mispricing the position."
+   ],
+   "common_misunderstandings": [
+    "Using a single fixed barrels-per-tonne conversion for all crude oil, when the true ratio varies by grade (e.g., Persian Gulf vs. WTI/Brent)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crude oil density and API gravity",
+    "Sweet vs. sour crude"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "216",
+    "section_hint": "Common Units"
+   }
+  },
+  {
+   "topic": "Describing crude oil: density (API gravity) and sulfur content (sweet vs. sour)",
+   "category": "Commodities",
+   "subcategory": "Oil Fundamentals",
+   "type": "concept",
+   "definition": "Crude oils are characterized primarily by two properties: density, measured via American Petroleum Institute (API) gravity, and sulfur content. Low-density (\"light\") crude has a higher share of light hydrocarbons recoverable through simple distillation and flows freely; heavy crude has more low-value components requiring extra downstream processing and is more viscous. Sulfur content determines whether crude is labeled \"sweet\" (low sulfur) or \"sour\" (high sulfur); sulfur is a pollutant that requires expensive processing to remove, so high sulfur content is undesirable.",
+   "core_idea": "Crude oil grades are classified along two axes \u2014 light/heavy (density, via API gravity) and sweet/sour (sulfur content) \u2014 and both axes affect how valuable and easy-to-process a given crude is.",
+   "key_points": [
+    "Light crude oils flow freely and yield more value from simple distillation; heavy crude oils are more viscous and contain more low-value fractions needing further processing.",
+    "Crude density/viscosity is visually apparent on inspection (light flows freely vs. heavy is viscous).",
+    "Sweet crude = low sulfur content; sour crude = high sulfur content.",
+    "High sulfur is undesirable because it is a major pollutant that can only be removed via expensive processing."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sulfur regulation (e.g., U.S. low-sulfur fuel standards) drives regional demand for sweet crude",
+    "Density affects refining yield/economics"
+   ],
+   "trading_implications": [
+    "Sweet, light crude commands a premium where low-sulfur regulations apply (e.g., U.S.), which can justify shipping it long distances instead of using a closer but higher-sulfur supply."
+   ],
+   "common_misunderstandings": [
+    "Assuming all crude oil is priced identically regardless of grade; light/sweet and heavy/sour grades carry meaningfully different value due to processing cost and yield differences."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Barrel/tonne conversion by grade",
+    "Regulatory drivers of oil flow (U.S. sulfur standards)"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "216-217",
+    "section_hint": "Descriptions of Crude Oil"
+   }
+  }
+ ]
+}

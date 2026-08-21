@@ -1,0 +1,238 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Roles in a deregulated electricity grid",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "In deregulated power markets, the generation, transmission, and retail-sales functions of the grid are split among separate companies rather than being bundled into one utility.",
+   "core_idea": "Deregulation unbundles the electricity supply chain into distinct roles: a merchant generator that sells power (usually to a load-serving entity), a wires-only investor-owned utility that owns transmission/distribution but not generation, a load-serving entity (LSE) that acts as intermediary between the grid operator, generators, and consumers, and a provider of last resort (POLR) that is obligated to serve customers who haven't chosen a supplier or whose supplier has failed.",
+   "key_points": [
+    "Merchant generator: sells power to another company, typically a load-serving entity, rather than directly to end-users.",
+    "Investor-owned (wires) utility: owns transmission infrastructure but not generation assets.",
+    "Load-serving entity (LSE): intermediary providing electric service to end-users or wholesale customers.",
+    "Provider of last resort (POLR): the LSE obligated to supply consumers who don't pick a supplier or whose chosen supplier goes out of business."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with the bundled roles found in regulated (integrated utility) markets."
+   ],
+   "trading_implications": [
+    "Merchant generators are the natural counterparties for physical/financial power sales, since they don't have their own captive retail load."
+   ],
+   "common_misunderstandings": [
+    "The 'wires' utility owning transmission does not mean it also owns or dispatches generation in a deregulated market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulated market utility structures",
+    "Load serving entity"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "174-175",
+    "section_hint": "2.2 Electricity \u2014 market participants"
+   }
+  },
+  {
+   "topic": "Roles in a regulated electricity grid",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "In regulated markets, one entity typically performs all four core grid functions (generation, transmission, distribution, retail sale), usually as a government-sanctioned monopoly, though ownership models vary by type of sponsor.",
+   "core_idea": "Regulated-market utilities come in several forms depending on ownership: investor-backed integrated utilities, government-owned munis, not-for-profit rural co-ops, and federally owned utilities often tied to hydroelectric generation.",
+   "key_points": [
+    "Integrated utility: a regulated monopoly owning generation, transmission, and distribution assets together.",
+    "Municipally owned utility (muni): publicly owned by a local government.",
+    "Co-operative (co-op): not-for-profit, typically serving rural areas that are unprofitable for traditional utilities to serve.",
+    "Federally owned utility: a government entity, often involving hydroelectric generation, authorized to buy, sell, and distribute power."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with the unbundled roles (merchant generator, wires company, LSE, POLR) found in deregulated markets."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Deregulated market participant roles"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "174-175",
+    "section_hint": "2.2 Electricity \u2014 market participants"
+   }
+  },
+  {
+   "topic": "Forward power market vs. daily (spot) power auctions",
+   "category": "Power Markets",
+   "subcategory": "Trading Markets",
+   "type": "market_mechanic",
+   "definition": "The forward power market and the daily spot auction are related but structurally distinct markets: the spot auction sets the reference prices the forward market trades against, but access, contract types, and lot sizes differ sharply.",
+   "core_idea": "Daily power auctions are restricted to entities that can physically generate and deliver power onto the grid, and trade in arbitrarily small sizes for immediate delivery anywhere; the forward market is open to any sufficiently capitalized participant, trades both physical and cash-settled financial contracts, but only in large monthly blocks at a limited set of hub locations.",
+   "key_points": [
+    "Daily auctions (a.k.a. spot power market) are open only to power providers with generation/delivery capability.",
+    "Forward market participation requires no generation capability at all.",
+    "Forward contracts can be physical (delivery required) or financial (cash-settled).",
+    "Spot power can be bought in small sizes anywhere; forward power trades only in monthly blocks at roughly 30 major locations.",
+    "Most speculative trading activity occurs in the forward market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Forward market prices are anchored to daily auction (spot) prices even though the two markets have different access rules and contract structures."
+   ],
+   "trading_implications": [
+    "Speculators without generation assets can only participate via the forward market, not the daily auctions.",
+    "Because forward contracts are large and location-limited, achieving an exact regional price often requires a combination of a hub trade plus a separate fine-tuning trade."
+   ],
+   "common_misunderstandings": [
+    "The forward and spot markets are not the same market at different tenors \u2014 they have fundamentally different access requirements and contract sizes."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Trading hubs",
+    "Locational Marginal Price"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "175-176",
+    "section_hint": "2.2 Electricity \u2014 Electrical Trading Markets"
+   }
+  },
+  {
+   "topic": "Trading hub concentration and basis (fine-tuning) trades",
+   "category": "Power Markets",
+   "subcategory": "Trading Markets",
+   "type": "market_mechanic",
+   "definition": "Forward power trading is deliberately concentrated at a small number of major hub locations to concentrate liquidity, at the cost of imprecise geographic price matching.",
+   "core_idea": "Limiting forward trading to about 30 major hubs forces enough buyers and sellers into each contract to keep it liquid and standardized, but because those hubs cover broad geographic areas, the hub price won't exactly match the price at a specific delivery point, so traders often need a second, smaller trade to lock in the exact location price.",
+   "key_points": [
+    "Concentrating trading at limited hubs makes contracts easier to standardize and easier to find counterparties for.",
+    "The tradeoff is that hub prices represent an extended geographic area, not an exact point price.",
+    "Traders commonly execute power exposure in two steps: a standardized hub trade for approximate regional exposure, then a smaller trade to fine-tune the exact price.",
+    "The fine-tuning trade may or may not be available depending on market liquidity at the specific location."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to why the forward market differs structurally from the daily auction market."
+   ],
+   "trading_implications": [
+    "Basis risk exists between a hub forward position and an exact delivery-point exposure, and closing that gap requires a location-specific trade that isn't guaranteed to be available."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward power market vs. daily auctions",
+    "Locational Marginal Price"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "175-176",
+    "section_hint": "2.2 Electricity \u2014 Electrical Trading Markets"
+   }
+  },
+  {
+   "topic": "Locational Marginal Price (LMP) and out-of-merit dispatch",
+   "category": "Power Markets",
+   "subcategory": "Pricing / Congestion",
+   "type": "concept",
+   "definition": "LMP is the price of power at a specific grid location, which can diverge from the general clearing price when congestion forces a higher-cost generator to be dispatched out of merit order to serve local demand.",
+   "core_idea": "When transmission lines become overloaded during heavy demand, the grid operator must activate a nearer, often higher-cost, generator out of normal least-cost order to relieve congestion; rather than passing that higher cost to the entire grid, most deregulated markets charge it only to the affected location, producing a location-specific clearing price known as LMP.",
+   "key_points": [
+    "Low-cost generators are normally dispatched first (merit order).",
+    "Congestion can force a higher-cost, more local generator online out of merit order to relieve overloaded lines.",
+    "If that higher price applied grid-wide, all customers would bear a cost caused by a small minority's congestion.",
+    "Most deregulated grids instead isolate that added cost to the affected parties at that location \u2014 this location-specific price is the LMP."
+   ],
+   "formulas": [],
+   "relationships": [
+    "LMP is implemented via the Standard Market Design (SMD) congestion cost allocation.",
+    "Motivates the hub/basis trading structure described for the forward market."
+   ],
+   "trading_implications": [
+    "Location has become a major determinant of a power plant's profitability, alongside fuel cost and efficiency."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Standard Market Design",
+    "Congestion cost allocation",
+    "Remote generation / line-loss penalty"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "176",
+    "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   }
+  },
+  {
+   "topic": "Standard Market Design: congestion cost allocation",
+   "category": "Power Markets",
+   "subcategory": "Regulation / Pricing",
+   "type": "market_mechanic",
+   "definition": "Under FERC's recommended Standard Market Design (SMD), the cost of transmission congestion is charged only to the parties causing or affected by it, rather than spread across all grid users.",
+   "core_idea": "Both consumers and power producers can pay congestion costs: there is a charge for routing power into a congested high-load area, and a credit for producing power that bypasses congestion; the author frames this as aligning market prices with actual delivery cost, in contrast to price legislation, which the author characterizes as introducing exceptions rather than cost-based pricing.",
+   "key_points": [
+    "SMD assigns congestion costs to the parties actually affected, not the whole grid.",
+    "Consumers in congested high-load areas pay a routing charge.",
+    "Producers whose power bypasses congestion receive a credit.",
+    "Most of the U.S. is moving toward this cost-allocation model."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Part of the same SMD framework as the remote-generation/line-loss penalty and the LMP concept."
+   ],
+   "trading_implications": [
+    "Generators located to relieve congestion are economically favored; there is a market-based incentive to build transmission that reduces congestion."
+   ],
+   "common_misunderstandings": [
+    "The author's framing implies deregulation and cost-reflective pricing are linked, and that legislated pricing is presented as inherently less cost-reflective \u2014 this is the author's normative argument, not a neutral technical fact."
+   ],
+   "author_states_vs_inference": "The characterization that legislation 'interferes with' cost-reflective pricing and necessarily adds loopholes/exceptions is the author's argued opinion, flagged here as such rather than a purely technical claim.",
+   "related_topics": [
+    "Locational Marginal Price",
+    "Remote generation / line-loss penalty"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "176",
+    "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   }
+  },
+  {
+   "topic": "Remote generation penalty and payment for deliverable power",
+   "category": "Power Markets",
+   "subcategory": "Pricing",
+   "type": "market_mechanic",
+   "definition": "Under the SMD/LMP methodology, generators are paid based on the power actually delivered to customers (net of transmission line losses), not the gross power injected at the generation site.",
+   "core_idea": "Historically generators were paid for gross power placed onto the grid regardless of location; because line losses reduce how much of that power actually reaches distant customers, LMP-based pricing instead pays generators only for deliverable power, creating a financial penalty for being far from demand.",
+   "key_points": [
+    "Old model: generators paid for gross power injected at their site, ignoring transmission losses.",
+    "New (LMP) model: generators paid only for power that is actually deliverable to customers.",
+    "This creates an economic disincentive to build generation that can't effectively deliver power to load, and an incentive to build congestion-relieving transmission.",
+    "The combined effect (congestion allocation + remote generation penalty) is credited with improving overall grid reliability."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Second major component of FERC's Standard Market Design, alongside congestion cost allocation."
+   ],
+   "trading_implications": [
+    "Plant siting decisions must weigh line-loss-driven revenue penalties for remote locations against fuel cost and efficiency advantages."
+   ],
+   "common_misunderstandings": [
+    "Being paid for 'power produced' is not the same as being paid for 'power delivered' under LMP \u2014 the distinction is the basis of the remote generation penalty."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Standard Market Design",
+    "Locational Marginal Price"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "176-177",
+    "section_hint": "2.2 Electricity \u2014 Daily Power Auctions"
+   }
+  }
+ ]
+}

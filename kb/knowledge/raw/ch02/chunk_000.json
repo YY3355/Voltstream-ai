@@ -1,0 +1,262 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Why energy trading differs from other financial markets",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Energy trading is distinguished from other financial markets by the difficulty and expense of storing and transporting energy products, which breaks the usual link between current and future prices.",
+   "core_idea": "In most financial markets, buy-and-hold arbitrage ties spot and future prices together, since you can buy today, store, and resell later. Energy products are hard or costly to store and must compete with a continuous new supply, so this link is weak or absent, producing cyclical rather than arbitrage-linked pricing.",
+   "key_points": [
+    "Energy trading consists of both physical cash-market exchanges and forward markets, with most activity occurring in forward markets.",
+    "Energy products cannot be substituted across time or location \u2014 electricity in one place/time is a different product from electricity elsewhere or at another time.",
+    "Financial techniques from other markets (dynamic hedging, risk aggregation) must be modified because energy risks at different locations/delivery dates cannot be aggregated the same way.",
+    "Because storage/transport must be arranged in advance, most energy trading is really trading of agreements to deliver in the future, not trading of the physical commodity itself."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why spot prices in one location (e.g., Chicago in a cold snap) do not reflect availability or expectations elsewhere, since undeliverable supply has no value to that market."
+   ],
+   "trading_implications": [
+    "Traders cannot rely on cash-and-carry arbitrage to keep forward and spot energy prices in line the way they would for storable financial assets.",
+    "Location and delivery time are core contract terms, not incidental details, when structuring energy trades."
+   ],
+   "common_misunderstandings": [
+    "Assuming energy prices behave like storable-commodity or financial-asset prices, where present and future prices are tightly linked by arbitrage."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market",
+    "Forward Market",
+    "Basis Risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "73-74",
+    "section_hint": "1.2 Trading Markets \u2014 Purpose/Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "Cash market vs. trading market",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "A trading market allows both buying and selling of a commodity; a cash market may only allow buying, with no ability to resell.",
+   "core_idea": "Not every place a commodity changes hands is a trading market \u2014 the defining feature of a trading market is two-way (buy and sell) capability, such as at a service station where gasoline can be bought but not resold.",
+   "key_points": [
+    "Trading = buying, selling, and exchanging commodities, products, and services.",
+    "A cash-only purchase (e.g., gasoline at a service station) is not a trading-market transaction because it can't be reversed/resold."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguishes trading markets from the spot/cash market discussed later in the chunk"
+   ],
+   "trading_implications": [
+    "Determining whether a venue is a true trading market matters for whether a position can be exited, not just entered."
+   ],
+   "common_misunderstandings": [
+    "Conflating any cash purchase with participation in a trading market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "74",
+    "section_hint": "1.2 Trading Markets \u2014 intro"
+   }
+  },
+  {
+   "topic": "Non-storability and immediacy of energy delivery",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Electricity and heat generally cannot be stored or transported without advance arrangement, and physical energy purchased today usually must be consumed immediately.",
+   "core_idea": "Energy has no intrinsic value in isolation \u2014 it is only valuable at a specific place and time (e.g., heat has no value in summer, and gas that can't reach Chicago during a cold snap has no value there regardless of price), so spot prices reflect only what is locally deliverable, not broader future expectations.",
+   "key_points": [
+    "Home heating value is seasonal/contextual \u2014 worthless (or negative, i.e., people pay for cooling) in summer.",
+    "During a regional price spike (e.g., Chicago cold snap), gas that cannot physically be delivered there has little value, illustrating location-specific worth.",
+    "Spot prices in a location reflect current local deliverable supply/demand, not expectations of future prices, because customers cannot defer urgent consumption needs.",
+    "Consumers can't relocate overnight to escape a local shortage or price spike."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Reinforces the non-substitutability point about location/time in energy trading"
+   ],
+   "trading_implications": [
+    "Local spot price spikes should not be read as signals about future or other-location prices."
+   ],
+   "common_misunderstandings": [
+    "Believing that a high spot price in one location implies availability or value of the same commodity held elsewhere."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market",
+    "Location basis"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "74",
+    "section_hint": "1.2 Trading Markets \u2014 intro"
+   }
+  },
+  {
+   "topic": "Law of Demand and Law of Supply",
+   "category": "Power Markets",
+   "subcategory": "Supply and Demand",
+   "type": "definition",
+   "definition": "The Law of Demand states higher prices reduce demand; the Law of Supply states higher prices increase production.",
+   "core_idea": "Traders generally model prices as set by the intersection of supply and demand, with a free market gravitating toward the price level where quantity supplied equals quantity demanded.",
+   "key_points": [
+    "Theoretically, the supply/demand intersection sets the 'fair' price for an asset.",
+    "In practice, supply and demand don't always respond to price changes as theory predicts."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Foundation for the elasticity concept and inelastic-market price disruptions described next"
+   ],
+   "trading_implications": [
+    "Basic supply/demand framing is a starting point for price analysis but must be qualified by elasticity considerations in energy markets."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Elasticity",
+    "Inelastic markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "74-75",
+    "section_hint": "1.2 Trading Markets \u2014 Supply and Demand"
+   }
+  },
+  {
+   "topic": "Elasticity and inelastic energy markets",
+   "category": "Power Markets",
+   "subcategory": "Supply and Demand",
+   "type": "concept",
+   "definition": "Elasticity measures how much supply and demand respond to price changes; when they don't respond ('inelastic'), prices can spike or crash sharply rather than adjusting smoothly.",
+   "core_idea": "In an inelastic market, prices skyrocket when demand exceeds supply and crash when supply exceeds demand, because quantity doesn't adjust to absorb the imbalance \u2014 both events are common in energy markets.",
+   "key_points": [
+    "Energy supply and demand are often constant/unresponsive to price changes in the short run, causing price disruptions instead of smooth equilibration.",
+    "Price spikes and price crashes are both described as fairly common occurrences in energy markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the Law of Supply/Demand; explains why theoretical equilibrium often fails to hold in energy"
+   ],
+   "trading_implications": [
+    "Traders should expect sharper, more volatile price moves in energy markets than in markets with elastic supply/demand response."
+   ],
+   "common_misunderstandings": [
+    "Assuming energy prices will smoothly equilibrate the way textbook elastic-market prices do."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Law of Demand",
+    "Law of Supply",
+    "Capital investment lag"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "75",
+    "section_hint": "1.2 Trading Markets \u2014 Supply and Demand"
+   }
+  },
+  {
+   "topic": "Lag between high prices and new energy supply",
+   "category": "Power Markets",
+   "subcategory": "Supply and Demand",
+   "type": "concept",
+   "definition": "There is a substantial delay between a price increase and a corresponding increase in energy supply, because new supply requires long-term capital investments (wells, refineries, power plants).",
+   "core_idea": "Because building new energy infrastructure takes significant time and is only undertaken when a permanent price change is expected (not a short-term spike), the supply side of energy markets responds slowly, contributing to inelasticity.",
+   "key_points": [
+    "New supply investments (wells, refineries, power plants) are long-term capital projects, not short-term reactions to price.",
+    "Producers commit to new capacity only if they expect a durable/permanent price change, and construction itself takes substantial time.",
+    "Consumers also can't easily substitute away from energy demand \u2014 they can't relocate, easily convert vehicles to alternative fuels, or forgo winter heating \u2014 making them a largely captive audience."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains the supply-side driver of the inelastic-market/price-disruption dynamic described above"
+   ],
+   "trading_implications": [
+    "Short-term price spikes should not be expected to induce quick supply responses; capacity additions lag price signals by potentially years."
+   ],
+   "common_misunderstandings": [
+    "Expecting new energy supply to come online quickly in response to a price spike."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Elasticity and inelastic energy markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "75",
+    "section_hint": "1.2 Trading Markets \u2014 Supply and Demand"
+   }
+  },
+  {
+   "topic": "Spot market (cash market)",
+   "category": "Power Markets",
+   "subcategory": "Spot and Forward Markets",
+   "type": "definition",
+   "definition": "The spot market (a.k.a. cash market) is the market for immediate delivery of a commodity \u2014 for energy, this can mean delivery anywhere from about five seconds to one month out \u2014 typically involving small-quantity purchases for immediate use.",
+   "core_idea": "Spot trades involve the physical transfer of a standardized quantity of a commodity for a set price 'on the spot,' analogous to buying fast food or flipping a light switch (immediately buying and consuming electricity); electricity spot trading is limited to parties who can deliver or use power right away.",
+   "key_points": [
+    "'Immediate' delivery in energy spot markets can span from seconds up to about a month, given the practical complexity of delivering some energy commodities.",
+    "Spot market participants are typically consumers buying small quantities for immediate use.",
+    "Only parties able to physically deliver or immediately use power can trade in the electricity spot market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted directly with the forward market definition"
+   ],
+   "trading_implications": [
+    "Spot market access for electricity is inherently restricted to physical delivery/use capability, unlike purely financial markets."
+   ],
+   "common_misunderstandings": [
+    "Thinking 'spot' delivery always means instantaneous (seconds) rather than potentially up to a month for some energy commodities."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward Market"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "75-76",
+    "section_hint": "1.2 Trading Markets \u2014 Spot and Forward Markets / Spot Market"
+   }
+  },
+  {
+   "topic": "Forward market",
+   "category": "Power Markets",
+   "subcategory": "Spot and Forward Markets",
+   "type": "definition",
+   "definition": "The forward market is a financial market in which delivery of a commodity is scheduled for an agreed future point in time, typically at least a month ahead.",
+   "core_idea": "Unlike the spot market's immediate delivery, forward markets let counterparties arrange transactions well in advance of physical delivery, and most energy trading activity occurs in this forward segment.",
+   "key_points": [
+    "Forward market deliveries are typically scheduled at least a month in advance.",
+    "Most energy trading occurs in forward markets rather than spot markets (per the chapter's Key Topics)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted directly with the spot/cash market definition"
+   ],
+   "trading_implications": [
+    "Forward markets are the primary venue for arranging energy transactions given the difficulty of short-notice physical delivery."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "75",
+    "section_hint": "1.2 Trading Markets \u2014 Spot and Forward Markets"
+   }
+  }
+ ]
+}

@@ -1,0 +1,228 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "The generation stack",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "concept",
+   "definition": "A generation stack ranks all the power plants on a grid by their cost of production, usually drawn with the most expensive plant at the top and the cheapest at the bottom, with each plant's slice sized by how much capacity it can supply.",
+   "core_idea": "Because a plant's cost to produce power is driven mainly by its physical design and fuel, lining plants up by cost gives a simple tool for estimating what price the market will clear at for a given level of demand.",
+   "key_points": [
+    "Ordered from highest production cost (top) to lowest (bottom)",
+    "Each plant occupies a portion of the stack sized to its dispatchable capacity (MWh)",
+    "The stack is the primary lens used to estimate day-ahead and real-time power prices",
+    "Fuel cost heavily influences break-even cost for fuel-dependent plants such as gas-fired units"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds directly into the dispatch stack and the marginal-provider pricing mechanic"
+   ],
+   "trading_implications": [
+    "Identifying which plant type is likely to be needed to meet forecast demand brackets the likely clearing price"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dispatch stack",
+    "Break-even cost",
+    "Marginal provider"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "406-407",
+    "section_hint": "4.2 The Generation Stack"
+   }
+  },
+  {
+   "topic": "Dispatch capacity and break-even cost",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "definition",
+   "definition": "Dispatch capacity is the maximum amount of power a plant can produce; break-even cost is the lowest price a plant can accept for its output and still avoid a loss.",
+   "core_idea": "These two figures are what populate a generation stack for each plant: capacity determines the width of its block, break-even cost determines its vertical position.",
+   "key_points": [
+    "Break-even cost is heavily influenced by fuel costs for fuel-dependent generators (e.g., natural gas)",
+    "Capacity is the amount of power (in MWh) a plant can contribute"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins bid placement strategy and the generation stack ordering"
+   ],
+   "trading_implications": [
+    "Break-even cost acts as an approximate floor for a plant's bid price"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "407-408",
+    "section_hint": "4.2 The Generation Stack"
+   }
+  },
+  {
+   "topic": "Bid placement between own cost and the next unit's cost",
+   "category": "Power Markets",
+   "subcategory": "Bidding Strategy",
+   "type": "trading_strategy",
+   "definition": "Generators typically place bids above their own break-even cost but below the break-even cost of the next more expensive plant type in the stack.",
+   "core_idea": "This spacing lets a plant capture margin above its own cost while still positioning itself to clear ahead of costlier competitors, and it lets an outside observer bracket a plausible bid range for each plant type.",
+   "key_points": [
+    "Example given: a coal plant with an $50 break-even cost, sitting just below an $85 break-even unit, would likely bid somewhere between $50 and $85",
+    "Predicted consumer demand (plotted against price) determines which plant ends up being the price-setter"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on generation stack ordering",
+    "Determines the marginal provider in the dispatch stack"
+   ],
+   "trading_implications": [
+    "Bracketing a plant's likely bid range using the break-even costs of neighboring stack units helps forecast the clearing price at a given demand level"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Marginal provider"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "407-408",
+    "section_hint": "4.2 The Generation Stack"
+   }
+  },
+  {
+   "topic": "Uniform clearing price set by the marginal provider",
+   "category": "Power Markets",
+   "subcategory": "Auction Mechanics",
+   "type": "market_mechanic",
+   "definition": "All generators selected to run in a deregulated power auction are paid the same price, equal to the bid price of the highest-priced generator that still cleared (the marginal provider) \u2014 not each generator's own bid.",
+   "core_idea": "Because every activated generator is paid the marginal provider's price, that single unit effectively sets revenue for the whole activated fleet, which is why identifying it is central to price forecasting.",
+   "key_points": [
+    "Generators submit bids and the lowest bidders are selected first to supply the grid",
+    "The ISO/RTO chooses the set of winning generators that minimizes total cost to the market",
+    "The marginal provider sits at the top of the dispatch stack"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on the dispatch stack ordering to identify the marginal unit"
+   ],
+   "trading_implications": [
+    "Predicting which plant will be marginal for a given demand level is the core method for predicting the market clearing price"
+   ],
+   "common_misunderstandings": [
+    "This is not pay-as-bid pricing; every cleared generator receives the marginal provider's price, not its own submitted bid"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dispatch stack",
+    "Generation stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "406-409",
+    "section_hint": "4.2 The Generation Stack \u2014 Summary / The Dispatch Stack"
+   }
+  },
+  {
+   "topic": "Day-ahead auction versus real-time auction",
+   "category": "Power Markets",
+   "subcategory": "Auction Mechanics",
+   "type": "market_mechanic",
+   "definition": "Deregulated power markets typically run a day-ahead auction that schedules generators to run for full-hour blocks based on forecast load, followed by a real-time auction that adjusts production to reconcile actual demand with the day-ahead schedule.",
+   "core_idea": "The real-time auction exists specifically to correct for load-forecast error or intra-hour demand swings that the day-ahead schedule cannot anticipate.",
+   "key_points": [
+    "Day-ahead auction commits generators to operate for an entire hour based on predicted load",
+    "Real-time auction balances production against demand when the forecast proves wrong or demand fluctuates within the hour",
+    "Generators submit offer curves (generation levels tied to acceptable prices) plus technical constraints such as startup costs and minimum up time",
+    "The ISO selects the generator combination that minimizes total cost to the market",
+    "Most of a day's power is transacted in the day-ahead auction; real-time mainly handles short-term balancing and unexpected demand"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the bid-placement and real-time participation strategies"
+   ],
+   "trading_implications": [
+    "A generator must choose how much capacity to sell day-ahead versus hold back for the real-time market, trading certainty of a sale for potential upside"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bid placement strategy",
+    "Real-time market eligibility"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "407-408",
+    "section_hint": "The Mechanics of Day-Ahead and Real-Time Auctions"
+   }
+  },
+  {
+   "topic": "Real-time market eligibility and participation strategy by cost position",
+   "category": "Power Markets",
+   "subcategory": "Bidding Strategy",
+   "type": "trading_strategy",
+   "definition": "Only generators able to start quickly with fuel supplies already secured can participate in the real-time auction; low-cost baseload plants that fail to clear day-ahead are often locked out of real-time by their own operating constraints, while higher-cost, flexible plants may deliberately hold back capacity hoping for better real-time prices.",
+   "core_idea": "A plant's physical flexibility determines whether it even has the option to sell in real time, while its cost position determines whether waiting for real time is a sensible strategy.",
+   "key_points": [
+    "Real-time eligibility requires fast startup capability and fuel already lined up",
+    "Less efficient (often peaking) plants tend to have this flexibility",
+    "Low-cost providers usually try to lock in profit and hedge exposure ahead of time in the day-ahead market, since failing to sell there can leave them unable to fall back to real time",
+    "Higher-priced providers may deliberately wait for the real-time auction if day-ahead prices aren't high enough to satisfy them",
+    "A generator not selected in the day-ahead market remains eligible to try the real-time market (constraints permitting)"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the day-ahead vs. real-time auction mechanic"
+   ],
+   "trading_implications": [
+    "Bidding strategy differs systematically by plant type: baseload/low-cost units prioritize day-ahead certainty, while flexible/high-cost units may speculate on real-time pricing"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Day-ahead versus real-time auctions"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "408",
+    "section_hint": "The Mechanics of Day-Ahead and Real-Time Auctions"
+   }
+  },
+  {
+   "topic": "The dispatch stack and the marginal unit",
+   "category": "Power Markets",
+   "subcategory": "Generation Stack",
+   "type": "concept",
+   "definition": "The dispatch stack is the actual order in which generators are turned on based on the results of the day-ahead and real-time auctions, following a last-on-first-off pattern like a stack of plates; the unit at the top (the marginal unit) is activated last and deactivated first.",
+   "core_idea": "The plant sitting at the top of the dispatch stack is the marginal provider that sets the region's clearing price, so tracking which plant occupies that position as demand shifts is central to forecasting price.",
+   "key_points": [
+    "Dispatch order usually mirrors the cost ordering of the generation stack",
+    "Cheaper plants have more profit at stake if they aren't activated, so they compete hardest to be selected",
+    "Once price rises well above a plant's break-even cost, it risks forgoing significant profit by staying inactive",
+    "As a result, each plant tends to actively bid on only a small portion of the overall stack \u2014 the range near its own position"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly built on the generation stack concept and the uniform clearing-price mechanic"
+   ],
+   "trading_implications": [
+    "The marginal provider's break-even cost roughly bounds the clearing price for that period; tracking which plant is marginal as demand changes helps forecast price moves"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Uniform clearing price"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "408-410",
+    "section_hint": "The Dispatch Stack"
+   }
+  }
+ ]
+}

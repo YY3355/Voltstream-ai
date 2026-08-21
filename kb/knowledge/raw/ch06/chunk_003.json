@@ -1,0 +1,329 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Engine Knocking and Octane Rating",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Gasoline Quality",
+   "type": "concept",
+   "definition": "Octane rating measures how predictably a gasoline's ignition timing will occur across an engine's multiple cylinders.",
+   "core_idea": "An engine's cylinders must ignite in a coordinated sequence; if one cylinder's fuel ignites out of sync with the others, the mistimed piston reduces the engine's power output. Higher-octane fuel ignites more predictably, which reduces this mistiming.",
+   "key_points": [
+    "Multi-cylinder engines depend on synchronized ignition across cylinders",
+    "If one piston is still expanding when it should be retracting, engine power output drops",
+    "This mistiming problem is called knocking, pinging, or pinking",
+    "Higher octane fuel has less uncertainty in ignition timing, reducing knocking",
+    "Fuel additives have historically been used to improve ignition predictability: lead for many years, ethanol (high octane) currently"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Octane rating for gasoline is analogous to pentane rating for diesel fuel"
+   ],
+   "trading_implications": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Diesel Fuel (Heating Oil)"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "231",
+    "section_hint": "2.3 Oil"
+   }
+  },
+  {
+   "topic": "Diesel Fuel and Heating Oil Are the Same Base Product",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Refined Products",
+   "type": "definition",
+   "definition": "Diesel fuel and heating oil are both derived from the same petroleum distillate, No. 2 fuel oil, differing mainly in regulatory specifications rather than composition.",
+   "core_idea": "No. 2 fuel oil is sold either as diesel fuel or as heating oil; diesel has a stricter minimum pentane rating (diesel's analog to octane) and lower sulfur content, but otherwise the two are chemically and financially treated as nearly identical and interchangeable.",
+   "key_points": [
+    "Diesel and heating oil are both No. 2 fuel oil",
+    "Diesel requires a stricter minimum pentane rating (comparable to octane rating for gasoline) than heating oil",
+    "Diesel also requires lower sulfur content",
+    "Aside from these specs, the two products are nearly identical chemically and in financial markets, and used interchangeably",
+    "A large share of the consumer price of diesel comes from taxes, distribution, and marketing expenses, similar to gasoline",
+    "About 80% of No. 2 fuel oil is used as diesel fuel; the remainder is used for residential/commercial heating"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Diesel's pentane rating parallels gasoline's octane rating"
+   ],
+   "trading_implications": [
+    "Diesel and heating oil prices move together since they are the same underlying product"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Engine Knocking and Octane Rating",
+    "Heating Oil Seasonal Demand Pattern"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "231-232",
+    "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   }
+  },
+  {
+   "topic": "Diesel Fuel End Use and Trade Flows",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Diesel / Distillates",
+   "type": "market_mechanic",
+   "definition": "Diesel fuel in the US is used mainly for on-highway transport and heavy equipment, is largely domestically produced, and has only a small international trading market relative to crude oil.",
+   "core_idea": "Nearly all heavy vehicles and equipment in the US run on diesel, with on-highway trucking as the largest use; the US produces almost all the diesel it consumes and exports the surplus, since it is far more common for crude oil (the raw material) to be traded internationally than the finished refined product.",
+   "key_points": [
+    "Nearly all large trucks, buses, trains, farm equipment, and large boats in the US use diesel engines",
+    "The majority of diesel fuel use is for on-highway vehicles like semitrucks and tractor trailers",
+    "There is only a small international trading market for diesel fuel",
+    "Almost all US diesel consumption is produced domestically; surplus is exported",
+    "As with most petroleum products, crude oil (the raw material) is traded internationally far more than the finished product"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Diesel and heating oil are the same base product"
+   ],
+   "trading_implications": [
+    "US diesel pricing is primarily a domestic-market story, with exports absorbing surplus production"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Diesel Fuel and Heating Oil Are the Same Base Product"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "231-232",
+    "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   }
+  },
+  {
+   "topic": "Heating Oil Seasonal Demand Pattern",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Heating Oil",
+   "type": "market_mechanic",
+   "definition": "Heating oil demand and pricing follow a strong winter seasonal cycle driven by residential heating concentrated in the northeastern United States.",
+   "core_idea": "Because oil-heated homes are concentrated in the Mid-Atlantic and New England, heating oil prices are strongly tied to winter temperatures there; prices are lowest in summer and spike in winter, and even though households try to stock up cheaply in summer, limited storage capacity forces repeated refills through the winter.",
+   "key_points": [
+    "The largest use of No. 2 fuel oil as heating oil is residential heating during winter",
+    "Almost all US households using oil heat are located in the northeastern US",
+    "Heating oil prices are strongly influenced by winter temperatures in the Mid-Atlantic and New England",
+    "Prices are lowest in summer months and spike during winter",
+    "Households often fill storage tanks in summer when prices are low to reduce costs",
+    "Most households lack storage capacity to last a full winter without refilling, so demand continues through winter",
+    "Households typically refill their heating oil supply four or five times per winter"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Diesel Fuel and Heating Oil Are the Same Base Product"
+   ],
+   "trading_implications": [
+    "Heating oil has a predictable seasonal price pattern (low in summer, spiking in winter) tied to Northeast US winter weather",
+    "Summer stockpiling behavior creates a recurring pre-winter demand pattern, but doesn't eliminate winter demand due to storage limits"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Diesel Fuel and Heating Oil Are the Same Base Product"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "232",
+    "section_hint": "2.3 Oil \u2014 Diesel Fuel (Heating Oil)"
+   }
+  },
+  {
+   "topic": "WTI and Brent as Global Crude Oil Benchmarks",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Crude Oil Futures",
+   "type": "market_mechanic",
+   "definition": "NYMEX WTI and ICE Brent are the two dominant international crude oil futures benchmarks, representing different delivery regions but similar crude quality.",
+   "core_idea": "Crude oil futures are the most heavily traded futures contracts in the world, and the market is anchored by two benchmarks: WTI (crude delivered in the southern US) and Brent (seaborne crude in the Atlantic Ocean); both are light, low-sulfur crudes well suited to gasoline production.",
+   "key_points": [
+    "Crude oil futures are the most traded futures contracts in the world",
+    "NYMEX WTI represents crude oil delivered in the southern United States",
+    "ICE Brent represents the price of seaborne crude in the Atlantic Ocean",
+    "Both WTI and Brent are crude grades with high proportions of lighter components (good for gasoline) and low sulfur/pollutant content"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Grade Differential and Location Differential in physical crude pricing reference benchmarks like WTI/Brent"
+   ],
+   "trading_implications": [
+    "Benchmark choice (WTI vs Brent) matters because they represent different delivery regions and crude qualities"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variable Pricing Components in Physical Crude Contracts"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "232-233",
+    "section_hint": "2.3 Oil \u2014 Oil Futures"
+   }
+  },
+  {
+   "topic": "Core Contract Type Definitions: Futures, Spot, Physical, Financial",
+   "category": "Derivatives",
+   "subcategory": "Contract Types",
+   "type": "definition",
+   "definition": "Four foundational trading terms distinguishing exchange-traded vs. bilateral agreements, and physically-delivered vs. cash-settled transactions.",
+   "core_idea": "A futures contract is an exchange-traded agreement for future delivery and payment at a fixed price; a spot contract is a bilateral agreement for immediate/short-term delivery; a physical transaction delivers the actual commodity for cash, while a financial transaction settles in cash only, with no commodity delivered.",
+   "key_points": [
+    "Futures Contract: an agreement traded on an organized exchange to buy or sell assets at a fixed price, with delivery and payment both occurring at a future point in time",
+    "Spot Contract: a bilateral (direct, two-party) agreement to buy or sell assets for immediate or short-term delivery; in theory cash and commodity exchange 'on the spot', but in practice spot delivery typically means within the next four weeks",
+    "Physical Transaction: an exchange of commodity for cash",
+    "Financial Transaction: cash-settled \u2014 the commodity is not physically delivered; instead one party pays the other"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical Trading of Crude Priced off Futures",
+    "Spot Market Contract Standard Terms"
+   ],
+   "trading_implications": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market Contract Standard Terms"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "233",
+    "section_hint": "2.3 Oil \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Futures Contract Naming Convention and Expiration Timing",
+   "category": "Derivatives",
+   "subcategory": "Futures Contract Mechanics",
+   "type": "market_mechanic",
+   "definition": "Each futures contract has a coded name identifying commodity, delivery month, and delivery year, and a defined lifespan ending at a published expiration date before the delivery period.",
+   "core_idea": "Exchanges list multiple futures contracts per commodity distinguished by delivery date, using an abbreviation convention (e.g., CLZ7 for WTI December 2017: contract code, month code, year digit); each contract stops trading at a published expiration date before its delivery month so holders have time to arrange physical delivery.",
+   "key_points": [
+    "Each exchange lists multiple futures contracts per commodity, differing by delivery date",
+    "Contracts are named descriptively (e.g., 'WTI December 2017') or abbreviated (e.g., CLZ7): first characters = contract code, next-to-last character = delivery month code, last digit = delivery year",
+    "A futures contract's lifespan starts when the exchange opens it for trading and ends at its published expiration date",
+    "Expiration occurs before the delivery period \u2014 e.g., a WTI contract might cease trading on the third business day before the 25th calendar day of the month prior to delivery",
+    "Early expiration gives futures holders time to schedule physical delivery before the delivery month begins"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Core Contract Type Definitions"
+   ],
+   "trading_implications": [
+    "Traders must track each contract's specific expiration date relative to its delivery month, not assume expiration at month-end"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Core Contract Type Definitions: Futures, Spot, Physical, Financial"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "233-234",
+    "section_hint": "2.3 Oil \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Physical Crude Oil Priced off Futures (Reversed Price Discovery)",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Physical Trading / Price Discovery",
+   "type": "market_mechanic",
+   "definition": "Unlike most commodities, physical crude oil spot transactions are priced based on the futures market rather than the futures market being priced off physical spot transactions.",
+   "core_idea": "For most commodities, physical (spot) trading sets the spot price, and that spot price then informs forward/futures pricing; because crude oil futures are so heavily traded, the relationship is reversed \u2014 physical crude transactions are priced based on the futures market.",
+   "key_points": [
+    "Crude oil futures are so heavily traded that most physical crude transactions are based on futures prices",
+    "This differs from most other commodity markets, where physical transactions determine the spot price, which then determines pricing for future delivery",
+    "In crude markets specifically, futures prices determine physical/spot transaction pricing, not the reverse"
+   ],
+   "formulas": [],
+   "relationships": [
+    "WTI and Brent as Global Crude Oil Benchmarks",
+    "Spot Market Contract Standard Terms"
+   ],
+   "trading_implications": [
+    "The futures market is the primary price discovery mechanism for physical crude, making it central to hedging and pricing physical deals"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spot Market Contract Standard Terms"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "234",
+    "section_hint": "2.3 Oil \u2014 Physical Trading"
+   }
+  },
+  {
+   "topic": "Spot Market Contract Standard Terms for Physical Crude",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Physical Trading",
+   "type": "market_mechanic",
+   "definition": "Although physical crude oil contract terms could in theory be fully customized, in practice the market relies on a standardized set of contract terms to avoid case-by-case legal negotiation.",
+   "core_idea": "A bilateral spot agreement for crude (with delivery in practice within about four weeks) is normally standardized around a set of recurring elements: delivery volumes, delivery location, product grade, credit terms, payment terms, and a pricing mechanism, which can be either fixed or variable.",
+   "key_points": [
+    "Spot contracts are bilateral agreements for immediate/short-term delivery; for crude oil, 'spot' in practice means delivery within about four weeks",
+    "Terms could theoretically be customized per transaction, but in practice standardized terms are used so legal departments don't have to negotiate each deal individually",
+    "Standard contract elements include: monthly delivery volumes, delivery location, product grade (approximate composition), credit terms, payment terms, and a pricing mechanism",
+    "Pricing can be fixed or variable",
+    "Variable pricing is used to tie the physical transaction to the heavily-traded futures market, which is hard to manipulate and easy to hedge"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Physical Crude Oil Priced off Futures",
+    "Variable Pricing Components in Physical Crude Contracts"
+   ],
+   "trading_implications": [
+    "Standardized contract terms reduce transaction/legal cost and let traders execute deals faster",
+    "Variable (index-linked) pricing lets counterparties hedge physical positions against the liquid futures market"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variable Pricing Components in Physical Crude Contracts"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "234-235",
+    "section_hint": "2.3 Oil \u2014 Physical Trading"
+   }
+  },
+  {
+   "topic": "Variable Pricing Components in Physical Crude Contracts (Index + Differentials, CMA)",
+   "category": "Oil & Petroleum Products",
+   "subcategory": "Physical Trading / Pricing",
+   "type": "market_mechanic",
+   "definition": "Variable-priced physical crude oil contracts are built from a futures-linked index price adjusted by grade, location, and other differentials, with the index itself often defined using a calendar month average.",
+   "core_idea": "A variable-priced physical crude deal typically references an index price (commonly the next-to-deliver, or 'prompt', futures contract) plus differentials for crude grade, delivery location, and other negotiated factors; because many crude contracts don't expire at month end, index pricing is often defined instead as a Calendar Month Average (CMA) rather than tied to one specific futures contract.",
+   "key_points": [
+    "Index Price: commonly the next-to-deliver ('prompt') crude oil futures contract",
+    "Grade Differential (also called basis): a premium or discount to the index depending on the crude grade/quality",
+    "Location Differential (also called basis): a premium or discount reflecting the cost to transport oil to the delivery location, e.g. pipeline or trucking fees",
+    "Other Differential: a premium or discount arising from other negotiated factors",
+    "Because many crude oil futures contracts don't expire at month end, a common way to define the index price is a Calendar Month Average (CMA) rather than a single specific futures settlement"
+   ],
+   "formulas": [
+    {
+     "name": "Variable physical crude price (conceptual)",
+     "formula": "Physical Price = Index Price + Grade Differential + Location Differential + Other Differential",
+     "variables": {
+      "Index Price": "typically the prompt (next-to-deliver) futures price, sometimes a Calendar Month Average (CMA)",
+      "Grade Differential": "premium/discount for crude quality/grade, also called basis",
+      "Location Differential": "premium/discount for transport cost to delivery point, also called basis",
+      "Other Differential": "premium/discount from other negotiated terms"
+     }
+    }
+   ],
+   "relationships": [
+    "Spot Market Contract Standard Terms",
+    "WTI and Brent as Global Crude Oil Benchmarks"
+   ],
+   "trading_implications": [
+    "Traders decompose physical crude pricing into an index plus differentials, which lets them hedge the index leg via futures while separately negotiating grade/location/other basis"
+   ],
+   "author_states_vs_inference": "The additive 'Physical Price = Index + differentials' formula is my structural inference from the author's list of pricing components; the individual component definitions (index price, grade/location/other differential, CMA) are the author's own stated content.",
+   "related_topics": [
+    "Spot Market Contract Standard Terms",
+    "WTI and Brent as Global Crude Oil Benchmarks"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "235-236",
+    "section_hint": "2.3 Oil \u2014 Physical Trading"
+   }
+  }
+ ]
+}

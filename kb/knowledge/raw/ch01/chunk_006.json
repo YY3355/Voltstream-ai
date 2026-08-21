@@ -1,0 +1,230 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Volatility as a measure of trading risk",
+   "category": "Risk",
+   "subcategory": "Statistics",
+   "type": "concept",
+   "definition": "Volatility is the trading term for how much an asset's price is likely to swing between two points in time, formally the standard deviation of continuously compounded returns.",
+   "core_idea": "Traders use volatility purely as a measure of price dispersion/risk, not as a judgment of whether a trade is good or bad \u2014 a highly volatile asset is one whose price moves a lot, regardless of direction or quality.",
+   "key_points": [
+    "Volatility is mathematically defined as the standard deviation of continuously compounded returns.",
+    "High volatility means large price swings are common, not that the asset is a good or bad investment.",
+    "Much of trading vocabulary borrows from statistics, and volatility is one of the two most important imported terms."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Correlation is the other core statistical concept traders borrow",
+    "Volatility underlies option pricing and the long/short volatility framing of option positions"
+   ],
+   "trading_implications": [
+    "Traders separate 'how risky/volatile' from 'how good' a position is \u2014 the two are independent judgments."
+   ],
+   "common_misunderstandings": [
+    "Assuming volatility describes investment merit rather than just price dispersion risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Correlation",
+    "Option buyer/seller and long/short volatility"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "42-43",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Statistics"
+   }
+  },
+  {
+   "topic": "Correlation between assets",
+   "category": "Risk",
+   "subcategory": "Statistics",
+   "type": "concept",
+   "definition": "Correlation describes how closely the price movements of two things track each other, without implying that one causes the other.",
+   "core_idea": "When two assets are highly correlated they tend to move together, but the author is explicit that this co-movement can arise from a genuine causal link, a shared underlying driver, or simply random chance.",
+   "key_points": [
+    "High correlation means prices tend to move together.",
+    "Correlation does not by itself establish causation between the two assets.",
+    "Correlation can arise from a shared cause or from coincidence, not just a direct relationship."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Paired with volatility as a core statistics-derived trading term"
+   ],
+   "trading_implications": [
+    "Traders should be cautious about inferring a causal or structural relationship from observed correlation alone."
+   ],
+   "common_misunderstandings": [
+    "Treating correlation as proof of a causal relationship between two assets."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Volatility as a measure of trading risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "42-43",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Statistics"
+   }
+  },
+  {
+   "topic": "Options: structure, premium, and buyer's limited downside",
+   "category": "Derivatives",
+   "subcategory": "Financial Options",
+   "type": "definition",
+   "definition": "An option is a two-party contract giving its buyer the right, but not the obligation, to buy (call) or sell (put) an asset at a fixed price on a future date, in exchange for an up-front payment called the premium.",
+   "core_idea": "Because the buyer can walk away, an option is an all-or-nothing bet where the buyer's loss is capped at the premium while the potential payoff can be large, similar in structure to buying insurance.",
+   "key_points": [
+    "A call option is the right to buy; a put option is the right to sell.",
+    "The premium is paid up front by the buyer to the seller regardless of outcome.",
+    "The buyer's downside is capped at the premium paid; the option can expire completely worthless.",
+    "Buying options is analogous to buying insurance: usually the premium is lost, occasionally there is a large payoff.",
+    "Because the odds of a payoff are stacked against the buyer, the seller is compensated with the premium for taking on the risk.",
+    "Options are used in energy markets both for risk management and for framing physical operating/investment decisions (e.g., whether to run a plant, lock in fuel, or build a power line) \u2014 option theory gives a way to quantify such decisions."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into the call/put payoff formulas",
+    "Feeds into the long/short volatility framing of buyer vs. seller"
+   ],
+   "trading_implications": [
+    "Option buyers should expect to lose the premium most of the time and rely on occasional large payoffs, much like an insurance buyer.",
+    "Option theory can be applied to real physical/operational decisions in energy (dispatch, fuel procurement, capital investment), not just financial contracts."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Call and put payoff formulas",
+    "Long/short volatility (option buyer vs seller)"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "43-44",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Financial Options"
+   }
+  },
+  {
+   "topic": "Call and put payoff formulas",
+   "category": "Derivatives",
+   "subcategory": "Financial Options",
+   "type": "formula",
+   "definition": "At expiration, a call option pays off the amount by which the asset price exceeds the strike price, and a put option pays off the amount by which the strike price exceeds the asset price; otherwise each is worthless.",
+   "core_idea": "The strike (exercise) price is the fixed trading price set by the contract; payoff is purely the in-the-money difference between asset price and strike at expiration, with no payoff when the option is out of the money.",
+   "key_points": [
+    "A call benefits the owner when the asset price rises above the strike, letting them buy cheap and resell at the market price.",
+    "A put benefits the owner when the asset price falls below the strike, letting them sell high relative to the market.",
+    "No one would exercise an option against their own interest, so payoff is zero (worthless) when out of the money."
+   ],
+   "formulas": [
+    {
+     "name": "Call payoff",
+     "formula": "Call_Payoff = Asset_Price - Strike_Price, if Asset_Price > Strike_Price at expiration",
+     "variables": {
+      "Asset_Price": "market price of the underlying asset at expiration",
+      "Strike_Price": "fixed exercise price set by the option contract"
+     }
+    },
+    {
+     "name": "Put payoff",
+     "formula": "Put_Payoff = Strike_Price - Asset_Price, if Strike_Price > Asset_Price at expiration",
+     "variables": {
+      "Asset_Price": "market price of the underlying asset at expiration",
+      "Strike_Price": "fixed exercise price set by the option contract"
+     }
+    }
+   ],
+   "relationships": [
+    "Depends on the call/put definitions from the options overview item"
+   ],
+   "trading_implications": [
+    "Payoff calculations at expiration are a simple comparison of asset price to strike price \u2014 no complex model is needed once expiration is reached."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Options: structure, premium, and buyer's limited downside"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "44",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Financial Options"
+   }
+  },
+  {
+   "topic": "Option buyer vs. seller: transfer of risk and long/short volatility",
+   "category": "Derivatives",
+   "subcategory": "Financial Options",
+   "type": "concept",
+   "definition": "Option trading always involves a buyer and a seller; money is not created by the option, it is simply transferred from seller to buyer if the option pays off, funded by the premium the buyer paid up front.",
+   "core_idea": "The buyer is described as long the option / long volatility because rare large price moves produce a big profit for them, while the seller is short the option / short volatility because the same rare moves produce a big loss for them.",
+   "key_points": [
+    "The seller accepts the possibility of a large loss in exchange for receiving the premium up front.",
+    "If the option pays off, the seller must have the cash on hand to pay the buyer \u2014 the option itself creates no new money.",
+    "Buyer = long the option / long volatility (benefits from rare, large moves).",
+    "Seller = short the option / short volatility (harmed by rare, large moves)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the options overview and payoff formulas"
+   ],
+   "trading_implications": [
+    "Sellers of options are effectively compensated for bearing tail risk and need to be prepared to fund large payouts on rare adverse moves."
+   ],
+   "common_misunderstandings": [
+    "Thinking an option payoff represents new wealth creation rather than a transfer between two counterparties."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Volatility as a measure of trading risk",
+    "Call and put payoff formulas"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "44",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Financial Options"
+   }
+  },
+  {
+   "topic": "Option valuation philosophy: vanilla vs. exotic models, and the Black-Scholes origin",
+   "category": "Derivatives",
+   "subcategory": "Option Valuation",
+   "type": "concept",
+   "definition": "Option pricing models are approximations built on assumptions about how asset prices behave; 'vanilla' options fit a standard set of assumptions with well-known pricing formulas, while 'exotic' options require nonstandard assumptions and more complex models.",
+   "core_idea": "The author argues that simple models, even if imperfect, are generally preferable to very complex ones because more people can understand and catch flaws in a simple model, which reduces the risk of a model failing catastrophically; model weaknesses are often better addressed by improving observation/monitoring than by adding complexity.",
+   "key_points": [
+    "Option pricing math can be complex, but the underlying principles are straightforward approximations of real behavior.",
+    "Models are not a substitute for understanding the real situation they approximate.",
+    "Simple models are usually preferred over complex ones because broader understanding reduces disastrous failure risk.",
+    "It's often easier to fix a model's weaknesses by improving observation than by making the model more complicated.",
+    "Vanilla options rely on a standard set of price-behavior assumptions with well-known, easy-to-apply formulas.",
+    "Exotic options require nonstandard assumptions; users must judge whether an option formula's assumptions actually hold in their specific case, and use a different formula if not.",
+    "Model assumptions can drift over time, but option models rarely fail overnight \u2014 problems typically surface years before causing real economic damage, so it's on practitioners to catch and fix issues early.",
+    "Modern option trading originates from Fischer Black, Myron Scholes, and Robert Merton's late-1960s/early-1970s work combining dynamic hedging, price diffusion, and put/call parity into a continuous-time framework, yielding the Black-Scholes formula.",
+    "The Black-Scholes formula made option pricing broadly accessible and, along with related continuous-time finance work, won a Nobel Prize; most widely used option models today are variants of this 'Black Scholes genre.'",
+    "The core (still-used) idea behind option pricing, dynamic hedging, is that an option's payoff can be replicated by continuously trading the underlying asset."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the general options and payoff concepts earlier in this chunk"
+   ],
+   "trading_implications": [
+    "Practitioners should prefer simpler, well-understood models and actively monitor for assumption drift rather than reach for complexity by default.",
+    "Before applying a vanilla option formula, confirm its standard assumptions actually hold for the specific situation; if not, an exotic-option approach is needed."
+   ],
+   "common_misunderstandings": [
+    "Assuming more complex models are inherently more accurate or safer than simple ones.",
+    "Assuming an option pricing model is a complete substitute for understanding the real underlying situation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Options: structure, premium, and buyer's limited downside",
+    "Option buyer vs. seller: transfer of risk and long/short volatility"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "44-45",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Option Valuation"
+   }
+  }
+ ]
+}

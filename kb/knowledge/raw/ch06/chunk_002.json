@@ -1,0 +1,277 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Crack spread relationship between crude oil and refined products",
+   "category": "Oil",
+   "subcategory": "Refining Economics",
+   "type": "market_mechanic",
+   "definition": "The crack spread describes how refined product prices move relative to crude oil prices: they rise and fall together because crude is the refining input, but among themselves refined products can move in opposite directions.",
+   "core_idea": "Distillation ties all refined product prices to the crude oil price on the input side (crude up means everything refined gets more expensive), but on the output side an increase in one product's output (e.g. gasoline) floods the market with the co-produced products, pushing those other products' prices down \u2014 creating a negative correlation among refined products even as they stay positively linked to crude.",
+   "key_points": [
+    "Rising crude oil prices push up the price of all refined products.",
+    "Refiners cannot produce more of one refined product (e.g. gasoline) without also producing more of the others as a byproduct of distillation.",
+    "Extra output of the co-produced products can flood that market, driving those prices down even while crude and the targeted product move up.",
+    "This crude-to-products link plus product-to-product tension is what the term 'crack spread' refers to."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Crack spread ties crude oil prices to refined product prices",
+    "Refined products can be negatively correlated with each other despite shared positive correlation with crude"
+   ],
+   "trading_implications": [
+    "A trader targeting a gasoline shortage trade should also watch for downward pressure on other distillates from the increased joint output.",
+    "Crack spread positions capture the input-output margin, not just the outright direction of crude."
+   ],
+   "common_misunderstandings": [
+    "Assuming all refined products move together simply because they all track crude oil; the author notes they can diverge due to joint production effects."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fractional distillation",
+    "Refinery economics",
+    "Gasoline pricing"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "226-226",
+    "section_hint": "2.3 Oil \u2014 Crack Spread"
+   }
+  },
+  {
+   "topic": "Refinery and offshore drilling rig investment economics",
+   "category": "Oil",
+   "subcategory": "Refining Economics",
+   "type": "concept",
+   "definition": "Refineries and offshore drilling rigs are extremely long-lived, capital-intensive assets whose construction decisions must be justified by expectations of market conditions decades into the future.",
+   "core_idea": "Because refineries can take 15-20 years to pay back their construction cost, and no new U.S. refinery has been built since 1976, capacity decisions are effectively bets on where the market will be 20-40 years out; the same long-payback logic applies to offshore drilling rigs, which additionally face competition from shale, fracking, and electric vehicles.",
+   "key_points": [
+    "No new refineries have been built in the United States since 1976, and few are expected going forward.",
+    "A new refinery may take 15-20 years to pay back its construction cost, making it a very long-term investment decision.",
+    "Historic expectation that global oil production would peak around 2010 discouraged refinery capacity expansion at the time.",
+    "The peak-oil prediction proved overly pessimistic due to shale gas discoveries and improved exploration techniques, which then created a low-price problem for refiners instead.",
+    "Offshore drilling rig counts are declining for similar long-payback reasons, compounded by competition from shale fracking, electric cars, and other substitute technologies."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Long asset life ties refinery investment decisions to multi-decade demand forecasts",
+    "Peak-oil expectations historically suppressed refinery capacity additions"
+   ],
+   "trading_implications": [
+    "Refining capacity is structurally inelastic in the short-to-medium term, which can amplify price moves during localized shortages (e.g. a single refinery outage)."
+   ],
+   "common_misunderstandings": [
+    "Assuming refinery capacity can respond quickly to price signals; the long payback horizon means capacity additions lag demand shifts by many years."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Peak oil",
+    "Shale gas",
+    "Fractional distillation"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "226-226",
+    "section_hint": "2.3 Oil \u2014 Is There a Shortage of Refineries in the World?"
+   }
+  },
+  {
+   "topic": "Fractional distillation and cracking",
+   "category": "Oil",
+   "subcategory": "Refining Process",
+   "type": "concept",
+   "definition": "Fractional distillation is the process of separating crude oil into component fractions by heating it in a distillation tower; cracking further breaks heavier fractions into lighter, lower-density products.",
+   "core_idea": "Crude oil is heated in a distillation tower where lighter, lower-boiling-point fractions rise to the top and heavier fractions settle at the bottom, allowing the refiner to siphon off fractions selectively; heavier liquids recovered this way can then be cracked (subjected to high heat and pressure) to convert them into more valuable lighter products.",
+   "key_points": [
+    "Distillation towers separate crude oil by boiling point: lightest fractions rise to the top, heaviest settle at the bottom.",
+    "Fractions are selectively siphoned off at different heights of the tower to separate crude oil into its component pieces.",
+    "Cracking applies high temperature and pressure to heavier liquids to break them into lower-density (lighter) liquids.",
+    "Light sweet crude flows easily and is low in sulfur; heavy sour crude is thick and high in sulfur \u2014 these characteristics affect how a given crude refines."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Cracking follows distillation as a secondary processing step for heavier fractions",
+    "Crude quality (sweet/sour, light/heavy) affects distillation and cracking economics"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Crack spread",
+    "Crude oil grades"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "226-227",
+    "section_hint": "2.3 Oil \u2014 Fractional Distillation"
+   }
+  },
+  {
+   "topic": "Crude oil as a global market vs. refined products as regional markets",
+   "category": "Oil",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Crude oil trades as a roughly uniform global commodity that can be redirected between regions in response to price differences, while refined products like gasoline trade in fragmented regional markets with limited cross-border substitutability.",
+   "core_idea": "Because tanker shipments of crude can be redirected wherever prices are highest and different refineries can generally process crude meant for other regions, crude oil prices tend to converge globally; refined products lack this flexibility because international transport infrastructure for finished products is limited and local environmental regulations force region-specific formulations, so their prices and specifications vary substantially by location.",
+   "key_points": [
+    "Crude oil is approximately the same product at approximately the same price everywhere it trades, because tankers can be redirected to wherever the price is higher.",
+    "Refineries in different regions (e.g. northeastern U.S. and northern Europe) can generally each process crude oil originally intended for the other.",
+    "Refined products are historically refined close to their final consumption point rather than shipped internationally in bulk, partly because locating refineries outside industrialized countries was considered risky.",
+    "There is limited international infrastructure for transporting finished petroleum products in bulk, so cross-border trade volumes are much lower than for crude.",
+    "Local environmental regulations fragment refined product markets further \u2014 e.g. North American gasoline formulation differs from European, and formulations can even differ within a country (California vs. New York)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Regional formulation regulation drives regional price divergence in refined products",
+    "Global crude arbitrage keeps crude prices converged across regions"
+   ],
+   "trading_implications": [
+    "Crude oil price differentials across regions should compress quickly via tanker redirection; persistent regional refined-product price gaps are more structural and regulation-driven, not arbitraged away as easily."
+   ],
+   "common_misunderstandings": [
+    "Assuming refined product markets behave like crude oil's global market; the author stresses they are fragmented regional markets instead."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gasoline formulation",
+    "Crack spread"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "227-227",
+    "section_hint": "2.3 Oil \u2014 Comparing Crude Oil to Refined Petroleum"
+   }
+  },
+  {
+   "topic": "Gasoline demand, cost composition, and distribution",
+   "category": "Oil",
+   "subcategory": "Gasoline",
+   "type": "concept",
+   "definition": "Gasoline is the dominant automotive fuel, with about two-thirds of its U.S. retail cost coming from crude acquisition and refining and roughly one-third from taxes, distribution, and marketing; it is moved from refineries by pipeline, blended locally, and trucked to stations.",
+   "core_idea": "Gasoline consumption and pricing follow a seasonal demand pattern driven by weather (rising in spring, peaking in late summer), and its supply chain runs from refinery to pipeline-fed terminal (where local additives like ethanol are blended in for regulatory compliance) to tanker-truck delivery to retail stations.",
+   "key_points": [
+    "In 2007, gasoline accounted for 44 percent of all petroleum consumption.",
+    "In the United States, roughly two-thirds of the retail cost of gasoline is attributable to acquiring and refining crude oil.",
+    "The remaining roughly one-third of retail cost is made up of taxes, distribution, and marketing fees.",
+    "Gasoline demand rises with good weather, starting to increase in spring and peaking in late summer.",
+    "Gasoline is distributed primarily via pipeline from refineries to local terminals, where additives like ethanol are blended in to meet local regulations, then trucked to gas stations."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Seasonal weather patterns drive gasoline demand cycles",
+    "Local regulatory blending requirements are applied at the terminal stage of distribution"
+   ],
+   "trading_implications": [
+    "Seasonal demand patterns (spring ramp-up, late-summer peak) are a structural driver to anticipate in gasoline price forecasting."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gasoline formulation",
+    "Octane rating",
+    "Crude oil vs refined product markets"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "227-228",
+    "section_hint": "2.3 Oil \u2014 Gasoline"
+   }
+  },
+  {
+   "topic": "Octane rating: definition and common misconception",
+   "category": "Oil",
+   "subcategory": "Gasoline",
+   "type": "definition",
+   "definition": "Octane measures gasoline's resistance to ignition (how easily it combusts), not the amount of energy it contains; higher resistance to premature ignition lets an engine deliver more of the fuel's energy as usable power rather than wasted heat.",
+   "core_idea": "Octane is purely an ignition-resistance property; it does not indicate how much energy is in the fuel, and an engine only benefits from higher octane if it is designed/optimized for that octane level.",
+   "key_points": [
+    "Octane measures how much gasoline resists ignition; when gasoline resists ignition less well, more power is delivered as usable output rather than wasted as heat.",
+    "Octane is explicitly not a measure of the energy content in a tank of gasoline.",
+    "Ethanol has a higher octane rating than gasoline (it ignites more easily) but contains less energy per unit.",
+    "Adding ethanol raises a gasoline blend's octane but still reduces the vehicle's miles per gallon because ethanol carries less energy.",
+    "Engines must be optimized for a specific octane level \u2014 using higher-octane fuel does not automatically make an engine more efficient.",
+    "Higher octane allows more efficient engine operation only in the sense that less combustion heat is wasted; it does not itself add power or energy."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Octane relates to ignition timing/resistance, distinct from and sometimes inversely related to fuel energy content"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Believing higher octane fuel contains more energy or automatically improves any engine's efficiency \u2014 the author explicitly corrects both."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gasoline formulation",
+    "Ethanol blending"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "228-230",
+    "section_hint": "2.3 Oil \u2014 Octane Ratings"
+   }
+  },
+  {
+   "topic": "Gasoline formulation regulation and additives",
+   "category": "Oil",
+   "subcategory": "Gasoline",
+   "type": "market_mechanic",
+   "definition": "Gasoline formulation refers to the mix of additives that are mandated or prohibited by regulation, and it is a major driver of regional price and specification variation.",
+   "core_idea": "Governments regulate what must or must not be added to gasoline (e.g. mandated seasonal ethanol content, banned antiknock agents like lead, regulated pollutants like sulfur), and these formulation rules \u2014 along with octane level and local taxes \u2014 account for most of the regional variation in gasoline prices and specifications.",
+   "key_points": [
+    "Regulators can mandate additives, such as requiring 10 percent ethanol content during specific months of the year.",
+    "Regulators can also prohibit additives; lead was once used as an antiknock agent to raise octane but was banned after its exhaust pollution became a recognized health hazard.",
+    "Sulfur is another example of a regulated pollutant in gasoline formulation.",
+    "Octane level, formulation, and local taxes together account for most of the regional variation in gasoline prices.",
+    "Other, secondary factors affecting retail gasoline price include transportation costs and individual gas station marketing plans."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Formulation regulation ties into the regional-market fragmentation of refined products discussed for crude vs. refined product markets"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Octane rating",
+    "Crude oil vs refined product markets"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "228-228",
+    "section_hint": "2.3 Oil \u2014 Gasoline (formulation)"
+   }
+  },
+  {
+   "topic": "Gasoline price volatility and seasonality",
+   "category": "Oil",
+   "subcategory": "Gasoline",
+   "type": "concept",
+   "definition": "Gasoline prices are highly volatile and follow a seasonal pattern: rising rapidly in early spring/summer, stabilizing in late summer, and declining in the coldest winter months, driven by crude prices, consumer demand, and formulation requirements.",
+   "core_idea": "Gasoline's high price volatility stems from limited refinery-driven supply flexibility combined with consumers' inability to substitute other fuels for gasoline, layered on top of a seasonal demand/formulation cycle.",
+   "key_points": [
+    "Gas prices generally rise rapidly in early spring and summer, stabilize later in summer, and decline in the coldest winter months.",
+    "Gasoline price volatility is heightened because refinery supply is limited in how much it can flex and because consumers have no practical substitute fuel for gasoline.",
+    "Gasoline prices are driven by the combination of crude oil prices, consumer demand, and formulation requirements."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Seasonal demand pattern (per the gasoline demand item) combines with supply inflexibility to produce high volatility"
+   ],
+   "trading_implications": [
+    "The inelastic supply/demand combination implies gasoline prices can react sharply to short-term supply disruptions (e.g. refinery outages) more than crude oil itself."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gasoline demand",
+    "Crack spread"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "228-230",
+    "section_hint": "2.3 Oil \u2014 Gasoline (price volatility)"
+   }
+  }
+ ]
+}

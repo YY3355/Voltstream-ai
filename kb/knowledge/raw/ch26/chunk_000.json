@@ -1,0 +1,182 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Why pipelines dominate natural gas transportation",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "concept",
+   "definition": "Natural gas is transported almost exclusively by pipeline because the alternatives are impractical: gas must be kept in airtight, pressurized containers to avoid dispersing, making truck/rail transport heavy and costly, and liquefying gas (cooling to about -260\u00b0F) requires expensive insulated handling and re-heating at delivery that only makes sense at larger scale.",
+   "core_idea": "Pipelines avoid the cost of moving heavy pressurized containers and, once built, are cheap to operate with few moving parts, which is why they became the dominant delivery method and why non-pipeline-connected areas become effectively isolated from the gas market.",
+   "key_points": [
+    "Gas must be contained (it disperses if not airtight), and container weight drives up non-pipeline transport cost.",
+    "Liquefaction to about -260\u00b0F is possible but the cost/complexity of supercooling and re-heating limits it to non-small-scale use.",
+    "Once built, pipelines are cost-effective to run: few moving parts, continuous operation.",
+    "Areas not connected to the pipeline network are called 'stranded' - very hard to get gas in or out."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Stranded gas relates to regional basis/price dislocations since it cannot easily reach market."
+   ],
+   "trading_implications": [
+    "Regions cut off from pipeline access ('stranded' gas) can trade at persistently different prices because arbitrage via alternate transport is impractical."
+   ],
+   "common_misunderstandings": [
+    "That trucking or rail could be a routine substitute for pipeline transport - the source frames these as difficult/impractical, not just costlier."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Basis risk",
+    "LNG"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "506-507",
+    "section_hint": "5.1 Natural Gas Transportation - Summary"
+   }
+  },
+  {
+   "topic": "Pipelines as continuous-operation, insurance-like businesses",
+   "category": "Natural Gas",
+   "subcategory": "Transportation",
+   "type": "market_mechanic",
+   "definition": "Pipelines are privately owned, for-profit companies that must run continuously (they cannot 'shut down') and generate revenue by guaranteeing gas delivery, a business model the author compares to selling insurance, with different service tiers resembling different insurance contract types.",
+   "core_idea": "Because pipelines can't be switched off without losing pressure and flow, their commercial offering is really a guarantee of continuous deliverability, priced like insurance, and traders with access to storage can profit from the operational rigidity this creates.",
+   "key_points": [
+    "Pipeline operators are private, for-profit, and their product is a delivery guarantee.",
+    "The financial/contractual structure of transportation service is likened to insurance, with tiered service levels similar to different insurance policy types.",
+    "Because pipelines must run continuously, traders with storage access can exploit this operational constraint for profit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to natural gas storage economics and to physical delivery cost feeding into financial (cash-settled) contract pricing."
+   ],
+   "trading_implications": [
+    "Traders with storage facility access can capture value from the pipeline's need for continuous, uninterrupted flow.",
+    "Even purely financial (cash-settled) natural gas trades are priced off the underlying physical transportation cost."
+   ],
+   "common_misunderstandings": [
+    "That financial/cash-settled gas trades are disconnected from physical transport costs - the author notes transport cost still determines the settlement price."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Basis trading",
+    "Cash-settled derivatives"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "506-506",
+    "section_hint": "5.1 Natural Gas Transportation - Key Topics"
+   }
+  },
+  {
+   "topic": "Pipeline pressure mechanics and the continuous-flow requirement",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Operations",
+   "type": "concept",
+   "definition": "Natural gas moves through a pipeline because compressors create a high-pressure zone at the injection end and a low-pressure (suction) zone at the withdrawal end; gas flows from high to low pressure, and if pressure equalizes along the pipe, flow stops and can take a long time to restart.",
+   "core_idea": "A pipeline is fundamentally a pressure-differential machine - compressors at the start push and compressors/suction at the end pull - and this differential must be maintained continuously or the system stalls.",
+   "key_points": [
+    "A compressor at the pipe's start creates high pressure (like a fan); a compressor at the end creates a low-pressure suction zone.",
+    "Gas is drawn along the pipe by the pressure differential between injection and withdrawal points.",
+    "If the pipeline's pressure fully equalizes, flow stops and restarting can take a long time.",
+    "If discharge-end pressure exceeded well-head pressure, gas would flow backward into the well - so pressure ratios must be maintained end to end.",
+    "Practically, this means gas must be continually injected on one side and continually removed on the other for the pipeline to keep operating."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why pipelines 'can't shut down' (see continuous-operation/insurance concept) and why nominations/scheduling matter operationally."
+   ],
+   "trading_implications": [
+    "Operational inflexibility (inability to easily stop/restart) is a structural feature that can create value for parties who can smooth injections/withdrawals, e.g., via storage."
+   ],
+   "common_misunderstandings": [
+    "That a pipeline can be paused and resumed like a valve with no consequence - the source states re-pressurizing after equalization can take a long time."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Compressors",
+    "Line pressure balancing",
+    "Natural gas storage"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "507-509",
+    "section_hint": "5.1 Natural Gas Transportation - Pipeline Operations"
+   }
+  },
+  {
+   "topic": "Transportation vs. distribution pipelines",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Terminology",
+   "type": "definition",
+   "definition": "Pipelines are categorized by distance/role: transportation pipelines move gas long distances with relatively simple (one or two branch) structures, while distribution pipelines deliver gas to end-users through complex branching networks and are more expensive to build/operate per unit distance, especially over 'the last mile' from a citygate to a consumer.",
+   "core_idea": "The complexity (and thus cost) of a pipeline is driven more by how many end-users it must reach than by the distance it spans, so short last-mile distribution segments can cost as much as moving gas across the entire country.",
+   "key_points": [
+    "Transportation pipelines: long-distance, structurally simple (few branches).",
+    "Distribution pipelines: deliver to many end-users, structurally complex due to branching.",
+    "Last-mile delivery cost (citygate to consumer) can rival the cost of long-distance cross-country transport."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to hub/citygate definitions and to burner-tip pricing."
+   ],
+   "trading_implications": [
+    "Local distribution costs are a material component of delivered gas price, not just long-haul transport - relevant when evaluating citygate vs. burner-tip pricing."
+   ],
+   "common_misunderstandings": [
+    "That cost scales mainly with distance - the source emphasizes branching complexity, not distance, drives distribution cost."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Citygate",
+    "Burner tip",
+    "Hub"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "507-508",
+    "section_hint": "5.1 Natural Gas Transportation - Pipeline Terminology"
+   }
+  },
+  {
+   "topic": "Natural gas pipeline delivery-point terminology",
+   "category": "Natural Gas",
+   "subcategory": "Pipeline Terminology",
+   "type": "definition",
+   "definition": "Standard terms for pipeline interconnections and flow points: a hub is where two or more transportation (transmission) pipelines meet (and commonly hosts storage facilities); a citygate is where a transportation pipeline connects to a distribution pipeline; burner tip refers to the end consumer of the gas; a receipt point is where gas is injected into a pipeline (named for the pipeline's obligation to receive gas), and a delivery point is where gas is withdrawn (named for the pipeline's obligation to deliver gas).",
+   "core_idea": "Pipeline terminology (hub, citygate, burner tip, receipt point, delivery point) names locations from the perspective of the pipeline's contractual obligation to receive or deliver gas, and both hubs and citygates serve as common contractual delivery locations for natural gas contracts.",
+   "key_points": [
+    "Hub = interconnection of two or more transmission/long-distance pipelines; often co-located with storage.",
+    "Citygate = interconnection between a transportation pipeline and a distribution pipeline.",
+    "Burner tip = term for the natural gas consumer.",
+    "Receipt point = injection location, named for the pipeline receiving gas.",
+    "Delivery point = withdrawal location, named for the pipeline delivering gas.",
+    "Both hubs and citygates are common delivery locations specified in natural gas contracts."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly ties to how natural gas contracts specify delivery location, which affects pricing/basis."
+   ],
+   "trading_implications": [
+    "Contract delivery location (hub vs. citygate vs. burner tip) is a key term that determines applicable price/basis for a natural gas trade."
+   ],
+   "common_misunderstandings": [
+    "That receipt/delivery point naming reflects the buyer's or seller's action - the source clarifies the names are based on the pipeline's obligation, not the transportation contract purchaser's."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Basis contracts",
+    "Transportation vs distribution pipelines"
+   ],
+   "source": {
+    "chapter": 26,
+    "pages": "508-508",
+    "section_hint": "5.1 Natural Gas Transportation - Common Terms"
+   }
+  }
+ ]
+}

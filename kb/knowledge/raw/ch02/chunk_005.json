@@ -1,0 +1,263 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Initial Margin and Excess Equity",
+   "category": "Derivatives",
+   "subcategory": "Futures Margining",
+   "type": "definition",
+   "definition": "Initial margin is the good-faith deposit a trader must post with an exchange to open a futures position. Funds in a margin account beyond what's required for open positions can be withdrawn or used to open new trades; that surplus is called excess equity, even though it isn't an ownership stake.",
+   "core_idea": "Futures require an upfront deposit sized to cover potential losses, and any account balance above that requirement is freely available to the trader.",
+   "key_points": [
+    "Initial margin is required to establish a futures position.",
+    "Money above the initial margin requirement is 'excess equity' and can be withdrawn or redeployed.",
+    "Excess equity is not an equity/ownership position despite the name."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into daily margining and margin calls once a position is open."
+   ],
+   "trading_implications": [
+    "Traders should track excess equity to know how much capital is freed up or at risk without adding new deposits."
+   ],
+   "common_misunderstandings": [
+    "The term 'equity' in excess equity is misleading \u2014 it is not an ownership stake, just surplus margin cash."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Daily Margin",
+    "Margin Call"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "93-93",
+    "section_hint": "Common Terms \u2014 Initial Margin"
+   }
+  },
+  {
+   "topic": "Daily Margining (Mark-to-Market)",
+   "category": "Derivatives",
+   "subcategory": "Futures Margining",
+   "type": "market_mechanic",
+   "definition": "Each trading day, an exchange marks every open futures position to that day's official settlement price, crediting or debiting each trader's margin account for the change in value \u2014 functionally equivalent to closing and reopening the trade at the new price.",
+   "core_idea": "Futures gains and losses are realized daily in cash rather than accumulating until the contract's end, so a position generates a running series of small transfers rather than one lump-sum settlement.",
+   "key_points": [
+    "The settlement (closing) price is a single official price applied to both buyers and sellers.",
+    "Daily margining is economically similar to closing the trade and reopening it at the new settlement price.",
+    "Gains/losses are transferred directly between the margin accounts of opposing traders (the loser's payment funds the winner's credit).",
+    "This contrasts with OTC forwards, where no money typically moves until delivery, at which point a single large payment (or product-for-money exchange) occurs."
+   ],
+   "formulas": [
+    {
+     "name": "Daily margin cash flow (example)",
+     "formula": "daily_gain_or_loss = price_change \u00d7 contract_quantity",
+     "variables": {
+      "price_change": "change in settlement price from prior day, $/unit",
+      "contract_quantity": "contract size, units (e.g. MMBtus)",
+      "daily_gain_or_loss": "cash credited (+) or debited (-) to the margin account, $"
+     }
+    }
+   ],
+   "relationships": [
+    "Triggers margin calls when losses reduce the account below the required level."
+   ],
+   "trading_implications": [
+    "A trader must have cash on hand to meet daily losses before the contract's delivery date, unlike an OTC forward.",
+    "If a trader receives daily margin gains, that cash needs to be reinvested somewhere rather than sitting idle."
+   ],
+   "common_misunderstandings": [
+    "Daily margining is not just a bookkeeping entry \u2014 it is a real transfer of money between counterparties' accounts each day the settlement price changes."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Initial Margin",
+    "Margin Call",
+    "Counterparty Risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "93-94",
+    "section_hint": "Common Terms \u2014 Daily Margin"
+   }
+  },
+  {
+   "topic": "Margin Call",
+   "category": "Derivatives",
+   "subcategory": "Futures Margining",
+   "type": "definition",
+   "definition": "A margin call is the exchange's notice that a trader's margin account balance has fallen too low after daily mark-to-market losses and must be topped up with additional deposits.",
+   "core_idea": "Daily margining can push an account balance below the required minimum, and the margin call is the mechanism forcing the trader to replenish it or face liquidation.",
+   "key_points": [
+    "If daily margining leaves excess money in the account, it can be withdrawn.",
+    "If the balance falls too low, more money must be deposited.",
+    "A margin call is the alert that a deposit is needed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Failure to meet a margin call lets the exchange seize and liquidate the position."
+   ],
+   "trading_implications": [
+    "Traders must maintain liquidity to meet margin calls promptly or risk forced liquidation of their position."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Initial Margin",
+    "Daily Margin",
+    "Counterparty Risk / Exchange Liquidation"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "93-94",
+    "section_hint": "Common Terms \u2014 Margin Call"
+   }
+  },
+  {
+   "topic": "Exchange Liquidation on Missed Margin Call",
+   "category": "Derivatives",
+   "subcategory": "Counterparty Risk",
+   "type": "risk",
+   "definition": "If a trader fails to meet a margin call, the exchange can seize the futures position along with its supporting initial margin, then liquidate it, keeping the initial margin as compensation.",
+   "core_idea": "Daily margining caps an exchange's counterparty exposure to roughly a single day's price move, because the exchange only has to cover the risk window between missed margin calls; the initial margin is sized to absorb that one-day loss.",
+   "key_points": [
+    "Daily margining limits the exchange's counterparty risk to about one day's price move, since mark-to-market keeps positions near fair value.",
+    "On a missed margin call, the exchange takes ownership of the position and its initial margin, then liquidates.",
+    "As long as initial margin covers the one-day loss, the exchange profits from (or at least breaks even on) the liquidation.",
+    "Initial margin levels rise with commodity volatility \u2014 generally set slightly above the largest expected one-day move.",
+    "Initial margin can also scale with a trader's perceived creditworthiness: smaller or weaker-credit traders may face higher deposit requirements than large or strong-credit traders."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to Initial Margin sizing and Daily Margining."
+   ],
+   "trading_implications": [
+    "Expect higher initial margin requirements on more volatile commodities and potentially on accounts with weaker credit standing."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Initial Margin",
+    "Daily Margin",
+    "Margin Call"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "94-94",
+    "section_hint": "Common Terms \u2014 Margin Call / Exchange Risk"
+   }
+  },
+  {
+   "topic": "Futures Contracts \u2014 Key Characteristics",
+   "category": "Derivatives",
+   "subcategory": "Futures",
+   "type": "concept",
+   "definition": "Futures are standardized, exchange-traded contracts for future delivery that are margined and cash-settled daily until the final delivery date.",
+   "core_idea": "Futures trade anonymously through an exchange intermediary with minimal credit risk due to margining, but the daily cash flows this creates are generally a drag, and most contracts are closed out before physical delivery rather than fulfilled.",
+   "key_points": [
+    "Anonymous trading: the exchange sits between buyer and seller, so counterparties don't need to know each other.",
+    "Minimal/no credit risk because positions are margined daily.",
+    "Daily margining creates ongoing cash flows: losses must be funded before delivery, and gains received must be reinvested \u2014 the author frames this as generally a negative.",
+    "Most futures are liquidated prior to physical delivery rather than settled by delivery.",
+    "Futures are also used as industry benchmarks."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why traders who want customized delivery use an EFP instead of taking exchange delivery."
+   ],
+   "trading_implications": [
+    "Traders using futures purely for price exposure/benchmarking typically exit before delivery rather than take physical product."
+   ],
+   "common_misunderstandings": [
+    "Futures are often assumed to end in physical delivery, but the author notes most are liquidated beforehand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Daily Margin",
+    "Exchange for Physical",
+    "Exchange for Principal"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "94-94",
+    "section_hint": "Key Concepts \u2014 Futures"
+   }
+  },
+  {
+   "topic": "Exchange for Physical (EFP)",
+   "category": "Derivatives",
+   "subcategory": "Exchange Mechanics",
+   "type": "market_mechanic",
+   "definition": "An EFP is a bilaterally negotiated trade where a trader with a long futures position transfers it to a trader with a short futures position, canceling both futures positions, in exchange for the short-side trader delivering the physical commodity to the long-side trader at an agreed price.",
+   "core_idea": "EFPs let traders use the futures market to settle a physical transaction at a location or with product specifications different from the standard exchange delivery terms.",
+   "key_points": [
+    "The buyer of the physical commodity holds a long futures position; the seller holds a short futures position.",
+    "Step 1: the long-position trader transfers futures (valued at the latest exchange settlement price) to the short-position trader, canceling both positions.",
+    "Step 2: the short-position trader delivers the agreed physical commodity at the agreed location to the long-position trader.",
+    "Step 3: the buyer pays the seller, typically quoted as the futures settlement price plus a differential (basis) price.",
+    "EFPs are negotiated privately (bilaterally, off-exchange) but ultimately executed/cleared on the exchange.",
+    "Key negotiated terms: delivery location, and the price differential to reconcile the futures delivery point vs. the actual physical delivery point."
+   ],
+   "formulas": [
+    {
+     "name": "EFP settlement price",
+     "formula": "payment = futures_settlement_price + basis_differential",
+     "variables": {
+      "futures_settlement_price": "latest official exchange settlement price for the futures contract",
+      "basis_differential": "negotiated price adjustment for location/quality differences, $/unit"
+     }
+    }
+   ],
+   "relationships": [
+    "Requires one party long and one party short in the underlying futures contract before the EFP can be executed."
+   ],
+   "trading_implications": [
+    "EFPs give traders flexibility to settle at a location (e.g., a different delivery point than the exchange's) or with a slightly different product grade than the standard futures contract specifies.",
+    "Because the two legs cancel each other's futures exposure, both traders exit the futures market entirely while completing the physical transaction."
+   ],
+   "common_misunderstandings": [
+    "An EFP is not simply a physical trade \u2014 it explicitly requires offsetting long and short futures positions that get canceled as part of the mechanism."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Futures",
+    "Exchange for Principal Transaction"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "94-95",
+    "section_hint": "Exchange for Physical"
+   }
+  },
+  {
+   "topic": "Exchange for Principal (EFP) Transaction Confirmation",
+   "category": "Derivatives",
+   "subcategory": "Exchange Mechanics",
+   "type": "market_mechanic",
+   "definition": "An exchange for principal (EFP) transaction lets traders customize the commodity delivered under a futures-linked deal; the trade is negotiated directly between counterparties off-exchange and then cleared on the exchange, with the confirmation specifying (among other terms) a description of the physical commodity being delivered.",
+   "core_idea": "EFP transactions are privately sourced deals (traders must find their own counterparty) that get formalized into an exchange-clearable confirmation, giving flexibility on commodity specification beyond the standard futures contract terms.",
+   "key_points": [
+    "These trades are negotiated off the exchange; traders must find a willing counterparty themselves.",
+    "Once agreed, the transaction is cleared on the exchange.",
+    "The trade confirmation includes a description of the physical commodity being delivered, among other negotiated terms."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to but distinct from the general Exchange for Physical (EFP) mechanism described in the same section; both are submitted to the exchange to pair traders for delivery."
+   ],
+   "trading_implications": [
+    "Useful when a trader needs delivery of a commodity variant that doesn't match the standard futures contract specification."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exchange for Physical",
+    "Futures"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "95-96",
+    "section_hint": "Exchange for Principal Transaction"
+   }
+  }
+ ]
+}

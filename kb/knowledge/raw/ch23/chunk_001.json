@@ -1,0 +1,217 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Compressed-Air Thermal Storage as a Peak/Off-Peak Spread Position",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "trading_strategy",
+   "definition": "Using a compressed-air-based HVAC system that compresses air overnight (off-peak) so daytime (peak) cooling load is met without buying peak power, which turns an operating decision into a financial spread position between peak and off-peak electricity prices.",
+   "core_idea": "Installing an HVAC system that shifts electricity consumption from peak to off-peak hours is financially equivalent to being long peak power and short off-peak power; separately arranging a supply contract for the off-peak leg cancels that exposure, leaving a pure long position in peak prices.",
+   "key_points": [
+    "The compressor does not need to run in real time \u2014 air can be compressed overnight and used during the day.",
+    "Because the buyer purchases power wholesale, it can arrange a contract to buy specifically off-peak.",
+    "The investment becomes more valuable if peak prices rise after installation, and also benefits if the contracted off-peak price falls.",
+    "Locking in the off-peak purchase price removes that leg's price risk, isolating the position to peak-price exposure.",
+    "The author notes this is a piece of physical hardware, not purely a financial instrument, even though it can be analyzed as one."
+   ],
+   "formulas": [],
+   "relationships": [
+    "long peak / short off-peak spread",
+    "time-shifting of energy purchases"
+   ],
+   "trading_implications": [
+    "Once the off-peak leg is contracted away, the investment's value tracks the peak power price level.",
+    "A physical efficiency/hardware investment can be analyzed and hedged like a financial spread trade."
+   ],
+   "common_misunderstandings": [
+    "Viewing this purely as an operating-cost saving rather than as a market-price-exposed peak/off-peak spread position."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "electricity storage valuation",
+    "peak/off-peak price spread"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "482-483",
+    "section_hint": "Trading Example\u2014Compressed Air"
+   }
+  },
+  {
+   "topic": "Valuing Electricity Storage as a Series of Futures Purchases",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "concept",
+   "definition": "A valuation approach for storage where the nightly (off-peak) purchase decision is not discretionary \u2014 it always occurs \u2014 so the investment can be valued similarly to holding a stream of futures purchases rather than modeling a daily operating decision.",
+   "core_idea": "When storage always charges overnight with no real operating decision involved, its value can be estimated by forecasting forward prices and valuing the position like a futures purchase, which the author describes as requiring relatively simple math.",
+   "key_points": [
+    "Applies specifically when there is no discretionary daily operating decision \u2014 the nightly purchase always happens.",
+    "Requires forecasting forward prices into the future.",
+    "Described by the author as needing only 'limited mathematics' compared to other approaches."
+   ],
+   "formulas": [],
+   "relationships": [
+    "storage valuation",
+    "forward price forecasting"
+   ],
+   "trading_implications": [
+    "This method sidesteps the need to model optimal daily charge/discharge behavior when the charging pattern is fixed."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "forward curve",
+    "electricity storage valuation"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "483",
+    "section_hint": "Expected Profitability"
+   }
+  },
+  {
+   "topic": "Off-Peak to Peak Price Ratio as a Storage Valuation Input",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "market_mechanic",
+   "definition": "A rule-of-thumb relationship between overnight (off-peak) and peak power prices that can be used to estimate storage value, noting that this ratio is seasonal rather than fixed.",
+   "core_idea": "In many regions overnight power is roughly half the price of peak power on a typical basis, but the ratio shifts by month \u2014 summer afternoons see peak prices spike from air-conditioning demand while nighttime prices stay comparatively stable, narrowing the share of energy used at night.",
+   "key_points": [
+    "Overnight power described as 'about 50 percent' the price of peak power in many regions \u2014 presented as an illustrative typical figure, not a universal constant.",
+    "The ratio varies by month (illustrated in the source's Figure 4.8.5).",
+    "Summer peak prices spike due to air-conditioning demand on hot days; nighttime prices remain relatively stable.",
+    "This relationship could underlie a model that estimates peak prices from marginal fuel costs and then derives off-peak price estimates from those."
+   ],
+   "formulas": [],
+   "relationships": [
+    "peak/off-peak price spread",
+    "marginal fuel pricing",
+    "seasonal demand shape"
+   ],
+   "trading_implications": [
+    "Storage valuation models using this ratio should account for month-to-month variation rather than applying one fixed ratio year-round."
+   ],
+   "common_misunderstandings": [
+    "Treating the ~50% off-peak/peak ratio as a fixed constant rather than a seasonally varying approximation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "peak/off-peak spread",
+    "seasonal demand",
+    "electricity storage valuation"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "483",
+    "section_hint": "Expected Profitability / Figure 4.8.5"
+   }
+  },
+  {
+   "topic": "Storage Buildout Can Compress Its Own Profit Opportunity",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "risk",
+   "definition": "A structural risk in electricity storage valuation: widespread storage adoption in a region tends to shrink the intraday peak/off-peak price spread that made storage profitable in the first place.",
+   "core_idea": "If enough storage capacity exists, storage units can supply power during peak demand and displace the peaking generators that created high prices, narrowing or eliminating the intraday swings that storage investments were built to capture.",
+   "key_points": [
+    "Applies to both the futures-purchase and off-peak/peak-ratio valuation approaches discussed.",
+    "The author explicitly cautions against over-optimistic assumptions about future storage profits for this reason."
+   ],
+   "formulas": [],
+   "relationships": [
+    "storage displaces peaking generation",
+    "price convergence reduces peak/off-peak spread"
+   ],
+   "trading_implications": [
+    "Forward-looking storage valuations should discount for spread compression as regional storage capacity grows."
+   ],
+   "common_misunderstandings": [
+    "Assuming historical peak/off-peak spreads will persist unchanged as more storage capacity is added to a market."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "peaking generation",
+    "price spread compression",
+    "electricity storage valuation"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "483",
+    "section_hint": "Expected Profitability"
+   }
+  },
+  {
+   "topic": "Pumped Hydropower Storage \u2014 Spring/Summer Seasonal Arbitrage",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "trading_strategy",
+   "definition": "A physical storage strategy using pumped hydropower to buy (store) low-cost spring snowmelt power and later sell it into higher-priced summer peak markets.",
+   "core_idea": "During spring snowmelt, hydro plants run at maximum capacity and depress local power prices; pumping that cheap power into elevated reservoirs allows it to be released and sold later into higher-priced peak-season markets such as New York City in August.",
+   "key_points": [
+    "Example uses former coal-mining ponds near mountains as reservoirs, since the land is offered free to whoever assumes the associated environmental liability.",
+    "Beyond the seasonal spring/summer trade, the facility could also capture shorter-term price spikes, such as buying cheap ahead of an anticipated heat wave and selling into the resulting price rise.",
+    "Feasible because a pumped-hydro plant is one of the few participants that can actually store bulk power and act on price cycles, unlike most market participants who cannot store electricity.",
+    "The strategy is described as generally straightforward given the cyclical nature of power prices, but is constrained by reservoir capacity \u2014 the plant cannot keep buying or selling once reservoirs are full or empty."
+   ],
+   "formulas": [],
+   "relationships": [
+    "seasonal hydro generation",
+    "peak power arbitrage",
+    "reservoir capacity constraint"
+   ],
+   "trading_implications": [
+    "Physical storage assets that can both buy and sell power on short notice can exploit both seasonal and event-driven (e.g., heat wave) price cycles."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "pumped storage",
+    "peak power arbitrage",
+    "reservoir capacity"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "483-484",
+    "section_hint": "Trading Example\u2014Pumped Hydropower"
+   }
+  },
+  {
+   "topic": "Pumped Hydropower \u2014 Operational, Environmental, and Execution Risks",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "risk",
+   "definition": "The non-price risks that make a pumped-hydro storage arbitrage strategy unattractive to most investors despite a favorable, low-risk price-cycle trading logic.",
+   "core_idea": "Even though buying low and selling high on cyclical power prices is described as comparatively low-risk, the surrounding physical and legal burdens \u2014 assumed environmental cleanup liability, dam construction complexity, high maintenance costs from corrosive water, and daily trade execution overhead \u2014 are severe enough to deter nearly all investors.",
+   "key_points": [
+    "Taking on legal liability for someone else's toxic-pond cleanup is identified as the primary deal-killer.",
+    "Physical construction of a dam to move water up and down a mountain adds major engineering complexity.",
+    "Corrosive, highly acidic water in the ponds is expected to drive high ongoing maintenance costs.",
+    "Executing the trade requires both an operational team to run the physical facility and a separate team to handle daily power purchase/sale scheduling and paperwork.",
+    "The author concludes that most investors will pass on this investment despite the underlying trading logic being sound."
+   ],
+   "formulas": [],
+   "relationships": [
+    "environmental liability",
+    "physical trade execution overhead"
+   ],
+   "trading_implications": [
+    "A financially attractive arbitrage logic does not by itself make a physical storage project investable once legal, environmental, and operational costs are weighed."
+   ],
+   "common_misunderstandings": [
+    "Assuming a favorable price-arbitrage rationale alone justifies a physical storage project, without weighing legal, environmental, and operational overhead."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "environmental liability",
+    "physical commodity trade execution",
+    "storage project risk"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "484-485",
+    "section_hint": "Trading Example\u2014Pumped Hydropower / The Risks, Results"
+   }
+  }
+ ]
+}

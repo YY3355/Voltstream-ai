@@ -1,0 +1,146 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Value at Risk (VAR) \u2014 definition and purpose",
+   "category": "Risk",
+   "subcategory": "Risk Measurement",
+   "type": "concept",
+   "definition": "VAR is a risk statistic that reduces the combined trading risk of a portfolio to a single number by describing how large a P&L (profit and loss) move can be expected to happen with a given frequency.",
+   "core_idea": "VAR was created to make dissimilar positions (e.g., a $15M stock position vs. a large futures position with little cash outlay) comparable by using daily change in mark-to-market value \u2014 P&L \u2014 as the common denominator for size and risk.",
+   "key_points": [
+    "Notional cost to enter a position (cash required) is not a reliable measure of its size or risk \u2014 a stock position and a futures position with a small margin deposit aren't comparable on that basis.",
+    "VAR expresses risk in terms of P&L volatility rather than position notional or trade count.",
+    "VAR is one of the primary components of most risk management practices, even though practices vary widely across firms.",
+    "VAR relies on mark-to-market accounting prices as its foundation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on mark-to-market accounting (covered separately in Ch. 6.1)."
+   ],
+   "trading_implications": [
+    "Risk managers use VAR to set position size limits for traders across very different instrument types on a like-for-like basis."
+   ],
+   "common_misunderstandings": [
+    "VAR is not a measure of the cost or margin required to hold a position \u2014 it measures expected P&L variability instead."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-market accounting",
+    "Risk limits",
+    "Portfolio risk aggregation"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "557-558",
+    "section_hint": "6.2 Value at Risk \u2014 Summary"
+   }
+  },
+  {
+   "topic": "VAR as a summary statistic \u2014 strengths and limits",
+   "category": "Risk",
+   "subcategory": "Risk Measurement",
+   "type": "concept",
+   "definition": "VAR intentionally compresses portfolio risk into one number, which makes it simple and easy to track over time but means it deliberately omits trade-level detail.",
+   "core_idea": "VAR's popularity comes from being a single, easily-trended number suitable for daily reporting to a broad audience, but because it is a high-level summary it hides individual trade risks that still exist even though the report doesn't show them.",
+   "key_points": [
+    "VAR attempts to describe 'the big picture' of a portfolio rather than analyzing any specific trade.",
+    "Individual trade-level risks are obscured, not eliminated, by a VAR summary.",
+    "VAR's single-number format makes it easy to spot trends \u2014 e.g., a $20 million drop in VAR over a week signals a meaningful change in portfolio risk.",
+    "VAR analysis is almost always paired with more granular risk techniques such as stress testing or worst-case scenario analysis, because VAR alone is only part of the risk picture."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Complementary to stress testing and worst-case scenario analysis, not a replacement for them."
+   ],
+   "trading_implications": [
+    "A risk manager should not rely on VAR alone; material trade-level risks can be present without moving the headline VAR number."
+   ],
+   "common_misunderstandings": [
+    "A stable or low VAR does not mean there is no meaningful risk in the portfolio \u2014 VAR can obscure risks at the individual trade level."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Stress testing",
+    "Worst-case scenario analysis"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "557-559",
+    "section_hint": "6.2 Value at Risk \u2014 Summary / A High-Level Summary"
+   }
+  },
+  {
+   "topic": "The four components of a VAR description",
+   "category": "Risk",
+   "subcategory": "Risk Measurement",
+   "type": "definition",
+   "definition": "A complete VAR statement is defined by four elements: the frequency of the described event, the time horizon of the move, whether it is one-sided or two-sided, and the magnitude of the move.",
+   "core_idea": "A VAR figure like 'once a month, the desk can expect to lose at least $1 million over one day' packs frequency, time horizon, sidedness, and magnitude into a single, audience-friendly statement.",
+   "key_points": [
+    "Frequency: how often the described move is expected to occur, typically expressed as a percentile (e.g., a 1-in-20 event corresponds to exceeding the 95th percentile of outcomes).",
+    "Time horizon: the period over which the P&L change is measured, e.g., one day or one week.",
+    "Sidedness: one-sided VAR looks only at losses (or only gains); two-sided VAR describes the possible size of both profits and losses.",
+    "Magnitude: the size of the expected move in dollar terms, e.g., up or down by $1 million.",
+    "A 95th-percentile move is expected roughly once a month (about 1 in 20 trading days); a 99th-percentile move is expected about two and a half times a year.",
+    "VAR gives the minimum threshold expected to be exceeded at the stated frequency \u2014 it does not say how much worse the loss could be beyond that threshold (e.g., it doesn't distinguish whether the loss will be $1 million, $2 million, or $10 million)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "The frequency component is directly tied to percentile choice (e.g., 95th percentile \u2248 monthly event given ~20 trading days/month)."
+   ],
+   "trading_implications": [
+    "Different firms choose different frequency percentiles for VAR \u2014 some prefer more frequently-checkable/accurate points, others prefer numbers closer to a worst-case scenario."
+   ],
+   "common_misunderstandings": [
+    "VAR is not the worst case that can happen \u2014 it is the minimum size of move expected to be met or exceeded at the chosen frequency, so actual losses on a VAR-breaching day can be much larger than the stated VAR figure."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Percentile / confidence level selection",
+    "One-sided vs two-sided risk measures"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "558-560",
+    "section_hint": "6.2 Value at Risk \u2014 A High-Level Summary"
+   }
+  },
+  {
+   "topic": "Calculating VAR \u2014 the two-step process",
+   "category": "Risk",
+   "subcategory": "Risk Measurement",
+   "type": "market_mechanic",
+   "definition": "VAR is calculated by first establishing mark-to-market prices for a portfolio's positions and then analyzing the resulting P&L volatility to pick a single number representing a chosen frequency/percentile of that distribution.",
+   "core_idea": "Because mark-to-market accounting turns any asset into a priced position, and price changes translate into P&L, P&L volatility becomes a common denominator that lets a single VAR number stand in for an entire distribution (or combination of distributions) of possible outcomes.",
+   "key_points": [
+    "Risk of a portfolio is commonly treated as synonymous with its P&L volatility.",
+    "VAR compresses a full distribution of possible P&L outcomes (or several distributions combined) into one representative number at a chosen percentile.",
+    "Because ~20 trading days occur in a month, a move at least as large as the 95th-percentile P&L move is expected to occur about once a month on average \u2014 this is one common reason the 95 percent level is chosen.",
+    "Picking a single point sacrifices some accuracy/detail versus using the full outcome distribution, in exchange for a simpler, more communicable estimate of risk.",
+    "Different assets or portfolios can share the same VAR number even though their underlying return distributions differ."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on mark-to-market accounting (Chapter 6.1) as the first of the two calculation steps."
+   ],
+   "trading_implications": [
+    "Because VAR is a single chosen point on a distribution, two portfolios with the same VAR are not necessarily equally risky in every respect \u2014 the full distribution shape can still differ."
+   ],
+   "common_misunderstandings": [
+    "Equal VAR does not imply identical risk profiles between two assets or portfolios \u2014 VAR intentionally discards distributional detail for simplicity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-market accounting",
+    "P&L distribution",
+    "Percentile selection for VAR"
+   ],
+   "source": {
+    "chapter": 30,
+    "pages": "560-561",
+    "section_hint": "6.2 Value at Risk \u2014 Calculating VAR"
+   }
+  }
+ ]
+}

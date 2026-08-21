@@ -1,0 +1,255 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Why power markets run two auctions (day-ahead and real-time)",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Two sequential auctions exist because generation fleets can't ramp instantly: the day-ahead market commits plants in half-hour or hourly blocks based on expected load, and the real-time market covers any load that shows up between those commitment intervals.",
+   "core_idea": "Day-ahead scheduling activates generators in discrete time blocks sized to the load expected at the start of each block; any demand that materializes before the next block's units come online has to be served by real-time, which is why real-time prices react to short-term swings in hourly demand.",
+   "key_points": [
+    "Day-ahead activates generation in half-hour or hour-long increments, sized to load at the start of the period.",
+    "Demand increases occurring before the next scheduled activation must be met by the real-time market.",
+    "This structural lag is the mechanical reason real-time prices move with short-term demand changes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into why the real-time and day-ahead generation stacks end up similar (see companion item on stack overlap)."
+   ],
+   "trading_implications": [
+    "Short-term demand ramps that outrun the day-ahead commitment schedule are a structural driver of real-time price spikes, independent of any generation shortage."
+   ],
+   "common_misunderstandings": [
+    "Real-time price volatility is not necessarily a sign of a supply shortfall; it can simply reflect the lag between demand realization and the next scheduled unit commitment."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Unit commitment",
+    "Real-time vs day-ahead pricing"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack"
+   }
+  },
+  {
+   "topic": "Similarity of real-time and day-ahead generation stacks",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Because most marginal suppliers bid similarly into both auctions, and because the most efficient (cheapest) plants are almost always running, the day-ahead and real-time generation stacks tend to look nearly the same except at the very bottom.",
+   "core_idea": "The cheapest, most efficient generators are the ones most likely to miss out on real-time participation (since day-ahead already locked them in), but they are essentially always dispatched anyway except in very low demand periods, so they rarely set the real-time margin \u2014 leaving the two stacks closely aligned.",
+   "key_points": [
+    "Marginal suppliers generally use the same bidding strategy in both the day-ahead and real-time auctions.",
+    "The most efficient plants at the bottom of the stack are most likely to be excluded from real-time participation.",
+    "Except during very low demand, bottom-of-stack plants run continuously and are not the marginal (price-setting) unit.",
+    "Net effect: real-time and day-ahead stacks are usually very similar."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the day-ahead/real-time auction structure described above."
+   ],
+   "trading_implications": [
+    "Divergence between day-ahead and real-time stacks should be more pronounced in low-demand periods, when baseload plants are more likely to actually be on the margin."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Baseload generation",
+    "Marginal pricing"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack"
+   }
+  },
+  {
+   "topic": "Efficient dispatch vs economic dispatch",
+   "category": "Power Markets",
+   "subcategory": "Dispatch & Environmental Policy",
+   "type": "concept",
+   "definition": "Economic dispatch activates generators purely by cost, which tends to favor cheap-fuel coal over cleaner but pricier natural gas; efficient dispatch would instead prioritize plants by emissions (SO2/CO2) rather than cost.",
+   "core_idea": "In a plain economic dispatch, coal stays on because its fuel is cheap even though it pollutes heavily, and green generation entering the market displaces marginal gas plants rather than coal \u2014 the opposite of what environmental advocates want, since gas produces much more energy per unit of pollution than coal.",
+   "key_points": [
+    "Economic dispatch orders generators by cost, not by emissions.",
+    "Coal remains competitive under economic dispatch because of low fuel cost, despite high pollution output.",
+    "When green power comes online, it typically displaces marginal natural gas plants, not coal, since gas is more expensive to run.",
+    "Natural gas yields much more energy per unit of pollution than coal, which is why environmentalists object to this outcome.",
+    "Efficient dispatch would instead activate plants to minimize SO2 and CO2 emissions rather than cost."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the use of emissions credits, described in the next item."
+   ],
+   "trading_implications": [
+    "Adding renewable capacity in an economically dispatched market can perversely reduce gas demand/price support while leaving coal dispatch largely untouched, unless emissions costs are layered in."
+   ],
+   "common_misunderstandings": [
+    "Adding green power to the grid does not automatically reduce coal generation under pure economic dispatch \u2014 it more often displaces the more expensive, cleaner marginal fuel (gas)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Emissions credits",
+    "Generation stack",
+    "Merit order"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Efficient Versus Economic Dispatch"
+   }
+  },
+  {
+   "topic": "Emissions credits as a bridge between economic and efficient dispatch",
+   "category": "Power Markets",
+   "subcategory": "Dispatch & Environmental Policy",
+   "type": "market_mechanic",
+   "definition": "Emissions credits impose a cost on CO2/SO2 output, effectively taxing heavily polluting plants (mainly coal) so that cost-based dispatch decisions also account for environmental impact.",
+   "core_idea": "By making coal generation more expensive through emissions charges, deregulated markets can keep a price-based (economic) dispatch mechanism while still nudging outcomes toward the lower-emissions result that efficient dispatch would target; the added consumer cost can be offset by reducing other charges.",
+   "key_points": [
+    "The common fix for the economic-vs-efficient dispatch conflict is charging plants for CO2 and SO2 emissions.",
+    "This raises coal's effective cost, which can be offset for consumers via reductions in other costs/charges.",
+    "Emissions credits function as a tax on high-polluting generation layered onto an otherwise cost-based dispatch system."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the economic vs efficient dispatch conflict above."
+   ],
+   "trading_implications": [
+    "Emissions credit/carbon costs should be modeled as an add-on to coal's variable cost when projecting its position in the generation stack and dispatch likelihood."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Economic dispatch",
+    "Carbon pricing",
+    "Generation stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Efficient Versus Economic Dispatch"
+   }
+  },
+  {
+   "topic": "Marginal pricing degrades as the generation stack flattens",
+   "category": "Power Markets",
+   "subcategory": "Marginal Pricing",
+   "type": "concept",
+   "definition": "Marginal pricing works well when the generation stack has a steep cost gradient (e.g., cheap coal/nuclear baseload versus pricier gas at the margin, as in the mid-1990s), but breaks down as a profit mechanism when many generators share similar marginal costs \u2014 a 'flat' stack, which became more common by 2015 due to cheaper fracked natural gas and newer technology.",
+   "core_idea": "The steepness of the cost curve across the generation stack determines how well marginal (uniform clearing) pricing preserves producer margins; two decades of technology change plus cheap shale gas flattened the U.S. stack relative to the 1990s, undermining the profit margins that steep-stack marginal pricing used to generate.",
+   "key_points": [
+    "Marginal pricing performed well historically when baseload (coal/nuclear) was cheap and gas set high marginal prices.",
+    "By 2015, roughly 20 years of new technology plus cheaper fracked natural gas had flattened the generation stack.",
+    "A flatter stack means marginal costs across generators converge, weakening marginal pricing as a way to sustain producer profit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the numeric margin-compression example and the single-technology extreme case below."
+   ],
+   "trading_implications": [
+    "As gas costs converge with other fuel costs, expect baseload generator margins to compress even without any change in the marginal unit's identity \u2014 margin risk grows purely from stack-flattening dynamics."
+   ],
+   "common_misunderstandings": [
+    "A flat stack is a structural feature of the fleet's mix of technologies/fuel costs, not necessarily a sign of oversupply or weak demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Generation stack",
+    "Heat rate",
+    "Natural gas fracking impact on power markets"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Problems with Marginal Pricing"
+   }
+  },
+  {
+   "topic": "Numeric example: gas price decline compresses baseload coal margin",
+   "category": "Power Markets",
+   "subcategory": "Marginal Pricing",
+   "type": "example",
+   "definition": "A worked example showing how a drop in gas price sharply reduces the profit margin of a baseload coal unit when a 10 MMBtu/MWh heat-rate gas unit sets the marginal power price.",
+   "core_idea": "With a marginal gas unit at a 10 MMBtu/MWh heat rate, power price roughly tracks heat rate times gas price; when gas falls from $10/MMBtu to $4/MMBtu, marginal power price falls from about $100/MWh to $40/MWh, and a coal unit with $35/MWh variable cost sees its margin collapse from $65/MWh to $5/MWh.",
+   "key_points": [
+    "Marginal power price \u2248 marginal unit's heat rate \u00d7 gas price.",
+    "At $10/MMBtu gas and 10 MMBtu/MWh heat rate, power price \u2248 $100/MWh.",
+    "At $4/MMBtu gas, power price falls to \u2248 $40/MWh.",
+    "A coal plant with $35/MWh variable cost sees margin fall from $65/MWh (at $100 power) to $5/MWh (at $40 power)."
+   ],
+   "formulas": [
+    {
+     "name": "Marginal power price from heat rate and gas price",
+     "formula": "Power Price ($/MWh) = Heat Rate (MMBtu/MWh) x Gas Price ($/MMBtu)",
+     "variables": {
+      "Heat Rate": "fuel input per unit of electrical output, MMBtu/MWh, for the marginal (price-setting) generator",
+      "Gas Price": "natural gas price, $/MMBtu",
+      "Power Price": "resulting marginal clearing price, $/MWh"
+     }
+    }
+   ],
+   "relationships": [
+    "Illustrates the flat-stack marginal pricing problem described in the preceding item."
+   ],
+   "trading_implications": [
+    "Baseload coal margins are highly sensitive to gas price moves even though coal doesn't burn gas \u2014 because gas sets the marginal clearing price; this is a key basis-risk-style exposure to model when gas prices fall sharply."
+   ],
+   "common_misunderstandings": [
+    "A falling gas price doesn't just hurt gas generators \u2014 it can severely compress margins for non-gas (coal) baseload units too, since power price is set by the marginal (often gas) unit."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heat rate",
+    "Marginal pricing",
+    "Generation stack"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Problems with Marginal Pricing"
+   }
+  },
+  {
+   "topic": "Single-technology extreme case: marginal pricing eliminates profit and threatens new investment",
+   "category": "Power Markets",
+   "subcategory": "Marginal Pricing",
+   "type": "risk",
+   "definition": "In the extreme case where a grid's generators all use similar technology (fully flat stack), marginal pricing sets everyone's clearing price near their common marginal cost, leaving no margin for anyone \u2014 which is a problem because new generation requires large upfront capital that must be recovered from operating profits.",
+   "core_idea": "A fully flat stack under marginal pricing removes the profit that steep-stack marginal pricing normally provides; since new power plants need large initial investment recouped over time, a market with no sustained margin makes it hard for developers to attract financing, since lenders need assurance of a steady profit stream to be repaid.",
+   "key_points": [
+    "If all generators share similar marginal cost, marginal-price clearing yields near-zero profit for everyone.",
+    "Building new generation requires large upfront capital investment.",
+    "Lenders financing new plants need confidence in a steady profit stream to recover their loans.",
+    "A structurally flat, no-margin market therefore threatens the economics of new generation investment."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extreme endpoint of the flat-stack marginal pricing problem described above."
+   ],
+   "trading_implications": [
+    "Markets trending toward a flat generation stack may need capacity payments or other non-energy revenue mechanisms to keep new investment financeable, since energy-only marginal pricing alone may not support debt service."
+   ],
+   "common_misunderstandings": [
+    "Low or converging marginal costs across generators (often seen as good for consumers) can simultaneously be a red flag for long-term resource adequacy, since it undermines the investment case for new capacity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity markets",
+    "Resource adequacy",
+    "Generation stack",
+    "Marginal pricing"
+   ],
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Problems with Marginal Pricing"
+   }
+  }
+ ]
+}

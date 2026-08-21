@@ -1,0 +1,200 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Spatial load forecasting (definition and purpose)",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "definition",
+   "definition": "Spatial load forecasting is the practice of predicting how much electrical demand ('load') will occur, broken out by geographic region and by time period, so that a power grid can plan generation and delivery accordingly.",
+   "core_idea": "Because electricity generally cannot be stored and must be produced as it is consumed, grid operators need to predict both how much power a region will need and when, since consumers make no advance commitment to their usage.",
+   "key_points": [
+    "'Spatial' means tied to a specific region or geographic space, so the forecast is always scoped to a defined area.",
+    "'Load' is an electrical engineering term for the power drawn from a circuit or power line; in trading contexts it is used interchangeably with 'demand'.",
+    "Power can't easily be stored, so supply must be generated on demand, making anticipation of demand changes necessary.",
+    "Short-term forecasts are used operationally, to schedule power plants for operation and maintenance.",
+    "Long-term forecasts are used strategically, to justify building new power lines, power plants, and other infrastructure."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins base load and peak load concepts, since both are defined relative to a forecast demand profile.",
+    "Feeds into power price prediction, since demand is a primary driver of price."
+   ],
+   "trading_implications": [
+    "Load forecasts matter to traders because demand for power is a primary determinant of power prices, so a better load forecast supports better price prediction."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Base load",
+    "Peak load",
+    "Power price formation",
+    "Grid operations (RTO/ISO)"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "388-389",
+    "section_hint": "4.1 Spatial Load Forecasting \u2014 Purpose/Summary"
+   }
+  },
+  {
+   "topic": "Why grid operators must forecast rather than schedule demand",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "market_mechanic",
+   "definition": "Grid operators (RTOs, ISOs, utilities) never know in advance exactly how much power they will need to deliver, because consumers do not schedule their electricity use \u2014 they simply turn appliances on and off as they wish.",
+   "core_idea": "Since electricity consumption decisions are made independently and without advance notice by consumers, the grid operator's only option is to estimate demand ahead of time well enough to have adequate generation ready.",
+   "key_points": [
+    "Unlike a scheduled commodity purchase, consumers do not pre-commit to spot electricity purchases.",
+    "The grid operator's goal is to deliver power to consumers wherever and whenever they choose to use it.",
+    "This makes demand estimation a prerequisite for reliable grid operation, not an optional analytical exercise."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the need for spatial load forecasting overall"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Grid operations (RTO/ISO)",
+    "Spatial load forecasting"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "389",
+    "section_hint": "4.1 Spatial Load Forecasting"
+   }
+  },
+  {
+   "topic": "Base load, peak load, and safety-margin generation",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "definition",
+   "definition": "Base load is the minimum level of demand a region must meet at all times, typically supplied by baseload generation units. Peak load is the expected maximum level of demand, which requires nearly all of a region's generation units to run. Many regions also hold extra generation capacity as a safety margin that may rarely or never run under normal conditions.",
+   "core_idea": "A region's demand profile spans a floor (base load) and a ceiling (peak load), and grid operators keep reserve capacity beyond the peak as insurance against unexpected contingencies.",
+   "key_points": [
+    "Base load = minimum demand that must always be met; served by baseload generation units.",
+    "Peak load = expected maximum demand; meeting it requires nearly all generation units in the region to operate.",
+    "Safety-margin units are extra generation held in reserve, which may never be dispatched under normal conditions.",
+    "These three concepts frame what a spatial load forecast is trying to estimate: expected demand, maximum demand, and the buffer needed above it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Both are quantities a spatial load forecast must estimate for capacity planning"
+   ],
+   "trading_implications": [
+    "Peak load periods are when nearly all generation is engaged, which is relevant context for understanding price spikes."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spatial load forecasting",
+    "Capacity planning",
+    "Generation dispatch"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "389",
+    "section_hint": "4.1 Spatial Load Forecasting \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Drivers of day-to-day demand variation",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Even within the same region, daily electricity demand fluctuates, and most of that fluctuation is attributable to calendar effects (such as day of week or hour of day) and weather (primarily temperature).",
+   "core_idea": "Short-term load forecasting is fundamentally about understanding why people use electricity \u2014 much of which reduces to routine schedules and temperature-driven equipment use (like heating and cooling).",
+   "key_points": [
+    "Calendar effects: predictable patterns like an office's 9-to-5 schedule recur every weekday.",
+    "Weather effects: demand shifts with temperature because buildings run heating or air conditioning to hold a constant indoor temperature.",
+    "Different consumer types (e.g., a downtown business district vs. a residential suburb) have distinct demand profiles even though both can be modeled from historical behavior.",
+    "Location matters because climate varies by region (the book contrasts central Florida vs. the Mid-Atlantic coastline in February) so the same type of consumer will show different usage patterns in different places."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds directly into building a short-term load forecasting model"
+   ],
+   "trading_implications": [
+    "Because weather and calendar effects drive short-term demand swings, and demand drives price, these are the practical inputs a trader would want a forecasting model to capture."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Consumer type and location",
+    "Weather-driven demand",
+    "Spatial load forecasting"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "389-391",
+    "section_hint": "4.1 Spatial Load Forecasting \u2014 Forecasting / Consumer Type and Location"
+   }
+  },
+  {
+   "topic": "Expected demand vs. worst-case demand as distinct modeling goals",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "A load forecasting model must be built around its intended use: a utility doing capacity planning may want the heaviest plausible load on a given day (a worst-case forecast) so it can line up enough standby generation, while a trader may instead want the load most likely to actually occur (an expected-value forecast) to support a trading strategy.",
+   "core_idea": "There is no single 'best' load forecasting model \u2014 the right model depends on whether the goal is capacity planning (worst case) or trading (expected/most likely case), and the modeler should reason about the specific goal rather than apply one generic approach.",
+   "key_points": [
+    "Utilities doing capacity planning care about the heaviest plausible load, to ensure sufficient standby generation is available.",
+    "Traders care about the load most likely to occur, since it feeds trading decisions.",
+    "All forecasting models share similarities, but no model is universally optimal across use cases.",
+    "The author frames this as a call for practical judgment: think about the goal and apply common sense rather than a one-size-fits-all technique."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Applies the general spatial load forecasting concept to two different use cases: utility capacity planning vs. trading"
+   ],
+   "trading_implications": [
+    "A trader's forecasting model should target the most likely demand outcome, not the worst case a utility would plan around \u2014 using the wrong target could bias a trading strategy."
+   ],
+   "common_misunderstandings": [
+    "Assuming one universal load forecast (e.g., a utility's worst-case planning number) is equally appropriate for trading purposes, when the author notes the two use cases call for different modeling targets."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spatial load forecasting",
+    "Trading strategy design",
+    "Capacity planning"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "390",
+    "section_hint": "4.1 Spatial Load Forecasting \u2014 Expected or Worst-Case Scenario?"
+   }
+  },
+  {
+   "topic": "Key inputs to a load forecast: consumer type, location, weather, calendar effects",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Load forecasts are built for bounded geographic areas (from neighborhoods up to multi-state regions), and the boundary chosen determines what mix of consumer types and what climate the model must account for; the author identifies consumer type, location, weather, and calendar effects as the most important forecasting factors.",
+   "core_idea": "The geographic scope of a load forecast is what defines the 'spatial' part of spatial load forecasting, since it fixes both the consumer mix and the climate the model needs to represent.",
+   "key_points": [
+    "Forecast areas can range in size from a neighborhood to a multi-state region.",
+    "The chosen boundary determines the consumer types present and the general climate of the region.",
+    "Consumer type, location, weather, and calendar effects are called out as among the most important factors in a load forecast."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Defines the spatial component referenced in 'spatial load forecasting'"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spatial load forecasting",
+    "Drivers of day-to-day demand variation"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "391",
+    "section_hint": "4.1 Spatial Load Forecasting \u2014 Consumer Type and Location"
+   }
+  }
+ ]
+}

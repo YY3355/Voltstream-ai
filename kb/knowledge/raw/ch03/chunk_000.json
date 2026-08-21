@@ -1,0 +1,288 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Fossil fuels as hydrocarbons",
+   "category": "Fundamentals",
+   "subcategory": "Fuel Types",
+   "type": "concept",
+   "definition": "Fossil (conventional) fuels are organic fuels extracted from underground deposits that formed naturally from decayed plant matter over millions of years; they are built from hydrogen-and-carbon molecules, hence the name hydrocarbons.",
+   "core_idea": "Organic fuels supply the overwhelming majority of world energy, and are split into fossil fuels (ancient, extracted from the ground) versus biofuels (produced from recently grown crops).",
+   "key_points": [
+    "Organic-source fuels supply more than 90% of world energy.",
+    "Fossil fuels form over millions of years from trapped, decaying plant life.",
+    "Biofuels are the same broad hydrocarbon category but sourced from recently grown crops rather than ancient underground deposits.",
+    "Burning (combusting) hydrocarbons with oxygen releases heat used to power engines or generators."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Fossil fuels and biofuels are both hydrocarbon fuels, distinguished by the age/source of the organic material rather than chemical composition."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Fossil fuel and hydrocarbon are not strict synonyms \u2014 hydrocarbon is the chemical category, while fossil fuel specifies the ancient-underground origin as opposed to biofuel."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Biofuels",
+    "Hydrocarbon carbon-chain classification"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "118-119",
+    "section_hint": "1.3 Exploration and Production \u2014 Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "Exploration and production as two distinct activities",
+   "category": "Power Markets",
+   "subcategory": "Upstream Operations",
+   "type": "market_mechanic",
+   "definition": "Before fossil fuels can be sold, they must be located (exploration) and then physically extracted from the ground (production), typically by a specialized company working with the mineral rights owner.",
+   "core_idea": "Exploration covers licensing, searching for resources, and negotiating extraction contracts with mineral rights owners; production covers the physical extraction via drilling (oil/gas) or mining (coal).",
+   "key_points": [
+    "Exploration = getting search licenses, locating resources, and negotiating contracts with mineral rights owners.",
+    "Production = extracting the fuel, via drilling for oil and gas or mining for coal.",
+    "After production, fuels must be separated from each other via refining before being sold to consumers.",
+    "This work is often performed by a dedicated exploration and production (E&P) company rather than the mineral rights owner directly."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Production precedes refining, which precedes consumer sale."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Refining",
+    "Mineral rights",
+    "Landman"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "118-119",
+    "section_hint": "1.3 Exploration and Production \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Hydrocarbon classification by carbon chain length",
+   "category": "Fundamentals",
+   "subcategory": "Fuel Types",
+   "type": "concept",
+   "definition": "Hydrocarbon fuels are categorized by the length of their carbon chain, notated Cn where n is the number of carbon atoms; chain length determines whether the fuel is a gas, liquid, or solid at standard temperature and pressure.",
+   "core_idea": "Short carbon chains form natural gas (gaseous), mid-length chains form petroleum (liquid), and the longest chains form coal (solid).",
+   "key_points": [
+    "Carbon-chain notation: capital C plus a subscript for the number of carbon atoms, e.g. C5 = five-carbon molecule.",
+    "Shortest chains (natural gases) are gaseous at standard temperature and pressure.",
+    "Mid-length chains (petroleum) are liquid.",
+    "Longest chains (coal) are solid.",
+    "Even after processing, fuels remain mixtures of hydrocarbons of varying chain length rather than a single pure molecule \u2014 e.g. gasoline is predominantly C7\u2013C11 but also contains some C5, C6, C12, C13, etc.",
+    "The proportion of lighter/heavier molecules in a fuel like gasoline can vary substantially, so the carbon-chain makeup of a named fuel (e.g. 'gasoline') may be defined slightly differently across countries, states, or even processing locations."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Carbon chain length is the underlying variable linking natural gas, petroleum, and coal as points on one spectrum rather than unrelated substances."
+   ],
+   "trading_implications": [
+    "Because named fuel grades (e.g. gasoline) are regionally-defined mixtures rather than fixed chemical formulas, specification differences across jurisdictions can matter for physical delivery/quality contracts."
+   ],
+   "common_misunderstandings": [
+    "Natural gas, petroleum, and coal are not chemically distinct categories in an absolute sense \u2014 they are ranges along a continuous carbon-chain-length spectrum."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Refining",
+    "Fossil fuels as hydrocarbons"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "119-120",
+    "section_hint": "1.3 Exploration and Production \u2014 Hydrocarbon Fuels"
+   }
+  },
+  {
+   "topic": "Mineral rights ownership and licensing for E&P",
+   "category": "Power Markets",
+   "subcategory": "Upstream Operations",
+   "type": "market_mechanic",
+   "definition": "Energy companies lease land to extract fuel and compensate both the surface land owner and the mineral rights owner (often the same or different parties) via royalties, a share of production profit; who owns subsurface mineral rights varies by country.",
+   "core_idea": "In the U.S., subsurface fossil fuel rights are commonly privately owned, whereas in most other countries they belong to the government; regardless of ownership, exploration companies must obtain licenses first to explore and then, separately, to develop identified resources for production.",
+   "key_points": [
+    "Producers pay royalties \u2014 a percentage of production profit \u2014 to land and mineral rights owners.",
+    "U.S.: subsurface fossil fuel rights are often privately owned.",
+    "Most other countries: subsurface resources are government-owned.",
+    "Two licensing stages: one to explore for new resources, a separate one to develop/produce once resources are identified."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Royalty-based compensation connects to the Tax and Royalty contract structure described later in the same section."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Ownership of surface land does not automatically imply ownership of subsurface mineral rights, and the two can be held by different parties."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Landman",
+    "Tax and royalty contracts"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "119-120",
+    "section_hint": "1.3 Exploration and Production \u2014 Exploration and Production Agreements"
+   }
+  },
+  {
+   "topic": "The landman role",
+   "category": "Power Markets",
+   "subcategory": "Upstream Operations",
+   "type": "definition",
+   "definition": "A landman is a professional who negotiates land titles and mineral leases on behalf of an oil and gas exploration company.",
+   "core_idea": "Landmen identify and contact potential land/mineral-rights sellers on behalf of an exploration company and then negotiate the resulting lease or purchase contracts.",
+   "key_points": [
+    "Landmen act as the exploration company's representative for identifying willing sellers of mineral rights.",
+    "They also handle negotiation of the resulting contracts once a willing owner is found."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mineral rights ownership and licensing for E&P"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "120",
+    "section_hint": "1.3 Exploration and Production \u2014 The Landman"
+   }
+  },
+  {
+   "topic": "Risk in exploration and production",
+   "category": "Risk",
+   "subcategory": "Upstream Risk",
+   "type": "risk",
+   "definition": "E&P is potentially very profitable but carries significant risk at several stages: technical/mechanical failure during extraction, leasing land that turns out to have no economically extractable reserves, and the risk that future price declines make previously-profitable reserves unprofitable after wells are already drilled.",
+   "core_idea": "Risk in E&P is multi-layered \u2014 technical execution risk, resource/geological risk (no viable reserves found), and price risk that can turn a good discovery bad after capital has already been committed.",
+   "key_points": [
+    "Technical complexity means mechanical problems can arise even when a project is otherwise going well.",
+    "A company can take a lease and find no identifiable fuel reserves at all.",
+    "A company can identify real reserves that are nonetheless uneconomic to extract.",
+    "Even initially profitable reserves can become unprofitable if energy prices fall after wells have already been drilled \u2014 i.e., risk persists after the sunk investment.",
+    "Because of this uncertainty, a variety of contract structures exist to allocate risk between the exploration company and the resource owner."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This risk landscape motivates the different contract types (tax and royalty, production sharing, service contract) that allocate risk differently between developer and owner."
+   ],
+   "trading_implications": [
+    "Price risk is not limited to the point of initial investment decision \u2014 a project judged profitable at the time of drilling can become unprofitable purely due to subsequent price moves, independent of execution quality."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Tax and royalty contracts",
+    "Production sharing contracts",
+    "Service contracts"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "120-121",
+    "section_hint": "1.3 Exploration and Production \u2014 Exploration and Production Agreements"
+   }
+  },
+  {
+   "topic": "Tax and royalty contract",
+   "category": "Power Markets",
+   "subcategory": "E&P Contract Structures",
+   "type": "market_mechanic",
+   "definition": "A contract structure where the exploration company (developer) pays the mineral rights owner an up-front licensing fee plus a percentage of gross profits (a typical U.S. figure cited is one-eighth of gross profits).",
+   "core_idea": "Under a tax and royalty contract, the developer bears essentially all of the development risk while the owner is shielded from out-of-pocket losses, though both parties are exposed to the effect of falling energy prices on profit share.",
+   "key_points": [
+    "Owner receives an up-front fee plus a percentage of gross profits.",
+    "A typical U.S. royalty share cited is one-eighth of gross profits.",
+    "The exploration company bears essentially all development risk.",
+    "The mineral rights owner never has to pay out of pocket \u2014 their downside is limited to reduced profits, not losses.",
+    "Both developer and owner are still exposed to declining energy prices reducing the profit pool."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with production sharing (owner takes more risk for potentially higher reward) and service contracts (developer takes no ownership stake at all)."
+   ],
+   "trading_implications": [
+    "This is the lowest-risk structure for the mineral rights owner among the three described, at the cost of lower potential upside compared to production sharing."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Production sharing contract",
+    "Service contract",
+    "Mineral rights ownership and licensing for E&P"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "121",
+    "section_hint": "1.3 Exploration and Production \u2014 Exploration and Production Agreements"
+   }
+  },
+  {
+   "topic": "Production sharing contract",
+   "category": "Power Markets",
+   "subcategory": "E&P Contract Structures",
+   "type": "market_mechanic",
+   "definition": "A contract structure where the exploration company gives the mineral rights owner a share of the physical fuel produced (rather than a cash royalty), leaving the owner responsible for selling or using that fuel.",
+   "core_idea": "Because the owner takes on the additional burden and risk of handling and marketing physical fuel themselves, a production sharing contract can yield the owner higher profits than a tax and royalty contract, but requires the owner to have the knowledge and capability to transact in physical energy.",
+   "key_points": [
+    "Owner receives a percentage of the physical fuel produced, not a cash royalty.",
+    "Owner must independently arrange to sell or use that fuel, requiring physical energy transaction capability.",
+    "Owner bears more risk than under a tax and royalty contract, which can translate into higher potential profit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sits between tax and royalty (lower owner risk/reward) and full risk-bearing on the spectrum of E&P contract structures."
+   ],
+   "trading_implications": [
+    "Owners choosing production sharing take on commodity marketing/sales risk in addition to production-side risk, which only makes sense if they have the operational capacity to handle physical fuel."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Tax and royalty contract",
+    "Service contract"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "121-122",
+    "section_hint": "1.3 Exploration and Production \u2014 Exploration and Production Agreements"
+   }
+  },
+  {
+   "topic": "Service contract",
+   "category": "Power Markets",
+   "subcategory": "E&P Contract Structures",
+   "type": "market_mechanic",
+   "definition": "A contract structure where the developer acts purely as a paid contractor to produce oil and gas for a fee, without taking ownership of the crude oil produced.",
+   "core_idea": "Under a service contract the developer is compensated as a fee-for-service provider rather than as a profit-or-loss stakeholder in the extracted fuel itself.",
+   "key_points": [
+    "Developer is paid a fee to produce oil and gas.",
+    "Developer does not take ownership of the crude oil produced."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Represents the lowest-risk-for-developer end of the E&P contract spectrum, contrasted with tax and royalty and production sharing where the developer/owner take on production or price risk."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; note the source text is truncated mid-sentence ('Since most of the costs are...') so the full cost/risk allocation detail for this contract type is not captured here",
+   "related_topics": [
+    "Tax and royalty contract",
+    "Production sharing contract"
+   ],
+   "source": {
+    "chapter": 3,
+    "pages": "122-123",
+    "section_hint": "1.3 Exploration and Production \u2014 Exploration and Production Agreements"
+   }
+  }
+ ]
+}

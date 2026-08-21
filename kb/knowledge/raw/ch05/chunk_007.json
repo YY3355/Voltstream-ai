@@ -1,0 +1,203 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "PJM (Mid-Atlantic) power market geography and fundamentals",
+   "category": "Power Markets",
+   "subcategory": "Regional Markets - PJM",
+   "type": "market_mechanic",
+   "definition": "PJM's service territory spans a geographically and climatically diverse part of the Mid-Atlantic, which produces different marginal fuels and demand patterns across its western and eastern halves.",
+   "core_idea": "In the western part of PJM, cheap native coal from Pennsylvania and West Virginia sets the marginal price of power, while gas-fired generation is the marginal price setter on the East Coast and in Virginia. Climate ranges from cold winters/hot summers in the north to milder winters and longer hot summers in the south.",
+   "key_points": [
+    "Western PJM's marginal fuel is coal, sourced locally from Pennsylvania and West Virginia.",
+    "Eastern PJM (East Coast, Virginia) relies on gas-fired plants as the marginal price setter.",
+    "Climate varies north-to-south: the north sees cold winters and hot summers; the south has milder winters and extended hot summers.",
+    "Many power plants sit in sparsely populated parts of the PJM footprint and export power into denser, higher-demand areas.",
+    "This generation-to-load geography routinely creates congestion on the transmission lines linking rural generation areas to population centers."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Generation-load geographic mismatch drives transmission congestion, a recurring theme across US ISOs (see MISO, ERCOT)."
+   ],
+   "trading_implications": [
+    "Coal prices are a leading indicator for western PJM power prices; gas prices matter more for eastern/Virginia nodes.",
+    "Congestion between exporting rural generation zones and importing population centers creates locational basis risk."
+   ],
+   "common_misunderstandings": [
+    "Assuming a single marginal fuel applies uniformly across all of PJM, when in practice it differs materially between the western (coal) and eastern (gas) sub-regions."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Marginal fuel",
+    "Transmission congestion",
+    "MISO",
+    "ERCOT"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "207-208",
+    "section_hint": "2.2 Electricity - Mid-Atlantic (PJM)"
+   }
+  },
+  {
+   "topic": "Midcontinent (MISO) power market geography and fundamentals",
+   "category": "Power Markets",
+   "subcategory": "Regional Markets - MISO",
+   "type": "market_mechanic",
+   "definition": "MISO (formerly the Midwest ISO) coordinates power across much of the central United States, with Indiana Hub (formerly Cin-Hub) as its most influential trading location.",
+   "core_idea": "Coal-fired plants, including many marginal producers in the industrialized north, keep coal prices the primary driver of Midwest power prices even during high-demand periods, while the more rural south depends heavily on natural gas.",
+   "key_points": [
+    "The northeastern part of MISO is heavily industrialized; the southern and northwestern sections are more rural.",
+    "Indiana Hub (previously Cin-Hub) is described as the most influential trading location in the region.",
+    "The region has cold winters (often starting as early as November, typically lasting through April) and hot, humid summers (July-August) that cool quickly by September; the southern part of MISO has milder winters and hot summers.",
+    "Coal powers many northern plants, including marginal producers, so coal prices commonly set Midwest power prices even in high-demand periods.",
+    "The southern MISO territory relies heavily on natural gas.",
+    "Because the Midwest's shoulder seasons (spring/fall) are cool, power is often wheeled south to hotter states during those periods.",
+    "Some hydroelectric power is available from the Great Lakes and Tennessee Valley areas and may be imported depending on the time of year."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Coal-driven marginal pricing parallels western PJM; south-to-north gas dependence contrasts with MISO's north."
+   ],
+   "trading_implications": [
+    "Coal price moves are a stronger driver of Midwest power prices than in gas-dominated regions, even at peak demand.",
+    "Seasonal wheeling of power from the cooler Midwest to hotter southern states creates predictable seasonal flow/basis patterns.",
+    "Hydro availability from the Great Lakes/Tennessee Valley is a seasonal import option affecting regional supply."
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas dominates Midwest power pricing the way it does in many other US markets; in MISO's north, coal remains the marginal fuel even at peak demand."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Marginal fuel",
+    "Power wheeling",
+    "Hydroelectric power",
+    "PJM"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "208-209",
+    "section_hint": "2.2 Electricity - Midcontinent (MISO)"
+   }
+  },
+  {
+   "topic": "New York (NYISO) power market geography and fundamentals",
+   "category": "Power Markets",
+   "subcategory": "Regional Markets - NYISO",
+   "type": "market_mechanic",
+   "definition": "The New York power grid is self-contained within the state, characterized by low-cost power flowing from the northern and western regions into the high-demand New York City / Long Island area.",
+   "core_idea": "Because much of the NYC metro area sits on islands with limited transfer capability from other parts of the region, the area relies heavily on inefficient peaking generators during peak demand, making it one of the most expensive power markets in the country and subjecting local plants to stricter reliability rules.",
+   "key_points": [
+    "NYISO is self-contained within New York State.",
+    "The southeastern part of the state (NYC and Long Island) is one of the most electricity-demand-dense areas in the country.",
+    "Low-cost power flows from the northern and western parts of the state toward the high-demand NYC-area region.",
+    "Most of the NYC metro area is on islands, limiting the ability to import power from other parts of the region.",
+    "This limited import capability forces high reliance on inefficient generators during peak demand periods.",
+    "As a result, the NYC area is one of the most expensive power markets in the country.",
+    "Power plants in the NYC metro area face stricter regulatory/reliability requirements than is typical elsewhere."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Island/transmission-constrained geography producing persistent price premiums parallels congestion dynamics seen in PJM and MISO, but is structurally more severe due to limited import paths."
+   ],
+   "trading_implications": [
+    "Expect a persistent price premium in NYC/Long Island nodes versus upstate New York due to transmission constraints and reliance on inefficient peaking units.",
+    "Peak-demand periods in NYC are especially price-sensitive given the constrained ability to import cheaper upstate power."
+   ],
+   "common_misunderstandings": [
+    "Treating NYISO pricing as uniform statewide, when the NYC/Long Island area is structurally isolated and priced very differently from the rest of the state."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Transmission congestion",
+    "Peaking generation",
+    "PJM"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "209-210",
+    "section_hint": "2.2 Electricity - New York (NYISO)"
+   }
+  },
+  {
+   "topic": "New England (ISO-NE) power market geography and fundamentals",
+   "category": "Power Markets",
+   "subcategory": "Regional Markets - ISO-NE",
+   "type": "market_mechanic",
+   "definition": "New England has a single trading hub, with prices based on selected nodes around Boston, Massachusetts, and the region imports nearly all the fuel needed for its power generation.",
+   "core_idea": "Natural gas is the marginal fuel for New England, supplied mostly from the U.S. Gulf Coast and eastern Canada; efforts to build LNG terminals in Massachusetts aim to supplement this imported gas supply, and most of the region's population (and thus demand) is concentrated in the south (Connecticut and greater Boston).",
+   "key_points": [
+    "ISO-NE has only one trading hub, priced off selected nodes near Boston.",
+    "New England imports almost all fuel needed for power generation.",
+    "Natural gas is the region's marginal fuel.",
+    "The bulk of New England's gas supply comes from the U.S. Gulf Coast and eastern Canada.",
+    "Efforts exist to build LNG terminals in Massachusetts to augment natural gas supply.",
+    "Most of the region's population is in the south (Connecticut and the Boston area); the north is relatively unpopulated."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Single-hub pricing structure contrasts with the multi-zone structures of PJM, MISO, and ERCOT."
+   ],
+   "trading_implications": [
+    "Because gas is the marginal fuel and is largely imported, New England power prices are sensitive to Gulf Coast/eastern Canada gas supply and pipeline/LNG import capacity, especially in winter.",
+    "A single trading hub simplifies price discovery relative to multi-zone markets but concentrates basis risk at Boston-area nodes."
+   ],
+   "common_misunderstandings": [
+    "Assuming New England has abundant local fuel supply; the region imports nearly all its generation fuel, making it more exposed to external gas supply disruptions than fuel-producing regions like ERCOT or western PJM."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas marginal fuel",
+    "LNG import terminals",
+    "PJM"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "210-211",
+    "section_hint": "2.2 Electricity - New England (ISO-NE)"
+   }
+  },
+  {
+   "topic": "Texas (ERCOT) power market geography and fundamentals",
+   "category": "Power Markets",
+   "subcategory": "Regional Markets - ERCOT",
+   "type": "market_mechanic",
+   "definition": "ERCOT is the ISO serving Texas, divided into five primary regions, with most of the state's population and generation concentrated in the northeastern part of the state (North/Dallas-Fort Worth and Houston zones).",
+   "core_idea": "Because of abundant local gas supply, natural gas is usually the marginal fuel in ERCOT; the climate features mild winters and prolonged hot summers, and while most generation is currently near the north and Houston demand centers, growing wind and solar buildout in the western zone is complicating congestion planning because it requires moving variable quantities of power from the west into the more populated zones.",
+   "key_points": [
+    "ERCOT is divided into five primary regions.",
+    "Most of Texas's population is in the northeastern part of the state; ERCOT North covers greater Dallas/Fort Worth and ERCOT Houston covers the Houston metro area.",
+    "Natural gas is usually the marginal fuel in ERCOT due to abundant local supply.",
+    "Climate is characterized by mild winters and prolonged hot summers.",
+    "Most generation is currently located in the north and Houston zones, near the largest demand centers.",
+    "Substantial solar and wind generation is being built in the western part of the state.",
+    "This west-based renewable buildout complicates congestion planning because it requires transmitting constantly changing quantities of power from the western zone into the more populated zones."
+   ],
+   "formulas": [],
+   "relationships": [
+    "The west-to-population-center transmission challenge echoes PJM's and MISO's rural-generation-to-load congestion pattern, but is driven specifically by variable wind/solar output rather than steady baseload export."
+   ],
+   "trading_implications": [
+    "Natural gas price moves are a primary driver of ERCOT power prices given gas's role as the typical marginal fuel.",
+    "Growing west-zone wind/solar generation increases the importance of monitoring west-to-north/Houston transmission congestion and basis risk as renewable output varies.",
+    "Because renewable output (not just plant availability) drives the changing power flows from the west, congestion patterns are less predictable than fixed-generator export patterns in other regions."
+   ],
+   "common_misunderstandings": [
+    "Assuming ERCOT congestion patterns are static like a coal- or gas-plant export pattern; the west-zone congestion driver is the variability of wind/solar output, not a fixed generation source."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Marginal fuel",
+    "Transmission congestion",
+    "Wind and solar generation",
+    "PJM",
+    "MISO"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "211-213",
+    "section_hint": "2.2 Electricity - Texas (ERCOT)"
+   }
+  }
+ ]
+}

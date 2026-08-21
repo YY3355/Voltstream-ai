@@ -1,0 +1,204 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Mark-to-Market Accounting",
+   "category": "Risk",
+   "subcategory": "Accounting Methods",
+   "type": "definition",
+   "definition": "An accounting approach that values a position using current market-quoted prices rather than its original purchase price.",
+   "core_idea": "Tradable contracts like futures, swaps, and options are typically required to be valued at current market prices, so gains and losses show up immediately as the market moves rather than only when the position is closed.",
+   "key_points": [
+    "Applies mainly to instruments that can be traded (futures, swaps, options).",
+    "Intuitive: if an asset bought at $100 is now quoted at $120, it shows a $20 profit immediately.",
+    "Relies on the existence of a liquid, fair market for price discovery to work well.",
+    "Firms generally don't get to choose their accounting method freely \u2014 accounting rules dictate which method applies to a given instrument."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with historical cost accounting",
+    "Interacts with hedge accounting rules when combined with historically-priced assets"
+   ],
+   "trading_implications": [
+    "Daily P&L on mark-to-market books reflects market moves in real time, which is useful for active risk management but can look noisy for positions that are otherwise economically hedged."
+   ],
+   "common_misunderstandings": [
+    "MTM can fail badly in illiquid or manipulable markets \u2014 a single thinly-traded print can swing valuations for reasons unrelated to real economic change."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Historical Cost Accounting",
+    "Hedge Accounting",
+    "Value at Risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "63-64",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Historical Cost Accounting",
+   "category": "Risk",
+   "subcategory": "Accounting Methods",
+   "type": "definition",
+   "definition": "An accounting approach that values an asset at its original acquisition price and does not revalue it as market conditions change.",
+   "core_idea": "Used mainly for physical assets (buildings, equipment) that aren't easily traded; the recorded value stays fixed until the asset is actually sold, which can misrepresent the current worth of long-dated assets.",
+   "key_points": [
+    "Typically applied to physical, non-tradable investments.",
+    "Value stays flat on the books regardless of market moves, unlike mark-to-market.",
+    "Can be misleading for long-dated assets since their true economic value isn't regularly updated."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with mark-to-market accounting"
+   ],
+   "trading_implications": [
+    "A power plant with fully locked-in fuel and sales contracts may be economically hedged, but if the plant is booked at historical cost while its OTC hedges are marked to market, the combination can look artificially risky because the two sides don't revalue together."
+   ],
+   "common_misunderstandings": [
+    "That historical cost is a free choice \u2014 in practice accounting rules specify which method must be used for a given asset type."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Hedge Accounting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "63-64",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Difficulty Applying Mark-to-Market in Energy Markets",
+   "category": "Power Markets",
+   "subcategory": "Accounting Methods",
+   "type": "concept",
+   "definition": "Energy-specific obstacles that make mark-to-market valuation hard to apply consistently.",
+   "core_idea": "Energy contracts are often illiquid or non-assignable, so there may be no willing counterparty or clean way to transfer the contract, creating gray areas over which accounting treatment even applies.",
+   "key_points": [
+    "Some commodities/locations have no counterparty willing to transact, so there's no clean market price to mark to.",
+    "Some contracts (e.g., a PPA tied to a specific generation unit and bundled with non-tradable items like capacity and ancillary services) can't be sold separately from the physical asset.",
+    "This ambiguity can force accountants to make judgment calls about which accounting rules apply to a given deal."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why hedge accounting rules exist"
+   ],
+   "trading_implications": [
+    "Deals structured around specific physical assets (like unit-contingent PPAs) may be harder to value transparently and harder to exit than standardized traded contracts."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "PPA"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "63",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Mark-to-Market and Liquidity Risk / Forced Liquidation Cascades",
+   "category": "Risk",
+   "subcategory": "Market Risk",
+   "type": "risk",
+   "definition": "A chain-reaction risk where mark-to-market losses trigger forced selling that itself depresses prices further.",
+   "core_idea": "Because many funds have risk limits that force liquidation once mark-to-market losses breach a threshold, a price drop in an illiquid market can force sales at depressed prices, which can trip other firms' risk limits and cascade into a broader sell-off.",
+   "key_points": [
+    "Mandatory liquidation rules are often triggered directly by mark-to-market price levels.",
+    "In illiquid markets, a forced seller may only be able to exit at a large discount.",
+    "One trader's forced sale can depress prices enough to trigger other firms' risk limits, prompting further forced selling.",
+    "This self-reinforcing cycle can trigger or worsen a broader market crash, and can affect investors who did no trading of their own."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Direct consequence of relying on mark-to-market accounting in illiquid markets"
+   ],
+   "trading_implications": [
+    "Holding illiquid, mark-to-market assets exposes a portfolio to risk from other market participants' forced selling, not just from one's own trading decisions."
+   ],
+   "common_misunderstandings": [
+    "That mark-to-market losses only reflect true economic loss \u2014 in illiquid markets, a low print can be caused by a single distressed seller rather than genuine value change."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Value at Risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "63-64",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Value at Risk (VAR)",
+   "category": "Risk",
+   "subcategory": "Risk Metrics",
+   "type": "definition",
+   "definition": "A risk statistic that estimates the size of a P&L move a portfolio is likely to experience with a given frequency, reducing a full distribution of possible outcomes to a single number.",
+   "core_idea": "VAR was developed to let dissimilar investments (e.g., a stock position vs. a commodity futures position) be compared using something they have in common \u2014 daily changes in value (P&L) \u2014 by picking the loss size associated with a chosen probability of occurrence.",
+   "key_points": [
+    "Reduces a full P&L distribution to a single representative number, trading accuracy for simplicity.",
+    "Calculated in two steps: (1) build the distribution of possible P&L outcomes via simulation or historical data, (2) find the value at the desired probability/frequency.",
+    "The chosen frequency is a judgment call: some prefer more frequent, easily-checkable thresholds (more likely to be accurate/verifiable); others prefer rarer thresholds meant to represent worst-case scenarios.",
+    "Different assets can share the same VAR number despite having different underlying risk profiles.",
+    "Almost all risk management practice is at least partly built around some form of VAR methodology, even though methodologies vary across firms."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Used alongside mark-to-market accounting for risk management",
+    "Basis for one-sided and two-sided VAR variants"
+   ],
+   "trading_implications": [
+    "VAR lets risk managers set common risk limits across very different asset classes using one comparable size metric."
+   ],
+   "common_misunderstandings": [
+    "That a VAR figure tells you much about the worst-case tail \u2014 a 95% 1-day VAR of $1,000,000 doesn't reveal much more than knowing the position is roughly a $20 million portfolio; VAR is better at describing commonly occurring moves than extreme ones.",
+    "That VAR outcomes are always statistically well-behaved \u2014 VAR often assumes losses follow a known statistical distribution, but real future events can be hard to describe statistically."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "One-Sided vs Two-Sided VAR"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "64-66",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Value at Risk"
+   }
+  },
+  {
+   "topic": "One-Sided vs Two-Sided VAR",
+   "category": "Risk",
+   "subcategory": "Risk Metrics",
+   "type": "definition",
+   "definition": "A distinction in VAR methodology based on whether only losses are examined (one-sided) or both gains and losses are examined (two-sided).",
+   "core_idea": "One-sided VAR focuses purely on the loss side of the P&L distribution, while two-sided VAR considers volatility of both profits and losses; one-sided VAR is the more commonly used convention.",
+   "key_points": [
+    "One-sided VAR: examines only losses.",
+    "Two-sided VAR: examines both profits and losses (i.e., volatility in both directions).",
+    "One-sided VAR is more commonly used in practice than two-sided VAR."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Variant methodology within Value at Risk"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Value at Risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "65-66",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Value at Risk"
+   }
+  }
+ ]
+}

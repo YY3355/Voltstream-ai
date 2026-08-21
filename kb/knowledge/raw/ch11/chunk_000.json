@@ -1,0 +1,200 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Physical vs. Chemical Changes",
+   "category": "Commodity Fundamentals",
+   "subcategory": "Physical Properties",
+   "type": "concept",
+   "definition": "A physical change alters the form of a substance (e.g., its phase) without altering its chemical identity and can be undone, while a chemical change (such as combustion) transforms a substance into something new and generally cannot be reversed.",
+   "core_idea": "The defining test between the two types of change is reversibility: melting and refreezing water returns it to its original state, but burning or cooking a substance permanently changes it.",
+   "key_points": [
+    "Chemical properties describe how a substance reacts with other substances (e.g., combustion is a reaction between a fuel and oxygen).",
+    "Physical properties describe changes that don't alter chemical identity.",
+    "Reversibility is the practical dividing line: physical (state) changes reverse, chemical reactions generally don't.",
+    "Most real-world mixtures undergo some combination of both physical and chemical changes as temperature changes, and under some conditions a solid can convert straight to a gas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why distillation/refining (physical) differ fundamentally from combustion (chemical) as industrial processes."
+   ],
+   "trading_implications": [
+    "Because combustion is one-way, burnt/consumed fuel can't be recovered, which is part of why fuel is treated as a consumable commodity rather than a reusable asset."
+   ],
+   "common_misunderstandings": [
+    "Not all temperature-driven transformations are simple phase changes; some are irreversible chemical reactions even though both are triggered by heating."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Phase (State of Matter) and Its Trading Relevance",
+    "Distillation"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "290-291",
+    "section_hint": "3.2 Physical Properties - Summary/Introduction"
+   }
+  },
+  {
+   "topic": "Phase (State of Matter) and Its Trading Relevance",
+   "category": "Commodity Fundamentals",
+   "subcategory": "Physical Properties",
+   "type": "concept",
+   "definition": "Phase is whether a substance is solid, liquid, or gas; it determines how a fuel must be transported and what kind of equipment or engine is needed to use it.",
+   "core_idea": "Because phase governs transport and end-use equipment requirements, controlling phase changes deliberately (distillation, air conditioning) is central to energy processes, while uncontrolled phase changes (like unwanted condensation) can damage equipment.",
+   "key_points": [
+    "Solids and liquids stay contained in a vessel; gas dissipates immediately unless actively contained.",
+    "Controlled state changes (distillation, refrigeration/AC) are deliberate and useful.",
+    "Uncontrolled state changes (e.g., condensation in a pipeline) can be destructive.",
+    "The physical phase of a fuel dictates the transport method and the combustion/engine technology required to use it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to pipeline design considerations and to distillation/refrigeration as controlled-phase-change industries."
+   ],
+   "trading_implications": [
+    "A fuel's phase is a structural constraint on its logistics and market infrastructure, not just a technical detail \u2014 it shapes which transport and end-use assets a trader must account for."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "States of Matter: Solid, Liquid, Gas",
+    "Pipeline Phase-Change Hazards"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "290-291",
+    "section_hint": "3.2 Physical Properties - Introduction"
+   }
+  },
+  {
+   "topic": "Melting Point and Boiling Point as Separation Tools",
+   "category": "Commodity Fundamentals",
+   "subcategory": "Physical Properties",
+   "type": "concept",
+   "definition": "Every substance has its own distinct melting point (solid/liquid transition) and boiling point (liquid/gas transition), and because these thresholds differ substance to substance, a mixture can be separated by carefully controlling temperature.",
+   "core_idea": "Slowly heating a mixture causes its components to melt or vaporize off one at a time in order of their unique transition temperatures, which is the physical basis for separating raw materials into purified products.",
+   "key_points": [
+    "Boiling point governs liquid/gas transitions; melting point governs solid/liquid transitions.",
+    "Because each substance's transition points are unique, controlled heating separates components sequentially.",
+    "This principle underlies purification tasks like extracting gasoline from crude oil or separating ethanol from water."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly enables distillation as a separation method."
+   ],
+   "trading_implications": [
+    "Separation via temperature control (rather than chemical reaction) explains why refining is energy-intensive: the heating/cooling needed to hit precise transition points consumes significant energy, a cost embedded in refined product economics."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Distillation",
+    "Physical vs. Chemical Changes"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "291-292",
+    "section_hint": "States of Matter and Separation"
+   }
+  },
+  {
+   "topic": "Distillation",
+   "category": "Commodity Fundamentals",
+   "subcategory": "Refining & Separation",
+   "type": "market_mechanic",
+   "definition": "Distillation is a purely physical separation process where a liquid mixture is heated until it boils, and the resulting vapor is captured and cooled back into liquid form, isolating components by their differing boiling points.",
+   "core_idea": "Distillation separates and identifies liquid mixtures (including unknown hydrocarbon blends) using heat alone, with no chemical reaction involved, and is a large energy consumer due to the heating and cooling required.",
+   "key_points": [
+    "Process: heat mixture to boiling, capture the vapor, cool it back to liquid.",
+    "It is a physical process, not a chemical one \u2014 no new substances are created.",
+    "It is commonly used to separate liquids and to identify unknown hydrocarbon liquids.",
+    "Like refrigeration, it requires a tremendous amount of energy because of the heating and cooling involved."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Is the practical application of unique boiling/melting points; conceptually parallel to refrigeration in its heavy energy use."
+   ],
+   "trading_implications": [
+    "The energy intensity of distillation is a real cost driver embedded in refined product economics and should be considered when modeling refining margins."
+   ],
+   "common_misunderstandings": [
+    "Distillation is sometimes conflated with chemical refining steps, but the author is explicit that it does not rely on chemical reactions."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Melting Point and Boiling Point as Separation Tools",
+    "Physical vs. Chemical Changes"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "292-293",
+    "section_hint": "Distillation"
+   }
+  },
+  {
+   "topic": "Gas Compression and Expansion Thermodynamics",
+   "category": "Commodity Fundamentals",
+   "subcategory": "Physical Properties",
+   "type": "concept",
+   "definition": "Compressing a gas heats it up (and it radiates that heat into its surroundings), while allowing a gas to expand cools it down (and it absorbs heat); liquefying a gas by compression requires substantial cooling, and without continued cooling the liquid will re-expand into gas.",
+   "core_idea": "This heat/cool behavior under compression and expansion is the physical mechanism underlying refrigeration and air conditioning systems.",
+   "key_points": [
+    "Compression raises gas temperature; the gas radiates that heat outward.",
+    "Expansion lowers gas temperature; the gas absorbs heat from its surroundings.",
+    "Turning gas into liquid via compression requires substantial cooling to counteract the heat generated.",
+    "A liquefied gas kept from staying cool will begin expanding back into gas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly explains how refrigeration/AC systems work and is also the physical property causing bubble/condensation issues in pipelines."
+   ],
+   "trading_implications": [
+    "This same compress/cool cycle underlies LNG production economics and refrigeration-based cooling infrastructure relevant to gas storage and transport assets."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pipeline Phase-Change Hazards",
+    "States of Matter: Solid, Liquid, Gas"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "290-292",
+    "section_hint": "3.2 Physical Properties - Introduction"
+   }
+  },
+  {
+   "topic": "Pipeline Phase-Change Hazards",
+   "category": "Energy Infrastructure",
+   "subcategory": "Pipelines",
+   "type": "risk",
+   "definition": "Because pipeline temperatures aren't constant, unwanted phase changes can occur in transit: in gas pipelines, liquids can condense out and are extremely difficult to remove, while in oil pipelines, gas bubbles can form and damage the pipe.",
+   "core_idea": "Pipeline engineers must design systems to handle both gas and liquid phases simultaneously because temperature variation along a pipeline can cause the transported fuel to partially change phase, creating operational hazards.",
+   "key_points": [
+    "Gas pipelines: condensed liquids are hard to remove once they form.",
+    "Oil pipelines: bubble formation can damage the pipe.",
+    "Root cause is non-constant temperature along the pipeline route.",
+    "Pipeline design must accommodate both gas and liquid phases of the transported substance."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A direct consequence of the phase-transition properties described for gases and liquids."
+   ],
+   "trading_implications": [
+    "Uncontrolled condensation/bubble formation represents an operational risk to transport infrastructure that can affect delivery reliability and asset integrity."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Gas Compression and Expansion Thermodynamics",
+    "Phase (State of Matter) and Its Trading Relevance"
+   ],
+   "source": {
+    "chapter": 11,
+    "pages": "290-291",
+    "section_hint": "3.2 Physical Properties - Introduction"
+   }
+  }
+ ]
+}

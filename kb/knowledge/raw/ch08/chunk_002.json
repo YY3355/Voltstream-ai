@@ -1,0 +1,309 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Carbon capture and sequestration",
+   "category": "Emissions Markets",
+   "subcategory": "Carbon Capture",
+   "type": "concept",
+   "definition": "The physical process of capturing CO2 from fossil-fuel combustion exhaust and storing it underground rather than releasing it to the atmosphere.",
+   "core_idea": "Because burning hydrocarbons unavoidably produces CO2 (breaking carbon chains into atoms that bond with oxygen releases the heat), the only way to keep that CO2 out of the atmosphere is to capture it at the plant and store it in depleted gas wells or water reservoirs, using infrastructure similar to natural gas storage.",
+   "key_points": [
+    "Combustion breaks long hydrocarbon chains into single carbon atoms that combine with oxygen; this reaction is what releases heat, so CO2 formation cannot be avoided while burning hydrocarbon fuels.",
+    "Carbon sequestration captures CO2 at the power plant and stores it in a depleted natural gas well or a water reservoir.",
+    "Carbon storage facilities are structurally similar to natural gas storage facilities, just storing CO2 instead of methane."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into carbon offset/credit creation used to hedge cap-and-trade exposure"
+   ],
+   "trading_implications": [
+    "Sequestration capacity can be a source of manufactured emissions credits/offsets"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "carbon offsets",
+    "cap and trade"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "271",
+    "section_hint": "2.5 Emissions Markets \u2014 carbon capture intro"
+   }
+  },
+  {
+   "topic": "Biological carbon capture (plants and bacteria)",
+   "category": "Emissions Markets",
+   "subcategory": "Carbon Capture",
+   "type": "concept",
+   "definition": "Use of plants or bacteria as a biological alternative to mechanical carbon sequestration.",
+   "core_idea": "Plants and bacteria both naturally absorb CO2, but plants require fossil-fuel inputs for fertilization and harvesting that partly offset their benefit, whereas dense bacteria colonies can absorb CO2 in a small footprint without heavy petroleum inputs.",
+   "key_points": [
+    "Plants convert CO2 into wood, bark, and leaves, but growing and harvesting them typically requires fossil fuels for fertilization and harvesting.",
+    "Bacteria can also absorb CO2; the advantage is that a very dense bacteria colony can fit in a small area and doesn't require much petroleum product to maintain."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative to mechanical carbon sequestration"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Plant-based capture is not a 'free' offset since fertilization/harvesting reintroduce fossil fuel use"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "carbon sequestration"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "271",
+    "section_hint": "2.5 Emissions Markets \u2014 carbon capture intro"
+   }
+  },
+  {
+   "topic": "Practical scope limits of cap-and-trade tracking",
+   "category": "Emissions Markets",
+   "subcategory": "Cap and Trade Limitations",
+   "type": "market_mechanic",
+   "definition": "The structural constraint that a cap-and-trade system can only realistically cover a subset of all CO2-producing activity.",
+   "core_idea": "Because it's impossible to track every source of CO2 (even something like a person jogging produces more CO2 through exertion), real-world cap-and-trade systems must narrow their scope, and in practice concentrate on CO2 from fossil fuel combustion.",
+   "key_points": [
+    "Comprehensive tracking of all carbon dioxide emissions is impossible, and even if possible would be too complex to trade.",
+    "Example given: animals (including humans) produce more CO2 when exercising, but a cap-and-trade system can't realistically apply to something like jogging.",
+    "As a result, emissions trading markets must selectively choose which CO2 sources to restrict, and most carbon trading focuses on fossil-fuel combustion."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Scope limitation is the root cause of the accounting-gaming risk described separately"
+   ],
+   "trading_implications": [
+    "Only facilities/sectors explicitly brought into scope face compliance obligations; large swaths of real-world emissions sit outside any market"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "cap and trade accounting risk"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "271-272",
+    "section_hint": "Limitations to Cap and Trade Systems"
+   }
+  },
+  {
+   "topic": "Accounting gaming risk from narrow cap-and-trade scope",
+   "category": "Emissions Markets",
+   "subcategory": "Cap and Trade Limitations",
+   "type": "risk",
+   "definition": "The risk that because only some emitters are capped, actions that lower measured emissions in the capped sector can actually raise true total emissions.",
+   "core_idea": "When a region caps emissions from one sector (e.g., power plants) but not another (e.g., cars), it can create an incentive to shift activity from the capped sector to the uncapped one in a way that looks like a reduction on paper but increases real-world emissions.",
+   "key_points": [
+    "Example: a region caps power-plant emissions but not car emissions; shutting down a power-plant-powered commuter railroad appears to reduce the capped power plant's emissions.",
+    "In reality this pushes former rail commuters into cars, and since cars are also a major pollution source, total regional emissions actually increase.",
+    "This illustrates a general 'funny accounting' risk any time offset/credit creation spans sources that aren't uniformly capped."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Direct consequence of the narrow-scope limitation of cap-and-trade systems"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "A drop in emissions within the capped sector does not necessarily mean total emissions fell"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "cap and trade scope limits",
+    "carbon offsets"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "271-272",
+    "section_hint": "Limitations to Cap and Trade Systems"
+   }
+  },
+  {
+   "topic": "Cornering risk and the reserve-offset hedge",
+   "category": "Emissions Markets",
+   "subcategory": "Cap and Trade Limitations",
+   "type": "risk",
+   "definition": "The risk that speculators corner the emissions credit market, and the practical hedge of maintaining low-value offset projects that can manufacture credits on demand.",
+   "core_idea": "Because cornering supply is described as essentially the only way speculators can profit in emissions markets, companies that depend on credits protect their customers by keeping the ability to create their own credits via carbon offset projects on standby, even when those projects would otherwise be poor investments.",
+   "key_points": [
+    "Cap-and-trade can force companies into carbon-mitigation investments that would normally be considered bad ideas purely on economic merit.",
+    "A power producer wanting to protect customers needs to minimize the risk of speculators cornering the emissions rights market; the primary defense is being able to create emissions credits on demand.",
+    "Cornering the market is described as just about the only way speculators can make a profit trading emissions credits.",
+    "Because credits can be manufactured through carbon offsets, the easiest protection is to keep a couple of offset ideas in reserve \u2014 their economic value can be poor, it just needs to be better than being held hostage by speculators."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties to carbon sequestration/offset creation as the supply-manufacturing mechanism"
+   ],
+   "trading_implications": [
+    "Firms exposed to compliance credit purchases should value 'standby' offset capacity as a hedge against price spikes/cornering, not just judge such projects on standalone ROI"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "carbon sequestration",
+    "cap and trade scope limits"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "272",
+    "section_hint": "Limitations to Cap and Trade Systems"
+   }
+  },
+  {
+   "topic": "Carbon taxes as an alternative to cap and trade",
+   "category": "Emissions Markets",
+   "subcategory": "Carbon Taxes",
+   "type": "market_mechanic",
+   "definition": "A surcharge on energy costs intended to use higher prices to push adoption of lower-carbon technology, generally viewed as the main alternative to cap-and-trade.",
+   "core_idea": "Carbon taxes are simple to apply broadly and administer, and unlike cap-and-trade payments that may flow to a carbon sink in another jurisdiction, tax revenue can be reinvested locally; however, a coordinated international carbon tax is considered unlikely because countries prefer schemes that tax other countries rather than themselves.",
+   "key_points": [
+    "Carbon taxes and cap-and-trade systems commonly coexist rather than being mutually exclusive.",
+    "Taxes can be applied universally with minimal administration \u2014 e.g., a fuel surcharge is simpler than verifying someone owns enough emissions credits to buy gasoline.",
+    "Tax revenue can be reinvested in local projects, keeping the money in the domestic economy, whereas cap-and-trade cash can be transferred to a carbon sink in a different jurisdiction.",
+    "Most countries have domestic energy taxes, but an international carbon tax remains unlikely because countries favor tax schemes that levy costs on other countries while benefiting themselves."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with cap-and-trade cash flow and administration"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "cap and trade limitations"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "272-273",
+    "section_hint": "Carbon Taxes"
+   }
+  },
+  {
+   "topic": "Domestic weakness of carbon taxes: consumer cost pass-through",
+   "category": "Emissions Markets",
+   "subcategory": "Carbon Taxes",
+   "type": "risk",
+   "definition": "The main domestic drawback of carbon taxation: energy producers pass the tax cost through to consumers rather than absorbing pressure to change technology themselves.",
+   "core_idea": "Because energy companies pass tax costs directly to consumers, consumers \u2014 a captive audience that still needs energy \u2014 bear the financial impact, while power companies, who actually control technology decisions, have little direct financial motivation to adopt less-polluting technology under a pure taxation system.",
+   "key_points": [
+    "Energy consumers are described as a captive audience under domestic carbon taxation.",
+    "Power companies pass taxes along directly to consumers rather than absorbing the cost.",
+    "Because the financial burden lands on consumers, the companies with the ability to adopt cleaner technology lack strong direct motivation to do so under a taxation system."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Trade-off against the administrative simplicity/local-reinvestment advantages of taxes"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "carbon tax advantages"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "273",
+    "section_hint": "Carbon Taxes"
+   }
+  },
+  {
+   "topic": "Limited role of speculation in emissions markets",
+   "category": "Emissions Markets",
+   "subcategory": "Trading Carbon Emissions",
+   "type": "market_mechanic",
+   "definition": "How speculative participation functions differently in emissions markets compared with typical commodity markets.",
+   "core_idea": "In most markets, a large number of participants including speculators reduces volatility and transaction costs, but the author argues this dynamic likely doesn't hold for emissions markets, and carbon trading could fulfill its climate goal without ever becoming a major financial market.",
+   "key_points": [
+    "It's possible for carbon emissions trading to reduce climate change without ever becoming a major financial market.",
+    "Speculators don't have a clear constructive role in emissions markets, unlike in most markets where more participants lowers volatility and transaction costs.",
+    "General economic expectation: rising population and power demand will push emissions rights prices upward over time."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to government price-stabilization incentives"
+   ],
+   "trading_implications": [
+    "Speculative participation in this market should not be assumed to reduce volatility or costs the way it does in other commodity markets"
+   ],
+   "common_misunderstandings": [
+    "Assuming emissions markets behave like typical commodity markets where more speculators improves liquidity/dampens volatility"
+   ],
+   "author_states_vs_inference": "author frames the upward price trend as general economic expectation, not a certainty; rest is stated directly",
+   "related_topics": [
+    "government price stabilization"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "273",
+    "section_hint": "Trading Carbon Emissions"
+   }
+  },
+  {
+   "topic": "Government tools and incentives to manage emissions prices",
+   "category": "Emissions Markets",
+   "subcategory": "Trading Carbon Emissions",
+   "type": "market_mechanic",
+   "definition": "The levers governments hold to keep emissions prices within a preferred range, and their political motivation for doing so.",
+   "core_idea": "Governments want emissions prices high enough to spur environmentally conscious investment but low enough to avoid burdening the economy and voters, and they can directly manage price levels by issuing new emissions rights and controlling how easy it is to create offset-based credits, while also having incentive to prevent speculative cornering.",
+   "key_points": [
+    "No one, especially government, benefits from higher carbon emissions prices; the only downside of low prices is weaker incentive for companies to invest in cleaner technology.",
+    "As long as environmental targets are met, governments prefer lower emissions prices.",
+    "Governments can issue new emissions rights and set the rules for how easily offset-based credits can be created, giving them direct tools to stabilize prices.",
+    "High carbon prices are ultimately paid by consumers/voters and the broader economy; governments have a civic obligation to keep grids running and economies moving, giving them incentive to manage prices and prevent speculators from cornering the market for a windfall."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the limited/absent role of speculation in stabilizing this market"
+   ],
+   "trading_implications": [
+    "Market participants should expect government intervention (new rights issuance, offset-creation rules) as an active price-management force rather than a purely supply/demand-driven market"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "limited role of speculation"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "273",
+    "section_hint": "Trading Carbon Emissions"
+   }
+  },
+  {
+   "topic": "Carbon equivalents and other pollutant markets (SOX, NOX)",
+   "category": "Emissions Markets",
+   "subcategory": "Carbon Equivalents and Other Pollutants",
+   "type": "definition",
+   "definition": "Emissions trading extends beyond CO2 to other greenhouse gases converted to CO2-equivalent units, and to separate regional markets for pollutants like sulfur oxide (SOX) and nitrogen oxide (NOX).",
+   "core_idea": "Other greenhouse gases such as methane, nitrous oxide, and ozone are converted into carbon dioxide equivalents and traded within the carbon market, while SOX and NOX \u2014 both linked to acid rain \u2014 are traded in their own markets that are typically regional rather than global because their pollution impact is more localized.",
+   "key_points": [
+    "Methane, nitrous oxide, and ozone are examples of non-CO2 greenhouse gases; they are converted into carbon dioxide equivalents and traded as part of the carbon market.",
+    "SOX (sulfur oxide) is a source of acid rain, a regional problem; SOX markets are separate from carbon markets and typically organized by region.",
+    "NOX (nitrogen oxide) markets are closely associated with SOX markets and are also linked to acid rain.",
+    "Because most pollution types (other than CO2) only affect a limited area, most non-carbon emissions markets are regional (covering a couple of countries) rather than global."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Shares terminology and cap-and-trade-style limitations with the carbon market"
+   ],
+   "trading_implications": [
+    "Non-CO2 pollutant markets should be evaluated as regional instruments, not treated as global carbon-market analogues"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "cap and trade limitations"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "274",
+    "section_hint": "Carbon Equivalents and Other Pollutants"
+   }
+  }
+ ]
+}

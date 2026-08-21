@@ -1,0 +1,205 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Option contracts: calls, puts, and premiums",
+   "category": "Derivatives",
+   "subcategory": "Options Basics",
+   "type": "definition",
+   "definition": "An option is a two-party contract that gives its buyer the right, but not the obligation, to buy or sell a specified underlying asset at a fixed price at a future point in time. A call grants the right to buy; a put grants the right to sell. The buyer pays the seller (the writer) an up-front fee called the premium for this right.",
+   "core_idea": "Options let the buyer decide later, based on how prices move, whether to act on a fixed-price deal; the writer accepts that open-ended obligation in exchange for being paid up front.",
+   "key_points": [
+    "The underlying is the asset that can be bought or sold under the contract.",
+    "Call = right to buy at a fixed price; put = right to sell at a fixed price.",
+    "The premium is paid by the buyer to the writer at the time the contract is signed, regardless of what happens later.",
+    "Choosing to use the right is called exercising the option; the author notes it is usually obvious when exercise makes sense \u2014 the hard part is pricing the option in the first place.",
+    "The buyer's downside is capped at the premium already paid; losing it or profiting are the only two outcomes for the buyer."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins long/short volatility framing",
+    "Feeds into intrinsic vs. extrinsic value"
+   ],
+   "trading_implications": [
+    "Because the buyer's max loss is the premium, options are pitched as a way to gain exposure to a big favorable move without unlimited downside.",
+    "Pricing an option means estimating the probability/magnitude that the underlying will move enough to make exercise worthwhile."
+   ],
+   "common_misunderstandings": [
+    "None flagged directly by the author in this passage, but implicitly: an option is not free upside \u2014 the premium is a real, certain cost paid regardless of outcome."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option payoffs",
+    "Long/short volatility",
+    "Intrinsic and extrinsic value"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "326-327",
+    "section_hint": "3.4 Financial Options \u2014 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "Options behave like insurance: asymmetric payoff, generally unprofitable to buy outright",
+   "category": "Derivatives",
+   "subcategory": "Options \u2014 Risk Characteristics",
+   "type": "concept",
+   "definition": "Buying an option is structurally similar to buying insurance: most of the time the premium is paid and the contract expires worthless, but occasionally an unusual price move produces a large payoff. Even though the downside (the premium) is small relative to the potential upside, the odds are stacked against the buyer, so purely speculative option buying is generally unprofitable.",
+   "core_idea": "The small-downside/large-upside shape of an option's payoff does not mean the average outcome favors the buyer; like insurance, buying options only makes sense as part of a broader strategy, not as a standalone bet.",
+   "key_points": [
+    "It is rarely profitable to buy options purely for speculative reasons, per the author.",
+    "A financial option is an all-or-nothing investment: it's possible to put a large amount of money into options and lose all of it.",
+    "The option writer takes on the risk of a large loss and must be compensated (via the premium) for accepting it.",
+    "No money is created in an option trade \u2014 value is simply transferred between buyer and writer depending on the outcome."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Complements the call/put definition item",
+    "Motivates why writers demand a premium"
+   ],
+   "trading_implications": [
+    "Standalone speculative option buying is framed by the author as a poor strategy on average, despite attractive-looking asymmetric payoffs.",
+    "Options make more sense as one component of a broader hedging or trading strategy rather than an isolated directional bet."
+   ],
+   "common_misunderstandings": [
+    "The author flags the common misread that a limited-downside/large-upside payoff shape implies a favorable bet \u2014 it does not; the probabilities are stacked against the buyer."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option contracts: calls, puts, and premiums",
+    "Long/short volatility"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "327-328",
+    "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   }
+  },
+  {
+   "topic": "Real options: using option theory to model energy investment decisions",
+   "category": "Power Markets",
+   "subcategory": "Real Options in Energy",
+   "type": "concept",
+   "definition": "Many physical energy decisions (whether to run a plant, lock in winter fuel supply, or build new transmission) can be represented as options, because they involve a future choice to act or not based on economic conditions. Comparing the cost of the physical investment to the economic value of the option it confers helps determine whether the investment is worthwhile.",
+   "core_idea": "Physical assets or operational choices in energy markets can be treated as options because they give their owner the right, but not the obligation, to take an economically motivated action later.",
+   "key_points": [
+    "Example given: an integrated oil well and refinery that can produce gasoline at $4.00/gallon effectively gives its owner the option to 'buy' gasoline at that fixed cost for resale.",
+    "Valuing that embedded option and comparing it to the cost of building/operating the installation is one way to judge whether the investment is worth making.",
+    "Other cited examples of decisions option theory can quantify: turning a power plant on to convert fuel into electricity, locking in winter fuel supply now versus waiting, and building a new transmission line between regions."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the general call option definition to physical/real assets"
+   ],
+   "trading_implications": [
+    "Physical energy assets can be evaluated using option-pricing intuition rather than only static NPV, since they embed a decision to act or not act."
+   ],
+   "common_misunderstandings": [
+    "The author distinguishes this from financial options: a physical investment is described as an 'approximation' of an option, not an all-or-nothing financial contract."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option contracts: calls, puts, and premiums"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "327",
+    "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   }
+  },
+  {
+   "topic": "Long/short the option, long/short volatility",
+   "category": "Derivatives",
+   "subcategory": "Options Basics",
+   "type": "definition",
+   "definition": "The option buyer is described as being long the option, or long volatility, because rare/large price moves produce a big profit for them. The option writer (seller) is described as being short the option, or short volatility, because those same rare events produce a big loss for the writer.",
+   "core_idea": "Because option value responds to how much and how unusually prices move, holding an option position is equivalently described as taking a view on volatility, not just direction.",
+   "key_points": [
+    "Buyer = long the option = long volatility (benefits from rare, large moves).",
+    "Writer = short the option = short volatility (harmed by rare, large moves).",
+    "If the option pays off, the writer must find the cash to pay the buyer; the transaction transfers money between the two parties rather than creating it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the call/put/premium definition"
+   ],
+   "trading_implications": [
+    "An option position can be framed as a volatility exposure, which matters when thinking about hedging or speculating on price variability rather than just price level."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option contracts: calls, puts, and premiums",
+    "Options behave like insurance"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "328",
+    "section_hint": "3.4 Financial Options \u2014 narrative discussion"
+   }
+  },
+  {
+   "topic": "Call and put payoff mechanics relative to the strike price",
+   "category": "Derivatives",
+   "subcategory": "Option Payoffs",
+   "type": "market_mechanic",
+   "definition": "Every option has a strike (exercise) price \u2014 the fixed price at which the underlying can be traded in the future. A call option pays off when the market price rises above the strike, letting the owner buy cheap and resell at the higher market price. A put option pays off when the market price falls below the strike, letting the owner sell high relative to the market; if the market price is above the strike, the put is worthless since no one would sell for less than market value.",
+   "core_idea": "Call value increases as the underlying rises above the strike; put value increases as the underlying falls below the strike \u2014 each option only has value when exercising it beats the prevailing market price.",
+   "key_points": [
+    "Strike/exercise price = the fixed future trading price set in the contract.",
+    "Call owner benefits when market price > strike, buying low (at strike) and able to resell at the higher market price.",
+    "Put owner benefits when market price < strike, selling high (at strike) rather than at the lower market price.",
+    "A put is worthless if the market price is above the strike, since no one would voluntarily sell below market value."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds directly on the call/put definition item",
+    "Feeds into intrinsic value (the payoff-if-exercised-now)"
+   ],
+   "trading_implications": [
+    "Whether an option is worth exercising is a straightforward comparison of strike versus current market price, per the author \u2014 the hard problem is pricing the option beforehand, not deciding when to exercise it."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option contracts: calls, puts, and premiums",
+    "Intrinsic and extrinsic value"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "328",
+    "section_hint": "3.4 Financial Options \u2014 Figure 3.4.1 discussion"
+   }
+  },
+  {
+   "topic": "Intrinsic value vs. extrinsic value of an option",
+   "category": "Derivatives",
+   "subcategory": "Option Valuation",
+   "type": "concept",
+   "definition": "Intrinsic value is the amount that could be captured by exercising the option immediately, giving up any further chance of upside. Extrinsic value is the additional value that comes from continuing to hold the option rather than exercising it now \u2014 i.e., the value of remaining time/uncertainty.",
+   "core_idea": "An option's total value splits into what you could lock in today (intrinsic) and what you're giving up by not waiting (extrinsic); the higher the intrinsic value already embedded, the more the position has at risk.",
+   "key_points": [
+    "Author's analogy: a $1 lottery ticket that already paid $1 million and offers a further double-or-nothing coin flip. After winning the first $1 million, that $1 million becomes the ticket's intrinsic value \u2014 the amount the holder could walk away with right now.",
+    "In that analogy, once the intrinsic value is nonzero, the position is no longer riskless: the holder now has real money (not just the original $1 stake) at risk if they keep holding for the extrinsic (further) upside.",
+    "The author states explicitly: the higher the intrinsic value of the option, the more risk is involved."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on the payoff mechanics (strike vs. market price) item"
+   ],
+   "trading_implications": [
+    "Holding an option with high intrinsic value means there is more locked-in value exposed to being given back if the position is not closed out, which the author frames as a risk consideration distinct from the option's remaining time value."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Call and put payoff mechanics relative to the strike price"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "328-329",
+    "section_hint": "3.4 Financial Options \u2014 Intrinsic and Extrinsic Value"
+   }
+  }
+ ]
+}

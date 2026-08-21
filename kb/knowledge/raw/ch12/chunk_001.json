@@ -1,0 +1,241 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Integration as the calculus basis for probability",
+   "category": "Statistics",
+   "subcategory": "Probability & Calculus",
+   "type": "concept",
+   "definition": "Integration is the calculus operation of finding the area under a curve; applied to a probability distribution, the area under a segment of the curve equals the probability that a random draw falls in that segment.",
+   "core_idea": "A histogram approximates this same idea discretely: counting samples in a bucket and dividing by the total sample count estimates the probability of landing in that bucket. As the number of buckets grows toward infinity and bucket width shrinks toward zero, the discrete sum (denoted with sigma, S) becomes a continuous integral (denoted with the stretched-S integral sign) over a function S(x) with respect to x.",
+   "key_points": [
+    "Histogram bars: height = sample count in that bucket; count/total = estimated probability.",
+    "More buckets (finer resolution) makes the histogram-based probability estimate more precise.",
+    "Discrete summation (sigma notation) is the finite-bucket analog of continuous integration.",
+    "Continuous integration replaces the discrete sample table with a function S(x) and sums with respect to dx.",
+    "Practically, a user doesn't need to solve the calculus by hand \u2014 just knowing how to read the notation is enough to identify the right spreadsheet/library function and its required parameters."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies the later variance/standard deviation formulas, which are themselves expectations (integrals/sums) over a distribution."
+   ],
+   "trading_implications": [
+    "Reading probability notation (even without solving it by hand) lets a trader identify which built-in statistical function to call for a given risk question."
+   ],
+   "common_misunderstandings": [
+    "Not knowing how to solve a calculus equation is not a barrier to using it in practice \u2014 recognizing the notation is often sufficient to find the right tool."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Frequency distributions",
+    "Histograms",
+    "Variance",
+    "Standard deviation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "307-308",
+    "section_hint": "3.3 Statistics \u2014 Calculus and Statistics"
+   }
+  },
+  {
+   "topic": "Mode, median, and mean as measures of central tendency",
+   "category": "Statistics",
+   "subcategory": "Central Tendency",
+   "type": "definition",
+   "definition": "Mode, median, and mean are the three standard ways to describe the 'typical' value of a distribution: the most frequent value, the midpoint value, and the arithmetic average, respectively.",
+   "core_idea": "Each measure has a different practical tradeoff: mode is the most frequent value but can be ambiguous (multiple modes) and expensive to find; median is the true midpoint but requires sorting the full data set; mean is the simple average and is the easiest and cheapest to compute, which is why it is treated as the most important of the three.",
+   "key_points": [
+    "Mode = value(s) occurring most often; a distribution can have more than one mode (e.g., a fair coin flip has heads and tails as co-equal modes).",
+    "Mode is rarely used in practice because finding it requires scanning the whole distribution and it isn't guaranteed to be unique.",
+    "Median = the value splitting the distribution into top 50% and bottom 50%; for an even number of samples it is the average of the two middle values.",
+    "Median's practical drawback is that computing it requires sorting the data set, which is slow for very large sets even on fast computers.",
+    "Mean (arithmetic mean) = sum of all values divided by count; it represents the expected value of a random variable.",
+    "Mean's main advantage is ease of calculation, which is why the author calls it the most important central-tendency measure.",
+    "Mode, median, and mean do not necessarily coincide \u2014 different distribution shapes can pull them apart, though the mode always sits at a distribution's peak(s)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Mean is the reference point used later in the mean absolute deviation and variance formulas."
+   ],
+   "trading_implications": [
+    "Mean is favored in practice for describing 'typical' price behavior (e.g., typical neighborhood gasoline price) because it is cheap and simple to compute at scale."
+   ],
+   "common_misunderstandings": [
+    "Assuming mode, median, and mean will agree for a given distribution \u2014 they can diverge depending on the distribution's shape."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Frequency distributions",
+    "Variance",
+    "Standard deviation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "308-309",
+    "section_hint": "3.3 Statistics \u2014 Mode, Median, and Mean"
+   }
+  },
+  {
+   "topic": "Why variation/dispersion matters alongside the average",
+   "category": "Statistics",
+   "subcategory": "Dispersion & Volatility",
+   "type": "concept",
+   "definition": "Two data sets (or investments) can share the same central tendency (e.g., the same mean) while differing greatly in how spread out their values are around that mean.",
+   "core_idea": "Knowing only the average outcome is insufficient for decision-making; the degree of variation around that average \u2014 e.g., a near-certain $10 million payoff versus one with a wide range of possible outcomes \u2014 is critical information for an investor or decision-maker, even when both have the same expected value.",
+   "key_points": [
+    "Two bell-shaped distributions can share the same central tendency yet have very different spread (one narrow, one wide).",
+    "In trading, 'volatility' specifically refers to the standard deviation of a series.",
+    "Standard deviation is described as fairly complex to calculate directly, motivating two intermediate dispersion measures examined first: mean absolute deviation and variance."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up mean absolute deviation, variance, and standard deviation as the specific tools used to quantify this variation."
+   ],
+   "trading_implications": [
+    "Comparing two investments or forecasts solely on expected value can hide materially different risk profiles; variation must be reported alongside the mean."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mean",
+    "Standard deviation",
+    "Volatility"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "309-310",
+    "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   }
+  },
+  {
+   "topic": "Mean absolute deviation",
+   "category": "Statistics",
+   "subcategory": "Dispersion & Volatility",
+   "type": "formula",
+   "definition": "Mean absolute deviation measures dispersion as the average distance (regardless of direction) between each sample and the distribution's mean.",
+   "core_idea": "Because distance can't be negative, each point's deviation from the mean is taken in absolute value, then averaged across all samples; the author notes this is a reasonable dispersion measure but is awkward to use in calculus-based derivations because absolute value is not calculus-friendly.",
+   "key_points": [
+    "Computed as the average of |x - mean| across all samples, divided by the number of samples.",
+    "Its main weakness (per the author) is not intuition but mathematical tractability: absolute value doesn't work well inside calculus-derived formulas.",
+    "This limitation is the stated motivation for using squared deviations (variance) instead."
+   ],
+   "formulas": [
+    {
+     "name": "Mean absolute deviation",
+     "formula": "MAD = (1/n) * S|x_i - mean|",
+     "variables": {
+      "x_i": "value of each sample",
+      "mean": "arithmetic mean of the series",
+      "n": "number of samples"
+     }
+    }
+   ],
+   "relationships": [
+    "Precursor/contrast to variance \u2014 both measure average deviation from the mean, but variance squares instead of taking absolute value."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming mean absolute deviation is the standard trading measure of dispersion \u2014 in practice variance/standard deviation are used instead, largely for calculus compatibility."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variance",
+    "Standard deviation"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "310",
+    "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   }
+  },
+  {
+   "topic": "Variance (sigma squared)",
+   "category": "Statistics",
+   "subcategory": "Dispersion & Volatility",
+   "type": "formula",
+   "definition": "Variance is the average of the squared distances between each sample and the mean, used as a calculus-friendly alternative to mean absolute deviation.",
+   "core_idea": "Squaring each deviation from the mean guarantees a non-negative quantity (like absolute value does) but remains usable in calculus-derived formulas, which is why variance rather than mean absolute deviation is the standard building block for further statistical formulas.",
+   "key_points": [
+    "Denoted sigma-squared (s\u00b2), read as 'sigma squared.'",
+    "Computed as the average squared deviation from the mean across all samples.",
+    "For a price series, the units of variance are the squared units of the original data (e.g., dollars-squared), which the author notes is less intuitive than the original units."
+   ],
+   "formulas": [
+    {
+     "name": "Variance",
+     "formula": "s^2 = (1/n) * S(x_i - mean)^2",
+     "variables": {
+      "x_i": "value of each sample",
+      "mean": "arithmetic mean of the series",
+      "n": "number of samples",
+      "s^2": "variance"
+     }
+    }
+   ],
+   "relationships": [
+    "Standard deviation is derived by taking the square root of variance, converting back into the original units."
+   ],
+   "trading_implications": [
+    "Variance's squared units (e.g., dollars-squared for prices) make it less directly interpretable than standard deviation for communicating risk."
+   ],
+   "common_misunderstandings": [
+    "Treating variance's units as directly comparable to the original series' units \u2014 they are squared units, not the same scale."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mean absolute deviation",
+    "Standard deviation",
+    "Volatility"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "310-311",
+    "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   }
+  },
+  {
+   "topic": "Standard deviation and volatility",
+   "category": "Statistics",
+   "subcategory": "Dispersion & Volatility",
+   "type": "formula",
+   "definition": "Standard deviation is the square root of variance, restoring the original units of the data; in finance this same quantity is called volatility, and in science/engineering it is called root mean square (RMS).",
+   "core_idea": "Standard deviation is the most commonly used dispersion measure precisely because taking the square root of variance converts squared units (e.g., dollars-squared) back into the original, interpretable units (e.g., dollars), and it is the specific quantity traders mean when they discuss market volatility.",
+   "key_points": [
+    "Standard deviation = square root of variance; denoted lowercase sigma (s).",
+    "Same underlying quantity has different names by field: standard deviation (general statistics), root mean square/RMS (science/engineering), volatility (finance/trading).",
+    "Standard deviation is highlighted as the key concept traders reference when discussing market volatility."
+   ],
+   "formulas": [
+    {
+     "name": "Standard deviation",
+     "formula": "s = sqrt(s^2)",
+     "variables": {
+      "s": "standard deviation (volatility)",
+      "s^2": "variance"
+     }
+    }
+   ],
+   "relationships": [
+    "Directly derived from variance by square root; variance itself is the average squared deviation from the mean."
+   ],
+   "trading_implications": [
+    "'Volatility' as traders use the term is mathematically the standard deviation of a price/return series, not a vague qualitative notion."
+   ],
+   "common_misunderstandings": [
+    "Treating volatility as a separate concept from standard deviation rather than recognizing it as the same statistical quantity under a different name in finance."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Variance",
+    "Mean absolute deviation",
+    "Volatility"
+   ],
+   "source": {
+    "chapter": 12,
+    "pages": "311-313",
+    "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   }
+  }
+ ]
+}

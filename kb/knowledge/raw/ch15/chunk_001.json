@@ -1,0 +1,253 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Seasonal behavior of the spark spread distribution",
+   "category": "Power Markets",
+   "subcategory": "Spark Spread Statistics",
+   "type": "concept",
+   "definition": "The spark spread (power price minus fuel-implied cost) tends to cluster around zero and can be roughly approximated by a normal distribution, but this approximation breaks down around extreme events and ignores seasonal demand swings.",
+   "core_idea": "A single normal distribution fit to spark spread history is a reasonable rough approximation except for extreme outliers (like August 2001), and it also glosses over the fact that spread behavior differs by season because different generators are on the margin at different times of year.",
+   "key_points": [
+    "A large outlier (August 2001) sits well above what a normal distribution centered on zero would predict, but the author argues this is a real price spike, not bad data, since summer power price spikes are common.",
+    "In low-demand shoulder seasons (spring/fall) only efficient generators run, keeping the spark spread low.",
+    "In high-demand seasons (winter/summer) less efficient plants are dispatched, pushing spreads higher, and on the most extreme demand days the least efficient plants running can cause spread spikes.",
+    "Because the marginal generator mix changes with season, a more accurate model would fit a separate distribution per season rather than one distribution for the whole year."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into spread/spark-spread option valuation and Kirk's approximation discussed later in the same section"
+   ],
+   "trading_implications": [
+    "Risk models built on a single annual spread distribution will underestimate tail risk in peak seasons and overstate it in shoulder seasons.",
+    "Seasonal segmentation of historical spread data gives a more realistic input to option valuation and plant valuation than a single pooled distribution."
+   ],
+   "common_misunderstandings": [
+    "Treating a large historical price spike as a data error rather than a real event driven by demand-driven dispatch of inefficient plants."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread",
+    "Spread options",
+    "Kirk's approximation"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "381-382",
+    "section_hint": "3.6 Spread Options \u2014 distribution of spreads"
+   }
+  },
+  {
+   "topic": "Price-spike frequency and the value of owning a power plant",
+   "category": "Power Markets",
+   "subcategory": "Power Plant Valuation",
+   "type": "concept",
+   "definition": "The economic value of owning a generation asset is tied to how often extreme spread outliers (like the August 2001 spike) are expected to recur, and that expectation can change if grid operators act to suppress such spikes.",
+   "core_idea": "A power plant's optionality value rises with the expected frequency of future price spikes and falls if market/grid changes reduce the likelihood of similar spikes, so a historically fitted price model may not reliably predict future value.",
+   "key_points": [
+    "If outlier events like the 2001 spike are expected to recur, the option-like value of owning generation capacity increases.",
+    "If the grid operator implements measures that eliminate similar spikes, plant value decreases.",
+    "Even a well-fitted historical distribution may not be a good forward-looking predictor because structural changes in the market can invalidate it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the spark spread distribution discussion",
+    "Relevant to real-option valuation of generation assets"
+   ],
+   "trading_implications": [
+    "Plant valuation and hedging decisions should account for regulatory/market structure changes that affect the future frequency of price spikes, not just backward-looking historical distributions."
+   ],
+   "common_misunderstandings": [
+    "Assuming a historically calibrated price/spread model remains valid going forward regardless of changes to grid operations."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power plant real options",
+    "Spark spread",
+    "Spread options"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "382",
+    "section_hint": "3.6 Spread Options \u2014 distribution of spreads"
+   }
+  },
+  {
+   "topic": "Kirk's approximation for valuing spread options",
+   "category": "Derivatives",
+   "subcategory": "Spread Options",
+   "type": "concept",
+   "definition": "Kirk's approximation is a method for pricing spread options that adapts the Black Scholes/Black 76 framework by working with the ratio of the two underlying asset prices instead of modeling their difference directly.",
+   "core_idea": "By algebraically transforming the spread option payoff into a ratio-based payoff, Kirk's approximation lets a Black-Scholes-style formula be applied to spread options, avoiding the complication of the spread going negative, at the cost of only being an approximate solution (though typically fairly accurate).",
+   "key_points": [
+    "Modeling the ratio of two asset prices rather than their spread avoids the negative-price problem inherent to spreads.",
+    "The payoff of a spread option can be algebraically rewritten to resemble a standard Black Scholes payoff.",
+    "The resulting formula multiplies the option value by (F2 + X) and replaces the price distribution term with the distribution of the ratio F1 / (F2 + X), compared to the standard Black 76 formula.",
+    "It is described as an 'approximation' specifically because of how the volatility input is estimated, not because the payoff transformation itself is inexact.",
+    "It is only an approximate solution overall, but the author states it typically produces reasonably accurate results."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends Black Scholes / Black 76 option pricing to two-underlying spread options",
+    "Requires an implied volatility and implied correlation estimation step"
+   ],
+   "trading_implications": [
+    "Provides a tractable, computationally simple way to price spread options (e.g., spark spreads, locational spreads) without needing a full two-factor numerical model."
+   ],
+   "common_misunderstandings": [
+    "The word 'approximation' in the name refers to the volatility estimation step, not to the payoff transformation itself."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes model",
+    "Black 76 model",
+    "Spark spread",
+    "Implied correlation"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "382-384",
+    "section_hint": "3.6 Spread Options \u2014 Kirk's Approximation"
+   }
+  },
+  {
+   "topic": "Volatility estimation via the ratio of two lognormal distributions",
+   "category": "Derivatives",
+   "subcategory": "Spread Options",
+   "type": "concept",
+   "definition": "Kirk's approximation estimates the volatility needed for its modified Black-Scholes-style formula by relying on the fact that the ratio of two lognormally distributed prices is approximately normally distributed.",
+   "core_idea": "Because dividing one lognormal distribution by another produces a distribution that is close to normal, this approximate normality can be used to derive a workable volatility estimate for the ratio-based spread option formula.",
+   "key_points": [
+    "The probability distribution formed by dividing one lognormal distribution by another is only approximately, not exactly, normal.",
+    "This approximate normality is the specific assumption that gives Kirk's approximation its name.",
+    "This assumption is what makes it mathematically tractable to estimate the volatility input required by the modified Black-Scholes-style equation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies the volatility term used in Kirk's approximation formula",
+    "Connects to implied correlation estimation"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Assuming the ratio of two lognormal distributions is exactly normal rather than only approximately so."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kirk's approximation",
+    "Lognormal distribution",
+    "Implied volatility"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "383-384",
+    "section_hint": "3.6 Spread Options \u2014 Kirk's Approximation"
+   }
+  },
+  {
+   "topic": "Three unknown parameters in spread option valuation",
+   "category": "Derivatives",
+   "subcategory": "Spread Option Pricing Inputs",
+   "type": "concept",
+   "definition": "Unlike a standard Black 76 option, which has a single unknown parameter (implied volatility), a spread option valuation has three unknowns: the implied volatilities of each of the two underlying assets and an implied correlation between them.",
+   "core_idea": "In practice, the only purpose of the two implied volatilities and the implied correlation in a spread option model is to together define the future volatility of the ratio between the two underlying assets.",
+   "key_points": [
+    "A standard Black 76 formula requires solving for only one implied volatility.",
+    "A spread option requires two implied asset volatilities plus an implied correlation between the two assets.",
+    "Regardless of how these three parameters are individually interpreted, their combined role in the model is solely to determine the volatility of the future price ratio."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on Kirk's approximation's use of a price ratio",
+    "Sets up the implied correlation estimation method"
+   ],
+   "trading_implications": [
+    "Traders should focus on calibrating the combined ratio volatility rather than over-interpreting the individual volatility/correlation parameters in isolation."
+   ],
+   "common_misunderstandings": [
+    "Getting sidetracked interpreting what each of the two volatilities and the correlation 'mean' individually, when their only functional role is defining the ratio's future volatility."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kirk's approximation",
+    "Implied volatility",
+    "Implied correlation"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "384",
+    "section_hint": "3.6 Spread Options \u2014 Estimating Implied Correlation"
+   }
+  },
+  {
+   "topic": "Estimating implied correlation from historical spread/ratio data",
+   "category": "Derivatives",
+   "subcategory": "Spread Options",
+   "type": "market_mechanic",
+   "definition": "Implied correlation for a spread option can be estimated by fitting a normal distribution to historically observed spreads or ratios (e.g., between two natural gas pricing points), then finding the Black Scholes implied volatility consistent with that fitted distribution, assuming future spreads behave like historical ones.",
+   "core_idea": "Because a normal distribution is fully described by a single dispersion parameter, and Black-Scholes-style volatility scales predictably with the square root of time, historical spread/ratio data can be used to back out an implied volatility for the ratio under an assumption that history is representative of the future.",
+   "key_points": [
+    "The method is illustrated with a natural gas transportation spread example: the price ratio between Florida Gas Pipeline Zone 3 (near Pensacola) and Florida City Gates (near Orlando).",
+    "A normal distribution can be fit to historical ratio/spread observations using a spreadsheet.",
+    "This relies on assuming futures spreads will resemble historically observed spreads.",
+    "Because a normal distribution is defined by a single dispersion variable, and Black-Scholes-style random-walk dispersion scales with the square root of time, converting the fitted historical distribution into an implied volatility is mathematically straightforward.",
+    "This approach lets correlation be examined under 'normal' (non-stressed) market conditions.",
+    "An alternative approach uses volatilities observed in other markets to fix two of the three unknowns and then solves algebraically for the remaining implied correlation that reproduces the desired future distribution."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds the implied correlation term needed by Kirk's approximation",
+    "Depends on the three-unknown-parameter structure of spread options"
+   ],
+   "trading_implications": [
+    "Historical spread/ratio distributions, fit with simple spreadsheet tools, provide a practical way to derive correlation inputs for spread option pricing when no direct market-quoted correlation exists.",
+    "Because the calibration assumes history repeats, it inherits the same forward-looking-validity caveat noted earlier for spread distributions in general."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kirk's approximation",
+    "Implied volatility",
+    "Natural gas transportation spreads"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "384-386",
+    "section_hint": "3.6 Spread Options \u2014 Estimating Implied Correlation"
+   }
+  },
+  {
+   "topic": "Rearranging Kirk's approximation to solve for implied correlation; observed correlation term-structure pattern",
+   "category": "Derivatives",
+   "subcategory": "Spread Options",
+   "type": "example",
+   "definition": "Kirk's approximation equation can be algebraically rearranged to solve directly for the implied correlation term, and empirically this implied correlation is often observed to be negative in the near term but rise above roughly 90% within a couple of months.",
+   "core_idea": "Once the other inputs are known, Kirk's approximation can be inverted to back out implied correlation, and in practice this correlation commonly starts negative for near-term tenors and climbs to over 90% for tenors a couple of months out.",
+   "key_points": [
+    "Kirk's approximation formula can be rearranged algebraically to isolate and solve for the implied correlation parameter.",
+    "It is fairly common to observe negative implied correlations in the short term.",
+    "That correlation is commonly observed rising to above 90 percent after a couple of months."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Direct extension of Kirk's approximation and the implied correlation estimation method"
+   ],
+   "trading_implications": [
+    "The typical term structure of implied correlation (negative short-term, high long-term) is a pattern traders can use as a sanity check or calibration prior when pricing or evaluating spread options at different tenors."
+   ],
+   "common_misunderstandings": [
+    "Expecting implied correlation for a spread option to be stable or uniformly positive across all tenors, when the typical observed pattern is negative short-term rising sharply longer-term."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kirk's approximation",
+    "Implied correlation",
+    "Spread options"
+   ],
+   "source": {
+    "chapter": 15,
+    "pages": "386-387",
+    "section_hint": "3.6 Spread Options \u2014 Estimating Implied Correlation"
+   }
+  }
+ ]
+}

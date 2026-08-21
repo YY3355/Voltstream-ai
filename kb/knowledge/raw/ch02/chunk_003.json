@@ -1,0 +1,212 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Trades vs. positions",
+   "category": "Trading Markets",
+   "subcategory": "Position Terminology",
+   "type": "definition",
+   "definition": "A trade is a single completed transaction (executing a trade creates a position); a position is the net exposure left over after combining all the trades a trader has made in a commodity.",
+   "core_idea": "Traders should think in terms of net position, not individual trades \u2014 several trades in the same commodity roll up into one combined exposure.",
+   "key_points": [
+    "Executing a trade is the act of completing a transaction.",
+    "A position is the aggregate/net result of one or more trades \u2014 e.g., three buy transactions plus one sell transaction in crude oil combine into a single net position.",
+    "Trades require both a buyer and a seller (the two parties); each side calls the other its counterparty."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Positions are further classified as long, short, or flat"
+   ],
+   "trading_implications": [
+    "Risk should be assessed on the net position resulting from all trades, not on any single transaction in isolation."
+   ],
+   "common_misunderstandings": [
+    "Treating each trade as a separate risk rather than netting them into one overall position."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Long and short positions",
+    "Closing out a position"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "85-85",
+    "section_hint": "1.2 Trading Markets"
+   }
+  },
+  {
+   "topic": "Long, short, and flat positions",
+   "category": "Trading Markets",
+   "subcategory": "Position Terminology",
+   "type": "concept",
+   "definition": "A long position gains value when the price (or spread) rises; a short position gains value when the price (or spread) falls; a flat position is unaffected by price moves in either direction.",
+   "core_idea": "Traders describe exposure using long/short/flat rather than buy/sell because 'buying' a contract can itself create an obligation to sell, so buy/sell language doesn't reliably tell you the direction of price exposure.",
+   "key_points": [
+    "A contract obligating a fixed-price sale is an asset (costs money to acquire) if the fixed price is above the current market price, and a liability (you get paid to take it on) if the fixed price is below market.",
+    "Long positions are typically associated with owning an asset or agreeing to buy at a fixed future price; they benefit from rising prices.",
+    "Short positions are typically associated with agreeing to sell at a fixed future price; they benefit from falling prices because the seller can source the commodity more cheaply than the fixed sale price.",
+    "For a spread (e.g., gasoline price minus crude price), being long the spread means benefiting when the spread widens \u2014 from gasoline rising and/or crude falling.",
+    "By convention, long positions are shown with a positive sign, short positions with a negative sign, and flat positions benefit from neither direction.",
+    "The author advises always converting trades into long/short terms rather than mentally tracking buy/sell terminology, since a purchased contract can require the holder to sell."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the trade-vs-position distinction",
+    "Spread trades follow the same long/short convention applied to the spread value rather than a single price"
+   ],
+   "trading_implications": [
+    "Always translate a trade into its long/short exposure before assessing risk, rather than relying on whether the trader 'bought' or 'sold' the contract."
+   ],
+   "common_misunderstandings": [
+    "Assuming 'buying' a contract always means a long/bullish exposure \u2014 a bought contract can obligate the holder to sell, making the true exposure short."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Trades vs. positions",
+    "Closing out a position"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "85-86",
+    "section_hint": "1.2 Trading Markets \u2014 Long and Short Rather Than Buy and Sell"
+   }
+  },
+  {
+   "topic": "Closing out and flat positions",
+   "category": "Trading Markets",
+   "subcategory": "Position Terminology",
+   "type": "concept",
+   "definition": "Closing out (liquidating) a position means entering an offsetting trade so the trader has no further price risk or contractual responsibility, effectively converting the position to cash; a flat position is any combination of trades that is not affected by price movements.",
+   "core_idea": "Closing out a trade is not always possible, because some contracts are direct bilateral agreements that both original parties must agree to unwind.",
+   "key_points": [
+    "Closing out means eliminating further risk/responsibility by converting positions to a liquid (cash) state.",
+    "Direct bilateral contracts often cannot be closed out unilaterally \u2014 both original parties must agree to dissolve the agreement.",
+    "Example: a trader who negotiated separate bilateral contracts to buy gas from one party and sell it to another remains obligated to actually receive and deliver the commodity, even if that leaves the trader economically flat."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ease of closing out is a key practical difference between bilateral/OTC trades and exchange-traded contracts"
+   ],
+   "trading_implications": [
+    "Liquidity/exit risk in bilateral markets is materially higher than in exchange markets because unwinding a position requires counterparty cooperation."
+   ],
+   "common_misunderstandings": [
+    "Assuming any position can always be closed out at will \u2014 bilateral agreements may trap a trader in performance obligations even after they are economically flat."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bilateral and OTC trading",
+    "Exchanges"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "85-86",
+    "section_hint": "1.2 Trading Markets"
+   }
+  },
+  {
+   "topic": "Bilateral / OTC trading and ISDA netting",
+   "category": "Trading Markets",
+   "subcategory": "Bilateral and OTC Trading",
+   "type": "market_mechanic",
+   "definition": "Bilateral (over-the-counter/OTC) trades are direct contractual agreements between two counterparties, usually standardized under an ISDA master agreement so that all trades between the two parties form a single combined contract rather than separate ones.",
+   "core_idea": "Combining all trades between two parties into one ISDA contract matters most in bankruptcy, because it limits credit exposure to the net amount owed across all trades instead of exposing a solvent party to cherry-picked obligations.",
+   "key_points": [
+    "OTC trading is a bilateral agreement specifically between a professional trading organization and a counterparty; 'bilateral' and 'OTC' are used largely interchangeably.",
+    "Bilateral trading requires signing (or extending) a contract for every trade, and depends on the creditworthiness/reliability of the counterparty.",
+    "If a counterparty goes bankrupt, there is generally no immediate recourse outside bankruptcy proceedings.",
+    "ISDA master agreements fold all trades between two parties into a single contract, so a bankruptcy court cannot selectively freeze only the bankrupt party's liabilities while still enforcing the solvent party's obligations under other trades in the same relationship.",
+    "Illustrative example: without netting, if Unreliable Corp (owed gas from SolidGoldPower, owing power to SolidGoldPower) goes bankrupt, the court could freeze Unreliable's gas delivery while still forcing SolidGoldPower to deliver power \u2014 forcing SolidGoldPower to source replacement gas at last-minute cost while still delivering full power output for nothing in return. With netting, Unreliable must deliver the gas to receive the power, since individual line items can't be selectively frozen.",
+    "Downsides of OTC trading: credit risk, contractual paperwork, and difficulty initiating or unwinding trades.",
+    "Modifying a bilateral contract requires agreement from both parties."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with exchange trading, which removes direct counterparty credit risk"
+   ],
+   "trading_implications": [
+    "A trader's real credit exposure to an OTC counterparty is the net exposure across the whole ISDA-netted relationship, not the sum of individual trade exposures.",
+    "Weaker-credit counterparties often must post collateral or buy credit protection (e.g., a CDS) to be tradable at all."
+   ],
+   "common_misunderstandings": [
+    "Assuming that in a counterparty bankruptcy, a solvent party's obligations and the bankrupt party's obligations would automatically offset \u2014 without an ISDA-style netted master agreement, the bankruptcy court can enforce the solvent party's obligations while freezing the bankrupt party's, exposing the solvent party to outsized loss."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Closing out and flat positions",
+    "Exchanges",
+    "Credit risk mitigation (collateral and CDS)"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "86-87",
+    "section_hint": "Bilateral, Over the Counter, and Exchange Trading \u2014 Bilateral and OTC Trades"
+   }
+  },
+  {
+   "topic": "Credit risk mitigation: collateral and credit-default swaps",
+   "category": "Risk",
+   "subcategory": "Counterparty Credit Risk",
+   "type": "risk",
+   "definition": "Collateral is money pledged as security to back a trading obligation; a credit-default swap (CDS) is insurance against contractual default, letting a weaker-credit counterparty effectively borrow the credit standing of a stronger-credit party.",
+   "core_idea": "Companies with weak credit typically must post collateral or buy CDS protection to get others to trade with them bilaterally, but a CDS does not fully remove credit risk \u2014 it substitutes one default risk for the risk that either the CDS buyer or the CDS issuer fails to perform.",
+   "key_points": [
+    "Collateral is used to offer security for a trader's obligations when its own creditworthiness is insufficient.",
+    "A CDS lets a poor-credit party buy protection from a better-credit party, effectively swapping credit risk exposure.",
+    "CDS trades do not eliminate credit risk entirely: there remains a possibility that neither the CDS buyer nor the CDS issuer can meet their obligations."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to bilateral/OTC trading, where counterparty credit risk is a core downside"
+   ],
+   "trading_implications": [
+    "Even after using collateral or a CDS to mitigate credit risk on an OTC trade, some residual counterparty risk remains and must be considered."
+   ],
+   "common_misunderstandings": [
+    "Treating a CDS as a complete elimination of credit risk rather than a transfer/substitution of it."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bilateral / OTC trading and ISDA netting",
+    "Exchanges"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "87-87",
+    "section_hint": "Bilateral and OTC Trades"
+   }
+  },
+  {
+   "topic": "Exchange trading",
+   "category": "Trading Markets",
+   "subcategory": "Exchanges",
+   "type": "market_mechanic",
+   "definition": "An exchange is an intermediary where both sides of a trade contract with the exchange itself rather than directly with each other, removing direct counterparty risk and the need to sign a separate agreement with every potential trading partner.",
+   "core_idea": "Exchanges make markets more accessible than bilateral trading by letting participants sign a single agreement and monitor credit risk against just one counterparty (the exchange), which itself is protected by required financial backing and margin deposits from traders.",
+   "key_points": [
+    "Bilateral/OTC trading limits market access because a trader would otherwise need an ISDA agreement with every potential counterparty before trading with them.",
+    "Example: a small hedge fund (GetRichNow Partners) wanting to trade OTC would need bilateral agreements with every other potential counterparty, which is impractical for fast, frequent trading.",
+    "On an exchange, participants sign one agreement with the exchange and thereafter only need to monitor the exchange's own credit risk.",
+    "Exchanges are generally very safe counterparties because they are required to have solid financial backing and require traders to post a good-faith deposit called margin."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly contrasts with bilateral/OTC trading's credit-risk and paperwork downsides"
+   ],
+   "trading_implications": [
+    "Exchange trading trades some flexibility (customized bilateral terms) for reduced counterparty risk, less paperwork, and easier entry/exit."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Bilateral / OTC trading and ISDA netting",
+    "Closing out and flat positions"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "87-88",
+    "section_hint": "Bilateral, Over the Counter, and Exchange Trading \u2014 Exchanges"
+   }
+  }
+ ]
+}

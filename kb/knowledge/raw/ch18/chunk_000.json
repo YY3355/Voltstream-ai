@@ -1,0 +1,262 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Tolling agreement",
+   "category": "Power Markets",
+   "subcategory": "Contracts & Structures",
+   "type": "definition",
+   "definition": "A tolling agreement is a long-term contract in which a power marketer rents the operating rights of a power plant from its owner, paying a fixed fee for plant maintenance while taking on the right (and risk) to buy fuel, run the plant, and sell the resulting electricity.",
+   "core_idea": "Tolling agreements split plant ownership into two roles: an owner who is paid a fixed fee to keep the hardware running, and a marketer who makes all economic decisions and keeps all profit above that fee.",
+   "key_points": [
+    "Terms often run 20-30 years.",
+    "The owner bears no market risk and earns a fixed maintenance fee.",
+    "The marketer supplies fuel, operates the plant economically, sells power into the competitive market, and absorbs all commodity risk and upside.",
+    "Emerged after deregulation split the power industry into specialists: some firms focused on physical plant maintenance, others on power marketing/trading."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies the real options approach to plant valuation",
+    "Depends on the spark spread for its economics"
+   ],
+   "trading_implications": [
+    "A tolling agreement effectively gives the marketer a call option on the spread between power and fuel prices without having to own the physical asset."
+   ],
+   "common_misunderstandings": [
+    "Before deregulation, plant operation was seen as an ultra-safe business; tolling exposes the operator's counterparty (the marketer) to real market risk that a simple ownership model didn't have."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Real options model",
+    "Spark spread",
+    "Power marketer"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "423-424",
+    "section_hint": "4.3 Tolling Agreements \u2014 Purpose/Summary"
+   }
+  },
+  {
+   "topic": "Real options model for tolling agreements",
+   "category": "Derivatives",
+   "subcategory": "Valuation Methods",
+   "type": "concept",
+   "definition": "A real options model values a physical asset (here, a power plant) by treating its operating flexibility as if it were a portfolio of financial options, since the plant owner/operator can choose to 'exercise' (run the plant) or do nothing (leave it idle) much like an option holder.",
+   "core_idea": "Because a tolling agreement lets the marketer convert fuel to power only when profitable and otherwise walk away, the agreement's economics mirror a financial option's payoff, so its value is commonly approximated as a replicating portfolio of option contracts.",
+   "key_points": [
+    "The plant's optionality (run vs. don't run) is analogous to a financial option holder's choice to exercise or not.",
+    "Valuation approach: estimate the plant's value as the cost of replicating its physical capabilities with financial option contracts.",
+    "Commonly implemented with spread options (e.g., Kirk's approximation to Black-Scholes-style formulas) or Monte Carlo simulation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Built on the spark spread option concept",
+    "Applied via spread-option pricing (Kirk's approximation) or Monte Carlo simulation"
+   ],
+   "trading_implications": [
+    "Tolling agreement value can be decomposed and hedged using standard option-pricing machinery rather than only physical/operational modeling."
+   ],
+   "common_misunderstandings": [
+    "The 'real options' label refers to modeling a physical/real asset with option math \u2014 it is a valuation analogy, not a claim that the plant literally trades as a listed option."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread option",
+    "Kirk's approximation",
+    "Monte Carlo simulation"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "423-425",
+    "section_hint": "4.3 Tolling Agreements \u2014 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "Fuel-power correlation as the dominant value driver",
+   "category": "Risk",
+   "subcategory": "Tolling Agreement Valuation",
+   "type": "risk",
+   "definition": "The statistical correlation between fuel prices and power prices is identified as the single largest factor determining a tolling agreement's economic value.",
+   "core_idea": "Because a tolling agreement's payoff depends on the spread between two commodities, how tightly (and in what direction) fuel and power prices move together dominates the option-like value of the deal more than any other single factor.",
+   "key_points": [
+    "Tolling value is fundamentally a spread-option value, and spread options are highly sensitive to the correlation between the two underlying legs.",
+    "This correlation sensitivity is why spread-option-specific formulas (e.g., Kirk's approximation) rather than plain single-asset option formulas are used."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly drives the value produced by spark spread option / real options models"
+   ],
+   "trading_implications": [
+    "Risk management and valuation for tolling deals should focus heavily on modeling and monitoring the fuel-power correlation, not just each commodity's standalone volatility."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread option",
+    "Real options model",
+    "Spread options"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "423-424",
+    "section_hint": "4.3 Tolling Agreements \u2014 Key Topics"
+   }
+  },
+  {
+   "topic": "Heat rate and plant conversion efficiency",
+   "category": "Power Markets",
+   "subcategory": "Physical Plant Economics",
+   "type": "definition",
+   "definition": "The heat rate measures how efficiently a power plant converts fuel into electricity; a higher heat rate figure (as used here) means the plant produces more electricity from the same amount of fuel.",
+   "core_idea": "Heat rate is the physical conversion-efficiency parameter that links a plant's fuel input to its electrical output, and it is the key plant-specific input to profit calculations like the spark spread.",
+   "key_points": [
+    "Different plants have different heat rates, so they differ in how much fuel they need to burn to produce the same electricity output."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Input to the spark spread net-profit calculation"
+   ],
+   "trading_implications": [
+    "A plant's heat rate determines how much of a given power-fuel spread actually converts into plant profit, and is central to comparing plants' relative value."
+   ],
+   "common_misunderstandings": [
+    "The text's phrasing ('higher heat rate = more electricity for the same fuel') is the plant-efficiency convention used in this section; readers should note some industry contexts define heat rate inversely (fuel needed per unit of output), so the direction of 'better' can differ by convention."
+   ],
+   "author_states_vs_inference": "The misunderstanding note on inverse heat-rate conventions is my own addition, not stated by the author; everything else is from source.",
+   "related_topics": [
+    "Spark spread",
+    "Tolling agreement"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "424",
+    "section_hint": "4.3 Tolling Agreements \u2014 Converting Fuel to Electricity"
+   }
+  },
+  {
+   "topic": "Spark spread",
+   "category": "Derivatives",
+   "subcategory": "Power Plant Valuation",
+   "type": "formula",
+   "definition": "The spark spread is the per-unit net profit estimate for converting fuel into electricity, approximated as the plant's electricity sale price minus its fuel cost (adjusted for the plant's conversion efficiency), with other operating costs typically ignored because fuel dominates total cost.",
+   "core_idea": "Because fuel costs dwarf other operating costs, a power plant's net profit per unit of output can be approximated using only the spread between power price and fuel cost, scaled by the plant's heat rate \u2014 this per-unit measure is called the spark spread.",
+   "key_points": [
+    "Standard net-profit logic: profit = sale price \u2212 cost of materials/operating costs.",
+    "Operating costs other than fuel are usually ignored as immaterial relative to fuel cost.",
+    "Total profit = per-unit spark spread \u00d7 total units of electricity produced.",
+    "Spark spreads can be negative when fuel costs exceed the value of power produced."
+   ],
+   "formulas": [
+    {
+     "name": "Spark spread (net profit per unit)",
+     "formula": "Spark Spread = Power Price \u2212 (Heat Rate \u00d7 Fuel Price)",
+     "variables": {
+      "Power Price": "market price of electricity per unit of output",
+      "Heat Rate": "plant's fuel-to-electricity conversion efficiency factor",
+      "Fuel Price": "market price of the fuel input"
+     }
+    }
+   ],
+   "relationships": [
+    "Basis for the spark spread option payoff",
+    "Uses heat rate as its efficiency input"
+   ],
+   "trading_implications": [
+    "Total plant profit scales linearly with output once the per-unit spark spread is known, making it a standard building block for plant profit-and-loss estimation."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "The named formula and variable list are my restatement of the source's prose description (the book shows this as Figure 4.3.2 without transcribable formula text here); the underlying relationship (sale price minus fuel-adjusted cost) is the author's stated concept.",
+   "related_topics": [
+    "Heat rate",
+    "Spark spread option"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "424-425",
+    "section_hint": "4.3 Tolling Agreements \u2014 Converting Fuel to Electricity"
+   }
+  },
+  {
+   "topic": "Spark spread option",
+   "category": "Derivatives",
+   "subcategory": "Power Plant Valuation",
+   "type": "formula",
+   "definition": "A spark spread option is the option-adjusted version of the spark spread: since a plant can choose not to run, its per-unit profit is the greater of the spark spread or zero, reflecting the owner's ability to avoid negative profit by shutting down.",
+   "core_idea": "Because plants can idle rather than operate at a loss, plant profitability must be modeled as an option on the spark spread (profit floor of zero) rather than as the raw spread itself, which could go negative.",
+   "key_points": [
+    "When the spark spread is positive, total profit = spark spread \u00d7 total electricity produced.",
+    "When the spark spread is negative, the plant is assumed to shut down and take zero profit.",
+    "General rule: operators take the profit when spreads are positive and try to shut down (take zero) when spreads are negative.",
+    "Real-world frictions can override this rule: regulatory requirements may prevent shutdown, or an operator may choose to run at a short-term loss to avoid the cost of a later restart/cooldown cycle."
+   ],
+   "formulas": [
+    {
+     "name": "Spark spread option payoff",
+     "formula": "Payoff per unit = max(Spark Spread, 0); Total Profit = max(Spark Spread, 0) \u00d7 Volume",
+     "variables": {
+      "Spark Spread": "per-unit profit from converting fuel to power",
+      "Volume": "total units of electricity the plant produces/could produce"
+     }
+    }
+   ],
+   "relationships": [
+    "Directly extends the spark spread by adding optionality",
+    "Forms the basis of the real options model of a tolling agreement"
+   ],
+   "trading_implications": [
+    "Because plant profit is a max(spread,0) payoff, tolling agreements are naturally priced with option models rather than linear spread contracts."
+   ],
+   "common_misunderstandings": [
+    "Assuming plants always shut down instantly when spreads go negative ignores stated exceptions: regulatory shutdown restrictions and the operational cost of restarting/cooling can make short-term loss operation rational."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread",
+    "Real options model"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "425",
+    "section_hint": "4.3 Tolling Agreements \u2014 Converting Fuel to Electricity"
+   }
+  },
+  {
+   "topic": "Breaking a tolling agreement into legs (operating-decision granularity)",
+   "category": "Derivatives",
+   "subcategory": "Power Plant Valuation",
+   "type": "market_mechanic",
+   "definition": "Because a tolling agreement involves many operating decisions over its life, it is modeled as a series ('legs') of spark spread options, each leg representing one on/off decision over a chosen time interval (e.g., hourly, daily, or monthly).",
+   "core_idea": "A single spark spread option isn't enough to represent a multi-year plant; the agreement is decomposed into many sequential options, one per operating-decision period, and the choice of period length is a practical modeling tradeoff rather than a fixed rule.",
+   "key_points": [
+    "Since electricity can't be stored, electricity at different times of year functions as different underlying products, creating many distinct underlyings to manage from a risk perspective over a plant's multi-year life.",
+    "Typical operating-decision frequencies are hourly, daily, or monthly.",
+    "Modeling future decisions differs from modeling today's decision because granular data (e.g., hourly prices) isn't available for future periods.",
+    "There is little benefit to using very short (e.g., hourly) modeling legs if the underlying price data must itself be estimated from longer-period data.",
+    "Every model has an optimal complexity point; beyond it, added complexity slows computation and complicates testing without improving accuracy.",
+    "The right number of legs is primarily driven by two things: available market price data (e.g., only monthly forward market data vs. a daily simulated price) and the physical operating capabilities of the plant."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Each leg is itself a spark spread option",
+    "Aggregated legs implement the real options model of the full tolling agreement"
+   ],
+   "trading_implications": [
+    "Model granularity should be matched to the granularity of available price data \u2014 e.g., use monthly legs when only monthly forward prices exist, and finer legs only when finer (e.g., daily simulated) price data is genuinely available."
+   ],
+   "common_misunderstandings": [
+    "More granular (e.g., hourly) modeling isn't automatically 'more accurate' \u2014 if the price inputs themselves are estimated from coarser data, added granularity only adds computational cost and testing complexity without real accuracy gains."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread option",
+    "Real options model"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "425-427",
+    "section_hint": "4.3 Tolling Agreements \u2014 Breaking Up the Model"
+   }
+  }
+ ]
+}

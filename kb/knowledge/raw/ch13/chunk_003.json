@@ -1,0 +1,228 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Asian and European options: exercise-style distinctions",
+   "category": "Derivatives",
+   "subcategory": "Option Types",
+   "type": "definition",
+   "definition": "Two option variants distinguished by how and when the payoff is determined: an Asian option pays out based on an average of the underlying's price over a defined window rather than a single spot price, while a European option can only be exercised at expiration, never before.",
+   "core_idea": "Asian options smooth the payoff by averaging price over time (e.g., average monthly peak power price vs. a strike), and both Asian and European options share the trait that early exercise is not permitted.",
+   "key_points": [
+    "Asian option value at expiration depends on the average underlying price over some period, not a single price point.",
+    "Asian options typically cannot be exercised early.",
+    "Example given: an Asian option paying the difference between a strike and the average cost of peak power over a month.",
+    "A European option can only be exercised at expiration; early exercise is not allowed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Both are contrasted implicitly with options that allow early exercise, though the source does not name that alternative here"
+   ],
+   "trading_implications": [
+    "Averaging the underlying price in an Asian option reduces sensitivity to a price spike or manipulation right at expiration, since the payoff depends on a period average rather than one settlement price."
+   ],
+   "common_misunderstandings": [
+    "Assuming any option can be exercised early by default \u2014 the source specifies both Asian and European options here cannot be."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Strike Price",
+    "Premium",
+    "Intrinsic Value"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Moneyness: At the Money, In the Money, Out of the Money",
+   "category": "Derivatives",
+   "subcategory": "Option Valuation",
+   "type": "definition",
+   "definition": "Classification of an option's status relative to the current price of its underlying, based on whether immediate exercise would be profitable.",
+   "core_idea": "An option is at the money when its strike equals the current underlying price, in the money when it has positive intrinsic value (profitable to exercise now), and out of the money when its intrinsic value is zero (worthless if exercised now).",
+   "key_points": [
+    "At the Money: strike price of the option equals the current price of the underlying.",
+    "In the Money: option has positive intrinsic value; would be profitable to exercise immediately.",
+    "Out of the Money: option has zero intrinsic value; worthless if exercised at the current time."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends directly on Intrinsic Value",
+    "Depends on Strike Price relative to underlying price"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Out of the money does not mean the option has no value at all \u2014 it can still carry extrinsic (time) value even with zero intrinsic value."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Intrinsic Value",
+    "Extrinsic Value",
+    "Strike Price"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Intrinsic Value and Extrinsic Value of an option",
+   "category": "Derivatives",
+   "subcategory": "Option Valuation",
+   "type": "formula",
+   "definition": "The two components that together make up an option's price: intrinsic value is the payoff from immediate exercise, and extrinsic value is the remaining time value in the option's price.",
+   "core_idea": "An option's premium splits into intrinsic value (what the buyer would receive by exercising right now) and extrinsic value (the time value, found by subtracting intrinsic value from the current option price).",
+   "key_points": [
+    "Intrinsic Value: the amount of money the option buyer would receive if the option were immediately exercised.",
+    "Extrinsic Value: the time value of the option, computed by subtracting intrinsic value from the option's current price."
+   ],
+   "formulas": [
+    {
+     "name": "Extrinsic Value",
+     "formula": "Extrinsic Value = Current Option Price \u2212 Intrinsic Value",
+     "variables": {
+      "Current Option Price": "the option's current market premium",
+      "Intrinsic Value": "money received if the option were exercised immediately"
+     }
+    }
+   ],
+   "relationships": [
+    "Together intrinsic and extrinsic value sum to the option's current price/premium"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "In the Money",
+    "Out of the Money",
+    "Premium"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Derivative and Underlying",
+   "category": "Derivatives",
+   "subcategory": "Basic Terminology",
+   "type": "definition",
+   "definition": "A derivative is a financial contract whose value derives from the price of some other asset (usually referring to an option in practice); the underlying is that other asset used to determine the derivative's price.",
+   "core_idea": "Derivatives get their value from an underlying asset, and that underlying itself can be another derivative (like a forward or future), including cases where an option references more than one underlying, as with spread options.",
+   "key_points": [
+    "Derivative, in its most general form, is any financial contract whose value is derived from the price of something else.",
+    "In practice, the term derivative usually refers to an option.",
+    "Underlying is the asset used to determine the price of a derivative.",
+    "The underlying can itself be a derivative, such as a forward or a future.",
+    "An option can have more than one underlying, as in spread options."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Spread options reference multiple underlyings"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Straddle",
+    "Synthetic Option"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Premium (option price)",
+   "category": "Derivatives",
+   "subcategory": "Basic Terminology",
+   "type": "definition",
+   "definition": "The premium is the money the option buyer pays to the option seller to acquire the option contract.",
+   "core_idea": "The premium is simply the price paid by the purchaser of an option to the seller of that option.",
+   "key_points": [
+    "Premium is paid by the option purchaser to the option seller."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Premium equals the sum of intrinsic value and extrinsic value"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Intrinsic Value",
+    "Extrinsic Value"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Strike Price",
+   "category": "Derivatives",
+   "subcategory": "Basic Terminology",
+   "type": "definition",
+   "definition": "The exercise price stated in an option contract \u2014 the price at which the call buyer may purchase, or the put buyer may sell, the underlying asset.",
+   "core_idea": "The strike price fixes the transaction price for exercising an option, whether buying (call) or selling (put) the underlying.",
+   "key_points": [
+    "Strike price is the exercise price of an option contract.",
+    "For a call, it is the price at which the buyer can purchase the underlying.",
+    "For a put, it is the price at which the buyer can sell the underlying."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Determines moneyness (At/In/Out of the Money) relative to current underlying price"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "At the Money",
+    "In the Money",
+    "Out of the Money"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  },
+  {
+   "topic": "Synthetic Option and Straddle",
+   "category": "Derivatives",
+   "subcategory": "Option Combinations",
+   "type": "concept",
+   "definition": "A synthetic option replicates the payoff of an option using a combination of other options and forwards; a straddle is one specific type of synthetic option, formed by buying a put and a call with the same underlying, strike price, and expiration date.",
+   "core_idea": "Traders can recreate an option-like payoff profile by combining other options and forwards (a synthetic option), and a straddle is a named example of this built from a matching put and call.",
+   "key_points": [
+    "Synthetic option: duplicating the payoff of an option using a combination of other options and forwards.",
+    "Straddle: a synthetic option created by buying a put and a call option sharing the same underlying, strike price, and expiration date."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Straddle is a specific instance of a synthetic option"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Strike Price",
+    "Derivative",
+    "Underlying"
+   ],
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  }
+ ]
+}

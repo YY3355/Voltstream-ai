@@ -1,0 +1,104 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Solar-thermal-assisted small-scale LNG storage facility",
+   "category": "Natural Gas",
+   "subcategory": "LNG Storage",
+   "type": "concept",
+   "definition": "A hybrid facility that pairs a small-scale LNG storage unit with a thermal solar installation, using solar-heated molten salt as the heat source for regasifying stored LNG back into pipeline gas.",
+   "core_idea": "Liquefying gas for storage and reheating it for use are both energy-intensive steps; by using a thermal solar plant that heats rock salt to roughly 600\u00b0F and stores the melted salt in an insulated vessel, the facility can supply much of that energy from solar rather than purchased fuel or power.",
+   "key_points": [
+    "Combines two distinct technologies: a thermal solar plant and a small-scale LNG facility.",
+    "Both the solar and LNG sides require insulated storage vessels.",
+    "Molten salt heated to about 600\u00b0F by the solar plant provides the heat used to convert stored LNG back into gas.",
+    "The scale of the solar installation caps how much heating (and cooling, for liquefaction) the facility can perform."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Functions as a variant of a natural gas storage facility, but substitutes insulated containers for an underground storage formation.",
+    "Feeds gas to on-site peaking generators, linking it to tolling-agreement-style valuation."
+   ],
+   "trading_implications": [
+    "Reduces the facility's exposure to fuel/power costs for the liquefaction and regasification cycle, since solar heat displaces purchased energy for reheating."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG storage economics",
+    "Tolling agreements",
+    "Natural gas storage valuation"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "543-543",
+    "section_hint": "5.3 LIQUEFIED NATURAL GAS - The Opportunity/Intuition"
+   }
+  },
+  {
+   "topic": "Siting and trading strategy for insulated-container LNG storage",
+   "category": "Natural Gas",
+   "subcategory": "LNG Storage",
+   "type": "trading_strategy",
+   "definition": "A strategy for a gas-peaker owner to lock in fuel supply by building a compact, insulated-container LNG storage facility sited near congested demand centers, using solar-supplied energy to cut operating costs, and reselling generated electricity at peak prices.",
+   "core_idea": "Because the facility stores gas in insulated containers rather than an underground formation, it needs much less land and can be located close to electrically congested consuming regions, letting the owner buy fuel cheaply, run much of the process on solar energy, and sell power at the highest available price.",
+   "key_points": [
+    "Insulated-container storage needs far less space than underground rock-formation storage, giving siting flexibility.",
+    "Proximity to congested demand regions is a deliberate siting choice enabled by the smaller footprint.",
+    "The economic combination is: low-cost fuel purchase + solar-subsidized processing energy + high-price power resale."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds directly on the solar-assisted LNG facility concept described for this opportunity.",
+    "Connects storage economics (buy-low gas) with generation economics (sell-high power) at a congested node."
+   ],
+   "trading_implications": [
+    "Facility value depends on capturing both the low-to-high time-shift spread in gas prices and the premium available from selling power into a congested delivery point."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Locational/congestion pricing",
+    "Gas storage arbitrage",
+    "Peaking generation"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "543-543",
+    "section_hint": "5.3 LIQUEFIED NATURAL GAS - The Strategy"
+   }
+  },
+  {
+   "topic": "Valuation approach for the solar-LNG hybrid facility",
+   "category": "Derivatives",
+   "subcategory": "Real Option / Storage Valuation",
+   "type": "concept",
+   "definition": "The facility's value is framed as a blend of two established valuation models: a tolling-agreement-style value from converting fuel into power, and a storage-style value from shifting natural gas purchases between low- and high-cost periods.",
+   "core_idea": "Because the facility both generates and sells electricity (like a tolling deal) and stores gas to shift purchase timing (like a storage asset), its valuation must incorporate elements of both model types rather than fitting neatly into either alone.",
+   "key_points": [
+    "The power-sale side of the facility resembles a tolling agreement, where the owner converts fuel into electricity for a margin.",
+    "The LNG storage side allows the owner to buy gas when cheap and use/convert it when gas or power prices are more favorable, resembling a time-shifting storage asset."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Draws on tolling agreement valuation concepts.",
+    "Draws on natural gas storage (intrinsic/time-shift) valuation concepts."
+   ],
+   "trading_implications": [
+    "A full valuation would need to combine a tolling-style spread option on fuel-to-power conversion with a storage-style optionality on gas purchase timing."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Tolling agreements",
+    "Natural gas storage valuation",
+    "Spread options"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "543-543",
+    "section_hint": "5.3 LIQUEFIED NATURAL GAS - Valuation"
+   }
+  }
+ ]
+}

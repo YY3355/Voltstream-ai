@@ -1,0 +1,136 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Heavy Fuel Oil (No. 4/5/6 / Bunker Fuel)",
+   "category": "Commodities",
+   "subcategory": "Oil Products",
+   "type": "definition",
+   "definition": "Heavy fuel oil, also called bunker fuel, refers to the heaviest grades of fuel oil produced by distillation. It must be heated to become liquid before use.",
+   "core_idea": "Because handling heavy oil requires heating and careful process control, its use is largely limited to large ships and power plants, which keeps its price below gasoline or diesel.",
+   "key_points": [
+    "Heavy oil is the heaviest class of fuel oil grades.",
+    "Must be heated to liquefy before it can be used, which is described as a delicate process.",
+    "Primarily used aboard large ships and in power plants due to this handling requirement.",
+    "Its limited range of uses makes it typically cheaper than gasoline or diesel."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sits at the heavy end of the fuel oil distillation stack, opposite kerosene."
+   ],
+   "trading_implications": [
+    "Narrower end-use demand (shipping, power generation) links heavy oil pricing more to those sectors than to broader transportation fuel demand."
+   ],
+   "common_misunderstandings": [
+    "Not a liquid at normal handling temperatures without preheating, unlike lighter fuel oils."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kerosene",
+    "WTI Crude",
+    "Distillation stack"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "245-245",
+    "section_hint": "2.3 OIL"
+   }
+  },
+  {
+   "topic": "Kerosene (No. 1 Fuel Oil)",
+   "category": "Commodities",
+   "subcategory": "Oil Products",
+   "type": "definition",
+   "definition": "Kerosene is the lightest of the fuel oil grades, positioned between gasoline and diesel in the distillation stack.",
+   "core_idea": "Kerosene is a light fuel oil grade that, unlike gasoline, diesel, and heavy oil, is not commonly traded as a futures contract.",
+   "key_points": [
+    "Lightest grade among the fuel oils.",
+    "Falls between gasoline and diesel fuel in the distillation stack.",
+    "Uncommon to see kerosene traded in futures markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Positioned opposite heavy oil on the distillation stack, with gasoline and diesel in between."
+   ],
+   "trading_implications": [
+    "Limited futures market liquidity means kerosene is less useful than gasoline, diesel, or WTI for hedging or price discovery."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heavy Fuel Oil",
+    "RBOB Gasoline",
+    "Distillation stack"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "245-245",
+    "section_hint": "2.3 OIL"
+   }
+  },
+  {
+   "topic": "RBOB Gasoline",
+   "category": "Commodities",
+   "subcategory": "Oil Products",
+   "type": "definition",
+   "definition": "RBOB is a gasoline grade formulated for blending with ethanol or other additives; it is the pre-blend form of finished gasoline.",
+   "core_idea": "RBOB represents gasoline in its state before additives such as ethanol are mixed in, distinguishing it from finished, pump-ready gasoline.",
+   "key_points": [
+    "RBOB stands for gasoline blendstock suitable for mixing with ethanol or other additives.",
+    "It is gasoline prior to the addition of those blending components."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Precursor product to finished gasoline once blended with ethanol or additives."
+   ],
+   "trading_implications": [
+    "As a traded futures benchmark, RBOB pricing reflects the pre-blend product rather than the finished retail gasoline."
+   ],
+   "common_misunderstandings": [
+    "RBOB is not finished gasoline; it excludes the ethanol/additive blend added later."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Kerosene",
+    "WTI Crude"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "245-245",
+    "section_hint": "2.3 OIL"
+   }
+  },
+  {
+   "topic": "WTI Crude Oil",
+   "category": "Commodities",
+   "subcategory": "Crude Oil",
+   "type": "definition",
+   "definition": "West Texas Intermediate (WTI) is a premium, light, sweet crude oil that yields a high proportion of valuable light petroleum products via simple distillation.",
+   "core_idea": "WTI is the most widely used benchmark for U.S. crude oil prices because its light, sweet quality makes it especially efficient to refine into higher-value products.",
+   "key_points": [
+    "WTI is a light, sweet crude oil.",
+    "Simple distillation of WTI produces a high proportion of valuable light petroleum products.",
+    "It is the most common benchmark used for U.S. crude oil prices."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Serves as the crude oil source from which the fuel oil grades (heavy oil, kerosene, gasoline/RBOB) are ultimately distilled."
+   ],
+   "trading_implications": [
+    "Its role as the primary U.S. benchmark makes WTI prices a key reference point for pricing other U.S. crude and refined product contracts."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "RBOB Gasoline",
+    "Heavy Fuel Oil",
+    "Kerosene"
+   ],
+   "source": {
+    "chapter": 6,
+    "pages": "245-245",
+    "section_hint": "2.3 OIL"
+   }
+  }
+ ]
+}

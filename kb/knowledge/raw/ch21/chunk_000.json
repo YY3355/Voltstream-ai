@@ -1,0 +1,250 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Wind turbines and wind farms",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "definition",
+   "definition": "A wind turbine converts the kinetic energy of moving air into electricity by using rotating blades to spin a generator; when many turbines are sited together they form a wind farm.",
+   "core_idea": "Wind power has been harnessed mechanically for centuries (windmills, sailing ships), but purpose-built electricity-generating wind turbines only emerged starting in the 1970s.",
+   "key_points": [
+    "Turbines work like other generator-driven turbines: rotational energy spins an electromagnet to make electricity.",
+    "Wind farms are typically sited in locations with sustained high winds.",
+    "The technology is comparatively recent (since the 1970s) versus millennia-old mechanical wind use."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into grid dispatch alongside other generation sources that must offset wind's variability."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind variability and grid balancing",
+    "Wind farm siting criteria"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "461-462",
+    "section_hint": "4.6 Wind Power - Summary/intro"
+   }
+  },
+  {
+   "topic": "Wind variability and grid balancing",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "risk",
+   "definition": "Wind output is inherently irregular and hard to forecast, so grids relying on wind generation must have a way to cover supply gaps.",
+   "core_idea": "Because wind supply arrives in unpredictable bursts, grid operators typically rely on fast-cycling but inefficient fossil-fuel plants (natural gas turbines, diesel peakers) to fill gaps, which undercuts wind's environmental benefit.",
+   "key_points": [
+    "Predicting the timing and magnitude of wind output is extremely difficult.",
+    "Gaps in wind supply are commonly met by natural gas turbines or diesel peaking units because they can cycle on/off easily.",
+    "Using quick-cycling fossil generation to backstop wind commits a region to inefficient, more polluting generation, offsetting wind's clean-energy benefit.",
+    "Electricity storage can sometimes be used to time-shift wind production to periods of higher demand.",
+    "If baseload plants (nuclear or coal) are used as backup instead, they cannot ramp quickly, so surplus wind energy may simply be wasted when both are producing at once."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to storage as a mitigation tool",
+    "Related to cube-law energy variability driving the unpredictability"
+   ],
+   "trading_implications": [
+    "The need for fast-cycling backup generation to firm wind output has cost and efficiency implications for the overall generation stack.",
+    "Wind's environmental value is partially offset when its intermittency forces reliance on inefficient peaking plants."
+   ],
+   "common_misunderstandings": [
+    "Adding wind capacity does not automatically reduce fossil fuel use in a straightforward way if the backup generation needed to cover its gaps is itself inefficient and polluting."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind energy cube-law variability",
+    "Capacity factor"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "461-463",
+    "section_hint": "Key Topics / Wind Energy"
+   }
+  },
+  {
+   "topic": "Wind energy's cube-law relationship to wind speed",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "formula",
+   "definition": "The energy content of wind scales with the cube of wind speed, so small increases in wind speed produce disproportionately large increases in available energy.",
+   "core_idea": "Because energy grows with the cube of speed, doubling wind speed yields eight times the energy, making wind a 'streaky' resource where a small number of very windy periods supply a disproportionate share of total wind energy.",
+   "key_points": [
+    "Doubling wind speed multiplies available energy by 8 (2^3).",
+    "This makes wind output highly episodic: a few very windy days contribute a large fraction of total wind energy for an area.",
+    "This nonlinearity is a root cause of why wind value is hard to predict from a trading perspective."
+   ],
+   "formulas": [
+    {
+     "name": "Wind energy vs. wind speed",
+     "formula": "Energy \u221d (Wind Speed)^3",
+     "variables": {
+      "Energy": "available wind energy",
+      "Wind Speed": "instantaneous wind speed"
+     }
+    }
+   ],
+   "relationships": [
+    "Underlies wind variability and grid balancing challenges"
+   ],
+   "trading_implications": [
+    "Wind energy production is skewed toward a small number of high-wind periods, which may or may not align with periods of high power demand, making the value of wind energy hard to forecast."
+   ],
+   "common_misunderstandings": [
+    "Wind power output does not scale linearly with wind speed; a modest wind-speed increase can imply a much larger jump in generation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind variability and grid balancing",
+    "Capacity factor"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "462-463",
+    "section_hint": "Wind Energy"
+   }
+  },
+  {
+   "topic": "Wind farm siting criteria",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "concept",
+   "definition": "A good wind farm site needs consistent wind, sufficiently high wind speeds, and enough available land for the installation.",
+   "core_idea": "Coastlines and flat plains are generally the most attractive wind farm locations, while mountainous or uneven terrain is less attractive due to limited space and unpredictable wind behavior.",
+   "key_points": [
+    "Three siting criteria: consistency of wind, sufficient wind speed, and adequate land availability.",
+    "Coastlines and flat plains are typically the easiest locations to develop.",
+    "Mountains/uneven terrain are less attractive because of space constraints and unpredictable wind.",
+    "The U.S. National Renewable Energy Laboratory (NREL) is the primary source of U.S. wind resource data, building on long-standing government wind research originally done for aviation purposes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to turbine spacing/wake effects, which further constrains site layout"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Turbine wake effects and maintenance",
+    "Wind turbines and wind farms"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "462-463",
+    "section_hint": "Wind"
+   }
+  },
+  {
+   "topic": "Turbine wake effects and wind farm maintenance burden",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "risk",
+   "definition": "Densely packed wind turbines create turbulent wake effects that stress downwind units, while turbines' remote locations make maintenance logistically difficult and costly.",
+   "core_idea": "A single turbine experiences predictable airflow, but when many are clustered, upwind turbines create chaotic turbulence that puts unpredictable structural stress on downwind turbines, pushing wind farm layouts toward long, spread-out lines that raise aesthetic objections.",
+   "key_points": [
+    "Prolonged high-wind torque can deform a turbine's superstructure over time.",
+    "Turbulence from upwind turbines causes chaotic airflow and unpredictable stress on downwind turbines, especially when units are close together.",
+    "This pushes wind farm design toward spreading turbines out in long lines (potentially tens to 100+ miles), which raises aesthetic/visual objections.",
+    "Remote siting complicates maintenance: specialized technicians, vehicles, and tools (e.g., oil-carrying trucks, portable elevators) must be brought to often-inaccessible locations, and workers may need to climb ~20-story towers."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to wind farm siting criteria"
+   ],
+   "trading_implications": [
+    "Higher and more complex maintenance costs relative to other generation technologies should be factored into wind asset economics."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Wind farm siting criteria"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "463-464",
+    "section_hint": "Installation and Maintenance"
+   }
+  },
+  {
+   "topic": "Capacity factor for wind generation",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "formula",
+   "definition": "Capacity factor is the ratio of a wind unit's actual energy production to the maximum energy it could theoretically produce running at full nameplate capacity continuously over the same period.",
+   "core_idea": "Capacity factor is the standard metric for describing how much of a wind unit's theoretical maximum output is actually realized, and typical values are well below 100% due to wind's intermittency.",
+   "key_points": [
+    "A 100 MW unit running at 100% capacity all year would theoretically produce 876,000 MWh (365 days \u00d7 24 hours \u00d7 100 MW).",
+    "A unit producing half of that theoretical maximum has a 50% capacity factor.",
+    "A typical well-sited wind turbine has an annual capacity factor around 35%.",
+    "Particularly good sites (e.g., offshore in windy areas) can reach capacity factors as high as 40%."
+   ],
+   "formulas": [
+    {
+     "name": "Capacity Factor",
+     "formula": "Capacity Factor = Actual Energy Produced / (Nameplate Capacity \u00d7 Hours in Period)",
+     "variables": {
+      "Actual Energy Produced": "measured energy output over the period (MWh)",
+      "Nameplate Capacity": "rated maximum output of the unit (MW)",
+      "Hours in Period": "number of hours in the measurement period"
+     }
+    }
+   ],
+   "relationships": [
+    "Related to wind's cube-law variability and seasonal/diurnal wind patterns"
+   ],
+   "trading_implications": [
+    "Capacity factor gives a baseline expectation for average wind output that can inform forward valuation, though actual output remains highly variable hour to hour."
+   ],
+   "common_misunderstandings": [
+    "A 35% typical capacity factor does not mean wind produces steadily at 35% of nameplate; output is still bursty, the capacity factor is just the average over the period."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Seasonal and diurnal wind production patterns",
+    "Wind energy cube-law relationship"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "464-465",
+    "section_hint": "Typical Wind Production"
+   }
+  },
+  {
+   "topic": "Seasonal and diurnal patterns in wind production",
+   "category": "Power Markets",
+   "subcategory": "Wind Power",
+   "type": "concept",
+   "definition": "Wind output in the U.S. tends to follow predictable seasonal and daily patterns: generally higher in winter and overnight, lower in summer and midday, though exact timing varies by location.",
+   "core_idea": "Average monthly wind capacity factors in the U.S. are typically higher in winter (roughly 40-50%) and lower in summer (roughly 20%), and within a day, wind speeds are typically highest overnight and lowest around midday.",
+   "key_points": [
+    "U.S. wind output is generally lowest in summer months and highest in winter months.",
+    "Average monthly capacity factors in winter are commonly 40-50%.",
+    "Average monthly capacity factors in summer can be much lower, around 20%.",
+    "Exact seasonal timing varies by specific location.",
+    "Within a day, wind speeds are typically highest overnight and lowest during the middle of the day."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Refines the capacity factor concept with seasonal/diurnal granularity"
+   ],
+   "trading_implications": [
+    "Seasonal and diurnal wind patterns can misalign with typical demand peaks (e.g., summer afternoon demand peaks coincide with lower wind output), which is relevant when valuing wind's contribution to meeting load."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity factor for wind generation"
+   ],
+   "source": {
+    "chapter": 21,
+    "pages": "465-467",
+    "section_hint": "Typical Wind Production"
+   }
+  }
+ ]
+}

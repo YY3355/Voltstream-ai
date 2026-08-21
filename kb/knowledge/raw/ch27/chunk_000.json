@@ -1,0 +1,191 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Why natural gas requires storage",
+   "category": "Natural Gas",
+   "subcategory": "Storage Fundamentals",
+   "type": "concept",
+   "definition": "Because natural gas is a gas rather than a liquid, it disperses unless kept in a sealed, pressurized location, and holding an economically meaningful amount requires very large storage volumes.",
+   "core_idea": "Gas takes up far more space than an energy-equivalent liquid fuel, so economically useful storage requires either huge volumes or high pressure, which is why underground reservoirs (with their vast natural capacity) became the dominant storage method.",
+   "key_points": [
+    "Storing the energy equivalent of one gallon of gasoline as natural gas at atmospheric pressure takes about 900 gallons of storage space.",
+    "Pressurizing the gas reduces the space needed but still requires a very large facility.",
+    "Underground reservoirs are the most common storage location because of their large natural capacity."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Drives the use of depleted reservoirs, salt caverns, and aquifers as storage types"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Storage facility types",
+    "Base gas vs working gas"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "522-522",
+    "section_hint": "5.2 Summary"
+   }
+  },
+  {
+   "topic": "Economic role of storage facilities",
+   "category": "Natural Gas",
+   "subcategory": "Storage Fundamentals",
+   "type": "concept",
+   "definition": "Storage facility owners profit by buying gas when it is cheap, holding it, and selling it when prices rise, and this buying/selling behavior also balances the continuous, inflexible flow requirements of pipelines against cyclical consumer demand.",
+   "core_idea": "Because pipelines must keep delivering gas continuously and can't be shut off, and demand for gas is highly cyclical, storage facilities absorb gas during low-demand periods and release it during high-demand periods, which is also the source of their trading value.",
+   "key_points": [
+    "Pipelines cannot completely shut down and must maintain a constant flow, even though the rate can be adjusted somewhat.",
+    "Demand for gas is highly cyclical, so supply leaving a pipeline seldom matches regional demand precisely.",
+    "Storage facilities take in surplus gas during oversupply and deliver gas during shortages, effectively buying cheap and selling high.",
+    "Natural gas is chemically stable, nontoxic, and doesn't spoil, making it safe to store for extended periods without environmental risk from leaks."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies common storage trading strategies (time-of-day, weekday/weekend, seasonal spreads)"
+   ],
+   "trading_implications": [
+    "Common storage-related trading opportunities include nights versus days, weekends versus weekdays, and shoulder months versus peak demand months."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage valuation",
+    "Seasonal and diurnal spread trading"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "522-523",
+    "section_hint": "5.2 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "Types of natural gas storage facilities and their location pattern",
+   "category": "Natural Gas",
+   "subcategory": "Storage Infrastructure",
+   "type": "market_mechanic",
+   "definition": "Natural gas is stored in depleted gas reservoirs (the most common type), salt caverns, and aquifers, which differ in construction cost, storage capacity, and injection/withdrawal speed; gas is often stored at multiple points along its path from producing to consuming regions.",
+   "core_idea": "Different underground geologies produce storage facilities with different cost, capacity, and speed tradeoffs, and gas typically passes through storage near production (e.g., the U.S. Gulf Coast) and again near the consuming region before final delivery.",
+   "key_points": [
+    "Depleted gas reservoirs are underground caverns that once held natural gas and can be reused by pumping gas back in.",
+    "Salt caverns and aquifers are other common storage facility types.",
+    "Facilities differ in construction cost, storage quantity, and injection/withdrawal speed depending on local geology.",
+    "Gas commonly passes through a first set of storage facilities near producing regions (e.g., the U.S. Gulf Coast near refineries and pipeline hubs) and a second set near the consuming region before final delivery."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Facility geology determines base gas requirements and withdrawal speed"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Base gas vs working gas",
+    "Compression mechanics"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "523-524",
+    "section_hint": "5.2 Key Topics"
+   }
+  },
+  {
+   "topic": "Base gas (cushion gas) versus working gas",
+   "category": "Natural Gas",
+   "subcategory": "Storage Operations",
+   "type": "concept",
+   "definition": "Extractable gas in a storage facility is split into base gas, which maintains enough pressure to withdraw gas at a reasonable rate and is rarely removed, and working gas, which is the gas normally injected and withdrawn for supply/demand balancing.",
+   "core_idea": "Because withdrawal speed depends on the pressure differential between the facility and the pipeline, operators must trade off holding a larger working-gas volume that can only be withdrawn slowly against a smaller volume that can be withdrawn quickly, using base gas to sustain that pressure.",
+   "key_points": [
+    "Gas withdrawal speed depends on the relative pressure between the storage facility and the pipeline; withdrawal is easy when the facility is nearly full and gets progressively slower as pressure drops.",
+    "Base (cushion) gas exists to maintain enough pressure to extract working gas at a reasonable speed and is rarely removed during normal operation.",
+    "During peak demand, some base gas can be removed and delivered as working gas, but doing so lowers facility pressure and slows future withdrawal rates.",
+    "Operators generally keep a fixed base gas cushion over the long run to meet performance (withdrawal rate) targets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Determines a facility's usable capacity and withdrawal-rate performance"
+   ],
+   "trading_implications": [
+    "The tradeoff between working gas volume and withdrawal speed affects how much gas a facility can reliably supply during peak demand, which factors into storage valuation."
+   ],
+   "common_misunderstandings": [
+    "Base gas is not simply unusable dead space \u2014 it can be tapped during peak demand, but at the cost of degraded future withdrawal performance."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Compression and injection mechanics",
+    "Storage facility valuation"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "524-525",
+    "section_hint": "5.2 Key Topics"
+   }
+  },
+  {
+   "topic": "Mechanics of injecting gas into storage via compression",
+   "category": "Natural Gas",
+   "subcategory": "Storage Operations",
+   "type": "market_mechanic",
+   "definition": "Since gas naturally flows from high to low pressure, moving gas into a storage facility (which is kept at higher pressure than the pipeline to maximize capacity) requires artificially creating high pressure through compression, analogous to a vacuum cleaner pulling gas from the pipeline and pushing it into storage.",
+   "core_idea": "A compressor applies suction to the pipeline and delivers gas at high pressure into the storage facility; as the facility fills and pushes back against the compressor, more compression is needed to maintain the same injection rate until the facility's maximum safe pressure is reached and injection must stop.",
+   "key_points": [
+    "Storage facilities are kept at higher pressure than the pipeline to maximize the amount of gas stored in a limited space.",
+    "A compressor creates suction on the pipeline side and high pressure on the storage side, pulling gas out of the lower-pressure pipeline into the higher-pressure storage.",
+    "As long as the compressor's output pressure exceeds the storage pressure, gas flows into storage rather than back into the pipeline.",
+    "As the facility fills, it pushes back against the compressor, requiring more compression to maintain the same injection rate.",
+    "Injection must stop once the facility reaches its maximum safe pressure.",
+    "When suction is turned off, the connection between the storage facility and the pipeline must be closed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Explains why injection/withdrawal rates change as a facility fills or empties"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Base gas vs working gas"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "525-526",
+    "section_hint": "Inserting and Removing Gas from a Storage Facility"
+   }
+  },
+  {
+   "topic": "Difficulty of valuing a natural gas storage facility",
+   "category": "Natural Gas",
+   "subcategory": "Storage Valuation",
+   "type": "concept",
+   "definition": "The economic value of a storage facility is hard to calculate precisely because it depends on a path-dependent option calculation, so simpler approximations such as intrinsic value are commonly used instead.",
+   "core_idea": "A storage facility's value comes from the optionality of when to inject and withdraw gas over time, which makes exact valuation a path-dependent option problem; practitioners commonly substitute simpler approximations like intrinsic value.",
+   "key_points": [
+    "Precise valuation of a storage facility requires a path-dependent option calculation.",
+    "Because exact valuation is complex, approximations such as intrinsic value are commonly used in practice."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects storage economics to option pricing concepts used elsewhere in the text"
+   ],
+   "trading_implications": [
+    "Traders and analysts often rely on intrinsic value as a practical approximation rather than solving the full path-dependent option problem."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Economic role of storage facilities",
+    "Options"
+   ],
+   "source": {
+    "chapter": 27,
+    "pages": "522-523",
+    "section_hint": "5.2 Key Topics"
+   }
+  }
+ ]
+}

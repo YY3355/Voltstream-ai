@@ -1,0 +1,308 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Correlation between power and fuel prices drives tolling agreement value",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "concept",
+   "definition": "A tolling agreement (physical spark spread option) gains value from volatility in the spread between electricity and fuel prices, and that volatility is largely governed by how correlated power and fuel prices are.",
+   "core_idea": "Because the plant owner can simply not run the plant when the spread is unfavorable, wide swings in the power/fuel relationship help the owner (upside is captured, downside is capped at zero). Tightly correlated power and fuel prices compress the spread's volatility and therefore reduce the plant's option value; even small shifts in the assumed correlation can swing the valuation a lot.",
+   "key_points": [
+    "Extreme moves in the spread benefit the tolling agreement owner because the plant can be shut off to avoid losses.",
+    "High correlation between power and fuel prices means low spread volatility and thus lower option value.",
+    "Small changes in assumed correlation can produce large changes in valuation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Spark spread option value depends on spread volatility, which depends on correlation between power and gas prices"
+   ],
+   "trading_implications": [
+    "When modeling a tolling deal, the correlation assumption between power and gas deserves as much scrutiny as the price forecasts themselves, since it is a primary value driver.",
+    "Desks should stress-test valuations against a range of correlation assumptions rather than relying on a single point estimate."
+   ],
+   "common_misunderstandings": [
+    "It's tempting to think of high volatility as risk to be minimized, but for an option holder with a shutdown right, higher spread volatility is a benefit, not a danger."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread options",
+    "Optionality",
+    "Heat rate"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "433-434",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Intrinsic value vs. optionality value in a tolling agreement",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "concept",
+   "definition": "A tolling agreement's value has two parts: intrinsic value, locked in today by hedging fuel purchases and power sales in the forward market, and additional value from the uncertainty of future prices, since the plant's downside is capped by the ability to shut down.",
+   "core_idea": "The plant is guaranteed at least its intrinsic value (its value if operating decisions were locked in immediately via forward contracts), but it is worth more than that because uncertainty about future prices is favorable to an option holder whose losses are capped.",
+   "key_points": [
+    "Intrinsic value can be realized immediately by arranging firm forward purchases of fuel and forward sales of power.",
+    "The remaining value comes from optionality: a roughly even chance of extra profit is attractive when the downside is simply 'don't run' rather than an additional cash outlay."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Total tolling value = intrinsic value + optionality (time) value"
+   ],
+   "trading_implications": [
+    "Even a plant with an unattractive current forward spread can carry meaningful value from optionality alone, so valuation should not stop at the intrinsic (forward-locked) calculation."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option intrinsic value",
+    "Real options"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "433-434",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Valuation date vs. expiration date for a tolling option",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "definition",
+   "definition": "The valuation date is when the option's value is calculated; the expiration date is the day the plant actually converts fuel into electricity and the operating decision becomes irreversible.",
+   "core_idea": "Up until expiration, the operator retains flexibility to change the run/don't-run decision; exercising the option means locking in a permanent operating choice, and it is generally best to defer that decision as long as possible to preserve flexibility.",
+   "key_points": [
+    "Before expiration, the operating decision can still be revised.",
+    "After expiration, the decision is locked in and cannot be changed.",
+    "Delaying the final decision is usually preferable because it preserves optionality."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Time between valuation and expiration affects the width of the spread distribution, and thus option value"
+   ],
+   "trading_implications": [
+    "Operators should avoid committing to a dispatch decision earlier than necessary, since flexibility itself has value."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option expiration",
+    "Real options",
+    "Dispatch decisions"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "434",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Spread distribution around the forward spread and heat-rate-determined profitability",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "concept",
+   "definition": "At expiration, the realized power-fuel spread is treated as a random draw from a statistical distribution centered on today's forward spread; the plant's heat rate (efficiency) determines which realized spreads are profitable to dispatch against.",
+   "core_idea": "Today's forward spread is only a best estimate \u2014 the actual spread at expiration will likely differ, scattering around that forward value. Whether a given realized spread is profitable to run the plant against depends on the plant's heat rate, which sets the break-even spread.",
+   "key_points": [
+    "The forward spread is today's prediction of the future power/fuel spread.",
+    "The actual spread at expiration is unlikely to exactly match the forward spread but tends to cluster around it.",
+    "Heat rate determines the boundary between spreads that make running the plant profitable versus unprofitable."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Forward spread anchors the distribution; heat rate determines the profitable region of that distribution"
+   ],
+   "trading_implications": [
+    "Valuation models need a distribution of possible spreads, not just the single forward point, plus the plant's heat rate to classify which outcomes trigger dispatch."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heat rate",
+    "Forward curve",
+    "Spark spread"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "434-435",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Expected profit per megawatt from profitable spread scenarios",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "formula",
+   "definition": "The expected profit from a tolling agreement scenario is derived by averaging only the profitable portion of the spread distribution and scaling by the plant's dispatch capacity.",
+   "core_idea": "At expiration, only the spreads above the plant's break-even (profitable) point matter; averaging those profitable spreads gives a profit-per-MW figure, and multiplying by the dispatch rate (MW) gives the total expected profit for that scenario.",
+   "key_points": [
+    "Only spreads in the profitable region of the distribution are used in the average \u2014 unprofitable spreads are excluded because the plant would simply not run.",
+    "Total expected profit scales linearly with the plant's dispatch rate (its MW capacity)."
+   ],
+   "formulas": [
+    {
+     "name": "Expected profit from a dispatch scenario",
+     "formula": "Expected Profit = Average(Profitable Spreads) \u00d7 Dispatch Rate",
+     "variables": {
+      "Average(Profitable Spreads)": "average price ($/MWh) across only the spread outcomes where running the plant is profitable",
+      "Dispatch Rate": "plant output capacity in megawatts (MW)"
+     }
+    }
+   ],
+   "relationships": [
+    "Depends on the spread distribution described in the prior item and the plant's heat-rate-determined profitability threshold"
+   ],
+   "trading_implications": [
+    "This is the basic building block of a spark spread option valuation model: identify the profitable tail of the distribution, average it, then scale by capacity."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Heat rate",
+    "Dispatch rate",
+    "Monte Carlo valuation"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "434-435",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Wider spread distributions increase spread option value (asymmetric payoff)",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "concept",
+   "definition": "Because a spread option's downside is capped at zero (the plant just doesn't run) while its upside is uncapped, a wider distribution of possible expiration spreads raises the option's expected value.",
+   "core_idea": "The asymmetric payoff shape means increased dispersion in outcomes benefits the option holder: the extra chance of a large favorable spread outweighs the extra chance of an unfavorable one, since unfavorable outcomes cost nothing beyond not operating.",
+   "key_points": [
+    "Loss is bounded at zero; gains are theoretically unbounded, creating payoff asymmetry.",
+    "A wider distribution of possible expiration spreads increases expected profit per megawatt.",
+    "This is a general property of options, applied here specifically to spread/tolling options."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distribution width is itself driven by time-to-expiration and correlation, per the following item"
+   ],
+   "trading_implications": [
+    "Higher expected volatility in the power-fuel relationship should be treated as value-additive for a plant owner, all else equal, not purely as a risk to hedge away."
+   ],
+   "common_misunderstandings": [
+    "One might assume wider price uncertainty is symmetric risk; for a capped-downside asset like a dispatchable plant, wider uncertainty is asymmetrically beneficial."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option volatility sensitivity (vega)",
+    "Payoff asymmetry"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "435",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Time-to-expiration and correlation set the width of the spread distribution",
+   "category": "Derivatives",
+   "subcategory": "Tolling Agreements / Spark Spread Options",
+   "type": "concept",
+   "definition": "The dispersion of possible expiration spreads around the forward spread is driven by two factors: how much time remains between the valuation date and expiration, and how correlated power and gas prices are.",
+   "core_idea": "Highly correlated power and gas prices keep the realized spread tightly clustered near the forward spread \u2014 in the extreme case of perfect correlation, there is no distribution at all since the spread never changes. Lower correlation produces a wider distribution of possible outcomes.",
+   "key_points": [
+    "Perfectly correlated power and gas prices would eliminate spread uncertainty entirely (no bell curve).",
+    "Lower correlation widens the distribution of possible spreads.",
+    "Time between valuation and expiration is the other driver of distribution width."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds directly into the previous item: wider distribution (from lower correlation or more time) increases option value"
+   ],
+   "trading_implications": [
+    "A correlation assumption near 1.0 should be treated with skepticism in a spark spread valuation, since it implies almost no time value in the option \u2014 a claim that rarely reflects real gas/power dynamics."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Volatility term structure",
+    "Correlation risk"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "435",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  },
+  {
+   "topic": "Spark spread option models can overstate real plant profitability",
+   "category": "Risk",
+   "subcategory": "Tolling Agreements / Model Risk",
+   "type": "risk",
+   "definition": "Spread option models simplify a physical power plant into an instantaneous on/off decision, ignoring real operating constraints, which can lead the model to overestimate the plant's true profitability, sometimes materially.",
+   "core_idea": "Real plants cannot start instantly (ramp-up/cycling time), incur variable operating costs, may need more fuel and time to start in cold weather, and are subject to local reliability rules \u2014 none of which a basic spread option model captures. This can overestimate profitability by roughly 20-30% if unchecked, and such errors can silently propagate into downstream systems like value-at-risk calculations for years.",
+   "key_points": [
+    "Models assume instantaneous decisions; real plants have ramp-up/cycling time that varies seasonally (e.g., slower/more fuel-intensive starts in winter).",
+    "Variable operating costs and local grid-reliability rules are hard to quantify and often excluded from the option model.",
+    "Overestimation of profitability from overoptimistic assumptions can reach 20-30%.",
+    "Such modeling errors can propagate into other risk systems (e.g., VaR) undetected for extended periods."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Compounds with the 'reactive dispatch' limitation described in the next item"
+   ],
+   "trading_implications": [
+    "Valuation and risk teams should explicitly haircut or stress-test spark spread model outputs against known physical constraints (ramp time, startup fuel, seasonal effects) rather than trusting the idealized instantaneous-dispatch output.",
+    "Any VaR or P&L system fed by spark spread valuations should be periodically audited against realized plant performance to catch drift from overoptimistic assumptions."
+   ],
+   "common_misunderstandings": [
+    "Treating a spark spread option valuation as equivalent to a realistic operating forecast, when it is a simplified upper-bound-leaning approximation."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Value-at-risk",
+    "Ramp rate",
+    "Model risk"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "435-436",
+    "section_hint": "4.3 Tolling Agreements \u2014 Dangers to Using Options"
+   }
+  },
+  {
+   "topic": "Reactive dispatch assumption in spark spread models understates anticipatory operating strategy",
+   "category": "Risk",
+   "subcategory": "Tolling Agreements / Model Risk",
+   "type": "risk",
+   "definition": "Standard spread option models assume a plant reacts mechanically to the current price spread (run if profitable, off if not), whereas real operators may deliberately run at a loss in some periods to position the plant to capture larger profits later.",
+   "core_idea": "Because real-world optimal dispatch can be anticipatory rather than purely reactive, a model that only reacts to today's spread can misstate the true optimal operating strategy and its value; the size of this problem varies by generator and by how operating scenarios are chosen, with no single universal fix.",
+   "key_points": [
+    "Reactive models turn the plant on/off purely based on the current spread, ignoring forward-looking positioning.",
+    "Real operators may accept short-term losses to enable larger future gains (e.g., anticipating a price change).",
+    "The materiality of this simplification differs generator by generator and depends on how operating scenarios are constructed; the author does not offer one general correction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A second, distinct source of model risk alongside the physical-constraint omissions in the previous item"
+   ],
+   "trading_implications": [
+    "When building or reviewing a dispatch/valuation model, consider whether scenario design should include forward-looking (anticipatory) dispatch logic rather than purely reactive rules, especially for generators where start-up costs or grid commitments make anticipation valuable."
+   ],
+   "common_misunderstandings": [
+    "Assuming a 'reactive' on/off model is a neutral simplification; the author frames it as a real source of valuation error whose size is generator-specific."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Dispatch optimization",
+    "Model risk",
+    "Scenario design"
+   ],
+   "source": {
+    "chapter": 18,
+    "pages": "436",
+    "section_hint": "4.3 Tolling Agreements \u2014 Dangers to Using Options"
+   }
+  }
+ ]
+}

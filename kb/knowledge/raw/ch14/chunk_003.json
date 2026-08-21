@@ -1,0 +1,235 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Black Scholes formula",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "A closed-form equation for pricing European-style stock options, developed by Fisher Black, Myron Scholes, and Robert Merton (Nobel Prize-winning work).",
+   "core_idea": "Given five inputs \u2014 underlying price, strike price, volatility, risk-free rate, and time to expiration \u2014 the formula directly returns an option price without iteration, which is what made option pricing accessible to ordinary investors rather than only specialists.",
+   "key_points": [
+    "Takes exactly five variables: underlying price, strike price, volatility, risk-free interest rate, time to expiration.",
+    "Produces a unique, direct answer once the variables are plugged in.",
+    "Its creators won a Nobel Prize for this work.",
+    "Opened option trading up to general investors by removing the need to understand the underlying math."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis for the broader family of 'Black Scholes genre' models"
+   ],
+   "trading_implications": [
+    "Traders can price options quickly using only observable/quotable market inputs, without needing to understand the derivation."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Closed form solution",
+    "Black Scholes genre option models",
+    "Implied volatility"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "361-362",
+    "section_hint": "3.5 Option Pricing"
+   }
+  },
+  {
+   "topic": "Closed form vs. open form solutions",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "Two different approaches to solving for an option's value: a closed form solution plugs variables into a fixed equation for an instant answer; an open form solution converges on an answer through repeated computer iteration.",
+   "core_idea": "Closed form solutions (like Black Scholes) are fast to use but mathematically complex and can obscure intuition; open form solutions (like binomial trees) are slower and depend on the number of iterative steps chosen, but are conceptually simpler and rest on fewer assumptions.",
+   "key_points": [
+    "Closed form solution: substitute variables into a formula for a fast, exact answer; downside is the underlying math can be too complex to build intuition from, even for someone with an advanced math PhD.",
+    "Open form solution: must be solved iteratively by computer (e.g., a binomial tree); accuracy improves and converges toward the correct answer as more periods/steps are used.",
+    "Open form solutions are more time-intensive to calculate but require only high-school/undergraduate-level math to understand.",
+    "Open form solutions depend on fewer assumptions than closed form solutions, so using one requires 'less of a leap of faith.'"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Binomial tree model is the author's example of an open form solution",
+    "Black Scholes formula is the primary example of a closed form solution"
+   ],
+   "trading_implications": [
+    "Choice between closed and open form approaches trades off speed/ease of use against transparency and assumption dependence."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes formula",
+    "Binomial tree"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "361-362",
+    "section_hint": "3.5 Option Pricing \u2014 Open and Closed Form Solutions"
+   }
+  },
+  {
+   "topic": "Black Scholes assumptions for energy/futures-based options",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "A set of six market-behavior assumptions the original Black Scholes formula relies on, which the author notes are generally reasonable for energy options based on futures/forwards rather than the physical commodity.",
+   "core_idea": "The formula assumes prices are unpredictable random walks with no jumps, trading is frictionless and continuous, borrowing/lending happens at one constant risk-free rate, holding the underlying has no cost or benefit, and no arbitrage persists; if these don't hold, the formula gives wrong or inaccurate prices.",
+   "key_points": [
+    "1) The underlying's future price is best estimated by its current price (a Martingale process \u2014 no predictable drift beyond that).",
+    "2) The underlying can be bought and sold without large transaction costs or taxes.",
+    "3) Trading is continuous with no price jumps (no skipping over intermediate untradeable prices).",
+    "4) Borrowing and lending occur at the same risk-free rate, constant over the option's life.",
+    "5) Holding the underlying carries no benefit or penalty (no dividends, no storage cost).",
+    "6) No arbitrage opportunities persist, since they would be exploited too quickly to matter.",
+    "These assumptions are generally reasonable for energy options based on futures/forwards rather than the physical commodity.",
+    "If the assumptions aren't met, the formula becomes inaccurate or wrong, and not every option can be reasonably approximated this way \u2014 such options typically need a variant of the binomial tree approach instead."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why energy options are often priced with Black-76 rather than the plain-vanilla Black Scholes model"
+   ],
+   "trading_implications": [
+    "Before applying Black Scholes-style pricing to an energy option, check whether it is forward/futures-based (assumptions more likely to hold) versus spot-commodity-based (assumptions may break down, requiring an alternative model)."
+   ],
+   "common_misunderstandings": [
+    "Assuming Black Scholes is universally valid for any option; the author is explicit that it will be wrong when its assumptions aren't met."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes genre option models",
+    "Black 76"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "362-363",
+    "section_hint": "3.5 Option Pricing"
+   }
+  },
+  {
+   "topic": "General assumptions of Black Scholes genre models",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "A broader set of five market assumptions shared by the whole family of Black Scholes-derived option models, distinct from (but overlapping with) the original formula's specific list.",
+   "core_idea": "All Black Scholes genre models assume markets are arbitrage-free, frictionless and continuously tradable, that a constant risk-free borrowing/lending rate exists, that prices follow geometric Brownian motion (lognormal distribution), and that volatility stays constant over the option's life.",
+   "key_points": [
+    "Arbitrage-Free Markets: traders maximize profit and don't let riskless arbitrage opportunities persist.",
+    "Frictionless, Continuous Markets: any amount of the underlying can be bought/sold at any time with no transaction costs.",
+    "Risk-Free Rates: money can be borrowed and lent at a risk-free rate.",
+    "Lognormally Distributed Price Movements: prices follow geometric Brownian motion.",
+    "Constant Volatility: volatility is assumed constant across the option's life."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Shared foundation across Black Scholes (stocks), Merton, Black 76, Asay, and Garman-Kohlhagen models"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes genre option models",
+    "Black Scholes assumptions for energy/futures-based options"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "363",
+    "section_hint": "3.5 Option Pricing \u2014 Black Scholes Genre Option Models"
+   }
+  },
+  {
+   "topic": "Black Scholes genre option model variants",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "A family of option pricing models built on the original Black Scholes formula, mathematically nearly identical, differing mainly in how the option's expiration-date value is discounted/converted back to a present valuation-date value depending on what kind of underlying is being priced.",
+   "core_idea": "Each variant adapts the starting-price assumption to a different underlying: stocks starting at spot and drifting up at the risk-free rate, dividend-paying stocks, forward-priced commodities, daily-margined futures, or FX pairs with two currencies' interest rates \u2014 with Black 76 being the variant most used in energy markets.",
+   "key_points": [
+    "Black Scholes (Stocks): the original model; the underlying is common stock traded at its spot (present) price, which drifts upward over time at the risk-free rate.",
+    "Merton (Stocks with Continuous Dividend Yield): adjusts for dividends, which reduce option value since the option holder doesn't receive dividends until exercise.",
+    "Black 76 (Commodity Futures): the underlying trades at a forward price that must be present-valued, rather than a spot price that drifts upward; this is the variant most heavily used in energy markets.",
+    "Asay (Exchange Traded Futures): similar to Black 76 but skips present-valuing prices because of daily margining.",
+    "Garman-Kohlhagen (FX Futures): used for FX options; each currency in the pair is discounted using its own interest rate.",
+    "Because forward/futures-based options (as in Black 76) have no benefit to early exercise, standard Black Scholes assumptions can be reused just by changing the underlying's starting price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "All build on the original Black Scholes (stocks) formula and share its general assumptions"
+   ],
+   "trading_implications": [
+    "Energy option traders should default to thinking in terms of Black 76 (forward/futures-based) rather than the plain stock-based Black Scholes model, since most energy options are written on futures/forwards."
+   ],
+   "common_misunderstandings": [
+    "Treating all Black Scholes genre models as the same formula; the author stresses they differ chiefly in how the expiration value is converted to present value, not in overall structure."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cost of carry",
+    "General assumptions of Black Scholes genre models"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "363-364",
+    "section_hint": "3.5 Option Pricing \u2014 Black Scholes Genre Option Models"
+   }
+  },
+  {
+   "topic": "Cost of carry (generalized Black Scholes)",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "concept",
+   "definition": "The term 'b' in the generalized Black Scholes formula that represents the cost of holding, or 'carrying,' a position, and is the key parameter that differentiates the various Black Scholes genre formulas from each other.",
+   "core_idea": "Cost-of-carry payments (borrowed from bond-market terminology) accrue to whoever owns the underlying asset, not the option holder, so they reduce the option's value; varying this single term is what converts the generalized formula into the specific stock, dividend, futures, or FX variants.",
+   "key_points": [
+    "Cost of carry (b) is the term that differentiates Black Scholes genre formulas from one another.",
+    "The concept originates in the bond market and refers to the cost of holding a position.",
+    "Carry payments go to the owner of the underlying, not the owner of the option, which is why they reduce option value."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguishes Black Scholes (stocks), Merton, Black 76, Asay, and Garman-Kohlhagen from one another"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Black Scholes genre option model variants"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "365",
+    "section_hint": "3.5 Option Pricing \u2014 Figure 3.5.13"
+   }
+  },
+  {
+   "topic": "Implied volatility as the hard input",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing",
+   "type": "definition",
+   "definition": "Implied volatility (\u03c3) is the one input to the generalized Black Scholes formula that isn't directly observable in the market and must instead be backed out from recently traded option prices.",
+   "core_idea": "While most generalized Black Scholes inputs are readily available contract terms or market prices, volatility is the exception \u2014 it has to be estimated from other options' trading prices rather than read off directly.",
+   "key_points": [
+    "Most terms in the generalized Black Scholes formula are either stated in the option contract or observable market prices.",
+    "Implied volatility is the one term that is difficult to obtain directly.",
+    "It is typically calculated using the prices of other, recently traded options."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Input to the generalized Black Scholes formula"
+   ],
+   "trading_implications": [
+    "Since volatility must be inferred rather than observed, its estimation quality directly affects the reliability of any Black Scholes genre price."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; author notes implied volatility is discussed in greater detail later in the chapter",
+   "related_topics": [
+    "Black Scholes formula",
+    "Cost of carry (generalized Black Scholes)"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "365",
+    "section_hint": "3.5 Option Pricing \u2014 Figure 3.5.12/3.5.14"
+   }
+  }
+ ]
+}

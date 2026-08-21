@@ -1,0 +1,170 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Vega \u2014 sensitivity to volatility",
+   "category": "Derivatives",
+   "subcategory": "Option Greeks",
+   "type": "concept",
+   "definition": "Vega measures how much the value of an option (or an option-heavy portfolio) changes as volatility changes. It matters mainly for portfolios with significant option exposure.",
+   "core_idea": "Because option pricing models assume prices diffuse outward from a starting point, small shifts in that dispersion (volatility) can materially change an option's value, making options highly sensitive to volatility.",
+   "key_points": [
+    "Vega is named after a star in the constellation Lyra, not a Greek letter \u2014 it was adopted into the options 'Greeks' vocabulary because no Greek letter starts with 'v'.",
+    "Options have no downside beyond the premium paid, so a rise in volatility (more chance of a windfall) is unambiguously good for the buyer and bad for the seller.",
+    "An option buyer is described as 'long volatility' (benefits when volatility rises); an option seller is 'short volatility' (benefits when volatility falls)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguished from Theta (time) and Rho (interest rates) as another portfolio sensitivity measure ('Greek')."
+   ],
+   "trading_implications": [
+    "Option buyers want volatility to increase after they establish a position; option sellers want it to stay flat or decline.",
+    "Portfolios heavy in options carry volatility risk that non-option positions do not, and need to be monitored via vega exposure."
+   ],
+   "common_misunderstandings": [
+    "Vega is often assumed to be a Greek letter like the other sensitivities (delta, gamma, theta, rho); the author notes it is not \u2014 it's a star name repurposed for convenience."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Theta",
+    "Rho",
+    "Option pricing (diffusion model)"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 Changes in Volatility (Vega)"
+   }
+  },
+  {
+   "topic": "Theta \u2014 sensitivity to the passage of time",
+   "category": "Derivatives",
+   "subcategory": "Option Greeks",
+   "type": "concept",
+   "definition": "Theta measures how an option's value changes purely due to time passing, holding other factors constant. It captures the erosion of an option's time value as expiration approaches.",
+   "core_idea": "An option's value splits into intrinsic value (what it's worth if exercised right now) and time value (the extra value attributable to time remaining until expiration); time value shrinks as expiration nears, and Theta quantifies that decay.",
+   "key_points": [
+    "More time until expiration generally makes an option more valuable, all else equal, because there is more opportunity for it to become profitable.",
+    "For an out-of-the-money option, a longer time horizon is valuable to the buyer because it gives more chances for the option to move into profitability.",
+    "For an option that is already deep in the money, time value is less significant \u2014 its value is dominated by intrinsic value rather than the optionality embedded in time remaining."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Time value complements intrinsic value in total option value.",
+    "Interacts with Vega: a highly profitable (deep ITM) option is less sensitive to both time and volatility changes than an out-of-the-money option."
+   ],
+   "trading_implications": [
+    "All else equal, option sellers earn a small profit every day that passes (time decay working in their favor) since it becomes less likely they'll owe a large payout.",
+    "Option buyers bleed value daily from time decay and must rely on the underlying moving favorably or volatility rising to offset that cost."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Vega",
+    "Intrinsic value",
+    "Time value"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 The Passage of Time (Theta)"
+   }
+  },
+  {
+   "topic": "Rho \u2014 sensitivity to interest rates",
+   "category": "Derivatives",
+   "subcategory": "Option Greeks",
+   "type": "concept",
+   "definition": "Rho measures how sensitive an asset's value is to changes in interest rates.",
+   "core_idea": "Rho matters most for interest-rate-sensitive instruments like bonds, but it's still relevant to energy trading because energy positions often tie up large amounts of capital for extended periods, making the opportunity cost of capital (the risk-free rate) relevant to their relative attractiveness.",
+   "key_points": [
+    "Rho is generally less important for energy products than for bonds, but not irrelevant.",
+    "Because energy trades can tie up significant capital for a long time, traders must compare the return on an energy investment against alternatives such as risk-free government bonds.",
+    "A given nominal return (e.g., 10% annually) is more attractive when the risk-free rate is low (e.g., 2%) than when it's high (e.g., 20%), since the relative premium over the risk-free alternative shrinks as rates rise."
+   ],
+   "formulas": [],
+   "relationships": [
+    "One of the option/portfolio sensitivity measures alongside Vega and Theta."
+   ],
+   "trading_implications": [
+    "When evaluating capital-intensive energy positions, compare the expected return against the prevailing risk-free rate to judge relative attractiveness, since rho-type interest rate effects change that comparison."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Vega",
+    "Theta",
+    "Cost of capital"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 Interest Rates (Rho)"
+   }
+  },
+  {
+   "topic": "Binomial model: complementary probability of a price decline",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Models",
+   "type": "formula",
+   "definition": "In the binomial framework referenced by the author, prices are modeled as only able to rise or fall, so the probability of a decline is fully determined by the probability of a rise.",
+   "core_idea": "Because the two outcomes (price rises or price falls) are exhaustive and must sum to 100%, the probability of a fall is simply one minus the probability of a rise.",
+   "key_points": [
+    "The model assumes only two possible price directions: up or down.",
+    "This is stated in a footnote tied to the broader option pricing discussion, not derived from the Vega/Theta/Rho text itself."
+   ],
+   "formulas": [
+    {
+     "name": "Complementary probability of decline",
+     "formula": "P(down) = 100% - P(up)",
+     "variables": {
+      "P(up)": "probability price rises (denoted p in source)",
+      "P(down)": "probability price falls, equals 1.0 - p in decimal form"
+     }
+    }
+   ],
+   "relationships": [
+    "Underlies binomial-tree style option pricing models referenced elsewhere in the chapter."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option pricing models",
+    "Binomial trees"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 footnote 2"
+   }
+  },
+  {
+   "topic": "Origin of modern option pricing theory (Black-Scholes-Merton)",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing History",
+   "type": "definition",
+   "definition": "Background note on the Nobel Prize awarded for foundational option pricing work, cited by the author as context for the Greeks framework.",
+   "core_idea": "Myron Scholes and Robert Merton received the 1997 Nobel Prize for option pricing theory; Fischer Black, their collaborator, was not eligible because he died in 1995, though the Nobel committee indicated he would have been a co-winner.",
+   "key_points": [
+    "The author notes Black, Scholes, and Merton were not the sole contributors to option pricing theory, but their work is credited with opening options markets to general investors."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Historical context for the option pricing / Greeks framework discussed in this chapter."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option pricing theory",
+    "Black-Scholes model"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 footnote 1"
+   }
+  }
+ ]
+}

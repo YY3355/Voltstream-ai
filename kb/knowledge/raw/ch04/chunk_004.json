@@ -1,0 +1,385 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Spread trades in natural gas",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A trade structured around the price difference between two related things (locations, products, or time periods) rather than a bet on overall market direction.",
+   "core_idea": "By simultaneously buying one position and selling a related one, a spread trader isolates a specific price relationship and reduces exposure to broad market moves.",
+   "key_points": [
+    "Directional trades bet on the whole market moving up or down; spread trades instead target relative-value differences between two securities.",
+    "Because natural gas prices are cyclical, spread trading is more common in gas markets than pure directional bets.",
+    "Spread trades are popular because they reduce a trader's exposure to overall market direction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Parent concept for location spreads, heat rate trades, time spreads, and swing trades"
+   ],
+   "trading_implications": [
+    "Traders favor spreads to isolate a specific relationship (location, gas-vs-power, time, storage) instead of taking outright market risk."
+   ],
+   "common_misunderstandings": [
+    "Spread trades still carry risk \u2014 just a narrower, relationship-specific risk rather than zero risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "location spreads",
+    "heat rate trades",
+    "time spreads",
+    "swing trades"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Trading and Marketing"
+   }
+  },
+  {
+   "topic": "Location spreads",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A spread trade that speculates on the natural gas price difference between two different geographic locations.",
+   "core_idea": "Because gas transport isn't instantaneous and storage is often limited, regional supply-demand imbalances create price differences between locations that a trader can bet on.",
+   "key_points": [
+    "Natural gas transportation is not instantaneous, and storage capacity is often limited.",
+    "In peak-demand periods, an area's demand can exceed what pipelines or storage can supply, pushing local prices up until more supply arrives.",
+    "Mild weather can reduce demand and create a regional supply glut, causing prices to fall."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A type of spread trade"
+   ],
+   "trading_implications": [
+    "Traders can profit from anticipated regional supply-demand mismatches without taking a view on the overall market direction."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spread trades",
+    "spot and forward markets"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Trading and Marketing"
+   }
+  },
+  {
+   "topic": "Heat rate trades (gas-power price relationship)",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A spread trade that speculates on the relationship between natural gas prices and electricity prices.",
+   "core_idea": "Because power plants convert gas into electricity, the two prices are usually linked, but because different mechanisms set gas prices and power prices, the relationship isn't constant, creating opportunities to trade the divergence.",
+   "key_points": [
+    "Electricity prices generally track natural gas prices because gas-fired plants convert gas into power, keeping the two markets linked most of the time.",
+    "Gas and power prices are determined by different mechanisms, so they don't always move together.",
+    "Traders can benefit from the volatility in this gas-power relationship."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A type of spread trade",
+    "Links the natural gas market to power markets via generation"
+   ],
+   "trading_implications": [
+    "Traders can position on the gas-to-power price relationship diverging or reconverging."
+   ],
+   "common_misunderstandings": [
+    "Gas and power prices are linked but not perfectly correlated at all times."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spread trades",
+    "location spreads"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Trading and Marketing"
+   }
+  },
+  {
+   "topic": "Time spreads",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A spread trade that speculates on the natural gas price difference between two different time periods.",
+   "core_idea": "Because gas demand varies seasonally, traders can bet on the relative price difference between a high-demand and a low-demand period without taking on outright market direction risk.",
+   "key_points": [
+    "Time spreads speculate on the price difference between periods of high and low demand.",
+    "Example: buying winter gas and selling spring gas to bet on a colder-than-normal winter while removing exposure to the overall market direction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A type of spread trade",
+    "Related to the seasonal shape of the forward curve"
+   ],
+   "trading_implications": [
+    "Lets traders express a seasonal-demand view (e.g., a cold winter) without outright market exposure."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spread trades",
+    "forward price seasonality",
+    "swing trades"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Trading and Marketing"
+   }
+  },
+  {
+   "topic": "Swing trades (physical storage arbitrage)",
+   "category": "Natural Gas",
+   "subcategory": "Trading Strategies",
+   "type": "trading_strategy",
+   "definition": "A trade that relies on a trader's physical ability to store natural gas over short periods, buying when demand and price are low and reselling when demand and price are high.",
+   "core_idea": "Because gas demand fluctuates significantly even within a week, a trader with storage access can buy inexpensive gas during low-demand periods and resell it during high-demand periods.",
+   "key_points": [
+    "Pipelines operate continuously, but gas demand varies considerably over short periods such as a week.",
+    "Example: Monday mornings see high demand from industrial restarts and reheating offices after the weekend; late Saturday night sees low demand (no industrial demand, less home heating).",
+    "Executing this strategy requires the physical ability to store natural gas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A type of spread-like trade distinct from spread trades proper",
+    "Distinct from swing swaps/options, which are financial derivatives sharing a similar name"
+   ],
+   "trading_implications": [
+    "Only accessible to traders/entities with physical storage access.",
+    "Captures short-term, demand-driven price volatility."
+   ],
+   "common_misunderstandings": [
+    "\"Swing trade\" (physical storage arbitrage) should not be confused with \"swing swap\"/\"swing option\" (financial derivatives with daily delivery flexibility)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "swing swaps",
+    "swing options",
+    "spread trades"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Trading and Marketing"
+   }
+  },
+  {
+   "topic": "Why natural gas spot and forward markets are distinct",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Natural gas spot markets (immediate delivery) and forward markets (future delivery) are priced by different logic because gas production, transportation, and storage must be arranged in advance.",
+   "core_idea": "Spot prices reflect current on-hand supply and current demand, while forward prices reflect macro-level expectations of the average future supply-demand balance; because near-term supply can't be increased quickly while longer-term supply can, spot markets are substantially more volatile than forward markets.",
+   "key_points": [
+    "If a shortage is expected weeks out, production can usually be increased to meet it.",
+    "If a shortage occurs today, there is no real way to get more supply immediately \u2014 moving large gas volumes into/out of storage or transferring supply from nearby areas on short notice is difficult.",
+    "Forward prices are set by macroeconomic, expected-average supply-demand relationships.",
+    "Spot prices are set by supply currently on hand and current consumer demand.",
+    "As a result, spot markets are substantially more volatile than forward markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the price-certainty term structure and to swing trades (storage-driven exploitation of spot volatility)"
+   ],
+   "trading_implications": [
+    "Traders can exploit spot volatility via storage arbitrage; forward-market participants face less near-term price uncertainty."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "price certainty",
+    "swing trades",
+    "forward price seasonality"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Spot and Forward Markets"
+   }
+  },
+  {
+   "topic": "Why natural gas breaks the storable-commodity forward-pricing model",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Natural gas doesn't fit the classic storable-commodity model where spot and forward markets are linked through buy-and-store arbitrage, because gas requires continuous new production and consumption, is difficult to store and transport, and has no intrinsic value apart from what it's converted into.",
+   "core_idea": "Classic storable commodities (e.g., gold, stock certificates) link spot and forward markets because the asset is never \"used up\" and can be carried forward unaffected by short-term supply-demand shifts; natural gas fails this pattern, so long-term buy-and-hold investing doesn't really work in gas, and the spot/forward relationship that does exist is more complex and less reliable than in other markets.",
+   "key_points": [
+    "In markets where spot and forward prices are linked, the commodity's quantity is roughly constant and it isn't consumed when used (e.g., a gold bar or a stock certificate), so it's unaffected by short-term supply/demand swings.",
+    "Natural gas requires a continuous supply of new production, has constantly shifting consumer demand, and is difficult to store and transport \u2014 breaking that classic linkage.",
+    "Gas has no intrinsic value by itself; only the products of burning it (heat, electricity) are valuable.",
+    "Gas held in storage is generally no easier to deliver than newly extracted gas, unless the storage facility happens to be near a consuming area.",
+    "The most common storage facilities are previously emptied gas wells.",
+    "Consequently, a long-term buy-and-hold gas strategy is essentially a bet on undeveloped gas reserves rather than a genuine investment strategy.",
+    "Traders instead use storage tactically to balance supply and demand over periods under a year (e.g., buying summer gas to sell the following winter).",
+    "The author notes a spot/forward relationship does still exist in natural gas forward prices, but it is more complicated and less reliable than in other (storable-commodity) markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to the spot/forward volatility item and to forward price seasonality"
+   ],
+   "trading_implications": [
+    "Classic cash-and-carry arbitrage used in metals or financial assets doesn't transfer cleanly to natural gas.",
+    "Storage should be treated as a tactical, sub-annual balancing tool rather than a long-term investment vehicle."
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas forward pricing follows the same storage-cost/interest-rate-driven curve as storable commodities like gold.",
+    "Assuming stored gas is a viable long-term investment rather than effectively a bet on undeveloped reserves."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spot and forward markets",
+    "forward price seasonality",
+    "swing trades"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Spot and Forward Markets"
+   }
+  },
+  {
+   "topic": "Swing swaps and swing options",
+   "category": "Natural Gas",
+   "subcategory": "Derivatives",
+   "type": "definition",
+   "definition": "Swing swaps and swing options are natural gas derivatives with daily delivery, distinct from standard futures/forwards/options that deliver over a full month; they are primarily used by utilities to manage volumetric risk.",
+   "core_idea": "These instruments let a utility hedge the risk that customer gas usage deviates from expectations (e.g., a cold snap driving higher-than-forecast consumption), which matters especially when the utility cannot pass higher costs through to consumers.",
+   "key_points": [
+    "Swing swap: exchanges a fixed price (set at the start of the delivery month) for the daily spot price reported by a pricing service.",
+    "Swing option: gives the buyer the right to purchase gas at a price set at the start of the delivery month (commonly referencing a survey such as Platts Inside FERC/IFERC) at any point during that month; these options typically limit how many times the buyer can exercise.",
+    "Both differ from standard swaps/options because the fixed reference price is set at the start of the delivery month rather than negotiated at the time of the trade.",
+    "Volumetric risk is the risk that a utility's customers use more (or less) gas than expected."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Reference price for the fixed leg comes from bidweek surveys",
+    "Similarly named but distinct from physical swing trades"
+   ],
+   "trading_implications": [
+    "Utilities use these instruments to hedge daily consumption variability without predicting exact usage in advance."
+   ],
+   "common_misunderstandings": [
+    "\"Swing swap/option\" (financial derivative, daily delivery, monthly fixed reference price) is distinct from a \"swing trade\" (physical storage arbitrage)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "bidweek",
+    "swing trades",
+    "volumetric risk"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Swing Swaps and Options"
+   }
+  },
+  {
+   "topic": "Bidweek",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "Bidweek is the week prior to the end of each month during which natural gas traders report the fixed prices they've agreed to for delivering gas over the following month; survey firms average these reported transactions into published price indexes.",
+   "core_idea": "Bidweek transactions form the basis for widely referenced monthly gas price benchmarks (e.g., Platts Inside FERC/IFERC), which are in turn used as reference prices for instruments like swing swaps and options.",
+   "key_points": [
+    "Occurs in the week prior to the end of each month.",
+    "Traders report prices for fixed-price gas to be delivered the following month.",
+    "Survey firms (e.g., Platts IFERC and other index providers) average these reported prices.",
+    "Each survey firm's exact methodology varies slightly but is generally documented publicly."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Provides the reference price used by swing swaps and swing options"
+   ],
+   "trading_implications": [
+    "Bidweek-derived indexes serve as the standard reference price for monthly and swing-type gas contracts."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "swing swaps and options"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Bidweek"
+   }
+  },
+  {
+   "topic": "Seasonality of the natural gas forward curve",
+   "category": "Natural Gas",
+   "subcategory": "Forward Curve",
+   "type": "concept",
+   "definition": "Natural gas forward prices are driven by seasonal expectations of supply and demand rather than by the current spot price and storage costs, producing a forward curve that is highly cyclical (high in winter, falling sharply in spring) rather than smoothly upward-sloping.",
+   "core_idea": "Because seasonal supply-demand patterns repeat similarly year to year, the gas forward curve tracks the seasonal shape of consumer demand instead of following the interest-rate/storage-cost-driven slope typical of other storable-commodity forward curves.",
+   "key_points": [
+    "Seasonal supply-demand expectations tend to repeat similarly from year to year.",
+    "Forward prices mirror consumer demand seasonality \u2014 high in winter, falling dramatically in spring.",
+    "This cyclical shape contrasts with markets where forward prices are set by interest rates and storage costs, which tend to produce a different relationship (referenced in the source as Figure 2.1.8)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to time spreads (which trade this seasonal shape) and to the storable-commodity contrast"
+   ],
+   "trading_implications": [
+    "Time-spread traders can structure positions around the expected, recurring seasonal shape of the curve."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "time spreads",
+    "spot and forward markets",
+    "storable-commodity forward pricing contrast"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Forward Prices"
+   }
+  },
+  {
+   "topic": "Price certainty and the term structure of natural gas volatility",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "concept",
+   "definition": "Natural gas prices become less certain (more volatile) the closer they are to the delivery date, which is the opposite of the typical pattern in most other markets.",
+   "core_idea": "Short-term supply disruptions strongly affect near-term/spot prices, but unless the disruption reflects a lasting fundamental shift, it doesn't meaningfully move forward prices; forward prices tend to revert toward levels based on typical consumer demand and expected supply, so volatility is concentrated in the spot market rather than spread across the whole curve.",
+   "key_points": [
+    "Price uncertainty increases as delivery approaches \u2014 near-dated prices are less certain than far-dated ones (referenced in the source as Figure 2.1.9), which the author flags as unusual relative to most other markets.",
+    "Short-term supply disruptions have an outsized effect on near-term/spot prices.",
+    "Large spot price moves generally do not affect future/forward prices unless driven by a lasting fundamental cause.",
+    "Forward prices tend to revert to levels reflecting typical consumer demand and expected supply.",
+    "Overall, spot prices are more volatile than forward prices."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Reinforces the spot/forward market distinction",
+    "Ties to swing trades' ability to exploit short-term spot volatility"
+   ],
+   "trading_implications": [
+    "Near-term/spot positions carry more price risk than forward positions.",
+    "Storage/swing strategies benefit from volatility being concentrated near delivery."
+   ],
+   "common_misunderstandings": [
+    "Assuming natural gas price uncertainty behaves like other markets, where near-term prices are typically more certain than long-dated ones."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "spot and forward markets",
+    "swing trades",
+    "forward price seasonality"
+   ],
+   "source": {
+    "chapter": 4,
+    "pages": "152-156",
+    "section_hint": "Price Certainty"
+   }
+  }
+ ]
+}

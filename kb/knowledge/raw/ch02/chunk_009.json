@@ -1,0 +1,386 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Physical, Spot, Forward, and Financial Markets",
+   "category": "Market Structure",
+   "subcategory": "Market Types",
+   "type": "definition",
+   "definition": "A physical (or spot/cash) market exchanges cash for immediate delivery of a commodity; a forward market arranges exchange of goods or services for a later date; a financial market trades financial instruments like futures or forwards rather than a physical commodity itself.",
+   "core_idea": "Energy markets split along two axes: when delivery happens (spot vs. forward) and whether what's traded is the physical commodity or a financial claim on it. Most energy trading activity happens in the forward market rather than the spot market.",
+   "key_points": [
+    "Physical market, cash market, and spot market are treated as synonyms by the author.",
+    "Forward market = delivery/settlement arranged now for a future date.",
+    "Financial market trades derivative-type products (futures, forwards) as distinct from a market where a physical commodity changes hands for cash.",
+    "The author states most energy trading occurs in the forward market, not the spot market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A trade is broadly defined as any exchange of goods or services, underlying all these market types."
+   ],
+   "trading_implications": [
+    "Because most energy volume trades forward rather than spot, spot prices alone understate the market's real liquidity and price discovery activity."
+   ],
+   "common_misunderstandings": [
+    "Treating 'financial market' as only meaning stocks/bonds \u2014 the author uses it specifically to distinguish derivative-product markets from physical-commodity-for-cash markets."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Deregulated vs Regulated Markets",
+    "Exchange vs OTC Trading"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Deregulated vs Regulated Markets",
+   "category": "Market Structure",
+   "subcategory": "Market Types",
+   "type": "definition",
+   "definition": "Deregulation is the elimination of a government-created monopoly to introduce spot-market competition, most commonly applied to breaking up government power-generation monopolies. A regulated market is a physical spot market still dominated by a government monopoly.",
+   "core_idea": "Deregulation and regulation describe opposite ends of the same spectrum for how a physical power market is structured \u2014 competitive vs. monopoly-controlled.",
+   "key_points": [
+    "Deregulation is most commonly discussed in the context of power generation.",
+    "Regulated local electrical markets remain fairly common even today, per the author."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to Physical/Spot Market definitions since both terms describe structures of a physical spot market."
+   ],
+   "trading_implications": [
+    "A regulated market limits the opportunities for competitive trading strategies since a government monopoly controls generation/supply."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Physical, Spot, Forward, and Financial Markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Exchange-Traded vs OTC Trading",
+   "category": "Market Structure",
+   "subcategory": "Trading Venues",
+   "type": "definition",
+   "definition": "An exchange is an organized marketplace for standardized securities/commodities where the exchange itself acts as counterparty to every trade and requires margin as a good-faith deposit. OTC (over-the-counter) trading is privately negotiated between two parties without an exchange intermediary, offering high customization but carrying significant counterparty credit risk.",
+   "core_idea": "Exchange trading sacrifices customization for standardization and reduced counterparty risk (via the exchange-as-counterparty and margin), while OTC trading sacrifices that safety for flexibility.",
+   "key_points": [
+    "Exchanges require posted margin as a good-faith deposit from traders.",
+    "OTC trades are typically direct two-party agreements, most commonly governed by the ISDA master agreement.",
+    "OTC contracts are usually not considered 'securities' because they can't be resold/exchanged without modifying the original agreement.",
+    "Forwards are the canonical OTC instrument (no margin, no cash flows before delivery); futures are the canonical exchange instrument (daily mark-to-market margin settlement)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects Forward vs Future definitions and the ISDA Agreement's netting provision, which mitigates OTC counterparty risk."
+   ],
+   "trading_implications": [
+    "Choosing OTC forwards vs. exchange futures is a tradeoff between customization/no upfront margin (OTC) and lower counterparty risk/daily cash settlement (exchange)."
+   ],
+   "common_misunderstandings": [
+    "Assuming all derivatives are securities \u2014 the author notes OTC contracts generally are not, unlike exchange-traded futures/options."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Future",
+    "Forward",
+    "ISDA Agreement",
+    "Margin"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Forward vs Future Contracts",
+   "category": "Derivatives",
+   "subcategory": "Contract Types",
+   "type": "definition",
+   "definition": "A forward is an OTC contract for future delivery, typically unmargined with no cash flows until the delivery date, usually a direct bilateral agreement under an ISDA master agreement. A future is an exchange-traded contract for future delivery that is freely tradable and requires daily mark-to-market profit/loss to be settled via margin payments.",
+   "core_idea": "Forwards and futures both fix a future delivery, but differ in venue (OTC vs. exchange), tradability, and cash-flow timing (settlement-date-only vs. daily margin).",
+   "key_points": [
+    "Forwards: OTC, typically not margined, no cash flow until delivery.",
+    "Futures: exchange-traded, freely tradable, daily mark-to-market margin settlement required."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties to Exchange vs OTC Trading and Margin/Mark-to-Market definitions."
+   ],
+   "trading_implications": [
+    "Futures' daily margin settlement means P&L is realized incrementally in cash, while a forward's P&L is only realized at delivery \u2014 this affects funding/liquidity needs during the life of the position."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exchange-Traded vs OTC Trading",
+    "Margin",
+    "Mark-to-Market"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Fungibility and Notional Value",
+   "category": "Market Structure",
+   "subcategory": "Contract Properties",
+   "type": "definition",
+   "definition": "Fungible means a unit of a good can be freely substituted for another unit of the same commodity. A megawatt of power is not fungible across locations or times in general, but a specific power product (fixed zone, delivery hour, and date) is fungible. Notional value is the face value of a contract (quantity times price), fixed at inception and not necessarily related to the contract's trading profit or risk.",
+   "core_idea": "Power's physical constraints (can't move it freely across time/location) mean fungibility only holds once a contract is fully specified down to location, hour, and date \u2014 this is what makes standardized power contracts tradable at all.",
+   "key_points": [
+    "A share of IBM stock is fungible; any share substitutes for any other.",
+    "Raw megawatts of power are not fungible across locations (e.g., New York vs. Los Angeles).",
+    "A fully specified power delivery (zone + date + hour) IS fungible, per the author's example.",
+    "Notional value example: selling 1,000 barrels of oil at $80 has a notional value of $80,000.",
+    "Notional value stays fixed over the contract's life and may have no relationship to actual trading P&L or risk."
+   ],
+   "formulas": [
+    {
+     "name": "Notional Value",
+     "formula": "Notional Value = Quantity x Price",
+     "variables": {
+      "Quantity": "contract size, e.g. barrels or MWh",
+      "Price": "agreed contract price per unit"
+     }
+    }
+   ],
+   "relationships": [
+    "Fungibility is a precondition for standardized exchange trading of a security."
+   ],
+   "trading_implications": [
+    "Because power is only fungible once fully specified (location, date, hour), standardized power contracts must be defined at that granularity to be tradable/exchangeable."
+   ],
+   "common_misunderstandings": [
+    "Assuming notional value reflects a contract's actual risk or expected profit \u2014 the author explicitly says it may have no relationship to either."
+   ],
+   "author_states_vs_inference": "The notional value formula (quantity x price) is inferred from the author's worked example, not stated as an explicit formula in the text; all other points are from source.",
+   "related_topics": [
+    "Security",
+    "Forward vs Future Contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Long, Short, Hedge, and Natural Hedge",
+   "category": "Risk",
+   "subcategory": "Positions and Hedging",
+   "type": "definition",
+   "definition": "A long position benefits from a price increase (commonly ownership of an asset); a short position benefits from a price decrease (commonly owing an asset). A hedge is an offsetting position taken deliberately to reduce portfolio risk. A natural hedge is a position that reduces risk as a side effect, without having been taken on for that purpose.",
+   "core_idea": "Long/short describe directional exposure; hedging (deliberate or natural) describes combining positions so their price exposures offset.",
+   "key_points": [
+    "Position = net amount of goods/services owned by an investor; described as long or short depending on which price direction benefits the owner.",
+    "Natural hedge example: a natural gas transport contract is short gas at the source (benefits from buying cheap) and long gas at the destination (benefits from selling high) \u2014 since source and destination prices tend to move together, the combination naturally offsets price risk even though the contract wasn't created for hedging."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Natural Hedge is a special case of Hedge where the offsetting effect is incidental rather than intentional."
+   ],
+   "trading_implications": [
+    "Recognizing natural hedges embedded in existing physical contracts (e.g., transport/transmission rights) can reveal risk offsets that don't require additional trades."
+   ],
+   "common_misunderstandings": [
+    "Assuming a hedge must be intentionally constructed \u2014 the natural hedge example shows risk-reducing offsets can arise incidentally from the structure of a physical contract."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fungibility and Notional Value"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Margin and Mark-to-Market",
+   "category": "Risk",
+   "subcategory": "Settlement Mechanics",
+   "type": "definition",
+   "definition": "Initial margin is a good-faith cash deposit required to enter a trade, returned when the trade settles; daily margin is a daily cash settlement of the change in a contract's price. Mark-to-market (MTM) is the process of pricing a financial instrument based on recent trades in similar instruments/contracts.",
+   "core_idea": "Margin mechanics separate a one-time entry deposit (initial margin, which can vary by trader) from an ongoing daily true-up of gains/losses (daily margin, which is uniform for all parties on a given side of a trade) \u2014 and MTM is the pricing process that daily margin settlement depends on.",
+   "key_points": [
+    "Initial margin amount can vary trader-to-trader.",
+    "Daily margin settlement amount is the same for everyone on the same side of a given trade.",
+    "MTM prices an instrument using recent trades in similar instruments/contracts, not a model in isolation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Daily margin settlement is driven by MTM price changes; both are central to how futures (vs. forwards) function."
+   ],
+   "trading_implications": [
+    "Daily margin settlement based on MTM means futures positions generate real cash flow swings before final delivery, unlike unmargined forwards."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Forward vs Future Contracts",
+    "Exchange-Traded vs OTC Trading"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Liquidity and Security",
+   "category": "Market Structure",
+   "subcategory": "Contract Properties",
+   "type": "definition",
+   "definition": "Liquidity describes how easily a financial instrument can be exchanged for cash or other financial products; illiquid means it cannot be easily exchanged. A security is a fungible contract representing financial value (e.g., a future or exchange-traded option) \u2014 a catch-all term for tradable contracts, generally excluding OTC contracts since those can't be sold/exchanged without modifying the original agreement.",
+   "core_idea": "Liquidity and the security/non-security distinction both hinge on how easily a contract can change hands: securities are built to be fungible and tradable, while OTC contracts generally are not.",
+   "key_points": [
+    "Liquidity is a spectrum (liquid vs. illiquid), not a binary property tied to venue alone.",
+    "OTC contracts are usually excluded from the 'security' label because trading them requires modifying the original bilateral agreement."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Security status depends on the fungibility concept and connects to Exchange vs OTC Trading."
+   ],
+   "trading_implications": [
+    "Illiquid positions (common in OTC/customized deals) are harder to exit or offset quickly, raising execution and pricing risk relative to liquid, exchange-traded securities."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fungibility and Notional Value",
+    "Exchange-Traded vs OTC Trading"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "ISDA and the ISDA Master Agreement",
+   "category": "Derivatives",
+   "subcategory": "Institutions and Documentation",
+   "type": "definition",
+   "definition": "ISDA (International Swaps and Derivatives Association) is an international trade association of major institutions active in privately negotiated derivatives. The ISDA Agreement is a standard set of clauses used in almost all OTC contracts; because all contracts referencing the master agreement share the same clauses, updates to the master agreement propagate to every referencing contract without renegotiation. Its most important clause is the netting-of-positions provision, which substantially reduces counterparty risk in privately negotiated derivatives deals.",
+   "core_idea": "The ISDA master agreement standardizes OTC derivatives documentation so that legal/regulatory updates apply market-wide without bilateral renegotiation, and its netting provision is the key mechanism that tames OTC counterparty risk.",
+   "key_points": [
+    "ISDA is a trade association, not a regulator or exchange.",
+    "The master agreement's clauses can be updated to meet changing regulatory environments across all referencing contracts at once.",
+    "Netting of positions is called out as the single most important clause because it materially reduces counterparty risk."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly underlies how Forwards and other OTC contracts manage counterparty credit risk, in contrast to exchange margin."
+   ],
+   "trading_implications": [
+    "Netting under an ISDA agreement reduces the effective counterparty exposure between two OTC counterparties, which is a key reason OTC forwards remain viable despite lacking exchange-style margin."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Exchange-Traded vs OTC Trading",
+    "Forward vs Future Contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "EIA and FERC",
+   "category": "Power Markets",
+   "subcategory": "Regulatory Bodies",
+   "type": "definition",
+   "definition": "The Energy Information Agency (EIA) is the U.S. government branch that produces official energy statistics. The Federal Energy Regulatory Commission (FERC) is the U.S. government branch responsible for regulating interstate trading of energy products.",
+   "core_idea": "EIA and FERC play distinct federal roles in U.S. energy markets: EIA is the statistics/data authority, while FERC is the interstate trading regulator.",
+   "key_points": [
+    "EIA's role is limited to producing official statistics, not regulation.",
+    "FERC's regulatory authority is specifically over interstate energy trading."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "EIA data is a standard reference source for market statistics; FERC's interstate jurisdiction is relevant to compliance for any trading activity crossing state lines."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Deregulated vs Regulated Markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  },
+  {
+   "topic": "Bond Prices Move Inversely to Interest Rates",
+   "category": "Risk",
+   "subcategory": "Cross-Market Relationships",
+   "type": "concept",
+   "definition": "A future payment is economically equivalent to a bond, and bond prices move opposite to interest rates: bonds are more valuable when rates are low and less valuable when rates are high. The market trading interest rates is called the Bond Market or Fixed Income market.",
+   "core_idea": "Because any future cash flow behaves like a bond, forward/future energy contracts carry an implicit interest-rate sensitivity tied to the discounting of that future payment.",
+   "key_points": [
+    "Future payments are treated as economically equivalent to bonds.",
+    "Bond prices and interest rates move in opposite directions.",
+    "The interest-rate market is called the Bond Market or Fixed Income market."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to Forward vs Future Contracts, since forwards/futures involve payments at a future date."
+   ],
+   "trading_implications": [
+    "Valuing a forward or future contract implicitly involves discounting a future payment, so interest-rate moves affect contract value independent of the underlying commodity price."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source (footnote 1)",
+   "related_topics": [
+    "Forward vs Future Contracts"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - footnote 1"
+   }
+  },
+  {
+   "topic": "Negative Prices Break Risk Management Systems",
+   "category": "Risk",
+   "subcategory": "Operational Risk",
+   "type": "risk",
+   "definition": "Negative prices tend to break risk management systems built assuming prices are positive; diagnosing the resulting problems can be time-consuming and confusing, since a portfolio can show a large percentage gain while losing real dollars, and the calculating software is still functioning as designed.",
+   "core_idea": "Risk systems often carry implicit positive-price assumptions, and negative prices (which do occur in power markets) can produce confusing or misleading outputs even when the system itself has no bug.",
+   "key_points": [
+    "Negative prices can cause a portfolio to appear up in percentage terms while actually losing dollars \u2014 described as confusing but not a software defect.",
+    "The author flags this as a common source of long, confusing debugging efforts in trading risk systems."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Risk and P&L systems handling energy (especially power, which can go negative) should be explicitly tested against negative-price scenarios rather than assuming positivity."
+   ],
+   "common_misunderstandings": [
+    "Assuming a percentage-based P&L read (e.g., 'portfolio up 10%') is a reliable signal \u2014 under negative prices it can diverge sharply from actual dollar gain/loss."
+   ],
+   "author_states_vs_inference": "all from source (footnote 2)",
+   "related_topics": [],
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - footnote 2"
+   }
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Costless Collar",
+   "category": "Derivatives",
+   "subcategory": "Hedging Instruments",
+   "type": "trading_strategy",
+   "definition": "A hedge built from a short call (sets a price ceiling) paired with a long put (sets a price floor), with the two strikes chosen so the premium received from selling the call offsets the premium paid for the put, making net entry cost roughly zero.",
+   "core_idea": "A costless collar lets a hedger stay exposed to price moves between the floor and ceiling strikes while being protected against extreme moves outside that band, without paying cash up front.",
+   "key_points": [
+    "Combines a short call (caps upside price benefit) with a long put (protects downside).",
+    "Because one leg is short and the other long, strikes can be tuned so the premiums cancel out, requiring no upfront payment.",
+    "The hedger retains exposure to price movements between the two strike levels.",
+    "Contrasted with single-option hedges, which are less popular because outright option premiums are often too expensive."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to option strategies and to futures/swap hedges as alternative hedging tools."
+   ],
+   "trading_implications": [
+    "Useful when a hedger wants downside protection but doesn't want to pay premium and is willing to give up some upside.",
+    "The 'no cash' framing can mask that the hedger is giving up value (via the capped upside) rather than truly getting the protection for free."
+   ],
+   "common_misunderstandings": [
+    "Zero upfront cost does not mean the hedge has no economic cost \u2014 value is still being exchanged, just not as cash (see companion note on hidden costs)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Option Strategies",
+    "Hidden Costs of Hedging"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "595",
+    "section_hint": "6.5 Hedging - Costless Collar"
+   }
+  },
+  {
+   "topic": "Hidden Costs of \"Costless\" Hedges",
+   "category": "Risk",
+   "subcategory": "Hedging Economics",
+   "type": "risk",
+   "definition": "The observation that a hedge requiring no upfront cash payment is not truly free \u2014 the hedger is typically giving up economic value to the counterparty in a less visible form than a cash payment.",
+   "core_idea": "Because energy hedgers (e.g., producers locking in long-term prices) far outnumber natural long-term buyers, hedgers often must transact with profit-seeking counterparties (like banks) who build their compensation into the terms of the trade rather than charging an explicit fee.",
+   "key_points": [
+    "Wind farms and similar producers benefit from locking in future production prices \u2014 it improves financing terms and gives investors more predictable cash flows.",
+    "There are few natural long-term buyers (e.g., households won't sign 25-year power contracts), so energy companies must trade with counterparties motivated by profit rather than genuine long-term consumption need.",
+    "A bank taking the other side of a long-dated hedge must hold a risky position for years and set aside capital against it; shareholders require a return on that capital.",
+    "For a futures-based hedge, the bank builds in profit by negotiating a price below its own expected future market price.",
+    "For more complex structures like costless collars, profit can be hidden less obviously \u2014 the bank can structure the collar so it captures value while the client believes the hedge was 'free'.",
+    "Costless collars do have genuine advantages over futures: they let the hedger keep exposure to moderate price moves while still being protected from extreme moves \u2014 but this benefit is separate from the fact that the structure isn't literally free."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from and qualifies the Costless Collar concept.",
+    "Relates to counterparty/dealer economics in derivatives markets generally."
+   ],
+   "trading_implications": [
+    "A hedger evaluating a 'free' structure should assess whether strikes/terms are priced against them relative to fair value, not just whether cash changes hands upfront.",
+    "Long-dated hedges are more likely to carry hidden compensation because capital costs and holding-period risk for the dealer are higher."
+   ],
+   "common_misunderstandings": [
+    "That 'no money down' means no cost was incurred by the hedging company \u2014 in reality value is given away, just not as an explicit payment."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Costless Collar",
+    "Futures Hedging",
+    "Dealer/Bank Economics"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "595-596",
+    "section_hint": "6.5 Hedging - \"Costless\" Doesn't Mean Free"
+   }
+  },
+  {
+   "topic": "Minimum Variance Hedge Ratio",
+   "category": "Risk",
+   "subcategory": "Hedge Sizing",
+   "type": "concept",
+   "definition": "The hedge size that minimizes the residual risk (variance) of the combined hedge-plus-hedged-item position, used when the hedging instrument is not a perfect match for the item being hedged.",
+   "core_idea": "Because most available hedging instruments are standardized benchmark commodities rather than an exact match for the hedged exposure, the hedger must first find an instrument highly correlated with the exposure, then size the hedge so that its dollar volatility matches the dollar volatility of the hedged item, scaled by their correlation.",
+   "key_points": [
+    "Hedge sizing depends on three factors: the volatility of the hedge instrument, the volatility of the hedged item, and the correlation between the two.",
+    "An undersized hedge leaves residual risk that can be reduced by increasing the hedge size.",
+    "An oversized hedge can actually increase portfolio risk rather than reduce it \u2014 hedge size is not 'more is always safer'.",
+    "The minimum-variance point occurs when the dollar-volatility of the hedge and the dollar-volatility of the hedged item are matched, scaled by the correlation between them (illustrated in the source's Figure 6.5.1, not reproduced here in formula form)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Prerequisite step is identifying a hedging instrument highly correlated with the hedged item."
+   ],
+   "trading_implications": [
+    "Hedgers should actively test and adjust hedge ratio/size rather than assuming a 1:1 notional match is optimal.",
+    "Correlation breakdown between the hedge instrument and the hedged item degrades the effectiveness of even a well-sized hedge."
+   ],
+   "common_misunderstandings": [
+    "That maximizing hedge size always reduces risk \u2014 the source explicitly notes an oversized hedge can increase risk."
+   ],
+   "author_states_vs_inference": "The qualitative description (volatilities matched, scaled by correlation) is the author's; the exact algebraic formula is shown only as a figure in the source and is not restated here to avoid inventing precision not given in the text.",
+   "related_topics": [
+    "Hedge Accounting",
+    "Correlation",
+    "Basis Risk"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "596",
+    "section_hint": "6.5 Hedging - Minimum Variance Hedge Ratio"
+   }
+  },
+  {
+   "topic": "Hedge Accounting",
+   "category": "Risk",
+   "subcategory": "Accounting Treatment",
+   "type": "concept",
+   "definition": "An accounting methodology that reports the combined value of a hedge and the item it hedges together, suspending the daily mark-to-market reporting that would otherwise apply to the hedge alone, in order to avoid a reporting mismatch with a non-financial hedged asset.",
+   "core_idea": "Because financial hedging instruments (like futures or collars) are revalued daily under mark-to-market accounting while the underlying non-financial asset (like a wind farm) is not, showing the hedge's mark-to-market swings alone on financial statements would misleadingly obscure the company's true combined economic value; hedge accounting fixes this by reporting the combined position instead.",
+   "key_points": [
+    "Applies where the hedge (typically a derivative, mark-to-market) and the hedged item (e.g., physical asset) are on different accounting bases.",
+    "To qualify, a hedge must be proven effective via a pre-defined testing plan created before the hedge is entered.",
+    "The testing plan must state the hedge's objective, the test frequency, and an objective standard for what counts as 'highly effective'.",
+    "Initial documentation/analysis (usually based on historical data) supporting that the hedge will work is called prospective testing.",
+    "Ongoing testing after the hedge is in place, usually done every time financial statements are published (commonly quarterly), is called retrospective testing.",
+    "If a hedger has multiple hedges, all must be tested using the same methodology.",
+    "There is no single mandated statistical test, but there are commonly accepted standards for how regression-based effectiveness testing is done."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on prospective and retrospective testing to qualify.",
+    "Retrospective testing commonly uses linear regression."
+   ],
+   "trading_implications": [
+    "Companies that want to avoid earnings volatility from derivative hedges have an accounting incentive to qualify for hedge accounting, which shapes how hedges are documented and structured."
+   ],
+   "common_misunderstandings": [
+    "That hedge accounting changes the economics of the hedge \u2014 it only changes how the combined position is reported, not the underlying cash flows or risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-Market Accounting",
+    "Prospective Testing",
+    "Retrospective Testing",
+    "Hedge Designation Memo"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "596-597",
+    "section_hint": "6.5 Hedging - Hedge Accounting"
+   }
+  },
+  {
+   "topic": "Hedge Accounting Common Terms",
+   "category": "Risk",
+   "subcategory": "Definitions",
+   "type": "definition",
+   "definition": "Glossary of terms used in hedge accounting: Hedge Accounting, Hedge Designation Memo, Mark-to-Market Accounting, Prospective Testing, Retrospective Testing.",
+   "core_idea": "The source defines five linked terms used to describe and document a hedge accounting relationship, from the accounting methodology itself to the specific memo and tests required to support it.",
+   "key_points": [
+    "Hedge Accounting: an accounting methodology that reduces reported volatility from daily mark-to-market of a hedge (usually a derivative) when the hedged item uses a different accounting basis.",
+    "Hedge Designation Memo: the document describing the hedging relationship, its rationale, and the methodology for prospective and retrospective testing, prepared to support hedge accounting treatment.",
+    "Mark-to-Market Accounting: an accounting method that values an asset or liability at current market prices, commonly applied to derivatives and other financial instruments.",
+    "Prospective Testing: documentation and analysis supporting the expectation that the hedge and hedged item will move closely together in the future.",
+    "Retrospective Testing: testing performed to verify the hedge has actually been effective over some period, typically since the hedge began."
+   ],
+   "formulas": [],
+   "relationships": [
+    "All five terms describe parts of the same Hedge Accounting framework."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hedge Accounting",
+    "Hedge Effectiveness Tests"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "596-597",
+    "section_hint": "6.5 Hedging - Common Terms"
+   }
+  },
+  {
+   "topic": "Hedge Effectiveness Testing via Linear Regression",
+   "category": "Risk",
+   "subcategory": "Statistical Testing",
+   "type": "concept",
+   "definition": "The standard retrospective-testing method for hedge accounting, using linear regression to check whether changes in the value of the hedged item are matched by equal and opposite changes in the value of the hedge.",
+   "core_idea": "Linear regression is applied to the paired changes in value of the hedge and the hedged item to statistically assess whether a $1 gain in one is offset by roughly a $1 loss in the other, with a scatter diagram (hedge item values vs. hedge values, with a fitted line) as the common way to visualize this relationship.",
+   "key_points": [
+    "Linear regression is the most commonly used statistical test for retrospective hedge effectiveness testing.",
+    "Most modern spreadsheet and statistical software includes regression tools, though they may not be enabled by default.",
+    "The core question tested is whether a gain in the hedged item is matched by an equal and opposite loss in the hedge (and vice versa).",
+    "A scatter diagram plots one series on the X axis and the other on the Y axis, with a fitted line describing the relationship."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Used to perform Retrospective Testing within Hedge Accounting."
+   ],
+   "trading_implications": [
+    "A hedge that fails a regression-based effectiveness test could lose its qualification for hedge accounting, reintroducing mark-to-market earnings volatility."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hedge Accounting",
+    "Retrospective Testing"
+   ],
+   "source": {
+    "chapter": 33,
+    "pages": "597-599",
+    "section_hint": "6.5 Hedging - Hedge Effectiveness Tests"
+   }
+  }
+ ]
+}

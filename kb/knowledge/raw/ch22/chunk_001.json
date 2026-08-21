@@ -1,0 +1,259 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Uranium enrichment levels for power vs. weapons",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Raw uranium ore does not come out of the ground with the right concentration of fissionable Uranium-235 for use as reactor fuel, so it must be processed to hit a target enrichment level \u2014 too little U-235 and the reaction won't sustain, too much and it runs away too fast.",
+   "core_idea": "A commercial reactor targets a fairly low enrichment (around 4% U-235) for a controlled, moderate reaction, while weapons-grade material requires much higher purity (90%+).",
+   "key_points": [
+    "Nuclear fuel must be processed/enriched before use because raw uranium does not have the correct U-235 concentration.",
+    "Too little U-235 means the chain reaction won't occur; too much means it happens too fast (uncontrolled).",
+    "A power plant might target roughly 4% U-235 enrichment for a moderate, controllable reaction.",
+    "A weapon requires much higher enrichment, around 90% or more.",
+    "After enrichment, uranium is converted back into a solid form (uranium dioxide, UO2) and shaped for its final use."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Same enrichment process underlies both civilian fuel and weapons-grade material, which is the technical basis of the proliferation concern."
+   ],
+   "trading_implications": [
+    "The wide gap between power-grade (~4%) and weapons-grade (~90%+) enrichment is the technical basis for enrichment-capacity policy risk, which can affect uranium/enrichment supply chains relevant to nuclear generator fuel costs."
+   ],
+   "common_misunderstandings": [
+    "Nuclear fuel is not simply mined uranium \u2014 it must be enriched to a specific, narrow target concentration, not maximized."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Thorium fuel cycle",
+    "Nuclear weapon proliferation risk"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "473-473",
+    "section_hint": "4.7 Nuclear Power"
+   }
+  },
+  {
+   "topic": "Physical control of nuclear reaction speed (fuel shape and control rods)",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Beyond enrichment level, a reactor's fuel geometry and graphite control rods are used to physically govern how fast the fission chain reaction proceeds.",
+   "core_idea": "Fuel shaped as a flat sheet (rather than a compact ball) lets more radiation escape and slows the reaction, while graphite control rods can be inserted to absorb radiation and further throttle fission speed \u2014 a power plant wants slow/controlled fission, a weapon wants fast/maximal fission.",
+   "key_points": [
+    "A weapon wants fuel shaped into a ball to maximize chain-reaction speed.",
+    "A power plant wants fuel shaped into a flat sheet so energy escapes from the top and bottom, reducing chain-reaction speed.",
+    "Graphite control rods fine-tune fission speed by absorbing radiation before it can trigger fission in another atom.",
+    "Control rods can be inserted into the reactor chamber to slow down the reaction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Fuel shape and control rods are complementary, independent levers (along with enrichment %) for managing reaction speed."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Reaction speed control isn't just about enrichment percentage \u2014 physical fuel geometry and control rods are separate, additional mechanisms."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Uranium enrichment levels for power vs. weapons"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "473-473",
+    "section_hint": "4.7 Nuclear Power"
+   }
+  },
+  {
+   "topic": "Spent fuel and nuclear waste handling",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "After use, reactor fuel, control rods, and cooling water remain radioactive (still undergoing fission, just much more slowly), and used fuel may be reprocessed to recover unused U-235 before the remaining waste must be disposed of.",
+   "core_idea": "Toxic/radioactive waste can either be diluted across a wide area or concentrated into a smaller volume; because most jurisdictions restrict release of toxic substances into the environment, dilution is generally not viable, so nuclear waste ends up concentrated and stored in dedicated facilities.",
+   "key_points": [
+    "Spent fuel, control rods, and cooling water are all radioactive after reactor use, continuing fission at a much slower rate.",
+    "Used fuel may be reprocessed to remove remaining usable U-235.",
+    "Toxic waste in general has two disposal strategies: dilute over a wide area, or concentrate into a smaller, more toxic volume.",
+    "Regulatory limits on releasing toxic substances into the biosphere generally rule out dilution as a viable approach.",
+    "As a result, nuclear waste is concentrated and placed in storage facilities intended to be far from populated areas."
+   ],
+   "formulas": [],
+   "relationships": [
+    "This waste-concentration outcome connects directly to the later point that concentrated nuclear waste is a distinct, immediate health hazard compared to diffuse fossil-fuel pollution."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Diluting nuclear waste is not treated as a real regulatory option \u2014 the author frames concentration/storage as effectively the only path given release limits."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Pollution profile of nuclear vs. fossil generation"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "473-474",
+    "section_hint": "4.7 Nuclear Power"
+   }
+  },
+  {
+   "topic": "Thorium fuel cycle as a uranium alternative",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Thorium-232 is a non-fissionable but more abundant alternative nuclear fuel source that can be converted into fissionable Uranium-233 by bombardment with atomic particles.",
+   "core_idea": "Thorium-based fuel is roughly three times as abundant as uranium and nearly all mined thorium is usable as fuel; it isn't fissionable on its own but converts into U-233, producing less radioactive waste than the uranium cycle and being harder to weaponize than U-235.",
+   "key_points": [
+    "Thorium-232 is not itself fissionable but can be converted into Uranium-233 by bombarding it with atomic particles.",
+    "Thorium is roughly three times more common than uranium.",
+    "Nearly all mined thorium could be used as nuclear fuel.",
+    "The thorium cycle produces much less radioactive waste than the uranium cycle.",
+    "Uranium-233 is harder to use for nuclear weapons than Uranium-235.",
+    "Alternative fuels like thorium are generally more expensive than uranium, but tend to produce less radioactive waste and be more weapons-resistant."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with the Uranium-235 cycle described earlier in the section (enrichment, waste, weapons risk)."
+   ],
+   "trading_implications": [
+    "Thorium's greater abundance and lower weapons-proliferation profile could reduce fuel-supply and geopolitical risk relative to uranium-fueled generation, though the author notes it is generally more expensive."
+   ],
+   "common_misunderstandings": [
+    "Thorium itself is not fissionable fuel \u2014 it must first be converted into Uranium-233 to be used in a reactor."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Uranium enrichment levels for power vs. weapons"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "474-474",
+    "section_hint": "Thorium Cycle"
+   }
+  },
+  {
+   "topic": "Nuclear power's grid and transmission structure problem",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Like coal plants, nuclear plants must be built at very large scale and sited far from consumers, which commits a power system to long-distance transmission of power.",
+   "core_idea": "Committing to nuclear as a primary power source means committing to a grid architecture with large, distant generation and long-haul transmission, which the author states is inherently less reliable than a grid with generation located close to consumers.",
+   "key_points": [
+    "Nuclear plants share engineering constraints with coal plants: very large scale, sited far from consumers.",
+    "Adopting nuclear as a primary source implies committing to long-distance transmission infrastructure.",
+    "A grid built around long-distance transmission is inherently less reliable than one with generation close to consumers, per the author."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Parallels the coal-plant siting/transmission tradeoff discussed elsewhere in the text."
+   ],
+   "trading_implications": [
+    "Large, remote nuclear generation implies greater reliance on transmission paths, which is relevant to congestion and reliability risk in a nodal/locational market like ERCOT."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Fuel import dependency of nuclear power"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "474-474",
+    "section_hint": "Problems with Nuclear Power"
+   }
+  },
+  {
+   "topic": "Nuclear power does not solve fuel import dependency",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Because uranium must still be mined and sourced from somewhere, nuclear power leaves a country just as fuel-dependent as fossil-fuel generation, undermining energy-independence arguments for nuclear.",
+   "core_idea": "Regional uranium reserves vary widely \u2014 North America has some uranium but far less than its coal reserves, while regions like Europe must import nearly all their nuclear fuel \u2014 so nuclear is not necessarily a path to energy independence.",
+   "key_points": [
+    "Uranium has to be mined from somewhere, making nuclear power just as fuel-dependent as fossil-fuel-fired generation.",
+    "North America has some uranium reserves, but they are much less extensive than its coal reserves.",
+    "Regions like Europe must import nearly all of their nuclear fuel.",
+    "Nuclear power is not necessarily the best approach for a country seeking energy independence."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Fuel-import dependency for nuclear generation is a geopolitical/supply-chain risk factor comparable to fossil fuel import dependency, relevant to long-run generation-mix and fuel-cost risk assessments."
+   ],
+   "common_misunderstandings": [
+    "Nuclear power is sometimes assumed to guarantee energy independence because it doesn't burn imported fossil fuel directly, but the uranium fuel itself is often imported."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Nuclear power's grid and transmission structure problem"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "474-475",
+    "section_hint": "Problems with Nuclear Power"
+   }
+  },
+  {
+   "topic": "Nuclear weapon proliferation risk from enrichment process",
+   "category": "Risk",
+   "subcategory": "Nuclear Power",
+   "type": "risk",
+   "definition": "The enrichment process used to produce civilian reactor fuel is nearly identical to the process used to produce weapons-grade material, creating a dual-use policy challenge.",
+   "core_idea": "Ensuring a reliable civilian nuclear fuel supply while preventing that same enrichment capability from being diverted to weapons production is described as an ongoing public-policy challenge.",
+   "key_points": [
+    "The enrichment process for civilian fuel and for nuclear weapons fuel is nearly identical.",
+    "Guaranteeing civilian fuel supply without enabling military diversion is characterized as a persistent public-policy problem."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly tied to the enrichment-percentage contrast (4% vs 90%+) described earlier in the chapter."
+   ],
+   "trading_implications": [
+    "Proliferation policy constraints on enrichment capacity are a structural risk factor for uranium fuel supply chains."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Uranium enrichment levels for power vs. weapons"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "475-475",
+    "section_hint": "Problems with Nuclear Power"
+   }
+  },
+  {
+   "topic": "Pollution profile of nuclear power vs. fossil fuels",
+   "category": "Power Markets",
+   "subcategory": "Nuclear Power",
+   "type": "concept",
+   "definition": "Nuclear power produces no CO2, sulfur dioxide, or nitrogen oxide emissions, but concentrated nuclear waste poses an immediate, deadly health hazard that differs in kind from diffuse fossil-fuel pollution.",
+   "core_idea": "The author contrasts fossil-fuel pollution, which mainly causes gradual harm (climate change, ecosystem damage) without an immediate lethal threat, against nuclear waste, which is deadly when concentrated and thus presents a direct, acute danger rather than a diffuse one.",
+   "key_points": [
+    "Nuclear power generates no CO2, sulfur dioxide, or nitrogen oxide pollution.",
+    "Fossil fuel pollution is characterized as causing climate change, wildlife harm, and environmental damage, but not an immediate lethal threat to people.",
+    "Concentrated nuclear waste is deadly and presents an immediate health threat.",
+    "Storing concentrated nuclear waste safely is described as very problematic given its danger."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the earlier point that regulation forces nuclear waste to be concentrated rather than diluted."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "\"Nuclear is pollution-free\" overlooks that the author distinguishes emissions-free operation from the separate, acute hazard posed by concentrated radioactive waste."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spent fuel and nuclear waste handling"
+   ],
+   "source": {
+    "chapter": 22,
+    "pages": "475-475",
+    "section_hint": "Problems with Nuclear Power"
+   }
+  }
+ ]
+}

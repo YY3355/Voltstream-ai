@@ -1,0 +1,237 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "What LNG Is and Why It Matters",
+   "category": "Natural Gas",
+   "subcategory": "LNG Fundamentals",
+   "type": "concept",
+   "definition": "LNG is natural gas (methane) that has been cooled to roughly -260\u00b0F at normal atmospheric pressure so it condenses into a liquid, shrinking its volume to about 1/610th of the gaseous form.",
+   "core_idea": "Because liquefied gas takes up so much less space, it can be economically loaded onto tanker ships and moved to places pipelines don't reach, turning a pipeline-bound commodity into something that can be shipped like oil.",
+   "key_points": [
+    "Cooling to about -260\u00b0F at standard atmospheric pressure liquefies methane.",
+    "Liquefaction cuts the gas's volume to roughly 1/610th of its gaseous volume.",
+    "The compactness is what makes ship-based transport and non-traditional storage viable.",
+    "Small-scale (e.g., truck-based) LNG transport is still not cost-effective; the economics work at cargo-ship scale."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Enables global LNG trade",
+    "Enables LNG-based peak shaving storage"
+   ],
+   "trading_implications": [
+    "LNG lets producers reach overseas markets rather than being limited to whatever a pipeline connects to."
+   ],
+   "common_misunderstandings": [
+    "Small-scale/local LNG transport is not automatically cost-effective just because the gas is compact \u2014 ship-scale volumes are what make the economics work."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG Value Chain",
+    "LNG and Global Natural Gas Market Integration"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "539-540",
+    "section_hint": "5.3 Liquefied Natural Gas - Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "LNG and Global Natural Gas Market Integration",
+   "category": "Natural Gas",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "The ability to liquefy methane is knitting together the historically separate, regional natural gas markets into a single global market, similar to how oil already trades globally.",
+   "core_idea": "Natural gas markets were traditionally isolated by geography because gas could only move through connected pipelines; LNG removes that constraint by letting gas move by ship, so as liquefaction/regasification technology gets cheaper and more efficient, the global integration accelerates.",
+   "key_points": [
+    "Historically, natural gas markets were regional because pipelines defined who could sell to whom.",
+    "LNG lets producers and consumers who have no pipeline connection still trade.",
+    "Efficiency gains in liquefaction/regasification technology make LNG progressively more economical, reinforcing the trend toward a global market.",
+    "There was already an established LNG trade in the Pacific region for decades before North America and Europe opened up LNG import/export capacity, which expanded the addressable market further."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on liquefaction/regasification technology cost",
+    "Increases LNG's role in natural gas price formation"
+   ],
+   "trading_implications": [
+    "As more regions build LNG terminals, natural gas prices in different regions become more linked, reducing purely regional price disconnects over time."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "What LNG Is and Why It Matters",
+    "US LNG Terminal Reversal: Import to Export"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "539-539",
+    "section_hint": "5.3 Liquefied Natural Gas - Summary/Key Topics"
+   }
+  },
+  {
+   "topic": "US LNG Terminal Reversal: Import to Export",
+   "category": "Natural Gas",
+   "subcategory": "Market History",
+   "type": "example",
+   "definition": "A historical case where US LNG infrastructure was built for one purpose (importing gas) but ended up being repurposed for the opposite (exporting gas) once domestic supply conditions changed.",
+   "core_idea": "In the early 2000s, the US and Europe were expected to run short of domestic natural gas and need LNG imports; the shale fracking boom by 2015 flooded the US with cheap domestic gas, so many terminals originally built to regasify imported LNG were converted into liquefaction plants to export US gas instead.",
+   "key_points": [
+    "US and Europe consume a large share of world natural gas but were believed to hold only a small share of proven reserves, driving early-2000s import expectations.",
+    "By 2015, fracking-driven supply growth reversed the US gas balance toward surplus.",
+    "Regasification terminals (built for imports) were converted into liquefaction terminals (for exports) as a result."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Illustrates how domestic supply shocks can flip infrastructure use",
+    "Connected to global LNG market growth"
+   ],
+   "trading_implications": [
+    "Long-lived LNG infrastructure investments can be repurposed for the opposite trade flow if the underlying supply/demand balance shifts significantly, which matters when evaluating terminal investment risk."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG and Global Natural Gas Market Integration",
+    "LNG as Monetization for Stranded Natural Gas Reserves"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "539-540",
+    "section_hint": "5.3 Liquefied Natural Gas"
+   }
+  },
+  {
+   "topic": "LNG Value Chain: Liquefaction, Transportation, Regasification",
+   "category": "Natural Gas",
+   "subcategory": "LNG Infrastructure",
+   "type": "market_mechanic",
+   "definition": "The physical LNG supply chain has three stages: cooling gas into liquid near production, shipping it in specialized tankers, and warming it back into gas near the consuming market before pipeline delivery.",
+   "core_idea": "Each stage has its own infrastructure and losses: liquefaction plants near wellheads cool gas to -260\u00b0F for loading onto tankers; tankers must be specially insulated because some liquid methane still boils back into gas in transit, causing fuel loss; regasification plants at the destination store the LNG cold until it's warmed and injected into local pipelines.",
+   "key_points": [
+    "Liquefaction plants sit near production areas and are fed by short-range pipelines from wells.",
+    "Cooling gas to -260\u00b0F for liquefaction is energy-intensive, and the resulting emissions count toward LNG's overall greenhouse gas footprint.",
+    "Tankers lose a small percentage of cargo to boil-off (liquid methane reverting to gas) during transport; faster voyages and cryogenic reliquefaction systems reduce this loss.",
+    "Regasification plants store LNG cold until warming it for pipeline delivery to end customers."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Liquefaction energy cost affects LNG's climate footprint",
+    "Boil-off loss affects shipping economics"
+   ],
+   "trading_implications": [
+    "Boil-off losses and liquefaction/regasification energy costs are real frictions that reduce the effective volume and raise the effective cost of delivered LNG compared to the original wellhead gas."
+   ],
+   "common_misunderstandings": [
+    "LNG is not a lossless transport method \u2014 some cargo is lost to boil-off in transit, and considerable energy (with associated emissions) is spent liquefying and later reheating the gas."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "What LNG Is and Why It Matters",
+    "LNG Safety Concerns and Facility Siting"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "540-541",
+    "section_hint": "5.3 Liquefied Natural Gas - process steps"
+   }
+  },
+  {
+   "topic": "LNG as Monetization for Stranded Natural Gas Reserves",
+   "category": "Natural Gas",
+   "subcategory": "Producer Economics",
+   "type": "market_mechanic",
+   "definition": "A natural gas field with no pipeline connection to a major consuming region is considered 'stranded' because its gas cannot practically be sold; LNG terminals give such fields a route to market.",
+   "core_idea": "Historically only a few Asian markets (Japan, South Korea, Taiwan) could receive LNG cargoes, so stranded gas had very limited outlets even if liquefied; opening North American and European markets to LNG means shipments can now enter from almost anywhere and feed into those regions' large pipeline networks, letting producers build a short pipeline to a liquefaction terminal, sign long-term overseas sales contracts, and fund further exploration.",
+   "key_points": [
+    "A well with no pipeline to a major consuming market is 'stranded' \u2014 its gas can't be sold.",
+    "Historically, only Japan, South Korea, and Taiwan were realistic LNG destination markets.",
+    "Opening North American and European markets to LNG imports greatly expanded the number of viable destinations.",
+    "Producers can monetize otherwise-stranded fields by building a short pipeline to an LNG terminal and signing long-term export agreements."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on global LNG terminal buildout",
+    "Follows from US LNG Terminal Reversal example"
+   ],
+   "trading_implications": [
+    "Long-term LNG sales agreements let low-cost producers monetize reserves that would otherwise sit undeveloped for lack of pipeline access, and the resulting cash flow can fund further exploration."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "US LNG Terminal Reversal: Import to Export",
+    "LNG and Global Natural Gas Market Integration"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "540-541",
+    "section_hint": "5.3 Liquefied Natural Gas"
+   }
+  },
+  {
+   "topic": "LNG Safety Concerns and Facility Siting",
+   "category": "Risk",
+   "subcategory": "LNG Infrastructure Risk",
+   "type": "risk",
+   "definition": "Debate over whether LNG storage and regasification facilities pose catastrophic disaster risk, which the author identifies as a key reason so few LNG terminals exist and why political opposition frequently blocks new ones.",
+   "core_idea": "Critics worry that the large concentration of fuel at LNG facilities could cause catastrophic damage if something went wrong, while proponents point to methane's properties \u2014 non-toxic, non-explosive outside a confined space, and only combustible within a specific fuel-to-air ratio \u2014 as evidence of a strong safety record.",
+   "key_points": [
+    "Facility safety controversy is cited as a primary reason for the limited number of LNG terminals worldwide.",
+    "Political opposition continues to block new LNG facility construction on safety grounds.",
+    "Proponents note methane is odorless and non-toxic and won't poison the environment or wildlife in a spill.",
+    "LNG is not explosive outside a contained space and only combusts within a specific methane-to-air ratio, per the author's summary of the safety argument."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Constrains growth of LNG and Global Natural Gas Market Integration"
+   ],
+   "trading_implications": [
+    "Facility siting/permitting risk driven by safety controversy is a real bottleneck on how much new LNG liquefaction/regasification capacity can come online, which affects long-run supply of LNG trade opportunities."
+   ],
+   "common_misunderstandings": [
+    "LNG itself is not described as explosive in open air \u2014 the author notes it doesn't transition from liquid to gas fast enough to build the overpressure needed for an explosion, though it can still burn."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG Value Chain: Liquefaction, Transportation, Regasification"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "541-541",
+    "section_hint": "5.3 Liquefied Natural Gas - Concerns"
+   }
+  },
+  {
+   "topic": "LNG Peak Shaving Units",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "trading_strategy",
+   "definition": "Small-scale LNG storage facilities used as an alternative to traditional natural gas storage, valued similarly to conventional storage from an investment standpoint.",
+   "core_idea": "As liquefaction and regasification technology becomes cheaper, small LNG storage facilities let operators buy natural gas during low-demand periods, store it compactly as a liquid, and use or sell it during high-demand ('peak') periods \u2014 extending storage capability to locations that lack the geology needed for traditional storage.",
+   "key_points": [
+    "Liquefying gas for storage dramatically shrinks the physical footprint versus traditional storage.",
+    "This allows storage in areas without suitable geological formations for conventional natural gas storage.",
+    "From an investment standpoint, LNG peak shaving facilities are valued similarly to normal storage facilities.",
+    "The basic trading logic is the same as traditional storage: buy/inject during low-demand periods, use/withdraw during heavy-demand periods."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative to traditional natural gas storage economics"
+   ],
+   "trading_implications": [
+    "Peak shaving LNG storage can be analyzed like traditional storage \u2014 value comes from capturing the spread between low-demand purchase prices and high-demand use/sale value."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "What LNG Is and Why It Matters"
+   ],
+   "source": {
+    "chapter": 28,
+    "pages": "541-542",
+    "section_hint": "5.3 Liquefied Natural Gas - Peak Shaving Units"
+   }
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Why natural gas storage exists",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "Storage facilities hold natural gas between the pipeline system and the end user, absorbing the mismatch between continuous pipeline flow and cyclical gas demand.",
+   "core_idea": "Pipelines are built to flow gas around the clock, but demand for gas swings seasonally, so storage lets surplus gas from low-demand periods be banked and drawn down during high-demand periods.",
+   "key_points": [
+    "Gas that isn't needed immediately after transport can be stored for very long periods (much of the gas produced is already geologically ancient).",
+    "Pipelines must run continuously, but demand does not, so gas has to be either stored or flared off.",
+    "Demand peaks twice a year: winter (heating) and summer (air conditioning load on power generation).",
+    "Storage also provides a safety margin against short-term, regional swings in demand.",
+    "Storage sites are located at both ends of pipelines.",
+    "Facilities differ mainly along two dimensions: how much gas they can hold and how fast it can be withdrawn."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sits downstream of pipeline transport described earlier in the section."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas pipelines",
+    "Seasonal demand"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "60-60",
+    "section_hint": "Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "How gas is physically injected into and held in storage",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "Storage facilities are underground volumes connected to a pipeline; gas is pulled into them by applying suction (similar to a vacuum) strong enough to overcome the facility's internal pressure.",
+   "core_idea": "As long as suction on the pipeline connection exceeds the pressure already inside the storage cavity, gas flows into storage rather than back out; once the suction stops, the connection has to be closed off to keep gas from flowing back into the pipeline.",
+   "key_points": [
+    "Storage pressure is normally higher than pipeline pressure unless the facility is nearly empty.",
+    "Gas must be compressed to enter the storage facility.",
+    "The pipeline-to-storage connection is closed once suction/injection stops."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Precedes the base gas/working gas withdrawal dynamics."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "60-60",
+    "section_hint": "Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "Base gas vs. working gas",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "definition",
+   "definition": "Working gas is the volume of stored gas that can actually be withdrawn and delivered; base (or cushion) gas is the portion left behind to keep the facility pressurized enough to push the working gas out at a usable rate.",
+   "core_idea": "Base gas is normally never withdrawn during routine operation because removing it drops the facility's pressure and slows down how fast working gas can be extracted, so a fixed cushion has to be maintained to meet ongoing deliverability needs.",
+   "key_points": [
+    "Extractable gas splits into base (cushion) gas and working gas.",
+    "Base gas exists to maintain enough pressure to get working gas out in a reasonable time.",
+    "Operators trade off a large working-gas volume that can only be withdrawn slowly against a smaller volume that can be withdrawn quickly.",
+    "During peak demand, some base gas can temporarily be delivered as working gas.",
+    "Over the long run the cushion must stay intact, since drawing it down reduces pressure and future extraction speed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Determines a facility's deliverability, which is one of the two dimensions (capacity, speed) that differentiate storage facilities."
+   ],
+   "trading_implications": [
+    "Deliverability constraints from the base/working gas split mean a facility's peak withdrawal rate is not simply proportional to its total inventory, which matters when assessing whether storage can meet a spike in demand."
+   ],
+   "common_misunderstandings": [
+    "Total stored volume is not the same as usable (working) supply \u2014 a chunk of stored gas is permanently reserved as cushion."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural gas storage",
+    "Storage facility pressure limits"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "60-61",
+    "section_hint": "Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "Storage facility pressure constraint",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "Maximum operating pressure caps how much gas a storage facility can hold in a given volume and how quickly it can be withdrawn, but pushing pressure higher raises structural stress and the risk of gas escaping.",
+   "core_idea": "Because there are only a limited number of geological sites suitable for gas storage, the pressure ceiling for a given facility is usually determined by what the site can physically support rather than by what operators would prefer.",
+   "key_points": [
+    "Higher pressure allows more gas storage per unit volume and faster extraction.",
+    "Higher pressure increases structural stress and the chance of gas leaking into the environment.",
+    "Available storage geology, not desired performance, typically sets the pressure limit."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Interacts with base/working gas trade-off and with the ranking of storage site types by performance."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Base gas vs working gas",
+    "Storage facility types"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "61-61",
+    "section_hint": "Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "Types of underground gas storage sites",
+   "category": "Natural Gas",
+   "subcategory": "Storage",
+   "type": "concept",
+   "definition": "Three geological formations are used for natural gas storage \u2014 depleted gas reservoirs, converted salt caverns, and aquifers \u2014 chosen based on what is available in a given area.",
+   "core_idea": "Depleted reservoirs are the cheapest and most reliable option, salt caverns deliver the best performance because they tolerate much higher pressure, and aquifers (water-bearing permeable rock) are used only where the other two options aren't available.",
+   "key_points": [
+    "Depleted gas reservoirs: cheapest, most reliable.",
+    "Converted salt caverns: highest performance, able to withstand significantly higher pressure than the alternatives.",
+    "Aquifers: permeable rock layers often containing groundwater, used as a fallback option.",
+    "Choice of storage type in a region is generally limited to whatever geology is locally available."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Salt cavern performance advantage ties directly to the maximum-pressure constraint discussed above."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Storage facility pressure constraint"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "61-61",
+    "section_hint": "Natural Gas Storage"
+   }
+  },
+  {
+   "topic": "Liquefied natural gas (LNG) and ocean transport",
+   "category": "Natural Gas",
+   "subcategory": "LNG",
+   "type": "concept",
+   "definition": "LNG is natural gas cooled to roughly \u2212263\u00b0F until it liquefies, becoming about 600 times denser than its gaseous form, which lets it be shipped across oceans on specially insulated tankers and regasified by heating at the destination port before entering the local pipeline grid.",
+   "core_idea": "Because pipelines can't span oceans, cooling gas into a much denser liquid state is the practical way to move natural gas between continents.",
+   "key_points": [
+    "Liquefaction occurs at about \u2212263\u00b0F.",
+    "Liquid form is roughly 600 times denser than gaseous form.",
+    "Transport uses specially insulated tanker ships.",
+    "At the receiving port, LNG is reheated back into gas and injected into a pipeline for delivery."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Enables the market-linking effect described in the LNG globalization item."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG safety",
+    "LNG and market globalization"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "61-62",
+    "section_hint": "Liquefied Natural Gas"
+   }
+  },
+  {
+   "topic": "LNG safety and explosion risk",
+   "category": "Natural Gas",
+   "subcategory": "LNG",
+   "type": "concept",
+   "definition": "LNG is non-toxic, non-corrosive, and evaporates quickly without leaving residue when spilled; it is only flammable within a narrow 5-15 percent air-concentration band, so open-air spills pose low explosion risk compared with confined-space accumulation.",
+   "core_idea": "Rapid evaporation plus a narrow flammability window mean LNG carries meaningfully less fire risk than storing oil or coal, though risk still exists if gas becomes trapped and concentrated in an enclosed space.",
+   "key_points": [
+    "Aside from being extremely cold, LNG is non-toxic and non-corrosive.",
+    "Spilled LNG evaporates rapidly and leaves no residue.",
+    "Natural gas ignites only within a 5-15% concentration-in-air range.",
+    "Confined spaces (e.g., a house or storage facility) are where dangerous concentrations can build up.",
+    "Author states natural gas storage carries less fire risk than oil or coal storage facilities."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Any large volume of flammable material carries some fire risk, but the author distinguishes LNG as lower-risk than oil/coal, not risk-free."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG and ocean transport"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "62-62",
+    "section_hint": "Liquefied Natural Gas"
+   }
+  },
+  {
+   "topic": "LNG's effect on regional gas market integration",
+   "category": "Natural Gas",
+   "subcategory": "LNG",
+   "type": "market_mechanic",
+   "definition": "By making it possible to ship gas supply between regions, LNG converts what would otherwise be separate regional gas markets (e.g., Europe and the United States) into parts of a single, more globally connected market, pushing prices toward convergence.",
+   "core_idea": "Without LNG, regional gas markets are isolated from each other; with it, supply can move to wherever demand/price is highest, so prices across regions start to converge toward one global level.",
+   "key_points": [
+    "As of the source's writing, there were no LNG-specific futures contracts being traded.",
+    "LNG shipping lets supply move between previously separate regional markets like Europe and the U.S.",
+    "The ability to transfer supply across regions pushes prices toward a single global price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on LNG's physical transportability described in the ocean-transport item."
+   ],
+   "trading_implications": [
+    "Author states that LNG-enabled arbitrage between regions drives long-run price convergence, though no dedicated LNG contract existed at time of writing to trade that convergence directly."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "LNG and ocean transport"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "62-62",
+    "section_hint": "Liquefied Natural Gas"
+   }
+  },
+  {
+   "topic": "Overview of risk management practices in energy trading",
+   "category": "Risk",
+   "subcategory": "Risk Management Framework",
+   "type": "concept",
+   "definition": "Modern financial risk management is built primarily on two practices \u2014 mark-to-market accounting and analysis of earnings volatility \u2014 supported by credit risk analysis, review of trading behavior under unusual/stressed conditions, hedging, and management of modeling risk.",
+   "core_idea": "The author frames energy risk management as anchored by valuation (mark-to-market) and volatility analysis, with credit, stress-testing, hedging, and model-risk oversight as supporting disciplines.",
+   "key_points": [
+    "Two core practices: mark-to-market accounting and earnings volatility analysis.",
+    "Supporting practice: credit risk analysis.",
+    "Supporting practice: analyzing trading behavior under unusual or stressed conditions.",
+    "Supporting practice: hedging \u2014 using financial transactions to reduce risk.",
+    "Supporting practice: managing modeling risk."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the following discussion of mark-to-market accounting."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Mark-to-market accounting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "62-62",
+    "section_hint": "Risk Management"
+   }
+  },
+  {
+   "topic": "Mark-to-market accounting",
+   "category": "Risk",
+   "subcategory": "Accounting / Valuation",
+   "type": "definition",
+   "definition": "Mark-to-market is a fair-value accounting method applied to financial instruments and is the standard valuation approach used for energy transactions; the accounting rules governing it set the definition of what counts as the trading price for a position.",
+   "core_idea": "Because mark-to-market accounting effectively defines 'the trading price,' it affects every downstream process that relies on price as an input, including risk management and financial reporting.",
+   "key_points": [
+    "Mark-to-market is a fair-value accounting standard for financial investments.",
+    "It is the most common valuation standard used for energy transactions.",
+    "Mark-to-market accounting policy determines what is treated as the trading price.",
+    "Anything using price as an input, such as risk management and financial reporting, is affected by this definition."
+   ],
+   "formulas": [],
+   "relationships": [
+    "One of the two core practices named in the risk management overview item."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Overview of risk management practices in energy trading"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "62-62",
+    "section_hint": "Risk Management \u2014 Mark-to-Market Accounting"
+   }
+  }
+ ]
+}

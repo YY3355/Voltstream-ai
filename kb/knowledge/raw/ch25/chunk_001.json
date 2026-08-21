@@ -1,0 +1,184 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Capacity market goals and payment structures",
+   "category": "Power Markets",
+   "subcategory": "Capacity Markets",
+   "type": "market_mechanic",
+   "definition": "A capacity market is a mechanism grid operators use to pay generators for being available to produce power, separate from energy sold, with the dual purpose of keeping existing plants online and encouraging new investment.",
+   "core_idea": "Capacity markets exist because energy-only revenue may not be enough to keep generators solvent or to attract new builds, so operators add a payment tied to a unit's availability rather than its output.",
+   "key_points": [
+    "Capacity markets aim to (1) retain existing generation resources and (2) spur development of new resources, including batteries and demand-reduction programs.",
+    "There is no single standard design; some grids have no capacity market at all, though many share common features.",
+    "A plain 'Capacity' payment is typically based on the average output a unit could deliver if fully active.",
+    "A 'Capacity Performance' category exists in some markets for units that can guarantee output, often because they hold firm fuel supply, or that can reliably generate during peak stress periods (e.g., summer afternoons, cold winter nights)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguished from energy markets, which pay for actual output rather than availability."
+   ],
+   "trading_implications": [
+    "Generators with firm fuel or peak-reliability characteristics may qualify for higher Capacity Performance payments than units without those guarantees."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Outage rates",
+    "Capacity auctions",
+    "Capacity market design flaws"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "498-499",
+    "section_hint": "4.10 Secondary Electricity Markets - Capacity Markets"
+   }
+  },
+  {
+   "topic": "Outage rates and capacity auction mechanics",
+   "category": "Power Markets",
+   "subcategory": "Capacity Markets",
+   "type": "market_mechanic",
+   "definition": "Capacity payments are usually scaled to how much a unit is expected to actually run, based on its typical forced outage rate, and the price for capacity is generally set through an auction.",
+   "core_idea": "In a capacity auction, generators bid their full capacity (unless retiring), the grid sets a target capacity need, and payments flow only if there's a shortfall relative to that target \u2014 otherwise no one is paid.",
+   "key_points": [
+    "A forced outage is defined as an equipment failure or other breakdown.",
+    "Capacity compensation is typically adjusted for the unit's expected forced outage rate.",
+    "Auctions require most generation units to bid in their full capacity unless they intend to retire the unit.",
+    "The grid operator sets a target amount of capacity it believes is needed to serve demand.",
+    "If the market meets the target, no capacity payments are made; if there is a shortfall, payments are made to incentivize new construction.",
+    "This auction design works reasonably well when consumer demand is steadily rising, but tends to under-compensate existing generation when demand is flat or declining.",
+    "A separate unresolved problem is compensating standby units that run only intermittently, sometimes as rarely as once every 5-10 years."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the general capacity market concept described in the prior item."
+   ],
+   "trading_implications": [
+    "In stable- or falling-demand regions, capacity auction revenue alone may be insufficient to keep existing plants economically viable."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity market goals and payment structures",
+    "Capacity market design flaws"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "498-499",
+    "section_hint": "4.10 Secondary Electricity Markets - Outage Rates"
+   }
+  },
+  {
+   "topic": "Commonly observed design flaws in capacity markets",
+   "category": "Power Markets",
+   "subcategory": "Capacity Markets",
+   "type": "risk",
+   "definition": "Capacity markets built around assumptions of ever-rising demand and ever-improving new-generation efficiency can fail to deliver the steady revenue needed to fund new construction when those assumptions don't hold.",
+   "core_idea": "Two embedded assumptions \u2014 that demand always grows and that new units are always more efficient than old ones \u2014 often break down in practice, undermining the revenue new generation needs to get built.",
+   "key_points": [
+    "Many capacity markets assume consumer demand rises continuously, but efficiency gains in insulation, appliances, lighting, and computing can flatten demand growth; U.S. retail electricity sales barely grew from 2005 to 2015.",
+    "A second embedded assumption is that new generation is always more efficient than existing generation, letting new units displace older ones in the dispatch stack and earn operating income that funds construction, while capacity payments cover the older units' maintenance.",
+    "When new units use the same or less efficient technology as the existing fleet, they may fail to displace existing units and thus may not capture the operating income needed to pay for their own construction.",
+    "Adding less-efficient generation can still be beneficial in some cases \u2014 e.g., a gas turbine added to a wind/solar-heavy grid for reliability won't displace the renewables, runs only infrequently, and must be paid for almost entirely through capacity payments rather than energy margin.",
+    "Because capacity markets primarily pay out when there is a construction shortfall, and a single new unit (e.g., one gas turbine built every few years under flat demand) can quickly close that shortfall, capacity payments can start and stop abruptly.",
+    "This start-stop payment pattern can leave developers without the sufficiently consistent, predictable cash flow needed to finance new generation construction."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Directly follows from the auction mechanics described in 'Outage rates and capacity auction mechanics'."
+   ],
+   "trading_implications": [
+    "Developers evaluating new generation projects in flat-demand or same-technology markets should not assume capacity market revenue will be steady or sufficient to finance construction.",
+    "Adding less-efficient, infrequently-run reliability generation (e.g., a peaking gas turbine on a renewables-heavy grid) is a case where capacity payments, not energy margin, must carry nearly the full cost of the asset."
+   ],
+   "common_misunderstandings": [
+    "It is not automatic that new generation displaces old generation in the stack \u2014 that only happens if the new unit is meaningfully more efficient than what's already running."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Capacity market goals and payment structures",
+    "Outage rates and capacity auction mechanics"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "499-500",
+    "section_hint": "4.10 Secondary Electricity Markets - Commonly Observed Design Flaws in Capacity Markets"
+   }
+  },
+  {
+   "topic": "Power Purchase Agreements (PPAs)",
+   "category": "Derivatives",
+   "subcategory": "Bilateral Contracts",
+   "type": "definition",
+   "definition": "A PPA is a bilateral contract in which one party (the seller) generates and sells electricity and the other party (the buyer) purchases it, typically bundled with the generation's renewable attributes and any capacity benefits.",
+   "core_idea": "PPAs are usually signed at the time a generation unit is built, giving the developer a guaranteed revenue stream that supports cheaper project financing, with pricing often set via a levelized-cost-of-new-entry approach.",
+   "key_points": [
+    "PPAs are commonly used by regulated utilities to buy power from renewable sources such as solar or wind farms.",
+    "In addition to electricity itself, PPAs typically also transfer the renewable attributes and any capacity benefits of the generation.",
+    "Signing a PPA at the time of construction gives the developer guaranteed income, which helps secure project financing at more favorable rates.",
+    "Prices are commonly negotiated to give the developer a fixed return on investment, with resulting savings passed through to the utility's customers.",
+    "PPA pricing is commonly set using a levelized cost of new entry (LCOE) approach."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with capacity markets as an alternative way to finance new generation construction with more predictable cash flow."
+   ],
+   "trading_implications": [
+    "A PPA offers a developer more predictable, bankable cash flow than relying on capacity market payments alone, which is especially relevant given the capacity market revenue instability described earlier in this chapter."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Commonly observed design flaws in capacity markets",
+    "Financial Transmission Rights"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "500",
+    "section_hint": "4.10 Secondary Electricity Markets - Power Purchase Agreements"
+   }
+  },
+  {
+   "topic": "Financial Transmission Rights (FTRs)",
+   "category": "Derivatives",
+   "subcategory": "Transmission / Congestion Hedging",
+   "type": "definition",
+   "definition": "An FTR is a financial hedge against congestion costs, defined by a source (starting) point and a sink (ending) point, that pays or charges its holder depending on whether power actually congests in the same direction as the FTR.",
+   "core_idea": "FTRs let market participants hedge locational congestion costs by holding a directional claim between two grid points; the FTR pays the holder when real congested flow matches the FTR's direction and charges the holder when it runs opposite.",
+   "key_points": [
+    "FTRs are defined by two endpoints: the source (start) and the sink (end), and direction matters.",
+    "Energy is treated as flowing from the low-cost location to the high-cost location.",
+    "When the FTR's direction matches the direction of congested flow, it pays out to (benefits) the holder.",
+    "When the FTR's direction is opposite the congested flow, it becomes a liability/charge to the holder.",
+    "FTRs are typically allocated through auctions held by the grid operator one to three years ahead of the flow date.",
+    "Smaller monthly auctions let participants sell FTRs they hold or buy FTRs left unsold from prior auctions.",
+    "FTRs between major hub-to-hub points can be valued using a spread option model.",
+    "Many FTRs are not between major locations (e.g., a line from a substation to an abandoned factory); these still generate LMPs at both endpoints, but with little or no regular power flow, the resulting price may be effectively noise driven by flows in surrounding areas.",
+    "Because of this valuation difficulty, many market participants mark FTRs to market using the price from the last reported auction rather than an independent model."
+   ],
+   "formulas": [],
+   "relationships": [
+    "FTR valuation for hub-to-hub pairs draws on spread option pricing (see options/spread option concepts elsewhere in the text)."
+   ],
+   "trading_implications": [
+    "FTR holders should verify that the FTR's direction aligns with expected congestion flow, since a mismatched direction converts the FTR from a hedge into a liability.",
+    "FTRs on illiquid, non-major routes are hard to value with models and are commonly marked to the last auction clearing price instead.",
+    "Hub-to-hub FTRs are more tractable to value (via spread option models) than FTRs involving minor or lightly-flowed nodes."
+   ],
+   "common_misunderstandings": [
+    "An FTR is not a generic transmission hedge in all conditions \u2014 its payoff depends on the direction of actual congested flow matching the FTR's own source-to-sink direction."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Power Purchase Agreements",
+    "Locational marginal prices (LMPs)"
+   ],
+   "source": {
+    "chapter": 25,
+    "pages": "500-501",
+    "section_hint": "4.10 Secondary Electricity Markets - Financial Transmission Rights"
+   }
+  }
+ ]
+}

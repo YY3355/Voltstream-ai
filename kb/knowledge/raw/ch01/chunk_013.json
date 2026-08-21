@@ -1,0 +1,335 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Asymmetric P&L and Seasonal VAR Limitations",
+   "category": "Risk",
+   "subcategory": "Risk Metrics",
+   "type": "concept",
+   "definition": "The observation that many energy assets have lopsided, seasonally-driven P&L profiles that a single VAR number struggles to capture.",
+   "core_idea": "Assets like peaking power plants sit idle and lose small amounts most of the year, then earn large windfall profits on a handful of hot summer afternoons; a gas pipeline selling firm delivery does the opposite, earning steadily until a rare failure causes a large loss. Season-specific VAR distributions could help but aren't a general fix, since not every asset's risk follows a clean seasonal pattern.",
+   "key_points": [
+    "Energy P&L is often not normally distributed \u2014 gains and losses aren't equally likely.",
+    "A peaking plant loses small, steady amounts most days and earns rare large windfalls on hot summer afternoons.",
+    "A firm-delivery gas pipeline earns steady profits until an equipment failure causes a large loss; failures have some seasonality but far less than temperature-driven power demand.",
+    "Season-specific VAR distributions are a possible partial fix but not a general solution across asset types.",
+    "VAR remains useful precisely because it is simple and gets checked regularly, even though no general model can handle every special case."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends Value at Risk",
+    "Illustrates limits of one-sided/two-sided VAR framing"
+   ],
+   "trading_implications": [
+    "Risk limits sized off a single VAR number may understate the true tail risk of assets with option-like, seasonally concentrated payoffs (e.g., peaking plants)."
+   ],
+   "common_misunderstandings": [
+    "That a single VAR distribution fairly represents assets whose risk is concentrated in rare seasonal events rather than spread evenly through the year."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Value at Risk",
+    "One-Sided vs Two-Sided VAR"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "67",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Value at Risk"
+   }
+  },
+  {
+   "topic": "Credit Exposure",
+   "category": "Risk",
+   "subcategory": "Counterparty and Credit Risk",
+   "type": "definition",
+   "definition": "The magnitude of money that could be lost if a counterparty defaults on a contract.",
+   "core_idea": "The simplest way to estimate credit exposure assumes total loss on every contract, which bounds the worst case but overstates the likely loss; a more accurate estimate factors in the probability of recovering assets through bankruptcy, including where a given debt ranks in the recovery order (e.g., preferred debt is repaid before other debt).",
+   "key_points": [
+    "Assuming complete loss on every contract sets an upper bound but tends to overestimate actual severity.",
+    "A more accurate estimate incorporates expected recovery through bankruptcy proceedings.",
+    "Recovery depends on debt priority \u2014 preferred debt is repaid ahead of other claims, so knowing where a contract ranks matters."
+   ],
+   "formulas": [],
+   "relationships": [
+    "One of two components of counterparty credit risk, alongside credit quality"
+   ],
+   "trading_implications": [
+    "Firms set hard exposure limits per counterparty; overestimating exposure needlessly restricts trading, while underestimating it risks a catastrophic loss on default."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Quality",
+    "Counterparty Risk Management"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "67",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   }
+  },
+  {
+   "topic": "Credit Quality",
+   "category": "Risk",
+   "subcategory": "Counterparty and Credit Risk",
+   "type": "definition",
+   "definition": "A forward-looking assessment of how likely a counterparty is to default on its payment obligations.",
+   "core_idea": "Credit quality draws on external ratings agencies plus in-house research on key counterparties, and can require multiple layers of analysis since a counterparty's own credit risk depends partly on the credit quality of its clients; a firm also becomes more likely to default once its large trades have moved against it, and less likely once trades have moved in its favor.",
+   "key_points": [
+    "Forward-looking, relevant because many energy contracts run for years.",
+    "Ratings agencies provide a baseline; firms often supplement this with in-house research on important counterparties.",
+    "Assessment can require layered analysis \u2014 a counterparty's credit risk depends on the credit quality of its own clients.",
+    "A counterparty's default likelihood shifts with how its large trades have performed: less likely to default if trades favor it, more likely if trades have moved against it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "One of two components of counterparty credit risk, alongside credit exposure"
+   ],
+   "trading_implications": [
+    "Monitoring how a major counterparty's other large positions are performing can be an early warning signal for rising default risk, independent of published credit ratings."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "Counterparty Risk Management"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "67-68",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   }
+  },
+  {
+   "topic": "Managing Counterparty Credit Risk",
+   "category": "Risk",
+   "subcategory": "Counterparty and Credit Risk",
+   "type": "concept",
+   "definition": "The practice of balancing credit risk controls against the need to keep doing business.",
+   "core_idea": "Credit risk from bilateral energy agreements can't be eliminated outright, only mitigated with collateral and managed through supervision; controls that are too strict block legitimate trading and damage relationships, while controls that are too loose risk a catastrophic counterparty collapse, so firms need to find a middle ground.",
+   "key_points": [
+    "Credit risk can be mitigated (collateral) and managed (supervision), but not eliminated.",
+    "Overly strict exposure limits cost missed trading opportunities and damaged relationships.",
+    "Overly loose limits risk a catastrophic loss from a counterparty collapse.",
+    "The goal is a balance between these two extremes, not a maximal-safety posture."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on Credit Exposure and Credit Quality"
+   ],
+   "trading_implications": [
+    "Setting per-counterparty exposure limits is inherently a trade-off exercise, not a pure risk-minimization problem."
+   ],
+   "common_misunderstandings": [
+    "That tighter credit controls are always safer \u2014 excessively strict limits carry their own business cost by blocking otherwise-good trades."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Credit Exposure",
+    "Credit Quality"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "68",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Counterparty and Credit Risk"
+   }
+  },
+  {
+   "topic": "Model Risk",
+   "category": "Risk",
+   "subcategory": "Model Risk",
+   "type": "risk",
+   "definition": "The risk that the methodology or assumptions behind a valuation model become invalid over time.",
+   "core_idea": "Energy model risk is especially acute because many models value long-lived physical assets (power plants, pipelines, gas wells with 20+ year lifetimes) using assumptions that regulatory change, population shifts, or technology can invalidate years later, compounded by employee turnover leaving no one who fully understands an aging model.",
+   "key_points": [
+    "Poor assumptions and badly designed models cause risk problems across financial markets generally, but are especially common in energy given model complexity and long asset lifetimes.",
+    "A model can be adequate when built and still fail well before the asset's life ends, as regulations, population, or technology shift underlying assumptions.",
+    "Employee turnover compounds the problem \u2014 original model developers are often gone before issues surface.",
+    "Organizations need a deliberate process to ensure someone still understands each model in production after years of use."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct risk category alongside VAR and counterparty/credit risk"
+   ],
+   "trading_implications": [
+    "Long-lived asset valuations (power plants, pipelines, wells) should be periodically re-validated rather than trusted indefinitely once built."
+   ],
+   "common_misunderstandings": [
+    "That a model validated at inception remains reliable for the full life of a long-dated asset."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Value at Risk",
+    "Basis Risk at Illiquid Trading Points",
+    "Correlation Risk in Spread Options"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "68",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   }
+  },
+  {
+   "topic": "Basis Risk at Illiquid Trading Points",
+   "category": "Risk",
+   "subcategory": "Model Risk",
+   "type": "risk",
+   "definition": "A model-risk source arising from approximating an illiquid physical trading point's price using a nearby liquid hub's price.",
+   "core_idea": "Since many physical delivery points aren't liquid enough to price directly, models commonly assume the point moves in tandem with a nearby hub; this assumption holds up well sometimes, but the historical relationship between the two locations can break down over a period of years.",
+   "key_points": [
+    "Illiquid physical points are commonly approximated using a nearby hub's price.",
+    "The implicit assumption is that the illiquid point tracks the hub's price changes.",
+    "This relationship can hold for a while and then break down after a couple of years, invalidating models built on it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A specific instance of Model Risk"
+   ],
+   "trading_implications": [
+    "Basis relationships used to price or hedge illiquid delivery points should be periodically re-checked rather than assumed permanent."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Model Risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "68-69",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   }
+  },
+  {
+   "topic": "Correlation Risk in Spread Options",
+   "category": "Derivatives",
+   "subcategory": "Model Risk",
+   "type": "risk",
+   "definition": "A model-risk source specific to spread options, where valuation is highly sensitive to the assumed correlation between the two underlying assets.",
+   "core_idea": "Unlike some inputs, the correlation between two assets underlying a spread option can't be pulled from an independent market source \u2014 it must be estimated internally and reviewed regularly, making it a persistent source of valuation uncertainty.",
+   "key_points": [
+    "Spread option value is highly sensitive to the correlation assumption between the two underlying assets.",
+    "Correlation can't be readily observed from an independent market source, unlike a traded price.",
+    "Because it must be estimated, correlation assumptions require ongoing review rather than a one-time calibration."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A specific instance of Model Risk",
+    "Relates to Spread Options"
+   ],
+   "trading_implications": [
+    "Spread option books carry embedded model risk that doesn't show up as clearly as price risk, since the key correlation input isn't independently observable."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Model Risk",
+    "Spread Options"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "69",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Managing Model Risk"
+   }
+  },
+  {
+   "topic": "Hedging",
+   "category": "Risk",
+   "subcategory": "Hedging",
+   "type": "definition",
+   "definition": "A trading position taken to lock in the profit or loss of another investment, transferring risk from one trader to another.",
+   "core_idea": "The contract used to hedge is called the hedging instrument, and the position being protected is the hedged item; traders hedge particularly when liquidating the original position would be undesirable, difficult, or impossible \u2014 for example, a wind farm's bondholders may require hedges to lock in future income and guarantee bond payments, at the cost of forgoing upside if prices later rise.",
+   "key_points": [
+    "Hedge = the trading position taken to offset risk; hedging instrument = the contract used; hedged item = the original position being protected.",
+    "Hedging transfers risk between traders rather than eliminating it.",
+    "Useful when the original position can't easily be liquidated or sold.",
+    "Example: bondholders financing a wind farm may require hedging (e.g., selling power forward) to guarantee the project can meet bond payments \u2014 but this locks out any upside from a future price rise."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct risk-transfer concept from VAR, credit risk, and model risk"
+   ],
+   "trading_implications": [
+    "Hedging requirements imposed by lenders (e.g., project finance bondholders) can force a producer to give up upside price exposure in exchange for guaranteed cash flow."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cost of Hedging",
+    "Hedge Accounting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "69",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   }
+  },
+  {
+   "topic": "The Cost and Risk-Management Blind Spot of Hedging",
+   "category": "Risk",
+   "subcategory": "Hedging",
+   "type": "concept",
+   "definition": "The idea that hedging is never free and can itself introduce underappreciated risk-management problems.",
+   "core_idea": "Hedging carries a hidden cost because there are only a limited number of counterparties willing to take the other side \u2014 most commodities are ultimately bought by consumers who won't lock in prices more than a year or two out. Separately, because a hedge is booked as a distinct position, it often receives far less scrutiny than the original investment, even though it's equal in size and opposite in direction \u2014 creating a risk that an large position gets offset by an equally large opposing trade under the banner of \"risk management\" without the same level of review.",
+   "key_points": [
+    "Hedging has a real, often hidden cost since willing counterparties for long-dated fixed prices are scarce \u2014 most consumers won't lock in prices beyond a year or two.",
+    "Producers want fixed prices to make projects financeable with outside capital (e.g., bondholders), but the limited counterparty pool constrains this.",
+    "A hedge is equal in size and opposite in risk to the original investment, yet typically gets much less scrutiny.",
+    "This scrutiny gap can let a large position be effectively reversed under the guise of hedging, undoing the original investment thesis without the same review it originally received."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends Hedging"
+   ],
+   "trading_implications": [
+    "Hedges should be reviewed with the same rigor as the position they offset, since a hedge desk can otherwise take on a large opposing bet with less oversight than the original trade."
+   ],
+   "common_misunderstandings": [
+    "That hedging is a costless or purely risk-reducing action \u2014 it has real transaction/availability costs and can introduce its own governance risk."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hedging",
+    "Hedge Accounting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "69-70",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   }
+  },
+  {
+   "topic": "Hedge Accounting",
+   "category": "Risk",
+   "subcategory": "Hedging",
+   "type": "definition",
+   "definition": "Accounting rules that let a hedger avoid mark-to-market treatment of the hedged item, provided the hedge and hedged item pass certain qualifying tests.",
+   "core_idea": "Hedging often pairs a tradable instrument (like a futures contract) with a nontradable one (like a power plant's future output), and the two aren't naturally valued the same way; hedge accounting rules exist to address this mismatch by letting the hedged item skip mark-to-market treatment when specific tests are met.",
+   "key_points": [
+    "Arises because hedges often combine tradable investments with nontradable ones, valued differently by default.",
+    "Hedge accounting lets the hedger avoid mark-to-market accounting for the hedged item specifically \u2014 not automatically, only if qualifying tests are passed."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends Hedging",
+    "Relates to Mark-to-Market Accounting and Historical Cost Accounting"
+   ],
+   "trading_implications": [
+    "Whether a hedge qualifies for hedge accounting treatment affects how much P&L volatility shows up on the books, even when the underlying economics are unchanged."
+   ],
+   "common_misunderstandings": [
+    "That any hedge automatically qualifies for favorable accounting treatment \u2014 it depends on passing specific tests."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Hedging",
+    "Mark-to-Market Accounting",
+    "Historical Cost Accounting"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "70",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Hedging"
+   }
+  }
+ ]
+}

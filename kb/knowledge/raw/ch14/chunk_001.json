@@ -1,0 +1,324 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Option value as a bounded percentage of the underlying price",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Black-Scholes-Merton's key insight is that an option's premium can be expressed as a fraction of the underlying's price, and that fraction is bounded by two extreme cases defined by the strike price.",
+   "core_idea": "A call struck at zero must always end in the money regardless of the price distribution, so its premium must equal the underlying's price or an arbitrage exists; a call struck so high it can never be reached is worth nothing because it will never be exercised. Real options price somewhere between these two bounds.",
+   "key_points": [
+    "A zero-strike call is always in the money no matter how future prices are distributed, so its premium must equal the underlying price to prevent arbitrage.",
+    "A call with an unreachably high strike will never be exercised, so its premium must be zero.",
+    "Most traded options have strikes between these extremes, so their premiums fall between 0% and 100% of the underlying's price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies the concept of delta / hedge ratio",
+    "Justified by no-arbitrage reasoning"
+   ],
+   "trading_implications": [
+    "An option's premium can be thought of as underlying price times a percentage (its hedge ratio) rather than derived independently each time."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Delta hedging",
+    "Arbitrage",
+    "Hedge ratio"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "350-350",
+    "section_hint": "3.5 Option Pricing"
+   }
+  },
+  {
+   "topic": "Delta hedging and the hedge ratio",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Delta hedging describes how an option's value moves in response to changes in the underlying price; the hedge ratio (delta) is the fraction of one unit of the underlying needed to replicate the option's payoff.",
+   "core_idea": "Delta ranges from 1 (a zero-strike call, fully replicated by holding one unit of underlying) down to 0 (an option that will never be exercised, replicated by holding nothing), with most options falling in between.",
+   "key_points": [
+    "A zero-strike call has a hedge ratio (delta) of 1 \u2014 its payoff is exactly duplicated by holding one unit of the underlying.",
+    "Higher strike prices reduce an option's value and its hedge ratio.",
+    "An option that can never be exercised has a hedge ratio of 0 and can be replicated by holding nothing.",
+    "'Delta' and 'hedge ratio' are used as synonyms.",
+    "An option struck near today's forward price might have a delta around 0.5, as an example of an intermediate case."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the zero-strike/unreachable-strike bounding argument",
+    "Basis for replicating portfolios"
+   ],
+   "trading_implications": [
+    "Delta tells a trader how many units of the underlying to hold to hedge or replicate an option position."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Replicating portfolios",
+    "Arbitrage-free pricing"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "350-351",
+    "section_hint": "3.5 Option Pricing"
+   }
+  },
+  {
+   "topic": "Arbitrage and arbitrage-free pricing",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Common Terms",
+   "type": "definition",
+   "definition": "Arbitrage is buying and selling two different assets simultaneously to lock in a risk-free profit. Arbitrage-free pricing sets an option's value equal to the cost of a portfolio of other assets that exactly replicates its payoff.",
+   "core_idea": "Option values are pinned down by requiring that no risk-free profit can be made between the option and a replicating combination of other assets.",
+   "key_points": [
+    "Arbitrage exploits price discrepancies between two assets for a risk-free profit.",
+    "In option pricing, value is determined by the cost of replicating the option's payoff with other assets.",
+    "Setting the option's price equal to its replicating portfolio's cost is called arbitrage-free pricing."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why zero-strike and unreachable-strike option values are forced to specific levels"
+   ],
+   "trading_implications": [
+    "Mispriced options relative to their replicating portfolio create arbitrage opportunities."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Replicating portfolios",
+    "Delta hedging"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "351-351",
+    "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Brownian motion (Wiener process)",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Common Terms",
+   "type": "definition",
+   "definition": "Brownian motion (or Wiener process) is a mathematical description of random motion, independently developed in botany (Robert Brown) and physics (Norbert Wiener), that characterizes the boundaries of a random walk made up of very small steps.",
+   "core_idea": "It is the mathematical foundation used to model continuous random price movement in option pricing.",
+   "key_points": [
+    "Same underlying mathematical process was discovered independently in two different scientific fields.",
+    "Describes the limiting behavior of a random walk taken in very small increments."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to random walk and stochastic process"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Random walk",
+    "Stochastic process"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "351-352",
+    "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Martingale",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Common Terms",
+   "type": "definition",
+   "definition": "A martingale is a random number sequence (stochastic process) in which the current value is the best available estimate of its future value.",
+   "core_idea": "Coin flipping is the canonical martingale example: given a fair coin, the expected future gap between heads and tails equals today's gap, since neither outcome is more likely going forward.",
+   "key_points": [
+    "The best estimate of a martingale's future value is simply its current value.",
+    "Example: if 50 flips of a fair coin produced 30 heads and 20 tails (a gap of 10), the expected gap after 100 flips is still 10, since future flips are 50/50."
+   ],
+   "formulas": [],
+   "relationships": [
+    "A type of stochastic process",
+    "Underlies the assumption that today's price is the best estimate of tomorrow's price"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Stochastic process",
+    "Models of future prices"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "351-352",
+    "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Random walk",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Common Terms",
+   "type": "definition",
+   "definition": "In finance, a random walk is typically a one-dimensional process where prices spread out from a starting point as a function of time; the binomial tree is a one-dimensional random walk example, though more advanced option models can use two- or three-dimensional random walks.",
+   "core_idea": "Random walk is the general modeling framework behind simple price-evolution models like the binomial tree.",
+   "key_points": [
+    "One-dimensional random walks spread prices out over time from a starting point.",
+    "The binomial tree used later in the chapter is a one-dimensional random walk.",
+    "More advanced models may use multi-dimensional random walks."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Basis for the binomial tree model",
+    "Related to Brownian motion"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Binomial tree model",
+    "Brownian motion"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "352-352",
+    "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Stochastic process",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Common Terms",
+   "type": "definition",
+   "definition": "A stochastic process is a general term for a sequence of random numbers or a method for generating one; it can generally be substituted with 'sequence of random numbers' in any sentence.",
+   "core_idea": "It is the umbrella term covering specific random processes such as coin flips, dice rolls, martingales, and random walks.",
+   "key_points": [
+    "The term is general \u2014 many different types of random number sequences qualify as stochastic processes.",
+    "Coin flipping and dice rolling are both given as examples of stochastic processes."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Martingale and random walk are specific types of stochastic processes"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Martingale",
+    "Random walk"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "352-352",
+    "section_hint": "3.5 Option Pricing \u2014 Common Terms"
+   }
+  },
+  {
+   "topic": "Replicating portfolios as the basis of option pricing",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Modern option theory prices an option by constructing a portfolio of the underlying (and other assets) that replicates the option's payoff, rather than by directly forecasting future prices.",
+   "core_idea": "This shift reduced the need to predict future prices accurately, which matters especially for option sellers, who must be willing to quote whatever product a buyer wants and cannot selectively predict only the assets they prefer.",
+   "key_points": [
+    "Option pricing has two steps: (1) model the statistical distribution of likely underlying price movements, then (2) determine how to replicate the option's payoff under those probabilities.",
+    "Replication reduces reliance on directional price forecasting.",
+    "Option sellers benefit particularly, since they must quote prices on whatever a buyer wants to trade and cannot pick only assets they're confident forecasting."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Connects to delta/hedge ratio and arbitrage-free pricing"
+   ],
+   "trading_implications": [
+    "An option seller can price and hedge a position via replication without needing an accurate directional price forecast."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Delta hedging",
+    "Arbitrage-free pricing",
+    "Models of future prices"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "352-352",
+    "section_hint": "3.5 Option Pricing \u2014 Replicating Portfolios"
+   }
+  },
+  {
+   "topic": "Modeling future prices: distributional estimates and the core pricing assumptions",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "Option pricing models generally forecast a probability distribution of future price outcomes rather than a single directional price, built on two standard assumptions: today's price is the best estimate of tomorrow's price, and volatility of returns stays constant over the option's life.",
+   "core_idea": "A distributional estimate (e.g., probabilities of the price staying within certain ranges) is more reliably accurate than a single directional call, and combining the 'today's price is the best estimate' and 'constant volatility' assumptions makes it tractable to build a model of future underlying prices.",
+   "key_points": [
+    "A probabilistic estimate of price ranges (e.g., 60% chance within 20 cents, 20% chance of a 20-70 cent move, 20% chance of more than a 70 cent move) is more likely to be accurate than a single directional prediction.",
+    "The assumption that today's price is the best estimate of tomorrow's price is justified by a risk-free profit argument: if a trader knew tomorrow's price with certainty and it differed from today's, they could buy today and resell tomorrow for a riskless profit.",
+    "This 'best estimate' assumption implies returns (percent changes) are distributed around today's price, which is reasonable for futures/forward contracts in energy markets.",
+    "This assumption is less appropriate for physical energy commodities, whose prices move cyclically and predictably due to factors like weather and consumer demand.",
+    "The second core assumption is that return volatility is constant over the life of the option \u2014 the magnitude of returns is assumed the same a week out as it is tomorrow.",
+    "Together, these two assumptions make it feasible to build a simple model of likely future underlying prices, such as a binomial tree."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Leads directly into the binomial tree model",
+    "Relies on the martingale/risk-free-profit no-arbitrage logic"
+   ],
+   "trading_implications": [
+    "The riskless-profit argument for 'today's price = best estimate' means any known future/forward price mismatch can be arbitraged away by buying today and reselling later."
+   ],
+   "common_misunderstandings": [
+    "The 'today's price is the best estimate of tomorrow's' assumption applies to futures/forward contracts, not to physical commodity spot prices, which have predictable cyclical patterns."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Martingale",
+    "Binomial tree model",
+    "Replicating portfolios"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "352-353",
+    "section_hint": "3.5 Option Pricing \u2014 Models of Future Prices"
+   }
+  },
+  {
+   "topic": "The binomial tree model of future prices",
+   "category": "Derivatives",
+   "subcategory": "Option Pricing Theory",
+   "type": "concept",
+   "definition": "A binomial tree is the simplest model of future underlying prices, assuming the price can rise or fall by a fixed percentage each period, with that percentage held constant over the option's life; prices start at today's value and diverge over time.",
+   "core_idea": "Even though the up and down move sizes can be asymmetric, the tree can be constructed so that a higher probability of an up-move offsets a larger possible down-move, keeping the expected average price at each future period equal to today's price.",
+   "key_points": [
+    "Prices start at today's value and branch into higher or lower values at each subsequent period.",
+    "In the example, a $100 starting price moves to either $110 or $85 in the next period.",
+    "Downside moves may be larger in magnitude than upside moves, but the probability of an upside move is higher, so the expected price in later periods still averages to $100.",
+    "Standard notation: p = probability price rises, (1-p) = probability price falls, u = up-move amount, v = down-move (fall) amount, S with a period subscript (e.g., S_x) = underlying price at a given period, with period numbering starting at 0."
+   ],
+   "formulas": [],
+   "relationships": [
+    "An application of the random walk concept",
+    "Built on the 'today's price is best estimate' and 'constant volatility' assumptions"
+   ],
+   "trading_implications": [
+    "Provides a tractable, period-by-period framework for pricing options via replication once a price distribution is modeled."
+   ],
+   "common_misunderstandings": [
+    "An asymmetric up/down move size does not necessarily mean the expected future price is biased \u2014 the probabilities are set so the average still equals the current price."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Random walk",
+    "Models of future prices",
+    "Replicating portfolios"
+   ],
+   "source": {
+    "chapter": 14,
+    "pages": "353-353",
+    "section_hint": "3.5 Option Pricing \u2014 Models of Future Prices (Figure 3.5.1 / 3.5.2)"
+   }
+  }
+ ]
+}

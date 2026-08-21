@@ -1,0 +1,219 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Customer class segmentation for load forecasting",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Forecasters group electricity consumers within a region into a small number of classes with distinct usage patterns, rather than modeling every customer individually.",
+   "core_idea": "Grid regions are defined mainly by shared transmission connectivity, not by uniform climate or consumer mix, so within any region load is decomposed into residential, commercial, and industrial classes because each has a characteristic demand shape.",
+   "key_points": [
+    "Regions are grouped primarily because they sit on the same part of a power grid; shared consumer mix, climate, and calendar (holidays, daylight savings) are secondary or convenience factors.",
+    "Very large individual consumers (e.g., an aluminum manufacturer) may need to arrange most of their power in advance rather than being folded into a class-level forecast.",
+    "Smaller customers are pooled and forecast as a group.",
+    "Residential: households, energy use concentrated roughly 6-9am and 6-11pm around the working day, though some run continuous loads (lighting, AC); includes apartments and suburban homes.",
+    "Commercial: offices and retail on standard business-hour schedules with moderate, fairly steady demand (e.g., desktop computers, office HVAC).",
+    "Industrial: manufacturers with wide variability in demand; very large industrial customers often arrange a steady power supply, which lowers their own cost and simplifies grid operation."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Feeds into base load / intermediate / peaking capacity planning",
+    "Interacts with temperature-driven demand (residential AC/heating especially)"
+   ],
+   "trading_implications": [
+    "Understanding the residential/commercial/industrial mix of a region helps explain why its load curve has particular peak timing and weather sensitivity, which matters for forecasting demand and pricing risk."
+   ],
+   "common_misunderstandings": [
+    "Regions are not necessarily climatically or demographically uniform even though they are treated as a single forecasting unit; the unifying factor is grid connectivity."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Base load power",
+    "Temperature effect on demand",
+    "Load duration curve"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "392-393",
+    "section_hint": "4.1 Spatial Load Forecasting"
+   }
+  },
+  {
+   "topic": "Base load power and the three-tier capacity structure",
+   "category": "Power Markets",
+   "subcategory": "Load Forecasting",
+   "type": "concept",
+   "definition": "Base load power is the minimum level of demand a grid must supply at essentially all times; it anchors how much always-on generation capacity a region needs, with additional tiers of capacity layered on top for variable and peak demand.",
+   "core_idea": "Using historical hourly load data (the PJM-West example, Jan 2004-Aug 2006), the author shows demand never fell below roughly 20,000 MWh, was above 30,000 MWh about half the time, and peaked near 60,000 MWh, illustrating how a cumulative load distribution is used to size three tiers of generation capacity.",
+   "key_points": [
+    "Base load power = the minimum amount of power that must be supplied to the grid at any given time; base load power plants are the units sized to run full-time to meet it.",
+    "A cumulative load distribution (percentage of time load exceeds a given level) is a practical tool for estimating capacity needs from historical hourly demand.",
+    "PJM-West example: load never below ~20,000 MWh, above 30,000 MWh about half the time, above 40,000 MWh only about 10% of the time, peaks near 60,000 MWh.",
+    "Roughly 20,000 MWh of capacity should be base load: highly efficient, low-cost units that benefit from running around the clock.",
+    "Roughly another 20,000 MWh should be intermediate/variable capacity: units cycled on and off regularly but used fairly often.",
+    "Roughly another 20,000 MWh should be peaking capacity: units that run less than 10% of the year, so the priority for them is being cheap to build, store, and start rather than efficient to run."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Derived from the region's cumulative load distribution",
+    "Complements customer-class segmentation and temperature-driven demand analysis"
+   ],
+   "trading_implications": [
+    "The proportion of time a region spends at different load levels indicates how much cheap base load vs. flexible/peaking capacity a market needs, which shapes the economics and dispatch order of different plant types."
+   ],
+   "common_misunderstandings": [
+    "The specific 20,000/20,000/20,000 MWh split is illustrative for the PJM-West example given, not a universal rule for all grids."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Customer class segmentation",
+    "Load duration curve",
+    "Peaking plant economics"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "393-394",
+    "section_hint": "4.1 Spatial Load Forecasting - Base Load Power"
+   }
+  },
+  {
+   "topic": "Temperature as the primary driver of short-term load variation",
+   "category": "Power Markets",
+   "subcategory": "Weather-Driven Demand",
+   "type": "concept",
+   "definition": "Electricity demand rises in both cold winter conditions (heating) and hot summer conditions (air conditioning), making temperature the dominant explanator of day-to-day load swings.",
+   "core_idea": "Because heating and cooling are major uses of electricity, load has a U-shaped (or similar) relationship with temperature, and short-term temperature forecasts are therefore central inputs to electrical demand forecasting.",
+   "key_points": [
+    "As temperature falls in winter, electricity use for heating rises.",
+    "As temperature rises in summer, electricity use for air conditioning rises.",
+    "Temperature explains a large share of day-to-day variation in electricity demand.",
+    "This dependency is why short-term temperature forecasts are important to the power industry."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies monthly seasonality patterns",
+    "Motivates THI and WCI adjustments"
+   ],
+   "trading_implications": [
+    "Traders and forecasters rely heavily on short-term temperature forecasts because temperature swings translate directly into demand (and price) swings."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "THI",
+    "WCI",
+    "Monthly seasonality",
+    "NWS forecasts"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "394-395",
+    "section_hint": "4.1 Spatial Load Forecasting - Temperature"
+   }
+  },
+  {
+   "topic": "Temperature Heat Index (THI) and Wind Chill Index (WCI) as apparent-temperature adjustments",
+   "category": "Power Markets",
+   "subcategory": "Weather-Driven Demand",
+   "type": "definition",
+   "definition": "THI and WCI are common adjustments energy traders apply to raw temperature to better estimate how hot or cold conditions actually feel, and thus how much power will be demanded for cooling or heating.",
+   "core_idea": "Humidity makes warm conditions feel hotter and keeps overnight temperatures elevated (THI), while wind makes cold conditions feel colder and increases building heat loss (WCI); both effects shift electricity demand beyond what raw dry-bulb temperature alone would predict.",
+   "key_points": [
+    "THI adjusts for humidity: high humidity raises apparent temperature and slows overnight cooling, so in humid regions (e.g., U.S. Gulf Coast) a 95\u00b0F daytime high might only fall to ~90\u00b0F overnight, versus a much larger overnight drop in dry desert regions.",
+    "Uncomfortable nighttime temperatures push more people to run air conditioners, and once turned on, ACs are often left running through the day, causing higher-than-expected demand during very humid weather.",
+    "WCI adjusts for wind: strong wind cools exposed structures (e.g., houses) faster than still air, increasing the heat required to maintain a constant indoor temperature.",
+    "THI and WCI are common enough in trader practice to have standard acronyms."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Refine the raw temperature-vs-demand relationship",
+    "Feed into short-term load forecasts alongside NWS temperature/humidity data"
+   ],
+   "trading_implications": [
+    "Humid-weather periods can produce power demand spikes beyond what temperature alone predicts, because previously idle air conditioners get switched on and left running.",
+    "Windy cold periods can raise heating demand beyond what temperature alone predicts."
+   ],
+   "common_misunderstandings": [
+    "The source describes THI and WCI conceptually (what they adjust for and why) but does not provide their calculation formulas, so no formula should be assumed."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Temperature as demand driver",
+    "Monthly seasonality",
+    "NWS forecasts"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "395-396",
+    "section_hint": "4.1 Spatial Load Forecasting - Common Terms"
+   }
+  },
+  {
+   "topic": "Monthly seasonality and behavioral load creep (May vs. August effect)",
+   "category": "Power Markets",
+   "subcategory": "Weather-Driven Demand",
+   "type": "concept",
+   "definition": "Average load by month peaks in the hottest and coldest months and dips in spring/fall; additionally, consumer behavior toward cooling shifts over the course of a season, so the same daily high temperature produces different demand depending on how long hot weather has persisted.",
+   "core_idea": "Using PJM-West (hot summers, cold winters, located west of Washington D.C.) as the example, monthly average load is highest in summer and winter and lowest in spring and fall, and within summer, prolonged heat causes people to shift from occasional to full-time air-conditioner use, so a given temperature yields more demand later in the summer (August) than earlier (May).",
+   "key_points": [
+    "PJM-W shows peak power demand in summer and winter months, with much lower demand in spring and fall.",
+    "In May, mild-weather regions like the Mid-Atlantic see occasional hot days but people generally leave air conditioners off, waiting for sustained heat before turning them on for the season.",
+    "By August, sustained hot weather has led many people to run air conditioners full time.",
+    "As a result, for the same daily high temperature, the region uses more power in August than in May \u2014 the temperature-to-load relationship is not static across the season but shifts with cumulative weather exposure."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends the basic temperature-vs-demand relationship with a seasonal/behavioral lag effect"
+   ],
+   "trading_implications": [
+    "A load forecast that uses only current-day temperature without accounting for how far into the cooling/heating season it is can systematically misestimate demand, especially early vs. late in summer."
+   ],
+   "common_misunderstandings": [
+    "Assuming the load-vs-temperature relationship is fixed year-round; the source shows it shifts (higher load per degree) as summer progresses due to behavioral adaptation, not just cumulative heat."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Temperature as demand driver",
+    "Customer class segmentation"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "396-397",
+    "section_hint": "4.1 Spatial Load Forecasting - Month"
+   }
+  },
+  {
+   "topic": "NOAA/NWS as the primary U.S. weather forecast source for load forecasting",
+   "category": "Power Markets",
+   "subcategory": "Weather-Driven Demand",
+   "type": "definition",
+   "definition": "The National Weather Service (part of NOAA) is identified as the primary source of hourly temperature and humidity forecasts used in U.S. electricity load forecasting, providing both short-term hourly forecasts and longer-term (monthly/quarterly) above/below-average temperature outlooks.",
+   "core_idea": "Energy load forecasters draw on NWS hourly and longer-horizon temperature/humidity forecasts (available at forecast.weather.gov) as the weather input to demand models.",
+   "key_points": [
+    "NWS produces both short-term hourly forecasts and longer-term forecasts covering temperature and relative humidity.",
+    "NWS also issues monthly and quarterly outlooks on whether regional temperatures will run above or below average.",
+    "Forecasts are publicly available at forecast.weather.gov."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Supplies the raw temperature/humidity data that THI/WCI adjustments and load forecasts are built on"
+   ],
+   "trading_implications": [
+    "NWS short-term hourly forecasts and monthly/quarterly outlooks are usable direct inputs for short- and medium-term power demand forecasting."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "THI",
+    "WCI",
+    "Temperature as demand driver"
+   ],
+   "source": {
+    "chapter": 16,
+    "pages": "397-398",
+    "section_hint": "4.1 Spatial Load Forecasting - Forecasts"
+   }
+  }
+ ]
+}

@@ -1,0 +1,215 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "CO2 Emissions Are an Unavoidable Combustion Byproduct, Varying by Fuel Chemistry",
+   "category": "Environmental / Emissions",
+   "subcategory": "Greenhouse Gases",
+   "type": "concept",
+   "definition": "Any carbon-based fuel produces CO2 when fully combusted, and this cannot be engineered away the way carbon monoxide can; the split between CO2 and water output is governed by the fuel's hydrogen-to-carbon ratio and molecular structure.",
+   "core_idea": "Fuels with more hydrogen relative to carbon, and with small self-contained molecules (like methane/natural gas), produce proportionally more water and less CO2 than fuels with long carbon-carbon-bonded chains or sheets (like coal), which are more carbon-intensive per unit combusted.",
+   "key_points": [
+    "Complete combustion of any carbon-based fuel unavoidably yields CO2 \u2014 unlike carbon monoxide, plants cannot design this away.",
+    "Methane has the highest hydrogen-to-carbon ratio (4:1) among common fuels, so combustion output skews toward water rather than CO2.",
+    "Longer-chain hydrocarbons like coal carry more carbon, so they yield a higher proportion of CO2 relative to water when burned.",
+    "Structurally, natural gas is made of small self-contained molecules while coal consists of large sheets of carbon atoms, which is the underlying reason coal is more carbon-intensive than gas.",
+    "CO2 emission restrictions are generally treated as a global regulatory issue, in contrast to NOx/SOx/particulates which are handled regionally."
+   ],
+   "relationships": [
+    "Contrasts with carbon monoxide, which power plants can largely eliminate via complete combustion.",
+    "Contrasts with NOx and SOx, which are regional rather than global regulatory concerns."
+   ],
+   "trading_implications": [
+    "Fuel switching between coal and natural gas has a direct, structurally-grounded effect on carbon intensity, which matters for dispatch decisions and cost exposure under carbon-constrained regimes."
+   ],
+   "common_misunderstandings": [
+    "One might assume all fossil fuels emit similar CO2 per unit of energy; the text attributes the difference specifically to hydrogen-to-carbon ratio and molecular structure, not just 'coal is dirtier.'"
+   ],
+   "author_states_vs_inference": "The trading implication is inference; all other points are the author's stated claims.",
+   "related_topics": [
+    "Carbon monoxide combustion control",
+    "Coal vs. natural gas emissions",
+    "Cap-and-trade for greenhouse gases"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 CO2 Emissions and Fuel Type"
+   }
+  },
+  {
+   "topic": "Nitrogen Oxide (NOx) Formation and Effects",
+   "category": "Environmental / Emissions",
+   "subcategory": "Criteria Pollutants",
+   "type": "concept",
+   "definition": "NOx is the generic term for nitrogen oxide (NO) and nitrogen dioxide (NO2), formed when high combustion temperatures force atmospheric nitrogen (78% of air) to react with oxygen supplied by the combustion air.",
+   "core_idea": "Because combustion draws its oxygen from air that is mostly nitrogen, sufficiently hot flames inevitably create some NOx; in sunlight this breaks down and contributes to ground-level ozone (smog) and acid rain, both of which have direct respiratory health impacts.",
+   "key_points": [
+    "Nitrogen is inert, colorless, and odorless under normal conditions but reacts with oxygen at high combustion temperatures.",
+    "NOx is a generic label covering both NO and NO2.",
+    "Sunlight breaks apart NOx molecules, generating ozone (O3).",
+    "Ozone/smog causes shortness of breath, chest pain, asthma, and coughing attacks.",
+    "NOx also contributes to acid rain formation.",
+    "NOx pollution is typically managed as a localized/regional issue rather than a global one."
+   ],
+   "relationships": [
+    "NO2, a form of NOx, acts as the catalyst that converts SO2 into sulfuric acid (see SOx item)."
+   ],
+   "trading_implications": [
+    "Regional rather than global NOx regulation implies compliance costs and any emissions-trading exposure are geography-specific for generators, distinct from global CO2 regimes."
+   ],
+   "common_misunderstandings": [
+    "It's easy to assume NOx comes mainly from nitrogen contained in the fuel itself; the text attributes it primarily to atmospheric nitrogen reacting at high combustion temperature."
+   ],
+   "author_states_vs_inference": "The trading implication is inference; all other points are the author's stated claims.",
+   "related_topics": [
+    "SOx and acid rain",
+    "Ozone and smog formation",
+    "Regional emissions regulation"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 Nitrogen Oxides"
+   }
+  },
+  {
+   "topic": "Sulfur Oxide (SOx) Formation and Acid Rain",
+   "category": "Environmental / Emissions",
+   "subcategory": "Criteria Pollutants",
+   "type": "concept",
+   "definition": "SOx (generically sulfur oxides, chiefly SO2) forms when sulfur naturally distributed throughout fossil fuels is burned; in the presence of NO2 as a catalyst, SO2 converts into sulfuric acid, a principal component of acid rain.",
+   "core_idea": "Fuel-bound sulfur becomes SO2 upon combustion and can be catalytically converted to sulfuric acid by NO2; acid rain's damage is cumulative rather than immediate \u2014 small amounts aren't acutely dangerous, but buildup over time kills exposed plants and animals once acidity crosses a threshold.",
+   "key_points": [
+    "Sulfur is distributed throughout fossil fuels and forms SO2 when the fuel is burned.",
+    "'SOx' is the generic abbreviation for sulfur oxides.",
+    "NO2 acts as a catalyst that converts SO2 into sulfuric acid.",
+    "Acid rain harm is cumulative: minor exposure isn't immediately dangerous, but buildup eventually kills exposed plants and animals.",
+    "Like NOx, SOx pollution is generally addressed at the regional level rather than globally."
+   ],
+   "relationships": [
+    "Depends on NOx: NO2 is the catalyst that drives the SO2-to-sulfuric-acid conversion."
+   ],
+   "trading_implications": [
+    "As a regionally regulated pollutant, SOx compliance costs and any market-based control mechanisms are geography-specific for generators burning sulfur-containing fuels."
+   ],
+   "common_misunderstandings": [
+    "One might think the NO2 catalyst is the source of the acid; the sulfur originates from the fuel itself, and NO2 only accelerates its conversion to sulfuric acid."
+   ],
+   "author_states_vs_inference": "The trading implication is inference; all other points are the author's stated claims.",
+   "related_topics": [
+    "NOx formation",
+    "Acid rain",
+    "Regional emissions regulation"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 Sulfur Oxides"
+   }
+  },
+  {
+   "topic": "Heavy Metal Pollution from Coal Combustion (Mercury)",
+   "category": "Environmental / Emissions",
+   "subcategory": "Particulate & Toxic Pollution",
+   "type": "concept",
+   "definition": "Coal-fired power plants are a leading source of atmospheric heavy metal pollution, with mercury \u2014 a potent neurotoxin \u2014 as the most dangerous pollutant of this type; lead and plutonium are cited as other combustion-released heavy metals.",
+   "core_idea": "Mercury is dangerous at effectively any exposure level, so unlike CO2 or acid-rain precursors, cap-and-trade approaches (which permit averaging emissions across sources) are considered impractical for it \u2014 it requires a different regulatory approach.",
+   "key_points": [
+    "In many regions, coal-fired power plants can account for up to roughly 90% of atmospheric mercury emissions.",
+    "Mercury exposure is linked to autism, sensory impairments, and death, among other medical problems.",
+    "Public health risk from mercury varies by region, but any level of mercury emission is considered dangerous \u2014 there is no safe threshold.",
+    "Because there is no safe threshold, cap-and-trade solutions (workable for greenhouse gases and acid rain precursors) are considered impractical for mercury.",
+    "Lead and plutonium are given as other examples of heavy metals releasable through combustion."
+   ],
+   "relationships": [
+    "Contrasts with CO2 and SOx/NOx, where cap-and-trade mechanisms are viable regulatory tools; mercury is presented as the exception."
+   ],
+   "trading_implications": [
+    "Because mercury doesn't suit cap-and-trade, coal generators likely face direct emission limits rather than market-based allowance trading for this pollutant specifically."
+   ],
+   "common_misunderstandings": [
+    "One might assume all emissions, including mercury, can be handled via cap-and-trade like CO2 or SO2; the text explicitly states this doesn't work for mercury given its zero-safe-threshold toxicity."
+   ],
+   "author_states_vs_inference": "The trading implication is inference; all other points are the author's stated claims.",
+   "related_topics": [
+    "Toxic pollution management strategies",
+    "Coal plant emissions",
+    "Cap-and-trade limitations"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 Particulate Pollution: Heavy Metals"
+   }
+  },
+  {
+   "topic": "Particulate Pollution (Fly Ash / Soot)",
+   "category": "Environmental / Emissions",
+   "subcategory": "Particulate & Toxic Pollution",
+   "type": "concept",
+   "definition": "Fine particles released directly by combustion, or formed secondarily from SOx and NOx chemistry, that cause respiratory and cardiovascular harm and reduce atmospheric visibility.",
+   "core_idea": "Particulate matter can be small enough to be inhaled deep into the lungs and pass into the bloodstream, causing respiratory damage, heart attacks, and strokes; children, asthmatics, and the elderly are the most vulnerable populations, and particulates are also a major driver of urban haze.",
+   "key_points": [
+    "Particulates arise both directly from combustion and secondarily from SOx/NOx reactions in the atmosphere.",
+    "Health effects include breathing problems, heart attacks, and strokes.",
+    "The smallest particles can be inhaled into the lungs and enter the bloodstream, causing substantial respiratory system damage.",
+    "Children, people with asthma, and the elderly face the highest risk.",
+    "Particulate pollution reduces visibility and is a major cause of urban haze."
+   ],
+   "relationships": [
+    "Forms secondarily from NOx and SOx emissions, in addition to being emitted directly from combustion."
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "It's easy to think of particulates as only direct soot from combustion; the text notes a significant secondary source is chemical reaction from already-emitted SOx and NOx."
+   ],
+   "author_states_vs_inference": "All from source.",
+   "related_topics": [
+    "NOx formation",
+    "SOx formation",
+    "Heavy metal pollution"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 Particulate Pollution: Fly Ash/Soot"
+   }
+  },
+  {
+   "topic": "Strategies for Managing Toxic Pollution",
+   "category": "Environmental / Emissions",
+   "subcategory": "Waste & Toxic Substance Management",
+   "type": "concept",
+   "definition": "Three general approaches exist for handling produced toxic substances: neutralize the toxin into a nontoxic compound, dilute it below a harmful concentration, or concentrate it and attempt long-term containment/storage.",
+   "core_idea": "Neutralization into a harmless substance is always the best option when chemically achievable; when it isn't (as with radioactive material), the remaining choice is a tradeoff between diluting the toxin broadly \u2014 spreading a small amount of harm everywhere \u2014 or concentrating and storing it, which risks a catastrophic release if containment ever fails.",
+   "key_points": [
+    "Best option when feasible: combine the toxin with another substance to render it nontoxic \u2014 example given is SO2 (an acid) reacting with lime (a base) to form gypsum, which is safe even in a landfill.",
+    "Second option: dilute the toxic substance until its concentration falls below a level of major health concern \u2014 effectively spreads a small amount of harm broadly rather than eliminating it.",
+    "Third option: concentrate the toxin and attempt to store it somewhere it cannot escape.",
+    "Nuclear waste is cited as an example where neutralization is impossible (it can't be made nonradioactive), forcing a choice between dilution and concentrated storage.",
+    "A leak from concentrated, stored toxin is typically catastrophic \u2014 the central downside of the concentrate-and-store approach."
+   ],
+   "relationships": [
+    "Applies as a general framework across pollutant types, including heavy metals and other toxic byproducts of energy production."
+   ],
+   "trading_implications": [
+    "The choice of waste-handling method (neutralize vs. dilute vs. concentrate/store) affects a generator's long-term liability and storage costs for toxic byproducts such as ash or nuclear waste."
+   ],
+   "common_misunderstandings": [
+    "Dilution might seem like a fully safe solution since it lowers immediate risk, but the text frames it as still 'polluting everything a little bit' rather than eliminating harm \u2014 it's a tradeoff, not a fix."
+   ],
+   "author_states_vs_inference": "The trading implication is inference; all other points are the author's stated claims.",
+   "related_topics": [
+    "Heavy metal pollution",
+    "Nuclear waste disposal",
+    "Acid rain"
+   ],
+   "source": {
+    "chapter": 10,
+    "pages": "287-289",
+    "section_hint": "3.1 Pollution \u2014 Toxic Pollution"
+   }
+  }
+ ]
+}

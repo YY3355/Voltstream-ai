@@ -1,0 +1,229 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Baseload generation plants",
+   "category": "Power Markets",
+   "subcategory": "Generation Fleet Structure",
+   "type": "concept",
+   "definition": "Baseload plants are generation units that are cheap to run but costly or physically risky to shut down, so they aim to operate continuously regardless of demand level.",
+   "core_idea": "Hydro, nuclear, and coal plants are typically baseload because stopping them is expensive or operationally dangerous, so they bid low to stay online rather than risk being taken offline.",
+   "key_points": [
+    "Hydro plants have no fuel cost and shutting down can risk flooding nearby communities.",
+    "Nuclear plants must actively spend money (control rods) to slow the reaction; without intervention it runs at max capacity, so slowing down is the costly action rather than running.",
+    "Coal plants are easier to shut down than hydro or nuclear but expensive to restart once fully cooled.",
+    "Baseload plants try to avoid being the marginal (price-setting) plant and will offer power at low prices specifically to stay online."
+   ],
+   "relationships": [
+    "Contrasts with peaking generation plants",
+    "Contrasts with mid-merit generation plants",
+    "Baseload bidding behavior feeds into who sets the marginal price"
+   ],
+   "trading_implications": [
+    "Because baseload plants bid low to avoid shutting down, they are rarely the price-setting (marginal) unit in a region."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Peaking generation plants",
+    "Mid-merit generation and marginal pricing"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "50-51",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   }
+  },
+  {
+   "topic": "Peaking generation plants",
+   "category": "Power Markets",
+   "subcategory": "Generation Fleet Structure",
+   "type": "concept",
+   "definition": "Peaking plants are generation units built to start up quickly and deliver short bursts of power during periods of maximum demand, prioritizing fast start over fuel efficiency.",
+   "core_idea": "These plants sacrifice operating efficiency for the ability to start almost instantly, running only a small number of hours per year and recovering their costs through very high prices when they do run.",
+   "key_points": [
+    "Structurally many are similar to jet engines: fuel is pumped in and ignited, with few moving parts and a lot of wasted heat.",
+    "They don't need to conserve fuel \u2014 operating cost efficiency is a secondary concern to startup speed.",
+    "Many peaking plants run only a couple hundred hours per year.",
+    "Because they run so rarely, they must charge very high prices during the hours they do operate to recover fixed and startup costs."
+   ],
+   "relationships": [
+    "Contrasts with baseload generation plants",
+    "Sits at the opposite extreme from baseload on the merit order"
+   ],
+   "trading_implications": [
+    "Expect peaking units to bid high, since they are only economic during the highest-demand, highest-price hours."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Baseload generation plants",
+    "Mid-merit generation and marginal pricing"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "50-51",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   }
+  },
+  {
+   "topic": "Mid-merit generation and marginal price setting",
+   "category": "Power Markets",
+   "subcategory": "Generation Fleet Structure / Price Formation",
+   "type": "market_mechanic",
+   "definition": "Mid-merit plants sit between baseload and peaking in cost structure and are the units most commonly on the margin, meaning they most often determine the regional clearing price.",
+   "core_idea": "Because a power market clears at a single regional price, the marginal (price-setting) plants \u2014 usually mid-merit units \u2014 have the hardest bidding decision, typically bidding some capacity near cost and progressively more capacity at higher prices.",
+   "key_points": [
+    "Mid-merit plants are either older, less-efficient baseload plants no longer worth running full-time, or efficient gas plants that cycle more easily than baseload units.",
+    "Mid-merit units show the most variability in bidding strategy since they are the ones actually setting price most of the time.",
+    "In a uniform-price market, once a plant is dispatched it receives the same clearing price as the highest accepted bid, so there is no benefit to being the top bidder and no downside to bidding near zero if someone else sets a higher clearing price.",
+    "The common mid-merit bidding strategy: offer some capacity at or slightly below cost, then offer progressively more capacity at rising prices."
+   ],
+   "relationships": [
+    "Depends on baseload plants bidding low and peaking plants bidding high, leaving mid-merit as the swing price setter",
+    "Demand level determines which category (baseload, mid-merit, or peaking) ends up on the margin"
+   ],
+   "trading_implications": [
+    "Mid-merit bidding behavior is the primary driver of regional power price formation most of the time.",
+    "Uniform clearing price mechanics mean bidding strategy for non-marginal units can be aggressive on the low side without cost, since they still receive the market clearing price."
+   ],
+   "common_misunderstandings": [
+    "It is not necessary (and offers no benefit) to be the highest bidder to profit \u2014 all dispatched generators receive the same regional clearing price."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Baseload generation plants",
+    "Peaking generation plants"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "50-51",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 generation categories"
+   }
+  },
+  {
+   "topic": "Tolling agreements",
+   "category": "Power Markets",
+   "subcategory": "Contracts / Asset Structures",
+   "type": "definition",
+   "definition": "A tolling agreement is a long-term arrangement (often 20-30 years) where a power marketer effectively rents a power plant, splitting responsibilities: one party maintains the physical plant for a fixed fee while the trader makes all economic decisions.",
+   "core_idea": "The trader in a tolling deal supplies fuel, decides when to run the plant, and sells the resulting power, bearing all economic risk and keeping all profit above the fixed maintenance fee paid to the plant owner/operator.",
+   "key_points": [
+    "Two parties: one maintains the plant for a pre-established fee; the trader (power marketer) makes the economic run/no-run decisions.",
+    "The trader supplies fuel and sells output electricity into the competitive market.",
+    "The trader bears all economic risk and captures all profit above the fixed maintenance fee.",
+    "Agreements are typically very long-dated (often 20-30 years)."
+   ],
+   "relationships": [
+    "Commonly valued using spark spread option models"
+   ],
+   "trading_implications": [
+    "A tolling agreement converts a physical power plant into a financial optionality position for the trader, similar to owning a call option on the spark spread."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread option model for power plant valuation"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "51",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   }
+  },
+  {
+   "topic": "Spark spread option model for power plant valuation",
+   "category": "Derivatives",
+   "subcategory": "Power Plant / Tolling Valuation",
+   "type": "concept",
+   "definition": "A common way to value a power plant or tolling agreement is to model it as a series of spread options, where the plant's payoff each period is the power price minus the fuel price minus operating cost, capturing the plant's option to run or not run.",
+   "core_idea": "When power price exceeds the generator's production cost the plant runs profitably; otherwise it can simply not run and lose nothing beyond fixed costs \u2014 this optionality is what a spark spread model captures.",
+   "key_points": [
+    "The model treats the plant as a spread option: payoff is the price difference (power price vs. fuel/production cost) less operating cost.",
+    "If power price is below the generator's cost of production, the plant can shut down and earn nothing rather than run at a loss.",
+    "This framework is called a 'spark spread' model because it centers on the spread between power price and generation cost."
+   ],
+   "relationships": [
+    "Used to value tolling agreements",
+    "Has known limitations described in a related risk item"
+   ],
+   "trading_implications": [
+    "Spark spread modeling gives a tractable way to price optionality in generation assets and tolling deals."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Tolling agreements",
+    "Limitations of spark spread option models"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "51",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   }
+  },
+  {
+   "topic": "Limitations of spark spread option models",
+   "category": "Risk",
+   "subcategory": "Model Risk / Power Plant Valuation",
+   "type": "risk",
+   "definition": "Spark spread option models simplify away real physical and behavioral constraints of generators, which can materially overstate a plant's estimated profitability and risk metrics.",
+   "core_idea": "Because option models assume instantaneous, price-reactive, independent decisions, they ignore ramp times, variable startup/cooling costs, anticipatory scheduling, and path dependency \u2014 errors that can inflate profitability estimates by 20-30 percent with no universal correction factor.",
+   "key_points": [
+    "Ignored physical realities: ramp-up/cycling time, and variable costs like startup and cooling that depend on ambient temperature (e.g., winter starts take longer than summer starts).",
+    "Local regulatory constraints on grid reliability can also be hard to quantify within the model.",
+    "Because the model is less constrained than a real plant, it tends to overestimate profitability, by as much as 20 to 30 percent, causing meaningful errors in profit and value-at-risk estimates.",
+    "The size of this overestimation depends on local/plant-specific characteristics, so there is no general-purpose correction factor.",
+    "The model is 'reactive' \u2014 it assumes the plant turns on/off purely in response to current price, whereas real optimal scheduling may anticipate future price changes and accept short-term losses for later gains; the importance of this effect varies by generator.",
+    "The model typically assumes each dispatch decision is independent of prior decisions, but real plants can be path dependent (today's operation depends on whether the plant ran yesterday), which simpler independent-decision models don't capture.",
+    "More complex models that address these issues are harder to verify, slower to run, and more likely to become invalid over time; simpler models are generally preferable but must be tested regularly since they aren't always appropriate."
+   ],
+   "relationships": [
+    "Extends the spark spread option model concept",
+    "Relevant to tolling agreement valuation"
+   ],
+   "trading_implications": [
+    "Profitability and VaR figures derived from spark spread models should be treated as potentially overstated by up to 20-30%, with the exact bias being plant/location-specific.",
+    "Model choice (simple vs. path-dependent/anticipatory) should be periodically re-tested rather than assumed permanently valid."
+   ],
+   "common_misunderstandings": [
+    "A spark spread valuation is not automatically conservative \u2014 it structurally tends to overstate profitability, not understate it."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Spark spread option model for power plant valuation",
+    "Tolling agreements"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "51-52",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Tolling Agreements"
+   }
+  },
+  {
+   "topic": "Wheeling and the generation-transmission cost trade-off",
+   "category": "Power Markets",
+   "subcategory": "Transmission",
+   "type": "definition",
+   "definition": "Wheeling is the long-distance transmission of power; total delivered power cost combines both generation cost and transmission cost, and minimizing total cost requires balancing the two.",
+   "core_idea": "Transmission cost is minimized when power is generated near where it's consumed, but generation is often more efficient at larger, centralized plants that are farther from load \u2014 creating a historical trade-off between siting generation close to demand versus building large centralized plants.",
+   "key_points": [
+    "Total cost of delivered power = generation cost + transmission cost.",
+    "Producing power where it is consumed minimizes transmission cost.",
+    "Larger power plants are often more efficient generators, which historically pushed toward centralization even though it increases transmission distance/cost."
+   ],
+   "relationships": [
+    "Trade-off between generation efficiency (favors large centralized plants) and transmission cost (favors local generation)"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source; note source text is truncated mid-discussion of the centralized-vs-local trade-off so this item covers only the introductory framing",
+   "related_topics": [],
+   "source": {
+    "chapter": 1,
+    "pages": "52",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Wheeling Power"
+   }
+  }
+ ]
+}

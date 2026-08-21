@@ -1,0 +1,291 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Nuclear Power Generation Mechanics",
+   "category": "Power Generation",
+   "subcategory": "Nuclear",
+   "type": "concept",
+   "definition": "Nuclear plants produce heat through nuclear fission, a non-combustion process that splits nuclei apart, rather than burning fuel the way coal plants do.",
+   "core_idea": "Because fission isn't combustion, nuclear generation avoids carbon dioxide emissions entirely, but it substitutes a different pollution problem: radioactive waste.",
+   "key_points": [
+    "Fission breaks protons and neutrons free from the fuel's nucleus rather than burning it",
+    "No CO2 is produced since there is no combustion",
+    "Radioactive waste is the tradeoff pollutant in place of carbon emissions"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts directly with coal plant combustion-based heat generation"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Nuclear power is sometimes treated as pollution-free; the source notes it still produces radioactive waste, just not CO2"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Coal generation",
+    "Uranium fuel supply and proliferation"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "56-56",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Uranium Fuel Constraints and Proliferation Risk",
+   "category": "Power Generation",
+   "subcategory": "Nuclear",
+   "type": "risk",
+   "definition": "The practical and geopolitical limits on sourcing and refining uranium fuel for nuclear reactors.",
+   "core_idea": "Concentrated uranium is highly toxic and economically extractable only from a limited number of large deposits, and because refining it resembles the process for weapons-grade material, new reactor construction carries proliferation concerns.",
+   "key_points": [
+    "Uranium is highly toxic once concentrated",
+    "Large, economically extractable deposits are geographically limited despite uranium being common in the Earth's crust",
+    "The refining process overlaps with the process used to produce nuclear weapons fuel",
+    "This overlap ties reactor construction to weapons proliferation concerns"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to nuclear plant heat generation via fission"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Nuclear Power Generation Mechanics"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "56-56",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Electricity Storage Methods and Economics",
+   "category": "Power Markets",
+   "subcategory": "Energy Storage",
+   "type": "concept",
+   "definition": "Electricity storage works by converting power into another energy form and later reconverting it back to electricity.",
+   "core_idea": "Round-trip conversion efficiency for most storage methods is typically low, but storage can still be economically justified when electricity input is very cheap or when the storage system itself is inexpensive to build.",
+   "key_points": [
+    "Storage methods include chemical energy (batteries), capacitors (direct voltage storage), pressurized gas, kinetic energy, and gravity-based systems",
+    "Conversion efficiency is usually low across these methods",
+    "Even inefficient storage can be economical if the electricity input is very cheap or the build cost is low"
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Cheap-power periods can justify storage arbitrage even with low round-trip efficiency, especially for low-capex storage technologies"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Levelized Cost of Entry (LCOE)"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "56-56",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Levelized Cost of Entry (LCOE)",
+   "category": "Power Markets",
+   "subcategory": "Valuation and Fundamentals",
+   "type": "concept",
+   "definition": "A long-horizon estimate of the power price at which developers would be willing to build new generation, used as an implied ceiling for future power prices.",
+   "core_idea": "LCOE is calculated by dividing the cost of building a generating unit by its expected generation volume, adjusted for the time value of money, and can be extended to include fixed and variable operating costs (fuel, maintenance, overhead); if market prices rise above this level, new entry should occur and push prices back down.",
+   "key_points": [
+    "Provides an estimated upper bound for long-horizon power prices",
+    "Basic version divides build cost by time-value-adjusted expected generation volume; can be expanded to include fixed and variable operating costs",
+    "Common uses: PPA pricing, fundamental forecasts, capacity market pricing, renewable energy certificate market analysis",
+    "Also used to compare competitiveness across different generating technologies over a typical life span and duty cycle",
+    "Key input is the cost of new entry (CONE), the estimated cost to construct a new unit",
+    "CONE is spread across the facility's expected life using discounted cash flow (DCF) analysis to derive a daily revenue requirement in $/MW-day",
+    "The underlying math is analogous to annuity calculations used in finance"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Depends on CONE and DCF/annuity math",
+    "Used in capacity markets and PPA pricing"
+   ],
+   "trading_implications": [
+    "Serves as a fundamental, long-run reference point for where power prices should cap out, informing long-horizon forecasts"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cost of New Entry (CONE)",
+    "Capacity Markets",
+    "Power Purchase Agreements"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "56-57",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Secondary Electricity Markets (Ancillary Services, Capacity, PPAs, FTRs)",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "market_mechanic",
+   "definition": "Markets that developed alongside the core energy market to help grids reliably deliver power and let participants manage related risks.",
+   "core_idea": "Ancillary services and capacity markets are reliability tools typical of deregulated markets, PPAs are the procurement tool used in regulated markets, and FTRs let participants hedge transmission congestion cost.",
+   "key_points": [
+    "Ancillary services pay generators to stay partially unused so they can ramp production up or down to match changing demand",
+    "Capacity markets pay generators to incentivize new construction and discourage retirement of underutilized units, ensuring future demand can be met",
+    "PPAs let a regulated utility contract directly with third-party generators, often to secure renewable supply",
+    "FTRs are a hedge against congestion cost, offsetting transmission costs and capable of producing either gains or losses for the holder",
+    "Ancillary services and capacity markets are typical of deregulated markets; PPAs are typical of regulated utility structures"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Capacity markets relate to LCOE/CONE pricing",
+    "FTRs relate to congestion risk management"
+   ],
+   "trading_implications": [
+    "FTR holders bear two-sided (gain or loss) congestion exposure rather than a one-directional hedge"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Levelized Cost of Entry (LCOE)",
+    "Congestion risk"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "57-58",
+    "section_hint": "1.1 An Overview of the Energy Markets"
+   }
+  },
+  {
+   "topic": "Natural Gas Physical Properties and Transport Implications",
+   "category": "Natural Gas",
+   "subcategory": "Fundamentals",
+   "type": "concept",
+   "definition": "The physical characteristics of natural gas that make its transportation and storage fundamentally different from solid or liquid fuels.",
+   "core_idea": "Natural gas has low energy density compared to solids and liquids, and methane specifically is less energy dense than other hydrocarbon gases like propane; combined with the extreme cryogenic temperature (-263\u00b0F) required to liquefy it, this makes tank-based distribution impractical and pipelines the standard transport method.",
+   "key_points": [
+    "Gas contains substantially less energy per unit volume than solids or liquids",
+    "Methane is one of the least energy-dense hydrocarbon gases, less dense than propane",
+    "Liquefying natural gas requires supercold temperatures (-263\u00b0F), making liquid-form consumer distribution impractical",
+    "These constraints make pipeline transport the typical solution"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the need for pipeline pressure dynamics and storage facilities"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Pipeline Pressure Dynamics",
+    "Natural Gas Storage Facilities"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "58-58",
+    "section_hint": "Natural Gas Models"
+   }
+  },
+  {
+   "topic": "Natural Gas Pipeline Pressure Dynamics",
+   "category": "Natural Gas",
+   "subcategory": "Transportation and Storage",
+   "type": "market_mechanic",
+   "definition": "The physical requirement that pipelines maintain continuous gas injection and withdrawal to sustain flow in the correct direction.",
+   "core_idea": "Since gas flows from high to low pressure, a pipeline needs continuous injection at the well/storage end (creating a high-pressure zone) and continuous withdrawal at the burner tip, or consumer end (creating a low-pressure zone); compressor stations sustain this by drawing suction on their intake side and pushing high pressure out their discharge side, letting gas expand from one station's discharge into the next station's suction.",
+   "key_points": [
+    "Gas moves from high pressure to low pressure, so injection and withdrawal cannot both stop without breaking flow",
+    "If burner-tip pressure exceeded wellhead pressure, gas would flow backward into the well",
+    "Because pipelines serve a public/reliability function, injections and withdrawals can't simply be halted for being uneconomical",
+    "If there's no consumer demand and no available storage, excess gas may need to be flared or disposed of uneconomically",
+    "Compressor stations create suction (intake side, low pressure) and discharge (high pressure); gas moves by expanding from one station's discharge to the next station's intake",
+    "Choosing the right number/placement of compressor stations is a key part of pipeline operation",
+    "'Burner tip' is the term for a natural gas consumer"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the need for storage facilities as a buffer"
+   ],
+   "trading_implications": [
+    "Explains why pipeline operators sometimes must act against short-term economics to preserve flow integrity, a constraint relevant to understanding pipeline reliability"
+   ],
+   "common_misunderstandings": [
+    "Gas flow can never be precisely controlled, so even simple pipeline balancing is more complex than it appears"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Storage Facilities",
+    "Firm vs. Interruptible Pipeline Transportation Service"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "58-59",
+    "section_hint": "Natural Gas Transportation"
+   }
+  },
+  {
+   "topic": "Natural Gas Storage Facilities",
+   "category": "Natural Gas",
+   "subcategory": "Transportation and Storage",
+   "type": "concept",
+   "definition": "Repurposed geological formations used to hold natural gas as a buffer between supply and burner-tip demand.",
+   "core_idea": "Depleted oil wells, salt mines, and aquifers are adapted for gas storage and kept at higher pressure than the pipeline itself, so stored gas can later flow back into the pipeline when needed.",
+   "key_points": [
+    "Storage prevents having to burn off or waste excess gas when there's no immediate consumer demand",
+    "Storage facilities are typically repurposed unused oil wells, salt mines, or aquifers",
+    "Storage must be held at higher pressure than the pipeline to allow outflow back into it"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Serves as the buffer implied by pipeline pressure dynamics"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Pipeline Pressure Dynamics"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "58-59",
+    "section_hint": "Natural Gas Models"
+   }
+  },
+  {
+   "topic": "Firm vs. Interruptible Pipeline Transportation Service",
+   "category": "Natural Gas",
+   "subcategory": "Transportation and Storage",
+   "type": "market_mechanic",
+   "definition": "The two main service tiers for contracting natural gas pipeline capacity, distinguished by reliability guarantee and price.",
+   "core_idea": "Firm service guarantees capacity availability except in cases of Force Majeure and costs more, while interruptible service is offered only on a best-efforts basis at a lower price and can be curtailed for various reasons, most commonly to help balance pipeline flow.",
+   "key_points": [
+    "Firm service: highly reliable, guaranteed except for Force Majeure events, but expensive",
+    "Interruptible service: cheap, best-efforts only, can be interrupted for any valid reason or may not be available at all",
+    "The most common reason for interrupting service is balancing gas flow on the pipeline",
+    "Gas movement can never be precisely controlled, making even simple pipeline flow optimization complex",
+    "Firm and interruptible are general descriptive terms; exact service definitions vary by individual pipeline system"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on pipeline pressure/flow-balancing dynamics"
+   ],
+   "trading_implications": [
+    "Shippers trade off cost against curtailment risk when choosing between firm and interruptible transportation capacity"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Natural Gas Pipeline Pressure Dynamics"
+   ],
+   "source": {
+    "chapter": 1,
+    "pages": "59-59",
+    "section_hint": "Natural Gas Transportation"
+   }
+  }
+ ]
+}

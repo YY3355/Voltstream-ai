@@ -1,0 +1,271 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "China vs. US carbon emissions dispute",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Background",
+   "type": "concept",
+   "definition": "A geopolitical disagreement over how global carbon caps should be allocated between high-population, rapidly industrializing countries and already-industrialized countries.",
+   "core_idea": "China's fast build-out of coal power means it will likely overtake the US as the top carbon emitter; China favors per-capita emissions caps (which would let it keep building coal plants), while the US resists a framework where it retires plants only for China to add more polluting capacity.",
+   "key_points": [
+    "China and the US are described as the two largest carbon polluters, with China poised to overtake the US as it builds more coal plants",
+    "China's large population makes a population-based (per-capita) cap structure favorable to it, since it would permit continued coal buildout",
+    "The US position is that it shouldn't bear the cost of shutting down less-polluting plants if that capacity is simply replaced by more-polluting Chinese plants",
+    "The author frames the underlying dispute as being about who ultimately pays a higher cost for power"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Motivates the choice between carbon taxes and cap-and-trade as competing policy tools"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade",
+    "Carbon tax",
+    "Distributing emissions rights"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "267",
+    "section_hint": "2.5 Emissions Markets (intro)"
+   }
+  },
+  {
+   "topic": "Carbon tax",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Mechanisms",
+   "type": "definition",
+   "definition": "A fixed per-unit charge levied whenever carbon dioxide or another greenhouse gas is emitted, intended to make polluting technology more expensive relative to cleaner alternatives.",
+   "core_idea": "A carbon tax is a price-based lever: it raises the cost of dirty technology and can fund subsidies that lower the relative cost of clean technology, using tax collection machinery most countries already have.",
+   "key_points": [
+    "Tax revenue can be redirected to subsidize less-polluting technology, widening the cost gap between clean and dirty options",
+    "Relatively easy to implement within a single country since tax infrastructure already exists",
+    "Adds a fixed cost to energy, unlike cap-and-trade's variable surcharge",
+    "A tax system typically results in a direct cash payment to a government (not revenue-neutral)",
+    "Cross-border taxation is complicated because it's unclear which government should receive the revenue",
+    "Carbon taxes and cap-and-trade are not mutually exclusive and often coexist in practice"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted directly with cap and trade"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade",
+    "Emissions trading markets"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "267-268",
+    "section_hint": "Reducing Carbon Emissions"
+   }
+  },
+  {
+   "topic": "Cap and trade",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Mechanisms",
+   "type": "market_mechanic",
+   "definition": "A regulatory system that fixes (caps) total allowable emissions and creates a tradable permit that must be held/consumed for each unit of pollution produced, letting the market set the price of compliance.",
+   "core_idea": "By capping total emissions and letting the right to pollute trade freely, companies can individually choose the cheapest way to comply, and the resulting market price efficiently finds the lowest-cost emissions cuts across borders and currencies.",
+   "key_points": [
+    "Total emissions volume is fixed by the cap; the price of permits floats with supply and demand, adding a variable surcharge to energy costs",
+    "Government is typically revenue-neutral under cap and trade (it doesn't profit from the system), unlike a tax",
+    "Because trades are private company-to-company exchanges of goods (cash for permits), they can cross country borders and currencies without government intermediation",
+    "Companies retain flexibility to either install cleaner technology or purchase emissions credits, whichever is cheaper for them",
+    "The author states trading provides the best way to minimize everyone's overall cost of complying with environmental goals",
+    "Cap and trade creates a new class of property (emissions rights) where none previously existed"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasted with carbon tax",
+    "Underpins real-world emissions trading markets, including Kyoto Protocol-conforming systems"
+   ],
+   "trading_implications": [
+    "Permit price is variable and driven by supply/demand plus macro factors like interest rates and FX rates, unlike a fixed tax cost"
+   ],
+   "common_misunderstandings": [
+    "Emissions rights under cap and trade can be viewed either as 'a license to pollute' or as 'the right to use affordable (coal) power' \u2014 the author notes there is no allocation of these rights that makes everyone happy"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Carbon tax",
+    "Emissions credits",
+    "Emissions trading markets",
+    "Distributing emissions rights"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "267-269",
+    "section_hint": "Reducing Carbon Emissions / Emissions Trading Markets"
+   }
+  },
+  {
+   "topic": "Public goods and free riders",
+   "category": "Emissions Markets",
+   "subcategory": "Economic Theory",
+   "type": "definition",
+   "definition": "A public good benefits everyone regardless of who pays for it (e.g., national defense); a free rider is someone who receives the benefit without contributing to its cost.",
+   "core_idea": "Greenhouse gas reduction can be framed as a public good \u2014 costly to create but universally beneficial once achieved \u2014 which historically has been funded through taxation, though that approach struggles when much of the world lacks the money or electricity usage to contribute meaningfully.",
+   "key_points": [
+    "National defense is given as the classic public-goods example: it's impossible to protect a country's borders without protecting everyone in it",
+    "Free riders are people who take the benefit of a public good without paying toward its cost",
+    "Emissions reduction fits the public-goods framing: there's an upfront cost, but the benefit (once achieved) accrues to everyone",
+    "The typical public-goods funding approach is taxation, requiring everyone to contribute",
+    "The author flags a key problem: much of the world doesn't use much electricity and lacks money to pay for emissions reductions, undermining a pure tax-funded approach"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the alternative 'common lands' framing of emissions rights"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Common lands problem",
+    "Carbon tax"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "268",
+    "section_hint": "Public Goods and Common Land"
+   }
+  },
+  {
+   "topic": "Common lands problem framing of emissions rights",
+   "category": "Emissions Markets",
+   "subcategory": "Economic Theory",
+   "type": "concept",
+   "definition": "A subset of public-goods problems, named after historical shared lands in England, Scotland, and Wales, applied to emissions by treating carbon rights as a limited, distributable commodity rather than a tax obligation.",
+   "core_idea": "Instead of viewing emissions reduction purely as a shared tax burden, it can be reframed as distributing a limited commodity \u2014 the right to low-cost electricity \u2014 which is the conceptual basis for treating emissions rights as tradable permits.",
+   "key_points": [
+    "Political economists label this category of public-goods problem 'common lands problems'",
+    "The name derives from shared land historically found in England, Scotland, and Wales before the seventeenth century",
+    "Under this framing, emissions rights are a limited commodity: possessing one grants access to low-cost electricity",
+    "This reframing turns the emissions problem into one of distributing low-cost-electricity permits rather than collecting taxes"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Alternative framing to the pure public-goods/tax view",
+    "Conceptual basis for cap and trade's tradable permits"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Public goods and free riders",
+    "Cap and trade"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "268",
+    "section_hint": "Public Goods and Common Land"
+   }
+  },
+  {
+   "topic": "Advantages of cap and trade over carbon taxes",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Mechanisms",
+   "type": "concept",
+   "definition": "A set of theoretical benefits the author attributes to cap-and-trade systems relative to carbon taxes.",
+   "core_idea": "Cap and trade is presented as advantageous because it fixes total pollution at a known level, gives businesses flexible compliance choices, avoids incentives for companies to relocate to low-tax regions, and can operate across countries/currencies/gas types without a government intermediary or legislative adjustment.",
+   "key_points": [
+    "Capping the maximum emissions level makes total pollution well known in advance",
+    "Businesses get maximum flexibility: install cleaner technology or buy emissions credits, whichever is cheaper",
+    "Because compliance can be achieved globally via trading, there's no incentive for companies to relocate factories from high-tax to low-tax regions",
+    "Cap and trade is broadly applicable across countries and different greenhouse gas types",
+    "No government intermediary is needed for cross-border transactions, so trades can pay for cuts in one country/currency and realize benefits in another",
+    "Unlike a tax system, which needs periodic legislative adjustment, a trading system self-adjusts to changing economic conditions"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on the cap-and-trade vs. carbon-tax comparison"
+   ],
+   "trading_implications": [
+    "Permit markets can dynamically reallocate the location of emissions cuts in response to interest rates, FX rates, and other economic stimuli, since it doesn't matter where the physical cuts occur"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade",
+    "Carbon tax",
+    "Emissions trading markets"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "268-269",
+    "section_hint": "Emissions Trading Markets"
+   }
+  },
+  {
+   "topic": "Distributing emissions rights and consumer protection",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Implementation",
+   "type": "concept",
+   "definition": "The practical challenge of deciding who initially receives the right to emit carbon, given that no one naturally owns emissions rights, plus the related need to shield consumers from power-generator failures during the transition.",
+   "core_idea": "Because no one inherently owns emissions rights, allocating them is inherently contentious, and an equal-cost-to-everyone approach conflicts with the trading market's core purpose of rewarding whoever can cut emissions most cheaply; meanwhile governments must ensure power generators that fail under the new cost burden don't leave communities without power, with the residential consumer typically bearing the compliance cost in the end.",
+   "key_points": [
+    "No party naturally owns emissions rights, so determining who may produce carbon emissions is a core design problem",
+    "The issue often reduces to who retains access to low-cost, coal-fired electricity",
+    "Charging everyone the same amount for power is described as tempting but at odds with the trading market's purpose, which is to find and pay for the cheapest available emissions cuts",
+    "Governments cannot allow power generators to go bankrupt in a way that leaves their service territory without power; the government would need to assume the failed operator's obligations",
+    "The author concludes that residential consumers ultimately bear the high cost of complying with environmental regulations"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Follows from the cap-and-trade advantages discussion"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [
+    "Charging a uniform price to everyone seems fair but actually undermines the trading market's efficiency goal of rewarding least-cost emissions cuts"
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade",
+    "Emissions credits"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "269",
+    "section_hint": "Distributing Rights"
+   }
+  },
+  {
+   "topic": "Emissions credits: allocation vs. offsets",
+   "category": "Emissions Markets",
+   "subcategory": "Policy Implementation",
+   "type": "market_mechanic",
+   "definition": "The two routes by which a participant obtains emissions rights in most cap-and-trade systems: receiving them from the system administrator (allocation or auction), or creating an offset that counteracts emissions elsewhere.",
+   "core_idea": "Beyond being granted or auctioned rights directly, participants can earn emissions credits by creating carbon sinks, sequestering carbon, or building non-polluting generation, and \u2014 particularly under Kyoto Protocol-style systems \u2014 these offsetting activities can be performed anywhere in the world, letting the market find the globally cheapest reduction.",
+   "key_points": [
+    "Route 1: receive emissions rights directly from the cap-and-trade administrator, usually via allocation or auction",
+    "Route 2: create something that offsets carbon emissions, such as a carbon sink (e.g., planting a forest), carbon sequestration (capturing CO2 and storing it underground), or building non-polluting generation (e.g., hydroelectric or solar)",
+    "The ability to creatively offset emissions is described as a key advantage of cap and trade, letting countries keep using coal power while alternatives are developed",
+    "Under Kyoto Protocol-conforming systems in particular, offsets don't need to occur close to home \u2014 they can be created anywhere in the world",
+    "This global flexibility is intended to ensure the lowest-cost offset option can always be found"
+   ],
+   "formulas": [],
+   "relationships": [
+    "Extends cap and trade's compliance-flexibility advantage",
+    "Leads into carbon sequestration as a specific offset mechanism"
+   ],
+   "trading_implications": [
+    "Offset location is not constrained to the emitter's home country under Kyoto-style systems, widening the pool of low-cost compliance options"
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cap and trade",
+    "Carbon sequestration"
+   ],
+   "source": {
+    "chapter": 8,
+    "pages": "269-270",
+    "section_hint": "Emissions Credits"
+   }
+  }
+ ]
+}

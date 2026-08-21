@@ -1,0 +1,220 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Non-storability of electricity and its market consequences",
+   "category": "Power Markets",
+   "subcategory": "Electricity Fundamentals",
+   "type": "concept",
+   "definition": "Electricity trading differs from other commodity trading because power cannot be economically stored and must be generated and delivered essentially instantaneously to match consumption.",
+   "core_idea": "Because electricity can't be stockpiled and long-distance transmission is costly, supply and demand must be balanced continuously in real time, which produces highly volatile prices and a patchwork of regional markets rather than one unified national market.",
+   "key_points": [
+    "Electricity must be generated and delivered in near real time; there is no meaningful storage buffer.",
+    "This makes electricity fundamentally different from storable commodities where a buy-and-hold strategy is viable.",
+    "Long-distance transmission is expensive, reinforcing small regional markets instead of a single national market.",
+    "Continuous supply/demand matching within each regional market leads to highly volatile prices."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underlies why regional TSO/ISO/RTO structures and day-ahead/real-time auctions exist"
+   ],
+   "trading_implications": [
+    "Traders must think in terms of continuous physical balancing rather than inventory-based arbitrage common in storable-commodity markets.",
+    "Structural inability to store surplus or draw down reserves during shortages contributes to higher baseline price volatility."
+   ],
+   "common_misunderstandings": [
+    "Assuming electricity markets behave like other commodity markets where storage smooths out price volatility."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regional power markets",
+    "TSO/ISO/RTO",
+    "Day-ahead and real-time auctions"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "169-170",
+    "section_hint": "2.2 Electricity - Summary/Introduction"
+   }
+  },
+  {
+   "topic": "TSO, ISO, and RTO structures",
+   "category": "Power Markets",
+   "subcategory": "Market Structure / Regulation",
+   "type": "definition",
+   "definition": "Each regional electricity market is coordinated by a Transmission Service Operator (TSO), which may be a government-sponsored monopoly, an Independent System Operator (ISO), or a Regional Transmission Organization (RTO).",
+   "core_idea": "ISOs and RTOs maintain the grid in areas where a monopoly utility has been disbanded; ISOs operate within a single state and sit outside federal jurisdiction, while RTOs span multiple states and fall under federal jurisdiction, with many RTOs having originated as single-state ISOs.",
+   "key_points": [
+    "TSO is the general term for whichever entity coordinates a region's grid.",
+    "ISOs operate in a single state and are exempt from federal jurisdiction.",
+    "RTOs operate across multiple states and are subject to federal jurisdiction.",
+    "Many RTOs began as single-state ISOs and kept 'ISO' in their name after expanding across state lines."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Ties into the regulated vs deregulated market distinction"
+   ],
+   "trading_implications": [
+    "Whether a market's operator is state-only (ISO) or multi-state (RTO) determines the applicable regulatory jurisdiction (state vs. federal) a trader must account for."
+   ],
+   "common_misunderstandings": [
+    "An organization's name containing 'ISO' does not guarantee it is legally an ISO \u2014 some are RTOs that retained legacy naming after expanding across state boundaries."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulated vs deregulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "170",
+    "section_hint": "2.2 Electricity - Market operators"
+   }
+  },
+  {
+   "topic": "Regulated vs deregulated electricity markets",
+   "category": "Power Markets",
+   "subcategory": "Market Structure / Regulation",
+   "type": "concept",
+   "definition": "A regulated market is served by a single government-sanctioned monopoly utility overseen by a public utility/service commission, while a deregulated market is coordinated by an RTO/ISO and open to any party that builds and connects generation to the grid.",
+   "core_idea": "Regulated markets control utility behavior through legislative rate cases that approve spending (with profit tied to a percentage of approved spend), whereas deregulated markets rely on competitive auctions, guaranteed equal transmission access, and economic incentives; most energy trading activity occurs in deregulated markets.",
+   "key_points": [
+    "In regulated markets, the monopoly utility typically owns generation, transmission lines, and maintenance infrastructure.",
+    "A public utility/service commission approves utility spending in annual rate case hearings; utility profit is a percentage of approved spending.",
+    "In deregulated markets, any party can own a power plant and connect it to the grid to sell power.",
+    "Deregulated markets guarantee equal transmission access to all participants and favor economic/competitive innovation.",
+    "Regulated markets rely on legislative mandates; deregulated markets rely on economic incentives.",
+    "Most energy trading occurs in deregulated markets."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Sets up the daily auction / marginal pricing mechanic that applies specifically in deregulated markets"
+   ],
+   "trading_implications": [
+    "Competitive price discovery, and therefore trading opportunity, is concentrated in deregulated markets rather than regulated monopoly territories.",
+    "Utility profit tied to approved capital spending (regulated markets) creates a different incentive structure than the competitive returns available in deregulated markets."
+   ],
+   "common_misunderstandings": [
+    "Deregulation does not mean an absence of oversight \u2014 it replaces legislative/rate-case control with auction-based, economically incentivized coordination."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "TSO/ISO/RTO",
+    "Day-ahead and real-time auctions"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "170-171",
+    "section_hint": "2.2 Electricity - Regulated vs deregulated markets"
+   }
+  },
+  {
+   "topic": "Nondiscriminatory power auctions and the clearing/marginal price",
+   "category": "Power Markets",
+   "subcategory": "Price Formation",
+   "type": "market_mechanic",
+   "definition": "In deregulated markets, generators bid the price at which they'll supply power and are dispatched from lowest to highest bid until demand is met; all dispatched generators are paid the same clearing (wholesale) price, set by the bid of the last (marginal) unit needed.",
+   "core_idea": "The auction stacks generator bids cheapest-to-most-expensive and activates them in that order until demand is satisfied; the last unit's bid \u2014 the marginal price of power \u2014 becomes the single clearing price paid to every dispatched generator, which is why the auction is called nondiscriminatory.",
+   "key_points": [
+    "Generators submit the price at which they are willing to supply power.",
+    "Generators are dispatched from lowest to highest bid until demand is fully met.",
+    "All dispatched generators are paid the same clearing/wholesale price regardless of their individual bid.",
+    "The last generator activated is the marginal producer, and its bid is the marginal price of power.",
+    "The area-wide clearing price equals the marginal price.",
+    "Smaller (retail) customers pay a somewhat higher retail price than the wholesale clearing price."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Clearing price = marginal price set by the last-dispatched (marginal) generator"
+   ],
+   "trading_implications": [
+    "Predicting which generator is likely to be marginal, and its bid, helps forecast the clearing price.",
+    "Because every dispatched generator is paid the marginal price rather than its own bid, lower-cost generators earn a margin above their bid \u2014 relevant to asset valuation and dispatch strategy."
+   ],
+   "common_misunderstandings": [
+    "Winning bidders are not paid their own submitted bid (as in a discriminatory/pay-as-bid auction) \u2014 everyone dispatched receives the same clearing price set by the marginal unit."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Day-ahead and real-time auctions",
+    "Regulated vs deregulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "171",
+    "section_hint": "2.2 Electricity - Auction mechanics"
+   }
+  },
+  {
+   "topic": "Day-ahead vs real-time power auctions",
+   "category": "Power Markets",
+   "subcategory": "Price Formation",
+   "type": "market_mechanic",
+   "definition": "RTOs/ISOs typically run a day-ahead auction that prices the next day's power in one-hour blocks based on forecasted load, followed by a real-time auction that continuously reconciles actual demand against that forecast in five-minute increments.",
+   "core_idea": "The day-ahead auction, usually finalized in the early afternoon before delivery, lets generators plan fuel and operations around a load forecast, while the real-time auction runs throughout the delivery day balancing actual versus forecast demand and favors plants capable of starting and stopping quickly.",
+   "key_points": [
+    "Day-ahead auction prices the next day's power in one-hour increments, typically completed in the early afternoon before delivery.",
+    "Day-ahead prices are based on a predicted (forecast) load, not actual demand.",
+    "Real-time auction runs continuously through the delivery day, typically in five-minute increments, balancing actual demand against the day-ahead forecast.",
+    "A plant not selected in the day-ahead auction can still bid into the real-time auction.",
+    "Real-time participation requires the ability to start and stop quickly, which not every plant can do.",
+    "Only power plants participate directly in these auctions, but the resulting price affects every market participant."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Both auctions use the same marginal-price/clearing-price mechanic described for deregulated market auctions"
+   ],
+   "trading_implications": [
+    "Fast-ramping or flexible generation has an advantage bidding into the real-time auction when not cleared day-ahead.",
+    "The existence of two sequential auctions (forecast-based day-ahead, actuals-based real-time) is the structural basis for day-ahead vs. real-time price spreads."
+   ],
+   "common_misunderstandings": [
+    "The real-time auction is not a single event \u2014 it runs continuously in five-minute increments throughout the delivery day, unlike the one-time day-ahead auction."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Marginal price and clearing price",
+    "Regulated vs deregulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "171-172",
+    "section_hint": "2.2 Electricity - Day-ahead and real-time auctions"
+   }
+  },
+  {
+   "topic": "Four functional components of electricity delivery",
+   "category": "Power Markets",
+   "subcategory": "Market Structure",
+   "type": "definition",
+   "definition": "Getting power to consumers is divided into four functions: generation (producing electricity), transmission (long-distance, high-voltage transport), distribution (short-distance, low-voltage delivery to individual buildings), and retail sales (billing, customer service, and capacity contracting).",
+   "core_idea": "A regulated monopoly utility typically performs all four functions itself, while deregulated markets commonly split them across separate entities, with retail providers additionally responsible for contracting with generators to secure enough capacity for their customer base.",
+   "key_points": [
+    "Generation: power plants that produce electricity.",
+    "Transmission: long-distance transport, typically at high voltage.",
+    "Distribution: short-distance, neighborhood-level transport at low voltage, connecting individual buildings to the grid.",
+    "Retail sales: billing and customer service; in deregulated markets, retail providers also contract with generators to ensure sufficient capacity for their customers.",
+    "Regulated monopoly utilities typically handle all four functions themselves.",
+    "Deregulated markets commonly split these four functions among multiple separate companies."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Structural counterpart to the regulated vs deregulated market distinction"
+   ],
+   "trading_implications": [
+    "In deregulated markets, retail providers bear the responsibility of procuring adequate generation capacity via contracts, creating demand for hedging and structured energy products."
+   ],
+   "common_misunderstandings": [
+    "Generation, transmission, distribution, and retail are distinct functions even when bundled under one monopoly utility in regulated markets \u2014 deregulation unbundles existing functions into separate businesses rather than creating new ones."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Regulated vs deregulated markets"
+   ],
+   "source": {
+    "chapter": 5,
+    "pages": "172-173",
+    "section_hint": "2.2 Electricity - Market participants"
+   }
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Electricity storage as a price-arbitrage opportunity",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "The idea that if electricity could be stored cheaply and efficiently, it could be bought during low-price periods and resold during high-price periods, exploiting the market's recurring day/night price swings.",
+   "core_idea": "Electricity prices repeat a daily pattern of cheap overnight power and expensive daytime power; storage that could capture this spread would be highly profitable, which is why efficient storage is described as a major prize for electrical markets \u2014 but in practice available technology is not efficient enough to make this simple arbitrage broadly economical.",
+   "key_points": [
+    "Electricity prices oscillate predictably, typically highest during the day and lowest at night and on weekends.",
+    "If storage were cheap and efficient, buying overnight and reselling the next day would be a straightforward profit strategy.",
+    "Storage would change electrical market behavior substantially if it were efficient enough to support this kind of resale.",
+    "In practice, storage technology is generally not efficient enough for this type of trading to work economically."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Round-trip efficiency sets storage breakeven economics"
+   ],
+   "trading_implications": [
+    "Storage value should be modeled around the size and reliability of the peak-vs-off-peak price spread available in the market.",
+    "A storage arbitrage strategy is a bet that the spread persists and is large enough to cover round-trip losses plus capital and operating costs."
+   ],
+   "common_misunderstandings": [
+    "Cheap storage sounds like an easy arbitrage, but low round-trip efficiency plus installation/maintenance costs can eliminate the apparent profit."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Battery storage for the electrical grid",
+    "Pumped hydropower storage"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "476-476",
+    "section_hint": "4.8 Electricity Storage \u2014 Summary / Key Topics"
+   }
+  },
+  {
+   "topic": "Round-trip efficiency and storage breakeven economics",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "formula",
+   "definition": "Storage facilities lose energy converting electricity into another form and back; the resulting round-trip efficiency sets the minimum peak/off-peak price spread needed just to break even on gross profit, before any capital or maintenance costs.",
+   "core_idea": "With a 25% round-trip efficiency, only one unit of electricity is recovered for every four units put in, so peak prices would need to be at least four times off-peak prices just to break even on gross margin \u2014 and that still ignores installation and ongoing maintenance costs.",
+   "key_points": [
+    "Author's example: a storage facility with 25% efficiency returns only 25% of the electricity put into it.",
+    "At 25% efficiency, peak prices consistently four times off-peak prices would let the system break even on gross profit only.",
+    "Breaking even on gross profit does not cover installation and ongoing maintenance costs, so real-world viability requires an even wider spread."
+   ],
+   "formulas": [
+    {
+     "name": "Storage breakeven price ratio",
+     "formula": "Breakeven Peak/Off-Peak Price Ratio = 1 / Round-Trip Efficiency",
+     "variables": {
+      "Round-Trip Efficiency": "fraction of stored electricity recovered after storage losses (e.g., 0.25 = 25%)"
+     }
+    }
+   ],
+   "relationships": [
+    "Electricity storage as a price-arbitrage opportunity"
+   ],
+   "trading_implications": [
+    "When valuing a storage asset, compare the observed peak/off-peak spread to 1/efficiency to see if there is room for gross profit before fixed costs.",
+    "Low round-trip-efficiency technologies need very wide, reliable price spreads to be economic at all."
+   ],
+   "common_misunderstandings": [
+    "Breaking even on gross profit is not the same as a profitable investment \u2014 capital and maintenance costs still have to be covered on top."
+   ],
+   "author_states_vs_inference": "The 25%-efficiency / 4x-breakeven numeric example is the author's own claim; the general formula '1/efficiency = breakeven ratio' is my restatement generalizing that example.",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity",
+    "Storage valuation depends on the operating profile"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "476-477",
+    "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Baseload plants and effectively free overnight power for storage",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "Large baseload plants such as nuclear and coal units are costly to ramp down overnight because reheating the system in the morning burns more fuel than continuous operation, so their overnight output can become effectively free if it can't be sold or stored.",
+   "core_idea": "Because cycling output down overnight and back up in the morning costs a baseload plant more fuel than simply continuing to run, storage attached to such a plant can acquire electricity at effectively zero marginal cost, which changes storage economics compared to buying power at market off-peak prices.",
+   "key_points": [
+    "Nuclear and coal plants operate most efficiently at constant high temperature and output.",
+    "Reducing output overnight and restoring it in the morning is more costly in fuel than running continuously.",
+    "If the plant cannot sell or use the excess power, it is discarded, making it effectively free to a storage system that can absorb it."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Storage valuation depends on the operating profile"
+   ],
+   "trading_implications": [
+    "Storage co-located with must-run baseload generation can have a fundamentally better cost basis than storage that buys power on the open market."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity",
+    "Battery storage for the electrical grid"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "477-477",
+    "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Storage valuation depends on the assumed operating profile",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "There is no single valuation approach for electricity storage; the correct method depends heavily on how the facility is expected to acquire and dispatch power, e.g., daily buy-low/sell-high cycling versus holding free power for an extended period.",
+   "core_idea": "A storage facility that trades daily around the peak/off-peak spread is economically a very different asset from one that captures free overnight power and holds it for months, so any valuation must be tailored to the specific expected operating strategy rather than treated generically.",
+   "key_points": [
+    "Example contrast given: a facility buying overnight power and reselling it the next day versus a facility that gets free power and holds it for several months.",
+    "The core of a storage valuation is the assumed operating pattern, not just the underlying technology."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Round-trip efficiency and storage breakeven economics",
+    "Baseload plants and effectively free overnight power for storage"
+   ],
+   "trading_implications": [
+    "Before valuing a storage asset, first pin down its expected dispatch/operating strategy, since that determines which price spreads and holding costs are relevant."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [],
+   "source": {
+    "chapter": 23,
+    "pages": "477-477",
+    "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   }
+  },
+  {
+   "topic": "Battery storage for the electrical grid",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "Grid-scale batteries work conceptually like consumer electronics batteries; they are especially valuable paired with intermittent solar or wind generation, and can independently provide short-term ancillary services to help balance grid voltage.",
+   "core_idea": "Falling battery costs, driven by demand for mobile phones, tablets, and laptops, are making large-scale grid battery storage increasingly viable, both for pairing with renewables and as a standalone source of short-term grid-balancing services.",
+   "key_points": [
+    "Grid batteries are conceptually similar to batteries found in mobile phones or laptops.",
+    "Batteries are most desirable when linked to solar or wind generation.",
+    "Even without renewable pairing, batteries can supply ancillary services that help the grid balance short-term voltage variances.",
+    "Battery prices have fallen steadily due to demand from mobile phones, tablets, and laptops, making large-scale grid use more feasible.",
+    "Greater adoption of battery storage is expected to create further economies of scale and additional price declines."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Electric cars as a source of grid battery storage"
+   ],
+   "trading_implications": [
+    "Battery cost trends are a leading indicator of when large-scale grid storage becomes broadly economical.",
+    "Ancillary services revenue is a use case for batteries that is independent of renewable pairing or price arbitrage."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity",
+    "Electric cars as a source of grid battery storage"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "477-478",
+    "section_hint": "4.8 Electricity Storage \u2014 Batteries"
+   }
+  },
+  {
+   "topic": "Electric cars as a source of grid battery storage",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "Electric vehicles could bring large-scale battery capacity to the power grid, both through direct vehicle-to-grid charging feedback and, more significantly, through reuse of retired car batteries.",
+   "core_idea": "While electric vehicles can feed power back to the grid while charging, the author suggests the larger potential impact is that batteries retired from cars \u2014 once their capacity drops below about 80% of maximum \u2014 may still have years of useful life left for stationary grid storage.",
+   "key_points": [
+    "Electric cars use batteries and an electric motor instead of an internal combustion engine, reducing moving parts.",
+    "If batteries become sufficiently cheap, fewer moving parts could make electric cars easier and cheaper to build and maintain than traditional cars.",
+    "Electric motors deliver torque immediately, giving electric cars strong acceleration \u2014 a possible adoption driver independent of environmental motivations.",
+    "Electric cars connected for charging can feed energy back to the power grid, but the author describes this as a relatively minor effect.",
+    "Batteries are typically retired once they can no longer hold more than about 80% of their maximum charge; such batteries may be unsuitable for cars but still useful for grid storage."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Battery storage for the electrical grid"
+   ],
+   "trading_implications": [
+    "A secondary market for retired EV batteries repurposed as grid storage could be a meaningful future supply source, distinct from vehicle-to-grid charging itself."
+   ],
+   "common_misunderstandings": [
+    "Vehicle-to-grid charging feedback might be assumed to be the main grid-storage benefit of electric cars, but the author suggests repurposed retired batteries could matter more."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Battery storage for the electrical grid"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "478-479",
+    "section_hint": "4.8 Electricity Storage \u2014 Electric Cars and the Power Grid"
+   }
+  },
+  {
+   "topic": "Compressed air energy storage",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "A storage method that uses low-cost off-peak power to run an air compressor, forcing air into a storage vessel; the compressed air can later be released to run a turbine for electricity, used directly as pneumatic power, or used for heating/cooling because it cools rapidly as it expands.",
+   "core_idea": "Compressed air storage banks cheap night/weekend power as pressurized air, which can later be converted back to electricity via a turbine, used directly to power pneumatic tools, or exploited for an HVAC application because expanding compressed gas cools rapidly.",
+   "key_points": [
+    "The compressor runs during low-price periods, such as nights or weekends, to fill the storage vessel.",
+    "Sufficiently high air pressure can drive a turbine to regenerate electricity when needed.",
+    "Compressed air can also be used directly, for example to run pneumatic tools common in industrial jobs.",
+    "Because compressed gas cools rapidly as it expands, the author notes it could support a heating, ventilation, and air conditioning (HVAC) use case."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Compressed air storage has multiple potential use paths (electricity regeneration, direct pneumatic use, HVAC), which broadens how a facility might be valued beyond pure electricity price arbitrage."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "479-479",
+    "section_hint": "4.8 Electricity Storage \u2014 Compressed Air"
+   }
+  },
+  {
+   "topic": "Flywheel energy storage",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "A mechanical storage method that stores energy in a fast-spinning, low-friction wheel; energy is added by speeding the wheel up and extracted by slowing it down, either generating AC power via an electromagnet or providing mechanical drive via a shaft.",
+   "core_idea": "Flywheels store energy kinetically in a heavy, fast-spinning wheel and are relatively compact with straightforward energy extraction, but the large stored kinetic energy creates safety risks and gyroscopic effects that must be addressed through engineering design.",
+   "key_points": [
+    "Eliminating friction on the spinning wheel is described as the key design challenge for a flywheel system.",
+    "Advantages include compactness and straightforward energy extraction, via an electromagnet for AC power or a shaft for mechanical drive.",
+    "A fast-spinning flywheel stores a large amount of energy and can cause significant damage if an axle breaks.",
+    "A single flywheel mounted in a vehicle behaves like a gyroscope, making the vehicle harder to turn.",
+    "Running two flywheels side by side spinning in opposite directions cancels the gyroscopic effect, but subjects any shared axle to significant torque.",
+    "The author states these problems can all be addressed through engineering solutions."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "479-480",
+    "section_hint": "4.8 Electricity Storage \u2014 Flywheels"
+   }
+  },
+  {
+   "topic": "Pumped hydropower storage",
+   "category": "Power Markets",
+   "subcategory": "Electricity Storage",
+   "type": "concept",
+   "definition": "A storage method that pumps water into an elevated reservoir during low-price periods and releases it through a hydroelectric turbine to regenerate electricity when needed, operating as a closed-loop version of a conventional hydro plant.",
+   "core_idea": "Pumped hydro stores energy as gravitational potential energy by moving water uphill during the storage phase and letting it flow back down through a turbine during generation; with sufficiently large upper and lower reservoirs it can store substantial energy for an extended period.",
+   "key_points": [
+    "Water is pumped from a lower storage facility to an elevated reservoir during the storage phase.",
+    "Released water drives a hydroelectric turbine to regenerate electricity when power is needed.",
+    "The concept is similar to a conventional river-fed hydro plant but operates as a closed system pumping water back above a dam rather than relying on river flow.",
+    "Sufficiently large reservoirs at the top and bottom of the facility allow storage of a large quantity of energy for an extended period."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Electricity storage as a price-arbitrage opportunity"
+   ],
+   "source": {
+    "chapter": 23,
+    "pages": "480-481",
+    "section_hint": "4.8 Electricity Storage \u2014 Pumped Hydropower"
+   }
+  }
+ ]
+}

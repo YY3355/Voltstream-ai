@@ -1,0 +1,229 @@
+{
+ "skip": false,
+ "items": [
+  {
+   "topic": "Shape of the interest rate curve as an economic signal",
+   "category": "Risk",
+   "subcategory": "Interest Rate Curve",
+   "type": "concept",
+   "definition": "The interest rate (yield) curve shows how the discount rate applied to a future cash flow changes with the length of time until that cash flow is received.",
+   "core_idea": "Discount rates are not linear in time to payment (a two-year rate is not simply double a one-year rate), and the overall steepness of the curve is read as a signal of investor sentiment about the economy.",
+   "key_points": [
+    "The farther in the future a payment is, the less it is worth in today's dollars, but this discounting effect does not scale linearly with time.",
+    "A steeply sloped curve typically reflects investors wanting cash now, often because attractive investment opportunities exist today \u2014 read as a positive economic outlook.",
+    "A flat curve typically reflects investors being content to wait for their money because there are few attractive opportunities to redeploy it \u2014 read as a negative economic outlook."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinct from a parallel shift, which moves the whole curve rather than changing its shape"
+   ],
+   "trading_implications": [
+    "Curve steepness can be used qualitatively as a read on market sentiment about future economic conditions."
+   ],
+   "common_misunderstandings": [
+    "Assuming the discount rate scales linearly with time to payment (e.g., that a two-year rate is twice a one-year rate)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Parallel shift in interest rates",
+    "Present value and interest rate risk"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "104-105",
+    "section_hint": "1.2 Trading Markets \u2014 interest rate curve"
+   }
+  },
+  {
+   "topic": "Parallel shift in interest rates",
+   "category": "Risk",
+   "subcategory": "Interest Rate Curve",
+   "type": "definition",
+   "definition": "A parallel shift is when every interest rate on the curve, across all maturities, moves up or down together by roughly the same amount.",
+   "core_idea": "Parallel shifts tend to be driven by broad forces \u2014 credit quality concerns or deliberate government action to add or remove money from the economy \u2014 and generally signal a large change in overall economic conditions.",
+   "key_points": [
+    "Contrasts with a change in curve shape (steepening/flattening), where different maturities move by different amounts.",
+    "Common triggers cited: shifts in perceived credit quality, or monetary policy actions injecting or withdrawing money from the economy."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Related to interest rate curve shape as a distinct mode of interest rate movement"
+   ],
+   "trading_implications": [],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Shape of the interest rate curve as an economic signal"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "105",
+    "section_hint": "1.2 Trading Markets \u2014 parallel shift"
+   }
+  },
+  {
+   "topic": "Present value sensitivity to interest rate changes",
+   "category": "Risk",
+   "subcategory": "Time Value of Money",
+   "type": "example",
+   "definition": "Present value is what a future cash payment is worth today once discounted at a given interest rate, and that present value moves inversely with the rate used.",
+   "core_idea": "Because interest rates change over time, the present value of a fixed future payment changes too \u2014 a drop in rates raises the present value of a promised future cash flow.",
+   "key_points": [
+    "Author's example: at a 10% annual interest rate, $1,000 received in five years has a present value of $621.",
+    "If the interest rate drops to 5%, the present value of that same $1,000 payment rises to $784.",
+    "Bond markets allow a future cash flow like this to be sold for cash today.",
+    "For a trading firm that routinely converts future cash flows into present cash (or vice versa), a shift in interest rates is a real cash gain or loss, not just a paper effect."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Underpins why interest rate moves matter for energy forward contracts, which involve large future cash flows"
+   ],
+   "trading_implications": [
+    "A firm regularly monetizing future cash flows is directly exposed to interest rate moves as realized gains/losses."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Interest rate risk: forwards vs. futures cash flow timing"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "105",
+    "section_hint": "1.2 Trading Markets \u2014 present value example"
+   }
+  },
+  {
+   "topic": "Interest rate risk: forwards vs. futures cash flow timing",
+   "category": "Risk",
+   "subcategory": "Interest Rate Risk in Forwards vs Futures",
+   "type": "risk",
+   "definition": "Forwards and futures differ in when their cash flows occur, which changes how exposed each is to interest rate risk.",
+   "core_idea": "A forward contract settles with one large cash flow at the end of the contract, while a futures contract pays or collects small cash flows daily until maturity; because interest rate risk grows with the size and distance of a cash flow, the forward's single distant payment is far more rate-sensitive than the futures' stream of near-term payments.",
+   "key_points": [
+    "Most energy trades occur in the future, so interest rates materially affect the profitability of those future cash flows.",
+    "For small notional amounts this effect can be immaterial; for large notional amounts it becomes a major source of risk.",
+    "Author's illustrative example: a 20-year contract to sell 500 MW of power, 7am-11pm, five days a week, to an industrial facility at an average price of $75/MWh represents a $3.1 billion exposure \u2014 showing the scale of cash flow at stake in a single large long-term power contract."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Builds on present value sensitivity to interest rate changes",
+    "Connects to earlier forwards-vs-futures distinction (not itself included in this chunk)"
+   ],
+   "trading_implications": [
+    "Long-dated forward-style power contracts carry meaningfully more interest rate risk than economically similar futures positions due to the timing of cash settlement.",
+    "Firms with large long-term forward exposures should treat interest rate moves as a real risk factor, not a rounding error."
+   ],
+   "common_misunderstandings": [],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Present value sensitivity to interest rate changes"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "105-106",
+    "section_hint": "1.2 Trading Markets \u2014 interest rate risk in energy contracts"
+   }
+  },
+  {
+   "topic": "Negative prices in energy markets",
+   "category": "Power Markets",
+   "subcategory": "Negative Prices",
+   "type": "market_mechanic",
+   "definition": "Unlike most traded markets, energy (particularly power) prices can fall to zero or below zero.",
+   "core_idea": "Grid operators sometimes push prices negative to force generators to reduce output when the grid cannot absorb the power being produced, because generators often prefer to keep paying to run rather than incur the cost of shutting down and restarting.",
+   "key_points": [
+    "The common assumption in most markets is that prices cannot be zero or negative \u2014 this assumption fails in energy markets.",
+    "Zero/negative prices aren't common but do occur and can break financial calculations, e.g. percentage price-change math becomes undefined or misleading when the reference price is zero or negative.",
+    "Physical driver: if too much power is put onto a line without enough being consumed, transmission lines can overheat/melt, so operators need a way to force generators to cut output.",
+    "Because restarting a power plant is costly, many generators would rather give power away for free than shut down \u2014 so operators charge them (negative price) per MW produced to create sufficient incentive to actually cut back.",
+    "During negative price periods, consumers of power can effectively get paid for consuming (e.g., turning on lights)."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Contrasts with normal market dogma assumed in equities/other asset classes"
+   ],
+   "trading_implications": [
+    "Standard percentage-change or return calculations should not be naively applied to power prices that can be zero or negative."
+   ],
+   "common_misunderstandings": [
+    "Assuming prices can't go to zero or negative, as in most other financial/commodity markets."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cyclical markets and the spot-forward relationship in energy"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "106-107",
+    "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Negative Prices"
+   }
+  },
+  {
+   "topic": "Cyclical markets and the spot-forward relationship in energy",
+   "category": "Power Markets",
+   "subcategory": "Spot-Forward Relationship",
+   "type": "concept",
+   "definition": "In classic storable, non-perishable commodity/financial markets, forward prices are anchored to the spot price plus the cost of holding the asset (and can benefit from a stored yield, like dividends), so a buy-and-hold strategy links spot and forward prices. Energy behaves differently.",
+   "core_idea": "Because energy is costly to store, loses storage value the more easily it can be produced later, and is destroyed once consumed, forward energy prices are driven mainly by the intersection of near-term supply and demand rather than by a buy-and-hold cost-of-carry relationship to spot \u2014 which tends to produce cyclical patterns in forward price curves.",
+   "key_points": [
+    "In storable markets, forward prices are generally higher than spot prices when storage provides an additional benefit (analogous to dividend-paying stocks).",
+    "Energy prices are set by current supply and demand, not by anticipated future scarcity or abundance.",
+    "Author's example: a natural gas refiner that cannot economically shut down over a weekend keeps producing gas even though the industrial buyer (a steel plant) isn't operating, creating a weekend gas surplus; absent enough alternative demand or storage, the refiner accepts very low weekend prices rather than destroy the gas produced \u2014 regardless of expected gas scarcity 20 years out.",
+    "This short-term-supply-and-demand dominance is why forward price curves for many energy products tend to look cyclical."
+   ],
+   "formulas": [],
+   "relationships": [
+    "Distinguishes energy market dynamics from the general 'buy and hold' cost-of-carry logic used in traditional storable commodity/financial markets"
+   ],
+   "trading_implications": [
+    "Forward curve shapes in energy should be read as reflecting expected seasonal/periodic supply-demand patterns, not a simple cost-of-carry markup over spot."
+   ],
+   "common_misunderstandings": [
+    "Assuming energy forward curves behave like storable-commodity or equity forward curves (spot plus carry cost)."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Negative prices in energy markets"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "107",
+    "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Cyclical Markets"
+   }
+  },
+  {
+   "topic": "Illiquidity in energy markets",
+   "category": "Power Markets",
+   "subcategory": "Market Liquidity",
+   "type": "market_mechanic",
+   "definition": "Energy markets should generally be assumed illiquid rather than liquid \u2014 it can be difficult to find a counterparty or to convert a position back into cash.",
+   "core_idea": "Illiquidity in energy markets stems from heavy reliance on privately negotiated bilateral contracts, the narrowing of liquidity in exchange-traded contracts beyond the near term, the location- and time-specific nature of physical delivery, and a tendency for market participants to move in the same direction at the same time, leaving few counterparties on the other side.",
+   "key_points": [
+    "Directly negotiated (bilateral/OTC) contracts are common in energy and are inherently harder to exit than exchange-traded ones.",
+    "Even liquid exchange-traded contracts (e.g., NYMEX WTI Crude Oil) concentrate most volume in the first few delivery months, with open interest dropping off quickly further out.",
+    "Delivery is tied to specific times and locations; a facility in an unusual location (author's example: Alaska) may have very few counterparties able to physically deliver power there, and no nearby exchange-traded contract to reference.",
+    "A bespoke bilateral deal can be nearly impossible to unwind: other market participants may be suspicious of why the original counterparty wants out of a trade that looked good enough to enter, and the original physical counterparty (e.g., the industrial facility) may have no incentive to unwind a deal that locked in favorable prices for them.",
+    "Energy market participants (e.g., refiners, power plant owners) tend to converge on the same market view at the same time, which undermines liquidity since a liquid market needs both willing buyers and willing sellers, ideally in balance."
+   ],
+   "formulas": [],
+   "relationships": [],
+   "trading_implications": [
+    "Positions taken via bilateral/OTC deals or in longer-dated/off-standard-location energy contracts should be assumed hard to exit, not just hard to price.",
+    "Herding behavior among energy market participants can dry up liquidity precisely when a trader most wants to adjust a position."
+   ],
+   "common_misunderstandings": [
+    "Assuming that because a contract is exchange-traded, it will remain liquid at all maturities.",
+    "Assuming a profitable bilateral trade can easily be exited if desired."
+   ],
+   "author_states_vs_inference": "all from source",
+   "related_topics": [
+    "Cyclical markets and the spot-forward relationship in energy"
+   ],
+   "source": {
+    "chapter": 2,
+    "pages": "107-109",
+    "section_hint": "1.2 Trading Markets \u2014 Unique Features of the Energy Market: Illiquidity"
+   }
+  }
+ ]
+}
