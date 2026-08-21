@@ -20,7 +20,9 @@ same check ×3 = stop. Pause + report after every task. Engine=claude-cli (subsc
 - [x] 4 — FULL RUN. 129/129 chunks done, 0 errors (3 transient claude CLI rc=1 all succeeded on the
       single retry — deleted their state entries + reran). Aggregate: 911 items, 77 formulas, 1 sensible
       skip, 0 verbatim-flags (empty human-review queue). Subscription (not token-metered). ✔
-- [ ] 5 — REPORT pdf: cross-check figures vs processing_state.json; caveat says Pass1/unvalidated.
+- [x] 5 — REPORT. kb_report.pdf generated. Verified: PDF figures (129 chunks / 911 items / 77 formulas /
+      0 errors / 0 flags) all trace to processing_state.json + raw/ (every number from disk). Caveat
+      section says "Pass 1 (extraction) only... unverified; formulas must be source-checked" — not softened. ✔
 
 ## Append-only log
 - setup (2026-08-21) — kb/ not in repo; found scripts across ~/Downloads/files(3,4,5) zips (all today).
