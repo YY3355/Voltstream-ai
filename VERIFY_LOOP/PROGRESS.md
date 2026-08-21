@@ -12,7 +12,12 @@ Pause + report after every task. Judge engine=claude-cli. NO app.py. Annotate+fl
       pages=SUPPORTED, real+wrong pages=UNSUPPORTED (correct, no rubber-stamp, no formula rewrite).
       Annotate-in-place + state work; content untouched. ⏸ STOP for Mike's review before full run.
 - [ ] 2 — FULL RUN (on go): all 911 items, resumable; verdict counts.
-- [ ] 3 — REPORT + review queue (UNSUPPORTED + UNCLEAR, formulas-first).
+- [ ] 2 — FULL RUN (GO): validate all 911 (ch17 skipped, already done); resumable; if rate-window,
+      pause+resume, never downgrade the judge. Verdict counts.
+- [ ] 3 — REPORT + review queue (UNSUPPORTED + UNCLEAR, formulas-first). RIDER: name the deterministic-
+      PASS blind spot (tokens-present != correctly-assembled); break flags PER CHAPTER; for notation-heavy
+      all-green chapters (3.3 Statistics, 3.5 Option Pricing, 6.2 VaR) add 2-3 RANDOMLY-SAMPLED PASSED
+      formulas to the human-review queue, not just flags. Keep "validated" honest.
 
 ## Append-only log
 - setup (2026-08-21) — Pass 1 done (911 items, 77 formulas, unvalidated). Mike chose (A) validation over
