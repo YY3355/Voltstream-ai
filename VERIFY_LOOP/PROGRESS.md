@@ -15,10 +15,11 @@ Pause + report after every task. Judge engine=claude-cli. NO app.py. Annotate+fl
 - [x] 2 — FULL RUN. 911/911 validated (0 missing _validation), no rate-window pause. 817 deterministic-
       pass (provisional); 94 flagged->judged: 40 SUPPORTED / 47 UNSUPPORTED / 7 UNCLEAR. Review queue =
       54 (UNSUPPORTED+UNCLEAR). 61 items carry >=1 formula. ✔
-- [ ] 3 — REPORT + review queue (UNSUPPORTED + UNCLEAR, formulas-first). RIDER: name the deterministic-
-      PASS blind spot (tokens-present != correctly-assembled); break flags PER CHAPTER; for notation-heavy
-      all-green chapters (3.3 Statistics, 3.5 Option Pricing, 6.2 VaR) add 2-3 RANDOMLY-SAMPLED PASSED
-      formulas to the human-review queue, not just flags. Keep "validated" honest.
+- [x] 3 — REPORT. kb_review_queue.py -> kb/knowledge/review_queue.md: summary, blind-spot named (tokens-
+      present != assembled-right), per-chapter flag table, 54-item queue (12 FORMULA-items first, then
+      prose), each with why-flagged (43/54 page-attribution, 11 formula) + judge reason, + sampled PASSED
+      formulas from ch12/14/30 (blind-spot insurance). Real catch e.g. cube-law wind formula UNSUPPORTED
+      (not in source). Every figure from disk; read-only. ✔  LOOP COMPLETE (T1-T3).
 
 ## Append-only log
 - setup (2026-08-21) — Pass 1 done (911 items, 77 formulas, unvalidated). Mike chose (A) validation over
