@@ -17,8 +17,14 @@ listed in excluded_from_pass3.json. Recomputed from _validation each run (re-run
       merge_plan_review.md (seed list + assigned topics). Verified 6 groups no-false-merge: var variant
       safe (no variance/variability), implied heat rate SEPARATE from heat rate, spark/dark/crack never
       cross. excluded_from_pass3.json (54). LMP genuinely absent (confirmed). ⏸ STOP for Mike's review.
-- [ ] 2 — PILOT MERGE (claude -p) Part 4 (ch16-25). Marker-verify 5 canonical objects (provenance, no new
-      material, ≥1 distinct pair unmerged). Contradictions. ⏸ STOP.
+- [x] 2 — PILOT MERGE Part 4 (9 groups). Machinery: merge_group (formulas+refs+rollup DETERMINISTIC,
+      LLM merges prose only) + MANDATORY post-merge judge + Pass-1 resumability + circuit-breaker(>50%).
+      Marker-verify (subagent): caught wheeling inventing "between the 3 interconnects" -> tightened
+      prompt fixed it; distinct pair heat_rate vs implied_heat_rate held (0 overlap); all source_refs +
+      formulas preserved (deterministic). Learned: merge over-connects ~1/3 even w/ tight prompt; formula-
+      aware judge caught 3/3 (real subtle over-reaches). DESIGN = Option A: judge is the guarantee, flagged
+      objects reach production FLAGGED (Pass-2 architecture); B-line folded as flag-rate reducer (not a
+      gate). ✔
 - [ ] 3 — FULL SYNTHESIS (on go): all chapters + global pass. Resumable.
 - [ ] 4 — STRUCTURE + OUTPUTS: energy_knowledge_base/ layout + taxonomy/concept_graph/contradictions. Counts
       reconcile; 5 random re-checked.
