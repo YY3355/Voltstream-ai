@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Exchange-traded crack spreads",
+ "type": "market_mechanic",
+ "category": "Oil Markets",
+ "subcategory": "Derivatives",
+ "definition": "Crack spreads can be traded either by assembling positions in the individual crude oil, gasoline, and diesel futures legs, or as a single packaged instrument (crack spread futures or options) listed directly on an exchange.",
+ "core_idea": "Because a crack spread position is inherently less risky than any single outright leg, exchanges allow it to be margined and traded as one combined instrument, which is more capital-efficient than legging in with separate futures trades.",
+ "key_points": [
+  "Every exchange futures trade requires margin sized to the risk of that trade",
+  "Building a crack spread from separate crude, gasoline, and diesel futures legs can tie up substantial capital across multiple margin positions",
+  "The combined crack spread is much less risky than holding any single underlying commodity outright, so less capital is required when it is margined as one unit",
+  "Exchanges commonly offer crack spread trading directly alongside markets for the underlying commodities",
+  "Crack spread futures and crack spread options are available on exchanges, replicating the same economic exposure as legging in manually",
+  "Exchange-listed crack instruments have lower margin requirements and execute all underlying legs simultaneously"
+ ],
+ "relationships": [
+  "Alternative execution method for the crack spread trades described above"
+ ],
+ "trading_implications": [
+  "Trading the exchange-listed crack instrument reduces margin/capital requirements and execution risk compared to manually legging into crude, gasoline, and diesel futures separately"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "239-239"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 4,
+   "topic": "Exchange-traded crack spreads"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

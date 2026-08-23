@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Rate base and the utility rate-setting mechanism",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regulation",
+ "definition": "Regulated utilities are compensated via a fee approved to earn a fixed return on the 'rate base' \u2014 the cumulative value of prudently made investments in generation, transmission, and distribution infrastructure \u2014 with rates and approved investments set periodically in commission proceedings called rate cases, and published in a pricing document called a tariff.",
+ "core_idea": "Because utility profit is a fixed percentage return on invested capital (the rate base) rather than a margin on efficiency, the utility's main lever for increasing profit is spending more on infrastructure, not cutting costs.",
+ "key_points": [
+  "Rate base = the value of investments the utility has prudently made into generation, transmission, and distribution assets.",
+  "A rate case is a periodic meeting between the utility commission and the utility that authorizes the allowed rate of return and approves new additions to the rate base before the next meeting.",
+  "A tariff is the published pricing structure a retailer/utility charges a customer for energy consumption, and it documents the fee/rate base information.",
+  "Because profit scales with rate-base spending, more consumer usage \u2192 more assets the utility can justify building \u2192 greater shareholder profit.",
+  "Regulated utilities have no direct financial incentive to find cheaper ways to operate or to encourage conservation; they instead tend to prioritize customer satisfaction and reliability."
+ ],
+ "relationships": [
+  "Set by the public utility commission via rate cases; documented in tariffs."
+ ],
+ "trading_implications": [
+  "This structure means regulated utility profitability is driven by capital investment approvals, not by commodity price movements or operating efficiency \u2014 a different fundamental driver than merchant/deregulated generators."
+ ],
+ "caveats": [
+  "It's a common misread to assume regulated utilities are incentivized like competitive businesses to cut costs \u2014 the rate-base mechanism instead rewards additional capital spending."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "179"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 4,
+   "topic": "Rate base and the utility rate-setting mechanism"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

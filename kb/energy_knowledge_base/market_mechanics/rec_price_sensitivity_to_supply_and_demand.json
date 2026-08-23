@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "REC price sensitivity to supply and demand",
+ "type": "market_mechanic",
+ "category": "Environmental & Renewable Markets",
+ "subcategory": "REC Pricing",
+ "definition": "Because RECs carry no intrinsic value, their price is driven entirely by the balance between regulator-mandated purchase requirements and available supply. When eligible supply is short relative to the requirement, prices rise toward the alternative compliance payment (the regulatory penalty for non-compliance) and stay elevated as long as the shortage persists; when supply exceeds the requirement, prices collapse toward zero as excess holders compete just to sell.",
+ "core_idea": "REC prices behave as a bounded market between zero and the compliance penalty price, governed by quota supply/demand rather than production cost or physical commodity fundamentals.",
+ "key_points": [
+  "The alternative compliance payment acts as an effective price ceiling",
+  "Sustained shortage keeps prices near the penalty price",
+  "Oversupply drives prices toward zero (example: 10 million RECs created but only 2 million required leads sellers to bid near zero)",
+  "RECs and similar environmental products generally: have no inherent value, derive demand purely from regulatory compliance needs, are highly sensitive to supply/demand shifts, and are only usable within the specific jurisdiction of the regulator that created the requirement"
+ ],
+ "relationships": [
+  "Interacts directly with RPS-set purchase requirements and the alternative compliance payment penalty level"
+ ],
+ "trading_implications": [
+  "REC price risk is primarily regulatory/quota risk, not fuel-cost or weather-driven risk",
+  "Traders need to track eligible generation supply against the mandated requirement rather than production economics"
+ ],
+ "caveats": [
+  "REC prices are not anchored to generation cost \u2014 a REC can trade near zero even if the underlying generation was costly, if supply overshoots the mandate"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "503"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_002.json",
+   "idx": 2,
+   "topic": "REC price sensitivity to supply and demand"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

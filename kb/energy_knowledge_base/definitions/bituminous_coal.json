@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Bituminous coal",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Coal Types",
+ "definition": "Bituminous coal, formed under high temperature and pressure, is about 70% carbon, the most abundant coal type in North America (about half of usage), contains two to three times the heat energy of lignite, and is actively traded internationally for both power generation and industrial raw material use.",
+ "core_idea": "Bituminous coal is the dominant North American coal grade and the one with a meaningful international trading market, used both as a power fuel and as an industrial input.",
+ "key_points": [
+  "Bituminous coal is about 70 percent carbon, formed by high temperature and pressure.",
+  "It is the most abundant coal type in North America.",
+  "It contains two to three times the heat energy of lignite.",
+  "There is active international trade in bituminous coal.",
+  "It is used both for power generation and as a source of industrial raw materials.",
+  "It is usually black but can be dark brown, often showing bright/dark striations.",
+  "About half of the coal used in North America is bituminous."
+ ],
+ "relationships": [
+  "Ranks above sub-bituminous and below anthracite in carbon content; the only fuel-grade coal type described as having active international trade."
+ ],
+ "trading_implications": [
+  "Bituminous coal is the fuel-coal grade most relevant to international trading activity, unlike lignite and sub-bituminous coal which are largely domestic."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "251-252"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 7,
+   "topic": "Bituminous coal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

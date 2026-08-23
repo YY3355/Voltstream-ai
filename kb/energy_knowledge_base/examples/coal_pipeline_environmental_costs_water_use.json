@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Coal pipeline environmental costs: water use",
+ "type": "example",
+ "category": "Coal",
+ "subcategory": "Environmental Impact",
+ "definition": "Coal slurry pipelines require large volumes of water \u2014 roughly a 1:1 ratio of coal to water \u2014 and the used water becomes difficult to clean afterward, which is a significant environmental concern, especially in water-scarce regions.",
+ "core_idea": "Slurry pipelines solve coal's long-distance transport problem but create a serious secondary environmental cost through heavy water consumption and contamination, illustrated by the Mojave Generating Station pipeline being shut down after complaints from local tribes.",
+ "key_points": [
+  "Coal slurry pipelines use approximately a 1:1 ratio of coal to water.",
+  "The water used in slurry pipelines becomes very difficult to clean after use.",
+  "A large coal-fired power plant burning around 1,000 tons of coal per day implies significant annual water usage for a slurry pipeline feeding it.",
+  "Water usage is especially problematic in regions with limited water supplies.",
+  "Example: the 273-mile coal slurry pipeline supplying the Mojave Generating Station in Laughlin, Nevada used about a billion gallons of water a year before being shut down following complaints from local Indian tribes."
+ ],
+ "relationships": [
+  "Connects to broader theme of coal's pollution/environmental unpopularity despite its cost advantages."
+ ],
+ "trading_implications": [
+  "Environmental/regulatory risk (e.g., water-rights disputes) can shut down coal transport infrastructure, illustrating a real operational risk for coal-dependent plants relying on pipelines."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "248-249"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 6,
+   "topic": "Coal pipeline environmental costs: water use"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

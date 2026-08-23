@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Natural Gas Transportation Contract Fee Terms",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Transportation Contracts",
+ "definition": "A standard set of named charges and terms used in pipeline transportation contracts to structure how shippers pay for capacity and gas movement.",
+ "core_idea": "Pipeline transportation pricing is built from several standard components \u2014 a fixed reservation fee, a variable commodity fee, small regulatory/inflation add-ons, an in-kind allowance for gas lost as compressor fuel, and location-based price adjusters \u2014 that together define the full cost of moving gas.",
+ "key_points": [
+  "Reservation charge: fixed monthly fee to reserve pipeline capacity.",
+  "Commodity charge: variable fee, quoted per unit of gas transported.",
+  "ACA (Annual Cost Adjustment) charge: small fee adjusting transport costs for inflation.",
+  "GRI (Gas Research Institute) charge: small fixed U.S. fee funding the nonprofit Gas Research Institute.",
+  "Fuel usage: gas lost in transport, typically taken in kind as payment to power the compressors that move the gas.",
+  "Receipt adder: fixed price adjustment setting the receipt-point price relative to a nearby benchmark.",
+  "Delivery adder: fixed price adjustment setting the delivery-point price relative to a nearby benchmark.",
+  "Volume: the contracted quantity of gas to be transported."
+ ],
+ "relationships": [
+  "These terms together define the effective full-cycle cost of a firm or interruptible transportation contract"
+ ],
+ "trading_implications": [
+  "Receipt/delivery adders let traders translate a hub benchmark price into the effective price at a specific receipt or delivery point (basis)",
+  "Fuel usage reduces delivered volume relative to injected volume, a shrinkage cost to factor into netback calculations"
+ ],
+ "caveats": [
+  "Fuel usage is not a cash charge \u2014 it is gas physically consumed/lost in transit, generally used as in-kind payment for compressor power"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "143-144"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 4,
+   "topic": "Natural Gas Transportation Contract Fee Terms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

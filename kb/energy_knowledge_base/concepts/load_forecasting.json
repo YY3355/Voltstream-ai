@@ -1,0 +1,111 @@
+{
+ "canonical_topic": "load forecasting",
+ "type": "concept",
+ "n_merged": 5,
+ "definition": "Spatial load forecasting is the practice of predicting how much electrical demand ('load') will occur, broken out by geographic region and time period, so that a power grid can plan generation and delivery accordingly; because electricity cannot be stored, supply must be generated to match forecasted demand in real time.",
+ "core_idea": "Because electricity can't be stored, grid operators and traders must forecast demand ('load') by region and time period in order to schedule generation, plan infrastructure, and anticipate price movements. Forecasts are built by segmenting customers into a small number of usage-pattern classes, incorporating weather forecasts (primarily temperature and humidity from NOAA/NWS, since most short-term demand variability comes from weather), and are constructed by starting from a deliberately simple baseline model before adding complexity.",
+ "key_points": [
+  "'Load' is used synonymously / interchangeably with electricity demand.",
+  "'Spatial' means the forecast is tied to and scoped to a specific geographic region.",
+  "Electricity cannot be stored, so supply must be generated on demand, making anticipation of demand changes necessary.",
+  "Most regions have a relatively constant baseline demand; most short-term variability in demand comes from weather.",
+  "Over long time frames (e.g., a decade), economic growth and residential trends also become significant demand drivers.",
+  "Short-term load forecasts are used operationally to schedule power plant operation and maintenance.",
+  "Long-term load forecasts are used strategically to plan new transmission lines, new power plants, and other infrastructure.",
+  "Base load power is the minimum amount of power that must be supplied to the grid at any time; it sets a floor on how many plants must run continuously year-round.",
+  "Peak demand is the maximum amount of power expected to be required at any time; grid operators use it for capacity planning and traders use the same estimates to anticipate the frequency and timing of price spikes.",
+  "Forecasters group consumers within a region into a small number of classes with distinct usage patterns, rather than modeling every customer individually.",
+  "Regions are grouped primarily because they sit on the same part of the power grid; shared consumer mix, climate, and calendar (holidays, daylight savings) are secondary/convenience factors.",
+  "Very large individual consumers (e.g., an aluminum manufacturer) may need to arrange most of their power in advance rather than being folded into a class-level forecast; smaller customers are pooled and forecast as a group.",
+  "Residential class: usage concentrated roughly 6-9am and 6-11pm around the working day, though some run continuous loads (lighting, AC); includes apartments and suburban homes.",
+  "Commercial class: offices and retail on standard business-hour schedules with moderate, fairly steady demand (e.g., desktop computers, office HVAC).",
+  "Industrial class: manufacturers with wide variability in demand; very large industrial customers often arrange a steady power supply, lowering their own cost and simplifying grid operation.",
+  "The National Weather Service (part of NOAA) is the primary source of hourly temperature and humidity forecasts used in load forecasting, and also issues monthly/quarterly outlooks on whether regional temperatures will run above or below average.",
+  "NWS forecasts are publicly available at forecast.weather.gov.",
+  "A practical model-building approach: first plot historical load to see actual patterns, then fit a deliberately simple first model narrow in scope (e.g., a specific region, hour window, month, and day type), adding complexity only incrementally afterward."
+ ],
+ "relationships": [
+  "Feeds directly into the merit-order/generation stack pricing mechanic \u2014 demand forecasts determine how far up the bid stack the ISO must dispatch.",
+  "Underpins base load and peak load concepts, since both are defined relative to a forecast demand profile.",
+  "Feeds into power price prediction, since demand is a primary driver of price.",
+  "Feeds into base load / intermediate / peaking capacity planning.",
+  "Interacts with temperature-driven demand (residential AC/heating especially).",
+  "Supplies/depends on the raw temperature and humidity data (from NWS) that THI/WCI adjustments and load forecasts are built on.",
+  "Building a simple baseline model precedes error analysis, which determines what additional complexity the model needs."
+ ],
+ "trading_implications": [
+  "Peak demand forecasts help traders anticipate the frequency and timing of price spikes.",
+  "Load forecasts matter to traders because demand for power is a primary determinant of power prices, so a better load forecast supports better price prediction.",
+  "Understanding the residential/commercial/industrial mix of a region helps explain why its load curve has particular peak timing and weather sensitivity, which matters for forecasting demand and pricing risk.",
+  "NWS short-term hourly forecasts and monthly/quarterly outlooks are usable direct inputs for short- and medium-term power demand forecasting.",
+  "Analysts building proprietary load or price models should validate a minimal baseline model before layering in additional regressors, to isolate what each addition actually improves."
+ ],
+ "caveats": [
+  "Very large individual consumers (e.g., an aluminum manufacturer) don't fit the class-based approach and may need to arrange most of their power in advance rather than being folded into a class-level forecast."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "48-49"
+  },
+  {
+   "chapter": 16,
+   "pages": "388-389"
+  },
+  {
+   "chapter": 16,
+   "pages": "392-393"
+  },
+  {
+   "chapter": 16,
+   "pages": "397-398"
+  },
+  {
+   "chapter": 16,
+   "pages": "402-403"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 5
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_007.json",
+   "idx": 4,
+   "topic": "Spatial load forecasting, base load, and peak demand"
+  },
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 0,
+   "topic": "Spatial load forecasting (definition and purpose)"
+  },
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 0,
+   "topic": "Customer class segmentation for load forecasting"
+  },
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 5,
+   "topic": "NOAA/NWS as the primary U.S. weather forecast source for load forecasting"
+  },
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 2,
+   "topic": "Building a simple load forecasting model from historical data"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "key_points",
+    "claim": "The National Weather Service (part of NOAA) is the primary source of hourly temperature and humidity forecasts used in load forecasting, and also issues monthly/quarterly outlooks...",
+    "reason": "Source item 4 explicitly scopes this claim to 'U.S. electricity load forecasting' ('the primary source of hourly temperature and humidity forecasts used in U.S. electricity load forecasting'). The merged object drops the 'U.S.' qualifier, broadening a claim about NWS's primacy in American forecasting into a general, unbounded claim about load forecasting anywhere \u2014 a scope-broadening not supported by the source."
+   }
+  ],
+  "checked_at": "2026-08-22T23:45:38+00:00"
+ }
+}

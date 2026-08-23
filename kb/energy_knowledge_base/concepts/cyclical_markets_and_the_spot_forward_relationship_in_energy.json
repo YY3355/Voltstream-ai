@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Cyclical markets and the spot-forward relationship in energy",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Spot-Forward Relationship",
+ "definition": "In classic storable, non-perishable commodity/financial markets, forward prices are anchored to the spot price plus the cost of holding the asset (and can benefit from a stored yield, like dividends), so a buy-and-hold strategy links spot and forward prices. Energy behaves differently.",
+ "core_idea": "Because energy is costly to store, loses storage value the more easily it can be produced later, and is destroyed once consumed, forward energy prices are driven mainly by the intersection of near-term supply and demand rather than by a buy-and-hold cost-of-carry relationship to spot \u2014 which tends to produce cyclical patterns in forward price curves.",
+ "key_points": [
+  "In storable markets, forward prices are generally higher than spot prices when storage provides an additional benefit (analogous to dividend-paying stocks).",
+  "Energy prices are set by current supply and demand, not by anticipated future scarcity or abundance.",
+  "Author's example: a natural gas refiner that cannot economically shut down over a weekend keeps producing gas even though the industrial buyer (a steel plant) isn't operating, creating a weekend gas surplus; absent enough alternative demand or storage, the refiner accepts very low weekend prices rather than destroy the gas produced \u2014 regardless of expected gas scarcity 20 years out.",
+  "This short-term-supply-and-demand dominance is why forward price curves for many energy products tend to look cyclical."
+ ],
+ "relationships": [
+  "Distinguishes energy market dynamics from the general 'buy and hold' cost-of-carry logic used in traditional storable commodity/financial markets"
+ ],
+ "trading_implications": [
+  "Forward curve shapes in energy should be read as reflecting expected seasonal/periodic supply-demand patterns, not a simple cost-of-carry markup over spot."
+ ],
+ "caveats": [
+  "Assuming energy forward curves behave like storable-commodity or equity forward curves (spot plus carry cost)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "107"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 5,
+   "topic": "Cyclical markets and the spot-forward relationship in energy"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

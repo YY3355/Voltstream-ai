@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Governance risk from under-scrutinized hedges",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Risk Management",
+ "definition": "A hedge is equal in size and risk to the investment it offsets, but in practice it often receives far less organizational review and oversight than the original investment decision.",
+ "core_idea": "A major capital investment might get extensive committee-level review, while the equally large, directionally-opposite hedge position offsetting it may be designed by a single junior employee with only cursory senior-management review.",
+ "key_points": [
+  "A hedge carries the same magnitude of risk as the position it offsets",
+  "Investment decisions are typically reviewed by many stakeholders",
+  "Hedge design/execution can be delegated with much lighter review, creating an oversight gap",
+  "This asymmetry in scrutiny is itself identified as a risk management issue"
+ ],
+ "relationships": [
+  "Definition of hedging"
+ ],
+ "trading_implications": [
+  "Firms should apply governance/review rigor to hedge construction proportional to its size, not just to the original investment"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "592"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 3,
+   "topic": "Governance risk from under-scrutinized hedges"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

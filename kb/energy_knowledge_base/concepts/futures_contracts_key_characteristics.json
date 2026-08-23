@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Futures Contracts \u2014 Key Characteristics",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Futures",
+ "definition": "Futures are standardized, exchange-traded contracts for future delivery that are margined and cash-settled daily until the final delivery date.",
+ "core_idea": "Futures trade anonymously through an exchange intermediary with minimal credit risk due to margining, but the daily cash flows this creates are generally a drag, and most contracts are closed out before physical delivery rather than fulfilled.",
+ "key_points": [
+  "Anonymous trading: the exchange sits between buyer and seller, so counterparties don't need to know each other.",
+  "Minimal/no credit risk because positions are margined daily.",
+  "Daily margining creates ongoing cash flows: losses must be funded before delivery, and gains received must be reinvested \u2014 the author frames this as generally a negative.",
+  "Most futures are liquidated prior to physical delivery rather than settled by delivery.",
+  "Futures are also used as industry benchmarks."
+ ],
+ "relationships": [
+  "Underpins why traders who want customized delivery use an EFP instead of taking exchange delivery."
+ ],
+ "trading_implications": [
+  "Traders using futures purely for price exposure/benchmarking typically exit before delivery rather than take physical product."
+ ],
+ "caveats": [
+  "Futures are often assumed to end in physical delivery, but the author notes most are liquidated beforehand."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "94-94"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 4,
+   "topic": "Futures Contracts \u2014 Key Characteristics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

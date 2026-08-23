@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Why energy trading differs from other financial markets",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Energy trading is distinguished from other financial markets by the difficulty and expense of storing and transporting energy products, which breaks the usual link between current and future prices.",
+ "core_idea": "In most financial markets, buy-and-hold arbitrage ties spot and future prices together, since you can buy today, store, and resell later. Energy products are hard or costly to store and must compete with a continuous new supply, so this link is weak or absent, producing cyclical rather than arbitrage-linked pricing.",
+ "key_points": [
+  "Energy trading consists of both physical cash-market exchanges and forward markets, with most activity occurring in forward markets.",
+  "Energy products cannot be substituted across time or location \u2014 electricity in one place/time is a different product from electricity elsewhere or at another time.",
+  "Financial techniques from other markets (dynamic hedging, risk aggregation) must be modified because energy risks at different locations/delivery dates cannot be aggregated the same way.",
+  "Because storage/transport must be arranged in advance, most energy trading is really trading of agreements to deliver in the future, not trading of the physical commodity itself."
+ ],
+ "relationships": [
+  "Underlies why spot prices in one location (e.g., Chicago in a cold snap) do not reflect availability or expectations elsewhere, since undeliverable supply has no value to that market."
+ ],
+ "trading_implications": [
+  "Traders cannot rely on cash-and-carry arbitrage to keep forward and spot energy prices in line the way they would for storable financial assets.",
+  "Location and delivery time are core contract terms, not incidental details, when structuring energy trades."
+ ],
+ "caveats": [
+  "Assuming energy prices behave like storable-commodity or financial-asset prices, where present and future prices are tightly linked by arbitrage."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "73-74"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 0,
+   "topic": "Why energy trading differs from other financial markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

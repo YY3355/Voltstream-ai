@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Transportation vs. distribution pipelines",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Terminology",
+ "definition": "Pipelines are categorized by distance/role: transportation pipelines move gas long distances with relatively simple (one or two branch) structures, while distribution pipelines deliver gas to end-users through complex branching networks and are more expensive to build/operate per unit distance, especially over 'the last mile' from a citygate to a consumer.",
+ "core_idea": "The complexity (and thus cost) of a pipeline is driven more by how many end-users it must reach than by the distance it spans, so short last-mile distribution segments can cost as much as moving gas across the entire country.",
+ "key_points": [
+  "Transportation pipelines: long-distance, structurally simple (few branches).",
+  "Distribution pipelines: deliver to many end-users, structurally complex due to branching.",
+  "Last-mile delivery cost (citygate to consumer) can rival the cost of long-distance cross-country transport."
+ ],
+ "relationships": [
+  "Connects to hub/citygate definitions and to burner-tip pricing."
+ ],
+ "trading_implications": [
+  "Local distribution costs are a material component of delivered gas price, not just long-haul transport - relevant when evaluating citygate vs. burner-tip pricing."
+ ],
+ "caveats": [
+  "That cost scales mainly with distance - the source emphasizes branching complexity, not distance, drives distribution cost."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "507-508"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_000.json",
+   "idx": 3,
+   "topic": "Transportation vs. distribution pipelines"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

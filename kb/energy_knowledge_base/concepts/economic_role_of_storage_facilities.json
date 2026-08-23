@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Economic role of storage facilities",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage Fundamentals",
+ "definition": "Storage facility owners profit by buying gas when it is cheap, holding it, and selling it when prices rise, and this buying/selling behavior also balances the continuous, inflexible flow requirements of pipelines against cyclical consumer demand.",
+ "core_idea": "Because pipelines must keep delivering gas continuously and can't be shut off, and demand for gas is highly cyclical, storage facilities absorb gas during low-demand periods and release it during high-demand periods, which is also the source of their trading value.",
+ "key_points": [
+  "Pipelines cannot completely shut down and must maintain a constant flow, even though the rate can be adjusted somewhat.",
+  "Demand for gas is highly cyclical, so supply leaving a pipeline seldom matches regional demand precisely.",
+  "Storage facilities take in surplus gas during oversupply and deliver gas during shortages, effectively buying cheap and selling high.",
+  "Natural gas is chemically stable, nontoxic, and doesn't spoil, making it safe to store for extended periods without environmental risk from leaks."
+ ],
+ "relationships": [
+  "Underlies common storage trading strategies (time-of-day, weekday/weekend, seasonal spreads)"
+ ],
+ "trading_implications": [
+  "Common storage-related trading opportunities include nights versus days, weekends versus weekdays, and shoulder months versus peak demand months."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "522-523"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 1,
+   "topic": "Economic role of storage facilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

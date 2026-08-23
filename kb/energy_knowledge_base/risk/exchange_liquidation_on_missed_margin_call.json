@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Exchange Liquidation on Missed Margin Call",
+ "type": "risk",
+ "category": "Derivatives",
+ "subcategory": "Counterparty Risk",
+ "definition": "If a trader fails to meet a margin call, the exchange can seize the futures position along with its supporting initial margin, then liquidate it, keeping the initial margin as compensation.",
+ "core_idea": "Daily margining caps an exchange's counterparty exposure to roughly a single day's price move, because the exchange only has to cover the risk window between missed margin calls; the initial margin is sized to absorb that one-day loss.",
+ "key_points": [
+  "Daily margining limits the exchange's counterparty risk to about one day's price move, since mark-to-market keeps positions near fair value.",
+  "On a missed margin call, the exchange takes ownership of the position and its initial margin, then liquidates.",
+  "As long as initial margin covers the one-day loss, the exchange profits from (or at least breaks even on) the liquidation.",
+  "Initial margin levels rise with commodity volatility \u2014 generally set slightly above the largest expected one-day move.",
+  "Initial margin can also scale with a trader's perceived creditworthiness: smaller or weaker-credit traders may face higher deposit requirements than large or strong-credit traders."
+ ],
+ "relationships": [
+  "Directly tied to Initial Margin sizing and Daily Margining."
+ ],
+ "trading_implications": [
+  "Expect higher initial margin requirements on more volatile commodities and potentially on accounts with weaker credit standing."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "94-94"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 3,
+   "topic": "Exchange Liquidation on Missed Margin Call"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

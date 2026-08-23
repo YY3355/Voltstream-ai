@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "What petroleum/oil is",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Fuel Fundamentals",
+ "definition": "Petroleum is a liquid fossil fuel: decayed organic matter buried under heat and pressure over geologic time converts into a mixture of hydrocarbons, some of which are liquid at normal temperature and pressure.",
+ "core_idea": "\"Petroleum\" is a generic term covering crude oil as extracted plus every product later refined from it; \"crude oil\" specifically means the unrefined liquid as it comes out of the ground.",
+ "key_points": [
+  "Fossil-fuel hydrocarbon mixtures can be gas, liquid, or solid depending on composition.",
+  "Crude oil is the raw, undistilled extracted liquid; distillation splits it into named products (gasoline, heating oil, etc.).",
+  "Petroleum's high energy density per unit volume makes it a favored transportation fuel versus gaseous hydrocarbons (e.g., propane) and easier to handle in an engine than solid hydrocarbons (e.g., coal)."
+ ],
+ "relationships": [
+  "Natural gas (gaseous hydrocarbons)",
+  "Coal (solid hydrocarbons)",
+  "Refined petroleum products"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Using \"petroleum\" and \"crude oil\" interchangeably \u2014 the author distinguishes crude oil (unrefined) from petroleum (the whole crude-plus-refined-products family)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "34-35"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 1,
+   "topic": "What petroleum/oil is"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Tradability requirements: assignability, liquidity, fungibility",
+ "type": "concept",
+ "category": "Trading Markets",
+ "subcategory": "Market Structure Fundamentals",
+ "definition": "For an asset or liability to be tradable in a meaningful sense, it generally needs three properties: it can be legally transferred to another party (assignability), it can be converted to or from cash within a reasonable time without a large cost (liquidity), and it can be swapped for another unit of the same type without loss of value (fungibility).",
+ "core_idea": "Tradability isn't binary \u2014 an asset can technically change hands but still fail to be a useful market instrument if legal transfer, quick conversion to cash, or interchangeability with like units is missing.",
+ "key_points": [
+  "Assignability: the legal ability to transfer an asset or liability to someone else (e.g., a resale license requirement can block this even for a standardized good).",
+  "Liquidity: ability to convert an asset/liability to or from cash in a reasonable time without significant cost; a common benchmark is completing a round-trip (buy and sell) within a single business day while losing no more than about 10% of value.",
+  "Fungibility: the ability of an asset to be interchanged with similar assets of the same type; non-fungible assets (e.g., a unique piece of framed art, real property, patents) carry subjective value tied to their unique characteristics, which slows sales and makes pricing harder.",
+  "Liquid markets typically show low transaction costs, low volatility, and the ability to execute near a fair price; illiquid markets require either a long search for a counterparty or accepting an unfavorable price."
+ ],
+ "relationships": [
+  "Liquidity and fungibility both support (but are distinct from) assignability as separate prerequisites for a well-functioning trading market.",
+  "The same ~10% value-retention benchmark used to define liquidity reappears later as the accounting threshold for 'readily convertible to cash' (RCC) status required of a derivative's underlying asset."
+ ],
+ "trading_implications": [
+  "Illiquid or non-fungible assets (art, property, patents) are harder to price and slower to sell, so they trade in narrower, more negotiated markets rather than standardized exchanges."
+ ],
+ "caveats": [
+  "Being legally sellable (assignable) does not automatically make an asset liquid or fungible \u2014 all three properties are independently necessary for full tradability."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "81-82"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_002.json",
+   "idx": 0,
+   "topic": "Tradability requirements: assignability, liquidity, fungibility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "LNG safety and explosion risk",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "LNG",
+ "definition": "LNG is non-toxic, non-corrosive, and evaporates quickly without leaving residue when spilled; it is only flammable within a narrow 5-15 percent air-concentration band, so open-air spills pose low explosion risk compared with confined-space accumulation.",
+ "core_idea": "Rapid evaporation plus a narrow flammability window mean LNG carries meaningfully less fire risk than storing oil or coal, though risk still exists if gas becomes trapped and concentrated in an enclosed space.",
+ "key_points": [
+  "Aside from being extremely cold, LNG is non-toxic and non-corrosive.",
+  "Spilled LNG evaporates rapidly and leaves no residue.",
+  "Natural gas ignites only within a 5-15% concentration-in-air range.",
+  "Confined spaces (e.g., a house or storage facility) are where dangerous concentrations can build up.",
+  "Author states natural gas storage carries less fire risk than oil or coal storage facilities."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [
+  "Any large volume of flammable material carries some fire risk, but the author distinguishes LNG as lower-risk than oil/coal, not risk-free."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "62-62"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 6,
+   "topic": "LNG safety and explosion risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

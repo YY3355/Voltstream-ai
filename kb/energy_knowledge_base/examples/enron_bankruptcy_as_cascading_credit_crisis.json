@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Enron Bankruptcy as Cascading Credit Crisis",
+ "type": "example",
+ "category": "Risk",
+ "subcategory": "Credit Risk",
+ "definition": "A historical example illustrating how the default of one dominant market participant can propagate credit-quality damage across the broader market.",
+ "core_idea": "Enron's bankruptcy froze its assets and obligations, and because it was counterparty (directly or indirectly) to nearly the whole energy trading market, the shock degraded the credit quality of many other trading firms simultaneously, even those without a direct trading relationship to Enron.",
+ "key_points": [
+  "Enron was the largest energy trader in the world and counterparty to nearly everyone in the market.",
+  "When Enron went bankrupt, it stopped meeting financial obligations, causing its direct counterparties to struggle to meet their own obligations.",
+  "This produced a cascading effect that dropped the credit quality of many energy trading firms at once, including firms with no direct exposure to Enron."
+ ],
+ "relationships": [
+  "Illustrates systemic/contagion risk arising from concentrated counterparty exposure."
+ ],
+ "trading_implications": [
+  "Concentration risk in a single dominant counterparty can create systemic contagion; firms should consider indirect/second-order exposure, not just direct trading relationships."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "568-568"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 4,
+   "topic": "Enron Bankruptcy as Cascading Credit Crisis"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

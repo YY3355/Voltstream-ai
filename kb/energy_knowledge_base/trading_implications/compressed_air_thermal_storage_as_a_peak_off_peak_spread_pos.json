@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Compressed-Air Thermal Storage as a Peak/Off-Peak Spread Position",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "Using a compressed-air-based HVAC system that compresses air overnight (off-peak) so daytime (peak) cooling load is met without buying peak power, which turns an operating decision into a financial spread position between peak and off-peak electricity prices.",
+ "core_idea": "Installing an HVAC system that shifts electricity consumption from peak to off-peak hours is financially equivalent to being long peak power and short off-peak power; separately arranging a supply contract for the off-peak leg cancels that exposure, leaving a pure long position in peak prices.",
+ "key_points": [
+  "The compressor does not need to run in real time \u2014 air can be compressed overnight and used during the day.",
+  "Because the buyer purchases power wholesale, it can arrange a contract to buy specifically off-peak.",
+  "The investment becomes more valuable if peak prices rise after installation, and also benefits if the contracted off-peak price falls.",
+  "Locking in the off-peak purchase price removes that leg's price risk, isolating the position to peak-price exposure.",
+  "The author notes this is a piece of physical hardware, not purely a financial instrument, even though it can be analyzed as one."
+ ],
+ "relationships": [
+  "long peak / short off-peak spread",
+  "time-shifting of energy purchases"
+ ],
+ "trading_implications": [
+  "Once the off-peak leg is contracted away, the investment's value tracks the peak power price level.",
+  "A physical efficiency/hardware investment can be analyzed and hedged like a financial spread trade."
+ ],
+ "caveats": [
+  "Viewing this purely as an operating-cost saving rather than as a market-price-exposed peak/off-peak spread position."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "482-483"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 0,
+   "topic": "Compressed-Air Thermal Storage as a Peak/Off-Peak Spread Position"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

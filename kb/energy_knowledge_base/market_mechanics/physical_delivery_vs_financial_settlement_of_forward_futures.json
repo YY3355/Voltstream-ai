@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Physical Delivery vs. Financial Settlement of Forward/Futures Contracts",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Contract Settlement",
+ "definition": "A contract can be closed out either by physically transferring the commodity (physical delivery) or by cash-settling the price difference before delivery (financial settlement). Closing out a contract early works by the two counterparties entering an offsetting trade; under financial settlement they simply settle the price difference in cash rather than transferring the commodity.",
+ "core_idea": "Most market participants want price exposure, not the physical commodity, so historically fewer than 1% of futures contracts ever go to physical delivery \u2014 the rest are liquidated (offset) before expiration.",
+ "key_points": [
+  "Historically less than 1 percent of futures contracts go to physical delivery; the remainder are liquidated before being exercised.",
+  "Closing a contract = entering an offsetting trade with the counterparty; under financial settlement, the two sides simply exchange the cash difference in price.",
+  "Example given: a trucking company can hedge diesel exposure by buying crude oil forwards (a correlated, not identical, underlying) \u2014 if the oil/diesel price relationship holds and fuel prices rise, gains on the forward offset higher fuel costs; if fuel prices instead fall, the trucking company's fuel savings are largely offset by losses on the forward position. The company wants only the financial exposure, not the crude oil itself."
+ ],
+ "relationships": [
+  "Forward market mechanics and its volatility-reducing role"
+ ],
+ "trading_implications": [
+  "Hedging with a correlated (rather than identical) underlying, e.g., crude oil forwards to hedge diesel exposure, locks in cost only to the extent the price relationship between the two commodities continues to hold."
+ ],
+ "caveats": [
+  "A hedge using a correlated instrument isn't a guaranteed lock on costs \u2014 it depends on the correlation persisting; if it breaks or moves the 'wrong' direction, expected savings can be eroded by losses on the hedge."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "78-79"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 4,
+   "topic": "Physical Delivery vs. Financial Settlement of Forward/Futures Contracts"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 26,
+ "title": "5.1 NATURAL GAS TRANSPORTATION",
+ "n_concepts": 17,
+ "summary": "This chapter surveys how natural gas actually moves through the system and how that physical reality shapes commercial arrangements. It starts with the mechanics of pipeline transport itself \u2014 compressors creating pressure gradients, continuous injection and withdrawal, commingled gas flows, and the cooling/impurity-removal steps compression requires \u2014 and explains why pipelines are the dominant mode of transport given the alternatives. It then turns to the commercial layer built on top of that physical system: the firm-versus-interruptible distinction (both at the pipeline-service level and, separately, as buyer-seller contract tiers), tariffs, rate zones, and charge components, along with contract features like force majeure and swing arrangements. Worked examples illustrate how these pieces interact in practice, such as investing in compressor redundancy to expand firm capacity or pairing interruptible transportation with flexible feedstock choices, while a closing set of terminology entries (hubs, delivery points, transportation vs. distribution pipelines, ACA charges) fills in the vocabulary used throughout.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

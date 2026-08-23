@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "REC Vintage",
+ "type": "definition",
+ "category": "Environmental & Renewable Markets",
+ "subcategory": "Terminology",
+ "definition": "Vintage is the calendar year in which a REC's underlying generation occurred. RPS rules typically restrict how long after its vintage year a REC can still be used to satisfy compliance obligations \u2014 the source gives an example of a three-year usability window.",
+ "core_idea": "Vintage functions like a shelf life or expiration window governing how long a REC remains eligible for compliance use.",
+ "key_points": [
+  "Vintage = the year the REC's underlying generation took place",
+  "RPS programs typically define a maximum eligibility age for compliance use (example given: within three years of generation)"
+ ],
+ "relationships": [
+  "Tied to RPS compliance windows"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "504"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_002.json",
+   "idx": 5,
+   "topic": "REC Vintage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

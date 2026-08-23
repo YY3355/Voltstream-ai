@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Two forms of solar power: photovoltaic vs. thermal",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Solar power comes in two distinct forms: photovoltaic (PV), where semiconductor panels convert sunlight directly into DC electricity (invertible to AC), and thermal solar, where sunlight is captured as heat and used directly (space/water heating) or to drive a steam turbine for electricity.",
+ "core_idea": "PV and thermal solar both start from sunlight but diverge in mechanism \u2014 PV skips a heat stage and generates electricity electronically, while thermal solar routes energy through a heat-storage/steam-turbine path.",
+ "key_points": [
+  "PV panels use specialized semiconductors that release electrons when exposed to sunlight, producing DC power.",
+  "Thermal solar instead uses mirrors/collectors to concentrate heat, which can drive steam turbines, heat buildings, power air conditioners, or heat pools.",
+  "A key advantage of thermal solar is that heat is comparatively easy to store, letting facilities that captured heat during the day deliver output around the clock (though only using heat captured while the sun was up).",
+  "PV is the technology most commonly meant when people say 'solar power.'"
+ ],
+ "relationships": [
+  "Thermal solar's heat-storage advantage parallels battery storage's role of shifting delivery away from the generation window, but via stored heat rather than stored electricity."
+ ],
+ "trading_implications": [
+  "Thermal solar's storable-heat characteristic can smooth or shift output relative to real-time sunlight, unlike PV which is more directly tied to instantaneous irradiance."
+ ],
+ "caveats": [
+  "Assuming 'solar power' always means PV panels \u2014 thermal solar is a materially different technology with different output characteristics (notably storage-driven, around-the-clock potential)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "449-450"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 0,
+   "topic": "Two forms of solar power: photovoltaic vs. thermal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

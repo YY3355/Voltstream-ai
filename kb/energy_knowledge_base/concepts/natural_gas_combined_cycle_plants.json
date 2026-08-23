@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Natural Gas Combined Cycle Plants",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "A combined cycle plant pairs a gas turbine with a steam turbine, using the gas turbine's hot exhaust \u2014 too hot to spin another gas turbine but well suited to boiling water \u2014 to raise steam that drives the steam turbine.",
+ "core_idea": "By capturing exhaust heat that a standalone gas turbine would otherwise waste, a combined cycle plant is more efficient and produces less pollution per megawatt than either a gas turbine or steam turbine plant alone, though it is mechanically more complex than either.",
+ "key_points": [
+  "Gas turbine exhaust gas is too hot and non-expanding to drive a second gas turbine, but effective for boiling water",
+  "The steam turbine stage of a combined cycle plant operates like a standalone steam turbine, including reuse of its own hot-water byproduct",
+  "Combined cycle plants are more complex than single-technology plants but achieve higher efficiency from less wasted heat",
+  "A combined cycle plant that also cogenerates hot water is described as highly efficient with minimal pollution per megawatt"
+ ],
+ "relationships": [
+  "Analogous in structure to bottoming cycle cogeneration, but using a gas turbine's own exhaust rather than an external industrial process",
+  "Can still layer on cogeneration via the steam turbine's condenser heat"
+ ],
+ "trading_implications": [
+  "Higher efficiency typically positions combined cycle units favorably in heat-rate/merit-order rankings versus simple-cycle gas or steam plants"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "191-192"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 7,
+   "topic": "Natural Gas Combined Cycle Plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

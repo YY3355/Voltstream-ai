@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Three storage facility types and their cushion-gas requirements",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Facility Types",
+ "definition": "Natural gas storage is built in one of three geological settings \u2014 depleted gas reservoirs, salt caverns, or aquifers \u2014 each with a distinct cost, performance, and required cushion-gas profile.",
+ "core_idea": "Depleted reservoirs are the cheapest and most common option; salt caverns cost more to develop but deliver much higher performance (higher pressure tolerance, faster cycling); aquifers are used only where neither alternative is available and are the least efficient of the three.",
+ "key_points": [
+  "Depleted gas reservoirs: cheapest, most reliable, most historically abundant; require reserving about 50% of capacity as cushion gas.",
+  "Salt caverns: more expensive to build but highest performance (least leakage, strongest walls, highest pressure tolerance, most frequent cycling); require reserving about 33% of capacity as cushion.",
+  "Aquifers: used only when neither depleted reservoirs nor salt caverns are available; least desirable performance; require reserving about 80% of capacity as cushion.",
+  "Cushion gas is the portion of a facility's total capacity that must stay in place (working gas is the remainder available for injection/withdrawal cycles)."
+ ],
+ "relationships": [
+  "Cushion-gas ratios explain why salt caverns are preferred for high-cycling, price-sensitive strategies despite higher build cost.",
+  "Ties to the maximum-pressure concept: salt caverns' superior pressure tolerance is the source of their performance edge."
+ ],
+ "trading_implications": [
+  "A facility's cushion-gas ratio directly limits how much working (tradeable) gas volume it actually offers, which matters when valuing or leasing storage capacity.",
+  "Salt caverns' faster cycling ability makes them better suited to capturing frequent, erratic price swings than depleted reservoirs or aquifers."
+ ],
+ "caveats": [
+  "Assuming a facility's nameplate capacity is all usable working gas \u2014 a large fraction is permanently reserved as cushion gas and never available for trading cycles."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "528-530"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 2,
+   "topic": "Three storage facility types and their cushion-gas requirements"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

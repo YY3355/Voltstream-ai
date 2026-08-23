@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Fly ash and soot as inhaled particulate pollution",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Environmental / Combustion byproducts",
+ "definition": "Fly ash and soot are general terms for inert particulate matter left in fossil fuels \u2014 typically fine grains of sand or unburned coal \u2014 which, when airborne, can lodge in the lungs and cause breathing problems and diseases such as silicosis.",
+ "core_idea": "Fly ash and soot are unburned or incombustible particulate residue that poses a health risk primarily through inhalation rather than chemical toxicity.",
+ "key_points": [
+  "Fly ash and soot are described as inert particulate matter trapped in fossil fuels.",
+  "They are commonly very small grains of sand or incompletely burned coal.",
+  "When suspended in air, these particles easily lodge in the lungs.",
+  "This can cause breathing problems and diseases such as silicosis."
+ ],
+ "relationships": [
+  "Two general categories of combustion pollution"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "41-41"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 11,
+   "topic": "Fly ash and soot as inhaled particulate pollution"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

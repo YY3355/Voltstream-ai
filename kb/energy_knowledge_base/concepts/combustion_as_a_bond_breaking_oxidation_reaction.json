@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Combustion as a bond-breaking oxidation reaction",
+ "type": "concept",
+ "category": "Fossil Fuel Chemistry",
+ "subcategory": "Combustion mechanics",
+ "definition": "Combustion is described as an oxidation reaction in which existing chemical bonds in a fuel are broken and replaced with oxygen bonds; because oxygen bonds are generally lower-energy than the bonds they replace, this exchange is exothermic and releases heat.",
+ "core_idea": "Fuels burn by breaking their internal chemical bonds (e.g., carbon-carbon or carbon-hydrogen) and forming new bonds with oxygen, and it is this bond-replacement process that releases the heat used for useful work like power generation.",
+ "key_points": [
+  "Replacing most chemical bonds with oxygen bonds is exothermic, releasing heat as the byproduct that combustion harnesses.",
+  "Example: burning coal breaks carbon-carbon bonds and forms carbon-oxygen bonds.",
+  "Methane (CH4) has four carbon-hydrogen bonds; combining methane with oxygen breaks these bonds and produces heat, carbon dioxide, and water.",
+  "Most combustion needs an initial energy input (e.g., a spark) to break the first bonds; if the resulting heat is sufficient to break further bonds, the reaction becomes self-sustaining until fuel is exhausted.",
+  "A substance is combustible only if it has bonds that can be profitably replaced by oxygen bonds; water (H2O) is not combustible because breaking one hydrogen-oxygen bond to form another yields no net energy gain, regardless of temperature."
+ ],
+ "relationships": [
+  "Explains mechanistically why carbon dioxide and water are unavoidable combustion byproducts, as described in the pollution-sources item."
+ ],
+ "trading_implications": [
+  "Reinforces why CO2 output scales with the amount of carbon-based fuel combusted, a basic driver behind fuel-switching and emissions-intensity comparisons across generation types."
+ ],
+ "caveats": [
+  "Combustion isn't just 'fuel catching fire' \u2014 it specifically requires bonds whose replacement with oxygen bonds is energetically favorable; not every substance that contains oxygen-linkable atoms (e.g., water) can sustain combustion."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "284-285"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_000.json",
+   "idx": 3,
+   "topic": "Combustion as a bond-breaking oxidation reaction"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

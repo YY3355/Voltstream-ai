@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Long, short, and flat positions",
+ "type": "concept",
+ "category": "Trading Markets",
+ "subcategory": "Position Terminology",
+ "definition": "A long position gains value when the price (or spread) rises; a short position gains value when the price (or spread) falls; a flat position is unaffected by price moves in either direction.",
+ "core_idea": "Traders describe exposure using long/short/flat rather than buy/sell because 'buying' a contract can itself create an obligation to sell, so buy/sell language doesn't reliably tell you the direction of price exposure.",
+ "key_points": [
+  "A contract obligating a fixed-price sale is an asset (costs money to acquire) if the fixed price is above the current market price, and a liability (you get paid to take it on) if the fixed price is below market.",
+  "Long positions are typically associated with owning an asset or agreeing to buy at a fixed future price; they benefit from rising prices.",
+  "Short positions are typically associated with agreeing to sell at a fixed future price; they benefit from falling prices because the seller can source the commodity more cheaply than the fixed sale price.",
+  "For a spread (e.g., gasoline price minus crude price), being long the spread means benefiting when the spread widens \u2014 from gasoline rising and/or crude falling.",
+  "By convention, long positions are shown with a positive sign, short positions with a negative sign, and flat positions benefit from neither direction.",
+  "The author advises always converting trades into long/short terms rather than mentally tracking buy/sell terminology, since a purchased contract can require the holder to sell."
+ ],
+ "relationships": [
+  "Builds on the trade-vs-position distinction",
+  "Spread trades follow the same long/short convention applied to the spread value rather than a single price"
+ ],
+ "trading_implications": [
+  "Always translate a trade into its long/short exposure before assessing risk, rather than relying on whether the trader 'bought' or 'sold' the contract."
+ ],
+ "caveats": [
+  "Assuming 'buying' a contract always means a long/bullish exposure \u2014 a bought contract can obligate the holder to sell, making the true exposure short."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "85-86"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_003.json",
+   "idx": 1,
+   "topic": "Long, short, and flat positions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

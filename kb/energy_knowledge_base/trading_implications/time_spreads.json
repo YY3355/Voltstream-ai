@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Time spreads",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Trading Strategies",
+ "definition": "A spread trade that speculates on the natural gas price difference between two different time periods.",
+ "core_idea": "Because gas demand varies seasonally, traders can bet on the relative price difference between a high-demand and a low-demand period without taking on outright market direction risk.",
+ "key_points": [
+  "Time spreads speculate on the price difference between periods of high and low demand.",
+  "Example: buying winter gas and selling spring gas to bet on a colder-than-normal winter while removing exposure to the overall market direction."
+ ],
+ "relationships": [
+  "A type of spread trade",
+  "Related to the seasonal shape of the forward curve"
+ ],
+ "trading_implications": [
+  "Lets traders express a seasonal-demand view (e.g., a cold winter) without outright market exposure."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 3,
+   "topic": "Time spreads"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

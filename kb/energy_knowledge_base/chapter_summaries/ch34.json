@@ -1,0 +1,7 @@
+{
+ "chapter": 34,
+ "title": "6.6 WEATHER DERIVATIVES",
+ "n_concepts": 2,
+ "summary": "The chapter introduces heating and cooling degree days (HDD/CDD) as the standard temperature-deviation measures underlying weather derivatives, then works through a concrete example showing how those measures translate into a payoff for an HDD contract. Together the two pieces move from defining the index to demonstrating its mechanical application in pricing a contract's outcome.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

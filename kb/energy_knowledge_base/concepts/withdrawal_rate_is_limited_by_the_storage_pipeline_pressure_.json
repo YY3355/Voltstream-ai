@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Withdrawal rate is limited by the storage/pipeline pressure differential",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Physical Operations",
+ "definition": "When gas is withdrawn from storage, a compressor creates suction to draw gas out and push it into the pipeline; the speed of that withdrawal depends on the pressure differential between the storage facility and the pipeline.",
+ "core_idea": "Once withdrawal reaches a perfect vacuum on the suction side, the pressure differential \u2014 and therefore the flow rate \u2014 stops increasing, so the storage facility's own pressure becomes the hard ceiling on how fast gas can be pulled out.",
+ "key_points": [
+  "A compressor pulls gas from storage into the pipeline by suction.",
+  "Flow speed is a function of the pressure differential between storage and pipeline, not the compressor alone.",
+  "A perfect vacuum caps the achievable differential, making storage pressure the binding constraint on withdrawal speed."
+ ],
+ "relationships": [
+  "Ties directly to the facility's maximum pressure constraint, which sets the upper bound on storage-side pressure and therefore withdrawal speed."
+ ],
+ "trading_implications": [
+  "Deliverability (how fast gas can actually be withdrawn to meet demand spikes) is physically capped by facility pressure, which matters for valuing storage optionality during high-demand periods."
+ ],
+ "caveats": [
+  "Assuming withdrawal rate scales only with compressor power rather than being capped by the storage-pipeline pressure differential."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "527-528"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 0,
+   "topic": "Withdrawal rate is limited by the storage/pipeline pressure differential"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

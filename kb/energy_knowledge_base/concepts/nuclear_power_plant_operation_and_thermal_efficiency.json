@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Nuclear power plant operation and thermal efficiency",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "Nuclear plants generate electricity the same way coal plants do \u2014 heating water into pressurized steam that spins a turbine \u2014 but produce that heat via nuclear fission instead of combustion.",
+ "core_idea": "Because the turbine technology is shared with coal plants, nuclear plants follow the same thermal-efficiency rule: higher operating temperature and continuous (non-cycling) operation yield more electricity per unit of fuel, with efficiency ranging roughly 25% for a low-temperature plant up to 50-60% for a larger, hotter one.",
+ "key_points": [
+  "Steam-turbine technology is identical between nuclear and coal plants.",
+  "Higher operating temperature raises the fraction of heat energy converted to electricity.",
+  "A low-temperature plant may convert only ~25% of heat to electricity; a larger, hotter plant can reach 50-60%.",
+  "Plants are most efficient running full-time without letting the water cool overnight.",
+  "The key difference from coal is the heat source: nuclear fission vs. combustion."
+ ],
+ "relationships": [
+  "Shares turbine/steam technology with coal-fired generation",
+  "Efficiency behavior parallels coal plant economics"
+ ],
+ "trading_implications": [
+  "Nuclear plants economically favor running as baseload (continuous full-time operation) rather than cycling, which affects their bidding behavior and price responsiveness in power markets."
+ ],
+ "caveats": [
+  "Nuclear and coal plants are often thought of as fundamentally different generation technologies, but the electricity-generating turbine stage is the same; only the heat source differs."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "469-470"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_000.json",
+   "idx": 0,
+   "topic": "Nuclear power plant operation and thermal efficiency"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

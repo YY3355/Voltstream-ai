@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Distributing emissions rights and consumer protection",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Policy Implementation",
+ "definition": "The practical challenge of deciding who initially receives the right to emit carbon, given that no one naturally owns emissions rights, plus the related need to shield consumers from power-generator failures during the transition.",
+ "core_idea": "Because no one inherently owns emissions rights, allocating them is inherently contentious, and an equal-cost-to-everyone approach conflicts with the trading market's core purpose of rewarding whoever can cut emissions most cheaply; meanwhile governments must ensure power generators that fail under the new cost burden don't leave communities without power, with the residential consumer typically bearing the compliance cost in the end.",
+ "key_points": [
+  "No party naturally owns emissions rights, so determining who may produce carbon emissions is a core design problem",
+  "The issue often reduces to who retains access to low-cost, coal-fired electricity",
+  "Charging everyone the same amount for power is described as tempting but at odds with the trading market's purpose, which is to find and pay for the cheapest available emissions cuts",
+  "Governments cannot allow power generators to go bankrupt in a way that leaves their service territory without power; the government would need to assume the failed operator's obligations",
+  "The author concludes that residential consumers ultimately bear the high cost of complying with environmental regulations"
+ ],
+ "relationships": [
+  "Follows from the cap-and-trade advantages discussion"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Charging a uniform price to everyone seems fair but actually undermines the trading market's efficiency goal of rewarding least-cost emissions cuts"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "269"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 6,
+   "topic": "Distributing emissions rights and consumer protection"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

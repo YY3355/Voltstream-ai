@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Volatility as a risk measure",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Volatility",
+ "definition": "Volatility describes the risk of holding an asset and is typically defined as the standard deviation of continuously compounded returns; it measures how much prices are likely to disperse between two points in time.",
+ "core_idea": "An asset with high volatility commonly experiences large price swings, but volatility only describes the magnitude of price movement \u2014 not whether the trade is a good one.",
+ "key_points": [
+  "Volatility is standard deviation of continuously compounded returns.",
+  "It measures likely price dispersion between two time periods.",
+  "A highly volatile asset regularly sees large price changes.",
+  "Volatility says nothing about whether an investment is good or bad \u2014 it is purely a risk/dispersion measure, not a merit measure."
+ ],
+ "relationships": [
+  "Related to risk/reward ratios (e.g., Sharpe or Information Ratios), which combine volatility with return to assess investment merit."
+ ],
+ "trading_implications": [
+  "Traders use volatility as their primary shorthand for describing how risky an asset is to hold."
+ ],
+ "caveats": [
+  "Volatility is sometimes wrongly equated with investment quality; the author is explicit that it does not describe investment merit."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "301-302"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 1,
+   "topic": "Volatility as a risk measure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

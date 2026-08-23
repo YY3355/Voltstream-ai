@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Basis Risk at Illiquid Trading Points",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Model Risk",
+ "definition": "A model-risk source arising from approximating an illiquid physical trading point's price using a nearby liquid hub's price.",
+ "core_idea": "Since many physical delivery points aren't liquid enough to price directly, models commonly assume the point moves in tandem with a nearby hub; this assumption holds up well sometimes, but the historical relationship between the two locations can break down over a period of years.",
+ "key_points": [
+  "Illiquid physical points are commonly approximated using a nearby hub's price.",
+  "The implicit assumption is that the illiquid point tracks the hub's price changes.",
+  "This relationship can hold for a while and then break down after a couple of years, invalidating models built on it."
+ ],
+ "relationships": [
+  "A specific instance of Model Risk"
+ ],
+ "trading_implications": [
+  "Basis relationships used to price or hedge illiquid delivery points should be periodically re-checked rather than assumed permanent."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "68-69"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 5,
+   "topic": "Basis Risk at Illiquid Trading Points"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

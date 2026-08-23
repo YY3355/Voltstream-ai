@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Biodiesel: composition, advantages, and drawbacks",
+ "type": "concept",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Biodiesel",
+ "definition": "Biodiesel is an alternative diesel-engine fuel made by removing glycerin from vegetable oils; it contains no petroleum, generally runs in unmodified diesel engines, and is commonly blended with petroleum diesel in ratios denoted \"Bxx\" (percent biodiesel by volume).",
+ "core_idea": "Biodiesel offers environmental and safety benefits over conventional diesel but suffers a fuel-economy penalty and, most importantly, remains substantially more expensive and limited in production volume.",
+ "key_points": [
+  "Biodiesel is produced by removing glycerin from vegetable oils and contains no petroleum",
+  "Most diesel engines can run biodiesel without modification",
+  "Blend labeling convention: \"Bxx\" where xx is the percent biodiesel by volume (e.g., B20 = 20% biodiesel)",
+  "Advantages: biodegradable, renewable, generally lower emissions than standard diesel, nontoxic, higher flashpoint making it safer to transport and store",
+  "Disadvantages: about a 10% reduction in fuel economy and power versus diesel, acts as a stronger solvent than diesel, very high biodiesel percentages may require special engines",
+  "The biggest limitation is cost: biodiesel can currently only be produced in limited amounts and is substantially more expensive than regular diesel"
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "242-243"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 3,
+   "topic": "Biodiesel: composition, advantages, and drawbacks"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

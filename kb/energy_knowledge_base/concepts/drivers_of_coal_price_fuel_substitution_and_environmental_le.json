@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Drivers of coal price: fuel substitution and environmental legislation",
+ "type": "concept",
+ "category": "Commodities",
+ "subcategory": "Coal Pricing",
+ "definition": "Coal prices are primarily influenced by the price of competing fossil fuels and by environmental/carbon regulation; higher oil and gas prices make coal relatively more attractive and push its price up, while market-based emissions and pollution regulations specifically target coal to make it economically less attractive.",
+ "core_idea": "Coal price sits at the intersection of fuel-switching economics (it becomes more attractive, and its price rises, when oil and gas are expensive) and environmental policy (which deliberately raises the cost of coal-based generation because coal is heavily used and highly polluting), though coal typically remains cheaper than oil and gas even after price increases.",
+ "key_points": [
+  "Prolonged high oil and natural gas prices make coal relatively more attractive for power generation.",
+  "As other fuel prices rise, coal becomes comparatively more economical, increasing coal usage and coal prices.",
+  "Even after price increases, coal generally remains much cheaper than oil and natural gas.",
+  "Market-based carbon/pollution reduction approaches are a major influence on coal price because coal is heavily used and highly polluting, making it the primary regulatory target.",
+  "Environmental initiatives typically reduce coal usage by making coal-based generation more expensive, since coal's main appeal is being the cheaper generation fuel."
+ ],
+ "relationships": [
+  "Fuel-switching economics (oil/gas price vs. coal price) and environmental regulation are the two dominant, partly opposing forces on coal demand and price."
+ ],
+ "trading_implications": [
+  "Coal price/usage can be modeled as a function of relative fossil fuel prices (substitution effect) and the regulatory cost imposed on carbon/pollution, rather than coal supply-demand fundamentals alone."
+ ],
+ "caveats": [
+  "A rise in coal price due to fuel switching does not mean coal loses its cost advantage \u2014 it generally stays cheaper than oil and gas even when its price rises."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "250-251"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 3,
+   "topic": "Drivers of coal price: fuel substitution and environmental legislation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

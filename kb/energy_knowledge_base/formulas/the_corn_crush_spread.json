@@ -1,0 +1,64 @@
+{
+ "canonical_topic": "The corn crush spread",
+ "type": "trading_strategy",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Ethanol",
+ "definition": "The corn crush spread is the price relationship between ethanol and the corn used to produce it, analogous to a refinery crack spread, arising because ethanol's price is anchored to the gasoline it displaces while corn's price floats with weather, crop conditions, and food demand.",
+ "core_idea": "Because blending mandates tie ethanol's value to the price of the gasoline it displaces (unless ethanol trades at a premium), while raw corn prices move independently with agricultural conditions, a tradable spread opens between ethanol value and corn cost -- and that spread has a self-correcting feedback loop through distiller buying.",
+ "key_points": [
+  "Government regulations require ethanol to be blended into gasoline at a fixed ratio",
+  "Unless ethanol is priced above gasoline, ethanol's price is effectively set by the value of the gasoline it displaces",
+  "Corn (the dominant U.S. ethanol feedstock) is affected by weather, crop conditions, and competing food demand, so its price moves independently of ethanol's",
+  "Corn represents about two-thirds of the cost of producing a gallon of ethanol",
+  "Byproducts of conversion are distiller's dried grains (potential livestock feed or biodiesel feedstock, but currently low-value) and carbon dioxide",
+  "When ethanol is expensive relative to corn, distillers buy more corn for conversion, which raises food/corn prices and pushes ethanol prices back down",
+  "Future crush spread calculations may need to select the cheapest-to-deliver raw material (corn, sugarcane, or petroleum-derived ethanol), or change entirely if a market for distiller's grains develops"
+ ],
+ "relationships": [
+  "Analogous in structure to the crack spread between crude oil and refined products"
+ ],
+ "trading_implications": [
+  "Traders can speculate on the crush spread the same way they would a refinery crack spread, taking positions on the relationship between ethanol and corn prices",
+  "Cheap corn combined with expensive ethanol creates an incentive for distillers to increase ethanol production, which mechanically narrows the spread over time"
+ ],
+ "caveats": [
+  "The crush spread might look like a simple production margin, but the author notes ethanol's price is capped/anchored by the value of displaced gasoline under blending mandates, while corn's price floats independently -- so the spread is not driven by ethanol supply/demand alone"
+ ],
+ "formulas": [
+  {
+   "name": "Corn-to-ethanol conversion ratio",
+   "formula": "1 bushel of corn \u2192 2.6 gallons of ethanol",
+   "variables": {
+    "bushel of corn": "raw feedstock unit",
+    "gallons of ethanol": "fuel output volume"
+   },
+   "source": {
+    "chapter": 6,
+    "pages": "242-242",
+    "section_hint": "2.3 Oil - The Corn Crush"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "242-242"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 2,
+   "topic": "The corn crush spread"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

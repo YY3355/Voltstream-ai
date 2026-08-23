@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Coal price volatility and storage characteristics",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Price Behavior",
+ "definition": "Coal is historically less volatile than other energy commodities on a per-energy-unit basis, partly because it is relatively easy to store and therefore does not show a strong seasonal price pattern.",
+ "core_idea": "Coal's ease of storage removes much of the seasonal price swing seen in other energy commodities, and its price per unit of energy tends to run well below both natural gas and diesel.",
+ "key_points": [
+  "Coal has historically been less volatile than other energy commodities when compared on a price-per-energy basis",
+  "Because coal is relatively easy to store, it lacks a strong seasonal price trend",
+  "Coal prices tend to run substantially lower than natural gas and diesel prices"
+ ],
+ "relationships": [
+  "Contrasts with seasonal price behavior of natural gas"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "256-257"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 3,
+   "topic": "Coal price volatility and storage characteristics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Key features of forwards and swaps",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Forwards & Swaps",
+ "definition": "A set of structural characteristics common to bilaterally negotiated forward and swap contracts.",
+ "core_idea": "Because forwards and swaps are private, uncleared contracts, exiting or unwinding them requires dealing with the same original counterparty, and credit and margin arrangements are handled directly between the two parties.",
+ "key_points": [
+  "Being private contracts, offsetting or exiting a position requires transacting again with the original counterparty (no exchange to novate to).",
+  "All bilateral contracts carry credit risk \u2014 the counterparty must actually meet its obligations.",
+  "These contracts are typically struck at zero value (strike price = prevailing price at inception), so usually no cash changes hands until delivery/settlement.",
+  "Margin posting is optional and, when used, is agreed in advance under a master agreement.",
+  "Forwards typically run through to actual physical delivery rather than being unwound early; if delivery isn't wanted, a swap is used instead."
+ ],
+ "relationships": [
+  "These features distinguish forwards/swaps from exchange-cleared futures, which have daily margining, a clearinghouse counterparty, and easy offsetting."
+ ],
+ "trading_implications": [
+  "Traders using forwards/swaps must actively manage bilateral credit exposure and cannot easily lay off risk to a third party without a new offsetting trade with the same counterparty."
+ ],
+ "caveats": [
+  "Assuming forward/swap positions can be exited as freely as exchange-traded futures positions."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 3,
+   "topic": "Key features of forwards and swaps"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

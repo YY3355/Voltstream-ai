@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Seasonal Demand Regime Shift Risk in Gas Storage Valuation",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Market Structure Risk",
+ "definition": "A storage valuation built on historical seasonal price/demand patterns is exposed to the risk that those patterns shift permanently as the underlying drivers of gas demand evolve.",
+ "core_idea": "As new sources of demand emerge over time, the seasonal price pattern a storage strategy assumes can change structurally, undermining valuations based on older historical patterns.",
+ "key_points": [
+  "Example: in the mid-1980s there were very few natural-gas-fired power plants, so summer gas demand (and prices) were low relative to winter, heating-driven demand.",
+  "Roughly 25 years of natural-gas power plant buildout added a major new source of summer gas demand.",
+  "As a result, summer natural gas prices rose sharply, changing the seasonal pattern older storage valuations may have relied on."
+ ],
+ "relationships": [
+  "A risk factor for the same seasonal trade described in the Natural Gas Storage Arbitrage Bid Strategy example."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "535"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 11,
+   "topic": "Seasonal Demand Regime Shift Risk in Gas Storage Valuation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

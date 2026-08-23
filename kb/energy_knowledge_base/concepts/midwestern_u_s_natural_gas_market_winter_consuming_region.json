@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Midwestern U.S. natural gas market: winter consuming region",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets",
+ "definition": "The Midwest is described as an industrialized region with cold winters that is a major natural-gas-consuming region during the winter months.",
+ "core_idea": "Cold Midwestern winters drive it to be a major winter consumption region for natural gas, consistent with the earlier point that heating demand is the dominant seasonal driver.",
+ "key_points": [
+  "The Midwestern U.S. is an industrialized region with cold winters.",
+  "The Midwest is a major consuming region during the winter months."
+ ],
+ "relationships": [
+  "Extends the weather-driven demand concept to a specific region."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 8,
+   "topic": "Midwestern U.S. natural gas market: winter consuming region"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Estimating implied correlation from historical spread/ratio data",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Spread Options",
+ "definition": "Implied correlation for a spread option can be estimated by fitting a normal distribution to historically observed spreads or ratios (e.g., between two natural gas pricing points), then finding the Black Scholes implied volatility consistent with that fitted distribution, assuming future spreads behave like historical ones.",
+ "core_idea": "Because a normal distribution is fully described by a single dispersion parameter, and Black-Scholes-style volatility scales predictably with the square root of time, historical spread/ratio data can be used to back out an implied volatility for the ratio under an assumption that history is representative of the future.",
+ "key_points": [
+  "The method is illustrated with a natural gas transportation spread example: the price ratio between Florida Gas Pipeline Zone 3 (near Pensacola) and Florida City Gates (near Orlando).",
+  "A normal distribution can be fit to historical ratio/spread observations using a spreadsheet.",
+  "This relies on assuming futures spreads will resemble historically observed spreads.",
+  "Because a normal distribution is defined by a single dispersion variable, and Black-Scholes-style random-walk dispersion scales with the square root of time, converting the fitted historical distribution into an implied volatility is mathematically straightforward.",
+  "This approach lets correlation be examined under 'normal' (non-stressed) market conditions.",
+  "An alternative approach uses volatilities observed in other markets to fix two of the three unknowns and then solves algebraically for the remaining implied correlation that reproduces the desired future distribution."
+ ],
+ "relationships": [
+  "Feeds the implied correlation term needed by Kirk's approximation",
+  "Depends on the three-unknown-parameter structure of spread options"
+ ],
+ "trading_implications": [
+  "Historical spread/ratio distributions, fit with simple spreadsheet tools, provide a practical way to derive correlation inputs for spread option pricing when no direct market-quoted correlation exists.",
+  "Because the calibration assumes history repeats, it inherits the same forward-looking-validity caveat noted earlier for spread distributions in general."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "384-386"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 5,
+   "topic": "Estimating implied correlation from historical spread/ratio data"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

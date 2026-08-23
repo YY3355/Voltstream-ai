@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Base load, peak load, and safety-margin generation",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Base load is the minimum level of demand a region must meet at all times, typically supplied by baseload generation units. Peak load is the expected maximum level of demand, which requires nearly all of a region's generation units to run. Many regions also hold extra generation capacity as a safety margin that may rarely or never run under normal conditions.",
+ "core_idea": "A region's demand profile spans a floor (base load) and a ceiling (peak load), and grid operators keep reserve capacity beyond the peak as insurance against unexpected contingencies.",
+ "key_points": [
+  "Base load = minimum demand that must always be met; served by baseload generation units.",
+  "Peak load = expected maximum demand; meeting it requires nearly all generation units in the region to operate.",
+  "Safety-margin units are extra generation held in reserve, which may never be dispatched under normal conditions.",
+  "These three concepts frame what a spatial load forecast is trying to estimate: expected demand, maximum demand, and the buffer needed above it."
+ ],
+ "relationships": [
+  "Both are quantities a spatial load forecast must estimate for capacity planning"
+ ],
+ "trading_implications": [
+  "Peak load periods are when nearly all generation is engaged, which is relevant context for understanding price spikes."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "389"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 2,
+   "topic": "Base load, peak load, and safety-margin generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

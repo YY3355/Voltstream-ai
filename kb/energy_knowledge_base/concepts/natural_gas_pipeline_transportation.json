@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Natural Gas Pipeline Transportation",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Transportation & Infrastructure",
+ "definition": "Pipelines are the dominant way natural gas is moved, and they solve the commodity's low energy density by supplying a continuous stream of gas at moderate pressure rather than shipping it in dense, discrete batches.",
+ "core_idea": "Because methane carries less energy per unit volume than heavier hydrocarbons like propane or butane, pipelines compensate by delivering gas continuously under moderate pressure instead of trying to compress it into a denser form for shipment.",
+ "key_points": [
+  "Methane's low energy density per volume is the core physical challenge pipeline transport is built around.",
+  "Pipelines operate at moderate pressure and supply gas continuously rather than in discrete high-density shipments.",
+  "Interstate pipeline operators are for-profit businesses that also function much like public utilities.",
+  "FERC regulates interstate pipelines: limiting new construction, capping chargeable rates, and requiring nondiscriminatory access.",
+  "Service ranges from guaranteed delivery (most expensive) down to various nonguaranteed tiers, priced according to reliability."
+ ],
+ "relationships": [
+  "Regulated by FERC",
+  "Contrasts with LNG shipping for long-distance/overseas transport"
+ ],
+ "trading_implications": [
+  "Service-level tiers (firm vs nonguaranteed) create a reliability/cost tradeoff shippers must weigh when planning deliveries"
+ ],
+ "caveats": [
+  "Natural gas is not shipped in compact high-density batches like liquid fuels; pipeline transport instead relies on continuous flow because of the gas's inherently low energy density"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "142-142"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 0,
+   "topic": "Natural Gas Pipeline Transportation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

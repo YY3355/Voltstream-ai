@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Regulation up / regulation down",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Ancillary Services",
+ "definition": "Ancillary services used to hold grid frequency at 60 hertz by responding to automatic control signals that raise (reg up) or lower (reg down) a generator's output.",
+ "core_idea": "Regulation resources must be able to respond to automated dispatch signals very quickly (about a minute) to fine-tune output and keep grid frequency steady.",
+ "key_points": [
+  "Regulation Up: generator responds to signals to increase production, typically within about a minute.",
+  "Regulation Down: generator responds to signals to decrease production, typically within about a minute.",
+  "Regulation services are tied directly to maintaining 60 hertz frequency on the grid.",
+  "Exact performance requirements vary by power grid/ISO."
+ ],
+ "relationships": [
+  "A subtype of ancillary services.",
+  "Directly tied to frequency response concept."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "495"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 3,
+   "topic": "Regulation up / regulation down"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

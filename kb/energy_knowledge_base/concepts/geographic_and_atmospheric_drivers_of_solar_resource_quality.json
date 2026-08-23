@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Geographic and atmospheric drivers of solar resource quality",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation Siting",
+ "definition": "The efficiency of any solar collector depends heavily on location: how much atmosphere sunlight must pass through (a function of latitude and altitude) and how much particulate matter (water vapor, clouds, dust) is suspended in the air.",
+ "core_idea": "Dry, high-altitude locations near the equator receive the most usable solar energy because sunlight travels through less atmosphere and encounters less particulate scattering/absorption, which is why regions like the U.S. Desert Southwest or the Mediterranean are favored over places like the Great Lakes region or Northern Europe.",
+ "key_points": [
+  "Less atmosphere for sunlight to pass through means more energy reaches a solar collector.",
+  "Water vapor, clouds, and dust particles all reduce the amount of sunlight reaching the ground.",
+  "The combined effect of direct-sunlight availability and particulate matter explains regional favorability differences (e.g., Desert Southwest vs. Great Lakes in the U.S.; Mediterranean vs. Northern Europe)."
+ ],
+ "relationships": [
+  "Feeds into the estimation-risk topic \u2014 historical regional solar radiation averages are how this siting variability gets quantified for project analysis."
+ ],
+ "trading_implications": [
+  "Geographic siting is a first-order input to expected capacity factor and therefore to the economics of any solar investment or PPA."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "450-451"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 2,
+   "topic": "Geographic and atmospheric drivers of solar resource quality"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

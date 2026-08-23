@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Cogeneration (topping and bottoming cycle plants)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Generation",
+ "definition": "Cogeneration is the practice of capturing and selling the steam byproduct of electricity generation instead of venting it, so a plant produces both power and usable heat.",
+ "core_idea": "Reusing waste steam as a saleable product lowers a plant's effective operating cost, and the order in which heat vs. electricity is produced defines whether it is a topping or bottoming cycle plant.",
+ "key_points": [
+  "Cogeneration plants sell both electricity and steam/heat, which reduces net operating cost versus a plant that only sells power.",
+  "Topping cycle plants generate electricity first, then use the leftover exhaust steam for heating.",
+  "Bottoming cycle plants generate heat first for an industrial process, then use the leftover heat to run a steam generator for electricity."
+ ],
+ "relationships": [
+  "Related to heat rate, since cogeneration changes a plant's effective economics even if fuel-to-electricity efficiency is unchanged."
+ ],
+ "trading_implications": [
+  "Cogeneration economics can make a plant willing to run at lower power prices than a pure generation asset because of the added steam revenue stream."
+ ],
+ "caveats": [
+  "Cogeneration plants are not purely electricity assets \u2014 their dispatch economics depend on steam/heat sales too, so evaluating them on power price alone is incomplete."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "30-30"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 1,
+   "topic": "Cogeneration (topping and bottoming cycle plants)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

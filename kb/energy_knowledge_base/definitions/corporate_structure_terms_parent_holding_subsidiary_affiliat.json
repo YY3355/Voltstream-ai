@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Counterparty Credit Risk",
+ "definition": "A set of standard corporate-structure terms used to assess counterparty risk: a parent company holds a controlling stock interest in another company; a holding company is a parent whose main business is holding equity stakes in its subsidiaries; a subsidiary is a company at least 50% owned (voting-stock-controlled) by another company; an affiliate is a company with a substantial but non-majority stake in another, or two companies that share the same parent.",
+ "core_idea": "Because many energy companies are conglomerates built of multiple related entities, understanding whether a trading partner is a parent, subsidiary, or affiliate matters for figuring out who is actually legally on the hook for an obligation.",
+ "key_points": [
+  "Conglomerate structures are common in energy partly because regulators (e.g., public utility commissions) require regulated utility businesses to be shielded from unregulated business lines.",
+  "Affiliate status (same-parent subsidiaries, or non-majority substantial ownership) does not by itself mean shared liability for obligations.",
+  "Knowing the exact corporate relationship of a trading counterparty is necessary to know who is legally liable if that counterparty defaults."
+ ],
+ "relationships": [
+  "Underpins Ring Fencing and Structural Subordination concepts"
+ ],
+ "trading_implications": [
+  "Credit assessment must identify which specific legal entity is the counterparty and its exact place in the corporate structure, since affiliates are not automatically liable for each other's obligations."
+ ],
+ "caveats": [
+  "Assuming that because two companies are affiliates or share a parent, one is liable for the other's trading obligations \u2014 liability depends on the specific legal structure (cross-guarantees, ring fencing, etc.), not mere affiliation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "571-575"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_001.json",
+   "idx": 1,
+   "topic": "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

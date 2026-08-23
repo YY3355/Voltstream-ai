@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Financial assets: stocks and bonds",
+ "type": "definition",
+ "category": "Trading Markets",
+ "subcategory": "Asset Types",
+ "definition": "Financial assets represent ownership of real assets or of the cash flows real assets generate, and are distinguished from real assets by being created by an issuer rather than existing as physical property.",
+ "core_idea": "The two dominant financial asset types are stocks (ownership shares in a company) and bonds (a fixed-term loan to a company that must be repaid with interest); the author notes these are important markets but not the book's focus.",
+ "key_points": [
+  "Stock: a financial instrument giving an ownership share in a company.",
+  "Bond: a debt investment representing a loan to a company, repaid after a fixed period plus any accrued interest.",
+  "Financial assets are created by issuers, unlike real assets which exist independent of an issuing party."
+ ],
+ "relationships": [
+  "Contrasted directly with real assets in the same section."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "82"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_002.json",
+   "idx": 2,
+   "topic": "Financial assets: stocks and bonds"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

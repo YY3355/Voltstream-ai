@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Depleted gas reservoirs as storage facilities",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Facility Types",
+ "definition": "A depleted natural gas reservoir \u2014 an emptied natural gas field \u2014 can be refilled and reused as a storage facility, provided its location, pipeline proximity, and geology are suitable.",
+ "core_idea": "Depleted reservoirs are attractive because their geological characteristics are already well documented from years of production monitoring, much of the original extraction equipment can be reused to cut startup costs, and because gas has naturally resided there for millions of years there is little concern about induced geological instability.",
+ "key_points": [
+  "Physical characteristics (max pressure, geological stability) are already well known from prior years of well operation.",
+  "Existing extraction equipment can often be reused, lowering startup costs versus building fresh infrastructure.",
+  "Millions of years of natural gas presence in the reservoir minimizes concerns about geological side effects from reuse.",
+  "Because the reservoir already effectively contains unrecoverable gas from its natural history, no separate unrecoverable-gas barrier needs to be injected.",
+  "Historically the most abundant and cost-effective form of natural gas storage; alternatives must offer either better performance or a location advantage to compete."
+ ],
+ "relationships": [
+  "Contrasts with salt caverns (higher cost, higher performance) and aquifers (least desirable) as the other two facility types.",
+  "Ties to physically unrecoverable gas: no need to add an artificial unrecoverable-gas barrier since one already exists naturally."
+ ],
+ "trading_implications": [
+  "Being the cheapest, fastest-to-build option, depleted reservoirs set the baseline economics that competing storage types (salt caverns, aquifers) must beat on performance or location to justify their higher cost."
+ ],
+ "caveats": [
+  "Assuming all depleted reservoirs are automatically suitable for conversion \u2014 the author notes not all reservoirs are suitable for refilling."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "529-530"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 5,
+   "topic": "Depleted gas reservoirs as storage facilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

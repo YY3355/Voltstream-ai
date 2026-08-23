@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Martingale",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Common Terms",
+ "definition": "A martingale is a random number sequence (stochastic process) in which the current value is the best available estimate of its future value.",
+ "core_idea": "Coin flipping is the canonical martingale example: given a fair coin, the expected future gap between heads and tails equals today's gap, since neither outcome is more likely going forward.",
+ "key_points": [
+  "The best estimate of a martingale's future value is simply its current value.",
+  "Example: if 50 flips of a fair coin produced 30 heads and 20 tails (a gap of 10), the expected gap after 100 flips is still 10, since future flips are 50/50."
+ ],
+ "relationships": [
+  "A type of stochastic process",
+  "Underlies the assumption that today's price is the best estimate of tomorrow's price"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "351-352"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 4,
+   "topic": "Martingale"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

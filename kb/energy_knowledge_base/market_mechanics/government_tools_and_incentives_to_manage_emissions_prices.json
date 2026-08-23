@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Government tools and incentives to manage emissions prices",
+ "type": "market_mechanic",
+ "category": "Emissions Markets",
+ "subcategory": "Trading Carbon Emissions",
+ "definition": "The levers governments hold to keep emissions prices within a preferred range, and their political motivation for doing so.",
+ "core_idea": "Governments want emissions prices high enough to spur environmentally conscious investment but low enough to avoid burdening the economy and voters, and they can directly manage price levels by issuing new emissions rights and controlling how easy it is to create offset-based credits, while also having incentive to prevent speculative cornering.",
+ "key_points": [
+  "No one, especially government, benefits from higher carbon emissions prices; the only downside of low prices is weaker incentive for companies to invest in cleaner technology.",
+  "As long as environmental targets are met, governments prefer lower emissions prices.",
+  "Governments can issue new emissions rights and set the rules for how easily offset-based credits can be created, giving them direct tools to stabilize prices.",
+  "High carbon prices are ultimately paid by consumers/voters and the broader economy; governments have a civic obligation to keep grids running and economies moving, giving them incentive to manage prices and prevent speculators from cornering the market for a windfall."
+ ],
+ "relationships": [
+  "Builds on the limited/absent role of speculation in stabilizing this market"
+ ],
+ "trading_implications": [
+  "Market participants should expect government intervention (new rights issuance, offset-creation rules) as an active price-management force rather than a purely supply/demand-driven market"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "273"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 8,
+   "topic": "Government tools and incentives to manage emissions prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

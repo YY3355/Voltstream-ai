@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Real-time market eligibility and participation strategy by cost position",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Bidding Strategy",
+ "definition": "Only generators able to start quickly with fuel supplies already secured can participate in the real-time auction; low-cost baseload plants that fail to clear day-ahead are often locked out of real-time by their own operating constraints, while higher-cost, flexible plants may deliberately hold back capacity hoping for better real-time prices.",
+ "core_idea": "A plant's physical flexibility determines whether it even has the option to sell in real time, while its cost position determines whether waiting for real time is a sensible strategy.",
+ "key_points": [
+  "Real-time eligibility requires fast startup capability and fuel already lined up",
+  "Less efficient (often peaking) plants tend to have this flexibility",
+  "Low-cost providers usually try to lock in profit and hedge exposure ahead of time in the day-ahead market, since failing to sell there can leave them unable to fall back to real time",
+  "Higher-priced providers may deliberately wait for the real-time auction if day-ahead prices aren't high enough to satisfy them",
+  "A generator not selected in the day-ahead market remains eligible to try the real-time market (constraints permitting)"
+ ],
+ "relationships": [
+  "Extends the day-ahead vs. real-time auction mechanic"
+ ],
+ "trading_implications": [
+  "Bidding strategy differs systematically by plant type: baseload/low-cost units prioritize day-ahead certainty, while flexible/high-cost units may speculate on real-time pricing"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "408"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 5,
+   "topic": "Real-time market eligibility and participation strategy by cost position"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

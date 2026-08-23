@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Oil trap and related rock properties",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Geology terminology",
+ "definition": "A trap is an impermeable rock layer sitting above a porous, permeable rock layer, which allows oil/gas to accumulate rather than escape; porosity and permeability describe how much fluid a rock can hold and how easily it can move through it.",
+ "core_idea": "Oil accumulates where a permeable, porous reservoir rock is sealed beneath an impermeable cap rock (the trap); porosity measures storage capacity while permeability measures how connected/flowable that storage is.",
+ "key_points": [
+  "Trap: impermeable rock layer located above a porous, permeable rock layer.",
+  "Porosity: ratio of empty (pore) space in a rock to the rock's total volume.",
+  "Permeability: how easily liquid/gas passes through rock, driven by how connected the pores are.",
+  "A rock can be highly porous yet impermeable if its pores are not interconnected.",
+  "Associated gas: natural gas produced from the same well as oil."
+ ],
+ "relationships": [
+  "Porosity and permeability together determine whether a rock layer can serve as an oil reservoir beneath a trap"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "High porosity does not imply high permeability \u2014 a porous rock can still be impermeable if pores are disconnected."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "219-220"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 1,
+   "topic": "Oil trap and related rock properties"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

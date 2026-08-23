@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Spot vs forward correlation across locations",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Spot vs Forward Markets",
+ "definition": "In the forward market, prices at different locations stay highly correlated because there's time to arbitrage gas between them; in the spot market that arbitrage isn't possible, so cross-location correlation breaks down.",
+ "core_idea": "Forward-market correlation across locations is enforced by the threat of arbitrage (shipping gas from a cheap location to an expensive one), bounded only by transport and storage costs; the spot market has no such mechanism because neither supply nor demand can shift location on short notice.",
+ "key_points": [
+  "In the forward market, most natural gas prices at different locations are highly correlated because participants could otherwise profit by shifting gas between locations.",
+  "The only constraint on that forward arbitrage trade is the cost of transporting and storing the gas.",
+  "In the spot market, this arbitrage isn't possible \u2014 supply can't be moved in on short notice and demand can't be moved out.",
+  "Example given: most homeowners can't relocate to another state for a week just because gas prices are better there."
+ ],
+ "relationships": [
+  "Companion effect to higher spot volatility; both stem from the physical constraints on storage/transport."
+ ],
+ "trading_implications": [
+  "Basis trades that rely on location-to-location correlation are more reliable in the forward market than in the spot market."
+ ],
+ "caveats": [
+  "Assuming spot prices at different hubs will move together the way forward prices do."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 2,
+   "topic": "Spot vs forward correlation across locations"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

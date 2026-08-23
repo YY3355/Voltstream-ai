@@ -1,0 +1,78 @@
+{
+ "canonical_topic": "Basis price vs. index price vs. all-in price",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Pricing Terminology",
+ "definition": "Natural gas is customarily quoted relative to the Henry Hub benchmark: the index price is the Henry Hub price, the basis price is the location-specific spread to that benchmark, and the all-in (actual) price is what a physical buyer actually pays at a given location.",
+ "core_idea": "Because gas is traded relative to Henry Hub, the word 'price' is ambiguous \u2014 traders default to meaning the basis, while end users/utility operators default to meaning the all-in price \u2014 even though the delivered cost to the consumer is identical either way it's described.",
+ "key_points": [
+  "Index price = the Henry Hub price, the primary US natural gas benchmark.",
+  "Basis price = spread between the actual (all-in) price at a location and the index price; e.g., Henry Hub $3.52 and Waha Hub $3.70 implies a Waha basis of $0.18.",
+  "All-in price = index price + basis price = the actual physical delivered price at a location.",
+  "A trader asked for 'the price' will typically quote the basis; a utility operator asked the same question will typically mean the all-in price.",
+  "The terminology exists because Henry-Hub-priced futures are the primary trading vehicle, and the basis functions like an implied cost of moving gas from Henry Hub to the other location."
+ ],
+ "relationships": [
+  "Underlies the structure of basis positions and basis swaps described next."
+ ],
+ "trading_implications": [
+  "Always clarify whether a quoted 'price' is a basis or an all-in price to avoid costly miscommunication.",
+  "Basis prices function economically like an implied transportation cost from Henry Hub to the delivery point."
+ ],
+ "caveats": [
+  "Assuming 'the price' always means the all-in price \u2014 traders often mean the basis instead.",
+  "Thinking the way a price is quoted changes what the consumer actually pays \u2014 it does not; it's purely a description convention."
+ ],
+ "formulas": [
+  {
+   "name": "Basis price",
+   "formula": "Basis = Actual (all-in) price at location \u2212 Index price (Henry Hub)",
+   "variables": {
+    "Basis": "$/MMBtu spread quoted by traders for a specific hub",
+    "Actual (all-in) price": "$/MMBtu physical delivered price at the location",
+    "Index price": "$/MMBtu Henry Hub benchmark price"
+   },
+   "source": {
+    "chapter": 4,
+    "pages": "147-148",
+    "section_hint": "2.1 Natural Gas \u2014 Basis Prices / Common Terms"
+   }
+  },
+  {
+   "name": "All-in price",
+   "formula": "All-in price = Index price + Basis price",
+   "variables": {
+    "All-in price": "$/MMBtu actual physical price at a location",
+    "Index price": "$/MMBtu Henry Hub benchmark price",
+    "Basis price": "$/MMBtu spread for the location"
+   },
+   "source": {
+    "chapter": 4,
+    "pages": "147-148",
+    "section_hint": "2.1 Natural Gas \u2014 Basis Prices / Common Terms"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "147-148"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 1,
+   "topic": "Basis price vs. index price vs. all-in price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "canonical_topic": "Premium (option price)",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Basic Terminology",
+ "definition": "The premium is the money the option buyer pays to the option seller to acquire the option contract.",
+ "core_idea": "The premium is simply the price paid by the purchaser of an option to the seller of that option.",
+ "key_points": [
+  "Premium is paid by the option purchaser to the option seller."
+ ],
+ "relationships": [
+  "Premium equals the sum of intrinsic value and extrinsic value"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "344-345"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_003.json",
+   "idx": 4,
+   "topic": "Premium (option price)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Common hedge structures: futures and costless collars",
+ "type": "trading_strategy",
+ "category": "Derivatives",
+ "subcategory": "Hedging Strategy",
+ "definition": "Although almost any derivative can be used to hedge, futures/forwards/swaps and costless collars are the two most commonly used structures in practice.",
+ "core_idea": "Futures, forwards, and commodity swaps are favored as hedging tools primarily because they can be entered into for free or for only a limited margin requirement, making them capital-efficient relative to other instruments.",
+ "key_points": [
+  "A variety of futures, forwards, and commodity swaps can serve as hedging instruments",
+  "Futures-type hedges are attractive because they typically require little or no up-front premium, only margin",
+  "Costless collars are cited as the other most common hedge structure, for the same low-capital-requirement reason"
+ ],
+ "relationships": [
+  "Definition of hedging"
+ ],
+ "trading_implications": [
+  "Futures/forwards and costless collars are preferred hedge structures when a firm wants to minimize up-front cash outlay for the hedge"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "593-594"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 5,
+   "topic": "Common hedge structures: futures and costless collars"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

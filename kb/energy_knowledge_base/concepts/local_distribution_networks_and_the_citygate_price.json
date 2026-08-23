@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Local distribution networks and the citygate price",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Distribution",
+ "definition": "Most end customers receive gas via a local distribution company's network of small pipes rather than directly from interstate pipelines; the retail price customers pay combines the citygate price (interstate-pipeline gas delivered to the local utility) plus a local delivery charge.",
+ "core_idea": "Local distribution is expensive to maintain because it must connect every home and business regardless of individual profitability, so delivery charges \u2014 commonly about half of the total retail natural gas cost \u2014 make up a large share of what consumers pay.",
+ "key_points": [
+  "Local distribution companies operate the network of small pipes that reach individual homes/businesses, distinct from interstate pipelines.",
+  "These networks must maintain universal connections regardless of profitability of any single connection, driving up maintenance costs.",
+  "Retail natural gas bills combine the citygate price (interstate-delivered gas price to the local utility) with a local delivery charge.",
+  "Local delivery charges commonly make up about half of the total retail cost of natural gas."
+ ],
+ "relationships": [
+  "Citygate price sits downstream of the all-in/index/basis pricing structure described earlier, at the point interstate gas is handed to the local utility."
+ ],
+ "trading_implications": [
+  "Retail price movements can be driven as much by local delivery-charge structure as by wholesale (index/basis) price movements."
+ ],
+ "caveats": [
+  "Assuming the retail price consumers pay is just the wholesale (citygate) commodity price \u2014 roughly half is typically the local delivery charge."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "149-151"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 7,
+   "topic": "Local distribution networks and the citygate price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

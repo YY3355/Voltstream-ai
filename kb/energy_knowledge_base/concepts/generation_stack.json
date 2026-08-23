@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "generation stack",
+ "type": "concept",
+ "n_merged": 2,
+ "definition": "A generation stack ranks all the power plants on a grid by their cost of production, usually drawn with the most expensive plant at the top and the cheapest at the bottom, with each plant's slice sized by how much capacity it can supply.",
+ "core_idea": "Plants are ordered from highest to lowest production cost, with slice size reflecting dispatchable capacity; this ordering is the primary lens for estimating day-ahead and real-time power prices, but the shape of the stack (steep vs. flat) determines how well marginal pricing performs as a profit mechanism for generators.",
+ "key_points": [
+  "Ordered from highest production cost (top) to lowest (bottom)",
+  "Each plant occupies a portion of the stack sized to its dispatchable capacity (MWh)",
+  "The stack is the primary lens used to estimate day-ahead and real-time power prices",
+  "Fuel cost heavily influences break-even cost for fuel-dependent plants such as gas-fired units",
+  "Marginal pricing performed well historically when baseload (coal/nuclear) was cheap and gas set high marginal prices (a steep cost gradient, e.g. mid-1990s)",
+  "By 2015, roughly 20 years of new technology plus cheaper fracked natural gas had flattened the generation stack",
+  "A flatter stack means marginal costs across generators converge, weakening marginal pricing as a way to sustain producer profit"
+ ],
+ "relationships": [
+  "Feeds directly into the dispatch stack and the marginal-provider pricing mechanic",
+  "The stack's steepness or flatness sets up margin-compression dynamics for generators"
+ ],
+ "trading_implications": [
+  "Identifying which plant type is likely to be needed to meet forecast demand brackets the likely clearing price",
+  "As gas costs converge with other fuel costs, expect baseload generator margins to compress even without any change in the marginal unit's identity \u2014 margin risk grows purely from stack-flattening dynamics"
+ ],
+ "caveats": [
+  "Marginal pricing as a profit mechanism breaks down when many generators share similar marginal costs (a 'flat' stack), which became more common by 2015"
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "406-407"
+  },
+  {
+   "chapter": 17,
+   "pages": "420-422"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 0,
+   "topic": "The generation stack"
+  },
+  {
+   "file": "raw/ch17/chunk_003.json",
+   "idx": 4,
+   "topic": "Marginal pricing degrades as the generation stack flattens"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:52:02+00:00"
+ }
+}

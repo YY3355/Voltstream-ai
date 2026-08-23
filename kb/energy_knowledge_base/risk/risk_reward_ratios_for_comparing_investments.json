@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Risk/reward ratios for comparing investments",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Performance Measurement",
+ "definition": "Risk/reward relationships, such as the Sharpe Ratio or Information Ratio, are commonly used by traders to compare the relative merits of different investments.",
+ "core_idea": "Where volatility alone only measures risk, risk/reward ratios are the tools traders reach for when they need to weigh risk against return across multiple investment choices.",
+ "key_points": [
+  "Sharpe and Information Ratios are named as common risk/reward comparison tools.",
+  "These ratios are used specifically to compare the merits of multiple investments, addressing the gap left by volatility alone."
+ ],
+ "relationships": [
+  "Complements volatility, which measures risk but not merit."
+ ],
+ "trading_implications": [
+  "Traders use these ratios rather than raw volatility when deciding which of several investments is more attractive on a risk-adjusted basis."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "302-303"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 4,
+   "topic": "Risk/reward ratios for comparing investments"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

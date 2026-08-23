@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Physical, Spot, Forward, and Financial Markets",
+ "type": "definition",
+ "category": "Market Structure",
+ "subcategory": "Market Types",
+ "definition": "A physical (or spot/cash) market exchanges cash for immediate delivery of a commodity; a forward market arranges exchange of goods or services for a later date; a financial market trades financial instruments like futures or forwards rather than a physical commodity itself.",
+ "core_idea": "Energy markets split along two axes: when delivery happens (spot vs. forward) and whether what's traded is the physical commodity or a financial claim on it. Most energy trading activity happens in the forward market rather than the spot market.",
+ "key_points": [
+  "Physical market, cash market, and spot market are treated as synonyms by the author.",
+  "Forward market = delivery/settlement arranged now for a future date.",
+  "Financial market trades derivative-type products (futures, forwards) as distinct from a market where a physical commodity changes hands for cash.",
+  "The author states most energy trading occurs in the forward market, not the spot market."
+ ],
+ "relationships": [
+  "A trade is broadly defined as any exchange of goods or services, underlying all these market types."
+ ],
+ "trading_implications": [
+  "Because most energy volume trades forward rather than spot, spot prices alone understate the market's real liquidity and price discovery activity."
+ ],
+ "caveats": [
+  "Treating 'financial market' as only meaning stocks/bonds \u2014 the author uses it specifically to distinguish derivative-product markets from physical-commodity-for-cash markets."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 0,
+   "topic": "Physical, Spot, Forward, and Financial Markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

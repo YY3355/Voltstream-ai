@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Coal pipeline transportation trade-offs",
+ "type": "concept",
+ "category": "Commodities",
+ "subcategory": "Coal Logistics",
+ "definition": "New coal pipeline technologies aim to reduce the water used in slurry transport, but introduce a new cost: the coal must be dried before use, and drying by burning some of the coal raises both emissions and transport cost.",
+ "core_idea": "Compressed 'coal log' pipelines cut water use dramatically versus slurry pipelines and leave residual water cleaner, but they shift the problem from water consumption to a drying step that itself burns fuel and adds emissions and cost.",
+ "key_points": [
+  "Compressed coal-log pipelines can move three to four tons of coal per ton of water used, versus traditional slurry pipelines.",
+  "Coal-log pipelines leave the water cleaner than slurry pipelines do.",
+  "Transported coal must be dried before it can be burned as fuel.",
+  "Burning some of the coal is the most effective way to dry it, which increases carbon emissions and transportation cost."
+ ],
+ "relationships": [
+  "Trade-off between water-use efficiency and drying-related emissions/cost."
+ ],
+ "trading_implications": [
+  "Physical logistics costs (drying, transport) are a real cost layer that affects delivered coal economics, distinct from mine-mouth price."
+ ],
+ "caveats": [
+  "Reducing water usage in coal transport is not a free efficiency gain; it trades one input cost/environmental cost (water) for another (drying emissions and expense)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "250"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 0,
+   "topic": "Coal pipeline transportation trade-offs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

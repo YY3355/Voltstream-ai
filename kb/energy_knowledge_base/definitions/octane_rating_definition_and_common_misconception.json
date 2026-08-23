@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Octane rating: definition and common misconception",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Gasoline",
+ "definition": "Octane measures gasoline's resistance to ignition (how easily it combusts), not the amount of energy it contains; higher resistance to premature ignition lets an engine deliver more of the fuel's energy as usable power rather than wasted heat.",
+ "core_idea": "Octane is purely an ignition-resistance property; it does not indicate how much energy is in the fuel, and an engine only benefits from higher octane if it is designed/optimized for that octane level.",
+ "key_points": [
+  "Octane measures how much gasoline resists ignition; when gasoline resists ignition less well, more power is delivered as usable output rather than wasted as heat.",
+  "Octane is explicitly not a measure of the energy content in a tank of gasoline.",
+  "Ethanol has a higher octane rating than gasoline (it ignites more easily) but contains less energy per unit.",
+  "Adding ethanol raises a gasoline blend's octane but still reduces the vehicle's miles per gallon because ethanol carries less energy.",
+  "Engines must be optimized for a specific octane level \u2014 using higher-octane fuel does not automatically make an engine more efficient.",
+  "Higher octane allows more efficient engine operation only in the sense that less combustion heat is wasted; it does not itself add power or energy."
+ ],
+ "relationships": [
+  "Octane relates to ignition timing/resistance, distinct from and sometimes inversely related to fuel energy content"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Believing higher octane fuel contains more energy or automatically improves any engine's efficiency \u2014 the author explicitly corrects both."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "228-230"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 5,
+   "topic": "Octane rating: definition and common misconception"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

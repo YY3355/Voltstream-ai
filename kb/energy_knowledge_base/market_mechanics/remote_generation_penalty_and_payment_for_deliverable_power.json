@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Remote generation penalty and payment for deliverable power",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Pricing",
+ "definition": "Under the SMD/LMP methodology, generators are paid based on the power actually delivered to customers (net of transmission line losses), not the gross power injected at the generation site.",
+ "core_idea": "Historically generators were paid for gross power placed onto the grid regardless of location; because line losses reduce how much of that power actually reaches distant customers, LMP-based pricing instead pays generators only for deliverable power, creating a financial penalty for being far from demand.",
+ "key_points": [
+  "Old model: generators paid for gross power injected at their site, ignoring transmission losses.",
+  "New (LMP) model: generators paid only for power that is actually deliverable to customers.",
+  "This creates an economic disincentive to build generation that can't effectively deliver power to load, and an incentive to build congestion-relieving transmission.",
+  "The combined effect (congestion allocation + remote generation penalty) is credited with improving overall grid reliability."
+ ],
+ "relationships": [
+  "Second major component of FERC's Standard Market Design, alongside congestion cost allocation."
+ ],
+ "trading_implications": [
+  "Plant siting decisions must weigh line-loss-driven revenue penalties for remote locations against fuel cost and efficiency advantages."
+ ],
+ "caveats": [
+  "Being paid for 'power produced' is not the same as being paid for 'power delivered' under LMP \u2014 the distinction is the basis of the remote generation penalty."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "176-177"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 6,
+   "topic": "Remote generation penalty and payment for deliverable power"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

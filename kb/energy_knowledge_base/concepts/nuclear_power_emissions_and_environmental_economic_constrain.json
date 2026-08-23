@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Nuclear power emissions and environmental/economic constraints",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "Nuclear fission is not a combustion process, so nuclear plants produce no CO2, but they generate radioactive waste instead, and face fuel-supply and siting constraints coal plants don't.",
+ "core_idea": "Nuclear power trades one environmental problem (CO2 emissions) for others: radioactive waste, difficulty and toxicity of sourcing concentrated uranium fuel, weapons-proliferation concerns tied to the refining process, and grid strain from being built far from consumers due to public opposition to local siting.",
+ "key_points": [
+  "Nuclear fission breaks protons and neutrons from the fuel's nucleus without combustion, so no CO2 is produced.",
+  "Radioactive waste is the alternative pollution type produced.",
+  "Concentrated uranium fuel is highly toxic.",
+  "Large, economically extractable uranium deposits are limited despite uranium being common in the Earth's crust generally.",
+  "The refining process for reactor fuel is often similar to that for nuclear weapons fuel, linking reactor construction to weapons-proliferation fears.",
+  "Like coal plants, nuclear plants have economies of scale requiring large size, and public resistance to local siting ('not in my backyard') pushes them far from consumer regions, straining the grid.",
+  "Nuclear fuel refining techniques are often kept as government secrets."
+ ],
+ "relationships": [
+  "Contrasts with coal plant CO2/particulate emissions",
+  "Siting/scale economics parallel coal plants"
+ ],
+ "trading_implications": [
+  "Grid strain from long transmission distances between nuclear plants and demand centers is a structural factor in regional power flow and congestion."
+ ],
+ "caveats": [
+  "Nuclear power is sometimes framed as pollution-free because it lacks CO2 emissions, but the source is clear it produces a different pollutant (radioactive waste) and carries other environmental/economic costs."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "469-470"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_000.json",
+   "idx": 1,
+   "topic": "Nuclear power emissions and environmental/economic constraints"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Day-ahead vs real-time auction structure",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "ISO/RTO power markets run two sequential auctions \u2014 day-ahead and real-time \u2014 that rely on nearly identical generation stacks and bidding dynamics, with the day-ahead auction locking in most generation capacity and the real-time auction handling the remaining balancing volume.",
+ "core_idea": "Even though the real-time auction has fewer participants than the day-ahead auction, similar bidding behavior tends to produce similar generation stacks and prices across both markets, with real-time prices tracking day-ahead prices closely most of the time but occasionally spiking higher.",
+ "key_points": [
+  "Most generation capacity commitments are settled in the day-ahead market; the real-time market provides a smaller amount of balancing supply.",
+  "The real-time auction has fewer participants than the day-ahead auction but exhibits similar bidding dynamics, leading to similar generation stacks.",
+  "A comparison of real-time and day-ahead prices over two days (Figure 4.2.10) shows the two auction prices staying close together most of the time, with real-time occasionally running higher."
+ ],
+ "relationships": [
+  "Connects to the generation stack and generator bidding strategy concepts discussed earlier in the section."
+ ],
+ "trading_implications": [
+  "Because day-ahead and real-time prices are usually close but can diverge (real-time spiking higher), the relationship between the two markets is a natural basis for spread-based strategies."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "418-419"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_002.json",
+   "idx": 4,
+   "topic": "Day-ahead vs real-time auction structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

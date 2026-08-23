@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Forward vs Future Contracts",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Contract Types",
+ "definition": "A forward is an OTC contract for future delivery, typically unmargined with no cash flows until the delivery date, usually a direct bilateral agreement under an ISDA master agreement. A future is an exchange-traded contract for future delivery that is freely tradable and requires daily mark-to-market profit/loss to be settled via margin payments.",
+ "core_idea": "Forwards and futures both fix a future delivery, but differ in venue (OTC vs. exchange), tradability, and cash-flow timing (settlement-date-only vs. daily margin).",
+ "key_points": [
+  "Forwards: OTC, typically not margined, no cash flow until delivery.",
+  "Futures: exchange-traded, freely tradable, daily mark-to-market margin settlement required."
+ ],
+ "relationships": [
+  "Ties to Exchange vs OTC Trading and Margin/Mark-to-Market definitions."
+ ],
+ "trading_implications": [
+  "Futures' daily margin settlement means P&L is realized incrementally in cash, while a forward's P&L is only realized at delivery \u2014 this affects funding/liquidity needs during the life of the position."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 3,
+   "topic": "Forward vs Future Contracts"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

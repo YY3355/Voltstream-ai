@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Traders use options mainly as cost-effective insurance, priced by a competitive open market",
+ "type": "trading_strategy",
+ "category": "Derivatives",
+ "subcategory": "Options \u2014 Applications",
+ "definition": "Even though options are generally poor standalone speculative bets, they are commonly used as a cost-effective form of insurance, with an open market ensuring competitive pricing. No trader is forced to transact at another party's bid or ask, and any trader with sufficient assets to meet their obligations can sell options rather than only buy them.",
+ "core_idea": "The primary practical use of options is risk management (insurance-like protection) rather than speculation, supported by a liquid, competitively priced market where either side of a trade is accessible.",
+ "key_points": [
+  "Options are most commonly bought by traders as insurance, not as a primary speculative vehicle.",
+  "An open market for options ensures competitive pricing between participants.",
+  "No trader is obligated to accept another party's bid/ask price.",
+  "Any trader with sufficient assets to cover potential obligations can act as an option seller, not just a buyer."
+ ],
+ "relationships": [
+  "Reframes the earlier 'options behave like insurance' concept as the stated primary practical rationale for using options"
+ ],
+ "trading_implications": [
+  "A trading desk should think of options primarily as a hedging/insurance tool for managing risk on other positions, distinct from treating them as an independent speculative strategy."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "333"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 9,
+   "topic": "Traders use options mainly as cost-effective insurance, priced by a competitive open market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

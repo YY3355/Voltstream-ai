@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Ethanol production process (fermentation)",
+ "type": "market_mechanic",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Ethanol",
+ "definition": "Ethanol is produced from starch-based crops using fermentation, the same basic process used to make alcoholic beverages.",
+ "core_idea": "Raw crop material is milled into meal, mixed with liquid and heated to dissolve it and kill bacteria, cooled and treated with enzymes to convert starch into sugar, then fermented with yeast into alcohol and carbon dioxide, and finally distilled to separate the alcohol.",
+ "key_points": [
+  "Raw materials are milled into a fine powder called meal",
+  "Liquid is added to the meal to form a slurry, which is heated to dissolve the meal and kill bacteria",
+  "The mixture is cooled and enzymes are added to convert starch into simpler sugars",
+  "Yeast is added to convert the sugars into alcohol and carbon dioxide",
+  "The alcohol is separated from remaining solids/liquids by distillation"
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "241-241"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 1,
+   "topic": "Ethanol production process (fermentation)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Underground coal mining method and hazards",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Production & Mining",
+ "definition": "Underground coal mining carves a network of rooms out of a coal seam using continuous mining machines that cut along coal faces roughly 50 feet long.",
+ "core_idea": "Modern underground mining is heavily mechanized but still dangerous because material is physically excavated from beneath the surface, creating an ongoing risk of ground collapse whether the collapse is intentional or accidental.",
+ "key_points": [
+  "Continuous mining machines cut coal along faces approximately 50 feet in length",
+  "Removing underground material creates constant collapse risk, whether the collapse is deliberate (to preempt future problems) or accidental",
+  "Surface land above a collapsed mine is damaged and must be restored",
+  "Most U.S. underground mining is concentrated in the Appalachian Mountains east of the Mississippi River"
+ ],
+ "relationships": [
+  "Contrasts with western U.S. surface/strip mining used in Wyoming"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "256"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 0,
+   "topic": "Underground coal mining method and hazards"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

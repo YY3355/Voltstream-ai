@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "Extrinsic value as the value of the lottery ticket minus its intrinsic value",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "Continuing the coin-flip lottery ticket analogy, the extrinsic value of an option can be calculated directly: it is the expected value of holding the option (the whole lottery ticket) minus the intrinsic value that could be locked in by exercising right now.",
+ "core_idea": "Extrinsic value is what you're paying to keep optionality alive, quantified as the gap between the ticket's expected value and the risk-free amount already lockable through immediate exercise.",
+ "key_points": [
+  "Worked example: a 50/50 shot at $3 million (or $0) has an expected value of $1.5 million.",
+  "The intrinsic value is the $1 million that could be taken risk-free by exercising immediately instead of flipping again.",
+  "Extrinsic value = $1.5 million (expected value of the lottery ticket) \u2212 $1 million (intrinsic value) = $500,000.",
+  "The author frames this $500,000 as the value of choosing NOT to exercise \u2014 i.e., the value of preserving the remaining 50/50 upside."
+ ],
+ "relationships": [
+  "Directly extends the intrinsic vs. extrinsic value concept introduced earlier in this section",
+  "The $1 million/$3 million coin-flip figures are the same worked example used to introduce intrinsic value"
+ ],
+ "trading_implications": [
+  "A trader with enough capital to absorb the downside (the author's 'multibillionaire' framing) should keep taking a positive-expected-value coin flip every time it's offered, since not exercising captures the extrinsic value."
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Extrinsic value",
+   "formula": "Extrinsic Value = Expected Value of Holding the Option \u2212 Intrinsic Value",
+   "variables": {
+    "Expected Value of Holding the Option": "probability-weighted payoff of continuing to hold rather than exercising now ($)",
+    "Intrinsic Value": "amount capturable by exercising immediately ($)"
+   },
+   "source": {
+    "chapter": 13,
+    "pages": "330",
+    "section_hint": "3.4 Financial Options \u2014 Calculating Extrinsic Value"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "330"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 0,
+   "topic": "Extrinsic value as the value of the lottery ticket minus its intrinsic value"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

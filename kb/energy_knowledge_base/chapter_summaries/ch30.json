@@ -1,0 +1,7 @@
+{
+ "chapter": 30,
+ "title": "6.2 VALUE AT RISK",
+ "n_concepts": 1,
+ "summary": "Volatility, expressed as standard deviation (\u03c3), and variance (\u03c3\u00b2) are the two measures this chapter defines and relates to each other for use in portfolio risk work. The chapter establishes this terminology as a foundation, showing how the two quantities connect within the broader risk-calculation framework.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

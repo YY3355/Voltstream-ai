@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Liquidity and Security",
+ "type": "definition",
+ "category": "Market Structure",
+ "subcategory": "Contract Properties",
+ "definition": "Liquidity describes how easily a financial instrument can be exchanged for cash or other financial products; illiquid means it cannot be easily exchanged. A security is a fungible contract representing financial value (e.g., a future or exchange-traded option) \u2014 a catch-all term for tradable contracts, generally excluding OTC contracts since those can't be sold/exchanged without modifying the original agreement.",
+ "core_idea": "Liquidity and the security/non-security distinction both hinge on how easily a contract can change hands: securities are built to be fungible and tradable, while OTC contracts generally are not.",
+ "key_points": [
+  "Liquidity is a spectrum (liquid vs. illiquid), not a binary property tied to venue alone.",
+  "OTC contracts are usually excluded from the 'security' label because trading them requires modifying the original bilateral agreement."
+ ],
+ "relationships": [
+  "Security status depends on the fungibility concept and connects to Exchange vs OTC Trading."
+ ],
+ "trading_implications": [
+  "Illiquid positions (common in OTC/customized deals) are harder to exit or offset quickly, raising execution and pricing risk relative to liquid, exchange-traded securities."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 7,
+   "topic": "Liquidity and Security"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

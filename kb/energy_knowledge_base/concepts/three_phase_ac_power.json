@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Three-phase AC power",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Physical Infrastructure",
+ "definition": "Power is almost always transmitted as three separate oscillating currents (phases) whose waveforms are offset from each other, such that at every point the net current and voltage sum to zero when the three phases are combined.",
+ "core_idea": "Because the three phases cancel out at every point in the circuit, current doesn't need to loop all the way around the grid back to its source \u2014 it can 'dead-end' and cancel locally, which avoids a single-break-shuts-down-everything failure mode like a series circuit.",
+ "key_points": [
+  "In any circuit, net current at every point must be zero \u2014 current can't disappear, so it must be cancelled, moved, or converted (e.g., to heat).",
+  "Three-phase power achieves this cancellation by construction, since the three offset waveforms sum to zero.",
+  "This lets the grid avoid behaving like a chain of serial circuits (e.g., old-style Christmas lights) where one break stops everything.",
+  "Transmission towers typically carry a multiple of three wires; six wires (two sets of three) is common to reduce electromagnetic field strength via smaller conductors.",
+  "Using multiple smaller conductors per phase is called bundling; it helps prevent ionization/corona \u2014 an electrical charge buildup in the air around very large conductors."
+ ],
+ "relationships": [
+  "Three-phase cancellation is the physical reason all generators on a grid must be frequency-synchronized."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "One might assume power must flow in a complete loop back to its source; three-phase design specifically avoids requiring this."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "195-196"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 5,
+   "topic": "Three-phase AC power"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

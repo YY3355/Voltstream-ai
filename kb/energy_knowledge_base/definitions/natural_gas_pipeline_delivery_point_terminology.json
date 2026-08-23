@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Natural gas pipeline delivery-point terminology",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Terminology",
+ "definition": "Standard terms for pipeline interconnections and flow points: a hub is where two or more transportation (transmission) pipelines meet (and commonly hosts storage facilities); a citygate is where a transportation pipeline connects to a distribution pipeline; burner tip refers to the end consumer of the gas; a receipt point is where gas is injected into a pipeline (named for the pipeline's obligation to receive gas), and a delivery point is where gas is withdrawn (named for the pipeline's obligation to deliver gas).",
+ "core_idea": "Pipeline terminology (hub, citygate, burner tip, receipt point, delivery point) names locations from the perspective of the pipeline's contractual obligation to receive or deliver gas, and both hubs and citygates serve as common contractual delivery locations for natural gas contracts.",
+ "key_points": [
+  "Hub = interconnection of two or more transmission/long-distance pipelines; often co-located with storage.",
+  "Citygate = interconnection between a transportation pipeline and a distribution pipeline.",
+  "Burner tip = term for the natural gas consumer.",
+  "Receipt point = injection location, named for the pipeline receiving gas.",
+  "Delivery point = withdrawal location, named for the pipeline delivering gas.",
+  "Both hubs and citygates are common delivery locations specified in natural gas contracts."
+ ],
+ "relationships": [
+  "Directly ties to how natural gas contracts specify delivery location, which affects pricing/basis."
+ ],
+ "trading_implications": [
+  "Contract delivery location (hub vs. citygate vs. burner tip) is a key term that determines applicable price/basis for a natural gas trade."
+ ],
+ "caveats": [
+  "That receipt/delivery point naming reflects the buyer's or seller's action - the source clarifies the names are based on the pipeline's obligation, not the transportation contract purchaser's."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "508-508"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_000.json",
+   "idx": 4,
+   "topic": "Natural gas pipeline delivery-point terminology"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

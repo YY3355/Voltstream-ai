@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Traditional well construction",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Exploration and Production",
+ "definition": "A traditional well is built by drilling a borehole (roughly 6 inches to 3 feet / 12 cm to 1 m in diameter) with a rotating drill bit suspended on a drill string, then lining the hole with progressively smaller steel casings cemented in place, and finally perforating the casing at the target formation to let fuel flow in.",
+ "core_idea": "The drill string carries both rotational torque and drilling fluid (a clay/water/chemical mix) to cool the bit, clear rock cuttings, and manage underground pressure; casing and cement provide structural support and isolate different pressure zones as the well goes deeper, with modern wells using up to five levels of progressively smaller pipe before a perforating gun opens the final casing to the reservoir.",
+ "key_points": [
+  "Borehole diameter: roughly 6 inches to 3 feet (12 cm to 1 m).",
+  "Drill string transfers torque and drilling fluid to the drill bit.",
+  "Drilling fluid cools the bit, removes cuttings, and helps maintain proper downhole pressure.",
+  "Steel casing is cemented into the borehole for structural stability and to separate pressure zones.",
+  "Modern wells may use up to five levels of progressively smaller casing/drill bit as depth increases.",
+  "A perforating gun punches holes through casing and cement at the target layer to let fuel enter the well.",
+  "Traditional drilling works best for lower-density crude oil or natural gas that flows easily; underground pressure can be boosted later by pumping or additives as natural pressure declines."
+ ],
+ "relationships": [
+  "Well pressure decline over time links to the same overpressure/heat/buoyancy forces that initially drove production."
+ ],
+ "trading_implications": [
+  "Traditional drilling is best suited to lighter, more easily flowing crude or gas, which is relevant to distinguishing conventional supply from heavy-oil supply that needs different extraction economics."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "125-126"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_001.json",
+   "idx": 2,
+   "topic": "Traditional well construction"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

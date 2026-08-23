@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Defining features of a derivative contract",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Fundamentals",
+ "definition": "Accounting guidance identifies several required features of a derivative: a readily-convertible-to-cash (tradable) underlying asset, formation via a bilateral agreement between two parties (buyer/seller or 'Party A'/'Party B'), zero net wealth creation (only a wealth transfer/payoff between the two parties), a finite life span ending at an expiration date, and a payoff whose size/direction depends on something not yet known when the contract was created.",
+ "core_idea": "A derivative is fully defined by its written contract: who owes what to whom, under what triggering condition, by when \u2014 and it always requires both a buyer and a seller since it only transfers wealth rather than creating it.",
+ "key_points": [
+  "Readily convertible to cash (RCC): the accounting term for an underlying asset that can be both bought and sold in a reasonable time without losing more than about 10% of its value in transaction costs.",
+  "Derivatives are created by mutual agreement (trading) between two parties who sign a contract defining all terms; where 'buyer'/'seller' don't fit, the parties are called 'Party A' and 'Party B.'",
+  "A derivative transfers wealth between buyer and seller (a payoff) but never creates wealth outright.",
+  "Derivatives are often created at zero value initially, then fluctuate between being an asset (benefits the holder, who'd be paid to give it up) and a liability (holder must pay to be released from it).",
+  "Every derivative has a limited life span, ending at its expiration date/expiry, shortly after which the parties settle by cash payment or physical delivery.",
+  "Contracts specify relative obligations via a notional quantity (the fixed amount of the underlying) and the price of the underlying."
+ ],
+ "relationships": [
+  "RCC operationalizes the general 'liquidity' benchmark (10% value retention on a round trip) specifically for accounting classification of derivative underlyings."
+ ],
+ "trading_implications": [
+  "Because a derivative can swing between asset and liability status, its holder's exposure changes sign over the contract's life even without any new trade.",
+  "The zero-sum nature of payoffs means every derivative position implies an exact offsetting position on the other side of the trade."
+ ],
+ "caveats": [
+  "A derivative does not generate new wealth for the market as a whole \u2014 any gain to one party is exactly matched by a loss to the counterparty."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "83-84"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_002.json",
+   "idx": 4,
+   "topic": "Defining features of a derivative contract"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "American vs European options",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Options - Style",
+ "definition": "An American option can be exercised at any time up to expiration; a European option can only be exercised at expiration.",
+ "core_idea": "Although American options technically allow earlier exercise, this distinction rarely matters much for energy options on forwards/futures, since reselling an option is almost always more profitable than exercising it early.",
+ "key_points": [
+  "American option: exercisable any time before expiration.",
+  "European option: exercisable only at expiration.",
+  "Because options on forwards/futures reduce the benefit of early exercise, whether an option is American or European is usually not economically significant in this market."
+ ],
+ "relationships": [
+  "options on forwards/futures",
+  "early exercise value"
+ ],
+ "trading_implications": [
+  "Traders generally prefer to resell an option rather than exercise it early, regardless of its style."
+ ],
+ "caveats": [
+  "Assuming American-style optionality is always a major value driver \u2014 for forward/futures-based energy options it is usually immaterial."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "334-335"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 2,
+   "topic": "American vs European options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

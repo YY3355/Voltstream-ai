@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Arbitrage and arbitrage-free pricing",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Common Terms",
+ "definition": "Arbitrage is buying and selling two different assets simultaneously to lock in a risk-free profit. Arbitrage-free pricing sets an option's value equal to the cost of a portfolio of other assets that exactly replicates its payoff.",
+ "core_idea": "Option values are pinned down by requiring that no risk-free profit can be made between the option and a replicating combination of other assets.",
+ "key_points": [
+  "Arbitrage exploits price discrepancies between two assets for a risk-free profit.",
+  "In option pricing, value is determined by the cost of replicating the option's payoff with other assets.",
+  "Setting the option's price equal to its replicating portfolio's cost is called arbitrage-free pricing."
+ ],
+ "relationships": [
+  "Underpins why zero-strike and unreachable-strike option values are forced to specific levels"
+ ],
+ "trading_implications": [
+  "Mispriced options relative to their replicating portfolio create arbitrage opportunities."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "351-351"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 2,
+   "topic": "Arbitrage and arbitrage-free pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

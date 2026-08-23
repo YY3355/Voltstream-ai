@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Assumption risk from long model lifespans",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Model Maintenance",
+ "definition": "The risk that a model's foundational assumptions about how a market operates become invalid over time as real-world conditions shift.",
+ "core_idea": "Models are simplifications calibrated to historical, typical behavior, and energy infrastructure investments can last decades, so the regulatory, demographic, and technological environment a model assumed can change enough to invalidate its core assumptions \u2014 and if the basic assumptions are wrong, every downstream conclusion the model produces is likely wrong too.",
+ "key_points": [
+  "Models simplify reality and are based on typical historical behavior, with no guarantee that behavior remains predictive going forward",
+  "Real life has exceptions to nearly every rule, and it isn't always clear in advance where those exceptions will occur",
+  "The most dangerous failure mode is getting a basic assumption about market operation wrong, since it corrupts every conclusion built on top of it",
+  "Long-lived physical assets (power plants, pipelines, gas wells) mean pricing models tied to them can stay in use for decades, well past the point their original assumptions still hold",
+  "Employee turnover compounds the problem: the people who understood the original assumptions, and who could recognize when they'd broken down, are often gone before problems surface"
+ ],
+ "relationships": [
+  "Mitigated by model maintenance procedures (documentation counters the turnover problem)"
+ ],
+ "trading_implications": [
+  "Models supporting long-lived asset valuations need periodic assumption reviews, not just periodic recalibration of parameters"
+ ],
+ "caveats": [
+  "A model that has worked well for years is sometimes assumed to stay valid indefinitely; the author's point is closer to the opposite \u2014 durability increases the chance its assumptions have quietly broken down"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "585-587"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 2,
+   "topic": "Assumption risk from long model lifespans"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

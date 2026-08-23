@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Correlation between assets",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Statistics",
+ "definition": "Correlation describes how closely the price movements of two things track each other, without implying that one causes the other.",
+ "core_idea": "When two assets are highly correlated they tend to move together, but the author is explicit that this co-movement can arise from a genuine causal link, a shared underlying driver, or simply random chance.",
+ "key_points": [
+  "High correlation means prices tend to move together.",
+  "Correlation does not by itself establish causation between the two assets.",
+  "Correlation can arise from a shared cause or from coincidence, not just a direct relationship."
+ ],
+ "relationships": [
+  "Paired with volatility as a core statistics-derived trading term"
+ ],
+ "trading_implications": [
+  "Traders should be cautious about inferring a causal or structural relationship from observed correlation alone."
+ ],
+ "caveats": [
+  "Treating correlation as proof of a causal relationship between two assets."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "42-43"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 1,
+   "topic": "Correlation between assets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

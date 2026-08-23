@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Mode, median, and mean as measures of central tendency",
+ "type": "definition",
+ "category": "Statistics",
+ "subcategory": "Central Tendency",
+ "definition": "Mode, median, and mean are the three standard ways to describe the 'typical' value of a distribution: the most frequent value, the midpoint value, and the arithmetic average, respectively.",
+ "core_idea": "Each measure has a different practical tradeoff: mode is the most frequent value but can be ambiguous (multiple modes) and expensive to find; median is the true midpoint but requires sorting the full data set; mean is the simple average and is the easiest and cheapest to compute, which is why it is treated as the most important of the three.",
+ "key_points": [
+  "Mode = value(s) occurring most often; a distribution can have more than one mode (e.g., a fair coin flip has heads and tails as co-equal modes).",
+  "Mode is rarely used in practice because finding it requires scanning the whole distribution and it isn't guaranteed to be unique.",
+  "Median = the value splitting the distribution into top 50% and bottom 50%; for an even number of samples it is the average of the two middle values.",
+  "Median's practical drawback is that computing it requires sorting the data set, which is slow for very large sets even on fast computers.",
+  "Mean (arithmetic mean) = sum of all values divided by count; it represents the expected value of a random variable.",
+  "Mean's main advantage is ease of calculation, which is why the author calls it the most important central-tendency measure.",
+  "Mode, median, and mean do not necessarily coincide \u2014 different distribution shapes can pull them apart, though the mode always sits at a distribution's peak(s)."
+ ],
+ "relationships": [
+  "Mean is the reference point used later in the mean absolute deviation and variance formulas."
+ ],
+ "trading_implications": [
+  "Mean is favored in practice for describing 'typical' price behavior (e.g., typical neighborhood gasoline price) because it is cheap and simple to compute at scale."
+ ],
+ "caveats": [
+  "Assuming mode, median, and mean will agree for a given distribution \u2014 they can diverge depending on the distribution's shape."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "308-309"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 1,
+   "topic": "Mode, median, and mean as measures of central tendency"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

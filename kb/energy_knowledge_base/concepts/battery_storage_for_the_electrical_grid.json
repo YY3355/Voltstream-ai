@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Battery storage for the electrical grid",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "Grid-scale batteries work conceptually like consumer electronics batteries; they are especially valuable paired with intermittent solar or wind generation, and can independently provide short-term ancillary services to help balance grid voltage.",
+ "core_idea": "Falling battery costs, driven by demand for mobile phones, tablets, and laptops, are making large-scale grid battery storage increasingly viable, both for pairing with renewables and as a standalone source of short-term grid-balancing services.",
+ "key_points": [
+  "Grid batteries are conceptually similar to batteries found in mobile phones or laptops.",
+  "Batteries are most desirable when linked to solar or wind generation.",
+  "Even without renewable pairing, batteries can supply ancillary services that help the grid balance short-term voltage variances.",
+  "Battery prices have fallen steadily due to demand from mobile phones, tablets, and laptops, making large-scale grid use more feasible.",
+  "Greater adoption of battery storage is expected to create further economies of scale and additional price declines."
+ ],
+ "relationships": [
+  "Electric cars as a source of grid battery storage"
+ ],
+ "trading_implications": [
+  "Battery cost trends are a leading indicator of when large-scale grid storage becomes broadly economical.",
+  "Ancillary services revenue is a use case for batteries that is independent of renewable pairing or price arbitrage."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "477-478"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 4,
+   "topic": "Battery storage for the electrical grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

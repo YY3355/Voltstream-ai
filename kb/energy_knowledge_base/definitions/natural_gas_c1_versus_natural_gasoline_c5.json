@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Natural gas (C1) versus natural gasoline (C5+)",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "Despite similar-sounding names, natural gas (C1, methane, the lightest hydrocarbon) and natural gasoline (C5+, heavier hydrocarbons resembling low-octane naphtha) are very different substances.",
+ "core_idea": "The 'C1 vs C5+' framing is used to head off confusion between methane-based natural gas and the pentane-plus product called natural gasoline.",
+ "key_points": [
+  "C1 = methane = natural gas, the lightest hydrocarbon gas.",
+  "C5+ = natural gasoline = heavier hydrocarbons, similar to low-octane naphtha."
+ ],
+ "relationships": [
+  "Natural gasoline is the pentanes-plus fraction of NGLs, distinct from methane-based natural gas"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "The similarity in names ('natural gas' vs 'natural gasoline') invites confusion despite the substances being chemically very different."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "276-277"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 3,
+   "topic": "Natural gas (C1) versus natural gasoline (C5+)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

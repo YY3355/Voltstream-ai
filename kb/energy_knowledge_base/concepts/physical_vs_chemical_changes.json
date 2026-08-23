@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Physical vs. Chemical Changes",
+ "type": "concept",
+ "category": "Commodity Fundamentals",
+ "subcategory": "Physical Properties",
+ "definition": "A physical change alters the form of a substance (e.g., its phase) without altering its chemical identity and can be undone, while a chemical change (such as combustion) transforms a substance into something new and generally cannot be reversed.",
+ "core_idea": "The defining test between the two types of change is reversibility: melting and refreezing water returns it to its original state, but burning or cooking a substance permanently changes it.",
+ "key_points": [
+  "Chemical properties describe how a substance reacts with other substances (e.g., combustion is a reaction between a fuel and oxygen).",
+  "Physical properties describe changes that don't alter chemical identity.",
+  "Reversibility is the practical dividing line: physical (state) changes reverse, chemical reactions generally don't.",
+  "Most real-world mixtures undergo some combination of both physical and chemical changes as temperature changes, and under some conditions a solid can convert straight to a gas."
+ ],
+ "relationships": [
+  "Underpins why distillation/refining (physical) differ fundamentally from combustion (chemical) as industrial processes."
+ ],
+ "trading_implications": [
+  "Because combustion is one-way, burnt/consumed fuel can't be recovered, which is part of why fuel is treated as a consumable commodity rather than a reusable asset."
+ ],
+ "caveats": [
+  "Not all temperature-driven transformations are simple phase changes; some are irreversible chemical reactions even though both are triggered by heating."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "290-291"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 0,
+   "topic": "Physical vs. Chemical Changes"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

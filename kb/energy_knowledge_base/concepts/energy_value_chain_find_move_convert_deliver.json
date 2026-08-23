@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Energy value chain: find, move, convert, deliver",
+ "type": "concept",
+ "category": "Energy Markets",
+ "subcategory": "Industry Structure",
+ "definition": "The energy business is organized around a chain of activities: locating and extracting a fuel source, transporting it to where it will be used, and converting it into a usable product for delivery to end customers.",
+ "core_idea": "Every energy commodity moves through a similar sequence \u2014 exploration/extraction (or manufacturing/construction for renewables like solar panels or dams), transport in a form suited to the fuel (pipeline gas, LNG by ship, coal by rail/truck, oil by tanker/pipeline), and finally conversion/distribution to consumers by utilities or grid operators.",
+ "key_points": [
+  "Exploration and drilling companies locate and extract fuel; solar substitutes panel manufacturing, hydro substitutes dam construction",
+  "Natural gas moves via pressurized pipeline or is liquefied for ship transport and must be re-gasified afterward",
+  "Coal moves by truck/rail; oil moves by tanker ship and liquid pipeline; solar needs no transport step",
+  "Electricity is generated at power plants and delivered over a grid maintained by a Transmission System Operator",
+  "Gas is moved from transcontinental pipelines into local utility distribution networks; petroleum is refined then trucked/piped to end points"
+ ],
+ "relationships": [
+  "Feeds into TSO/RTO/ISO grid structure",
+  "Distinct fuel logistics explain why gas, oil, coal, and power markets trade differently"
+ ],
+ "trading_implications": [
+  "Transport/conversion bottlenecks (e.g., LNG liquefaction/regasification capacity, pipeline capacity) are natural points of price divergence between locations"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "22-22"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 0,
+   "topic": "Energy value chain: find, move, convert, deliver"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

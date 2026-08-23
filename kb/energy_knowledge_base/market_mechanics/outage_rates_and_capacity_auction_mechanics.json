@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Outage rates and capacity auction mechanics",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Capacity Markets",
+ "definition": "Capacity payments are usually scaled to how much a unit is expected to actually run, based on its typical forced outage rate, and the price for capacity is generally set through an auction.",
+ "core_idea": "In a capacity auction, generators bid their full capacity (unless retiring), the grid sets a target capacity need, and payments flow only if there's a shortfall relative to that target \u2014 otherwise no one is paid.",
+ "key_points": [
+  "A forced outage is defined as an equipment failure or other breakdown.",
+  "Capacity compensation is typically adjusted for the unit's expected forced outage rate.",
+  "Auctions require most generation units to bid in their full capacity unless they intend to retire the unit.",
+  "The grid operator sets a target amount of capacity it believes is needed to serve demand.",
+  "If the market meets the target, no capacity payments are made; if there is a shortfall, payments are made to incentivize new construction.",
+  "This auction design works reasonably well when consumer demand is steadily rising, but tends to under-compensate existing generation when demand is flat or declining.",
+  "A separate unresolved problem is compensating standby units that run only intermittently, sometimes as rarely as once every 5-10 years."
+ ],
+ "relationships": [
+  "Builds on the general capacity market concept described in the prior item."
+ ],
+ "trading_implications": [
+  "In stable- or falling-demand regions, capacity auction revenue alone may be insufficient to keep existing plants economically viable."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "498-499"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_001.json",
+   "idx": 1,
+   "topic": "Outage rates and capacity auction mechanics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

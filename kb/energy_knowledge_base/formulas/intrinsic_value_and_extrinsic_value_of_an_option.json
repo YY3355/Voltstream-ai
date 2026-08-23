@@ -1,0 +1,54 @@
+{
+ "canonical_topic": "Intrinsic Value and Extrinsic Value of an option",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "The two components that together make up an option's price: intrinsic value is the payoff from immediate exercise, and extrinsic value is the remaining time value in the option's price.",
+ "core_idea": "An option's premium splits into intrinsic value (what the buyer would receive by exercising right now) and extrinsic value (the time value, found by subtracting intrinsic value from the current option price).",
+ "key_points": [
+  "Intrinsic Value: the amount of money the option buyer would receive if the option were immediately exercised.",
+  "Extrinsic Value: the time value of the option, computed by subtracting intrinsic value from the option's current price."
+ ],
+ "relationships": [
+  "Together intrinsic and extrinsic value sum to the option's current price/premium"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Extrinsic Value",
+   "formula": "Extrinsic Value = Current Option Price \u2212 Intrinsic Value",
+   "variables": {
+    "Current Option Price": "the option's current market premium",
+    "Intrinsic Value": "money received if the option were exercised immediately"
+   },
+   "source": {
+    "chapter": 13,
+    "pages": "344-345",
+    "section_hint": "3.4 Financial Options - Glossary"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "344-345"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_003.json",
+   "idx": 2,
+   "topic": "Intrinsic Value and Extrinsic Value of an option"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

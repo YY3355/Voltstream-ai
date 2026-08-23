@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Compressor stations",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Infrastructure",
+ "definition": "Mechanical facilities spaced along a pipeline that create the pressure differentials needed to push gas forward, functioning like a heart pumping blood through the network.",
+ "core_idea": "A compressor station works like a household fan: it draws gas in on a low-pressure side and discharges it on a high-pressure side, and chaining many such stations together in series keeps gas flowing continuously down the pipeline.",
+ "key_points": [
+  "Simple mental model: a fan pulls gas in (low pressure zone) on one side and pushes it out (high pressure zone) on the other",
+  "Stations are typically spaced roughly every 50 miles along a pipeline",
+  "A modern station usually runs several compressor units in parallel",
+  "Gas path through a station: suction header, then a scrubber system, then compression/cooling stages, then discharge into the next pipeline segment",
+  "Gas moves between segments by flowing from one station's high-pressure discharge to the next station's low-pressure suction",
+  "All stations on a pipeline must operate in coordination or the whole pipeline stops working; most are automated and coordinated by a central computer"
+ ],
+ "relationships": [
+  "Depends on the continuous injection/withdrawal requirement",
+  "Cooling stages tie into compression heating/corrosion effects"
+ ],
+ "trading_implications": [
+  "Physical pipeline capacity is not a single uniform pipe but a chain of segments bounded by compressor stations, which is relevant to understanding where physical constraints or outages could occur"
+ ],
+ "caveats": [
+  "Thinking of a pipeline as one continuous unregulated pipe rather than a series of pressure-managed segments"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "511-513"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 1,
+   "topic": "Compressor stations"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

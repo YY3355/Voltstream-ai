@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Opacity of OTC energy pricing",
+ "type": "market_mechanic",
+ "category": "Trading Markets",
+ "subcategory": "OTC Markets",
+ "definition": "Because most energy deals are private bilateral contracts rather than exchange trades, neither counterparty is required to disclose the price, and traders often prefer to keep pricing confidential for competitive reasons.",
+ "core_idea": "Real transaction prices in OTC energy markets are largely hidden, so third-party price services rely on survey-based estimates rather than actual trade data, and those estimates can be unreliable in thin markets.",
+ "key_points": [
+  "Energy trades off an exchange are private contracts with no obligation to publish prices.",
+  "Traders frequently treat pricing data as competitively sensitive and resist disclosure.",
+  "Price-reporting firms publish indicative prices built from surveys, not confirmed trade prices.",
+  "FERC has cracked down on traders historically submitting misleading survey data to manipulate reported prices.",
+  "In regions with little recent trading activity, estimating a realistic execution price remains difficult.",
+  "A highly motivated buyer can push an actual trade price well above prior estimates; a highly motivated seller can push it well below."
+ ],
+ "relationships": [
+  "Underpins why spread trading and hedging are common risk-management responses to unreliable pricing.",
+  "Connects to counterparty credit risk in OTC contracts."
+ ],
+ "trading_implications": [
+  "Published indicative prices should be treated as a rough guide, not an executable quote, especially in illiquid regions.",
+  "A trader's own urgency (or a counterparty's) can move the effective execution price away from published estimates."
+ ],
+ "caveats": [
+  "Indicative OTC price estimates are not the same as actual executed trade prices."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 0,
+   "topic": "Opacity of OTC energy pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

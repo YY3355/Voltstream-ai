@@ -1,0 +1,63 @@
+{
+ "canonical_topic": "Exchange for Physical (EFP)",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Exchange Mechanics",
+ "definition": "An EFP is a bilaterally negotiated trade where a trader with a long futures position transfers it to a trader with a short futures position, canceling both futures positions, in exchange for the short-side trader delivering the physical commodity to the long-side trader at an agreed price.",
+ "core_idea": "EFPs let traders use the futures market to settle a physical transaction at a location or with product specifications different from the standard exchange delivery terms.",
+ "key_points": [
+  "The buyer of the physical commodity holds a long futures position; the seller holds a short futures position.",
+  "Step 1: the long-position trader transfers futures (valued at the latest exchange settlement price) to the short-position trader, canceling both positions.",
+  "Step 2: the short-position trader delivers the agreed physical commodity at the agreed location to the long-position trader.",
+  "Step 3: the buyer pays the seller, typically quoted as the futures settlement price plus a differential (basis) price.",
+  "EFPs are negotiated privately (bilaterally, off-exchange) but ultimately executed/cleared on the exchange.",
+  "Key negotiated terms: delivery location, and the price differential to reconcile the futures delivery point vs. the actual physical delivery point."
+ ],
+ "relationships": [
+  "Requires one party long and one party short in the underlying futures contract before the EFP can be executed."
+ ],
+ "trading_implications": [
+  "EFPs give traders flexibility to settle at a location (e.g., a different delivery point than the exchange's) or with a slightly different product grade than the standard futures contract specifies.",
+  "Because the two legs cancel each other's futures exposure, both traders exit the futures market entirely while completing the physical transaction."
+ ],
+ "caveats": [
+  "An EFP is not simply a physical trade \u2014 it explicitly requires offsetting long and short futures positions that get canceled as part of the mechanism."
+ ],
+ "formulas": [
+  {
+   "name": "EFP settlement price",
+   "formula": "payment = futures_settlement_price + basis_differential",
+   "variables": {
+    "futures_settlement_price": "latest official exchange settlement price for the futures contract",
+    "basis_differential": "negotiated price adjustment for location/quality differences, $/unit"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "94-95",
+    "section_hint": "Exchange for Physical"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "94-95"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 5,
+   "topic": "Exchange for Physical (EFP)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

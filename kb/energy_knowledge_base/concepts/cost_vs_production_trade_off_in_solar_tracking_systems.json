@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Cost vs. production trade-off in solar tracking systems",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "A design trade-off exists between the simplicity/low cost of fixed solar panels and the higher output but greater expense of motorized tracking panels.",
+ "core_idea": "Fixed panels have fewer moving parts and lower maintenance costs, while motorized tracking panels boost energy capture at the price of higher installation and maintenance costs.",
+ "key_points": [
+  "Fixed installations minimize moving parts and maintenance burden.",
+  "Motorized tracking components raise both installation and ongoing maintenance costs.",
+  "The choice between fixed and tracking designs is fundamentally an economic trade-off between extra production and extra cost."
+ ],
+ "relationships": [
+  "Underlies the capacity factor differences described for fixed vs. one-axis vs. two-axis tracking panels."
+ ],
+ "trading_implications": [
+  "Asset-level economics (capex/opex vs. incremental generation revenue) should factor into evaluating or financing solar projects with different tracking technologies."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "459"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_002.json",
+   "idx": 2,
+   "topic": "Cost vs. production trade-off in solar tracking systems"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

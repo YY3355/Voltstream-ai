@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Solar panel system sizing and DC-to-AC conversion loss",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "Solar panels natively produce DC power, which must pass through an inverter to become grid-usable AC power; this conversion (plus other system losses) typically discards about a quarter of the generated energy.",
+ "core_idea": "Because panels are rated in either AC or DC terms, and inverter capacity caps how much DC can be converted, actual grid-delivered AC output is meaningfully lower than nameplate DC production.",
+ "key_points": [
+  "An inverter is required to convert panel DC output into grid-compatible AC power.",
+  "There is a maximum conversion capacity set by inverter size; a bigger inverter raises system output but adds installation cost.",
+  "Total system losses (conversion plus other losses) are typically around 25 percent.",
+  "Example given: 1 KW of DC production yields roughly 0.75 KW of AC power delivered to the grid."
+ ],
+ "relationships": [
+  "Explains why nameplate DC capacity differs from realized AC capacity used in capacity factor calculations."
+ ],
+ "trading_implications": [
+  "System sizing decisions trade inverter cost against captured AC output, since inverter capacity \u2014 not panel DC rating \u2014 caps deliverable power."
+ ],
+ "caveats": [
+  "A panel's DC rating is not what reaches the grid; roughly 25% is lost by the time power is delivered as AC."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "455-456"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 3,
+   "topic": "Solar panel system sizing and DC-to-AC conversion loss"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Crude oil as a market benchmark",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Market structure",
+ "definition": "Crude oil is the world's most traded commodity, which gives it outsized influence as a price benchmark across the broader energy sector even where a direct fundamental link is weak.",
+ "core_idea": "Because crude oil trading volume dwarfs other energy commodities, its price movements are treated as a market-wide signal and often move other energy prices even absent a direct supply/demand connection.",
+ "key_points": [
+  "Crude oil is the single most traded commodity in the world.",
+  "This trading dominance makes crude oil prices highly influential across energy markets generally.",
+  "Crude oil prices can materially move other energy commodities even when there is no real underlying connection between them."
+ ],
+ "relationships": [
+  "Crude oil price acts as a sentiment/benchmark driver for other energy commodities"
+ ],
+ "trading_implications": [
+  "Traders in other energy commodities should watch crude oil price moves as a market-wide sentiment signal, independent of direct fundamentals."
+ ],
+ "caveats": [
+  "A large price impact from crude oil does not imply a real fundamental (supply/demand) link to the affected commodity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "220"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 2,
+   "topic": "Crude oil as a market benchmark"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

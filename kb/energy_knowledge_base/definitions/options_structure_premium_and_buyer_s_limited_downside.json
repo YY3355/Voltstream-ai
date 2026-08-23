@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Options: structure, premium, and buyer's limited downside",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Financial Options",
+ "definition": "An option is a two-party contract giving its buyer the right, but not the obligation, to buy (call) or sell (put) an asset at a fixed price on a future date, in exchange for an up-front payment called the premium.",
+ "core_idea": "Because the buyer can walk away, an option is an all-or-nothing bet where the buyer's loss is capped at the premium while the potential payoff can be large, similar in structure to buying insurance.",
+ "key_points": [
+  "A call option is the right to buy; a put option is the right to sell.",
+  "The premium is paid up front by the buyer to the seller regardless of outcome.",
+  "The buyer's downside is capped at the premium paid; the option can expire completely worthless.",
+  "Buying options is analogous to buying insurance: usually the premium is lost, occasionally there is a large payoff.",
+  "Because the odds of a payoff are stacked against the buyer, the seller is compensated with the premium for taking on the risk.",
+  "Options are used in energy markets both for risk management and for framing physical operating/investment decisions (e.g., whether to run a plant, lock in fuel, or build a power line) \u2014 option theory gives a way to quantify such decisions."
+ ],
+ "relationships": [
+  "Feeds into the call/put payoff formulas",
+  "Feeds into the long/short volatility framing of buyer vs. seller"
+ ],
+ "trading_implications": [
+  "Option buyers should expect to lose the premium most of the time and rely on occasional large payoffs, much like an insurance buyer.",
+  "Option theory can be applied to real physical/operational decisions in energy (dispatch, fuel procurement, capital investment), not just financial contracts."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "43-44"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 2,
+   "topic": "Options: structure, premium, and buyer's limited downside"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

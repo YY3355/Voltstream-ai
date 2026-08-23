@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "LCOE calculation mechanics: CONE, DCF, WACC, and CRF",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Economics",
+ "definition": "LCOE is built up like an annuity calculation: the cost of new entry (CONE) is spread across the asset's expected life via a discounted cash flow (DCF) analysis, using a developer's required return (WACC, denoted r) and the resulting capital recovery factor (CRF), to produce a required daily revenue figure.",
+ "core_idea": "The construction cost (CONE) is converted into an annual/daily revenue requirement by first determining the return needed to attract capital (WACC) and then computing what fraction of the investment must be recovered each year to achieve that return (CRF), analogous to computing an annuity payment.",
+ "key_points": [
+  "CONE (cost of new entry) is the key input representing the capital cost to construct the new unit",
+  "A discounted cash flow (DCF) analysis spreads CONE over the facility's expected life to produce a revenue requirement in $/MW-day",
+  "WACC (weighted average cost of capital, denoted r) represents the return needed to incentivize a typical developer to build",
+  "CRF (capital recovery factor) calculates the percent of the initial investment that must be earned back each year to achieve the target WACC return",
+  "The overall approach is mathematically analogous to calculating an annuity payment"
+ ],
+ "relationships": [
+  "WACC feeds into the CRF calculation",
+  "CRF feeds into the final LCOE calculation"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 24,
+   "pages": "487-488"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 2,
+   "topic": "LCOE calculation mechanics: CONE, DCF, WACC, and CRF"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

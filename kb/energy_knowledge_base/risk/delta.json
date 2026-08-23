@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Delta",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Option Sensitivities",
+ "definition": "Delta measures how much a portfolio's or option's value changes for a given change in the underlying's price; it is the first derivative of price with respect to the underlying.",
+ "core_idea": "Delta is the most commonly used Greek, analogous to velocity in a car trip: just as velocity is the first derivative of distance with respect to time, delta is the first derivative of an option's value with respect to the underlying's price.",
+ "key_points": [
+  "Delta can relate a portfolio's value to a broad benchmark (e.g., a stock portfolio to the S&P 500) or an option's value to its specific underlying.",
+  "The car-trip analogy: distance traveled relates to time similarly to how an option's value relates to the underlying price, with delta playing the role of velocity."
+ ],
+ "relationships": [
+  "First derivative of price with respect to underlying",
+  "Gamma is the derivative of delta"
+ ],
+ "trading_implications": [
+  "Delta is the primary measure traders use to gauge directional exposure to the underlying."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "369-370"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 6,
+   "topic": "Delta"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

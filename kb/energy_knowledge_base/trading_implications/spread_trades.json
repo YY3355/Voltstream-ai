@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Spread trades",
+ "type": "trading_strategy",
+ "category": "Trading Markets",
+ "subcategory": "Trade Types",
+ "definition": "A spread trade is the simultaneous purchase and sale of two related products \u2014 such as buying natural gas while selling power, or buying gas in one region while selling it in another \u2014 designed to isolate the trader's exposure to the price relationship between the two rather than to overall price direction.",
+ "core_idea": "By trading two correlated instruments at once, a trader profits or loses based on how the relationship between the two prices moves, largely insulated from moves in the general price level.",
+ "key_points": [
+  "Buying gas and selling power lets a trader profit if power prices rise faster than the fuel cost used to generate that power.",
+  "Buying gas in a producing region and selling it in a consuming region (e.g., Louisiana vs. New York) lets a trader profit if the consuming region's price rises relative to the producing region's price.",
+  "In both cases the trader's risk is concentrated on the price relationship, not the absolute level of energy prices.",
+  "Spread trades make up a very high proportion of energy trading volume compared to other markets.",
+  "The combined volatility of a simultaneous purchase and sale of related commodities is typically much lower than that of an outright position.",
+  "Because margin requirements scale with position risk, spread trades are often cheaper to hold than an equivalent outright position.",
+  "Offsetting a trade in one instrument with a trade in a related instrument is the definition of hedging.",
+  "Because spread trading is so common, the most frequently used spreads have their own specific names."
+ ],
+ "relationships": [
+  "Spread trading is a form of hedging.",
+  "Lower spread volatility drives lower margin costs relative to outright positions."
+ ],
+ "trading_implications": [
+  "Spread trades let a trader express a view on a price relationship while reducing exposure to broad commodity price swings.",
+  "Lower margin cost makes spread trades attractive relative to outright positions of similar notional size."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 2,
+   "topic": "Spread trades"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

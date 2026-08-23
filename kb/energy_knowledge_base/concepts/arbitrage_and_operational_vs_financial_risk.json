@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Arbitrage and operational vs financial risk",
+ "type": "concept",
+ "category": "Trading Strategy",
+ "subcategory": "Arbitrage",
+ "definition": "Arbitrage is making a risk-free profit by simultaneously buying one security and selling another; energy markets have more such opportunities than typical financial markets, but they often carry operational risk (e.g., logistics of delivery) instead of pure financial risk.",
+ "core_idea": "Access to more energy markets increases a trader's potential profit opportunities, and while true risk-free arbitrage is rare in most financial markets, energy markets present more of these opportunities because the 'risk-free' part is often replaced by real-world operational challenges.",
+ "key_points": [
+  "A common assumption in option pricing is that arbitrage opportunities don't exist, or don't persist long if they do.",
+  "In energy, apparent arbitrage may require solving operational problems, like arranging delivery of large quantities of physical product, which substitutes for financial risk.",
+  "Access to more markets generally raises a trader's potential profit."
+ ],
+ "relationships": [
+  "Connects to the physical vs financial trade distinction, since operational risk in arbitrage often stems from physical delivery logistics."
+ ],
+ "trading_implications": [
+  "A trader evaluating an apparent arbitrage in energy should account for the operational burden (e.g., delivery logistics) as a real risk, not treat the trade as truly risk-free."
+ ],
+ "caveats": [
+  "Energy 'arbitrage' opportunities may look risk-free on paper but can carry meaningful operational risk in practice."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "20"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 3,
+   "topic": "Arbitrage and operational vs financial risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Negative prices in energy markets",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Negative Prices",
+ "definition": "Unlike most traded markets, energy (particularly power) prices can fall to zero or below zero.",
+ "core_idea": "Grid operators sometimes push prices negative to force generators to reduce output when the grid cannot absorb the power being produced, because generators often prefer to keep paying to run rather than incur the cost of shutting down and restarting.",
+ "key_points": [
+  "The common assumption in most markets is that prices cannot be zero or negative \u2014 this assumption fails in energy markets.",
+  "Zero/negative prices aren't common but do occur and can break financial calculations, e.g. percentage price-change math becomes undefined or misleading when the reference price is zero or negative.",
+  "Physical driver: if too much power is put onto a line without enough being consumed, transmission lines can overheat/melt, so operators need a way to force generators to cut output.",
+  "Because restarting a power plant is costly, many generators would rather give power away for free than shut down \u2014 so operators charge them (negative price) per MW produced to create sufficient incentive to actually cut back.",
+  "During negative price periods, consumers of power can effectively get paid for consuming (e.g., turning on lights)."
+ ],
+ "relationships": [
+  "Contrasts with normal market dogma assumed in equities/other asset classes"
+ ],
+ "trading_implications": [
+  "Standard percentage-change or return calculations should not be naively applied to power prices that can be zero or negative."
+ ],
+ "caveats": [
+  "Assuming prices can't go to zero or negative, as in most other financial/commodity markets."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "106-107"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 4,
+   "topic": "Negative prices in energy markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

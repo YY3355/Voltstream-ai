@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Temperature Heat Index (THI) and Wind Chill Index (WCI) as apparent-temperature adjustments",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Weather-Driven Demand",
+ "definition": "THI and WCI are common adjustments energy traders apply to raw temperature to better estimate how hot or cold conditions actually feel, and thus how much power will be demanded for cooling or heating.",
+ "core_idea": "Humidity makes warm conditions feel hotter and keeps overnight temperatures elevated (THI), while wind makes cold conditions feel colder and increases building heat loss (WCI); both effects shift electricity demand beyond what raw dry-bulb temperature alone would predict.",
+ "key_points": [
+  "THI adjusts for humidity: high humidity raises apparent temperature and slows overnight cooling, so in humid regions (e.g., U.S. Gulf Coast) a 95\u00b0F daytime high might only fall to ~90\u00b0F overnight, versus a much larger overnight drop in dry desert regions.",
+  "Uncomfortable nighttime temperatures push more people to run air conditioners, and once turned on, ACs are often left running through the day, causing higher-than-expected demand during very humid weather.",
+  "WCI adjusts for wind: strong wind cools exposed structures (e.g., houses) faster than still air, increasing the heat required to maintain a constant indoor temperature.",
+  "THI and WCI are common enough in trader practice to have standard acronyms."
+ ],
+ "relationships": [
+  "Refine the raw temperature-vs-demand relationship",
+  "Feed into short-term load forecasts alongside NWS temperature/humidity data"
+ ],
+ "trading_implications": [
+  "Humid-weather periods can produce power demand spikes beyond what temperature alone predicts, because previously idle air conditioners get switched on and left running.",
+  "Windy cold periods can raise heating demand beyond what temperature alone predicts."
+ ],
+ "caveats": [
+  "The source describes THI and WCI conceptually (what they adjust for and why) but does not provide their calculation formulas, so no formula should be assumed."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "395-396"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 3,
+   "topic": "Temperature Heat Index (THI) and Wind Chill Index (WCI) as apparent-temperature adjustments"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

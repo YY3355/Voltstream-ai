@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Simple distillation of crude oil",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Refining",
+ "definition": "Simple distillation separates crude oil into fractions by progressively heating it so each component boils off at its own characteristic temperature, and the resulting vapors are captured and cooled back into liquid products.",
+ "core_idea": "Because each crude oil component has a distinct boiling point, raising crude oil's temperature step by step causes different products to vaporize in sequence, which are then condensed to yield separated refined fractions.",
+ "key_points": [
+  "Distillation separates crude oil into fractions by boiling it at progressively higher temperatures.",
+  "Each component boils off at a slightly different temperature.",
+  "Vaporized fractions are captured and cooled to return them to liquid form as separated products."
+ ],
+ "relationships": [
+  "Simple distillation is the first refining step, often followed by downstream/cracking processing to further increase value"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "222-223"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 8,
+   "topic": "Simple distillation of crude oil"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

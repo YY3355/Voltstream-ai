@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Natural gas composition: dry vs. wet",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Physical Fundamentals",
+ "definition": "Natural gas is a colorless, odorless fossil fuel gas mixture composed mainly of methane, often with ethane, propane, butane, and trace gases like nitrogen and carbon dioxide; it is termed 'dry' when it is nearly pure methane and 'wet' when it carries substantial amounts of the other hydrocarbons.",
+ "core_idea": "Natural gas's exact composition varies by location, and the dry/wet distinction reflects how much non-methane hydrocarbon content the gas carries.",
+ "key_points": [
+  "Primarily methane (CH4), often with ethane (C2H6), propane (C3H8), butane (C4H10)",
+  "Composition varies by location and may include nitrogen, CO2, and other trace gases",
+  "Dry gas = almost pure methane; wet gas = substantial other hydrocarbons",
+  "Valued as a comparatively clean, inexpensive fuel \u2014 the dominant fuel for U.S. power generators built in the past 20 years (as of writing)"
+ ],
+ "relationships": [
+  "Hydraulic fracturing / fracking",
+  "Henry Hub"
+ ],
+ "trading_implications": [
+  "Wet vs dry gas composition affects the value of extracted liquids, relevant to producer economics discussed alongside fracking"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "24-24"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 6,
+   "topic": "Natural gas composition: dry vs. wet"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

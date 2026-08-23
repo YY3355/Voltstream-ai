@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Why natural gas is transported by pipeline rather than pressurized containers",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Infrastructure and Transportation",
+ "definition": "Methane's low energy density per unit volume, relative to heavier hydrocarbons, makes pipeline transport the practical choice over pressurized container shipping.",
+ "core_idea": "Because methane holds relatively little heat energy per unit of volume compared to longer-chain hydrocarbons like propane or butane, moving it in pressurized metal containers would require impractically large containers, so pipelines are used instead.",
+ "key_points": [
+  "Propane and butane contain enough energy density to be practically shipped in pressurized metal containers",
+  "Methane requires a much larger container to hold an equivalent amount of heat energy, making container transport impractical at scale",
+  "Pipelines solve this by allowing continuous transport without needing to contain large volumes under pressure in discrete vessels"
+ ],
+ "relationships": [
+  "Low energy density of methane -> reliance on pipeline infrastructure rather than tanker/cylinder transport"
+ ],
+ "trading_implications": [
+  "Regions without pipeline access to a given supply source face a structurally different (and often costlier) transport option: liquefaction/LNG shipping"
+ ],
+ "caveats": [
+  "Assuming natural gas could be economically shipped in pressurized tanks the way propane or butane are"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "134-134"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 4,
+   "topic": "Why natural gas is transported by pipeline rather than pressurized containers"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

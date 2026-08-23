@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "ISDA and the ISDA Master Agreement",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Institutions and Documentation",
+ "definition": "ISDA (International Swaps and Derivatives Association) is an international trade association of major institutions active in privately negotiated derivatives. The ISDA Agreement is a standard set of clauses used in almost all OTC contracts; because all contracts referencing the master agreement share the same clauses, updates to the master agreement propagate to every referencing contract without renegotiation. Its most important clause is the netting-of-positions provision, which substantially reduces counterparty risk in privately negotiated derivatives deals.",
+ "core_idea": "The ISDA master agreement standardizes OTC derivatives documentation so that legal/regulatory updates apply market-wide without bilateral renegotiation, and its netting provision is the key mechanism that tames OTC counterparty risk.",
+ "key_points": [
+  "ISDA is a trade association, not a regulator or exchange.",
+  "The master agreement's clauses can be updated to meet changing regulatory environments across all referencing contracts at once.",
+  "Netting of positions is called out as the single most important clause because it materially reduces counterparty risk."
+ ],
+ "relationships": [
+  "Directly underlies how Forwards and other OTC contracts manage counterparty credit risk, in contrast to exchange margin."
+ ],
+ "trading_implications": [
+  "Netting under an ISDA agreement reduces the effective counterparty exposure between two OTC counterparties, which is a key reason OTC forwards remain viable despite lacking exchange-style margin."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 8,
+   "topic": "ISDA and the ISDA Master Agreement"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

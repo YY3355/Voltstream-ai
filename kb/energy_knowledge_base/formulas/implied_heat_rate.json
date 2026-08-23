@@ -1,0 +1,102 @@
+{
+ "canonical_topic": "implied heat rate",
+ "type": "concept",
+ "n_merged": 2,
+ "definition": "Implied heat rate (also called market implied heat rate or implied market heat rate) is the ratio of power price to fuel price \u2014 expressed in the same MMBtu/MWh units as a plant's physical heat rate \u2014 computed either as current power price over current fuel price, or as average power price over average natural gas price in a given market on a given day, the latter used to express the generation stack in heat-rate terms instead of dollar terms.",
+ "core_idea": "Dividing the power price by the fuel price restates the price relationship in heat-rate units, letting it be compared directly to plant heat rates or used to infer how much of a power price move is explained by fuel prices versus a shift in the generation stack.",
+ "key_points": [
+  "Because comparing power-to-fuel price ratios against plant heat rates is so common, this ratio is given its own name.",
+  "Same units (MMBtu/MWh) as a physical plant heat rate, enabling direct comparison across plant efficiencies.",
+  "Auction bids and load producers' break-even costs are not publicly disclosed (bids are private, and generation-stack composition is only released years later by the ISO/RTO), so historical prices and heat rates are used to estimate the stack instead.",
+  "A generation stack can be expressed either as prices or as heat rates by dividing prices by the day's natural gas price.",
+  "If implied heat rates stay unchanged between two periods, the price ratio between power and gas is constant, meaning the fuel-price change fully explains the power-price change.",
+  "In the source's August 2005 example, natural gas rose from $8.02 to $12.70/MMBtu alongside a large power price increase, but on the portion of the stack where gas was the marginal fuel, market heat rates barely changed between the two days (Figures 4.2.8-4.2.9) \u2014 indicating the gas price move, not a stack shift, explained the power price move on that segment."
+ ],
+ "relationships": [
+  "Compared directly against a plant's physical heat rate to judge which plant efficiencies are currently profitable.",
+  "Connects to generation stack and marginal-fuel bidding for fuel-dependent producers."
+ ],
+ "trading_implications": [
+  "Traders track market implied heat rate by region to see which plant efficiency classes are economic to dispatch in that region.",
+  "Implied heat rate is a diagnostic for decomposing a power price move into a fuel-price-driven component vs. a generation-stack-shift component.",
+  "Useful for estimating/predicting power prices from historical price relationships and current fuel prices, given that actual auction bids and plant economics are not public."
+ ],
+ "caveats": [
+  "Because actual auction bids and generation-stack composition are not publicly disclosed at the time (stack composition is released by the ISO/RTO only years later), implied heat rate is an estimate derived from historical prices, not a direct observation of the stack."
+ ],
+ "contradictions": [
+  {
+   "field": "formula basis",
+   "versions": [
+    {
+     "statement": "Market Implied Heat Rate = Power Price / Fuel Price (current power price over current fuel price, generic fuel)",
+     "from_item": "Market implied heat rate"
+    },
+    {
+     "statement": "Implied Heat Rate = Average Power Price / Average Natural Gas Price, computed in a given market on a given day",
+     "from_item": "Implied market heat rate"
+    }
+   ],
+   "note": "One item defines the ratio using current/point-in-time power and (generic) fuel prices; the other specifies daily-average power and natural-gas prices for a given market. Not resolved into a single formula since the items differ on both the price convention (current vs. daily average) and fuel specificity (generic fuel vs. natural gas)."
+  }
+ ],
+ "formulas": [
+  {
+   "name": "Market implied heat rate",
+   "formula": "Market Implied Heat Rate = Power Price / Fuel Price",
+   "variables": {
+    "Power Price": "current market price of electricity",
+    "Fuel Price": "current market price of fuel (e.g., natural gas)",
+    "Market Implied Heat Rate": "MMBtu/MWh"
+   },
+   "source": {
+    "chapter": 5,
+    "pages": "193-194",
+    "section_hint": "2.2 Electricity \u2014 Market implied heat rate"
+   }
+  },
+  {
+   "name": "Implied Market Heat Rate",
+   "formula": "Implied Heat Rate = Average Power Price / Average Natural Gas Price",
+   "variables": {
+    "Average Power Price": "$/MWh, average power price in a specific geographic market over a period (e.g., a day)",
+    "Average Natural Gas Price": "$/MMBtu, average natural gas price in the same market/period"
+   },
+   "source": {
+    "chapter": 17,
+    "pages": "416-418",
+    "section_hint": "4.2 The Generation Stack \u2014 Estimating Break-Even Costs Using Heat Rates"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "193-194"
+  },
+  {
+   "chapter": 17,
+   "pages": "416-418"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 1,
+   "topic": "Market implied heat rate"
+  },
+  {
+   "file": "raw/ch17/chunk_002.json",
+   "idx": 3,
+   "topic": "Implied market heat rate"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:53:21+00:00"
+ }
+}

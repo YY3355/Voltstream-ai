@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "LNG's effect on regional gas market integration",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "LNG",
+ "definition": "By making it possible to ship gas supply between regions, LNG converts what would otherwise be separate regional gas markets (e.g., Europe and the United States) into parts of a single, more globally connected market, pushing prices toward convergence.",
+ "core_idea": "Without LNG, regional gas markets are isolated from each other; with it, supply can move to wherever demand/price is highest, so prices across regions start to converge toward one global level.",
+ "key_points": [
+  "As of the source's writing, there were no LNG-specific futures contracts being traded.",
+  "LNG shipping lets supply move between previously separate regional markets like Europe and the U.S.",
+  "The ability to transfer supply across regions pushes prices toward a single global price."
+ ],
+ "relationships": [
+  "Builds on LNG's physical transportability described in the ocean-transport item."
+ ],
+ "trading_implications": [
+  "Author states that LNG-enabled arbitrage between regions drives long-run price convergence, though no dedicated LNG contract existed at time of writing to trade that convergence directly."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "62-62"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 7,
+   "topic": "LNG's effect on regional gas market integration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

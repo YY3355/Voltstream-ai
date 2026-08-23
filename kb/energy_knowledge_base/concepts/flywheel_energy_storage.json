@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Flywheel energy storage",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "A mechanical storage method that stores energy in a fast-spinning, low-friction wheel; energy is added by speeding the wheel up and extracted by slowing it down, either generating AC power via an electromagnet or providing mechanical drive via a shaft.",
+ "core_idea": "Flywheels store energy kinetically in a heavy, fast-spinning wheel and are relatively compact with straightforward energy extraction, but the large stored kinetic energy creates safety risks and gyroscopic effects that must be addressed through engineering design.",
+ "key_points": [
+  "Eliminating friction on the spinning wheel is described as the key design challenge for a flywheel system.",
+  "Advantages include compactness and straightforward energy extraction, via an electromagnet for AC power or a shaft for mechanical drive.",
+  "A fast-spinning flywheel stores a large amount of energy and can cause significant damage if an axle breaks.",
+  "A single flywheel mounted in a vehicle behaves like a gyroscope, making the vehicle harder to turn.",
+  "Running two flywheels side by side spinning in opposite directions cancels the gyroscopic effect, but subjects any shared axle to significant torque.",
+  "The author states these problems can all be addressed through engineering solutions."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "479-480"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 7,
+   "topic": "Flywheel energy storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

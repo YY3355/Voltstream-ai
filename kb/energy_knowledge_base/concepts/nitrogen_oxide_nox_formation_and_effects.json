@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Nitrogen Oxide (NOx) Formation and Effects",
+ "type": "concept",
+ "category": "Environmental / Emissions",
+ "subcategory": "Criteria Pollutants",
+ "definition": "NOx is the generic term for nitrogen oxide (NO) and nitrogen dioxide (NO2), formed when high combustion temperatures force atmospheric nitrogen (78% of air) to react with oxygen supplied by the combustion air.",
+ "core_idea": "Because combustion draws its oxygen from air that is mostly nitrogen, sufficiently hot flames inevitably create some NOx; in sunlight this breaks down and contributes to ground-level ozone (smog) and acid rain, both of which have direct respiratory health impacts.",
+ "key_points": [
+  "Nitrogen is inert, colorless, and odorless under normal conditions but reacts with oxygen at high combustion temperatures.",
+  "NOx is a generic label covering both NO and NO2.",
+  "Sunlight breaks apart NOx molecules, generating ozone (O3).",
+  "Ozone/smog causes shortness of breath, chest pain, asthma, and coughing attacks.",
+  "NOx also contributes to acid rain formation.",
+  "NOx pollution is typically managed as a localized/regional issue rather than a global one."
+ ],
+ "relationships": [
+  "NO2, a form of NOx, acts as the catalyst that converts SO2 into sulfuric acid (see SOx item)."
+ ],
+ "trading_implications": [
+  "Regional rather than global NOx regulation implies compliance costs and any emissions-trading exposure are geography-specific for generators, distinct from global CO2 regimes."
+ ],
+ "caveats": [
+  "It's easy to assume NOx comes mainly from nitrogen contained in the fuel itself; the text attributes it primarily to atmospheric nitrogen reacting at high combustion temperature."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "287-289"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_001.json",
+   "idx": 1,
+   "topic": "Nitrogen Oxide (NOx) Formation and Effects"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

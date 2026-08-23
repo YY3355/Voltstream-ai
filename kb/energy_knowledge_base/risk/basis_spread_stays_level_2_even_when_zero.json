@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Basis spread stays level 2 even when zero",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "A rule clarifying that the leveling of an input is based on its data source, not on its observed value at a given valuation date.",
+ "core_idea": "A Texas gas swap remains a level 2 security even if its basis spread to Henry Hub happens to equal zero on the valuation date, because level 1 status requires that all pricing data come directly from the primary market, not merely that the numeric value coincides with a level 1 price.",
+ "key_points": [
+  "A basis spread of zero at valuation does not upgrade a security to level 1.",
+  "Level 1 classification requires all data inputs to come directly from the primary market, not just a matching value."
+ ],
+ "relationships": [
+  "Refines the Henry Hub / Texas basis leveling example in this same section."
+ ],
+ "trading_implications": [
+  "Firms cannot reclassify a swap's fair-value level opportunistically based on a temporarily favorable (zero) basis reading."
+ ],
+ "caveats": [
+  "Assuming a spread value of zero means the input source itself has become a level 1 (primary market) source."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "556-556"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_003.json",
+   "idx": 1,
+   "topic": "Basis spread stays level 2 even when zero"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

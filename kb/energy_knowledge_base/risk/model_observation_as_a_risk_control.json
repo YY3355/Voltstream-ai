@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Model observation as a risk control",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Model Risk Management",
+ "definition": "Ongoing observation of a model in production is often more practical than trying to design a model that can never fail.",
+ "core_idea": "Because model problems typically develop gradually over months or years before they cause a financial loss, having people continuously watch model behavior lets issues surface and get reported before they become costly, making observation a more achievable control than trying to prevent every possible flaw at design time.",
+ "key_points": [
+  "Preventing every possible model flaw up front is harder than watching for problems once the model is running",
+  "Financial losses from model problems are usually preceded by a long lead time (months to years) during which the issue could have been caught",
+  "Institutionalizing timely reporting and review of anomalies by the people who depend on the model is essential to making observation work"
+ ],
+ "relationships": [
+  "Complements formal model testing (backtesting, stress testing, benchmarking, stability testing)"
+ ],
+ "trading_implications": [
+  "Risk teams should build monitoring/alerting around live model outputs, not rely solely on periodic revalidation"
+ ],
+ "caveats": [
+  "A model that passed testing at launch is sometimes assumed not to need continued watching"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "583-585"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 0,
+   "topic": "Model observation as a risk control"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

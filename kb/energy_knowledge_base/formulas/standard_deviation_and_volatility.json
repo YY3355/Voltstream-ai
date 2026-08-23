@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "Standard deviation and volatility",
+ "type": "formula",
+ "category": "Statistics",
+ "subcategory": "Dispersion & Volatility",
+ "definition": "Standard deviation is the square root of variance, restoring the original units of the data; in finance this same quantity is called volatility, and in science/engineering it is called root mean square (RMS).",
+ "core_idea": "Standard deviation is the most commonly used dispersion measure precisely because taking the square root of variance converts squared units (e.g., dollars-squared) back into the original, interpretable units (e.g., dollars), and it is the specific quantity traders mean when they discuss market volatility.",
+ "key_points": [
+  "Standard deviation = square root of variance; denoted lowercase sigma (s).",
+  "Same underlying quantity has different names by field: standard deviation (general statistics), root mean square/RMS (science/engineering), volatility (finance/trading).",
+  "Standard deviation is highlighted as the key concept traders reference when discussing market volatility."
+ ],
+ "relationships": [
+  "Directly derived from variance by square root; variance itself is the average squared deviation from the mean."
+ ],
+ "trading_implications": [
+  "'Volatility' as traders use the term is mathematically the standard deviation of a price/return series, not a vague qualitative notion."
+ ],
+ "caveats": [
+  "Treating volatility as a separate concept from standard deviation rather than recognizing it as the same statistical quantity under a different name in finance."
+ ],
+ "formulas": [
+  {
+   "name": "Standard deviation",
+   "formula": "s = sqrt(s^2)",
+   "variables": {
+    "s": "standard deviation (volatility)",
+    "s^2": "variance"
+   },
+   "source": {
+    "chapter": 12,
+    "pages": "311-313",
+    "section_hint": "3.3 Statistics \u2014 Variation and Volatility"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "311-313"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 5,
+   "topic": "Standard deviation and volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

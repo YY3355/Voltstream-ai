@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Seasonal reversal of Pacific Northwest / California power flows",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Western Interconnection",
+ "definition": "The direction of power flow between the Pacific Northwest, California, and the Desert Southwest changes with the season depending on which region has surplus generation versus peak demand.",
+ "core_idea": "In spring, snowmelt-driven hydro surplus in the Pacific Northwest flows to higher-demand Northern California; in summer, California imports from both the Northwest and the Desert Southwest to cover peak load; in fall, mild California temperatures combined with continued desert heat can reverse the flow so California exports power to Nevada/Arizona.",
+ "key_points": [
+  "Spring: Pacific Northwest snowmelt produces more hydro power than can be used locally, so it is transmitted mainly to Northern California",
+  "Summer: California often imports power from both the Pacific Northwest and the Desert Southwest to meet peak demand",
+  "Fall: mild California temperatures versus still-hot Las Vegas/Phoenix can reverse the flow, with California exporting to the desert areas",
+  "The direction of flow can change at any time based on the relative temperatures of the regions"
+ ],
+ "relationships": [
+  "Pacific Northwest",
+  "California (CAISO)",
+  "Desert Southwest"
+ ],
+ "trading_implications": [
+  "Traders need region-by-region temperature/weather forecasts (not just California's) to anticipate the direction of interregional flow and its price impact",
+  "Seasonal hydrology forecasts (snowpack) are a leading indicator for spring/summer Northwest-to-California flow volumes"
+ ],
+ "caveats": [
+  "Power flow direction between these regions is not fixed \u2014 it is commonly assumed California is always an importer, but it can become a net exporter to the desert in the fall"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "199-200"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 2,
+   "topic": "Seasonal reversal of Pacific Northwest / California power flows"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

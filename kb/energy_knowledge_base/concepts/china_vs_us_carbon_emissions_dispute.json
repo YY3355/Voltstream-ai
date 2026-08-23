@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "China vs. US carbon emissions dispute",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Policy Background",
+ "definition": "A geopolitical disagreement over how global carbon caps should be allocated between high-population, rapidly industrializing countries and already-industrialized countries.",
+ "core_idea": "China's fast build-out of coal power means it will likely overtake the US as the top carbon emitter; China favors per-capita emissions caps (which would let it keep building coal plants), while the US resists a framework where it retires plants only for China to add more polluting capacity.",
+ "key_points": [
+  "China and the US are described as the two largest carbon polluters, with China poised to overtake the US as it builds more coal plants",
+  "China's large population makes a population-based (per-capita) cap structure favorable to it, since it would permit continued coal buildout",
+  "The US position is that it shouldn't bear the cost of shutting down less-polluting plants if that capacity is simply replaced by more-polluting Chinese plants",
+  "The author frames the underlying dispute as being about who ultimately pays a higher cost for power"
+ ],
+ "relationships": [
+  "Motivates the choice between carbon taxes and cap-and-trade as competing policy tools"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "267"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 0,
+   "topic": "China vs. US carbon emissions dispute"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

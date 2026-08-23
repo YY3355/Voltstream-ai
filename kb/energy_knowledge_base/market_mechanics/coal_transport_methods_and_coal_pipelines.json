@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Coal transport methods and coal pipelines",
+ "type": "market_mechanic",
+ "category": "Coal",
+ "subcategory": "Transportation",
+ "definition": "Coal is most commonly transported by train, and also by barge or truck; where distances are long, specialized coal pipelines can move crushed coal as a water slurry or as compressed logs suspended in water.",
+ "core_idea": "Coal is relatively easy to store and transport compared to other fossil fuels since it can simply be piled up, and where rail/barge/truck are impractical over long distances, purpose-built slurry or log pipelines can substitute.",
+ "key_points": [
+  "Coal can be stacked in a pile without evaporating or leaking, unlike liquid fuels.",
+  "Train is the most common method of coal transport; barges and trucks are also fairly common.",
+  "Coal generally moves from mine to power plant, so there is not a large consumer-facing distribution system for coal.",
+  "Coal pipelines are an alternative for very long distances between mine and destination.",
+  "Two main coal pipeline technologies: slurry pipelines (coal crushed into small pieces and mixed into liquid solution) and log pipelines (coal compressed into logs suspended in water)."
+ ],
+ "relationships": [
+  "Coal pipelines exist as an alternative to rail cars and barges when distance is a major factor."
+ ],
+ "trading_implications": [
+  "Where power plants are far from mining regions but transmission needs pin the plant location, pipeline economics can determine whether that geography is viable."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "248-248"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 5,
+   "topic": "Coal transport methods and coal pipelines"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

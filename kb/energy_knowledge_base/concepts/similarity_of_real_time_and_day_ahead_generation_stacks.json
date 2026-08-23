@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Similarity of real-time and day-ahead generation stacks",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Because most marginal suppliers bid similarly into both auctions, and because the most efficient (cheapest) plants are almost always running, the day-ahead and real-time generation stacks tend to look nearly the same except at the very bottom.",
+ "core_idea": "The cheapest, most efficient generators are the ones most likely to miss out on real-time participation (since day-ahead already locked them in), but they are essentially always dispatched anyway except in very low demand periods, so they rarely set the real-time margin \u2014 leaving the two stacks closely aligned.",
+ "key_points": [
+  "Marginal suppliers generally use the same bidding strategy in both the day-ahead and real-time auctions.",
+  "The most efficient plants at the bottom of the stack are most likely to be excluded from real-time participation.",
+  "Except during very low demand, bottom-of-stack plants run continuously and are not the marginal (price-setting) unit.",
+  "Net effect: real-time and day-ahead stacks are usually very similar."
+ ],
+ "relationships": [
+  "Builds on the day-ahead/real-time auction structure described above."
+ ],
+ "trading_implications": [
+  "Divergence between day-ahead and real-time stacks should be more pronounced in low-demand periods, when baseload plants are more likely to actually be on the margin."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "420-422"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_003.json",
+   "idx": 1,
+   "topic": "Similarity of real-time and day-ahead generation stacks"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

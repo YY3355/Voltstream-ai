@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "The Greeks: standardized option sensitivity measures",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options Risk Sensitivities",
+ "definition": "The Greeks are a standard set of sensitivity measures, each named after a Greek letter, that quantify how an option's (or asset's) value responds to a change in one specific underlying factor.",
+ "core_idea": "Sensitivity analysis lets a trader isolate how much P&L would result from a specific kind of change \u2014 in price, volatility, time, or interest rates \u2014 so risk can be decomposed factor by factor instead of only viewed as a single aggregate exposure.",
+ "key_points": [
+  "A Greek is never a standalone number like a price \u2014 it is always a comparison of how one asset's value responds to changes in an underlying",
+  "Delta: the P&L that results when the underlying's price changes",
+  "Gamma: the change in Delta itself when the underlying's price changes",
+  "Vega: the P&L that results when the underlying's volatility changes",
+  "Theta: the P&L that results from the passage of time (commonly measured per day)",
+  "Rho: the P&L that results when the interest rate changes"
+ ],
+ "relationships": [
+  "Vega formalizes the volatility sensitivity described in the option/volatility discussion just before this section"
+ ],
+ "trading_implications": [
+  "Traders use the Greeks to answer targeted 'what happens if X moves' questions about a position without repricing the whole book",
+  "Because Greeks isolate individual risk factors, they let a portfolio's exposure be managed factor-by-factor (e.g., hedging Delta separately from Vega)"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "46-47"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_007.json",
+   "idx": 1,
+   "topic": "The Greeks: standardized option sensitivity measures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Biological carbon capture (plants and bacteria)",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Carbon Capture",
+ "definition": "Use of plants or bacteria as a biological alternative to mechanical carbon sequestration.",
+ "core_idea": "Plants and bacteria both naturally absorb CO2, but plants require fossil-fuel inputs for fertilization and harvesting that partly offset their benefit, whereas dense bacteria colonies can absorb CO2 in a small footprint without heavy petroleum inputs.",
+ "key_points": [
+  "Plants convert CO2 into wood, bark, and leaves, but growing and harvesting them typically requires fossil fuels for fertilization and harvesting.",
+  "Bacteria can also absorb CO2; the advantage is that a very dense bacteria colony can fit in a small area and doesn't require much petroleum product to maintain."
+ ],
+ "relationships": [
+  "Alternative to mechanical carbon sequestration"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Plant-based capture is not a 'free' offset since fertilization/harvesting reintroduce fossil fuel use"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "271"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 1,
+   "topic": "Biological carbon capture (plants and bacteria)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

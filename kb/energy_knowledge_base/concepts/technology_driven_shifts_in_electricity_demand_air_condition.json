@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Technology-driven shifts in electricity demand (air conditioning example)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Demand/Load",
+ "definition": "How adoption of new technology can permanently reshape the level and pattern of electricity demand, illustrated by air conditioning.",
+ "core_idea": "Widespread adoption of air conditioning transformed summer electricity demand from relatively low to extremely high, which rendered many earlier energy-efficiency studies (from the 1960s-70s) outdated.",
+ "key_points": [
+  "Air conditioning adoption fundamentally changed the dynamic of the power market",
+  "Pre-AC-era energy efficiency studies from the 1960s and 1970s are now considered incorrect because they didn't anticipate this shift",
+  "Demand forecasts and predictions must be updated to reflect changes in technology adoption"
+ ],
+ "relationships": [
+  "Daily demand pattern in hot weather"
+ ],
+ "trading_implications": [
+  "Long-run demand forecasting must account for technology adoption trends, not just historical weather-demand correlations"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "185"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 5,
+   "topic": "Technology-driven shifts in electricity demand (air conditioning example)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

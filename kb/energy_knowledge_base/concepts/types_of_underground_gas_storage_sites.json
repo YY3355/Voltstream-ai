@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Types of underground gas storage sites",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage",
+ "definition": "Three geological formations are used for natural gas storage \u2014 depleted gas reservoirs, converted salt caverns, and aquifers \u2014 chosen based on what is available in a given area.",
+ "core_idea": "Depleted reservoirs are the cheapest and most reliable option, salt caverns deliver the best performance because they tolerate much higher pressure, and aquifers (water-bearing permeable rock) are used only where the other two options aren't available.",
+ "key_points": [
+  "Depleted gas reservoirs: cheapest, most reliable.",
+  "Converted salt caverns: highest performance, able to withstand significantly higher pressure than the alternatives.",
+  "Aquifers: permeable rock layers often containing groundwater, used as a fallback option.",
+  "Choice of storage type in a region is generally limited to whatever geology is locally available."
+ ],
+ "relationships": [
+  "Salt cavern performance advantage ties directly to the maximum-pressure constraint discussed above."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "61-61"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 4,
+   "topic": "Types of underground gas storage sites"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

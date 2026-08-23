@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Midcontinent (MISO) power market geography and fundamentals",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regional Markets - MISO",
+ "definition": "MISO (formerly the Midwest ISO) coordinates power across much of the central United States, with Indiana Hub (formerly Cin-Hub) as its most influential trading location.",
+ "core_idea": "Coal-fired plants, including many marginal producers in the industrialized north, keep coal prices the primary driver of Midwest power prices even during high-demand periods, while the more rural south depends heavily on natural gas.",
+ "key_points": [
+  "The northeastern part of MISO is heavily industrialized; the southern and northwestern sections are more rural.",
+  "Indiana Hub (previously Cin-Hub) is described as the most influential trading location in the region.",
+  "The region has cold winters (often starting as early as November, typically lasting through April) and hot, humid summers (July-August) that cool quickly by September; the southern part of MISO has milder winters and hot summers.",
+  "Coal powers many northern plants, including marginal producers, so coal prices commonly set Midwest power prices even in high-demand periods.",
+  "The southern MISO territory relies heavily on natural gas.",
+  "Because the Midwest's shoulder seasons (spring/fall) are cool, power is often wheeled south to hotter states during those periods.",
+  "Some hydroelectric power is available from the Great Lakes and Tennessee Valley areas and may be imported depending on the time of year."
+ ],
+ "relationships": [
+  "Coal-driven marginal pricing parallels western PJM; south-to-north gas dependence contrasts with MISO's north."
+ ],
+ "trading_implications": [
+  "Coal price moves are a stronger driver of Midwest power prices than in gas-dominated regions, even at peak demand.",
+  "Seasonal wheeling of power from the cooler Midwest to hotter southern states creates predictable seasonal flow/basis patterns.",
+  "Hydro availability from the Great Lakes/Tennessee Valley is a seasonal import option affecting regional supply."
+ ],
+ "caveats": [
+  "Assuming natural gas dominates Midwest power pricing the way it does in many other US markets; in MISO's north, coal remains the marginal fuel even at peak demand."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "208-209"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_007.json",
+   "idx": 1,
+   "topic": "Midcontinent (MISO) power market geography and fundamentals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

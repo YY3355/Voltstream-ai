@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "LNG Peak Shaving Units",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Storage",
+ "definition": "Small-scale LNG storage facilities used as an alternative to traditional natural gas storage, valued similarly to conventional storage from an investment standpoint.",
+ "core_idea": "As liquefaction and regasification technology becomes cheaper, small LNG storage facilities let operators buy natural gas during low-demand periods, store it compactly as a liquid, and use or sell it during high-demand ('peak') periods \u2014 extending storage capability to locations that lack the geology needed for traditional storage.",
+ "key_points": [
+  "Liquefying gas for storage dramatically shrinks the physical footprint versus traditional storage.",
+  "This allows storage in areas without suitable geological formations for conventional natural gas storage.",
+  "From an investment standpoint, LNG peak shaving facilities are valued similarly to normal storage facilities.",
+  "The basic trading logic is the same as traditional storage: buy/inject during low-demand periods, use/withdraw during heavy-demand periods."
+ ],
+ "relationships": [
+  "Alternative to traditional natural gas storage economics"
+ ],
+ "trading_implications": [
+  "Peak shaving LNG storage can be analyzed like traditional storage \u2014 value comes from capturing the spread between low-demand purchase prices and high-demand use/sale value."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "541-542"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 6,
+   "topic": "LNG Peak Shaving Units"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

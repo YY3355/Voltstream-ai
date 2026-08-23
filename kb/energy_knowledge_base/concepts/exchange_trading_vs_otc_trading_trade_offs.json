@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Exchange trading vs. OTC trading: trade-offs",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Exchanges let traders enter and exit positions anonymously and without taking on credit exposure to their counterparty, because the exchange itself becomes the counterparty to every trade. The cost of this convenience is that exchange contracts must be standardized, so only a handful of contract variants exist per commodity.",
+ "core_idea": "Exchanges trade contract flexibility for liquidity, anonymity, and reduced counterparty credit risk; traders use exchange contracts wherever possible and fall back to OTC deals for anything an exchange can't accommodate.",
+ "key_points": [
+  "Exiting a trade on an exchange leaves no residual credit exposure to the original counterparty.",
+  "Trading can be done anonymously, including through a broker, whose ID is reported instead of the trader's identity \u2014 only the broker knows who initiated the trade.",
+  "Exchanges can only support a small number of standardized contracts per commodity to keep liquidity concentrated.",
+  "Example: all NYMEX natural gas futures deliver at Henry Hub in south-central Louisiana, so a liquid market exists there but not for delivery elsewhere (e.g., New York City).",
+  "The exchange only takes on credit risk between matched buyers and sellers \u2014 it does not act as a principal taking a market position.",
+  "The exchange protects itself against counterparty default by requiring margin deposits from traders.",
+  "Because the exchange only matches counterparties, there is always an equal number of buyers and sellers for any exchange-traded contract."
+ ],
+ "relationships": [
+  "Contrasts with OTC forwards/swaps, which trade customization for reduced liquidity and added counterparty credit risk."
+ ],
+ "trading_implications": [
+  "Traders default to exchange-traded contracts for standard needs and only pursue OTC deals for delivery points, grades, or terms an exchange can't offer.",
+  "A trader wanting delivery away from the exchange's specified hub (e.g., NYC gas) must arrange basis/OTC transactions rather than relying on the futures contract alone."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "89-90"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_004.json",
+   "idx": 0,
+   "topic": "Exchange trading vs. OTC trading: trade-offs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

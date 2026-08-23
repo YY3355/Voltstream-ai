@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Shale oil (shale rock processing)",
+ "type": "concept",
+ "category": "Oil & Gas",
+ "subcategory": "Exploration & Production",
+ "definition": "An alternative shale-extraction method that mines the shale rock out of the ground first, then crushes it in a processing plant to extract hydrocarbons, as opposed to fracturing the rock in place.",
+ "core_idea": "The mining-and-crushing technology for extracting hydrocarbons from shale has existed for over 200 years but is rarely economically viable because more cost-effective extraction methods (like fracking) exist.",
+ "key_points": [
+  "Differs from fracking in that the shale is physically removed from the ground before processing, rather than fractured in place.",
+  "The crushing technology has existed for more than 200 years.",
+  "Rarely economically viable given more cost-effective alternatives."
+ ],
+ "relationships": [
+  "Alternative to hydraulic fracturing"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Shale oil processing and fracking are both ways to get hydrocarbons out of shale but are not the same technique \u2014 one mines and crushes rock, the other fractures rock in place."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "129"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 3,
+   "topic": "Shale oil (shale rock processing)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

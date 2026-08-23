@@ -1,0 +1,60 @@
+{
+ "canonical_topic": "Credit Exposure, EAD, Recovery Rate, and LGD",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Credit Risk",
+ "definition": "Credit exposure quantifies how much money could be lost if a counterparty defaults; it is refined using the concepts of exposure at default, recovery rate, and loss given default.",
+ "core_idea": "The simplest exposure estimate assumes total loss on every contract (EAD), which overstates the real loss because bankruptcy proceedings typically recover some money (recovery rate); the unrecovered portion is the loss given default (LGD).",
+ "key_points": [
+  "Exposure at Default (EAD): the amount that could be lost if a counterparty defaults and enters bankruptcy \u2014 treats the loss as complete, so it is an upper bound and tends to overstate real loss severity.",
+  "Recovery Rate: the percentage of exposure eventually recovered through bankruptcy proceedings; averages about 40% for unsecured debt.",
+  "Loss Given Default (LGD): equals one minus the recovery rate \u2014 the portion of exposure actually lost; averages about 60% for unsecured debt."
+ ],
+ "relationships": [
+  "LGD is derived directly from recovery rate.",
+  "EAD is the base exposure figure that recovery rate/LGD refine into an expected loss estimate."
+ ],
+ "trading_implications": [
+  "Because most trading obligations are unsecured, firms should expect roughly 60% loss severity on defaulted exposure, not 100%, when sizing risk reserves."
+ ],
+ "caveats": [
+  "Assuming EAD (100% loss) is the realistic loss estimate rather than an upper bound; actual expected loss should incorporate the recovery rate."
+ ],
+ "formulas": [
+  {
+   "name": "Loss Given Default",
+   "formula": "LGD = 1 - Recovery Rate",
+   "variables": {
+    "LGD": "fraction of exposure lost in default",
+    "Recovery Rate": "fraction of exposure recovered in bankruptcy"
+   },
+   "source": {
+    "chapter": 31,
+    "pages": "567-567",
+    "section_hint": "Credit Exposure / Common Terms"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "567-567"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 1,
+   "topic": "Credit Exposure, EAD, Recovery Rate, and LGD"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

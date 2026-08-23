@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Expected-value example: aggressive bidding trade-off by cost basis",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Bidding Strategy",
+ "definition": "The author's numeric illustration comparing a near-zero-cost plant and a high-cost ($95) plant deciding whether to bid aggressively for a $1 price increase, given a 10% chance the aggressive bid leaves the plant undispatched.",
+ "core_idea": "For a plant with a large profit margin, the expected loss from occasionally not clearing outweighs the expected gain from a small price increase, while for a plant with a thin margin the same trade-off favors bidding aggressively.",
+ "key_points": [
+  "Setup: power price is roughly $100, and bidding aggressively can push the price up by $1 but carries a 10% chance of the plant not being dispatched at all.",
+  "Near-zero-cost plant: a 10% chance of losing the full $100 profit (~$10 expected loss) is weighed against an extra $1, 90% of the time (~$0.90 expected gain) \u2014 the trade-off does not favor aggressive bidding.",
+  "High-cost plant with a $95 cost basis (only $5 profit at $100 price): a 10% chance of losing that $5 profit (~$0.50 expected loss) is weighed against the same ~$0.90 expected gain from the price bump \u2014 here aggressive bidding is worthwhile.",
+  "The comparison shows the incentive to bid aggressively increases as a plant's built-in profit margin (price minus cost) shrinks."
+ ],
+ "relationships": [
+  "active vs passive bidding strategy",
+  "profit as price-minus-cost spread"
+ ],
+ "trading_implications": [
+  "Expect higher-cost, thinner-margin generators to be more willing to bid aggressively to move price, while very profitable low-cost generators tend to bid passively to protect guaranteed dispatch."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "412-413"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 5,
+   "topic": "Expected-value example: aggressive bidding trade-off by cost basis"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

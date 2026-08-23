@@ -1,0 +1,7 @@
+{
+ "chapter": 1,
+ "title": "1.1 AN OVERVIEW OF THE ENERGY MARKETS",
+ "n_concepts": 99,
+ "summary": "Energy markets are built around a chain of finding, moving, converting, and delivering fuel, and this chapter surveys how that chain plays out across electricity, natural gas, oil, coal, and NGLs \u2014 from physical properties and infrastructure constraints (pipelines, storage, transmission) to how prices actually form through auctions and merit-order dispatch. It then lays out the trading and risk layer built on top of that physical foundation: spot versus forward markets, bilateral versus exchange trading, secondary markets like ancillary services and FTRs, and core risk concepts such as hedging, credit risk, value at risk, and option payoff asymmetry. Throughout, the chapter connects physical market structure (why power, gas, and coal each trade differently given their storability and transport costs) to the financial instruments and accounting treatments used to manage exposure in those markets.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

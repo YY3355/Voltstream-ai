@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "The fat tail problem",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Model Risk / Volatility",
+ "definition": "The tendency for real asset prices to experience large moves in either direction far more often than a lognormal-return model predicts.",
+ "core_idea": "Real-world shocks such as bankruptcies, hurricanes, and infrastructure failures cause extreme price moves more frequently than statistical models expect, so the market compensates by pricing out-of-the-money options with higher implied volatility than at-the-money options.",
+ "key_points": [
+  "Lognormal models systematically understate the probability of extreme events, such as a stock price hitting zero",
+  "Real triggers for such moves include company bankruptcy/takeover, hurricanes, and physical failures like downed power lines",
+  "Out-of-the-money options are most sensitive to these large moves and are typically priced with higher volatility than at-the-money options",
+  "Traders refer to this mismatch between actual and lognormal-predicted tail risk as the fat tail problem"
+ ],
+ "relationships": [
+  "Related to the lognormal distribution assumption it undermines"
+ ],
+ "trading_implications": [
+  "Volatility should not be treated as flat across strikes; OTM options trade at a volatility premium to compensate sellers for underestimated tail risk"
+ ],
+ "caveats": [
+  "Assuming a single flat volatility input (as in a basic lognormal model) is adequate across all strikes"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "355-356"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 1,
+   "topic": "The fat tail problem"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

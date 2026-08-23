@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Worked Example: HDD Contract Payoff Calculation",
+ "type": "example",
+ "category": "Derivatives",
+ "subcategory": "Weather Derivatives",
+ "definition": "An illustrative walk-through of how an HDD contract's payoff is derived from daily temperature observations.",
+ "core_idea": "For a contract paying, say, $1,000 per HDD above a 100 HDD strike for a given week, the calculation requires: obtaining each day's average temperature from the contractually specified official source and location, converting each day into an HDD using the contract's baseline, and summing the daily HDDs across the period before comparing to the strike.",
+ "key_points": [
+  "The contract specifies the official weather data source, the location, and the baseline temperature used for the HDD calculation",
+  "An HDD is generated for each degree the daily average temperature falls below the baseline",
+  "The period (e.g., weekly) HDD total is the sum of the daily HDD values",
+  "The accumulated HDD is then compared against the contract's strike to determine the payoff"
+ ],
+ "relationships": [
+  "Applies the HDD formula from 'Heating Degree Days (HDD) and Cooling Degree Days (CDD)' over a defined period"
+ ],
+ "trading_implications": [
+  "Accurate payoff estimation requires knowing the exact reference station, baseline, and period defined in the trade confirmation, not just a general HDD formula"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 34,
+   "pages": "605-606"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 4,
+   "topic": "Worked Example: HDD Contract Payoff Calculation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

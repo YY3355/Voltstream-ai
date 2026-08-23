@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Hedge Effectiveness Testing via Linear Regression",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Statistical Testing",
+ "definition": "The standard retrospective-testing method for hedge accounting, using linear regression to check whether changes in the value of the hedged item are matched by equal and opposite changes in the value of the hedge.",
+ "core_idea": "Linear regression is applied to the paired changes in value of the hedge and the hedged item to statistically assess whether a $1 gain in one is offset by roughly a $1 loss in the other, with a scatter diagram (hedge item values vs. hedge values, with a fitted line) as the common way to visualize this relationship.",
+ "key_points": [
+  "Linear regression is the most commonly used statistical test for retrospective hedge effectiveness testing.",
+  "Most modern spreadsheet and statistical software includes regression tools, though they may not be enabled by default.",
+  "The core question tested is whether a gain in the hedged item is matched by an equal and opposite loss in the hedge (and vice versa).",
+  "A scatter diagram plots one series on the X axis and the other on the Y axis, with a fitted line describing the relationship."
+ ],
+ "relationships": [
+  "Used to perform Retrospective Testing within Hedge Accounting."
+ ],
+ "trading_implications": [
+  "A hedge that fails a regression-based effectiveness test could lose its qualification for hedge accounting, reintroducing mark-to-market earnings volatility."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "597-599"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 5,
+   "topic": "Hedge Effectiveness Testing via Linear Regression"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

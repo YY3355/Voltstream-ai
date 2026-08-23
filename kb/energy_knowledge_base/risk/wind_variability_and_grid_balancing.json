@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Wind variability and grid balancing",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "Wind output is inherently irregular and hard to forecast, so grids relying on wind generation must have a way to cover supply gaps.",
+ "core_idea": "Because wind supply arrives in unpredictable bursts, grid operators typically rely on fast-cycling but inefficient fossil-fuel plants (natural gas turbines, diesel peakers) to fill gaps, which undercuts wind's environmental benefit.",
+ "key_points": [
+  "Predicting the timing and magnitude of wind output is extremely difficult.",
+  "Gaps in wind supply are commonly met by natural gas turbines or diesel peaking units because they can cycle on/off easily.",
+  "Using quick-cycling fossil generation to backstop wind commits a region to inefficient, more polluting generation, offsetting wind's clean-energy benefit.",
+  "Electricity storage can sometimes be used to time-shift wind production to periods of higher demand.",
+  "If baseload plants (nuclear or coal) are used as backup instead, they cannot ramp quickly, so surplus wind energy may simply be wasted when both are producing at once."
+ ],
+ "relationships": [
+  "Related to storage as a mitigation tool",
+  "Related to cube-law energy variability driving the unpredictability"
+ ],
+ "trading_implications": [
+  "The need for fast-cycling backup generation to firm wind output has cost and efficiency implications for the overall generation stack.",
+  "Wind's environmental value is partially offset when its intermittency forces reliance on inefficient peaking plants."
+ ],
+ "caveats": [
+  "Adding wind capacity does not automatically reduce fossil fuel use in a straightforward way if the backup generation needed to cover its gaps is itself inefficient and polluting."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "461-463"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 1,
+   "topic": "Wind variability and grid balancing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

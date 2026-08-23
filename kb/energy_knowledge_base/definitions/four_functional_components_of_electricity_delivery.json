@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Four functional components of electricity delivery",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Getting power to consumers is divided into four functions: generation (producing electricity), transmission (long-distance, high-voltage transport), distribution (short-distance, low-voltage delivery to individual buildings), and retail sales (billing, customer service, and capacity contracting).",
+ "core_idea": "A regulated monopoly utility typically performs all four functions itself, while deregulated markets commonly split them across separate entities, with retail providers additionally responsible for contracting with generators to secure enough capacity for their customer base.",
+ "key_points": [
+  "Generation: power plants that produce electricity.",
+  "Transmission: long-distance transport, typically at high voltage.",
+  "Distribution: short-distance, neighborhood-level transport at low voltage, connecting individual buildings to the grid.",
+  "Retail sales: billing and customer service; in deregulated markets, retail providers also contract with generators to ensure sufficient capacity for their customers.",
+  "Regulated monopoly utilities typically handle all four functions themselves.",
+  "Deregulated markets commonly split these four functions among multiple separate companies."
+ ],
+ "relationships": [
+  "Structural counterpart to the regulated vs deregulated market distinction"
+ ],
+ "trading_implications": [
+  "In deregulated markets, retail providers bear the responsibility of procuring adequate generation capacity via contracts, creating demand for hedging and structured energy products."
+ ],
+ "caveats": [
+  "Generation, transmission, distribution, and retail are distinct functions even when bundled under one monopoly utility in regulated markets \u2014 deregulation unbundles existing functions into separate businesses rather than creating new ones."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "172-173"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 5,
+   "topic": "Four functional components of electricity delivery"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

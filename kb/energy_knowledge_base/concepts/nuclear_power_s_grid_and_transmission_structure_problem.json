@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Nuclear power's grid and transmission structure problem",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Like coal plants, nuclear plants must be built at very large scale and sited far from consumers, which commits a power system to long-distance transmission of power.",
+ "core_idea": "Committing to nuclear as a primary power source means committing to a grid architecture with large, distant generation and long-haul transmission, which the author states is inherently less reliable than a grid with generation located close to consumers.",
+ "key_points": [
+  "Nuclear plants share engineering constraints with coal plants: very large scale, sited far from consumers.",
+  "Adopting nuclear as a primary source implies committing to long-distance transmission infrastructure.",
+  "A grid built around long-distance transmission is inherently less reliable than one with generation close to consumers, per the author."
+ ],
+ "relationships": [
+  "Parallels the coal-plant siting/transmission tradeoff discussed elsewhere in the text."
+ ],
+ "trading_implications": [
+  "Large, remote nuclear generation implies greater reliance on transmission paths, which is relevant to congestion and reliability risk in a nodal/locational market like ERCOT."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "474-474"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 4,
+   "topic": "Nuclear power's grid and transmission structure problem"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

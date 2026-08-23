@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Gamma",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Option Sensitivities",
+ "definition": "Gamma measures how much an option's delta changes as the underlying's price changes; it is the second derivative of price with respect to the underlying, analogous to acceleration.",
+ "core_idea": "Although less directly informative than delta, gamma is closely watched by risk managers because it captures how a portfolio's risk profile itself shifts \u2014 becoming more or less exposed \u2014 when the underlying makes a large move.",
+ "key_points": [
+  "Gamma is often considered more important than delta from a risk management standpoint.",
+  "It indicates whether a portfolio will become riskier or less risky as the market moves substantially.",
+  "Continuing the car-trip analogy, gamma is to delta what acceleration is to velocity."
+ ],
+ "relationships": [
+  "Second derivative of price with respect to underlying",
+  "Derivative of delta"
+ ],
+ "trading_implications": [
+  "Risk managers scrutinize gamma to understand exposure during large or fast underlying price moves, not just small incremental ones."
+ ],
+ "caveats": [
+  "Assuming delta alone captures risk exposure; gamma reveals how that exposure itself changes under large market moves."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "370-371"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 7,
+   "topic": "Gamma"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

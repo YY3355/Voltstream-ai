@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Two general categories of combustion pollution",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Environmental / Combustion byproducts",
+ "definition": "Combustion pollution splits into two broad categories: impurities/particles trapped in the fuel that get released when it burns, and greenhouse gases, which are an intrinsic, unavoidable byproduct of the combustion chemistry itself.",
+ "core_idea": "The author frames fuel-borne particulate contamination and intrinsic greenhouse-gas production as the two fundamentally different types of pollution from burning fossil fuels \u2014 one is a fuel-purity issue, the other is unavoidable chemistry.",
+ "key_points": [
+  "First category: impurities or small particles trapped in the fuel, released on combustion.",
+  "Second category: greenhouse gases, an intrinsic part of the combustion process itself.",
+  "Greenhouse gases are described as not a direct health hazard and generally safe in themselves, but capable of altering global climate when released in large quantities."
+ ],
+ "relationships": [
+  "Carbon dioxide formation from combustion",
+  "Fly ash and soot as particulate pollution"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Assuming greenhouse gases are toxic like other pollutants \u2014 the author distinguishes them as non-hazardous to health individually, with the risk being climate-scale accumulation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "40-40"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 7,
+   "topic": "Two general categories of combustion pollution"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

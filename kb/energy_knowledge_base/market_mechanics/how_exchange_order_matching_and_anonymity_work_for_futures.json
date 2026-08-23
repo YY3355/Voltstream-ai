@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "How exchange order matching and anonymity work for futures",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Futures are standardized down to a limited set of grades, delivery locations, and delivery windows, and are matched through the exchange's order book without buyer and seller knowing each other's identity.",
+ "core_idea": "Traders submit buy/sell orders to the exchange's book; whenever a bid and offer overlap, a trade executes anonymously, and the exchange then substitutes itself as counterparty to both sides while a clearinghouse assigns the eventual delivery counterparty.",
+ "key_points": [
+  "The exchange fixes delivery time, delivery location, and grade for each futures contract, sharply limiting the number of possible contract variants.",
+  "All resting buy/sell instructions are consolidated into a single trading book by the exchange.",
+  "A transaction occurs whenever a buy price and a sell price overlap; the two parties never learn each other's identity during this process.",
+  "After a trade, the exchange becomes the counterparty to each trader individually.",
+  "At settlement/expiration, the clearinghouse \u2014 governed by exchange rules \u2014 determines who actually delivers to/receives from whom."
+ ],
+ "relationships": [
+  "Underpins the anonymity and reduced-credit-risk benefits described for exchange trading generally."
+ ],
+ "trading_implications": [
+  "Because counterparties are anonymous and exchange-guaranteed, traders can focus on price/liquidity rather than vetting individual counterparties."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "91"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_004.json",
+   "idx": 3,
+   "topic": "How exchange order matching and anonymity work for futures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

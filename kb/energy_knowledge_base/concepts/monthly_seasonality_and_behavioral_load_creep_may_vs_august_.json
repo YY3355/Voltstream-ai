@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Monthly seasonality and behavioral load creep (May vs. August effect)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Weather-Driven Demand",
+ "definition": "Average load by month peaks in the hottest and coldest months and dips in spring/fall; additionally, consumer behavior toward cooling shifts over the course of a season, so the same daily high temperature produces different demand depending on how long hot weather has persisted.",
+ "core_idea": "Using PJM-West (hot summers, cold winters, located west of Washington D.C.) as the example, monthly average load is highest in summer and winter and lowest in spring and fall, and within summer, prolonged heat causes people to shift from occasional to full-time air-conditioner use, so a given temperature yields more demand later in the summer (August) than earlier (May).",
+ "key_points": [
+  "PJM-W shows peak power demand in summer and winter months, with much lower demand in spring and fall.",
+  "In May, mild-weather regions like the Mid-Atlantic see occasional hot days but people generally leave air conditioners off, waiting for sustained heat before turning them on for the season.",
+  "By August, sustained hot weather has led many people to run air conditioners full time.",
+  "As a result, for the same daily high temperature, the region uses more power in August than in May \u2014 the temperature-to-load relationship is not static across the season but shifts with cumulative weather exposure."
+ ],
+ "relationships": [
+  "Extends the basic temperature-vs-demand relationship with a seasonal/behavioral lag effect"
+ ],
+ "trading_implications": [
+  "A load forecast that uses only current-day temperature without accounting for how far into the cooling/heating season it is can systematically misestimate demand, especially early vs. late in summer."
+ ],
+ "caveats": [
+  "Assuming the load-vs-temperature relationship is fixed year-round; the source shows it shifts (higher load per degree) as summer progresses due to behavioral adaptation, not just cumulative heat."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "396-397"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 4,
+   "topic": "Monthly seasonality and behavioral load creep (May vs. August effect)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

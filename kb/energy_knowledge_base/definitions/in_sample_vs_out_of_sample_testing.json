@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "In-sample vs. out-of-sample testing",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Model Validation",
+ "definition": "An in-sample test compares a model's predictions to the same data used to fit the model; an out-of-sample test compares predictions to data the model has not seen.",
+ "core_idea": "In-sample testing checks how well a model fits the data it was built from, while out-of-sample testing checks whether the model generalizes to new, unseen data.",
+ "key_points": [
+  "The author frames in-sample testing as the initial, more basic check performed first.",
+  "Out-of-sample testing is described as a later step, using data not used to build the model."
+ ],
+ "relationships": [
+  "Part of the broader error analysis process."
+ ],
+ "trading_implications": [
+  "A model that performs well in-sample but poorly out-of-sample is likely overfit and unreliable for forward-looking trading or hedging decisions."
+ ],
+ "caveats": [
+  "Good in-sample fit alone does not guarantee a model will predict future, unseen conditions well."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "403"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 5,
+   "topic": "In-sample vs. out-of-sample testing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

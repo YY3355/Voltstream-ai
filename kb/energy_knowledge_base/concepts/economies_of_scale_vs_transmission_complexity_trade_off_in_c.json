@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Economies of scale vs. transmission complexity trade-off in coal generation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Economics & Transmission",
+ "definition": "Large coal power plants gain fuel-efficiency economies of scale, but this benefit requires extensive long-distance transmission infrastructure, creating a cost trade-off.",
+ "core_idea": "Bigger coal plants need less fuel per unit of electricity produced, which historically drove the industry toward large centralized plants (a scale benefit nuclear power shares); but large centralized plants require elaborate long-distance transmission systems, and the source states that transmission systems become more expensive and less reliable as they grow more complex.",
+ "key_points": [
+  "Larger coal plants require less fuel per unit of electricity generated",
+  "Nuclear power shares a similar economy-of-scale benefit",
+  "Large centralized plants require elaborate long-distance transmission networks",
+  "Simple transmission systems are relatively inexpensive and reliable; complex ones become progressively more expensive and less reliable",
+  "Transmission complexity grew over time as electrical appliance use and population density increased"
+ ],
+ "relationships": [
+  "Related to the historical AC vs. DC transmission choice that enabled large centralized plants"
+ ],
+ "trading_implications": [
+  "The historical scale-vs-transmission trade-off underlies modern grid congestion and reliability cost drivers relevant to transmission-constrained markets"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "254"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 4,
+   "topic": "Economies of scale vs. transmission complexity trade-off in coal generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

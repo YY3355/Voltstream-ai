@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "Electricity units: megawatt vs. megawatt-hour",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Units of Measurement",
+ "definition": "A megawatt (MW) measures power \u2014 the rate at which electrical work is done or can be produced/carried; a megawatt-hour (MWh) measures energy \u2014 the amount of work done, equal to power sustained over a period of time.",
+ "core_idea": "MW is analogous to a car's speed (a rate), while MWh is analogous to the distance traveled (power multiplied by time), and the distinction between power and energy units is fundamental to how electricity is measured and traded.",
+ "key_points": [
+  "Power is the rate at which work can be done, analogous to a car's speed.",
+  "Energy is an amount of work done, analogous to distance traveled.",
+  "A megawatt (MW) measures the power a plant can produce or a transmission line can carry.",
+  "A megawatt-hour (MWh) measures energy, calculated as power (MW) multiplied by a duration in hours."
+ ],
+ "relationships": [
+  "MWh (energy traded/billed) is derived from MW (capacity/rate) via the time dimension."
+ ],
+ "trading_implications": [
+  "Contracts and bills for power are ultimately settled in energy (MWh) terms, even though plant and line capacity is described in power (MW) terms."
+ ],
+ "caveats": [
+  "MW and MWh are not interchangeable \u2014 confusing a plant's power rating (MW) with the energy (MWh) it delivers over time is a basic but common error."
+ ],
+ "formulas": [
+  {
+   "name": "Energy from power and time",
+   "formula": "Energy (MWh) = Power (MW) \u00d7 Time (hours)",
+   "variables": {
+    "MWh": "megawatt-hours, a measure of energy",
+    "MW": "megawatts, a measure of power",
+    "hours": "duration over which the power is sustained"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "28-29",
+    "section_hint": "1.1 An Overview of the Energy Markets - Electricity, Common Units"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "28-29"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 5,
+   "topic": "Electricity units: megawatt vs. megawatt-hour"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

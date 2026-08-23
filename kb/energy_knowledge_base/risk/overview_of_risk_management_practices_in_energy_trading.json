@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Overview of risk management practices in energy trading",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Risk Management Framework",
+ "definition": "Modern financial risk management is built primarily on two practices \u2014 mark-to-market accounting and analysis of earnings volatility \u2014 supported by credit risk analysis, review of trading behavior under unusual/stressed conditions, hedging, and management of modeling risk.",
+ "core_idea": "The author frames energy risk management as anchored by valuation (mark-to-market) and volatility analysis, with credit, stress-testing, hedging, and model-risk oversight as supporting disciplines.",
+ "key_points": [
+  "Two core practices: mark-to-market accounting and earnings volatility analysis.",
+  "Supporting practice: credit risk analysis.",
+  "Supporting practice: analyzing trading behavior under unusual or stressed conditions.",
+  "Supporting practice: hedging \u2014 using financial transactions to reduce risk.",
+  "Supporting practice: managing modeling risk."
+ ],
+ "relationships": [
+  "Sets up the following discussion of mark-to-market accounting."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "62-62"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 8,
+   "topic": "Overview of risk management practices in energy trading"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

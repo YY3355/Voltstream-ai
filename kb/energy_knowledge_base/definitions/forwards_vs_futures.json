@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Forwards vs. futures",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Forwards & Swaps",
+ "definition": "A forward is a physically settled contract that is economically similar to a futures contract but is negotiated directly (bilaterally/OTC) between two counterparties rather than cleared on an exchange.",
+ "core_idea": "Forwards give traders the same ability as futures to lock in a future price, location, and time, but without exchange clearing \u2014 trading customization for counterparty credit exposure.",
+ "key_points": [
+  "Forwards are bilateral/OTC, not exchange-cleared.",
+  "Because there is no clearinghouse, each party bears direct credit risk that the other side will fail to perform.",
+  "In theory forwards can be fully customized for illiquid or unique products, but in practice most are standardized, following terms similar to futures."
+ ],
+ "relationships": [
+  "Forwards are the bilateral counterpart to exchange-cleared futures; an OTC clearing service can convert a forward into a future by inserting the exchange as counterparty."
+ ],
+ "trading_implications": [
+  "Choosing a forward over a future trades exchange credit protection for contract customization (location, volume, delivery schedule)."
+ ],
+ "caveats": [
+  "Treating forwards as interchangeable with futures in terms of counterparty risk \u2014 forwards carry direct bilateral credit risk that futures do not."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 1,
+   "topic": "Forwards vs. futures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

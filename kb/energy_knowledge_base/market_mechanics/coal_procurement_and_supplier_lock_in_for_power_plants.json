@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Coal procurement and supplier lock-in for power plants",
+ "type": "market_mechanic",
+ "category": "Commodities",
+ "subcategory": "Coal Market Structure",
+ "definition": "Coal-fired power plants that run continuously typically sign long-term supply contracts with nearby mines, stockpile supply because it is easy to store, but rarely resell surplus coal because there are few interested counterparties, and they invest heavily in optimizing transportation logistics, which makes switching suppliers difficult on short notice.",
+ "core_idea": "The combination of easy stockpiling, a thin resale market, and heavily optimized point-to-point transportation logistics locks coal power plants into their existing local suppliers.",
+ "key_points": [
+  "Major coal consumers are power plants that operate continuously year-round.",
+  "These plants sign long-term supply contracts with nearby coal mines.",
+  "Stockpiling coal is fairly straightforward for power plants.",
+  "Reselling unused coal is difficult because there are few counterparties interested in trading coal.",
+  "Power plants spend significant effort optimizing transportation from local suppliers to minimize that cost component.",
+  "This optimization makes it difficult to switch to a different supplier on short notice."
+ ],
+ "relationships": [
+  "Thin secondary market + logistics optimization reinforces long-term single-supplier relationships."
+ ],
+ "trading_implications": [
+  "Coal supply relationships behave more like fixed physical logistics contracts than a liquid traded commodity, limiting short-term switching or trading flexibility."
+ ],
+ "caveats": [
+  "Unlike natural gas or power, coal is not easily resold once purchased, so surplus inventory is not a simple source of trading liquidity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "250"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 2,
+   "topic": "Coal procurement and supplier lock-in for power plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

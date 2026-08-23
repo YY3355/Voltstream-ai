@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Illustrative example: an irrational end-of-day trade forcing a market-wide markdown",
+ "type": "example",
+ "category": "Risk",
+ "subcategory": "Relationship with Risk Management",
+ "definition": "A hypothetical scenario where a trader, wanting to finish a large sale before a holiday weekend and running low on willing buyers, accepts a much lower price on the last block of a transaction late in the trading day; because it is the final reported trade, it becomes the mark used by everyone holding that asset.",
+ "core_idea": "A single trader's non-distressed, time-pressured decision can become the price that forces a substantial paper loss across all holders of the asset, even though the broader market was functioning normally.",
+ "key_points": [
+  "The trader sells the final portion of a large position at a discount near market close to avoid trading during a vacation.",
+  "Because it lands at end of day, this trade is likely to be the last reported price for the asset.",
+  "Everyone holding the asset must then mark their books to this final, discounted price.",
+  "The author notes the trade wasn't evidence of market distress -- it was a normal transaction between willing counterparties, just one that didn't maximize the seller's profit."
+ ],
+ "relationships": [
+  "Illustrates the systemic-risk problem of thin trading volume setting the mark"
+ ],
+ "trading_implications": [
+  "End-of-day or pre-holiday illiquidity can let a single trade set a mark that misrepresents the broader market's equilibrium price.",
+  "Holders of an asset can suffer a mark-to-market loss driven by one counterparty's scheduling convenience rather than by fundamental repricing."
+ ],
+ "caveats": [
+  "Interpreting a large, off-market final trade as a sign of genuine market distress rather than an idiosyncratic, liquidity-driven event."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "549-549"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 4,
+   "topic": "Illustrative example: an irrational end-of-day trade forcing a market-wide markdown"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

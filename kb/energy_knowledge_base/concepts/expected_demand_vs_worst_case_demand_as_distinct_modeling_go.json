@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Expected demand vs. worst-case demand as distinct modeling goals",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "A load forecasting model must be built around its intended use: a utility doing capacity planning may want the heaviest plausible load on a given day (a worst-case forecast) so it can line up enough standby generation, while a trader may instead want the load most likely to actually occur (an expected-value forecast) to support a trading strategy.",
+ "core_idea": "There is no single 'best' load forecasting model \u2014 the right model depends on whether the goal is capacity planning (worst case) or trading (expected/most likely case), and the modeler should reason about the specific goal rather than apply one generic approach.",
+ "key_points": [
+  "Utilities doing capacity planning care about the heaviest plausible load, to ensure sufficient standby generation is available.",
+  "Traders care about the load most likely to occur, since it feeds trading decisions.",
+  "All forecasting models share similarities, but no model is universally optimal across use cases.",
+  "The author frames this as a call for practical judgment: think about the goal and apply common sense rather than a one-size-fits-all technique."
+ ],
+ "relationships": [
+  "Applies the general spatial load forecasting concept to two different use cases: utility capacity planning vs. trading"
+ ],
+ "trading_implications": [
+  "A trader's forecasting model should target the most likely demand outcome, not the worst case a utility would plan around \u2014 using the wrong target could bias a trading strategy."
+ ],
+ "caveats": [
+  "Assuming one universal load forecast (e.g., a utility's worst-case planning number) is equally appropriate for trading purposes, when the author notes the two use cases call for different modeling targets."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "390"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 4,
+   "topic": "Expected demand vs. worst-case demand as distinct modeling goals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

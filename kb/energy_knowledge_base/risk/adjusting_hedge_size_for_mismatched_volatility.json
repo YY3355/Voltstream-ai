@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Adjusting hedge size for mismatched volatility",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Hedge Accounting / Effectiveness Testing",
+ "definition": "When the hedge instrument is more or less volatile than the hedged item, the notional size of the hedge must be scaled to compensate so that the dollar changes in value line up, and a pre-processing step (computing changes or percent changes in value) is needed before regression analysis.",
+ "core_idea": "If the hedge is, for example, twice as volatile as the hedged item, the hedge should be sized at roughly half the hedged item's size so their value changes stay comparable; mismatched volatility requires converting price series to value changes (or percent changes) before running a regression to test effectiveness.",
+ "key_points": [
+  "A hedge twice as volatile as the hedged item should be sized at about half the hedged item's notional.",
+  "Prior to regression analysis, an extra step converts price series into changes in value, or percent changes in value, when volatilities are mismatched."
+ ],
+ "relationships": [
+  "Precedes the regression-based statistical tests (slope, R-squared, etc.) covered later in the section."
+ ],
+ "trading_implications": [
+  "Size a hedge relative to the ratio of volatilities between the hedge and the hedged item rather than assuming a 1:1 notional match."
+ ],
+ "caveats": [
+  "Assuming a 1:1 notional hedge is always correct regardless of the relative volatility of the two instruments."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "600-602"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_002.json",
+   "idx": 1,
+   "topic": "Adjusting hedge size for mismatched volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

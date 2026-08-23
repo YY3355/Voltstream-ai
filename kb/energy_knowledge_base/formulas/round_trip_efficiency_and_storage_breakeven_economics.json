@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "Round-trip efficiency and storage breakeven economics",
+ "type": "formula",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "Storage facilities lose energy converting electricity into another form and back; the resulting round-trip efficiency sets the minimum peak/off-peak price spread needed just to break even on gross profit, before any capital or maintenance costs.",
+ "core_idea": "With a 25% round-trip efficiency, only one unit of electricity is recovered for every four units put in, so peak prices would need to be at least four times off-peak prices just to break even on gross margin \u2014 and that still ignores installation and ongoing maintenance costs.",
+ "key_points": [
+  "Author's example: a storage facility with 25% efficiency returns only 25% of the electricity put into it.",
+  "At 25% efficiency, peak prices consistently four times off-peak prices would let the system break even on gross profit only.",
+  "Breaking even on gross profit does not cover installation and ongoing maintenance costs, so real-world viability requires an even wider spread."
+ ],
+ "relationships": [
+  "Electricity storage as a price-arbitrage opportunity"
+ ],
+ "trading_implications": [
+  "When valuing a storage asset, compare the observed peak/off-peak spread to 1/efficiency to see if there is room for gross profit before fixed costs.",
+  "Low round-trip-efficiency technologies need very wide, reliable price spreads to be economic at all."
+ ],
+ "caveats": [
+  "Breaking even on gross profit is not the same as a profitable investment \u2014 capital and maintenance costs still have to be covered on top."
+ ],
+ "formulas": [
+  {
+   "name": "Storage breakeven price ratio",
+   "formula": "Breakeven Peak/Off-Peak Price Ratio = 1 / Round-Trip Efficiency",
+   "variables": {
+    "Round-Trip Efficiency": "fraction of stored electricity recovered after storage losses (e.g., 0.25 = 25%)"
+   },
+   "source": {
+    "chapter": 23,
+    "pages": "476-477",
+    "section_hint": "4.8 Electricity Storage \u2014 Summary"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "476-477"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 1,
+   "topic": "Round-trip efficiency and storage breakeven economics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

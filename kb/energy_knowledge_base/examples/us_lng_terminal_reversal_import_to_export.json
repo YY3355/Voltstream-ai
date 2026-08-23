@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "US LNG Terminal Reversal: Import to Export",
+ "type": "example",
+ "category": "Natural Gas",
+ "subcategory": "Market History",
+ "definition": "A historical case where US LNG infrastructure was built for one purpose (importing gas) but ended up being repurposed for the opposite (exporting gas) once domestic supply conditions changed.",
+ "core_idea": "In the early 2000s, the US and Europe were expected to run short of domestic natural gas and need LNG imports; the shale fracking boom by 2015 flooded the US with cheap domestic gas, so many terminals originally built to regasify imported LNG were converted into liquefaction plants to export US gas instead.",
+ "key_points": [
+  "US and Europe consume a large share of world natural gas but were believed to hold only a small share of proven reserves, driving early-2000s import expectations.",
+  "By 2015, fracking-driven supply growth reversed the US gas balance toward surplus.",
+  "Regasification terminals (built for imports) were converted into liquefaction terminals (for exports) as a result."
+ ],
+ "relationships": [
+  "Illustrates how domestic supply shocks can flip infrastructure use",
+  "Connected to global LNG market growth"
+ ],
+ "trading_implications": [
+  "Long-lived LNG infrastructure investments can be repurposed for the opposite trade flow if the underlying supply/demand balance shifts significantly, which matters when evaluating terminal investment risk."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "539-540"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 2,
+   "topic": "US LNG Terminal Reversal: Import to Export"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

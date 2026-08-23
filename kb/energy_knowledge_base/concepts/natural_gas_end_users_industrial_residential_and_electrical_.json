@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Natural gas end users: industrial, residential, and electrical generation",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Users of Natural Gas",
+ "definition": "The three largest categories of natural gas consumers are industrial clients, residential clients, and power plants, with gas-fired power generation being the fastest-growing of the three since 1990.",
+ "core_idea": "Each user segment values natural gas for a different property (industrial: instant on/off with no wasted fuel; residential: home heating and appliances; power generation: lower emissions than coal/oil), and gas-fired generation has grown the fastest of the three since 1990.",
+ "key_points": [
+  "The three largest natural gas user groups are industrial clients, residential clients, and power plants.",
+  "Industrial users value natural gas because it ignites and extinguishes instantly, unlike coal which keeps burning and wastes fuel after a furnace is shut off; used for metal/glass manufacturing, cooking, dehumidification, and waste incineration.",
+  "About half of homes in North America use natural gas for heating, which is the largest residential use; other residential uses include kitchen ranges, water heaters, clothes dryers, and outdoor grills.",
+  "Gas-fired power plants are the fastest-growing user segment and most power plants built since 1990 are gas-fired.",
+  "Gas-fired power plants produce fewer greenhouse gas emissions than coal- or oil-fired plants.",
+  "Some gas power plants run year-round while seasonal plants typically shut down in winter when gas prices peak."
+ ],
+ "relationships": [
+  "Electrical generation demand ties back to the weather-driven demand concept (summer AC load)."
+ ],
+ "trading_implications": [
+  "Seasonal power plants that idle in winter reduce gas demand from the power sector exactly when heating demand is highest, a partially offsetting dynamic worth modeling separately from residential/industrial demand."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 5,
+   "topic": "Natural gas end users: industrial, residential, and electrical generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

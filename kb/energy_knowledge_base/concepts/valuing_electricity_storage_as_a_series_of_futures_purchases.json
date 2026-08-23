@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Valuing Electricity Storage as a Series of Futures Purchases",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "A valuation approach for storage where the nightly (off-peak) purchase decision is not discretionary \u2014 it always occurs \u2014 so the investment can be valued similarly to holding a stream of futures purchases rather than modeling a daily operating decision.",
+ "core_idea": "When storage always charges overnight with no real operating decision involved, its value can be estimated by forecasting forward prices and valuing the position like a futures purchase, which the author describes as requiring relatively simple math.",
+ "key_points": [
+  "Applies specifically when there is no discretionary daily operating decision \u2014 the nightly purchase always happens.",
+  "Requires forecasting forward prices into the future.",
+  "Described by the author as needing only 'limited mathematics' compared to other approaches."
+ ],
+ "relationships": [
+  "storage valuation",
+  "forward price forecasting"
+ ],
+ "trading_implications": [
+  "This method sidesteps the need to model optimal daily charge/discharge behavior when the charging pattern is fixed."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "483"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 1,
+   "topic": "Valuing Electricity Storage as a Series of Futures Purchases"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

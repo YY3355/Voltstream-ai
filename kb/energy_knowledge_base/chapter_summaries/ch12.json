@@ -1,0 +1,7 @@
+{
+ "chapter": 12,
+ "title": "3.3 STATISTICS",
+ "n_concepts": 21,
+ "summary": "This chapter surveys the statistical toolkit traders use to describe and compare price behavior, starting from basic measures like mode, median, mean, and the notation for expressing them, then building up to variance, standard deviation, and volatility as ways of quantifying risk, including how these estimates shift depending on sample size or weighting scheme. It covers how distributions are visualized and summarized through histograms and cumulative curves, with integration underpinning how probabilities are read off those curves, and it cautions that any such summarization inevitably discards information. Correlation is treated at length, including its mechanics, its sensitivity to outliers, and \u2014 via a worked hedging example \u2014 why a statistically correlated relationship can still fail as a practical hedge. The chapter closes with Monte Carlo simulation as a tool for valuation and probability questions, and with risk-adjusted return measures like the Sharpe and Information Ratios used to compare investments.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Practical Constraints on Cogeneration",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "Three practical barriers limit where cogeneration is viable: a local buyer for the heat must exist, the heat must be physically transportable to that buyer, and serving that buyer imposes operating constraints on the power plant.",
+ "core_idea": "Even where a heat buyer exists, that buyer typically needs a stable, reliable supply of superheated water \u2014 which conflicts with a power plant's preference to avoid producing power (and thus heat) during periods when it is unprofitable to do so.",
+ "key_points": [
+  "There may be no local demand for superheated hot water at all",
+  "Delivering the heat generally requires the buyer to build adjacent to the plant or requires a dedicated pipeline",
+  "An industrial buyer's need for a stable heat supply can obligate the plant to keep running even when power prices make that unprofitable"
+ ],
+ "relationships": [
+  "Constrains when the benefits of cogeneration described in the source's cogeneration concept are actually realizable"
+ ],
+ "trading_implications": [
+  "Cogeneration plants may face a tension between power-market price signals and contractual steam-supply obligations"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "190"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 4,
+   "topic": "Practical Constraints on Cogeneration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "Conversion efficiency of a solar unit",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Conversion efficiency is the fraction of absorbed solar energy that a collector turns into usable output energy \u2014 most solar collectors can only absorb certain wavelengths, and much incoming light is reflected or otherwise lost before it can be converted.",
+ "core_idea": "A solar installation's total output depends on two separate factors multiplying together: how much solar energy is available/absorbed at the site, and how efficiently the unit converts that absorbed energy into useful energy.",
+ "key_points": [
+  "Conversion efficiency is described as a ratio of energy produced to energy absorbed.",
+  "Solar collectors are limited to certain usable wavelengths; light outside that range is reflected or absorbed without being converted.",
+  "Both site solar-energy availability and unit conversion efficiency jointly determine an installation's output \u2014 they are separate levers, not one combined figure."
+ ],
+ "relationships": [
+  "Combines with site solar-resource quality (geographic/atmospheric factors) to determine total installation output."
+ ],
+ "trading_implications": [
+  "Rated conversion efficiency is a key spec for comparing solar equipment/technologies when underwriting an installation's expected output."
+ ],
+ "caveats": [
+  "Confusing conversion efficiency (produced vs. absorbed) with an all-in efficiency that already accounts for how much ambient sunlight was captured/absorbed in the first place."
+ ],
+ "formulas": [
+  {
+   "name": "Conversion efficiency (conceptual)",
+   "formula": "conversion efficiency = energy produced / energy absorbed",
+   "variables": {
+    "energy produced": "useful energy output of the solar unit",
+    "energy absorbed": "solar energy absorbed by the collector before conversion losses"
+   },
+   "source": {
+    "chapter": 20,
+    "pages": "452",
+    "section_hint": "4.5 Solar Power \u2014 Concentrated Solar Power"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "452"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 5,
+   "topic": "Conversion efficiency of a solar unit"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

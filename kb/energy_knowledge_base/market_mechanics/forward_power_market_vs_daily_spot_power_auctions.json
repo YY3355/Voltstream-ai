@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Forward power market vs. daily (spot) power auctions",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Trading Markets",
+ "definition": "The forward power market and the daily spot auction are related but structurally distinct markets: the spot auction sets the reference prices the forward market trades against, but access, contract types, and lot sizes differ sharply.",
+ "core_idea": "Daily power auctions are restricted to entities that can physically generate and deliver power onto the grid, and trade in arbitrarily small sizes for immediate delivery anywhere; the forward market is open to any sufficiently capitalized participant, trades both physical and cash-settled financial contracts, but only in large monthly blocks at a limited set of hub locations.",
+ "key_points": [
+  "Daily auctions (a.k.a. spot power market) are open only to power providers with generation/delivery capability.",
+  "Forward market participation requires no generation capability at all.",
+  "Forward contracts can be physical (delivery required) or financial (cash-settled).",
+  "Spot power can be bought in small sizes anywhere; forward power trades only in monthly blocks at roughly 30 major locations.",
+  "Most speculative trading activity occurs in the forward market."
+ ],
+ "relationships": [
+  "Forward market prices are anchored to daily auction (spot) prices even though the two markets have different access rules and contract structures."
+ ],
+ "trading_implications": [
+  "Speculators without generation assets can only participate via the forward market, not the daily auctions.",
+  "Because forward contracts are large and location-limited, achieving an exact regional price often requires a combination of a hub trade plus a separate fine-tuning trade."
+ ],
+ "caveats": [
+  "The forward and spot markets are not the same market at different tenors \u2014 they have fundamentally different access requirements and contract sizes."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "175-176"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 2,
+   "topic": "Forward power market vs. daily (spot) power auctions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

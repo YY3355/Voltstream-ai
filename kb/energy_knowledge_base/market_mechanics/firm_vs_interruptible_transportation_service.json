@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Firm vs. interruptible transportation service",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Transportation Contracts",
+ "definition": "Firm service guarantees pipeline capacity availability except for force majeure events and costs a premium; interruptible service is cheaper, offered on a best-efforts basis, and can be curtailed for valid operational reasons, most commonly to keep the pipeline's pressure balanced.",
+ "core_idea": "Shippers trade off cost against reliability: firm service buys guaranteed capacity via a reservation charge, while interruptible service is cheap but can be shut off whenever the pipeline operator needs to balance flow or serve a firm shipper's actual delivery.",
+ "key_points": [
+  "Firm service: guaranteed except for force majeure; relatively expensive",
+  "Interruptible service: best-efforts basis, relatively cheap, can be interrupted for any valid reason, most commonly pipeline balancing",
+  "A firm shipper pays a reservation charge to guarantee available capacity but is not obligated to actually inject gas into the pipeline",
+  "When a firm shipper isn't using its reserved capacity (e.g., an unusually warm winter reducing heating demand), the pipeline operator sells cheaper interruptible service to other parties to keep the line pressurized",
+  "When the firm shipper does want to deliver, interruptible customers are shut off first",
+  "Public utilities delivering residential heat, and power plants/industrial facilities, tend to prefer firm service for reliability",
+  "Storage facilities may prefer interruptible service because they want to buy gas cheaply during low-demand periods, which is exactly when interruptible contracts tend to be active"
+ ],
+ "relationships": [
+  "Builds on the pipeline continuity requirement",
+  "Interacts with pipeline fullness economics"
+ ],
+ "trading_implications": [
+  "Storage operators can use interruptible contracts to buy gas cheaply during low-demand windows without paying the firm-service reliability premium",
+  "Knowing which counterparties hold firm vs. interruptible contracts helps anticipate whose gas flows get curtailed first when the pipeline needs to balance"
+ ],
+ "caveats": [
+  "Assuming interruptible service is simply a discount version of firm service rather than a fundamentally lower-priority, curtailable claim on capacity"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "513-514"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 3,
+   "topic": "Firm vs. interruptible transportation service"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

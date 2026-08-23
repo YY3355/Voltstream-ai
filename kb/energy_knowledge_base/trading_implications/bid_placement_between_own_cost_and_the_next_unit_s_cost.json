@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Bid placement between own cost and the next unit's cost",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Bidding Strategy",
+ "definition": "Generators typically place bids above their own break-even cost but below the break-even cost of the next more expensive plant type in the stack.",
+ "core_idea": "This spacing lets a plant capture margin above its own cost while still positioning itself to clear ahead of costlier competitors, and it lets an outside observer bracket a plausible bid range for each plant type.",
+ "key_points": [
+  "Example given: a coal plant with an $50 break-even cost, sitting just below an $85 break-even unit, would likely bid somewhere between $50 and $85",
+  "Predicted consumer demand (plotted against price) determines which plant ends up being the price-setter"
+ ],
+ "relationships": [
+  "Builds on generation stack ordering",
+  "Determines the marginal provider in the dispatch stack"
+ ],
+ "trading_implications": [
+  "Bracketing a plant's likely bid range using the break-even costs of neighboring stack units helps forecast the clearing price at a given demand level"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "407-408"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 2,
+   "topic": "Bid placement between own cost and the next unit's cost"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

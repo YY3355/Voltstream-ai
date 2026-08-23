@@ -1,0 +1,121 @@
+{
+ "canonical_topic": "credit risk",
+ "type": "concept",
+ "n_merged": 6,
+ "definition": "Counterparty credit risk is the danger that a trading partner in a bilateral contract will be unable or unwilling to meet its contractual/financial obligations; it can be mitigated (e.g. collateral) and managed (e.g. supervision, limits) but not eliminated, and firms must balance credit risk controls against the need to keep doing business.",
+ "core_idea": "Counterparty credit risk is defined by two components \u2014 credit exposure (magnitude of potential loss) and credit quality (likelihood of default) \u2014 and grows as a trade becomes more profitable to the party holding the exposure. Firms respond with a mix of assessment (knowing the trading partner), contractual protections (limits, netting, cross-default and master netting clauses), and financial backstops (collateral, margin, CDS, or OTC clearing), while recognizing none of these fully eliminates the residual risk.",
+ "key_points": [
+  "Credit risk can be mitigated (collateral) and managed (supervision), but not eliminated.",
+  "Overly strict exposure limits cost missed trading opportunities and damaged relationships; overly loose limits risk a catastrophic loss from a counterparty collapse \u2014 the goal is a balance between these extremes, not a maximal-safety posture.",
+  "Credit exposure measures the magnitude of potential loss from a counterparty; credit quality measures the likelihood that a counterparty defaults; together they define overall counterparty credit risk.",
+  "Obligor: a party legally obligated to perform (e.g., repay a debt). Default: failure to meet a legal obligation. Counterparty: the other party to a given contract, from one participant's perspective.",
+  "Counterparty credit risk varies directly with trade profitability: the more profitable a position is for one side, the greater the risk the other side can't pay; an unprofitable contract (from your perspective) carries very little counterparty credit risk since you're the one owing money regardless of the counterparty's solvency.",
+  "Collateral is money (or bonds, stocks, or other investments) pledged as security to back a trading obligation when a party's own creditworthiness is insufficient; it is held in trust but remains the property of the pledging party until the obligation is resolved.",
+  "A credit-default swap (CDS) is insurance against contractual default, letting a weaker-credit counterparty pay a fee to effectively borrow the credit standing of a stronger-credit party; it does not eliminate credit risk entirely, since there remains a possibility that neither the CDS buyer nor the CDS issuer can meet their obligations.",
+  "Requiring margin or evidence of a bank credit line reduces reliance on trusting the counterparty's creditworthiness.",
+  "With OTC clearing, two traders still negotiate the trade themselves but then register it with an exchange, which becomes the counterparty to each trader \u2014 converting the credit profile of the forward into that of a future.",
+  "Know your trading partner: assess line of business, asset base, and business model before trading.",
+  "A credit limit halts additional trading with a partner once net exposure becomes too large.",
+  "Netting payments and receipts allows only the net exposure to a counterparty to be monitored, rather than gross exposure.",
+  "Cross-default clauses are contractual terms preventing a counterparty from selectively defaulting on one obligation while remaining current on others.",
+  "Master netting agreements are another contractual term used to limit credit risk."
+ ],
+ "relationships": [
+  "Credit exposure and credit quality together define overall counterparty credit risk.",
+  "Directly tied to bilateral/OTC trading, where counterparty credit risk is a core downside.",
+  "OTC clearing bridges bilateral forwards and exchange-cleared futures.",
+  "Related to credit default swaps as a mitigation tool.",
+  "Protective mechanisms (netting, collateral, CDS, cross-default/master netting clauses) directly reduce credit exposure and/or the effective probability/impact of default."
+ ],
+ "trading_implications": [
+  "Setting per-counterparty exposure limits is inherently a trade-off exercise, not a pure risk-minimization problem.",
+  "Even after using collateral or a CDS to mitigate credit risk on an OTC trade, some residual counterparty risk remains and must be considered.",
+  "A trader worried about counterparty default on a forward can negotiate margin terms up front or clear the trade through an exchange service to gain clearinghouse credit protection while keeping bilateral price negotiation.",
+  "Traders should expect credit exposure to grow as a favorable position becomes more in-the-money, not stay fixed at trade inception.",
+  "Firms set hard exposure limits per counterparty to bound worst-case loss while still permitting enough trading volume to run the business.",
+  "Structuring trades with netting, collateral, or CDS backing can allow continued business with higher-risk counterparties while keeping effective exposure within acceptable limits."
+ ],
+ "caveats": [
+  "CDS trades do not eliminate credit risk entirely: there remains a possibility that neither the CDS buyer nor the CDS issuer can meet their obligations.",
+  "Credit risk can be mitigated and managed but never fully eliminated, regardless of the protective mechanism used."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "68"
+  },
+  {
+   "chapter": 2,
+   "pages": "87-87"
+  },
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  },
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  },
+  {
+   "chapter": 31,
+   "pages": "566-566"
+  },
+  {
+   "chapter": 31,
+   "pages": "569-570"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 6
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 3,
+   "topic": "Managing Counterparty Credit Risk"
+  },
+  {
+   "file": "raw/ch02/chunk_003.json",
+   "idx": 4,
+   "topic": "Credit risk mitigation: collateral and credit-default swaps"
+  },
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 5,
+   "topic": "Mitigating forward credit risk: margin and OTC clearing"
+  },
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 9,
+   "topic": "Counterparty credit risk"
+  },
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 0,
+   "topic": "Counterparty Credit Risk Overview"
+  },
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 6,
+   "topic": "Methods to Protect Against Counterparty Credit Risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "core_idea",
+    "claim": "financial backstops (collateral, margin, CDS, or OTC clearing), while recognizing none of these fully eliminates the residual risk",
+    "reason": "Only the CDS source item (item 2) explicitly states residual risk remains despite the mitigant. Item 3 (margin/OTC clearing) describes OTC clearing as converting the forward's credit profile into that of a future via the exchange becoming the counterparty \u2014 it never states margin or clearing leave unmitigated residual risk. Generalizing 'not fully eliminated' to margin and OTC clearing specifically is a scope-broadening beyond what those source items say."
+   },
+   {
+    "field": "caveats",
+    "claim": "Credit risk can be mitigated and managed but never fully eliminated, regardless of the protective mechanism used.",
+    "reason": "Item 1's general statement ('mitigated... managed... but not eliminated') uses collateral/supervision only as examples, and only item 2 (CDS) explicitly asserts residual risk survives the mitigant. Extending this to 'regardless of the protective mechanism used' broadens the claim to cover netting, cross-default clauses, master netting agreements, margin, and OTC clearing, none of which have an explicit non-elimination caveat in their source items."
+   }
+  ],
+  "checked_at": "2026-08-22T23:41:10+00:00"
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Estimating Probability of Default",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Credit Risk",
+ "definition": "Methods used to estimate the probability that a given counterparty will default, given that direct observation is often impractical for trading portfolios.",
+ "core_idea": "Unlike consumer credit portfolios (e.g., credit cards) where enough defaults occur to observe rates directly or rely on published scores, trading counterparties default too rarely for direct observation, so PD is instead inferred from credit ratings or, for very large counterparties, from CDS market pricing.",
+ "key_points": [
+  "For large populations like credit card portfolios, default probabilities can be directly observed or sourced from published credit scores (e.g., FICO scores from Fair Isaac).",
+  "Trading portfolios typically have low default probabilities, making direct observation impractical.",
+  "Credit ratings are a common alternative method to estimate PD for trading counterparties.",
+  "The credit default swap (CDS) market can be used to estimate PD for large counterparties, but only those whose CDS products actually trade \u2014 limiting this method to entities like oil majors and large banks."
+ ],
+ "relationships": [
+  "CDS-market-implied PD estimation is an alternative to ratings-based PD estimation, applicable only to a narrower set of large counterparties."
+ ],
+ "trading_implications": [
+  "For most counterparties, firms must rely on published credit ratings rather than direct default observation or CDS pricing to gauge default risk."
+ ],
+ "caveats": [
+  "Assuming CDS-based PD estimation is broadly applicable; it only works for counterparties large enough to have a traded CDS market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "568-569"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 5,
+   "topic": "Estimating Probability of Default"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Temperature as the primary driver of short-term load variation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Weather-Driven Demand",
+ "definition": "Electricity demand rises in both cold winter conditions (heating) and hot summer conditions (air conditioning), making temperature the dominant explanator of day-to-day load swings.",
+ "core_idea": "Because heating and cooling are major uses of electricity, load has a U-shaped (or similar) relationship with temperature, and short-term temperature forecasts are therefore central inputs to electrical demand forecasting.",
+ "key_points": [
+  "As temperature falls in winter, electricity use for heating rises.",
+  "As temperature rises in summer, electricity use for air conditioning rises.",
+  "Temperature explains a large share of day-to-day variation in electricity demand.",
+  "This dependency is why short-term temperature forecasts are important to the power industry."
+ ],
+ "relationships": [
+  "Underlies monthly seasonality patterns",
+  "Motivates THI and WCI adjustments"
+ ],
+ "trading_implications": [
+  "Traders and forecasters rely heavily on short-term temperature forecasts because temperature swings translate directly into demand (and price) swings."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "394-395"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 2,
+   "topic": "Temperature as the primary driver of short-term load variation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

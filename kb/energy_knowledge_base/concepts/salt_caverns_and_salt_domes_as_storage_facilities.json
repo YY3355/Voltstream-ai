@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Salt caverns and salt domes as storage facilities",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Facility Types",
+ "definition": "Salt caverns are underground storage facilities created by dissolving out salt deposits, offering high-pressure tolerance, low leakage, and strong structural resistance compared to other storage types.",
+ "core_idea": "Salt caverns cost more to develop than depleted reservoirs but outperform them because their strong, low-leak walls tolerate much higher operating pressure, allowing gas to be cycled in and out more frequently \u2014 a major advantage for customers with erratic supply needs; the best sites are salt domes, geological formations up to several miles across and over a mile high, formed when a marine basin evaporated, was buried in sediment, and the lighter salt rose upward through it.",
+ "key_points": [
+  "Salt caverns are more expensive to develop than depleted reservoirs but have superior performance.",
+  "Very little gas leaks out; walls are extremely strong and damage-resistant.",
+  "Higher pressure tolerance allows more frequent injection/withdrawal cycling than other storage types.",
+  "Frequent cycling makes salt caverns well suited to customers with erratic (variable) supply demands.",
+  "Built by injecting water to dissolve a salt deposit, leaving a cavern behind (solution mining).",
+  "Salt domes \u2014 the best type of deposit for this purpose \u2014 can span several miles and exceed a mile in height, formed when an evaporated marine basin was covered in sediment and the lighter salt migrated upward into a dome shape."
+ ],
+ "relationships": [
+  "Best performer of the three facility types on pressure tolerance and cycling speed (contrast with depleted reservoirs and aquifers).",
+  "Connects to the maximum-pressure and withdrawal-speed concepts: their superior pressure tolerance is what drives faster withdrawal and more frequent cycling."
+ ],
+ "trading_implications": [
+  "High cycling capability makes salt cavern storage particularly valuable for strategies that need to respond to frequent, erratic price or demand swings, despite higher development cost."
+ ],
+ "caveats": [
+  "Assuming all salt deposits work equally well \u2014 the author specifically identifies salt domes as the best type of salt deposit for storage development."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "530-531"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 6,
+   "topic": "Salt caverns and salt domes as storage facilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

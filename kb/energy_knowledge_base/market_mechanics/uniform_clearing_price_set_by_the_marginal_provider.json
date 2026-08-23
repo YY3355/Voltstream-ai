@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Uniform clearing price set by the marginal provider",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Auction Mechanics",
+ "definition": "All generators selected to run in a deregulated power auction are paid the same price, equal to the bid price of the highest-priced generator that still cleared (the marginal provider) \u2014 not each generator's own bid.",
+ "core_idea": "Because every activated generator is paid the marginal provider's price, that single unit effectively sets revenue for the whole activated fleet, which is why identifying it is central to price forecasting.",
+ "key_points": [
+  "Generators submit bids and the lowest bidders are selected first to supply the grid",
+  "The ISO/RTO chooses the set of winning generators that minimizes total cost to the market",
+  "The marginal provider sits at the top of the dispatch stack"
+ ],
+ "relationships": [
+  "Depends on the dispatch stack ordering to identify the marginal unit"
+ ],
+ "trading_implications": [
+  "Predicting which plant will be marginal for a given demand level is the core method for predicting the market clearing price"
+ ],
+ "caveats": [
+  "This is not pay-as-bid pricing; every cleared generator receives the marginal provider's price, not its own submitted bid"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "406-409"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 3,
+   "topic": "Uniform clearing price set by the marginal provider"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

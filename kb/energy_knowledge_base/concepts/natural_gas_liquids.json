@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "natural gas liquids",
+ "type": "concept",
+ "n_merged": 2,
+ "definition": "Natural gas liquids (NGLs) are combustible hydrocarbons heavier than methane but lighter than naphtha/gasoline; they remain gaseous at standard temperature and pressure but liquefy more readily than methane than methane does. The five NGLs are ethane, propane, butane, iso-butane, and pentane.",
+ "core_idea": "NGLs occupy the hydrocarbon weight range between methane (natural gas) and naphtha/gasoline, comprising five named compounds, and are commonly produced as a byproduct of natural gas processing and shale fracking.",
+ "key_points": [
+  "NGLs are heavier than methane (natural gas) but light enough to remain gaseous at standard temperature and pressure.",
+  "NGLs are heavier than methane but lighter than naphtha/gasoline, and liquefy much more readily than methane.",
+  "The five NGLs are ethane (C2), propane (C3), butane (C4), iso-butane (IC4), and pentane (C5).",
+  "Liquefied petroleum gas (LPG) refers specifically to a mixture of the two heaviest common NGLs, propane and butane.",
+  "Pentanes mixed with slightly heavier hydrocarbons are called 'pentanes plus' or 'natural gasoline.'",
+  "NGLs are abundant in shale deposits and are a major byproduct of natural gas fracking."
+ ],
+ "relationships": [
+  "Crude oil production",
+  "Natural gas processing",
+  "Shale/fracking",
+  "NGLs sit between methane (natural gas) and naphtha/gasoline on the hydrocarbon weight spectrum"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "39-40"
+  },
+  {
+   "chapter": 9,
+   "pages": "275-276"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 5,
+   "topic": "Natural gas liquids (NGLs) defined"
+  },
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 0,
+   "topic": "Natural Gas Liquids (NGLs): definition and composition"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "core_idea",
+    "claim": "NGLs ... are commonly produced as a byproduct of natural gas processing and shale fracking",
+    "reason": "Sources only state NGLs are 'a major byproduct of natural gas fracking' and separately list 'Natural gas processing' as a related topic tag \u2014 no source states NGLs are a byproduct of natural gas processing itself. This is an invented bridging claim combining a bare relationship tag with an unrelated byproduct fact."
+   }
+  ],
+  "checked_at": "2026-08-22T23:53:59+00:00"
+ }
+}

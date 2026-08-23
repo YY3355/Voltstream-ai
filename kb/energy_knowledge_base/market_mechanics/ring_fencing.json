@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Ring Fencing",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Counterparty Credit Risk",
+ "definition": "Ring fencing is a legal/economic separation of a regulated utility from its unregulated parent or holding company, which turns the parent into effectively a shareholder rather than a direct owner of the utility's assets.",
+ "core_idea": "Once ring fenced, the parent can collect dividends and sell its ownership stake in the subsidiary, but cannot directly seize or sell the subsidiary's assets, and usually cannot force a dividend increase without the utility regulator's approval.",
+ "key_points": [
+  "The parent cannot directly access cash or assets inside the ring-fenced utility (e.g., cannot sell an unused generation plant owned by the utility to fund the parent's other businesses).",
+  "The parent is still entitled to normal dividends from the ring-fenced subsidiary and can sell its equity stake in it.",
+  "Increasing the dividend paid out of the regulated utility typically requires the utility regulator's approval.",
+  "The parent cannot liquidate the ring-fenced subsidiary's assets to pay off the parent's own debts."
+ ],
+ "relationships": [
+  "Contrasts with cross-guarantee structures (best case for credit) and with structural subordination"
+ ],
+ "trading_implications": [
+  "When trading with a ring-fenced regulated-utility counterparty, its parent's financial distress is less likely to directly drain the utility's assets, which can make the utility a comparatively safer counterparty than its parent."
+ ],
+ "caveats": [
+  "Assuming a parent company can freely tap a ring-fenced subsidiary's balance sheet in a crisis \u2014 the ring fence specifically blocks that."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "571-575"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_001.json",
+   "idx": 2,
+   "topic": "Ring Fencing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

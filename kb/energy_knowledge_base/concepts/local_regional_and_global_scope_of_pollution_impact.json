@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Local, regional, and global scope of pollution impact",
+ "type": "concept",
+ "category": "Environmental/Emissions",
+ "subcategory": "Pollution scale",
+ "definition": "Different pollutants matter at different geographic scales: greenhouse gases are a global, cumulative problem; acid rain is a regional problem that weakens with distance from its source; and directly toxic substances (heavy metals) are a local health hazard in any quantity.",
+ "core_idea": "A single power plant's CO2 or acid-rain-forming emissions are individually insignificant, but the combined output of many plants can become environmentally or medically significant, making these fundamentally aggregate/cumulative problems rather than single-source problems.",
+ "key_points": [
+  "CO2 from one plant is not significant on its own, but aggregate emissions from all power plants can be enough to affect global climate.",
+  "A small amount of acid rain is not dangerous (water is naturally slightly acidic), but unlike water, most acids don't evaporate, so they can accumulate regionally to harmful levels over time.",
+  "Acid rain intensity declines with distance from its source, making it a regional rather than global issue, but still a cumulative one when multiple plants contribute to the same region.",
+  "Heavy metals are treated differently: any amount released into the air is considered a health hazard, unlike CO2 or acid rain where small quantities are benign."
+ ],
+ "relationships": [
+  "Builds on the impurity-vs-reaction pollution distinction by adding a geographic/cumulative dimension to how each pollutant type causes harm."
+ ],
+ "trading_implications": [
+  "Explains why CO2 is addressed via global/aggregate mechanisms (e.g., cap-and-trade or carbon pricing) while SOx/NOx controls are often regional, and heavy metal emissions are subject to strict per-source limits regardless of volume."
+ ],
+ "caveats": [
+  "It's tempting to judge a pollutant's danger by a single source's output, but for CO2 and acid rain the danger only emerges in aggregate across many sources, not from any one plant in isolation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "283-284"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_000.json",
+   "idx": 2,
+   "topic": "Local, regional, and global scope of pollution impact"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

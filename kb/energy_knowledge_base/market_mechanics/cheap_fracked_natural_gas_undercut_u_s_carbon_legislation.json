@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Cheap fracked natural gas undercut U.S. carbon legislation",
+ "type": "market_mechanic",
+ "category": "Emissions Markets",
+ "subcategory": "Natural gas vs. coal",
+ "definition": "Because coal historically generated electricity far more cheaply than alternatives despite its pollution, it was the main target of emissions policy; the fracking boom made natural gas cheaper than coal, achieving much of that policy's goal without the legislation itself.",
+ "core_idea": "The rise of cheap fracked natural gas displaced coal economically, largely accomplishing U.S. carbon legislation's central aim (removing coal from the generation mix) at little or no cost to consumers, which in turn reduced political momentum for carbon legislation.",
+ "key_points": [
+  "Coal historically produced power far more cheaply than alternative fuels despite higher pollution.",
+  "Fracking made natural gas cheaper than coal, undercutting coal's cost advantage.",
+  "Since removing coal as a major generation fuel was emissions legislation's primary goal, market-driven gas-for-coal substitution achieved much of that goal without formal legislation.",
+  "This substitution is described as happening at little or no cost to consumers."
+ ],
+ "relationships": [
+  "Coal as a thinly-traded commodity",
+  "Cap and trade vs. carbon taxes"
+ ],
+ "trading_implications": [
+  "Natural gas prices relative to coal are a key driver of the generation fuel mix and, indirectly, of carbon policy momentum."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "39-39"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 4,
+   "topic": "Cheap fracked natural gas undercut U.S. carbon legislation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

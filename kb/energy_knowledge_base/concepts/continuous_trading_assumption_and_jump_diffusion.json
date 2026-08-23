@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Continuous trading assumption and jump diffusion",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Foundations",
+ "definition": "Option pricing models assume the underlying can always be traded continuously. Jump diffusion is the industry term for periods when a price jumps from one level to another without being tradable at any intermediate point.",
+ "core_idea": "Because trading requires both a willing buyer and seller, the assumption of continuous tradability can fail in energy markets \u2014 sometimes no counterparty exists at the location where a trade is wanted, so the price can jump across a gap with no intermediate trade occurring.",
+ "key_points": [
+  "Continuous tradability of the underlying is a core assumption behind option pricing models, and it can be a risky one",
+  "Trades require both a willing buyer and a willing seller at the same time and place",
+  "In energy markets it can be impossible to find a counterparty willing to trade at the exact location desired",
+  "Jump diffusion describes the case where price moves without a trade occurring at any intermediate price"
+ ],
+ "relationships": [
+  "Compounds the fat tail problem in energy markets"
+ ],
+ "trading_implications": [
+  "Locational/nodal power markets can see prices jump without a matching trade, which complicates hedge replication in illiquid nodes"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "355-356"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 2,
+   "topic": "Continuous trading assumption and jump diffusion"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

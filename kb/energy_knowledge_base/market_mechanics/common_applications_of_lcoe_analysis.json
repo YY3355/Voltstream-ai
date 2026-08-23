@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Common applications of LCOE analysis",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Applications",
+ "definition": "LCOE analysis is used across several commercial and regulatory contexts beyond raw long-term price forecasting.",
+ "core_idea": "Because LCOE captures the full annualized cost of building and running a generating asset, it serves as a comparable benchmark across technologies and as an input to price negotiations and market-clearing estimates.",
+ "key_points": [
+  "Negotiating power purchase agreement (PPA) prices",
+  "Developing fundamental (cost-based) price forecasts",
+  "Estimating capacity market clearing prices",
+  "Estimating future renewable energy certificate (REC) market prices",
+  "Comparing the overall cost-competitiveness of different generating technologies on a like-for-like basis (cost to build and operate over a typical life span and duty cycle)"
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "A trader or structurer can use technology-specific LCOE estimates to sanity-check PPA offers or capacity price bids"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 24,
+   "pages": "487"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 1,
+   "topic": "Common applications of LCOE analysis"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

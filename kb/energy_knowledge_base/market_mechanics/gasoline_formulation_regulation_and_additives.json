@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Gasoline formulation regulation and additives",
+ "type": "market_mechanic",
+ "category": "Oil",
+ "subcategory": "Gasoline",
+ "definition": "Gasoline formulation refers to the mix of additives that are mandated or prohibited by regulation, and it is a major driver of regional price and specification variation.",
+ "core_idea": "Governments regulate what must or must not be added to gasoline (e.g. mandated seasonal ethanol content, banned antiknock agents like lead, regulated pollutants like sulfur), and these formulation rules \u2014 along with octane level and local taxes \u2014 account for most of the regional variation in gasoline prices and specifications.",
+ "key_points": [
+  "Regulators can mandate additives, such as requiring 10 percent ethanol content during specific months of the year.",
+  "Regulators can also prohibit additives; lead was once used as an antiknock agent to raise octane but was banned after its exhaust pollution became a recognized health hazard.",
+  "Sulfur is another example of a regulated pollutant in gasoline formulation.",
+  "Octane level, formulation, and local taxes together account for most of the regional variation in gasoline prices.",
+  "Other, secondary factors affecting retail gasoline price include transportation costs and individual gas station marketing plans."
+ ],
+ "relationships": [
+  "Formulation regulation ties into the regional-market fragmentation of refined products discussed for crude vs. refined product markets"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "228-228"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 6,
+   "topic": "Gasoline formulation regulation and additives"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Seasonality of the natural gas forward curve",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Forward Curve",
+ "definition": "Natural gas forward prices are driven by seasonal expectations of supply and demand rather than by the current spot price and storage costs, producing a forward curve that is highly cyclical (high in winter, falling sharply in spring) rather than smoothly upward-sloping.",
+ "core_idea": "Because seasonal supply-demand patterns repeat similarly year to year, the gas forward curve tracks the seasonal shape of consumer demand instead of following the interest-rate/storage-cost-driven slope typical of other storable-commodity forward curves.",
+ "key_points": [
+  "Seasonal supply-demand expectations tend to repeat similarly from year to year.",
+  "Forward prices mirror consumer demand seasonality \u2014 high in winter, falling dramatically in spring.",
+  "This cyclical shape contrasts with markets where forward prices are set by interest rates and storage costs, which tend to produce a different relationship (referenced in the source as Figure 2.1.8)."
+ ],
+ "relationships": [
+  "Connects to time spreads (which trade this seasonal shape) and to the storable-commodity contrast"
+ ],
+ "trading_implications": [
+  "Time-spread traders can structure positions around the expected, recurring seasonal shape of the curve."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 9,
+   "topic": "Seasonality of the natural gas forward curve"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Consumer opposition to wind farms",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "The two most common objections to wind farms cited by the author are the risk they pose to migratory birds, since turbines are often sited on migration corridors with steady winds, and aesthetic objections to their visual impact on natural landscapes.",
+ "core_idea": "Wind farm siting choices that are optimal for wind resource (migration corridors with sustained wind) create environmental conflict (bird strikes) and separately draw aesthetic opposition, both of which are cited as social/regulatory friction for wind development.",
+ "key_points": [
+  "Wind turbines are often placed on migratory bird corridors because those areas have steady sustained winds, leading to bird deaths from blade strikes.",
+  "Environmental groups worry that widespread wind power adoption could significantly reduce wild bird populations.",
+  "A separate objection is purely aesthetic \u2014 opposition to wind farms altering scenic natural landscapes."
+ ],
+ "relationships": [
+  "Wind farm siting",
+  "Environmental/regulatory risk",
+  "Renewable project development"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "54"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 6,
+   "topic": "Consumer opposition to wind farms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

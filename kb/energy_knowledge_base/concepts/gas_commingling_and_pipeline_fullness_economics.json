@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Gas commingling and pipeline fullness economics",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Operations",
+ "definition": "Gas injected into a pipeline mixes with the gas already there and moves according to pressure gradients rather than as a discrete tracked parcel, so the molecules withdrawn at a delivery point are not literally the same molecules injected upstream; how well injected volumes can be matched by withdrawals elsewhere depends heavily on how full the pipeline already is.",
+ "core_idea": "Pipeline 'transportation' is really a displacement process: in a nearly full pipeline, injecting gas at one point and withdrawing roughly the same volume elsewhere can happen almost immediately, but in a nearly empty pipeline the injected gas spreads throughout the line and cannot practically be fully recovered at the intended delivery point.",
+ "key_points": [
+  "The rate gas flows depends on the pressure difference between two points; higher-pressure gas moves faster",
+  "In a multi-segment pipeline, gas injected at one point disperses across the system rather than traveling as a discrete unit to a specific exit",
+  "If the pipeline is already nearly full, simultaneous injection and withdrawal at different points can approximate near-instant transportation because the system is close to equilibrium",
+  "If the pipeline starts nearly empty, injected gas spreads throughout its length, making it practically impossible to withdraw the full injected quantity at the intended point",
+  "Pipeline operators therefore have a strong incentive to keep pipelines nearly full, though not at true maximum capacity (which would prevent further injection) and not at very low pressure either"
+ ],
+ "relationships": [
+  "Explains why pipeline operators need interruptible buyers/sellers to manage fullness"
+ ],
+ "trading_implications": [
+  "Gas nominated for delivery at a specific point is a claim on volume, not on specific molecules, which is part of why pipeline balancing and fullness management matter operationally"
+ ],
+ "caveats": [
+  "Assuming pipeline transportation moves a specific parcel of gas directly from injection point to withdrawal point, like cargo on a train"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "514-515"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 4,
+   "topic": "Gas commingling and pipeline fullness economics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

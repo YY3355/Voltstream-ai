@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Mid-merit generation units",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack",
+ "definition": "Mid-merit plants sit between baseload and peaking units in the generation stack, and are commonly the plants that actually end up setting the clearing price because they are frequently on the margin.",
+ "core_idea": "Mid-merit capacity is either older baseload-style plants no longer economical to run full-time, or efficient gas plants built to cycle more easily than baseload units, and unlike baseload (always bids low) or peaking (always bids high), mid-merit bidding behavior varies a lot since these units are usually the ones setting price.",
+ "key_points": [
+  "Mid-merit plants occupy the middle of the generation stack, between baseload and peaking.",
+  "Some are aging, less efficient former baseload plants that are no longer economic to run continuously; others are efficient natural gas plants designed to cycle more easily than baseload units.",
+  "These units are commonly the ones on the margin and show much greater bidding variability than baseload (consistently low bids) or peaking (consistently high bids) units.",
+  "Mid-merit generators bid into both day-ahead and real-time markets and are usually the group that sets the clearing price of power."
+ ],
+ "relationships": [
+  "baseload generation",
+  "peaking generation",
+  "marginal price setting"
+ ],
+ "trading_implications": [
+  "Because mid-merit units typically set the clearing price, understanding their cost structure and variable bidding behavior is central to forecasting power prices."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "412"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 3,
+   "topic": "Mid-merit generation units"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

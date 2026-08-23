@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Coal, cost, and the emissions markets' real target",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Fuel Mix / Policy Rationale",
+ "definition": "Emissions markets are, in practice, aimed primarily at coal-fired generation, because coal has historically been by far the cheapest way to generate electricity despite being the most polluting fuel.",
+ "core_idea": "Because coal is so much cheaper than alternatives, removing it entirely from the generation mix would sharply raise electricity prices, so emissions policy has to balance environmental goals against the risk of making power unaffordable.",
+ "key_points": [
+  "Coal historically generated electricity far more cheaply than alternative fuels, which is why it dominates the generation stack in many regions.",
+  "The author frames 'affordable power' as effectively synonymous with coal power, given coal's abundance (cited reserves in the US, former Soviet Union, China, and India) and low mining cost.",
+  "Completely removing coal from generation would cause a large increase in electricity prices; the stated goal of emissions markets is to manage the transition away from coal at a manageable cost rather than eliminate it abruptly.",
+  "A price increase on the order of 5-10x today's electricity prices is characterized as economically catastrophic \u2014 severe enough to risk tipping the economy into depression and killing political support for further reform."
+ ],
+ "relationships": [
+  "Explains why natural gas fracking (see related item) was able to achieve emissions-policy goals informally by displacing coal on cost grounds alone."
+ ],
+ "trading_implications": [
+  "Coal-to-gas switching economics are a direct driver of emissions-credit demand/supply and of power price levels."
+ ],
+ "caveats": [
+  "It would be a misunderstanding to think emissions markets aim to eliminate coal entirely quickly; the author frames the goal as managing the cost/pace of the shift away from coal, not eliminating it outright."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "263-264"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 2,
+   "topic": "Coal, cost, and the emissions markets' real target"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

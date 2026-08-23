@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Eastern (East Coast) natural gas market structure",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets - East Coast",
+ "definition": "A profile of the mid-Atlantic to New England natural gas market, characterized by year-round demand, thin storage, and historically elevated basis prices.",
+ "core_idea": "Because the East Coast burns gas for both heating and power generation and has limited storage, especially in New England, it has experienced the highest basis prices in the country, though nearby Appalachian shale supply has been compressing that premium outside the coldest months.",
+ "key_points": [
+  "Gas demand is year-round because it serves both residential heating and electricity generation, unlike winter-only-demand regions.",
+  "New England in particular has very cold winters combined with limited storage capacity.",
+  "Limited regional storage plus high winter heating-and-power demand has historically pushed East Coast basis prices to the highest levels in the U.S.",
+  "Large Appalachian shale gas production (West Virginia/Pennsylvania border) has sharply reduced regional prices in all but the coldest months.",
+  "The East Coast remains a heavy importer of Gulf Coast gas despite the growth in local Appalachian supply."
+ ],
+ "relationships": [
+  "Low storage capacity plus high seasonal demand concentration amplifies basis price spikes.",
+  "Growth of a nearby low-cost supply basin (Appalachia) compresses basis in an import-dependent region."
+ ],
+ "trading_implications": [
+  "Winter basis risk/premium in the East Coast is structurally higher than in storage-rich regions, given thin local storage.",
+  "The rise of Appalachian shale supply has been narrowing East Coast basis premiums except during extreme cold, changing the historical basis-trading picture."
+ ],
+ "caveats": [
+  "Assuming East Coast basis premiums remain as extreme as historically observed; local shale supply growth has been eroding that premium outside peak cold periods."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "165-166"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_006.json",
+   "idx": 1,
+   "topic": "Eastern (East Coast) natural gas market structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

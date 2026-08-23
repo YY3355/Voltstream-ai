@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "SR 11-7's Definition of a Model",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Model Risk / Regulatory Guidance",
+ "definition": "Per Federal Reserve SR 11-7, a model is a quantitative method or system that applies statistical, economic, financial, or mathematical techniques and assumptions to turn input data into quantitative estimates, built from three parts: an input component, a processing component, and a reporting component.",
+ "core_idea": "SR 11-7 gives a deliberately broad definition of 'model' so that virtually any quantitative decision-support tool \u2014 including ones with partly qualitative or judgment-based inputs \u2014 falls under model-risk governance as long as its output is quantitative.",
+ "key_points": [
+  "The input component supplies assumptions and data; the processing component transforms inputs into estimates; the reporting component turns estimates into usable business information.",
+  "The definition covers models used for business strategy, decision-making, risk identification/measurement, valuation, stress testing, capital adequacy assessment, client asset management, limit compliance, and regulatory reporting/disclosure.",
+  "Models with inputs that are partially or wholly qualitative or based on expert judgment still count as models under SR 11-7, provided the output itself is quantitative."
+ ],
+ "relationships": [
+  "Basis for the documentation and appropriate-use practices discussed later in the chapter"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "576-577"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 1,
+   "topic": "SR 11-7's Definition of a Model"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

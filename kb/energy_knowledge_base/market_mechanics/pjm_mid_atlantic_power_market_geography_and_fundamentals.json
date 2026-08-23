@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "PJM (Mid-Atlantic) power market geography and fundamentals",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regional Markets - PJM",
+ "definition": "PJM's service territory spans a geographically and climatically diverse part of the Mid-Atlantic, which produces different marginal fuels and demand patterns across its western and eastern halves.",
+ "core_idea": "In the western part of PJM, cheap native coal from Pennsylvania and West Virginia sets the marginal price of power, while gas-fired generation is the marginal price setter on the East Coast and in Virginia. Climate ranges from cold winters/hot summers in the north to milder winters and longer hot summers in the south.",
+ "key_points": [
+  "Western PJM's marginal fuel is coal, sourced locally from Pennsylvania and West Virginia.",
+  "Eastern PJM (East Coast, Virginia) relies on gas-fired plants as the marginal price setter.",
+  "Climate varies north-to-south: the north sees cold winters and hot summers; the south has milder winters and extended hot summers.",
+  "Many power plants sit in sparsely populated parts of the PJM footprint and export power into denser, higher-demand areas.",
+  "This generation-to-load geography routinely creates congestion on the transmission lines linking rural generation areas to population centers."
+ ],
+ "relationships": [
+  "Generation-load geographic mismatch drives transmission congestion, a recurring theme across US ISOs (see MISO, ERCOT)."
+ ],
+ "trading_implications": [
+  "Coal prices are a leading indicator for western PJM power prices; gas prices matter more for eastern/Virginia nodes.",
+  "Congestion between exporting rural generation zones and importing population centers creates locational basis risk."
+ ],
+ "caveats": [
+  "Assuming a single marginal fuel applies uniformly across all of PJM, when in practice it differs materially between the western (coal) and eastern (gas) sub-regions."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "207-208"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_007.json",
+   "idx": 0,
+   "topic": "PJM (Mid-Atlantic) power market geography and fundamentals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

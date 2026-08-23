@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Option bid/ask spreads are wide relative to premium and scale with liquidity",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Options \u2014 Market Structure",
+ "definition": "Options trade with a bid/ask spread like other financial products, but the spread is typically large relative to the size of the premium itself. Spread width is generally proportional to how easily the market maker can offset the trade: tight spreads where buyers and sellers are easily matched for a low-risk profit, wide spreads where the market maker may be stuck holding the option until expiration.",
+ "core_idea": "Because option market makers must price in the risk of being unable to offset a position, the bid/ask spread reflects how liquid that specific contract is, and can be very large relative to the premium in illiquid options.",
+ "key_points": [
+  "The fair price for an option sits somewhere between the bid and ask.",
+  "Liquid, easily-matched options have tight spreads because the market maker can lay off risk for a low-risk profit.",
+  "Illiquid options can have very wide spreads because the market maker may need to hold the position to expiration.",
+  "Worked example: an illiquid option with a fair value around $6 might show a $2 bid and a $10 ask.",
+  "Becoming an option market maker mainly requires enough capital to cover losses; the downside is always trading against informed investors.",
+  "Because of spread size, buying and selling options in most speculative strategies is described as a losing proposition."
+ ],
+ "relationships": [
+  "Reinforces why outright speculative option buying/selling underperforms, alongside the buyer/seller payoff-shape item"
+ ],
+ "trading_implications": [
+  "Spread cost is a material drag on speculative option trading strategies, particularly in illiquid contracts, and should be weighed alongside the underlying directional or volatility view."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "332"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 7,
+   "topic": "Option bid/ask spreads are wide relative to premium and scale with liquidity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

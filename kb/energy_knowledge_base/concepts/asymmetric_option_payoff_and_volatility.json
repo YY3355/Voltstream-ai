@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Asymmetric option payoff and volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Because an option's payoff is asymmetric (limited downside for the buyer, unlimited upside), option value is closely tied to the volatility of the underlying asset rather than to its expected direction.",
+ "core_idea": "A large price move that is equally likely to go up or down still benefits the option buyer more than the seller, because the buyer's losses are capped at the premium paid while gains are not capped. This means option buyers benefit from volatility/large moves, while option sellers benefit from price stability.",
+ "key_points": [
+  "Option payoffs are asymmetric: buyer's downside is limited to the cost of the option, upside is theoretically unlimited.",
+  "Even a 50/50 chance up-or-down price move favors the option buyer over the seller due to this asymmetry.",
+  "Option buyers benefit from large price moves (high volatility); option sellers benefit from price stability (low volatility)."
+ ],
+ "relationships": [
+  "Volatility of the underlying is a central driver of option value due to payoff asymmetry."
+ ],
+ "trading_implications": [
+  "An option buyer's edge increases with underlying volatility regardless of direction.",
+  "An option seller (writer) is effectively exposed to volatility risk and benefits when prices stay stable."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "346"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 1,
+   "topic": "Asymmetric option payoff and volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

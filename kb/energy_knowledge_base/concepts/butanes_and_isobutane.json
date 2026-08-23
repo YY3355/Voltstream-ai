@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Butanes and isobutane",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "Most butane is blended with either propane (forming LPG) or gasoline; isobutane is a less-common variant used mainly to raise gasoline octane.",
+ "core_idea": "Because isobutane is less common than normal butane but has a specific octane-boosting use, it's slightly more valuable, so normal butane is often converted into isobutane to meet that demand.",
+ "key_points": [
+  "Normal butane blended with propane = liquid petroleum gas (LPG).",
+  "Normal butane is also blended into gasoline.",
+  "Isobutane primarily raises gasoline octane and is less common/more valuable than normal butane.",
+  "Normal butane is often converted into isobutane."
+ ],
+ "relationships": [
+  "Butane blended with propane forms LPG"
+ ],
+ "trading_implications": [
+  "Isobutane's scarcity relative to normal butane supports a value premium, incentivizing butane-to-isobutane conversion."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "277-278"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 7,
+   "topic": "Butanes and isobutane"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

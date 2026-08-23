@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Natural gas value chain and market participants",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "The natural gas business is divided into distinct physical roles from extraction to final delivery, plus a separate financial/trading function.",
+ "core_idea": "Natural gas moves through exploration, drilling/extraction, processing, transport (pipeline or tanker), storage, and local distribution, with most physical companies specializing in only one or two of these stages; trading itself is a distinct function handled by natural gas marketers.",
+ "key_points": [
+  "Exploration companies locate underground natural gas reserves",
+  "Drilling companies extract gas and move it to processing facilities",
+  "Processing plants remove impurities and separate the raw gas into component hydrocarbons, yielding dry gas (methane)",
+  "Dry gas is transported to consuming regions via interstate pipeline or tanker ship, then stored until needed",
+  "Local distribution pipelines make final delivery to the end consumer",
+  "Most physical-side companies specialize narrowly because each stage is technically complex",
+  "The skills required for physical natural gas operations differ substantially from those needed to trade/speculate on the financial commodity, so trading is handled by natural gas marketers"
+ ],
+ "relationships": [
+  "Physical value-chain specialization is distinct from and does not overlap with financial trading expertise"
+ ],
+ "trading_implications": [
+  "Natural gas marketers, not upstream/midstream physical operators, are the relevant counterparties/participants for financial trading and speculation in natural gas"
+ ],
+ "caveats": [
+  "Assuming the same companies that extract, process, or transport natural gas are also the primary financial traders of the commodity"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "135-136"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 7,
+   "topic": "Natural gas value chain and market participants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

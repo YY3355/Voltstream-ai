@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Pipeline pressure mechanics and the continuous-flow requirement",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Operations",
+ "definition": "Natural gas moves through a pipeline because compressors create a high-pressure zone at the injection end and a low-pressure (suction) zone at the withdrawal end; gas flows from high to low pressure, and if pressure equalizes along the pipe, flow stops and can take a long time to restart.",
+ "core_idea": "A pipeline is fundamentally a pressure-differential machine - compressors at the start push and compressors/suction at the end pull - and this differential must be maintained continuously or the system stalls.",
+ "key_points": [
+  "A compressor at the pipe's start creates high pressure (like a fan); a compressor at the end creates a low-pressure suction zone.",
+  "Gas is drawn along the pipe by the pressure differential between injection and withdrawal points.",
+  "If the pipeline's pressure fully equalizes, flow stops and restarting can take a long time.",
+  "If discharge-end pressure exceeded well-head pressure, gas would flow backward into the well - so pressure ratios must be maintained end to end.",
+  "Practically, this means gas must be continually injected on one side and continually removed on the other for the pipeline to keep operating."
+ ],
+ "relationships": [
+  "Underlies why pipelines 'can't shut down' (see continuous-operation/insurance concept) and why nominations/scheduling matter operationally."
+ ],
+ "trading_implications": [
+  "Operational inflexibility (inability to easily stop/restart) is a structural feature that can create value for parties who can smooth injections/withdrawals, e.g., via storage."
+ ],
+ "caveats": [
+  "That a pipeline can be paused and resumed like a valve with no consequence - the source states re-pressurizing after equalization can take a long time."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "507-509"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_000.json",
+   "idx": 2,
+   "topic": "Pipeline pressure mechanics and the continuous-flow requirement"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

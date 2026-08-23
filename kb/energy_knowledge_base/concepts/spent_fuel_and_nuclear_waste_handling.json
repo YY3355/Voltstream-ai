@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Spent fuel and nuclear waste handling",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "After use, reactor fuel, control rods, and cooling water remain radioactive (still undergoing fission, just much more slowly), and used fuel may be reprocessed to recover unused U-235 before the remaining waste must be disposed of.",
+ "core_idea": "Toxic/radioactive waste can either be diluted across a wide area or concentrated into a smaller volume; because most jurisdictions restrict release of toxic substances into the environment, dilution is generally not viable, so nuclear waste ends up concentrated and stored in dedicated facilities.",
+ "key_points": [
+  "Spent fuel, control rods, and cooling water are all radioactive after reactor use, continuing fission at a much slower rate.",
+  "Used fuel may be reprocessed to remove remaining usable U-235.",
+  "Toxic waste in general has two disposal strategies: dilute over a wide area, or concentrate into a smaller, more toxic volume.",
+  "Regulatory limits on releasing toxic substances into the biosphere generally rule out dilution as a viable approach.",
+  "As a result, nuclear waste is concentrated and placed in storage facilities intended to be far from populated areas."
+ ],
+ "relationships": [
+  "This waste-concentration outcome connects directly to the later point that concentrated nuclear waste is a distinct, immediate health hazard compared to diffuse fossil-fuel pollution."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Diluting nuclear waste is not treated as a real regulatory option \u2014 the author frames concentration/storage as effectively the only path given release limits."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "473-474"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 2,
+   "topic": "Spent fuel and nuclear waste handling"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

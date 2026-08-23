@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Power purchase agreements (PPAs)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Renewable Procurement",
+ "definition": "Contracts in regulated markets where a regulated utility agrees to buy power from a third-party generator, used to secure a sufficient supply of renewable power.",
+ "core_idea": "PPAs let a regulated utility lock in renewable supply from third-party generators, functioning as one of the tools (alongside ancillary services and capacity markets) grids use to secure adequate generation resources.",
+ "key_points": [
+  "PPAs are described in the context of regulated markets, where the regulated utility signs directly with third-party generators.",
+  "Their stated purpose in this text is specifically to secure renewable power supply."
+ ],
+ "relationships": [
+  "Grouped with ancillary services and capacity markets as demand/supply-adequacy tools."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "494"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 7,
+   "topic": "Power purchase agreements (PPAs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

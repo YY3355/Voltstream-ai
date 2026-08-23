@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Where NGLs come from and LPG definition",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "NGLs are commonly dissolved within crude oil or natural gas and are separated out at natural-gas-processing plants (from gas) or at refineries (from crude oil).",
+ "core_idea": "Liquefied petroleum gas (LPG) is a specific term for a mixture of the two heaviest common NGLs, propane and butane.",
+ "key_points": [
+  "NGLs are abundant in shale deposits developed via fracking.",
+  "Separation occurs at gas-processing plants (from natural gas) or refineries (from crude oil).",
+  "LPG = a propane/butane mixture, a subset term within the broader NGL category."
+ ],
+ "relationships": [
+  "LPG is a specific propane+butane blend within the broader NGL family"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "LPG is not synonymous with all NGLs \u2014 it specifically refers to the propane/butane mix."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "276"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 2,
+   "topic": "Where NGLs come from and LPG definition"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

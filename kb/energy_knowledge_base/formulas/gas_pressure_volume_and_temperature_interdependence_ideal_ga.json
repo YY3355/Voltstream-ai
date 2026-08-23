@@ -1,0 +1,66 @@
+{
+ "canonical_topic": "Gas Pressure, Volume, and Temperature Interdependence (Ideal Gas Law)",
+ "type": "formula",
+ "category": "Natural Gas",
+ "subcategory": "Gas Physics",
+ "definition": "Unlike solids or liquids, a gas's volume changes readily with outside conditions, and its pressure, volume, and temperature are mutually interdependent \u2014 none can change without affecting the others. The ideal gas law gives an approximate, layman-level description of this relationship for gases whose molecular collisions are treated as perfectly elastic.",
+ "core_idea": "Gas moves from high-pressure to low-pressure areas until pressure equalizes (the mechanism behind both straws and pipelines), and compressing a gas raises its temperature while letting it expand lowers its temperature. The ideal gas law formalizes how pressure, volume, and temperature move together, e.g., at constant volume, a temperature rise forces a pressure rise.",
+ "key_points": [
+  "Gas expands to fill its container unless constrained, and flows from high-pressure to low-pressure regions until equalized; a larger pressure differential moves gas faster.",
+  "Compressing a gas raises its temperature; letting it disperse or expand lowers its temperature.",
+  "Cooling a gas below the boiling point of any trace component can cause that component to condense into liquid \u2014 relevant since fuel gases like methane are rarely pure and carry trace gases.",
+  "Holding volume constant, raising a gas's temperature forces its pressure to rise, and vice versa, since the ideal gas law is an equality.",
+  "The ideal gas law is presented as a reasonable, layman-level approximation, not an exact model \u2014 it assumes perfectly elastic molecular collisions.",
+  "General relationships noted: gas in a contained area gets hotter as its pressure increases (and cooler as pressure decreases); cooling a gas lets more of it fit in the same volume at constant pressure."
+ ],
+ "relationships": [
+  "Explains why pipeline compressors change both pressure and temperature simultaneously",
+  "Explains liquid dropout risk in pipelines and gas processing"
+ ],
+ "trading_implications": [
+  "Trace-gas condensation risk ties gas composition/quality to pipeline operability, relevant to quality specifications embedded in physical gas transport contracts."
+ ],
+ "caveats": [
+  "Pressure, volume, and temperature cannot be treated independently \u2014 changing one always affects the others under the ideal gas law."
+ ],
+ "formulas": [
+  {
+   "name": "Ideal Gas Law",
+   "formula": "PV = nRT",
+   "variables": {
+    "P": "pressure",
+    "V": "volume",
+    "n": "amount of gas (moles)",
+    "R": "ideal gas constant",
+    "T": "temperature"
+   },
+   "source": {
+    "chapter": 11,
+    "pages": "295-296",
+    "section_hint": "3.2 Physical Properties \u2014 Physics of Gas"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "295-296"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_001.json",
+   "idx": 2,
+   "topic": "Gas Pressure, Volume, and Temperature Interdependence (Ideal Gas Law)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

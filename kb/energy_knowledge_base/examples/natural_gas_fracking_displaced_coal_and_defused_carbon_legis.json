@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Natural gas fracking displaced coal and defused carbon legislation",
+ "type": "example",
+ "category": "Emissions Markets",
+ "subcategory": "Fuel Mix / Policy Outcome",
+ "definition": "The drop in natural gas prices from fracking made efficient gas-fired generation cheap enough to displace many coal generators on pure economics, achieving much of what carbon legislation intended without the legislation itself passing.",
+ "core_idea": "Market-driven fuel switching (cheap gas out-competing coal) accomplished a large share of the emissions-reduction goal that formal cap and trade or carbon legislation was designed to achieve, effectively substituting for policy in the US.",
+ "key_points": [
+  "Fracking substantially lowered natural gas costs, enabling gas generation to displace less efficient coal units.",
+  "Since removing coal from the generation stack was the primary underlying goal of emissions legislation, this displacement achieved much of that goal 'for free' \u2014 without a carbon law being enacted.",
+  "The author states this development 'largely derailed' formal carbon legislation efforts in the United States, since the market solved much of the problem on its own."
+ ],
+ "relationships": [
+  "Follows directly from coal's cost advantage being the core reason coal is hard to displace by policy alone."
+ ],
+ "trading_implications": [
+  "Natural gas price declines can substitute for emissions-policy tightening as a driver of coal retirements and emissions-credit demand."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "263-264"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 3,
+   "topic": "Natural gas fracking displaced coal and defused carbon legislation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

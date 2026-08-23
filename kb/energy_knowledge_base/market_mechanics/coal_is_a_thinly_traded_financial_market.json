@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Coal is a thinly traded financial market",
+ "type": "market_mechanic",
+ "category": "Coal",
+ "subcategory": "Market Structure",
+ "definition": "Because coal is low-value relative to its weight, transportation cost dominates its delivered price, which confines most coal trade to a couple hundred miles between mine and power plant and limits the number of market participants.",
+ "core_idea": "Coal's economics push mines and power plants to co-locate, which shrinks the pool of open-market buyers and sellers and makes coal far less actively traded as a financial commodity than oil or natural gas.",
+ "key_points": [
+  "Transportation makes up a much higher share of coal's delivered cost than it does for other fossil fuels, because the underlying commodity price is low.",
+  "Most coal is consumed within roughly a couple hundred miles of where it is mined.",
+  "Coal mines and coal-fired power plants are frequently located near each other.",
+  "As a result, relatively few parties buy or sell coal on the open market, and coal is not a heavily traded financial product."
+ ],
+ "relationships": [
+  "Contrasts with oil and natural gas, which support more active, geographically dispersed financial trading markets."
+ ],
+ "trading_implications": [
+  "Limited liquidity and few open-market participants mean coal offers fewer opportunities for financial trading compared to oil or natural gas.",
+  "Coal transactions are more likely to be structured around long-term physical supply arrangements between a specific mine and plant than through open-market trading."
+ ],
+ "caveats": [
+  "Coal being cheap per unit does not mean it is cheap to trade or transport long distances \u2014 transportation cost is proportionally large precisely because the base commodity price is low."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "247-247"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 2,
+   "topic": "Coal is a thinly traded financial market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

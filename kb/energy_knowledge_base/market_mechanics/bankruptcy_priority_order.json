@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Bankruptcy Priority Order",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Credit Risk",
+ "definition": "The order in which different classes of creditors are repaid when a company goes bankrupt.",
+ "core_idea": "Trading counterparty claims are typically unsecured debt and sit low in the bankruptcy repayment priority, which materially affects how much of a credit exposure is actually recoverable.",
+ "key_points": [
+  "Priority order: employees owed wages are paid first.",
+  "Next, unpaid taxes are paid.",
+  "Next, senior debt holders (typically bondholders) are paid.",
+  "Next, trading partners as unsecured debt holders are paid.",
+  "Stockholders have the lowest priority of repayment."
+ ],
+ "relationships": [
+  "Low priority position of unsecured trading debt explains why recovery rates are only around 40%."
+ ],
+ "trading_implications": [
+  "Traders should recognize that most of their contractual exposure is unsecured and low-priority, reinforcing the need for collateral or netting to improve recovery position."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "567-568"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 2,
+   "topic": "Bankruptcy Priority Order"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

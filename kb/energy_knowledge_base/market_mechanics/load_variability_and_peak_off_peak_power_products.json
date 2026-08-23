@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Load variability and peak/off-peak power products",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Product Definitions",
+ "definition": "Electrical demand shifts constantly and cyclically by season, day of week, and time of day, so power is traded as many distinct products (defined by location, time period, and hours) rather than a single commodity, using a shorthand of days\u00d7hours.",
+ "core_idea": "Because demand changes minute-to-minute and follows daily/weekly/seasonal cycles, and electricity cannot be stored, power is split into many differentiated products described by a weekdays\u00d7hours shorthand (e.g., peak vs. off-peak).",
+ "key_points": [
+  "Demand changes constantly (every device switched on/off shifts load) and must be balanced in real time since power can't be stored.",
+  "Power usage is cyclical by season, day of week, and time of day \u2014 e.g., daytime power differs from nighttime power, and August power differs from January power.",
+  "This cyclicality means there isn't one electricity product but hundreds, differentiated by location, month/season, and time of day.",
+  "Peak hours are typically daytime, roughly 7 a.m. to 11 p.m.; off-peak hours are nighttime.",
+  "Products are described in weekdays\u00d7hours shorthand: 7x24 = all week, all hours; peak power is 5x16 (weekdays only) or 7x16 (including weekends).",
+  "If weekends are excluded from a 5x16 peak product, a separate 2x16 product covers weekend peak hours.",
+  "Off-peak is typically 7x8, or an 'off-peak wrap' combining the 2x16 weekend-peak hours with 7x8 nighttime hours.",
+  "Exact peak/off-peak hour definitions vary slightly by region."
+ ],
+ "relationships": [
+  "2x16 + 7x8 = the off-peak wrap product.",
+  "5x16 (weekday peak) + 2x16 (weekend peak) covers the same hours as 7x16."
+ ],
+ "trading_implications": [
+  "Traders must specify which of the many location/time-of-day/hour products they mean; peak and off-peak (and weekday vs. weekend peak) trade as genuinely separate products with separate prices."
+ ],
+ "caveats": [
+  "There is no single 'price of electricity' for a region \u2014 peak, off-peak, weekend-peak, and seasonal variants are distinct products, and regional definitions of peak/off-peak hours are not standardized nationally."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "28"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 3,
+   "topic": "Load variability and peak/off-peak power products"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

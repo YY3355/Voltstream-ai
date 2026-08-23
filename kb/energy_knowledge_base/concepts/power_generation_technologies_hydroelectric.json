@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Power generation technologies: hydroelectric",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Generation Technology",
+ "definition": "Overview of hydroelectric power generation and its operational constraints.",
+ "core_idea": "Hydroelectric dams use flowing water directly to spin a turbine (no steam involved), trapping a river behind a dam to form a lake; the fall of water from lake level down to the river below drives the turbine, and in some cases operators cannot fully halt water flow without risking flooding downstream communities.",
+ "key_points": [
+  "Hydroelectric generation drives a turbine directly with flowing water rather than using steam",
+  "Dams typically trap river water to form a lake, with the river located several hundred feet below the lake level",
+  "Falling water through the dam spins a water-based turbine to generate electricity",
+  "Depending on river flow and lake capacity, operators may not be able to stop water flow without flooding nearby communities"
+ ],
+ "relationships": [
+  "Power generation technologies: fossil fuel plants",
+  "Power generation technologies: nuclear"
+ ],
+ "trading_implications": [
+  "Operational flow constraints mean hydro output cannot always be freely dispatched down, which affects supply flexibility"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "185-186"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 8,
+   "topic": "Power generation technologies: hydroelectric"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

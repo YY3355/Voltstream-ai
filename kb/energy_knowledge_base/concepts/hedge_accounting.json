@@ -1,0 +1,91 @@
+{
+ "canonical_topic": "hedge accounting",
+ "type": "concept",
+ "n_merged": 4,
+ "definition": "An accounting methodology that lets a hedger avoid the daily mark-to-market treatment that would otherwise apply to a hedge (typically a derivative, e.g. futures or swaps) when the hedged item is valued under a different accounting basis (e.g. a physical/nontradable asset such as an oil well's future production), reporting the hedge and the hedged item's value together instead \u2014 but only if the hedge passes defined effectiveness tests, not automatically.",
+ "core_idea": "Hedges often pair a mark-to-market financial instrument with a differently-valued, nontradable hedged item; hedge accounting removes the resulting reporting mismatch/volatility, conditional on the hedge passing prospective and retrospective effectiveness tests documented in advance.",
+ "key_points": [
+  "Arises because a hedge (e.g. a derivative like futures or swaps) and its hedged item (e.g. a physical/nontradable asset, such as an oil well's future production) are typically valued under different accounting bases by default.",
+  "Without hedge accounting, this valuation mismatch can create reported accounting volatility even when the economic exposure is fully offset.",
+  "Hedge accounting lets the hedger avoid mark-to-market treatment of the hedged item specifically \u2014 this is not automatic, only available if qualifying 'hedge effectiveness tests' are passed.",
+  "To qualify, the hedge must be proven effective via a pre-defined testing plan created before the hedge is entered; the plan must state the hedge's objective, the test frequency, and an objective standard for what counts as 'highly effective'.",
+  "Prospective testing is the initial documentation/analysis (usually based on historical data) supporting that the hedge and hedged item will move closely together in the future.",
+  "Retrospective testing is ongoing testing performed after the hedge is in place to verify it has actually been effective, typically since the hedge began, usually done each time financial statements are published (commonly quarterly).",
+  "If a hedger has multiple hedges, all must be tested using the same methodology.",
+  "There is no single mandated statistical test for effectiveness, though there are commonly accepted standards for regression-based effectiveness testing.",
+  "A Hedge Designation Memo is the document describing the hedging relationship, its rationale, and the methodology for prospective and retrospective testing, prepared to support hedge accounting treatment.",
+  "The rules are described as generally beneficial to the hedger, conditional on passing the required effectiveness tests."
+ ],
+ "relationships": [
+  "Extends Hedging",
+  "Relates to Mark-to-Market Accounting and Historical Cost Accounting",
+  "Depends on prospective and retrospective testing to qualify",
+  "Retrospective testing commonly uses linear regression",
+  "Hedge Designation Memo, Mark-to-Market Accounting, Prospective Testing, and Retrospective Testing are related terms describing parts of the same Hedge Accounting framework"
+ ],
+ "trading_implications": [
+  "Whether a hedge qualifies for hedge accounting treatment affects how much P&L volatility shows up on the books, even when the underlying economics are unchanged.",
+  "Failing hedge effectiveness tests forces mark-to-market treatment of the hedge without matching treatment of the hedged item, creating reported earnings volatility.",
+  "Companies that want to avoid earnings volatility from derivative hedges have an accounting incentive to qualify for hedge accounting, which shapes how hedges are documented and structured."
+ ],
+ "caveats": [
+  "There is no single mandated statistical test for hedge effectiveness \u2014 only commonly accepted standards (e.g. regression-based testing), which introduces judgment into qualification.",
+  "The characterization of these rules as 'generally beneficial to the hedger' is the source author's framing, conditional on passing the required tests, not an unconditional guarantee."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "70"
+  },
+  {
+   "chapter": 33,
+   "pages": "591-592"
+  },
+  {
+   "chapter": 33,
+   "pages": "596-597"
+  },
+  {
+   "chapter": 33,
+   "pages": "596-597"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 4
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 9,
+   "topic": "Hedge Accounting"
+  },
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 1,
+   "topic": "Hedge accounting"
+  },
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 3,
+   "topic": "Hedge Accounting"
+  },
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 4,
+   "topic": "Hedge Accounting Common Terms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "caveats",
+    "claim": "...which introduces judgment into qualification.",
+    "reason": "Source item 3 (kp7) only states there is no single mandated statistical test but commonly accepted standards exist for regression-based testing; it never characterizes this as 'introducing judgment into qualification.' This is an inference/elaboration added during merging, not present in any source item."
+   }
+  ],
+  "checked_at": "2026-08-22T23:49:55+00:00"
+ }
+}

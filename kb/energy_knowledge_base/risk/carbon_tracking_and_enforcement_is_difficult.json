@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Carbon tracking and enforcement is difficult",
+ "type": "risk",
+ "category": "Emissions Markets",
+ "subcategory": "Cap and trade design",
+ "definition": "Carbon dioxide is produced and absorbed by an enormous range of everyday activities, from breathing to gardening, making it impractical for governments to monitor, license, or credit all CO2-related activity.",
+ "core_idea": "Because CO2 sources and sinks are diffuse and pervasive, comprehensive monitoring and enforcement of carbon markets is fundamentally hard, which undermines cap-and-trade's effectiveness.",
+ "key_points": [
+  "Countless activities produce CO2 (e.g., breathing, burning fuel) and countless others remove it (e.g., planting, carbon storage injection).",
+  "It is not feasible for governments to monitor or issue licenses/credits for all of these activities.",
+  "This measurement gap is presented as a core enforcement problem for carbon markets."
+ ],
+ "relationships": [
+  "Cap and trade vs. carbon taxes"
+ ],
+ "trading_implications": [
+  "Enforcement gaps create risk around the credibility and integrity of carbon credits/licenses traded in these markets."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "39-39"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 3,
+   "topic": "Carbon tracking and enforcement is difficult"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

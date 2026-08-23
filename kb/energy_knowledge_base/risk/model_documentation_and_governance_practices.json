@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Model Documentation and Governance Practices",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Model Risk Mitigation",
+ "definition": "A set of governance practices \u2014 maintaining a model inventory, assigning unique IDs and named owners, and requiring documentation plus senior approval \u2014 meant to make model risk manageable and accountable.",
+ "core_idea": "Managing model risk starts with organizational discipline: knowing what models exist, documenting them to a minimum standard, and giving each one a clear owner and a formal, senior-level approval process rather than informal adoption.",
+ "key_points": [
+  "Keep an up-to-date inventory of every model used in the firm, updated whenever a model is put into use or retired.",
+  "Assign each model a unique ID so there is no confusion about which model is which when it breaks or needs maintenance.",
+  "Require every model to meet a minimum documentation standard and be approved by an appropriate party before it is used.",
+  "Assign a named model owner responsible for maintaining the model and confirming, at least annually, that the model is still in use.",
+  "Having a senior person at the firm review each model, in consultation with quantitative staff, is materially stronger governance than informal or undocumented adoption of a model."
+ ],
+ "relationships": [
+  "Operationalizes the reduction of model risk described earlier; pairs with 'using models appropriately'"
+ ],
+ "trading_implications": [
+  "A trading desk relying on a model that lacks a named owner, documentation, or formal approval is itself carrying an elevated, avoidable risk."
+ ],
+ "caveats": [
+  "The author explicitly contrasts an informally adopted model ('a summer intern said it was OK') with one formally reviewed and compared to alternatives by senior/quant staff \u2014 informal usage history is not a substitute for governance."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "578-580"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 4,
+   "topic": "Model Documentation and Governance Practices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

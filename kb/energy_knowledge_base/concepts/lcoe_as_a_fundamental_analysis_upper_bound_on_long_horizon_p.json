@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "LCOE as a fundamental-analysis upper bound on long-horizon power prices",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Fundamental Analysis / Price Forecasting",
+ "definition": "Levelized cost of entry (LCOE) is the break-even price a developer needs to justify building a new generating unit; it is used to estimate an equilibrium ceiling for electricity prices over very long forecast horizons.",
+ "core_idea": "If market prices rise above LCOE, new generation becomes economic to build, and the resulting supply increase pushes prices back down, so LCOE functions as a supply-and-demand-based upper bound in long-term fundamental price forecasts.",
+ "key_points": [
+  "Applies specifically to very long time horizons, not short-term price forecasting",
+  "Relies on a supply/demand feedback argument: price above LCOE incentivizes new build, which adds supply and caps price",
+  "In periods of continuously rising demand, new generation must be built, and its costs effectively set the market price",
+  "Calculated by spreading the cost of building a unit over its expected life, then dividing by expected generation volume to get a price per unit of output"
+ ],
+ "relationships": [
+  "Mathematically similar to annuity calculations used in finance/MBA coursework"
+ ],
+ "trading_implications": [
+  "Provides a long-horizon ceiling estimate useful for fundamental price forecasts",
+  "Used as a benchmark in PPA price negotiation and capacity market price estimation"
+ ],
+ "caveats": [
+  "LCOE is an approximation, not a precise price prediction \u2014 actual investment decisions are also shaped by project-specific technological and regional factors"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 24,
+   "pages": "486-487"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch24/chunk_000.json",
+   "idx": 0,
+   "topic": "LCOE as a fundamental-analysis upper bound on long-horizon power prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

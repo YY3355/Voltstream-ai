@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Secondary electricity markets overview",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "A set of markets that grew up around the core electricity market to handle problems the spot/forward energy market doesn't solve on its own.",
+ "core_idea": "Ancillary services, capacity markets, and PPAs exist to help grids reliably match uncertain, spiky consumer demand to generation; FTRs exist to let traders hedge congestion risk; RECs exist to let renewable generators monetize the environmental attribute of their output separately from the energy itself.",
+ "key_points": [
+  "Ancillary services, capacity markets, and PPAs are grouped together because they all address reliable delivery given uncertain demand.",
+  "FTRs are grouped separately because they address transmission congestion risk, not generation adequacy.",
+  "RECs are grouped separately again because they address renewable-attribute tracking/income, not reliability or congestion.",
+  "Consumer demand can swing 2-3x between peak events (heat waves, cold snaps) and normal periods, which is the root problem these markets respond to."
+ ],
+ "relationships": [
+  "Underpins ancillary services, capacity markets, PPAs, FTRs, and RECs as distinct sub-markets."
+ ],
+ "trading_implications": [
+  "A trader in a deregulated market may need exposure to several of these markets (not just energy) to fully hedge or monetize a generation or load position."
+ ],
+ "caveats": [
+  "These are sometimes lumped together as one 'ancillary' catch-all, but the author distinguishes them by the specific problem each solves (reliability vs. congestion vs. renewable tracking)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "493-494"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 0,
+   "topic": "Secondary electricity markets overview"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

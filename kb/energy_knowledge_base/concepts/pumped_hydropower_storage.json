@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Pumped hydropower storage",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "A storage method that pumps water into an elevated reservoir during low-price periods and releases it through a hydroelectric turbine to regenerate electricity when needed, operating as a closed-loop version of a conventional hydro plant.",
+ "core_idea": "Pumped hydro stores energy as gravitational potential energy by moving water uphill during the storage phase and letting it flow back down through a turbine during generation; with sufficiently large upper and lower reservoirs it can store substantial energy for an extended period.",
+ "key_points": [
+  "Water is pumped from a lower storage facility to an elevated reservoir during the storage phase.",
+  "Released water drives a hydroelectric turbine to regenerate electricity when power is needed.",
+  "The concept is similar to a conventional river-fed hydro plant but operates as a closed system pumping water back above a dam rather than relying on river flow.",
+  "Sufficiently large reservoirs at the top and bottom of the facility allow storage of a large quantity of energy for an extended period."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "480-481"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 8,
+   "topic": "Pumped hydropower storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

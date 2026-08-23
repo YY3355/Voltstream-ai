@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Texas Interconnection (ERCOT)",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Texas Interconnection",
+ "definition": "The Texas Interconnect is the smallest of the U.S. power interconnections and sits entirely inside Texas, coordinated by a single ISO (ERCOT) rather than a patchwork of utilities and RTOs.",
+ "core_idea": "ERCOT is a self-contained grid with only limited DC tie capacity to the Eastern Interconnect and Mexico, which is why it is often treated as electrically isolated from the rest of the country.",
+ "key_points": [
+  "Smallest of the North American interconnections, entirely within Texas",
+  "Single ISO (ERCOT) coordinates the whole footprint",
+  "DC lines connect to the Eastern Interconnect and Mexican grids, but their capacity is limited"
+ ],
+ "relationships": [
+  "Eastern Interconnect",
+  "Mexican power grids"
+ ],
+ "trading_implications": [
+  "Limited DC tie capacity constrains how much power/price arbitrage can flow between ERCOT and neighboring grids, reinforcing ERCOT as a largely self-contained price zone"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "198"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 0,
+   "topic": "Texas Interconnection (ERCOT)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

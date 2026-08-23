@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Cold-Start Economics and Continuous Operation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Economics",
+ "definition": "Reheating already-hot condensed water back into steam takes far less energy than heating cold water from scratch, so most of a steam turbine's fuel consumption occurs during startup rather than continuous running.",
+ "core_idea": "Because a cold start is the most fuel-intensive part of operating a steam turbine, plant operators often find it cheaper to keep a unit running \u2014 even accepting a loss during low-demand periods \u2014 than to shut down and later restart it.",
+ "key_points": [
+  "Boiling water that is already near its boiling point requires much less added heat than boiling cold water",
+  "Startup/heat-up is the most fuel-consuming phase of steam turbine operation",
+  "Operators may choose to run at a loss during low-demand periods specifically to avoid cold-start costs"
+ ],
+ "relationships": [
+  "Related to must-run/unit-commitment behavior in generation fleets"
+ ],
+ "trading_implications": [
+  "Helps explain why some steam-turbine generators are willing to run through periods of low or negative prices rather than cycle off"
+ ],
+ "caveats": [
+  "A generator accepting a short-term loss isn't necessarily behaving irrationally \u2014 it can be avoiding a costlier cold restart"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "188-189"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 2,
+   "topic": "Cold-Start Economics and Continuous Operation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

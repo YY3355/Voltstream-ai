@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "The dispatch stack and the marginal unit",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack",
+ "definition": "The dispatch stack is the actual order in which generators are turned on based on the results of the day-ahead and real-time auctions, following a last-on-first-off pattern like a stack of plates; the unit at the top (the marginal unit) is activated last and deactivated first.",
+ "core_idea": "The plant sitting at the top of the dispatch stack is the marginal provider that sets the region's clearing price, so tracking which plant occupies that position as demand shifts is central to forecasting price.",
+ "key_points": [
+  "Dispatch order usually mirrors the cost ordering of the generation stack",
+  "Cheaper plants have more profit at stake if they aren't activated, so they compete hardest to be selected",
+  "Once price rises well above a plant's break-even cost, it risks forgoing significant profit by staying inactive",
+  "As a result, each plant tends to actively bid on only a small portion of the overall stack \u2014 the range near its own position"
+ ],
+ "relationships": [
+  "Directly built on the generation stack concept and the uniform clearing-price mechanic"
+ ],
+ "trading_implications": [
+  "The marginal provider's break-even cost roughly bounds the clearing price for that period; tracking which plant is marginal as demand changes helps forecast price moves"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "408-410"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 6,
+   "topic": "The dispatch stack and the marginal unit"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

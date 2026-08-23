@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Public Utility Commission / Public Service Commission role",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Regulation",
+ "definition": "Public Utility Commissions (PUCs) are the government bodies, typically staffed by politically appointed commissioners, that approve utility rates and investments.",
+ "core_idea": "Commissioners, who may lack deep engineering or energy market expertise, must balance short-term voter-popular pressures (like lower prices) against long-term needs (like infrastructure investment for future reliability).",
+ "key_points": [
+  "Commissioners are typically political appointees and may have limited engineering or energy market knowledge.",
+  "PUCs must weigh short-term political considerations (cutting consumer prices) against long-term considerations (infrastructure investment for future supply stability)."
+ ],
+ "relationships": [
+  "Runs rate cases that set the rate base return and approved investments for integrated/regulated utilities."
+ ],
+ "trading_implications": [
+  "Regulatory/political dynamics at the PUC level (not just fundamentals) can drive whether and when infrastructure investment \u2014 and thus rate base growth \u2014 occurs."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "179-180"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 5,
+   "topic": "Public Utility Commission / Public Service Commission role"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

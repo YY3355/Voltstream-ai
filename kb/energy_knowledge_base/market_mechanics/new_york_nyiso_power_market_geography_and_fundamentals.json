@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "New York (NYISO) power market geography and fundamentals",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regional Markets - NYISO",
+ "definition": "The New York power grid is self-contained within the state, characterized by low-cost power flowing from the northern and western regions into the high-demand New York City / Long Island area.",
+ "core_idea": "Because much of the NYC metro area sits on islands with limited transfer capability from other parts of the region, the area relies heavily on inefficient peaking generators during peak demand, making it one of the most expensive power markets in the country and subjecting local plants to stricter reliability rules.",
+ "key_points": [
+  "NYISO is self-contained within New York State.",
+  "The southeastern part of the state (NYC and Long Island) is one of the most electricity-demand-dense areas in the country.",
+  "Low-cost power flows from the northern and western parts of the state toward the high-demand NYC-area region.",
+  "Most of the NYC metro area is on islands, limiting the ability to import power from other parts of the region.",
+  "This limited import capability forces high reliance on inefficient generators during peak demand periods.",
+  "As a result, the NYC area is one of the most expensive power markets in the country.",
+  "Power plants in the NYC metro area face stricter regulatory/reliability requirements than is typical elsewhere."
+ ],
+ "relationships": [
+  "Island/transmission-constrained geography producing persistent price premiums parallels congestion dynamics seen in PJM and MISO, but is structurally more severe due to limited import paths."
+ ],
+ "trading_implications": [
+  "Expect a persistent price premium in NYC/Long Island nodes versus upstate New York due to transmission constraints and reliance on inefficient peaking units.",
+  "Peak-demand periods in NYC are especially price-sensitive given the constrained ability to import cheaper upstate power."
+ ],
+ "caveats": [
+  "Treating NYISO pricing as uniform statewide, when the NYC/Long Island area is structurally isolated and priced very differently from the rest of the state."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "209-210"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_007.json",
+   "idx": 2,
+   "topic": "New York (NYISO) power market geography and fundamentals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

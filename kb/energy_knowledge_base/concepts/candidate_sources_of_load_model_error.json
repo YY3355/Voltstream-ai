@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Candidate sources of load model error",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Several hypothesized reasons a simple temperature-based load model might systematically misestimate demand, offered as examples of what error analysis should test.",
+ "core_idea": "The author lists three candidate explanations for model error: within-month behavioral drift, temperature-dependent bias (nonlinearity), and day-specific deviations within the weekday/weekend categories.",
+ "key_points": [
+  "Consumer behavior may shift within a month (e.g., late August differs from early August), similar to how May differs from August.",
+  "The model may be biased at temperature extremes \u2014 e.g., air conditioner efficiency may decline in extreme heat, requiring disproportionately more power to deliver the same cooling.",
+  "Some individual weekdays may behave differently from the weekday average \u2014 e.g., workers leaving early on Fridays could reduce demand at specific hours, though the author is uncertain whether this applies at 2 p.m. specifically."
+ ],
+ "relationships": [
+  "These are candidate hypotheses to be tested as part of error analysis on the simple linear load model."
+ ],
+ "trading_implications": [
+  "Before relying on a simple linear temperature model for pricing or hedging, an analyst should check for nonlinearity at temperature extremes and for day-specific (e.g., Friday) deviations, since both can produce systematic, exploitable forecast bias."
+ ],
+ "caveats": [
+  "A linear load-temperature relationship is assumed to hold uniformly, but the author explicitly flags that efficiency losses at extreme heat could break linearity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "403-405"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 6,
+   "topic": "Candidate sources of load model error"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Kirk's Approximation",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Methods",
+ "definition": "A commonly used method that modifies the Black-Scholes formula to approximate the value of a spread option.",
+ "core_idea": "Because spread options cannot be exactly priced with standard option formulas, practitioners use approximation techniques like Kirk's approximation to adapt Black-Scholes for two-asset spread payoffs.",
+ "key_points": [
+  "Named as one of the key topics of the chapter but the specific formula is not given in this excerpt.",
+  "Positioned as a practical workaround for the fact that spreads don't fit lognormal, single-asset option pricing assumptions."
+ ],
+ "relationships": [
+  "Modification of the Black-Scholes formula for spread options."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "374-374"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 2,
+   "topic": "Kirk's Approximation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Pipeline quality standards (GTC) and condensation risk",
+ "type": "risk",
+ "category": "Natural Gas",
+ "subcategory": "NGL Trading",
+ "definition": "Pipeline-grade NGLs must meet quality standards set in each pipeline's tariff 'General Terms and Conditions' (GTC), which vary by pipeline design, interconnects, and end consumer.",
+ "core_idea": "These standards exist to prevent heavier hydrocarbons from condensing into liquid inside the pipeline, which is hard to remove (pipelines are airtight, so trapped liquid won't evaporate) and can corrode equipment since NGLs act as solvents.",
+ "key_points": [
+  "Common GTC clauses: Btu content limits, minimum dew-point temperature (below which liquid condenses at pipeline pressure), pollutant/nonfuel gas limits, particulate/liquid limits.",
+  "Standards vary pipeline-to-pipeline based on design, interconnections, and intended consumer.",
+  "Condensed NGLs trapped in an airtight pipeline won't evaporate on their own and are corrosive as solvents, risking damage to the pipeline and ancillary equipment."
+ ],
+ "relationships": [
+  "Ties to purity grading, since less-purified/pipeline-grade product carries more heavy hydrocarbons that risk condensation"
+ ],
+ "trading_implications": [
+  "Physical delivery obligations must meet the specific receiving pipeline's GTC spec, which can differ contract to contract."
+ ],
+ "caveats": [
+  "Condensed liquids in a pipeline don't simply evaporate away \u2014 being trapped in an airtight system, they persist and can cause corrosion damage."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "279-281"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 11,
+   "topic": "Pipeline quality standards (GTC) and condensation risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Why natural gas spot and forward markets are distinct",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Natural gas spot markets (immediate delivery) and forward markets (future delivery) are priced by different logic because gas production, transportation, and storage must be arranged in advance.",
+ "core_idea": "Spot prices reflect current on-hand supply and current demand, while forward prices reflect macro-level expectations of the average future supply-demand balance; because near-term supply can't be increased quickly while longer-term supply can, spot markets are substantially more volatile than forward markets.",
+ "key_points": [
+  "If a shortage is expected weeks out, production can usually be increased to meet it.",
+  "If a shortage occurs today, there is no real way to get more supply immediately \u2014 moving large gas volumes into/out of storage or transferring supply from nearby areas on short notice is difficult.",
+  "Forward prices are set by macroeconomic, expected-average supply-demand relationships.",
+  "Spot prices are set by supply currently on hand and current consumer demand.",
+  "As a result, spot markets are substantially more volatile than forward markets."
+ ],
+ "relationships": [
+  "Connects to the price-certainty term structure and to swing trades (storage-driven exploitation of spot volatility)"
+ ],
+ "trading_implications": [
+  "Traders can exploit spot volatility via storage arbitrage; forward-market participants face less near-term price uncertainty."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 5,
+   "topic": "Why natural gas spot and forward markets are distinct"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

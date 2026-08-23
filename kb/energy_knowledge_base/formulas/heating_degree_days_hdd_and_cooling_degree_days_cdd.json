@@ -1,0 +1,71 @@
+{
+ "canonical_topic": "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Weather Derivatives",
+ "definition": "HDD and CDD are daily measures of how far the average temperature deviates from a reference baseline, used as the underlying index for most weather derivatives.",
+ "core_idea": "HDDs accumulate on cold days when heating is needed (temperature below baseline), and CDDs accumulate on hot days when cooling is needed (temperature above baseline); the daily values are summed over a contract period and compared to a strike to determine payoff.",
+ "key_points": [
+  "HDD and CDD contracts are the most common form of weather derivative",
+  "Common baseline temperatures are 65\u00b0F in the United States and 18\u00b0C in Europe",
+  "Example: an 85\u00b0F average daily temperature against a 65\u00b0F baseline contributes 20 CDD",
+  "Daily HDD/CDD values are accumulated over the contract period and compared against a strike to compute the payoff"
+ ],
+ "relationships": [
+  "HDD/CDD accumulated over a period is compared to a contract Strike to compute the payoff of an HDD/CDD weather derivative"
+ ],
+ "trading_implications": [
+  "Payoff sensitivity depends on the chosen baseline and reference weather station, both of which are specified in the contract"
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Heating Degree Day",
+   "formula": "HDD = Max(Baseline \u2013 Average Temperature, 0)",
+   "variables": {
+    "Baseline": "reference temperature, commonly 65\u00b0F (US) or 18\u00b0C (Europe)",
+    "Average Temperature": "observed daily average temperature at the reference station"
+   },
+   "source": {
+    "chapter": 34,
+    "pages": "605",
+    "section_hint": "6.6 Weather Derivatives \u2014 Heating and Cooling Degree Days"
+   }
+  },
+  {
+   "name": "Cooling Degree Day",
+   "formula": "CDD = Max(Average Temperature \u2013 Baseline, 0)",
+   "variables": {
+    "Baseline": "reference temperature, commonly 65\u00b0F (US) or 18\u00b0C (Europe)",
+    "Average Temperature": "observed daily average temperature at the reference station"
+   },
+   "source": {
+    "chapter": 34,
+    "pages": "605",
+    "section_hint": "6.6 Weather Derivatives \u2014 Heating and Cooling Degree Days"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 34,
+   "pages": "605"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 3,
+   "topic": "Heating Degree Days (HDD) and Cooling Degree Days (CDD)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Deepwater drilling activity as an oil-price sentiment indicator",
+ "type": "market_mechanic",
+ "category": "Oil & Gas",
+ "subcategory": "Market Signals",
+ "definition": "Because deepwater drilling is substantially more complex, riskier, and more expensive than traditional drilling, the amount of deepwater drilling activity is highly sensitive to oil prices and is often used as a leading indicator of industry sentiment about future oil prices.",
+ "core_idea": "Deepwater projects are only economic at higher oil prices given their elevated cost and risk, so a pickup or pullback in deepwater activity signals how the industry expects prices to move.",
+ "key_points": [
+  "Deepwater drilling is more complicated and more expensive than traditional drilling due to more numerous and more severe problems that are also harder to fix.",
+  "Deepwater drilling activity levels are very sensitive to oil price.",
+  "Industry participants treat deepwater activity as a leading indicator of price sentiment."
+ ],
+ "relationships": [
+  "Deepwater drilling technical challenges (pressure, remote operations)"
+ ],
+ "trading_implications": [
+  "Rising deepwater drilling activity can be read as a bullish signal on industry price expectations; falling activity can be read as bearish."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "130"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 5,
+   "topic": "Deepwater drilling activity as an oil-price sentiment indicator"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

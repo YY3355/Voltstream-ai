@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Closing out and flat positions",
+ "type": "concept",
+ "category": "Trading Markets",
+ "subcategory": "Position Terminology",
+ "definition": "Closing out (liquidating) a position means entering an offsetting trade so the trader has no further price risk or contractual responsibility, effectively converting the position to cash; a flat position is any combination of trades that is not affected by price movements.",
+ "core_idea": "Closing out a trade is not always possible, because some contracts are direct bilateral agreements that both original parties must agree to unwind.",
+ "key_points": [
+  "Closing out means eliminating further risk/responsibility by converting positions to a liquid (cash) state.",
+  "Direct bilateral contracts often cannot be closed out unilaterally \u2014 both original parties must agree to dissolve the agreement.",
+  "Example: a trader who negotiated separate bilateral contracts to buy gas from one party and sell it to another remains obligated to actually receive and deliver the commodity, even if that leaves the trader economically flat."
+ ],
+ "relationships": [
+  "Ease of closing out is a key practical difference between bilateral/OTC trades and exchange-traded contracts"
+ ],
+ "trading_implications": [
+  "Liquidity/exit risk in bilateral markets is materially higher than in exchange markets because unwinding a position requires counterparty cooperation."
+ ],
+ "caveats": [
+  "Assuming any position can always be closed out at will \u2014 bilateral agreements may trap a trader in performance obligations even after they are economically flat."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "85-86"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_003.json",
+   "idx": 2,
+   "topic": "Closing out and flat positions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

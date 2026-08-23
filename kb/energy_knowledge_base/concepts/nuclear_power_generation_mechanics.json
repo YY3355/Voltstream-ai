@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Nuclear Power Generation Mechanics",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "Nuclear plants produce heat through nuclear fission, a non-combustion process that splits nuclei apart, rather than burning fuel the way coal plants do.",
+ "core_idea": "Because fission isn't combustion, nuclear generation avoids carbon dioxide emissions entirely, but it substitutes a different pollution problem: radioactive waste.",
+ "key_points": [
+  "Fission breaks protons and neutrons free from the fuel's nucleus rather than burning it",
+  "No CO2 is produced since there is no combustion",
+  "Radioactive waste is the tradeoff pollutant in place of carbon emissions"
+ ],
+ "relationships": [
+  "Contrasts directly with coal plant combustion-based heat generation"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Nuclear power is sometimes treated as pollution-free; the source notes it still produces radioactive waste, just not CO2"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "56-56"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 0,
+   "topic": "Nuclear Power Generation Mechanics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

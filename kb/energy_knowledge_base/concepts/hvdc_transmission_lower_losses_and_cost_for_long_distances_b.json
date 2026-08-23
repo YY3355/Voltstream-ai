@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "HVDC transmission: lower losses and cost for long distances, but poor multi-endpoint flexibility",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission / Physics",
+ "definition": "High voltage direct current (HVDC) lines are often lower cost and lose less power than AC over very long distances (and are used to link unsynchronized grids or cross long underwater stretches), but they require costly AC conversion at endpoints, can't use transformers, and don't support multiple endpoints well because tapping power anywhere drops voltage across the whole line.",
+ "core_idea": "HVDC trades AC's flexibility (transformers, easy multi-endpoint interconnection) for lower transmission losses and cost over extreme distances, which is why the author says it's typically used only for long-distance, point-to-point links where AC losses would otherwise dominate conversion losses.",
+ "key_points": [
+  "HVDC lines are often lower cost and lower loss than AC lines for very long distances, and are used for cross-grid synchronization mismatches and long underwater routes.",
+  "DC power must be converted back to AC at the endpoint; this conversion can cost 5-10 percent of the power.",
+  "HVDC is impractical/dangerous in residential settings, and voltage cannot be stepped up/down with a transformer on DC.",
+  "Because DC voltage isn't held constant by transformers, drawing power off at any point along a DC line drops the voltage across the entire line, making multiple endpoints difficult.",
+  "As a result, HVDC lines are mostly built as long-distance, point-to-point connections rather than an interconnected grid.",
+  "Rerouting power delivered via HVDC (e.g., from one East Coast endpoint to another) generally requires converting to AC first and using the AC grid; only the DC origin point offers rerouting flexibility.",
+  "A fully direct (point-to-point) transmission grid connecting every generator to every user would be operationally unmanageable at scale, which is part of why AC's interconnected-grid model remains dominant despite HVDC's efficiency advantages for specific long-distance links."
+ ],
+ "relationships": [
+  "HVDC's transmission-loss advantage must be weighed against its ~5-10% AC conversion loss; the author states HVDC is favored only when AC transmission losses would exceed this conversion cost.",
+  "Multi-endpoint voltage-drop behavior on DC lines is a direct consequence of transformers being unusable on DC."
+ ],
+ "trading_implications": [
+  "Wheeling deals over HVDC infrastructure are best suited to simple point-to-point flows; multi-destination wheeling is structurally harder over DC than AC."
+ ],
+ "caveats": [
+  "It would be wrong to assume HVDC is strictly better because of lower transmission losses; conversion losses and multi-endpoint inflexibility are real trade-offs the author highlights."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "443-444"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 6,
+   "topic": "HVDC transmission: lower losses and cost for long distances, but poor multi-endpoint flexibility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

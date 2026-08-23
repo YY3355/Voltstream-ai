@@ -1,0 +1,7 @@
+{
+ "chapter": 31,
+ "title": "6.3 COUNTERPARTY CREDIT RISK",
+ "n_concepts": 11,
+ "summary": "Counterparty credit risk asks how much a firm stands to lose if a trading partner defaults, and how that loss is estimated and controlled. It ties financial measures \u2014 credit exposure, EAD, recovery rate, LGD, probability of default, and mark-to-market adjustments like CVA/DVA \u2014 to the legal architecture that determines what a defaulting counterparty's creditors actually recover, including corporate structures (parent, holding, subsidiary, affiliate), structural subordination, ring fencing, bankruptcy priority order, and master netting agreements. The Enron bankruptcy is presented as an example of how one counterparty's default can spread credit damage through a market, motivating why firms must set credit limits despite the tradeoff between limiting exposure and doing business at all.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

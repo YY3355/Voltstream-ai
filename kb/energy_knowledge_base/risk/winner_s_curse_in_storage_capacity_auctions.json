@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Winner's Curse in Storage Capacity Auctions",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Auction / Bidding Risk",
+ "definition": "In a competitive storage-capacity auction, valuation error creates an asymmetric risk: bidding too high wins the auction but means overpaying, while bidding too low simply loses to another bidder without a matching direct loss.",
+ "core_idea": "The 'winner's curse' describes how, in an auction with valuation uncertainty, the winning bid tends to be the most optimistic (and often overpriced) one, because only over-optimistic bids win.",
+ "key_points": [
+  "Overpricing risk from a flawed valuation is realized directly as a loss \u2014 the trader wins and overpays.",
+  "Underpricing risk is not symmetric \u2014 a too-low bid simply loses the auction to a higher bidder rather than costing money.",
+  "Economists term this dynamic the 'winner's curse.'"
+ ],
+ "relationships": [
+  "A risk specific to the auction-based acquisition described in the Natural Gas Storage Arbitrage Bid Strategy example."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "535"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 10,
+   "topic": "Winner's Curse in Storage Capacity Auctions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

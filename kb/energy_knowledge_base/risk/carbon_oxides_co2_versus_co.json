@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Carbon oxides: CO2 versus CO",
+ "type": "risk",
+ "category": "Environmental/Emissions",
+ "subcategory": "Combustion byproducts",
+ "definition": "Of the carbon-based combustion byproducts, carbon dioxide is a normal, nontoxic result of complete combustion whose concern is purely climatic, while carbon monoxide results from incomplete combustion (insufficient oxygen) and is acutely toxic to humans.",
+ "core_idea": "Carbon dioxide and water are the primary hydrocarbon combustion byproducts and aren't pollutants in the traditional toxicity sense (water isn't a pollutant at all); the real health-hazard byproduct is carbon monoxide, which forms specifically when combustion is oxygen-starved.",
+ "key_points": [
+  "Water and carbon dioxide are the primary byproducts of hydrocarbon combustion; water is not considered a pollutant at all.",
+  "Carbon dioxide is colorless, odorless, and nontoxic, and would not be considered a pollutant except for its effect on global climate.",
+  "Carbon monoxide is highly toxic precisely because it is highly reactive, and forms when combustion is incomplete due to insufficient oxygen."
+ ],
+ "relationships": [
+  "Directly ties back to the major-pollutant-categories item, elaborating the distinction between CO2 and CO first introduced there."
+ ],
+ "trading_implications": [
+  "Because CO2 is climate-relevant rather than acutely toxic, its regulatory treatment (aggregate, market-based) differs from CO, NOx, and SOx, which are handled as direct health/air-quality hazards."
+ ],
+ "caveats": [
+  "CO2 is often lumped in with 'toxic emissions,' but the source is explicit that it poses no direct health threat \u2014 the same byproduct as normal breathing or exercise \u2014 unlike carbon monoxide."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "285-286"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_000.json",
+   "idx": 4,
+   "topic": "Carbon oxides: CO2 versus CO"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

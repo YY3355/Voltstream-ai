@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Grid frequency synchronization as an operational risk",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Grid Reliability",
+ "definition": "All power plants feeding a shared AC grid must oscillate at exactly the same frequency and phase timing; mismatched frequencies or starting points cause line voltages to interfere destructively rather than cancel properly.",
+ "core_idea": "Frequency synchronization across all generators is a hard physical requirement of AC grids, and keeping it is a core, ongoing TSO responsibility \u2014 a failure risks short circuits, shocks, melted lines, or fires, and it's also a major obstacle to connecting separate grids together.",
+ "key_points": [
+  "If current isn't properly cancelled at every point, it must go somewhere \u2014 causing short circuits/shocks \u2014 or convert to heat, causing melted lines and fires.",
+  "Synchronizing frequency/phase across power plants is described as a major responsibility of each TSO.",
+  "Synchronization mismatches are also a major obstacle to integrating adjoining power grids."
+ ],
+ "relationships": [
+  "Follows directly from the three-phase cancellation requirement."
+ ],
+ "trading_implications": [
+  "Synchronization difficulty helps explain why separate interconnects (Eastern, Western, ERCOT) remain largely isolated markets rather than one unified grid."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "196"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 6,
+   "topic": "Grid frequency synchronization as an operational risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

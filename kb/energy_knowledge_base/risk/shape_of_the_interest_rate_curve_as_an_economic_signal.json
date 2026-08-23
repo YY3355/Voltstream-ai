@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Shape of the interest rate curve as an economic signal",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Interest Rate Curve",
+ "definition": "The interest rate (yield) curve shows how the discount rate applied to a future cash flow changes with the length of time until that cash flow is received.",
+ "core_idea": "Discount rates are not linear in time to payment (a two-year rate is not simply double a one-year rate), and the overall steepness of the curve is read as a signal of investor sentiment about the economy.",
+ "key_points": [
+  "The farther in the future a payment is, the less it is worth in today's dollars, but this discounting effect does not scale linearly with time.",
+  "A steeply sloped curve typically reflects investors wanting cash now, often because attractive investment opportunities exist today \u2014 read as a positive economic outlook.",
+  "A flat curve typically reflects investors being content to wait for their money because there are few attractive opportunities to redeploy it \u2014 read as a negative economic outlook."
+ ],
+ "relationships": [
+  "Distinct from a parallel shift, which moves the whole curve rather than changing its shape"
+ ],
+ "trading_implications": [
+  "Curve steepness can be used qualitatively as a read on market sentiment about future economic conditions."
+ ],
+ "caveats": [
+  "Assuming the discount rate scales linearly with time to payment (e.g., that a two-year rate is twice a one-year rate)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "104-105"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 0,
+   "topic": "Shape of the interest rate curve as an economic signal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

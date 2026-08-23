@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Carbon equivalents and other pollutant markets (SOX, NOX)",
+ "type": "definition",
+ "category": "Emissions Markets",
+ "subcategory": "Carbon Equivalents and Other Pollutants",
+ "definition": "Emissions trading extends beyond CO2 to other greenhouse gases converted to CO2-equivalent units, and to separate regional markets for pollutants like sulfur oxide (SOX) and nitrogen oxide (NOX).",
+ "core_idea": "Other greenhouse gases such as methane, nitrous oxide, and ozone are converted into carbon dioxide equivalents and traded within the carbon market, while SOX and NOX \u2014 both linked to acid rain \u2014 are traded in their own markets that are typically regional rather than global because their pollution impact is more localized.",
+ "key_points": [
+  "Methane, nitrous oxide, and ozone are examples of non-CO2 greenhouse gases; they are converted into carbon dioxide equivalents and traded as part of the carbon market.",
+  "SOX (sulfur oxide) is a source of acid rain, a regional problem; SOX markets are separate from carbon markets and typically organized by region.",
+  "NOX (nitrogen oxide) markets are closely associated with SOX markets and are also linked to acid rain.",
+  "Because most pollution types (other than CO2) only affect a limited area, most non-carbon emissions markets are regional (covering a couple of countries) rather than global."
+ ],
+ "relationships": [
+  "Shares terminology and cap-and-trade-style limitations with the carbon market"
+ ],
+ "trading_implications": [
+  "Non-CO2 pollutant markets should be evaluated as regional instruments, not treated as global carbon-market analogues"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "274"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 9,
+   "topic": "Carbon equivalents and other pollutant markets (SOX, NOX)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

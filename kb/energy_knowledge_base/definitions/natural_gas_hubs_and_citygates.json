@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Natural Gas Hubs and Citygates",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Market Infrastructure",
+ "definition": "A hub is any location where two or more pipelines interconnect; a citygate is a specific type of hub where an interstate pipeline hands gas off to a local distribution network. Most natural gas trading happens at these interconnection points.",
+ "core_idea": "Because pipelines physically interconnect at hubs and citygates, these points naturally become the centers of price discovery and trading activity for natural gas.",
+ "key_points": [
+  "A hub is any location where two or more pipelines connect.",
+  "A citygate is a hub type specifically where interstate pipelines connect into local distribution networks.",
+  "Most natural gas trading occurs at hubs or citygates rather than at wellheads or arbitrary pipeline points.",
+  "Henry Hub, located on the U.S. Gulf Coast roughly between New Orleans and Houston, is the most important natural gas hub in North America."
+ ],
+ "relationships": [
+  "Henry Hub is a specific, dominant example of a hub",
+  "Citygates link interstate pipelines to local distribution"
+ ],
+ "trading_implications": [
+  "Traders concentrate liquidity and price discovery at hubs/citygates rather than diffuse pipeline segments"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "142-142"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 1,
+   "topic": "Natural Gas Hubs and Citygates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

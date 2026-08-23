@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Energy Cost of Distillation at Scale",
+ "type": "concept",
+ "category": "Refining & Processing",
+ "subcategory": "Distillation",
+ "definition": "Distillation's major drawback is the large amount of energy needed to heat every unit of liquid to its boiling point and then cool it back down, repeated across the full volume of fuel produced worldwide.",
+ "core_idea": "Because essentially all gasoline and ethanol in use has passed through a heat-then-cool distillation cycle, and global fuel consumption is enormous (illustrated by extrapolating from the tank sizes of cars on a single street to cars worldwide), the aggregate energy embedded in producing fuel via distillation is immense.",
+ "key_points": [
+  "Every gallon of gasoline or ethanol in circulation has been heated to its boiling point and cooled back down at least once during distillation.",
+  "The scale of this energy use is illustrated by estimating fuel volume from cars on one street and extrapolating to global car fuel consumption."
+ ],
+ "relationships": [
+  "Distillation energy cost is a structural input cost underlying refined fuel supply"
+ ],
+ "trading_implications": [
+  "The scale of energy embedded in distillation implies refining costs are sensitive to the price of the energy used to run boilers and condensers, a structural driver of refined-product margins."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "294-295"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_001.json",
+   "idx": 1,
+   "topic": "Energy Cost of Distillation at Scale"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

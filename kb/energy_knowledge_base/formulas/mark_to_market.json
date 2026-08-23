@@ -1,0 +1,217 @@
+{
+ "canonical_topic": "mark to market",
+ "type": "concept",
+ "n_merged": 13,
+ "definition": "Mark-to-market (MTM) is a fair-value accounting method that values a financial instrument \u2014 typically tradable derivatives such as futures, swaps, and options \u2014 at its current market price (for regularly-traded instruments, usually the last reported trade price; more generally, a price based on recent trades in similar instruments/contracts) rather than its original purchase price or historical cost. It is the most common valuation standard used for energy transactions because most energy transactions are structured as derivatives. Firms do not freely choose their accounting method \u2014 accounting rules dictate which method (MTM, historical cost, or hedge accounting) applies to a given instrument \u2014 and the resulting definition of 'the trading price' cascades into risk management and financial reporting.",
+ "core_idea": "MTM values tradable instruments at current market prices instead of historical cost; because that price definition also feeds risk-management triggers and margin/capital requirements, the same mechanism that gives real-time, fraud-resistant P&L also creates the channel through which illiquid or thin trading can cascade into forced liquidations and systemic risk.",
+ "key_points": [
+  "MTM is a fair-value accounting standard applied mainly to tradable financial/derivative instruments \u2014 futures, swaps, and options are typically all subject to it.",
+  "It values a position using current market-quoted prices rather than original cost: an asset bought at $100 now quoted at $120 shows an immediate $20 profit under MTM, versus no recognized gain under historical cost until sale.",
+  "For instruments that trade regularly, the MTM price is usually just the last reported trade price; more broadly, MTM prices an instrument based on recent trades in similar instruments/contracts.",
+  "It is the most common valuation standard used for energy transactions/energy trading because most energy transactions are structured as derivatives.",
+  "Firms generally don't choose their accounting method freely \u2014 accounting rules dictate which method applies to a given instrument or deal.",
+  "The accounting policy defining 'trading price' has a cascade effect: risk management and financial reporting both consume that price definition, sometimes producing unexpected consequences.",
+  "MTM relies on a liquid, fair market for price discovery to work well; some commodities/locations have no counterparty willing to transact, so there is no clean market price to mark to.",
+  "Some contracts \u2014 e.g., a PPA tied to a specific generation unit and bundled with non-tradable items like capacity and ancillary services \u2014 can't be sold separately from the physical asset, which can force accountants into judgment calls about which accounting rules apply.",
+  "A primary historical motivation for adopting MTM was curbing accounting fraud: prices are typically pulled from independent brokers, exchanges, or similar data providers, preventing traders from marking their own books and smoothing earnings.",
+  "MTM prices are the primary input into risk-management trigger mechanisms \u2014 directly (a stop-loss forces liquidation once price falls below a set level) or indirectly (a risk limit tied to volatility, which rises when prices move sharply).",
+  "Mandatory/forced liquidation rules are often triggered directly by MTM price levels; in illiquid markets a forced seller may only be able to exit at a large discount, and one trader's forced sale can depress prices enough to trigger other firms' risk limits, prompting further forced selling in a self-reinforcing cycle that can trigger or worsen a broader market crash and can affect investors who did no trading of their own.",
+  "Only a fraction of total outstanding assets in a class trades on any given day, so a handful of transactions can set the marked value for an entire industry; since margin requirements and bank capital requirements also key off these prices, a price shock can cascade rapidly across the system.",
+  "Named systemic downsides of this thin-trading dependency: increased likelihood of market panics, temporary liquidity disappearance, and bank failures.",
+  "Contagion mechanism: a bank facing a regulator-mandated minimum liquid-asset level may need to sell other assets if one holding's marked value drops, and traders using a devalued asset as collateral can face margin calls forcing them to raise cash or sell assets (difficult over, e.g., a holiday weekend); the resulting forced selling can push prices down further and cross into other markets.",
+  "Key trade-off: MTM creates a barrier between financial reporting and trading that curbs fraud risk, but that same separation raises the probability of systemic problems like forced liquidations and market crashes, and can result in major business decisions being made without input from the traders closest to current market conditions.",
+  "Margin is a good-faith collateral deposit required by the exchange to guarantee performance \u2014 not a down payment and not ownership of or exposure to the physical commodity; initial margin is typically sized to roughly 5\u201310% of the commodity's price, calibrated to cover a large single-day swing, and can vary trader-to-trader.",
+  "Daily margining marks every open futures position to that day's official settlement price (a single price applied to both buyers and sellers), crediting or debiting each trader's margin account for the change \u2014 functionally equivalent to closing and reopening the trade at the new price; the settlement amount is the same for everyone on the same side of a given trade, with gains/losses transferred directly between the margin accounts of opposing traders (the loser's payment funds the winner's credit).",
+  "The exchange's clearinghouse executes all margin debits and credits; individual traders usually access the exchange through a broker rather than transacting directly with the exchange, so clearing margin (exchange-to-broker) and customer margin (broker-to-trader) are technically distinct but serve the same protective function, with the broker typically passing margin costs on to the client.",
+  "Daily margining/MTM settlement contrasts with OTC forwards, where no money typically moves until delivery, at which point a single large payment (or product-for-money exchange) occurs."
+ ],
+ "relationships": [
+  "Contrasts with historical cost accounting (used for physical, non-tradable assets) and interacts with/contrasts with hedge accounting rules for derivatives hedging physical assets.",
+  "The difficulty of applying MTM to non-separable, physically-bundled contracts underlies why hedge accounting rules exist.",
+  "Daily margining is the direct mechanism by which MTM is implemented in futures markets, and directly implements the credit-risk protection the exchange offers.",
+  "Daily margin settlement amounts are driven by MTM price changes.",
+  "MTM pricing is a direct dependency of risk-management triggers (stop-losses, volatility-based limits) and connects to margin and capital requirements.",
+  "The fraud-prevention benefit of independent pricing is traded off against the systemic risk introduced by reliance on those same visible/thinly-sourced prices.",
+  "Systemic risk from thin trading builds on/connects to margin calls and bank liquidity requirements, which in turn can cascade into cross-market contagion."
+ ],
+ "trading_implications": [
+  "Daily P&L on mark-to-market books reflects market moves in real time, useful for active risk management but can look noisy for positions that are otherwise economically hedged.",
+  "Deals structured around specific physical assets (like unit-contingent PPAs) may be harder to value transparently and harder to exit than standardized traded contracts.",
+  "Holding illiquid, mark-to-market assets exposes a portfolio to risk from other market participants' forced selling, not just from one's own trading decisions.",
+  "Traders must be prepared to fund margin calls on unprofitable days or risk having their position liquidated; margin costs, including a broker's pass-through, are a real cost of holding an exchange position and should factor into trade sizing/funding planning.",
+  "A trader must have cash on hand to meet daily losses before the contract's delivery date, unlike an OTC forward; cash received from daily margin gains needs to be reinvested rather than sitting idle.",
+  "A trader's exposure to forced liquidation depends on how the firm's risk system translates marked prices into triggers (direct stop-loss vs. volatility-based limit).",
+  "Traders lose discretion to self-mark positions, shifting earnings volatility onto the books in real time rather than allowing it to be smoothed.",
+  "Risk managers should treat marked prices from illiquid/thinly-traded periods with caution, since they may not reflect a representative transaction volume \u2014 a firm's margin or capital position can move sharply on a price print reflecting only a small trade volume.",
+  "Positions collateralized by a thinly-traded asset carry hidden liquidity risk: a single adverse mark can trigger margin calls timed badly (e.g., holiday weekends); cross-market contagion risk should be considered when an asset serves as collateral or counts toward regulatory liquidity buffers.",
+  "Risk managers should stay alert not just to price-driven liquidation risk, but to the possibility that trading expertise is being excluded from decisions made purely off reported marks."
+ ],
+ "caveats": [
+  "MTM works well only when there is a liquid, fair market for price discovery; some commodities/locations lack a counterparty willing to transact, so there is no clean market price to mark to.",
+  "Contracts bundled with non-tradable items (e.g., a unit-contingent PPA with capacity/ancillary services) can't be cleanly separated and priced, forcing judgment calls about which accounting rules apply.",
+  "Marked prices can rest on a thin sample of transactions \u2014 only a fraction of an asset class trades on any given day \u2014 so a handful of trades can set the value used across an entire industry, with cascading effects on margin and bank capital requirements."
+ ],
+ "contradictions": [],
+ "formulas": [
+  {
+   "name": "Daily margin cash flow (example)",
+   "formula": "daily_gain_or_loss = price_change \u00d7 contract_quantity",
+   "variables": {
+    "price_change": "change in settlement price from prior day, $/unit",
+    "contract_quantity": "contract size, units (e.g. MMBtus)",
+    "daily_gain_or_loss": "cash credited (+) or debited (-) to the margin account, $"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "93-94",
+    "section_hint": "Common Terms \u2014 Daily Margin"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "62-62"
+  },
+  {
+   "chapter": 1,
+   "pages": "63-64"
+  },
+  {
+   "chapter": 1,
+   "pages": "63"
+  },
+  {
+   "chapter": 1,
+   "pages": "63-64"
+  },
+  {
+   "chapter": 2,
+   "pages": "91-92"
+  },
+  {
+   "chapter": 2,
+   "pages": "93-94"
+  },
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  },
+  {
+   "chapter": 29,
+   "pages": "544-547"
+  },
+  {
+   "chapter": 29,
+   "pages": "548-548"
+  },
+  {
+   "chapter": 29,
+   "pages": "548-548"
+  },
+  {
+   "chapter": 29,
+   "pages": "548-549"
+  },
+  {
+   "chapter": 29,
+   "pages": "549-550"
+  },
+  {
+   "chapter": 29,
+   "pages": "549-549"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 12,
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 9,
+   "topic": "Mark-to-market accounting"
+  },
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 0,
+   "topic": "Mark-to-Market Accounting"
+  },
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 2,
+   "topic": "Difficulty Applying Mark-to-Market in Energy Markets"
+  },
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 3,
+   "topic": "Mark-to-Market and Liquidity Risk / Forced Liquidation Cascades"
+  },
+  {
+   "file": "raw/ch02/chunk_004.json",
+   "idx": 4,
+   "topic": "Margin: initial margin and daily mark-to-market settlement"
+  },
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 1,
+   "topic": "Daily Margining (Mark-to-Market)"
+  },
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 6,
+   "topic": "Margin and Mark-to-Market"
+  },
+  {
+   "file": "raw/ch29/chunk_000.json",
+   "idx": 0,
+   "topic": "Mark-to-Market Accounting"
+  },
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 1,
+   "topic": "Mark-to-market as the price input for risk management triggers"
+  },
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 2,
+   "topic": "Mark-to-market as a fraud-prevention mechanism"
+  },
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 3,
+   "topic": "Systemic risk created by mark-to-market's reliance on thin trading"
+  },
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 5,
+   "topic": "Mark-to-market contagion through bank liquidity rules and margin calls"
+  },
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 6,
+   "topic": "Key Concept: the fraud/systemic-risk trade-off of mark-to-market, and its effect on trader input"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "key_points",
+    "claim": "an asset bought at $100 now quoted at $120 shows an immediate $20 profit under MTM, versus no recognized gain under historical cost until sale",
+    "reason": "The $100\u2192$120/$20 profit example is in source items 2 and 7, but no source states the historical-cost comparison ('no recognized gain... until sale') \u2014 this is an invented bridging claim connecting MTM to a specific historical-cost accounting mechanic not described anywhere in the sources."
+   },
+   {
+    "field": "definition",
+    "claim": "accounting rules dictate which method (MTM, historical cost, or hedge accounting) applies to a given instrument",
+    "reason": "Source item 2 only says accounting rules dictate which method applies, without naming the three methods together as an explicit enumerated set. Historical cost and hedge accounting appear only in 'relationships' fields (contrasts with / interacts with), not as co-equal alternatives to MTM in this sentence \u2014 the enumeration is an invented bridging synthesis."
+   },
+   {
+    "field": "key_points",
+    "claim": "The accounting policy defining 'trading price' has a cascade effect: risk management and financial reporting both consume that price definition, sometimes producing unexpected consequences.",
+    "reason": "Source items 1 and 7 state the cascade into risk management and financial reporting, but neither says this 'sometimes produces unexpected consequences' \u2014 that qualifier is added editorializing not present in any source item."
+   }
+  ],
+  "checked_at": "2026-08-22T05:25:02+00:00"
+ }
+}

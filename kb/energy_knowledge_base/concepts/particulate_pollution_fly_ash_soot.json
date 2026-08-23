@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Particulate Pollution (Fly Ash / Soot)",
+ "type": "concept",
+ "category": "Environmental / Emissions",
+ "subcategory": "Particulate & Toxic Pollution",
+ "definition": "Fine particles released directly by combustion, or formed secondarily from SOx and NOx chemistry, that cause respiratory and cardiovascular harm and reduce atmospheric visibility.",
+ "core_idea": "Particulate matter can be small enough to be inhaled deep into the lungs and pass into the bloodstream, causing respiratory damage, heart attacks, and strokes; children, asthmatics, and the elderly are the most vulnerable populations, and particulates are also a major driver of urban haze.",
+ "key_points": [
+  "Particulates arise both directly from combustion and secondarily from SOx/NOx reactions in the atmosphere.",
+  "Health effects include breathing problems, heart attacks, and strokes.",
+  "The smallest particles can be inhaled into the lungs and enter the bloodstream, causing substantial respiratory system damage.",
+  "Children, people with asthma, and the elderly face the highest risk.",
+  "Particulate pollution reduces visibility and is a major cause of urban haze."
+ ],
+ "relationships": [
+  "Forms secondarily from NOx and SOx emissions, in addition to being emitted directly from combustion."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "It's easy to think of particulates as only direct soot from combustion; the text notes a significant secondary source is chemical reaction from already-emitted SOx and NOx."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "287-289"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_001.json",
+   "idx": 4,
+   "topic": "Particulate Pollution (Fly Ash / Soot)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

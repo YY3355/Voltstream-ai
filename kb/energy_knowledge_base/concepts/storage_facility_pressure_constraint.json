@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Storage facility pressure constraint",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage",
+ "definition": "Maximum operating pressure caps how much gas a storage facility can hold in a given volume and how quickly it can be withdrawn, but pushing pressure higher raises structural stress and the risk of gas escaping.",
+ "core_idea": "Because there are only a limited number of geological sites suitable for gas storage, the pressure ceiling for a given facility is usually determined by what the site can physically support rather than by what operators would prefer.",
+ "key_points": [
+  "Higher pressure allows more gas storage per unit volume and faster extraction.",
+  "Higher pressure increases structural stress and the chance of gas leaking into the environment.",
+  "Available storage geology, not desired performance, typically sets the pressure limit."
+ ],
+ "relationships": [
+  "Interacts with base/working gas trade-off and with the ranking of storage site types by performance."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "61-61"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 3,
+   "topic": "Storage facility pressure constraint"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Investing in redundant compressors to grow firm-contract capacity",
+ "type": "example",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "A worked example showing how a pipeline with unreliable compressors can increase profit by adding backup compressors, allowing it to safely sell more firm (vs. interruptible) capacity.",
+ "core_idea": "Because firm-contract nondelivery penalties vastly exceed firm-contract delivery revenue, a pipeline's profit is highly sensitive to reliability; investing in redundant compressors to raise reliability lets the pipeline sell more high-margin firm capacity instead of low-margin interruptible capacity, sharply increasing profit even after higher maintenance costs.",
+ "key_points": [
+  "Setup: 5 compressor stations in series, each up 85% of the time (1 week/year scheduled maintenance). The pipeline can tolerate a single down compressor (losing 20% capacity per offline unit) but fails when two adjacent compressors are down simultaneously.",
+  "Pricing: firm transportation pays $1/MMBtu delivered but costs the pipeline $12.50/MMBtu if undelivered; interruptible transportation pays $0.15/MMBtu delivered and costs nothing if undelivered.",
+  "Baseline: the pipeline was unable to operate at all 8% of days and ran at full capacity only 42.5% of the time; with 60% of capacity sold as firm and 91.7% of firm volume actually delivered, nondelivery penalties consumed essentially all the profit from delivered firm volume.",
+  "Strategy: add a second (mostly idle) compressor at each station to raise overall pipeline reliability, which allows more capacity to be safely sold as firm rather than interruptible.",
+  "Result: capacity generating $0.15 on 40% utilization shifted to capacity generating $1 on 80% utilization, roughly a 100x increase in profit, which more than offset doubled maintenance costs."
+ ],
+ "relationships": [
+  "Firm/interruptible pricing asymmetry ties directly to the buyer-seller firm vs. interruptible contract distinction."
+ ],
+ "trading_implications": [
+  "Reliability investment can be evaluated as a real option: it converts low-margin interruptible sales into high-margin firm sales by shrinking the tail risk of nondelivery penalties.",
+  "Because nondelivery penalties are far larger than delivery revenue for firm contracts, small improvements in operating reliability can produce outsized profit swings."
+ ],
+ "caveats": [
+  "It may look wasteful to add a compressor that is idle most of the time, but its value comes from reliability/optionality, not utilization."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "518-520"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 3,
+   "topic": "Investing in redundant compressors to grow firm-contract capacity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

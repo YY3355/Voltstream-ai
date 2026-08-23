@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Two-trade structure: Henry Hub futures + basis swap",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Physical natural gas trading is typically executed as two separate trades \u2014 a liquid, standardized Henry Hub futures trade, followed by a basis swap that converts the Henry Hub exposure into exposure at the desired delivery location.",
+ "core_idea": "The market is structured around a highly liquid, standardized Henry Hub futures contract precisely to make it easy to find counterparties, with the harder-to-trade locational piece handled separately via a basis swap.",
+ "key_points": [
+  "Henry Hub futures are exchange-traded, standardized contracts that are very liquid \u2014 large volumes trade quickly with minimal transaction costs.",
+  "It is much harder to find counterparties willing to trade at other, non-Henry-Hub locations directly.",
+  "Exchange-traded Henry Hub futures eliminate counterparty credit risk concerns and allow trades to be netted.",
+  "Traders execute the bulk of their volume at Henry Hub first, then complete the locational piece once a suitable basis counterparty is found."
+ ],
+ "relationships": [
+  "Combines the index price (Henry Hub futures) with the basis price (basis swap) to reconstruct an all-in locational exposure."
+ ],
+ "trading_implications": [
+  "Expect better liquidity and tighter costs trading Henry Hub futures than trading directly at illiquid delivery points.",
+  "Locational (basis) trades may face longer time-to-execution due to thinner counterparty availability."
+ ],
+ "caveats": [
+  "Assuming all natural gas locations trade with Henry-Hub-like liquidity \u2014 most do not."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "148"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 3,
+   "topic": "Two-trade structure: Henry Hub futures + basis swap"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Capacity factor by solar tracking technology",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Different solar panel mounting technologies (fixed, single-axis tracking, dual-axis tracking) achieve different ranges of capacity factor by more closely following the sun's position.",
+ "core_idea": "Adding tracking motion to solar panels increases efficiency and capacity factor relative to a fixed panel, with dual-axis tracking outperforming single-axis, which in turn outperforms fixed installations.",
+ "key_points": [
+  "Fixed-panel arrays: 13-20% capacity factor.",
+  "One-axis (east-west) tracking: 25-30% more efficient than fixed panels, with 17-25% capacity factor.",
+  "Two-axis tracking (east-west plus tilt): 30-40% more efficient than fixed panels, with 18-27.5% capacity factor.",
+  "Efficiency gains from tracking come from keeping panels more directly oriented toward the sun as it moves through the sky."
+ ],
+ "relationships": [
+  "Directly extends the general solar capacity factor range described alongside it."
+ ],
+ "trading_implications": [
+  "Knowing which tracking technology underlies a given solar asset helps refine generation forecasts and valuation versus using a single blended capacity-factor assumption."
+ ],
+ "caveats": [
+  "The percentage efficiency gains (25-30%, 30-40%) describe relative improvement in output versus a fixed panel, not the absolute capacity factor itself."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "458-459"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_002.json",
+   "idx": 1,
+   "topic": "Capacity factor by solar tracking technology"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

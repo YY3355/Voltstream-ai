@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Credit Quality and Probability of Default",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Credit Risk",
+ "definition": "Credit quality is a forward-looking assessment of the probability that a counterparty will default on its obligations over some future period.",
+ "core_idea": "Because energy contracts often span years, credit quality must be estimated prospectively using ratings agencies, in-house research, and layered analysis of a counterparty's own clients, rather than solely from historical default data.",
+ "key_points": [
+  "Credit quality attempts to forecast default probability over a forward-looking horizon appropriate to the contract's life.",
+  "Ratings agencies provide credit ratings that can be supplemented by in-house research on key counterparties.",
+  "A trading partner's own credit risk depends in part on the credit quality of its clients (layered/cascading exposure).",
+  "A company is less likely to default when its large trades have moved in its favor, and more likely to default when trades have moved against it.",
+  "Probability of Default (PD): the likelihood that an obligor fails to make a scheduled payment or obligation by a given future date (e.g., by bond expiration or within a fixed window like the next month)."
+ ],
+ "relationships": [
+  "PD is the quantitative expression of credit quality.",
+  "Credit quality interacts with exposure to determine overall counterparty risk."
+ ],
+ "trading_implications": [
+  "Traders should monitor mark-to-market direction on large positions with a counterparty, since adverse moves against that counterparty raise its default likelihood."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "568-569"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_000.json",
+   "idx": 3,
+   "topic": "Credit Quality and Probability of Default"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

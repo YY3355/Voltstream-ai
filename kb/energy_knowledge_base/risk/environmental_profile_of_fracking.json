@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Environmental profile of fracking",
+ "type": "risk",
+ "category": "Oil & Gas",
+ "subcategory": "Environmental / Risk",
+ "definition": "Fracking carries both an environmental benefit (displacing coal with cheaper, cleaner natural gas, lowering air pollution and carbon emissions) and an environmental risk (releasing pollutants such as sulfur and heavy metals that were trapped in shale formations, which requires water treatment to protect drinking water).",
+ "core_idea": "Cheap fracked natural gas displacing coal was a major driver of falling U.S. carbon emissions, but the same process can mobilize pollutants trapped in shale that must be removed from water before it reaches drinking supplies.",
+ "key_points": [
+  "Cheap natural gas from fracking displaced coal as the lowest-cost generation fuel across much of the U.S.",
+  "This displacement was a primary driver of a roughly 12 percent decrease in U.S. carbon emissions from 2005 to 2015.",
+  "Pollution (e.g., sulfur, heavy metals) trapped alongside hydrocarbons in shale can be released by fracking.",
+  "Water used in fracking must be treated to remove this pollution before it can contaminate drinking water."
+ ],
+ "relationships": [
+  "Natural gas vs. coal generation economics",
+  "Fracking process (fluid injection)"
+ ],
+ "trading_implications": [
+  "Cheap fracked gas supply has structurally pressured coal generation economics in the U.S. power stack."
+ ],
+ "caveats": [
+  "Fracking's environmental impact is not purely negative or purely positive \u2014 the source presents a genuine mix of emissions benefit and water-contamination risk."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "129"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 2,
+   "topic": "Environmental profile of fracking"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

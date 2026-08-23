@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Operating scenarios simplify turbine-combination optimization",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Tolling Agreements / Valuation",
+ "definition": "Rather than optimizing each turbine individually, tolling models group plant configurations into a small number of 'operating scenarios' (e.g., all off, most-efficient units only, all units on) built by summing individual generator capabilities.",
+ "core_idea": "This simplification relies on the assumption that less-efficient turbines are always brought online after more-efficient ones (a merit-order assumption), letting valuation choose among a handful of aggregate scenarios per period instead of searching every turbine combination.",
+ "key_points": [
+  "Example scenarios: all units off, only the most efficient units running, all units running.",
+  "Scenario capability is computed by summing the individual generators' capabilities from a plant capability chart.",
+  "Assumption: less efficient turbines are never activated ahead of more efficient ones."
+ ],
+ "relationships": [
+  "Builds on the plant physical description (steam + gas turbines); extended further by day/night-linked scenarios"
+ ],
+ "trading_implications": [
+  "Valuation reduces to selecting the highest-value scenario per period rather than an intractable combinatorial search"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "430-431"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 4,
+   "topic": "Operating scenarios simplify turbine-combination optimization"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

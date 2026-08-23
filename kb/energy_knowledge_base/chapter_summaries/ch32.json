@@ -1,0 +1,7 @@
+{
+ "chapter": 32,
+ "title": "6.4 MODEL RISK",
+ "n_concepts": 12,
+ "summary": "DAT loss model risk in energy trading arises when quantitative models fail silently as their underlying assumptions drift from real-world conditions, or when their inputs and processing are misunderstood or misused. This chapter surveys the sources of that risk\u2014stale assumptions, arbitrary parameters from thin data, and proxy pricing for illiquid locations\u2014alongside the practices meant to contain it: rigorous testing methods, governance and documentation standards, ongoing observation once a model is live, and deliberate safeguards like profit reserves and manual overlays. Together these concepts frame model risk not as a single failure mode but as something to be defined, tested, governed, and watched throughout a model's working life.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

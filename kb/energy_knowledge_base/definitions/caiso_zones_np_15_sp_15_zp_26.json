@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "CAISO zones: NP-15, SP-15, ZP-26",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "California (CAISO)",
+ "definition": "California's power market is divided by the Path 15 transmission line into two primary pricing zones, NP-15 (north) and SP-15 (south), plus a third, less critical zone, ZP-26, that interconnects to both.",
+ "core_idea": "NP-15 covers the northern Bay Area and can import low-cost hydro from the Columbia River basin when water is available, otherwise relying on Canadian-supplied gas plants; SP-15 covers southern California and imports gas/solar power from Arizona and hydropower from Nevada, with its own gas plants fed from the Rockies and West Texas; ZP-26 is a lower-population zone with excess generation capacity connecting the other two.",
+ "key_points": [
+  "Path 15 is the major transmission line that bisects the state and gives the NP-15/SP-15 zones their names",
+  "NP-15 (north of Path 15, includes San Francisco Bay area): imports low-cost hydro from the Columbia River basin (Oregon) when rainfall/snowmelt allow; otherwise natural gas (supplied mainly from western Canada) sets price",
+  "SP-15 (south of Path 15, most of southern California): major importer of power from Arizona (natural gas and solar) and Nevada (Colorado River hydropower); its own gas plants are fed from Rocky Mountain and West Texas supply",
+  "ZP-26 is a large but less important zone with low population and excess generation capacity, connecting to both NP-15 and SP-15"
+ ],
+ "relationships": [
+  "Pacific Northwest",
+  "Desert Southwest",
+  "California's marginal fuel and gas supply split"
+ ],
+ "trading_implications": [
+  "NP-15 vs SP-15 basis reflects differing import sources (Northwest hydro vs. Arizona/Nevada supply) and differing marginal gas basins"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "201-202"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 6,
+   "topic": "CAISO zones: NP-15, SP-15, ZP-26"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Active versus passive bidding strategy",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Bidding Strategy",
+ "definition": "Because every dispatched generator earns the same market clearing price, a plant can safely bid very low (passive) without losing revenue as long as some other participant sets a higher price; deliberately bidding to push the price up (active) is riskier because it raises the chance of not clearing at all.",
+ "core_idea": "The choice between active and passive bidding comes down to how much profit a plant would forgo if it failed to clear, which depends on the spread between the market price and the plant's own production cost.",
+ "key_points": [
+  "In a uniform-price auction there is no need to be the top bidder \u2014 a plant earns the clearing price regardless of how low it bid, provided someone else sets a higher price.",
+  "Actively bidding to try to raise the market price carries real risk: an aggressive bid can fail to clear, meaning the plant earns nothing for that period.",
+  "The decision to bid actively hinges on how much profit is at stake if the plant ends up inactive.",
+  "A plant's profit is the spread between the market price and its own cost of production, so low-cost plants risk giving up much more profit than high-cost plants by going inactive."
+ ],
+ "relationships": [
+  "uniform clearing price mechanism",
+  "generation stack cost position"
+ ],
+ "trading_implications": [
+  "Low-cost producers should generally favor passive, low bids to guarantee dispatch and protect their large profit margin.",
+  "Higher-cost, thinner-margin producers have comparatively less to lose from occasional non-dispatch, so they have more incentive to bid aggressively to try to move the price up."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "412"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 4,
+   "topic": "Active versus passive bidding strategy"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

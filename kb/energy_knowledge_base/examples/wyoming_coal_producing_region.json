@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Wyoming coal-producing region",
+ "type": "example",
+ "category": "Coal",
+ "subcategory": "Producing Regions",
+ "definition": "The western United States, centered on Wyoming, is the single largest coal-producing region in the country, characterized by extremely large surface mines working thick coal seams (sometimes 40-50 feet deep) close to the surface.",
+ "core_idea": "Wyoming's surface mines produce low-sulfur, low-ash sub-bituminous coal that fuels power plants across the central U.S., and the region alone accounts for roughly half of total U.S. coal production, including some of the world's largest surface mines.",
+ "key_points": [
+  "The western U.S., centered in Wyoming, is the largest coal-producing region in the country",
+  "Coal seams there are sometimes 40 to 50 feet thick and lie close to the surface, enabling extremely large surface mines",
+  "Wyoming mines produce low-sulfur, low-ash sub-bituminous coal used to fuel power plants throughout the central United States",
+  "Some of the largest surface mines in the world are located in this region",
+  "The region accounts for about half of total U.S. coal production"
+ ],
+ "relationships": [
+  "Contrasts directly with the Appalachian underground-mining region"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "260-261"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 8,
+   "topic": "Wyoming coal-producing region"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

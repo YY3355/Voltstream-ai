@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Exotic vs. Vanilla Options",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Classification",
+ "definition": "A vanilla option is a plain option (e.g., one whose underlying asset price can be modeled with a lognormal distribution) that can typically be priced with the Black-Scholes formula. An exotic option is any option that does not meet the assumptions of the Black-Scholes model, i.e., cannot be constructed from simple put and call options.",
+ "core_idea": "The key distinction between vanilla and exotic options is the assumptions needed to model their price; exotic option formulas typically require more variables, and those variables may not behave the same way as in standard models.",
+ "key_points": [
+  "Exotic option: any option that can't be replicated with standard put or call options / doesn't meet Black-Scholes assumptions.",
+  "Vanilla option: a normal option with no special features, usually priced with Black-Scholes.",
+  "Spread options are a type of exotic option because they involve two underlying assets."
+ ],
+ "relationships": [
+  "Spread options are a specific case of exotic options."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "375-376"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 1,
+   "topic": "Exotic vs. Vanilla Options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

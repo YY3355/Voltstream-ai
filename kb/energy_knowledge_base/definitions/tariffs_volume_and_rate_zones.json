@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Tariffs, volume, and rate zones",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "Tariffs are the public rate documents pipelines file describing their transportation charges; volume is the quantity of gas moved; zones are the geographic segments a pipeline is divided into for rate-setting purposes.",
+ "core_idea": "Pipeline transportation pricing is publicly documented (tariffs) and can vary by geographic segment of the pipeline (zones) rather than being uniform end to end.",
+ "key_points": [
+  "Tariffs are commonly public and can be found on the pipeline's own site or the relevant regulator's site (e.g., the eFERC site in the U.S.).",
+  "Volume refers simply to the quantity of gas transported.",
+  "Zones divide a pipeline into different geographic areas that can carry different rates; a 'postage stamp' pipeline is the special case of just one zone."
+ ],
+ "relationships": [
+  "Zones are the mechanism by which a pipeline can charge differently from a simple single postage-stamp rate."
+ ],
+ "trading_implications": [
+  "Traders can look up actual pipeline rates directly from filed tariffs rather than relying on estimates."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "517-518"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 1,
+   "topic": "Tariffs, volume, and rate zones"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Surface (strip) mining of coal",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Coal Mining Methods",
+ "definition": "Surface mining, or strip mining, extracts coal located close to the earth's surface by clearing topsoil and rock before excavating the coal.",
+ "core_idea": "Strip mining removes topsoil/groundcover with standard earth-moving equipment and the underlying rock layer via explosives followed by excavation; it is simpler and requires fewer workers than underground mining (though underground coal is typically higher quality), is driven economically by the ratio of coal recovered to earth removed, and is typically followed by contouring, topsoil replacement, and replanting to restore the land \u2014 practices that have reduced its historically poor environmental reputation.",
+ "key_points": [
+  "Used when coal deposits are close to the surface",
+  "Topsoil/groundcover removed with standard earth-moving equipment (e.g., bulldozers)",
+  "Rock layer requires explosives to crack before excavation",
+  "Uses equipment similar to standard excavation equipment, at very large scale",
+  "Simpler and needs fewer miners than underground mining, but the highest-quality coal tends to be deep underground",
+  "Primary economics: coal quantity available vs. amount of earth that must be removed",
+  "Post-mining restoration is now generally required: contouring, topsoil replacement, replanting",
+  "Common in the Midwestern and Western United States"
+ ],
+ "relationships": [
+  "Contrasted with underground mining, which the source begins to introduce as the method used when coal is too deep for surface mining"
+ ],
+ "trading_implications": [
+  "Regional differences in mining method (surface vs. underground) affect coal cost and quality, relevant to delivered coal price/quality differentials by supply region"
+ ],
+ "caveats": [
+  "Cheaper, simpler surface mining does not imply the coal obtained is of comparable quality to deeper, underground-mined coal"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "254-255"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 6,
+   "topic": "Surface (strip) mining of coal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Error analysis in load model development",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Model Validation",
+ "definition": "Error analysis is the systematic comparison of a model's predictions against actual observed load to find where and why the model is wrong.",
+ "core_idea": "Modeling is treated like scientific hypothesis testing: build an initial model, then actively try to find where it fails, and revise it iteratively until the errors are acceptably small or well understood.",
+ "key_points": [
+  "The error of a model is defined as the difference between actual observed load and the model's prediction.",
+  "The process is iterative: identify systematic error patterns, adjust the model, and repeat.",
+  "The goal of error analysis is to explain the specific cases where the model does not work well, not just to report an average error."
+ ],
+ "relationships": [
+  "Follows creation of the initial simple model; motivates the in-sample/out-of-sample distinction and the search for specific error sources."
+ ],
+ "trading_implications": [
+  "Systematic, unexplained forecast errors are a signal that a trading/forecasting model is missing a real driver of demand and should not be trusted blindly for pricing decisions."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "403"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 4,
+   "topic": "Error analysis in load model development"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

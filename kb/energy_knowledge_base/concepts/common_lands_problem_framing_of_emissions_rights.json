@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Common lands problem framing of emissions rights",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Economic Theory",
+ "definition": "A subset of public-goods problems, named after historical shared lands in England, Scotland, and Wales, applied to emissions by treating carbon rights as a limited, distributable commodity rather than a tax obligation.",
+ "core_idea": "Instead of viewing emissions reduction purely as a shared tax burden, it can be reframed as distributing a limited commodity \u2014 the right to low-cost electricity \u2014 which is the conceptual basis for treating emissions rights as tradable permits.",
+ "key_points": [
+  "Political economists label this category of public-goods problem 'common lands problems'",
+  "The name derives from shared land historically found in England, Scotland, and Wales before the seventeenth century",
+  "Under this framing, emissions rights are a limited commodity: possessing one grants access to low-cost electricity",
+  "This reframing turns the emissions problem into one of distributing low-cost-electricity permits rather than collecting taxes"
+ ],
+ "relationships": [
+  "Alternative framing to the pure public-goods/tax view",
+  "Conceptual basis for cap and trade's tradable permits"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "268"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 4,
+   "topic": "Common lands problem framing of emissions rights"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

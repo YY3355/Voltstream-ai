@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Western Interconnection overview and hydro dependence",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Western Interconnection",
+ "definition": "The Western Interconnect spans a chain of regional grids from the Pacific Northwest through California to the Desert Southwest, with trading activity centered on power flows into and out of California.",
+ "core_idea": "Because hydroelectric generation supplies roughly 70% of Washington and Oregon's power, small changes in water flow drive outsized swings in regional power supply and, by extension, prices across the Western Interconnect.",
+ "key_points": [
+  "Seven major trading locations exist across the western U.S.",
+  "Geography (Rocky Mountains) and California's central position shape regional power flow",
+  "Pacific Northwest (MIDC) and the Colorado River near Las Vegas (Mead) are major hydroelectric sources",
+  "During peak usage periods, power generally flows toward California",
+  "Hydro supplies ~70% of Washington/Oregon power, so small water-flow changes cause large supply swings"
+ ],
+ "relationships": [
+  "California (CAISO)",
+  "Pacific Northwest",
+  "Desert Southwest"
+ ],
+ "trading_implications": [
+  "Hydrology (snowpack, rainfall) becomes a key driver of regional power price forecasting, not just demand/weather"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "198-199"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 1,
+   "topic": "Western Interconnection overview and hydro dependence"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

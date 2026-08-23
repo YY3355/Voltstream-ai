@@ -1,0 +1,2139 @@
+{
+ "nodes": [
+  "mark to market",
+  "value at risk",
+  "wheeling",
+  "black scholes",
+  "spark spread",
+  "weather derivative",
+  "cap and trade",
+  "heat rate",
+  "hedging",
+  "natural gas storage",
+  "spread option",
+  "credit risk",
+  "tolling agreement",
+  "crack spread",
+  "load forecasting",
+  "model risk",
+  "financial transmission rights",
+  "hedge accounting",
+  "liquefied natural gas",
+  "carbon tax",
+  "generation stack",
+  "historical cost accounting",
+  "implied heat rate",
+  "natural gas liquids",
+  "AC grid frequency response",
+  "AC transmission losses scale with the square of current",
+  "AC vs. DC power transmission",
+  "AC vs. DC transmission (Edison vs. Westinghouse)",
+  "Acid rain from nitrogen and sulfur oxides",
+  "Active versus passive bidding strategy",
+  "Actual (all-in) position vs. basis position",
+  "Actual (physical commodity term)",
+  "Adjusting hedge size for mismatched volatility",
+  "American vs European options",
+  "Ancillary services markets",
+  "Annual Cost Adjustment (ACA) charge",
+  "Anthracite coal",
+  "Appalachian coal-producing region",
+  "Arbitrage and arbitrage-free pricing",
+  "Arbitrage and operational vs financial risk",
+  "Arbitrage-free option pricing via replication",
+  "Arbitrage-free pricing",
+  "Asian (average price) options",
+  "Asian and European options: exercise-style distinctions",
+  "Assumption risk from long model lifespans",
+  "Asymmetric option payoff and volatility",
+  "Avoided cost compensation",
+  "Bankruptcy Priority Order",
+  "Barrel of oil equivalent (BOE) and tonne of oil equivalent (TOE) conversions",
+  "Base gas (cushion gas) versus working gas",
+  "Base gas vs. working gas",
+  "Base load power and the three-tier capacity structure",
+  "Base load, peak load, and safety-margin generation",
+  "Baseload generation plants",
+  "Baseload generation units",
+  "Basis - divergent meaning in energy markets",
+  "Basis Risk at Illiquid Trading Points",
+  "Basis for testing hedge effectiveness: changes in value, not levels",
+  "Basis price vs. index price vs. all-in price",
+  "Basis spread stays level 2 even when zero",
+  "Battery storage for the electrical grid",
+  "Bid placement between own cost and the next unit's cost",
+  "Bidweek",
+  "Bilateral (OTC) trading vs. exchange trading",
+  "Bilateral / OTC trading and ISDA netting",
+  "Binomial model: complementary probability of a price decline",
+  "Biodiesel blend grades: B2-B5, B100, B99.9",
+  "Biodiesel: composition, advantages, and drawbacks",
+  "Biological carbon capture (plants and bacteria)",
+  "Bituminous coal",
+  "Bond Prices Move Inversely to Interest Rates",
+  "Brownian motion (Wiener process)",
+  "Burner tip and natural gas hubs / Henry Hub",
+  "Butanes and isobutane",
+  "Buyer-seller gas contract tiers: interruptible, baseload, firm",
+  "CAISO zones: NP-15, SP-15, ZP-26",
+  "CO2 Emissions Are an Unavoidable Combustion Byproduct, Varying by Fuel Chemistry",
+  "Calendar Month Average (CMA) pricing",
+  "California's marginal fuel and regional natural gas supply split",
+  "Call and put payoff formulas",
+  "Call and put payoff mechanics relative to the strike price",
+  "Candidate sources of load model error",
+  "Capacity factor by solar tracking technology",
+  "Capacity market goals and payment structures",
+  "Capacity markets",
+  "Carbon capture and sequestration",
+  "Carbon dioxide is an unavoidable product of burning organic fuel",
+  "Carbon equivalents and other pollutant markets (SOX, NOX)",
+  "Carbon oxides: CO2 versus CO",
+  "Carbon tracking and enforcement is difficult",
+  "Cash market",
+  "Cash market vs. trading market",
+  "Cash transactions, futures, swaps, and forwards defined",
+  "Cheap fracked natural gas undercut U.S. carbon legislation",
+  "China vs. US carbon emissions dispute",
+  "Choosing the exit price: primary market vs. highest and best use",
+  "Circuit fundamentals and Ohm's Law",
+  "Classification of coal by rank: lignite, sub-bituminous, bituminous, anthracite",
+  "Closed form vs. open form solutions",
+  "Closing out and flat positions",
+  "Coal as a fuel: characteristics and role",
+  "Coal as a generation fuel: benefits and drawbacks",
+  "Coal as a thinly-traded commodity",
+  "Coal is a thinly traded financial market",
+  "Coal pipeline environmental costs: water use",
+  "Coal pipeline transportation trade-offs",
+  "Coal price volatility and storage characteristics",
+  "Coal pricing terminology",
+  "Coal procurement and supplier lock-in for power plants",
+  "Coal transport methods and coal pipelines",
+  "Coal washing (pyrite removal)",
+  "Coal's dominant use is electrical generation",
+  "Coal, cost, and the emissions markets' real target",
+  "Cogeneration",
+  "Cogeneration (topping and bottoming cycle plants)",
+  "Cold-Start Economics and Continuous Operation",
+  "Cold-weather dual-peak demand pattern",
+  "Combustion as a bond-breaking oxidation reaction",
+  "Commodity swap",
+  "Common applications of LCOE analysis",
+  "Common contractual features of futures, forwards, and swaps",
+  "Common hedge structures: futures and costless collars",
+  "Common lands problem framing of emissions rights",
+  "Common oil market terminology: Brent Crude, Feedstock, Fuel Oils, Heating Oil",
+  "Commonly observed design flaws in capacity markets",
+  "Complexity tradeoff in option model design",
+  "Compressed air energy storage",
+  "Compressed-Air Thermal Storage as a Peak/Off-Peak Spread Position",
+  "Compression heating, cooling, and impurity removal",
+  "Compressor stations",
+  "Concentrated solar power and the collector-vs-panel trade-off",
+  "Consumer opposition to wind farms",
+  "Continuous injection/withdrawal requirement for pipeline operation",
+  "Continuous trading assumption and jump diffusion",
+  "Conversion efficiency of a solar unit",
+  "Core Contract Type Definitions: Futures, Spot, Physical, Financial",
+  "Core fair value terminology (ASC 820 / IFRS 13)",
+  "Core model testing techniques",
+  "Cornering risk and the reserve-offset hedge",
+  "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate",
+  "Correlated does not mean a good hedge",
+  "Correlation between assets",
+  "Correlation between price series",
+  "Correlation between two price series",
+  "Correlation coefficient: definition and interpretation",
+  "Correlation is driven by outlier observations",
+  "Cost vs. production trade-off in solar tracking systems",
+  "Costless Collar",
+  "Credit Default Swap (CDS)",
+  "Credit Exposure, EAD, Recovery Rate, and LGD",
+  "Credit Quality",
+  "Credit Quality and Probability of Default",
+  "Credit Value Adjustment (CVA) and Debit Value Adjustment (DVA)",
+  "Credit quality and interest rate benchmarks",
+  "Crude oil as a global market vs. refined products as regional markets",
+  "Crude oil as a market benchmark",
+  "Crude oil market participant categories",
+  "Crude oil quality: density and sulfur classification",
+  "Crude oil trade geography and refining location",
+  "Crude oil trading units: barrel and tonne",
+  "Cyclical markets and the spot-forward relationship in energy",
+  "Cycling (Storage Term)",
+  "Daily demand pattern in hot weather",
+  "Data reduction and the risk of misleading summaries",
+  "Day-ahead auction versus real-time auction",
+  "Day-ahead vs real-time auction structure",
+  "Day-ahead vs real-time power auctions",
+  "Day-ahead vs. real-time bidding strategy for generators",
+  "Day-ahead/real-time auctions, forward markets, and the clearing price",
+  "Day-type effects on electricity demand",
+  "Day/night linkage forces joint valuation of operating scenarios",
+  "Daylight saving time and Indiana electricity demand",
+  "Deepwater drilling activity as an oil-price sentiment indicator",
+  "Deepwater drilling: definition and physical challenges",
+  "Defining features of a derivative contract",
+  "Deliverability (Storage Term)",
+  "Delta",
+  "Depleted gas reservoirs as storage facilities",
+  "Deregulated vs Regulated Markets",
+  "Deregulation reshaped who owns power plants",
+  "Derivative and Underlying",
+  "Derivatives: definition and role",
+  "Desert Southwest power market and trading hubs",
+  "Dew-point separation of hydrocarbons",
+  "Diesel Fuel End Use and Trade Flows",
+  "Diesel Fuel and Heating Oil Are the Same Base Product",
+  "Difficulty applying MTM to energy contracts",
+  "Disorderly transactions and their indicators",
+  "Dispatch capacity and break-even cost",
+  "Distillation",
+  "Distillation as a Separation Method",
+  "Distillation of crude oil into refined products",
+  "Distributing emissions licenses is inherently contested",
+  "Distributing emissions rights and consumer protection",
+  "Drivers of coal price: fuel substitution and environmental legislation",
+  "Drivers of day-to-day demand variation",
+  "EIA and FERC",
+  "Earnings manipulation risk via MTM on illiquid assets",
+  "Eastern (East Coast) natural gas market structure",
+  "Eastern Interconnect structure: RTO/ISOs and regulated utilities",
+  "Eastern Interconnect trading drivers: fuel mix and regional climate",
+  "Economic role of storage facilities",
+  "Economies of scale vs. transmission complexity trade-off in coal generation",
+  "Economy of scale in coal-fired generation shaped the grid",
+  "Efficient dispatch vs economic dispatch",
+  "Elasticity and inelastic energy markets",
+  "Electric cars as a source of grid battery storage",
+  "Electrical flow follows physics, not operator intent (loop flow / congestion)",
+  "Electricity Storage Methods and Economics",
+  "Electricity forward contract structure (fragmented products)",
+  "Electricity price formation via merit-order auctions",
+  "Electricity storage as a price-arbitrage opportunity",
+  "Electricity units: megawatt vs. megawatt-hour",
+  "Electromagnetic induction principle behind generators",
+  "Emissions credits as a bridge between economic and efficient dispatch",
+  "Emissions credits: allocation vs. offsets",
+  "Energy Cost of Distillation at Scale",
+  "Energy density comparison: gasoline vs. natural gas",
+  "Energy independence versus pollution tradeoff",
+  "Energy options are written on futures/forwards, which further discourages early exercise",
+  "Energy value chain: find, move, convert, deliver",
+  "Engine Knocking and Octane Rating",
+  "Enron Bankruptcy as Cascading Credit Crisis",
+  "Environmental profile of fracking",
+  "Error analysis in load model development",
+  "Estimating Probability of Default",
+  "Estimating implied correlation from historical spread/ratio data",
+  "Estimation risk in solar project sizing",
+  "Ethane: limited trading market",
+  "Ethanol as a transportation fuel: properties and drawbacks",
+  "Ethanol as an alternative fuel",
+  "Ethanol production process (fermentation)",
+  "Example linear load-vs-temperature model for PJM-West",
+  "Exception to no-early-exercise: dividends accrue to the stock owner, not the option owner",
+  "Exchange Liquidation on Missed Margin Call",
+  "Exchange for Physical (EFP)",
+  "Exchange for Physical (EFP) negotiated terms",
+  "Exchange for Principal (EFP) Transaction Confirmation",
+  "Exchange trading",
+  "Exchange trading vs. OTC trading: trade-offs",
+  "Exchange-Traded vs OTC Trading",
+  "Exchange-traded crack spreads",
+  "Exotic vs. Vanilla Options",
+  "Expected demand vs. worst-case demand as distinct modeling goals",
+  "Expected profit per megawatt from profitable spread scenarios",
+  "Expected-value example: aggressive bidding trade-off by cost basis",
+  "Exploration and production as two distinct activities",
+  "Exponentially weighted volatility (lambda decay)",
+  "Extending replication pricing over multiple periods",
+  "Extrinsic value as the value of the lottery ticket minus its intrinsic value",
+  "FTR Options",
+  "Fair Value and core accounting terms",
+  "Fair value accounting definitions: FASB ASC 820 and IASB IFRS 13",
+  "Fair value hierarchy (Level 1 / 2 / 3 inputs)",
+  "Fair value leveling example: Henry Hub vs. Texas gas basis",
+  "Fast-start backup generation needed for wind ramp-down",
+  "Financial assets: stocks and bonds",
+  "Firm vs. Interruptible Pipeline Transportation Service",
+  "Firm vs. Interruptible Transportation Contracts",
+  "Firm vs. interruptible transportation service",
+  "Five prospective regression tests for hedge effectiveness",
+  "Fly ash and soot as inhaled particulate pollution",
+  "Flywheel energy storage",
+  "Force Majeure Clause",
+  "Force majeure clause",
+  "Formation and trapping of natural gas",
+  "Forward Market Mechanics and Its Volatility-Reducing Role",
+  "Forward market",
+  "Forward power market vs. daily (spot) power auctions",
+  "Forward vs Future Contracts",
+  "Forwards vs. futures",
+  "Fossil fuels as hydrocarbons",
+  "Four functional components of electricity delivery",
+  "Fractional distillation and cracking",
+  "Fuel-power correlation as the dominant value driver",
+  "Fungibility and Notional Value",
+  "Futures Contract Naming Convention and Expiration Timing",
+  "Futures Contracts \u2014 Key Characteristics",
+  "Game Theory in generator bidding",
+  "Gamma",
+  "Gas Compression and Expansion Thermodynamics",
+  "Gas Pipeline Compression: Corrosion and Liquid Dropout Risk",
+  "Gas Pressure, Volume, and Temperature Interdependence (Ideal Gas Law)",
+  "Gas Storage Capacity \u2014 Base Gas vs Working Gas",
+  "Gas Turbine Power Generation",
+  "Gas commingling and pipeline fullness economics",
+  "Gas-oil ratio classification of wells",
+  "Gasoline demand, cost composition, and distribution",
+  "Gasoline formulation regulation and additives",
+  "Gasoline price volatility and seasonality",
+  "General rule: options are (almost) never exercised early",
+  "Generation-Load Balance and Grid Stability",
+  "Geographic and atmospheric drivers of solar resource quality",
+  "Geographic drivers of solar production and capacity factor",
+  "Geographic risk gradient of acid rain from coal plants",
+  "German feed-in tariff solar subsidy trade",
+  "Global coal reserve geography and Atlantic vs. Pacific trade markets",
+  "Global crude oil pricing vs. regional refined product pricing",
+  "Governance risk from under-scrutinized hedges",
+  "Government tools and incentives to manage emissions prices",
+  "Green Energy vs Brown Energy",
+  "Grid frequency synchronization as an operational risk",
+  "HVDC transmission: lower losses and cost for long distances, but poor multi-endpoint flexibility",
+  "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+  "Heavy Fuel Oil (No. 4/5/6 / Bunker Fuel)",
+  "Heavy Metal Pollution from Coal Combustion (Mercury)",
+  "Heavy metal contamination from combustion",
+  "Hedge Effectiveness Testing via Linear Regression",
+  "Henry Hub Benchmark and NYMEX Futures Contract",
+  "Hidden Costs of \"Costless\" Hedges",
+  "Hourly (diurnal) load shape varies by season and day type",
+  "How exchange order matching and anonymity work for futures",
+  "How gas is physically injected into and held in storage",
+  "How natural gas pipelines physically move gas",
+  "Hydraulic fracturing (fracking)",
+  "Hydraulic fracturing (fracking) and its market impact",
+  "Hydrocarbon classification by carbon chain length",
+  "Hydrocarbon gas liquids: alkanes versus alkenes",
+  "ISDA and the ISDA Master Agreement",
+  "ISDA master agreement and netting",
+  "Illiquid trading point / benchmark proxy risk",
+  "Illiquidity in energy markets",
+  "Illustrative example: an irrational end-of-day trade forcing a market-wide markdown",
+  "Implied volatility as the hard input",
+  "In-sample vs. out-of-sample testing",
+  "Individual rate of return (IRR) vs. market interest rate",
+  "Initial Margin and Excess Equity",
+  "Injection Capacity (Storage Term)",
+  "Integration as the calculus basis for probability",
+  "Interest rate binomial tree",
+  "Interest rate risk: forwards vs. futures cash flow timing",
+  "Intrinsic Value and Extrinsic Value of an option",
+  "Intrinsic value vs. extrinsic value of an option",
+  "Investing in redundant compressors to grow firm-contract capacity",
+  "Isotopes and atomic mass/atomic number",
+  "Joint (fixed-ratio) production of refined products",
+  "Kerosene (No. 1 Fuel Oil)",
+  "Key features of forwards and swaps",
+  "Key inputs to a load forecast: consumer type, location, weather, calendar effects",
+  "Kirk's Approximation",
+  "LCOE as a fundamental-analysis upper bound on long-horizon power prices",
+  "LCOE calculation mechanics: CONE, DCF, WACC, and CRF",
+  "LNG Peak Shaving Units",
+  "LNG Value Chain: Liquefaction, Transportation, Regasification",
+  "LNG and Global Natural Gas Market Integration",
+  "LNG as Monetization for Stranded Natural Gas Reserves",
+  "LNG safety and explosion risk",
+  "LNG transportation losses (boil-off)",
+  "LNG's effect on regional gas market integration",
+  "Lag between high prices and new energy supply",
+  "Law of Demand and Law of Supply",
+  "Leveling determination is a firm management judgment",
+  "Light vs. heavy crude and API gravity",
+  "Lignite (brown coal)",
+  "Limited international coal trade and low price volatility",
+  "Limited role of speculation in emissions markets",
+  "Liquidity and Security",
+  "Liquidity: liquid vs illiquid markets/assets",
+  "Load variability and peak/off-peak power products",
+  "Local Fragmentation and Volatility of Electricity Spot Markets",
+  "Local distribution networks and the citygate price",
+  "Local, regional, and global scope of pollution impact",
+  "Location spread trade example: NP-15 vs. MID-C on an early snowmelt view",
+  "Location spreads",
+  "Locational basis in natural gas markets",
+  "Lognormal versus normal price distributions",
+  "Long vs. short exposure, and why 'buy' terminology is misleading for forwards",
+  "Long, Short, Hedge, and Natural Hedge",
+  "Long, short, and flat positions",
+  "Long-run natural gas supply as a function of price",
+  "Long/short the option, long/short volatility",
+  "Major crude oil benchmarks: WTI, Brent, Persian Gulf",
+  "Major pollutant categories from power plant combustion",
+  "Margin Call",
+  "Marginal bid clustering under uniform clearing price",
+  "Marginal supply sensitivity of power prices",
+  "Martingale",
+  "Master Netting Agreements",
+  "Mean Reversion vs. Martingale Behavior in Spreads",
+  "Mechanics of injecting gas into storage via compression",
+  "Mechanisms that drive hydrocarbons to the surface",
+  "Melting Point and Boiling Point as Separation Tools",
+  "Mid-Atlantic region and PJM ISO",
+  "Mid-merit generation and marginal price setting",
+  "Mid-merit generation units",
+  "Midcontinent (MISO) power market geography and fundamentals",
+  "Midwest natural gas market structure",
+  "Midwestern U.S. natural gas market: winter consuming region",
+  "Mineral rights ownership and licensing for E&P",
+  "Minimum Variance Hedge Ratio",
+  "Mode, median, and mean as measures of central tendency",
+  "Model Documentation and Governance Practices",
+  "Model maintenance procedures",
+  "Model observation as a risk control",
+  "Model overlay",
+  "Modeling future prices: distributional estimates and the core pricing assumptions",
+  "Modeling reserve",
+  "Moneyness: At the Money, In the Money, Out of the Money",
+  "Monte Carlo analysis as a valuation tool",
+  "Monte Carlo simulation for valuation modeling",
+  "Monthly seasonality and behavioral load creep (May vs. August effect)",
+  "Multi-layer (graded band gap) solar cells",
+  "NGL liquefaction, storage, transport, and sourcing",
+  "NGL trading hubs and physical vs. financial trading",
+  "Named commodity spreads (spark, dark, crack, frac)",
+  "National positions in emissions allocation disputes",
+  "Natural Gas Combined Cycle Plants",
+  "Natural Gas Hubs and Citygates",
+  "Natural Gas Physical Properties and Transport Implications",
+  "Natural Gas Pipeline Pressure Dynamics",
+  "Natural Gas Pipeline Transportation",
+  "Natural Gas Transportation Contract Fee Terms",
+  "Natural gas (C1) versus natural gasoline (C5+)",
+  "Natural gas common terms glossary",
+  "Natural gas composition: dry vs. wet",
+  "Natural gas end users: industrial, residential, and electrical generation",
+  "Natural gas forward vs. spot market behavior and the storage arbitrage limit",
+  "Natural gas fracking displaced coal and defused carbon legislation",
+  "Natural gas heat-energy units and conversions",
+  "Natural gas marketers vs. physical companies",
+  "Natural gas pipeline delivery-point terminology",
+  "Natural gas value chain and market participants",
+  "Negative Prices Break Risk Management Systems",
+  "Negative prices in energy markets",
+  "New England (ISO-NE) power market geography and fundamentals",
+  "New York (NYISO) power market geography and fundamentals",
+  "Nitrogen Oxide (NOx) Formation and Effects",
+  "Node, zone, and hub pricing under SMD",
+  "Non-fungibility of electricity across time/location creates hundreds of distinct exposures",
+  "Non-storability and immediacy of energy delivery",
+  "Non-storability of electricity and its market consequences",
+  "Nuclear Power Generation Mechanics",
+  "Nuclear fission mechanics",
+  "Nuclear power does not solve fuel import dependency",
+  "Nuclear power emissions and environmental/economic constraints",
+  "Nuclear power plant operation and thermal efficiency",
+  "Nuclear power thermal efficiency",
+  "Nuclear power's grid and transmission structure problem",
+  "Nuclear weapon proliferation risk from enrichment process",
+  "Numeric example: gas price decline compresses baseload coal margin",
+  "Octane rating: definition and common misconception",
+  "Off-Peak to Peak Price Ratio as a Storage Valuation Input",
+  "Oil and gas reserve classification: proven, probable, possible, resources",
+  "Oil sands / heavy oil extraction",
+  "Oil trap and related rock properties",
+  "Opacity of OTC energy pricing",
+  "Operating scenarios simplify turbine-combination optimization",
+  "Option bid/ask spreads are wide relative to premium and scale with liquidity",
+  "Option buyer vs. seller: transfer of risk and long/short volatility",
+  "Option contracts: calls, puts, and premiums",
+  "Option payoffs are asymmetric, which links option value to volatility",
+  "Option premium shifts the payoff and sets the breakeven price",
+  "Option pricing models and vanilla vs. exotic options",
+  "Option value as a bounded percentage of the underlying price",
+  "Option writing as the market's limiting factor",
+  "Options behave like insurance: asymmetric payoff, generally unprofitable to buy outright",
+  "Options on forwards/futures deliver the contract, not the physical commodity",
+  "Options trading as a zero sum game",
+  "Options: calls, puts, and premium",
+  "Options: structure, premium, and buyer's limited downside",
+  "Origins of international climate negotiations (UN, c. 1990)",
+  "Outage rates and capacity auction mechanics",
+  "Outright position",
+  "Overview of risk management practices in energy trading",
+  "PJM (Mid-Atlantic) power market geography and fundamentals",
+  "PJM-East/PJM-West basis hedge case study",
+  "Pacific Northwest power market and trading hubs",
+  "Parallel shift in interest rates",
+  "Parameter estimation risk from limited data",
+  "Particulate Pollution (Fly Ash / Soot)",
+  "Peak/off-peak hour definitions and shorthand notation",
+  "Peaking generation plants",
+  "Peaking generation units",
+  "Permeability",
+  "Petroleum vs. crude oil terminology",
+  "Phase (State of Matter) and Its Trading Relevance",
+  "Photovoltaic (PV) effect and solar cell operation",
+  "Physical Delivery vs. Financial Settlement of Forward/Futures Contracts",
+  "Physical Storage Ownership as an Operational Commitment",
+  "Physical assets as a cheaper substitute for financial options",
+  "Physical constraints on storing and transporting natural gas",
+  "Physical control of nuclear reaction speed (fuel shape and control rods)",
+  "Physical nature and composition of natural gas",
+  "Physical trades vs financial trades",
+  "Physical turbine characteristics and plant example drive model time-frame and structure",
+  "Physical vs. Chemical Changes",
+  "Physical, Spot, Forward, and Financial Markets",
+  "Physically unrecoverable gas",
+  "Physics analogy for voltage, current, and transmission loss",
+  "Pipeline Phase-Change Hazards",
+  "Pipeline infrastructure and captive demand",
+  "Pipeline pressure mechanics and the continuous-flow requirement",
+  "Pipeline quality standards (GTC) and condensation risk",
+  "Pipeline tariffs",
+  "Pipeline transportation charge components",
+  "Pollution profile of nuclear power vs. fossil fuels",
+  "Porosity",
+  "Posting Plus (P-Plus)",
+  "Power Purchase Agreements (PPAs)",
+  "Power generation technologies: fossil fuel plants",
+  "Power generation technologies: hydroelectric",
+  "Power generation technologies: nuclear",
+  "Power plant generation technologies",
+  "Power purchase agreements (PPAs)",
+  "Practical Constraints on Cogeneration",
+  "Premium (option price)",
+  "Premium crude oil",
+  "Price certainty and the term structure of natural gas volatility",
+  "Price spread definition",
+  "Price-spike frequency and the value of owning a power plant",
+  "Principal market vs. most advantageous market",
+  "Production sharing contract",
+  "Propane: uses and demand base",
+  "Public Utility Commission / Public Service Commission role",
+  "Public goods and free riders",
+  "Public opposition to wind power: bird mortality and aesthetics",
+  "Pumped Hydropower Storage \u2014 Spring/Summer Seasonal Arbitrage",
+  "Pumped Hydropower \u2014 Operational, Environmental, and Execution Risks",
+  "Pumped hydropower storage",
+  "RBOB Gasoline",
+  "REC Vintage",
+  "REC price sensitivity to supply and demand",
+  "REC registration and ownership transfer via registries",
+  "RIN price spikes under fixed-quantity biofuel mandates",
+  "Rate base and the utility rate-setting mechanism",
+  "Real assets",
+  "Real options: using option theory to model energy investment decisions",
+  "Real options: using options theory to analyze discretionary investments",
+  "Real-time market eligibility and participation strategy by cost position",
+  "Rearranging Kirk's approximation to solve for implied correlation; observed correlation term-structure pattern",
+  "Refinery and offshore drilling rig investment economics",
+  "Regulated power markets and integrated utilities",
+  "Regulated vs deregulated electricity markets",
+  "Regulated vs. Deregulated Power Markets",
+  "Regulated vs. deregulated markets",
+  "Regulation of transmission rental pricing",
+  "Regulation up / regulation down",
+  "Remote generation penalty and payment for deliverable power",
+  "Renewable Energy Certificates (RECs)",
+  "Renewable Identification Numbers (RINs)",
+  "Renewable Portfolio Standards (RPS) and REC product segmentation",
+  "Renewable energy certificates (RECs)",
+  "Replicating portfolios as the basis of option pricing",
+  "Reservoir pressure and well production decline",
+  "Reservoir trapping and exploration targeting",
+  "Rho \u2014 sensitivity to interest rates",
+  "Ring Fencing",
+  "Risk/reward ratios for comparing investments",
+  "Risk/reward ratios: Sharpe Ratio and Information Ratio",
+  "Roles in a deregulated electricity grid",
+  "Roles in a regulated electricity grid",
+  "Rolling-window volatility and the outlier drop-off problem",
+  "Round-trip efficiency and storage breakeven economics",
+  "SR 11-7's Definition of a Model",
+  "Salt Bed Storage Caverns",
+  "Salt Cavern Pressure and Temperature Engineering",
+  "Salt Cavern Storage Economics",
+  "Salt caverns and salt domes as storage facilities",
+  "Sample variance and standard deviation correction (n-1)",
+  "Sampling: histograms, frequency distributions, and cumulative distributions",
+  "Seasonal Demand Regime Shift Risk in Gas Storage Valuation",
+  "Seasonal and diurnal patterns in wind production",
+  "Seasonal demand and shoulder months",
+  "Seasonal reversal of Pacific Northwest / California power flows",
+  "Seasonality of the natural gas forward curve",
+  "Secondary Electricity Markets (Ancillary Services, Capacity, PPAs, FTRs)",
+  "Secondary electricity markets overview",
+  "Segments of the physical natural gas business",
+  "Seismic exploration for oil traps",
+  "Selling the option instead of exercising it captures extrinsic value while shedding risk",
+  "Service contract",
+  "Shale oil (shale rock processing)",
+  "Shape of the interest rate curve as an economic signal",
+  "Similarity of real-time and day-ahead generation stacks",
+  "Simple distillation of crude oil",
+  "Single-price convention for symmetric assets and liabilities",
+  "Single-technology extreme case: marginal pricing eliminates profit and threatens new investment",
+  "Site-specific variability of wind output",
+  "Siting and trading strategy for insulated-container LNG storage",
+  "Solar capacity factor ranges",
+  "Solar panel system sizing and DC-to-AC conversion loss",
+  "Solar power: PV vs. thermal",
+  "Solar tracking and orientation trade-offs",
+  "Solar-thermal-assisted small-scale LNG storage facility",
+  "Solving for implied volatility",
+  "Southeast U.S. natural gas market structure",
+  "Spent fuel and nuclear waste handling",
+  "Split-bid (tranche) optimal bidding strategy",
+  "Spot Market Contract Standard Terms for Physical Crude",
+  "Spot market (cash market)",
+  "Spot market vs forward market divide",
+  "Spot vs forward correlation across locations",
+  "Spot vs. forward natural gas price volatility and seasonality",
+  "Spread trades",
+  "Spread trades in natural gas",
+  "Standard Market Design: congestion cost allocation",
+  "Standard deviation and volatility",
+  "Standard forward power blocks referenced per tolling leg (peak/off-peak/weekend)",
+  "Standard notation for the mean",
+  "Statistical Modeling of Spreads vs. Asset Prices",
+  "Statistics as a shared vocabulary for traders",
+  "Steam Turbine Power Generation",
+  "Steam turbine efficiency scales with operating temperature",
+  "Storage Buildout Can Compress Its Own Profit Opportunity",
+  "Storage facility pressure constraint",
+  "Storage geology: porosity, permeability, and impermeable seals",
+  "Storage valuation depends on the assumed operating profile",
+  "Strategies for Managing Toxic Pollution",
+  "Strike Price",
+  "Structural Subordination",
+  "Structural limits on coal trading",
+  "Structure of regional electricity markets",
+  "Structure of the energy market",
+  "Sub-bituminous coal",
+  "Sulfur Oxide (SOx) Formation and Acid Rain",
+  "Sulfur content classification and acid rain risk",
+  "Surface (strip) mining of coal",
+  "Sweet vs. sour crude classification",
+  "Swing contracts with interruptible transportation for opportunistic gas purchases",
+  "Swing swaps and swing options",
+  "Swing trades (physical storage arbitrage)",
+  "Synthetic Option and Straddle",
+  "TSO, ISO, and RTO definitions",
+  "TSO, ISO, and RTO structures",
+  "Tariffs, volume, and rate zones",
+  "Taxonomy of Financial Instruments: Real Assets, Financial Assets, Derivatives",
+  "Technology-driven shifts in electricity demand (air conditioning example)",
+  "Temperature Heat Index (THI) and Wind Chill Index (WCI) as apparent-temperature adjustments",
+  "Temperature as the primary driver of short-term load variation",
+  "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold",
+  "Texas (ERCOT) power market geography and fundamentals",
+  "Texas Interconnection (ERCOT)",
+  "Texas/Gulf Coast natural gas market structure",
+  "The Greeks (overview)",
+  "The Greeks: standardized option sensitivity measures",
+  "The Kyoto Protocol (1997)",
+  "The Tradeoff in Setting Credit Limits",
+  "The binomial tree model of future prices",
+  "The corn crush spread",
+  "The dispatch stack and the marginal unit",
+  "The fat tail problem",
+  "The landman role",
+  "The market as a whole is never considered distressed",
+  "The nuclear fuel cycle",
+  "Thermal solar power and heat storage advantage",
+  "Theta \u2014 sensitivity to the passage of time",
+  "Thorium fuel cycle as a uranium alternative",
+  "Three storage facility types and their cushion-gas requirements",
+  "Three-phase AC power",
+  "Time spreads",
+  "Time value of money and interest rates",
+  "Time-to-expiration and correlation set the width of the spread distribution",
+  "Topping Cycle vs. Bottoming Cycle Cogeneration",
+  "Tradability requirements: assignability, liquidity, fungibility",
+  "Trade-offs and drivers behind long-distance transmission investment",
+  "Traders use options mainly as cost-effective insurance, priced by a competitive open market",
+  "Trades vs. positions",
+  "Trading hub concentration and basis (fine-tuning) trades",
+  "Traditional well construction",
+  "Transformers require AC and rely on magnetic induction between two windings",
+  "Transmission losses and the voltage trade-off",
+  "Transmission overload risk from correlated wind ramp-up",
+  "Transmission vs. distribution and the power grid",
+  "Transmission, distribution, and the power grid",
+  "Transportation vs. distribution pipelines",
+  "Two chemical forms of sulfur in coal",
+  "Two forms of solar power: photovoltaic vs. thermal",
+  "Two general categories of combustion pollution",
+  "Two origins of combustion pollution",
+  "Two-trade structure: Henry Hub futures + basis swap",
+  "Types of underground gas storage sites",
+  "Typical payoff pattern: option buyers lose often with rare big wins; option sellers win often with rare big losses",
+  "US LNG Terminal Reversal: Import to Export",
+  "Underground coal mining method and hazards",
+  "Uniform clearing price set by the marginal provider",
+  "Up-front premium cost determines whether an option (or lottery ticket) is a good investment",
+  "Uranium Fuel Constraints and Proliferation Risk",
+  "Uranium enrichment levels for power vs. weapons",
+  "Using Models Appropriately",
+  "Valuation approach for the solar-LNG hybrid facility",
+  "Valuing Asian options",
+  "Valuing Electricity Storage as a Series of Futures Purchases",
+  "Vapor-Compression Cooling Cycle (Air Conditioning and Refrigeration)",
+  "Variable (intermittent) generation and price-taking behavior",
+  "Variable Pricing Components in Physical Crude Contracts (Index + Differentials, CMA)",
+  "Vega \u2014 sensitivity to volatility",
+  "Volatility Term Structure: Spot Markets Are More Volatile Than Distant Forward Contracts",
+  "Volatility and variance terminology",
+  "Volatility as a measure of trading risk",
+  "Volatility as a risk measure",
+  "Volatility estimation via the ratio of two lognormal distributions",
+  "Volatility exposure: option buyers benefit from bigger moves, writers benefit from quiet markets",
+  "Volatility smile",
+  "Volatility, Correlation, and Spread Width",
+  "WTI Crude Oil",
+  "WTI and Brent as Global Crude Oil Benchmarks",
+  "Wake effect and wind farm layout",
+  "Weak correlation between coal and electricity prices",
+  "Weather Risk: Combined Volume and Price Exposure",
+  "Weather as the primary national demand driver for natural gas",
+  "Western Interconnection overview and hydro dependence",
+  "Western U.S. natural gas market characteristics",
+  "What LNG Is and Why It Matters",
+  "What petroleum/oil is",
+  "Where NGLs come from and LPG definition",
+  "Why Asian options have lower implied volatility",
+  "Why crude oil is transported unrefined to its destination",
+  "Why energy trading differs from other financial markets",
+  "Why global warming is treated as dangerous",
+  "Why grid operators must forecast rather than schedule demand",
+  "Why natural gas breaks the storable-commodity forward-pricing model",
+  "Why natural gas is transported by pipeline rather than pressurized containers",
+  "Why natural gas requires storage",
+  "Why natural gas spot and forward markets are distinct",
+  "Why options can't be priced like insurance",
+  "Why peak-driven pricing alone is an unpopular way to fund reliability",
+  "Why physical spot market knowledge is required despite forward market liquidity",
+  "Why pipelines dominate natural gas transportation",
+  "Why power markets run two auctions (day-ahead and real-time)",
+  "Why regional power prices diverge",
+  "Why the cost burden of emissions reduction is politically deadlocking",
+  "Wind farm siting criteria",
+  "Wind turbines and wind farms",
+  "Wind variability and grid balancing",
+  "Winner's Curse in Storage Capacity Auctions",
+  "Withdrawal rate is limited by the storage/pipeline pressure differential",
+  "Worked Example: HDD Contract Payoff Calculation",
+  "Worked example: one-period option replication",
+  "Wyoming coal-producing region",
+  "Levelized Cost of Entry (LCOE)",
+  "p-n junction doping for directional current flow",
+  "Put/call parity and synthetic options"
+ ],
+ "edges": [
+  {
+   "from": "mark to market",
+   "to": "hedging",
+   "stated_in": "Contrasts with historical cost accounting (used for physical, non-tradable assets) and interacts with/contrasts with hedge accounting rules for derivatives hedg"
+  },
+  {
+   "from": "mark to market",
+   "to": "hedge accounting",
+   "stated_in": "Contrasts with historical cost accounting (used for physical, non-tradable assets) and interacts with/contrasts with hedge accounting rules for derivatives hedg"
+  },
+  {
+   "from": "mark to market",
+   "to": "historical cost accounting",
+   "stated_in": "Contrasts with historical cost accounting (used for physical, non-tradable assets) and interacts with/contrasts with hedge accounting rules for derivatives hedg"
+  },
+  {
+   "from": "mark to market",
+   "to": "hedge accounting",
+   "stated_in": "The difficulty of applying MTM to non-separable, physically-bundled contracts underlies why hedge accounting rules exist."
+  },
+  {
+   "from": "mark to market",
+   "to": "credit risk",
+   "stated_in": "Daily margining is the direct mechanism by which MTM is implemented in futures markets, and directly implements the credit-risk protection the exchange offers."
+  },
+  {
+   "from": "value at risk",
+   "to": "mark to market",
+   "stated_in": "Depends on / is used alongside mark-to-market accounting prices as its foundation."
+  },
+  {
+   "from": "wheeling",
+   "to": "Spread trades",
+   "stated_in": "Location spread trades are the financial substitute for a wheeling trade when transmission is unavailable."
+  },
+  {
+   "from": "spark spread",
+   "to": "spread option",
+   "stated_in": "Forms the basis of the spark spread option payoff used in power plant and tolling agreement valuation."
+  },
+  {
+   "from": "spark spread",
+   "to": "tolling agreement",
+   "stated_in": "Forms the basis of the spark spread option payoff used in power plant and tolling agreement valuation."
+  },
+  {
+   "from": "spark spread",
+   "to": "heat rate",
+   "stated_in": "Built from heat rate (and market-implied heat rate) as its efficiency input."
+  },
+  {
+   "from": "spark spread",
+   "to": "implied heat rate",
+   "stated_in": "Built from heat rate (and market-implied heat rate) as its efficiency input."
+  },
+  {
+   "from": "spark spread",
+   "to": "spread option",
+   "stated_in": "Feeds into spread option valuation (and Kirk's approximation, referenced in the same section)."
+  },
+  {
+   "from": "spark spread",
+   "to": "spread option",
+   "stated_in": "The reactive-dispatch assumption and the omitted physical-constraint limitations are two distinct, compounding sources of model risk in spark spread option mode"
+  },
+  {
+   "from": "spark spread",
+   "to": "model risk",
+   "stated_in": "The reactive-dispatch assumption and the omitted physical-constraint limitations are two distinct, compounding sources of model risk in spark spread option mode"
+  },
+  {
+   "from": "weather derivative",
+   "to": "Forward market",
+   "stated_in": "Weather derivative valuation contrasts with standard forward-pricing methods used elsewhere in energy trading, since it relies on historical data analysis rathe"
+  },
+  {
+   "from": "heat rate",
+   "to": "spark spread",
+   "stated_in": "Heat rate is a core input to plant dispatch cost and is used to convert fuel prices into an implied power price (spark-spread type logic)."
+  },
+  {
+   "from": "heat rate",
+   "to": "spark spread",
+   "stated_in": "Heat rate is the input used to compute market-implied heat rate and spark spread."
+  },
+  {
+   "from": "heat rate",
+   "to": "implied heat rate",
+   "stated_in": "Heat rate is the input used to compute market-implied heat rate and spark spread."
+  },
+  {
+   "from": "heat rate",
+   "to": "spark spread",
+   "stated_in": "Heat rate is an input to the spark-spread net-profit calculation."
+  },
+  {
+   "from": "heat rate",
+   "to": "crack spread",
+   "stated_in": "Regional heat rate illustrates the general spread-options concept, analogous to the conversion-linked/mean-reverting spread behavior described for the crack spr"
+  },
+  {
+   "from": "hedging",
+   "to": "credit risk",
+   "stated_in": "Distinct risk-transfer concept from VAR, credit risk, and model risk."
+  },
+  {
+   "from": "hedging",
+   "to": "model risk",
+   "stated_in": "Distinct risk-transfer concept from VAR, credit risk, and model risk."
+  },
+  {
+   "from": "hedging",
+   "to": "Spread trades",
+   "stated_in": "Hedging is the general risk-management purpose that spread trades often serve."
+  },
+  {
+   "from": "hedging",
+   "to": "hedge accounting",
+   "stated_in": "Hedge accounting."
+  },
+  {
+   "from": "spread option",
+   "to": "black scholes",
+   "stated_in": "Kirk's approximation extends the Black Scholes / Black 76 option pricing framework to spread options and requires an implied volatility and implied correlation "
+  },
+  {
+   "from": "spread option",
+   "to": "model risk",
+   "stated_in": "Correlation risk in spread options is a specific instance of model risk."
+  },
+  {
+   "from": "spread option",
+   "to": "wheeling",
+   "stated_in": "Wheeling valuation as a spread option builds on regional power price divergence as the source of the spread payoff."
+  },
+  {
+   "from": "credit risk",
+   "to": "Credit Quality",
+   "stated_in": "Credit exposure and credit quality together define overall counterparty credit risk."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spark spread",
+   "stated_in": "Commonly valued using spark spread option models."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spread option",
+   "stated_in": "Commonly valued using spark spread option models."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spark spread",
+   "stated_in": "Depends on the spark spread for its economics."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spread option",
+   "stated_in": "Applied via spread-option pricing (Kirk's approximation) or Monte Carlo simulation."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spark spread",
+   "stated_in": "Each leg of the full agreement is itself a spark spread option; aggregated legs implement the real options model of the full tolling agreement."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spread option",
+   "stated_in": "Each leg of the full agreement is itself a spark spread option; aggregated legs implement the real options model of the full tolling agreement."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spark spread",
+   "stated_in": "Spark spread option value depends on spread volatility, which depends on correlation between power and gas prices."
+  },
+  {
+   "from": "tolling agreement",
+   "to": "spread option",
+   "stated_in": "Spark spread option value depends on spread volatility, which depends on correlation between power and gas prices."
+  },
+  {
+   "from": "crack spread",
+   "to": "Distillation",
+   "stated_in": "Distillation process"
+  },
+  {
+   "from": "crack spread",
+   "to": "hedging",
+   "stated_in": "Underlies both refiner hedging and speculative crack-spread trading"
+  },
+  {
+   "from": "crack spread",
+   "to": "Martingale",
+   "stated_in": "Example of Mean Reversion vs. Martingale Behavior in Spreads"
+  },
+  {
+   "from": "load forecasting",
+   "to": "generation stack",
+   "stated_in": "Feeds directly into the merit-order/generation stack pricing mechanic \u2014 demand forecasts determine how far up the bid stack the ISO must dispatch."
+  },
+  {
+   "from": "model risk",
+   "to": "credit risk",
+   "stated_in": "Distinct risk category alongside VAR and counterparty/credit risk."
+  },
+  {
+   "from": "financial transmission rights",
+   "to": "FTR Options",
+   "stated_in": "FTR options are a variant of the base FTR obligation contract."
+  },
+  {
+   "from": "financial transmission rights",
+   "to": "spread option",
+   "stated_in": "Hub-to-hub FTR valuation draws on spread option pricing models."
+  },
+  {
+   "from": "hedge accounting",
+   "to": "hedging",
+   "stated_in": "Extends Hedging"
+  },
+  {
+   "from": "hedge accounting",
+   "to": "mark to market",
+   "stated_in": "Relates to Mark-to-Market Accounting and Historical Cost Accounting"
+  },
+  {
+   "from": "hedge accounting",
+   "to": "historical cost accounting",
+   "stated_in": "Relates to Mark-to-Market Accounting and Historical Cost Accounting"
+  },
+  {
+   "from": "hedge accounting",
+   "to": "mark to market",
+   "stated_in": "Hedge Designation Memo, Mark-to-Market Accounting, Prospective Testing, and Retrospective Testing are related terms describing parts of the same Hedge Accountin"
+  },
+  {
+   "from": "carbon tax",
+   "to": "cap and trade",
+   "stated_in": "Contrasted directly with cap and trade"
+  },
+  {
+   "from": "historical cost accounting",
+   "to": "mark to market",
+   "stated_in": "Contrasts with mark-to-market accounting."
+  },
+  {
+   "from": "historical cost accounting",
+   "to": "mark to market",
+   "stated_in": "Primary alternative to mark-to-market accounting; hedge accounting is a separate alternative for derivatives hedging physical assets."
+  },
+  {
+   "from": "historical cost accounting",
+   "to": "hedging",
+   "stated_in": "Primary alternative to mark-to-market accounting; hedge accounting is a separate alternative for derivatives hedging physical assets."
+  },
+  {
+   "from": "historical cost accounting",
+   "to": "hedge accounting",
+   "stated_in": "Primary alternative to mark-to-market accounting; hedge accounting is a separate alternative for derivatives hedging physical assets."
+  },
+  {
+   "from": "implied heat rate",
+   "to": "heat rate",
+   "stated_in": "Compared directly against a plant's physical heat rate to judge which plant efficiencies are currently profitable."
+  },
+  {
+   "from": "implied heat rate",
+   "to": "generation stack",
+   "stated_in": "Connects to generation stack and marginal-fuel bidding for fuel-dependent producers."
+  },
+  {
+   "from": "Acid rain from nitrogen and sulfur oxides",
+   "to": "Two general categories of combustion pollution",
+   "stated_in": "Two general categories of combustion pollution"
+  },
+  {
+   "from": "Active versus passive bidding strategy",
+   "to": "generation stack",
+   "stated_in": "generation stack cost position"
+  },
+  {
+   "from": "Actual (physical commodity term)",
+   "to": "Cash market",
+   "stated_in": "Related to cash market"
+  },
+  {
+   "from": "Ancillary services markets",
+   "to": "Capacity markets",
+   "stated_in": "Sits alongside capacity markets and PPAs as a grid-reliability mechanism."
+  },
+  {
+   "from": "Anthracite coal",
+   "to": "Bituminous coal",
+   "stated_in": "Highest rank of the four fuel coal types; comparable heat content to bituminous coal despite much higher carbon content."
+  },
+  {
+   "from": "Arbitrage-free option pricing via replication",
+   "to": "Interest rate binomial tree",
+   "stated_in": "Builds on lognormal price distribution assumption and the interest rate binomial tree"
+  },
+  {
+   "from": "Arbitrage-free pricing",
+   "to": "black scholes",
+   "stated_in": "Underpins Black Scholes genre model assumptions."
+  },
+  {
+   "from": "Assumption risk from long model lifespans",
+   "to": "Model maintenance procedures",
+   "stated_in": "Mitigated by model maintenance procedures (documentation counters the turnover problem)"
+  },
+  {
+   "from": "Baseload generation plants",
+   "to": "Peaking generation plants",
+   "stated_in": "Contrasts with peaking generation plants"
+  },
+  {
+   "from": "Baseload generation units",
+   "to": "generation stack",
+   "stated_in": "generation stack position"
+  },
+  {
+   "from": "Basis Risk at Illiquid Trading Points",
+   "to": "model risk",
+   "stated_in": "A specific instance of Model Risk"
+  },
+  {
+   "from": "Battery storage for the electrical grid",
+   "to": "Electric cars as a source of grid battery storage",
+   "stated_in": "Electric cars as a source of grid battery storage"
+  },
+  {
+   "from": "Bid placement between own cost and the next unit's cost",
+   "to": "generation stack",
+   "stated_in": "Builds on generation stack ordering"
+  },
+  {
+   "from": "Bidweek",
+   "to": "Swing swaps and swing options",
+   "stated_in": "Provides the reference price used by swing swaps and swing options"
+  },
+  {
+   "from": "Bilateral / OTC trading and ISDA netting",
+   "to": "credit risk",
+   "stated_in": "Contrasts with exchange trading, which removes direct counterparty credit risk"
+  },
+  {
+   "from": "Bilateral / OTC trading and ISDA netting",
+   "to": "Exchange trading",
+   "stated_in": "Contrasts with exchange trading, which removes direct counterparty credit risk"
+  },
+  {
+   "from": "Bond Prices Move Inversely to Interest Rates",
+   "to": "Forward vs Future Contracts",
+   "stated_in": "Connects to Forward vs Future Contracts, since forwards/futures involve payments at a future date."
+  },
+  {
+   "from": "Carbon capture and sequestration",
+   "to": "cap and trade",
+   "stated_in": "Feeds into carbon offset/credit creation used to hedge cap-and-trade exposure"
+  },
+  {
+   "from": "Carbon dioxide is an unavoidable product of burning organic fuel",
+   "to": "Two general categories of combustion pollution",
+   "stated_in": "Two general categories of combustion pollution"
+  },
+  {
+   "from": "Carbon equivalents and other pollutant markets (SOX, NOX)",
+   "to": "cap and trade",
+   "stated_in": "Shares terminology and cap-and-trade-style limitations with the carbon market"
+  },
+  {
+   "from": "Carbon tracking and enforcement is difficult",
+   "to": "cap and trade",
+   "stated_in": "Cap and trade vs. carbon taxes"
+  },
+  {
+   "from": "Cash market vs. trading market",
+   "to": "Cash market",
+   "stated_in": "Distinguishes trading markets from the spot/cash market discussed later in the chunk"
+  },
+  {
+   "from": "Cheap fracked natural gas undercut U.S. carbon legislation",
+   "to": "cap and trade",
+   "stated_in": "Cap and trade vs. carbon taxes"
+  },
+  {
+   "from": "China vs. US carbon emissions dispute",
+   "to": "cap and trade",
+   "stated_in": "Motivates the choice between carbon taxes and cap-and-trade as competing policy tools"
+  },
+  {
+   "from": "Circuit fundamentals and Ohm's Law",
+   "to": "Electromagnetic induction principle behind generators",
+   "stated_in": "Electromagnetic induction principle behind generators"
+  },
+  {
+   "from": "Closed form vs. open form solutions",
+   "to": "black scholes",
+   "stated_in": "Black Scholes formula is the primary example of a closed form solution"
+  },
+  {
+   "from": "Cogeneration (topping and bottoming cycle plants)",
+   "to": "heat rate",
+   "stated_in": "Related to heat rate, since cogeneration changes a plant's effective economics even if fuel-to-electricity efficiency is unchanged."
+  },
+  {
+   "from": "Cogeneration (topping and bottoming cycle plants)",
+   "to": "Cogeneration",
+   "stated_in": "Related to heat rate, since cogeneration changes a plant's effective economics even if fuel-to-electricity efficiency is unchanged."
+  },
+  {
+   "from": "Cold-weather dual-peak demand pattern",
+   "to": "load forecasting",
+   "stated_in": "An example of the seasonal/time-of-day cyclicality that makes load forecasting tractable."
+  },
+  {
+   "from": "Common hedge structures: futures and costless collars",
+   "to": "hedging",
+   "stated_in": "Definition of hedging"
+  },
+  {
+   "from": "Common lands problem framing of emissions rights",
+   "to": "cap and trade",
+   "stated_in": "Conceptual basis for cap and trade's tradable permits"
+  },
+  {
+   "from": "Commonly observed design flaws in capacity markets",
+   "to": "Outage rates and capacity auction mechanics",
+   "stated_in": "Directly follows from the auction mechanics described in 'Outage rates and capacity auction mechanics'."
+  },
+  {
+   "from": "Continuous injection/withdrawal requirement for pipeline operation",
+   "to": "Compressor stations",
+   "stated_in": "Compressor stations maintain this pressure differential"
+  },
+  {
+   "from": "Continuous trading assumption and jump diffusion",
+   "to": "The fat tail problem",
+   "stated_in": "Compounds the fat tail problem in energy markets"
+  },
+  {
+   "from": "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate",
+   "to": "Ring Fencing",
+   "stated_in": "Underpins Ring Fencing and Structural Subordination concepts"
+  },
+  {
+   "from": "Corporate Structure Terms: Parent, Holding, Subsidiary, Affiliate",
+   "to": "Structural Subordination",
+   "stated_in": "Underpins Ring Fencing and Structural Subordination concepts"
+  },
+  {
+   "from": "Correlation coefficient: definition and interpretation",
+   "to": "hedging",
+   "stated_in": "Feeds into hedge selection and correlation-based valuation, but see the hedging caveat below."
+  },
+  {
+   "from": "Costless Collar",
+   "to": "hedging",
+   "stated_in": "Related to option strategies and to futures/swap hedges as alternative hedging tools."
+  },
+  {
+   "from": "Credit Default Swap (CDS)",
+   "to": "credit risk",
+   "stated_in": "Mitigation tool related to counterparty credit risk"
+  },
+  {
+   "from": "Credit Quality",
+   "to": "credit risk",
+   "stated_in": "One of two components of counterparty credit risk, alongside credit exposure"
+  },
+  {
+   "from": "Credit Quality and Probability of Default",
+   "to": "Credit Quality",
+   "stated_in": "PD is the quantitative expression of credit quality."
+  },
+  {
+   "from": "Credit Quality and Probability of Default",
+   "to": "Credit Quality",
+   "stated_in": "Credit quality interacts with exposure to determine overall counterparty risk."
+  },
+  {
+   "from": "Credit Value Adjustment (CVA) and Debit Value Adjustment (DVA)",
+   "to": "credit risk",
+   "stated_in": "Applies the credit-risk concepts underlying master netting and credit limits to financial reporting"
+  },
+  {
+   "from": "Credit quality and interest rate benchmarks",
+   "to": "credit risk",
+   "stated_in": "This is a specific application of time value of money \u2014 the discount rate used depends on the credit risk of the specific cash flow's payer."
+  },
+  {
+   "from": "Crude oil market participant categories",
+   "to": "crack spread",
+   "stated_in": "Refiner economics tie to crack spread"
+  },
+  {
+   "from": "Crude oil quality: density and sulfur classification",
+   "to": "Distillation",
+   "stated_in": "Distillation/refining economics"
+  },
+  {
+   "from": "Cycling (Storage Term)",
+   "to": "natural gas storage",
+   "stated_in": "Directly limits which seasonal trading strategies (see Natural Gas Storage Arbitrage Bid Strategy) are physically feasible."
+  },
+  {
+   "from": "Day-ahead vs real-time auction structure",
+   "to": "generation stack",
+   "stated_in": "Connects to the generation stack and generator bidding strategy concepts discussed earlier in the section."
+  },
+  {
+   "from": "Daylight saving time and Indiana electricity demand",
+   "to": "Assumption risk from long model lifespans",
+   "stated_in": "Illustrates assumption risk from long model lifespans"
+  },
+  {
+   "from": "Delta",
+   "to": "Gamma",
+   "stated_in": "Gamma is the derivative of delta"
+  },
+  {
+   "from": "Depleted gas reservoirs as storage facilities",
+   "to": "Physically unrecoverable gas",
+   "stated_in": "Ties to physically unrecoverable gas: no need to add an artificial unrecoverable-gas barrier since one already exists naturally."
+  },
+  {
+   "from": "Deregulation reshaped who owns power plants",
+   "to": "Regulated vs. deregulated markets",
+   "stated_in": "Regulated vs deregulated markets"
+  },
+  {
+   "from": "Dew-point separation of hydrocarbons",
+   "to": "natural gas liquids",
+   "stated_in": "Natural gas liquids production"
+  },
+  {
+   "from": "Difficulty applying MTM to energy contracts",
+   "to": "mark to market",
+   "stated_in": "Relates to Mark-to-Market Accounting and Historical Cost Accounting as the set of possible treatments; hedge accounting is the third option, not detailed in thi"
+  },
+  {
+   "from": "Difficulty applying MTM to energy contracts",
+   "to": "hedge accounting",
+   "stated_in": "Relates to Mark-to-Market Accounting and Historical Cost Accounting as the set of possible treatments; hedge accounting is the third option, not detailed in thi"
+  },
+  {
+   "from": "Difficulty applying MTM to energy contracts",
+   "to": "historical cost accounting",
+   "stated_in": "Relates to Mark-to-Market Accounting and Historical Cost Accounting as the set of possible treatments; hedge accounting is the third option, not detailed in thi"
+  },
+  {
+   "from": "Dispatch capacity and break-even cost",
+   "to": "generation stack",
+   "stated_in": "Underpins bid placement strategy and the generation stack ordering"
+  },
+  {
+   "from": "Distillation of crude oil into refined products",
+   "to": "crack spread",
+   "stated_in": "Crack spread"
+  },
+  {
+   "from": "Distributing emissions licenses is inherently contested",
+   "to": "cap and trade",
+   "stated_in": "Cap and trade vs. carbon taxes"
+  },
+  {
+   "from": "Distributing emissions rights and consumer protection",
+   "to": "cap and trade",
+   "stated_in": "Follows from the cap-and-trade advantages discussion"
+  },
+  {
+   "from": "Drivers of day-to-day demand variation",
+   "to": "load forecasting",
+   "stated_in": "Feeds directly into building a short-term load forecasting model"
+  },
+  {
+   "from": "Earnings manipulation risk via MTM on illiquid assets",
+   "to": "mark to market",
+   "stated_in": "Ties back to Mark-to-Market Accounting's dependence on real trading markets, and to the fair value hierarchy accounting has developed for illiquid/heavily model"
+  },
+  {
+   "from": "Electric cars as a source of grid battery storage",
+   "to": "Battery storage for the electrical grid",
+   "stated_in": "Battery storage for the electrical grid"
+  },
+  {
+   "from": "Electricity price formation via merit-order auctions",
+   "to": "generation stack",
+   "stated_in": "Sets up the more detailed 'generation stack' discussion of bidding strategy that follows"
+  },
+  {
+   "from": "Emissions credits: allocation vs. offsets",
+   "to": "cap and trade",
+   "stated_in": "Extends cap and trade's compliance-flexibility advantage"
+  },
+  {
+   "from": "Energy Cost of Distillation at Scale",
+   "to": "Distillation",
+   "stated_in": "Distillation energy cost is a structural input cost underlying refined fuel supply"
+  },
+  {
+   "from": "Exchange trading",
+   "to": "credit risk",
+   "stated_in": "Directly contrasts with bilateral/OTC trading's credit-risk and paperwork downsides"
+  },
+  {
+   "from": "Exchange trading vs. OTC trading: trade-offs",
+   "to": "credit risk",
+   "stated_in": "Contrasts with OTC forwards/swaps, which trade customization for reduced liquidity and added counterparty credit risk."
+  },
+  {
+   "from": "Exchange-traded crack spreads",
+   "to": "crack spread",
+   "stated_in": "Alternative execution method for the crack spread trades described above"
+  },
+  {
+   "from": "Exchange-traded crack spreads",
+   "to": "Spread trades",
+   "stated_in": "Alternative execution method for the crack spread trades described above"
+  },
+  {
+   "from": "Expected demand vs. worst-case demand as distinct modeling goals",
+   "to": "load forecasting",
+   "stated_in": "Applies the general spatial load forecasting concept to two different use cases: utility capacity planning vs. trading"
+  },
+  {
+   "from": "Expected profit per megawatt from profitable spread scenarios",
+   "to": "heat rate",
+   "stated_in": "Depends on the spread distribution described in the prior item and the plant's heat-rate-determined profitability threshold"
+  },
+  {
+   "from": "Extending replication pricing over multiple periods",
+   "to": "black scholes",
+   "stated_in": "Extension of the one-period arbitrage-free replication method; precursor to the Black-Scholes formula as time steps shrink toward continuous time"
+  },
+  {
+   "from": "Fair Value and core accounting terms",
+   "to": "mark to market",
+   "stated_in": "Fair value accounting is the umbrella category that mark-to-market accounting falls under."
+  },
+  {
+   "from": "Fair value accounting definitions: FASB ASC 820 and IASB IFRS 13",
+   "to": "mark to market",
+   "stated_in": "Provides the accounting basis requiring firms to use mark-to-market"
+  },
+  {
+   "from": "Financial assets: stocks and bonds",
+   "to": "Real assets",
+   "stated_in": "Contrasted directly with real assets in the same section."
+  },
+  {
+   "from": "Fly ash and soot as inhaled particulate pollution",
+   "to": "Two general categories of combustion pollution",
+   "stated_in": "Two general categories of combustion pollution"
+  },
+  {
+   "from": "Formation and trapping of natural gas",
+   "to": "Permeability",
+   "stated_in": "Porosity and permeability determine recoverability"
+  },
+  {
+   "from": "Formation and trapping of natural gas",
+   "to": "Porosity",
+   "stated_in": "Porosity and permeability determine recoverability"
+  },
+  {
+   "from": "Forward market",
+   "to": "Cash market",
+   "stated_in": "Contrasted directly with the spot/cash market definition"
+  },
+  {
+   "from": "Forward power market vs. daily (spot) power auctions",
+   "to": "Forward market",
+   "stated_in": "Forward market prices are anchored to daily auction (spot) prices even though the two markets have different access rules and contract structures."
+  },
+  {
+   "from": "Forward vs Future Contracts",
+   "to": "mark to market",
+   "stated_in": "Ties to Exchange vs OTC Trading and Margin/Mark-to-Market definitions."
+  },
+  {
+   "from": "Fractional distillation and cracking",
+   "to": "Distillation",
+   "stated_in": "Cracking follows distillation as a secondary processing step for heavier fractions"
+  },
+  {
+   "from": "Fractional distillation and cracking",
+   "to": "Distillation",
+   "stated_in": "Crude quality (sweet/sour, light/heavy) affects distillation and cracking economics"
+  },
+  {
+   "from": "Fuel-power correlation as the dominant value driver",
+   "to": "spark spread",
+   "stated_in": "Directly drives the value produced by spark spread option / real options models"
+  },
+  {
+   "from": "Fuel-power correlation as the dominant value driver",
+   "to": "spread option",
+   "stated_in": "Directly drives the value produced by spark spread option / real options models"
+  },
+  {
+   "from": "Fungibility and Notional Value",
+   "to": "Exchange trading",
+   "stated_in": "Fungibility is a precondition for standardized exchange trading of a security."
+  },
+  {
+   "from": "Gamma",
+   "to": "Delta",
+   "stated_in": "Derivative of delta"
+  },
+  {
+   "from": "Global crude oil pricing vs. regional refined product pricing",
+   "to": "crack spread",
+   "stated_in": "Refined product regional pricing vs. crack spread economics for local refiners"
+  },
+  {
+   "from": "Governance risk from under-scrutinized hedges",
+   "to": "hedging",
+   "stated_in": "Definition of hedging"
+  },
+  {
+   "from": "Heating Degree Days (HDD) and Cooling Degree Days (CDD)",
+   "to": "weather derivative",
+   "stated_in": "HDD/CDD accumulated over a period is compared to a contract Strike to compute the payoff of an HDD/CDD weather derivative"
+  },
+  {
+   "from": "Heavy Fuel Oil (No. 4/5/6 / Bunker Fuel)",
+   "to": "Distillation",
+   "stated_in": "Sits at the heavy end of the fuel oil distillation stack, opposite kerosene."
+  },
+  {
+   "from": "Heavy Metal Pollution from Coal Combustion (Mercury)",
+   "to": "cap and trade",
+   "stated_in": "Contrasts with CO2 and SOx/NOx, where cap-and-trade mechanisms are viable regulatory tools; mercury is presented as the exception."
+  },
+  {
+   "from": "Heavy metal contamination from combustion",
+   "to": "Two general categories of combustion pollution",
+   "stated_in": "Two general categories of combustion pollution"
+  },
+  {
+   "from": "Hedge Effectiveness Testing via Linear Regression",
+   "to": "hedge accounting",
+   "stated_in": "Used to perform Retrospective Testing within Hedge Accounting."
+  },
+  {
+   "from": "Hidden Costs of \"Costless\" Hedges",
+   "to": "Costless Collar",
+   "stated_in": "Directly follows from and qualifies the Costless Collar concept."
+  },
+  {
+   "from": "How exchange order matching and anonymity work for futures",
+   "to": "credit risk",
+   "stated_in": "Underpins the anonymity and reduced-credit-risk benefits described for exchange trading generally."
+  },
+  {
+   "from": "How exchange order matching and anonymity work for futures",
+   "to": "Exchange trading",
+   "stated_in": "Underpins the anonymity and reduced-credit-risk benefits described for exchange trading generally."
+  },
+  {
+   "from": "How natural gas pipelines physically move gas",
+   "to": "natural gas storage",
+   "stated_in": "Sets up the operational-continuity requirement that motivates natural gas storage."
+  },
+  {
+   "from": "Hydraulic fracturing (fracking)",
+   "to": "Porosity",
+   "stated_in": "Porosity"
+  },
+  {
+   "from": "Hydraulic fracturing (fracking)",
+   "to": "Permeability",
+   "stated_in": "Permeability"
+  },
+  {
+   "from": "ISDA and the ISDA Master Agreement",
+   "to": "credit risk",
+   "stated_in": "Directly underlies how Forwards and other OTC contracts manage counterparty credit risk, in contrast to exchange margin."
+  },
+  {
+   "from": "ISDA master agreement and netting",
+   "to": "credit risk",
+   "stated_in": "Master agreement documentation underlies the credit-risk management features of forwards and swaps."
+  },
+  {
+   "from": "Implied volatility as the hard input",
+   "to": "black scholes",
+   "stated_in": "Input to the generalized Black Scholes formula"
+  },
+  {
+   "from": "Interest rate risk: forwards vs. futures cash flow timing",
+   "to": "Forwards vs. futures",
+   "stated_in": "Connects to earlier forwards-vs-futures distinction (not itself included in this chunk)"
+  },
+  {
+   "from": "Joint (fixed-ratio) production of refined products",
+   "to": "Distillation",
+   "stated_in": "Directly follows from the distillation/cracking process producing a full product slate from each barrel"
+  },
+  {
+   "from": "Kerosene (No. 1 Fuel Oil)",
+   "to": "Distillation",
+   "stated_in": "Positioned opposite heavy oil on the distillation stack, with gasoline and diesel in between."
+  },
+  {
+   "from": "Key inputs to a load forecast: consumer type, location, weather, calendar effects",
+   "to": "load forecasting",
+   "stated_in": "Defines the spatial component referenced in 'spatial load forecasting'"
+  },
+  {
+   "from": "Kirk's Approximation",
+   "to": "black scholes",
+   "stated_in": "Modification of the Black-Scholes formula for spread options."
+  },
+  {
+   "from": "LNG Peak Shaving Units",
+   "to": "natural gas storage",
+   "stated_in": "Alternative to traditional natural gas storage economics"
+  },
+  {
+   "from": "Lignite (brown coal)",
+   "to": "Bituminous coal",
+   "stated_in": "Lowest rank of the four fuel coal types; sits below sub-bituminous coal in carbon content and energy."
+  },
+  {
+   "from": "Liquidity: liquid vs illiquid markets/assets",
+   "to": "Forward market",
+   "stated_in": "Ties to the spot-vs-forward market split: spot markets tend to be less liquid/more locally constrained than forward financial markets."
+  },
+  {
+   "from": "Local Fragmentation and Volatility of Electricity Spot Markets",
+   "to": "Forward market",
+   "stated_in": "Contrasts with forward-market pricing, which is driven by macroeconomics rather than short-term local imbalances"
+  },
+  {
+   "from": "Location spread trade example: NP-15 vs. MID-C on an early snowmelt view",
+   "to": "Spread trades",
+   "stated_in": "Illustrates location spread trades"
+  },
+  {
+   "from": "Lognormal versus normal price distributions",
+   "to": "black scholes",
+   "stated_in": "Underlies the binomial tree and Black-Scholes option pricing frameworks"
+  },
+  {
+   "from": "Long vs. short exposure, and why 'buy' terminology is misleading for forwards",
+   "to": "Exchange trading",
+   "stated_in": "Bilateral/OTC vs exchange trading"
+  },
+  {
+   "from": "Long, short, and flat positions",
+   "to": "Spread trades",
+   "stated_in": "Spread trades follow the same long/short convention applied to the spread value rather than a single price"
+  },
+  {
+   "from": "Marginal bid clustering under uniform clearing price",
+   "to": "generation stack",
+   "stated_in": "generation stack / merit order"
+  },
+  {
+   "from": "Marginal supply sensitivity of power prices",
+   "to": "generation stack",
+   "stated_in": "Directly follows from variable generation shifting the top of the generation stack."
+  },
+  {
+   "from": "Mean Reversion vs. Martingale Behavior in Spreads",
+   "to": "spark spread",
+   "stated_in": "Applies to conversion-linked spreads such as the crack spread and, by extension, the spark spread."
+  },
+  {
+   "from": "Mean Reversion vs. Martingale Behavior in Spreads",
+   "to": "crack spread",
+   "stated_in": "Applies to conversion-linked spreads such as the crack spread and, by extension, the spark spread."
+  },
+  {
+   "from": "Melting Point and Boiling Point as Separation Tools",
+   "to": "Distillation",
+   "stated_in": "Directly enables distillation as a separation method."
+  },
+  {
+   "from": "Melting Point and Boiling Point as Separation Tools",
+   "to": "Distillation as a Separation Method",
+   "stated_in": "Directly enables distillation as a separation method."
+  },
+  {
+   "from": "Minimum Variance Hedge Ratio",
+   "to": "hedging",
+   "stated_in": "Prerequisite step is identifying a hedging instrument highly correlated with the hedged item."
+  },
+  {
+   "from": "Model Documentation and Governance Practices",
+   "to": "model risk",
+   "stated_in": "Operationalizes the reduction of model risk described earlier; pairs with 'using models appropriately'"
+  },
+  {
+   "from": "Model Documentation and Governance Practices",
+   "to": "Using Models Appropriately",
+   "stated_in": "Operationalizes the reduction of model risk described earlier; pairs with 'using models appropriately'"
+  },
+  {
+   "from": "Model overlay",
+   "to": "model risk",
+   "stated_in": "One of the named tools/terms under model risk controls, alongside modeling reserve."
+  },
+  {
+   "from": "Model overlay",
+   "to": "Modeling reserve",
+   "stated_in": "One of the named tools/terms under model risk controls, alongside modeling reserve."
+  },
+  {
+   "from": "Modeling future prices: distributional estimates and the core pricing assumptions",
+   "to": "Martingale",
+   "stated_in": "Relies on the martingale/risk-free-profit no-arbitrage logic"
+  },
+  {
+   "from": "Modeling reserve",
+   "to": "model risk",
+   "stated_in": "A response to the same underlying model risk that position limits address, but targets underscrutinized profitable models rather than exposure size."
+  },
+  {
+   "from": "Moneyness: At the Money, In the Money, Out of the Money",
+   "to": "Strike Price",
+   "stated_in": "Depends on Strike Price relative to underlying price"
+  },
+  {
+   "from": "NGL liquefaction, storage, transport, and sourcing",
+   "to": "natural gas liquids",
+   "stated_in": "Natural gas liquids (NGLs) defined"
+  },
+  {
+   "from": "Natural Gas Combined Cycle Plants",
+   "to": "Cogeneration",
+   "stated_in": "Analogous in structure to bottoming cycle cogeneration, but using a gas turbine's own exhaust rather than an external industrial process"
+  },
+  {
+   "from": "Natural Gas Combined Cycle Plants",
+   "to": "Cogeneration",
+   "stated_in": "Can still layer on cogeneration via the steam turbine's condenser heat"
+  },
+  {
+   "from": "Natural gas common terms glossary",
+   "to": "Forward market",
+   "stated_in": "Basis price ties directly to the forward-market cross-location correlation concept."
+  },
+  {
+   "from": "Natural gas marketers vs. physical companies",
+   "to": "hedging",
+   "stated_in": "Physical company hedging desks"
+  },
+  {
+   "from": "Node, zone, and hub pricing under SMD",
+   "to": "financial transmission rights",
+   "stated_in": "Node/zone/hub pricing is the basis for Financial Transmission Rights (FTRs), which hedge the price difference between hub and node."
+  },
+  {
+   "from": "Node, zone, and hub pricing under SMD",
+   "to": "Forward market",
+   "stated_in": "Hub prices anchor forward market contracts."
+  },
+  {
+   "from": "Oil trap and related rock properties",
+   "to": "Permeability",
+   "stated_in": "Porosity and permeability together determine whether a rock layer can serve as an oil reservoir beneath a trap"
+  },
+  {
+   "from": "Oil trap and related rock properties",
+   "to": "Porosity",
+   "stated_in": "Porosity and permeability together determine whether a rock layer can serve as an oil reservoir beneath a trap"
+  },
+  {
+   "from": "Opacity of OTC energy pricing",
+   "to": "hedging",
+   "stated_in": "Underpins why spread trading and hedging are common risk-management responses to unreliable pricing."
+  },
+  {
+   "from": "Opacity of OTC energy pricing",
+   "to": "credit risk",
+   "stated_in": "Connects to counterparty credit risk in OTC contracts."
+  },
+  {
+   "from": "Option pricing models and vanilla vs. exotic options",
+   "to": "black scholes",
+   "stated_in": "Vanilla options relate to Black Scholes genre models; exotic options require alternative/nonstandard models."
+  },
+  {
+   "from": "Option value as a bounded percentage of the underlying price",
+   "to": "Delta",
+   "stated_in": "Underlies the concept of delta / hedge ratio"
+  },
+  {
+   "from": "Options on forwards/futures deliver the contract, not the physical commodity",
+   "to": "American vs European options",
+   "stated_in": "American vs European options"
+  },
+  {
+   "from": "Outright position",
+   "to": "Spread trades",
+   "stated_in": "Contrasted with spread trades"
+  },
+  {
+   "from": "Overview of risk management practices in energy trading",
+   "to": "mark to market",
+   "stated_in": "Sets up the following discussion of mark-to-market accounting."
+  },
+  {
+   "from": "PJM-East/PJM-West basis hedge case study",
+   "to": "Correlated does not mean a good hedge",
+   "stated_in": "Concrete illustration of \"Correlated does not mean a good hedge.\""
+  },
+  {
+   "from": "Peaking generation plants",
+   "to": "Baseload generation plants",
+   "stated_in": "Contrasts with baseload generation plants"
+  },
+  {
+   "from": "Permeability",
+   "to": "Porosity",
+   "stated_in": "Porosity"
+  },
+  {
+   "from": "Petroleum vs. crude oil terminology",
+   "to": "Distillation",
+   "stated_in": "Distillation output products (gasoline, heating oil) are downstream of crude oil"
+  },
+  {
+   "from": "Petroleum vs. crude oil terminology",
+   "to": "crack spread",
+   "stated_in": "Crack spread depends on this refining relationship"
+  },
+  {
+   "from": "Phase (State of Matter) and Its Trading Relevance",
+   "to": "Distillation",
+   "stated_in": "Connects to pipeline design considerations and to distillation/refrigeration as controlled-phase-change industries."
+  },
+  {
+   "from": "Physical Delivery vs. Financial Settlement of Forward/Futures Contracts",
+   "to": "Forward market",
+   "stated_in": "Forward market mechanics and its volatility-reducing role"
+  },
+  {
+   "from": "Physical Storage Ownership as an Operational Commitment",
+   "to": "natural gas storage",
+   "stated_in": "Part of the execution stage of the Natural Gas Storage Arbitrage Bid Strategy example."
+  },
+  {
+   "from": "Physical vs. Chemical Changes",
+   "to": "Distillation",
+   "stated_in": "Underpins why distillation/refining (physical) differ fundamentally from combustion (chemical) as industrial processes."
+  },
+  {
+   "from": "Porosity",
+   "to": "Permeability",
+   "stated_in": "Permeability"
+  },
+  {
+   "from": "Power Purchase Agreements (PPAs)",
+   "to": "Capacity markets",
+   "stated_in": "Contrasts with capacity markets as an alternative way to finance new generation construction with more predictable cash flow."
+  },
+  {
+   "from": "Power generation technologies: fossil fuel plants",
+   "to": "heat rate",
+   "stated_in": "Heat rate and fossil plants as marginal price setters"
+  },
+  {
+   "from": "Power plant generation technologies",
+   "to": "heat rate",
+   "stated_in": "Fuel choice drives emissions profile and plant economics discussed later in heat rate and dispatch order concepts."
+  },
+  {
+   "from": "Power purchase agreements (PPAs)",
+   "to": "Capacity markets",
+   "stated_in": "Grouped with ancillary services and capacity markets as demand/supply-adequacy tools."
+  },
+  {
+   "from": "Practical Constraints on Cogeneration",
+   "to": "Cogeneration",
+   "stated_in": "Constrains when the benefits of cogeneration described in the source's cogeneration concept are actually realizable"
+  },
+  {
+   "from": "Price certainty and the term structure of natural gas volatility",
+   "to": "Forward market",
+   "stated_in": "Reinforces the spot/forward market distinction"
+  },
+  {
+   "from": "Price spread definition",
+   "to": "Spread trades",
+   "stated_in": "Underlies location spread trades"
+  },
+  {
+   "from": "Price-spike frequency and the value of owning a power plant",
+   "to": "spark spread",
+   "stated_in": "Directly follows from the spark spread distribution discussion"
+  },
+  {
+   "from": "Real options: using option theory to model energy investment decisions",
+   "to": "Real assets",
+   "stated_in": "Extends the general call option definition to physical/real assets"
+  },
+  {
+   "from": "Replicating portfolios as the basis of option pricing",
+   "to": "Delta",
+   "stated_in": "Connects to delta/hedge ratio and arbitrage-free pricing"
+  },
+  {
+   "from": "Reservoir pressure and well production decline",
+   "to": "Permeability",
+   "stated_in": "Reservoir rock porosity/permeability"
+  },
+  {
+   "from": "Reservoir pressure and well production decline",
+   "to": "Porosity",
+   "stated_in": "Reservoir rock porosity/permeability"
+  },
+  {
+   "from": "Ring Fencing",
+   "to": "Structural Subordination",
+   "stated_in": "Contrasts with cross-guarantee structures (best case for credit) and with structural subordination"
+  },
+  {
+   "from": "Seasonal Demand Regime Shift Risk in Gas Storage Valuation",
+   "to": "natural gas storage",
+   "stated_in": "A risk factor for the same seasonal trade described in the Natural Gas Storage Arbitrage Bid Strategy example."
+  },
+  {
+   "from": "Seasonal demand and shoulder months",
+   "to": "Daily demand pattern in hot weather",
+   "stated_in": "Daily demand pattern in hot weather"
+  },
+  {
+   "from": "Seasonality of the natural gas forward curve",
+   "to": "Time spreads",
+   "stated_in": "Connects to time spreads (which trade this seasonal shape) and to the storable-commodity contrast"
+  },
+  {
+   "from": "Secondary Electricity Markets (Ancillary Services, Capacity, PPAs, FTRs)",
+   "to": "Capacity markets",
+   "stated_in": "Capacity markets relate to LCOE/CONE pricing"
+  },
+  {
+   "from": "Secondary electricity markets overview",
+   "to": "Capacity markets",
+   "stated_in": "Underpins ancillary services, capacity markets, PPAs, FTRs, and RECs as distinct sub-markets."
+  },
+  {
+   "from": "Seismic exploration for oil traps",
+   "to": "Permeability",
+   "stated_in": "Used to locate oil traps, which are defined by permeability/porosity of surrounding rock"
+  },
+  {
+   "from": "Seismic exploration for oil traps",
+   "to": "Porosity",
+   "stated_in": "Used to locate oil traps, which are defined by permeability/porosity of surrounding rock"
+  },
+  {
+   "from": "Simple distillation of crude oil",
+   "to": "Distillation",
+   "stated_in": "Simple distillation is the first refining step, often followed by downstream/cracking processing to further increase value"
+  },
+  {
+   "from": "Single-price convention for symmetric assets and liabilities",
+   "to": "mark to market",
+   "stated_in": "Underlies mark-to-market valuation generally"
+  },
+  {
+   "from": "Solar-thermal-assisted small-scale LNG storage facility",
+   "to": "natural gas storage",
+   "stated_in": "Functions as a variant of a natural gas storage facility, but substitutes insulated containers for an underground storage formation."
+  },
+  {
+   "from": "Solar-thermal-assisted small-scale LNG storage facility",
+   "to": "tolling agreement",
+   "stated_in": "Feeds gas to on-site peaking generators, linking it to tolling-agreement-style valuation."
+  },
+  {
+   "from": "Solving for implied volatility",
+   "to": "black scholes",
+   "stated_in": "Feeds into Black-Scholes/Black 76 option pricing"
+  },
+  {
+   "from": "Solving for implied volatility",
+   "to": "Volatility smile",
+   "stated_in": "Underlies the volatility smile"
+  },
+  {
+   "from": "Split-bid (tranche) optimal bidding strategy",
+   "to": "generation stack",
+   "stated_in": "generation stack cost position"
+  },
+  {
+   "from": "Spot market (cash market)",
+   "to": "Forward market",
+   "stated_in": "Contrasted directly with the forward market definition"
+  },
+  {
+   "from": "Spread trades",
+   "to": "hedging",
+   "stated_in": "Spread trading is a form of hedging."
+  },
+  {
+   "from": "Spread trades in natural gas",
+   "to": "heat rate",
+   "stated_in": "Parent concept for location spreads, heat rate trades, time spreads, and swing trades"
+  },
+  {
+   "from": "Spread trades in natural gas",
+   "to": "Location spreads",
+   "stated_in": "Parent concept for location spreads, heat rate trades, time spreads, and swing trades"
+  },
+  {
+   "from": "Spread trades in natural gas",
+   "to": "Time spreads",
+   "stated_in": "Parent concept for location spreads, heat rate trades, time spreads, and swing trades"
+  },
+  {
+   "from": "Steam Turbine Power Generation",
+   "to": "Cogeneration",
+   "stated_in": "Basis for cogeneration and combined-cycle designs described later in the chunk"
+  },
+  {
+   "from": "Storage geology: porosity, permeability, and impermeable seals",
+   "to": "Permeability",
+   "stated_in": "Underlies why salt caverns (low permeability walls) leak far less than reservoirs or aquifers."
+  },
+  {
+   "from": "Storage geology: porosity, permeability, and impermeable seals",
+   "to": "Physically unrecoverable gas",
+   "stated_in": "Connects to physically unrecoverable gas \u2014 gas embeds in pore walls even in a well-sealed facility."
+  },
+  {
+   "from": "Structural Subordination",
+   "to": "Ring Fencing",
+   "stated_in": "Contrasts with cross-guarantee structures and with Ring Fencing"
+  },
+  {
+   "from": "Structure of regional electricity markets",
+   "to": "wheeling",
+   "stated_in": "This regional fragmentation is the reason inter-regional price differences (and wheeling opportunities) can persist."
+  },
+  {
+   "from": "Sub-bituminous coal",
+   "to": "Bituminous coal",
+   "stated_in": "Ranks above lignite and below bituminous coal in carbon content, energy content, and transportability."
+  },
+  {
+   "from": "Swing swaps and swing options",
+   "to": "Bidweek",
+   "stated_in": "Reference price for the fixed leg comes from bidweek surveys"
+  },
+  {
+   "from": "Swing trades (physical storage arbitrage)",
+   "to": "Spread trades",
+   "stated_in": "A type of spread-like trade distinct from spread trades proper"
+  },
+  {
+   "from": "TSO, ISO, and RTO definitions",
+   "to": "Regulated vs. deregulated markets",
+   "stated_in": "Regulated vs deregulated markets"
+  },
+  {
+   "from": "Taxonomy of Financial Instruments: Real Assets, Financial Assets, Derivatives",
+   "to": "Forward market",
+   "stated_in": "Forward market mechanics"
+  },
+  {
+   "from": "Technology-driven shifts in electricity demand (air conditioning example)",
+   "to": "Daily demand pattern in hot weather",
+   "stated_in": "Daily demand pattern in hot weather"
+  },
+  {
+   "from": "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold",
+   "to": "Seasonal demand and shoulder months",
+   "stated_in": "Seasonal demand and shoulder months"
+  },
+  {
+   "from": "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold",
+   "to": "Daily demand pattern in hot weather",
+   "stated_in": "Daily demand pattern in hot weather"
+  },
+  {
+   "from": "The Greeks (overview)",
+   "to": "Delta",
+   "stated_in": "Delta and Gamma are first and second derivatives of price with respect to the underlying"
+  },
+  {
+   "from": "The Greeks (overview)",
+   "to": "Gamma",
+   "stated_in": "Delta and Gamma are first and second derivatives of price with respect to the underlying"
+  },
+  {
+   "from": "The Kyoto Protocol (1997)",
+   "to": "cap and trade",
+   "stated_in": "Builds directly on the cap and trade mechanics and the national-allocation disputes described earlier in the section."
+  },
+  {
+   "from": "The Tradeoff in Setting Credit Limits",
+   "to": "Master Netting Agreements",
+   "stated_in": "Motivates use of master netting agreements and CVA/DVA adjustments"
+  },
+  {
+   "from": "The corn crush spread",
+   "to": "crack spread",
+   "stated_in": "Analogous in structure to the crack spread between crude oil and refined products"
+  },
+  {
+   "from": "The dispatch stack and the marginal unit",
+   "to": "generation stack",
+   "stated_in": "Directly built on the generation stack concept and the uniform clearing-price mechanic"
+  },
+  {
+   "from": "Topping Cycle vs. Bottoming Cycle Cogeneration",
+   "to": "Cogeneration",
+   "stated_in": "Both are subtypes of cogeneration"
+  },
+  {
+   "from": "Trade-offs and drivers behind long-distance transmission investment",
+   "to": "wheeling",
+   "stated_in": "Explains the investment-decision context for the option framing in [[Wheeling valued as a spread option on transmission capacity]]."
+  },
+  {
+   "from": "Trade-offs and drivers behind long-distance transmission investment",
+   "to": "spread option",
+   "stated_in": "Explains the investment-decision context for the option framing in [[Wheeling valued as a spread option on transmission capacity]]."
+  },
+  {
+   "from": "Trading hub concentration and basis (fine-tuning) trades",
+   "to": "Forward market",
+   "stated_in": "Directly tied to why the forward market differs structurally from the daily auction market."
+  },
+  {
+   "from": "Using Models Appropriately",
+   "to": "model risk",
+   "stated_in": "Directly addresses the 'model used incorrectly' cause of model risk; builds on documentation practices"
+  },
+  {
+   "from": "Valuation approach for the solar-LNG hybrid facility",
+   "to": "tolling agreement",
+   "stated_in": "Draws on tolling agreement valuation concepts."
+  },
+  {
+   "from": "Valuation approach for the solar-LNG hybrid facility",
+   "to": "natural gas storage",
+   "stated_in": "Draws on natural gas storage (intrinsic/time-shift) valuation concepts."
+  },
+  {
+   "from": "Variable Pricing Components in Physical Crude Contracts (Index + Differentials, CMA)",
+   "to": "WTI and Brent as Global Crude Oil Benchmarks",
+   "stated_in": "WTI and Brent as Global Crude Oil Benchmarks"
+  },
+  {
+   "from": "Volatility Term Structure: Spot Markets Are More Volatile Than Distant Forward Contracts",
+   "to": "Forward market",
+   "stated_in": "Forward market mechanics and its volatility-reducing role"
+  },
+  {
+   "from": "Weather Risk: Combined Volume and Price Exposure",
+   "to": "natural gas storage",
+   "stated_in": "Connects to natural gas storage dynamics during winter demand spikes."
+  },
+  {
+   "from": "Why grid operators must forecast rather than schedule demand",
+   "to": "load forecasting",
+   "stated_in": "Motivates the need for spatial load forecasting overall"
+  },
+  {
+   "from": "Why options can't be priced like insurance",
+   "to": "hedging",
+   "stated_in": "Motivates dynamic hedging as the alternative to historical/statistical pricing."
+  },
+  {
+   "from": "Why peak-driven pricing alone is an unpopular way to fund reliability",
+   "to": "Ancillary services markets",
+   "stated_in": "Motivates the existence of ancillary services markets and capacity markets."
+  },
+  {
+   "from": "Why peak-driven pricing alone is an unpopular way to fund reliability",
+   "to": "Capacity markets",
+   "stated_in": "Motivates the existence of ancillary services markets and capacity markets."
+  },
+  {
+   "from": "Why physical spot market knowledge is required despite forward market liquidity",
+   "to": "Forward market",
+   "stated_in": "Builds directly on the spot-vs-forward market divide and liquidity concepts."
+  },
+  {
+   "from": "Why regional power prices diverge",
+   "to": "wheeling",
+   "stated_in": "Underpins the profitability driver described in [[Wheeling (long-distance power transmission trading)]]."
+  },
+  {
+   "from": "Winner's Curse in Storage Capacity Auctions",
+   "to": "natural gas storage",
+   "stated_in": "A risk specific to the auction-based acquisition described in the Natural Gas Storage Arbitrage Bid Strategy example."
+  },
+  {
+   "from": "Levelized Cost of Entry (LCOE)",
+   "to": "Capacity markets",
+   "stated_in": "Used in capacity markets and PPA pricing"
+  }
+ ],
+ "note": "edges derived only from objects' stated relationships; no invented edges"
+}

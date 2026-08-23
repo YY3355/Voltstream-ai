@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "REC registration and ownership transfer via registries",
+ "type": "market_mechanic",
+ "category": "Environmental & Renewable Markets",
+ "subcategory": "Market Infrastructure",
+ "definition": "Generators register renewable production with a registry, which cross-checks the claimed generation against actual power grid injection records to verify it. Once a REC is created, ownership transfer on a trade is simply an electronic change of owner-of-record in the registry.",
+ "core_idea": "The registry is the trust and audit mechanism that ties REC issuance to verified physical generation, preventing double-counting or fabricated certificates.",
+ "key_points": [
+  "Generators register production with a registry to have RECs created",
+  "The registry cross-checks generation claims against the power grid",
+  "Ownership transfer on trade is an electronic record change, with no physical delivery involved"
+ ],
+ "relationships": [
+  "Underpins the integrity of REC trading described elsewhere in the chapter"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "504"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_002.json",
+   "idx": 4,
+   "topic": "REC registration and ownership transfer via registries"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

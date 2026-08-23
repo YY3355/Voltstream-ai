@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Option value as a bounded percentage of the underlying price",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Black-Scholes-Merton's key insight is that an option's premium can be expressed as a fraction of the underlying's price, and that fraction is bounded by two extreme cases defined by the strike price.",
+ "core_idea": "A call struck at zero must always end in the money regardless of the price distribution, so its premium must equal the underlying's price or an arbitrage exists; a call struck so high it can never be reached is worth nothing because it will never be exercised. Real options price somewhere between these two bounds.",
+ "key_points": [
+  "A zero-strike call is always in the money no matter how future prices are distributed, so its premium must equal the underlying price to prevent arbitrage.",
+  "A call with an unreachably high strike will never be exercised, so its premium must be zero.",
+  "Most traded options have strikes between these extremes, so their premiums fall between 0% and 100% of the underlying's price."
+ ],
+ "relationships": [
+  "Underlies the concept of delta / hedge ratio",
+  "Justified by no-arbitrage reasoning"
+ ],
+ "trading_implications": [
+  "An option's premium can be thought of as underlying price times a percentage (its hedge ratio) rather than derived independently each time."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "350-350"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 0,
+   "topic": "Option value as a bounded percentage of the underlying price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

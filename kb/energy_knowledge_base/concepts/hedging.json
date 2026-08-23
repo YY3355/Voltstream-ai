@@ -1,0 +1,135 @@
+{
+ "canonical_topic": "hedging",
+ "type": "concept",
+ "n_merged": 7,
+ "definition": "A hedge is a trading position (using a hedging instrument, e.g. a future or forward) taken to offset the price risk of another position (the hedged item), so gains or losses on the hedge counteract gains or losses on the hedged item \u2014 generally used when the original position can't easily be liquidated, sold, or closed out directly.",
+ "core_idea": "Hedging offsets the risk of a position that can't practically be unwound by taking an equal-and-opposite position elsewhere, transferring risk between traders rather than eliminating it outright. It relies on correlation between the hedge instrument and the underlying exposure rather than an exact match of terms, is never free (explicit and hidden/opportunity costs), and its economic value depends on the specific market friction it addresses.",
+ "key_points": [
+  "Hedge = the trading position taken to offset risk; hedging instrument = the contract used (e.g. a future or forward); hedged item = the original exposure being protected.",
+  "Hedging transfers risk from one trader to another rather than eliminating it.",
+  "Hedging is generally used when the original/underlying position can't easily be liquidated, sold, or closed out directly.",
+  "Example: bondholders/creditors financing a project (e.g. a wind farm) may require the producer to hedge (e.g. sell output forward) to guarantee revenue can meet debt payments \u2014 but this forfeits upside if prices later rise.",
+  "Example: a long OTC position that's hard to exit directly can instead be hedged with an opposite position in an exchange-traded instrument.",
+  "Example: a marketer with a long-term fixed-price supply contract can hedge rising-price risk using futures that don't physically deliver to the required location, because delivery locations are highly correlated in the futures market \u2014 the hedge works via correlation, not matching terms.",
+  "Hedging is never free: it carries explicit up-front costs and hidden opportunity costs, in part because willing counterparties for long-dated fixed prices are scarce.",
+  "Few counterparties want the buy side of long-dated hedges, which skews long-term forward prices in buyers' favor, so a producer's locked-in hedge price may be systematically less favorable than an unbiased expectation of future prices.",
+  "A hedge is equal in size and opposite in risk to the original position, yet typically gets much less scrutiny \u2014 a gap that can let a hedge desk effectively reverse the original investment thesis without the same review.",
+  "Delta hedging: an option's hedge ratio (delta) is the fraction of the underlying needed to replicate its payoff; a zero-strike call has delta 1, an option that can never be exercised has delta 0, and an option struck near today's forward price might have delta around 0.5. 'Delta' and 'hedge ratio' are synonyms.",
+  "Modigliani-Miller: in a frictionless market, corporate hedging doesn't increase risk-adjusted value to shareholders because investors could replicate the hedge themselves; real markets have friction (borrowing constraints, bankruptcy costs, transaction costs, conflicting shareholder/creditor/manager interests), and hedging's benefit can be judged by comparing its cost to the friction it avoids \u2014 the most commonly cited real benefit is reducing bankruptcy risk to ease borrowing; a subsidiary may also benefit by reducing parent micromanagement friction. Overall conclusion: hedging often enriches investment banks and distracts management more than it benefits shareholders, except where it addresses genuine market friction."
+ ],
+ "relationships": [
+  "Distinct risk-transfer concept from VAR, credit risk, and model risk.",
+  "Hedging is the general risk-management purpose that spread trades often serve.",
+  "Relies on price correlation between the hedge instrument and the underlying exposure \u2014 connects to basis risk.",
+  "Builds on the zero-strike/unreachable-strike bounding argument; basis for replicating portfolios.",
+  "Hedge accounting.",
+  "Modigliani-Miller Proposition on Hedging.",
+  "The hidden-cost/scrutiny-gap view extends the base definition of hedging."
+ ],
+ "trading_implications": [
+  "Hedging requirements imposed by lenders (e.g. project finance bondholders) can force a producer to give up upside price exposure in exchange for guaranteed cash flow.",
+  "Hedges should be reviewed with the same rigor as the position they offset, since a hedge desk can otherwise take on a large opposing bet with less oversight than the original trade.",
+  "A hedge instrument does not need to match the underlying position's exact delivery location or terms to be effective, as long as prices are highly correlated.",
+  "Hedging is chosen over liquidation specifically when unwinding the original position isn't feasible or desirable.",
+  "Delta tells a trader how many units of the underlying to hold to hedge or replicate an option position.",
+  "Producers seeking long-term hedges to support project financing should expect forward prices skewed toward buyer-favorable levels, not neutral market expectations.",
+  "Before hedging, a firm should identify which specific market friction (e.g. bankruptcy risk, borrowing constraints) the hedge is meant to mitigate, rather than assuming hedging is inherently value-adding."
+ ],
+ "caveats": [
+  "Hedging is not free \u2014 it carries both explicit up-front costs and hidden opportunity costs that are often not obvious.",
+  "The market structure for long-dated hedges (scarce counterparties on the buy side) can itself bias the prices producers receive away from a neutral expectation.",
+  "Real markets are not frictionless, so the Modigliani-Miller result (hedging adds no shareholder value) applies only to the extent the frictionless-market assumption fails to hold; actual benefit depends on which frictions are genuinely present."
+ ],
+ "contradictions": [
+  {
+   "field": "whether hedging eliminates or merely transfers risk",
+   "versions": [
+    {
+     "statement": "Hedging transfers risk from one trader to another rather than eliminating it.",
+     "from_item": "Hedging (ch1, p.69)"
+    },
+    {
+     "statement": "Hedging means taking an offsetting position to reduce the risk of an existing position... generally used to lock in profit or eliminate risk on a position that can't practically be unwound.",
+     "from_item": "Hedging (ch2, p.110-113)"
+    }
+   ],
+   "note": "One item frames hedging strictly as a risk transfer between counterparties (risk isn't destroyed, just moved), while another describes it as reducing or eliminating risk on the hedger's own position. Not resolved here."
+  }
+ ],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "69"
+  },
+  {
+   "chapter": 1,
+   "pages": "69-70"
+  },
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  },
+  {
+   "chapter": 14,
+   "pages": "350-351"
+  },
+  {
+   "chapter": 33,
+   "pages": "591-592"
+  },
+  {
+   "chapter": 33,
+   "pages": "592"
+  },
+  {
+   "chapter": 33,
+   "pages": "592-593"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 7
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 7,
+   "topic": "Hedging"
+  },
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 8,
+   "topic": "The Cost and Risk-Management Blind Spot of Hedging"
+  },
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 4,
+   "topic": "Hedging"
+  },
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 1,
+   "topic": "Delta hedging and the hedge ratio"
+  },
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 0,
+   "topic": "Definition of hedging"
+  },
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 2,
+   "topic": "The hidden costs of hedging"
+  },
+  {
+   "file": "raw/ch33/chunk_000.json",
+   "idx": 4,
+   "topic": "Modigliani-Miller Proposition on Hedging"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:36:14+00:00"
+ }
+}

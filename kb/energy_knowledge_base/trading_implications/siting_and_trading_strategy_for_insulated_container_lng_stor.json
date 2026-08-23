@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Siting and trading strategy for insulated-container LNG storage",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "LNG Storage",
+ "definition": "A strategy for a gas-peaker owner to lock in fuel supply by building a compact, insulated-container LNG storage facility sited near congested demand centers, using solar-supplied energy to cut operating costs, and reselling generated electricity at peak prices.",
+ "core_idea": "Because the facility stores gas in insulated containers rather than an underground formation, it needs much less land and can be located close to electrically congested consuming regions, letting the owner buy fuel cheaply, run much of the process on solar energy, and sell power at the highest available price.",
+ "key_points": [
+  "Insulated-container storage needs far less space than underground rock-formation storage, giving siting flexibility.",
+  "Proximity to congested demand regions is a deliberate siting choice enabled by the smaller footprint.",
+  "The economic combination is: low-cost fuel purchase + solar-subsidized processing energy + high-price power resale."
+ ],
+ "relationships": [
+  "Builds directly on the solar-assisted LNG facility concept described for this opportunity.",
+  "Connects storage economics (buy-low gas) with generation economics (sell-high power) at a congested node."
+ ],
+ "trading_implications": [
+  "Facility value depends on capturing both the low-to-high time-shift spread in gas prices and the premium available from selling power into a congested delivery point."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "543-543"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_001.json",
+   "idx": 1,
+   "topic": "Siting and trading strategy for insulated-container LNG storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

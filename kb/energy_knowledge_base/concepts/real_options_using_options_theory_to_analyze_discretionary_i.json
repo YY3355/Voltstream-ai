@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Real options: using options theory to analyze discretionary investments",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options Applications",
+ "definition": "Investment decisions that involve a choice about whether to act (rather than an obligation to act) can be modeled using option theory, because the decision-maker retains the right, not the requirement, to proceed.",
+ "core_idea": "Building a power plant effectively hands the operator an option to convert fuel into electricity, exercised only when doing so is profitable, so option analysis is a natural framework for this and similar discretionary investments.",
+ "key_points": [
+  "A power plant gives its operator the choice, not the obligation, to burn fuel and produce electricity.",
+  "The operator only 'exercises' by running the plant when production is profitable.",
+  "Any investment decision with embedded discretion can be analyzed using option logic."
+ ],
+ "relationships": [
+  "real options valuation",
+  "plant dispatch economics"
+ ],
+ "trading_implications": [
+  "Physical assets with dispatch flexibility can be valued using option-pricing style frameworks rather than a single static NPV estimate."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "334-334"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 0,
+   "topic": "Real options: using options theory to analyze discretionary investments"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

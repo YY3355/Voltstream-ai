@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Correlated does not mean a good hedge",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Hedging",
+ "definition": "High correlation between two price series does not guarantee they are trending in the same direction or that a hedge built on one will track losses/gains in the other over time.",
+ "core_idea": "Energy prices are often cyclical and highly correlated with each other because they share seasonal/weather drivers, but two series can be highly correlated in their day-to-day swings while their overall price levels drift apart over years \u2014 making a correlation-based hedge dangerously misleading if no one checks the underlying trend.",
+ "key_points": [
+  "Energy prices are commonly highly correlated simply because they are all cyclical, not because they trend together.",
+  "The text gives an illustrative case with r = 0.5 where two series are correlated but moving in opposite overall directions.",
+  "A correlation estimate can stay high indefinitely even as absolute price levels between the two series diverge, because correlation captures co-movement of swings (e.g., both peak on hot summer days), not the level or trend of prices.",
+  "The danger is trusting the correlation statistic without ever looking at the actual underlying price data over time."
+ ],
+ "relationships": [
+  "Builds on the outlier-driven nature of correlation: shared weather-driven peaks/troughs can sustain high correlation even as trends diverge."
+ ],
+ "trading_implications": [
+  "Before using one location's futures as a proxy hedge for another location's exposure, check not just the correlation coefficient but the actual historical price trend/spread between the two series.",
+  "A hedge that looks statistically sound at initiation can silently accumulate large basis losses over years if the two locations' underlying supply/demand fundamentals diverge."
+ ],
+ "caveats": [
+  "Believing a high correlation coefficient at trade inception is sufficient evidence that a cross-location hedge will remain effective over the life of the position."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "322-323"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_003.json",
+   "idx": 2,
+   "topic": "Correlated does not mean a good hedge"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Pipeline Phase-Change Hazards",
+ "type": "risk",
+ "category": "Energy Infrastructure",
+ "subcategory": "Pipelines",
+ "definition": "Because pipeline temperatures aren't constant, unwanted phase changes can occur in transit: in gas pipelines, liquids can condense out and are extremely difficult to remove, while in oil pipelines, gas bubbles can form and damage the pipe.",
+ "core_idea": "Pipeline engineers must design systems to handle both gas and liquid phases simultaneously because temperature variation along a pipeline can cause the transported fuel to partially change phase, creating operational hazards.",
+ "key_points": [
+  "Gas pipelines: condensed liquids are hard to remove once they form.",
+  "Oil pipelines: bubble formation can damage the pipe.",
+  "Root cause is non-constant temperature along the pipeline route.",
+  "Pipeline design must accommodate both gas and liquid phases of the transported substance."
+ ],
+ "relationships": [
+  "A direct consequence of the phase-transition properties described for gases and liquids."
+ ],
+ "trading_implications": [
+  "Uncontrolled condensation/bubble formation represents an operational risk to transport infrastructure that can affect delivery reliability and asset integrity."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "290-291"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 5,
+   "topic": "Pipeline Phase-Change Hazards"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

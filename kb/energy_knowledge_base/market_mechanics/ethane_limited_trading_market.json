@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Ethane: limited trading market",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "Ethane is used almost exclusively to produce ethylene (a plastics feedstock), and its trading market is very limited.",
+ "core_idea": "Because ethane demand is nearly all petrochemical and it's hard to transport except by dedicated pipeline, many NGL processors don't bother separating it from methane, leaving it in the interstate natural gas pipeline stream instead.",
+ "key_points": [
+  "Ethane's demand is concentrated almost entirely in petrochemicals (ethylene production).",
+  "Transport outside dedicated pipelines is difficult, constraining the tradeable market.",
+  "Processors often leave ethane unseparated, letting it flow into the natural gas pipeline system rather than extracting it."
+ ],
+ "relationships": [
+  "Contrasts with propane's broader, more diversified demand base"
+ ],
+ "trading_implications": [
+  "Very limited liquid trading market for ethane compared to other NGLs.",
+  "Processor decisions to leave ethane unseparated affect how much ethane volume ever reaches an NGL market versus staying blended into pipeline gas."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "277"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 6,
+   "topic": "Ethane: limited trading market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

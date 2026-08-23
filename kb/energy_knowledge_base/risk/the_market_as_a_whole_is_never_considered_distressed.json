@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "The market as a whole is never considered distressed",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "An accounting principle stating that even in a market-wide crash, published prices must still be used for fair value rather than substituted with a hold-to-maturity or normal-conditions valuation.",
+ "core_idea": "Distress/forced-sale exceptions apply only to individual transactions, never to the market overall \u2014 as long as the market is open and participants could transact, published prices are mandatory for fair value, even during a crash.",
+ "key_points": [
+  "It is not acceptable to value an asset via a hold-to-maturity approach (discounting expected future cash flows) as a workaround during a market decline.",
+  "It is also not acceptable to substitute assumptions based on 'normal' market conditions when the real market is stressed.",
+  "The FASB definition (ASC 820-10-35-51D) reaffirms that fair value remains the orderly-transaction exit price under CURRENT market conditions, even after a significant decrease in volume/activity, regardless of which valuation technique is used."
+ ],
+ "relationships": [
+  "Complements the disorderly-transaction exceptions: those exclude specific bad trades, but never let a firm treat the whole market as invalid."
+ ],
+ "trading_implications": [
+  "During a market crash, a trading desk cannot mark its book off a discounted-cash-flow / hold-to-maturity model to smooth out mark-to-market losses; it must still use actual current market prices."
+ ],
+ "caveats": [
+  "A crashing or highly volatile market is not, by itself, grounds to abandon published prices in favor of a theoretical or historical-conditions valuation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "553-554"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_002.json",
+   "idx": 3,
+   "topic": "The market as a whole is never considered distressed"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

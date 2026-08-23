@@ -1,0 +1,7 @@
+{
+ "chapter": 13,
+ "title": "3.4 FINANCIAL OPTIONS",
+ "n_concepts": 29,
+ "summary": "This chapter introduces options as contracts giving the right, but not the obligation, to buy or sell an underlying (often a futures or forward contract rather than the physical commodity) at a fixed strike price, and works through the basic vocabulary of premiums, moneyness, American/European/Asian exercise styles, and long/short positioning. It then builds up the economics of an option's price by splitting it into intrinsic and extrinsic value, using this split to explain why early exercise is generally suboptimal (with dividends as a notable exception) and why selling an in-the-money option often beats exercising it. The chapter also frames options as a zero-sum, insurance-like market \u2014 asymmetric payoffs, wide bid/ask spreads, and a typical pattern of frequent small losses for buyers offset by rare large gains \u2014 before extending the same theory to synthetic positions (straddles, put/call parity) and to \"real options,\" where the framework is applied to discretionary physical investment decisions in energy.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Interest rate binomial tree",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Foundations",
+ "definition": "The same binomial-tree framework used to model underlying asset prices can also be used to model the risk-free interest rate over time.",
+ "core_idea": "A constant interest rate produces an unremarkable, flat binomial tree on its own, but it becomes essential later as the risk-free leg combined with the underlying's tree to compute a fair option premium.",
+ "key_points": [
+  "Example given: at a 5% interest rate per period, a dollar held at Time t is worth $1.05 at Time t+1",
+  "With constant rates the interest rate tree is not interesting by itself, but is later used to derive the correct option premium"
+ ],
+ "relationships": [
+  "Feeds directly into arbitrage-free replication pricing"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "356"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 3,
+   "topic": "Interest rate binomial tree"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

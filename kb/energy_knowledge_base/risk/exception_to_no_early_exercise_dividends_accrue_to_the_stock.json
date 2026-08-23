@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Exception to no-early-exercise: dividends accrue to the stock owner, not the option owner",
+ "type": "risk",
+ "category": "Derivatives",
+ "subcategory": "Early Exercise",
+ "definition": "Owning the underlying asset can carry a benefit the option owner never receives \u2014 for example, a stock dividend. Since a dividend payment reduces the stock price (and thus a call option's value) but only the stock owner collects the offsetting cash, a call holder may rationally exercise early to capture a large dividend, giving up the option's remaining extrinsic value in exchange for it.",
+ "core_idea": "Early exercise can make sense specifically when the underlying delivers a benefit the option contract itself does not pass through, and that benefit is large enough to outweigh the extrinsic value being forfeited.",
+ "key_points": [
+  "A stock dividend lowers the stock price and thus reduces a call option's value.",
+  "The stock owner is compensated for that price drop by receiving the dividend cash; the call option owner is not.",
+  "If the dividend is large enough, it can be worthwhile for a call holder to exercise early and give up the extrinsic value in order to capture the dividend as a stockholder."
+ ],
+ "relationships": [
+  "Named as the exception to the general no-early-exercise rule"
+ ],
+ "trading_implications": [
+  "This exception is specific to options on assets (like dividend-paying stocks) where holding the underlying itself confers a benefit not passed through the option contract."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "331"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 4,
+   "topic": "Exception to no-early-exercise: dividends accrue to the stock owner, not the option owner"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

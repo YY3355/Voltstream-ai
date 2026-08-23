@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Core fair value terminology (ASC 820 / IFRS 13)",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "A set of interlocking terms accounting standards use to define what 'fair value' means when marking an asset or liability to market.",
+ "core_idea": "Fair value is the cash amount an orderly, willing, knowledgeable counterparty would pay or receive for an asset/liability at the measurement date; several supporting definitions (exit price, market participant, orderly market, active market) pin down exactly what 'orderly' and 'willing' mean.",
+ "key_points": [
+  "Exit price: what would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants, as of the measurement date.",
+  "Fair value: the cash amount corresponding to that exit price; for a single asset/liability it's essentially the same as exit price, but for a quantity it's exit price multiplied by quantity.",
+  "Market participant: an independent counterparty who knows current prices/market info, is able to transact, and is willing (not compelled) to transact.",
+  "Orderly market: one where participants have adequate time to complete a transaction.",
+  "Active market: one where transactions occur often enough and in enough volume to give continuous pricing information \u2014 a distinct concept from 'orderly', and fair value depends on the market being orderly, not necessarily active.",
+  "Orderly/active are properties of the market for a specific asset or liability (e.g., a specific futures contract), not of a trading venue as a whole (e.g., an exchange can have both active and inactive markets within it)."
+ ],
+ "relationships": [
+  "Because exit price only requires an orderly (not active) market, illiquid assets/liabilities without regular pricing data must still be marked to market \u2014 this is the rationale for the fair value hierarchy (level 1-3 inputs)."
+ ],
+ "trading_implications": [
+  "Marking illiquid positions still requires a fair value estimate even absent frequent trading, so long as a transaction could occur in an orderly manner."
+ ],
+ "caveats": [
+  "Active and orderly are not the same requirement \u2014 a market can be orderly (fair value usable) without being active (frequently traded)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "551-552"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_002.json",
+   "idx": 0,
+   "topic": "Core fair value terminology (ASC 820 / IFRS 13)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

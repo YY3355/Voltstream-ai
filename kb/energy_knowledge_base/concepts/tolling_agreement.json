@@ -1,0 +1,112 @@
+{
+ "canonical_topic": "tolling agreement",
+ "type": "concept",
+ "n_merged": 6,
+ "definition": "A tolling agreement is a long-term contract (often 20-30 years) in which a power marketer rents the operating rights of a power plant from its owner: the owner maintains the physical plant for a fixed fee, while the marketer (trader) takes on the right and risk to buy fuel, run the plant, and sell the resulting electricity into the competitive market.",
+ "core_idea": "Deregulation split the power industry into specialists \u2014 some firms focused on physical plant maintenance, others on power marketing/trading \u2014 and the tolling agreement is the contract that lets a marketer control a plant's economic run/no-run decisions and market exposure without owning it, while the owner is insulated from market risk in exchange for a fixed fee.",
+ "key_points": [
+  "Two parties: one maintains the plant for a pre-established/fixed fee and bears no market risk; the trader (power marketer) makes the economic run/no-run decisions.",
+  "The trader supplies fuel, operates the plant economically, and sells the output electricity into the competitive market.",
+  "The trader bears all economic (commodity) risk and captures all profit/upside above the fixed maintenance fee.",
+  "Agreements are typically very long-dated (often 20-30 years).",
+  "Emerged after deregulation split the power industry into specialists: some firms focused on physical plant maintenance, others on power marketing/trading.",
+  "The plant's optionality (run vs. don't run) is analogous to a financial option holder's choice to exercise or not.",
+  "Valuation approach: estimate the plant's value as the cost of replicating its physical capabilities with financial option contracts, commonly via spread options (e.g., Kirk's approximation) or Monte Carlo simulation.",
+  "Because a tolling agreement involves many operating decisions over its life, it is modeled as a series ('legs') of spark spread options, each leg representing one on/off decision over a chosen time interval (typically hourly, daily, or monthly).",
+  "Electricity can't be stored, so electricity at different times of year functions as different underlying products, creating many distinct underlyings to manage over a plant's multi-year life.",
+  "Modeling future operating decisions differs from modeling today's decision because granular data (e.g., hourly prices) isn't available for future periods.",
+  "The right number of legs is primarily driven by available market price data (e.g., monthly forward data vs. daily simulated price) and the plant's physical operating capabilities.",
+  "Extreme moves in the power-fuel spread benefit the tolling agreement owner because the plant can be shut off to avoid losses.",
+  "High correlation between power and fuel prices means low spread volatility and thus lower option value; small changes in assumed correlation can produce large changes in valuation.",
+  "Tolling agreement value has two parts: intrinsic value, locked in today by hedging fuel purchases and power sales in the forward market, and additional optionality value from future price uncertainty, since downside is capped by the ability to shut down."
+ ],
+ "relationships": [
+  "Commonly valued using spark spread option models.",
+  "Underlies the real options approach to plant valuation.",
+  "Depends on the spark spread for its economics.",
+  "Applied via spread-option pricing (Kirk's approximation) or Monte Carlo simulation.",
+  "Each leg of the full agreement is itself a spark spread option; aggregated legs implement the real options model of the full tolling agreement.",
+  "Spark spread option value depends on spread volatility, which depends on correlation between power and gas prices.",
+  "Total tolling value = intrinsic value + optionality (time) value."
+ ],
+ "trading_implications": [
+  "A tolling agreement converts a physical power plant into a financial optionality position for the trader \u2014 effectively a call option on the spread between power and fuel prices \u2014 without the marketer having to own the physical asset.",
+  "Tolling agreement value can be decomposed and hedged using standard option-pricing machinery rather than only physical/operational modeling.",
+  "Model granularity should be matched to the granularity of available price data \u2014 e.g., use monthly legs when only monthly forward prices exist, and finer legs only when finer (e.g., daily simulated) price data is genuinely available.",
+  "The correlation assumption between power and gas deserves as much scrutiny as the price forecasts themselves, since it is a primary value driver; desks should stress-test valuations against a range of correlation assumptions rather than relying on a single point estimate.",
+  "Even a plant with an unattractive current forward spread can carry meaningful value from optionality alone, so valuation should not stop at the intrinsic (forward-locked) calculation."
+ ],
+ "caveats": [
+  "Modeling future operating decisions differs from modeling today's decision, since granular price data isn't available for future periods.",
+  "There is little benefit to using very short (e.g., hourly) modeling legs if the underlying price data must itself be estimated from longer-period data.",
+  "Every model has an optimal complexity point; beyond it, added complexity slows computation and complicates testing without improving accuracy."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "51"
+  },
+  {
+   "chapter": 18,
+   "pages": "423-424"
+  },
+  {
+   "chapter": 18,
+   "pages": "423-425"
+  },
+  {
+   "chapter": 18,
+   "pages": "425-427"
+  },
+  {
+   "chapter": 18,
+   "pages": "433-434"
+  },
+  {
+   "chapter": 18,
+   "pages": "433-434"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 6
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 3,
+   "topic": "Tolling agreements"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 0,
+   "topic": "Tolling agreement"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 1,
+   "topic": "Real options model for tolling agreements"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 6,
+   "topic": "Breaking a tolling agreement into legs (operating-decision granularity)"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 0,
+   "topic": "Correlation between power and fuel prices drives tolling agreement value"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 1,
+   "topic": "Intrinsic value vs. optionality value in a tolling agreement"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:42:38+00:00"
+ }
+}

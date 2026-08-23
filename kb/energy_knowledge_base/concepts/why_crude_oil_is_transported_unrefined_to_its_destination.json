@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Why crude oil is transported unrefined to its destination",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Transportation and logistics",
+ "definition": "Crude oil is shipped in its raw form and only refined near its final destination, a business model driven by refinery economics, labor availability, local demand/regulatory optimization, and safety/political risk.",
+ "core_idea": "Refineries are multibillion-dollar, multi-decade assets that outlive any single oil field, need a skilled workforce best found near cities, benefit from being close to the customers whose demand/regulations they must match, and are sited for safety and political stability \u2014 all of which favor building refineries near demand rather than near the oil field.",
+ "key_points": [
+  "Refineries can cost billions of dollars and have expected lifespans over 50 years, so a refinery typically outlives any single oil field feeding it.",
+  "Oil fields are often in remote locations, while refineries need a highly trained workforce more easily found near major cities.",
+  "Refineries sited near their customers can tailor output to local demand and comply with local regulations.",
+  "Refineries are also sited to protect worker and investor safety, including avoiding locations at risk of violence or nationalization by unfriendly governments."
+ ],
+ "relationships": [
+  "This logistics pattern explains why crude oil, rather than refined products, moves via pipeline and ship over long distances"
+ ],
+ "trading_implications": [
+  "Refinery location decisions (near demand centers, in stable jurisdictions) shape regional crude oil flows and can be a factor in long-term crude transportation/logistics analysis."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "221-222"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 6,
+   "topic": "Why crude oil is transported unrefined to its destination"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Volatility smile",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing",
+ "definition": "The volatility smile is the pattern seen when implied volatility is plotted against strike price: out-of-the-money and in-the-money options tend to show higher implied volatility than at-the-money options.",
+ "core_idea": "Because the assumption that prices are lognormally distributed breaks down most for options with extreme strikes or long maturities, the market prices these options with higher volatility than at-the-money options to compensate for that extra model risk, producing the smile shape when graphed.",
+ "key_points": [
+  "All corrections for imperfections in the option model (e.g., inaccuracy of the lognormal assumption) show up as adjustments to the volatility input, since every other input is directly observable.",
+  "Options with high or low strikes, or very long maturities, are most affected by the lognormal assumption being inaccurate.",
+  "These options are priced with different (typically higher) volatility than at-the-money options to account for that risk.",
+  "Implied volatility is observed in the market by backing out volatility from the Black Scholes equation using actual traded option prices and known inputs."
+ ],
+ "relationships": [
+  "Depends on implied volatility calculation",
+  "Related to lognormal price distribution assumption"
+ ],
+ "trading_implications": [
+  "Traders should expect deep out-of-the-money or long-dated options to trade at higher implied volatility than at-the-money options, not the same flat volatility."
+ ],
+ "caveats": [
+  "Assuming a single flat volatility should apply across all strikes; the smile reflects that the lognormal assumption is worse at extreme strikes/maturities."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "368-369"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 4,
+   "topic": "Volatility smile"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

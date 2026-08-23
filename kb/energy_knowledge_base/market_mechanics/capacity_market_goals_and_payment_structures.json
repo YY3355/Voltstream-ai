@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Capacity market goals and payment structures",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Capacity Markets",
+ "definition": "A capacity market is a mechanism grid operators use to pay generators for being available to produce power, separate from energy sold, with the dual purpose of keeping existing plants online and encouraging new investment.",
+ "core_idea": "Capacity markets exist because energy-only revenue may not be enough to keep generators solvent or to attract new builds, so operators add a payment tied to a unit's availability rather than its output.",
+ "key_points": [
+  "Capacity markets aim to (1) retain existing generation resources and (2) spur development of new resources, including batteries and demand-reduction programs.",
+  "There is no single standard design; some grids have no capacity market at all, though many share common features.",
+  "A plain 'Capacity' payment is typically based on the average output a unit could deliver if fully active.",
+  "A 'Capacity Performance' category exists in some markets for units that can guarantee output, often because they hold firm fuel supply, or that can reliably generate during peak stress periods (e.g., summer afternoons, cold winter nights)."
+ ],
+ "relationships": [
+  "Distinguished from energy markets, which pay for actual output rather than availability."
+ ],
+ "trading_implications": [
+  "Generators with firm fuel or peak-reliability characteristics may qualify for higher Capacity Performance payments than units without those guarantees."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "498-499"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_001.json",
+   "idx": 0,
+   "topic": "Capacity market goals and payment structures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

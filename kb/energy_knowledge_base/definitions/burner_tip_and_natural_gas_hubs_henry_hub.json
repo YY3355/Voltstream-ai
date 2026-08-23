@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Burner tip and natural gas hubs / Henry Hub",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Infrastructure",
+ "definition": "The 'burner tip' refers to the end user of natural gas (a legacy term from old gas-appliance dispersing heads); a natural gas hub is an interconnection point between major pipelines, and Henry Hub \u2014 located on the U.S. Gulf Coast between New Orleans and Houston \u2014 is the most important such hub, serving as the delivery point for the NYMEX natural gas futures contract and the national benchmark price.",
+ "core_idea": "Gas moves from extraction wells through pipelines to consumers, and Henry Hub's role as both the NYMEX delivery point and pricing benchmark makes it the reference location for natural gas prices nationwide.",
+ "key_points": [
+  "Burner tip = end user of natural gas, a nickname surviving from obsolete gas-appliance hardware",
+  "Natural gas hubs sit at interconnections between major pipelines",
+  "Henry Hub is located on the Gulf Coast between New Orleans and Houston",
+  "Henry Hub is the NYMEX natural gas futures delivery location and the U.S. benchmark price reference"
+ ],
+ "relationships": [
+  "Natural gas transport",
+  "Forward vs spot behavior for gas"
+ ],
+ "trading_implications": [
+  "Henry Hub pricing is the reference point for basis/locational pricing of natural gas elsewhere in the country"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "24-25"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 7,
+   "topic": "Burner tip and natural gas hubs / Henry Hub"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Integration as the calculus basis for probability",
+ "type": "concept",
+ "category": "Statistics",
+ "subcategory": "Probability & Calculus",
+ "definition": "Integration is the calculus operation of finding the area under a curve; applied to a probability distribution, the area under a segment of the curve equals the probability that a random draw falls in that segment.",
+ "core_idea": "A histogram approximates this same idea discretely: counting samples in a bucket and dividing by the total sample count estimates the probability of landing in that bucket. As the number of buckets grows toward infinity and bucket width shrinks toward zero, the discrete sum (denoted with sigma, S) becomes a continuous integral (denoted with the stretched-S integral sign) over a function S(x) with respect to x.",
+ "key_points": [
+  "Histogram bars: height = sample count in that bucket; count/total = estimated probability.",
+  "More buckets (finer resolution) makes the histogram-based probability estimate more precise.",
+  "Discrete summation (sigma notation) is the finite-bucket analog of continuous integration.",
+  "Continuous integration replaces the discrete sample table with a function S(x) and sums with respect to dx.",
+  "Practically, a user doesn't need to solve the calculus by hand \u2014 just knowing how to read the notation is enough to identify the right spreadsheet/library function and its required parameters."
+ ],
+ "relationships": [
+  "Underlies the later variance/standard deviation formulas, which are themselves expectations (integrals/sums) over a distribution."
+ ],
+ "trading_implications": [
+  "Reading probability notation (even without solving it by hand) lets a trader identify which built-in statistical function to call for a given risk question."
+ ],
+ "caveats": [
+  "Not knowing how to solve a calculus equation is not a barrier to using it in practice \u2014 recognizing the notation is often sufficient to find the right tool."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "307-308"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_001.json",
+   "idx": 0,
+   "topic": "Integration as the calculus basis for probability"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

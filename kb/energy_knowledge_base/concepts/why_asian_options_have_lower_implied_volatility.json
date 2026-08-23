@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Why Asian options have lower implied volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Exotic Options",
+ "definition": "Averaging a series of random prices produces a result with less dispersion (lower volatility) than any single price drawn from that same series.",
+ "core_idea": "Because the settlement is an average rather than a single spot observation, the effective volatility priced into an Asian option is lower than that of an equivalent European option, making it cheaper for buyers and safer for sellers.",
+ "key_points": [
+  "The statistical reduction in dispersion from averaging is the mechanical reason Asian options price with lower implied volatility.",
+  "Lower volatility pricing translates to lower premiums than a comparable European option.",
+  "This also makes the position less risky from the seller's perspective."
+ ],
+ "relationships": [
+  "Follows from Asian option payoff definition",
+  "Affects premium relative to European options"
+ ],
+ "trading_implications": [
+  "Buyers pay less for Asian options than for comparable standard options because of the reduced effective volatility.",
+  "Sellers of Asian options take on less risk than sellers of comparable European options."
+ ],
+ "caveats": [
+  "One might assume an average-price option should price the same as a European option with the same underlying and strike; the averaging mechanically lowers effective volatility, so it does not."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "367-368"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 2,
+   "topic": "Why Asian options have lower implied volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

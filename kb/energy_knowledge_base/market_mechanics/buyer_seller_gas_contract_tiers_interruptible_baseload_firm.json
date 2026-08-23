@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Buyer-seller gas contract tiers: interruptible, baseload, firm",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "Three levels of commercial commitment used in contracts between gas buyers and sellers, distinct from (though similarly named to) pipeline transportation service tiers.",
+ "core_idea": "Buyer-seller gas contracts range from fully optional short-term deals to legally binding firm obligations, with an intermediate 'best effort' tier in between.",
+ "key_points": [
+  "Short term interruptible contracts: brief deals (days to end of month) where the trade only happens if the seller has supply, the buyer wants it, and transportation is available; neither party is obligated otherwise.",
+  "Baseload contracts: an interruptible-type contract where both sides make a 'best effort' to perform daily; may use firm transportation, interruptible transportation, or a mix, and rely on mutual trust rather than binding obligation.",
+  "Firm contracts: legally binding \u2014 the seller must deliver and the buyer must receive, with legal recourse for breach; firm buyer-seller contracts almost always pair with firm pipeline transportation contracts so the pipeline itself is obligated to reserve capacity."
+ ],
+ "relationships": [
+  "Firm buyer-seller contracts require firm pipeline transportation to back them; baseload and short-term interruptible contracts do not."
+ ],
+ "trading_implications": [
+  "The choice of contract tier trades off certainty of delivery against cost and flexibility.",
+  "Firm contracts carry real legal/financial exposure on nonperformance, unlike interruptible or baseload arrangements."
+ ],
+ "caveats": [
+  "Baseload and firm sound similar in commitment but baseload is a 'best effort' understanding, not a legally binding obligation like firm."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "518"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 2,
+   "topic": "Buyer-seller gas contract tiers: interruptible, baseload, firm"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

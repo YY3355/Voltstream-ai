@@ -1,0 +1,54 @@
+{
+ "canonical_topic": "Binomial model: complementary probability of a price decline",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Models",
+ "definition": "In the binomial framework referenced by the author, prices are modeled as only able to rise or fall, so the probability of a decline is fully determined by the probability of a rise.",
+ "core_idea": "Because the two outcomes (price rises or price falls) are exhaustive and must sum to 100%, the probability of a fall is simply one minus the probability of a rise.",
+ "key_points": [
+  "The model assumes only two possible price directions: up or down.",
+  "This is stated in a footnote tied to the broader option pricing discussion, not derived from the Vega/Theta/Rho text itself."
+ ],
+ "relationships": [
+  "Underlies binomial-tree style option pricing models referenced elsewhere in the chapter."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Complementary probability of decline",
+   "formula": "P(down) = 100% - P(up)",
+   "variables": {
+    "P(up)": "probability price rises (denoted p in source)",
+    "P(down)": "probability price falls, equals 1.0 - p in decimal form"
+   },
+   "source": {
+    "chapter": 14,
+    "pages": "372-373",
+    "section_hint": "3.5 Option Pricing \u2014 footnote 2"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "372-373"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_005.json",
+   "idx": 3,
+   "topic": "Binomial model: complementary probability of a price decline"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "canonical_topic": "The landman role",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Upstream Operations",
+ "definition": "A landman is a professional who negotiates land titles and mineral leases on behalf of an oil and gas exploration company.",
+ "core_idea": "Landmen identify and contact potential land/mineral-rights sellers on behalf of an exploration company and then negotiate the resulting lease or purchase contracts.",
+ "key_points": [
+  "Landmen act as the exploration company's representative for identifying willing sellers of mineral rights.",
+  "They also handle negotiation of the resulting contracts once a willing owner is found."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "120"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 4,
+   "topic": "The landman role"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Brownian motion (Wiener process)",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Common Terms",
+ "definition": "Brownian motion (or Wiener process) is a mathematical description of random motion, independently developed in botany (Robert Brown) and physics (Norbert Wiener), that characterizes the boundaries of a random walk made up of very small steps.",
+ "core_idea": "It is the mathematical foundation used to model continuous random price movement in option pricing.",
+ "key_points": [
+  "Same underlying mathematical process was discovered independently in two different scientific fields.",
+  "Describes the limiting behavior of a random walk taken in very small increments."
+ ],
+ "relationships": [
+  "Related to random walk and stochastic process"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "351-352"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 3,
+   "topic": "Brownian motion (Wiener process)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

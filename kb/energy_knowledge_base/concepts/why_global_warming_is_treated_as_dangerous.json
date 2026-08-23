@@ -1,0 +1,39 @@
+{
+ "canonical_topic": "Why global warming is treated as dangerous",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Background / Motivation",
+ "definition": "The main harm attributed to climate change in this context is disruption of the sunlight/rainfall balance that arable farmland depends on, which threatens food production for a growing global population.",
+ "core_idea": "Because ecosystems (plants and animals) are adapted to specific regional climate conditions, a regional climate shift tends to kill off local species rather than simply relocate them, and there is no practical way to relocate affected human populations to newly-suitable regions either.",
+ "key_points": [
+  "Crops depend on a specific balance of sunlight and rainfall; disruption of that balance is described as generally harmful.",
+  "If a region's climate changes, local plant and animal life is likely to die out rather than adapt in place.",
+  "Even if another region's climate becomes suitable for the displaced species/crops, the author notes there is no easy way to physically relocate the people who depended on the original region."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "264"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 5,
+   "topic": "Why global warming is treated as dangerous"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

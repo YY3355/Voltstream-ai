@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Long/short the option, long/short volatility",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Options Basics",
+ "definition": "The option buyer is described as being long the option, or long volatility, because rare/large price moves produce a big profit for them. The option writer (seller) is described as being short the option, or short volatility, because those same rare events produce a big loss for the writer.",
+ "core_idea": "Because option value responds to how much and how unusually prices move, holding an option position is equivalently described as taking a view on volatility, not just direction.",
+ "key_points": [
+  "Buyer = long the option = long volatility (benefits from rare, large moves).",
+  "Writer = short the option = short volatility (harmed by rare, large moves).",
+  "If the option pays off, the writer must find the cash to pay the buyer; the transaction transfers money between the two parties rather than creating it."
+ ],
+ "relationships": [
+  "Directly follows from the call/put/premium definition"
+ ],
+ "trading_implications": [
+  "An option position can be framed as a volatility exposure, which matters when thinking about hedging or speculating on price variability rather than just price level."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "328"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 3,
+   "topic": "Long/short the option, long/short volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

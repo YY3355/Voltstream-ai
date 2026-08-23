@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Actual (physical commodity term)",
+ "type": "definition",
+ "category": "Trading Markets",
+ "subcategory": "Common Terminology",
+ "definition": "\"Actual\" designates the physical commodity itself, used to distinguish it from financial contracts referencing that commodity.",
+ "core_idea": "Since most energy trading happens in forward/financial form, traders need a specific word to flag that a deal involves the real physical commodity rather than a paper contract.",
+ "key_points": [
+  "Used to differentiate physical delivery from financial contracts on the same commodity.",
+  "Example usage given: barrels of oil sitting on a tanker, described as \"actuals.\""
+ ],
+ "relationships": [
+  "Contrasted with financial/forward contracts",
+  "Related to cash market"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 7,
+   "topic": "Actual (physical commodity term)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

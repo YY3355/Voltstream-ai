@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Gas Pipeline Compression: Corrosion and Liquid Dropout Risk",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Operations",
+ "definition": "Gas pipelines move gas using compressor stations that create a pressure differential \u2014 a vacuum on one side and high pressure on the other \u2014 functioning like a long chain of fans; because compression changes pressure, it also changes gas temperature at each stage.",
+ "core_idea": "As gas is compressed, its temperature rises, increasing corrosion risk if the gas is chemically reactive; as gas then moves away from the compressor and cools en route to the next one, part of the mixture can condense into liquid, which accumulates in the pipe (an airtight system) unless actively removed.",
+ "key_points": [
+  "A pipeline is effectively a long chain of compressor stations linked by pipe segments.",
+  "Compression raises gas temperature, which raises corrosion risk for chemically reactive gas components.",
+  "As gas cools while moving toward the next compressor, part of the mixture can condense into liquid.",
+  "Because pipelines are airtight, condensed liquid does not simply re-evaporate and can build up over time unless removed."
+ ],
+ "relationships": [
+  "Direct consequence of the pressure-temperature relationship described by the ideal gas law",
+  "Creates the need for liquid removal/dehydration equipment along pipeline routes"
+ ],
+ "trading_implications": [
+  "Liquid dropout and corrosion risk are physical constraints shaping pipeline maintenance, gas quality specs, and deliverability \u2014 relevant to transport reliability that underlies basis and locational price risk."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "296-297"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_001.json",
+   "idx": 3,
+   "topic": "Gas Pipeline Compression: Corrosion and Liquid Dropout Risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

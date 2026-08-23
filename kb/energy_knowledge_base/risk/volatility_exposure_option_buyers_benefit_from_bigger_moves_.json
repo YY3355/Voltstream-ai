@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Volatility exposure: option buyers benefit from bigger moves, writers benefit from quiet markets",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options \u2014 Risk Characteristics",
+ "definition": "Volatility describes the market's tendency toward large price moves, which itself cycles between quiet and active periods. Because of how option payoffs work, an option buyer benefits when large price moves become more likely (long volatility) while an option writer benefits from a quiet market or prices staying near where they started (short volatility), since the premium collected is the writer's only profit regardless of how far out-of-the-money the option finishes.",
+ "core_idea": "Holding an option is a bet on how much prices will move (volatility), not just which direction \u2014 buyers gain from increased movement, writers gain from calm markets, but writers face open-ended loss risk if prices move sharply against them.",
+ "key_points": [
+  "Volatility itself moves in cycles between quiet and active markets.",
+  "Option buyer = long volatility, unlimited benefit if prices move favorably, limited loss (premium) if they don't.",
+  "Option writer = short volatility, benefits in a quiet market or when prices stay flat; the premium is the writer's only profit.",
+  "A writer earns no extra profit whether the option finishes just out-of-the-money or very far out-of-the-money \u2014 the payoff caps at keeping the premium.",
+  "The writer has substantial loss exposure if prices move sharply in the unfavorable direction."
+ ],
+ "relationships": [
+  "Elaborates on the long/short volatility framing given earlier in this section, adding the quiet-market and capped-writer-upside details"
+ ],
+ "trading_implications": [
+  "Positioning as an option buyer or writer is effectively a view on future volatility (and volatility's own cyclicality), separate from a pure directional price view."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "332-333"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 8,
+   "topic": "Volatility exposure: option buyers benefit from bigger moves, writers benefit from quiet markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

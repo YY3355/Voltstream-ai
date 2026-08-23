@@ -1,0 +1,7 @@
+{
+ "chapter": 25,
+ "title": "4.10 SECONDARY ELECTRICITY MARKETS",
+ "n_concepts": 18,
+ "summary": "Secondary electricity markets encompass mechanisms built alongside the core energy market to address needs it doesn't handle directly: paying generators for future availability rather than just energy delivered (capacity markets, with their outage-rate-based payment scaling and known design weaknesses), keeping grid frequency stable through ancillary services like regulation up/down, and enabling renewable attributes to be bought and sold separately from the underlying electricity via RECs (including their registration, vintage rules, and price drivers) and RPS policies that create demand for them. PPAs and Green vs. Brown energy classifications tie into this same renewables layer, letting utilities and buyers secure or verify renewable supply. Underlying several of these markets is a shared economic rationale \u2014 compensating resources that are needed only intermittently or for reliability, rather than relying solely on energy prices at peak demand.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

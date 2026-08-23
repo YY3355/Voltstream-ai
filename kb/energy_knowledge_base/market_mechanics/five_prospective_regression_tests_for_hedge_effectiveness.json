@@ -1,0 +1,52 @@
+{
+ "canonical_topic": "Five prospective regression tests for hedge effectiveness",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Hedge Accounting / Effectiveness Testing",
+ "definition": "A regression of the hedge's value changes against the hedged item's value changes produces summary statistics; a commonly used framework applies five tests to that regression's output to decide whether a hedge qualifies as highly effective.",
+ "core_idea": "After running linear regression on the value changes of the hedge and hedged item, practitioners commonly check five statistics \u2014 slope, R-squared, slope significance, F-test significance, and sample count \u2014 against threshold values to judge whether the hedge is highly effective.",
+ "key_points": [
+  "Test 1 (Slope): the regression slope should fall between -0.80 and -1.25, meaning a $1.00 move in the hedged item should be offset by roughly $0.80 to $1.25 in the hedge.",
+  "Test 2 (R-squared): R2 measures how well the paired observations fit the regression line; a commonly used threshold requires R2 greater than 0.80.",
+  "Test 3 (Slope significance): checks whether the slope estimate is statistically meaningful, commonly by requiring the t-statistic's p-value to be below 0.05.",
+  "Test 4 (F-test significance): a secondary test analogous to Test 3 but for the R2 estimate, commonly by requiring the F-statistic's p-value to be below 0.05.",
+  "Test 5 (Number of samples): checks that enough observations were used for the test to be valid; commonly 30 or more samples.",
+  "A p-value is the probability output of a statistical test used to judge pass/fail against a threshold like 0.05.",
+  "Statistical significance compares an estimate to its error band: a small error relative to the estimate is significant (e.g., $1 million +/- $50,000), while a large error relative to the estimate is not (e.g., $1 million +/- $10 million).",
+  "In practice, spreadsheet or statistical software computes these values automatically; the user's role is to read and interpret the output against the thresholds."
+ ],
+ "relationships": [
+  "Builds on the changes-in-value framing and volatility-adjusted sizing described earlier in this section."
+ ],
+ "trading_implications": [
+  "A hedge failing the slope range, R2 threshold, or sample-size test would not be classified as highly effective under this framework, which matters for hedge accounting/documentation.",
+  "The slope's sign convention here is negative, reflecting that an effective hedge's value should move opposite to the hedged item's value."
+ ],
+ "caveats": [
+  "Treating R2 alone as sufficient without also checking slope range, significance tests, and sample size.",
+  "Confusing a small p-value requirement with the underlying idea of statistical significance (which compares estimate size to error-band size)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "600-602"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_002.json",
+   "idx": 2,
+   "topic": "Five prospective regression tests for hedge effectiveness"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "AC grid frequency response",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Grid Reliability",
+ "definition": "The relationship between grid-wide generation/consumption balance and the AC system's oscillation frequency, and the corrective actions taken when frequency drifts.",
+ "core_idea": "System frequency depends on generation staying balanced with consumption; when frequency drops too low the grid must increase production or cut consumption, and when it rises too high generators must decrease production or consumption must increase \u2014 which is why ancillary services are framed around frequency maintenance.",
+ "key_points": [
+  "Frequency is the number of oscillations per second on the AC grid.",
+  "Low frequency signals a need to increase production or reduce consumption.",
+  "High frequency signals a need to decrease production or increase consumption.",
+  "Ancillary services are commonly discussed in terms of their role in maintaining system frequency."
+ ],
+ "relationships": [
+  "Explains the purpose of regulation up/down and reserve ancillary services."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "495"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 5,
+   "topic": "AC grid frequency response"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

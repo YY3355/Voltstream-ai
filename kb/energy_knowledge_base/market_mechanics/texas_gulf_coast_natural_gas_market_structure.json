@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Texas/Gulf Coast natural gas market structure",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets - Texas/Gulf Coast",
+ "definition": "A profile of the Texas/Gulf Coast region as the dominant North American natural gas producing and exporting hub, and the location of the Henry Hub NYMEX settlement point.",
+ "core_idea": "The Texas/Gulf Coast is a net-exporting, production-heavy region whose mild winters limit heating demand but whose abundant local supply has made it heavily reliant on gas for electricity, and whose basis prices are tightly correlated to NYMEX futures because Henry Hub itself sits in the region.",
+ "key_points": [
+  "The region is a net exporter and the most important natural-gas-producing region in North America, with most exports flowing to the East Coast and Midwest.",
+  "Abundant local supply has made the region heavily dependent on natural gas as a power-generation fuel.",
+  "Mild winters mean limited seasonal heating-driven demand.",
+  "The region has substantial storage, used mainly to help exporting pipelines balance gas leaving processing plants against demand from other regions, rather than to meet local seasonal demand.",
+  "Basis prices are highly correlated with NYMEX futures because the Henry Hub settlement point is physically located in western Louisiana, within this region."
+ ],
+ "relationships": [
+  "Physical proximity to the NYMEX settlement point (Henry Hub) explains the region's tight basis correlation to futures prices.",
+  "Storage here functions as a supply-balancing tool for export pipelines rather than as a seasonal-demand buffer."
+ ],
+ "trading_implications": [
+  "Basis trades in this region carry comparatively low basis risk relative to NYMEX futures given the physical proximity to Henry Hub.",
+  "As the primary export source to the Midwest and East Coast, supply disruptions here have outsized effects on basis in those importing regions."
+ ],
+ "caveats": [
+  "Assuming all U.S. regional storage serves the same seasonal-demand-buffering purpose; in the Gulf Coast, storage primarily balances export pipeline flows rather than meeting local winter demand."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "166-167"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_006.json",
+   "idx": 2,
+   "topic": "Texas/Gulf Coast natural gas market structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

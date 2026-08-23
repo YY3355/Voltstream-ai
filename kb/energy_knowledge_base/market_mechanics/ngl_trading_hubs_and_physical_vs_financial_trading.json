@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "NGL trading hubs and physical vs. financial trading",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "NGL Trading",
+ "definition": "Most NGL trading occurs at hub locations with dense pipeline and refinery connectivity, chiefly Mont Belvieu, Texas (near Houston) and Conway, Kansas.",
+ "core_idea": "NGLs trade both physically (seller-to-buyer product transfer) and financially (derivatives cash-settled against an index price).",
+ "key_points": [
+  "Mont Belvieu, TX and Conway, KS are the two largest NGL trading hubs.",
+  "Trading occurs both physically and via financial/derivative index-settled contracts."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Hub concentration around pipeline/refinery-dense regions (especially the Gulf Coast) is central to how NGL price discovery and liquidity form."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "278-279"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 9,
+   "topic": "NGL trading hubs and physical vs. financial trading"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

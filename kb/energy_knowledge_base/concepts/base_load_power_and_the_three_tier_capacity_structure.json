@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Base load power and the three-tier capacity structure",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Base load power is the minimum level of demand a grid must supply at essentially all times; it anchors how much always-on generation capacity a region needs, with additional tiers of capacity layered on top for variable and peak demand.",
+ "core_idea": "Using historical hourly load data (the PJM-West example, Jan 2004-Aug 2006), the author shows demand never fell below roughly 20,000 MWh, was above 30,000 MWh about half the time, and peaked near 60,000 MWh, illustrating how a cumulative load distribution is used to size three tiers of generation capacity.",
+ "key_points": [
+  "Base load power = the minimum amount of power that must be supplied to the grid at any given time; base load power plants are the units sized to run full-time to meet it.",
+  "A cumulative load distribution (percentage of time load exceeds a given level) is a practical tool for estimating capacity needs from historical hourly demand.",
+  "PJM-West example: load never below ~20,000 MWh, above 30,000 MWh about half the time, above 40,000 MWh only about 10% of the time, peaks near 60,000 MWh.",
+  "Roughly 20,000 MWh of capacity should be base load: highly efficient, low-cost units that benefit from running around the clock.",
+  "Roughly another 20,000 MWh should be intermediate/variable capacity: units cycled on and off regularly but used fairly often.",
+  "Roughly another 20,000 MWh should be peaking capacity: units that run less than 10% of the year, so the priority for them is being cheap to build, store, and start rather than efficient to run."
+ ],
+ "relationships": [
+  "Derived from the region's cumulative load distribution",
+  "Complements customer-class segmentation and temperature-driven demand analysis"
+ ],
+ "trading_implications": [
+  "The proportion of time a region spends at different load levels indicates how much cheap base load vs. flexible/peaking capacity a market needs, which shapes the economics and dispatch order of different plant types."
+ ],
+ "caveats": [
+  "The specific 20,000/20,000/20,000 MWh split is illustrative for the PJM-West example given, not a universal rule for all grids."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "393-394"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_001.json",
+   "idx": 1,
+   "topic": "Base load power and the three-tier capacity structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

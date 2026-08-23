@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Regulation of transmission rental pricing",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Transmission / Regulation",
+ "definition": "Where a single operator controls transmission in a region, regulators typically require nondiscriminatory pricing for line rental rather than allowing a competitive auction for scarce capacity.",
+ "core_idea": "Because a lone transmission owner otherwise holds monopoly power over a scarce resource, regulation forces nondiscriminatory pricing and pushes the operator to expand capacity (and recover that cost from the investor groups needing it) rather than let price ration access.",
+ "key_points": [
+  "Single-operator regions are prone to regulatory oversight to prevent monopoly pricing on line rental.",
+  "The regulatory logic favors capacity expansion funded by the requesting parties over a bidding war for existing scarce capacity."
+ ],
+ "relationships": [
+  "Rental price is tied to build/maintenance cost, which in turn is shaped by regulatory nondiscrimination requirements when there is a single operator."
+ ],
+ "trading_implications": [
+  "Traders should expect rental costs for transmission to track regulated, cost-based rates rather than scarcity-driven market prices in single-operator regions."
+ ],
+ "caveats": [
+  "One might expect scarce transmission capacity to be allocated by competitive auction like other scarce resources; the author notes regulators instead favor mandated capacity expansion."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "441-441"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 1,
+   "topic": "Regulation of transmission rental pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Firm vs. Interruptible Transportation Contracts",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Transportation Contracts",
+ "definition": "Pipeline transportation capacity is sold either as firm (capacity guaranteed to be available) or interruptible (capacity available only when firm-contract holders aren't using all of their reserved capacity).",
+ "core_idea": "Firm transportation guarantees pipeline space at a premium, publicly-tariffed price, while interruptible transportation offers cheaper, opportunistic access that the pipeline can curtail whenever firm customers need their reserved capacity.",
+ "key_points": [
+  "Firm contracts guarantee that capacity will be available.",
+  "Interruptible contracts only allow flow when firm customers aren't using all of their reserved capacity, at a price negotiated with the pipeline.",
+  "Firm transportation pricing is public: regulated pipelines must publish a tariff, obtainable from the pipeline or the regulator.",
+  "Example: a gas-fired generator with firm capacity may only need it during extreme weather, letting the pipeline resell the unused capacity as interruptible service; a storage facility might use interruptible transport to fill up when pipeline usage is low and sell out of storage when usage is high."
+ ],
+ "relationships": [
+  "Interruptible capacity is unused firm capacity resold by the pipeline",
+  "Connects to storage arbitrage business models"
+ ],
+ "trading_implications": [
+  "Storage operators can use cheap interruptible transport to buy into storage during low-usage periods and sell during high-usage periods, monetizing the price/capacity spread",
+  "Firm transport costs are publicly known via tariffs and can be modeled precisely, unlike negotiated interruptible pricing"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "143-144"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 3,
+   "topic": "Firm vs. Interruptible Transportation Contracts"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

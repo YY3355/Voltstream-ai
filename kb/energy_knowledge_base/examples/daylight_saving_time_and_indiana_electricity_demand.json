@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Daylight saving time and Indiana electricity demand",
+ "type": "example",
+ "category": "Risk",
+ "subcategory": "Model Maintenance",
+ "definition": "A real-world illustration of a model's underlying assumption silently reversing as the environment around it changed.",
+ "core_idea": "A mid-1970s study found that shifting clocks for daylight saving in summer slightly reduced energy use by extending evening daylight; when Indiana finally adopted daylight saving roughly thirty years later, the state instead saw a noticeable increase in power consumption, which was attributed to air conditioning \u2014 largely absent in the 1970s \u2014 having since become the dominant summer electricity use, so extra evening daylight now drove more cooling demand instead of less lighting demand.",
+ "key_points": [
+  "1970s study concluded daylight saving time modestly cut energy use, at a time when lighting was the dominant driver of summer electricity use",
+  "About thirty years later, Indiana's actual switch to daylight saving produced a measurable increase in power consumption instead",
+  "The reversal is attributed to the intervening widespread adoption of air conditioning, which shifted the dominant driver of electricity demand from lighting to cooling",
+  "The case shows a model's real-world conclusion can flip sign entirely as the underlying drivers of the system change, with no error in the original analysis itself"
+ ],
+ "relationships": [
+  "Illustrates assumption risk from long model lifespans"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "585-586"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 3,
+   "topic": "Daylight saving time and Indiana electricity demand"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

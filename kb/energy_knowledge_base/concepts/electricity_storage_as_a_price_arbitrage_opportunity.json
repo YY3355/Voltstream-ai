@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Electricity storage as a price-arbitrage opportunity",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "The idea that if electricity could be stored cheaply and efficiently, it could be bought during low-price periods and resold during high-price periods, exploiting the market's recurring day/night price swings.",
+ "core_idea": "Electricity prices repeat a daily pattern of cheap overnight power and expensive daytime power; storage that could capture this spread would be highly profitable, which is why efficient storage is described as a major prize for electrical markets \u2014 but in practice available technology is not efficient enough to make this simple arbitrage broadly economical.",
+ "key_points": [
+  "Electricity prices oscillate predictably, typically highest during the day and lowest at night and on weekends.",
+  "If storage were cheap and efficient, buying overnight and reselling the next day would be a straightforward profit strategy.",
+  "Storage would change electrical market behavior substantially if it were efficient enough to support this kind of resale.",
+  "In practice, storage technology is generally not efficient enough for this type of trading to work economically."
+ ],
+ "relationships": [
+  "Round-trip efficiency sets storage breakeven economics"
+ ],
+ "trading_implications": [
+  "Storage value should be modeled around the size and reliability of the peak-vs-off-peak price spread available in the market.",
+  "A storage arbitrage strategy is a bet that the spread persists and is large enough to cover round-trip losses plus capital and operating costs."
+ ],
+ "caveats": [
+  "Cheap storage sounds like an easy arbitrage, but low round-trip efficiency plus installation/maintenance costs can eliminate the apparent profit."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "476-476"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 0,
+   "topic": "Electricity storage as a price-arbitrage opportunity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

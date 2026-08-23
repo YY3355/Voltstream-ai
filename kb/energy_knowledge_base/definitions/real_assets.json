@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Real assets",
+ "type": "definition",
+ "category": "Trading Markets",
+ "subcategory": "Asset Types",
+ "definition": "Real assets are properties whose value comes from their physical substance or attributes (tangible), though a small subset \u2014 such as patents, trademarks, and artwork \u2014 have value without physical form (intangible).",
+ "core_idea": "In energy markets, real assets are mostly tangible (oil, land, drilling equipment, refineries, power lines, generation facilities) and trade in spot markets in a limited, largely one-directional way because storing and transporting them is complex.",
+ "key_points": [
+  "Tangible real assets in energy: oil, land, drilling equipment, refineries, power lines, power generation facilities.",
+  "Intangible real assets are less common in energy markets: examples given are patents, advertising trademarks, and works of art.",
+  "Real asset transactions tend to be one-directional \u2014 a buyer purchases to use the asset, not to resell it.",
+  "Most commodity trading activity actually happens in derivatives markets rather than the physical (real asset) spot market."
+ ],
+ "relationships": [
+  "Contrasted with financial assets, which are created by issuers rather than existing as physical/tangible property.",
+  "Real assets serve as the underlying asset for most energy derivatives (e.g., crude oil, electricity)."
+ ],
+ "trading_implications": [
+  "Because physical storage/transport is complex, liquidity and active trading concentrate in derivatives on real assets rather than the real assets themselves."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "82"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_002.json",
+   "idx": 1,
+   "topic": "Real assets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

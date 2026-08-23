@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Roles in a deregulated electricity grid",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "In deregulated power markets, the generation, transmission, and retail-sales functions of the grid are split among separate companies rather than being bundled into one utility.",
+ "core_idea": "Deregulation unbundles the electricity supply chain into distinct roles: a merchant generator that sells power (usually to a load-serving entity), a wires-only investor-owned utility that owns transmission/distribution but not generation, a load-serving entity (LSE) that acts as intermediary between the grid operator, generators, and consumers, and a provider of last resort (POLR) that is obligated to serve customers who haven't chosen a supplier or whose supplier has failed.",
+ "key_points": [
+  "Merchant generator: sells power to another company, typically a load-serving entity, rather than directly to end-users.",
+  "Investor-owned (wires) utility: owns transmission infrastructure but not generation assets.",
+  "Load-serving entity (LSE): intermediary providing electric service to end-users or wholesale customers.",
+  "Provider of last resort (POLR): the LSE obligated to supply consumers who don't pick a supplier or whose chosen supplier goes out of business."
+ ],
+ "relationships": [
+  "Contrasts with the bundled roles found in regulated (integrated utility) markets."
+ ],
+ "trading_implications": [
+  "Merchant generators are the natural counterparties for physical/financial power sales, since they don't have their own captive retail load."
+ ],
+ "caveats": [
+  "The 'wires' utility owning transmission does not mean it also owns or dispatches generation in a deregulated market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "174-175"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 0,
+   "topic": "Roles in a deregulated electricity grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

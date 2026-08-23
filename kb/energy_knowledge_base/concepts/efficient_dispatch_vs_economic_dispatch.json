@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Efficient dispatch vs economic dispatch",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Dispatch & Environmental Policy",
+ "definition": "Economic dispatch activates generators purely by cost, which tends to favor cheap-fuel coal over cleaner but pricier natural gas; efficient dispatch would instead prioritize plants by emissions (SO2/CO2) rather than cost.",
+ "core_idea": "In a plain economic dispatch, coal stays on because its fuel is cheap even though it pollutes heavily, and green generation entering the market displaces marginal gas plants rather than coal \u2014 the opposite of what environmental advocates want, since gas produces much more energy per unit of pollution than coal.",
+ "key_points": [
+  "Economic dispatch orders generators by cost, not by emissions.",
+  "Coal remains competitive under economic dispatch because of low fuel cost, despite high pollution output.",
+  "When green power comes online, it typically displaces marginal natural gas plants, not coal, since gas is more expensive to run.",
+  "Natural gas yields much more energy per unit of pollution than coal, which is why environmentalists object to this outcome.",
+  "Efficient dispatch would instead activate plants to minimize SO2 and CO2 emissions rather than cost."
+ ],
+ "relationships": [
+  "Motivates the use of emissions credits, described in the next item."
+ ],
+ "trading_implications": [
+  "Adding renewable capacity in an economically dispatched market can perversely reduce gas demand/price support while leaving coal dispatch largely untouched, unless emissions costs are layered in."
+ ],
+ "caveats": [
+  "Adding green power to the grid does not automatically reduce coal generation under pure economic dispatch \u2014 it more often displaces the more expensive, cleaner marginal fuel (gas)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "420-422"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_003.json",
+   "idx": 2,
+   "topic": "Efficient dispatch vs economic dispatch"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

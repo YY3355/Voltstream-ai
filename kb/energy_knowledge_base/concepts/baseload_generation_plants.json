@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Baseload generation plants",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Fleet Structure",
+ "definition": "Baseload plants are generation units that are cheap to run but costly or physically risky to shut down, so they aim to operate continuously regardless of demand level.",
+ "core_idea": "Hydro, nuclear, and coal plants are typically baseload because stopping them is expensive or operationally dangerous, so they bid low to stay online rather than risk being taken offline.",
+ "key_points": [
+  "Hydro plants have no fuel cost and shutting down can risk flooding nearby communities.",
+  "Nuclear plants must actively spend money (control rods) to slow the reaction; without intervention it runs at max capacity, so slowing down is the costly action rather than running.",
+  "Coal plants are easier to shut down than hydro or nuclear but expensive to restart once fully cooled.",
+  "Baseload plants try to avoid being the marginal (price-setting) plant and will offer power at low prices specifically to stay online."
+ ],
+ "relationships": [
+  "Contrasts with peaking generation plants",
+  "Contrasts with mid-merit generation plants",
+  "Baseload bidding behavior feeds into who sets the marginal price"
+ ],
+ "trading_implications": [
+  "Because baseload plants bid low to avoid shutting down, they are rarely the price-setting (marginal) unit in a region."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "50-51"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 0,
+   "topic": "Baseload generation plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

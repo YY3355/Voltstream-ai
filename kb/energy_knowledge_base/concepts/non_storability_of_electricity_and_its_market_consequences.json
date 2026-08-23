@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Non-storability of electricity and its market consequences",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Fundamentals",
+ "definition": "Electricity trading differs from other commodity trading because power cannot be economically stored and must be generated and delivered essentially instantaneously to match consumption.",
+ "core_idea": "Because electricity can't be stockpiled and long-distance transmission is costly, supply and demand must be balanced continuously in real time, which produces highly volatile prices and a patchwork of regional markets rather than one unified national market.",
+ "key_points": [
+  "Electricity must be generated and delivered in near real time; there is no meaningful storage buffer.",
+  "This makes electricity fundamentally different from storable commodities where a buy-and-hold strategy is viable.",
+  "Long-distance transmission is expensive, reinforcing small regional markets instead of a single national market.",
+  "Continuous supply/demand matching within each regional market leads to highly volatile prices."
+ ],
+ "relationships": [
+  "Underlies why regional TSO/ISO/RTO structures and day-ahead/real-time auctions exist"
+ ],
+ "trading_implications": [
+  "Traders must think in terms of continuous physical balancing rather than inventory-based arbitrage common in storable-commodity markets.",
+  "Structural inability to store surplus or draw down reserves during shortages contributes to higher baseline price volatility."
+ ],
+ "caveats": [
+  "Assuming electricity markets behave like other commodity markets where storage smooths out price volatility."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "169-170"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 0,
+   "topic": "Non-storability of electricity and its market consequences"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

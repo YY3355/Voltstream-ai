@@ -1,0 +1,7 @@
+{
+ "chapter": 27,
+ "title": "5.2 NATURAL GAS STORAGE",
+ "n_concepts": 20,
+ "summary": "This chapter explains why natural gas\u2014being dispersive rather than liquid\u2014must be stored under pressure, and surveys the three underground formats used to do it: depleted reservoirs, salt caverns (including salt dome and salt bed variants), and aquifers, each resting on the same geological requirements of porous, permeable rock sealed by an impermeable layer. It then works through the mechanics common to all three: gas moves along pressure gradients, so injection and withdrawal rates hinge on the differential between storage and pipeline pressure, and a portion of injected gas becomes base (cushion) gas that sustains pressure while the rest is working gas that cycles in and out \u2014 with some gas permanently unrecoverable. Building on these mechanics, the chapter defines the performance vocabulary (deliverability, injection capacity, cycling) that explains why salt caverns, with their fast cycling, tend to be the most profitable format, and closes by treating physical storage ownership as an operational commitment whose economics depend on buying low and selling high, and whose risks include overpaying in capacity auctions and mispricing based on seasonal patterns that may not hold going forward.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

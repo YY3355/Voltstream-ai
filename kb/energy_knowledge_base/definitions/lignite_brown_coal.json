@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Lignite (brown coal)",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Coal Types",
+ "definition": "Lignite, also called brown coal or 'burnable earth,' is the lowest-energy fuel coal, roughly 30% carbon with high moisture content, soft and crumbly, prone to spontaneous combustion if not stored carefully, used almost exclusively for local power generation because its low energy density makes long-distance transport inefficient.",
+ "core_idea": "Lignite's main economic role is as a cheap, locally-burned power fuel; its low density, high moisture, high pollutant content, and combustion risk make it unsuited to storage, transport, or international trade.",
+ "key_points": [
+  "Lignite contains about 30 percent carbon and has very high moisture content.",
+  "It is often soft and crumbly in texture.",
+  "Low energy density makes it inefficient to transport long distances, so it is almost never traded internationally.",
+  "It is subject to spontaneous combustion unless stored carefully.",
+  "Its only commercial use is power generation by nearby power plants.",
+  "Compared to black coal, lignite has an especially high proportion of pollutants, making its use politically charged.",
+  "Its main value proposition is providing a low-cost source of electricity."
+ ],
+ "relationships": [
+  "Lowest rank of the four fuel coal types; sits below sub-bituminous coal in carbon content and energy."
+ ],
+ "trading_implications": [
+  "Lignite is essentially a non-tradable, local-only fuel \u2014 pricing and logistics analysis should treat it as tied to specific nearby power plants rather than a broader market."
+ ],
+ "caveats": [
+  "Lignite's low cost does not mean low risk \u2014 it carries both a high pollution profile and spontaneous-combustion storage risk."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "251"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 5,
+   "topic": "Lignite (brown coal)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Lag between high prices and new energy supply",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Supply and Demand",
+ "definition": "There is a substantial delay between a price increase and a corresponding increase in energy supply, because new supply requires long-term capital investments (wells, refineries, power plants).",
+ "core_idea": "Because building new energy infrastructure takes significant time and is only undertaken when a permanent price change is expected (not a short-term spike), the supply side of energy markets responds slowly, contributing to inelasticity.",
+ "key_points": [
+  "New supply investments (wells, refineries, power plants) are long-term capital projects, not short-term reactions to price.",
+  "Producers commit to new capacity only if they expect a durable/permanent price change, and construction itself takes substantial time.",
+  "Consumers also can't easily substitute away from energy demand \u2014 they can't relocate, easily convert vehicles to alternative fuels, or forgo winter heating \u2014 making them a largely captive audience."
+ ],
+ "relationships": [
+  "Explains the supply-side driver of the inelastic-market/price-disruption dynamic described above"
+ ],
+ "trading_implications": [
+  "Short-term price spikes should not be expected to induce quick supply responses; capacity additions lag price signals by potentially years."
+ ],
+ "caveats": [
+  "Expecting new energy supply to come online quickly in response to a price spike."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "75"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 5,
+   "topic": "Lag between high prices and new energy supply"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

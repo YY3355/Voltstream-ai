@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Physically unrecoverable gas",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Geology",
+ "definition": "Physically unrecoverable gas is the portion of injected gas that becomes permanently embedded in the walls of a storage facility and can never be extracted, even after the facility is decommissioned.",
+ "core_idea": "Higher storage pressure pushes more gas into the surrounding rock walls, and if pressure rises enough the gas can eventually reach a permeable pathway and escape entirely; the pressure threshold at which this happens is unique to each facility's geology.",
+ "key_points": [
+  "Some gas embeds into facility walls in every storage facility and is never recoverable, even at facility closure.",
+  "Greater storage pressure increases the amount of gas pushed into the walls.",
+  "Beyond a facility-specific pressure threshold, gas can reach a permeable zone and leak out of the facility.",
+  "The escape threshold is determined by the specific local geology, so it differs facility to facility."
+ ],
+ "relationships": [
+  "Distinct from cushion gas, though depleted reservoirs' pre-existing unrecoverable gas from natural reservoir history offsets their need to inject additional cushion gas."
+ ],
+ "trading_implications": [
+  "Unrecoverable gas is a real economic cost of building/operating storage capacity, and became materially more significant as gas prices rose from the cheap-gas era of the early 1980s."
+ ],
+ "caveats": [
+  "Treating cushion gas and physically unrecoverable gas as the same thing \u2014 cushion gas is a deliberately retained operating reserve, while unrecoverable gas is permanently lost into the rock regardless of operating strategy."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "529"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 4,
+   "topic": "Physically unrecoverable gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

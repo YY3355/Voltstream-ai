@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Option writing as the market's limiting factor",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "The scarce side of the options market is sellers (writers), not buyers, because buying an option has no downside beyond its cost while writing an option means accepting open-ended risk.",
+ "core_idea": "Because option buyers face no risk beyond the premium paid, there is always ample demand to buy options; the real constraint on market activity is finding someone willing to write (sell) options and bear the associated risk. A fair option price is defined as one that fully compensates the writer for the risk taken on.",
+ "key_points": [
+  "Option buyer demand is essentially unlimited since the only downside to owning an option is its cost.",
+  "The scarce resource in the options market is willing option writers/sellers, who take on open-ended risk.",
+  "The goal of option pricing, and the definition of a 'fair' option price, is a price that fully compensates the writer for the risk assumed."
+ ],
+ "relationships": [
+  "Ties back to the asymmetric payoff concept: buyer's limited risk vs. writer's unlimited risk."
+ ],
+ "trading_implications": [
+  "Fair-value option pricing should be evaluated from the writer's risk-compensation perspective, not merely from buyer demand."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "347"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 4,
+   "topic": "Option writing as the market's limiting factor"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

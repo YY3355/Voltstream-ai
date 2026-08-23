@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Steam Turbine Power Generation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "The dominant global generation technology (roughly 80% of world power), in which water is boiled into superheated steam that expands through a turbine, spinning an attached generator; the steam then condenses back to water in a condenser and is recycled to the boiler.",
+ "core_idea": "A steam turbine is essentially an electric fan run in reverse \u2014 steam pressure spins the turbine instead of electricity spinning a fan \u2014 and turbine speed directly determines power output.",
+ "key_points": [
+  "About 80% of world electricity generation uses steam turbines",
+  "Simpler turbine designs are cheaper to build and operate but less efficient; more complex designs are more efficient but costlier to maintain",
+  "Cycle: boiler heats water to steam -> steam expands past turbine -> turbine spins generator -> spent steam condenses in condenser -> water returns to boiler",
+  "Faster turbine spin produces more electrical power"
+ ],
+ "relationships": [
+  "Basis for cogeneration and combined-cycle designs described later in the chunk"
+ ],
+ "trading_implications": [
+  "Efficiency/cost tradeoff across turbine complexity contributes to the spread of heat rates seen across a generation fleet"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "188-189"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 1,
+   "topic": "Steam Turbine Power Generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

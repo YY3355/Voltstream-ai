@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "The Tradeoff in Setting Credit Limits",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Counterparty Credit Risk",
+ "definition": "Credit risk management for a trading firm is a balancing act: a trading business exists to enter contracts where counterparties owe it money, so eliminating credit risk entirely is neither possible nor desirable, but unlimited exposure risks being pulled into a counterparty's bankruptcy.",
+ "core_idea": "Overly strict credit controls choke off trading volume and damage counterparty relationships, while overly loose controls expose the firm to being dragged down when a counterparty defaults or fails to perform \u2014 credit limits have to balance these two costs.",
+ "key_points": [
+  "A trading company's core purpose involves entering contracts that create receivables (money others owe it), which is inherently a source of credit risk.",
+  "Overly strict credit limits cause missed trading opportunities and strained relationships with counterparties.",
+  "Credit limits that are too loose risk the firm being pulled into a counterparty's bankruptcy or nonperformance.",
+  "There is no zero-risk option \u2014 the goal is managing the tradeoff, not eliminating credit risk."
+ ],
+ "relationships": [
+  "Motivates use of master netting agreements and CVA/DVA adjustments"
+ ],
+ "trading_implications": [
+  "Credit limits should be set as a deliberate balance between captured trading opportunity and default risk, not simply minimized."
+ ],
+ "caveats": [
+  "Believing that tighter credit limits are always safer for the firm overall \u2014 in practice they trade default risk for lost business and relationship damage."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "571-575"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_001.json",
+   "idx": 4,
+   "topic": "The Tradeoff in Setting Credit Limits"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

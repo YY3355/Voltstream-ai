@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Standard Market Design: congestion cost allocation",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regulation / Pricing",
+ "definition": "Under FERC's recommended Standard Market Design (SMD), the cost of transmission congestion is charged only to the parties causing or affected by it, rather than spread across all grid users.",
+ "core_idea": "Both consumers and power producers can pay congestion costs: there is a charge for routing power into a congested high-load area, and a credit for producing power that bypasses congestion; the author frames this as aligning market prices with actual delivery cost, in contrast to price legislation, which the author characterizes as introducing exceptions rather than cost-based pricing.",
+ "key_points": [
+  "SMD assigns congestion costs to the parties actually affected, not the whole grid.",
+  "Consumers in congested high-load areas pay a routing charge.",
+  "Producers whose power bypasses congestion receive a credit.",
+  "Most of the U.S. is moving toward this cost-allocation model."
+ ],
+ "relationships": [
+  "Part of the same SMD framework as the remote-generation/line-loss penalty and the LMP concept."
+ ],
+ "trading_implications": [
+  "Generators located to relieve congestion are economically favored; there is a market-based incentive to build transmission that reduces congestion."
+ ],
+ "caveats": [
+  "The author's framing implies deregulation and cost-reflective pricing are linked, and that legislated pricing is presented as inherently less cost-reflective \u2014 this is the author's normative argument, not a neutral technical fact."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "176"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 5,
+   "topic": "Standard Market Design: congestion cost allocation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

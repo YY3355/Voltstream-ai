@@ -1,0 +1,60 @@
+{
+ "canonical_topic": "Example linear load-vs-temperature model for PJM-West",
+ "type": "formula",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "An illustrative simple linear regression relating afternoon summer load to temperature for one region and hour window.",
+ "core_idea": "For PJM-West load between 2 p.m. and 3 p.m. on August weekdays, the author fits a linear model where load has a fixed base level plus an increment per degree of temperature above a 72\u00b0F threshold.",
+ "key_points": [
+  "The model captures the basic relationship that power demand rises with temperature.",
+  "The author explicitly notes the model is not complete at this stage \u2014 it still needs error analysis to find where it performs poorly."
+ ],
+ "relationships": [
+  "A first-pass model to be refined via error analysis into a more complete forecasting model."
+ ],
+ "trading_implications": [
+  "Such a simple temperature-slope model can serve as a first-order proxy for hourly demand sensitivity to weather, useful for sanity-checking more complex forecasts."
+ ],
+ "caveats": [
+  "The model is only valid for the specific hour window, month, and day type it was fit on (2-3 p.m., August, weekdays) \u2014 it is not a general-purpose load model."
+ ],
+ "formulas": [
+  {
+   "name": "PJM-West 2-3 p.m. August weekday load model",
+   "formula": "Load (MWh) \u2248 32,850 + 750 \u00d7 (T \u2212 72), for T > 72\u00b0F",
+   "variables": {
+    "Load": "estimated regional load in MWh for the 2 p.m.-3 p.m. hour",
+    "32,850": "base load (MWh) at or below 72\u00b0F",
+    "750": "MWh increase per \u00b0F above 72",
+    "T": "temperature in \u00b0F"
+   },
+   "source": {
+    "chapter": 16,
+    "pages": "402-403",
+    "section_hint": "4.1 Spatial Load Forecasting - Creating a Model / Figure 4.1.11"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "402-403"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 3,
+   "topic": "Example linear load-vs-temperature model for PJM-West"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

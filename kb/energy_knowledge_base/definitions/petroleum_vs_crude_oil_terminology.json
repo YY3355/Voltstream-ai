@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Petroleum vs. crude oil terminology",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Oil Fundamentals",
+ "definition": "Petroleum is the umbrella term for any hydrocarbon that is liquid at normal temperature and pressure, covering crude oil as well as everything refined from it (gasoline, heating oil, jet fuel, etc.). Crude oil specifically refers to petroleum in its unrefined state, as it comes out of the ground, before it has been separated in a refinery.",
+ "core_idea": "\"Petroleum\" and \"crude oil\" are not synonyms: petroleum is the broad category, crude oil is the raw input before distillation splits it into named products.",
+ "key_points": [
+  "Petroleum forms over millions of years as decaying plant matter is subjected to heat and pressure underground, yielding a mix of gas, liquid, and solid hydrocarbons.",
+  "Crude oil is not burned directly because its light fractions form explosive vapors and its heavy fractions resist ignition/flow.",
+  "Refineries use distillation to separate crude oil into more uniform, named components (gasoline, heating oil, etc.).",
+  "Petroleum's high energy density per unit volume makes it attractive versus hydrocarbon gases (e.g., propane) and easier to handle in engines than solid fuels like coal."
+ ],
+ "relationships": [
+  "Distillation output products (gasoline, heating oil) are downstream of crude oil",
+  "Crack spread depends on this refining relationship"
+ ],
+ "trading_implications": [
+  "Because crude oil must be refined before use, its price and refined-product prices are linked but not identical, creating the basis for crack-spread trading."
+ ],
+ "caveats": [
+  "Treating \"petroleum\" and \"crude oil\" as interchangeable terms; petroleum is the broader category that includes refined products."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "214-215"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 0,
+   "topic": "Petroleum vs. crude oil terminology"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

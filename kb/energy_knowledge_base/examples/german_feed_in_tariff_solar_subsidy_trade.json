@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "German feed-in tariff solar subsidy trade",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Policy / Distributed Generation",
+ "definition": "A worked example of how a government feed-in tariff and net-metering policy created a strong financial incentive for German homeowners to install solar capacity beyond their own consumption needs.",
+ "core_idea": "By paying homeowners roughly triple the retail power price for solar electricity exported to the grid (funded by a surcharge spread across all ratepayers), the German policy made maximizing exportable solar capacity, not just offsetting home use, the economically optimal strategy.",
+ "key_points": [
+  "Feed-in tariffs paid homeowners an above-retail price for solar power fed back into the grid.",
+  "Net-metering let households simultaneously draw from and export to the grid.",
+  "The above-market cost of the subsidy was socialized monthly across all utility customers as a surcharge.",
+  "Illustrative pricing: retail power at $30/MWh vs. a feed-in payment of about $90/MWh (roughly triple).",
+  "Before a household becomes a net exporter, solar power's value is capped at the avoided cost of grid electricity; only exported surplus captures the tripled price.",
+  "Optimal homeowner strategy: install as much solar capacity as feasible and minimize home consumption to maximize the exported (grid-bound) surplus.",
+  "Once a home crosses into net-exporter status during daylight hours, the investment pays back relatively quickly given the tripled export price.",
+  "Outcome: Germany built the world's largest installed PV base despite modest solar resource; non-adopters saw only a modest utility cost increase, and solar came to cover a large share of peak demand."
+ ],
+ "relationships": [
+  "Illustrates a policy-driven trading/investment incentive layered on top of the physical solar generation characteristics described earlier in the section."
+ ],
+ "trading_implications": [
+  "Subsidy design (a large spread between retail and feed-in price) can make oversizing generation capacity, rather than simply matching load, the economically rational strategy.",
+  "Socialized surcharge funding means the economics of the trade depend on policy durability and the size of the non-adopter customer base absorbing the cost."
+ ],
+ "caveats": [
+  "The value of self-generated solar is not constant: it equals avoided retail cost up to self-consumption, then jumps to the (much higher) feed-in tariff rate only for exported surplus."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "459-460"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_002.json",
+   "idx": 3,
+   "topic": "German feed-in tariff solar subsidy trade"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

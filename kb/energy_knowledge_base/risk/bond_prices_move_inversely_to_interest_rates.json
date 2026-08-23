@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Bond Prices Move Inversely to Interest Rates",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Cross-Market Relationships",
+ "definition": "A future payment is economically equivalent to a bond, and bond prices move opposite to interest rates: bonds are more valuable when rates are low and less valuable when rates are high. The market trading interest rates is called the Bond Market or Fixed Income market.",
+ "core_idea": "Because any future cash flow behaves like a bond, forward/future energy contracts carry an implicit interest-rate sensitivity tied to the discounting of that future payment.",
+ "key_points": [
+  "Future payments are treated as economically equivalent to bonds.",
+  "Bond prices and interest rates move in opposite directions.",
+  "The interest-rate market is called the Bond Market or Fixed Income market."
+ ],
+ "relationships": [
+  "Connects to Forward vs Future Contracts, since forwards/futures involve payments at a future date."
+ ],
+ "trading_implications": [
+  "Valuing a forward or future contract implicitly involves discounting a future payment, so interest-rate moves affect contract value independent of the underlying commodity price."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 10,
+   "topic": "Bond Prices Move Inversely to Interest Rates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

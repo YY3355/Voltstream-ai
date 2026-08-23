@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Thorium fuel cycle as a uranium alternative",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Thorium-232 is a non-fissionable but more abundant alternative nuclear fuel source that can be converted into fissionable Uranium-233 by bombardment with atomic particles.",
+ "core_idea": "Thorium-based fuel is roughly three times as abundant as uranium and nearly all mined thorium is usable as fuel; it isn't fissionable on its own but converts into U-233, producing less radioactive waste than the uranium cycle and being harder to weaponize than U-235.",
+ "key_points": [
+  "Thorium-232 is not itself fissionable but can be converted into Uranium-233 by bombarding it with atomic particles.",
+  "Thorium is roughly three times more common than uranium.",
+  "Nearly all mined thorium could be used as nuclear fuel.",
+  "The thorium cycle produces much less radioactive waste than the uranium cycle.",
+  "Uranium-233 is harder to use for nuclear weapons than Uranium-235.",
+  "Alternative fuels like thorium are generally more expensive than uranium, but tend to produce less radioactive waste and be more weapons-resistant."
+ ],
+ "relationships": [
+  "Contrasts directly with the Uranium-235 cycle described earlier in the section (enrichment, waste, weapons risk)."
+ ],
+ "trading_implications": [
+  "Thorium's greater abundance and lower weapons-proliferation profile could reduce fuel-supply and geopolitical risk relative to uranium-fueled generation, though the author notes it is generally more expensive."
+ ],
+ "caveats": [
+  "Thorium itself is not fissionable fuel \u2014 it must first be converted into Uranium-233 to be used in a reactor."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "474-474"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 3,
+   "topic": "Thorium fuel cycle as a uranium alternative"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

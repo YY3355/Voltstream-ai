@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "CO2 Emissions Are an Unavoidable Combustion Byproduct, Varying by Fuel Chemistry",
+ "type": "concept",
+ "category": "Environmental / Emissions",
+ "subcategory": "Greenhouse Gases",
+ "definition": "Any carbon-based fuel produces CO2 when fully combusted, and this cannot be engineered away the way carbon monoxide can; the split between CO2 and water output is governed by the fuel's hydrogen-to-carbon ratio and molecular structure.",
+ "core_idea": "Fuels with more hydrogen relative to carbon, and with small self-contained molecules (like methane/natural gas), produce proportionally more water and less CO2 than fuels with long carbon-carbon-bonded chains or sheets (like coal), which are more carbon-intensive per unit combusted.",
+ "key_points": [
+  "Complete combustion of any carbon-based fuel unavoidably yields CO2 \u2014 unlike carbon monoxide, plants cannot design this away.",
+  "Methane has the highest hydrogen-to-carbon ratio (4:1) among common fuels, so combustion output skews toward water rather than CO2.",
+  "Longer-chain hydrocarbons like coal carry more carbon, so they yield a higher proportion of CO2 relative to water when burned.",
+  "Structurally, natural gas is made of small self-contained molecules while coal consists of large sheets of carbon atoms, which is the underlying reason coal is more carbon-intensive than gas.",
+  "CO2 emission restrictions are generally treated as a global regulatory issue, in contrast to NOx/SOx/particulates which are handled regionally."
+ ],
+ "relationships": [
+  "Contrasts with carbon monoxide, which power plants can largely eliminate via complete combustion.",
+  "Contrasts with NOx and SOx, which are regional rather than global regulatory concerns."
+ ],
+ "trading_implications": [
+  "Fuel switching between coal and natural gas has a direct, structurally-grounded effect on carbon intensity, which matters for dispatch decisions and cost exposure under carbon-constrained regimes."
+ ],
+ "caveats": [
+  "One might assume all fossil fuels emit similar CO2 per unit of energy; the text attributes the difference specifically to hydrogen-to-carbon ratio and molecular structure, not just 'coal is dirtier.'"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "287-289"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_001.json",
+   "idx": 0,
+   "topic": "CO2 Emissions Are an Unavoidable Combustion Byproduct, Varying by Fuel Chemistry"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

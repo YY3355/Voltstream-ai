@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Volatility estimation via the ratio of two lognormal distributions",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Spread Options",
+ "definition": "Kirk's approximation estimates the volatility needed for its modified Black-Scholes-style formula by relying on the fact that the ratio of two lognormally distributed prices is approximately normally distributed.",
+ "core_idea": "Because dividing one lognormal distribution by another produces a distribution that is close to normal, this approximate normality can be used to derive a workable volatility estimate for the ratio-based spread option formula.",
+ "key_points": [
+  "The probability distribution formed by dividing one lognormal distribution by another is only approximately, not exactly, normal.",
+  "This approximate normality is the specific assumption that gives Kirk's approximation its name.",
+  "This assumption is what makes it mathematically tractable to estimate the volatility input required by the modified Black-Scholes-style equation."
+ ],
+ "relationships": [
+  "Underlies the volatility term used in Kirk's approximation formula",
+  "Connects to implied correlation estimation"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Assuming the ratio of two lognormal distributions is exactly normal rather than only approximately so."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "383-384"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 3,
+   "topic": "Volatility estimation via the ratio of two lognormal distributions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

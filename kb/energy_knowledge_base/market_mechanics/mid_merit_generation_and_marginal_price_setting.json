@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Mid-merit generation and marginal price setting",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Generation Fleet Structure / Price Formation",
+ "definition": "Mid-merit plants sit between baseload and peaking in cost structure and are the units most commonly on the margin, meaning they most often determine the regional clearing price.",
+ "core_idea": "Because a power market clears at a single regional price, the marginal (price-setting) plants \u2014 usually mid-merit units \u2014 have the hardest bidding decision, typically bidding some capacity near cost and progressively more capacity at higher prices.",
+ "key_points": [
+  "Mid-merit plants are either older, less-efficient baseload plants no longer worth running full-time, or efficient gas plants that cycle more easily than baseload units.",
+  "Mid-merit units show the most variability in bidding strategy since they are the ones actually setting price most of the time.",
+  "In a uniform-price market, once a plant is dispatched it receives the same clearing price as the highest accepted bid, so there is no benefit to being the top bidder and no downside to bidding near zero if someone else sets a higher clearing price.",
+  "The common mid-merit bidding strategy: offer some capacity at or slightly below cost, then offer progressively more capacity at rising prices."
+ ],
+ "relationships": [
+  "Depends on baseload plants bidding low and peaking plants bidding high, leaving mid-merit as the swing price setter",
+  "Demand level determines which category (baseload, mid-merit, or peaking) ends up on the margin"
+ ],
+ "trading_implications": [
+  "Mid-merit bidding behavior is the primary driver of regional power price formation most of the time.",
+  "Uniform clearing price mechanics mean bidding strategy for non-marginal units can be aggressive on the low side without cost, since they still receive the market clearing price."
+ ],
+ "caveats": [
+  "It is not necessary (and offers no benefit) to be the highest bidder to profit \u2014 all dispatched generators receive the same regional clearing price."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "50-51"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 2,
+   "topic": "Mid-merit generation and marginal price setting"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

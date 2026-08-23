@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Solar-thermal-assisted small-scale LNG storage facility",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "LNG Storage",
+ "definition": "A hybrid facility that pairs a small-scale LNG storage unit with a thermal solar installation, using solar-heated molten salt as the heat source for regasifying stored LNG back into pipeline gas.",
+ "core_idea": "Liquefying gas for storage and reheating it for use are both energy-intensive steps; by using a thermal solar plant that heats rock salt to roughly 600\u00b0F and stores the melted salt in an insulated vessel, the facility can supply much of that energy from solar rather than purchased fuel or power.",
+ "key_points": [
+  "Combines two distinct technologies: a thermal solar plant and a small-scale LNG facility.",
+  "Both the solar and LNG sides require insulated storage vessels.",
+  "Molten salt heated to about 600\u00b0F by the solar plant provides the heat used to convert stored LNG back into gas.",
+  "The scale of the solar installation caps how much heating (and cooling, for liquefaction) the facility can perform."
+ ],
+ "relationships": [
+  "Functions as a variant of a natural gas storage facility, but substitutes insulated containers for an underground storage formation.",
+  "Feeds gas to on-site peaking generators, linking it to tolling-agreement-style valuation."
+ ],
+ "trading_implications": [
+  "Reduces the facility's exposure to fuel/power costs for the liquefaction and regasification cycle, since solar heat displaces purchased energy for reheating."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "543-543"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_001.json",
+   "idx": 0,
+   "topic": "Solar-thermal-assisted small-scale LNG storage facility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

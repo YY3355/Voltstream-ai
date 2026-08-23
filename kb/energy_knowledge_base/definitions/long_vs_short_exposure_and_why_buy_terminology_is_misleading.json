@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Long vs. short exposure, and why 'buy' terminology is misleading for forwards",
+ "type": "definition",
+ "category": "Trading",
+ "subcategory": "Core Terminology",
+ "definition": "A trader is 'long' an asset if they benefit when its price rises, and 'short' if they benefit when its price falls; these terms are used instead of 'buy'/'sell' because a future purchase obligation can create either exposure depending on whether the price is fixed.",
+ "core_idea": "Agreeing today to buy an asset at a fixed future price is a long position (benefits from price increases, since the price is already locked in), while agreeing to buy at an unfixed future price is effectively a short-like exposure (benefits from price declines, since a lower future price means paying less).",
+ "key_points": [
+  "Long: benefits from price appreciation",
+  "Short: benefits from price decline",
+  "A fixed-price forward purchase = long exposure to the price",
+  "An unfixed-price forward purchase = benefits when price falls, so 'buying' isn't automatically 'long'",
+  "Traders use long/short specifically to avoid the ambiguity of buy/sell language"
+ ],
+ "relationships": [
+  "Power Marketer",
+  "Bilateral/OTC vs exchange trading"
+ ],
+ "trading_implications": [
+  "Always evaluate whether a forward commitment fixes price before labeling the exposure long or short",
+  "The direction of price benefit, not the buy/sell action, defines long/short"
+ ],
+ "caveats": [
+  "Assuming 'agreeing to buy in the future' always means long exposure \u2014 it only does if price is fixed"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "23-24"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 4,
+   "topic": "Long vs. short exposure, and why 'buy' terminology is misleading for forwards"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

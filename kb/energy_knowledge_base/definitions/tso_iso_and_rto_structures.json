@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "TSO, ISO, and RTO structures",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure / Regulation",
+ "definition": "Each regional electricity market is coordinated by a Transmission Service Operator (TSO), which may be a government-sponsored monopoly, an Independent System Operator (ISO), or a Regional Transmission Organization (RTO).",
+ "core_idea": "ISOs and RTOs maintain the grid in areas where a monopoly utility has been disbanded; ISOs operate within a single state and sit outside federal jurisdiction, while RTOs span multiple states and fall under federal jurisdiction, with many RTOs having originated as single-state ISOs.",
+ "key_points": [
+  "TSO is the general term for whichever entity coordinates a region's grid.",
+  "ISOs operate in a single state and are exempt from federal jurisdiction.",
+  "RTOs operate across multiple states and are subject to federal jurisdiction.",
+  "Many RTOs began as single-state ISOs and kept 'ISO' in their name after expanding across state lines."
+ ],
+ "relationships": [
+  "Ties into the regulated vs deregulated market distinction"
+ ],
+ "trading_implications": [
+  "Whether a market's operator is state-only (ISO) or multi-state (RTO) determines the applicable regulatory jurisdiction (state vs. federal) a trader must account for."
+ ],
+ "caveats": [
+  "An organization's name containing 'ISO' does not guarantee it is legally an ISO \u2014 some are RTOs that retained legacy naming after expanding across state boundaries."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "170"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 1,
+   "topic": "TSO, ISO, and RTO structures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

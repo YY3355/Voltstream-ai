@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Renewable Identification Numbers (RINs)",
+ "type": "market_mechanic",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Compliance Instruments",
+ "definition": "A Renewable Identification Number (RIN) is a compliance identification number assigned to a unit of biofuel (such as ethanol or biodiesel) when it is created, which can be traded independently of the physical fuel to help obligated parties, typically oil refiners, meet renewable fuel standard requirements.",
+ "core_idea": "RINs decouple compliance with renewable fuel mandates from the physical fuel itself, letting refiners buy RINs on their own market instead of only meeting requirements through direct biofuel blending.",
+ "key_points": [
+  "Governments in many countries have passed renewable fuel standards requiring a certain amount of biofuel use",
+  "A RIN is generated when a batch of biofuel is created and tracks compliance with these standards",
+  "RINs can be traded independently of the physical fuel",
+  "Parties required to meet renewable fuel standards, typically oil refiners, can purchase RINs to satisfy their compliance obligations"
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "RINs represent a distinct tradable compliance instrument separate from the physical biofuel market"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "243-244"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 5,
+   "topic": "Renewable Identification Numbers (RINs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

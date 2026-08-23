@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Core model testing techniques",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Model Testing",
+ "definition": "Four complementary methods for validating a model's soundness: backtesting, stress testing, benchmarking, and stability testing.",
+ "core_idea": "Each technique probes a different weakness: backtesting checks fit against real historical data, stress testing checks behavior under extreme or unusual scenarios that may never have occurred historically, benchmarking checks reasonableness against alternative models or intuition, and stability testing checks that small input changes don't cause disproportionately large output swings.",
+ "key_points": [
+  "Backtesting: run the model against as much historical data as possible to confirm it performs as expected over that period",
+  "Stress testing: simulate extreme conditions and unusual combinations of events (a financial crisis, a major counterparty's bankruptcy, an unusually cold winter or hot summer, a natural disaster) that may not appear anywhere in the historical record",
+  "Benchmarking: compare the model's output to alternative models, trader intuition, or historically observed payouts for similar instruments",
+  "Stability testing: confirm that small changes in inputs produce correspondingly small changes in outputs; this is a desirable property because it lets the model be used safely even with input values never previously observed",
+  "Unstable or chaotic models \u2014 ones that produce large, unpredictable output changes from small input changes \u2014 are much harder to manage"
+ ],
+ "relationships": [
+  "Works alongside ongoing observation of a live model"
+ ],
+ "trading_implications": [
+  "A model that fails stability testing needs extra safeguards before being trusted with novel inputs",
+  "Benchmarking against trader intuition can catch model risk that a purely quantitative backtest misses"
+ ],
+ "caveats": [
+  "Stress testing is sometimes conflated with backtesting, but stress testing specifically targets scenarios that may never have occurred historically"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "583-585"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 1,
+   "topic": "Core model testing techniques"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

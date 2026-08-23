@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Law of Demand and Law of Supply",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Supply and Demand",
+ "definition": "The Law of Demand states higher prices reduce demand; the Law of Supply states higher prices increase production.",
+ "core_idea": "Traders generally model prices as set by the intersection of supply and demand, with a free market gravitating toward the price level where quantity supplied equals quantity demanded.",
+ "key_points": [
+  "Theoretically, the supply/demand intersection sets the 'fair' price for an asset.",
+  "In practice, supply and demand don't always respond to price changes as theory predicts."
+ ],
+ "relationships": [
+  "Foundation for the elasticity concept and inelastic-market price disruptions described next"
+ ],
+ "trading_implications": [
+  "Basic supply/demand framing is a starting point for price analysis but must be qualified by elasticity considerations in energy markets."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "74-75"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 3,
+   "topic": "Law of Demand and Law of Supply"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

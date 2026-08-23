@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Renewable Portfolio Standards (RPS) and REC product segmentation",
+ "type": "market_mechanic",
+ "category": "Environmental & Renewable Markets",
+ "subcategory": "Renewable Portfolio Standard",
+ "definition": "An RPS is typically a state-level (in the US) regulation requiring that a specified share of consumed power come from renewable generation, along with eligibility criteria such as generator location, generation technology, and generation date. Because these criteria can be layered (e.g. technology type combined with in-state/out-of-state origin), a single RPS can give rise to several distinct, non-fungible traded REC products.",
+ "core_idea": "The specific design of an RPS determines how many separate REC product types exist in a market, since RECs satisfying different eligibility criteria are not interchangeable.",
+ "key_points": [
+  "RPS mandates a minimum renewable share of consumption, set at the state level in the US",
+  "Common eligibility criteria: generator location, generation technology, generation date",
+  "Example: an RPS requiring 10% renewable power, with half from solar PV, and half of each category from in-state facilities, creates four distinct products \u2014 in-state solar, in-state non-solar, out-of-state solar, out-of-state non-solar RECs"
+ ],
+ "relationships": [
+  "Drives REC naming conventions, e.g. a New Jersey solar REC (NJ SREC) meets New Jersey's solar-specific requirement"
+ ],
+ "trading_implications": [
+  "Traders must track each jurisdiction's specific RPS carve-outs since RECs meeting different criteria are not fungible substitutes for each other"
+ ],
+ "caveats": [
+  "A REC is not one uniform national product \u2014 an SREC from one state's program generally cannot satisfy a non-solar or out-of-state requirement elsewhere"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "503-504"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_002.json",
+   "idx": 3,
+   "topic": "Renewable Portfolio Standards (RPS) and REC product segmentation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

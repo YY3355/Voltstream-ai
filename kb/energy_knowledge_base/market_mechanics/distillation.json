@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Distillation",
+ "type": "market_mechanic",
+ "category": "Commodity Fundamentals",
+ "subcategory": "Refining & Separation",
+ "definition": "Distillation is a purely physical separation process where a liquid mixture is heated until it boils, and the resulting vapor is captured and cooled back into liquid form, isolating components by their differing boiling points.",
+ "core_idea": "Distillation separates and identifies liquid mixtures (including unknown hydrocarbon blends) using heat alone, with no chemical reaction involved, and is a large energy consumer due to the heating and cooling required.",
+ "key_points": [
+  "Process: heat mixture to boiling, capture the vapor, cool it back to liquid.",
+  "It is a physical process, not a chemical one \u2014 no new substances are created.",
+  "It is commonly used to separate liquids and to identify unknown hydrocarbon liquids.",
+  "Like refrigeration, it requires a tremendous amount of energy because of the heating and cooling involved."
+ ],
+ "relationships": [
+  "Is the practical application of unique boiling/melting points; conceptually parallel to refrigeration in its heavy energy use."
+ ],
+ "trading_implications": [
+  "The energy intensity of distillation is a real cost driver embedded in refined product economics and should be considered when modeling refining margins."
+ ],
+ "caveats": [
+  "Distillation is sometimes conflated with chemical refining steps, but the author is explicit that it does not rely on chemical reactions."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "292-293"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 3,
+   "topic": "Distillation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 5,
+ "title": "2.2 ELECTRICITY",
+ "n_concepts": 57,
+ "summary": "This is a chapter on electricity fundamentals covering four broad areas: the physical basis of power (circuits, three-phase AC, generation technologies from steam/gas turbines to hydro/nuclear/fossil, transmission losses, and cogeneration), how demand behaves (temperature-driven daily and seasonal patterns, the AC-driven shift in demand levels), how markets are structured (regulated vs. deregulated grids, the four functional roles, PUC rate-setting, avoided cost, TSO/ISO/RTO models, and day-ahead vs. real-time auctions with SMD node/zone/hub pricing and congestion allocation via FTRs), and how each major U.S. interconnection and regional market (ERCOT, PJM, MISO, NYISO, ISO-NE, CAISO, Pacific Northwest, Desert Southwest, Eastern Interconnect) is organized and trades. Threading through these is electricity's defining trait \u2014 its non-storability \u2014 which shapes everything from generation dispatch and cold-start economics to forward contract design, hub-based trading, and basis risk.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

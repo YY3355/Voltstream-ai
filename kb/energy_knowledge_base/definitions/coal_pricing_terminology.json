@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Coal pricing terminology",
+ "type": "definition",
+ "category": "Coal",
+ "subcategory": "Pricing Terminology",
+ "definition": "Coal markets use four distinct price concepts depending on who is transacting and whether transportation and affiliation are involved.",
+ "core_idea": "Coal pricing separates the exchange-based price available to outside investors from prices that only apply to affiliated parties, unaffiliated large buyers/sellers, or end consumers paying delivery costs.",
+ "key_points": [
+  "Spot price: the price of a cash transaction at the futures delivery point, typically set through exchange-based trading (like the forward price)",
+  "Captive price: the price used when coal moves between two branches of the same company or between affiliated companies; an unaffiliated party cannot access this price, and such affiliations between coal miners and coal-fired generators are common",
+  "Open market price: the prevailing price for coal traded between large, unaffiliated producers and consumers",
+  "Delivered price: the actual price a coal consumer pays once transportation costs are added"
+ ],
+ "relationships": [
+  "Captive pricing arises from the common affiliation between coal miners and coal-fired power generators"
+ ],
+ "trading_implications": [
+  "An individual investor cannot access captive pricing, only exchange-based spot/forward pricing"
+ ],
+ "caveats": [
+  "Treating captive price as representative of the broader coal market when it only applies between affiliated parties"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "257-258"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 4,
+   "topic": "Coal pricing terminology"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

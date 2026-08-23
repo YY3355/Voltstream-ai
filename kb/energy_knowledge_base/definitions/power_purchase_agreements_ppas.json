@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Power Purchase Agreements (PPAs)",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Bilateral Contracts",
+ "definition": "A PPA is a bilateral contract in which one party (the seller) generates and sells electricity and the other party (the buyer) purchases it, typically bundled with the generation's renewable attributes and any capacity benefits.",
+ "core_idea": "PPAs are usually signed at the time a generation unit is built, giving the developer a guaranteed revenue stream that supports cheaper project financing, with pricing often set via a levelized-cost-of-new-entry approach.",
+ "key_points": [
+  "PPAs are commonly used by regulated utilities to buy power from renewable sources such as solar or wind farms.",
+  "In addition to electricity itself, PPAs typically also transfer the renewable attributes and any capacity benefits of the generation.",
+  "Signing a PPA at the time of construction gives the developer guaranteed income, which helps secure project financing at more favorable rates.",
+  "Prices are commonly negotiated to give the developer a fixed return on investment, with resulting savings passed through to the utility's customers.",
+  "PPA pricing is commonly set using a levelized cost of new entry (LCOE) approach."
+ ],
+ "relationships": [
+  "Contrasts with capacity markets as an alternative way to finance new generation construction with more predictable cash flow."
+ ],
+ "trading_implications": [
+  "A PPA offers a developer more predictable, bankable cash flow than relying on capacity market payments alone, which is especially relevant given the capacity market revenue instability described earlier in this chapter."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "500"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_001.json",
+   "idx": 3,
+   "topic": "Power Purchase Agreements (PPAs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

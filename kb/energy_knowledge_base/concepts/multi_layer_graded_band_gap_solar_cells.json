@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Multi-layer (graded band gap) solar cells",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "Stacking semiconductor layers with progressively lower band gaps reduces the energy wasted as heat and raises overall conversion efficiency versus a single-layer cell.",
+ "core_idea": "A single band gap wastes energy from photons that are either below threshold (unabsorbed) or well above it (excess becomes heat); layering high-to-low band-gap materials lets more of the solar spectrum be captured usefully.",
+ "key_points": [
+  "First layer uses a high band-gap material, followed by progressively lower band-gap layers.",
+  "This staged approach is presented as a way to improve on the low efficiency of a simple single-layer solar cell."
+ ],
+ "relationships": [
+  "Directly addresses the inefficiency mechanism described in the basic PV effect."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "455"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 2,
+   "topic": "Multi-layer (graded band gap) solar cells"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

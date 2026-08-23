@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Commodity swap",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Forwards & Swaps",
+ "definition": "A commodity swap is essentially a forward contract that settles financially (in cash) instead of through physical delivery of the commodity.",
+ "core_idea": "In energy markets, 'swap' most commonly refers to a cash-settled forward \u2014 the same price-lock mechanics as a forward, but no physical commodity changes hands.",
+ "key_points": [
+  "General definition of 'swap' is broad (any agreement to exchange something in the future), but in energy trading it specifically denotes a cash-settled forward.",
+  "If traders don't want physical delivery, they use a swap instead of a forward.",
+  "The term 'swap' can mean different things in other financial markets outside energy."
+ ],
+ "relationships": [
+  "Commodity swap relates to forwards as the cash-settled counterpart of a physically settled contract."
+ ],
+ "trading_implications": [
+  "Traders who want price exposure without logistics/delivery obligations use swaps rather than forwards."
+ ],
+ "caveats": [
+  "Assuming 'swap' always means the same instrument across markets \u2014 its meaning is context-dependent, and in energy it specifically implies cash settlement of a forward-like trade."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 2,
+   "topic": "Commodity swap"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

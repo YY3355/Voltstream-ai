@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Spot market (cash market)",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Spot and Forward Markets",
+ "definition": "The spot market (a.k.a. cash market) is the market for immediate delivery of a commodity \u2014 for energy, this can mean delivery anywhere from about five seconds to one month out \u2014 typically involving small-quantity purchases for immediate use.",
+ "core_idea": "Spot trades involve the physical transfer of a standardized quantity of a commodity for a set price 'on the spot,' analogous to buying fast food or flipping a light switch (immediately buying and consuming electricity); electricity spot trading is limited to parties who can deliver or use power right away.",
+ "key_points": [
+  "'Immediate' delivery in energy spot markets can span from seconds up to about a month, given the practical complexity of delivering some energy commodities.",
+  "Spot market participants are typically consumers buying small quantities for immediate use.",
+  "Only parties able to physically deliver or immediately use power can trade in the electricity spot market."
+ ],
+ "relationships": [
+  "Contrasted directly with the forward market definition"
+ ],
+ "trading_implications": [
+  "Spot market access for electricity is inherently restricted to physical delivery/use capability, unlike purely financial markets."
+ ],
+ "caveats": [
+  "Thinking 'spot' delivery always means instantaneous (seconds) rather than potentially up to a month for some energy commodities."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "75-76"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 6,
+   "topic": "Spot market (cash market)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

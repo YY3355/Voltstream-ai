@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Gas Storage Capacity \u2014 Base Gas vs Working Gas",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage Terminology",
+ "definition": "A facility's total storage capacity splits into base gas, which is not normally removed, and working gas, which is added and withdrawn during the normal injection and delivery cycle.",
+ "core_idea": "Only the working-gas portion of a facility's capacity is actively traded; base gas is a cushion that is left in place to support operation.",
+ "key_points": [
+  "Base gas is not normally removed from the facility.",
+  "Working gas is the portion added during injection and removed during delivery."
+ ],
+ "relationships": [
+  "Explains why aquifers, which have the lowest working-gas-to-total-volume ratio, are the least flexible storage type."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "534"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 7,
+   "topic": "Gas Storage Capacity \u2014 Base Gas vs Working Gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

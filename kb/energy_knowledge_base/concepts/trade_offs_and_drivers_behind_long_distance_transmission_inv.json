@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Trade-offs and drivers behind long-distance transmission investment",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission Investment",
+ "definition": "Long-distance wheeling trades off transmission losses and increased failure points against siting constraints that force certain generation types to be built far from consumers, and private wheeling investment is the deregulated market's mechanism for deciding when building new transmission is worthwhile.",
+ "core_idea": "Some generation technologies (cogeneration needing a steam host, nuclear plants sited away from population, hydro tied to river/dam locations) cannot be built near demand centers, so long-distance transmission is sometimes unavoidable despite its line losses and reliability costs; private wheeling investment funds the transmission needed to connect these areas, and prices should converge as enough capacity gets built.",
+ "key_points": [
+  "Long-distance transmission loses a substantial amount of power and adds more points of failure than a compact grid.",
+  "Certain generator types have siting restrictions (gas cogeneration near steam users, nuclear away from communities, hydro at a dam site) that force long-distance transmission to be used anyway.",
+  "In a deregulated market, private wheeling investment funds the transmission lines connecting low-cost generation to high-priced demand regions, and investors earn the resulting spread profits.",
+  "As sufficient transmission capacity is built between low- and high-price regions, prices are expected to converge, with the market itself determining the appropriate level of transmission investment."
+ ],
+ "relationships": [
+  "Explains the investment-decision context for the option framing in [[Wheeling valued as a spread option on transmission capacity]]."
+ ],
+ "trading_implications": [
+  "As more wheeling capacity gets built along a corridor, the price spread \u2014 and thus the profitability of further wheeling trades there \u2014 should shrink over time."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "438-440"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_000.json",
+   "idx": 4,
+   "topic": "Trade-offs and drivers behind long-distance transmission investment"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

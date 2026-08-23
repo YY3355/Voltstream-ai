@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Time-to-expiration and correlation set the width of the spread distribution",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Tolling Agreements / Spark Spread Options",
+ "definition": "The dispersion of possible expiration spreads around the forward spread is driven by two factors: how much time remains between the valuation date and expiration, and how correlated power and gas prices are.",
+ "core_idea": "Highly correlated power and gas prices keep the realized spread tightly clustered near the forward spread \u2014 in the extreme case of perfect correlation, there is no distribution at all since the spread never changes. Lower correlation produces a wider distribution of possible outcomes.",
+ "key_points": [
+  "Perfectly correlated power and gas prices would eliminate spread uncertainty entirely (no bell curve).",
+  "Lower correlation widens the distribution of possible spreads.",
+  "Time between valuation and expiration is the other driver of distribution width."
+ ],
+ "relationships": [
+  "Feeds directly into the previous item: wider distribution (from lower correlation or more time) increases option value"
+ ],
+ "trading_implications": [
+  "A correlation assumption near 1.0 should be treated with skepticism in a spark spread valuation, since it implies almost no time value in the option \u2014 a claim that rarely reflects real gas/power dynamics."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "435"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 6,
+   "topic": "Time-to-expiration and correlation set the width of the spread distribution"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

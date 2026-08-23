@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Spot Market Contract Standard Terms for Physical Crude",
+ "type": "market_mechanic",
+ "category": "Oil & Petroleum Products",
+ "subcategory": "Physical Trading",
+ "definition": "Although physical crude oil contract terms could in theory be fully customized, in practice the market relies on a standardized set of contract terms to avoid case-by-case legal negotiation.",
+ "core_idea": "A bilateral spot agreement for crude (with delivery in practice within about four weeks) is normally standardized around a set of recurring elements: delivery volumes, delivery location, product grade, credit terms, payment terms, and a pricing mechanism, which can be either fixed or variable.",
+ "key_points": [
+  "Spot contracts are bilateral agreements for immediate/short-term delivery; for crude oil, 'spot' in practice means delivery within about four weeks",
+  "Terms could theoretically be customized per transaction, but in practice standardized terms are used so legal departments don't have to negotiate each deal individually",
+  "Standard contract elements include: monthly delivery volumes, delivery location, product grade (approximate composition), credit terms, payment terms, and a pricing mechanism",
+  "Pricing can be fixed or variable",
+  "Variable pricing is used to tie the physical transaction to the heavily-traded futures market, which is hard to manipulate and easy to hedge"
+ ],
+ "relationships": [
+  "Physical Crude Oil Priced off Futures",
+  "Variable Pricing Components in Physical Crude Contracts"
+ ],
+ "trading_implications": [
+  "Standardized contract terms reduce transaction/legal cost and let traders execute deals faster",
+  "Variable (index-linked) pricing lets counterparties hedge physical positions against the liquid futures market"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "234-235"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 8,
+   "topic": "Spot Market Contract Standard Terms for Physical Crude"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

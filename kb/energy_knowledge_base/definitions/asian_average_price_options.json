@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Asian (average price) options",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Exotic Options",
+ "definition": "An Asian option settles against the average price of the underlying over a defined period, rather than a single price observed at expiration.",
+ "core_idea": "Averaging prices over time dampens the impact of any single day's price manipulation or abnormal move, making the option's settlement more resistant to gaming near expiration.",
+ "key_points": [
+  "Also called average price options.",
+  "Commonly used in markets like crude oil where reducing sensitivity to expiration-day manipulation or noise is valuable."
+ ],
+ "relationships": [
+  "Contrasted with standard European options"
+ ],
+ "trading_implications": [
+  "Chosen specifically to reduce settlement risk from price manipulation or one-off spikes on the expiration date."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "367-368"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 1,
+   "topic": "Asian (average price) options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

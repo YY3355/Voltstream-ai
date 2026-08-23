@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Rearranging Kirk's approximation to solve for implied correlation; observed correlation term-structure pattern",
+ "type": "example",
+ "category": "Derivatives",
+ "subcategory": "Spread Options",
+ "definition": "Kirk's approximation equation can be algebraically rearranged to solve directly for the implied correlation term, and empirically this implied correlation is often observed to be negative in the near term but rise above roughly 90% within a couple of months.",
+ "core_idea": "Once the other inputs are known, Kirk's approximation can be inverted to back out implied correlation, and in practice this correlation commonly starts negative for near-term tenors and climbs to over 90% for tenors a couple of months out.",
+ "key_points": [
+  "Kirk's approximation formula can be rearranged algebraically to isolate and solve for the implied correlation parameter.",
+  "It is fairly common to observe negative implied correlations in the short term.",
+  "That correlation is commonly observed rising to above 90 percent after a couple of months."
+ ],
+ "relationships": [
+  "Direct extension of Kirk's approximation and the implied correlation estimation method"
+ ],
+ "trading_implications": [
+  "The typical term structure of implied correlation (negative short-term, high long-term) is a pattern traders can use as a sanity check or calibration prior when pricing or evaluating spread options at different tenors."
+ ],
+ "caveats": [
+  "Expecting implied correlation for a spread option to be stable or uniformly positive across all tenors, when the typical observed pattern is negative short-term rising sharply longer-term."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "386-387"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 6,
+   "topic": "Rearranging Kirk's approximation to solve for implied correlation; observed correlation term-structure pattern"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

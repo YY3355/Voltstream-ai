@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Nuclear weapon proliferation risk from enrichment process",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Nuclear Power",
+ "definition": "The enrichment process used to produce civilian reactor fuel is nearly identical to the process used to produce weapons-grade material, creating a dual-use policy challenge.",
+ "core_idea": "Ensuring a reliable civilian nuclear fuel supply while preventing that same enrichment capability from being diverted to weapons production is described as an ongoing public-policy challenge.",
+ "key_points": [
+  "The enrichment process for civilian fuel and for nuclear weapons fuel is nearly identical.",
+  "Guaranteeing civilian fuel supply without enabling military diversion is characterized as a persistent public-policy problem."
+ ],
+ "relationships": [
+  "Directly tied to the enrichment-percentage contrast (4% vs 90%+) described earlier in the chapter."
+ ],
+ "trading_implications": [
+  "Proliferation policy constraints on enrichment capacity are a structural risk factor for uranium fuel supply chains."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "475-475"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 6,
+   "topic": "Nuclear weapon proliferation risk from enrichment process"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

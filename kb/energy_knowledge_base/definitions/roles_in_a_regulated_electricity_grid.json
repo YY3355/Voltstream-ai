@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Roles in a regulated electricity grid",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "In regulated markets, one entity typically performs all four core grid functions (generation, transmission, distribution, retail sale), usually as a government-sanctioned monopoly, though ownership models vary by type of sponsor.",
+ "core_idea": "Regulated-market utilities come in several forms depending on ownership: investor-backed integrated utilities, government-owned munis, not-for-profit rural co-ops, and federally owned utilities often tied to hydroelectric generation.",
+ "key_points": [
+  "Integrated utility: a regulated monopoly owning generation, transmission, and distribution assets together.",
+  "Municipally owned utility (muni): publicly owned by a local government.",
+  "Co-operative (co-op): not-for-profit, typically serving rural areas that are unprofitable for traditional utilities to serve.",
+  "Federally owned utility: a government entity, often involving hydroelectric generation, authorized to buy, sell, and distribute power."
+ ],
+ "relationships": [
+  "Contrasts with the unbundled roles (merchant generator, wires company, LSE, POLR) found in deregulated markets."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "174-175"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 1,
+   "topic": "Roles in a regulated electricity grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

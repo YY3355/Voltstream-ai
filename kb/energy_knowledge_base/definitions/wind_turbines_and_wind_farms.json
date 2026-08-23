@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Wind turbines and wind farms",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "A wind turbine converts the kinetic energy of moving air into electricity by using rotating blades to spin a generator; when many turbines are sited together they form a wind farm.",
+ "core_idea": "Wind power has been harnessed mechanically for centuries (windmills, sailing ships), but purpose-built electricity-generating wind turbines only emerged starting in the 1970s.",
+ "key_points": [
+  "Turbines work like other generator-driven turbines: rotational energy spins an electromagnet to make electricity.",
+  "Wind farms are typically sited in locations with sustained high winds.",
+  "The technology is comparatively recent (since the 1970s) versus millennia-old mechanical wind use."
+ ],
+ "relationships": [
+  "Feeds into grid dispatch alongside other generation sources that must offset wind's variability."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "461-462"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 0,
+   "topic": "Wind turbines and wind farms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

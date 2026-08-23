@@ -1,0 +1,178 @@
+{
+ "canonical_topic": "heat rate",
+ "type": "concept",
+ "n_merged": 7,
+ "definition": "Heat rate measures how efficiently a power plant converts fuel into electricity, expressed as the amount of fuel energy input (e.g., Btu, MMBtu) required per unit of electrical output (e.g., kWh, MWh); a lower heat rate indicates a more efficient plant.",
+ "core_idea": "Heat rate is the fuel-to-electricity conversion efficiency of a power plant, and because fossil fuel plants are typically the marginal producers in most markets, their heat rates disproportionately drive electricity's market clearing price; heat rate is also the key input for converting fuel prices into an implied power price, underlying spark-spread economics and heat-rate-based spread trades.",
+ "key_points": [
+  "Heat rate expresses plant efficiency as a ratio of heat (fuel) input to electrical work output.",
+  "Common units are Btu/kWh or MMBtu/MWh; e.g., 8.5 MMBtu/MWh is equivalent to 8,500 Btu/kWh.",
+  "Lower heat rate = more efficient plant.",
+  "Typical heat rates range from about 7 to 14 MMBtu/MWh across the plant fleet: efficient natural-gas combined-cycle plants run close to 7 MMBtu/MWh; steam turbines (gas, coal, or nuclear) and modern gas turbines typically run near 10 MMBtu/MWh; higher (less efficient) heat rates are typical of older units or small backup units.",
+  "Fossil fuel plants are the most influential plant type for energy trading because they are marginal producers in most markets, so in markets that set clearing price to the marginal price of power, fossil plant heat rates disproportionately drive the electricity price.",
+  "Different plants have different heat rates, so they differ in how much fuel they need to burn to produce the same electricity output.",
+  "A regional/market-implied heat rate can be approximated by comparing observed electricity and fuel prices; example: PJM-West, Jan 2000\u2013Jun 2002, average implied heat rate of 9.5 MMBtu of natural gas per MWh of electricity, with natural gas and peak electricity prices observed to be correlated over that period.",
+  "Heat rate trades are a type of spread trade that speculate on the relationship between natural gas prices and electricity prices; electricity prices generally track natural gas prices because gas-fired plants convert gas into power, but gas and power prices are set by different mechanisms so the two don't always move together, and traders can benefit from volatility in this relationship.",
+  "Heat rate determines the boundary between power-fuel spread outcomes that make running the plant profitable versus unprofitable."
+ ],
+ "relationships": [
+  "Heat rate is a core input to plant dispatch cost and is used to convert fuel prices into an implied power price (spark-spread type logic).",
+  "Heat rate is the input used to compute market-implied heat rate and spark spread.",
+  "Heat rate is an input to the spark-spread net-profit calculation.",
+  "Regional heat rate illustrates the general spread-options concept, analogous to the conversion-linked/mean-reverting spread behavior described for the crack spread.",
+  "The forward spread anchors the distribution of possible realized power-fuel spreads at expiration; heat rate determines the profitable region of that distribution.",
+  "Heat rate trades link the natural gas market to power markets via generation, and are a type of spread trade."
+ ],
+ "trading_implications": [
+  "Plant heat rate determines fuel cost per MWh generated, which underlies merit-order dispatch and marginal price setting in the grid.",
+  "Heat rate is central to valuing fossil plant economics (e.g., spark spread) since it converts fuel cost into an equivalent electricity cost, and because fossil plants are often marginal, their heat rates are a key driver of the market clearing price of electricity.",
+  "A plant with heat rate H can run profitably (before operating costs) when the power price exceeds H times the fuel price \u2014 this comparison is the basis of spark-spread trading.",
+  "A power plant's profit comes from effectively holding an option to burn gas and produce power; the spark spread underlies the economic logic of dispatch, and in the PJM-West example the spread computed using the 9.5 MMBtu/MWh conversion oscillated around zero, at times positive and at times negative.",
+  "A plant's heat rate determines how much of a given power-fuel spread actually converts into plant profit, and is central to comparing plants' relative value.",
+  "Valuation models need a distribution of possible spreads around the forward spread, not just the single forward point, plus the plant's heat rate, to classify which realized spread outcomes trigger profitable dispatch.",
+  "Traders can position on the gas-to-power price relationship (heat rate trades) diverging or reconverging."
+ ],
+ "caveats": [
+  "A regional/market-implied heat rate (e.g., the PJM-West 9.5 MMBtu/MWh example) is derived by comparing observed electricity and fuel prices, approximating plant operational efficiency rather than being a directly measured physical plant heat rate.",
+  "Gas and power prices are determined by different mechanisms, so the gas-power relationship that heat rate trades speculate on does not always hold.",
+  "The realized power-fuel spread at expiration is unlikely to exactly match the forward spread; it is treated as a random draw from a distribution centered on the forward spread, with heat rate determining the profitable region of that distribution."
+ ],
+ "contradictions": [
+  {
+   "field": "direction of the heat-rate/efficiency relationship",
+   "versions": [
+    {
+     "statement": "Lower heat rate = more efficient plant.",
+     "from_item": "Heat rate"
+    },
+    {
+     "statement": "A lower heat rate indicates a more efficient power plant.",
+     "from_item": "Heat rate and fossil fuel plants as marginal price setters"
+    },
+    {
+     "statement": "a higher heat rate figure (as used here) means the plant produces more electricity from the same amount of fuel",
+     "from_item": "Heat rate and plant conversion efficiency"
+    }
+   ],
+   "note": "The 'Heat rate and plant conversion efficiency' item states that a higher heat rate figure means more electricity produced from the same fuel, which inverts the fuel-input-per-unit-output convention (lower = more efficient) stated by the other items. Not resolved."
+  }
+ ],
+ "formulas": [
+  {
+   "name": "Heat rate",
+   "formula": "Heat rate = Fuel energy input / Electrical energy output",
+   "variables": {
+    "Fuel energy input": "Btu or MMBtu of fuel burned",
+    "Electrical energy output": "kWh or MWh of electricity produced"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "30-30",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Electrical Generation"
+   }
+  },
+  {
+   "name": "Heat Rate",
+   "formula": "Heat Rate = Fuel Input (heat, e.g. Btu or MMBtu) / Electrical Output (e.g. kWh or MWh)",
+   "variables": {
+    "Fuel Input": "heat energy consumed, typically in Btu or MMBtu",
+    "Electrical Output": "electricity generated, typically in kWh or MWh"
+   },
+   "source": {
+    "chapter": 5,
+    "pages": "186",
+    "section_hint": "2.2 Electricity - Generation, heat rate"
+   }
+  },
+  {
+   "name": "Heat rate",
+   "formula": "Heat Rate = Fuel Input (MMBtu) / Electricity Output (MWh)",
+   "variables": {
+    "Fuel Input": "MMBtu of fuel consumed by the plant",
+    "Electricity Output": "MWh of electricity produced",
+    "Heat Rate": "MMBtu/MWh (or Btu/kWh when scaled by 1,000)"
+   },
+   "source": {
+    "chapter": 5,
+    "pages": "193-194",
+    "section_hint": "2.2 Electricity \u2014 Heat rate"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "30-30"
+  },
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  },
+  {
+   "chapter": 5,
+   "pages": "186"
+  },
+  {
+   "chapter": 5,
+   "pages": "193-194"
+  },
+  {
+   "chapter": 15,
+   "pages": "379-380"
+  },
+  {
+   "chapter": 18,
+   "pages": "424"
+  },
+  {
+   "chapter": 18,
+   "pages": "434-435"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 5,
+  "SUPPORTED": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 2,
+   "topic": "Heat rate"
+  },
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 2,
+   "topic": "Heat rate trades (gas-power price relationship)"
+  },
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 9,
+   "topic": "Heat rate and fossil fuel plants as marginal price setters"
+  },
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 0,
+   "topic": "Heat rate"
+  },
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 8,
+   "topic": "Spark Spread and Heat Rate (PJM-West Example)"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 3,
+   "topic": "Heat rate and plant conversion efficiency"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 3,
+   "topic": "Spread distribution around the forward spread and heat-rate-determined profitability"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:34:53+00:00"
+ }
+}

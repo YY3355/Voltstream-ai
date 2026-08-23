@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Vapor-Compression Cooling Cycle (Air Conditioning and Refrigeration)",
+ "type": "concept",
+ "category": "Energy Consumption & End Use",
+ "subcategory": "Cooling Systems",
+ "definition": "Cooling systems, from household air conditioners to industrial natural gas liquefaction, work by cycling a working fluid between gas and liquid phases through a compressor, condenser, and evaporator so the fluid absorbs heat in one place and radiates it elsewhere.",
+ "core_idea": "The working fluid is compressed \u2014 raising its pressure and temperature \u2014 so it can radiate heat outside through the condenser, then its pressure is dropped through a narrow opening into the low-pressure evaporator, where it boils into a cold gas that absorbs heat from indoors before returning to the compressor to repeat the cycle.",
+ "key_points": [
+  "Three main components: compressor and condenser (typically located outside) and evaporator (typically inside), connected by circulating working fluid.",
+  "Compressor stage: warm gas from indoors is compressed into a very hot gas, since compression raises temperature; exposing it to outside air lets it start cooling.",
+  "Condenser stage: fan-assisted metal fins radiate the hot fluid's heat into outside air, cooling it enough to condense into a liquid that is sent indoors.",
+  "Evaporator stage: the still-warm liquid is forced through a narrow opening into a low-pressure container; liquids boil more easily at low pressure, so the fluid vaporizes and absorbs heat from the indoor environment in the process.",
+  "The now-warmed cold gas from the evaporator is drawn back into the compressor to restart the cycle.",
+  "Air conditioning is framed as a major, energy-intensive modern (20th-century) technology, unlike heating, which is ancient."
+ ],
+ "relationships": [
+  "Applies the same compression/expansion pressure-temperature relationship described for gases generally",
+  "Shares its working-fluid phase-change cycle with industrial natural gas liquefaction"
+ ],
+ "trading_implications": [
+  "Cooling demand driven by this energy-intensive cycle is a major driver of electricity load, relevant to seasonal power demand and price patterns such as summer peak load in ERCOT."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "297-300"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_001.json",
+   "idx": 4,
+   "topic": "Vapor-Compression Cooling Cycle (Air Conditioning and Refrigeration)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

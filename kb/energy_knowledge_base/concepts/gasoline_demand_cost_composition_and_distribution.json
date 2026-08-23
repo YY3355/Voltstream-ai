@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Gasoline demand, cost composition, and distribution",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Gasoline",
+ "definition": "Gasoline is the dominant automotive fuel, with about two-thirds of its U.S. retail cost coming from crude acquisition and refining and roughly one-third from taxes, distribution, and marketing; it is moved from refineries by pipeline, blended locally, and trucked to stations.",
+ "core_idea": "Gasoline consumption and pricing follow a seasonal demand pattern driven by weather (rising in spring, peaking in late summer), and its supply chain runs from refinery to pipeline-fed terminal (where local additives like ethanol are blended in for regulatory compliance) to tanker-truck delivery to retail stations.",
+ "key_points": [
+  "In 2007, gasoline accounted for 44 percent of all petroleum consumption.",
+  "In the United States, roughly two-thirds of the retail cost of gasoline is attributable to acquiring and refining crude oil.",
+  "The remaining roughly one-third of retail cost is made up of taxes, distribution, and marketing fees.",
+  "Gasoline demand rises with good weather, starting to increase in spring and peaking in late summer.",
+  "Gasoline is distributed primarily via pipeline from refineries to local terminals, where additives like ethanol are blended in to meet local regulations, then trucked to gas stations."
+ ],
+ "relationships": [
+  "Seasonal weather patterns drive gasoline demand cycles",
+  "Local regulatory blending requirements are applied at the terminal stage of distribution"
+ ],
+ "trading_implications": [
+  "Seasonal demand patterns (spring ramp-up, late-summer peak) are a structural driver to anticipate in gasoline price forecasting."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "227-228"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 4,
+   "topic": "Gasoline demand, cost composition, and distribution"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

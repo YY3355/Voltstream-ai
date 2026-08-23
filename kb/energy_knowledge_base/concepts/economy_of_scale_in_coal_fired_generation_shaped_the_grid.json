@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Economy of scale in coal-fired generation shaped the grid",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Generation Economics",
+ "definition": "Large, centralized coal-fired power plants are cheaper to operate per unit of output than small ones, and this economy of scale is a major reason the electrical grid developed around centralized generation with extensive transmission networks.",
+ "core_idea": "Coal plant economics favor bigness, and that preference for scale is a structural driver behind the historical shape of the power grid (large centralized plants plus long transmission lines) rather than a distributed generation model.",
+ "key_points": [
+  "Big, centralized coal plants are cheaper to run than small coal plants (economy of scale).",
+  "The grid's current architecture \u2014 centralized generation plus extensive transmission \u2014 is attributed in large part to this coal-driven economy of scale."
+ ],
+ "relationships": [
+  "Links coal plant scale economics to overall grid/transmission architecture."
+ ],
+ "trading_implications": [
+  "Understanding why the grid is centralized helps explain transmission constraints and locational price dynamics that persist even as generation mix shifts away from coal."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "247-247"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 3,
+   "topic": "Economy of scale in coal-fired generation shaped the grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

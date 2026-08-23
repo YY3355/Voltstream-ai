@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Fair value accounting definitions: FASB ASC 820 and IASB IFRS 13",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Fair Value Accounting",
+ "definition": "In the U.S., the Financial Accounting Standards Board defines fair value under Accounting Standards Codification 820 (ASC 820); internationally, the International Accounting Standards Board defines it under International Financial Reporting Standards topic 13 (IFRS 13). Both define fair value as an exit price -- the price to liquidate a position under normal market conditions.",
+ "core_idea": "The two major accounting regimes converge on defining mark-to-market's target value as an 'exit price,' the price obtainable to liquidate under typical market conditions, and both rank the reliability of that estimate via a fair value hierarchy.",
+ "key_points": [
+  "FASB (US) defines fair value in ASC 820.",
+  "IASB (international) defines fair value in IFRS 13.",
+  "The two standards' definitions are similar in substance.",
+  "Fair value is defined as an exit price: the price to liquidate a transaction under typical/normal market conditions.",
+  "Both standards use a fair value hierarchy to communicate how accurate/reliable a given fair value estimate is."
+ ],
+ "relationships": [
+  "Provides the accounting basis requiring firms to use mark-to-market",
+  "Related to primary market / highest-and-best-use valuation rules"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Conflating 'fair value' with 'the price a firm believes an asset is worth' rather than the specific accounting definition of an achievable exit price."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "550-550"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 7,
+   "topic": "Fair value accounting definitions: FASB ASC 820 and IASB IFRS 13"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

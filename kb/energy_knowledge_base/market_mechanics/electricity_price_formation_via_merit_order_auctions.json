@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Electricity price formation via merit-order auctions",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Design / Dispatch Auctions",
+ "definition": "ISOs set electricity prices through non-discriminatory auctions: power plants submit bids, the ISO dispatches the lowest bidders first, and every dispatched plant is paid the same clearing price \u2014 the price bid by the marginal (last-needed) plant.",
+ "core_idea": "Because all winning generators receive the same uniform clearing price regardless of their own bid, the plants that sit at the margin \u2014 the last one turned on or the next one that would be turned off \u2014 are disproportionately influential in setting the market price.",
+ "key_points": [
+  "Power plants submit quotes/bids to the ISO to be selected for operation",
+  "Plants are dispatched from lowest bid to highest bid until demand is met; plants are continually activated and deactivated as demand changes",
+  "Every operating plant is paid the same price: the price set by the marginal plant (the last one activated, or the next one that would be deactivated)",
+  "Most power markets run two auctions: a day-ahead auction the day before delivery, plus real-time auctions to cover unexpected shortfalls",
+  "Marginal plants \u2014 those right at the activation/deactivation threshold \u2014 are the most influential in setting the market-clearing price"
+ ],
+ "relationships": [
+  "Sets up the more detailed 'generation stack' discussion of bidding strategy that follows"
+ ],
+ "trading_implications": [
+  "Traders track which plants are near the margin, since their bidding behavior drives the clearing price",
+  "Understanding the bid stack (merit order) helps anticipate when and how prices will move"
+ ],
+ "caveats": [
+  "Assuming generators are paid their own bid price (pay-as-bid) rather than the uniform marginal clearing price"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "48-49"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_007.json",
+   "idx": 3,
+   "topic": "Electricity price formation via merit-order auctions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

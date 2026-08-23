@@ -1,0 +1,52 @@
+{
+ "canonical_topic": "Why natural gas breaks the storable-commodity forward-pricing model",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Natural gas doesn't fit the classic storable-commodity model where spot and forward markets are linked through buy-and-store arbitrage, because gas requires continuous new production and consumption, is difficult to store and transport, and has no intrinsic value apart from what it's converted into.",
+ "core_idea": "Classic storable commodities (e.g., gold, stock certificates) link spot and forward markets because the asset is never \"used up\" and can be carried forward unaffected by short-term supply-demand shifts; natural gas fails this pattern, so long-term buy-and-hold investing doesn't really work in gas, and the spot/forward relationship that does exist is more complex and less reliable than in other markets.",
+ "key_points": [
+  "In markets where spot and forward prices are linked, the commodity's quantity is roughly constant and it isn't consumed when used (e.g., a gold bar or a stock certificate), so it's unaffected by short-term supply/demand swings.",
+  "Natural gas requires a continuous supply of new production, has constantly shifting consumer demand, and is difficult to store and transport \u2014 breaking that classic linkage.",
+  "Gas has no intrinsic value by itself; only the products of burning it (heat, electricity) are valuable.",
+  "Gas held in storage is generally no easier to deliver than newly extracted gas, unless the storage facility happens to be near a consuming area.",
+  "The most common storage facilities are previously emptied gas wells.",
+  "Consequently, a long-term buy-and-hold gas strategy is essentially a bet on undeveloped gas reserves rather than a genuine investment strategy.",
+  "Traders instead use storage tactically to balance supply and demand over periods under a year (e.g., buying summer gas to sell the following winter).",
+  "The author notes a spot/forward relationship does still exist in natural gas forward prices, but it is more complicated and less reliable than in other (storable-commodity) markets."
+ ],
+ "relationships": [
+  "Connects to the spot/forward volatility item and to forward price seasonality"
+ ],
+ "trading_implications": [
+  "Classic cash-and-carry arbitrage used in metals or financial assets doesn't transfer cleanly to natural gas.",
+  "Storage should be treated as a tactical, sub-annual balancing tool rather than a long-term investment vehicle."
+ ],
+ "caveats": [
+  "Assuming natural gas forward pricing follows the same storage-cost/interest-rate-driven curve as storable commodities like gold.",
+  "Assuming stored gas is a viable long-term investment rather than effectively a bet on undeveloped reserves."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 6,
+   "topic": "Why natural gas breaks the storable-commodity forward-pricing model"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

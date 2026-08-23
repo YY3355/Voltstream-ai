@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Intrinsic value vs. extrinsic value of an option",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "Intrinsic value is the amount that could be captured by exercising the option immediately, giving up any further chance of upside. Extrinsic value is the additional value that comes from continuing to hold the option rather than exercising it now \u2014 i.e., the value of remaining time/uncertainty.",
+ "core_idea": "An option's total value splits into what you could lock in today (intrinsic) and what you're giving up by not waiting (extrinsic); the higher the intrinsic value already embedded, the more the position has at risk.",
+ "key_points": [
+  "Author's analogy: a $1 lottery ticket that already paid $1 million and offers a further double-or-nothing coin flip. After winning the first $1 million, that $1 million becomes the ticket's intrinsic value \u2014 the amount the holder could walk away with right now.",
+  "In that analogy, once the intrinsic value is nonzero, the position is no longer riskless: the holder now has real money (not just the original $1 stake) at risk if they keep holding for the extrinsic (further) upside.",
+  "The author states explicitly: the higher the intrinsic value of the option, the more risk is involved."
+ ],
+ "relationships": [
+  "Depends on the payoff mechanics (strike vs. market price) item"
+ ],
+ "trading_implications": [
+  "Holding an option with high intrinsic value means there is more locked-in value exposed to being given back if the position is not closed out, which the author frames as a risk consideration distinct from the option's remaining time value."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "328-329"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 5,
+   "topic": "Intrinsic value vs. extrinsic value of an option"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

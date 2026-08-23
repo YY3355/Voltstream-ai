@@ -1,0 +1,53 @@
+{
+ "canonical_topic": "Put/call parity and synthetic options",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Put/Call Parity",
+ "definition": "Put/call parity is the pricing link that arises because buying a call and selling a put (same underlying, strike, and expiration) replicates a forward contract's payoff, forcing arbitrage-driven equality between corresponding put and call premiums.",
+ "core_idea": "Because combinations of puts, calls, and forwards can replicate one another's payoffs, arbitrage forces same-strike/expiration call and put premiums (and their implied volatilities) into alignment, within the bid-ask spread.",
+ "key_points": [
+  "Buying a call and selling a put (same underlying, strike, expiration) creates a synthetic long forward.",
+  "Other combinations create synthetic puts (e.g., short forward plus long call) or synthetic calls, generally called synthetic options.",
+  "Combining a long call and a long put (same strike/expiration) creates a straddle, which loses money if the price stays flat but profits from a large move in either direction.",
+  "If call and put premiums for the same underlying/strike/expiration diverge beyond the bid-ask spread, a trader can build the opposite synthetic position and lock in an arbitrage profit.",
+  "Implications: (1) properly combined puts and calls are interchangeable in a portfolio, (2) same-underlying/strike/expiration put and call premiums must be equal, (3) their implied volatilities must also be equal."
+ ],
+ "relationships": [
+  "synthetic forward",
+  "synthetic put",
+  "straddle",
+  "arbitrage",
+  "implied volatility"
+ ],
+ "trading_implications": [
+  "Arbitrage should keep same-strike put and call prices aligned outside the bid-ask spread, so persistent mispricings are unlikely to last.",
+  "Straddles express a view on the magnitude of a price move rather than its direction."
+ ],
+ "caveats": [
+  "Believing put and call prices for the same strike/expiration can diverge freely without arbitrage consequences.",
+  "Treating a straddle as a directional bet, when it actually pays off on large moves in either direction and loses on flat prices."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "339-343"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 6,
+   "topic": "Put/call parity and synthetic options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

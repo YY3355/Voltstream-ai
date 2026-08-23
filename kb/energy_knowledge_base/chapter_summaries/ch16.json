@@ -1,0 +1,7 @@
+{
+ "chapter": 16,
+ "title": "4.1 SPATIAL LOAD FORECASTING",
+ "n_concepts": 15,
+ "summary": "Grid operators cannot know electricity demand in advance, so they build forecasting models rather than fixed schedules, and this chapter lays out what drives those forecasts and how to evaluate them. Temperature is treated as the dominant short-term driver, refined through apparent-temperature adjustments like THI and WCI, while calendar effects (day type, weekday/weekend/holiday) and monthly seasonality explain much of the remaining day-to-day and month-to-month variation. The chapter distinguishes structural concepts \u2014 base, peak, and safety-margin load tiers, and expected versus worst-case forecasting goals \u2014 from the practical inputs (consumer type, location, weather, calendar) used to build a forecast, illustrated with a simple regional linear regression example. It closes by covering how forecast quality itself is assessed, through in-sample versus out-of-sample testing and systematic error analysis of candidate sources of model error.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

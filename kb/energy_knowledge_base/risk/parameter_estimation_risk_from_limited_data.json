@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Parameter estimation risk from limited data",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Market Data Quality",
+ "definition": "The risk that model parameters requiring hard-to-observe inputs, such as correlations, end up chosen somewhat arbitrarily when adequate market data doesn't exist.",
+ "core_idea": "Some model parameters \u2014 for example, the correlation between two assets that a spread option's value depends on \u2014 can't be reliably estimated when there isn't enough liquid price history, so in practice such parameters are commonly set fairly arbitrarily at model creation, and a poorly chosen one can cause the model's output to change dramatically if revisited.",
+ "key_points": [
+  "Limited market data restricts the ability to reliably estimate certain model parameters",
+  "Example given: a spread option's dependence on the correlation between two underlying assets, which can't be determined without adequate price data",
+  "In practice, a handful of parameters commonly end up chosen fairly arbitrarily when a model is first built",
+  "A poorly chosen parameter of this kind can cause the model's output to change dramatically if corrected or revisited later"
+ ],
+ "relationships": [
+  "Connects to illiquid trading point risk as another symptom of limited market data"
+ ],
+ "trading_implications": [
+  "Arbitrarily-set correlation or similar parameters should be flagged and periodically reviewed rather than treated as fixed inputs"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "588-589"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 6,
+   "topic": "Parameter estimation risk from limited data"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

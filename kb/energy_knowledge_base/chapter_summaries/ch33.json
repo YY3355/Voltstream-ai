@@ -1,0 +1,7 @@
+{
+ "chapter": 33,
+ "title": "6.5 HEDGING",
+ "n_concepts": 9,
+ "summary": "Battery storage economics and hedging depend on stable prices, and this chapter covers the mechanics of hedging that stability. It surveys the two dominant hedge structures \u2014 futures/forwards/swaps and costless collars \u2014 and explains how a costless collar's zero-premium framing can obscure real economic cost transferred to the counterparty. It then turns to sizing and validating a hedge: adjusting notional size when volatility differs between the hedge and the hedged item, using the minimum variance hedge ratio when the match is imperfect, and testing effectiveness via regression on value changes (not price levels) using standard prospective and retrospective frameworks. A closing thread notes that despite matching the underlying position in size and risk, hedges often escape the level of scrutiny given to the investments they offset.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Gas Compression and Expansion Thermodynamics",
+ "type": "concept",
+ "category": "Commodity Fundamentals",
+ "subcategory": "Physical Properties",
+ "definition": "Compressing a gas heats it up (and it radiates that heat into its surroundings), while allowing a gas to expand cools it down (and it absorbs heat); liquefying a gas by compression requires substantial cooling, and without continued cooling the liquid will re-expand into gas.",
+ "core_idea": "This heat/cool behavior under compression and expansion is the physical mechanism underlying refrigeration and air conditioning systems.",
+ "key_points": [
+  "Compression raises gas temperature; the gas radiates that heat outward.",
+  "Expansion lowers gas temperature; the gas absorbs heat from its surroundings.",
+  "Turning gas into liquid via compression requires substantial cooling to counteract the heat generated.",
+  "A liquefied gas kept from staying cool will begin expanding back into gas."
+ ],
+ "relationships": [
+  "Directly explains how refrigeration/AC systems work and is also the physical property causing bubble/condensation issues in pipelines."
+ ],
+ "trading_implications": [
+  "This same compress/cool cycle underlies LNG production economics and refrigeration-based cooling infrastructure relevant to gas storage and transport assets."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "290-292"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 4,
+   "topic": "Gas Compression and Expansion Thermodynamics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

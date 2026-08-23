@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Deepwater drilling: definition and physical challenges",
+ "type": "concept",
+ "category": "Oil & Gas",
+ "subcategory": "Exploration & Production",
+ "definition": "Offshore drilling in water deeper than 500 feet (150 meters) is classified as deepwater drilling. Water pressure increases by roughly one atmosphere every 10 meters, so at 500 feet depth pressure is about 16 times sea-level pressure \u2014 beyond human survivability without specialized equipment; the deepest projects reach about 10,000 feet (2,900 meters).",
+ "core_idea": "Deepwater drilling is defined purely by a depth threshold (500 ft), beyond which extreme pressure forces all operations to be remote/robotic and introduces engineering and equipment risks not present in shallower drilling.",
+ "key_points": [
+  "Deepwater drilling begins at water depths greater than 500 feet (150 meters).",
+  "Pressure increases roughly one atmosphere per 10 meters of depth.",
+  "At 500 feet, pressure is about 16x sea-level pressure, exceeding what humans can survive unaided.",
+  "The deepest projects reach roughly 10,000 feet (2,900 meters), about three times the human deep-diving record.",
+  "Lack of human operators at depth means routine tasks (e.g., equipment maintenance) must be done remotely via robotic drones, which is inherently harder.",
+  "Additional hazards include hurricanes, shifting sea-floor sediments, currents that shift the drill string, and unpredictable (higher or lower) pressures in sub-seafloor sediment layers.",
+  "High pressure raises equipment failure risk (steel pipes, electronics) and increases the chance of gas bubbling out of crude oil due to top-to-bottom pressure differences in the pipe.",
+  "Longer pipes and welded pipe joints increase the surface area/points where a weak spot or failure can occur."
+ ],
+ "relationships": [
+  "Contrasted with traditional (shallower/onshore) drilling"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "129-130"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 4,
+   "topic": "Deepwater drilling: definition and physical challenges"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

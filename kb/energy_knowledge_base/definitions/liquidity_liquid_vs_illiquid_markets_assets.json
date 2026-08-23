@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Liquidity: liquid vs illiquid markets/assets",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Market Liquidity",
+ "definition": "Liquidity describes how easy it is to find a trading counterparty and how cheap it is to trade; a liquid market/asset has ready counterparties and low trading cost, while an illiquid market/asset is hard to trade and relatively costly to transact in.",
+ "core_idea": "Difficulty finding trading partners is a distinct complication in energy markets, and the ease or cost of finding a counterparty is what traders mean by liquidity.",
+ "key_points": [
+  "A liquid asset (e.g., a U.S. government bond) can be bought or sold on short notice.",
+  "An illiquid asset (e.g., a nuclear power plant) may have real value but be hard to sell quickly at a fair price.",
+  "The most liquid parts of the energy market are the forward financial markets, in contrast to the more complicated spot markets."
+ ],
+ "relationships": [
+  "Ties to the spot-vs-forward market split: spot markets tend to be less liquid/more locally constrained than forward financial markets."
+ ],
+ "trading_implications": [
+  "Traders should expect higher transaction costs and more difficulty exiting positions in illiquid energy markets/assets compared to liquid ones."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "20"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 4,
+   "topic": "Liquidity: liquid vs illiquid markets/assets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

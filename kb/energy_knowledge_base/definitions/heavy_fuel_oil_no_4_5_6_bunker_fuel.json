@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Heavy Fuel Oil (No. 4/5/6 / Bunker Fuel)",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Oil Products",
+ "definition": "Heavy fuel oil, also called bunker fuel, refers to the heaviest grades of fuel oil produced by distillation. It must be heated to become liquid before use.",
+ "core_idea": "Because handling heavy oil requires heating and careful process control, its use is largely limited to large ships and power plants, which keeps its price below gasoline or diesel.",
+ "key_points": [
+  "Heavy oil is the heaviest class of fuel oil grades.",
+  "Must be heated to liquefy before it can be used, which is described as a delicate process.",
+  "Primarily used aboard large ships and in power plants due to this handling requirement.",
+  "Its limited range of uses makes it typically cheaper than gasoline or diesel."
+ ],
+ "relationships": [
+  "Sits at the heavy end of the fuel oil distillation stack, opposite kerosene."
+ ],
+ "trading_implications": [
+  "Narrower end-use demand (shipping, power generation) links heavy oil pricing more to those sectors than to broader transportation fuel demand."
+ ],
+ "caveats": [
+  "Not a liquid at normal handling temperatures without preheating, unlike lighter fuel oils."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "245-245"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_006.json",
+   "idx": 0,
+   "topic": "Heavy Fuel Oil (No. 4/5/6 / Bunker Fuel)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

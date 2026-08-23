@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "Numeric example: gas price decline compresses baseload coal margin",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Marginal Pricing",
+ "definition": "A worked example showing how a drop in gas price sharply reduces the profit margin of a baseload coal unit when a 10 MMBtu/MWh heat-rate gas unit sets the marginal power price.",
+ "core_idea": "With a marginal gas unit at a 10 MMBtu/MWh heat rate, power price roughly tracks heat rate times gas price; when gas falls from $10/MMBtu to $4/MMBtu, marginal power price falls from about $100/MWh to $40/MWh, and a coal unit with $35/MWh variable cost sees its margin collapse from $65/MWh to $5/MWh.",
+ "key_points": [
+  "Marginal power price \u2248 marginal unit's heat rate \u00d7 gas price.",
+  "At $10/MMBtu gas and 10 MMBtu/MWh heat rate, power price \u2248 $100/MWh.",
+  "At $4/MMBtu gas, power price falls to \u2248 $40/MWh.",
+  "A coal plant with $35/MWh variable cost sees margin fall from $65/MWh (at $100 power) to $5/MWh (at $40 power)."
+ ],
+ "relationships": [
+  "Illustrates the flat-stack marginal pricing problem described in the preceding item."
+ ],
+ "trading_implications": [
+  "Baseload coal margins are highly sensitive to gas price moves even though coal doesn't burn gas \u2014 because gas sets the marginal clearing price; this is a key basis-risk-style exposure to model when gas prices fall sharply."
+ ],
+ "caveats": [
+  "A falling gas price doesn't just hurt gas generators \u2014 it can severely compress margins for non-gas (coal) baseload units too, since power price is set by the marginal (often gas) unit."
+ ],
+ "formulas": [
+  {
+   "name": "Marginal power price from heat rate and gas price",
+   "formula": "Power Price ($/MWh) = Heat Rate (MMBtu/MWh) x Gas Price ($/MMBtu)",
+   "variables": {
+    "Heat Rate": "fuel input per unit of electrical output, MMBtu/MWh, for the marginal (price-setting) generator",
+    "Gas Price": "natural gas price, $/MMBtu",
+    "Power Price": "resulting marginal clearing price, $/MWh"
+   },
+   "source": {
+    "chapter": 17,
+    "pages": "420-422",
+    "section_hint": "4.2 The Generation Stack: Problems with Marginal Pricing"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "420-422"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_003.json",
+   "idx": 5,
+   "topic": "Numeric example: gas price decline compresses baseload coal margin"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

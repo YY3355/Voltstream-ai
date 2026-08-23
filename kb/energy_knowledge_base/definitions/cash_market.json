@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Cash market",
+ "type": "definition",
+ "category": "Trading Markets",
+ "subcategory": "Common Terminology",
+ "definition": "A cash market is one where cash is exchanged for immediate delivery of a commodity; the terms physical market, cash market, and spot market are treated as interchangeable.",
+ "core_idea": "Cash/physical/spot market are three names for the same thing: a market for immediate-delivery transactions.",
+ "key_points": [
+  "Cash market = physical market = spot market, per the author.",
+  "Defined by immediacy of delivery against cash payment."
+ ],
+ "relationships": [
+  "Synonymous with physical market and spot market",
+  "Related to \"actual\""
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 8,
+   "topic": "Cash market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

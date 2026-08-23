@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Physical turbine characteristics and plant example drive model time-frame and structure",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Tolling Agreements / Asset Modeling",
+ "definition": "The physical operating characteristics of a plant's generation units determine both the time granularity a tolling valuation model should use and how the plant must be broken into discrete components.",
+ "core_idea": "Fast-starting gas turbines can be modeled at high frequency, while slow-ramping steam turbines that need sustained runtime to reach efficiency favor a longer time-frame model; a concrete example used is a combined-cycle gas plant with two efficient-but-slow steam turbines and two smaller, less-efficient gas turbines that both assist steam-turbine startup and run independently as peakers.",
+ "key_points": [
+  "Gas turbines start and stop quickly, so they can support fine time-granularity models.",
+  "Steam turbines take time to reach top efficiency and want to run for extended periods, favoring longer model time frames.",
+  "Example plant: 2 combined-cycle steam turbines (large, efficient, expensive to maintain, slow to respond) + 2 gas turbines (smaller, less efficient, used for steam-turbine startup heat and as standalone peakers during peak demand).",
+  "Combined-cycle turbines are approximated as having two modes: normal dispatch and maximum dispatch; maximum dispatch is less fuel-efficient but produces more power."
+ ],
+ "relationships": [
+  "Feeds into the operating-scenario framework used to value tolling agreements"
+ ],
+ "trading_implications": [
+  "Mismatching model time-granularity to a unit's physical dispatch behavior risks misvaluing a tolling agreement's optionality"
+ ],
+ "caveats": [
+  "Assuming one time-frame or one dispatch curve fits all turbine types in a plant"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "428-430"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 0,
+   "topic": "Physical turbine characteristics and plant example drive model time-frame and structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

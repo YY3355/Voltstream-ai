@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Initial Margin and Excess Equity",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Futures Margining",
+ "definition": "Initial margin is the good-faith deposit a trader must post with an exchange to open a futures position. Funds in a margin account beyond what's required for open positions can be withdrawn or used to open new trades; that surplus is called excess equity, even though it isn't an ownership stake.",
+ "core_idea": "Futures require an upfront deposit sized to cover potential losses, and any account balance above that requirement is freely available to the trader.",
+ "key_points": [
+  "Initial margin is required to establish a futures position.",
+  "Money above the initial margin requirement is 'excess equity' and can be withdrawn or redeployed.",
+  "Excess equity is not an equity/ownership position despite the name."
+ ],
+ "relationships": [
+  "Feeds into daily margining and margin calls once a position is open."
+ ],
+ "trading_implications": [
+  "Traders should track excess equity to know how much capital is freed up or at risk without adding new deposits."
+ ],
+ "caveats": [
+  "The term 'equity' in excess equity is misleading \u2014 it is not an ownership stake, just surplus margin cash."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "93-93"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 0,
+   "topic": "Initial Margin and Excess Equity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

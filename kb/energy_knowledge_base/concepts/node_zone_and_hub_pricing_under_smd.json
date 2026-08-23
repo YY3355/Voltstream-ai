@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Node, zone, and hub pricing under SMD",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure / LMP",
+ "definition": "Under the Standard Market Design (SMD), power prices are calculated at three levels of granularity: nodes (specific physical delivery points), zones (geographic aggregations of nodes), and hubs (aggregations of selected nodes across multiple zones).",
+ "core_idea": "The systemwide power clearing price is the same everywhere, but congestion and line-loss charges vary by location, so nodal, zonal, and hub prices diverge from each other and from the clearing price depending on where you sit on the grid.",
+ "key_points": [
+  "Node price = price at a specific electrical bus (interface where power enters/leaves the transmission grid); generators are paid the nodal price at their delivery point.",
+  "Zone price = average of all nodal prices within a defined geographic area; used for buyers/customers because it requires less detailed metering.",
+  "Hub price = average of selected nodal prices spanning several zones; serves as the grid's benchmark price and is the price used extensively in forward market trading.",
+  "In most ISO/RTO regions the systemwide clearing price and the hub price are treated as synonymous."
+ ],
+ "relationships": [
+  "Node/zone/hub pricing is the basis for Financial Transmission Rights (FTRs), which hedge the price difference between hub and node.",
+  "Hub prices anchor forward market contracts."
+ ],
+ "trading_implications": [
+  "A generator's realized revenue is its nodal price, which can differ materially from the hub price traders use for forward hedges \u2014 creating basis risk that FTRs are designed to manage.",
+  "Customers billed at zone price face a different (averaged) exposure than a generator paid at a single node."
+ ],
+ "caveats": [
+  "The clearing price for power is uniform grid-wide, but this does NOT mean realized prices are uniform \u2014 congestion and losses make node/zone/hub prices diverge from that clearing price and from each other."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "178"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 0,
+   "topic": "Node, zone, and hub pricing under SMD"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

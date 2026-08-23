@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Replicating portfolios as the basis of option pricing",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Modern option theory prices an option by constructing a portfolio of the underlying (and other assets) that replicates the option's payoff, rather than by directly forecasting future prices.",
+ "core_idea": "This shift reduced the need to predict future prices accurately, which matters especially for option sellers, who must be willing to quote whatever product a buyer wants and cannot selectively predict only the assets they prefer.",
+ "key_points": [
+  "Option pricing has two steps: (1) model the statistical distribution of likely underlying price movements, then (2) determine how to replicate the option's payoff under those probabilities.",
+  "Replication reduces reliance on directional price forecasting.",
+  "Option sellers benefit particularly, since they must quote prices on whatever a buyer wants to trade and cannot pick only assets they're confident forecasting."
+ ],
+ "relationships": [
+  "Connects to delta/hedge ratio and arbitrage-free pricing"
+ ],
+ "trading_implications": [
+  "An option seller can price and hedge a position via replication without needing an accurate directional price forecast."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "352-352"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 7,
+   "topic": "Replicating portfolios as the basis of option pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

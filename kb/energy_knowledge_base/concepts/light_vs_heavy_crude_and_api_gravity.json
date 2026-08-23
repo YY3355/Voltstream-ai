@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Light vs. heavy crude and API gravity",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Crude oil quality grading",
+ "definition": "API gravity is the standard scale for classifying crude oil density; higher API gravity means a lighter (less dense) crude, and lighter crudes generally yield more valuable refined products.",
+ "core_idea": "Crude oil density is measured on the API gravity scale, and because lighter fractions like gasoline and jet fuel are worth more than heavy fractions like fuel oil and asphalt, crudes with higher API gravity (lighter) tend to be more valuable.",
+ "key_points": [
+  "Higher API gravity corresponds to less dense liquid.",
+  "Liquids with API gravity above 10 degrees float on water; below 10 degrees they sink.",
+  "Light crude: API gravity of 38 degrees or more.",
+  "Medium crude: API gravity between 22 and 38 degrees.",
+  "Heavy crude: API gravity of 22 degrees or less.",
+  "Condensate: API gravity above 45 degrees.",
+  "In general, light crudes are more valuable than heavier crudes or condensate.",
+  "Less dense refined products (jet fuel, gasoline) are more valuable than denser ones (heavy fuel oil, asphalt), which is why crude with more light-component content is worth more."
+ ],
+ "relationships": [
+  "API gravity classification combines with sulfur content (sweet/sour) to fully describe a crude grade, e.g. light sweet crude"
+ ],
+ "trading_implications": [
+  "API gravity is a direct driver of crude oil pricing and grade differentials, since it predicts the refined product yield mix a refiner can extract."
+ ],
+ "caveats": [
+  "Condensate (API gravity above 45) is a distinct category from 'light crude,' not merely the lightest sub-tier of light crude."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "220-221"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 4,
+   "topic": "Light vs. heavy crude and API gravity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

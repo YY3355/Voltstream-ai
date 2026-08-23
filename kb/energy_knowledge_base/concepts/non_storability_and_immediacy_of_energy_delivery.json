@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Non-storability and immediacy of energy delivery",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Electricity and heat generally cannot be stored or transported without advance arrangement, and physical energy purchased today usually must be consumed immediately.",
+ "core_idea": "Energy has no intrinsic value in isolation \u2014 it is only valuable at a specific place and time (e.g., heat has no value in summer, and gas that can't reach Chicago during a cold snap has no value there regardless of price), so spot prices reflect only what is locally deliverable, not broader future expectations.",
+ "key_points": [
+  "Home heating value is seasonal/contextual \u2014 worthless (or negative, i.e., people pay for cooling) in summer.",
+  "During a regional price spike (e.g., Chicago cold snap), gas that cannot physically be delivered there has little value, illustrating location-specific worth.",
+  "Spot prices in a location reflect current local deliverable supply/demand, not expectations of future prices, because customers cannot defer urgent consumption needs.",
+  "Consumers can't relocate overnight to escape a local shortage or price spike."
+ ],
+ "relationships": [
+  "Reinforces the non-substitutability point about location/time in energy trading"
+ ],
+ "trading_implications": [
+  "Local spot price spikes should not be read as signals about future or other-location prices."
+ ],
+ "caveats": [
+  "Believing that a high spot price in one location implies availability or value of the same commodity held elsewhere."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "74"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 2,
+   "topic": "Non-storability and immediacy of energy delivery"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

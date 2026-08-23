@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Non-fungibility of electricity across time/location creates hundreds of distinct exposures",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Risk Management",
+ "definition": "Each leg of a tolling agreement requires its own electricity and fuel price references tied to a specific time and location, because unlike storable commodities, power at one delivery period is not the same tradeable product as power at another.",
+ "core_idea": "Since electricity generally can't be stored and carried forward (you cannot buy May power and hold it to August), a long-dated tolling agreement can involve several hundred distinct underlying commodities rather than just 'power' and 'fuel,' and this breaks any attempt to aggregate risk into one number.",
+ "key_points": [
+  "Storage difficulty means energy products differ by delivery period even when nominally the same commodity (e.g., August electricity vs. May electricity).",
+  "A multi-year tolling agreement can involve several hundred separate traded commodities over its life.",
+  "It is meaningless to ask 'what's the exposure to the price of electricity' since there is no single electricity price.",
+  "Electricity prices across time/location have historically been uncorrelated, so assuming they move together is risky."
+ ],
+ "relationships": [
+  "Directly informs why tolling risk cannot be aggregated leg-to-leg"
+ ],
+ "trading_implications": [
+  "Risk managers must track exposures per leg/instrument rather than netting into a single aggregate figure",
+  "Hedging must match the specific time/location product, not a generic power price"
+ ],
+ "caveats": [
+  "Treating 'the price of electricity' as one meaningful number",
+  "Assuming all electricity prices move together"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "428-429"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 1,
+   "topic": "Non-fungibility of electricity across time/location creates hundreds of distinct exposures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

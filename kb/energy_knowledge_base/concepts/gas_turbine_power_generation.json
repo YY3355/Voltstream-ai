@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Gas Turbine Power Generation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "A gas turbine ignites a mixture of natural gas and air to create superheated gas directly (similar to a jet engine), which spins the turbine and generator without ever producing steam.",
+ "core_idea": "Gas turbines are less efficient than steam turbines because the spent combustion gas can't be reused, but they are simpler and cheaper to build and maintain, and because there is no water-heating delay they can reach full output almost immediately after startup.",
+ "key_points": [
+  "Combustion gas directly spins the turbine; no boiler or steam cycle is involved",
+  "Less efficient than a steam turbine because waste gas cannot be recycled",
+  "Simpler and cheaper to build and maintain than a steam turbine",
+  "Can start producing power at peak efficiency almost immediately, unlike a steam turbine's lengthy heat-up",
+  "Commonly used for plants that must start quickly or adjust output frequently"
+ ],
+ "relationships": [
+  "Gas turbine exhaust heat is reused in combined cycle plants"
+ ],
+ "trading_implications": [
+  "Fast-start, flexible-output profile makes gas turbines natural candidates for peaking capacity and ancillary/regulation services"
+ ],
+ "caveats": [
+  "Lower fuel efficiency doesn't make gas turbines uneconomic \u2014 their speed and flexibility are the value driver for certain roles"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "190-191"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 6,
+   "topic": "Gas Turbine Power Generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

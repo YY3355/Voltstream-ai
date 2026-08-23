@@ -1,0 +1,62 @@
+{
+ "canonical_topic": "Option premium shifts the payoff and sets the breakeven price",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Payoff Diagrams",
+ "definition": "Because buying an option costs a premium, the buyer's net payoff is the gross exercise payoff minus that premium, which pushes the true breakeven above the strike price by the amount of the premium.",
+ "core_idea": "A call buyer needs the underlying price to exceed not just the strike but the strike plus premium before showing a net profit, while the option writer keeps the premium as profit whenever the option expires worthless or only modestly in the money.",
+ "key_points": [
+  "Net profit equals the gross payoff at expiration minus the premium paid to buy the option.",
+  "The option writer keeps the premium as profit whenever the option expires out of the money.",
+  "If the option expires in the money, the buyer's gross payoff must exceed the premium before the position is net profitable.",
+  "Example given: a $100-strike call costing a $20 premium only becomes net profitable for the buyer above $120."
+ ],
+ "relationships": [
+  "call option payoff",
+  "option writer profit"
+ ],
+ "trading_implications": [
+  "Buying an option requires the underlying to clear strike-plus-premium, not just the strike, to be profitable net of cost.",
+  "Selling options generates premium income by default whenever the underlying stays on the writer's favorable side of the strike."
+ ],
+ "caveats": [
+  "Equating 'in the money at expiration' with an actual net profit for the buyer \u2014 being in the money only means gross payoff is positive, not that the premium has been recovered."
+ ],
+ "formulas": [
+  {
+   "name": "Call breakeven price",
+   "formula": "Breakeven Price = Strike Price + Premium",
+   "variables": {
+    "Strike Price": "the option's exercise price",
+    "Premium": "price paid to purchase the option"
+   },
+   "source": {
+    "chapter": 13,
+    "pages": "337-339",
+    "section_hint": "Payoff Diagrams; Figures 3.4.5-3.4.8"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "337-339"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 5,
+   "topic": "Option premium shifts the payoff and sets the breakeven price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

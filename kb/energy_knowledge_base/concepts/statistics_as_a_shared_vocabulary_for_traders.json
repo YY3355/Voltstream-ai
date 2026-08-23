@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Statistics as a shared vocabulary for traders",
+ "type": "concept",
+ "category": "Quantitative Methods",
+ "subcategory": "Statistics Fundamentals",
+ "definition": "Statistics is the branch of mathematics used to organize, analyze, and summarize data; traders rely on it as a common vocabulary so that numeric results can be communicated between people without ambiguity.",
+ "core_idea": "Traders use standardized statistical terms (like volatility and correlation) so that descriptions of price behavior mean the same thing to everyone, rather than being open to individual interpretation.",
+ "key_points": [
+  "Statistics serves traders primarily as a communication tool, not just an analytical one.",
+  "Terms such as volatility and correlation have fixed, agreed-upon meanings in trading contexts.",
+  "Statistical analysis has three main goals: summarizing time-series data, estimating confidence in that summary, and identifying relationships between phenomena."
+ ],
+ "relationships": [
+  "Underpins the specific concepts of volatility and correlation used elsewhere in trading."
+ ],
+ "trading_implications": [
+  "Precise statistical language lets traders convey results (e.g., 'the two prices are 40 percent correlated') unambiguously instead of vaguely."
+ ],
+ "caveats": [
+  "Statistics are not facts \u2014 they are simplified descriptions that may or may not be true, and always carry an error bound."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "301-302"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 0,
+   "topic": "Statistics as a shared vocabulary for traders"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Interest rate risk: forwards vs. futures cash flow timing",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Interest Rate Risk in Forwards vs Futures",
+ "definition": "Forwards and futures differ in when their cash flows occur, which changes how exposed each is to interest rate risk.",
+ "core_idea": "A forward contract settles with one large cash flow at the end of the contract, while a futures contract pays or collects small cash flows daily until maturity; because interest rate risk grows with the size and distance of a cash flow, the forward's single distant payment is far more rate-sensitive than the futures' stream of near-term payments.",
+ "key_points": [
+  "Most energy trades occur in the future, so interest rates materially affect the profitability of those future cash flows.",
+  "For small notional amounts this effect can be immaterial; for large notional amounts it becomes a major source of risk.",
+  "Author's illustrative example: a 20-year contract to sell 500 MW of power, 7am-11pm, five days a week, to an industrial facility at an average price of $75/MWh represents a $3.1 billion exposure \u2014 showing the scale of cash flow at stake in a single large long-term power contract."
+ ],
+ "relationships": [
+  "Builds on present value sensitivity to interest rate changes",
+  "Connects to earlier forwards-vs-futures distinction (not itself included in this chunk)"
+ ],
+ "trading_implications": [
+  "Long-dated forward-style power contracts carry meaningfully more interest rate risk than economically similar futures positions due to the timing of cash settlement.",
+  "Firms with large long-term forward exposures should treat interest rate moves as a real risk factor, not a rounding error."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "105-106"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 3,
+   "topic": "Interest rate risk: forwards vs. futures cash flow timing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

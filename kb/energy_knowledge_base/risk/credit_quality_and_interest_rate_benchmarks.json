@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Credit quality and interest rate benchmarks",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Time Value of Money",
+ "definition": "Interest rates vary primarily based on the creditworthiness of the borrower \u2014 the likelihood that the debtor will actually repay \u2014 with more reliable borrowers commanding lower rates.",
+ "core_idea": "Because there isn't one universal interest rate, the market prices many different rates depending on repayment risk, with very low-risk borrowers (like the U.S. government) setting benchmark low rates, and interbank lending rates like LIBOR serving as another common reference.",
+ "key_points": [
+  "The main driver of differences between interest rates is the likelihood the borrower meets its obligations (credit risk of the debtor).",
+  "Lower default risk correlates with a lower interest rate.",
+  "U.S. Treasury rates reflect the rate the U.S. government pays to borrow \u2014 treated as a very low-risk benchmark.",
+  "LIBOR (London Interbank Offered Rate) is another widely used benchmark, representing the rate at which major banks lend to one another."
+ ],
+ "relationships": [
+  "This is a specific application of time value of money \u2014 the discount rate used depends on the credit risk of the specific cash flow's payer."
+ ],
+ "trading_implications": [
+  "When valuing a future payment or contract, traders should select a discount/interest rate appropriate to the actual counterparty's credit quality rather than using a single generic rate."
+ ],
+ "caveats": [
+  "Assuming a single 'interest rate' applies uniformly across all borrowers regardless of their creditworthiness."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 9,
+   "topic": "Credit quality and interest rate benchmarks"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

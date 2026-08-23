@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Electricity Storage Methods and Economics",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "Electricity storage works by converting power into another energy form and later reconverting it back to electricity.",
+ "core_idea": "Round-trip conversion efficiency for most storage methods is typically low, but storage can still be economically justified when electricity input is very cheap or when the storage system itself is inexpensive to build.",
+ "key_points": [
+  "Storage methods include chemical energy (batteries), capacitors (direct voltage storage), pressurized gas, kinetic energy, and gravity-based systems",
+  "Conversion efficiency is usually low across these methods",
+  "Even inefficient storage can be economical if the electricity input is very cheap or the build cost is low"
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Cheap-power periods can justify storage arbitrage even with low round-trip efficiency, especially for low-capex storage technologies"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "56-56"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 2,
+   "topic": "Electricity Storage Methods and Economics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

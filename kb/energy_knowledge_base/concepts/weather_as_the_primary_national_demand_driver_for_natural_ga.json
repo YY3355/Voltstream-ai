@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Weather as the primary national demand driver for natural gas",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Demand and Weather",
+ "definition": "On a national level, temperature is the single largest driver of natural gas demand, with a roughly linear relationship between colder temperatures and higher consumption.",
+ "core_idea": "Natural gas demand is seasonal and temperature-driven: it's used for heating in winter and for generating electricity to run air conditioning in summer, making demand lowest in spring/fall and highest in the coldest winter months.",
+ "key_points": [
+  "Temperature is the single largest national factor affecting natural gas demand.",
+  "Winter demand comes from heating use.",
+  "Summer demand comes from gas-fired electricity generation used for air conditioning.",
+  "Demand is lowest in spring and fall and peaks during the coldest winter months.",
+  "There is a linear relationship between colder temperatures and increased natural gas consumption."
+ ],
+ "relationships": [
+  "Predicting demand is largely a weather-forecasting exercise, which in turn feeds long-run supply decisions."
+ ],
+ "trading_implications": [
+  "Weather forecasts (especially cold-snap risk) are a primary input for natural gas demand and price forecasting."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 4,
+   "topic": "Weather as the primary national demand driver for natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

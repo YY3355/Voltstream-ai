@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Options: calls, puts, and premium",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options",
+ "definition": "An option is a derivative contract giving its buyer the right, but not the obligation, to buy (call) or sell (put) an underlying asset at a fixed price at a future date, in exchange for an up-front premium.",
+ "core_idea": "Unlike futures, forwards, and swaps, an option buyer can choose not to exercise, which caps the buyer's downside at the premium paid while preserving upside participation.",
+ "key_points": [
+  "A call option is the right to buy; a put option is the right to sell.",
+  "The premium is paid up front by the buyer when purchasing the option, and can be expensive.",
+  "For the option buyer, risk is limited to losing the premium; otherwise the buyer profits.",
+  "As a rule of thumb, option buyers frequently lose small amounts (the premium) but occasionally realize large profits; option sellers earn a steady stream of small premiums but face occasional large losses \u2014 the payout profiles are mirror images of each other."
+ ],
+ "relationships": [
+  "Options differ from futures/forwards/swaps specifically in that exercise is optional for the buyer, changing the risk/reward shape versus a fixed obligation."
+ ],
+ "trading_implications": [
+  "Buying options is a way to set a worst-case price for an asset while retaining upside, at the cost of the premium; selling options generates regular premium income but exposes the seller to potentially large tail losses."
+ ],
+ "caveats": [
+  "Confusing an option's limited-loss profile for the buyer with the seller's risk profile \u2014 the seller does not have the same limited downside."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 6,
+   "topic": "Options: calls, puts, and premium"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

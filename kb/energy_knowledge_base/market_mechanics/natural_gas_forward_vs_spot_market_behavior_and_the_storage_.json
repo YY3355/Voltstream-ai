@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Natural gas forward vs. spot market behavior and the storage arbitrage limit",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Price Behavior",
+ "definition": "Natural gas forward prices show a strong, predictable seasonal pattern that tracks consumer heating demand (high in winter, falling sharply each spring), while spot prices lack this predictability and are driven by prevailing supply and demand; despite the different behaviors, the two markets cannot be arbitraged against each other without access to a physical storage facility.",
+ "core_idea": "Even though buying cheap spot gas, storing it, and selling it forward is theoretically profitable when the two markets diverge, executing that trade requires physical delivery and storage capability that most market participants don't have, so the forward/spot gap persists.",
+ "key_points": [
+  "Forward prices have a well-defined seasonal shape mirroring winter heating demand",
+  "Spot prices are unpredictable and driven by current supply/demand rather than seasonal expectation",
+  "Storage-based arbitrage (buy spot, store, sell forward) is possible in principle",
+  "That arbitrage requires physical trading capability \u2014 taking delivery and storing large gas volumes \u2014 that many participants lack, which limits convergence between the two markets"
+ ],
+ "relationships": [
+  "Henry Hub pricing",
+  "Natural gas composition"
+ ],
+ "trading_implications": [
+  "A trading desk without physical storage access cannot capture forward/spot divergence directly",
+  "Seasonal forward curve shape is a structural feature of gas markets tied to heating demand, not noise"
+ ],
+ "caveats": [
+  "Assuming forward/spot arbitrage is freely available to any trader \u2014 it is gated by physical storage access"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "25-25"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 8,
+   "topic": "Natural gas forward vs. spot market behavior and the storage arbitrage limit"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

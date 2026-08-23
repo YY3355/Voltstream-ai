@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Carbon capture and sequestration",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Carbon Capture",
+ "definition": "The physical process of capturing CO2 from fossil-fuel combustion exhaust and storing it underground rather than releasing it to the atmosphere.",
+ "core_idea": "Because burning hydrocarbons unavoidably produces CO2 (breaking carbon chains into atoms that bond with oxygen releases the heat), the only way to keep that CO2 out of the atmosphere is to capture it at the plant and store it in depleted gas wells or water reservoirs, using infrastructure similar to natural gas storage.",
+ "key_points": [
+  "Combustion breaks long hydrocarbon chains into single carbon atoms that combine with oxygen; this reaction is what releases heat, so CO2 formation cannot be avoided while burning hydrocarbon fuels.",
+  "Carbon sequestration captures CO2 at the power plant and stores it in a depleted natural gas well or a water reservoir.",
+  "Carbon storage facilities are structurally similar to natural gas storage facilities, just storing CO2 instead of methane."
+ ],
+ "relationships": [
+  "Feeds into carbon offset/credit creation used to hedge cap-and-trade exposure"
+ ],
+ "trading_implications": [
+  "Sequestration capacity can be a source of manufactured emissions credits/offsets"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "271"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 0,
+   "topic": "Carbon capture and sequestration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

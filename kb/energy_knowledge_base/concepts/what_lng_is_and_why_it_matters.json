@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "What LNG Is and Why It Matters",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "LNG Fundamentals",
+ "definition": "LNG is natural gas (methane) that has been cooled to roughly -260\u00b0F at normal atmospheric pressure so it condenses into a liquid, shrinking its volume to about 1/610th of the gaseous form.",
+ "core_idea": "Because liquefied gas takes up so much less space, it can be economically loaded onto tanker ships and moved to places pipelines don't reach, turning a pipeline-bound commodity into something that can be shipped like oil.",
+ "key_points": [
+  "Cooling to about -260\u00b0F at standard atmospheric pressure liquefies methane.",
+  "Liquefaction cuts the gas's volume to roughly 1/610th of its gaseous volume.",
+  "The compactness is what makes ship-based transport and non-traditional storage viable.",
+  "Small-scale (e.g., truck-based) LNG transport is still not cost-effective; the economics work at cargo-ship scale."
+ ],
+ "relationships": [
+  "Enables global LNG trade",
+  "Enables LNG-based peak shaving storage"
+ ],
+ "trading_implications": [
+  "LNG lets producers reach overseas markets rather than being limited to whatever a pipeline connects to."
+ ],
+ "caveats": [
+  "Small-scale/local LNG transport is not automatically cost-effective just because the gas is compact \u2014 ship-scale volumes are what make the economics work."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "539-540"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 0,
+   "topic": "What LNG Is and Why It Matters"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Off-Peak to Peak Price Ratio as a Storage Valuation Input",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "A rule-of-thumb relationship between overnight (off-peak) and peak power prices that can be used to estimate storage value, noting that this ratio is seasonal rather than fixed.",
+ "core_idea": "In many regions overnight power is roughly half the price of peak power on a typical basis, but the ratio shifts by month \u2014 summer afternoons see peak prices spike from air-conditioning demand while nighttime prices stay comparatively stable, narrowing the share of energy used at night.",
+ "key_points": [
+  "Overnight power described as 'about 50 percent' the price of peak power in many regions \u2014 presented as an illustrative typical figure, not a universal constant.",
+  "The ratio varies by month (illustrated in the source's Figure 4.8.5).",
+  "Summer peak prices spike due to air-conditioning demand on hot days; nighttime prices remain relatively stable.",
+  "This relationship could underlie a model that estimates peak prices from marginal fuel costs and then derives off-peak price estimates from those."
+ ],
+ "relationships": [
+  "peak/off-peak price spread",
+  "marginal fuel pricing",
+  "seasonal demand shape"
+ ],
+ "trading_implications": [
+  "Storage valuation models using this ratio should account for month-to-month variation rather than applying one fixed ratio year-round."
+ ],
+ "caveats": [
+  "Treating the ~50% off-peak/peak ratio as a fixed constant rather than a seasonally varying approximation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "483"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 2,
+   "topic": "Off-Peak to Peak Price Ratio as a Storage Valuation Input"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

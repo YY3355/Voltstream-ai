@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Mid-Atlantic region and PJM ISO",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Eastern Interconnection",
+ "definition": "PJM ISO originated as one of the first independent power grids in the densely populated mid-Atlantic region (Washington D.C., Baltimore, Philadelphia) and has since expanded well beyond its founding states.",
+ "core_idea": "Named for its original member states (Pennsylvania, New Jersey, Maryland), PJM has grown to include West Virginia, Delaware, large parts of Ohio, parts of northern Illinois, and Virginia, making it one of the largest and most liquid electricity markets, with several active internal trading hubs.",
+ "key_points": [
+  "Mid-Atlantic region includes major population centers: Washington D.C., Baltimore, Philadelphia",
+  "PJM ISO was one of the first independent power grids, named for Pennsylvania, New Jersey, and Maryland",
+  "PJM has expanded to include West Virginia, Delaware, large parts of Ohio, parts of northern Illinois, and Virginia",
+  "PJM is one of the largest and most liquid electricity markets, with a number of active trading hubs"
+ ],
+ "relationships": [
+  "Eastern Interconnect structure: RTO/ISOs and regulated utilities"
+ ],
+ "trading_implications": [
+  "PJM's size and liquidity make it a core reference market for Eastern Interconnect power trading strategies"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "205-206"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 9,
+   "topic": "Mid-Atlantic region and PJM ISO"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

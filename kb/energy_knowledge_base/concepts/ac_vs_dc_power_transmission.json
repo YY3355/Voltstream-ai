@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "AC vs. DC power transmission",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission",
+ "definition": "AC (alternating current) and DC (direct current) are the two ways electrical energy propagates through a wire: DC moves via the physical drift of electrons, AC moves via an electromagnetic shockwave created by oscillating the field.",
+ "core_idea": "AC dominates modern transmission because its voltage is easy to step up or down, but it requires all generators on a grid to oscillate in precise synchronization, whereas DC avoids synchronization but suffers voltage drop past each load point, making grid-wide voltage hard to predict.",
+ "key_points": [
+  "Both AC and DC are created by placing a conductive wire in an electromagnetic field, pushing electrons from the negative to positive side.",
+  "DC power is the direct motion of electrons down the wire.",
+  "AC power is an electromagnetic shockwave (created by electron collisions when the field/charge oscillates) that propagates much faster than individual electrons move.",
+  "AC's advantage: voltage is easy to scale up or down, simplifying transmission system design.",
+  "AC's challenge: every generator on the grid must oscillate in exact synchrony, or shockwaves from different generators collide and cancel out; this synchronization problem grows harder as more generators are added.",
+  "DC's issue: voltage declines on the line after each point where power is drawn off, making voltage hard to predict across a grid with variable demand.",
+  "DC's advantage: DC generators don't need to synchronize with other power plants."
+ ],
+ "relationships": [
+  "Underlies why real-world grids (including ERCOT) are AC systems requiring frequency synchronization."
+ ],
+ "trading_implications": [
+  "Not directly a trading mechanic, but explains a physical constraint (synchronization) behind grid reliability events that can drive price volatility."
+ ],
+ "caveats": [
+  "AC power is not the electrons themselves moving long distances \u2014 it's a shockwave/electromagnetic wave propagating through the electrons, which is why it travels far faster than electron drift speed."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "31-32"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 4,
+   "topic": "AC vs. DC power transmission"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

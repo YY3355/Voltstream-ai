@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Volatility Term Structure: Spot Markets Are More Volatile Than Distant Forward Contracts",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Volatility Structure",
+ "definition": "Nearby (short-dated) futures/forward contracts exhibit higher volatility than contracts further from expiration, because near-term prices are driven by short-term, fast-moving supply and demand shifts, while distant forward prices are shaped mainly by longer-run seasonal expectations.",
+ "core_idea": "Volatility decreases the further out a contract's expiration is, since near-dated prices reflect immediate, hard-to-predict local conditions while far-dated prices reflect more stable seasonal/macro views.",
+ "key_points": [
+  "The 1st (nearest) contract month is the most volatile, with volatility declining for the 2nd, 3rd, etc. months out, per the source's referenced diagram.",
+  "Driver of the effect: spot/near-term prices respond to volatile short-term supply-demand variation; distant forward prices respond to steadier seasonal expectations."
+ ],
+ "relationships": [
+  "Forward market mechanics and its volatility-reducing role",
+  "Local fragmentation and volatility of spot markets"
+ ],
+ "trading_implications": [
+  "When assessing price risk, expect nearer-dated positions to carry materially more volatility exposure than longer-dated ones."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "78"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 3,
+   "topic": "Volatility Term Structure: Spot Markets Are More Volatile Than Distant Forward Contracts"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

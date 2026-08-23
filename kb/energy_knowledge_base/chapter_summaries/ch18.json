@@ -1,0 +1,7 @@
+{
+ "chapter": 18,
+ "title": "4.3 TOLLING AGREEMENTS",
+ "n_concepts": 8,
+ "summary": "Tolling agreements are valued leg by leg, with each monthly period referenced to the actual forward power blocks traded in its local market and paired with its own time- and location-specific electricity and fuel prices, since power can't be stored or moved freely across periods. Within a plant, turbine dispatch is simplified into a handful of operating scenarios rather than optimized unit by unit, and because some units can't be cheaply cycled, day and night scenarios often must be valued together; the plant's physical characteristics also shape how granular and structured the model needs to be. Underlying all of this, the correlation between fuel and power prices is the main driver of the deal's value, while the spread between them \u2014 and how much it can vary before expiration \u2014 determines the expected profit, calculated by averaging the profitable outcomes and scaling by plant size.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

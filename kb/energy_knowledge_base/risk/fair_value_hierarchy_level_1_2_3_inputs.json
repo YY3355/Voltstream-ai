@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Fair value hierarchy (Level 1 / 2 / 3 inputs)",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "A three-tier classification (ASC 820 / IFRS 13) of the inputs used to value assets and liabilities, ranging from highly observable exchange prices to unobservable, illiquid-market estimates.",
+ "core_idea": "Because fair value must be estimated even for illiquid positions lacking regular pricing, accounting standards require firms to disclose how liquid/observable their valuation inputs are, using a three-level input hierarchy; an asset's own level classification is set by the least-observable input it relies on.",
+ "key_points": [
+  "Level 1 inputs are highly observable \u2014 typically prices taken directly from an exchange.",
+  "Level 2 inputs are more subjective, often arising from fragmented markets where trading activity is spread across multiple venues.",
+  "Level 3 inputs are unobservable, associated with markets that have limited liquidity.",
+  "A security is classified as level 1 if it's valued exclusively with level 1 inputs.",
+  "A security is level 2 if it uses a combination of level 1 and level 2 inputs.",
+  "A security is level 3 if it incorporates at least one level 3 input \u2014 i.e., the classification is driven by the least-liquid input used, not the majority of inputs."
+ ],
+ "relationships": [
+  "Exists because exit price only requires an orderly market (not an active one), so many positions must be valued without regular market pricing \u2014 the hierarchy standardizes how that uncertainty is disclosed to shareholders."
+ ],
+ "trading_implications": [
+  "A single unobservable (level 3) input pulls the entire security's classification down to level 3, even if every other input is level 1 \u2014 firms should be aware one illiquid component can drive the disclosed valuation uncertainty for an otherwise liquid instrument."
+ ],
+ "caveats": [
+  "Level classification is not an average or majority vote across inputs \u2014 using even one level 3 input makes the whole security level 3."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "554-555"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_002.json",
+   "idx": 4,
+   "topic": "Fair value hierarchy (Level 1 / 2 / 3 inputs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

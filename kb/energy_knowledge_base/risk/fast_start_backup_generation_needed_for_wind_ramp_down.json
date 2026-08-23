@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Fast-start backup generation needed for wind ramp-down",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Wind Power \u2014 Transmission & Grid Integration",
+ "definition": "Because regional wind output can also drop off simultaneously across many turbines, the grid needs backup generation capable of starting and stopping very quickly to replace that lost output.",
+ "core_idea": "When wind stops blowing across a region, many turbines can stop producing at once, forcing the grid to bring fast-start backup generation on- and off-line quickly; balancing is harder if that backup generation isn't located near the wind farms, since wind units themselves are typically sited in remote areas while fast-start units usually are not.",
+ "key_points": [
+  "Wind output can fall off simultaneously across many turbines in a region when wind conditions change.",
+  "This requires backup (fast-start) generation to rapidly come on- and off-line to offset the loss.",
+  "Fast-start generators are typically not located in the same remote areas as wind farms, which complicates balancing power flows across the grid."
+ ],
+ "relationships": [
+  "Grid balancing/reserves requirements",
+  "Transmission overload risk from correlated wind ramp-up"
+ ],
+ "trading_implications": [
+  "Wind's simultaneous ramp-down risk supports the case for flexible, quick-response capacity (e.g., fast-start gas peakers or battery storage) sited to help balance the grid when wind output drops."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "468-468"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_001.json",
+   "idx": 4,
+   "topic": "Fast-start backup generation needed for wind ramp-down"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

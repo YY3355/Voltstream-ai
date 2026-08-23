@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Option payoffs are asymmetric, which links option value to volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options",
+ "definition": "Because an option's payout is asymmetric (the buyer's downside is capped while upside is not), the buyer and seller of an option are affected differently by volatility.",
+ "core_idea": "A large price move, even one with equal odds of going up or down, benefits an option buyer more than it benefits the seller, since the buyer's losses are capped but gains are not \u2014 so buyers want volatility and sellers want price stability.",
+ "key_points": [
+  "Option payoffs are asymmetric: the buyer's potential loss is limited (to the premium paid), but potential profit is not",
+  "A 50/50 chance of a big move still favors the option buyer over the seller because of this asymmetry",
+  "Option buyers benefit from large price moves in either direction; option sellers benefit when prices stay stable"
+ ],
+ "relationships": [
+  "Underpins why volatility is priced into options, connecting to the Greeks (esp. Vega) discussed next"
+ ],
+ "trading_implications": [
+  "Sellers of options need to be compensated through premium for taking on volatility exposure",
+  "Volatility itself becomes a distinct, tradable risk factor separate from price direction"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "46-49"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_007.json",
+   "idx": 0,
+   "topic": "Option payoffs are asymmetric, which links option value to volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

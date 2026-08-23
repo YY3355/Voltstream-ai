@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Physical control of nuclear reaction speed (fuel shape and control rods)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Beyond enrichment level, a reactor's fuel geometry and graphite control rods are used to physically govern how fast the fission chain reaction proceeds.",
+ "core_idea": "Fuel shaped as a flat sheet (rather than a compact ball) lets more radiation escape and slows the reaction, while graphite control rods can be inserted to absorb radiation and further throttle fission speed \u2014 a power plant wants slow/controlled fission, a weapon wants fast/maximal fission.",
+ "key_points": [
+  "A weapon wants fuel shaped into a ball to maximize chain-reaction speed.",
+  "A power plant wants fuel shaped into a flat sheet so energy escapes from the top and bottom, reducing chain-reaction speed.",
+  "Graphite control rods fine-tune fission speed by absorbing radiation before it can trigger fission in another atom.",
+  "Control rods can be inserted into the reactor chamber to slow down the reaction."
+ ],
+ "relationships": [
+  "Fuel shape and control rods are complementary, independent levers (along with enrichment %) for managing reaction speed."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Reaction speed control isn't just about enrichment percentage \u2014 physical fuel geometry and control rods are separate, additional mechanisms."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "473-473"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 1,
+   "topic": "Physical control of nuclear reaction speed (fuel shape and control rods)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

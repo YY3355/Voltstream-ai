@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Formation and trapping of natural gas",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Geology / Exploration",
+ "definition": "Natural gas forms from decaying organic material and becomes economically recoverable only when an impermeable rock layer prevents the resulting methane from escaping to the surface.",
+ "core_idea": "Methane is a common byproduct of decomposing organic matter; it normally disperses into the atmosphere, but when trapped beneath impermeable rock it accumulates underground, dispersed through small connected pores rather than pooling in an open cavern.",
+ "key_points": [
+  "Natural gas is often found dissolved in oil fields, coal beds, and underground rock formations.",
+  "Underground deposits can be millions of years old, but methane can also form quickly from modern decomposing waste (e.g., landfills).",
+  "Trapped gas typically resides dispersed in small holes of a porous rock layer, not in a large open cavity.",
+  "Exploration targets a permeable rock layer sitting beneath an impermeable cap layer, since gas must be able to flow toward a well to be extracted."
+ ],
+ "relationships": [
+  "Porosity and permeability determine recoverability",
+  "Reservoir pressure determines extraction rate"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "That underground gas deposits are large open caves rather than gas dispersed through porous rock."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "138"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 2,
+   "topic": "Formation and trapping of natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

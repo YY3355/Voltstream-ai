@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "WTI Crude Oil",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Crude Oil",
+ "definition": "West Texas Intermediate (WTI) is a premium, light, sweet crude oil that yields a high proportion of valuable light petroleum products via simple distillation.",
+ "core_idea": "WTI is the most widely used benchmark for U.S. crude oil prices because its light, sweet quality makes it especially efficient to refine into higher-value products.",
+ "key_points": [
+  "WTI is a light, sweet crude oil.",
+  "Simple distillation of WTI produces a high proportion of valuable light petroleum products.",
+  "It is the most common benchmark used for U.S. crude oil prices."
+ ],
+ "relationships": [
+  "Serves as the crude oil source from which the fuel oil grades (heavy oil, kerosene, gasoline/RBOB) are ultimately distilled."
+ ],
+ "trading_implications": [
+  "Its role as the primary U.S. benchmark makes WTI prices a key reference point for pricing other U.S. crude and refined product contracts."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "245-245"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_006.json",
+   "idx": 3,
+   "topic": "WTI Crude Oil"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

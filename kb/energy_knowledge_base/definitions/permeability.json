@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Permeability",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Geology",
+ "definition": "Permeability describes how interconnected a rock's pores are, i.e., how easily fluid can move through the rock structure.",
+ "core_idea": "A rock can be porous without being permeable, since porosity measures the amount of void space while permeability measures whether those voids connect enough to let gas or liquid flow through.",
+ "key_points": [
+  "Permeability is typically assessed by how readily a liquid passes through the porous material.",
+  "Example given by the author: a foam coffee cup is highly porous (trapped air insulates well) but has low permeability (liquid doesn't leak through)."
+ ],
+ "relationships": [
+  "Porosity",
+  "Hydraulic fracturing (used to increase permeability)"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Confusing porosity (amount of holes) with permeability (connectivity between holes) \u2014 they are independent properties."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "139"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 5,
+   "topic": "Permeability"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

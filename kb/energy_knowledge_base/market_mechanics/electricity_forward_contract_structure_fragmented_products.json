@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Electricity forward contract structure (fragmented products)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Trading Products",
+ "definition": "How electricity forward contracts are structured given that power demand is cyclical by time of day, month, and location.",
+ "core_idea": "There is no single uniform 'electricity' commodity \u2014 forwards are traded as hundreds of distinct products differentiated by delivery location, month or season, and time of day (day vs. night), and contracts are normally sized to a full month.",
+ "key_points": [
+  "Forward contracts are typically structured for delivery across an entire month",
+  "Contracts are commonly split into daytime and nighttime blocks within a month",
+  "Example products cited: August daytime power at Cinergy Hub, January nighttime power for delivery in Southern California",
+  "The cyclical nature of demand (time-of-day, seasonal) is why the market fragments into many separately traded products by location, month/season, and time of day"
+ ],
+ "relationships": [
+  "Peak/off-peak hour definitions and shorthand notation"
+ ],
+ "trading_implications": [
+  "Traders must think in terms of location + month + peak/off-peak block rather than a single fungible electricity price",
+  "Cinergy Hub and SP15/SoCal are cited as example delivery points for month/day-night structured products"
+ ],
+ "caveats": [
+  "Treating electricity as a single commodity consistent throughout the year is incorrect \u2014 it is really hundreds of distinct location/time-differentiated products"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "184-185"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 3,
+   "topic": "Electricity forward contract structure (fragmented products)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

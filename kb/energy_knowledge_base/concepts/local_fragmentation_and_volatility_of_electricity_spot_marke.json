@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Local Fragmentation and Volatility of Electricity Spot Markets",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Spot Markets",
+ "definition": "Electricity spot markets are inherently local: because power must be delivered the instant it is demanded and cannot be substituted from a different geographic location without pre-arranged transmission, the market fractures into many separate local spot markets, each with its own rules and its own supply/demand balance.",
+ "core_idea": "Because actual demand isn't known in advance and supply has to be arranged ahead of time, an unexpected shift in local demand easily produces a shortage or glut, making local spot prices highly volatile and largely disconnected from neighboring markets.",
+ "key_points": [
+  "Consumers can draw power on demand at any time; the utility must meet it instantly with no ability to substitute power sourced elsewhere.",
+  "Because supply commitments must be arranged in advance, an unexpected demand swing can create a local shortage or surplus.",
+  "Each local spot market sets its own price from local supply and demand, so spot prices can be extremely volatile.",
+  "A price spike in one region (e.g., an unplanned plant outage forcing expensive backup generation) does not necessarily spread to a nearby region if real-time power transfer between the two is not possible \u2014 the two markets can move independently."
+ ],
+ "relationships": [
+  "Contrasts with forward-market pricing, which is driven by macroeconomics rather than short-term local imbalances",
+  "Related to regulated vs. deregulated market structure"
+ ],
+ "trading_implications": [
+  "Traders cannot assume price moves in one power market imply similar moves in an adjacent market; correlation across regions depends on whether real-time transfer capacity exists between them."
+ ],
+ "caveats": [
+  "It is tempting to assume nearby markets move together the way liquid, transportable commodities do; for electricity this is often false because it cannot be moved/stored freely."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "77-78"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 0,
+   "topic": "Local Fragmentation and Volatility of Electricity Spot Markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

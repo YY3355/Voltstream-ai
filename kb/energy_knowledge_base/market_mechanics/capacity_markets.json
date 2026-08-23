@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Capacity markets",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Resource Adequacy",
+ "definition": "Markets that pay generators (a 'capacity payment') to commit to remaining available for a future operating period, ensuring the grid has enough resources to meet demand years ahead.",
+ "core_idea": "A capacity market typically runs an annual auction several years before the target operating period; winning generators commit to being operational through that period in exchange for a capacity payment, which gives grids forward visibility into resource adequacy and gives generators a stable revenue stream even if they run infrequently.",
+ "key_points": [
+  "A typical capacity market holds an annual auction, held years in advance of the operating period being secured.",
+  "Winners commit to stay operational through the covered period in exchange for a capacity payment.",
+  "Capacity payments incentivize new construction and discourage owners from retiring underutilized generation units.",
+  "Capacity markets provide a stable revenue stream for resources that mainly serve peak demand and otherwise run infrequently."
+ ],
+ "relationships": [
+  "Alternative/complement to relying on energy price spikes to fund peaking capacity."
+ ],
+ "trading_implications": [
+  "Owners of peaking or seasonal generation can rely on capacity payments as a revenue floor, distinct from energy market revenue."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "495-497"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 6,
+   "topic": "Capacity markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

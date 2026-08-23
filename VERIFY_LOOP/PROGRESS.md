@@ -29,8 +29,15 @@ listed in excluded_from_pass3.json. Recomputed from _validation each run (re-run
       0 error scars (3 transient rc=1 retried OK on resume). Flag rate 8/24 = 33% (== ~1/3 pilot baseline;
       circuit-breaker not tripped). 4 contradictions. 8 flagged objects -> synth-review queue (Option A).
       707 singletons still to fold in as pass-through canonical objects in T4. ✔
-- [ ] 4 — STRUCTURE + OUTPUTS: energy_knowledge_base/ layout + taxonomy/concept_graph/contradictions. Counts
-      reconcile; 5 random re-checked.
+- [x] 4 — STRUCTURE + OUTPUTS. kb_structure.py assembles kb/energy_knowledge_base/: 733 canonical objects
+      (24 merged + 709 singleton pass-throughs) routed to typed folders (concepts 291, definitions 156,
+      market_mechanics 131, risk 83, formulas 28, trading_implications 23, examples 21). taxonomy.json;
+      concept_graph.json (733 nodes, 280 edges — ALL from objects' stated relationships, none invented,
+      spot-checked real); contradictions_review.md (4, recorded-not-resolved). 34 chapter_summaries/
+      (rewritten orientation, LLM) — fresh-eyes subagent verified ch05/16/20/30 inject no new claims.
+      RECONCILE: 857 trusted in == 857 contributing items out (nothing lost); 857 trusted + 54 excluded
+      = 911. Provenance re-checked on 5 random objects (source_refs + contributing_items + formula sources
+      all present). ✔
 - [ ] 5 — REPORT PDF: canonical count, merge stats, top-10 by source breadth, contradictions, excluded count,
       honest caveat (queue open, Pass 5-6 + Co-Pilot NOT built).
 

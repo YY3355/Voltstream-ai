@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Extending replication pricing over multiple periods",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Methodology",
+ "definition": "Multi-period binomial option pricing extends the one-period replication method by building a full price tree for the underlying, computing option values at the nodes nearest expiration first, and then working backward node by node to derive today's option value.",
+ "core_idea": "Multi-period binomial pricing uses backward induction: option values are first known at expiration, and each earlier period's value is found by replicating (duplicating) the already-computed values one step later, repeating until the current period's price is reached.",
+ "key_points": [
+  "Step 1: build a multi-period price tree for the underlying",
+  "Step 2: calculate option values at the nodes closest to the option's expiration date",
+  "Step 3: walk backward through the tree, computing each earlier period's option value by duplicating the next period's already-known values",
+  "The time step between tree periods can be made arbitrarily small \u2014 day, hour, or even minute increments",
+  "In practice, daily or weekly steps are generally sufficient to build a robust binomial tree"
+ ],
+ "relationships": [
+  "Extension of the one-period arbitrage-free replication method; precursor to the Black-Scholes formula as time steps shrink toward continuous time"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "358-359"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 6,
+   "topic": "Extending replication pricing over multiple periods"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

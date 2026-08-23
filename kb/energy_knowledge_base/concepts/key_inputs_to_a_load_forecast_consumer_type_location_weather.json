@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Key inputs to a load forecast: consumer type, location, weather, calendar effects",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Load forecasts are built for bounded geographic areas (from neighborhoods up to multi-state regions), and the boundary chosen determines what mix of consumer types and what climate the model must account for; the author identifies consumer type, location, weather, and calendar effects as the most important forecasting factors.",
+ "core_idea": "The geographic scope of a load forecast is what defines the 'spatial' part of spatial load forecasting, since it fixes both the consumer mix and the climate the model needs to represent.",
+ "key_points": [
+  "Forecast areas can range in size from a neighborhood to a multi-state region.",
+  "The chosen boundary determines the consumer types present and the general climate of the region.",
+  "Consumer type, location, weather, and calendar effects are called out as among the most important factors in a load forecast."
+ ],
+ "relationships": [
+  "Defines the spatial component referenced in 'spatial load forecasting'"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "391"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 5,
+   "topic": "Key inputs to a load forecast: consumer type, location, weather, calendar effects"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

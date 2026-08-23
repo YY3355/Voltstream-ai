@@ -1,0 +1,7 @@
+{
+ "chapter": 22,
+ "title": "4.7 NUCLEAR POWER",
+ "n_concepts": 13,
+ "summary": "Nuclear power generates electricity through the same basic steam-turbine process as fossil fuel plants, but derives its heat from fission rather than combustion, which shapes both its environmental profile and its logistical constraints. The fuel itself must be sourced through an extended cycle \u2014 mined, milled, converted, and enriched to a level suited for power (as distinct from weapons) use, with reaction speed then managed through fuel geometry and control rods, and an alternative thorium-based path also exists. This process yields no combustion emissions but produces concentrated radioactive waste requiring dedicated handling, and it carries proliferation risk since civilian enrichment closely resembles weapons-grade production. Structurally, nuclear plants share coal's large-scale, centralized siting and long-distance transmission needs, and because fuel must still be imported, nuclear does not resolve a country's underlying fuel-dependency problem.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Cash transactions, futures, swaps, and forwards defined",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Contract Types",
+ "definition": "The four core energy trade types are cash (spot) transactions and three forms of forward-price contracts \u2014 futures, swaps, and forwards \u2014 distinguished by where they trade and how they settle.",
+ "core_idea": "Cash trades exchange a physical commodity for cash immediately; futures, swaps, and forwards all fix a price today for a transaction at a future date, differing mainly in whether they trade on an exchange or OTC and whether they settle financially or physically.",
+ "key_points": [
+  "Cash (spot) transaction: exchange of cash for immediate delivery of a physical commodity; 'immediate' is commodity-specific (e.g., within the current month for oil, within the day for natural gas).",
+  "Futures: standardized contracts traded on an exchange; result in physical delivery if held to expiration.",
+  "Commodity swap: economically a futures or forward contract, but cash-settled rather than physically delivered; traded OTC.",
+  "Forward: negotiated directly between two counterparties (not on an exchange); results in physical delivery, like a future.",
+  "Swap is a term that means something different in other financial markets (e.g., bonds); in energy markets it specifically denotes a cash-settled forward/futures-equivalent.",
+  "Although forwards are theoretically more customizable than futures since they're individually negotiated, in practice they tend to be nearly as standardized as futures."
+ ],
+ "relationships": [
+  "Futures = exchange-traded + physically settled; forwards = OTC + physically settled; swaps = OTC + cash settled."
+ ],
+ "trading_implications": [
+  "Choice between futures, forwards, and swaps often comes down to whether physical delivery or cash settlement is desired and whether exchange standardization suffices."
+ ],
+ "caveats": [
+  "Assuming 'swap' means the same thing in energy markets as in other markets like bonds \u2014 in energy trading it specifically refers to a cash-settled contract."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "90-91"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_004.json",
+   "idx": 1,
+   "topic": "Cash transactions, futures, swaps, and forwards defined"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

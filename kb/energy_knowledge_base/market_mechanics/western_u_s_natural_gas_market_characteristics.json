@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Western U.S. natural gas market characteristics",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets",
+ "definition": "The Western U.S. natural gas market is geographically isolated by the Rocky Mountains, heavily dependent on gas for electricity, weakly linked to Henry Hub pricing, and constrained by very limited storage.",
+ "core_idea": "Western gas demand is driven by hot-summer air conditioning load and competes with/depends on Pacific Northwest hydropower, while California's import-heavy market and the region's minimal storage capacity make prices prone to sharp swings and largely decoupled from NYMEX/Henry Hub basis.",
+ "key_points": [
+  "The Rocky Mountains separate the Western U.S. gas market from the rest of the country.",
+  "Electrical generators across the region rely on natural gas as a primary fuel; demand is especially high in the hot southern West Coast summers for air conditioning.",
+  "Hydroelectric power from the Pacific Northwest is the major competing power source, so precipitation and snowmelt can significantly affect regional gas prices during peak demand.",
+  "Most of the region has mild winters.",
+  "California is the largest natural gas user in the region and trading there centers on imports from Canada and the Desert Southwest.",
+  "Storage capacity in the region is extremely limited, which can cause sharp price movements during peak demand.",
+  "Western basis prices are not highly correlated with NYMEX (Henry Hub) futures because the region doesn't directly import gas from the Gulf Coast.",
+  "Substantial gas production occurs east of the Rockies (Wyoming, Utah, Colorado), but most of that gas flows to the Midwest rather than to West Coast population centers."
+ ],
+ "relationships": [
+  "Illustrates the basis price concept and the weak cross-location correlation discussed for the spot market."
+ ],
+ "trading_implications": [
+  "Western basis trades should be modeled against regional hydro conditions and import flows rather than assuming a stable Henry Hub linkage.",
+  "Limited storage means Western price spikes during peak demand periods can be sharper and less predictable than in better-stored regions."
+ ],
+ "caveats": [
+  "Assuming Western basis moves in step with Henry Hub the way better-connected regions do."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 7,
+   "topic": "Western U.S. natural gas market characteristics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

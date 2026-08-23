@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Premium crude oil",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Crude oil quality grading",
+ "definition": "Premium crude is a grade of crude oil that yields a high proportion of lighter, more valuable products through simple distillation alone, and commands a higher price than lower-quality crude as a result.",
+ "core_idea": "Because the actual product mix from crude oil varies by source, crude that naturally distills into a high share of light (valuable) products is labeled premium and priced higher than crude lacking that composition.",
+ "key_points": [
+  "Every barrel of crude oil contains a different underlying mix of raw materials, so actual refined output varies substantially from the 'typical' mix.",
+  "Premium crude converts into a high proportion of lighter products via simple distillation.",
+  "Premium crude oils are priced higher than lower-quality crude oil."
+ ],
+ "relationships": [
+  "Premium crude designation relates to, but is described separately from, the light/heavy (API gravity) and sweet/sour classifications"
+ ],
+ "trading_implications": [
+  "Crude grade differentials in pricing partly reflect how 'premium' (light-product-rich) a given crude's natural distillation yield is."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "223-224"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 11,
+   "topic": "Premium crude oil"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

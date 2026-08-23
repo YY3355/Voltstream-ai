@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Volatility as a measure of trading risk",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Statistics",
+ "definition": "Volatility is the trading term for how much an asset's price is likely to swing between two points in time, formally the standard deviation of continuously compounded returns.",
+ "core_idea": "Traders use volatility purely as a measure of price dispersion/risk, not as a judgment of whether a trade is good or bad \u2014 a highly volatile asset is one whose price moves a lot, regardless of direction or quality.",
+ "key_points": [
+  "Volatility is mathematically defined as the standard deviation of continuously compounded returns.",
+  "High volatility means large price swings are common, not that the asset is a good or bad investment.",
+  "Much of trading vocabulary borrows from statistics, and volatility is one of the two most important imported terms."
+ ],
+ "relationships": [
+  "Correlation is the other core statistical concept traders borrow",
+  "Volatility underlies option pricing and the long/short volatility framing of option positions"
+ ],
+ "trading_implications": [
+  "Traders separate 'how risky/volatile' from 'how good' a position is \u2014 the two are independent judgments."
+ ],
+ "caveats": [
+  "Assuming volatility describes investment merit rather than just price dispersion risk."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "42-43"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 0,
+   "topic": "Volatility as a measure of trading risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

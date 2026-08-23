@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Southeast U.S. natural gas market structure",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets - Southeast",
+ "definition": "A profile of the southeastern U.S. natural gas market, defined by summer-peaking electricity-driven demand, very limited storage, and emerging LNG export/storage infrastructure.",
+ "core_idea": "The rural, agricultural Southeast uses gas mainly for electricity generation, with demand peaking in summer due to air-conditioning load rather than winter heating, and has very little storage capacity, though new LNG terminals are being built to add export capacity and serve as storage.",
+ "key_points": [
+  "Natural gas is used primarily to generate electricity in the Southeast, with demand peaking in summer as hot weather drives air-conditioning load.",
+  "Mild winters limit residential heating demand for gas.",
+  "The region has very limited storage capacity.",
+  "LNG terminals under construction (e.g., Elba Island) are intended both to export natural gas and to provide additional storage facilities for the region."
+ ],
+ "relationships": [
+  "Regional demand seasonality (summer peak vs. winter peak) is set by the dominant end use of gas (power generation for cooling vs. heating)."
+ ],
+ "trading_implications": [
+  "Very limited storage combined with summer-peaking demand suggests the Southeast is prone to tighter summer balances and potential price spikes during peak cooling demand.",
+  "New LNG terminal capacity (export + storage) is likely to change the region's supply-demand balance and basis dynamics going forward."
+ ],
+ "caveats": [
+  "Assuming all U.S. regions peak in winter demand for gas; the Southeast (like Texas/Gulf Coast) instead peaks in summer because of air-conditioning-driven power demand."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "167-168"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_006.json",
+   "idx": 3,
+   "topic": "Southeast U.S. natural gas market structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

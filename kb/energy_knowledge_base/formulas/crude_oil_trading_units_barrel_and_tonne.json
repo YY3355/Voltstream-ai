@@ -1,0 +1,60 @@
+{
+ "canonical_topic": "Crude oil trading units: barrel and tonne",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Units and Conversions",
+ "definition": "Crude oil is traded by volume (barrels) in the U.S. and by weight (tonnes) in Europe, with an approximate conversion between the two that varies by crude type.",
+ "core_idea": "Because different crude oils have different densities, there is no single exact barrel-to-tonne conversion factor \u2014 it must be looked up per crude type, ranging roughly from 7.2 (Persian Gulf) to 7.5 (premium light crude like WTI/Brent) barrels per tonne.",
+ "key_points": [
+  "1 barrel = 42 U.S. gallons \u2248 159 liters.",
+  "1 tonne (metric ton) = 1,000 kg \u2248 2,204.6 lbs.",
+  "Rough rule of thumb: ~7.5 barrels per tonne of crude oil.",
+  "Actual ratio depends on crude composition/density: ~7.2 bbl/tonne for Persian Gulf crude up to ~7.5 bbl/tonne for premium light crude (WTI, Brent)."
+ ],
+ "relationships": [
+  "Crude oil density/quality classification"
+ ],
+ "trading_implications": [
+  "Converting volumes between U.S. (barrel-quoted) and European (tonne-quoted) markets requires using the correct crude-specific ratio, not a single universal constant."
+ ],
+ "caveats": [
+  "Assuming one fixed barrels-per-tonne number applies to all crude oils \u2014 the author states the ratio varies with crude composition."
+ ],
+ "formulas": [
+  {
+   "name": "Approximate barrel-tonne conversion",
+   "formula": "1 tonne \u2248 7.2\u20137.5 barrels (crude-specific)",
+   "variables": {
+    "barrel": "42 US gallons / ~159 liters",
+    "tonne": "1,000 kg / ~2,204.6 lbs"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "35-36",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Common Units"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "35-36"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 4,
+   "topic": "Crude oil trading units: barrel and tonne"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

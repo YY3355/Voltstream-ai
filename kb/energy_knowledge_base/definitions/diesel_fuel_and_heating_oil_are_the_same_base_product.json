@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Diesel Fuel and Heating Oil Are the Same Base Product",
+ "type": "definition",
+ "category": "Oil & Petroleum Products",
+ "subcategory": "Refined Products",
+ "definition": "Diesel fuel and heating oil are both derived from the same petroleum distillate, No. 2 fuel oil, differing mainly in regulatory specifications rather than composition.",
+ "core_idea": "No. 2 fuel oil is sold either as diesel fuel or as heating oil; diesel has a stricter minimum pentane rating (diesel's analog to octane) and lower sulfur content, but otherwise the two are chemically and financially treated as nearly identical and interchangeable.",
+ "key_points": [
+  "Diesel and heating oil are both No. 2 fuel oil",
+  "Diesel requires a stricter minimum pentane rating (comparable to octane rating for gasoline) than heating oil",
+  "Diesel also requires lower sulfur content",
+  "Aside from these specs, the two products are nearly identical chemically and in financial markets, and used interchangeably",
+  "A large share of the consumer price of diesel comes from taxes, distribution, and marketing expenses, similar to gasoline",
+  "About 80% of No. 2 fuel oil is used as diesel fuel; the remainder is used for residential/commercial heating"
+ ],
+ "relationships": [
+  "Diesel's pentane rating parallels gasoline's octane rating"
+ ],
+ "trading_implications": [
+  "Diesel and heating oil prices move together since they are the same underlying product"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "231-232"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 1,
+   "topic": "Diesel Fuel and Heating Oil Are the Same Base Product"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

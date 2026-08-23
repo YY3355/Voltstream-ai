@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Nuclear power does not solve fuel import dependency",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Because uranium must still be mined and sourced from somewhere, nuclear power leaves a country just as fuel-dependent as fossil-fuel generation, undermining energy-independence arguments for nuclear.",
+ "core_idea": "Regional uranium reserves vary widely \u2014 North America has some uranium but far less than its coal reserves, while regions like Europe must import nearly all their nuclear fuel \u2014 so nuclear is not necessarily a path to energy independence.",
+ "key_points": [
+  "Uranium has to be mined from somewhere, making nuclear power just as fuel-dependent as fossil-fuel-fired generation.",
+  "North America has some uranium reserves, but they are much less extensive than its coal reserves.",
+  "Regions like Europe must import nearly all of their nuclear fuel.",
+  "Nuclear power is not necessarily the best approach for a country seeking energy independence."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Fuel-import dependency for nuclear generation is a geopolitical/supply-chain risk factor comparable to fossil fuel import dependency, relevant to long-run generation-mix and fuel-cost risk assessments."
+ ],
+ "caveats": [
+  "Nuclear power is sometimes assumed to guarantee energy independence because it doesn't burn imported fossil fuel directly, but the uranium fuel itself is often imported."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "474-475"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 5,
+   "topic": "Nuclear power does not solve fuel import dependency"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

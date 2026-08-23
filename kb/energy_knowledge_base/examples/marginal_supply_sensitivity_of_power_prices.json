@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Marginal supply sensitivity of power prices",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack / Price Formation",
+ "definition": "Because the generation stack is steep near the margin, even small changes in available supply can shift which unit is marginal and cause disproportionately large price moves.",
+ "core_idea": "A relatively small quantity of added or removed supply near the top of the stack can move the market clearing price by a large amount, since the marginal generators being displaced set the price for the whole market.",
+ "key_points": [
+  "During August 2005 in PJM, power prices were around $80/MWh.",
+  "A supply change of about 4,000 MWh was shown to move power prices by $10 or more (Figure 4.2.6), illustrating the steepness of the stack near the marginal generators active at that time."
+ ],
+ "relationships": [
+  "Directly follows from variable generation shifting the top of the generation stack."
+ ],
+ "trading_implications": [
+  "Small, seemingly minor changes in supply (e.g., from variable generation) can be a major driver of intraday price volatility."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "416"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_002.json",
+   "idx": 2,
+   "topic": "Marginal supply sensitivity of power prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Salt Cavern Storage Economics",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Storage - Salt Caverns",
+ "definition": "Salt caverns are the most profitable natural gas storage type because their fast injection and withdrawal speed lets operators capture short-term supply shortages and price spikes.",
+ "core_idea": "The speed at which gas can move in and out of storage is the key profit driver; salt caverns' rapid cycling \u2014 especially paired with a fast-starting gas turbine generator \u2014 lets a trader monetize brief spikes in gas and electricity prices.",
+ "key_points": [
+  "Fast insertion/removal lets salt caverns benefit from short-term shortages in gas supply.",
+  "Combining salt cavern storage with a fast-starting gas turbine generator lets a trader also capture short-term electricity price spikes."
+ ],
+ "relationships": [
+  "Builds on the equipment requirements described for salt cavern pressure/temperature."
+ ],
+ "trading_implications": [
+  "Salt caverns suit trading strategies targeting short-duration price volatility, in contrast to storage types limited to slower, purely seasonal arbitrage."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "532-533"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 2,
+   "topic": "Salt Cavern Storage Economics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

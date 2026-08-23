@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Production sharing contract",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "E&P Contract Structures",
+ "definition": "A contract structure where the exploration company gives the mineral rights owner a share of the physical fuel produced (rather than a cash royalty), leaving the owner responsible for selling or using that fuel.",
+ "core_idea": "Because the owner takes on the additional burden and risk of handling and marketing physical fuel themselves, a production sharing contract can yield the owner higher profits than a tax and royalty contract, but requires the owner to have the knowledge and capability to transact in physical energy.",
+ "key_points": [
+  "Owner receives a percentage of the physical fuel produced, not a cash royalty.",
+  "Owner must independently arrange to sell or use that fuel, requiring physical energy transaction capability.",
+  "Owner bears more risk than under a tax and royalty contract, which can translate into higher potential profit."
+ ],
+ "relationships": [
+  "Sits between tax and royalty (lower owner risk/reward) and full risk-bearing on the spectrum of E&P contract structures."
+ ],
+ "trading_implications": [
+  "Owners choosing production sharing take on commodity marketing/sales risk in addition to production-side risk, which only makes sense if they have the operational capacity to handle physical fuel."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "121-122"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 7,
+   "topic": "Production sharing contract"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

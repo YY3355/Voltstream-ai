@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Options trading as a zero sum game",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Market Structure",
+ "definition": "Options trading is zero sum: one trader's profit is exactly matched by another trader's loss, because option payments are direct transfers between counterparties rather than newly created value.",
+ "core_idea": "Because option gains come directly out of a counterparty's pocket rather than from broad value creation, sustainably profitable options trading requires being smarter or luckier than the people on the other side, and this Darwinian dynamic tends to push chronic losers out of the business.",
+ "key_points": [
+  "Option payoffs are direct transfers between the option writer and buyer; total gains equal total losses.",
+  "This differs from equities, where price appreciation \u2014 partly driven by broad economic growth \u2014 can create wealth for many holders at once.",
+  "Example given: if one seller trades a stock at $10 above the prior trade, the value of every outstanding share (e.g., one million shares) rises together, creating $10 million of wealth without a corresponding loser on that trade.",
+  "Stock markets can also fall broadly so that everyone loses together; neither market structure is inherently 'better,' just different.",
+  "Trading is described as Darwinian \u2014 traders who consistently lose money tend to be pushed out, leaving comparatively skilled or lucky survivors."
+ ],
+ "relationships": [
+  "option pricing",
+  "equity market pricing contrast"
+ ],
+ "trading_implications": [
+  "An options trader should expect counterparties to be relatively skilled, since persistent losers tend to exit the market.",
+  "Don't expect options markets to generate aggregate wealth the way broad equity appreciation can."
+ ],
+ "caveats": [
+  "Treating options markets as capable of generating aggregate wealth the way rising equity markets do."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "335-336"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 3,
+   "topic": "Options trading as a zero sum game"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

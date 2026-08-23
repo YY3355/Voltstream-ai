@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Why regional power prices diverge",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Price Formation",
+ "definition": "Regional electricity prices are usually set by the operating cost of the most recently activated (marginal) generator in that region, so two adjoining regions can have very different prices if their marginal generator uses different fuel.",
+ "core_idea": "A region where the marginal unit is gas-fired can price very differently from a neighboring region where the marginal unit is coal-fired, and this gap is the underlying driver of wheeling economics.",
+ "key_points": [
+  "Marginal-fuel differences between regions are cited as a primary cause of price divergence.",
+  "Weather patterns and differing consumer demand levels are also cited as drivers of regional price differences.",
+  "High-priced regions can pay roughly twice the average power price of low-priced regions, with the gap potentially widening further during peak demand."
+ ],
+ "relationships": [
+  "Underpins the profitability driver described in [[Wheeling (long-distance power transmission trading)]]."
+ ],
+ "trading_implications": [
+  "A wheeling trade between a coal-marginal region and a gas-marginal region is effectively a bet on the relative volatility/level of gas versus coal prices."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "437-439"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_000.json",
+   "idx": 1,
+   "topic": "Why regional power prices diverge"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Transmission overload risk from correlated wind ramp-up",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Wind Power \u2014 Transmission & Grid Integration",
+ "definition": "Wind power is often constrained by limited long-distance transmission capacity, and because turbines in a region tend to start producing together when wind picks up, the shared transmission lines can become congested/overloaded.",
+ "core_idea": "Remote wind farms depend on costly long-distance transmission lines to reach load; because wind across a region tends to rise simultaneously, all turbines can ramp up output together and overload that shared transmission path, similar to a rush-hour traffic jam limiting how much generation can actually reach consumers.",
+ "key_points": [
+  "Long-distance transmission to remote wind sites is expensive to build and maintain.",
+  "Wind output across a region tends to rise together, so many turbines can start producing at the same time.",
+  "This simultaneous ramp-up can overload the transmission lines carrying that power to load, creating congestion analogous to rush-hour traffic."
+ ],
+ "relationships": [
+  "Congestion pricing / locational price separation",
+  "Curtailment risk"
+ ],
+ "trading_implications": [
+  "Correlated regional wind ramps can drive transmission congestion, which is a relevant driver of locational basis and congestion cost between a wind-heavy zone and load centers.",
+  "Curtailment risk during high-wind periods should be considered when evaluating expected wind output that actually reaches the grid."
+ ],
+ "caveats": [
+  "Assuming turbine-level output alone determines delivered power, without accounting for transmission capacity limits."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "468-468"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_001.json",
+   "idx": 3,
+   "topic": "Transmission overload risk from correlated wind ramp-up"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

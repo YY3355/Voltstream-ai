@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Posting Plus (P-Plus)",
+ "type": "market_mechanic",
+ "category": "Oil Markets",
+ "subcategory": "Pricing Mechanisms",
+ "definition": "A localized variant of CMA pricing used for WTI or West Texas Sour (WTS) crude delivered to Cushing, OK (the NYMEX WTI delivery point), which indexes off a major producer's posted price instead of NYMEX WTI futures.",
+ "core_idea": "The 'plus' is nominally the cost of moving crude from the wellhead to the Cushing delivery point, but because wellhead-to-delivery differentials are fairly stable in practice, P-Plus contracts end up behaving much like ordinary CMA contracts.",
+ "key_points": [
+  "Applies to WTI or WTS crude purchases delivered to Cushing, OK, the NYMEX WTI futures delivery point",
+  "The 'plus' theoretically represents wellhead-to-delivery-point transportation cost",
+  "In practice, wellhead-to-Cushing price differentials are fairly consistent, so P-Plus contracts function similarly to CMA contracts",
+  "Key structural difference from CMA: the index price is a major oil producer's posted price rather than the NYMEX WTI futures price"
+ ],
+ "relationships": [
+  "Localized application of Calendar Month Average (CMA) pricing"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "237-238"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 1,
+   "topic": "Posting Plus (P-Plus)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

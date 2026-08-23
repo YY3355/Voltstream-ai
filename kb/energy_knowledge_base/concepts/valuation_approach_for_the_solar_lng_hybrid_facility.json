@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Valuation approach for the solar-LNG hybrid facility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Real Option / Storage Valuation",
+ "definition": "The facility's value is framed as a blend of two established valuation models: a tolling-agreement-style value from converting fuel into power, and a storage-style value from shifting natural gas purchases between low- and high-cost periods.",
+ "core_idea": "Because the facility both generates and sells electricity (like a tolling deal) and stores gas to shift purchase timing (like a storage asset), its valuation must incorporate elements of both model types rather than fitting neatly into either alone.",
+ "key_points": [
+  "The power-sale side of the facility resembles a tolling agreement, where the owner converts fuel into electricity for a margin.",
+  "The LNG storage side allows the owner to buy gas when cheap and use/convert it when gas or power prices are more favorable, resembling a time-shifting storage asset."
+ ],
+ "relationships": [
+  "Draws on tolling agreement valuation concepts.",
+  "Draws on natural gas storage (intrinsic/time-shift) valuation concepts."
+ ],
+ "trading_implications": [
+  "A full valuation would need to combine a tolling-style spread option on fuel-to-power conversion with a storage-style optionality on gas purchase timing."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "543-543"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_001.json",
+   "idx": 2,
+   "topic": "Valuation approach for the solar-LNG hybrid facility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

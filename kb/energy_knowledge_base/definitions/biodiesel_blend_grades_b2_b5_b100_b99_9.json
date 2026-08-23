@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Biodiesel blend grades: B2-B5, B100, B99.9",
+ "type": "definition",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Biodiesel",
+ "definition": "Common biodiesel blend grades differ in biodiesel percentage and have distinct practical and economic characteristics: B2-B5 are low-percentage trucking blends, B100 is pure biodiesel, and B99.9 is a near-pure blend structured around tax credit capture.",
+ "core_idea": "The specific blend percentage of biodiesel changes its practical use case (lubricity benefits at low blends, solvency risks at high blends) and, in the case of B99.9, its price relative to B100 due to how tax credits are captured.",
+ "key_points": [
+  "B2-B5: 2-5% biodiesel/95-98% diesel blends, popular in trucking because biodiesel's lubricating properties can improve engine performance and lengthen engine life",
+  "B100: pure biodiesel; it is a strong solvent that can loosen and dissolve sediment in storage tanks and may cause rubber and other components in older vehicles to fail",
+  "B99.9: biodiesel blended with a small amount of diesel so the blender (rather than the buyer) captures jurisdictional blending tax credits; because buyers of B99.9 don't get the credit, B99.9 trades at a discount to B100"
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "B99.9 trades at a discount to B100 because the tax credit value accrues to the blender rather than being passed through to the buyer"
+ ],
+ "caveats": [
+  "B99.9 might appear economically equivalent to B100 since it is nearly pure biodiesel, but the author notes it trades at a discount specifically because the blending step diverts the tax credit away from the buyer"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "243-243"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 4,
+   "topic": "Biodiesel blend grades: B2-B5, B100, B99.9"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

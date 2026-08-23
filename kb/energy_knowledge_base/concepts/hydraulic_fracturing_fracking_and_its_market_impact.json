@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Hydraulic fracturing (fracking) and its market impact",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Production/Supply",
+ "definition": "Hydraulic fracturing is an extraction technique that has made natural gas much cheaper to produce from certain rock formations, and it tends to yield a higher proportion of lighter, more valuable hydrocarbons (methane, propane, naphtha) than other extraction methods.",
+ "core_idea": "Fracking's economic significance is amplified because large shale deposits amenable to the technique are located in politically stable regions such as the United States, supporting abundant and reliable supply.",
+ "key_points": [
+  "Fracking substantially lowered extraction cost from certain rock formations",
+  "Produces a larger share of lighter, higher-value hydrocarbons than other extraction technologies",
+  "Large shale deposits suited to fracking are concentrated in politically stable regions like the U.S."
+ ],
+ "relationships": [
+  "Natural gas composition (dry/wet)",
+  "Supply-driven spot price behavior"
+ ],
+ "trading_implications": [
+  "Fracking-driven supply abundance and political stability of source regions are structural, supply-side reasons to expect lower and steadier gas price risk"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "25-25"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 9,
+   "topic": "Hydraulic fracturing (fracking) and its market impact"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Standard forward power blocks referenced per tolling leg (peak/off-peak/weekend)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Forward Markets",
+ "definition": "Each monthly leg of a tolling agreement is typically valued/hedged against the specific power block products actually traded in that local forward market.",
+ "core_idea": "Commonly traded forward power contracts are peak power (5\u00d716), off-peak power (7\u00d78), and weekend power (2\u00d716), so a single tolling leg often depends on several distinct instruments at once, which combined with time-of-year effects multiplies the number of largely uncorrelated exposures across the contract's life.",
+ "key_points": [
+  "5\u00d716 power = peak block (5 weekdays, 16 hours per day).",
+  "7\u00d78 power = off-peak block (7 days, 8 hours per day, i.e. nighttime).",
+  "2\u00d716 power = weekend block (2 days, 16 hours per day).",
+  "Each tolling leg can depend on a mix of these instruments rather than one flat power price."
+ ],
+ "relationships": [
+  "Extends the non-fungibility/underlying-instruments concept within a single leg"
+ ],
+ "trading_implications": [
+  "Hedging a tolling leg requires trading the specific block products the local forward market offers, not a single generic power price"
+ ],
+ "caveats": [
+  "Assuming a single power price index can hedge an entire monthly leg"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "428-429"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 2,
+   "topic": "Standard forward power blocks referenced per tolling leg (peak/off-peak/weekend)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

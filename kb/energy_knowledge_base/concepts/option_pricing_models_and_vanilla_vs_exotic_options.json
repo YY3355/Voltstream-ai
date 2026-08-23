@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Option pricing models and vanilla vs. exotic options",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Option prices are calculated using mathematical models rather than looked up directly; the dominant family is Black Scholes genre models, which price so-called 'vanilla' options, while options requiring assumptions outside that standard set need more complex 'exotic' models.",
+ "core_idea": "Option models work by mathematically replicating an option's payoff through a strategy of trading the underlying asset plus a risk-free investment (dynamic hedging). Choosing the right model matters more than being able to derive one from scratch \u2014 most practitioners just need to pick an appropriate model and supply correct inputs.",
+ "key_points": [
+  "Most real-world option pricing uses variants of the Black Scholes formula ('Black Scholes genre models').",
+  "Options priceable by Black Scholes genre models are called 'vanilla options'.",
+  "Options needing nonstandard assumptions about price behavior are called 'exotic options' and require more complex models.",
+  "Dynamic hedging is the underlying mechanism: replicate an option's payoff by trading the underlying asset and a risk-free instrument over time.",
+  "In practice it is usually unnecessary to rebuild a model from first principles \u2014 the key skill is selecting the correct model and its required inputs.",
+  "Every option formula implicitly asserts 'this works if assumptions X, Y, Z hold'; the user must verify those assumptions apply to their specific case, and switch models if they don't."
+ ],
+ "relationships": [
+  "Vanilla options relate to Black Scholes genre models; exotic options require alternative/nonstandard models."
+ ],
+ "trading_implications": [
+  "Before applying a standard option formula, a trader should check whether its underlying assumptions actually hold for the asset/market in question.",
+  "If standard assumptions fail, a different (exotic) model must be found rather than forcing the vanilla formula."
+ ],
+ "caveats": [
+  "That building or deeply understanding a model from scratch is necessary to price options in practice \u2014 the author states it usually is not."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "346-347"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 0,
+   "topic": "Option pricing models and vanilla vs. exotic options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

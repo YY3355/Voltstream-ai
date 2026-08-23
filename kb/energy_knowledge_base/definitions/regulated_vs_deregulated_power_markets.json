@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Regulated vs. Deregulated Power Markets",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure and Regulation",
+ "definition": "Local spot markets differ in how much government controls pricing. A regulated market has prices set by government legislation, typically administered through a government-sponsored monopoly overseen by a regulatory commission, with relatively little trading. A deregulated market allows competitive pricing and was largely designed to encourage trading.",
+ "core_idea": "The degree of government control over a local power market determines how much genuine trading activity that market supports.",
+ "key_points": [
+  "Every municipality can set its own rules governing the physical delivery of power within its boundaries.",
+  "Regulated markets: government-sponsored monopoly, commission oversight, little trading.",
+  "Deregulated markets: competitive pricing, designed to encourage trading."
+ ],
+ "relationships": [
+  "Local regulation is presented as a companion feature to the local/fragmented nature of spot markets"
+ ],
+ "trading_implications": [
+  "Trading opportunity is concentrated in deregulated markets; regulated markets offer little room for active trading due to administered pricing."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "78"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 1,
+   "topic": "Regulated vs. Deregulated Power Markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

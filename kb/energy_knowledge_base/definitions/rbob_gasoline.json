@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "RBOB Gasoline",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Oil Products",
+ "definition": "RBOB is a gasoline grade formulated for blending with ethanol or other additives; it is the pre-blend form of finished gasoline.",
+ "core_idea": "RBOB represents gasoline in its state before additives such as ethanol are mixed in, distinguishing it from finished, pump-ready gasoline.",
+ "key_points": [
+  "RBOB stands for gasoline blendstock suitable for mixing with ethanol or other additives.",
+  "It is gasoline prior to the addition of those blending components."
+ ],
+ "relationships": [
+  "Precursor product to finished gasoline once blended with ethanol or additives."
+ ],
+ "trading_implications": [
+  "As a traded futures benchmark, RBOB pricing reflects the pre-blend product rather than the finished retail gasoline."
+ ],
+ "caveats": [
+  "RBOB is not finished gasoline; it excludes the ethanol/additive blend added later."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "245-245"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_006.json",
+   "idx": 2,
+   "topic": "RBOB Gasoline"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

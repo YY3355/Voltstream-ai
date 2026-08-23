@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Propane: uses and demand base",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "Propane is primarily a heating and vehicular fuel, widely used residentially where natural gas service isn't available, and secondarily a petrochemical feedstock.",
+ "core_idea": "Propane demand spans residential heating/cooking/drying, backup generators, farm and industrial equipment (forklifts, welders, tractors), and \u2014 as a secondary use \u2014 petrochemical cracking alongside ethane and naphtha to make ethylene, propylene, and other olefins.",
+ "key_points": [
+  "Residential: heating, cooking, clothes drying, grills, backup generators where natural gas isn't piped in.",
+  "Industrial/agricultural: forklifts, electric welders, tractors.",
+  "Secondary use: petrochemical cracker feedstock (with ethane and naphtha) for ethylene/propylene/olefins."
+ ],
+ "relationships": [
+  "Shares petrochemical cracker feedstock role with ethane and naphtha"
+ ],
+ "trading_implications": [
+  "Propane's demand base is broader and more diversified (residential, industrial, petrochemical) than ethane's, which the text implies supports a more active trading market."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "277"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 5,
+   "topic": "Propane: uses and demand base"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

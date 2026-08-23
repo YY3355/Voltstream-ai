@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Green Energy vs Brown Energy",
+ "type": "definition",
+ "category": "Environmental & Renewable Markets",
+ "subcategory": "Terminology",
+ "definition": "Green energy is electricity produced from renewable sources such as solar, wind, tidal, or geothermal generation. Brown energy is electricity produced from conventional sources such as fossil fuels or nuclear generation; hydropower is often classified as brown power in many regions.",
+ "core_idea": "These terms are the base vocabulary distinguishing renewable from conventional generation, used throughout REC and RPS discussions.",
+ "key_points": [
+  "Green energy sources: primarily solar and wind, also tidal and geothermal",
+  "Brown energy sources: fossil fuels and nuclear generation",
+  "Hydropower is frequently categorized as brown power despite not being a fossil fuel"
+ ],
+ "relationships": [
+  "RPS rules define exactly which generation sources qualify as green/eligible for REC creation"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Hydropower is not automatically treated as green in many regulatory schemes"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "502-504"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_002.json",
+   "idx": 1,
+   "topic": "Green Energy vs Brown Energy"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

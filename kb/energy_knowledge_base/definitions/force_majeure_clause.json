@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Force Majeure Clause",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Contract Terms",
+ "definition": "Force majeure ('greater force' in French) is a standard contract clause that releases both parties from liability when extraordinary, uncontrollable events \u2014 such as war or natural disaster \u2014 prevent one or both from fulfilling their contractual obligations.",
+ "core_idea": "A force majeure clause protects contract counterparties from breach liability when performance is made impossible by events outside anyone's control.",
+ "key_points": [
+  "Common in energy and other commercial contracts.",
+  "Covers events like wars and natural disasters.",
+  "Applies specifically to events outside the control of either contracting party."
+ ],
+ "relationships": [
+  "Relevant contract-risk concept alongside weather-driven disruptions discussed in this section."
+ ],
+ "trading_implications": [
+  "Traders and structurers should check whether a physical delivery or supply contract includes a force majeure clause, since it determines liability if extreme weather or disaster prevents performance."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "71-72"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_014.json",
+   "idx": 3,
+   "topic": "Force Majeure Clause"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

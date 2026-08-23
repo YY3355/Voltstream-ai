@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Model maintenance procedures",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Model Maintenance",
+ "definition": "A set of governance practices modeling teams can use to keep models understandable and reliable as they age and change hands.",
+ "core_idea": "Because models routinely outlive the developers who built them, structured documentation and version-control practices are needed so later owners can understand, safely update, and validate a model rather than treating it as a black box.",
+ "key_points": [
+  "Model ID: a unique identifier for each model so it can be tracked and its source code located, important when a group maintains hundreds of models",
+  "Model Owner: a named person responsible for a model's upkeep, since an unowned model tends to get lost or go stale",
+  "Change Log: a record of what changed at each update and why, so future owners understand the reasoning behind past decisions",
+  "Source Code Control: versioning old copies of the model so an update that introduces an error can be rolled back to a known-good version",
+  "Test Case: a fixed set of known inputs and outputs used to confirm the model still behaves as originally intended after any update",
+  "Interactions List: a tracked record of which other models feed into or consume outputs from this model, since updating one model can unintentionally break related models; the list itself must be kept current"
+ ],
+ "relationships": [
+  "Mitigates the employee-turnover and assumption-drift risk described for long-lived models"
+ ],
+ "trading_implications": [
+  "Teams lacking these controls are more likely to introduce silent errors during routine model updates"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "586-588"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 4,
+   "topic": "Model maintenance procedures"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

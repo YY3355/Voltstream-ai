@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Distributing emissions licenses is inherently contested",
+ "type": "risk",
+ "category": "Emissions Markets",
+ "subcategory": "Cap and trade design",
+ "definition": "Cap-and-trade systems create a valuable new asset (the pollution license) out of nothing, so how that asset is initially handed out \u2014 via auction, historical usage, or population share \u2014 is a major point of contention with no clean solution.",
+ "core_idea": "Because emissions licenses have real market value the moment they're created, the initial allocation method is a zero-sum political and economic fight, and every allocation approach has real drawbacks.",
+ "key_points": [
+  "Emissions markets manufacture a valuable good (the license) essentially from nothing, which drives intense debate over its initial distribution.",
+  "Public auctions, historical-usage-based allocation, and population-based allocation are the three approaches named, each with drawbacks."
+ ],
+ "relationships": [
+  "Cap and trade vs. carbon taxes"
+ ],
+ "trading_implications": [
+  "The chosen allocation method affects who holds initial license inventory and therefore who can profit first from trading it \u2014 relevant to understanding why incumbents often favor historical-usage allocation."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "39-39"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 2,
+   "topic": "Distributing emissions licenses is inherently contested"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

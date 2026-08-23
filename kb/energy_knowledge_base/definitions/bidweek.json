@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Bidweek",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Bidweek is the week prior to the end of each month during which natural gas traders report the fixed prices they've agreed to for delivering gas over the following month; survey firms average these reported transactions into published price indexes.",
+ "core_idea": "Bidweek transactions form the basis for widely referenced monthly gas price benchmarks (e.g., Platts Inside FERC/IFERC), which are in turn used as reference prices for instruments like swing swaps and options.",
+ "key_points": [
+  "Occurs in the week prior to the end of each month.",
+  "Traders report prices for fixed-price gas to be delivered the following month.",
+  "Survey firms (e.g., Platts IFERC and other index providers) average these reported prices.",
+  "Each survey firm's exact methodology varies slightly but is generally documented publicly."
+ ],
+ "relationships": [
+  "Provides the reference price used by swing swaps and swing options"
+ ],
+ "trading_implications": [
+  "Bidweek-derived indexes serve as the standard reference price for monthly and swing-type gas contracts."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 8,
+   "topic": "Bidweek"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

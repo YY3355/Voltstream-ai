@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Futures Contract Naming Convention and Expiration Timing",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Futures Contract Mechanics",
+ "definition": "Each futures contract has a coded name identifying commodity, delivery month, and delivery year, and a defined lifespan ending at a published expiration date before the delivery period.",
+ "core_idea": "Exchanges list multiple futures contracts per commodity distinguished by delivery date, using an abbreviation convention (e.g., CLZ7 for WTI December 2017: contract code, month code, year digit); each contract stops trading at a published expiration date before its delivery month so holders have time to arrange physical delivery.",
+ "key_points": [
+  "Each exchange lists multiple futures contracts per commodity, differing by delivery date",
+  "Contracts are named descriptively (e.g., 'WTI December 2017') or abbreviated (e.g., CLZ7): first characters = contract code, next-to-last character = delivery month code, last digit = delivery year",
+  "A futures contract's lifespan starts when the exchange opens it for trading and ends at its published expiration date",
+  "Expiration occurs before the delivery period \u2014 e.g., a WTI contract might cease trading on the third business day before the 25th calendar day of the month prior to delivery",
+  "Early expiration gives futures holders time to schedule physical delivery before the delivery month begins"
+ ],
+ "relationships": [
+  "Core Contract Type Definitions"
+ ],
+ "trading_implications": [
+  "Traders must track each contract's specific expiration date relative to its delivery month, not assume expiration at month-end"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "233-234"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 6,
+   "topic": "Futures Contract Naming Convention and Expiration Timing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

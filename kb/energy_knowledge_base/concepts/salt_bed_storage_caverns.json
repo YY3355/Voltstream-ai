@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Salt Bed Storage Caverns",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage - Salt Caverns",
+ "definition": "Salt bed caverns are an alternative to salt dome caverns, carved out of shallower, thinner salt formations (typically a couple hundred feet thick) by dissolving the salt with circulated water.",
+ "core_idea": "Salt beds are geologically inferior to domes for storage purposes \u2014 thinner and wider, so more prone to collapse, with more insoluble rock that slows gas movement, and generally costlier to build and maintain.",
+ "key_points": [
+  "Used in areas where well-formed salt domes are not available.",
+  "Much shallower and thinner than domes, roughly a couple hundred feet in height.",
+  "Wide, thin geometry makes salt bed caverns more prone to collapse than dome caverns.",
+  "Higher content of insoluble rock slows the rate at which gas can flow through the facility.",
+  "Generally more expensive to excavate and maintain than salt domes."
+ ],
+ "relationships": [
+  "Contrasts with salt dome caverns as the other primary salt-cavern storage type."
+ ],
+ "trading_implications": [
+  "Higher cost and slower gas flow likely reduce a salt-bed facility's cycling speed and deliverability compared to a dome facility, affecting its value for fast-turnaround trading strategies."
+ ],
+ "caveats": [
+  "Treating all 'salt cavern' storage as interchangeable when domes and beds differ meaningfully in geometry, durability, flow rate, and cost."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "532"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 0,
+   "topic": "Salt Bed Storage Caverns"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

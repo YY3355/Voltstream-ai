@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Modeling future prices: distributional estimates and the core pricing assumptions",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Option pricing models generally forecast a probability distribution of future price outcomes rather than a single directional price, built on two standard assumptions: today's price is the best estimate of tomorrow's price, and volatility of returns stays constant over the option's life.",
+ "core_idea": "A distributional estimate (e.g., probabilities of the price staying within certain ranges) is more reliably accurate than a single directional call, and combining the 'today's price is the best estimate' and 'constant volatility' assumptions makes it tractable to build a model of future underlying prices.",
+ "key_points": [
+  "A probabilistic estimate of price ranges (e.g., 60% chance within 20 cents, 20% chance of a 20-70 cent move, 20% chance of more than a 70 cent move) is more likely to be accurate than a single directional prediction.",
+  "The assumption that today's price is the best estimate of tomorrow's price is justified by a risk-free profit argument: if a trader knew tomorrow's price with certainty and it differed from today's, they could buy today and resell tomorrow for a riskless profit.",
+  "This 'best estimate' assumption implies returns (percent changes) are distributed around today's price, which is reasonable for futures/forward contracts in energy markets.",
+  "This assumption is less appropriate for physical energy commodities, whose prices move cyclically and predictably due to factors like weather and consumer demand.",
+  "The second core assumption is that return volatility is constant over the life of the option \u2014 the magnitude of returns is assumed the same a week out as it is tomorrow.",
+  "Together, these two assumptions make it feasible to build a simple model of likely future underlying prices, such as a binomial tree."
+ ],
+ "relationships": [
+  "Leads directly into the binomial tree model",
+  "Relies on the martingale/risk-free-profit no-arbitrage logic"
+ ],
+ "trading_implications": [
+  "The riskless-profit argument for 'today's price = best estimate' means any known future/forward price mismatch can be arbitraged away by buying today and reselling later."
+ ],
+ "caveats": [
+  "The 'today's price is the best estimate of tomorrow's' assumption applies to futures/forward contracts, not to physical commodity spot prices, which have predictable cyclical patterns."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "352-353"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 8,
+   "topic": "Modeling future prices: distributional estimates and the core pricing assumptions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

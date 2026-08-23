@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Crude oil trade geography and refining location",
+ "type": "market_mechanic",
+ "category": "Oil",
+ "subcategory": "Crude Oil Markets",
+ "definition": "Crude oil trading is structured around the physical separation between producing regions (Middle East, South America) and consuming regions (North America, Europe, Asia-Pacific), which drives a large global crude transport trade.",
+ "core_idea": "Major refiners have historically preferred locating refineries near consumers rather than near producers, so crude oil is transported long distances and refined near where it will be sold; this makes crude the dominant globally-traded petroleum product while refined product prices stay mostly regional.",
+ "key_points": [
+  "Major consumers: industrialized North America, Europe, Asia-Pacific.",
+  "Major exporters: less-developed producing regions, chiefly Middle East and South America.",
+  "Refiners bear the cost/risk of transporting crude rather than siting refineries near production.",
+  "International trade in refined products (gasoline, diesel) exists but is much smaller than crude oil trade.",
+  "Refined product prices are set locally/regionally by local regulation, supply, and demand rather than a single global price."
+ ],
+ "relationships": [
+  "Crude oil benchmarks (WTI, Brent)",
+  "Regional refined product pricing"
+ ],
+ "trading_implications": [
+  "Because refined products are priced regionally, crude oil benchmarks (not refined-product benchmarks) are the primary globally-traded reference prices."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "35"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 2,
+   "topic": "Crude oil trade geography and refining location"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

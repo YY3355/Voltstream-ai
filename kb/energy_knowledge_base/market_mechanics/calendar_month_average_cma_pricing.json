@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Calendar Month Average (CMA) pricing",
+ "type": "market_mechanic",
+ "category": "Oil Markets",
+ "subcategory": "Pricing Mechanisms",
+ "definition": "A pricing method that sets a month's price as the average of the prompt (nearest-to-expiry) futures contract's daily price over that calendar month, rolling to the next contract mid-month if the prompt contract expires before the month ends.",
+ "core_idea": "Because futures contracts expire before a calendar month is over, a CMA price for that month can blend two different contract months \u2014 the expiring contract for the early part of the month and the newly-prompt contract for the rest.",
+ "key_points": [
+  "CMA averages the prompt futures contract's price over the days of a calendar month",
+  "When the prompt contract expires partway through the month, the CMA switches to the next contract for the remaining days",
+  "Example given: if a January contract expires two-thirds of the way through December, December's CMA blends the January contract price for the first two-thirds of the month and the February contract price for the last third"
+ ],
+ "relationships": [
+  "Basis for the localized P-Plus pricing structure"
+ ],
+ "trading_implications": [
+  "Parties pricing off CMA are exposed to whichever contract is prompt on each day, so their effective price mixes two contract months in expiry-transition months"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "237-238"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 0,
+   "topic": "Calendar Month Average (CMA) pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

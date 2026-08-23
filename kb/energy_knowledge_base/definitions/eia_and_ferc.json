@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "EIA and FERC",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Regulatory Bodies",
+ "definition": "The Energy Information Agency (EIA) is the U.S. government branch that produces official energy statistics. The Federal Energy Regulatory Commission (FERC) is the U.S. government branch responsible for regulating interstate trading of energy products.",
+ "core_idea": "EIA and FERC play distinct federal roles in U.S. energy markets: EIA is the statistics/data authority, while FERC is the interstate trading regulator.",
+ "key_points": [
+  "EIA's role is limited to producing official statistics, not regulation.",
+  "FERC's regulatory authority is specifically over interstate energy trading."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "EIA data is a standard reference source for market statistics; FERC's interstate jurisdiction is relevant to compliance for any trading activity crossing state lines."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 9,
+   "topic": "EIA and FERC"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Options on forwards/futures deliver the contract, not the physical commodity",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Options - Underlying Structure",
+ "definition": "Most energy options are written on forward or futures contracts, so exercising the option (even early) hands over the forward/futures position rather than the underlying physical commodity.",
+ "core_idea": "Because the deliverable of an energy option is a forward or futures contract, early exercise only trades the option for the forward \u2014 actual physical delivery, if any, still waits for that forward's own expiration.",
+ "key_points": [
+  "Exercising an option on a forward delivers the forward contract itself, not the physical commodity.",
+  "Any eventual physical delivery only occurs later, at the underlying forward contract's expiration.",
+  "This structure reduces the practical value of exercising an option early."
+ ],
+ "relationships": [
+  "American vs European options",
+  "forward contracts"
+ ],
+ "trading_implications": [
+  "Early exercise rarely helps since it only swaps the option for the underlying forward, not for the physical commodity itself."
+ ],
+ "caveats": [
+  "Assuming exercising a futures option triggers immediate physical delivery."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "334-335"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_002.json",
+   "idx": 1,
+   "topic": "Options on forwards/futures deliver the contract, not the physical commodity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

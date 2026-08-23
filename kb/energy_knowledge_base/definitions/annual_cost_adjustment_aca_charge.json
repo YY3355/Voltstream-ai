@@ -1,0 +1,39 @@
+{
+ "canonical_topic": "Annual Cost Adjustment (ACA) charge",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Common Terms",
+ "definition": "The ACA is a small tariff charge added to pipeline transportation costs to adjust for inflation.",
+ "core_idea": "A minor, inflation-linked line-item fee within a pipeline's published tariff.",
+ "key_points": [
+  "Adjusts transportation costs for inflation"
+ ],
+ "relationships": [
+  "Listed as part of a pipeline's tariff"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "516"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 6,
+   "topic": "Annual Cost Adjustment (ACA) charge"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Storage geology: porosity, permeability, and impermeable seals",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage \u2014 Geology",
+ "definition": "A storage facility is a porous, permeable underground rock volume where gas dissolves, sealed by a surrounding layer of impermeable rock that keeps it from escaping.",
+ "core_idea": "Porosity describes how much empty space (pores) a rock contains, while permeability describes whether those pores are interconnected; larger, better-connected pores let gas move in and out faster, and an impermeable cap rock \u2014 especially directly above the storage zone, since gas rises \u2014 is essential to contain it.",
+ "key_points": [
+  "Storage facilities are geologically similar to natural gas wells and other pressurized containers.",
+  "Reusing existing porous rock formations is both structurally sound and far cheaper than excavation, so finding a suitable existing reservoir is one of the biggest tasks in building a new facility.",
+  "Porosity = amount of pore space in a rock; permeability = whether pores are connected, allowing flow.",
+  "Larger and more interconnected pores increase the speed at which gas can enter or leave the facility.",
+  "The impermeable rock layer directly above the storage zone is especially critical because gas naturally rises."
+ ],
+ "relationships": [
+  "Underlies why salt caverns (low permeability walls) leak far less than reservoirs or aquifers.",
+  "Connects to physically unrecoverable gas \u2014 gas embeds in pore walls even in a well-sealed facility."
+ ],
+ "trading_implications": [
+  "Geological quality (porosity/permeability/seal integrity) determines a facility's real-world deliverability, not just its stated capacity."
+ ],
+ "caveats": [
+  "Confusing porosity (space present) with permeability (whether that space is connected enough to allow flow) \u2014 a rock can be porous but not permeable."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "528-529"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_001.json",
+   "idx": 3,
+   "topic": "Storage geology: porosity, permeability, and impermeable seals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

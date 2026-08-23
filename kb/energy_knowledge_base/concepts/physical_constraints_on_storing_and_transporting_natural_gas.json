@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Physical constraints on storing and transporting natural gas",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Spot vs Forward Markets",
+ "definition": "Natural gas cannot be costlessly moved between locations or stored by most end users, so once there isn't enough lead time to arrange transport, the price link between two locations breaks down.",
+ "core_idea": "Gas must be physically moved to where it's needed, and most market participants lack storage access, so on short notice buyers are forced to transact in whichever local market (forward or spot) is available on the day gas is needed, rather than arbitraging across time or location.",
+ "key_points": [
+  "Natural gas in one location can't be exchanged for gas in another location without physically moving it there.",
+  "If there isn't enough time to arrange transportation, the price linkage between source and destination locations disappears.",
+  "Storing natural gas requires specialized facilities that most market participants do not have access to.",
+  "Without storage access, buyers can't purchase gas cheaply on the spot market and hold it for later use.",
+  "Typical customers must buy either in the forward market or on the spot market on the day the gas is actually used."
+ ],
+ "relationships": [
+  "Root cause of higher spot volatility and weaker spot-market cross-location correlation."
+ ],
+ "trading_implications": [
+  "Physical storage or transport access is itself a source of trading advantage/optionality unavailable to most participants."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 1,
+   "topic": "Physical constraints on storing and transporting natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

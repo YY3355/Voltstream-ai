@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Baseload generation units",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack",
+ "definition": "Baseload plants sit at the bottom of the generation stack, run nearly continuously all year, sell mainly into the day-ahead market, and are cheap to produce power from but often difficult or costly to shut down.",
+ "core_idea": "Hydro, nuclear, and coal plants are typically baseload: they run essentially full-time because shutting down is operationally impractical or expensive, so they bid low to avoid being taken offline rather than to chase price.",
+ "key_points": [
+  "Baseload units sit at the bottom of the stack, operate all year, and primarily sell in the day-ahead auction.",
+  "Hydro plants have no fuel cost and in some cases cannot shut down without risking flooding of nearby areas.",
+  "Nuclear plants require control rods to slow the reaction; without active cooling/control the reactor runs at maximum output, and shutting one down is costly.",
+  "Coal plants are easier to shut down than nuclear or hydro but become expensive to restart if allowed to cool completely.",
+  "Coal is described as costing more to run than other baseload sources, even though coal is the cheapest fossil fuel per unit of energy among fossil generators.",
+  "Because almost all baseload capacity runs continuously, these plants are rarely the marginal (price-setting) unit and bid low specifically to avoid being forced offline."
+ ],
+ "relationships": [
+  "hydro/nuclear/coal generation economics",
+  "generation stack position"
+ ],
+ "trading_implications": [
+  "Baseload output can generally be treated as price-inelastic in day-ahead scheduling; marginal price signals should be read from mid-merit or peaking units, not baseload."
+ ],
+ "caveats": [
+  "Coal being the cheapest fossil fuel per unit of energy does not make it the cheapest baseload source overall \u2014 the author notes coal plants are still more costly to run than other baseload producers like hydro and nuclear."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "411"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 1,
+   "topic": "Baseload generation units"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

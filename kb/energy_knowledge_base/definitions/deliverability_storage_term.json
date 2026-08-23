@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Deliverability (Storage Term)",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage Terminology",
+ "definition": "Deliverability is a storage facility's ability to withdraw gas for sale, and it depends on how much gas is currently held in the facility.",
+ "core_idea": "Deliverability rises with the facility's fill level and is highest when the facility is nearly full.",
+ "key_points": [
+  "Deliverability depends on the current amount of gas in the facility.",
+  "Deliverability is at its highest when the facility is nearly full."
+ ],
+ "relationships": [
+  "Inverse relationship to Injection Capacity \u2014 deliverability peaks exactly when injection capacity is lowest."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "534"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 6,
+   "topic": "Deliverability (Storage Term)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

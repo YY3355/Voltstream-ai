@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Ethanol as an alternative fuel",
+ "type": "concept",
+ "category": "Alternative Fuels",
+ "subcategory": "Biofuels",
+ "definition": "Ethanol is a clear, colorless alcohol fuel produced by fermenting and distilling starch-containing crops (e.g., corn, sugarcane); fuel-grade ethanol is denatured so it cannot be consumed as a beverage, avoiding alcohol-beverage regulation.",
+ "core_idea": "Ethanol is marketed as a renewable, lower-emission alternative to petroleum fuel, but its net environmental benefit is uncertain because growing and processing the feedstock itself consumes petroleum and generates pollution, and it also costs more to transport than gasoline.",
+ "key_points": [
+  "Produced by fermenting and distilling almost any starch-containing crop",
+  "Chemically identical to the alcohol in intoxicating beverages, but fuel ethanol is denatured to make it unsuitable for drinking",
+  "Positioned as a renewable fuel that produces fewer greenhouse emissions than fossil fuel",
+  "Its net benefit is unclear: farm equipment and fertilizer used to grow feedstock crops both require petroleum and generate pollution",
+  "Ethanol has lower energy density than gasoline",
+  "As a result of its properties, transporting ethanol is relatively more expensive than transporting gasoline"
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [
+  "Ethanol is often assumed to straightforwardly cut petroleum demand and pollution, but the author notes this is unclear given the petroleum inputs and pollution from farming its feedstock"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "239-240"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 5,
+   "topic": "Ethanol as an alternative fuel"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

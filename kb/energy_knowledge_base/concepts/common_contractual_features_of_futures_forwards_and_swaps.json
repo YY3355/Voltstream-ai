@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Common contractual features of futures, forwards, and swaps",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Contract Terms",
+ "definition": "Futures, forwards, and commodity swaps are all bilateral agreements to buy/sell a fixed quantity of a commodity at a fixed price on a future date, and they share a common set of defining terms.",
+ "core_idea": "Every such contract specifies the underlying asset, the strike (agreed) price, the notional quantity, the settlement currency, the commodity grade/quality, the delivery location, and the expiration date; aside from a refundable margin deposit, none of these contracts require upfront payment.",
+ "key_points": [
+  "Underlying asset: the commodity the contract is based on (e.g., crude oil).",
+  "Strike price: the price agreed upon for future delivery/settlement.",
+  "Notional quantity: the amount of the commodity to be delivered/settled at expiration.",
+  "Currency: the currency in which the buyer must pay the seller.",
+  "Grade/quality: the required commodity specification (e.g., crude oil's sulphur content and density).",
+  "Location: the delivery point and acceptable delivery method.",
+  "Expiration date: the last date on which the contract's obligations can still be transferred to another party.",
+  "Other than a refundable good-faith margin deposit, these contracts carry no upfront cost."
+ ],
+ "relationships": [
+  "Applies uniformly across futures, forwards, and swaps despite their differing settlement/venue mechanics."
+ ],
+ "trading_implications": [
+  "Comparing contracts across venues requires checking all seven terms (asset, price, quantity, currency, grade, location, expiration), since apparent similarity in one commodity can hide differences in grade or location that matter for physical delivery."
+ ],
+ "caveats": [
+  "Margin should not be mistaken for a down payment or a stake in the underlying commodity position \u2014 it is purely a performance-assurance deposit."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "90-91"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_004.json",
+   "idx": 2,
+   "topic": "Common contractual features of futures, forwards, and swaps"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

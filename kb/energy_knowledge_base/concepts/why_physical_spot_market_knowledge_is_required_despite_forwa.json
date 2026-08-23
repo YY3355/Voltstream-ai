@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Why physical spot market knowledge is required despite forward market liquidity",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Although the forward financial markets are the most liquid and easiest to trade, many of their pricing features can't be understood without first understanding the underlying, more complex physical spot markets.",
+ "core_idea": "It's tempting for traders to focus only on the simpler, more liquid financial/forward markets, but the author argues this is a mistake because financial market behavior is ultimately explained by physical spot market constraints.",
+ "key_points": [
+  "Spot markets are complicated: full of local regulation and physical constraints.",
+  "Forward financial markets are the most liquid part of the energy market.",
+  "Ignoring the physical markets in favor of financial markets is called out explicitly as a mistake.",
+  "The complexity of physical spot markets is described as the defining feature of energy trading -- individually simple issues, but many of them to track."
+ ],
+ "relationships": [
+  "Builds directly on the spot-vs-forward market divide and liquidity concepts."
+ ],
+ "trading_implications": [
+  "A trader should not skip learning the physical/spot market mechanics even if they only intend to trade financial/forward instruments."
+ ],
+ "caveats": [
+  "Assuming the forward financial market can be understood in isolation from physical market fundamentals."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "20-21"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 5,
+   "topic": "Why physical spot market knowledge is required despite forward market liquidity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

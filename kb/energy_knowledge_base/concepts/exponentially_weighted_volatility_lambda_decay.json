@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Exponentially weighted volatility (lambda decay)",
+ "type": "concept",
+ "category": "Statistics",
+ "subcategory": "Volatility Estimation",
+ "definition": "An alternative to equal-weighted rolling-window volatility that applies a decay factor (lambda, \u03bb) so more recent return observations count more heavily than older ones, with today (t=0) weighted 100% and weight declining progressively for older days.",
+ "core_idea": "Exponential weighting lets new large price moves affect the volatility estimate immediately while old observations fade out gradually rather than dropping out abruptly, avoiding the sudden jumps caused by simple rolling windows.",
+ "key_points": [
+  "Lambda (\u03bb) is the decay factor controlling how quickly weight falls off with age.",
+  "The current day's observation (t=0) gets full (100%) weighting; earlier days get progressively less weight.",
+  "A very large new observation immediately moves the volatility estimate, then its influence shrinks steadily over time (exponential decay) rather than vanishing abruptly.",
+  "Effectively caps the number of observations that meaningfully matter, since weights eventually become negligible.",
+  "At \u03bb=0.94, observations older than 75 days carry less than 1% of the weight of the most recent observation; at \u03bb=0.96 this threshold is 113 days; at \u03bb=0.98 it is 228 days."
+ ],
+ "relationships": [
+  "Addresses the abrupt-drop-off weakness of simple equal-weighted rolling-window volatility."
+ ],
+ "trading_implications": [
+  "Choice of lambda is a tradeoff between responsiveness to new information (lower \u03bb) and stability/longer effective memory (higher \u03bb)."
+ ],
+ "caveats": [
+  "Assuming exponentially weighted volatility ignores old data entirely rather than merely down-weighting it asymptotically toward negligible influence."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "316-317"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 2,
+   "topic": "Exponentially weighted volatility (lambda decay)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Fossil fuels as hydrocarbons",
+ "type": "concept",
+ "category": "Fundamentals",
+ "subcategory": "Fuel Types",
+ "definition": "Fossil (conventional) fuels are organic fuels extracted from underground deposits that formed naturally from decayed plant matter over millions of years; they are built from hydrogen-and-carbon molecules, hence the name hydrocarbons.",
+ "core_idea": "Organic fuels supply the overwhelming majority of world energy, and are split into fossil fuels (ancient, extracted from the ground) versus biofuels (produced from recently grown crops).",
+ "key_points": [
+  "Organic-source fuels supply more than 90% of world energy.",
+  "Fossil fuels form over millions of years from trapped, decaying plant life.",
+  "Biofuels are the same broad hydrocarbon category but sourced from recently grown crops rather than ancient underground deposits.",
+  "Burning (combusting) hydrocarbons with oxygen releases heat used to power engines or generators."
+ ],
+ "relationships": [
+  "Fossil fuels and biofuels are both hydrocarbon fuels, distinguished by the age/source of the organic material rather than chemical composition."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Fossil fuel and hydrocarbon are not strict synonyms \u2014 hydrocarbon is the chemical category, while fossil fuel specifies the ancient-underground origin as opposed to biofuel."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "118-119"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 0,
+   "topic": "Fossil fuels as hydrocarbons"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

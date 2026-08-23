@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Midwest natural gas market structure",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Regional Markets - Midwest",
+ "definition": "A profile of how supply, demand, storage, and pipeline connectivity shape the Midwest U.S. natural gas market.",
+ "core_idea": "Midwest gas demand is driven almost entirely by winter residential heating because coal, not gas, dominates regional power generation, and heavy storage infrastructure with government-mandated winter delivery obligations backstops that seasonal demand.",
+ "key_points": [
+  "Demand is strongly seasonal (winter heating) rather than year-round, unlike regions where gas also fuels power plants.",
+  "Coal is the primary power-generation fuel in the Midwest, so summer gas demand is comparatively low.",
+  "The region has extensive storage and local distribution networks, and some jurisdictions can compel storage operators to release gas to residential customers ahead of commercial use during winter.",
+  "Large pipelines link the Midwest mainly to Canadian and Rocky Mountain supply basins, with supplemental Gulf Coast gas when available.",
+  "Midwest basis prices track NYMEX (Henry Hub) futures only loosely, reflecting import access from multiple supply sources."
+ ],
+ "relationships": [
+  "Regional power-generation fuel mix determines whether gas demand is seasonal-only or year-round."
+ ],
+ "trading_implications": [
+  "Government-mandated winter release obligations can effectively withdraw storage gas from the commercial market at the coldest, highest-demand times.",
+  "Looser correlation to Henry Hub implies basis trades here carry more idiosyncratic (supply-source-driven) risk than in tightly correlated regions."
+ ],
+ "caveats": [
+  "One might assume gas demand tracks power demand everywhere; in the Midwest it does not, because coal supplies most power generation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "164-165"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_006.json",
+   "idx": 0,
+   "topic": "Midwest natural gas market structure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

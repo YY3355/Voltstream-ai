@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Uranium Fuel Constraints and Proliferation Risk",
+ "type": "risk",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "The practical and geopolitical limits on sourcing and refining uranium fuel for nuclear reactors.",
+ "core_idea": "Concentrated uranium is highly toxic and economically extractable only from a limited number of large deposits, and because refining it resembles the process for weapons-grade material, new reactor construction carries proliferation concerns.",
+ "key_points": [
+  "Uranium is highly toxic once concentrated",
+  "Large, economically extractable deposits are geographically limited despite uranium being common in the Earth's crust",
+  "The refining process overlaps with the process used to produce nuclear weapons fuel",
+  "This overlap ties reactor construction to weapons proliferation concerns"
+ ],
+ "relationships": [
+  "Related to nuclear plant heat generation via fission"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "56-56"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 1,
+   "topic": "Uranium Fuel Constraints and Proliferation Risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

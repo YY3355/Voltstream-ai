@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Hydraulic fracturing (fracking)",
+ "type": "concept",
+ "category": "Oil & Gas",
+ "subcategory": "Exploration & Production",
+ "definition": "A production technique that frees hydrocarbons trapped in the pore spaces of impermeable rock (shale) by fracturing the rock, typically by pumping water or another fluid underground and using pressure/compression waves to crack the formation so hydrocarbons can migrate to the surface.",
+ "core_idea": "Unlike traditional drilling, which taps hydrocarbons already pooled in permeable reservoir rock under an impermeable cap, fracking manufactures permeability in rock where hydrocarbons are otherwise locked in place.",
+ "key_points": [
+  "Traditional wells target reservoirs formed where migrating hydrocarbons are trapped under an impermeable rock layer.",
+  "Fracking targets hydrocarbons trapped directly inside impermeable rock (shale) rather than pooled reservoirs.",
+  "The rock must be fractured before hydrocarbons can flow, distinguishing it from conventional drilling.",
+  "Fractures are commonly created by injecting hydraulic fluid to propagate compression waves from explosions into the formation."
+ ],
+ "relationships": [
+  "Contrasted with traditional/conventional drilling",
+  "Contrasted with shale oil (mining) processing"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Fracking is not the same process as conventional drilling with an extra step; the underlying geology being targeted (hydrocarbons locked in impermeable rock vs. pooled in permeable rock) is different."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "128-129"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 0,
+   "topic": "Hydraulic fracturing (fracking)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

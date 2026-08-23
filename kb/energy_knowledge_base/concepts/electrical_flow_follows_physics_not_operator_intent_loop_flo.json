@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Electrical flow follows physics, not operator intent (loop flow / congestion)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Grid Operations / Congestion",
+ "definition": "Power moves along the path(s) of least electrical resistance across the whole grid, not necessarily along the direct contractual path, so a grid operator must ensure spare capacity on every line the power could conceivably flow across.",
+ "core_idea": "In a three-node grid, power intended to move from A to B may instead spill over a secondary path (A to C to B) if the direct line is loaded, and since the operator cannot dictate the exact physical path, it must keep sufficient headroom on all potentially affected lines to prevent overload.",
+ "key_points": [
+  "Resistance on each line changes throughout the day based on local consumption, which changes how power actually flows.",
+  "Every transmission line has a maximum power-carrying limit; exceeding it risks equipment failure ('meltdown').",
+  "Because flow paths aren't fully controllable, the operator must reserve adequate capacity on every line that could carry a given import, not just the 'intended' direct line.",
+  "If sufficient capacity isn't available on the needed paths, imported power may fail to reach its destination even though a contract calls for delivery."
+ ],
+ "relationships": [
+  "Line loading/congestion determines whether power can actually follow a direct A-to-B path or is forced onto alternate paths like A-to-C-to-B."
+ ],
+ "trading_implications": [
+  "A wheeling deal's physical feasibility depends on grid-wide congestion, not just capacity on the single line nominally being 'rented'.",
+  "Congestion risk should be assessed across all plausible flow paths between source and sink, not only the shortest contractual path."
+ ],
+ "caveats": [
+  "It is a misunderstanding to assume power takes the contractually intended route; physically it follows least-resistance paths across the network."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "441-442"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 2,
+   "topic": "Electrical flow follows physics, not operator intent (loop flow / congestion)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

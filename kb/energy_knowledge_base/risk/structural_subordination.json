@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Structural Subordination",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Counterparty Credit Risk",
+ "definition": "Structural subordination describes a conglomerate that operates through multiple organizational layers, such that in bankruptcy each subsidiary pays its own creditors first, and only leftover value flows up to the parent company.",
+ "core_idea": "Creditors that extend credit at the parent level sit behind each subsidiary's own creditors in priority of repayment, making parent-level credit exposure inherently weaker than exposure to the operating subsidiary itself.",
+ "key_points": [
+  "Each subsidiary settles its own creditors first out of its own assets before any residual value passes up to the parent.",
+  "Anyone holding credit exposure to the parent company has a low priority claim on assets that are actually owned by a subsidiary."
+ ],
+ "relationships": [
+  "Contrasts with cross-guarantee structures and with Ring Fencing"
+ ],
+ "trading_implications": [
+  "Extending credit to a parent holding company (rather than the operating subsidiary that actually generates cash flow) carries structurally weaker repayment priority in a bankruptcy."
+ ],
+ "caveats": [
+  "Treating exposure to the parent company as equivalent to exposure to the operating subsidiary \u2014 the parent's claim on subsidiary assets is subordinate to the subsidiary's own creditors."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "571-575"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_001.json",
+   "idx": 3,
+   "topic": "Structural Subordination"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

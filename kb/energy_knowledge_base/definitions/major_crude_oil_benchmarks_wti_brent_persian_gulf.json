@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Major crude oil benchmarks: WTI, Brent, Persian Gulf",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Crude Oil Benchmarks",
+ "definition": "WTI and Brent are the two liquid, tradable crude oil benchmark contracts; Persian Gulf crude is a third common reference but has no comparably liquid futures contract, only spot prices from Oman and Dubai.",
+ "core_idea": "The industry references crude quality and price mainly through a small set of benchmarks, of which only WTI (U.S. production) and Brent (North Atlantic seaborne delivery) have active liquid contract markets.",
+ "key_points": [
+  "WTI: benchmark for crude produced in the United States.",
+  "Brent: benchmark for crude delivered by ship in the northern Atlantic.",
+  "Persian Gulf crude: referenced via Oman and Dubai spot prices, no equivalent liquid futures contract.",
+  "WTI and Brent are both classified as light, sweet (\"premium\") crude oils."
+ ],
+ "relationships": [
+  "Crude oil quality classification (light/heavy, sweet/sour)"
+ ],
+ "trading_implications": [
+  "Liquidity differences mean WTI/Brent serve as tradable price references while Persian Gulf crude pricing relies on spot assessments rather than futures hedging."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "35"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 3,
+   "topic": "Major crude oil benchmarks: WTI, Brent, Persian Gulf"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

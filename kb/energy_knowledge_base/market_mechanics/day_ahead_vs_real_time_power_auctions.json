@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Day-ahead vs real-time power auctions",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Price Formation",
+ "definition": "RTOs/ISOs typically run a day-ahead auction that prices the next day's power in one-hour blocks based on forecasted load, followed by a real-time auction that continuously reconciles actual demand against that forecast in five-minute increments.",
+ "core_idea": "The day-ahead auction, usually finalized in the early afternoon before delivery, lets generators plan fuel and operations around a load forecast, while the real-time auction runs throughout the delivery day balancing actual versus forecast demand and favors plants capable of starting and stopping quickly.",
+ "key_points": [
+  "Day-ahead auction prices the next day's power in one-hour increments, typically completed in the early afternoon before delivery.",
+  "Day-ahead prices are based on a predicted (forecast) load, not actual demand.",
+  "Real-time auction runs continuously through the delivery day, typically in five-minute increments, balancing actual demand against the day-ahead forecast.",
+  "A plant not selected in the day-ahead auction can still bid into the real-time auction.",
+  "Real-time participation requires the ability to start and stop quickly, which not every plant can do.",
+  "Only power plants participate directly in these auctions, but the resulting price affects every market participant."
+ ],
+ "relationships": [
+  "Both auctions use the same marginal-price/clearing-price mechanic described for deregulated market auctions"
+ ],
+ "trading_implications": [
+  "Fast-ramping or flexible generation has an advantage bidding into the real-time auction when not cleared day-ahead.",
+  "The existence of two sequential auctions (forecast-based day-ahead, actuals-based real-time) is the structural basis for day-ahead vs. real-time price spreads."
+ ],
+ "caveats": [
+  "The real-time auction is not a single event \u2014 it runs continuously in five-minute increments throughout the delivery day, unlike the one-time day-ahead auction."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "171-172"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 4,
+   "topic": "Day-ahead vs real-time power auctions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

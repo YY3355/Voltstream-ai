@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Wake effect and wind farm layout",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "When one turbine sits downwind of another, it receives turbulent, disrupted airflow rather than clean wind, which lowers its output and increases mechanical stress.",
+ "core_idea": "The upwind turbine disturbs the wind flow reaching downwind turbines, so wind farm layouts are typically arranged in lines or otherwise spaced out to minimize this interference between units.",
+ "key_points": [
+  "A downwind turbine experiences chaotic/disrupted airflow caused by the turbine upwind of it.",
+  "Wind farms are commonly organized in lines or spread out specifically to reduce this inter-turbine disruption."
+ ],
+ "relationships": [
+  "Related to overall wind farm capacity factor and turbine spacing decisions"
+ ],
+ "trading_implications": [
+  "Physical layout constraints limit how densely a wind farm can be built on a given parcel, which caps nameplate capacity per unit of land."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "468-468"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_001.json",
+   "idx": 1,
+   "topic": "Wake effect and wind farm layout"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

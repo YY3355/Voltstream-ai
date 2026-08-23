@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Hydraulic fracturing (fracking)",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Extraction Technology",
+ "definition": "Hydraulic fracturing is a technique for extracting gas from rock that is porous but not naturally permeable, by artificially creating fractures that connect the pores.",
+ "core_idea": "By injecting water or similar fluid and using controlled explosions to generate compression waves, engineers create microfractures throughout a rock formation, making an otherwise impermeable but porous rock permeable enough for conventional drilling to extract the gas.",
+ "key_points": [
+  "Targets rock that has gas trapped in pores but lacks the interconnection needed for the gas to flow to a well.",
+  "The fracturing process itself doesn't extract the gas \u2014 it enables extraction via conventional drilling afterward."
+ ],
+ "relationships": [
+  "Porosity",
+  "Permeability"
+ ],
+ "trading_implications": [
+  "Fracking technology expanded economically recoverable gas supply by unlocking previously inaccessible porous-but-impermeable formations."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "139"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 6,
+   "topic": "Hydraulic fracturing (fracking)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

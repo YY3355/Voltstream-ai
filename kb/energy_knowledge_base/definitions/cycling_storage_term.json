@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Cycling (Storage Term)",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage Terminology",
+ "definition": "Cycling is the number of times a storage facility can be fully emptied and refilled within a calendar year.",
+ "core_idea": "A facility's cycling capability determines whether it can serve both the summer and winter demand seasons or only one, since refilling takes a fixed amount of time.",
+ "key_points": [
+  "Many facilities are single-cycle \u2014 refilling takes long enough that they can't sell into both summer and winter.",
+  "If a single-cycle facility sold gas in summer, it wouldn't have time to refill before winter demand hits."
+ ],
+ "relationships": [
+  "Directly limits which seasonal trading strategies (see Natural Gas Storage Arbitrage Bid Strategy) are physically feasible."
+ ],
+ "trading_implications": [
+  "A facility's cycling rate is a hard physical constraint on any seasonal or short-term arbitrage strategy built around it."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "534"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 5,
+   "topic": "Cycling (Storage Term)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Call and put payoff mechanics relative to the strike price",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Option Payoffs",
+ "definition": "Every option has a strike (exercise) price \u2014 the fixed price at which the underlying can be traded in the future. A call option pays off when the market price rises above the strike, letting the owner buy cheap and resell at the higher market price. A put option pays off when the market price falls below the strike, letting the owner sell high relative to the market; if the market price is above the strike, the put is worthless since no one would sell for less than market value.",
+ "core_idea": "Call value increases as the underlying rises above the strike; put value increases as the underlying falls below the strike \u2014 each option only has value when exercising it beats the prevailing market price.",
+ "key_points": [
+  "Strike/exercise price = the fixed future trading price set in the contract.",
+  "Call owner benefits when market price > strike, buying low (at strike) and able to resell at the higher market price.",
+  "Put owner benefits when market price < strike, selling high (at strike) rather than at the lower market price.",
+  "A put is worthless if the market price is above the strike, since no one would voluntarily sell below market value."
+ ],
+ "relationships": [
+  "Builds directly on the call/put definition item",
+  "Feeds into intrinsic value (the payoff-if-exercised-now)"
+ ],
+ "trading_implications": [
+  "Whether an option is worth exercising is a straightforward comparison of strike versus current market price, per the author \u2014 the hard problem is pricing the option beforehand, not deciding when to exercise it."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "328"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 4,
+   "topic": "Call and put payoff mechanics relative to the strike price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 21,
+ "title": "4.6 WIND POWER",
+ "n_concepts": 9,
+ "summary": "Wind power converts atmospheric kinetic energy into electricity, and the chapter walks through the physical and locational factors that determine how much a farm produces: siting for consistent, strong wind and sufficient land, the recurring seasonal and daily production patterns, and how site-specific variability and the wake effect between turbines shape actual output. It then turns to the grid-integration consequences of that variability \u2014 the need for balancing capacity, fast-start backup to cover sudden regional drop-offs, and transmission constraints when many turbines ramp up together \u2014 before closing on the main public concerns, bird mortality and visual impact.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

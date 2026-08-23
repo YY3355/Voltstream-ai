@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Regulated vs. deregulated markets",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "A regulated market is one where a government-appointed commission oversees a state-sanctioned monopoly over part of the energy market; a deregulated market removes that legislative monopoly to allow competing participants, though substantial government oversight typically remains.",
+ "core_idea": "Deregulation is about permitting competition, not eliminating regulation \u2014 most deregulated power markets remain heavily regulated in practice.",
+ "key_points": [
+  "Regulated market: public utility/public service commission oversees a state monopoly",
+  "Deregulated market: legislative barriers to competition are removed",
+  "Deregulated markets still carry substantial government oversight"
+ ],
+ "relationships": [
+  "Underlies why RTO/ISO markets allow free electricity trading but remain rule-heavy"
+ ],
+ "trading_implications": [
+  "Market rules and participant eligibility vary by jurisdiction even within deregulated markets, so local rules must be checked per grid"
+ ],
+ "caveats": [
+  "Deregulated does not mean unregulated \u2014 significant oversight persists"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "22-23"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 1,
+   "topic": "Regulated vs. deregulated markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

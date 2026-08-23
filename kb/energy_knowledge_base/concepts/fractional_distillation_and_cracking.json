@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Fractional distillation and cracking",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Refining Process",
+ "definition": "Fractional distillation is the process of separating crude oil into component fractions by heating it in a distillation tower; cracking further breaks heavier fractions into lighter, lower-density products.",
+ "core_idea": "Crude oil is heated in a distillation tower where lighter, lower-boiling-point fractions rise to the top and heavier fractions settle at the bottom, allowing the refiner to siphon off fractions selectively; heavier liquids recovered this way can then be cracked (subjected to high heat and pressure) to convert them into more valuable lighter products.",
+ "key_points": [
+  "Distillation towers separate crude oil by boiling point: lightest fractions rise to the top, heaviest settle at the bottom.",
+  "Fractions are selectively siphoned off at different heights of the tower to separate crude oil into its component pieces.",
+  "Cracking applies high temperature and pressure to heavier liquids to break them into lower-density (lighter) liquids.",
+  "Light sweet crude flows easily and is low in sulfur; heavy sour crude is thick and high in sulfur \u2014 these characteristics affect how a given crude refines."
+ ],
+ "relationships": [
+  "Cracking follows distillation as a secondary processing step for heavier fractions",
+  "Crude quality (sweet/sour, light/heavy) affects distillation and cracking economics"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "226-227"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 2,
+   "topic": "Fractional distillation and cracking"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

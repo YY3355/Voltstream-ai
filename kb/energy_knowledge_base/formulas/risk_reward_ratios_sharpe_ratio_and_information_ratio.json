@@ -1,0 +1,65 @@
+{
+ "canonical_topic": "Risk/reward ratios: Sharpe Ratio and Information Ratio",
+ "type": "formula",
+ "category": "Risk",
+ "subcategory": "Performance Measurement",
+ "definition": "A risk-adjusted performance measure that divides an investment's average return by the standard deviation (variability) of its returns; when both are measured net of a benchmark, this is commonly called a Sharpe Ratio or Information Ratio.",
+ "core_idea": "Neither average return nor volatility alone tells you whether an investment was good; dividing return by volatility (a reward-to-risk ratio) gives a single comparable measure, with higher ratios indicating better risk-adjusted performance.",
+ "key_points": [
+  "Sharpe Ratio and Information Ratio work the same way: average return (net of a benchmark) divided by variability of return (net of a benchmark).",
+  "Higher ratios are considered better investments.",
+  "These ratios rely on historical data being representative of future/actual performance; they are not predictions.",
+  "They can be distorted by changing market conditions or by accounting practices that artificially smooth earnings.",
+  "The ratio only behaves sensibly when returns are positive; when returns are negative, higher volatility actually produces a less negative (seemingly better) ratio, which is misleading."
+ ],
+ "relationships": [
+  "Built on the standard deviation concept described in the sample variance/volatility discussion.",
+  "Connects to portfolio diversification: combining imperfectly correlated strategies improves overall risk/reward versus any single strategy."
+ ],
+ "trading_implications": [
+  "Use average-return-to-volatility ratios cautiously as historical, backward-looking measures rather than guarantees of future performance.",
+  "Be alert to accounting smoothing or regime changes that can inflate a ratio's apparent attractiveness.",
+  "Do not trust the ratio at face value when returns are negative, since higher volatility mechanically improves (less negative) it."
+ ],
+ "caveats": [
+  "Treating Sharpe/Information Ratio as a forward-looking prediction rather than a historical, data-dependent measure.",
+  "Not realizing that with negative returns, a higher-volatility strategy can show a better (less negative) ratio than a lower-volatility one, which is a distortion, not genuine outperformance."
+ ],
+ "formulas": [
+  {
+   "name": "Reward-to-risk ratio (Sharpe/Information Ratio)",
+   "formula": "Ratio = average return / standard deviation of returns",
+   "variables": {
+    "average return": "mean return of the investment, net of a benchmark if applicable",
+    "standard deviation of returns": "variability of the return series, net of the same benchmark"
+   },
+   "source": {
+    "chapter": 12,
+    "pages": "317-318",
+    "section_hint": "3.3 Statistics - Risk/Reward Measures"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "317-318"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 3,
+   "topic": "Risk/reward ratios: Sharpe Ratio and Information Ratio"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "canonical_topic": "Geographic drivers of solar production and capacity factor",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "Solar output depends on installation type and location, with proximity to the equator and dry/arid climate both increasing production, and capacity factor measuring realized AC output against a unit's rated size.",
+ "core_idea": "Solar farms closer to the equator in dry climates produce more power because sunlight travels through less atmosphere and loses less energy, and this locational effect is one driver behind a unit's capacity factor.",
+ "key_points": [
+  "Dry, arid climates near the equator yield the highest solar production.",
+  "Greater distance from the equator means sunlight passes through more atmosphere, reducing the energy content that reaches the panel and lowering production.",
+  "Example comparison: a Desert Southwest (e.g., Arizona) solar farm would produce more power than one in the northeastern U.S. (e.g., New Jersey).",
+  "Capacity factor is the ratio of actual power delivered to the grid versus the unit's stated (rated) size.",
+  "Example given: a 100-KW installation delivering 70 KW of AC power has a 70 percent capacity factor.",
+  "A ~70 percent capacity factor is described as typical when a unit's size is stated relative to its DC output at midday."
+ ],
+ "relationships": [
+  "Connects to DC-to-AC conversion losses, since capacity factor as defined here is measured in AC terms against a DC-based rating."
+ ],
+ "trading_implications": [
+  "Location selection (latitude, aridity) is a first-order driver of expected capacity factor and thus expected generation revenue."
+ ],
+ "caveats": [
+  "A stated capacity factor of ~70% for solar is tied to comparing AC output against a midday DC rating, not an inherent universal solar constant."
+ ],
+ "formulas": [
+  {
+   "name": "Capacity factor",
+   "formula": "Capacity Factor = AC Power Delivered to Grid / Rated Unit Size",
+   "variables": {
+    "AC Power Delivered to Grid": "actual power output placed onto the grid, kW or MW",
+    "Rated Unit Size": "stated nameplate size of the installation, typically DC kW/MW at midday"
+   },
+   "source": {
+    "chapter": 20,
+    "pages": "456-457",
+    "section_hint": "Solar Production Volume"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "456-457"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 6,
+   "topic": "Geographic drivers of solar production and capacity factor"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Power generation technologies: fossil fuel plants",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Generation Technology",
+ "definition": "Overview of how fossil fuel power plants generate electricity and their environmental impact.",
+ "core_idea": "Fossil fuel plants burn oil, natural gas, or coal to create steam that drives a generator; all produce CO2 and other greenhouse gases, with pollution per MWh depending on plant efficiency, and coal is the most polluting fossil fuel by a factor of two to three versus the others.",
+ "key_points": [
+  "Fossil fuel plants burn oil, natural gas, or coal to produce superheated steam that drives a generator",
+  "All fossil fuels produce greenhouse gases (e.g., CO2) when burned",
+  "More efficient plants use less fuel and thus produce less pollution per megawatt generated",
+  "Coal-fired generation is the most polluting fossil fuel, producing two to three times the pollution of oil or natural gas generation"
+ ],
+ "relationships": [
+  "Heat rate and fossil plants as marginal price setters"
+ ],
+ "trading_implications": [
+  "Fuel choice and plant efficiency affect a plant's emissions profile, which is relevant to environmental/carbon cost considerations in dispatch economics"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "185"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 6,
+   "topic": "Power generation technologies: fossil fuel plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

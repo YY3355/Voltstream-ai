@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Major pollutant categories from power plant combustion",
+ "type": "definition",
+ "category": "Environmental/Emissions",
+ "subcategory": "Pollutant types",
+ "definition": "The author identifies six named byproducts of fossil fuel combustion: carbon dioxide, carbon monoxide, nitrogen oxides, sulfur oxides, heavy metals, and fly ash/soot, distinguishing which arise from the oxidation reaction versus from impurities in the fuel.",
+ "core_idea": "Power plants produce five main pollutant categories (CO2, NOx, SOx, heavy metals, fly ash/soot); the first three come from the oxidation chemistry of combustion, while heavy metals and fly ash come from particles physically trapped in the fuel.",
+ "key_points": [
+  "Carbon dioxide (CO2): a nontoxic, odorless, naturally-occurring atmospheric gas and a core byproduct of burning any plant-based fuel; large volumes strengthen the greenhouse effect.",
+  "Carbon monoxide (CO): forms from incomplete combustion (insufficient oxygen); it is poisonous because it binds strongly to hemoglobin and interferes with breathing; it can also combine with NOx or SOx to form acid rain.",
+  "Nitrogen oxides (NOx, commonly NO2): a mix of nitrogen and oxygen compounds and a major contributor to acid rain.",
+  "Sulfur oxides (SOx, commonly SO2): a mix of sulfur and oxygen compounds and a major contributor to acid rain.",
+  "Heavy metals (e.g., mercury, lead, plutonium): highly toxic, trapped in the original fuel and released on combustion; they accumulate in living organisms and are difficult for the body to eliminate.",
+  "Fly ash/soot: inert particulate matter (fine sand grains or unburned coal) trapped in the fuel; small enough to be inhaled, causing lung damage and diseases such as silicosis."
+ ],
+ "relationships": [
+  "CO2, NOx, and SOx result from the oxidation process of combustion itself; heavy metals and fly ash/soot result from impurities physically trapped in the fuel."
+ ],
+ "trading_implications": [
+  "Different pollutants are regulated differently (e.g., particulate/metal controls at the plant vs. aggregate CO2 accounting), which can affect compliance costs and fuel choice for generators."
+ ],
+ "caveats": [
+  "CO2 and CO are easily conflated, but CO2 is a normal, nontoxic combustion product while CO specifically signals incomplete combustion and is acutely poisonous."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "283-284"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_000.json",
+   "idx": 1,
+   "topic": "Major pollutant categories from power plant combustion"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

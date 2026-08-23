@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Crude oil as a global market vs. refined products as regional markets",
+ "type": "market_mechanic",
+ "category": "Oil",
+ "subcategory": "Market Structure",
+ "definition": "Crude oil trades as a roughly uniform global commodity that can be redirected between regions in response to price differences, while refined products like gasoline trade in fragmented regional markets with limited cross-border substitutability.",
+ "core_idea": "Because tanker shipments of crude can be redirected wherever prices are highest and different refineries can generally process crude meant for other regions, crude oil prices tend to converge globally; refined products lack this flexibility because international transport infrastructure for finished products is limited and local environmental regulations force region-specific formulations, so their prices and specifications vary substantially by location.",
+ "key_points": [
+  "Crude oil is approximately the same product at approximately the same price everywhere it trades, because tankers can be redirected to wherever the price is higher.",
+  "Refineries in different regions (e.g. northeastern U.S. and northern Europe) can generally each process crude oil originally intended for the other.",
+  "Refined products are historically refined close to their final consumption point rather than shipped internationally in bulk, partly because locating refineries outside industrialized countries was considered risky.",
+  "There is limited international infrastructure for transporting finished petroleum products in bulk, so cross-border trade volumes are much lower than for crude.",
+  "Local environmental regulations fragment refined product markets further \u2014 e.g. North American gasoline formulation differs from European, and formulations can even differ within a country (California vs. New York)."
+ ],
+ "relationships": [
+  "Regional formulation regulation drives regional price divergence in refined products",
+  "Global crude arbitrage keeps crude prices converged across regions"
+ ],
+ "trading_implications": [
+  "Crude oil price differentials across regions should compress quickly via tanker redirection; persistent regional refined-product price gaps are more structural and regulation-driven, not arbitraged away as easily."
+ ],
+ "caveats": [
+  "Assuming refined product markets behave like crude oil's global market; the author stresses they are fragmented regional markets instead."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "227-227"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 3,
+   "topic": "Crude oil as a global market vs. refined products as regional markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Public opposition to wind power: bird mortality and aesthetics",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Wind Power \u2014 Siting & Environmental Issues",
+ "definition": "The two most common sources of consumer/community opposition to wind farms are harm to migratory birds and objections to the visual appearance of turbines.",
+ "core_idea": "Turbines are often sited on migratory bird corridors because those corridors have the steady winds turbines need, which puts them at risk of collision with spinning blades; separately, some communities object to wind farms simply because they consider them visually unappealing.",
+ "key_points": [
+  "Steady, sustained winds along bird migration corridors make those corridors attractive turbine sites, creating overlap with bird flight paths.",
+  "Birds can be struck and killed by turbine blades in these areas.",
+  "Environmental groups worry that widespread wind adoption could significantly harm wild bird populations.",
+  "Aesthetic objections (turbines viewed as unattractive) are a separate, non-environmental driver of local opposition."
+ ],
+ "relationships": [
+  "Siting decisions",
+  "Permitting/regulatory risk for wind projects"
+ ],
+ "trading_implications": [
+  "Community and environmental opposition is a project development/siting risk that can delay or block new wind capacity, which is relevant context when assessing future wind supply growth."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "468-468"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_001.json",
+   "idx": 2,
+   "topic": "Public opposition to wind power: bird mortality and aesthetics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

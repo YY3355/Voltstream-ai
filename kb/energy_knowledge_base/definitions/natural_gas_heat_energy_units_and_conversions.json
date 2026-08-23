@@ -1,0 +1,74 @@
+{
+ "canonical_topic": "Natural gas heat-energy units and conversions",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Units of Measurement",
+ "definition": "Because raw natural gas composition varies, the market measures it by the heat energy it releases when burned rather than by volume or weight.",
+ "core_idea": "Natural gas is priced and traded in heat-content terms (Btu/MMBtu) rather than physical volume, with Bcf used mainly to describe storage capacity, and Joules as the non-US equivalent unit.",
+ "key_points": [
+  "Btu (British Thermal Unit) is the standard US measure of heat energy; gas is commonly traded in MMBtu (millions of Btus).",
+  "Bcf (billion cubic feet) is a volume measure used mainly to describe the size of gas storage facilities.",
+  "Roughly 1 million MMBtu are contained in 1 Bcf of natural gas.",
+  "Joules (and kJ/MJ) are the heat-energy unit used in most of the world outside the US.",
+  "1 Btu equals approximately 1054.35 Joules."
+ ],
+ "relationships": [
+  "Heat-energy pricing is why gas contracts are quoted per MMBtu rather than per cubic foot or per pound."
+ ],
+ "trading_implications": [
+  "Any cross-border or cross-unit gas comparison (e.g., US MMBtu pricing vs. a Joule-denominated market) requires converting through the Btu-Joule relationship."
+ ],
+ "caveats": [
+  "Bcf is a volume/capacity measure (used for storage), not itself a heat-energy measure like Btu/MMBtu; the two are only linked via the approximate conversion factor."
+ ],
+ "formulas": [
+  {
+   "name": "Bcf to MMBtu (approximate)",
+   "formula": "1 Bcf \u2248 1,000,000 MMBtu",
+   "variables": {
+    "Bcf": "billion cubic feet of natural gas",
+    "MMBtu": "million British Thermal Units"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "26-27",
+    "section_hint": "1.1 An Overview of the Energy Markets - Common Units (natural gas)"
+   }
+  },
+  {
+   "name": "Btu to Joule conversion",
+   "formula": "1 Btu = 1054.35 J",
+   "variables": {
+    "Btu": "British Thermal Unit",
+    "J": "Joule"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "26-27",
+    "section_hint": "1.1 An Overview of the Energy Markets - Common Units (natural gas)"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "26-27"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 0,
+   "topic": "Natural gas heat-energy units and conversions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

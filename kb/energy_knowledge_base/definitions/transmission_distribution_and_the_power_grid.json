@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Transmission, distribution, and the power grid",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Physical Infrastructure",
+ "definition": "Transmission is the bulk transfer of power from a power plant to a substation over high-voltage lines; distribution is the transfer of power from a substation to end consumers over much lower-voltage lines. The interconnected set of plants, transmission lines, and substations forms the power grid.",
+ "core_idea": "Higher voltage is more efficient for moving power long distances but more dangerous, which is why the grid splits into high-voltage transmission and low-voltage distribution segments linked by transformers/substations; the grid's redundant, interconnected structure protects reliability.",
+ "key_points": [
+  "Transformers and substations step voltage up or down between transmission and distribution segments.",
+  "The power grid's redundancy \u2014 multiple routing paths between any two points \u2014 prevents any single line from overloading and helps avoid blackouts from a single point of failure.",
+  "Most power lines are overhead, mounted on poles; buried lines are used in some urban areas but are less reliable and harder to maintain, so burying is uncommon in suburban/rural areas."
+ ],
+ "relationships": [
+  "Voltage choice for transmission vs. distribution is a trade-off among safety, reliability, and efficiency."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Buried lines might seem inherently 'better' or safer, but the author notes they are actually less reliable and harder to maintain than overhead lines."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "194-195"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 3,
+   "topic": "Transmission, distribution, and the power grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Parallel shift in interest rates",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Interest Rate Curve",
+ "definition": "A parallel shift is when every interest rate on the curve, across all maturities, moves up or down together by roughly the same amount.",
+ "core_idea": "Parallel shifts tend to be driven by broad forces \u2014 credit quality concerns or deliberate government action to add or remove money from the economy \u2014 and generally signal a large change in overall economic conditions.",
+ "key_points": [
+  "Contrasts with a change in curve shape (steepening/flattening), where different maturities move by different amounts.",
+  "Common triggers cited: shifts in perceived credit quality, or monetary policy actions injecting or withdrawing money from the economy."
+ ],
+ "relationships": [
+  "Related to interest rate curve shape as a distinct mode of interest rate movement"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "105"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 1,
+   "topic": "Parallel shift in interest rates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

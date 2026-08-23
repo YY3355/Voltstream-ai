@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Illiquidity in energy markets",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Liquidity",
+ "definition": "Energy markets should generally be assumed illiquid rather than liquid \u2014 it can be difficult to find a counterparty or to convert a position back into cash.",
+ "core_idea": "Illiquidity in energy markets stems from heavy reliance on privately negotiated bilateral contracts, the narrowing of liquidity in exchange-traded contracts beyond the near term, the location- and time-specific nature of physical delivery, and a tendency for market participants to move in the same direction at the same time, leaving few counterparties on the other side.",
+ "key_points": [
+  "Directly negotiated (bilateral/OTC) contracts are common in energy and are inherently harder to exit than exchange-traded ones.",
+  "Even liquid exchange-traded contracts (e.g., NYMEX WTI Crude Oil) concentrate most volume in the first few delivery months, with open interest dropping off quickly further out.",
+  "Delivery is tied to specific times and locations; a facility in an unusual location (author's example: Alaska) may have very few counterparties able to physically deliver power there, and no nearby exchange-traded contract to reference.",
+  "A bespoke bilateral deal can be nearly impossible to unwind: other market participants may be suspicious of why the original counterparty wants out of a trade that looked good enough to enter, and the original physical counterparty (e.g., the industrial facility) may have no incentive to unwind a deal that locked in favorable prices for them.",
+  "Energy market participants (e.g., refiners, power plant owners) tend to converge on the same market view at the same time, which undermines liquidity since a liquid market needs both willing buyers and willing sellers, ideally in balance."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Positions taken via bilateral/OTC deals or in longer-dated/off-standard-location energy contracts should be assumed hard to exit, not just hard to price.",
+  "Herding behavior among energy market participants can dry up liquidity precisely when a trader most wants to adjust a position."
+ ],
+ "caveats": [
+  "Assuming that because a contract is exchange-traded, it will remain liquid at all maturities.",
+  "Assuming a profitable bilateral trade can easily be exited if desired."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "107-109"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_007.json",
+   "idx": 6,
+   "topic": "Illiquidity in energy markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

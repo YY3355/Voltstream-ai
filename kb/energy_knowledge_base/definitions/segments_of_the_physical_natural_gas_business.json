@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Segments of the physical natural gas business",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Value Chain",
+ "definition": "The natural gas industry is organized into distinct functional segments, each handling a different stage of moving gas from underground reservoir to end consumer.",
+ "core_idea": "Natural gas moves through seven broad functions: exploration, drilling, processing, interstate pipeline transport, LNG transport, storage, and distribution.",
+ "key_points": [
+  "Exploration: searching for new natural gas sources.",
+  "Drilling: extracting gas from underground reservoirs and moving it to processing plants.",
+  "Processing: converting raw gas into a standardized commodity (nearly pure methane, called dry natural gas).",
+  "Interstate pipeline transportation: maintaining pipelines linking producing areas or LNG terminals to consuming regions.",
+  "LNG transportation: shipping gas across oceans by tanker after cooling it to about -260\u00b0F to liquefy it.",
+  "Storage: maintaining large underground facilities to hold natural gas.",
+  "Distribution: delivering gas from a transporter or storage facility to end consumers."
+ ],
+ "relationships": [
+  "Gas value chain segments feed into each other sequentially, from wellhead to consumer"
+ ],
+ "trading_implications": [
+  "Each segment represents a distinct point where price risk, basis risk, or capacity constraints can arise (e.g., pipeline vs. storage vs. LNG bottlenecks)."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "137-138"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 1,
+   "topic": "Segments of the physical natural gas business"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

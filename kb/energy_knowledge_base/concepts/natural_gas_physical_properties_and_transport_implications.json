@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Natural Gas Physical Properties and Transport Implications",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Fundamentals",
+ "definition": "The physical characteristics of natural gas that make its transportation and storage fundamentally different from solid or liquid fuels.",
+ "core_idea": "Natural gas has low energy density compared to solids and liquids, and methane specifically is less energy dense than other hydrocarbon gases like propane; combined with the extreme cryogenic temperature (-263\u00b0F) required to liquefy it, this makes tank-based distribution impractical and pipelines the standard transport method.",
+ "key_points": [
+  "Gas contains substantially less energy per unit volume than solids or liquids",
+  "Methane is one of the least energy-dense hydrocarbon gases, less dense than propane",
+  "Liquefying natural gas requires supercold temperatures (-263\u00b0F), making liquid-form consumer distribution impractical",
+  "These constraints make pipeline transport the typical solution"
+ ],
+ "relationships": [
+  "Sets up the need for pipeline pressure dynamics and storage facilities"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "58-58"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 5,
+   "topic": "Natural Gas Physical Properties and Transport Implications"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

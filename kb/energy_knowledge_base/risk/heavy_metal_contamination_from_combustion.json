@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Heavy metal contamination from combustion",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Environmental / Combustion byproducts",
+ "definition": "Fossil fuels often contain trapped heavy metals such as mercury, lead, and plutonium, which are released during combustion and, because they do not decay in the body, can accumulate to toxic levels in humans and wildlife.",
+ "core_idea": "Heavy metals released by burning fossil fuels are dangerous specifically because they bioaccumulate rather than break down, so toxicity is a function of cumulative exposure over time.",
+ "key_points": [
+  "Mercury, lead, and plutonium are named as heavy metals commonly trapped in fossil fuels.",
+  "These metals are released during combustion.",
+  "They do not decay once accumulated in the body.",
+  "Sufficient accumulation is toxic to both humans and wildlife."
+ ],
+ "relationships": [
+  "Two general categories of combustion pollution"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "41-41"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 10,
+   "topic": "Heavy metal contamination from combustion"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

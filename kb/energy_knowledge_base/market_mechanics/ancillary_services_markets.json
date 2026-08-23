@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Ancillary services markets",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Grid Reliability",
+ "definition": "Markets that pay generators to hold back some of their capacity, or to be ready to ramp output, so the grid can balance rapidly changing consumer demand and variable renewable output in real time.",
+ "core_idea": "In deregulated markets, ancillary services markets compensate generators specifically for the ability to increase or decrease output on demand \u2014 a service distinct from and paid for separately from the energy itself.",
+ "key_points": [
+  "In regulated markets, the utility itself takes on the balancing responsibility rather than a market mechanism.",
+  "Failure to match generation to demand can cause blackouts (lines melting under excess load) or brownouts (voltage falling too low).",
+  "The grid cannot control consumer behavior (e.g., turning on a light or running laundry), so it relies on generators to flex output instead.",
+  "Not all generators can participate \u2014 participation requires meeting minimum performance/response requirements that vary by service type and by power grid.",
+  "The four most common ancillary service types are regulation up, regulation down, spinning reserve, and nonspinning reserve."
+ ],
+ "relationships": [
+  "Sits alongside capacity markets and PPAs as a grid-reliability mechanism.",
+  "Connected to frequency response: ancillary services are the tools used to keep grid frequency stable."
+ ],
+ "trading_implications": [
+  "Generators with fast-ramp capability have an additional revenue stream beyond energy sales by offering ancillary services."
+ ],
+ "caveats": [
+  "Ancillary services are not just 'extra electricity' \u2014 they specifically compensate the capability/readiness to change output, not output itself."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "494-495"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 2,
+   "topic": "Ancillary services markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

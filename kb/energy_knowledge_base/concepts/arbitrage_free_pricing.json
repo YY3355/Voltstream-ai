@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Arbitrage-free pricing",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Arbitrage-free pricing is the principle that two assets worth the same amount throughout their lives and at expiration must be priced identically at all times, since otherwise a trader could buy the cheaper one, sell the more expensive one, and lock in a risk-free profit.",
+ "core_idea": "Option pricing commonly assumes arbitrage opportunities either don't exist or are quickly eliminated by alert traders exploiting them, forcing prices back into an arbitrage-free relationship. The author notes there is little practical difference between the 'strong form' of this assumption (arbitrage never exists) and the 'weak form' (arbitrage exists but doesn't last), as long as someone acts on the opportunity.",
+ "key_points": [
+  "Arbitrage is defined as making a risk-free profit by simultaneously buying one security and selling another.",
+  "A common option-pricing assumption is that arbitrage opportunities do not exist, or that alert traders quickly eliminate them.",
+  "Arbitrage-free pricing: if two assets have identical value throughout their lives and at expiration, their prices should be identical at all times; otherwise a risk-free profit could be made by buying one and selling the other.",
+  "This is an assumption, since traders are technically free to transact at any price \u2014 it holds in practice as long as someone acts to exploit any pricing gap.",
+  "The author treats the 'strong form' (arbitrage never exists) and 'weak form' (arbitrage opportunities exist but don't persist) of this assumption as practically equivalent."
+ ],
+ "relationships": [
+  "Underpins Black Scholes genre model assumptions."
+ ],
+ "trading_implications": [
+  "Pricing discrepancies between equivalent assets should be viewed as temporary arbitrage opportunities that the market will close."
+ ],
+ "caveats": [
+  "That the no-arbitrage assumption requires arbitrage to literally never occur \u2014 the author clarifies the weak form (temporary arbitrage, quickly closed) is functionally equivalent."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "348-349"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 6,
+   "topic": "Arbitrage-free pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Implied volatility as the hard input",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing",
+ "definition": "Implied volatility (\u03c3) is the one input to the generalized Black Scholes formula that isn't directly observable in the market and must instead be backed out from recently traded option prices.",
+ "core_idea": "While most generalized Black Scholes inputs are readily available contract terms or market prices, volatility is the exception \u2014 it has to be estimated from other options' trading prices rather than read off directly.",
+ "key_points": [
+  "Most terms in the generalized Black Scholes formula are either stated in the option contract or observable market prices.",
+  "Implied volatility is the one term that is difficult to obtain directly.",
+  "It is typically calculated using the prices of other, recently traded options."
+ ],
+ "relationships": [
+  "Input to the generalized Black Scholes formula"
+ ],
+ "trading_implications": [
+  "Since volatility must be inferred rather than observed, its estimation quality directly affects the reliability of any Black Scholes genre price."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "365"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 6,
+   "topic": "Implied volatility as the hard input"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

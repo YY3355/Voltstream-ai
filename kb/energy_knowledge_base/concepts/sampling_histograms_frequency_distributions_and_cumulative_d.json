@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Sampling: histograms, frequency distributions, and cumulative distributions",
+ "type": "concept",
+ "category": "Quantitative Methods",
+ "subcategory": "Distributions",
+ "definition": "A histogram organizes raw data (e.g., prices) into buckets showing how many samples fall in each; when data is abundant, histograms are often fitted with a smooth mathematical function, producing frequency distributions and cumulative distributions as two alternate ways to view the same data.",
+ "core_idea": "Frequency distributions show the area under the curve as 100% of possible values, so probability over a range is the area between two points; cumulative distributions show, for each point, the percentage of samples at or below it, which lets probabilities over a range be found by simple subtraction \u2014 making them generally easier to use.",
+ "key_points": [
+  "A histogram buckets raw samples (e.g., gas station prices) to summarize them.",
+  "With enough data, histograms are commonly smoothed into a mathematical function for easier analysis.",
+  "Frequency distributions and cumulative distributions are the two most common chart types for summarizing statistical data; both represent the same underlying data differently.",
+  "In a frequency distribution, the total area under the curve equals 100% of possible values, and the probability of a range is the area between two points.",
+  "A cumulative distribution shows, at each x-value, the percentage of samples equal to or below that value.",
+  "Cumulative distributions let you find the probability of a range via subtraction (e.g., % below $3.00 minus % below $2.95 gives the % between $2.95 and $3.00).",
+  "Because of this subtraction property, cumulative distributions are generally easier to use, and most spreadsheet statistical functions are built on cumulative distributions."
+ ],
+ "relationships": [
+  "Cumulative distributions are described as derived from / an alternate view of the same data as frequency distributions."
+ ],
+ "trading_implications": [
+  "Traders can use cumulative distributions to quickly compute the probability that a price falls within a specific band via subtraction, without needing to integrate an area under a curve."
+ ],
+ "caveats": [
+  "Frequency and cumulative distributions can seem like different data sets, but the author stresses they are just different ways of looking at the same underlying data."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "304-306"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 7,
+   "topic": "Sampling: histograms, frequency distributions, and cumulative distributions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

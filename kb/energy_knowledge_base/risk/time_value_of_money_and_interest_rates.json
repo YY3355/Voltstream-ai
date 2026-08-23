@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Time value of money and interest rates",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Time Value of Money",
+ "definition": "The principle that money available today is generally worth more than the same nominal amount promised in the future, because it can be invested or spent immediately; interest rates quantify this relationship between present and future value.",
+ "core_idea": "Interest rates translate between present value (cash today) and future value (cash at a later date), and the 'right' rate to use reflects the market's consensus expected return, which itself is shaped by the likelihood of actually being repaid.",
+ "key_points": [
+  "Given a guaranteed choice between equal payments now vs. later, rational actors prefer payment now because they can invest or spend it immediately.",
+  "When future payments are larger than present ones, the decision depends on comparing the larger future payment against the expected investment return achievable on the smaller present payment.",
+  "A stated interest rate expresses the equivalence between a present amount and a larger future amount (the author's example: 10% annual rate implies $100 today \u2248 $110 in a year, and conversely $100 a year from now is worth about $91 today)."
+ ],
+ "relationships": [
+  "Time value of money underlies the pricing logic connecting present and future cash flows, which the author distinguishes from an individual's own required return (IRR) and from the market consensus rate (interest rate)."
+ ],
+ "trading_implications": [
+  "When comparing cash flows that occur at different times (e.g., valuing a forward or evaluating a payment plan), a trader must discount/compound cash flows using an appropriate interest rate rather than comparing nominal amounts directly."
+ ],
+ "caveats": [
+  "Comparing nominal dollar amounts across different time periods without adjusting for the time value of money."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 7,
+   "topic": "Time value of money and interest rates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

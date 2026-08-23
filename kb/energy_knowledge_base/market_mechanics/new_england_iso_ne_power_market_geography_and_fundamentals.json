@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "New England (ISO-NE) power market geography and fundamentals",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regional Markets - ISO-NE",
+ "definition": "New England has a single trading hub, with prices based on selected nodes around Boston, Massachusetts, and the region imports nearly all the fuel needed for its power generation.",
+ "core_idea": "Natural gas is the marginal fuel for New England, supplied mostly from the U.S. Gulf Coast and eastern Canada; efforts to build LNG terminals in Massachusetts aim to supplement this imported gas supply, and most of the region's population (and thus demand) is concentrated in the south (Connecticut and greater Boston).",
+ "key_points": [
+  "ISO-NE has only one trading hub, priced off selected nodes near Boston.",
+  "New England imports almost all fuel needed for power generation.",
+  "Natural gas is the region's marginal fuel.",
+  "The bulk of New England's gas supply comes from the U.S. Gulf Coast and eastern Canada.",
+  "Efforts exist to build LNG terminals in Massachusetts to augment natural gas supply.",
+  "Most of the region's population is in the south (Connecticut and the Boston area); the north is relatively unpopulated."
+ ],
+ "relationships": [
+  "Single-hub pricing structure contrasts with the multi-zone structures of PJM, MISO, and ERCOT."
+ ],
+ "trading_implications": [
+  "Because gas is the marginal fuel and is largely imported, New England power prices are sensitive to Gulf Coast/eastern Canada gas supply and pipeline/LNG import capacity, especially in winter.",
+  "A single trading hub simplifies price discovery relative to multi-zone markets but concentrates basis risk at Boston-area nodes."
+ ],
+ "caveats": [
+  "Assuming New England has abundant local fuel supply; the region imports nearly all its generation fuel, making it more exposed to external gas supply disruptions than fuel-producing regions like ERCOT or western PJM."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "210-211"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_007.json",
+   "idx": 3,
+   "topic": "New England (ISO-NE) power market geography and fundamentals"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

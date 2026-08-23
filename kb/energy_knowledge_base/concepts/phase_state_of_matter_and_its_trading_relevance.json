@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Phase (State of Matter) and Its Trading Relevance",
+ "type": "concept",
+ "category": "Commodity Fundamentals",
+ "subcategory": "Physical Properties",
+ "definition": "Phase is whether a substance is solid, liquid, or gas; it determines how a fuel must be transported and what kind of equipment or engine is needed to use it.",
+ "core_idea": "Because phase governs transport and end-use equipment requirements, controlling phase changes deliberately (distillation, air conditioning) is central to energy processes, while uncontrolled phase changes (like unwanted condensation) can damage equipment.",
+ "key_points": [
+  "Solids and liquids stay contained in a vessel; gas dissipates immediately unless actively contained.",
+  "Controlled state changes (distillation, refrigeration/AC) are deliberate and useful.",
+  "Uncontrolled state changes (e.g., condensation in a pipeline) can be destructive.",
+  "The physical phase of a fuel dictates the transport method and the combustion/engine technology required to use it."
+ ],
+ "relationships": [
+  "Connects to pipeline design considerations and to distillation/refrigeration as controlled-phase-change industries."
+ ],
+ "trading_implications": [
+  "A fuel's phase is a structural constraint on its logistics and market infrastructure, not just a technical detail \u2014 it shapes which transport and end-use assets a trader must account for."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "290-291"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 1,
+   "topic": "Phase (State of Matter) and Its Trading Relevance"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

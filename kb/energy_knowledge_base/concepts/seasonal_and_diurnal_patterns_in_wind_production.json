@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Seasonal and diurnal patterns in wind production",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "Wind output in the U.S. tends to follow predictable seasonal and daily patterns: generally higher in winter and overnight, lower in summer and midday, though exact timing varies by location.",
+ "core_idea": "Average monthly wind capacity factors in the U.S. are typically higher in winter (roughly 40-50%) and lower in summer (roughly 20%), and within a day, wind speeds are typically highest overnight and lowest around midday.",
+ "key_points": [
+  "U.S. wind output is generally lowest in summer months and highest in winter months.",
+  "Average monthly capacity factors in winter are commonly 40-50%.",
+  "Average monthly capacity factors in summer can be much lower, around 20%.",
+  "Exact seasonal timing varies by specific location.",
+  "Within a day, wind speeds are typically highest overnight and lowest during the middle of the day."
+ ],
+ "relationships": [
+  "Refines the capacity factor concept with seasonal/diurnal granularity"
+ ],
+ "trading_implications": [
+  "Seasonal and diurnal wind patterns can misalign with typical demand peaks (e.g., summer afternoon demand peaks coincide with lower wind output), which is relevant when valuing wind's contribution to meeting load."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "465-467"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 6,
+   "topic": "Seasonal and diurnal patterns in wind production"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "canonical_topic": "Price spread definition",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Locational Spreads",
+ "definition": "A price spread is simply the price in one region minus the price in another region, collapsing two separate regional prices into a single comparative number.",
+ "core_idea": "Spreads express relative value between two markets as one number, which is what a location spread trade is designed to speculate on.",
+ "key_points": [
+  "Example given: if New York price is $100 and California price is $120, the New York/California spread is -$20.",
+  "The sign and magnitude of the spread convention (Region A minus Region B) matters for interpreting which side of the trade is long or short."
+ ],
+ "relationships": [
+  "Underlies location spread trades"
+ ],
+ "trading_implications": [
+  "A location spread position is a bet that this difference will move in a particular direction relative to market expectations at trade inception."
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Price spread",
+   "formula": "Spread(A, B) = Price(A) - Price(B)",
+   "variables": {
+    "Price(A)": "spot or futures price in region A",
+    "Price(B)": "spot or futures price in region B"
+   },
+   "source": {
+    "chapter": 19,
+    "pages": "447",
+    "section_hint": "4.4 Wheeling Power \u2014 Spread Trades Versus Wheeling Trades"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "447"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_002.json",
+   "idx": 2,
+   "topic": "Price spread definition"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

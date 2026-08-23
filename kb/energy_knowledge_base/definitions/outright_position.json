@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Outright position",
+ "type": "definition",
+ "category": "Trading Markets",
+ "subcategory": "Trade Types",
+ "definition": "An outright position is a directional bet on a single commodity's price \u2014 for example, betting that electricity prices will rise or fall relative to current expectations of future prices.",
+ "core_idea": "Taking an outright position means being exposed to the absolute price direction of one commodity, as opposed to the relative relationship between two commodities.",
+ "key_points": [
+  "An outright trade is a single-commodity directional bet.",
+  "Contrasted directly with spread trades, which bet on the relationship between two related products instead of absolute direction."
+ ],
+ "relationships": [
+  "Contrasted with spread trades"
+ ],
+ "trading_implications": [
+  "Outright positions carry full exposure to commodity price volatility and therefore typically require more margin than an equivalent spread position."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 1,
+   "topic": "Outright position"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

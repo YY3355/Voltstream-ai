@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "p-n junction doping for directional current flow",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "Solar cells use doped semiconductor layers (p-type and n-type) to force freed electrons to flow in a consistent direction, producing usable current rather than random electron motion.",
+ "core_idea": "A p-type layer (doped to be positively charged, missing electrons) is sandwiched with an n-type layer (doped with excess electrons); when sunlight frees an electron on the n-type side, it migrates toward the positive p-type side, creating a directional current.",
+ "key_points": [
+  "P-type semiconductors are doped with atoms lacking electrons, giving a net positive charge.",
+  "N-type semiconductors are doped with atoms carrying excess electrons, giving a net negative charge.",
+  "Free electrons naturally move away from negative charge and toward positive charge, which the p-n sandwich exploits to generate consistent current."
+ ],
+ "relationships": [
+  "Builds on the basic PV effect (band gap excitation) described alongside it."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "454-455"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 1,
+   "topic": "p-n junction doping for directional current flow"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

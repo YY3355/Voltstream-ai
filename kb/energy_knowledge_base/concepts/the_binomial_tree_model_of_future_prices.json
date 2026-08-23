@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "The binomial tree model of future prices",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "A binomial tree is the simplest model of future underlying prices, assuming the price can rise or fall by a fixed percentage each period, with that percentage held constant over the option's life; prices start at today's value and diverge over time.",
+ "core_idea": "Even though the up and down move sizes can be asymmetric, the tree can be constructed so that a higher probability of an up-move offsets a larger possible down-move, keeping the expected average price at each future period equal to today's price.",
+ "key_points": [
+  "Prices start at today's value and branch into higher or lower values at each subsequent period.",
+  "In the example, a $100 starting price moves to either $110 or $85 in the next period.",
+  "Downside moves may be larger in magnitude than upside moves, but the probability of an upside move is higher, so the expected price in later periods still averages to $100.",
+  "Standard notation: p = probability price rises, (1-p) = probability price falls, u = up-move amount, v = down-move (fall) amount, S with a period subscript (e.g., S_x) = underlying price at a given period, with period numbering starting at 0."
+ ],
+ "relationships": [
+  "An application of the random walk concept",
+  "Built on the 'today's price is best estimate' and 'constant volatility' assumptions"
+ ],
+ "trading_implications": [
+  "Provides a tractable, period-by-period framework for pricing options via replication once a price distribution is modeled."
+ ],
+ "caveats": [
+  "An asymmetric up/down move size does not necessarily mean the expected future price is biased \u2014 the probabilities are set so the average still equals the current price."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "353-353"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_001.json",
+   "idx": 9,
+   "topic": "The binomial tree model of future prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

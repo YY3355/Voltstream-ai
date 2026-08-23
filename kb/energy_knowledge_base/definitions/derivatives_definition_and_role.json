@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Derivatives: definition and role",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Fundamentals",
+ "definition": "A derivative is a financial contract whose value is derived from the value of some other asset (the underlying asset). Trading a derivative transfers only the contract and its obligations, not the underlying commodity itself \u2014 physical delivery, if any, happens only when the contract is exercised.",
+ "core_idea": "Most energy trading activity is really the transfer of paper obligations about the future (futures, forwards, swaps, options) rather than the movement of physical commodities; the underlying asset is commonly a real asset like crude oil or electricity, but can also be another derivative (e.g., an option on a forward).",
+ "key_points": [
+  "Common derivative types named: futures, forwards, swaps, option contracts.",
+  "The value of a derivative equals the price someone will pay to have the contract (the obligation) transferred to them.",
+  "An underlying asset can itself be a derivative \u2014 e.g., an option written on a forward contract."
+ ],
+ "relationships": [
+  "Depends on the underlying asset being tradable per the assignability/liquidity/fungibility framework \u2014 formalized in accounting as 'readily convertible to cash' (RCC)."
+ ],
+ "trading_implications": [
+  "Because only the contract changes hands (not the commodity) until exercise, derivatives let traders take positions on price without managing physical logistics."
+ ],
+ "caveats": [
+  "Trading a crude oil futures contract does not move physical crude oil at trade time \u2014 delivery only occurs upon exercise of the contract."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "82-83"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_002.json",
+   "idx": 3,
+   "topic": "Derivatives: definition and role"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

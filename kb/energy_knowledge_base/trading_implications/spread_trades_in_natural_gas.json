@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Spread trades in natural gas",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Trading Strategies",
+ "definition": "A trade structured around the price difference between two related things (locations, products, or time periods) rather than a bet on overall market direction.",
+ "core_idea": "By simultaneously buying one position and selling a related one, a spread trader isolates a specific price relationship and reduces exposure to broad market moves.",
+ "key_points": [
+  "Directional trades bet on the whole market moving up or down; spread trades instead target relative-value differences between two securities.",
+  "Because natural gas prices are cyclical, spread trading is more common in gas markets than pure directional bets.",
+  "Spread trades are popular because they reduce a trader's exposure to overall market direction."
+ ],
+ "relationships": [
+  "Parent concept for location spreads, heat rate trades, time spreads, and swing trades"
+ ],
+ "trading_implications": [
+  "Traders favor spreads to isolate a specific relationship (location, gas-vs-power, time, storage) instead of taking outright market risk."
+ ],
+ "caveats": [
+  "Spread trades still carry risk \u2014 just a narrower, relationship-specific risk rather than zero risk."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 0,
+   "topic": "Spread trades in natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

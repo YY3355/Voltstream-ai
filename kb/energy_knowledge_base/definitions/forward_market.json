@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Forward market",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Spot and Forward Markets",
+ "definition": "The forward market is a financial market in which delivery of a commodity is scheduled for an agreed future point in time, typically at least a month ahead.",
+ "core_idea": "Unlike the spot market's immediate delivery, forward markets let counterparties arrange transactions well in advance of physical delivery, and most energy trading activity occurs in this forward segment.",
+ "key_points": [
+  "Forward market deliveries are typically scheduled at least a month in advance.",
+  "Most energy trading occurs in forward markets rather than spot markets (per the chapter's Key Topics)."
+ ],
+ "relationships": [
+  "Contrasted directly with the spot/cash market definition"
+ ],
+ "trading_implications": [
+  "Forward markets are the primary venue for arranging energy transactions given the difficulty of short-notice physical delivery."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "75"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 7,
+   "topic": "Forward market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

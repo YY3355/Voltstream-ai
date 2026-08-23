@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Steam turbine efficiency scales with operating temperature",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "For thermal solar-driven steam turbines, the fraction of heat energy converted to electricity rises significantly as operating temperature increases, making concentrated (higher-temperature) heat more valuable than a larger volume of lower-temperature heat.",
+ "core_idea": "A steam turbine's conversion efficiency is temperature-dependent, so achieving high concentration/temperature matters more than sheer volume of stored heat.",
+ "key_points": [
+  "Example given: a turbine operating at 500\u00b0F converts about 40 percent of heat energy into electricity.",
+  "Example given: a turbine operating at 1000\u00b0F converts about 60 percent of heat energy into electricity.",
+  "As a result, a smaller volume of liquid at 1000\u00b0F is more valuable than twice the volume at 500\u00b0F.",
+  "This is the reason thermal solar system design prioritizes achieving high concentrated temperatures via concentrators and tracking systems."
+ ],
+ "relationships": [
+  "Directly motivates the emphasis on solar concentrators and tracking systems in thermal solar design."
+ ],
+ "trading_implications": [
+  "Values concentrated, higher-temperature thermal storage over larger quantities of lower-temperature storage when planning generation economics."
+ ],
+ "caveats": [
+  "More stored heat volume does not compensate for lower temperature \u2014 efficiency losses at lower temperatures can outweigh volume advantages."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "456"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 5,
+   "topic": "Steam turbine efficiency scales with operating temperature"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

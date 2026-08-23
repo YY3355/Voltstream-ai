@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Margin Call",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Futures Margining",
+ "definition": "A margin call is the exchange's notice that a trader's margin account balance has fallen too low after daily mark-to-market losses and must be topped up with additional deposits.",
+ "core_idea": "Daily margining can push an account balance below the required minimum, and the margin call is the mechanism forcing the trader to replenish it or face liquidation.",
+ "key_points": [
+  "If daily margining leaves excess money in the account, it can be withdrawn.",
+  "If the balance falls too low, more money must be deposited.",
+  "A margin call is the alert that a deposit is needed."
+ ],
+ "relationships": [
+  "Failure to meet a margin call lets the exchange seize and liquidate the position."
+ ],
+ "trading_implications": [
+  "Traders must maintain liquidity to meet margin calls promptly or risk forced liquidation of their position."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "93-94"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 2,
+   "topic": "Margin Call"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

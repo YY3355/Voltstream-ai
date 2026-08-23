@@ -1,0 +1,7 @@
+{
+ "chapter": 29,
+ "title": "6.1 MARK-TO-MARKET ACCOUNTING",
+ "n_concepts": 15,
+ "summary": "Chapter 29 covers how mark-to-market accounting establishes fair value under ASC 820/IFRS 13, starting from core terminology and the fair value hierarchy (Level 1/2/3 inputs) before turning to the practical rules for choosing prices: principal vs. most advantageous market, exit price selection, and the convention that basis spreads and offsetting asset/liability pairs are priced consistently regardless of a zero observed value. It then works through concrete cases \u2014 a Henry Hub/Texas basis leveling example and a hypothetical distressed end-of-day trade \u2014 to show how disorderly-transaction criteria and the \"market is never distressed\" principle keep isolated bad trades from skewing valuations. The chapter closes on the practical and governance challenges of applying MTM to energy contracts: the difficulty of pricing illiquid instruments, the earnings-manipulation risk this creates, and the fact that leveling determinations ultimately rest on each firm's own management judgment.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

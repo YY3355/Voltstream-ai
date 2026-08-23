@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Weather Risk: Combined Volume and Price Exposure",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Weather Risk",
+ "definition": "Weather is unusual as a risk factor for energy companies because a single weather event can simultaneously move both the quantity of energy needed (volume risk) and its price (price risk), making it hard to hedge with a standard financial instrument that typically addresses only one dimension.",
+ "core_idea": "An extreme weather event can drive up both consumption and price at the same time, compounding the financial impact in a way ordinary single-variable hedges can't fully offset.",
+ "key_points": [
+  "An unusually cold winter increases heating demand, which draws down stored natural gas faster than normal (volume effect).",
+  "The same cold snap can push natural gas prices higher as utilities compete for the dwindling supply of stored gas (price effect).",
+  "Because volume and price move together and are both driven by the same weather cause, standard financial hedges (which typically fix a price or a quantity separately) struggle to fully cover the combined exposure."
+ ],
+ "relationships": [
+  "Motivates the use of weather derivatives as a complementary hedge alongside commodity price hedges.",
+  "Connects to natural gas storage dynamics during winter demand spikes."
+ ],
+ "trading_implications": [
+  "Risk managers at gas utilities need to consider combined volume-and-price scenarios (e.g., a cold winter) rather than hedging price and volume as independent risks."
+ ],
+ "caveats": [
+  "Assuming a price hedge alone (e.g., a futures contract for a fixed quantity) fully protects against a weather-driven demand spike, when the volume actually needed also changes."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "71-72"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_014.json",
+   "idx": 1,
+   "topic": "Weather Risk: Combined Volume and Price Exposure"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

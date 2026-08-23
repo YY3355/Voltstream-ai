@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Mean Reversion vs. Martingale Behavior in Spreads",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Spread Option Modeling",
+ "definition": "A modeling assumption about how a spread evolves over time: a martingale process (like a coin flip) has no memory of the past, while a mean-reverting process tends to return to a central trend over time.",
+ "core_idea": "Spreads can fall into either behavioral category, but whenever a conversion relationship links the two underlying assets (e.g., crude oil into gasoline), the spread tends to oscillate around the cost of that conversion because competitive forces pull prices back together over the long run, even though short-term supply/demand shocks can temporarily widen the spread.",
+ "key_points": [
+  "Not all price/spread series behave the same way statistically \u2014 some trend, some mean-revert.",
+  "A conversion relationship between two assets (e.g., crack spread: crude oil vs. gasoline) tends to make the spread oscillate around the conversion cost.",
+  "Short-term supply and demand issues can temporarily push the spread away from that equilibrium.",
+  "Over the long run, competition (e.g., between refineries) tends to bring the spread back toward the conversion cost."
+ ],
+ "relationships": [
+  "Applies to conversion-linked spreads such as the crack spread and, by extension, the spark spread."
+ ],
+ "trading_implications": [
+  "Modeling a conversion-linked spread as mean-reverting around the conversion cost may better reflect real market behavior than assuming random-walk (martingale) behavior."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "377-378"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 4,
+   "topic": "Mean Reversion vs. Martingale Behavior in Spreads"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

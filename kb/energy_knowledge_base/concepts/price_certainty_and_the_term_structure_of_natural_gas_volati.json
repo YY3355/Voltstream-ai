@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Price certainty and the term structure of natural gas volatility",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Natural gas prices become less certain (more volatile) the closer they are to the delivery date, which is the opposite of the typical pattern in most other markets.",
+ "core_idea": "Short-term supply disruptions strongly affect near-term/spot prices, but unless the disruption reflects a lasting fundamental shift, it doesn't meaningfully move forward prices; forward prices tend to revert toward levels based on typical consumer demand and expected supply, so volatility is concentrated in the spot market rather than spread across the whole curve.",
+ "key_points": [
+  "Price uncertainty increases as delivery approaches \u2014 near-dated prices are less certain than far-dated ones (referenced in the source as Figure 2.1.9), which the author flags as unusual relative to most other markets.",
+  "Short-term supply disruptions have an outsized effect on near-term/spot prices.",
+  "Large spot price moves generally do not affect future/forward prices unless driven by a lasting fundamental cause.",
+  "Forward prices tend to revert to levels reflecting typical consumer demand and expected supply.",
+  "Overall, spot prices are more volatile than forward prices."
+ ],
+ "relationships": [
+  "Reinforces the spot/forward market distinction",
+  "Ties to swing trades' ability to exploit short-term spot volatility"
+ ],
+ "trading_implications": [
+  "Near-term/spot positions carry more price risk than forward positions.",
+  "Storage/swing strategies benefit from volatility being concentrated near delivery."
+ ],
+ "caveats": [
+  "Assuming natural gas price uncertainty behaves like other markets, where near-term prices are typically more certain than long-dated ones."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 10,
+   "topic": "Price certainty and the term structure of natural gas volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

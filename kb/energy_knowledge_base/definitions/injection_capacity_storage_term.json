@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Injection Capacity (Storage Term)",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage Terminology",
+ "definition": "Injection capacity is the speed at which gas can be placed back into a storage facility.",
+ "core_idea": "Injection capacity behaves oppositely to deliverability: it is highest when the facility is nearly empty and lowest when the facility is nearly full.",
+ "key_points": [
+  "The more gas already in the facility, the longer it takes to inject additional gas.",
+  "Injection capacity is lowest exactly when the facility is nearly full \u2014 the opposite condition from peak deliverability."
+ ],
+ "relationships": [
+  "Inverse relationship to Deliverability."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "534-535"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 8,
+   "topic": "Injection Capacity (Storage Term)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Commonly observed design flaws in capacity markets",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Capacity Markets",
+ "definition": "Capacity markets built around assumptions of ever-rising demand and ever-improving new-generation efficiency can fail to deliver the steady revenue needed to fund new construction when those assumptions don't hold.",
+ "core_idea": "Two embedded assumptions \u2014 that demand always grows and that new units are always more efficient than old ones \u2014 often break down in practice, undermining the revenue new generation needs to get built.",
+ "key_points": [
+  "Many capacity markets assume consumer demand rises continuously, but efficiency gains in insulation, appliances, lighting, and computing can flatten demand growth; U.S. retail electricity sales barely grew from 2005 to 2015.",
+  "A second embedded assumption is that new generation is always more efficient than existing generation, letting new units displace older ones in the dispatch stack and earn operating income that funds construction, while capacity payments cover the older units' maintenance.",
+  "When new units use the same or less efficient technology as the existing fleet, they may fail to displace existing units and thus may not capture the operating income needed to pay for their own construction.",
+  "Adding less-efficient generation can still be beneficial in some cases \u2014 e.g., a gas turbine added to a wind/solar-heavy grid for reliability won't displace the renewables, runs only infrequently, and must be paid for almost entirely through capacity payments rather than energy margin.",
+  "Because capacity markets primarily pay out when there is a construction shortfall, and a single new unit (e.g., one gas turbine built every few years under flat demand) can quickly close that shortfall, capacity payments can start and stop abruptly.",
+  "This start-stop payment pattern can leave developers without the sufficiently consistent, predictable cash flow needed to finance new generation construction."
+ ],
+ "relationships": [
+  "Directly follows from the auction mechanics described in 'Outage rates and capacity auction mechanics'."
+ ],
+ "trading_implications": [
+  "Developers evaluating new generation projects in flat-demand or same-technology markets should not assume capacity market revenue will be steady or sufficient to finance construction.",
+  "Adding less-efficient, infrequently-run reliability generation (e.g., a peaking gas turbine on a renewables-heavy grid) is a case where capacity payments, not energy margin, must carry nearly the full cost of the asset."
+ ],
+ "caveats": [
+  "It is not automatic that new generation displaces old generation in the stack \u2014 that only happens if the new unit is meaningfully more efficient than what's already running."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "499-500"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_001.json",
+   "idx": 2,
+   "topic": "Commonly observed design flaws in capacity markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

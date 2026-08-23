@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Solar power: PV vs. thermal",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Solar power splits into photovoltaic (PV), which converts sunlight directly into electricity via panels, and thermal solar, which uses sunlight to produce heat that can drive steam turbines or directly displace heating electricity.",
+ "core_idea": "PV output depends on panel technology and sunlight intensity, while thermal solar's key advantage is that heat is comparatively easy to store, letting thermal facilities generate around the clock even though they only collect energy during daylight.",
+ "key_points": [
+  "PV panel output depends on equipment type and sunlight intensity.",
+  "Accurately estimating expected PV output is critical: underestimating makes solar look uneconomical and gets it passed over, while overestimating causes power shortfalls relative to the project's economic goals.",
+  "Thermal solar installations range from small systems (e.g., heating outdoor pools) to full electrical generation facilities.",
+  "Thermal solar's ability to store heat lets facilities operate around the clock despite only collecting solar energy during the day.",
+  "Solar radiation varies with weather, sun position, and daylight hours, and is further affected by panel angle, efficiency at handling direct vs. diffuse light, and surrounding environment.",
+  "Regional/national historical solar radiation averages are used to analyze and estimate solar installations."
+ ],
+ "relationships": [
+  "Renewable generation estimation",
+  "Steam turbine generation",
+  "Locational siting constraints"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Both overly conservative and overly optimistic output estimates are problematic in different ways \u2014 it isn't just a matter of being 'safe' with low estimates."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "53-54"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 3,
+   "topic": "Solar power: PV vs. thermal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

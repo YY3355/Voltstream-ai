@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Sweet vs. sour crude classification",
+ "type": "definition",
+ "category": "Oil",
+ "subcategory": "Crude oil quality grading",
+ "definition": "Crude oil is classified as sweet or sour based on its sulfur content, since sulfur becomes a pollutant (sulfuric acid precursor) when the oil is combusted.",
+ "core_idea": "Sulfur content in crude oil determines a sweet/sour label, which matters because burning sulfur-bearing oil produces sulfur oxides that combine with water to form sulfuric acid, a pollutant.",
+ "key_points": [
+  "Sweet crude: sulfur content below 0.5 percent.",
+  "Sour crude: sulfur content above 0.5 percent.",
+  "During combustion, sulfur reacts with oxygen to form sulfur oxides, which combine with combustion water to form sulfuric acid."
+ ],
+ "relationships": [
+  "Sweet/sour classification is independent of the light/heavy (API gravity) classification, and both jointly describe crude quality (e.g., 'light sweet crude')"
+ ],
+ "trading_implications": [
+  "Sweet crude is generally easier/cheaper to refine into clean fuels, so sulfur content is a key driver of price differentials between crude grades."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "220"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 3,
+   "topic": "Sweet vs. sour crude classification"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

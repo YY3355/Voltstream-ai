@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Thermal solar power and heat storage advantage",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "Thermal solar systems concentrate sunlight to generate high heat (e.g., melting salt for storage) rather than directly generating electricity, allowing energy to be stored and used later, including at night.",
+ "core_idea": "Unlike PV, which must use sunlight as it arrives, thermal solar can bank heat in an insulated storage medium during the day and release it for electricity generation (via steam turbines) or other uses whenever needed.",
+ "key_points": [
+  "Example: a high-temperature facility can heat salt to ~500\u00b0F, at which point it melts and can be held in insulated storage until needed.",
+  "Stored heat need not be used immediately, unlike PV output \u2014 this is presented as thermal solar's key advantage over PV.",
+  "Heat can serve purposes other than electricity generation: air conditioning, heating, cooking, sterilization, and dehydration.",
+  "Electricity is typically produced from stored heat via a steam turbine.",
+  "Because the sun's position moves through the day, thermal solar systems generally need tracking mechanisms to keep concentrated energy focused on the collection point."
+ ],
+ "relationships": [
+  "Contrasts directly with PV power's inability to store energy for later use."
+ ],
+ "trading_implications": [
+  "Thermal solar's storage capability lets it shift generation timing, which is valuable in markets where evening/night prices exceed daytime prices."
+ ],
+ "caveats": [
+  "Thermal solar isn't only for electricity \u2014 it may be more valuable directed at other heat-driven uses instead of power generation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "456"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 4,
+   "topic": "Thermal solar power and heat storage advantage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

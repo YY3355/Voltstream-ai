@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Exchange trading",
+ "type": "market_mechanic",
+ "category": "Trading Markets",
+ "subcategory": "Exchanges",
+ "definition": "An exchange is an intermediary where both sides of a trade contract with the exchange itself rather than directly with each other, removing direct counterparty risk and the need to sign a separate agreement with every potential trading partner.",
+ "core_idea": "Exchanges make markets more accessible than bilateral trading by letting participants sign a single agreement and monitor credit risk against just one counterparty (the exchange), which itself is protected by required financial backing and margin deposits from traders.",
+ "key_points": [
+  "Bilateral/OTC trading limits market access because a trader would otherwise need an ISDA agreement with every potential counterparty before trading with them.",
+  "Example: a small hedge fund (GetRichNow Partners) wanting to trade OTC would need bilateral agreements with every other potential counterparty, which is impractical for fast, frequent trading.",
+  "On an exchange, participants sign one agreement with the exchange and thereafter only need to monitor the exchange's own credit risk.",
+  "Exchanges are generally very safe counterparties because they are required to have solid financial backing and require traders to post a good-faith deposit called margin."
+ ],
+ "relationships": [
+  "Directly contrasts with bilateral/OTC trading's credit-risk and paperwork downsides"
+ ],
+ "trading_implications": [
+  "Exchange trading trades some flexibility (customized bilateral terms) for reduced counterparty risk, less paperwork, and easier entry/exit."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "87-88"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_003.json",
+   "idx": 5,
+   "topic": "Exchange trading"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Vega \u2014 sensitivity to volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Greeks",
+ "definition": "Vega measures how much the value of an option (or an option-heavy portfolio) changes as volatility changes. It matters mainly for portfolios with significant option exposure.",
+ "core_idea": "Because option pricing models assume prices diffuse outward from a starting point, small shifts in that dispersion (volatility) can materially change an option's value, making options highly sensitive to volatility.",
+ "key_points": [
+  "Vega is named after a star in the constellation Lyra, not a Greek letter \u2014 it was adopted into the options 'Greeks' vocabulary because no Greek letter starts with 'v'.",
+  "Options have no downside beyond the premium paid, so a rise in volatility (more chance of a windfall) is unambiguously good for the buyer and bad for the seller.",
+  "An option buyer is described as 'long volatility' (benefits when volatility rises); an option seller is 'short volatility' (benefits when volatility falls)."
+ ],
+ "relationships": [
+  "Distinguished from Theta (time) and Rho (interest rates) as another portfolio sensitivity measure ('Greek')."
+ ],
+ "trading_implications": [
+  "Option buyers want volatility to increase after they establish a position; option sellers want it to stay flat or decline.",
+  "Portfolios heavy in options carry volatility risk that non-option positions do not, and need to be monitored via vega exposure."
+ ],
+ "caveats": [
+  "Vega is often assumed to be a Greek letter like the other sensitivities (delta, gamma, theta, rho); the author notes it is not \u2014 it's a star name repurposed for convenience."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "372-373"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_005.json",
+   "idx": 0,
+   "topic": "Vega \u2014 sensitivity to volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Mineral rights ownership and licensing for E&P",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Upstream Operations",
+ "definition": "Energy companies lease land to extract fuel and compensate both the surface land owner and the mineral rights owner (often the same or different parties) via royalties, a share of production profit; who owns subsurface mineral rights varies by country.",
+ "core_idea": "In the U.S., subsurface fossil fuel rights are commonly privately owned, whereas in most other countries they belong to the government; regardless of ownership, exploration companies must obtain licenses first to explore and then, separately, to develop identified resources for production.",
+ "key_points": [
+  "Producers pay royalties \u2014 a percentage of production profit \u2014 to land and mineral rights owners.",
+  "U.S.: subsurface fossil fuel rights are often privately owned.",
+  "Most other countries: subsurface resources are government-owned.",
+  "Two licensing stages: one to explore for new resources, a separate one to develop/produce once resources are identified."
+ ],
+ "relationships": [
+  "Royalty-based compensation connects to the Tax and Royalty contract structure described later in the same section."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Ownership of surface land does not automatically imply ownership of subsurface mineral rights, and the two can be held by different parties."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "119-120"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 3,
+   "topic": "Mineral rights ownership and licensing for E&P"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

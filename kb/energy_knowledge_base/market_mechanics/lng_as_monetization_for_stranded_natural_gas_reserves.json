@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "LNG as Monetization for Stranded Natural Gas Reserves",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Producer Economics",
+ "definition": "A natural gas field with no pipeline connection to a major consuming region is considered 'stranded' because its gas cannot practically be sold; LNG terminals give such fields a route to market.",
+ "core_idea": "Historically only a few Asian markets (Japan, South Korea, Taiwan) could receive LNG cargoes, so stranded gas had very limited outlets even if liquefied; opening North American and European markets to LNG means shipments can now enter from almost anywhere and feed into those regions' large pipeline networks, letting producers build a short pipeline to a liquefaction terminal, sign long-term overseas sales contracts, and fund further exploration.",
+ "key_points": [
+  "A well with no pipeline to a major consuming market is 'stranded' \u2014 its gas can't be sold.",
+  "Historically, only Japan, South Korea, and Taiwan were realistic LNG destination markets.",
+  "Opening North American and European markets to LNG imports greatly expanded the number of viable destinations.",
+  "Producers can monetize otherwise-stranded fields by building a short pipeline to an LNG terminal and signing long-term export agreements."
+ ],
+ "relationships": [
+  "Depends on global LNG terminal buildout",
+  "Follows from US LNG Terminal Reversal example"
+ ],
+ "trading_implications": [
+  "Long-term LNG sales agreements let low-cost producers monetize reserves that would otherwise sit undeveloped for lack of pipeline access, and the resulting cash flow can fund further exploration."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "540-541"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 4,
+   "topic": "LNG as Monetization for Stranded Natural Gas Reserves"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

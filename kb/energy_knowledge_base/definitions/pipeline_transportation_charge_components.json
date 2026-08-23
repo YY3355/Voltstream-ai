@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Pipeline transportation charge components",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "The set of standard fee types that make up what a shipper pays a pipeline to move gas, as itemized in pipeline tariffs.",
+ "core_idea": "Pipeline transportation cost is built from several distinct charge types \u2014 some fixed, some variable, some paid in gas rather than cash \u2014 rather than a single price.",
+ "key_points": [
+  "Commodity charge: a variable, per-unit charge for the gas actually transported.",
+  "Reservation charge: a fixed monthly fee paid to reserve transportation capacity, independent of how much gas is actually shipped.",
+  "Fuel usage: gas physically lost/consumed in transit, commonly taken by the pipeline as in-kind payment to fuel the compressors that move the gas.",
+  "GRI charge: a small fixed U.S. pipeline charge that funds the nonprofit Gas Research Institute.",
+  "Receipt adder and delivery adder: fixed price adjustments that translate a nearby benchmark price into the price at the specific receipt point or delivery point, respectively.",
+  "Postage stamp rate: a single flat transportation charge that applies pipeline-wide on a pipeline with only one rate zone, regardless of actual distance shipped."
+ ],
+ "relationships": [
+  "Delivery adder and receipt adder both key off a nearby benchmark price rather than being set independently."
+ ],
+ "trading_implications": [
+  "A shipper's all-in transport cost mixes fixed elements (reservation charge, GRI charge) with volumetric ones (commodity charge, fuel usage), so cost per unit shipped falls as utilization rises."
+ ],
+ "caveats": [
+  "Fuel usage is not a cash fee \u2014 it is gas volume that never arrives, effectively paid in kind."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "517-518"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 0,
+   "topic": "Pipeline transportation charge components"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

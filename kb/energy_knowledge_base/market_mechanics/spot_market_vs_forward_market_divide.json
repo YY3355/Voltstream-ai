@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Spot market vs forward market divide",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "The spot (cash) market covers transactions for immediate delivery, while the forward market covers agreements for delivery at a future date; in energy, unlike in stocks or bonds, these two markets are not closely linked.",
+ "core_idea": "Because electricity and heat cannot be stored economically and are costly to move long distances, they must be produced close to where they're consumed, which forces the market to split into localized spot markets and a separate, more national forward market that don't behave as a single continuous curve.",
+ "key_points": [
+  "Electricity and heat generally can't be stored and must be generated on demand.",
+  "This non-storability and high transmission cost push power/heat generation to be local to consumption.",
+  "The resulting market split: many small local spot markets focused on current activity, versus a broader forward market reflecting national expectations.",
+  "The link between spot and forward prices that exists in stocks/bonds (via storage/carry) does not hold the same way in power because you cannot buy electricity now, store it, and deliver it later."
+ ],
+ "relationships": [
+  "This non-storability is also why spot markets are described as complicated/local-regulation-heavy while forward markets are the most liquid segment."
+ ],
+ "trading_implications": [
+  "Traders can't rely on simple cash-and-carry arbitrage logic between energy spot and forward prices the way they might in financial markets."
+ ],
+ "caveats": [
+  "One should not assume energy spot and forward prices are tightly linked the way stock/bond spot and forward prices are."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "19-20"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 2,
+   "topic": "Spot market vs forward market divide"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

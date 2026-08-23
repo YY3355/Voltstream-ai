@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Spot vs. forward natural gas price volatility and seasonality",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Spot vs Forward Markets",
+ "definition": "Forward natural gas prices follow a regular, predictable seasonal pattern, while spot prices move erratically because they reflect short-term, localized supply and demand shocks rather than a smooth seasonal curve.",
+ "core_idea": "Because forward markets have time to arrange transportation and adjust supply, they trade in a smooth seasonal pattern; spot markets react instantly to whatever is happening right now, so they are much noisier and more volatile.",
+ "key_points": [
+  "Forward prices show a regular, highly predictable seasonal trend.",
+  "Spot prices do not show the same seasonality and instead appear erratic.",
+  "Spot volatility tends to be higher than forward volatility."
+ ],
+ "relationships": [
+  "Driven by the physical constraints on storing/transporting natural gas on short notice (see companion topic)."
+ ],
+ "trading_implications": [
+  "Risk models should not assume spot price behavior mirrors forward seasonality; spot exposure carries higher volatility risk than an equivalent forward position."
+ ],
+ "caveats": [
+  "Assuming spot prices should track the same seasonal curve as forward prices."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 0,
+   "topic": "Spot vs. forward natural gas price volatility and seasonality"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

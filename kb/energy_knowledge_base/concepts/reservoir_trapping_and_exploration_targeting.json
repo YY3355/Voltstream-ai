@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Reservoir trapping and exploration targeting",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Exploration and Production",
+ "definition": "A hydrocarbon reservoir only accumulates where an impermeable rock layer sits above a source of decaying organic material, trapping the migrating fuel instead of letting it disperse to the surface.",
+ "core_idea": "Without a sealing rock barrier, oil and gas would simply leak away over geologic time; the presence of the right rock formation is therefore what geologists search for, using seismic mapping to build 3D underground images before confirming a prospect with a test well.",
+ "key_points": [
+  "An impermeable rock cap over decaying plant material is required to form a trappable reservoir.",
+  "Seismic waves are used to build three-dimensional maps of candidate underground formations.",
+  "Test wells are drilled into promising formations to confirm the actual presence of fuel before further development."
+ ],
+ "relationships": [
+  "Depends on the same overpressure/heat/buoyancy migration mechanisms; the rock cap is what stops that migration at a producible depth."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "124-125"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_001.json",
+   "idx": 1,
+   "topic": "Reservoir trapping and exploration targeting"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

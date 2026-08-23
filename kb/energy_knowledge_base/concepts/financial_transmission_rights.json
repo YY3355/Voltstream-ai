@@ -1,0 +1,85 @@
+{
+ "canonical_topic": "financial transmission rights",
+ "type": "concept",
+ "n_merged": 4,
+ "definition": "A Financial Transmission Right (FTR) is a tradable contract between two counterparties, defined by a source (starting) point and a sink (ending) point, under which the parties pay or receive the difference in power price between those two nodes depending on whether power actually congests, and in which direction \u2014 used to hedge the cost of congestion between a hub/reference price and an actual delivery/receipt point.",
+ "core_idea": "FTRs let a participant who pays/receives a hub price but actually delivers/receives power at a different node hedge the congestion-driven price gap between the two points; whether the FTR pays out or becomes a liability depends on whether real congestion flows in the same direction as the FTR's source-to-sink direction.",
+ "key_points": [
+  "An FTR is a contract between two counterparties who take opposite sides of an obligation to pay/receive the price difference between two nodes, defined by a source (start) point and a sink (end) point.",
+  "If there is no congestion between the two nodes, prices are identical and no payment changes hands.",
+  "If there is congestion, one party pays the other; the direction of payment is not fixed to one side \u2014 energy is treated as flowing from the low-cost to the high-cost location, so the FTR pays out to the holder when its direction matches the direction of congested flow, and becomes a liability/charge when its direction is opposite.",
+  "FTRs are a hedge specifically for congestion cost, not general price risk, addressing the mismatch between paying/receiving a hub price and actually delivering/receiving power at a specific node.",
+  "FTRs can produce either positive or negative outcomes to the holder \u2014 they are not one-directional protection.",
+  "FTR options are a variant of the base FTR obligation: the holder pays an upfront premium to avoid the obligation to pay under the FTR later, i.e. a capped-downside hedge versus the symmetric obligation form.",
+  "FTRs are typically allocated through auctions held by the grid operator one to three years ahead of the flow date; smaller monthly auctions let participants sell FTRs they hold or buy FTRs left unsold from prior auctions.",
+  "Hub-to-hub FTRs can be valued using a spread option model.",
+  "Many FTRs are not between major locations (e.g., a line from a substation to an abandoned factory); these still generate LMPs at both endpoints, but with little or no regular power flow, the resulting price may be effectively noise driven by flows in surrounding areas, so many market participants mark such FTRs to market using the price from the last reported auction rather than an independent model."
+ ],
+ "relationships": [
+  "Directly tied to congestion and LMPs \u2014 FTRs exist because of the node-to-node price divergence congestion creates.",
+  "Distinct from ancillary services/capacity/PPA \u2014 FTRs address congestion risk rather than resource adequacy.",
+  "FTR options are a variant of the base FTR obligation contract.",
+  "Hub-to-hub FTR valuation draws on spread option pricing models."
+ ],
+ "trading_implications": [
+  "FTRs (obligation) and FTR options are the standard hedge for locational basis/congestion risk between a hub and a delivery node: the obligation form is swap-like and symmetric (payment can go either way), while the option form is a capped-downside, premium-paid hedge; a party wanting to avoid ever paying should prefer the option form.",
+  "A trader who is long power at a hub but must deliver at a specific node should consider an FTR to hedge basis/congestion risk between the two points.",
+  "FTR holders should verify that the FTR's source-to-sink direction aligns with expected congestion flow, since a mismatched direction converts the FTR from a hedge into a liability.",
+  "FTRs on illiquid, non-major routes are hard to value with models and are commonly marked to the last auction clearing price instead; hub-to-hub FTRs are more tractable to value via spread option models.",
+  "A trader delivering power to a specific grid point can use FTRs to manage congestion cost exposure, but must recognize the position can lose money as well as hedge it."
+ ],
+ "caveats": [
+  "FTRs are scoped strictly to hedging congestion cost, not general price risk.",
+  "Many FTRs run between minor, lightly-flowed nodes rather than major hubs; the LMPs at such endpoints can be effectively noise from surrounding-area flows, which is why they are often marked to the last auction price instead of modeled."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "32-33"
+  },
+  {
+   "chapter": 5,
+   "pages": "178"
+  },
+  {
+   "chapter": 25,
+   "pages": "494"
+  },
+  {
+   "chapter": 25,
+   "pages": "500-501"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 4
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 6,
+   "topic": "Financial transmission rights (FTRs) and FTR options"
+  },
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 1,
+   "topic": "Financial Transmission Rights (FTRs)"
+  },
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 8,
+   "topic": "Financial transmission rights (FTRs)"
+  },
+  {
+   "file": "raw/ch25/chunk_001.json",
+   "idx": 4,
+   "topic": "Financial Transmission Rights (FTRs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:48:53+00:00"
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 2,
+ "title": "1.2 TRADING MARKETS",
+ "n_concepts": 69,
+ "summary": "This chapter surveys how trading markets function, starting from a taxonomy of financial instruments \u2014 real assets, financial assets, and derivatives \u2014 before moving to the mechanics of positions, trades, and the contract types (spot, forward, futures, swap, option) that let participants transact across time. It contrasts exchange-based trading, with its standardization, anonymity, and margining, against bilateral OTC dealing under ISDA documentation, and explains structural features like basis, spreads, closing out, and credit protections such as CDS. A recurring thread is what sets energy apart from other financial markets: non-storability, locational fragmentation, inelastic supply and demand, and the resulting illiquidity, price volatility, and pricing opacity. The chapter also touches on the regulatory and economic backdrop \u2014 regulated versus deregulated markets, supply/demand laws, and institutions like the EIA and FERC \u2014 that shapes how these trading mechanisms operate in practice.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

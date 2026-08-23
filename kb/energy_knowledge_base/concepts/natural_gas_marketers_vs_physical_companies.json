@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Natural gas marketers vs. physical companies",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "Marketers are the speculative traders of the natural gas world \u2014 often Wall Street firms or spinoffs from energy companies \u2014 who buy and sell gas to profit from price moves, as distinct from physical companies that produce, move, or store the commodity itself.",
+ "core_idea": "Physical natural gas businesses generally prefer to earn steady profits in a specialized, hard-to-enter niche and leave speculative trading to dedicated marketers, because trading's volatility conflicts with the steady-earnings expectations of a service company's shareholders.",
+ "key_points": [
+  "Many gas-services companies have shrunk or closed trading desks because a few bad trades can threaten an otherwise stable business.",
+  "Physical companies still keep some trading capability, mainly to hedge price risk on the raw materials they already hold.",
+  "Physical companies occasionally trade speculatively, since their domain expertise can let them spot opportunities before others.",
+  "Marketers require deep operational/legal infrastructure: contracts, credit monitoring, and relationships across many counterparties, plus arranging storage and transportation logistics.",
+  "Because of their broad contact networks, marketers tend to trade across many commodities (electricity, coal, oil, emissions credits), not just natural gas."
+ ],
+ "relationships": [
+  "Physical company hedging desks",
+  "Trading desk risk management"
+ ],
+ "trading_implications": [
+  "A marketer's competitive edge comes from breadth of counterparty relationships and logistics/legal capability, not just price views.",
+  "A physical producer's trading activity is usually risk-reducing (hedging) rather than a profit center."
+ ],
+ "caveats": [
+  "That physical energy companies don't trade at all \u2014 they do, but mostly to hedge, not to speculate."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "137"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 0,
+   "topic": "Natural gas marketers vs. physical companies"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

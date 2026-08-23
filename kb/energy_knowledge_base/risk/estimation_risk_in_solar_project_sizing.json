@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Estimation risk in solar project sizing",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Renewable Project Economics",
+ "definition": "Because a solar installation's economics hinge on correctly forecasting how much power it will produce, both under- and over-estimating output create distinct failure modes for a project.",
+ "core_idea": "Solar output forecasts sit on a knife's edge: too conservative an estimate makes a viable project look uneconomical and it gets shelved for other technologies, while too optimistic an estimate leads to a shortfall that fails to meet the installation's economic targets.",
+ "key_points": [
+  "Overly conservative production estimates can cause solar to be passed over in favor of other generation technologies even when it would have been viable.",
+  "Overly optimistic production estimates create a power shortfall relative to the economic goals set for the installation.",
+  "Historical, government-collected regional/national solar radiation averages are the standard tool used to make these estimates, because insolation varies with weather, sun position, and day length throughout the year."
+ ],
+ "relationships": [
+  "Ties to government renewable-incentive programs mentioned in the chapter purpose, since incentives shape whether marginal projects proceed."
+ ],
+ "trading_implications": [
+  "Investment/financing decisions for solar projects are directly sensitive to the quality of the underlying irradiance forecast \u2014 this is the core diligence item for evaluating a proposed installation."
+ ],
+ "caveats": [
+  "Treating solar output forecasting as a minor engineering detail rather than the critical determinant of whether a project is even worth building."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "449-450"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 1,
+   "topic": "Estimation risk in solar project sizing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

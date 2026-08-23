@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Day-ahead vs. real-time bidding strategy for generators",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Day-Ahead and Real-Time Auctions",
+ "definition": "A generator bidding into a two-settlement power market must choose how much of its output to commit in the day-ahead auction versus holding back capacity to sell into the real-time auction.",
+ "core_idea": "Real-time prices can offer bigger upside, but holding capacity back to sell real-time carries the risk of not being dispatched at all; a plant's physical flexibility (start-up speed, ramping ability, fuel efficiency) largely determines which strategy is viable.",
+ "key_points": [
+  "The day-ahead and real-time auctions are run and cleared separately.",
+  "Selling into real-time offers potentially greater profit but higher risk of the capacity going unused.",
+  "A unit not selected in the day-ahead auction can still bid into real-time.",
+  "Because real-time delivery is physical, mainly fast-starting or excess-capacity units can realistically participate there.",
+  "As a result most capacity clears day-ahead, and real-time mainly balances short-term fluctuations and unexpected demand."
+ ],
+ "relationships": [
+  "Day-ahead market allocation",
+  "Real-time balancing market",
+  "Generator startup cost and minimum up-time constraints"
+ ],
+ "trading_implications": [
+  "Bidding strategy should be tailored to a unit's technical constraints rather than treated as a uniform choice across the fleet.",
+  "Flexible/fast-start assets have an option value in real-time that inflexible baseload assets do not."
+ ],
+ "caveats": [
+  "Assuming the real-time market is where most power is transacted \u2014 the author states most capacity is actually allocated day-ahead, with real-time used for balancing."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "34"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 0,
+   "topic": "Day-ahead vs. real-time bidding strategy for generators"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

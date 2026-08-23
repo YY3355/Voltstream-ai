@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Complexity tradeoff in option model design",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "There is a tradeoff between model complexity and accessibility: highly complex models are understood by very few people, while simpler models (even with known flaws) are broadly understood, and broad understanding reduces the chance of a model failing disastrously.",
+ "core_idea": "A good option model balances comprehensibility against realism of assumptions. It is often more effective to address a simple model's weaknesses by improving observation/monitoring than to replace it with a more complex model, because models are not a substitute for understanding the underlying market reality.",
+ "key_points": [
+  "Highly complex models are understood by only a few people, which the author frames as a risk factor.",
+  "Simple models, despite flaws, are more broadly understood, and wider understanding reduces disastrous failure risk.",
+  "A good option model balances understandability against realistic assumptions about price behavior.",
+  "It is often easier/preferable to fix a simple model's weaknesses through better observation than to build a more complicated model.",
+  "Option models are not a substitute for understanding what is actually happening in the market."
+ ],
+ "relationships": [
+  "Connects to vanilla vs. exotic model choice: simplicity/comprehensibility is itself a selection criterion, not just accuracy."
+ ],
+ "trading_implications": [
+  "When choosing between a simple and complex model, consider organizational/market-wide understanding of the model as a risk factor, not just statistical fit."
+ ],
+ "caveats": [
+  "That more complex/realistic models are always better \u2014 the author argues broad comprehensibility has independent risk-reduction value."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "347"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 3,
+   "topic": "Complexity tradeoff in option model design"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

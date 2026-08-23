@@ -1,0 +1,100 @@
+{
+ "canonical_topic": "Named commodity spreads (spark, dark, crack, frac)",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Spread Products",
+ "definition": "Four commonly named spread trades, each approximating the operating margin of a specific type of conversion facility by pricing the difference between an input fuel and its output product(s).",
+ "core_idea": "Because certain fuel-to-product conversions recur constantly in energy markets, the market has standardized names for the associated spreads, and each spread approximates the gross profit of the corresponding physical plant.",
+ "key_points": [
+  "Spark spread: electricity price minus natural gas price; approximates the profit a gas-fired power plant earns burning gas to make power. Gas plants are the price setter for power in many regions.",
+  "Dark spread: electricity price minus coal price, not netting out emissions costs; approximates the profit of a coal-fired power plant. Coal plants set power prices in some regions, and dark spreads are often traded alongside CO2 emissions.",
+  "Crack spread: refined petroleum product prices (commonly gasoline and heating oil) minus crude oil price; most often a three-commodity spread; approximates a refinery's profitability.",
+  "Frac spread: propane price minus natural gas price; approximates the profit from extracting propane out of a natural gas stream, since gas wells are propane's primary source."
+ ],
+ "relationships": [
+  "All four are specific instances of the general spread-trade concept.",
+  "Dark spreads are commonly paired with carbon dioxide emissions trading."
+ ],
+ "trading_implications": [
+  "These spreads are traded directly as a proxy for plant operating margins, letting traders take a view on generation/refining economics without owning physical assets."
+ ],
+ "caveats": [
+  "Dark spread as commonly quoted does not net out emissions costs, so it overstates a coal plant's true economic margin where carbon costs apply."
+ ],
+ "formulas": [
+  {
+   "name": "Spark spread",
+   "formula": "Spark spread = Electricity price - Natural gas price",
+   "variables": {
+    "Electricity price": "$/MWh",
+    "Natural gas price": "gas-equivalent cost per MWh"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "name": "Dark spread",
+   "formula": "Dark spread = Electricity price - Coal price",
+   "variables": {
+    "Electricity price": "$/MWh",
+    "Coal price": "coal-equivalent cost per MWh, excludes emissions cost"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "name": "Crack spread",
+   "formula": "Crack spread = Refined product price(s) - Crude oil price",
+   "variables": {
+    "Refined product price(s)": "e.g. gasoline, heating oil",
+    "Crude oil price": "input crude cost"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  },
+  {
+   "name": "Frac spread",
+   "formula": "Frac spread = Propane price - Natural gas price",
+   "variables": {
+    "Propane price": "$/unit",
+    "Natural gas price": "$/unit"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "110-113",
+    "section_hint": "1.2 Trading Markets - Outright and Spread Trades"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 3,
+   "topic": "Named commodity spreads (spark, dark, crack, frac)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Avoided cost compensation",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Contracts",
+ "definition": "Avoided cost is the compensation basis regulated utilities are required to pay third-party generators (when required to purchase from them under certain rules) \u2014 equal to what the utility would have itself paid to generate that power.",
+ "core_idea": "When a regulated utility is obligated to buy power from a qualifying third-party generator, it pays a price benchmarked to its own cost of self-generation, rather than a freely negotiated market price.",
+ "key_points": [
+  "Applies when a utility is required to purchase power from third-party generators meeting certain requirements.",
+  "The payment equals the utility's own avoided cost of generating that power itself."
+ ],
+ "relationships": [
+  "Alternative to PPAs as a mechanism for regulated utilities to source third-party generation."
+ ],
+ "trading_implications": [
+  "Avoided-cost generators' revenue is benchmarked to the incumbent utility's generation cost structure, not to a competitive market price."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "180"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 7,
+   "topic": "Avoided cost compensation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

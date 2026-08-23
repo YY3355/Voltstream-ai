@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Why options can't be priced like insurance",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Theory",
+ "definition": "Options resemble insurance contracts economically but must be priced differently, because insurance relies on slowly-changing historical statistical tables while the underlying assets behind options can change behavior dramatically over short periods.",
+ "core_idea": "Insurance pricing works because the probabilities it relies on shift slowly, giving underwriters time to detect trend changes; option pricing cannot rely on historical statistical probabilities in the same way because the underlying market's behavior can shift abruptly, and even skilled professionals cannot reliably predict markets.",
+ "key_points": [
+  "Insurance pricing is based on statistical tables of future probabilities that change slowly, allowing underwriters years to detect trend shifts.",
+  "Option underlyings can change behavior dramatically over short periods, unlike the risks insurance is priced against.",
+  "Using historical statistical probabilities (an insurance-style approach) to price options is described as 'a sure-fire way to lose money.'",
+  "Historical prices are not accurate predictors of future prices, and this holds even for highly skilled financial professionals.",
+  "The shift away from statistical/historical pricing toward dynamic hedging (replicating payoffs via frequent trading in the underlying) is described as the option pricing revolution."
+ ],
+ "relationships": [
+  "Motivates dynamic hedging as the alternative to historical/statistical pricing."
+ ],
+ "trading_implications": [
+  "Do not price options purely from historical statistical frequency of price moves; use models built on replication/hedging logic instead."
+ ],
+ "caveats": [
+  "That options can be safely priced the way insurance is priced, using historical statistical tables \u2014 the author explicitly warns this loses money."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "346-347"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 2,
+   "topic": "Why options can't be priced like insurance"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Electric cars as a source of grid battery storage",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "Electric vehicles could bring large-scale battery capacity to the power grid, both through direct vehicle-to-grid charging feedback and, more significantly, through reuse of retired car batteries.",
+ "core_idea": "While electric vehicles can feed power back to the grid while charging, the author suggests the larger potential impact is that batteries retired from cars \u2014 once their capacity drops below about 80% of maximum \u2014 may still have years of useful life left for stationary grid storage.",
+ "key_points": [
+  "Electric cars use batteries and an electric motor instead of an internal combustion engine, reducing moving parts.",
+  "If batteries become sufficiently cheap, fewer moving parts could make electric cars easier and cheaper to build and maintain than traditional cars.",
+  "Electric motors deliver torque immediately, giving electric cars strong acceleration \u2014 a possible adoption driver independent of environmental motivations.",
+  "Electric cars connected for charging can feed energy back to the power grid, but the author describes this as a relatively minor effect.",
+  "Batteries are typically retired once they can no longer hold more than about 80% of their maximum charge; such batteries may be unsuitable for cars but still useful for grid storage."
+ ],
+ "relationships": [
+  "Battery storage for the electrical grid"
+ ],
+ "trading_implications": [
+  "A secondary market for retired EV batteries repurposed as grid storage could be a meaningful future supply source, distinct from vehicle-to-grid charging itself."
+ ],
+ "caveats": [
+  "Vehicle-to-grid charging feedback might be assumed to be the main grid-storage benefit of electric cars, but the author suggests repurposed retired batteries could matter more."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "478-479"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 5,
+   "topic": "Electric cars as a source of grid battery storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Swing swaps and swing options",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Derivatives",
+ "definition": "Swing swaps and swing options are natural gas derivatives with daily delivery, distinct from standard futures/forwards/options that deliver over a full month; they are primarily used by utilities to manage volumetric risk.",
+ "core_idea": "These instruments let a utility hedge the risk that customer gas usage deviates from expectations (e.g., a cold snap driving higher-than-forecast consumption), which matters especially when the utility cannot pass higher costs through to consumers.",
+ "key_points": [
+  "Swing swap: exchanges a fixed price (set at the start of the delivery month) for the daily spot price reported by a pricing service.",
+  "Swing option: gives the buyer the right to purchase gas at a price set at the start of the delivery month (commonly referencing a survey such as Platts Inside FERC/IFERC) at any point during that month; these options typically limit how many times the buyer can exercise.",
+  "Both differ from standard swaps/options because the fixed reference price is set at the start of the delivery month rather than negotiated at the time of the trade.",
+  "Volumetric risk is the risk that a utility's customers use more (or less) gas than expected."
+ ],
+ "relationships": [
+  "Reference price for the fixed leg comes from bidweek surveys",
+  "Similarly named but distinct from physical swing trades"
+ ],
+ "trading_implications": [
+  "Utilities use these instruments to hedge daily consumption variability without predicting exact usage in advance."
+ ],
+ "caveats": [
+  "\"Swing swap/option\" (financial derivative, daily delivery, monthly fixed reference price) is distinct from a \"swing trade\" (physical storage arbitrage)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 7,
+   "topic": "Swing swaps and swing options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

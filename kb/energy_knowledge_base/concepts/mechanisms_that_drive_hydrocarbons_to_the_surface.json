@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Mechanisms that drive hydrocarbons to the surface",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Exploration and Production",
+ "definition": "Three physical mechanisms explain why oil and gas migrate upward through rock toward the surface once they exist underground: overpressure, heat, and buoyancy.",
+ "core_idea": "As organic matter decays into shorter hydrocarbon chains it becomes less dense and takes up more volume, raising local pressure; subsurface heat further expands these fluids; and because hydrocarbons are lighter than surrounding rock, water, and decaying matter, buoyancy pushes them upward. Together these forces are what make a well flow once it's drilled.",
+ "key_points": [
+  "Overpressure: decay of long hydrocarbon chains into shorter, less dense ones increases local pressure.",
+  "Heat: hydrocarbons expand as temperature rises, and deeper earth is hotter than the surface, so heat pushes fuel upward.",
+  "Buoyancy: hydrocarbons are less dense than rock, water, or decaying plant matter, so they float upward through permeable material.",
+  "A well's own driving pressure is what brings fuel to the surface without external lift in early production."
+ ],
+ "relationships": [
+  "Underground pressure decline over a well's life is the same pressure phenomenon that initially drives production."
+ ],
+ "trading_implications": [
+  "Because natural well pressure declines over time, production from a given well is front-loaded, which affects supply forecasting and decline-curve-based output expectations."
+ ],
+ "caveats": [
+  "It is not just heat or just buoyancy alone; the author frames all three mechanisms as acting together."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "124-125"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_001.json",
+   "idx": 0,
+   "topic": "Mechanisms that drive hydrocarbons to the surface"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

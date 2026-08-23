@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Principal market vs. most advantageous market",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "Rules for choosing which market's prices to use for fair value when more than one market for an asset/liability could apply.",
+ "core_idea": "Traders must use the principal market's prices when one exists; only in its absence do they fall back to the most advantageous market (or highest and best use for nonfinancial assets), though in practice the principal market is usually also the most advantageous one.",
+ "key_points": [
+  "Principal market: the market with the greatest volume/activity level for the asset or liability.",
+  "Most advantageous market: absent a principal market, the market that maximizes sale proceeds or minimizes liability-transfer cost, net of transaction and transport costs; applies to financial products.",
+  "Highest and best use: for nonfinancial assets (e.g., an oil well, pipeline, wind farm), the legally permissible, physically possible, and financially feasible use that maximizes the value of the asset or the group of assets/liabilities it's used within \u2014 the nonfinancial-asset analogue of 'most advantageous market', but it does allow consideration of the surrounding business use, unlike most-advantageous-market.",
+  "If a principal market exists, its prices govern the mark; if not, the trader must determine highest and best use or the most advantageous market instead.",
+  "The primary market is typically (though not always) also the most advantageous market."
+ ],
+ "relationships": [
+  "This hierarchy of market selection feeds directly into which price is used as the 'exit price' for fair value."
+ ],
+ "trading_implications": [
+  "A trader can't simply pick a favorable price from any market they participate in \u2014 they must default to the principal market's price if one exists."
+ ],
+ "caveats": [
+  "Highest and best use and most advantageous market are similar but not interchangeable \u2014 highest and best use applies to nonfinancial assets and factors in the related business, while most advantageous market applies to financial products and does not."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "551-552"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_002.json",
+   "idx": 1,
+   "topic": "Principal market vs. most advantageous market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

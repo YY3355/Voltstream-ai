@@ -1,0 +1,70 @@
+{
+ "canonical_topic": "Call and put payoff formulas",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Financial Options",
+ "definition": "At expiration, a call option pays off the amount by which the asset price exceeds the strike price, and a put option pays off the amount by which the strike price exceeds the asset price; otherwise each is worthless.",
+ "core_idea": "The strike (exercise) price is the fixed trading price set by the contract; payoff is purely the in-the-money difference between asset price and strike at expiration, with no payoff when the option is out of the money.",
+ "key_points": [
+  "A call benefits the owner when the asset price rises above the strike, letting them buy cheap and resell at the market price.",
+  "A put benefits the owner when the asset price falls below the strike, letting them sell high relative to the market.",
+  "No one would exercise an option against their own interest, so payoff is zero (worthless) when out of the money."
+ ],
+ "relationships": [
+  "Depends on the call/put definitions from the options overview item"
+ ],
+ "trading_implications": [
+  "Payoff calculations at expiration are a simple comparison of asset price to strike price \u2014 no complex model is needed once expiration is reached."
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Call payoff",
+   "formula": "Call_Payoff = Asset_Price - Strike_Price, if Asset_Price > Strike_Price at expiration",
+   "variables": {
+    "Asset_Price": "market price of the underlying asset at expiration",
+    "Strike_Price": "fixed exercise price set by the option contract"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "44",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Financial Options"
+   }
+  },
+  {
+   "name": "Put payoff",
+   "formula": "Put_Payoff = Strike_Price - Asset_Price, if Strike_Price > Asset_Price at expiration",
+   "variables": {
+    "Asset_Price": "market price of the underlying asset at expiration",
+    "Strike_Price": "fixed exercise price set by the option contract"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "44",
+    "section_hint": "1.1 An Overview of the Energy Markets \u2014 Financial Options"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "44"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 3,
+   "topic": "Call and put payoff formulas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

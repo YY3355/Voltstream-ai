@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Isotopes and atomic mass/atomic number",
+ "type": "definition",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "Isotopes are variants of an element with the same number of protons but different numbers of neutrons; the atomic mass number is protons plus neutrons, while the atomic number is protons alone.",
+ "core_idea": "Isotopes of an element behave identically chemically but differ in nuclear stability due to differing atomic weight; the number after an element's chemical symbol (e.g., U-235, U-238) denotes the atomic mass number (protons + neutrons), distinct from the atomic number (protons only), which is not shown in a chemical formula.",
+ "key_points": [
+  "Isotopes share the same proton count but differ in neutron count.",
+  "Chemically, isotopes of the same element behave identically.",
+  "Nuclear stability differs between isotopes because of differing atomic weight.",
+  "The number appended to a chemical symbol (e.g., U-238, U-235) is the atomic mass number: protons + neutrons combined.",
+  "Protons and neutrons weigh about the same, but only protons carry electrical charge.",
+  "The atomic number is the count of protons in the nucleus and is never explicitly shown in a chemical formula."
+ ],
+ "relationships": [
+  "Distinguishes U-235 from U-238 in the enrichment process"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "The number after an element's symbol (mass number) is sometimes mistaken for the atomic number; the source explicitly distinguishes the two."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "471-472"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_000.json",
+   "idx": 4,
+   "topic": "Isotopes and atomic mass/atomic number"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Cogeneration",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "A cogeneration plant captures heat that would otherwise be discarded (typically the hot water used to cool a steam turbine's condenser) and sells it as useful output alongside electricity.",
+ "core_idea": "Cogeneration doesn't make electrical generation itself more efficient, but by monetizing waste heat it increases total plant revenue for the same fuel input, which can be viewed as effectively lowering the plant's fuel cost.",
+ "key_points": [
+  "Condenser cooling water is normally discarded into a river or evaporated via a cooling tower once it becomes hot",
+  "If that hot water is instead sold/used for an external purpose, the plant produces both electricity and hot water",
+  "Cogeneration adds an income source without improving generation efficiency, effectively reducing net fuel cost"
+ ],
+ "relationships": [
+  "Topping cycle and bottoming cycle are the two named forms of cogeneration"
+ ],
+ "trading_implications": [
+  "Lower effective fuel cost can let a cogeneration plant bid more competitively into power markets"
+ ],
+ "caveats": [
+  "Cogeneration improves plant economics, not the electrical conversion efficiency itself"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "189-190"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 3,
+   "topic": "Cogeneration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

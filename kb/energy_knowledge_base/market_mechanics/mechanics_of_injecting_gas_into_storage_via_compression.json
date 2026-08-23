@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Mechanics of injecting gas into storage via compression",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Storage Operations",
+ "definition": "Since gas naturally flows from high to low pressure, moving gas into a storage facility (which is kept at higher pressure than the pipeline to maximize capacity) requires artificially creating high pressure through compression, analogous to a vacuum cleaner pulling gas from the pipeline and pushing it into storage.",
+ "core_idea": "A compressor applies suction to the pipeline and delivers gas at high pressure into the storage facility; as the facility fills and pushes back against the compressor, more compression is needed to maintain the same injection rate until the facility's maximum safe pressure is reached and injection must stop.",
+ "key_points": [
+  "Storage facilities are kept at higher pressure than the pipeline to maximize the amount of gas stored in a limited space.",
+  "A compressor creates suction on the pipeline side and high pressure on the storage side, pulling gas out of the lower-pressure pipeline into the higher-pressure storage.",
+  "As long as the compressor's output pressure exceeds the storage pressure, gas flows into storage rather than back into the pipeline.",
+  "As the facility fills, it pushes back against the compressor, requiring more compression to maintain the same injection rate.",
+  "Injection must stop once the facility reaches its maximum safe pressure.",
+  "When suction is turned off, the connection between the storage facility and the pipeline must be closed."
+ ],
+ "relationships": [
+  "Explains why injection/withdrawal rates change as a facility fills or empties"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "525-526"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 4,
+   "topic": "Mechanics of injecting gas into storage via compression"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

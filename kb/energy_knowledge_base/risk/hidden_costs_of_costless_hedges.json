@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Hidden Costs of \"Costless\" Hedges",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Hedging Economics",
+ "definition": "The observation that a hedge requiring no upfront cash payment is not truly free \u2014 the hedger is typically giving up economic value to the counterparty in a less visible form than a cash payment.",
+ "core_idea": "Because energy hedgers (e.g., producers locking in long-term prices) far outnumber natural long-term buyers, hedgers often must transact with profit-seeking counterparties (like banks) who build their compensation into the terms of the trade rather than charging an explicit fee.",
+ "key_points": [
+  "Wind farms and similar producers benefit from locking in future production prices \u2014 it improves financing terms and gives investors more predictable cash flows.",
+  "There are few natural long-term buyers (e.g., households won't sign 25-year power contracts), so energy companies must trade with counterparties motivated by profit rather than genuine long-term consumption need.",
+  "A bank taking the other side of a long-dated hedge must hold a risky position for years and set aside capital against it; shareholders require a return on that capital.",
+  "For a futures-based hedge, the bank builds in profit by negotiating a price below its own expected future market price.",
+  "For more complex structures like costless collars, profit can be hidden less obviously \u2014 the bank can structure the collar so it captures value while the client believes the hedge was 'free'.",
+  "Costless collars do have genuine advantages over futures: they let the hedger keep exposure to moderate price moves while still being protected from extreme moves \u2014 but this benefit is separate from the fact that the structure isn't literally free."
+ ],
+ "relationships": [
+  "Directly follows from and qualifies the Costless Collar concept.",
+  "Relates to counterparty/dealer economics in derivatives markets generally."
+ ],
+ "trading_implications": [
+  "A hedger evaluating a 'free' structure should assess whether strikes/terms are priced against them relative to fair value, not just whether cash changes hands upfront.",
+  "Long-dated hedges are more likely to carry hidden compensation because capital costs and holding-period risk for the dealer are higher."
+ ],
+ "caveats": [
+  "That 'no money down' means no cost was incurred by the hedging company \u2014 in reality value is given away, just not as an explicit payment."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "595-596"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 1,
+   "topic": "Hidden Costs of \"Costless\" Hedges"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

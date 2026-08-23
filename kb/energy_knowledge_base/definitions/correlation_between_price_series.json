@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Correlation between price series",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Correlation",
+ "definition": "Correlation describes how closely two things are related \u2014 when two assets are highly correlated, their prices tend to move together, though this does not necessarily mean one causes the other.",
+ "core_idea": "Correlation can arise either from a genuine shared cause or from random chance, so a statistical relationship between two series is not by itself evidence of a causal link.",
+ "key_points": [
+  "High correlation means two assets' prices tend to move together.",
+  "Correlation may or may not reflect a causal relationship.",
+  "Correlation can be produced by random chance rather than a real shared driver.",
+  "Correlation is a key input to many option pricing models used in energy markets."
+ ],
+ "relationships": [
+  "Feeds into option pricing models in energy markets."
+ ],
+ "trading_implications": [
+  "Expressing relationships precisely (e.g., '40 percent correlated') removes ambiguity compared to vague statements like 'they act alike most of the time.'"
+ ],
+ "caveats": [
+  "Assuming correlation implies causation: the author cites the NFL Super Bowl 'indicator' (stock market historically rising more often when an NFC team wins) as a correlation with no plausible causal link, and warns that over-precise use of coincidental correlations is misleading."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "301-303"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 2,
+   "topic": "Correlation between price series"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

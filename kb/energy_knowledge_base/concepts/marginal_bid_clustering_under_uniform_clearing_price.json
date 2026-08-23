@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Marginal bid clustering under uniform clearing price",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack / Merit Order",
+ "definition": "Because every cleared generator in a power auction is paid the same clearing price regardless of its own bid, a plant loses nothing by bidding just below a higher-cost competitor as long as that competitor (or someone else) ends up setting a higher price.",
+ "core_idea": "The single-clearing-price mechanism removes any penalty for underbidding a rival, so similarly-positioned generators cluster their bids near common price points, and only the handful of plants actually on the margin end up setting the market price.",
+ "key_points": [
+  "Uniform pricing means a generator doesn't need to be the top bidder to capture the clearing price, so there's no cost to bidding just under a higher-cost competitor.",
+  "This incentive causes generators with similar production costs to cluster their bids around the same price levels.",
+  "At any given time only a small number of plants are actually on the margin, so those few plants have outsized influence on the clearing price.",
+  "Because clustering behavior is predictable, it is often possible to infer which type of plant is currently setting the price by observing the stack."
+ ],
+ "relationships": [
+  "generation stack / merit order",
+  "uniform (pay-as-cleared) pricing"
+ ],
+ "trading_implications": [
+  "Watching which cost tier of plants clusters near the margin helps predict which unit type is setting price and how sensitive price is to small shifts in demand or outages."
+ ],
+ "caveats": [
+  "Being the highest bidder does not mean earning more revenue \u2014 since everyone clears at the same price, rational bidders intentionally underbid the next higher-cost unit rather than bidding at their true willingness-to-accept."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "411"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 0,
+   "topic": "Marginal bid clustering under uniform clearing price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

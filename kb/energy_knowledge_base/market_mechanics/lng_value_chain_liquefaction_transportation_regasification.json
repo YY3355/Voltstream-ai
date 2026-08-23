@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "LNG Value Chain: Liquefaction, Transportation, Regasification",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "LNG Infrastructure",
+ "definition": "The physical LNG supply chain has three stages: cooling gas into liquid near production, shipping it in specialized tankers, and warming it back into gas near the consuming market before pipeline delivery.",
+ "core_idea": "Each stage has its own infrastructure and losses: liquefaction plants near wellheads cool gas to -260\u00b0F for loading onto tankers; tankers must be specially insulated because some liquid methane still boils back into gas in transit, causing fuel loss; regasification plants at the destination store the LNG cold until it's warmed and injected into local pipelines.",
+ "key_points": [
+  "Liquefaction plants sit near production areas and are fed by short-range pipelines from wells.",
+  "Cooling gas to -260\u00b0F for liquefaction is energy-intensive, and the resulting emissions count toward LNG's overall greenhouse gas footprint.",
+  "Tankers lose a small percentage of cargo to boil-off (liquid methane reverting to gas) during transport; faster voyages and cryogenic reliquefaction systems reduce this loss.",
+  "Regasification plants store LNG cold until warming it for pipeline delivery to end customers."
+ ],
+ "relationships": [
+  "Liquefaction energy cost affects LNG's climate footprint",
+  "Boil-off loss affects shipping economics"
+ ],
+ "trading_implications": [
+  "Boil-off losses and liquefaction/regasification energy costs are real frictions that reduce the effective volume and raise the effective cost of delivered LNG compared to the original wellhead gas."
+ ],
+ "caveats": [
+  "LNG is not a lossless transport method \u2014 some cargo is lost to boil-off in transit, and considerable energy (with associated emissions) is spent liquefying and later reheating the gas."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "540-541"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 3,
+   "topic": "LNG Value Chain: Liquefaction, Transportation, Regasification"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

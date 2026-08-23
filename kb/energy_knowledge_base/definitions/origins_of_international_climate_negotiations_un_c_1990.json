@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Origins of international climate negotiations (UN, c. 1990)",
+ "type": "definition",
+ "category": "Emissions Markets",
+ "subcategory": "History",
+ "definition": "International discussions on limiting greenhouse gases began around 1990 after scientists observed rising regional temperatures, coordinated through the United Nations with the goal of binding treaties capping emissions at 1990 levels.",
+ "core_idea": "The UN's coordinating role existed because unilateral emissions cuts by a single country are largely ineffective if other countries don't cut in parallel, but the talks ultimately broke down over disagreement about who should bear the cost of cutting emissions.",
+ "key_points": [
+  "Global warming became a prominent topic around 1990 as observed temperature records showed gradual increases in many regions.",
+  "The stated original goal was binding international treaties limiting greenhouse gas emissions back to 1990 levels.",
+  "The UN's involvement is explained by the free-rider logic: one country cutting emissions alone does little good if others don't also slow their output.",
+  "The talks ultimately failed to produce a binding international compromise, primarily due to disagreement over which parties should pay for emissions reductions."
+ ],
+ "relationships": [
+  "Sets up the later, more specific national disputes described under the EU, Russia, and China/India positions, and leads into the Kyoto Protocol."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "264-265"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 6,
+   "topic": "Origins of international climate negotiations (UN, c. 1990)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Cornering risk and the reserve-offset hedge",
+ "type": "risk",
+ "category": "Emissions Markets",
+ "subcategory": "Cap and Trade Limitations",
+ "definition": "The risk that speculators corner the emissions credit market, and the practical hedge of maintaining low-value offset projects that can manufacture credits on demand.",
+ "core_idea": "Because cornering supply is described as essentially the only way speculators can profit in emissions markets, companies that depend on credits protect their customers by keeping the ability to create their own credits via carbon offset projects on standby, even when those projects would otherwise be poor investments.",
+ "key_points": [
+  "Cap-and-trade can force companies into carbon-mitigation investments that would normally be considered bad ideas purely on economic merit.",
+  "A power producer wanting to protect customers needs to minimize the risk of speculators cornering the emissions rights market; the primary defense is being able to create emissions credits on demand.",
+  "Cornering the market is described as just about the only way speculators can make a profit trading emissions credits.",
+  "Because credits can be manufactured through carbon offsets, the easiest protection is to keep a couple of offset ideas in reserve \u2014 their economic value can be poor, it just needs to be better than being held hostage by speculators."
+ ],
+ "relationships": [
+  "Ties to carbon sequestration/offset creation as the supply-manufacturing mechanism"
+ ],
+ "trading_implications": [
+  "Firms exposed to compliance credit purchases should value 'standby' offset capacity as a hedge against price spikes/cornering, not just judge such projects on standalone ROI"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "272"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 4,
+   "topic": "Cornering risk and the reserve-offset hedge"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

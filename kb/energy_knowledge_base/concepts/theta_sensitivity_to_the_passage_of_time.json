@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Theta \u2014 sensitivity to the passage of time",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Greeks",
+ "definition": "Theta measures how an option's value changes purely due to time passing, holding other factors constant. It captures the erosion of an option's time value as expiration approaches.",
+ "core_idea": "An option's value splits into intrinsic value (what it's worth if exercised right now) and time value (the extra value attributable to time remaining until expiration); time value shrinks as expiration nears, and Theta quantifies that decay.",
+ "key_points": [
+  "More time until expiration generally makes an option more valuable, all else equal, because there is more opportunity for it to become profitable.",
+  "For an out-of-the-money option, a longer time horizon is valuable to the buyer because it gives more chances for the option to move into profitability.",
+  "For an option that is already deep in the money, time value is less significant \u2014 its value is dominated by intrinsic value rather than the optionality embedded in time remaining."
+ ],
+ "relationships": [
+  "Time value complements intrinsic value in total option value.",
+  "Interacts with Vega: a highly profitable (deep ITM) option is less sensitive to both time and volatility changes than an out-of-the-money option."
+ ],
+ "trading_implications": [
+  "All else equal, option sellers earn a small profit every day that passes (time decay working in their favor) since it becomes less likely they'll owe a large payout.",
+  "Option buyers bleed value daily from time decay and must rely on the underlying moving favorably or volatility rising to offset that cost."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "372-373"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_005.json",
+   "idx": 1,
+   "topic": "Theta \u2014 sensitivity to the passage of time"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

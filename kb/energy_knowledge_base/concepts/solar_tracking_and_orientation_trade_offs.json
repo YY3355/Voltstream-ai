@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Solar tracking and orientation trade-offs",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Facing a solar collector toward the sun increases the sunlight it captures \u2014 in the Northern Hemisphere this means mounting units facing south at a slight upward angle \u2014 and a motorized tracking base that follows the sun's path through the sky further increases capture, at the cost of added installation and maintenance expense.",
+ "core_idea": "Orientation and tracking both raise energy output, but tracking in particular introduces a capex/opex cost (motors, moving parts) that must be weighed against the incremental energy gained, and this trade-off matters more for concentrating collectors than for standard flat panels.",
+ "key_points": [
+  "Static orientation toward the sun (south-facing, slight upward tilt, in the Northern Hemisphere) improves capture with no moving parts.",
+  "Motorized tracking bases that follow the sun increase energy output further but add installation and maintenance cost.",
+  "Precise facing/tracking matters most for concentrating collectors (where the mirror's focal point shifts if not adjusted for the sun's position) and matters less, though still somewhat, for ordinary panel arrays."
+ ],
+ "relationships": [
+  "Directly tied to concentrated solar power, where a mirror's focal point breaks if the mirror doesn't track the sun."
+ ],
+ "trading_implications": [
+  "Tracking-vs-fixed-mount is a capex/output trade-off relevant when underwriting or comparing solar installation designs."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "452"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 4,
+   "topic": "Solar tracking and orientation trade-offs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

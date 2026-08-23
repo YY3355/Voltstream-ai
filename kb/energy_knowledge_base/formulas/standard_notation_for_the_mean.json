@@ -1,0 +1,55 @@
+{
+ "canonical_topic": "Standard notation for the mean",
+ "type": "formula",
+ "category": "Quantitative Methods",
+ "subcategory": "Notation",
+ "definition": "Statistics uses shorthand notation where a bar over a variable (e.g., x-bar) denotes the arithmetic mean of that variable's distribution, and n denotes the number of elements in the distribution.",
+ "core_idea": "The mean of a series is computed by summing all its values and dividing by the count of values (n), using subscripts (x1, x2, ... xn) to refer to individual elements of the series.",
+ "key_points": [
+  "A bar over a variable name denotes its arithmetic mean.",
+  "n represents the number of elements in a distribution.",
+  "Subscripts index individual elements of a series (e.g., x1, x2, ... xn).",
+  "When multiple series are in play, n can itself be subscripted (e.g., n_x) for clarity, at the cost of more complex notation."
+ ],
+ "relationships": [],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Arithmetic mean",
+   "formula": "x\u0304 = (\u03a3 x_i, i=1 to n) / n",
+   "variables": {
+    "x\u0304": "arithmetic mean of the x distribution",
+    "x_i": "the i-th individual value in the series",
+    "n": "number of elements in the distribution"
+   },
+   "source": {
+    "chapter": 12,
+    "pages": "303-304",
+    "section_hint": "3.3 Statistics \u2014 Common Notations"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "303-304"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 6,
+   "topic": "Standard notation for the mean"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

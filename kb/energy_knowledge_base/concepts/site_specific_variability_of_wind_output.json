@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Site-specific variability of wind output",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "Wind generation output depends heavily on the exact physical location of a turbine, not just the general region \u2014 nearby sites can have very different wind resource quality.",
+ "core_idea": "Terrain features (e.g., a hilltop versus the sheltered side of the same hill) can produce sharply different wind speeds at locations only a short distance apart, so wind resource assessment must be done at the individual turbine/site level rather than assumed uniform across a project area.",
+ "key_points": [
+  "Two nearby locations can have materially different wind conditions due to terrain (e.g., hilltop vs. hillside shelter).",
+  "This makes wind output forecasting and siting more granular/site-specific than for some other generation types."
+ ],
+ "relationships": [
+  "Affects capacity factor estimates used in wind project economics"
+ ],
+ "trading_implications": [
+  "Forecast error for a specific wind farm can't be assumed to track a regional average; site-level historical output data is more reliable than nearby-site proxies."
+ ],
+ "caveats": [
+  "Assuming that wind conditions are roughly uniform across a small geographic area."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "468-468"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_001.json",
+   "idx": 0,
+   "topic": "Site-specific variability of wind output"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

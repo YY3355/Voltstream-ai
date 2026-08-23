@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Correlation between two price series",
+ "type": "concept",
+ "category": "Statistics",
+ "subcategory": "Correlation Analysis",
+ "definition": "Correlation describes a direct linear relationship between two variables \u2014 when two statistically correlated series move together, high values in one tend to coincide with high values in the other.",
+ "core_idea": "Energy traders often want to know whether two price series (e.g., natural gas prices in two regions, or peak electricity prices versus natural gas prices) move together; correlation assumes and measures the strength of a linear relationship between them.",
+ "key_points": [
+  "Correlation implies a direct linear relationship: when one series is high, the correlated series tends to also be high.",
+  "Example given: natural gas prices in New York and New Jersey are usually correlated.",
+  "Plotting two price series over time, or using a scatter diagram (one series vs. the other on the same day), are two visual ways to check for a relationship before quantifying it.",
+  "A scatter diagram can visually reveal that a straight line captures the primary relationship between two series (e.g., peak electricity prices and natural gas prices).",
+  "Correlation specifically assumes a linear (straight-line) relationship between the two data series.",
+  "The correlation coefficient, abbreviated r, is introduced as the standard single-number summary of the strength of this relationship, analogous to how average and standard deviation summarize a single data series (the chunk ends before defining r's calculation)."
+ ],
+ "relationships": [
+  "Connects to the portfolio diversification discussion: low correlation between strategies/assets is what produces diversification benefits."
+ ],
+ "trading_implications": [
+  "Checking correlation between related markets (e.g., regional gas prices, or power vs. gas prices) helps identify relationships useful for hedging, spread trading, or diversification."
+ ],
+ "caveats": [
+  "Assuming correlation captures any kind of relationship between two series, when it specifically measures the strength of a linear (straight-line) relationship."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "318-320"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 5,
+   "topic": "Correlation between two price series"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

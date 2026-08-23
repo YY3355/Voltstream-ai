@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Sub-bituminous coal",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Coal Types",
+ "definition": "Sub-bituminous coal sits between lignite and bituminous coal in properties, with about 40% carbon content, more heat energy and less moisture than lignite, making it somewhat more efficient to transport, though international trade remains relatively small; it is used almost exclusively as a power-generation fuel and accounts for a little under half of North American coal production.",
+ "core_idea": "Sub-bituminous coal is a mid-rank fuel coal, better than lignite but still primarily a domestic/regional power-generation fuel rather than an internationally traded commodity.",
+ "key_points": [
+  "Sub-bituminous coal has about 40 percent carbon content, higher than lignite.",
+  "It typically has less moisture than lignite and contains more heat energy.",
+  "It is slightly more efficient to transport over long distances than lignite, but international trade is still relatively small.",
+  "A little less than half of North American coal production is sub-bituminous.",
+  "It is used almost exclusively as a fuel for electrical power generation."
+ ],
+ "relationships": [
+  "Ranks above lignite and below bituminous coal in carbon content, energy content, and transportability."
+ ],
+ "trading_implications": [
+  "Represents a major share of North American coal supply relevant to power generation, but like lignite is mostly a domestic-use fuel rather than an internationally traded one."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "251"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 6,
+   "topic": "Sub-bituminous coal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

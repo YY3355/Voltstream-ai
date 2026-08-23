@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Basis for testing hedge effectiveness: changes in value, not levels",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Hedge Accounting / Effectiveness Testing",
+ "definition": "A hedge is effective when a $1 move in the hedged item's price is matched by a roughly $1 offsetting move in the hedge's value. Because of this, effectiveness testing compares period-to-period changes in value between the hedge and the hedged item, not their absolute price levels.",
+ "core_idea": "Hedge quality is judged by how closely the day-to-day value changes of the hedge track the day-to-day value changes of the hedged item, rather than by comparing the two items' price levels directly.",
+ "key_points": [
+  "The ideal hedge offsets the hedged item's value change roughly dollar-for-dollar.",
+  "Effectiveness tests use day-to-day (or period-to-period) changes in value, not the values themselves.",
+  "This distinction matters because comparing raw price levels would not reveal whether the two positions move together."
+ ],
+ "relationships": [
+  "Feeds into regression-based effectiveness tests (slope, R-squared) described in the same section."
+ ],
+ "trading_implications": [
+  "When building a hedge test, prepare a changes-in-value (or percent-change) series for both instruments before running any statistical analysis."
+ ],
+ "caveats": [
+  "Assuming hedge effectiveness can be judged by comparing the two items' price levels rather than their changes in value."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "600-602"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_002.json",
+   "idx": 0,
+   "topic": "Basis for testing hedge effectiveness: changes in value, not levels"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

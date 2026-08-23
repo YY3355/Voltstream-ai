@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Locational basis in natural gas markets",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Basis",
+ "definition": "In natural gas (and energy markets generally), basis refers to the price difference between two physical trading locations, most commonly the difference between a specific delivery point and the Henry Hub, the sole liquid NYMEX settlement location.",
+ "core_idea": "Because futures only deliver to one physical point, traders use the term basis to describe how much a given location's price differs from the futures delivery price, and basis swaps let them convert a Henry Hub-referenced position into exposure at a different physical location.",
+ "key_points": [
+  "Henry Hub is described as the only liquid natural gas trading location and is the NYMEX futures settlement point.",
+  "Basis swaps let users combine NYMEX futures with a swap that exchanges the Henry Hub price for the price at a different physical location.",
+  "Because futures have only a single delivery point, \"basis\" in energy/gas trading most commonly means the price gap between a specific location and that futures delivery point."
+ ],
+ "relationships": [
+  "Directly follows from the general point that energy-market basis is locational rather than time-based.",
+  "Basis swaps connect futures exposure (single delivery point) to a trader's actual physical location need."
+ ],
+ "trading_implications": [
+  "A trader needing gas at a location other than Henry Hub can combine NYMEX futures with a basis swap to get location-specific price exposure."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 6,
+   "topic": "Locational basis in natural gas markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

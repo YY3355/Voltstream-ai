@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Renewable energy certificates (RECs)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Renewable Procurement",
+ "definition": "Tradable credits that let owners of renewable generation sell the renewable attribute of their electricity separately from the electricity itself.",
+ "core_idea": "RECs give renewable generators a second income stream by letting them sell the environmental/renewable attribute of their power, and are commonly purchased by load-serving entities to satisfy renewable-acquisition obligations; they also let a grid track how much renewable generation has actually been delivered.",
+ "key_points": [
+  "RECs are often purchased by load-serving entities to meet obligations to acquire specified amounts of renewable energy.",
+  "RECs provide a second source of income to renewable generators such as wind and solar producers.",
+  "REC markets provide a way to track renewable contributions once power is placed onto the grid.",
+  "In a deregulated market, the REC market is described as a way to incentivize construction of new renewable generation."
+ ],
+ "relationships": [
+  "Complements PPAs as a renewable-generation revenue/procurement mechanism."
+ ],
+ "trading_implications": [
+  "Renewable generators can monetize RECs independently of their energy sales, and buyers (e.g., load-serving entities) may need to source RECs separately from energy to meet compliance obligations."
+ ],
+ "caveats": [
+  "A REC represents the renewable attribute of power, not the power itself \u2014 a buyer of RECs is not necessarily buying the underlying electricity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "494"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 9,
+   "topic": "Renewable energy certificates (RECs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 4,
+ "title": "2.1 NATURAL GAS",
+ "n_concepts": 47,
+ "summary": "This chapter maps natural gas from the ground up: how the fuel forms and is extracted, the physical properties (energy density, storability constraints) that force it to move by pipeline rather than by container, and why that pipeline dependency creates captive regional demand. It then works through the market's structure \u2014 the distinct roles of producers, pipelines, distributors, and marketers, the regional profiles (East, Midwest, Southeast, West, Texas/Gulf Coast), and pricing conventions built around the Henry Hub benchmark, basis, and citygates. The remainder covers how spot and forward pricing diverge from typical storable-commodity logic, including seasonality and the unusual volatility term structure, and closes with the trading toolkit \u2014 futures-plus-basis execution, spread and swing trades, transportation contract terms, and the field's core vocabulary.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

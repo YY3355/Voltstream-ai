@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Coal washing (pyrite removal)",
+ "type": "market_mechanic",
+ "category": "Coal",
+ "subcategory": "Pre-combustion Processing",
+ "definition": "Coal washing is a density-based separation process that removes pyrite from crushed coal before it is burned.",
+ "core_idea": "Because pyrite is denser than coal, crushing the coal and submerging it in water causes coal to float and pyrite to sink, allowing pyrite to be separated out; the technique itself is simple, but since the coal must be dehydrated before burning, washing can add substantial cost unless the coal was already going to be crushed and slurried anyway.",
+ "key_points": [
+  "Relies on the density difference between coal and pyrite",
+  "Coal floats to the top of the water; pyrite sinks",
+  "Post-wash dehydration is required before the coal can be burned, and this can be costly",
+  "Incremental cost can be low if the coal is already crushed and moved via water slurry pipeline"
+ ],
+ "relationships": [
+  "Complements flue gas desulfurization, which handles the organic sulfur that washing cannot remove"
+ ],
+ "trading_implications": [
+  "Coal transported by slurry pipeline may have a lower effective cost to desulfurize via washing, affecting relative economics versus other coal sources/transport modes"
+ ],
+ "caveats": [
+  "Washing only removes pyrite-bound sulfur; it does nothing for organic sulfur"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "253"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 2,
+   "topic": "Coal washing (pyrite removal)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

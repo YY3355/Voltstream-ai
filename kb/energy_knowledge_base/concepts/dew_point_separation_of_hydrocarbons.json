@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Dew-point separation of hydrocarbons",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Processing",
+ "definition": "Processing plants separate a raw hydrocarbon mixture into its individual components by exploiting the fact that different hydrocarbons liquefy (reach their dew point) at different temperatures.",
+ "core_idea": "Because larger hydrocarbon molecules like propane and butane turn liquid at warmer temperatures than smaller ones like methane, progressively cooling the raw gas stream causes the larger molecules to condense out first, allowing them to be separated from the gas before it enters the pipeline.",
+ "key_points": [
+  "Larger hydrocarbons (e.g., propane, butane) must be removed so they don't condense into liquid within a pipeline.",
+  "Separation is achieved by progressively cooling the combined gas stream so each component liquefies at its own characteristic temperature."
+ ],
+ "relationships": [
+  "Natural gas quality standards",
+  "Natural gas liquids production"
+ ],
+ "trading_implications": [
+  "This separation process is what produces natural gas liquids (NGLs) like propane and butane as distinct tradeable commodities from raw gas."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "140-141"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 8,
+   "topic": "Dew-point separation of hydrocarbons"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

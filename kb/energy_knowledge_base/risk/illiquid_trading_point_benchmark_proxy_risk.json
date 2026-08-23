@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Illiquid trading point / benchmark proxy risk",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Market Data Quality",
+ "definition": "The risk of approximating an illiquid physical trading location's price using a nearby liquid benchmark.",
+ "core_idea": "Many physical energy trading points trade infrequently, so between actual trades there may be no fresh price available; the common workaround is to approximate the illiquid location's price off a nearby liquid benchmark, but the historical relationship between the two can break down without warning.",
+ "key_points": [
+  "A trade's price is known at the moment it happens, but future prices depend on whether other participants trade at that same location",
+  "If a location doesn't trade regularly, a meaningful amount of time can pass before another real price is observed there",
+  "The standard workaround is to proxy illiquid locations off a nearby liquid benchmark",
+  "This proxy relationship is sometimes a reasonable assumption and sometimes fails when the expected relationship between the benchmark and the location breaks down"
+ ],
+ "relationships": [
+  "Related to parameter estimation risk as another consequence of limited market data"
+ ],
+ "trading_implications": [
+  "Positions or valuations at illiquid points carry basis risk to the benchmark used as a proxy"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "588-589"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_001.json",
+   "idx": 5,
+   "topic": "Illiquid trading point / benchmark proxy risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

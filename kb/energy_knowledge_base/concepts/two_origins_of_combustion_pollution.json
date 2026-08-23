@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Two origins of combustion pollution",
+ "type": "concept",
+ "category": "Environmental/Emissions",
+ "subcategory": "Pollution sources",
+ "definition": "Fossil fuel pollution comes from two distinct sources: impurities physically trapped inside the fuel that are released when it burns, and gases that are an unavoidable byproduct of the combustion (oxidation) reaction itself.",
+ "core_idea": "Impurity-based pollutants (ash, sulfur, nitrogen, heavy metals) can be reduced by choosing cleaner fuel, but reaction-based byproducts like CO2 and water cannot be eliminated because producing them is literally how the fuel releases its energy.",
+ "key_points": [
+  "Impurity pollution originates from substances embedded in the fuel itself (e.g., fly ash, sulfur, nitrogen, heavy metals) and can be mitigated by using fuel with fewer impurities.",
+  "Reaction pollution (CO2 and water) is intrinsic to combustion as an oxidation process and cannot be avoided while still generating energy from the fuel.",
+  "Greenhouse gases themselves are not a direct health hazard and are generally safe in normal quantities, but large aggregate releases can alter global climate."
+ ],
+ "relationships": [
+  "Underlies the distinction between locally-controllable pollution and globally cumulative pollution described elsewhere in the chunk."
+ ],
+ "trading_implications": [
+  "Regulatory and abatement strategies differ by pollutant type: fuel-quality standards address impurity pollution, while CO2 requires aggregate/market-based mechanisms (e.g., emissions pricing) since it can't be engineered out of combustion."
+ ],
+ "caveats": [
+  "Greenhouse gases are not toxic or hazardous to individual health the way heavy metals or fly ash are; their risk is cumulative and climatic, not acute."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "282-283"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_000.json",
+   "idx": 0,
+   "topic": "Two origins of combustion pollution"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

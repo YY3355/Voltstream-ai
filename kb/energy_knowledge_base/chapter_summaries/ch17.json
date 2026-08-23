@@ -1,0 +1,7 @@
+{
+ "chapter": 17,
+ "title": "4.2 THE GENERATION STACK",
+ "n_concepts": 24,
+ "summary": "The generation stack refers to how power plants are ranked and dispatched by cost, from cheap baseload units at the bottom to expensive peaking units at the top, with mid-merit plants in between often setting the market price. This chapter walks through how that stack interacts with the day-ahead and real-time auction structure \u2014 nearly identical bidding dynamics across both, with a uniform clearing price paid to all cleared generators based on the highest-accepted bid. It covers the strategic implications for bidders, including tranche splitting, active versus passive bidding, and where to place bids relative to break-even costs and the next-cheapest plant type, along with how factors like fuel price shifts, emissions credits, and marginal supply sensitivity affect margins and clearing prices. It closes by considering edge cases, such as a flat, single-technology stack where marginal pricing erodes profit and discourages new investment.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

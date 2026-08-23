@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Distillation of crude oil into refined products",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Refining",
+ "definition": "Distillation is the process of separating crude oil's mixed hydrocarbons into distinct refined products by heating the mixture so each hydrocarbon vaporizes at its own characteristic temperature, then condensing each vapor separately.",
+ "core_idea": "Refining crude oil is a joint-production process: a refiner cannot make only gasoline \u2014 the same run necessarily also yields diesel, heating oil, asphalt, and other distillates in some proportion, often requiring multiple distillation passes to reach product purity.",
+ "key_points": [
+  "Each hydrocarbon in crude turns to gas at a different temperature, enabling separation by staged heating and cooling.",
+  "Vaporized fractions are captured and re-condensed into separate liquid products.",
+  "Multiple distillation passes may be needed to get a sufficiently pure end product.",
+  "Producing more of one distillate (e.g., gasoline) necessarily means producing more of the others as well (diesel, heating oil, asphalt, etc.)."
+ ],
+ "relationships": [
+  "Crack spread",
+  "Crude oil quality (light/heavy, sweet/sour)"
+ ],
+ "trading_implications": [
+  "Because product mix is not independently adjustable, a refiner responding to a shortage in one product (e.g., gasoline) simultaneously affects supply/price of the others."
+ ],
+ "caveats": [
+  "Thinking a refiner can freely dial up single-product output (e.g., pure gasoline) without producing the other distillates."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "36-37"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 6,
+   "topic": "Distillation of crude oil into refined products"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

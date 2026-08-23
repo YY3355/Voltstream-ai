@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Credit Quality",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Counterparty and Credit Risk",
+ "definition": "A forward-looking assessment of how likely a counterparty is to default on its payment obligations.",
+ "core_idea": "Credit quality draws on external ratings agencies plus in-house research on key counterparties, and can require multiple layers of analysis since a counterparty's own credit risk depends partly on the credit quality of its clients; a firm also becomes more likely to default once its large trades have moved against it, and less likely once trades have moved in its favor.",
+ "key_points": [
+  "Forward-looking, relevant because many energy contracts run for years.",
+  "Ratings agencies provide a baseline; firms often supplement this with in-house research on important counterparties.",
+  "Assessment can require layered analysis \u2014 a counterparty's credit risk depends on the credit quality of its own clients.",
+  "A counterparty's default likelihood shifts with how its large trades have performed: less likely to default if trades favor it, more likely if trades have moved against it."
+ ],
+ "relationships": [
+  "One of two components of counterparty credit risk, alongside credit exposure"
+ ],
+ "trading_implications": [
+  "Monitoring how a major counterparty's other large positions are performing can be an early warning signal for rising default risk, independent of published credit ratings."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "67-68"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 2,
+   "topic": "Credit Quality"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

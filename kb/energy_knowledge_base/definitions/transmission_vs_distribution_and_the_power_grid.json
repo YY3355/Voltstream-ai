@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Transmission vs. distribution and the power grid",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Transmission",
+ "definition": "Transmission is the bulk, long-distance movement of power at high voltage from a power plant to a substation; distribution is the shorter, low-voltage movement of power from a substation to end consumers.",
+ "core_idea": "The power grid links generation, transmission lines, and substations into an interconnected network whose redundancy \u2014 multiple routing paths between any two points \u2014 is what prevents a single failed line from causing a blackout.",
+ "key_points": [
+  "Transmission = bulk transfer at high voltage, plant to substation.",
+  "Distribution = transfer at lower voltage, substation to consumers.",
+  "The grid's redundancy (multiple paths between locations) prevents overload on any single line and protects against single-point-of-failure blackouts.",
+  "Most lines are overhead on poles; buried lines are used in some urban areas but are less reliable and harder to maintain, and are uncommon in suburban/rural areas.",
+  "Higher voltage reduces transmission losses (power dissipated as heat) but increases danger, so voltage/routing choices trade off safety, reliability, and efficiency.",
+  "Transformers step voltage up for long-distance transmission and step it back down for local distribution."
+ ],
+ "relationships": [
+  "Transmission losses and congestion connect to locational marginal pricing and FTRs."
+ ],
+ "trading_implications": [
+  "Grid topology and line capacity constraints are the physical root cause of congestion pricing and the need for FTR hedges."
+ ],
+ "caveats": [
+  "Burying power lines, while common in cities for aesthetics/safety, actually reduces reliability and maintainability rather than improving it."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "30-31"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_003.json",
+   "idx": 3,
+   "topic": "Transmission vs. distribution and the power grid"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

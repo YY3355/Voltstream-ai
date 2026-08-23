@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Modeling reserve",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Model Risk",
+ "definition": "A modeling reserve is a portion of a model's reported profit that is deliberately withheld from recognized earnings for some period, to absorb losses if the model later proves flawed.",
+ "core_idea": "A model that shows a steady stream of profits attracts less scrutiny than one losing money, so it is more likely to have an undiscovered flaw; setting aside part of its profits as a reserve protects against that hidden risk before it is caught.",
+ "key_points": [
+  "Models that are hemorrhaging money draw attention and get their problems found quickly.",
+  "A steadily profitable model is more dangerous precisely because it is more likely to be left unexamined.",
+  "The reserve is not recognized as earnings until the model has proven itself over some operating period.",
+  "This is described as a second way (alongside position limits) of limiting model risk."
+ ],
+ "relationships": [
+  "A response to the same underlying model risk that position limits address, but targets underscrutinized profitable models rather than exposure size."
+ ],
+ "trading_implications": [
+  "Consistently profitable models should not be assumed safe just because they aren't losing money; reserving part of their P&L is a deliberate hedge against undetected model error."
+ ],
+ "caveats": [
+  "It would be a mistake to assume a model showing steady profits is lower risk than one showing losses \u2014 the source frames it as the more dangerous case because it is less likely to be scrutinized."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "590-590"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_002.json",
+   "idx": 1,
+   "topic": "Modeling reserve"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

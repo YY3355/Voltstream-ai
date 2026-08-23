@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Why the cost burden of emissions reduction is politically deadlocking",
+ "type": "concept",
+ "category": "Emissions Markets",
+ "subcategory": "Policy / Political Economy",
+ "definition": "International climate negotiations have stalled largely because reducing carbon emissions is expensive, and no country or bloc is willing to bear that cost \u2014 nor can it simply be shifted onto someone else.",
+ "core_idea": "Stripped of diplomatic language, the core sticking point in emissions negotiations is a dispute over who pays for more expensive electricity, since neither industrialized nor developing countries can absorb heating/electricity costs many times higher than today's.",
+ "key_points": [
+  "The author argues there is no feasible way to make 'someone else' bear the cost of higher electricity prices, and that this is the central reason international emissions talks have deadlocked.",
+  "Both industrialized-country and developing-country consumers are described as unable to afford electricity/heating costs an order of magnitude above current levels."
+ ],
+ "relationships": [
+  "Directly connects to the national-allocation disputes under the Kyoto Protocol."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "263-264"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 4,
+   "topic": "Why the cost burden of emissions reduction is politically deadlocking"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

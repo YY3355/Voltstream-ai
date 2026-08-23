@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Up-front premium cost determines whether an option (or lottery ticket) is a good investment",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "A favorable payoff shape (small risk, large potential reward) does not by itself make an option a good investment. What matters is the price paid to enter: a free or cheap option can be a great investment, but an option purchased for too high a premium becomes a guaranteed-loss position regardless of how attractive its payoff structure looks.",
+ "core_idea": "Attractive asymmetric payoffs are not sufficient to judge an investment \u2014 the entry cost has to be weighed against the expected value, or a high-priced option becomes what the author calls a 'risk-free way to lose money.'",
+ "key_points": [
+  "A free lottery ticket / option would be a great investment by definition.",
+  "High up-front costs can turn even a favorable-looking payoff structure into a poor investment.",
+  "The author's phrase: overpriced lottery tickets and options can become 'risk-free ways to lose money.'"
+ ],
+ "relationships": [
+  "Complements the extrinsic value formula \u2014 paying more than expected value less intrinsic value erodes the trade's edge"
+ ],
+ "trading_implications": [
+  "Evaluating an option purchase requires comparing the premium against the option's calculated expected/extrinsic value, not just judging the shape of the payoff."
+ ],
+ "caveats": [
+  "The author explicitly warns against the misconception that low risk plus high potential payoff automatically means a good investment \u2014 price paid is the deciding factor."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "330"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 2,
+   "topic": "Up-front premium cost determines whether an option (or lottery ticket) is a good investment"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

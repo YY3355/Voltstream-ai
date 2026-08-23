@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Physical Storage Ownership as an Operational Commitment",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Trading Strategies",
+ "definition": "Owning a physical natural gas storage facility is not a purely financial position \u2014 it requires hiring an operations team for the life of the contract to coordinate physical delivery and sale of gas.",
+ "core_idea": "Even when much of the trading exposure is hedged ahead of time in the futures market, physical storage ownership still carries an ongoing operational and staffing burden distinct from a financial trading position.",
+ "key_points": [
+  "The example cites a 20-year commitment to keep an operations staff in place.",
+  "Substantial daily housekeeping is required regardless of how much trading is pre-arranged via futures."
+ ],
+ "relationships": [
+  "Part of the execution stage of the Natural Gas Storage Arbitrage Bid Strategy example."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "535-536"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 12,
+   "topic": "Physical Storage Ownership as an Operational Commitment"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

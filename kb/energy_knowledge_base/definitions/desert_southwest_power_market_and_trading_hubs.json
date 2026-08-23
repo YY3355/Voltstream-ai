@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Desert Southwest power market and trading hubs",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Desert Southwest",
+ "definition": "The Desert Southwest is a moderate-winter, hot-summer region that typically runs a generation surplus (mainly natural gas, with some coal and hydro, plus strong solar potential) and exports power to Southern California, trading through three major hubs.",
+ "core_idea": "Palo Verde (near Phoenix, at a major nuclear plant/switching yard) is the benchmark hub for the northern part of the region and a key gateway to California; Mead (near Las Vegas, at Hoover Dam/Lake Mead) is the primary delivery point for southern Nevada hydropower; Four Corners (northwestern New Mexico) sits at the junction of several major transmission lines.",
+ "key_points": [
+  "Region has moderate winters and long hot summers, usually generation-surplus and a major exporter to Southern California",
+  "Natural gas is the most common marginal fuel, given abundant regional reserves; coal and hydropower are also present",
+  "Abundant sunlight makes the region attractive for solar generation",
+  "Three major hubs: Palo Verde, Mead, Four Corners",
+  "Palo Verde: ~45 miles west of Phoenix, at a major nuclear plant/switching yard, hosts many California transmission lines, and is the benchmark for power delivered to Colorado and Wyoming",
+  "Mead: outskirts of Las Vegas, at Lake Mead/Hoover Dam, primary delivery point for southern Nevada power",
+  "Four Corners: northwestern New Mexico, at the interconnection of several major transmission lines"
+ ],
+ "relationships": [
+  "California (CAISO)",
+  "Western Interconnection overview"
+ ],
+ "trading_implications": [
+  "Palo Verde is the standard benchmark price point for trades into California and the northern part of the Desert Southwest region"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "202-204"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 7,
+   "topic": "Desert Southwest power market and trading hubs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

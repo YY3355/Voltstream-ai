@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Split-bid (tranche) optimal bidding strategy",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Bidding Strategy",
+ "definition": "Rather than submitting one bid price for all of their capacity, generators commonly split their offer into multiple tranches \u2014 some priced at or below their own cost, and the rest priced just under the point where the next plant in the stack becomes profitable.",
+ "core_idea": "A low tranche near or below cost protects against costly unplanned shutdowns (especially for steam turbines that are expensive to restart), while a higher tranche is priced as high as possible without inviting the next-highest-cost competitor to undercut it.",
+ "key_points": [
+  "Many generators, especially steam turbines that are costly to bring back online, submit part of their capacity at or below their own production cost to avoid unnecessary stoppages.",
+  "The remaining capacity is typically bid as high as the market will bear, just under the price where the next plant in the stack would become profitable, to maximize profit without risking being undercut.",
+  "Example given: a plant profitable at $50, with the next plant in the stack becoming profitable at $60, might submit a low-priced tranche below $50 and a second tranche priced just under $60.",
+  "Executing this well requires detailed knowledge of the cost structure of nearby competitors in the stack, which is typically learned through experience rather than formal analysis.",
+  "As a result, plants tend to understand their local neighborhood of the generation stack well but have much less insight into parts of the stack far from their own cost position."
+ ],
+ "relationships": [
+  "marginal bid clustering",
+  "generation stack cost position"
+ ],
+ "trading_implications": [
+  "Expect generator offers to appear as multiple price tranches rather than a single bid; the price of a unit's top tranche can reveal its inferred estimate of the next-most-expensive competing plant's breakeven cost."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "413"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 6,
+   "topic": "Split-bid (tranche) optimal bidding strategy"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Swing trades (physical storage arbitrage)",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Trading Strategies",
+ "definition": "A trade that relies on a trader's physical ability to store natural gas over short periods, buying when demand and price are low and reselling when demand and price are high.",
+ "core_idea": "Because gas demand fluctuates significantly even within a week, a trader with storage access can buy inexpensive gas during low-demand periods and resell it during high-demand periods.",
+ "key_points": [
+  "Pipelines operate continuously, but gas demand varies considerably over short periods such as a week.",
+  "Example: Monday mornings see high demand from industrial restarts and reheating offices after the weekend; late Saturday night sees low demand (no industrial demand, less home heating).",
+  "Executing this strategy requires the physical ability to store natural gas."
+ ],
+ "relationships": [
+  "A type of spread-like trade distinct from spread trades proper",
+  "Distinct from swing swaps/options, which are financial derivatives sharing a similar name"
+ ],
+ "trading_implications": [
+  "Only accessible to traders/entities with physical storage access.",
+  "Captures short-term, demand-driven price volatility."
+ ],
+ "caveats": [
+  "\"Swing trade\" (physical storage arbitrage) should not be confused with \"swing swap\"/\"swing option\" (financial derivatives with daily delivery flexibility)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 4,
+   "topic": "Swing trades (physical storage arbitrage)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

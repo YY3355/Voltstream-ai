@@ -1,0 +1,62 @@
+{
+ "canonical_topic": "Natural gas common terms glossary",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Terminology",
+ "definition": "A set of standard natural gas market terms: All-in Price, Basis Price, Burner Tip, Citygate, Dry Natural Gas, Hub, and Wet Natural Gas.",
+ "core_idea": "These terms describe how gas is priced at a location relative to a benchmark (all-in/basis price), where physical handoffs occur (citygate, burner tip, hub), and gas composition (dry vs. wet).",
+ "key_points": [
+  "All-in Price: the price of natural gas at a specific location, equal to the benchmark location's price plus the basis price.",
+  "Basis Price: the price difference between a specific location and the benchmark location (Henry Hub in the U.S.); driven by transportation costs and storage capability between the two areas.",
+  "Burner Tip: an end-user of natural gas.",
+  "Citygate: the point where the municipal distribution system takes possession of natural gas for delivery to retail customers.",
+  "Dry Natural Gas: natural gas that is almost pure methane.",
+  "Hub: an interconnection point between two or more natural gas pipelines.",
+  "Wet Natural Gas: natural gas containing substantial hydrocarbons other than methane, or substantial impurities."
+ ],
+ "relationships": [
+  "Basis price ties directly to the forward-market cross-location correlation concept."
+ ],
+ "trading_implications": [
+  "Basis trading is fundamentally a bet on transportation/storage cost dynamics between a location and the benchmark hub."
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "All-in price",
+   "formula": "All-in Price = Benchmark (Henry Hub) Price + Basis Price",
+   "variables": {
+    "All-in Price": "delivered price at a specific location",
+    "Benchmark Price": "price at the benchmark hub (e.g. Henry Hub)",
+    "Basis Price": "price differential vs. the benchmark, driven by transport/storage costs"
+   },
+   "source": {
+    "chapter": 4,
+    "pages": "157-163",
+    "section_hint": "2.1 Natural Gas \u2014 Common Terms"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 6,
+   "topic": "Natural gas common terms glossary"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

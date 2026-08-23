@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Kerosene (No. 1 Fuel Oil)",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Oil Products",
+ "definition": "Kerosene is the lightest of the fuel oil grades, positioned between gasoline and diesel in the distillation stack.",
+ "core_idea": "Kerosene is a light fuel oil grade that, unlike gasoline, diesel, and heavy oil, is not commonly traded as a futures contract.",
+ "key_points": [
+  "Lightest grade among the fuel oils.",
+  "Falls between gasoline and diesel fuel in the distillation stack.",
+  "Uncommon to see kerosene traded in futures markets."
+ ],
+ "relationships": [
+  "Positioned opposite heavy oil on the distillation stack, with gasoline and diesel in between."
+ ],
+ "trading_implications": [
+  "Limited futures market liquidity means kerosene is less useful than gasoline, diesel, or WTI for hedging or price discovery."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "245-245"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_006.json",
+   "idx": 1,
+   "topic": "Kerosene (No. 1 Fuel Oil)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

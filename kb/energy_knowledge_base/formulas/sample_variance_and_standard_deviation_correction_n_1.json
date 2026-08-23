@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "Sample variance and standard deviation correction (n-1)",
+ "type": "formula",
+ "category": "Statistics",
+ "subcategory": "Volatility Estimation",
+ "definition": "When variance or standard deviation is estimated from a sample rather than the full population, dividing by the sample size n produces a value that consistently understates true volatility; dividing by n-1 instead corrects this bias.",
+ "core_idea": "Sampled data systematically underestimates true variance/volatility, so the standard fix is to divide the sum of squared deviations by n-1 rather than n when computing sample variance and standard deviation.",
+ "key_points": [
+  "Using the full-population formula (divide by n) on a sample understates actual variance and volatility.",
+  "The correction is to divide by n-1 instead of n.",
+  "For large samples (e.g., n=1,001) the n vs n-1 difference is negligible.",
+  "For small samples, the n-1 correction can materially change the result."
+ ],
+ "relationships": [
+  "Feeds directly into standard deviation (square root of sample variance), which underlies volatility, Sharpe/Information ratios, and rolling/exponentially weighted volatility estimates."
+ ],
+ "trading_implications": [
+  "Risk managers estimating volatility from limited historical price samples should use the n-1 correction, especially with short lookback windows, to avoid systematically underestimating risk."
+ ],
+ "caveats": [
+  "Assuming the n vs n-1 distinction is always immaterial; it matters for small sample sizes even though it's negligible for large ones."
+ ],
+ "formulas": [
+  {
+   "name": "Sample variance (n-1 correction)",
+   "formula": "s^2 = sum((x_i - x_bar)^2) / (n - 1)",
+   "variables": {
+    "x_i": "individual observed value",
+    "x_bar": "sample mean",
+    "n": "number of observations in the sample"
+   },
+   "source": {
+    "chapter": 12,
+    "pages": "314-315",
+    "section_hint": "3.3 Statistics - Estimating Variance and Standard Deviation from Sampled Data"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "314-315"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 0,
+   "topic": "Sample variance and standard deviation correction (n-1)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

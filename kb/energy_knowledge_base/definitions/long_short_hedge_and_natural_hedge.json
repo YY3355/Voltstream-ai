@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Long, Short, Hedge, and Natural Hedge",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Positions and Hedging",
+ "definition": "A long position benefits from a price increase (commonly ownership of an asset); a short position benefits from a price decrease (commonly owing an asset). A hedge is an offsetting position taken deliberately to reduce portfolio risk. A natural hedge is a position that reduces risk as a side effect, without having been taken on for that purpose.",
+ "core_idea": "Long/short describe directional exposure; hedging (deliberate or natural) describes combining positions so their price exposures offset.",
+ "key_points": [
+  "Position = net amount of goods/services owned by an investor; described as long or short depending on which price direction benefits the owner.",
+  "Natural hedge example: a natural gas transport contract is short gas at the source (benefits from buying cheap) and long gas at the destination (benefits from selling high) \u2014 since source and destination prices tend to move together, the combination naturally offsets price risk even though the contract wasn't created for hedging."
+ ],
+ "relationships": [
+  "Natural Hedge is a special case of Hedge where the offsetting effect is incidental rather than intentional."
+ ],
+ "trading_implications": [
+  "Recognizing natural hedges embedded in existing physical contracts (e.g., transport/transmission rights) can reveal risk offsets that don't require additional trades."
+ ],
+ "caveats": [
+  "Assuming a hedge must be intentionally constructed \u2014 the natural hedge example shows risk-reducing offsets can arise incidentally from the structure of a physical contract."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 5,
+   "topic": "Long, Short, Hedge, and Natural Hedge"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

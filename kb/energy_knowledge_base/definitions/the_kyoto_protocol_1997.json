@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "The Kyoto Protocol (1997)",
+ "type": "definition",
+ "category": "Emissions Markets",
+ "subcategory": "History / Policy",
+ "definition": "The Kyoto Protocol, signed in 1997, was the first global agreement establishing a cap and trade framework with both international and national emissions limits; it was approved in principle by nearly every country but never became a binding agreement in practice.",
+ "core_idea": "Kyoto's cap and trade structure was widely endorsed conceptually, but setting the actual national allocation levels turned into an intractable political fight, centered on whether the US should have to abandon coal-based generation so that other nations could build their own coal plants.",
+ "key_points": [
+  "Kyoto created the first cap and trade system operating at both an international and national level for greenhouse gases.",
+  "Nearly universal approval 'in principle' did not translate into a binding agreement.",
+  "The central disagreement in setting national allocations was framed as: should the US be required to give up coal power so developing nations can build coal plants of their own.",
+  "Two competing allocation philosophies were in tension: setting carbon limits on a per-person basis, versus the view that no region should build highly polluting technology regardless of its current per-capita emissions.",
+  "The author frames the underlying dispute, again, as fundamentally about who bears the cost of more expensive electricity."
+ ],
+ "relationships": [
+  "Builds directly on the cap and trade mechanics and the national-allocation disputes described earlier in the section."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Approval 'in principle' by most countries should not be mistaken for a binding treaty \u2014 the text is explicit that Kyoto did not become binding."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "265-266"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 8,
+   "topic": "The Kyoto Protocol (1997)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

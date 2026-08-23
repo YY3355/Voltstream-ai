@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Reservoir pressure and well production decline",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Production",
+ "definition": "The rate at which a natural gas well produces is driven by the pressure differential between the reservoir and the surface, which naturally declines as the reservoir is depleted.",
+ "core_idea": "Gas flows from high to low pressure, so a well produces fastest when the reservoir is freshest (highest pressure) and slows over time as pressure drops, eventually reaching a point where continued extraction is no longer economical and the well is closed.",
+ "key_points": [
+  "A vacuum applied at the reservoir mouth combines with gas's natural buoyancy to pull it upward.",
+  "Production rate is fastest immediately after a well is opened and decreases as reservoir pressure falls.",
+  "Water injection can be used to artificially raise the pressure of remaining gas, since methane doesn't dissolve in water \u2014 this can extend a well's productive life.",
+  "The physical properties of the reservoir rock directly affect how quickly gas can be recovered."
+ ],
+ "relationships": [
+  "Reservoir rock porosity/permeability",
+  "Well economics / decline curves"
+ ],
+ "trading_implications": [
+  "Declining well productivity over time is a structural driver of ongoing drilling activity needed to sustain supply."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "138-139"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 3,
+   "topic": "Reservoir pressure and well production decline"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "Gas-oil ratio classification of wells",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Exploration and Production",
+ "definition": "Wells that produce a mixture of oil and gas are labeled 'gas well' or 'oil well' based on the ratio of gas volume produced to oil volume produced, using a conventional threshold of 100,000 cubic feet of gas per barrel of oil.",
+ "core_idea": "Because virtually all wells produce some mixture of both oil and gas, the gas-to-oil ratio (GOR) is used as a naming convention rather than a strict physical category: below the threshold the well is called an oil well, above it a gas well.",
+ "key_points": [
+  "Gas-oil ratio = volume of natural gas produced (ft3) divided by volume of crude oil produced (BBL) over a given period.",
+  "Oil well: gas-oil ratio less than 100,000 ft3/BBL.",
+  "Gas well: gas-oil ratio greater than 100,000 ft3/BBL.",
+  "All wells generally produce both gas and oil in some proportion; the label just reflects which dominates."
+ ],
+ "relationships": [
+  "Applies to output from traditional wells described in the surrounding text."
+ ],
+ "trading_implications": [
+  "GOR labeling affects how a well's output is categorized for market/production reporting purposes, even though actual output is mixed."
+ ],
+ "caveats": [
+  "A 'gas well' or 'oil well' label does not mean the well produces only one fuel type \u2014 it reflects a ratio threshold, not exclusivity."
+ ],
+ "formulas": [
+  {
+   "name": "Gas-oil ratio (GOR)",
+   "formula": "GOR = Gas produced (ft3) / Oil produced (BBL)",
+   "variables": {
+    "Gas produced": "cubic feet (ft3) of natural gas produced over a period",
+    "Oil produced": "barrels (BBL) of crude oil produced over the same period",
+    "100,000 ft3/BBL": "conventional dividing line between classifying a well as oil vs. gas"
+   },
+   "source": {
+    "chapter": 3,
+    "pages": "126",
+    "section_hint": "1.3 Exploration and Production \u2014 Gas and Oil Wells"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "126"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_001.json",
+   "idx": 3,
+   "topic": "Gas-oil ratio classification of wells"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Generation-Load Balance and Grid Stability",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Grid Physics",
+ "definition": "Voltage (production), current, and load (demand) on a power system are physically linked; a grid stays stable only when generation is kept matched to demand.",
+ "core_idea": "Because grid operators cannot directly throttle how much electricity consumers use, they must continuously adjust production to track demand. Too little generation causes brownouts; too much overloads transmission wires, which heat up and can melt, causing a blackout.",
+ "key_points": [
+  "Excess current heats transmission wires; enough heat causes the wire to melt",
+  "Grid operators balance the system by adjusting supply, not demand, since demand isn't directly controllable",
+  "Undergeneration relative to demand causes brownouts",
+  "Overgeneration relative to demand can overheat lines and cause blackouts"
+ ],
+ "relationships": [
+  "Brownouts and blackouts are opposite failure modes of the same generation/demand mismatch problem"
+ ],
+ "trading_implications": [
+  "Explains the physical necessity of real-time balancing and frequency-responsive dispatch in power markets"
+ ],
+ "caveats": [
+  "Blackouts aren't only caused by too little power \u2014 producing too much relative to demand can also force an outage by melting lines"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "188"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 0,
+   "topic": "Generation-Load Balance and Grid Stability"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

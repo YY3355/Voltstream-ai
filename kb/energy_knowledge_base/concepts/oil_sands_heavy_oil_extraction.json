@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Oil sands / heavy oil extraction",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Exploration and Production",
+ "definition": "Heavy crude oil is too viscous (ranging from molasses-like to solid at room temperature) to flow to the surface under natural pressure like traditional wells, so it requires strip mining (if near-surface) or steam injection to liquefy it underground before extraction.",
+ "core_idea": "Traditional drilling only works for lighter, shorter-chain hydrocarbons that flow easily; heavy oil needs either surface mining or high-temperature steam injection, both of which are far more energy-, water-, and resource-intensive and more environmentally destructive, and heavy oil also needs more downstream processing to become usable fuel \u2014 but heavy oil reserves are roughly twice as abundant globally as light oil reserves and often sit near the surface in politically stable regions, so the main constraints on developing them are water access and environmental considerations rather than resource scarcity or location.",
+ "key_points": [
+  "Heavy crude viscosity ranges from molasses-like to solid at room temperature.",
+  "Near-surface heavy oil deposits can be strip mined, similar to coal mining.",
+  "Deeper heavy oil deposits are extracted by injecting high-temperature steam to melt the oil into a liquid.",
+  "Heavy oil extraction requires far more energy and water than traditional drilling and is generally more environmentally destructive.",
+  "Heavy oil requires more processing than light crude to convert into gasoline or diesel.",
+  "Heavy oil reserves are roughly double the world's light oil reserves.",
+  "Many heavy oil reserves are located near the surface in politically stable regions, unlike hard-to-locate light crude.",
+  "The primary limiting factors for heavy oil development are access to water (for steam) and environmental considerations, not resource scarcity."
+ ],
+ "relationships": [
+  "Contrasts directly with traditional well production described earlier, which depends on natural underground pressure to flow lighter fuels to the surface."
+ ],
+ "trading_implications": [
+  "Heavy oil's abundance and near-surface, politically stable locations make it a strategically attractive supply source despite higher production costs and lower desirability versus light crude.",
+  "Water availability and environmental permitting, rather than geological discovery, are the practical constraints on heavy oil supply growth."
+ ],
+ "caveats": [
+  "Heavy oil is less desirable/more costly to produce, but this is due to processing intensity and resource requirements, not scarcity \u2014 reserves are actually larger than light oil."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "126-127"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_001.json",
+   "idx": 4,
+   "topic": "Oil sands / heavy oil extraction"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

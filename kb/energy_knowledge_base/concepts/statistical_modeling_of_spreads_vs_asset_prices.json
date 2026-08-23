@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Statistical Modeling of Spreads vs. Asset Prices",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Spread Option Modeling",
+ "definition": "Spreads between two prices differ fundamentally from individual asset prices: they can be zero or negative, so the lognormal distribution and percent-return concepts typically used for asset prices don't apply. Spreads are more commonly modeled with a normal distribution, or by using the ratio of the two prices (which behaves more like a lognormal distribution, e.g., tends not to go negative).",
+ "core_idea": "Because individual commodity prices are almost always positive and are well described by a lognormal distribution, but spreads frequently cross zero, spread option models require different distributional assumptions than single-asset option models.",
+ "key_points": [
+  "Asset prices are typically modeled as never going below zero but able to rise a lot (lognormal-like); this doesn't fit spreads.",
+  "Percent return is undefined for a spread that starts at zero, since that produces a division-by-zero error.",
+  "Spreads are commonly modeled with a normal distribution rather than lognormal.",
+  "An alternative approach models the ratio of the two prices instead of the difference, since the ratio behaves more like a lognormal distribution (e.g., stays non-negative)."
+ ],
+ "relationships": [
+  "Distinguishes spread modeling from standard single-asset lognormal option pricing (contrast with vanilla option assumptions)."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Assuming a spread can be modeled the same way as a single commodity price (lognormal, never negative) is incorrect \u2014 spreads can be zero or negative."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "376-377"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 3,
+   "topic": "Statistical Modeling of Spreads vs. Asset Prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

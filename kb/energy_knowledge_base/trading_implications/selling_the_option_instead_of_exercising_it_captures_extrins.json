@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Selling the option instead of exercising it captures extrinsic value while shedding risk",
+ "type": "trading_strategy",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "Rather than exercising an in-the-money option to lock in the risk-free intrinsic value, a holder can sell the option itself for a price between its intrinsic value and its full expected value, capturing most of the remaining extrinsic value without carrying the risk of the underlying bet.",
+ "core_idea": "Selling an option can beat exercising it because a buyer will pay a premium over intrinsic value for the remaining chance of upside, letting the original holder monetize more of the option's total value while exiting the risk.",
+ "key_points": [
+  "Worked example: with intrinsic value $1 million and full expected value $1.5 million, the holder might sell the ticket for $1.4 million \u2014 more than the risk-free exercise value, without keeping the risk.",
+  "The author notes a 50/50 shot at $3 million for $1.4 million is still a profitable trade for whoever buys it.",
+  "This lets the original holder capture most of the coin flip's benefit without being exposed to the risk of losing the $1 million."
+ ],
+ "relationships": [
+  "Builds on the extrinsic value formula item",
+  "Foreshadows the general early-exercise rule (sell rather than exercise) discussed later in this section"
+ ],
+ "trading_implications": [
+  "This is the intuition behind the general market rule that options are sold rather than exercised early: selling can realize more value than exercising while eliminating downside risk."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "330"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 1,
+   "topic": "Selling the option instead of exercising it captures extrinsic value while shedding risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

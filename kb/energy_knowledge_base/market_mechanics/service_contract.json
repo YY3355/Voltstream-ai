@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Service contract",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "E&P Contract Structures",
+ "definition": "A contract structure where the developer acts purely as a paid contractor to produce oil and gas for a fee, without taking ownership of the crude oil produced.",
+ "core_idea": "Under a service contract the developer is compensated as a fee-for-service provider rather than as a profit-or-loss stakeholder in the extracted fuel itself.",
+ "key_points": [
+  "Developer is paid a fee to produce oil and gas.",
+  "Developer does not take ownership of the crude oil produced."
+ ],
+ "relationships": [
+  "Represents the lowest-risk-for-developer end of the E&P contract spectrum, contrasted with tax and royalty and production sharing where the developer/owner take on production or price risk."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "122-123"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 8,
+   "topic": "Service contract"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

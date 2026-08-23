@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Cash market vs. trading market",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "A trading market allows both buying and selling of a commodity; a cash market may only allow buying, with no ability to resell.",
+ "core_idea": "Not every place a commodity changes hands is a trading market \u2014 the defining feature of a trading market is two-way (buy and sell) capability, such as at a service station where gasoline can be bought but not resold.",
+ "key_points": [
+  "Trading = buying, selling, and exchanging commodities, products, and services.",
+  "A cash-only purchase (e.g., gasoline at a service station) is not a trading-market transaction because it can't be reversed/resold."
+ ],
+ "relationships": [
+  "Distinguishes trading markets from the spot/cash market discussed later in the chunk"
+ ],
+ "trading_implications": [
+  "Determining whether a venue is a true trading market matters for whether a position can be exited, not just entered."
+ ],
+ "caveats": [
+  "Conflating any cash purchase with participation in a trading market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "74"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 1,
+   "topic": "Cash market vs. trading market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

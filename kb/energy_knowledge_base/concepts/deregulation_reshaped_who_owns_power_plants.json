@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Deregulation reshaped who owns power plants",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market History",
+ "definition": "Before deregulation, only utility-owned power plants could sell into the grid; after deregulation, any party could build, generate, and sell power, and utilities shifted toward operating transmission rather than generation.",
+ "core_idea": "Deregulation separated grid ownership (retained by utilities/TSOs) from generation ownership (opened to traders and independent operators), which created an actual market for electricity as a tradable commodity.",
+ "key_points": [
+  "Pre-deregulation: only utility-owned plants could sell power to the grid",
+  "Post-deregulation: any party can build a plant and offer power for sale",
+  "Utilities pivoted toward running transmission grids rather than power plants",
+  "Power plants increasingly came to be owned by traders and run by specialized operating companies"
+ ],
+ "relationships": [
+  "Regulated vs deregulated markets",
+  "Power Marketer"
+ ],
+ "trading_implications": [
+  "The existence of independent, trader-owned generation is what makes an electricity trading market possible at all"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "23-24"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 3,
+   "topic": "Deregulation reshaped who owns power plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

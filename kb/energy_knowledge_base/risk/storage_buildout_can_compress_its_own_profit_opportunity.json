@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Storage Buildout Can Compress Its Own Profit Opportunity",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "A structural risk in electricity storage valuation: widespread storage adoption in a region tends to shrink the intraday peak/off-peak price spread that made storage profitable in the first place.",
+ "core_idea": "If enough storage capacity exists, storage units can supply power during peak demand and displace the peaking generators that created high prices, narrowing or eliminating the intraday swings that storage investments were built to capture.",
+ "key_points": [
+  "Applies to both the futures-purchase and off-peak/peak-ratio valuation approaches discussed.",
+  "The author explicitly cautions against over-optimistic assumptions about future storage profits for this reason."
+ ],
+ "relationships": [
+  "storage displaces peaking generation",
+  "price convergence reduces peak/off-peak spread"
+ ],
+ "trading_implications": [
+  "Forward-looking storage valuations should discount for spread compression as regional storage capacity grows."
+ ],
+ "caveats": [
+  "Assuming historical peak/off-peak spreads will persist unchanged as more storage capacity is added to a market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "483"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 3,
+   "topic": "Storage Buildout Can Compress Its Own Profit Opportunity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

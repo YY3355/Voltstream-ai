@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Valuing Asian options",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Exotic Options",
+ "definition": "Asian options are approximated using a modified Black 76 formula with an adjusted volatility input, since the true distribution of an averaged price series is not exactly lognormal.",
+ "core_idea": "The average of several lognormal price distributions is not itself lognormal, so exact closed-form pricing isn't possible, but a modified Black 76 approach with adjusted volatility gives a reasonably good approximation outside the delivery/averaging period.",
+ "key_points": [
+  "Outside the delivery month, an adjusted-volatility version of Black 76 is used as an approximation.",
+  "Within the delivery month, part of the averaging period's prices are already known/observed, so the model must calculate the expected dispersion of the remaining unobserved prices.",
+  "As more of the averaging period's prices become known during the delivery month, expected volatility declines rapidly."
+ ],
+ "relationships": [
+  "Builds on Black 76 model",
+  "Related to implied volatility adjustment"
+ ],
+ "trading_implications": [
+  "Risk on an Asian option should be expected to fall quickly as the delivery/averaging month progresses and more of the settlement prices are locked in."
+ ],
+ "caveats": [
+  "The author notes the average of lognormal distributions is not itself lognormal \u2014 an exact analytic solution isn't available, only an approximation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "368"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 3,
+   "topic": "Valuing Asian options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

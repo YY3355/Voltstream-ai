@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Eastern Interconnect trading drivers: fuel mix and regional climate",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Eastern Interconnection",
+ "definition": "Trading opportunities in the Eastern Interconnect commonly arise from differences in generation fuel mix (coal vs. natural gas) between regions and from north-south differences in seasonal weather patterns.",
+ "core_idea": "Some of the most significant trades pit coal-heavy regions against gas-heavy regions, while others exploit the fact that the southern Eastern Interconnect has a long summer/mild winter climate whereas the north has cold winters and a shorter cooling season.",
+ "key_points": [
+  "Key trades occur between regions relying on coal-fired generation and regions relying on natural-gas-fired generation",
+  "Southern part of the Eastern Interconnect: extended summer, mild winters",
+  "Northern part: cold winters, shorter summer air-conditioning season"
+ ],
+ "relationships": [
+  "Eastern Interconnect structure"
+ ],
+ "trading_implications": [
+  "Coal-vs-gas generation mix differentials across regions create fuel-switching-driven power price spread trades",
+  "North-south seasonal demand asymmetry (winter heating vs. summer cooling) creates weather-driven regional spread opportunities"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "201"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 5,
+   "topic": "Eastern Interconnect trading drivers: fuel mix and regional climate"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

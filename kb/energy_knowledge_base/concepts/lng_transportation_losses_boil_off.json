@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "LNG transportation losses (boil-off)",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "LNG Value Chain",
+ "definition": "Even well-insulated LNG tankers lose some cargo in transit because a portion of the liquefied methane warms back into gas during the voyage.",
+ "core_idea": "LNG boil-off is an inherent transport loss that shippers try to minimize through ship design and scale rather than eliminate entirely.",
+ "key_points": [
+  "Boil-off happens even in the best-insulated LNG tankers.",
+  "Larger cargo volumes, faster transit times, and cryogenic reliquefaction systems that refreeze the boiled-off gas all reduce the loss.",
+  "After transport, LNG goes to a regasification facility where it is warmed back to gas and conditioned to local pipeline specs before injection."
+ ],
+ "relationships": [
+  "Precedes pipeline injection; follows liquefaction and ocean transport in the LNG chain."
+ ],
+ "trading_implications": [
+  "Boil-off is a physical shrinkage cost that affects the economics of LNG cargoes and should be accounted for separately from commercial fees."
+ ],
+ "caveats": [
+  "Insulation does not fully stop boil-off; it only slows the rate of loss."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "147"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 0,
+   "topic": "LNG transportation losses (boil-off)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

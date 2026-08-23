@@ -1,0 +1,7 @@
+{
+ "chapter": 23,
+ "title": "4.8 ELECTRICITY STORAGE",
+ "n_concepts": 14,
+ "summary": "Storage as Price Arbitrage: Rethinking Grid-Scale Electricity Storage \u2014 this chapter builds from the basic economic premise (storing cheap off-peak power to sell during expensive peak periods) through the physical technologies that can do it (pumped hydro, compressed air, flywheels, and batteries, including electric vehicles as a distributed battery source), and finally into how to value such assets. It emphasizes that valuation is not one-size-fits-all: approaches like the off-peak/peak price ratio, treating nightly purchases as a futures series, or seasonal pumped-hydro arbitrage all depend on the facility's actual operating profile, while round-trip efficiency losses set a floor on the price spread needed to break even. The chapter also flags the practical limits of this opportunity \u2014 operational and environmental risks that deter investors (particularly in pumped hydro) and the self-defeating dynamic where widespread storage adoption narrows the very price spread that made it profitable.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "RIN price spikes under fixed-quantity biofuel mandates",
+ "type": "risk",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Compliance Instruments",
+ "definition": "RIN prices can spike when renewable fuel rules require refiners to use a fixed quantity of biofuel rather than a fixed percentage blended into conventional fuel, because a drop in total fuel demand can leave refiners unable to physically absorb more biofuel and forced instead to buy RINs.",
+ "core_idea": "If a mandate is quantity-based rather than percentage-based, an economic slowdown that reduces total fuel sales does not reduce the required biofuel volume; since engines are only rated for a certain maximum biofuel percentage, refiners already blending at that cap cannot use more biofuel physically and must instead purchase RINs, driving RIN prices up.",
+ "key_points": [
+  "RIN price spikes occur specifically under quantity-based (not percentage-based) biofuel mandates",
+  "In an economic slowdown, overall fuel consumption falls and refiners sell less fuel",
+  "Auto manufacturers only rate engines to handle a certain maximum biofuel percentage, capping how much biofuel can be physically blended in",
+  "If refiners are already blending at that maximum percentage, they cannot use more biofuel through blending alone",
+  "Refiners in this situation turn to purchasing RINs to meet the fixed-quantity requirement, which drives RIN prices higher"
+ ],
+ "relationships": [
+  "Depends on Renewable Identification Numbers as the compliance mechanism"
+ ],
+ "trading_implications": [
+  "RIN prices can be sensitive to macroeconomic fuel-demand swings when the underlying mandate is quantity-based, creating a risk factor distinct from the biofuel commodity market itself"
+ ],
+ "caveats": [
+  "It might seem counterintuitive that lower overall fuel demand could spike RIN prices; the mechanism the author describes is that quantity-based mandates don't scale down with demand, while engine biofuel-percentage caps prevent refiners from closing the gap through blending alone"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "244-244"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 6,
+   "topic": "RIN price spikes under fixed-quantity biofuel mandates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

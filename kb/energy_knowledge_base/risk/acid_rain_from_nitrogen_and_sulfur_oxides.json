@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Acid rain from nitrogen and sulfur oxides",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Environmental / Combustion byproducts",
+ "definition": "Combustion also produces nitrogen and sulfur oxides \u2014 from atmospheric nitrogen and trace sulfur trapped in fossil fuels \u2014 which combine with water to form acid rain, a regional hazard to vegetation and wildlife when concentrated.",
+ "core_idea": "Nitrogen and sulfur oxides released by combustion react with water to create acid rain, which is normally mild but becomes locally poisonous when acid accumulates heavily in one area.",
+ "key_points": [
+  "Nitrogen oxides come from atmospheric nitrogen; sulfur oxides come from trace sulfur trapped in fossil fuels.",
+  "These oxides combine with water to form acid rain.",
+  "Acid rain is characterized as a regional problem that can kill vegetation and wildlife.",
+  "Most rain is slightly acidic already; the hazard arises when large amounts of acid concentrate in a small area."
+ ],
+ "relationships": [
+  "Two general categories of combustion pollution"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Assuming all acid rain is dangerous \u2014 the author notes most rain is mildly acidic and only concentrated buildup is poisonous."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "40-41"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 9,
+   "topic": "Acid rain from nitrogen and sulfur oxides"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

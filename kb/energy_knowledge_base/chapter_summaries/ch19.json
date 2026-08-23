@@ -1,0 +1,7 @@
+{
+ "chapter": 19,
+ "title": "4.4 WHEELING POWER",
+ "n_concepts": 9,
+ "summary": "The Wheeling Power chapter examines how electricity actually moves between regions and what that means for trading long-distance price differences. It starts from the physical layer \u2014 AC transmission losing power as the square of current, transformers stepping voltage via magnetic induction, and power routing along paths of least resistance rather than intended contracts \u2014 then builds up to how HVDC offers a lower-loss but less flexible alternative for long hauls, and the broader trade-offs (losses, failure points, siting constraints) that shape investment in these links. It then connects this physical picture to the economics: since regional prices are typically set by the marginal generator, and a price spread is just one region's price minus another's, transmission constraints and physics create the divergences that a location spread trade can exploit, illustrated with a worked NP-15/MID-C example. A closing note on regulation covers why transmission rental pricing on shared lines is typically kept nondiscriminatory rather than competitive.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

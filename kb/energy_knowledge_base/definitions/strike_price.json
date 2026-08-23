@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Strike Price",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Basic Terminology",
+ "definition": "The exercise price stated in an option contract \u2014 the price at which the call buyer may purchase, or the put buyer may sell, the underlying asset.",
+ "core_idea": "The strike price fixes the transaction price for exercising an option, whether buying (call) or selling (put) the underlying.",
+ "key_points": [
+  "Strike price is the exercise price of an option contract.",
+  "For a call, it is the price at which the buyer can purchase the underlying.",
+  "For a put, it is the price at which the buyer can sell the underlying."
+ ],
+ "relationships": [
+  "Determines moneyness (At/In/Out of the Money) relative to current underlying price"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "344-345"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_003.json",
+   "idx": 5,
+   "topic": "Strike Price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

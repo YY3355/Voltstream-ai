@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Base gas (cushion gas) versus working gas",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage Operations",
+ "definition": "Extractable gas in a storage facility is split into base gas, which maintains enough pressure to withdraw gas at a reasonable rate and is rarely removed, and working gas, which is the gas normally injected and withdrawn for supply/demand balancing.",
+ "core_idea": "Because withdrawal speed depends on the pressure differential between the facility and the pipeline, operators must trade off holding a larger working-gas volume that can only be withdrawn slowly against a smaller volume that can be withdrawn quickly, using base gas to sustain that pressure.",
+ "key_points": [
+  "Gas withdrawal speed depends on the relative pressure between the storage facility and the pipeline; withdrawal is easy when the facility is nearly full and gets progressively slower as pressure drops.",
+  "Base (cushion) gas exists to maintain enough pressure to extract working gas at a reasonable speed and is rarely removed during normal operation.",
+  "During peak demand, some base gas can be removed and delivered as working gas, but doing so lowers facility pressure and slows future withdrawal rates.",
+  "Operators generally keep a fixed base gas cushion over the long run to meet performance (withdrawal rate) targets."
+ ],
+ "relationships": [
+  "Determines a facility's usable capacity and withdrawal-rate performance"
+ ],
+ "trading_implications": [
+  "The tradeoff between working gas volume and withdrawal speed affects how much gas a facility can reliably supply during peak demand, which factors into storage valuation."
+ ],
+ "caveats": [
+  "Base gas is not simply unusable dead space \u2014 it can be tapped during peak demand, but at the cost of degraded future withdrawal performance."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "524-525"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 3,
+   "topic": "Base gas (cushion gas) versus working gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Secondary Electricity Markets (Ancillary Services, Capacity, PPAs, FTRs)",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Markets that developed alongside the core energy market to help grids reliably deliver power and let participants manage related risks.",
+ "core_idea": "Ancillary services and capacity markets are reliability tools typical of deregulated markets, PPAs are the procurement tool used in regulated markets, and FTRs let participants hedge transmission congestion cost.",
+ "key_points": [
+  "Ancillary services pay generators to stay partially unused so they can ramp production up or down to match changing demand",
+  "Capacity markets pay generators to incentivize new construction and discourage retirement of underutilized units, ensuring future demand can be met",
+  "PPAs let a regulated utility contract directly with third-party generators, often to secure renewable supply",
+  "FTRs are a hedge against congestion cost, offsetting transmission costs and capable of producing either gains or losses for the holder",
+  "Ancillary services and capacity markets are typical of deregulated markets; PPAs are typical of regulated utility structures"
+ ],
+ "relationships": [
+  "Capacity markets relate to LCOE/CONE pricing",
+  "FTRs relate to congestion risk management"
+ ],
+ "trading_implications": [
+  "FTR holders bear two-sided (gain or loss) congestion exposure rather than a one-directional hedge"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "57-58"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 4,
+   "topic": "Secondary Electricity Markets (Ancillary Services, Capacity, PPAs, FTRs)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

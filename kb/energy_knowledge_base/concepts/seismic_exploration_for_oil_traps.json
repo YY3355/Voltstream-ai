@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Seismic exploration for oil traps",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Exploration",
+ "definition": "Seismology-based exploration estimates subsurface rock structure by sending sound/energy waves into the ground and analyzing the timing and strength of the echoes.",
+ "core_idea": "Because different rock types transmit energy at different speeds, engineers can infer rock layer type and depth from how sound waves echo back, helping locate likely oil/gas traps before drilling.",
+ "key_points": [
+  "Seismology studies how energy waves (sound, earthquakes) pass through the Earth.",
+  "Engineers generate sound waves and measure the timing/strength of the returning echo to infer rock type and depth.",
+  "Seismology is not exact \u2014 even confirming a trapped liquid exists may still require drilling a well to identify what the liquid actually is."
+ ],
+ "relationships": [
+  "Used to locate oil traps, which are defined by permeability/porosity of surrounding rock"
+ ],
+ "trading_implications": [
+  "Exploration uncertainty (seismology is imprecise) contributes to upstream supply risk that can affect crude price volatility."
+ ],
+ "caveats": [
+  "Seismology only indicates likely rock/trap structure, not confirmed presence or composition of oil \u2014 drilling is still required for certainty."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "219-220"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 0,
+   "topic": "Seismic exploration for oil traps"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

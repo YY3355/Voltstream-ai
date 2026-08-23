@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Lognormal versus normal price distributions",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Foundations",
+ "definition": "Standard option pricing models assume that percentage returns, not raw price levels, are normally distributed. Mathematically, this implies that the logarithm of price levels is normally distributed, i.e., prices themselves follow a lognormal distribution.",
+ "core_idea": "Modeling returns (rather than prices) as normally distributed keeps prices from ever going negative, since price moves shrink as price approaches zero, while leaving no ceiling on the upside \u2014 a better match for how many real asset prices behave than assuming prices are directly normal.",
+ "key_points": [
+  "Normally distributed returns imply prices are lognormally distributed",
+  "Under this assumption, prices can approach zero but cannot go below it",
+  "There is no upper limit on price under this assumption",
+  "Using returns instead of price levels makes it easier to compare price behavior across different commodities, e.g., natural gas versus electricity",
+  "Returns become undefined if the starting price is ever zero or negative, which is a real risk in power markets since electricity prices can go negative"
+ ],
+ "relationships": [
+  "Underlies the binomial tree and Black-Scholes option pricing frameworks"
+ ],
+ "trading_implications": [
+  "In markets where prices can go negative (e.g., electricity), the standard lognormal-return assumption breaks down and must be treated as an approximation"
+ ],
+ "caveats": [
+  "Assuming the lognormal model is a safe, unqualified fit for electricity prices despite the possibility of negative prices"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "354-355"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 0,
+   "topic": "Lognormal versus normal price distributions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

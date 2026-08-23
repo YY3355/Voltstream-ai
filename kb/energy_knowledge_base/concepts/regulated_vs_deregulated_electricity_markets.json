@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Regulated vs deregulated electricity markets",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure / Regulation",
+ "definition": "A regulated market is served by a single government-sanctioned monopoly utility overseen by a public utility/service commission, while a deregulated market is coordinated by an RTO/ISO and open to any party that builds and connects generation to the grid.",
+ "core_idea": "Regulated markets control utility behavior through legislative rate cases that approve spending (with profit tied to a percentage of approved spend), whereas deregulated markets rely on competitive auctions, guaranteed equal transmission access, and economic incentives; most energy trading activity occurs in deregulated markets.",
+ "key_points": [
+  "In regulated markets, the monopoly utility typically owns generation, transmission lines, and maintenance infrastructure.",
+  "A public utility/service commission approves utility spending in annual rate case hearings; utility profit is a percentage of approved spending.",
+  "In deregulated markets, any party can own a power plant and connect it to the grid to sell power.",
+  "Deregulated markets guarantee equal transmission access to all participants and favor economic/competitive innovation.",
+  "Regulated markets rely on legislative mandates; deregulated markets rely on economic incentives.",
+  "Most energy trading occurs in deregulated markets."
+ ],
+ "relationships": [
+  "Sets up the daily auction / marginal pricing mechanic that applies specifically in deregulated markets"
+ ],
+ "trading_implications": [
+  "Competitive price discovery, and therefore trading opportunity, is concentrated in deregulated markets rather than regulated monopoly territories.",
+  "Utility profit tied to approved capital spending (regulated markets) creates a different incentive structure than the competitive returns available in deregulated markets."
+ ],
+ "caveats": [
+  "Deregulation does not mean an absence of oversight \u2014 it replaces legislative/rate-case control with auction-based, economically incentivized coordination."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "170-171"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_000.json",
+   "idx": 2,
+   "topic": "Regulated vs deregulated electricity markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Emissions credits: allocation vs. offsets",
+ "type": "market_mechanic",
+ "category": "Emissions Markets",
+ "subcategory": "Policy Implementation",
+ "definition": "The two routes by which a participant obtains emissions rights in most cap-and-trade systems: receiving them from the system administrator (allocation or auction), or creating an offset that counteracts emissions elsewhere.",
+ "core_idea": "Beyond being granted or auctioned rights directly, participants can earn emissions credits by creating carbon sinks, sequestering carbon, or building non-polluting generation, and \u2014 particularly under Kyoto Protocol-style systems \u2014 these offsetting activities can be performed anywhere in the world, letting the market find the globally cheapest reduction.",
+ "key_points": [
+  "Route 1: receive emissions rights directly from the cap-and-trade administrator, usually via allocation or auction",
+  "Route 2: create something that offsets carbon emissions, such as a carbon sink (e.g., planting a forest), carbon sequestration (capturing CO2 and storing it underground), or building non-polluting generation (e.g., hydroelectric or solar)",
+  "The ability to creatively offset emissions is described as a key advantage of cap and trade, letting countries keep using coal power while alternatives are developed",
+  "Under Kyoto Protocol-conforming systems in particular, offsets don't need to occur close to home \u2014 they can be created anywhere in the world",
+  "This global flexibility is intended to ensure the lowest-cost offset option can always be found"
+ ],
+ "relationships": [
+  "Extends cap and trade's compliance-flexibility advantage",
+  "Leads into carbon sequestration as a specific offset mechanism"
+ ],
+ "trading_implications": [
+  "Offset location is not constrained to the emitter's home country under Kyoto-style systems, widening the pool of low-cost compliance options"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "269-270"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 7,
+   "topic": "Emissions credits: allocation vs. offsets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

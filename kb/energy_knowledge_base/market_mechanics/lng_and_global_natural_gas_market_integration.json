@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "LNG and Global Natural Gas Market Integration",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Market Structure",
+ "definition": "The ability to liquefy methane is knitting together the historically separate, regional natural gas markets into a single global market, similar to how oil already trades globally.",
+ "core_idea": "Natural gas markets were traditionally isolated by geography because gas could only move through connected pipelines; LNG removes that constraint by letting gas move by ship, so as liquefaction/regasification technology gets cheaper and more efficient, the global integration accelerates.",
+ "key_points": [
+  "Historically, natural gas markets were regional because pipelines defined who could sell to whom.",
+  "LNG lets producers and consumers who have no pipeline connection still trade.",
+  "Efficiency gains in liquefaction/regasification technology make LNG progressively more economical, reinforcing the trend toward a global market.",
+  "There was already an established LNG trade in the Pacific region for decades before North America and Europe opened up LNG import/export capacity, which expanded the addressable market further."
+ ],
+ "relationships": [
+  "Depends on liquefaction/regasification technology cost",
+  "Increases LNG's role in natural gas price formation"
+ ],
+ "trading_implications": [
+  "As more regions build LNG terminals, natural gas prices in different regions become more linked, reducing purely regional price disconnects over time."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 28,
+   "pages": "539-539"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch28/chunk_000.json",
+   "idx": 1,
+   "topic": "LNG and Global Natural Gas Market Integration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

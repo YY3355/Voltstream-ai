@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Public goods and free riders",
+ "type": "definition",
+ "category": "Emissions Markets",
+ "subcategory": "Economic Theory",
+ "definition": "A public good benefits everyone regardless of who pays for it (e.g., national defense); a free rider is someone who receives the benefit without contributing to its cost.",
+ "core_idea": "Greenhouse gas reduction can be framed as a public good \u2014 costly to create but universally beneficial once achieved \u2014 which historically has been funded through taxation, though that approach struggles when much of the world lacks the money or electricity usage to contribute meaningfully.",
+ "key_points": [
+  "National defense is given as the classic public-goods example: it's impossible to protect a country's borders without protecting everyone in it",
+  "Free riders are people who take the benefit of a public good without paying toward its cost",
+  "Emissions reduction fits the public-goods framing: there's an upfront cost, but the benefit (once achieved) accrues to everyone",
+  "The typical public-goods funding approach is taxation, requiring everyone to contribute",
+  "The author flags a key problem: much of the world doesn't use much electricity and lacks money to pay for emissions reductions, undermining a pure tax-funded approach"
+ ],
+ "relationships": [
+  "Sets up the alternative 'common lands' framing of emissions rights"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "268"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 3,
+   "topic": "Public goods and free riders"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

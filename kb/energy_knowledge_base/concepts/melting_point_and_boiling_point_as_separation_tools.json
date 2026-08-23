@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Melting Point and Boiling Point as Separation Tools",
+ "type": "concept",
+ "category": "Commodity Fundamentals",
+ "subcategory": "Physical Properties",
+ "definition": "Every substance has its own distinct melting point (solid/liquid transition) and boiling point (liquid/gas transition), and because these thresholds differ substance to substance, a mixture can be separated by carefully controlling temperature.",
+ "core_idea": "Slowly heating a mixture causes its components to melt or vaporize off one at a time in order of their unique transition temperatures, which is the physical basis for separating raw materials into purified products.",
+ "key_points": [
+  "Boiling point governs liquid/gas transitions; melting point governs solid/liquid transitions.",
+  "Because each substance's transition points are unique, controlled heating separates components sequentially.",
+  "This principle underlies purification tasks like extracting gasoline from crude oil or separating ethanol from water."
+ ],
+ "relationships": [
+  "Directly enables distillation as a separation method."
+ ],
+ "trading_implications": [
+  "Separation via temperature control (rather than chemical reaction) explains why refining is energy-intensive: the heating/cooling needed to hit precise transition points consumes significant energy, a cost embedded in refined product economics."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "291-292"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_000.json",
+   "idx": 2,
+   "topic": "Melting Point and Boiling Point as Separation Tools"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

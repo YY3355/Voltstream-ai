@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Natural Gas Pipeline Pressure Dynamics",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Transportation and Storage",
+ "definition": "The physical requirement that pipelines maintain continuous gas injection and withdrawal to sustain flow in the correct direction.",
+ "core_idea": "Since gas flows from high to low pressure, a pipeline needs continuous injection at the well/storage end (creating a high-pressure zone) and continuous withdrawal at the burner tip, or consumer end (creating a low-pressure zone); compressor stations sustain this by drawing suction on their intake side and pushing high pressure out their discharge side, letting gas expand from one station's discharge into the next station's suction.",
+ "key_points": [
+  "Gas moves from high pressure to low pressure, so injection and withdrawal cannot both stop without breaking flow",
+  "If burner-tip pressure exceeded wellhead pressure, gas would flow backward into the well",
+  "Because pipelines serve a public/reliability function, injections and withdrawals can't simply be halted for being uneconomical",
+  "If there's no consumer demand and no available storage, excess gas may need to be flared or disposed of uneconomically",
+  "Compressor stations create suction (intake side, low pressure) and discharge (high pressure); gas moves by expanding from one station's discharge to the next station's intake",
+  "Choosing the right number/placement of compressor stations is a key part of pipeline operation",
+  "'Burner tip' is the term for a natural gas consumer"
+ ],
+ "relationships": [
+  "Motivates the need for storage facilities as a buffer"
+ ],
+ "trading_implications": [
+  "Explains why pipeline operators sometimes must act against short-term economics to preserve flow integrity, a constraint relevant to understanding pipeline reliability"
+ ],
+ "caveats": [
+  "Gas flow can never be precisely controlled, so even simple pipeline balancing is more complex than it appears"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "58-59"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 6,
+   "topic": "Natural Gas Pipeline Pressure Dynamics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

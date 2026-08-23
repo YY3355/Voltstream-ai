@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Pumped Hydropower Storage \u2014 Spring/Summer Seasonal Arbitrage",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "A physical storage strategy using pumped hydropower to buy (store) low-cost spring snowmelt power and later sell it into higher-priced summer peak markets.",
+ "core_idea": "During spring snowmelt, hydro plants run at maximum capacity and depress local power prices; pumping that cheap power into elevated reservoirs allows it to be released and sold later into higher-priced peak-season markets such as New York City in August.",
+ "key_points": [
+  "Example uses former coal-mining ponds near mountains as reservoirs, since the land is offered free to whoever assumes the associated environmental liability.",
+  "Beyond the seasonal spring/summer trade, the facility could also capture shorter-term price spikes, such as buying cheap ahead of an anticipated heat wave and selling into the resulting price rise.",
+  "Feasible because a pumped-hydro plant is one of the few participants that can actually store bulk power and act on price cycles, unlike most market participants who cannot store electricity.",
+  "The strategy is described as generally straightforward given the cyclical nature of power prices, but is constrained by reservoir capacity \u2014 the plant cannot keep buying or selling once reservoirs are full or empty."
+ ],
+ "relationships": [
+  "seasonal hydro generation",
+  "peak power arbitrage",
+  "reservoir capacity constraint"
+ ],
+ "trading_implications": [
+  "Physical storage assets that can both buy and sell power on short notice can exploit both seasonal and event-driven (e.g., heat wave) price cycles."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "483-484"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 4,
+   "topic": "Pumped Hydropower Storage \u2014 Spring/Summer Seasonal Arbitrage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

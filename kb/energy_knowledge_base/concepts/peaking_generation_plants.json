@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Peaking generation plants",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Fleet Structure",
+ "definition": "Peaking plants are generation units built to start up quickly and deliver short bursts of power during periods of maximum demand, prioritizing fast start over fuel efficiency.",
+ "core_idea": "These plants sacrifice operating efficiency for the ability to start almost instantly, running only a small number of hours per year and recovering their costs through very high prices when they do run.",
+ "key_points": [
+  "Structurally many are similar to jet engines: fuel is pumped in and ignited, with few moving parts and a lot of wasted heat.",
+  "They don't need to conserve fuel \u2014 operating cost efficiency is a secondary concern to startup speed.",
+  "Many peaking plants run only a couple hundred hours per year.",
+  "Because they run so rarely, they must charge very high prices during the hours they do operate to recover fixed and startup costs."
+ ],
+ "relationships": [
+  "Contrasts with baseload generation plants",
+  "Sits at the opposite extreme from baseload on the merit order"
+ ],
+ "trading_implications": [
+  "Expect peaking units to bid high, since they are only economic during the highest-demand, highest-price hours."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "50-51"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 1,
+   "topic": "Peaking generation plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

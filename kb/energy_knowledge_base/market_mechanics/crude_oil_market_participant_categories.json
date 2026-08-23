@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Crude oil market participant categories",
+ "type": "market_mechanic",
+ "category": "Commodities",
+ "subcategory": "Oil Fundamentals",
+ "definition": "The petroleum market has five major participant types: producers (extract crude), refiners (convert crude into finished products and earn the crack spread), marketers (buy and resell petroleum products, ranging from hedge funds to gas station operators), governments (often own mineral rights outside the U.S., regulate trading, can use oil politically or nationalize assets), and consumers (end users, from industrial buyers to individual drivers).",
+ "core_idea": "Understanding who is on each side of an oil trade (producer, refiner, marketer, government, consumer) explains differing motives: producers extract, refiners capture a processing margin they typically hedge away, marketers seek resale profit, governments pursue policy/political goals, and consumers just need the end product.",
+ "key_points": [
+  "About half the world's crude supply is located in the Middle East, which \u2014 due to low regional population/demand \u2014 is the single largest exporting region.",
+  "Industrialized countries (e.g., the United States) can be major producers yet still be net importers because of high domestic demand.",
+  "Refiners' profit is proportional to the crack spread: the margin from buying a barrel of crude, splitting it into components via refining, and selling those components.",
+  "Refiners typically try to eliminate (hedge) their exposure to petroleum price movements rather than take directional price risk.",
+  "Outside the U.S., governments typically own mineral rights to petroleum and can also set trading rules, consumer protections, use oil as a political tool, or nationalize producer/refiner assets."
+ ],
+ "relationships": [
+  "Refiner economics tie to crack spread",
+  "Government ownership/regulation ties to political flow disruptions"
+ ],
+ "trading_implications": [
+  "Refiners are natural hedgers of crack spread exposure rather than outright crude price speculators.",
+  "Government actions (nationalization, export bans, policy use of oil) are a distinct risk category separate from normal supply/demand."
+ ],
+ "caveats": [
+  "Assuming a country that produces a lot of oil must be a net exporter \u2014 industrialized producers like the U.S. can still be net importers due to high domestic demand."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "215-216"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 3,
+   "topic": "Crude oil market participant categories"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "How gas is physically injected into and held in storage",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage",
+ "definition": "Storage facilities are underground volumes connected to a pipeline; gas is pulled into them by applying suction (similar to a vacuum) strong enough to overcome the facility's internal pressure.",
+ "core_idea": "As long as suction on the pipeline connection exceeds the pressure already inside the storage cavity, gas flows into storage rather than back out; once the suction stops, the connection has to be closed off to keep gas from flowing back into the pipeline.",
+ "key_points": [
+  "Storage pressure is normally higher than pipeline pressure unless the facility is nearly empty.",
+  "Gas must be compressed to enter the storage facility.",
+  "The pipeline-to-storage connection is closed once suction/injection stops."
+ ],
+ "relationships": [
+  "Precedes the base gas/working gas withdrawal dynamics."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "60-60"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 1,
+   "topic": "How gas is physically injected into and held in storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

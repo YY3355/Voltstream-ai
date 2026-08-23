@@ -1,0 +1,61 @@
+{
+ "canonical_topic": "Fungibility and Notional Value",
+ "type": "definition",
+ "category": "Market Structure",
+ "subcategory": "Contract Properties",
+ "definition": "Fungible means a unit of a good can be freely substituted for another unit of the same commodity. A megawatt of power is not fungible across locations or times in general, but a specific power product (fixed zone, delivery hour, and date) is fungible. Notional value is the face value of a contract (quantity times price), fixed at inception and not necessarily related to the contract's trading profit or risk.",
+ "core_idea": "Power's physical constraints (can't move it freely across time/location) mean fungibility only holds once a contract is fully specified down to location, hour, and date \u2014 this is what makes standardized power contracts tradable at all.",
+ "key_points": [
+  "A share of IBM stock is fungible; any share substitutes for any other.",
+  "Raw megawatts of power are not fungible across locations (e.g., New York vs. Los Angeles).",
+  "A fully specified power delivery (zone + date + hour) IS fungible, per the author's example.",
+  "Notional value example: selling 1,000 barrels of oil at $80 has a notional value of $80,000.",
+  "Notional value stays fixed over the contract's life and may have no relationship to actual trading P&L or risk."
+ ],
+ "relationships": [
+  "Fungibility is a precondition for standardized exchange trading of a security."
+ ],
+ "trading_implications": [
+  "Because power is only fungible once fully specified (location, date, hour), standardized power contracts must be defined at that granularity to be tradable/exchangeable."
+ ],
+ "caveats": [
+  "Assuming notional value reflects a contract's actual risk or expected profit \u2014 the author explicitly says it may have no relationship to either."
+ ],
+ "formulas": [
+  {
+   "name": "Notional Value",
+   "formula": "Notional Value = Quantity x Price",
+   "variables": {
+    "Quantity": "contract size, e.g. barrels or MWh",
+    "Price": "agreed contract price per unit"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "114-117",
+    "section_hint": "1.2 Trading Markets - glossary"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 4,
+   "topic": "Fungibility and Notional Value"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

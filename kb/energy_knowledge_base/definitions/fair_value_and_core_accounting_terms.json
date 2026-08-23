@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "Fair Value and core accounting terms",
+ "type": "definition",
+ "category": "Accounting & Reporting",
+ "subcategory": "Fair Value Accounting",
+ "definition": "Fair value is the amount of cash that would be required to liquidate (settle) an asset or liability under current market conditions; mark-to-market is one specific application of this broader fair-value approach.",
+ "core_idea": "Fair value accounting rests on the premise that an item can actually be transferred for cash: something you'd be paid to hand over is an asset, something you'd have to pay someone to take off your hands is a liability, and the ease/cost of making that conversion to cash is its liquidity.",
+ "key_points": [
+  "Mark (verb): to record something for accounting purposes.",
+  "Market: a mechanism (exchange or brokerage) that lets participants convert assets or liabilities into cash.",
+  "Asset: a financial instrument a third party would pay money to take ownership of.",
+  "Liability: a financial instrument that requires paying someone to take ownership of it.",
+  "Liquidation: the act of converting an asset or liability into cash.",
+  "Liquidity: how easily and cheaply something converts to cash \u2014 liquid instruments convert quickly and cheaply, illiquid ones do not.",
+  "Fair value is found by multiplying the quantity of an asset by its price per unit."
+ ],
+ "relationships": [
+  "Fair value accounting is the umbrella category that mark-to-market accounting falls under."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Fair Value",
+   "formula": "Fair Value = Quantity \u00d7 Price per unit",
+   "variables": {
+    "Quantity": "amount of the asset/liability held",
+    "Price per unit": "current market price for one unit"
+   },
+   "source": {
+    "chapter": 29,
+    "pages": "544-547",
+    "section_hint": "6.1 Mark-to-Market Accounting"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "544-547"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_000.json",
+   "idx": 3,
+   "topic": "Fair Value and core accounting terms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

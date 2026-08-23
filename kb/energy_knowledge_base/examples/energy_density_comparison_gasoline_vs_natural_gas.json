@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Energy density comparison: gasoline vs. natural gas",
+ "type": "example",
+ "category": "Natural Gas",
+ "subcategory": "Units and Measurement",
+ "definition": "A worked comparison of storage volume needed for equivalent heat energy from gasoline versus natural gas in various forms (atmospheric, compressed, liquefied).",
+ "core_idea": "Gasoline is far more energy-dense by volume than natural gas at atmospheric pressure, and even substantial compression or liquefaction does not fully close that gap.",
+ "key_points": [
+  "One gallon of gasoline contains about 124,000 Btu and occupies about 0.13 cubic feet",
+  "The same amount of energy in natural gas at standard atmospheric pressure requires about 100 cubic feet of storage",
+  "At about 250 times atmospheric pressure (roughly comparable to scuba tank compression levels of 200-300x), natural gas still needs about three times the storage volume of gasoline, plus a heavy pressurized cylinder",
+  "As supercooled liquid (LNG), natural gas holds about two-thirds the energy per volume of gasoline"
+ ],
+ "relationships": [
+  "Illustrates numerically why natural gas transport/storage logistics (pipeline, compression, or liquefaction) differ fundamentally from liquid fuels like gasoline"
+ ],
+ "trading_implications": [
+  "Explains why natural gas vehicles/storage face practical volume/weight penalties compared to liquid fuels, relevant to any gas-as-transport-fuel economics"
+ ],
+ "caveats": [
+  "Assuming compression alone (e.g., to scuba-tank-like pressures) brings natural gas storage density close to gasoline; the source shows it still needs roughly 3x the volume even at ~250x atmospheric pressure"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "135-135"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 6,
+   "topic": "Energy density comparison: gasoline vs. natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

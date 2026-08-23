@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Physical trades vs financial trades",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Contract Types",
+ "definition": "A physical trade requires an actual delivery or receipt of the underlying commodity (e.g., barrels of crude); a financial trade settles purely in cash with no physical movement of the commodity.",
+ "core_idea": "Energy markets split trades into physical and financial types because commodities like oil and gas are hard to transport and store, making physical settlement a distinct and more operationally demanding activity than pure cash settlement.",
+ "key_points": [
+  "Physical contracts transfer ownership of an actual commodity between parties.",
+  "Financial contracts transfer only cash and let investors get price exposure without ever handling the commodity.",
+  "The author states physical trading is both more complex and potentially more financially rewarding than financial trading."
+ ],
+ "relationships": [
+  "Physical trading complexity is a major driver of arbitrage opportunities described later in the chunk (operational risk substituting for financial risk)."
+ ],
+ "trading_implications": [
+  "Traders who are equipped to handle physical logistics (e.g., taking delivery) can access profit opportunities that pure financial traders cannot."
+ ],
+ "caveats": [
+  "It would be a mistake to focus only on financial markets since many of their features only make sense in light of underlying physical market mechanics."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "19-20"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 1,
+   "topic": "Physical trades vs financial trades"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

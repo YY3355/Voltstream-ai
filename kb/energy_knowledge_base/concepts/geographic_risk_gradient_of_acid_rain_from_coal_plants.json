@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Geographic risk gradient of acid rain from coal plants",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Environmental Impact",
+ "definition": "Acid rain exposure risk from coal mining and coal power generation is not uniform \u2014 it is concentrated near the source and fades with distance.",
+ "core_idea": "Populations located near coal mines and power plants, downwind of plant emissions, or downstream of related discharges face the greatest acid rain risk, with severity declining as distance from the source increases; the author notes acid rain is not harmful at low concentrations.",
+ "key_points": [
+  "Highest-risk locations: near the mine/plant, downwind of it, or downstream from it",
+  "Risk magnitude decreases with distance from the source",
+  "Acid rain is not considered dangerous in small concentrations"
+ ],
+ "relationships": [
+  "Sets up the motivation for sulfur removal via coal washing and flue gas desulfurization"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Acid rain risk is not an all-or-nothing hazard \u2014 it scales with proximity and concentration"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "253"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 0,
+   "topic": "Geographic risk gradient of acid rain from coal plants"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

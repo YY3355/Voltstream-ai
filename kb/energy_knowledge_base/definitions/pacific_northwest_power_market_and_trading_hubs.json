@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Pacific Northwest power market and trading hubs",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Pacific Northwest",
+ "definition": "The Pacific Northwest is a hydro-dominated region (about two-thirds of its electricity from hydroelectric production) that typically sells surplus power into California and the Southwest, with its supply heavily dependent on precipitation and snowmelt.",
+ "core_idea": "The Cascade Mountains split the region into a temperate, densely populated western side (Seattle, Portland) and a cold-winter/hot-summer eastern side bordering the Northern Plains; Mid-Columbia (MIDC) is the hydroelectric delivery hub on the Columbia River, and Cal-Oregon Border (COB) is the major switching station linking the region's transmission lines near the California border.",
+ "key_points": [
+  "About two-thirds of Pacific Northwest electricity comes from hydroelectric production, so surplus power availability depends heavily on precipitation",
+  "Water flow in this region directly affects California power prices",
+  "Cascade Mountain snowmelt is a major source of river water",
+  "West of the Cascades: temperate climate, major population centers (Seattle, Portland)",
+  "East of the Cascades: cold winters, hot summers, transitioning into the Northern Plains",
+  "MIDC (Mid-Columbia): delivery hub for hydroelectric plants on the Columbia River",
+  "COB (Cal-Oregon Border): major switching station in southern Oregon adjacent to California, interconnecting several major transmission lines"
+ ],
+ "relationships": [
+  "California (CAISO)",
+  "Western Interconnection overview"
+ ],
+ "trading_implications": [
+  "Precipitation/snowpack forecasts for the Pacific Northwest are a direct input to anticipating California power price movements via MIDC/COB flows"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "204-205"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 8,
+   "topic": "Pacific Northwest power market and trading hubs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

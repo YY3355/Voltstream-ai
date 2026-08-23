@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Global coal reserve geography and Atlantic vs. Pacific trade markets",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Global Market Structure",
+ "definition": "World coal reserves are concentrated in the Northern Hemisphere (notably the U.S. and Siberia), with relative scarcity in Western Europe, South America, and Africa; because transport cost is such a large share of coal's delivered cost, international trade splits into an Atlantic market and a larger Pacific market.",
+ "core_idea": "About 80% of coal produced worldwide is consumed near its mine, and the high relative cost of transport divides the remaining international trade into two separate regional markets, with the Pacific market handling roughly two-thirds of global coal trade.",
+ "key_points": [
+  "Coal reserves are concentrated in the Northern Hemisphere, particularly the United States and Siberia",
+  "Western Europe, South America, and Africa have relatively little coal",
+  "About 80 percent of coal produced worldwide is used close to where it is mined",
+  "High transportation cost as a share of total coal cost splits international trading into an Atlantic market and a Pacific market",
+  "Atlantic market importers include the United Kingdom, Germany, and Spain",
+  "Pacific market importers include Japan, Korea, and parts of China",
+  "About two-thirds of international coal trading occurs in the Pacific market"
+ ],
+ "relationships": [
+  "Explains why coal transportation/location trading is limited compared to natural gas"
+ ],
+ "trading_implications": [
+  "Regional split means coal trading strategies must be regionally specific (Atlantic vs. Pacific) rather than globally unified"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "258-259"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 5,
+   "topic": "Global coal reserve geography and Atlantic vs. Pacific trade markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

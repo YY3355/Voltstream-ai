@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "General rule: options are (almost) never exercised early",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Early Exercise",
+ "definition": "Exercising an option early locks in the intrinsic value but forfeits any remaining extrinsic value. Because selling the option typically realizes more total value than exercising it, the standard market practice is to sell an option to exit a position rather than exercise it before expiration.",
+ "core_idea": "Early exercise trades away the option's remaining time/uncertainty value for no benefit, so the default way to exit an option position is to sell it, not exercise it.",
+ "key_points": [
+  "Early exercise captures intrinsic value only and gives up all extrinsic value.",
+  "As a general rule, options are never exercised early.",
+  "If a holder wants out of a position, the standard move is to sell the option rather than exercise (liquidate) it.",
+  "Exceptions to this rule exist but are described as fairly rare."
+ ],
+ "relationships": [
+  "Follows directly from the extrinsic-value-preserved-by-selling item",
+  "Sets up the dividend exception item"
+ ],
+ "trading_implications": [
+  "Traders looking to exit or realize gains on an option position should default to selling it on the market rather than exercising."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "331"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 3,
+   "topic": "General rule: options are (almost) never exercised early"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

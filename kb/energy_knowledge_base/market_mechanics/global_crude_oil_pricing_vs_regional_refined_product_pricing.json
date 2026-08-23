@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Global crude oil pricing vs. regional refined product pricing",
+ "type": "market_mechanic",
+ "category": "Commodities",
+ "subcategory": "Oil Fundamentals",
+ "definition": "Crude oil trades in a single global market with roughly uniform pricing worldwide, supported by extensive transport and processing infrastructure. Refined products like gasoline and heating oil trade in smaller, regional markets because refineries are typically sited near their consumer markets and finished products are rarely shipped long distances.",
+ "core_idea": "Crude oil is a globally fungible commodity with one world price, while refined product prices are set by local supply and demand because refining capacity is built close to where the products are consumed.",
+ "key_points": [
+  "Refineries are located near consumer markets partly for worker safety and the perceived political stability of being near (but not necessarily in) production regions.",
+  "Because refined products aren't moved far after refining, regional supply/demand imbalances show up directly in regional refined-product prices.",
+  "International petroleum trading activity is concentrated in crude oil rather than in refined products.",
+  "Crude oil is described as the single most traded commodity in the world by both volume and value, giving it outsized influence as a benchmark for the broader energy sector, including electricity and heating costs."
+ ],
+ "relationships": [
+  "Refined product regional pricing vs. crack spread economics for local refiners"
+ ],
+ "trading_implications": [
+  "A trader hedging refined product exposure needs to watch regional supply/demand, not just the global crude benchmark.",
+  "Crude oil benchmarks can be used as a general proxy for energy-sector price direction given their global scrutiny and high trading volume."
+ ],
+ "caveats": [
+  "Assuming gasoline or heating oil prices move in lockstep worldwide the way crude oil prices roughly do; refined product prices are regional, not global."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "214-215"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_000.json",
+   "idx": 1,
+   "topic": "Global crude oil pricing vs. regional refined product pricing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

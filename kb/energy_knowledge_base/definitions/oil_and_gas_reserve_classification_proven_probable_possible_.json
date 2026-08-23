@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Oil and gas reserve classification: proven, probable, possible, resources",
+ "type": "definition",
+ "category": "Oil & Gas",
+ "subcategory": "Reserves & Resources",
+ "definition": "Because the true quantity of hydrocarbons underground is never precisely known, industry describes reserves probabilistically: Proven reserves have roughly 90%+ certainty of being produced under current technology/economics/politics; Probable reserves have 50-90% probability; Possible reserves have 10-50% probability; Resources refers to the total hydrocarbon volume physically present in a field regardless of whether it's economical or currently technologically feasible to extract (largely an estimate/guess).",
+ "core_idea": "Reserve figures are confidence-weighted estimates of recoverable volume, not measured facts, and even the underlying resource-in-place figure is largely a guess since a well's true content is generally unknown until the well is exhausted.",
+ "key_points": [
+  "Proven reserves: ~90% certainty of production under current technology and current economic/political conditions.",
+  "Probable reserves: 50-90% probability of production under current conditions.",
+  "Possible reserves: 10-50% probability of production under current conditions.",
+  "Resources: total hydrocarbon volume present in a field, irrespective of economic viability or current extraction technology; estimating resources is largely a guess.",
+  "Even after a well is exhausted (can no longer produce), it typically still contains hydrocarbons \u2014 remaining pressure is just insufficient to bring them to the surface.",
+  "Reserve estimates are conditional on current technology, economics, and political conditions and change with commodity prices: higher prices make more reserves economical (increasing reserves), lower prices reduce economically recoverable reserves.",
+  "Equivalent probabilistic notation: P90 = 90-100% chance of recovery (a near-certain amount across many wells); P50 = 50-100% chance (the average expected recovery across many wells); P10 = 10-100% chance (an unlikely but possible recoverable amount)."
+ ],
+ "relationships": [
+  "Reserve quantity depends on commodity price level",
+  "P90/P50/P10 as alternate notation for proven/probable/possible-style confidence bands"
+ ],
+ "trading_implications": [
+  "Reported reserves are not fixed physical facts \u2014 they rise and fall with the price outlook, so reserve figures should be read as price-conditional estimates, not constants."
+ ],
+ "caveats": [
+  "Reserves are not a measured, fixed quantity of oil in the ground; they are a probability-weighted, price- and technology-conditional estimate of what can be economically recovered.",
+  "An exhausted well is not necessarily an empty well \u2014 it may still hold hydrocarbons that simply can't reach the surface under current pressure."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "130-131"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_002.json",
+   "idx": 6,
+   "topic": "Oil and gas reserve classification: proven, probable, possible, resources"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Data reduction and the risk of misleading summaries",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Data Interpretation",
+ "definition": "Data reduction (or summarization) is the process of eliminating some data so that important patterns in the rest become visible, but this process is imperfect and can just as easily hide the important signal as reveal it.",
+ "core_idea": "Because summarizing always involves discarding data, it is possible to reach almost any desired conclusion simply by choosing which data to eliminate \u2014 statistics is a tool for describing data clearly, not a guarantee of truth.",
+ "key_points": [
+  "Too much raw data is incomprehensible without organizing/reducing it.",
+  "Eliminating data to summarize is not a neutral process \u2014 it's as easy to cut the important data as the unimportant data.",
+  "Skilled selective removal of data can be used to support almost any conclusion.",
+  "Statistics is not a substitute for actually understanding the underlying situation.",
+  "Because summaries can mislead, analysts also try to estimate the probability that a conclusion is wrong, commonly via margin of error or confidence intervals \u2014 itself an imperfect process, but a good habit."
+ ],
+ "relationships": [
+  "Motivates the practice of pairing summaries with confidence intervals/error bounds."
+ ],
+ "trading_implications": [
+  "Traders should treat any statistical summary skeptically and ask what data was excluded to produce it.",
+  "Estimating a margin of error or confidence interval alongside a summary is described as a good trading habit, making analysis more reliable than guessing."
+ ],
+ "caveats": [
+  "Assuming a clean statistical summary reflects unbiased truth, when the same technique can be used to support good or bad conclusions depending on what data was kept or dropped."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "302-303"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 5,
+   "topic": "Data reduction and the risk of misleading summaries"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

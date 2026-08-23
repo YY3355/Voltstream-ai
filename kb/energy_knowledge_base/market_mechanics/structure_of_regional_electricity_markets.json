@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Structure of regional electricity markets",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "Because electricity is hard to store and expensive to move long distances, there is no single national power market \u2014 instead a patchwork of separate regional markets, each with its own supply/demand balance, rules, and pricing.",
+ "core_idea": "Electricity's physical constraints (limited storage, transmission cost/loss) force power trading into regional markets that must continuously balance supply and demand, producing a highly volatile spot market.",
+ "key_points": [
+  "Electricity cannot be easily stored, so supply must be matched to demand in real time.",
+  "Long-distance transmission is expensive, which fragments the US into distinct regional grids/markets rather than one national market.",
+  "Each regional market has its own characteristics and regulatory regime.",
+  "Constant supply/demand matching produces high volatility in the spot market."
+ ],
+ "relationships": [
+  "This regional fragmentation is the reason inter-regional price differences (and wheeling opportunities) can persist."
+ ],
+ "trading_implications": [
+  "A trader must understand the specific regional market's auction rules and constraints rather than assuming a uniform national power price."
+ ],
+ "caveats": [
+  "Unlike other commodities, power markets are inherently local/regional, not a single fungible national market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "27-28"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 1,
+   "topic": "Structure of regional electricity markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

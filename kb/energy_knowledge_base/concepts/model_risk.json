@@ -1,0 +1,104 @@
+{
+ "canonical_topic": "model risk",
+ "type": "concept",
+ "n_merged": 5,
+ "definition": "Model risk is the risk that the methodology or assumptions behind a valuation, pricing, or risk model are no longer valid \u2014 so the model's outputs stop reflecting reality \u2014 whether because the model contains fundamental errors or because a sound model is used incorrectly or outside the context it was designed for.",
+ "core_idea": "Valuation, pricing, and risk models can quietly stop matching reality \u2014 through flawed construction, bad inputs, drifted assumptions, or misuse outside their intended scope \u2014 and organizations need deliberate re-validation, documentation, and independent risk controls (like position limits) to catch this before it causes losses.",
+ "key_points": [
+  "Poor assumptions and badly designed models cause risk-management problems across all financial markets, but are especially common in energy given model complexity and the long periods models and assets remain in use.",
+  "Bad assumptions, poor parameter estimates, or flawed market data can lead to major financial losses.",
+  "A model can be adequate when built and still fail well before the asset's life ends, as regulations, population, or technology shift the underlying assumptions.",
+  "Employee turnover compounds the problem \u2014 original model developers are often gone before issues surface.",
+  "Organizations need a deliberate process to ensure someone still understands each model in production after years of use.",
+  "The main U.S. regulatory reference for model risk is the Federal Reserve's SR 11-7 guidance to banks, which is treated as broadly applicable to energy market models too.",
+  "The Federal Reserve traces model risk to two root causes: the model itself may contain fundamental errors, or a fundamentally sound model may be used incorrectly or outside the context it was designed for.",
+  "Fundamental errors can enter at any stage of building a model: choice of theory, sample design, numerical methods, selection of inputs, or system implementation.",
+  "Shortcuts or approximations adopted to make a hard problem tractable can quietly undermine the reliability of a model's outputs.",
+  "Output quality is bounded by the quality of input data and assumptions \u2014 bad inputs or wrong assumptions produce inaccurate outputs regardless of how well the model itself is built.",
+  "Misuse can be deliberate, such as applying an existing model to a new product or market, or unintentional, such as market conditions or customer behavior drifting away from what the model assumes.",
+  "Decision-makers need to understand a model's limitations \u2014 both its inherent shortcomings/approximations and the restricted scope its assumptions imply \u2014 to avoid using it inconsistently with its original intent.",
+  "There is an inherent trade-off between how simple a model is (and thus how easily it can be understood and checked) versus how completely it captures the real-world factors that drive outcomes.",
+  "All models are simplified versions of reality; something important can be left out, or something unnecessary can be included.",
+  "Simple models benefit from being checkable by a wide range of people, which is itself a guard against model risk.",
+  "Complex models incorporate more factors but are harder to understand, so it is unrealistic to expect people to verify parts of a model they don't understand, and it is often unclear exactly when such a model stops working correctly.",
+  "No model can be completely trusted, so risk controls should assume any given model could eventually be shown to be wrong.",
+  "Position limits cap a trading desk's exposure to bound the damage any single flawed model can cause, enforcing diversification across trading types rather than concentrating risk on one model's output.",
+  "The goal of position limits is bounding worst-case loss from a single point of model failure, not improving the model's accuracy."
+ ],
+ "relationships": [
+  "Distinct risk category alongside VAR and counterparty/credit risk.",
+  "Sits under general risk management; grounded in Federal Reserve SR 11-7 guidance.",
+  "The complexity/checkability trade-off connects to why fundamental design errors happen and why documentation and appropriate-use practices matter as mitigations.",
+  "Position limits complement modeling reserves as a second, independent layer of model-risk control."
+ ],
+ "trading_implications": [
+  "Long-lived asset valuations (power plants, pipelines, wells) should be periodically re-validated rather than trusted indefinitely once built.",
+  "Traders who rely on a model's pricing, valuation, or risk output can be exposed to losses if the model breaks quietly without anyone noticing.",
+  "A model built for one market or product can generate misleading trading signals if reused elsewhere without re-validating its assumptions.",
+  "Firms should weigh the benefit of added model sophistication against a reduced ability of staff to independently verify or catch failures.",
+  "A desk should not size positions purely off one model's confidence, since position limits exist precisely because that confidence could be misplaced."
+ ],
+ "caveats": [
+  "SR 11-7 is Federal Reserve guidance written for banks; its application to energy market models is the author's extension, not a dedicated energy-market regulation.",
+  "Model risk cannot be fully eliminated by better model design alone \u2014 even a well-built model degrades if assumptions drift or it is used outside its intended context, which is why independent controls like position limits and reserves matter alongside model validation."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "68"
+  },
+  {
+   "chapter": 32,
+   "pages": "576-577"
+  },
+  {
+   "chapter": 32,
+   "pages": "577-578"
+  },
+  {
+   "chapter": 32,
+   "pages": "577-578"
+  },
+  {
+   "chapter": 32,
+   "pages": "590-590"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 5
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 4,
+   "topic": "Model Risk"
+  },
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 0,
+   "topic": "Model Risk (definition and scope)"
+  },
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 2,
+   "topic": "Two Root Causes of Model Risk"
+  },
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 3,
+   "topic": "Model Complexity vs. Model Risk Trade-off"
+  },
+  {
+   "file": "raw/ch32/chunk_002.json",
+   "idx": 0,
+   "topic": "Position limits as a hedge against model risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:47:39+00:00"
+ }
+}

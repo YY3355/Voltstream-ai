@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Option buyer vs. seller: transfer of risk and long/short volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Financial Options",
+ "definition": "Option trading always involves a buyer and a seller; money is not created by the option, it is simply transferred from seller to buyer if the option pays off, funded by the premium the buyer paid up front.",
+ "core_idea": "The buyer is described as long the option / long volatility because rare large price moves produce a big profit for them, while the seller is short the option / short volatility because the same rare moves produce a big loss for them.",
+ "key_points": [
+  "The seller accepts the possibility of a large loss in exchange for receiving the premium up front.",
+  "If the option pays off, the seller must have the cash on hand to pay the buyer \u2014 the option itself creates no new money.",
+  "Buyer = long the option / long volatility (benefits from rare, large moves).",
+  "Seller = short the option / short volatility (harmed by rare, large moves)."
+ ],
+ "relationships": [
+  "Builds on the options overview and payoff formulas"
+ ],
+ "trading_implications": [
+  "Sellers of options are effectively compensated for bearing tail risk and need to be prepared to fund large payouts on rare adverse moves."
+ ],
+ "caveats": [
+  "Thinking an option payoff represents new wealth creation rather than a transfer between two counterparties."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "44"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 4,
+   "topic": "Option buyer vs. seller: transfer of risk and long/short volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

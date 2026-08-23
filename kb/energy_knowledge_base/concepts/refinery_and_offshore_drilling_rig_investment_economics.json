@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Refinery and offshore drilling rig investment economics",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Refining Economics",
+ "definition": "Refineries and offshore drilling rigs are extremely long-lived, capital-intensive assets whose construction decisions must be justified by expectations of market conditions decades into the future.",
+ "core_idea": "Because refineries can take 15-20 years to pay back their construction cost, and no new U.S. refinery has been built since 1976, capacity decisions are effectively bets on where the market will be 20-40 years out; the same long-payback logic applies to offshore drilling rigs, which additionally face competition from shale, fracking, and electric vehicles.",
+ "key_points": [
+  "No new refineries have been built in the United States since 1976, and few are expected going forward.",
+  "A new refinery may take 15-20 years to pay back its construction cost, making it a very long-term investment decision.",
+  "Historic expectation that global oil production would peak around 2010 discouraged refinery capacity expansion at the time.",
+  "The peak-oil prediction proved overly pessimistic due to shale gas discoveries and improved exploration techniques, which then created a low-price problem for refiners instead.",
+  "Offshore drilling rig counts are declining for similar long-payback reasons, compounded by competition from shale fracking, electric cars, and other substitute technologies."
+ ],
+ "relationships": [
+  "Long asset life ties refinery investment decisions to multi-decade demand forecasts",
+  "Peak-oil expectations historically suppressed refinery capacity additions"
+ ],
+ "trading_implications": [
+  "Refining capacity is structurally inelastic in the short-to-medium term, which can amplify price moves during localized shortages (e.g. a single refinery outage)."
+ ],
+ "caveats": [
+  "Assuming refinery capacity can respond quickly to price signals; the long payback horizon means capacity additions lag demand shifts by many years."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "226-226"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 1,
+   "topic": "Refinery and offshore drilling rig investment economics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

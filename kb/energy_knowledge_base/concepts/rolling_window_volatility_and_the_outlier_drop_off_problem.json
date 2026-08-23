@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Rolling-window volatility and the outlier drop-off problem",
+ "type": "concept",
+ "category": "Statistics",
+ "subcategory": "Volatility Estimation",
+ "definition": "A rolling volatility estimate uses a fixed-length window of recent daily returns (e.g., the trailing year), adding one new observation and dropping the oldest each day; volatility is typically computed from the natural-log daily return, ln(price_t/price_t-1).",
+ "core_idea": "Because a rolling window gives every included observation equal weight, when a large historical price shock ages out of the window the estimated volatility can drop sharply overnight even though nothing unusual happened in current prices.",
+ "key_points": [
+  "Daily return is commonly calculated as the natural log of current price divided by previous price.",
+  "In a rolling window, one new observation enters and one leaves each period.",
+  "If the observation that leaves was a large outlier, volatility can fall dramatically even with no new market-moving event.",
+  "Example given: using a 7-day window around a 9.21% one-day crude oil jump (June 11, 1986), the volatility estimate fell from 3.5% to 2.1% the day after the jump aged out of the 7-day sample.",
+  "This matters because instruments like options are highly sensitive to volatility inputs, so a sudden drop in the volatility estimate (unrelated to any real change in market risk) can produce large, hard-to-explain P&L swings in an options portfolio."
+ ],
+ "relationships": [
+  "Motivates the use of exponentially weighted volatility as an alternative that avoids the abrupt drop-off effect."
+ ],
+ "trading_implications": [
+  "Traders and risk managers should be prepared to explain P&L moves in vol-sensitive instruments that stem purely from an outlier aging out of a rolling-window estimate, not from any actual change in market conditions."
+ ],
+ "caveats": [
+  "Interpreting a sudden fall in a rolling-window volatility estimate as evidence that the market has actually become calmer, when it may simply reflect an old outlier leaving the sample."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "315-316"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_002.json",
+   "idx": 1,
+   "topic": "Rolling-window volatility and the outlier drop-off problem"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Arbitrage-free option pricing via replication",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Methodology",
+ "definition": "An option-pricing approach in which fair value is derived not by forecasting the actual future price, but by finding a combination of the underlying asset and a risk-free investment that reproduces the option's payoff in every possible future state.",
+ "core_idea": "Because predicting a specific probability-weighted future price does not compensate the option seller for the risk taken on, the fair premium is instead computed as the cost of building a replicating portfolio \u2014 a quantity of underlying plus a quantity of risk-free investment \u2014 whose payoff matches the option's payoff exactly in both the up and down states.",
+ "key_points": [
+  "Simply multiplying a payoff by its probability (e.g., a 60% chance of a $10 payoff giving $6) undercompensates the option seller, who bears more risk than the buyer if the price prediction turns out wrong",
+  "There are two unknowns \u2014 the quantity of underlying (A) and the quantity of risk-free investment (B) \u2014 solved from two payoff equations, one for the up state and one for the down state",
+  "B is eliminated first because its payoff is identical in both ending scenarios; subtracting one payoff equation from the other isolates and solves for A",
+  "Once A is known, substituting it back into either original payoff equation solves for B",
+  "The option's fair value equals the cost of buying A units of underlying plus the cost/value of B units of risk-free investment at the starting period",
+  "This method only requires a plausible distribution of future outcomes (e.g., a binomial tree), not an accurate prediction of the actual future price"
+ ],
+ "relationships": [
+  "Builds on lognormal price distribution assumption and the interest rate binomial tree"
+ ],
+ "trading_implications": [
+  "Option market-makers price and hedge options through replication/hedging rather than by forecasting price direction"
+ ],
+ "caveats": [
+  "Believing the expected-value price (probability \u00d7 payoff) is the fair option price; it ignores the extra risk borne by the seller"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "356-358"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 4,
+   "topic": "Arbitrage-free option pricing via replication"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Exploration and production as two distinct activities",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Upstream Operations",
+ "definition": "Before fossil fuels can be sold, they must be located (exploration) and then physically extracted from the ground (production), typically by a specialized company working with the mineral rights owner.",
+ "core_idea": "Exploration covers licensing, searching for resources, and negotiating extraction contracts with mineral rights owners; production covers the physical extraction via drilling (oil/gas) or mining (coal).",
+ "key_points": [
+  "Exploration = getting search licenses, locating resources, and negotiating contracts with mineral rights owners.",
+  "Production = extracting the fuel, via drilling for oil and gas or mining for coal.",
+  "After production, fuels must be separated from each other via refining before being sold to consumers.",
+  "This work is often performed by a dedicated exploration and production (E&P) company rather than the mineral rights owner directly."
+ ],
+ "relationships": [
+  "Production precedes refining, which precedes consumer sale."
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "118-119"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 1,
+   "topic": "Exploration and production as two distinct activities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

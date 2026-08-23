@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "TSO, ISO, and RTO definitions",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Grid Operators",
+ "definition": "A Transmission System Operator (TSO) manages a power grid; when it is unaffiliated with local government it is called an Independent System Operator (ISO); an ISO whose footprint crosses state lines is also called a Regional Transmission Operator (RTO).",
+ "core_idea": "TSO is the generic term for any grid operator, while ISO/RTO describe operators running deregulated, free-trading grids, with RTO specifically denoting multi-state coverage.",
+ "key_points": [
+  "TSOs are sometimes run directly by local governments",
+  "An ISO is a TSO independent of local government",
+  "An RTO is an ISO whose grid spans multiple states",
+  "Most electricity trading happens on RTO/ISO-run deregulated grids",
+  "The book uses 'TSO' generically for any grid operator and 'RTO/ISO' for deregulated-market operators"
+ ],
+ "relationships": [
+  "Regulated vs deregulated markets",
+  "ERCOT functions as this kind of grid operator"
+ ],
+ "trading_implications": [
+  "Grid operator type/affiliation signals how much local-government vs market-based rule-making governs trading"
+ ],
+ "caveats": [
+  "ISO and RTO are sometimes used loosely; RTO specifically implies crossing state boundaries"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "23-23"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 2,
+   "topic": "TSO, ISO, and RTO definitions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

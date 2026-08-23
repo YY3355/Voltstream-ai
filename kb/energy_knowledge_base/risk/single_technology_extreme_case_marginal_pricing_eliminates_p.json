@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Single-technology extreme case: marginal pricing eliminates profit and threatens new investment",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Marginal Pricing",
+ "definition": "In the extreme case where a grid's generators all use similar technology (fully flat stack), marginal pricing sets everyone's clearing price near their common marginal cost, leaving no margin for anyone \u2014 which is a problem because new generation requires large upfront capital that must be recovered from operating profits.",
+ "core_idea": "A fully flat stack under marginal pricing removes the profit that steep-stack marginal pricing normally provides; since new power plants need large initial investment recouped over time, a market with no sustained margin makes it hard for developers to attract financing, since lenders need assurance of a steady profit stream to be repaid.",
+ "key_points": [
+  "If all generators share similar marginal cost, marginal-price clearing yields near-zero profit for everyone.",
+  "Building new generation requires large upfront capital investment.",
+  "Lenders financing new plants need confidence in a steady profit stream to recover their loans.",
+  "A structurally flat, no-margin market therefore threatens the economics of new generation investment."
+ ],
+ "relationships": [
+  "Extreme endpoint of the flat-stack marginal pricing problem described above."
+ ],
+ "trading_implications": [
+  "Markets trending toward a flat generation stack may need capacity payments or other non-energy revenue mechanisms to keep new investment financeable, since energy-only marginal pricing alone may not support debt service."
+ ],
+ "caveats": [
+  "Low or converging marginal costs across generators (often seen as good for consumers) can simultaneously be a red flag for long-term resource adequacy, since it undermines the investment case for new capacity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "420-422"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_003.json",
+   "idx": 6,
+   "topic": "Single-technology extreme case: marginal pricing eliminates profit and threatens new investment"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

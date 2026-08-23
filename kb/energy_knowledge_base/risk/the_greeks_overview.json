@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "The Greeks (overview)",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Option Sensitivities",
+ "definition": "The Greeks are a standard set of sensitivity measures describing how an option or portfolio's value responds to changes in an underlying factor.",
+ "core_idea": "Each Greek answers a specific risk question (e.g., how much P&L results from a price move, a volatility change, time passing, or a rate change) and is always expressed as a relationship between an asset's value and some underlying driver, never as a standalone number.",
+ "key_points": [
+  "Delta: P&L from a change in the price of the underlying asset.",
+  "Gamma: the change in delta itself as the underlying price changes.",
+  "Vega: P&L from a change in the underlying's volatility.",
+  "Theta: P&L from the passage of time, usually measured per day.",
+  "Rho: P&L from a change in the interest rate.",
+  "A Greek is always a comparison between two things \u2014 an asset and the underlying it's sensitive to \u2014 not a stand-alone figure like a price."
+ ],
+ "relationships": [
+  "Delta and Gamma are first and second derivatives of price with respect to the underlying"
+ ],
+ "trading_implications": [
+  "Traders use the Greeks to answer practical risk questions, such as expected gain/loss if a price trend continues or if a low-probability event becomes more likely."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "369"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 5,
+   "topic": "The Greeks (overview)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

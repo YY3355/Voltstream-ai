@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Pipeline infrastructure and captive demand",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Infrastructure and Transportation",
+ "definition": "Natural gas relies on an extensive, capital-intensive network of pipelines to move gas from producing regions to consumers, and this sunk infrastructure creates structural, durable demand.",
+ "core_idea": "Once pipeline networks and household/utility hookups are built, replacing them with infrastructure for a different fuel is prohibitively expensive, which locks in consumers as a 'captive audience' and cements natural gas's long-term role in heating and power.",
+ "key_points": [
+  "Transcontinental pipelines move gas between regions; local pipelines handle final delivery to consumers within a limited area",
+  "A low-price period in the 1970s-1980s spurred a natural gas infrastructure construction boom",
+  "Demand growth later pushed prices up, but the already-built infrastructure kept consumers reliant on gas",
+  "Once pipelines exist, transportation costs for gas become small relative to other fuels",
+  "Nearly all U.S. fossil-fuel power plants built since 1990 can burn natural gas, tying electricity prices closely to gas prices"
+ ],
+ "relationships": [
+  "Sunk pipeline/appliance infrastructure -> inelastic, captive residential and power-generation demand",
+  "Natural gas price levels are structurally linked to electricity prices because of the prevalence of gas-capable power plants"
+ ],
+ "trading_implications": [
+  "Structural, infrastructure-driven demand makes natural gas consumption relatively inelastic in the short-to-medium term, which matters for weather-driven demand spikes",
+  "Strong gas-to-power linkage means gas price moves are a key driver of electricity price moves"
+ ],
+ "caveats": [
+  "Believing natural gas is still 'extremely cheap' as it was decades ago; the author notes this is no longer true despite that reputation persisting"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "133-134"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 1,
+   "topic": "Pipeline infrastructure and captive demand"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

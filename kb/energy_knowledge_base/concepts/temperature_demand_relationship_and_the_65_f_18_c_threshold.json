@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Demand/Load",
+ "definition": "The empirical relationship between ambient temperature and electricity demand, anchored around a comfort threshold near 65\u00b0F (18\u00b0C).",
+ "core_idea": "As temperatures move further above or below roughly 65\u00b0F/18\u00b0C, electricity demand rises; the most extreme demand peaks occur on the hottest and coldest days.",
+ "key_points": [
+  "Demand increases as temperature deviates (in either direction) from about 65\u00b0F / 18\u00b0C",
+  "The author illustrates this with mid-Atlantic peak demand events from 2004 to 2006, which occurred on the warmest and coldest days of those years"
+ ],
+ "relationships": [
+  "Seasonal demand and shoulder months",
+  "Daily demand pattern in hot weather"
+ ],
+ "trading_implications": [
+  "Weather forecasts near the comfort threshold are a key input to short-term demand/load forecasting"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "184"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 2,
+   "topic": "Temperature-demand relationship and the 65\u00b0F/18\u00b0C threshold"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

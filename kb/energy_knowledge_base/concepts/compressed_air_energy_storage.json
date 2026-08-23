@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Compressed air energy storage",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "A storage method that uses low-cost off-peak power to run an air compressor, forcing air into a storage vessel; the compressed air can later be released to run a turbine for electricity, used directly as pneumatic power, or used for heating/cooling because it cools rapidly as it expands.",
+ "core_idea": "Compressed air storage banks cheap night/weekend power as pressurized air, which can later be converted back to electricity via a turbine, used directly to power pneumatic tools, or exploited for an HVAC application because expanding compressed gas cools rapidly.",
+ "key_points": [
+  "The compressor runs during low-price periods, such as nights or weekends, to fill the storage vessel.",
+  "Sufficiently high air pressure can drive a turbine to regenerate electricity when needed.",
+  "Compressed air can also be used directly, for example to run pneumatic tools common in industrial jobs.",
+  "Because compressed gas cools rapidly as it expands, the author notes it could support a heating, ventilation, and air conditioning (HVAC) use case."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Compressed air storage has multiple potential use paths (electricity regeneration, direct pneumatic use, HVAC), which broadens how a facility might be valued beyond pure electricity price arbitrage."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "479-479"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 6,
+   "topic": "Compressed air energy storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

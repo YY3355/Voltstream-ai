@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Sulfur content classification and acid rain risk",
+ "type": "concept",
+ "category": "Commodities",
+ "subcategory": "Coal Environmental Classification",
+ "definition": "Coal is also classified by sulfur content, since burning sulfur releases sulfur oxides that combine with water to form sulfuric acid \u2014 one of the main components of acid rain along with carbonic and nitric acid \u2014 and coal-related liquid runoff is also generally acidic; power plants burning high-sulfur coal tend to have higher maintenance costs than those burning low-sulfur coal, and sulfur oxide pollution is described as a localized problem that becomes harmful only once it accumulates past a critical threshold.",
+ "core_idea": "Sulfur content is a second major coal classification axis distinct from carbon rank, mattering because sulfur combustion drives acid rain and acidic runoff, raises plant maintenance costs, and causes localized ecological damage once pollutant concentration passes a critical buildup threshold.",
+ "key_points": [
+  "Burning sulfur produces sulfur oxides that combine with water to form sulfuric acid.",
+  "Sulfuric acid, along with carbonic and nitric acid, is a main component of acid rain.",
+  "Liquid runoff from coal mining or coal-burning facilities is generally somewhat acidic, not just rainfall.",
+  "Power plants using high-sulfur coal generally have higher maintenance costs than those using low-sulfur coal.",
+  "Sulfur oxide emissions are described as a localized pollution problem.",
+  "Small quantities of sulfuric acid are not harmful, but over time it can build up to a critical mass where species begin dying off."
+ ],
+ "relationships": [
+  "Sulfur content is a second, independent classification dimension for coal alongside carbon-based rank (lignite/sub-bituminous/bituminous/anthracite)."
+ ],
+ "trading_implications": [
+  "Low-sulfur coal commands an operating-cost advantage (lower plant maintenance) distinct from its carbon-rank pricing, so sulfur content is a separate factor in coal valuation and contract specification."
+ ],
+ "caveats": [
+  "Acid damage from coal is not limited to rainfall \u2014 general liquid runoff from coal facilities is also acidic and harmful; and the harm from sulfuric acid buildup is threshold-based (localized), not a simple linear function of any acid present."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "252"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 9,
+   "topic": "Sulfur content classification and acid rain risk"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

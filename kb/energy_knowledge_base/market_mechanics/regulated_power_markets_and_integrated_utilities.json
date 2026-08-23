@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Regulated power markets and integrated utilities",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Regulation / Market Structure",
+ "definition": "In regulated (non-deregulated) power grids, a monopoly utility that owns both transmission and generation (an integrated utility) is typically the sole supplier of power to consumers within its service area, overseen by a government commission that sets consumer prices.",
+ "core_idea": "Because the integrated utility is the sole supplier, there is little or no wholesale market inside the service area; any trading happens only at the import/export interconnection points with neighboring systems.",
+ "key_points": [
+  "The overseeing body is usually called a public utility commission or public service commission.",
+  "Trading nodes at the edges of a regulated utility's territory typically have names describing the interconnection, e.g., 'Into-Southern Company' or 'Into-Dominion'.",
+  "The commission determines the consumer electricity prices the utility may charge."
+ ],
+ "relationships": [
+  "Contrasts with deregulated SMD markets that use node/zone/hub LMP pricing and active wholesale trading."
+ ],
+ "trading_implications": [
+  "Wholesale trading opportunities in a regulated market are effectively limited to the utility's import/export interface points, not internal delivery points."
+ ],
+ "caveats": [
+  "Not all power grids are deregulated \u2014 deregulated wholesale market mechanics (nodal LMPs, hub trading) don't apply inside a regulated integrated utility's service territory."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "178-179"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 3,
+   "topic": "Regulated power markets and integrated utilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

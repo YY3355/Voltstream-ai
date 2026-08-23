@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Why natural gas requires storage",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage Fundamentals",
+ "definition": "Because natural gas is a gas rather than a liquid, it disperses unless kept in a sealed, pressurized location, and holding an economically meaningful amount requires very large storage volumes.",
+ "core_idea": "Gas takes up far more space than an energy-equivalent liquid fuel, so economically useful storage requires either huge volumes or high pressure, which is why underground reservoirs (with their vast natural capacity) became the dominant storage method.",
+ "key_points": [
+  "Storing the energy equivalent of one gallon of gasoline as natural gas at atmospheric pressure takes about 900 gallons of storage space.",
+  "Pressurizing the gas reduces the space needed but still requires a very large facility.",
+  "Underground reservoirs are the most common storage location because of their large natural capacity."
+ ],
+ "relationships": [
+  "Drives the use of depleted reservoirs, salt caverns, and aquifers as storage types"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "522-522"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 0,
+   "topic": "Why natural gas requires storage"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Disorderly transactions and their indicators",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "Criteria for identifying when a transaction's price should be excluded from fair value determination because the trade itself wasn't orderly.",
+ "core_idea": "Published market prices must generally be used for fair value, but prices from distressed or forced transactions are excluded because those transactions are considered disorderly rather than reflective of a genuine willing-participant price.",
+ "key_points": [
+  "Insufficient marketing time: a trade may be disorderly if it wasn't exposed to the market for the customary period given similar trades under current conditions.",
+  "Single buyer: marketing the asset to only one participant can make the trade disorderly, even with a normal marketing period; however, showing the trade to multiple buyers where only one turns out interested is NOT disorderly.",
+  "Distressed sale: seller is in or near bankruptcy, facing severe cash shortage, or has assets being repossessed by creditors.",
+  "Forced sale: seller must sell to meet legal/regulatory requirements, including under a supervisory agreement with regulators; a firm's own internal risk-limit-driven liquidation policy does NOT count as a forced sale.",
+  "Outlier/erroneous price: a transaction price that is an obvious anomaly versus other recent comparable trades (e.g., a misplaced decimal); an unusually high or low price arising from genuine market activity is not an outlier.",
+  "A trader rushing to complete many trades before a long weekend is explicitly not considered a disorderly transaction."
+ ],
+ "relationships": [
+  "These exceptions carve out which transactions are excluded when otherwise using primary/principal market prices for fair value."
+ ],
+ "trading_implications": [
+  "Risk-limit-forced liquidations still count as valid market prices for mark-to-market purposes \u2014 a firm cannot argue its own forced unwind should be excluded as 'disorderly'."
+ ],
+ "caveats": [
+  "Internal-policy-driven forced liquidation (e.g., breaching risk limits) is not a 'forced sale' in the accounting sense, even though it is forced from the trader's perspective.",
+  "A price being unusually high or low due to normal market moves does not make it an outlier/erroneous price to be excluded."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "552-554"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_002.json",
+   "idx": 2,
+   "topic": "Disorderly transactions and their indicators"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

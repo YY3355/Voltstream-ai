@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Real options: using option theory to model energy investment decisions",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Real Options in Energy",
+ "definition": "Many physical energy decisions (whether to run a plant, lock in winter fuel supply, or build new transmission) can be represented as options, because they involve a future choice to act or not based on economic conditions. Comparing the cost of the physical investment to the economic value of the option it confers helps determine whether the investment is worthwhile.",
+ "core_idea": "Physical assets or operational choices in energy markets can be treated as options because they give their owner the right, but not the obligation, to take an economically motivated action later.",
+ "key_points": [
+  "Example given: an integrated oil well and refinery that can produce gasoline at $4.00/gallon effectively gives its owner the option to 'buy' gasoline at that fixed cost for resale.",
+  "Valuing that embedded option and comparing it to the cost of building/operating the installation is one way to judge whether the investment is worth making.",
+  "Other cited examples of decisions option theory can quantify: turning a power plant on to convert fuel into electricity, locking in winter fuel supply now versus waiting, and building a new transmission line between regions."
+ ],
+ "relationships": [
+  "Extends the general call option definition to physical/real assets"
+ ],
+ "trading_implications": [
+  "Physical energy assets can be evaluated using option-pricing intuition rather than only static NPV, since they embed a decision to act or not act."
+ ],
+ "caveats": [
+  "The author distinguishes this from financial options: a physical investment is described as an 'approximation' of an option, not an all-or-nothing financial contract."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "327"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 2,
+   "topic": "Real options: using option theory to model energy investment decisions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

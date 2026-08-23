@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Price-spike frequency and the value of owning a power plant",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Power Plant Valuation",
+ "definition": "The economic value of owning a generation asset is tied to how often extreme spread outliers (like the August 2001 spike) are expected to recur, and that expectation can change if grid operators act to suppress such spikes.",
+ "core_idea": "A power plant's optionality value rises with the expected frequency of future price spikes and falls if market/grid changes reduce the likelihood of similar spikes, so a historically fitted price model may not reliably predict future value.",
+ "key_points": [
+  "If outlier events like the 2001 spike are expected to recur, the option-like value of owning generation capacity increases.",
+  "If the grid operator implements measures that eliminate similar spikes, plant value decreases.",
+  "Even a well-fitted historical distribution may not be a good forward-looking predictor because structural changes in the market can invalidate it."
+ ],
+ "relationships": [
+  "Directly follows from the spark spread distribution discussion",
+  "Relevant to real-option valuation of generation assets"
+ ],
+ "trading_implications": [
+  "Plant valuation and hedging decisions should account for regulatory/market structure changes that affect the future frequency of price spikes, not just backward-looking historical distributions."
+ ],
+ "caveats": [
+  "Assuming a historically calibrated price/spread model remains valid going forward regardless of changes to grid operations."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "382"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 1,
+   "topic": "Price-spike frequency and the value of owning a power plant"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

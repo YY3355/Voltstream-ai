@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Asian and European options: exercise-style distinctions",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Types",
+ "definition": "Two option variants distinguished by how and when the payoff is determined: an Asian option pays out based on an average of the underlying's price over a defined window rather than a single spot price, while a European option can only be exercised at expiration, never before.",
+ "core_idea": "Asian options smooth the payoff by averaging price over time (e.g., average monthly peak power price vs. a strike), and both Asian and European options share the trait that early exercise is not permitted.",
+ "key_points": [
+  "Asian option value at expiration depends on the average underlying price over some period, not a single price point.",
+  "Asian options typically cannot be exercised early.",
+  "Example given: an Asian option paying the difference between a strike and the average cost of peak power over a month.",
+  "A European option can only be exercised at expiration; early exercise is not allowed."
+ ],
+ "relationships": [
+  "Both are contrasted implicitly with options that allow early exercise, though the source does not name that alternative here"
+ ],
+ "trading_implications": [
+  "Averaging the underlying price in an Asian option reduces sensitivity to a price spike or manipulation right at expiration, since the payoff depends on a period average rather than one settlement price."
+ ],
+ "caveats": [
+  "Assuming any option can be exercised early by default \u2014 the source specifies both Asian and European options here cannot be."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "344-345"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_003.json",
+   "idx": 0,
+   "topic": "Asian and European options: exercise-style distinctions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

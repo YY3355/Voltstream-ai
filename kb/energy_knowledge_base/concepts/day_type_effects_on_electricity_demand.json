@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Day-type effects on electricity demand",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Electricity consumption on a given day depends systematically on whether it is a weekday, weekend, or holiday, because commercial and industrial activity (and therefore power use) drops when businesses are closed.",
+ "core_idea": "Weekday load is consistently higher than weekend/holiday load since offices, factories, and other non-residential consumers reduce or stop operations, removing a large chunk of demand.",
+ "key_points": [
+  "Weekday demand exceeds weekend/holiday demand across most systems.",
+  "PJM-West consumers used roughly 10% less power on weekends than on weekdays.",
+  "Day-of-week effects are typically incorporated into load models as a categorical or seasonal-style adjustment alongside temperature."
+ ],
+ "relationships": [
+  "Interacts with hour-of-day and seasonal temperature effects to shape the full hourly load curve."
+ ],
+ "trading_implications": [
+  "Forecasting models for spot/day-ahead power should condition on day type (weekday/weekend/holiday), not just temperature, to avoid systematic bias on non-workdays."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "399-401"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 0,
+   "topic": "Day-type effects on electricity demand"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

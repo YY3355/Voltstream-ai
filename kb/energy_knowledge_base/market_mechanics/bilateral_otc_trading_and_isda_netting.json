@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Bilateral / OTC trading and ISDA netting",
+ "type": "market_mechanic",
+ "category": "Trading Markets",
+ "subcategory": "Bilateral and OTC Trading",
+ "definition": "Bilateral (over-the-counter/OTC) trades are direct contractual agreements between two counterparties, usually standardized under an ISDA master agreement so that all trades between the two parties form a single combined contract rather than separate ones.",
+ "core_idea": "Combining all trades between two parties into one ISDA contract matters most in bankruptcy, because it limits credit exposure to the net amount owed across all trades instead of exposing a solvent party to cherry-picked obligations.",
+ "key_points": [
+  "OTC trading is a bilateral agreement specifically between a professional trading organization and a counterparty; 'bilateral' and 'OTC' are used largely interchangeably.",
+  "Bilateral trading requires signing (or extending) a contract for every trade, and depends on the creditworthiness/reliability of the counterparty.",
+  "If a counterparty goes bankrupt, there is generally no immediate recourse outside bankruptcy proceedings.",
+  "ISDA master agreements fold all trades between two parties into a single contract, so a bankruptcy court cannot selectively freeze only the bankrupt party's liabilities while still enforcing the solvent party's obligations under other trades in the same relationship.",
+  "Illustrative example: without netting, if Unreliable Corp (owed gas from SolidGoldPower, owing power to SolidGoldPower) goes bankrupt, the court could freeze Unreliable's gas delivery while still forcing SolidGoldPower to deliver power \u2014 forcing SolidGoldPower to source replacement gas at last-minute cost while still delivering full power output for nothing in return. With netting, Unreliable must deliver the gas to receive the power, since individual line items can't be selectively frozen.",
+  "Downsides of OTC trading: credit risk, contractual paperwork, and difficulty initiating or unwinding trades.",
+  "Modifying a bilateral contract requires agreement from both parties."
+ ],
+ "relationships": [
+  "Contrasts with exchange trading, which removes direct counterparty credit risk"
+ ],
+ "trading_implications": [
+  "A trader's real credit exposure to an OTC counterparty is the net exposure across the whole ISDA-netted relationship, not the sum of individual trade exposures.",
+  "Weaker-credit counterparties often must post collateral or buy credit protection (e.g., a CDS) to be tradable at all."
+ ],
+ "caveats": [
+  "Assuming that in a counterparty bankruptcy, a solvent party's obligations and the bankrupt party's obligations would automatically offset \u2014 without an ISDA-style netted master agreement, the bankruptcy court can enforce the solvent party's obligations while freezing the bankrupt party's, exposing the solvent party to outsized loss."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "86-87"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_003.json",
+   "idx": 3,
+   "topic": "Bilateral / OTC trading and ISDA netting"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

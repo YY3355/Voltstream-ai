@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Eastern Interconnect structure: RTO/ISOs and regulated utilities",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Eastern Interconnection",
+ "definition": "The Eastern Interconnect covers the eastern half of the U.S. as a mix of organized RTO/ISO markets and traditionally regulated utilities, and is less geographically constrained than the Western Interconnect.",
+ "core_idea": "PJM and MISO are the two largest RTO/ISOs in North America, alongside SPP, NYISO, and ISO-NE, with MISO-Indiana Hub and PJM Western Hub standing out as the most liquid trading points in the region.",
+ "key_points": [
+  "Eastern Interconnect is a combination of RTO/ISOs and regulated utilities, less dominated by geography than the West",
+  "PJM (originally Pennsylvania-New Jersey-Maryland Interconnection) and MISO are the two largest RTO/ISOs in North America",
+  "Other RTO/ISOs in the region: SPP, NYISO, ISO-NE",
+  "Most liquid trading locations: MISO-Indiana Hub (formerly Cin-Hub/Cinergy Hub) and PJM Western Hub (PJM-W)"
+ ],
+ "relationships": [
+  "PJM ISO",
+  "MISO",
+  "SPP",
+  "NYISO",
+  "ISO-NE"
+ ],
+ "trading_implications": [
+  "Indiana Hub and PJM-W are the reference liquid benchmarks for Eastern Interconnect power trading"
+ ],
+ "caveats": [
+  "MISO-Indiana Hub is a renamed successor to what was historically called Cin-Hub or Cinergy Hub"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "200-201"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 4,
+   "topic": "Eastern Interconnect structure: RTO/ISOs and regulated utilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

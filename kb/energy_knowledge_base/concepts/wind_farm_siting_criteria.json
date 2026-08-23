@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Wind farm siting criteria",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Wind Power",
+ "definition": "A good wind farm site needs consistent wind, sufficiently high wind speeds, and enough available land for the installation.",
+ "core_idea": "Coastlines and flat plains are generally the most attractive wind farm locations, while mountainous or uneven terrain is less attractive due to limited space and unpredictable wind behavior.",
+ "key_points": [
+  "Three siting criteria: consistency of wind, sufficient wind speed, and adequate land availability.",
+  "Coastlines and flat plains are typically the easiest locations to develop.",
+  "Mountains/uneven terrain are less attractive because of space constraints and unpredictable wind.",
+  "The U.S. National Renewable Energy Laboratory (NREL) is the primary source of U.S. wind resource data, building on long-standing government wind research originally done for aviation purposes."
+ ],
+ "relationships": [
+  "Related to turbine spacing/wake effects, which further constrains site layout"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 21,
+   "pages": "462-463"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch21/chunk_000.json",
+   "idx": 3,
+   "topic": "Wind farm siting criteria"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

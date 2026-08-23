@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Levelized Cost of Entry (LCOE)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Valuation and Fundamentals",
+ "definition": "A long-horizon estimate of the power price at which developers would be willing to build new generation, used as an implied ceiling for future power prices.",
+ "core_idea": "LCOE is calculated by dividing the cost of building a generating unit by its expected generation volume, adjusted for the time value of money, and can be extended to include fixed and variable operating costs (fuel, maintenance, overhead); if market prices rise above this level, new entry should occur and push prices back down.",
+ "key_points": [
+  "Provides an estimated upper bound for long-horizon power prices",
+  "Basic version divides build cost by time-value-adjusted expected generation volume; can be expanded to include fixed and variable operating costs",
+  "Common uses: PPA pricing, fundamental forecasts, capacity market pricing, renewable energy certificate market analysis",
+  "Also used to compare competitiveness across different generating technologies over a typical life span and duty cycle",
+  "Key input is the cost of new entry (CONE), the estimated cost to construct a new unit",
+  "CONE is spread across the facility's expected life using discounted cash flow (DCF) analysis to derive a daily revenue requirement in $/MW-day",
+  "The underlying math is analogous to annuity calculations used in finance"
+ ],
+ "relationships": [
+  "Depends on CONE and DCF/annuity math",
+  "Used in capacity markets and PPA pricing"
+ ],
+ "trading_implications": [
+  "Serves as a fundamental, long-run reference point for where power prices should cap out, informing long-horizon forecasts"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "56-57"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 3,
+   "topic": "Levelized Cost of Entry (LCOE)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

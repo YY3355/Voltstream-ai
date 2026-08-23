@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Topping Cycle vs. Bottoming Cycle Cogeneration",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Generation Technology",
+ "definition": "Topping cycle cogeneration uses waste heat from the condenser (produced after generating power) for an external purpose; bottoming cycle cogeneration instead uses heat from an external industrial process to supply or reduce the plant's own boiler fuel needs.",
+ "core_idea": "The two terms distinguish the direction of the heat exchange: topping cycle exports the plant's waste heat outward, while bottoming cycle imports outside process heat inward to cut the plant's own fuel use.",
+ "key_points": [
+  "Topping cycle: condenser waste heat is reused externally after power generation",
+  "Bottoming cycle: heat from an external industrial process feeds the plant's boiler, reducing or eliminating its fuel needs"
+ ],
+ "relationships": [
+  "Both are subtypes of cogeneration"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "190"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_004.json",
+   "idx": 5,
+   "topic": "Topping Cycle vs. Bottoming Cycle Cogeneration"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

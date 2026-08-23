@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Energy options are written on futures/forwards, which further discourages early exercise",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Early Exercise",
+ "definition": "Energy options are typically options on a futures or forward contract rather than on physical delivery of the commodity itself, because arranging an actual physical delivery cannot be set up on short notice. Because exercising early only produces the underlying forward contract (for its original delivery period), not physical commodity delivered on the exercise date, early exercise cannot be used to obtain product for a different, more valuable delivery window.",
+ "core_idea": "Structuring energy options on forward/futures contracts (rather than physical commodity) closes off a potential motive for early exercise, since exercising early just swaps into a forward for the same fixed future delivery period rather than getting commodity sooner.",
+ "key_points": [
+  "An option to buy electricity is almost always an option to buy a forward contract, not physical power, because physical delivery logistics take time to arrange.",
+  "Worked example: a call option on October off-peak (cheap) power cannot be exercised early to obtain daytime power in August (expensive power) \u2014 exercising it early still only delivers an October off-peak forward contract.",
+  "This structural feature tends to eliminate the value of exercising energy options prior to expiration."
+ ],
+ "relationships": [
+  "A commodity-market-specific reinforcement of the general no-early-exercise rule",
+  "Contrasts with the dividend exception, which applies to options on physical/financial assets like stocks"
+ ],
+ "trading_implications": [
+  "Energy option holders should not expect early exercise to be a useful tool for arbitraging timing mismatches between delivery periods \u2014 exercise only ever yields the contract's originally specified forward period."
+ ],
+ "caveats": [
+  "It might seem early exercise could be used to 'redirect' delivery timing (e.g., getting cheap power exercised early to cover an expensive period); the author explicitly rules this out."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "331"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 5,
+   "topic": "Energy options are written on futures/forwards, which further discourages early exercise"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

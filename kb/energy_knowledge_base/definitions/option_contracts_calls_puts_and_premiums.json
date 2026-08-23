@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Option contracts: calls, puts, and premiums",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Options Basics",
+ "definition": "An option is a two-party contract that gives its buyer the right, but not the obligation, to buy or sell a specified underlying asset at a fixed price at a future point in time. A call grants the right to buy; a put grants the right to sell. The buyer pays the seller (the writer) an up-front fee called the premium for this right.",
+ "core_idea": "Options let the buyer decide later, based on how prices move, whether to act on a fixed-price deal; the writer accepts that open-ended obligation in exchange for being paid up front.",
+ "key_points": [
+  "The underlying is the asset that can be bought or sold under the contract.",
+  "Call = right to buy at a fixed price; put = right to sell at a fixed price.",
+  "The premium is paid by the buyer to the writer at the time the contract is signed, regardless of what happens later.",
+  "Choosing to use the right is called exercising the option; the author notes it is usually obvious when exercise makes sense \u2014 the hard part is pricing the option in the first place.",
+  "The buyer's downside is capped at the premium already paid; losing it or profiting are the only two outcomes for the buyer."
+ ],
+ "relationships": [
+  "Underpins long/short volatility framing",
+  "Feeds into intrinsic vs. extrinsic value"
+ ],
+ "trading_implications": [
+  "Because the buyer's max loss is the premium, options are pitched as a way to gain exposure to a big favorable move without unlimited downside.",
+  "Pricing an option means estimating the probability/magnitude that the underlying will move enough to make exercise worthwhile."
+ ],
+ "caveats": [
+  "None flagged directly by the author in this passage, but implicitly: an option is not free upside \u2014 the premium is a real, certain cost paid regardless of outcome."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "326-327"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 0,
+   "topic": "Option contracts: calls, puts, and premiums"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

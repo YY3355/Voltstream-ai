@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Nuclear fission mechanics",
+ "type": "concept",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "Nuclear fission is the splitting of a large atomic nucleus (e.g., uranium) into smaller particles, either spontaneously (radioactive decay) or induced by humans to happen rapidly.",
+ "core_idea": "Fission occurs naturally as radioactive decay in unstable elements; when humans accelerate this process it is called induced fission, which is easiest to trigger in already-radioactive elements like uranium and plutonium and releases alpha particles, beta particles, and gamma radiation.",
+ "key_points": [
+  "Spontaneous fission (radioactive decay) occurs naturally when an unstable nucleus splits on its own.",
+  "Induced fission is the human-accelerated version of this splitting process.",
+  "Induced fission is easiest in elements already undergoing radioactive breakdown, such as uranium and plutonium.",
+  "Fission releases an alpha particle (two protons + two neutrons), beta particles (a pair of electrons), and gamma radiation (electromagnetic energy).",
+  "Almost any atomic nucleus can be split given enough energy, but some nuclei are far more susceptible and require much less energy \u2014 these are the substances capable of sustaining a chain reaction.",
+  "A chain reaction occurs when energy released from one fission event is sufficient to split a nearby nucleus; if nearby nuclei are stable, no chain reaction results.",
+  "Nuclear radiation, a nuclear reactor, and a nuclear bomb differ only in the speed/rate of the fission chain reaction: radiation is slow with no chain reaction, a reactor is a measured-rate chain reaction, and a bomb is an extremely fast uncontrolled chain reaction of all the fuel."
+ ],
+ "relationships": [
+  "Underlies the fuel enrichment process (Uranium-235 vs Uranium-238)"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Reactors and bombs are sometimes conflated as the same process; the source clarifies the difference is purely the rate of the chain reaction, not the underlying physics."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "470-471"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_000.json",
+   "idx": 2,
+   "topic": "Nuclear fission mechanics"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

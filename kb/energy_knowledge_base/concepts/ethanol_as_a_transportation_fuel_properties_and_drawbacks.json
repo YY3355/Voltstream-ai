@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Ethanol as a transportation fuel: properties and drawbacks",
+ "type": "concept",
+ "category": "Oil & Refined Products",
+ "subcategory": "Biofuels - Ethanol",
+ "definition": "Ethanol is an alcohol-based fuel blended into gasoline that requires specially built or modified engines and pipelines because it is corrosive and absorbs water, and it is generally considered an inferior fuel to gasoline on most measures.",
+ "core_idea": "Ethanol's market popularity is driven less by fuel quality and more by concern over future petroleum scarcity, combined with the fact that it can be produced at scale today and much of the existing gasoline infrastructure can be retrofitted to handle it.",
+ "key_points": [
+  "Ethanol is corrosive and hygroscopic (absorbs water), requiring engines and pipelines to be specifically built or modified for it",
+  "Ethanol combustion produces roughly twice the ground-level ozone pollution of a comparable gasoline engine",
+  "Ethanol production consumes food crops, and given limited cropland this reduces food available for a growing population, raising food prices",
+  "By most comparisons ethanol is an inferior fuel to gasoline",
+  "Ethanol's popularity rests on expectations of future petroleum scarcity, current scalability of production, and the ability to retrofit existing gasoline infrastructure"
+ ],
+ "relationships": [
+  "Ethanol competes with food crops for agricultural land and resources"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Ethanol's widespread adoption could be mistaken for evidence it is a superior fuel; the author states the opposite -- it is inferior to gasoline by most comparisons, and its adoption is driven by scarcity concerns and infrastructure practicality, not fuel quality"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "241-241"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 0,
+   "topic": "Ethanol as a transportation fuel: properties and drawbacks"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

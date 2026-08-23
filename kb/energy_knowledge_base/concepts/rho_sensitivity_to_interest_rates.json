@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Rho \u2014 sensitivity to interest rates",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Greeks",
+ "definition": "Rho measures how sensitive an asset's value is to changes in interest rates.",
+ "core_idea": "Rho matters most for interest-rate-sensitive instruments like bonds, but it's still relevant to energy trading because energy positions often tie up large amounts of capital for extended periods, making the opportunity cost of capital (the risk-free rate) relevant to their relative attractiveness.",
+ "key_points": [
+  "Rho is generally less important for energy products than for bonds, but not irrelevant.",
+  "Because energy trades can tie up significant capital for a long time, traders must compare the return on an energy investment against alternatives such as risk-free government bonds.",
+  "A given nominal return (e.g., 10% annually) is more attractive when the risk-free rate is low (e.g., 2%) than when it's high (e.g., 20%), since the relative premium over the risk-free alternative shrinks as rates rise."
+ ],
+ "relationships": [
+  "One of the option/portfolio sensitivity measures alongside Vega and Theta."
+ ],
+ "trading_implications": [
+  "When evaluating capital-intensive energy positions, compare the expected return against the prevailing risk-free rate to judge relative attractiveness, since rho-type interest rate effects change that comparison."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "372-373"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_005.json",
+   "idx": 2,
+   "topic": "Rho \u2014 sensitivity to interest rates"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "chapter": 15,
+ "title": "3.6 SPREAD OPTIONS",
+ "n_concepts": 9,
+ "summary": "Chapter 15 explains how spread options \u2014 where the underlying is the difference between two prices rather than a single asset \u2014 require different modeling assumptions than vanilla options, since spreads can go negative or to zero, ruling out lognormal treatment and raising the choice between martingale and mean-reverting dynamics. It covers Kirk's approximation as the standard pricing shortcut, built by adapting Black-Scholes with a volatility term derived from the ratio of two lognormal distributions, and shows how that same equation can be rearranged to back out implied correlation, including its observed term-structure behavior and estimation from historical spread or ratio data. It also ties volatility and correlation together as joint drivers of spread width, and connects spike frequency in spreads to the economic value of owning a generation asset.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

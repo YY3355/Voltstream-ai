@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Weak correlation between coal and electricity prices",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Price Relationships",
+ "definition": "Even though coal's primary use is electricity generation, coal and power prices are generally not correlated because power prices are set by the marginal (most expensive) fuel in a region, not the cheapest.",
+ "core_idea": "Electricity prices are typically driven by the most expensive fuel used in a region rather than by coal, so the coal-power price relationship is weak except in limited cases.",
+ "key_points": [
+  "Coal is primarily used for electrical generation, but coal and electricity prices are usually not correlated except in limited cases",
+  "Electricity prices are generally set by the most expensive fuel in a region, not the cheapest fuel (which is often coal)",
+  "Only investors who own coal-fired power plants can actually capture value from the coal-to-electricity price spread"
+ ],
+ "relationships": [
+  "Relates to merit-order/marginal-fuel price setting in power markets"
+ ],
+ "trading_implications": [
+  "The coal-electricity spread is effectively only monetizable by owners of coal-fired generation assets, not general market participants"
+ ],
+ "caveats": [
+  "Assuming coal prices and electricity prices move together because coal is a major generation fuel"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "256-257"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_003.json",
+   "idx": 2,
+   "topic": "Weak correlation between coal and electricity prices"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

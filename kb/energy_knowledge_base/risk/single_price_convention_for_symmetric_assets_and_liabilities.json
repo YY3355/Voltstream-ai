@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Single-price convention for symmetric assets and liabilities",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Mark-to-Market Accounting",
+ "definition": "When an asset and its offsetting liability exist (e.g., ownership of an undelivered barrel of oil vs. the obligation to deliver it), market convention typically prices both sides using the same reference price, even though this is only an approximation.",
+ "core_idea": "Using one price for both an asset and its mirror-image liability simplifies valuation but glosses over real-world frictions that would affect an actual transaction.",
+ "key_points": [
+  "A single quoted price (e.g., 'the price of a barrel of oil') is used loosely to value both the asset and the corresponding liability.",
+  "This single-price approach is an approximation, not a precise transaction price.",
+  "An actual trade would need to reflect bid/ask spread, transaction costs, and, if settlement isn't in cash, counterparty credit quality."
+ ],
+ "relationships": [
+  "Feeds into fair value / exit price concepts",
+  "Underlies mark-to-market valuation generally"
+ ],
+ "trading_implications": [
+  "Marked values from a single reference price can overstate realizable value once spread, costs, and credit quality are factored in."
+ ],
+ "caveats": [
+  "Treating the quoted 'price' as the exact price achievable in a real transaction rather than an approximation."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "548-548"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 0,
+   "topic": "Single-price convention for symmetric assets and liabilities"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

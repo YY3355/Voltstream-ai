@@ -1,0 +1,40 @@
+{
+ "canonical_topic": "Pipeline tariffs",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Regulation",
+ "definition": "A tariff is the publicly filed fee schedule a regulated pipeline charges for its services, obtainable from either the pipeline company or its regulating agency.",
+ "core_idea": "Nearly every pipeline available for public use in the U.S. is regulated and required to publish its charges in a public tariff document.",
+ "key_points": [
+  "Applies to regulated pipelines, which covers essentially all pipelines available for public use in the U.S.",
+  "Tariffs can be obtained from the pipeline company or the regulating agency"
+ ],
+ "relationships": [
+  "Contains charges such as the Annual Cost Adjustment"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "515"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 5,
+   "topic": "Pipeline tariffs"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

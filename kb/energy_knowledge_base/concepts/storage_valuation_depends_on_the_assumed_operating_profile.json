@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Storage valuation depends on the assumed operating profile",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Electricity Storage",
+ "definition": "There is no single valuation approach for electricity storage; the correct method depends heavily on how the facility is expected to acquire and dispatch power, e.g., daily buy-low/sell-high cycling versus holding free power for an extended period.",
+ "core_idea": "A storage facility that trades daily around the peak/off-peak spread is economically a very different asset from one that captures free overnight power and holds it for months, so any valuation must be tailored to the specific expected operating strategy rather than treated generically.",
+ "key_points": [
+  "Example contrast given: a facility buying overnight power and reselling it the next day versus a facility that gets free power and holds it for several months.",
+  "The core of a storage valuation is the assumed operating pattern, not just the underlying technology."
+ ],
+ "relationships": [
+  "Round-trip efficiency and storage breakeven economics",
+  "Baseload plants and effectively free overnight power for storage"
+ ],
+ "trading_implications": [
+  "Before valuing a storage asset, first pin down its expected dispatch/operating strategy, since that determines which price spreads and holding costs are relevant."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "477-477"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_000.json",
+   "idx": 3,
+   "topic": "Storage valuation depends on the assumed operating profile"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

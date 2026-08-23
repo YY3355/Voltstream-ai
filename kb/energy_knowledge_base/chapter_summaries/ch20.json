@@ -1,0 +1,7 @@
+{
+ "chapter": 20,
+ "title": "4.5 SOLAR POWER",
+ "n_concepts": 17,
+ "summary": "Solar power splits into two conversion pathways\u2014photovoltaic cells that turn sunlight directly into DC current via semiconductor physics, and thermal systems that concentrate heat for storage and steam generation\u2014each with distinct efficiency mechanics (band-gap layering and p-n junction doping for PV; turbine temperature for thermal). Output in both cases depends on fixed engineering choices (system losses, conversion efficiency, tracking hardware) and variable siting factors (latitude, atmosphere, climate), which together determine capacity factor and shape the cost-versus-output trade-offs designers face. The chapter also covers the practical and financial side of deploying solar: estimating production accurately enough to size a system, and how policy incentives like Germany's feed-in tariff can drive adoption.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

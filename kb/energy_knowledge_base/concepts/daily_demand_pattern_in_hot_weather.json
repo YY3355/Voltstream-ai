@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Daily demand pattern in hot weather",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Demand/Load",
+ "definition": "The shape of the intraday electricity demand curve on warm days, and how that shape sharpens with temperature extremity.",
+ "core_idea": "On hot days demand climbs through the day and peaks in the mid-afternoon as air conditioning use is heaviest; this peak is much sharper on the hottest days than on milder ones.",
+ "key_points": [
+  "Demand builds steadily through the day on hot days",
+  "Peak occurs mid-afternoon, driven by air conditioning load",
+  "The peak is far more pronounced on the hottest days than on comfortable days",
+  "Milder days show a flatter, less pronounced demand curve"
+ ],
+ "relationships": [
+  "Seasonal demand for power",
+  "Relationship between temperature and demand"
+ ],
+ "trading_implications": [
+  "Intraday shape of hot-day demand curves informs how peak-hour power products should be valued differently from off-peak"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "183"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_003.json",
+   "idx": 0,
+   "topic": "Daily demand pattern in hot weather"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "canonical_topic": "Why grid operators must forecast rather than schedule demand",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Grid operators (RTOs, ISOs, utilities) never know in advance exactly how much power they will need to deliver, because consumers do not schedule their electricity use \u2014 they simply turn appliances on and off as they wish.",
+ "core_idea": "Since electricity consumption decisions are made independently and without advance notice by consumers, the grid operator's only option is to estimate demand ahead of time well enough to have adequate generation ready.",
+ "key_points": [
+  "Unlike a scheduled commodity purchase, consumers do not pre-commit to spot electricity purchases.",
+  "The grid operator's goal is to deliver power to consumers wherever and whenever they choose to use it.",
+  "This makes demand estimation a prerequisite for reliable grid operation, not an optional analytical exercise."
+ ],
+ "relationships": [
+  "Motivates the need for spatial load forecasting overall"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "389"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 1,
+   "topic": "Why grid operators must forecast rather than schedule demand"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Negative Prices Break Risk Management Systems",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Operational Risk",
+ "definition": "Negative prices tend to break risk management systems built assuming prices are positive; diagnosing the resulting problems can be time-consuming and confusing, since a portfolio can show a large percentage gain while losing real dollars, and the calculating software is still functioning as designed.",
+ "core_idea": "Risk systems often carry implicit positive-price assumptions, and negative prices (which do occur in power markets) can produce confusing or misleading outputs even when the system itself has no bug.",
+ "key_points": [
+  "Negative prices can cause a portfolio to appear up in percentage terms while actually losing dollars \u2014 described as confusing but not a software defect.",
+  "The author flags this as a common source of long, confusing debugging efforts in trading risk systems."
+ ],
+ "relationships": [],
+ "trading_implications": [
+  "Risk and P&L systems handling energy (especially power, which can go negative) should be explicitly tested against negative-price scenarios rather than assuming positivity."
+ ],
+ "caveats": [
+  "Assuming a percentage-based P&L read (e.g., 'portfolio up 10%') is a reliable signal \u2014 under negative prices it can diverge sharply from actual dollar gain/loss."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 11,
+   "topic": "Negative Prices Break Risk Management Systems"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

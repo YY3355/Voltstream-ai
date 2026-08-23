@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Options behave like insurance: asymmetric payoff, generally unprofitable to buy outright",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options \u2014 Risk Characteristics",
+ "definition": "Buying an option is structurally similar to buying insurance: most of the time the premium is paid and the contract expires worthless, but occasionally an unusual price move produces a large payoff. Even though the downside (the premium) is small relative to the potential upside, the odds are stacked against the buyer, so purely speculative option buying is generally unprofitable.",
+ "core_idea": "The small-downside/large-upside shape of an option's payoff does not mean the average outcome favors the buyer; like insurance, buying options only makes sense as part of a broader strategy, not as a standalone bet.",
+ "key_points": [
+  "It is rarely profitable to buy options purely for speculative reasons, per the author.",
+  "A financial option is an all-or-nothing investment: it's possible to put a large amount of money into options and lose all of it.",
+  "The option writer takes on the risk of a large loss and must be compensated (via the premium) for accepting it.",
+  "No money is created in an option trade \u2014 value is simply transferred between buyer and writer depending on the outcome."
+ ],
+ "relationships": [
+  "Complements the call/put definition item",
+  "Motivates why writers demand a premium"
+ ],
+ "trading_implications": [
+  "Standalone speculative option buying is framed by the author as a poor strategy on average, despite attractive-looking asymmetric payoffs.",
+  "Options make more sense as one component of a broader hedging or trading strategy rather than an isolated directional bet."
+ ],
+ "caveats": [
+  "The author flags the common misread that a limited-downside/large-upside payoff shape implies a favorable bet \u2014 it does not; the probabilities are stacked against the buyer."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "327-328"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_000.json",
+   "idx": 1,
+   "topic": "Options behave like insurance: asymmetric payoff, generally unprofitable to buy outright"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

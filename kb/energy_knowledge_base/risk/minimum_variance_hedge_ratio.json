@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Minimum Variance Hedge Ratio",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Hedge Sizing",
+ "definition": "The hedge size that minimizes the residual risk (variance) of the combined hedge-plus-hedged-item position, used when the hedging instrument is not a perfect match for the item being hedged.",
+ "core_idea": "Because most available hedging instruments are standardized benchmark commodities rather than an exact match for the hedged exposure, the hedger must first find an instrument highly correlated with the exposure, then size the hedge so that its dollar volatility matches the dollar volatility of the hedged item, scaled by their correlation.",
+ "key_points": [
+  "Hedge sizing depends on three factors: the volatility of the hedge instrument, the volatility of the hedged item, and the correlation between the two.",
+  "An undersized hedge leaves residual risk that can be reduced by increasing the hedge size.",
+  "An oversized hedge can actually increase portfolio risk rather than reduce it \u2014 hedge size is not 'more is always safer'.",
+  "The minimum-variance point occurs when the dollar-volatility of the hedge and the dollar-volatility of the hedged item are matched, scaled by the correlation between them (illustrated in the source's Figure 6.5.1, not reproduced here in formula form)."
+ ],
+ "relationships": [
+  "Prerequisite step is identifying a hedging instrument highly correlated with the hedged item."
+ ],
+ "trading_implications": [
+  "Hedgers should actively test and adjust hedge ratio/size rather than assuming a 1:1 notional match is optimal.",
+  "Correlation breakdown between the hedge instrument and the hedged item degrades the effectiveness of even a well-sized hedge."
+ ],
+ "caveats": [
+  "That maximizing hedge size always reduces risk \u2014 the source explicitly notes an oversized hedge can increase risk."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "596"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 2,
+   "topic": "Minimum Variance Hedge Ratio"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

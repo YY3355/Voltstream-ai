@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Common oil market terminology: Brent Crude, Feedstock, Fuel Oils, Heating Oil",
+ "type": "definition",
+ "category": "Oil & Refined Products",
+ "subcategory": "Terminology",
+ "definition": "A glossary of common oil-market terms: Brent Crude (a light, sweet North Sea crude oil used as an international pricing benchmark), Feedstock (any crude oil entering a refinery), Fuel Oils (liquid fuels heavier than gasoline, classified into six numbered categories), and Heating Oil / No. 2 Fuel Oil (essentially diesel fuel, the second-largest fraction of a refined barrel after gasoline).",
+ "core_idea": "These are standard reference terms used throughout oil trading: Brent as a global benchmark grade, feedstock as the generic term for refinery input crude, and fuel oils/heating oil as classifications of refined output by weight and flow characteristics.",
+ "key_points": [
+  "Brent Crude is a light, sweet crude oil from the North Sea that serves as an international pricing benchmark",
+  "Feedstock refers to crude oil of any type entering a refinery",
+  "Fuel oils are liquid fuels heavier than gasoline, classified into six numbered categories, with lower-numbered oils flowing more easily than higher-numbered ones",
+  "The two most common fuel oil categories are No. 2 fuel oil (diesel) and heavy oil (No. 4 to No. 6 fuel oil)",
+  "Heating oil (No. 2 fuel oil) is essentially diesel fuel and is the second-largest fraction of a barrel of crude oil after gasoline",
+  "Most crude oil types yield roughly half as much heating oil as gasoline when refined"
+ ],
+ "relationships": [
+  "Feedstock is the input to refining; fuel oils and heating oil are refined outputs"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "244-244"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_005.json",
+   "idx": 7,
+   "topic": "Common oil market terminology: Brent Crude, Feedstock, Fuel Oils, Heating Oil"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

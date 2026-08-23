@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Earnings manipulation risk via MTM on illiquid assets",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Accounting / Market Integrity",
+ "definition": "Because MTM relies on trading market prices, it is only safe for liquid markets with enough trading activity to keep prices rational; for illiquid assets, traders can potentially manipulate reported P&L by transacting at artificial prices.",
+ "core_idea": "The author illustrates this with two traders at rival firms who, to avoid reporting losses to their risk committee, each buy a small amount of an illiquid asset the other holds at an inflated price \u2014 letting the counterparty mark a profit \u2014 without ever having to trade with each other directly; doing this across many small, illiquid positions can be hard to detect.",
+ "key_points": [
+  "MTM is only reliable in liquid markets with enough trading volume to produce rational prices.",
+  "For illiquid assets, it can be necessary to supplement market prices with pricing models as a second check.",
+  "That second check both limits the risk of transacting at illogical prices and limits traders' ability to manipulate MTM to smooth earnings.",
+  "Example scheme: two traders each buy a small amount of an illiquid asset the OTHER holds, at a high price, letting each mark a profit on their own illiquid holding without directly trading with each other.",
+  "The trade size needed to set the price can be very small, and spreading this across many illiquid, unowned assets can make the manipulation hard to catch.",
+  "This type of abuse is mitigated by comparing trades/marks against a modeled price rather than relying on market price alone."
+ ],
+ "relationships": [
+  "Ties back to Mark-to-Market Accounting's dependence on real trading markets, and to the fair value hierarchy accounting has developed for illiquid/heavily modeled prices."
+ ],
+ "trading_implications": [
+  "Risk committees and firms should require a modeled-price cross-check for illiquid marks, not just the latest trade, to prevent traders from using small collusive trades to manage reported earnings and avoid loss-driven trading curtailment or bonus impacts."
+ ],
+ "caveats": [
+  "A reported MTM profit isn't proof of real economic value if the market behind it is illiquid and the price was set by a small, possibly collusive trade."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "544-547"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_000.json",
+   "idx": 4,
+   "topic": "Earnings manipulation risk via MTM on illiquid assets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

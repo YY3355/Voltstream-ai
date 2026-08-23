@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "AC vs. DC transmission (Edison vs. Westinghouse)",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission History",
+ "definition": "The historical competition between Edison's direct current (DC) system and Westinghouse's alternating current (AC) system, resolved in favor of AC because it allowed voltage to be transformed up or down.",
+ "core_idea": "Edison's DC system suffered from voltage drop over distance with no efficient way to step voltage up or down, which meant generators had to be small and located near end-users; Westinghouse's AC system (based on Tesla's design) used transformers to repeatedly step voltage up or down, letting a single large plant serve a wide area and multiple customer voltage needs, which is why AC became the universal transmission standard.",
+ "key_points": [
+  "DC transmission loses voltage over distance with no efficient step up/down mechanism",
+  "DC's limitation implied small, local generation near end-users",
+  "AC, using transformers, can step voltage up or down multiple times along the transmission path",
+  "AC let one large plant serve a wide area and serve both high-voltage industrial and low-voltage residential customers",
+  "The greater efficiency of large generation plants tipped the outcome toward AC becoming the universal standard"
+ ],
+ "relationships": [
+  "Underpins the economies-of-scale-vs-transmission trade-off"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "254"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 5,
+   "topic": "AC vs. DC transmission (Edison vs. Westinghouse)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

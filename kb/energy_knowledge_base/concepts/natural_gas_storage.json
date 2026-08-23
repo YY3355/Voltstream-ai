@@ -1,0 +1,130 @@
+{
+ "canonical_topic": "natural gas storage",
+ "type": "concept",
+ "n_merged": 7,
+ "definition": "Storage facilities are repurposed geological formations that hold natural gas between the pipeline system and the end user, acting as a buffer that absorbs the mismatch between continuous pipeline flow and cyclical burner-tip demand; gas held in storage must be at higher pressure than the pipeline to allow outflow back into it.",
+ "core_idea": "Pipelines must run continuously but gas demand does not, so gas that isn't needed immediately after transport has to be either stored or flared off; storage absorbs this mismatch, smooths the two annual demand peaks (winter heating, summer air-conditioning load on power generation), and provides a safety margin against short-term regional demand swings.",
+ "key_points": [
+  "Storage prevents having to burn off or waste excess gas when there's no immediate consumer demand.",
+  "Pipelines must run continuously, but demand does not, so gas has to be either stored or flared off.",
+  "Storage must be held at higher pressure than the pipeline to allow outflow back into it.",
+  "Demand peaks twice a year: winter (heating) and summer (air conditioning load on power generation).",
+  "Storage also provides a safety margin against short-term, regional swings in demand.",
+  "Gas that isn't needed immediately after transport can be stored for very long periods (much of the gas produced is already geologically ancient).",
+  "Storage sites are located at both ends of pipelines: gas commonly passes through a first set of storage facilities near producing regions (e.g., the U.S. Gulf Coast near refineries and pipeline hubs) and a second set near the consuming region before final delivery.",
+  "Facilities differ mainly along two dimensions: how much gas they can hold and how fast it can be withdrawn; construction cost, storage quantity, and injection/withdrawal speed depend on local geology.",
+  "Facilities are typically repurposed unused oil wells, salt mines, or aquifers.",
+  "Depleted gas reservoirs (underground caverns that once held natural gas, reused by pumping gas back in) are the most common storage type; salt caverns and aquifers are the other common types.",
+  "Precise valuation of a storage facility requires a path-dependent option calculation; because this is complex, approximations such as intrinsic value are commonly used in practice instead.",
+  "Aquifers are water reservoirs repurposed to store natural gas; they are the least desirable and most expensive storage type, built only where they offer a strong geographic advantage over other options (i.e., the only viable option in that location).",
+  "Aquifers have the lowest working-gas-to-total-volume ratio and the slowest injection/withdrawal cycle of any storage facility type.",
+  "Because no gas exists in an aquifer at construction, a large volume must be injected before operation, and unlike other storage types there is little room to draw down the cushion gas without impairing the facility's ability to function.",
+  "A worked auction-bid valuation example combines a seasonal trade (buy in low-price spring and fall, sell in higher-price summer and winter) with a weekday/weekend trade (buy weekend, sell weekday, using the two weekend days for injection).",
+  "Most facilities can only do one full seasonal cycle a year; the example facility in the trading exercise is high-performance and can cycle twice.",
+  "Running the weekday/weekend trade alongside the seasonal trade leaves only 3 net days per week for the seasonal trade's injection/delivery instead of 7, since the two trades compete for the same physical injection/withdrawal capacity.",
+  "Valuing an auction bid requires optimizing across possible trade combinations to find the most profitable feasible mix.",
+  "The EIA publishes a weekly report on the amount of natural gas in storage, consisting of a table of regional storage volumes and a chart comparing current total storage to the prior five years."
+ ],
+ "relationships": [
+  "Serves as the buffer implied by pipeline pressure dynamics.",
+  "Sits downstream of pipeline transport.",
+  "Facility geology determines base gas requirements and withdrawal speed.",
+  "Connects storage economics to option pricing concepts used elsewhere in the text.",
+  "Contrasts with salt cavern storage as a much lower-performance, higher-cost storage type (aquifers).",
+  "The auction-bid arbitrage example draws directly on the Cycling, Deliverability, and Injection Capacity definitions.",
+  "The EIA weekly report provides the public data traders would use when valuing storage capacity, as in the Natural Gas Storage Arbitrage Bid Strategy example."
+ ],
+ "trading_implications": [
+  "Traders and analysts often rely on intrinsic value as a practical approximation rather than solving the full path-dependent option problem when valuing a storage facility.",
+  "Aquifer storage capacity is poorly suited to fast-cycling or short-term arbitrage strategies given its slow deliverability.",
+  "Valuing storage capacity for an auction bid requires optimizing across a seasonal trade and a weekday/weekend trade, which compete for the same physical injection/withdrawal capacity, so operational limits may make it infeasible to run both simultaneously year-round."
+ ],
+ "caveats": [
+  "Most facilities can only do one full cycle a year; the trading example's facility is high-performance and can cycle twice, so its economics are not representative of a typical facility.",
+  "Exact storage valuation is a path-dependent option calculation; intrinsic value is a commonly used approximation, not the precise value.",
+  "Aquifer storage cushion gas cannot be drawn down significantly without impairing the facility's ability to function, unlike other storage types."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "58-59"
+  },
+  {
+   "chapter": 1,
+   "pages": "60-60"
+  },
+  {
+   "chapter": 27,
+   "pages": "523-524"
+  },
+  {
+   "chapter": 27,
+   "pages": "522-523"
+  },
+  {
+   "chapter": 27,
+   "pages": "533-534"
+  },
+  {
+   "chapter": 27,
+   "pages": "534-535"
+  },
+  {
+   "chapter": 27,
+   "pages": "536"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 7
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 7,
+   "topic": "Natural Gas Storage Facilities"
+  },
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 0,
+   "topic": "Why natural gas storage exists"
+  },
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 2,
+   "topic": "Types of natural gas storage facilities and their location pattern"
+  },
+  {
+   "file": "raw/ch27/chunk_000.json",
+   "idx": 5,
+   "topic": "Difficulty of valuing a natural gas storage facility"
+  },
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 3,
+   "topic": "Aquifer Natural Gas Storage"
+  },
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 9,
+   "topic": "Natural Gas Storage Arbitrage Bid Strategy (Trading Example)"
+  },
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 14,
+   "topic": "EIA Weekly Natural Gas Storage Report"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "caveats",
+    "claim": "the trading example's facility is high-performance and can cycle twice, so its economics are not representative of a typical facility",
+    "reason": "No source item states or implies that the example facility's economics are unrepresentative of a typical facility \u2014 this is an added interpretive conclusion beyond the fact that most facilities cycle once while the example cycles twice."
+   }
+  ],
+  "checked_at": "2026-08-22T23:37:43+00:00"
+ }
+}

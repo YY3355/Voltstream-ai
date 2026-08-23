@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Continuous injection/withdrawal requirement for pipeline operation",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Operations",
+ "definition": "A pipeline only functions because gas is continuously injected at the high-pressure (supply) end and continuously withdrawn at the low-pressure (consumer) end; if either side stops for economic reasons, the pressure differential collapses and the pipeline stops moving gas.",
+ "core_idea": "Because pipeline flow depends entirely on maintaining a pressure gradient, operators may have to keep injecting and withdrawing gas even when it looks uneconomical, since restarting a stalled pipeline takes significant time.",
+ "key_points": [
+  "Gas only flows from high-pressure zones to low-pressure zones",
+  "Injections and withdrawals cannot be halted purely because they are unprofitable at a given moment without risking pipeline shutdown",
+  "Restarting a pipeline after a stoppage takes time, so it may need to keep running even with no active consumer demand and no available storage"
+ ],
+ "relationships": [
+  "Compressor stations maintain this pressure differential",
+  "Explains why pipeline operators rely on interruptible customers to keep pressure up"
+ ],
+ "trading_implications": [
+  "Pipeline operators have structural reasons to keep moving gas regardless of short-term economics, which affects how reliably interruptible capacity is offered"
+ ],
+ "caveats": [
+  "Assuming pipeline flow can be freely started and stopped like a valve, without consequence for the broader network"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "511-512"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 0,
+   "topic": "Continuous injection/withdrawal requirement for pipeline operation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

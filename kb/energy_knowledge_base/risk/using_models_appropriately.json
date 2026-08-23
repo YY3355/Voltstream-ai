@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Using Models Appropriately",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Model Risk Mitigation",
+ "definition": "Ensuring a model is used correctly requires a plain-English explanation of what it does, scrutiny of its three components (inputs, processing, outputs), and clarity on any restrictions its developers placed on its use.",
+ "core_idea": "Appropriate use of a model depends on everyone who touches it \u2014 quants, traders, engineers, and leadership \u2014 sharing a plain-language understanding of its purpose, and on knowing its theoretical basis, assumptions, restrictions, and whether the people who built or approved it were qualified to do so.",
+ "key_points": [
+  "A plain English description of a model helps ensure mathematicians, traders, software staff, and company leaders all share a common understanding of its purpose.",
+  "Reviewing a model's inputs, outputs, and processing component separately tends to surface where trouble is most likely to occur.",
+  "Example given: switching to a cheaper data vendor for model inputs can silently remove data-quality checks the original vendor performed, so equivalent checks need to be re-established.",
+  "Key context for judging whether a model is being used appropriately includes any restrictions its developers placed on it, its theoretical foundation, its underlying assumptions, and whether the people who developed and reviewed it were authorized and qualified to do so."
+ ],
+ "relationships": [
+  "Directly addresses the 'model used incorrectly' cause of model risk; builds on documentation practices"
+ ],
+ "trading_implications": [
+  "Before relying on a model's output for a trading decision, confirm the model is being used within its designed scope and that its input data pipeline has not quietly degraded (e.g., via a cheaper data vendor)."
+ ],
+ "caveats": [
+  "A cheaper or replacement data source can look like a cost saving while actually removing quality controls the model's outputs depended on."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "580-581"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_000.json",
+   "idx": 5,
+   "topic": "Using Models Appropriately"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

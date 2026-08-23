@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Salt Cavern Pressure and Temperature Engineering",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Storage - Salt Caverns",
+ "definition": "Salt caverns hold gas at high pressure \u2014 often about double a standard pipeline's pressure \u2014 which forces the use of heavier-grade, high-temperature- and corrosion-resistant pipes, fittings, and valves.",
+ "core_idea": "Because gas temperature rises with pressure, gas discharged from a highly pressurized salt cavern can be extremely hot, so all extraction equipment must be rated for both high pressure and high temperature/corrosion conditions.",
+ "key_points": [
+  "Salt caverns are often pressurized to roughly double standard pipeline pressure.",
+  "Extraction pipes and fittings must be heavier-grade than standard pipeline equipment as a result.",
+  "Gas temperature increases with pressure, so discharged gas can be very hot.",
+  "Pipes, fittings, and valves must be rated for high-temperature gas and resistant to the added corrosion that comes with it."
+ ],
+ "relationships": [
+  "A consequence of salt caverns' fast injection/withdrawal design that also drives their favorable economics."
+ ],
+ "trading_implications": [
+  "The specialized, heavier-grade equipment represents extra capital cost that must be weighed against salt caverns' superior cycling economics when valuing a facility."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 27,
+   "pages": "532-533"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch27/chunk_002.json",
+   "idx": 1,
+   "topic": "Salt Cavern Pressure and Temperature Engineering"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

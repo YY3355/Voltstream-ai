@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Transmission losses and the voltage trade-off",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Physical Infrastructure",
+ "definition": "Power lost as heat during transmission is proportional to the current flowing on the line; raising voltage lowers current for the same power delivered, which reduces losses, but higher voltage lines are more dangerous and can't be sited everywhere.",
+ "core_idea": "Line losses create an engineering-economic trade-off: utilities want higher voltage to cut losses, but safety and siting constraints limit how high voltage can go in a given location.",
+ "key_points": [
+  "Transmission losses are proportional to current, not directly to power.",
+  "Increasing voltage reduces current (for a given power level), which reduces losses.",
+  "Higher-voltage lines are more dangerous, restricting where they can be used."
+ ],
+ "relationships": [
+  "Directly connects to the choice between high-voltage transmission and low-voltage distribution."
+ ],
+ "trading_implications": [
+  "Transmission losses and voltage/siting constraints help explain persistent regional price differences that create wheeling opportunities."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "195"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 4,
+   "topic": "Transmission losses and the voltage trade-off"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

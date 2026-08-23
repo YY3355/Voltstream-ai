@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Closed form vs. open form solutions",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing",
+ "definition": "Two different approaches to solving for an option's value: a closed form solution plugs variables into a fixed equation for an instant answer; an open form solution converges on an answer through repeated computer iteration.",
+ "core_idea": "Closed form solutions (like Black Scholes) are fast to use but mathematically complex and can obscure intuition; open form solutions (like binomial trees) are slower and depend on the number of iterative steps chosen, but are conceptually simpler and rest on fewer assumptions.",
+ "key_points": [
+  "Closed form solution: substitute variables into a formula for a fast, exact answer; downside is the underlying math can be too complex to build intuition from, even for someone with an advanced math PhD.",
+  "Open form solution: must be solved iteratively by computer (e.g., a binomial tree); accuracy improves and converges toward the correct answer as more periods/steps are used.",
+  "Open form solutions are more time-intensive to calculate but require only high-school/undergraduate-level math to understand.",
+  "Open form solutions depend on fewer assumptions than closed form solutions, so using one requires 'less of a leap of faith.'"
+ ],
+ "relationships": [
+  "Binomial tree model is the author's example of an open form solution",
+  "Black Scholes formula is the primary example of a closed form solution"
+ ],
+ "trading_implications": [
+  "Choice between closed and open form approaches trades off speed/ease of use against transparency and assumption dependence."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "361-362"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 1,
+   "topic": "Closed form vs. open form solutions"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

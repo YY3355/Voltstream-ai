@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Moneyness: At the Money, In the Money, Out of the Money",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Option Valuation",
+ "definition": "Classification of an option's status relative to the current price of its underlying, based on whether immediate exercise would be profitable.",
+ "core_idea": "An option is at the money when its strike equals the current underlying price, in the money when it has positive intrinsic value (profitable to exercise now), and out of the money when its intrinsic value is zero (worthless if exercised now).",
+ "key_points": [
+  "At the Money: strike price of the option equals the current price of the underlying.",
+  "In the Money: option has positive intrinsic value; would be profitable to exercise immediately.",
+  "Out of the Money: option has zero intrinsic value; worthless if exercised at the current time."
+ ],
+ "relationships": [
+  "Depends directly on Intrinsic Value",
+  "Depends on Strike Price relative to underlying price"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Out of the money does not mean the option has no value at all \u2014 it can still carry extrinsic (time) value even with zero intrinsic value."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "344-345"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_003.json",
+   "idx": 1,
+   "topic": "Moneyness: At the Money, In the Money, Out of the Money"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Transformers require AC and rely on magnetic induction between two windings",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission / Physics",
+ "definition": "A transformer converts power between current and voltage levels while keeping total power roughly constant, using magnetic induction between a primary winding (connected to the AC source) and a secondary winding (connected to the load), typically wound around a shared iron core; this only works with AC, which is why AC transmission is more common than DC.",
+ "core_idea": "Transformers exploit the fact that changing electrical current creates a magnetic field and a changing magnetic field induces a current, so an AC current in the primary winding induces a current in the secondary winding at a different voltage/current ratio set by the relative number of winding turns on each side.",
+ "key_points": [
+  "Transformers work only on AC power lines, which is a key reason AC transmission dominates over DC.",
+  "A simple iron-core transformer has an iron frame guiding magnetic flux, connecting a primary winding (source side) and secondary winding (load side).",
+  "The primary winding's magnetic flux induces current in the secondary winding.",
+  "The voltage ratio between the two sides depends on the relative number of times each side's wire is wound around the core."
+ ],
+ "relationships": [
+  "Winding turns ratio between primary and secondary determines the voltage transformation; transformers keep total power roughly constant while trading off voltage and current."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "One might think transformers could be used on DC lines too; the author is explicit that transformers only function on AC, which is a structural reason DC power lines can't be voltage-stepped by transformers."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "442-443"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 5,
+   "topic": "Transformers require AC and rely on magnetic induction between two windings"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

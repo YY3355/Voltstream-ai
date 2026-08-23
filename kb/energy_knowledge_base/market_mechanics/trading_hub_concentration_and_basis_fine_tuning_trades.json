@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Trading hub concentration and basis (fine-tuning) trades",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Trading Markets",
+ "definition": "Forward power trading is deliberately concentrated at a small number of major hub locations to concentrate liquidity, at the cost of imprecise geographic price matching.",
+ "core_idea": "Limiting forward trading to about 30 major hubs forces enough buyers and sellers into each contract to keep it liquid and standardized, but because those hubs cover broad geographic areas, the hub price won't exactly match the price at a specific delivery point, so traders often need a second, smaller trade to lock in the exact location price.",
+ "key_points": [
+  "Concentrating trading at limited hubs makes contracts easier to standardize and easier to find counterparties for.",
+  "The tradeoff is that hub prices represent an extended geographic area, not an exact point price.",
+  "Traders commonly execute power exposure in two steps: a standardized hub trade for approximate regional exposure, then a smaller trade to fine-tune the exact price.",
+  "The fine-tuning trade may or may not be available depending on market liquidity at the specific location."
+ ],
+ "relationships": [
+  "Directly tied to why the forward market differs structurally from the daily auction market."
+ ],
+ "trading_implications": [
+  "Basis risk exists between a hub forward position and an exact delivery-point exposure, and closing that gap requires a location-specific trade that isn't guaranteed to be available."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "175-176"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_001.json",
+   "idx": 3,
+   "topic": "Trading hub concentration and basis (fine-tuning) trades"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "PJM-East/PJM-West basis hedge case study",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Hedging",
+ "definition": "A worked example (steel producer, 1990) illustrating how a correlation-based proxy hedge between two power price zones can fail over a long horizon as the zones' fundamentals diverge.",
+ "core_idea": "A PJM-East steel producer, lacking exchange-traded futures for its own zone, hedged 25 years of electricity exposure using PJM-West futures because the two zones' prices were highly correlated (both peak on the same hot summer days due to shared weather); over the following decade PJM-East prices rose sharply due to regional population/demand growth while PJM-West prices fell, and because correlation stayed high throughout, no one investigated the diverging price levels until the hedge had accumulated a large loss.",
+ "key_points": [
+  "Setup: PJM-East (near Washington, D.C./Baltimore) had no exchange-traded futures; PJM-West (western MD/WV/PA) did.",
+  "The producer bought $500 million notional of PJM-West forwards ($20 million/year for 25 years) after confirming high correlation between the two zones.",
+  "Over the next 10 years, Baltimore-Washington population/commercial growth pushed PJM-East prices up, while PJM-West, without similar growth, saw prices decline.",
+  "Correlation stayed high the whole time because both zones share weather (peaks on hot summer days) even as absolute price levels diverged.",
+  "The day-to-day correlation masked the multi-year trend divergence, so the widening gap went unnoticed until the hedge had produced a large loss."
+ ],
+ "relationships": [
+  "Concrete illustration of \"Correlated does not mean a good hedge.\""
+ ],
+ "trading_implications": [
+  "Long-dated proxy hedges across locations need periodic review of the actual price/basis trend, not just an initial or ongoing correlation check, since correlation reflects co-movement of swings, not convergence of price levels."
+ ],
+ "caveats": [
+  "Assuming that because two zones' prices peak and trough together (weather-driven correlation), the zones' price levels will also stay close together over time."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "322-323"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_003.json",
+   "idx": 3,
+   "topic": "PJM-East/PJM-West basis hedge case study"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

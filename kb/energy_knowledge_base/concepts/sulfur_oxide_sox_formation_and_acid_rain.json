@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Sulfur Oxide (SOx) Formation and Acid Rain",
+ "type": "concept",
+ "category": "Environmental / Emissions",
+ "subcategory": "Criteria Pollutants",
+ "definition": "SOx (generically sulfur oxides, chiefly SO2) forms when sulfur naturally distributed throughout fossil fuels is burned; in the presence of NO2 as a catalyst, SO2 converts into sulfuric acid, a principal component of acid rain.",
+ "core_idea": "Fuel-bound sulfur becomes SO2 upon combustion and can be catalytically converted to sulfuric acid by NO2; acid rain's damage is cumulative rather than immediate \u2014 small amounts aren't acutely dangerous, but buildup over time kills exposed plants and animals once acidity crosses a threshold.",
+ "key_points": [
+  "Sulfur is distributed throughout fossil fuels and forms SO2 when the fuel is burned.",
+  "'SOx' is the generic abbreviation for sulfur oxides.",
+  "NO2 acts as a catalyst that converts SO2 into sulfuric acid.",
+  "Acid rain harm is cumulative: minor exposure isn't immediately dangerous, but buildup eventually kills exposed plants and animals.",
+  "Like NOx, SOx pollution is generally addressed at the regional level rather than globally."
+ ],
+ "relationships": [
+  "Depends on NOx: NO2 is the catalyst that drives the SO2-to-sulfuric-acid conversion."
+ ],
+ "trading_implications": [
+  "As a regionally regulated pollutant, SOx compliance costs and any market-based control mechanisms are geography-specific for generators burning sulfur-containing fuels."
+ ],
+ "caveats": [
+  "One might think the NO2 catalyst is the source of the acid; the sulfur originates from the fuel itself, and NO2 only accelerates its conversion to sulfuric acid."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "287-289"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_001.json",
+   "idx": 2,
+   "topic": "Sulfur Oxide (SOx) Formation and Acid Rain"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

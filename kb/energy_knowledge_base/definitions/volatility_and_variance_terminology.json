@@ -1,0 +1,56 @@
+{
+ "canonical_topic": "Volatility and variance terminology",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Value at Risk",
+ "definition": "Standard terminology linking volatility (standard deviation, \u03c3) and variance (\u03c3\u00b2) as used in portfolio risk calculations.",
+ "core_idea": "Volatility (\u03c3) is a synonym for a portfolio's standard deviation; variance (\u03c3\u00b2) is its square and is a synonym for mean square error.",
+ "key_points": [
+  "Volatility is abbreviated with lowercase sigma (\u03c3) and is synonymous with standard deviation.",
+  "Variance is the square of volatility, abbreviated sigma squared (\u03c3\u00b2), and is synonymous with mean square error.",
+  "Portfolio variance is calculated as the sum of the component assets' variances plus a correlation adjustment term (the author describes this conceptually without spelling out the full equation)."
+ ],
+ "relationships": [
+  "Underpins parametric VAR, which relies on mean and standard deviation to characterize a normal distribution.",
+  "The correlation adjustment referenced here is the mathematical basis for the diversification effects described in 'Portfolio VAR and diversification.'"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Variance-volatility relationship",
+   "formula": "\u03c3\u00b2 = \u03c3 \u00d7 \u03c3",
+   "variables": {
+    "\u03c3": "volatility / standard deviation of the portfolio or asset",
+    "\u03c3\u00b2": "variance / mean square error"
+   },
+   "source": {
+    "chapter": 30,
+    "pages": "562-565",
+    "section_hint": "6.2 VALUE AT RISK \u2014 Portfolio VAR"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 3,
+   "topic": "Volatility and variance terminology"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

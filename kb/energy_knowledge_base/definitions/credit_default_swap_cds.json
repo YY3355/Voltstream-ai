@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Credit Default Swap (CDS)",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Credit Derivatives",
+ "definition": "A credit default swap lets a lower-credit-quality party effectively buy \"credit insurance\" by swapping their credit risk exposure for that of a higher-credit-quality counterparty, though the CDS itself doesn't remove credit risk entirely.",
+ "core_idea": "A CDS transfers credit exposure to a third party rather than eliminating it \u2014 the buyer is still exposed if the CDS issuer itself defaults.",
+ "key_points": [
+  "CDS trades exchange the credit quality associated with a risk for that of a better-rated counterparty.",
+  "CDS trades do not eliminate credit risk outright \u2014 there remains a chance the CDS issuer itself fails to pay."
+ ],
+ "relationships": [
+  "Mitigation tool related to counterparty credit risk"
+ ],
+ "trading_implications": [
+  "Using a CDS to manage credit exposure introduces new counterparty risk on the CDS issuer, so it shifts rather than removes risk."
+ ],
+ "caveats": [
+  "Buying a CDS does not fully eliminate credit risk; it substitutes the original counterparty's credit risk for the CDS issuer's."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 10,
+   "topic": "Credit Default Swap (CDS)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "The nuclear fuel cycle",
+ "type": "market_mechanic",
+ "category": "Power Generation",
+ "subcategory": "Nuclear",
+ "definition": "The nuclear cycle is the sequence of stages nuclear fuel passes through: exploration/mining, milling into yellowcake, conversion to uranium hexafluoride gas, and enrichment.",
+ "core_idea": "Raw uranium ore is mined, ground into a powder called yellowcake, converted into uranium hexafluoride (UF6) gas, and then enriched \u2014 typically via centrifuge, which uses the mass difference between U-238 and U-235 to concentrate the fissionable U-235 needed to sustain a reaction.",
+ "key_points": [
+  "Stage 1-2: exploration and mining remove uranium-bearing rock from the ground.",
+  "Stage 3: at a processing plant, uranium is separated from other rock and milled into a powder called yellowcake.",
+  "Stage 4: yellowcake is converted into a gas by combining uranium with fluoride to form uranium hexafluoride (UF6).",
+  "Stage 5: enrichment brings the fuel to a desired ratio of fissionable Uranium-235 to nonfissionable Uranium-238.",
+  "The most common enrichment method spins UF6 gas in a centrifuge; heavier U-238 moves outward while lighter, fissionable U-235 is collected from the inside.",
+  "Most naturally occurring uranium is not enriched enough to sustain a nuclear reaction on its own \u2014 enrichment is required to reach a sufficient concentration of U-235.",
+  "U-235 is favorable because it fissions easily, releasing more energy than is required to split its nucleus."
+ ],
+ "relationships": [
+  "Precedes reactor fuel loading",
+  "Enrichment ratio determines whether a chain reaction can be sustained"
+ ],
+ "trading_implications": [
+  "The enrichment/mining supply chain (limited economically extractable deposits, mining, milling, conversion, centrifuge enrichment) is a multi-stage cost and supply-security factor in uranium fuel markets."
+ ],
+ "caveats": [
+  "Mined uranium is not directly usable as reactor fuel; it must go through milling, conversion, and enrichment before it can sustain fission."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "471"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_000.json",
+   "idx": 3,
+   "topic": "The nuclear fuel cycle"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

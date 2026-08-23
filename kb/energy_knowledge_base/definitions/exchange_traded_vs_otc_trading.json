@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Exchange-Traded vs OTC Trading",
+ "type": "definition",
+ "category": "Market Structure",
+ "subcategory": "Trading Venues",
+ "definition": "An exchange is an organized marketplace for standardized securities/commodities where the exchange itself acts as counterparty to every trade and requires margin as a good-faith deposit. OTC (over-the-counter) trading is privately negotiated between two parties without an exchange intermediary, offering high customization but carrying significant counterparty credit risk.",
+ "core_idea": "Exchange trading sacrifices customization for standardization and reduced counterparty risk (via the exchange-as-counterparty and margin), while OTC trading sacrifices that safety for flexibility.",
+ "key_points": [
+  "Exchanges require posted margin as a good-faith deposit from traders.",
+  "OTC trades are typically direct two-party agreements, most commonly governed by the ISDA master agreement.",
+  "OTC contracts are usually not considered 'securities' because they can't be resold/exchanged without modifying the original agreement.",
+  "Forwards are the canonical OTC instrument (no margin, no cash flows before delivery); futures are the canonical exchange instrument (daily mark-to-market margin settlement)."
+ ],
+ "relationships": [
+  "Connects Forward vs Future definitions and the ISDA Agreement's netting provision, which mitigates OTC counterparty risk."
+ ],
+ "trading_implications": [
+  "Choosing OTC forwards vs. exchange futures is a tradeoff between customization/no upfront margin (OTC) and lower counterparty risk/daily cash settlement (exchange)."
+ ],
+ "caveats": [
+  "Assuming all derivatives are securities \u2014 the author notes OTC contracts generally are not, unlike exchange-traded futures/options."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 2,
+   "topic": "Exchange-Traded vs OTC Trading"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

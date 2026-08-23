@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Actual (all-in) position vs. basis position",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Position Types",
+ "definition": "An actual (all-in) position is exposure to the outright physical price of gas at one location; a basis position is exposure only to the spread between two locations' prices.",
+ "core_idea": "Because a basis price is itself a spread, holding a basis position means being simultaneously exposed to two locations rather than to an outright price level.",
+ "key_points": [
+  "An actual/all-in position: e.g., a trader physically owning gas at a location is exposed to that location's outright price.",
+  "A basis position: exposure to the difference between the basis location's price and the index (Henry Hub) location's price.",
+  "A long basis position at a location (e.g., Waha) is economically equivalent to physically owning gas at that location while being obligated to deliver gas at Henry Hub."
+ ],
+ "relationships": [
+  "Basis positions are built from the same basis-price definition as the pricing terminology item.",
+  "Basis positions are typically executed via a Henry Hub futures trade plus a basis swap."
+ ],
+ "trading_implications": [
+  "A long basis position isolates locational spread risk without taking outright Henry Hub price risk, since the position nets against an implied Henry Hub delivery obligation."
+ ],
+ "caveats": [
+  "Confusing a basis position (spread exposure, two locations) with an actual position (outright exposure, one location)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "148"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_003.json",
+   "idx": 2,
+   "topic": "Actual (all-in) position vs. basis position"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

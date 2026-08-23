@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "NGL liquefaction, storage, transport, and sourcing",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Natural Gas Liquids",
+ "definition": "Heavier NGLs such as propane and butane liquefy easily under only moderate compression, shrinking roughly 270-fold in volume, which lets them be stored and moved as liquids and released as gas on demand; they are recovered from raw natural gas at processing plants or from crude oil at refineries.",
+ "core_idea": "NGLs' ability to liquefy under modest pressure makes them practical to store, ship, and dispense (e.g., a grill propane tank), and they are commonly recovered as a byproduct of natural gas processing and oil refining, especially from shale plays developed via fracking.",
+ "key_points": [
+  "Compression liquefies NGLs like propane and butane far more easily than methane.",
+  "Liquefied NGLs occupy roughly 1/270th the volume of the gaseous form.",
+  "Only moderate pressure is needed for this compression, enabling practical liquid storage and transport.",
+  "A common consumer use is grill/cooking fuel: propane is stored liquefied under pressure and evaporates to gas when a valve is opened.",
+  "NGLs are commonly dissolved within crude oil or natural gas and are abundant in shale deposits accessed via fracking.",
+  "NGLs are separated out at natural gas processing plants (from gas) or at refineries (from crude oil)."
+ ],
+ "relationships": [
+  "Natural gas liquids (NGLs) defined",
+  "Cheap fracked natural gas undercut U.S. carbon legislation"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "39-40"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 6,
+   "topic": "NGL liquefaction, storage, transport, and sourcing"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

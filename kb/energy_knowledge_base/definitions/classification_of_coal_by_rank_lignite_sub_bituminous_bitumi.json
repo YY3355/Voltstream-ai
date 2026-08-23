@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Classification of coal by rank: lignite, sub-bituminous, bituminous, anthracite",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Coal Types",
+ "definition": "Coal used as fuel is classified into four main ranks by carbon content and heat energy \u2014 lignite, sub-bituminous, bituminous, and anthracite \u2014 with higher-carbon ranks generally containing more heat energy but being harder to ignite; other very high-carbon forms such as graphite and diamonds are technically coal but are not usable as fuel.",
+ "core_idea": "There is a fundamental trade-off in coal fuel quality: as carbon content and heat energy rise from lignite to anthracite (and theoretically to graphite/diamond), ease of ignition falls, so extremely high-quality carbon forms become impractical to burn.",
+ "key_points": [
+  "Coal is classified for fuel purposes mainly by carbon content and heat energy output.",
+  "The four fuel-grade coal types, in ascending order of carbon/energy content, are lignite, sub-bituminous, bituminous, and anthracite.",
+  "Graphite and diamond are nearly 100% carbon and technically coal, but are not practical fuels because they are hard to ignite.",
+  "Low-quality coal ignites easily but has lower energy content; higher-quality coal is harder to ignite but has substantially more energy content.",
+  "Extremely high-quality coal (e.g., graphite/diamond) has very high potential heat energy but is nearly impossible to ignite under normal conditions.",
+  "Coal types also vary in the type and amount of pollution they produce."
+ ],
+ "relationships": [
+  "Ignition ease is inversely related to carbon content/energy density across the coal ranks."
+ ],
+ "trading_implications": [
+  "Different coal grades are not interchangeable fuels; heat content and pollution profile differences affect delivered value and regulatory cost, so contracts should specify grade."
+ ],
+ "caveats": [
+  "Higher carbon content does not automatically make a substance a usable fuel coal \u2014 ignitability matters as much as energy content (graphite/diamond illustrate this limit)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "251"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 4,
+   "topic": "Classification of coal by rank: lignite, sub-bituminous, bituminous, anthracite"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

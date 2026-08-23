@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Master Netting Agreements",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Counterparty Credit Risk",
+ "definition": "A master netting agreement is a contract that requires a bankruptcy court to net together all of a defaulting counterparty's offsetting trade exposures and treat them as one combined exposure, rather than settling each trade separately.",
+ "core_idea": "Because a default on any single obligation is treated as a default on all obligations with that counterparty, netting collapses many gross exposures into one net exposure, reducing the amount at risk in a bankruptcy.",
+ "key_points": [
+  "Default on any one obligation triggers default treatment across all obligations with that counterparty.",
+  "Without a netting agreement, a bankruptcy court will only enforce the money the bankrupt party actually owes \u2014 it will not offset that against money the bankrupt party is owed.",
+  "Netting agreements materially reduce credit exposure between trading counterparties by converting many gross claims into a single net claim."
+ ],
+ "relationships": [
+  "Reduces effective exposure that CVA/DVA calculations must cover"
+ ],
+ "trading_implications": [
+  "Firms should insist on master netting agreements before building up bilateral trading volume with a counterparty, since exposure without netting is measured gross, not net."
+ ],
+ "caveats": [
+  "Assuming offsetting trades automatically net against each other in bankruptcy \u2014 without a netting agreement, only the bankrupt party's payables are subject to court enforcement, not a netted position."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 31,
+   "pages": "571-575"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch31/chunk_001.json",
+   "idx": 0,
+   "topic": "Master Netting Agreements"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

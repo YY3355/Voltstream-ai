@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Heavy Metal Pollution from Coal Combustion (Mercury)",
+ "type": "concept",
+ "category": "Environmental / Emissions",
+ "subcategory": "Particulate & Toxic Pollution",
+ "definition": "Coal-fired power plants are a leading source of atmospheric heavy metal pollution, with mercury \u2014 a potent neurotoxin \u2014 as the most dangerous pollutant of this type; lead and plutonium are cited as other combustion-released heavy metals.",
+ "core_idea": "Mercury is dangerous at effectively any exposure level, so unlike CO2 or acid-rain precursors, cap-and-trade approaches (which permit averaging emissions across sources) are considered impractical for it \u2014 it requires a different regulatory approach.",
+ "key_points": [
+  "In many regions, coal-fired power plants can account for up to roughly 90% of atmospheric mercury emissions.",
+  "Mercury exposure is linked to autism, sensory impairments, and death, among other medical problems.",
+  "Public health risk from mercury varies by region, but any level of mercury emission is considered dangerous \u2014 there is no safe threshold.",
+  "Because there is no safe threshold, cap-and-trade solutions (workable for greenhouse gases and acid rain precursors) are considered impractical for mercury.",
+  "Lead and plutonium are given as other examples of heavy metals releasable through combustion."
+ ],
+ "relationships": [
+  "Contrasts with CO2 and SOx/NOx, where cap-and-trade mechanisms are viable regulatory tools; mercury is presented as the exception."
+ ],
+ "trading_implications": [
+  "Because mercury doesn't suit cap-and-trade, coal generators likely face direct emission limits rather than market-based allowance trading for this pollutant specifically."
+ ],
+ "caveats": [
+  "One might assume all emissions, including mercury, can be handled via cap-and-trade like CO2 or SO2; the text explicitly states this doesn't work for mercury given its zero-safe-threshold toxicity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 10,
+   "pages": "287-289"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch10/chunk_001.json",
+   "idx": 3,
+   "topic": "Heavy Metal Pollution from Coal Combustion (Mercury)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

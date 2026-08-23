@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Coal as a thinly-traded commodity",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Coal",
+ "definition": "Because coal is cheap relative to its bulk, shipping it very far adds a large percentage to its delivered cost, so most coal is consumed within a couple hundred miles of the mine, usually by a nearby power plant.",
+ "core_idea": "Coal's economics push mines and power plants to co-locate, which leaves few independent buyers and sellers and makes coal a commodity that matters enormously to power generation but is not itself a heavily traded financial product.",
+ "key_points": [
+  "Transportation cost is a much larger share of delivered coal cost than for other fossil fuels because the underlying commodity price is low.",
+  "Most coal is used within roughly a couple hundred miles of the mine.",
+  "Mines and power plants are often co-located, reducing the number of arm's-length market participants.",
+  "Coal is central to electricity generation but not a heavily traded financial product on its own."
+ ],
+ "relationships": [
+  "Electrical generation demand",
+  "Natural gas price competition (fracking)"
+ ],
+ "trading_implications": [
+  "Limited open-market liquidity in coal means it is less useful than gas or power as a hedging or trading instrument, even though it strongly influences power prices."
+ ],
+ "caveats": [
+  "That coal, being a major generation fuel, must also be a liquid, widely traded financial commodity like natural gas or crude oil."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "38-38"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 0,
+   "topic": "Coal as a thinly-traded commodity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Model overlay",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Model Risk",
+ "definition": "A model overlay is a manual adjustment applied to a model's output by someone outside the model itself, used to impose a firm's own judgment on top of the model's calculation.",
+ "core_idea": "Firm management can override or scale a model's output from the outside \u2014 for example, deliberately doubling a worst-case loss estimate to be more conservative \u2014 without changing the model's internal logic.",
+ "key_points": [
+  "The overlay comes from an external source (e.g., firm management), not from the model's own calculation.",
+  "The example given is management doubling the risk team's worst-case loss estimate to get a more conservative figure.",
+  "It is presented as a discrete tool distinct from both position limits and modeling reserves."
+ ],
+ "relationships": [
+  "One of the named tools/terms under model risk controls, alongside modeling reserve."
+ ],
+ "trading_implications": [
+  "Risk figures reported to a firm's leadership may already reflect a deliberate conservative adjustment layered on top of the raw model output, not the model's unadjusted number."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 32,
+   "pages": "590-590"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch32/chunk_002.json",
+   "idx": 2,
+   "topic": "Model overlay"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

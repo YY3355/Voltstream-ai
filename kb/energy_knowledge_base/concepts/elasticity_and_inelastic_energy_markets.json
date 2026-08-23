@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Elasticity and inelastic energy markets",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Supply and Demand",
+ "definition": "Elasticity measures how much supply and demand respond to price changes; when they don't respond ('inelastic'), prices can spike or crash sharply rather than adjusting smoothly.",
+ "core_idea": "In an inelastic market, prices skyrocket when demand exceeds supply and crash when supply exceeds demand, because quantity doesn't adjust to absorb the imbalance \u2014 both events are common in energy markets.",
+ "key_points": [
+  "Energy supply and demand are often constant/unresponsive to price changes in the short run, causing price disruptions instead of smooth equilibration.",
+  "Price spikes and price crashes are both described as fairly common occurrences in energy markets."
+ ],
+ "relationships": [
+  "Directly follows from the Law of Supply/Demand; explains why theoretical equilibrium often fails to hold in energy"
+ ],
+ "trading_implications": [
+  "Traders should expect sharper, more volatile price moves in energy markets than in markets with elastic supply/demand response."
+ ],
+ "caveats": [
+  "Assuming energy prices will smoothly equilibrate the way textbook elastic-market prices do."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "75"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_000.json",
+   "idx": 4,
+   "topic": "Elasticity and inelastic energy markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

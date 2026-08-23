@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Compression heating, cooling, and impurity removal",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Pipeline Infrastructure",
+ "definition": "Compressing gas raises its temperature; since cold gas is denser than hot gas, cooling the gas after compression lets more gas mass be moved at a given pipeline pressure, and also reduces corrosion caused by trace impurities.",
+ "core_idea": "Compressor stations cool gas after compression both to increase the effective transport capacity of the pipeline and to limit corrosion from the trace non-methane gases that are always present in natural gas.",
+ "key_points": [
+  "Compression inherently increases gas temperature",
+  "Colder gas is denser, so at a constant operating pressure more gas can be transported if it is kept cool",
+  "Cooler gas causes less corrosion in the pipeline",
+  "Natural gas is never pure methane and always carries trace amounts of other gases, some of which are corrosive",
+  "Compressor stations include scrubbing systems to remove these trace impurities and particulates/liquids before compression, preventing mechanical breakdowns"
+ ],
+ "relationships": [
+  "Part of the compressor station process described above"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Assuming compression is a purely mechanical pressure-boosting step with no thermal or gas-quality side effects"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "511-512"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_001.json",
+   "idx": 2,
+   "topic": "Compression heating, cooling, and impurity removal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

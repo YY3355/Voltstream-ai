@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Difficulty applying MTM to energy contracts",
+ "type": "concept",
+ "category": "Accounting & Reporting",
+ "subcategory": "Fair Value Accounting",
+ "definition": "Even where MTM is the required standard, actually pricing an energy contract at fair market value can be difficult when there's no real trading market for it or when the contract can't be reassigned to another party.",
+ "core_idea": "Illiquid markets may have no willing counterparty for a specific commodity/location, and some contracts \u2014 like a power purchase agreement tied to one physical generation facility \u2014 bundle non-tradable items (capacity, ancillary services) in a way that may only be transferable together with the physical unit itself, forcing accountants to judge which accounting treatment actually applies.",
+ "key_points": [
+  "Some markets are illiquid enough that there's no counterparty willing to transact a given commodity at a given location.",
+  "A contract may not be easily assignable to another party even if a willing buyer exists.",
+  "Example: a PPA specifying a particular generation facility may obligate purchase of non-tradable items (capacity, ancillary services) alongside power, and may not be sellable without selling the physical unit too.",
+  "This creates gray areas where accountants must determine which accounting rules apply to a given contract.",
+  "Hedge accounting is a third alternative to MTM and historical cost, used specifically for derivatives employed to hedge physical assets."
+ ],
+ "relationships": [
+  "Relates to Mark-to-Market Accounting and Historical Cost Accounting as the set of possible treatments; hedge accounting is the third option, not detailed in this chunk."
+ ],
+ "trading_implications": [
+  "A contract's tradability/assignability \u2014 not just its label as a derivative \u2014 determines whether a clean MTM price is even obtainable."
+ ],
+ "caveats": [
+  "Being structured as a derivative doesn't guarantee a contract has a real, liquid market to mark against."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "544-547"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_000.json",
+   "idx": 2,
+   "topic": "Difficulty applying MTM to energy contracts"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

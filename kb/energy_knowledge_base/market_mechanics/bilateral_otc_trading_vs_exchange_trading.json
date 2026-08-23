@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Bilateral (OTC) trading vs. exchange trading",
+ "type": "market_mechanic",
+ "category": "Trading",
+ "subcategory": "Market Structure",
+ "definition": "Energy transactions can be arranged directly between two counterparties (bilateral or over-the-counter trading) or routed through an intermediary such as an exchange (e.g., NYMEX or ICE).",
+ "core_idea": "Financial trading in energy grew up alongside physical trading because producers, utilities, industrial consumers, and speculators all need contracts to raise capital, guarantee supply, hedge output, or take price views, and they can satisfy that need either directly with a counterparty or via an exchange.",
+ "key_points": [
+  "Bilateral/OTC trading is done directly between two parties without an intermediary",
+  "Exchange trading uses an intermediary organization",
+  "NYMEX and ICE are named as common venues for energy products",
+  "Motivations for entering transactions include funding exploration/construction, guaranteeing fuel/power supply, hedging plant fuel purchases and power sales, locking in future power costs, and speculation"
+ ],
+ "relationships": [
+  "Long vs short",
+  "Power Marketer"
+ ],
+ "trading_implications": [
+  "Choice of bilateral vs exchange venue affects counterparty risk and standardization of the trade"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "24-24"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_001.json",
+   "idx": 5,
+   "topic": "Bilateral (OTC) trading vs. exchange trading"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

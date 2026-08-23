@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Solving for implied volatility",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing",
+ "definition": "Implied volatility is the volatility input that, when plugged into an option pricing model like Black-Scholes, reproduces the option's observed market price.",
+ "core_idea": "Because volatility can't be directly observed (unlike rates, prices, strikes, and expirations), it's backed out by iteratively guessing a volatility value, computing the model price, and comparing to the actual traded price until the two match.",
+ "key_points": [
+  "All other Black-Scholes inputs are observable or easily estimated from the market or contract terms.",
+  "Volatility is the one input that must be inferred rather than observed.",
+  "The standard method is numerical: guess sigma, solve Black-Scholes, compare to market price, and refine the guess iteratively."
+ ],
+ "relationships": [
+  "Feeds into Black-Scholes/Black 76 option pricing",
+  "Underlies the volatility smile"
+ ],
+ "trading_implications": [
+  "Traders quote and trade options in terms of implied volatility rather than dollar premium in many markets."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "367"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_004.json",
+   "idx": 0,
+   "topic": "Solving for implied volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

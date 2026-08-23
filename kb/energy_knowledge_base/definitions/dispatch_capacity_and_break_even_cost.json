@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Dispatch capacity and break-even cost",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack",
+ "definition": "Dispatch capacity is the maximum amount of power a plant can produce; break-even cost is the lowest price a plant can accept for its output and still avoid a loss.",
+ "core_idea": "These two figures are what populate a generation stack for each plant: capacity determines the width of its block, break-even cost determines its vertical position.",
+ "key_points": [
+  "Break-even cost is heavily influenced by fuel costs for fuel-dependent generators (e.g., natural gas)",
+  "Capacity is the amount of power (in MWh) a plant can contribute"
+ ],
+ "relationships": [
+  "Underpins bid placement strategy and the generation stack ordering"
+ ],
+ "trading_implications": [
+  "Break-even cost acts as an approximate floor for a plant's bid price"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "407-408"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 1,
+   "topic": "Dispatch capacity and break-even cost"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

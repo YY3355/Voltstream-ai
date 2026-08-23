@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Costless Collar",
+ "type": "trading_strategy",
+ "category": "Derivatives",
+ "subcategory": "Hedging Instruments",
+ "definition": "A hedge built from a short call (sets a price ceiling) paired with a long put (sets a price floor), with the two strikes chosen so the premium received from selling the call offsets the premium paid for the put, making net entry cost roughly zero.",
+ "core_idea": "A costless collar lets a hedger stay exposed to price moves between the floor and ceiling strikes while being protected against extreme moves outside that band, without paying cash up front.",
+ "key_points": [
+  "Combines a short call (caps upside price benefit) with a long put (protects downside).",
+  "Because one leg is short and the other long, strikes can be tuned so the premiums cancel out, requiring no upfront payment.",
+  "The hedger retains exposure to price movements between the two strike levels.",
+  "Contrasted with single-option hedges, which are less popular because outright option premiums are often too expensive."
+ ],
+ "relationships": [
+  "Related to option strategies and to futures/swap hedges as alternative hedging tools."
+ ],
+ "trading_implications": [
+  "Useful when a hedger wants downside protection but doesn't want to pay premium and is willing to give up some upside.",
+  "The 'no cash' framing can mask that the hedger is giving up value (via the capped upside) rather than truly getting the protection for free."
+ ],
+ "caveats": [
+  "Zero upfront cost does not mean the hedge has no economic cost \u2014 value is still being exchanged, just not as cash (see companion note on hidden costs)."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 33,
+   "pages": "595"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch33/chunk_001.json",
+   "idx": 0,
+   "topic": "Costless Collar"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

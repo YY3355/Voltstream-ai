@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Distillation as a Separation Method",
+ "type": "concept",
+ "category": "Refining & Processing",
+ "subcategory": "Distillation",
+ "definition": "Distillation is a physical separation process that exploits the fact that each substance in a mixture has its own distinct boiling point, allowing components to be pulled out one at a time rather than filtered or chemically separated.",
+ "core_idea": "A boiler heats a mixture until the component whose boiling point has been reached vaporizes and exits through tubing; a condenser then cools that vapor back into a purified liquid. Stepping the target temperature through different boiling points lets a mixture be broken into pure products.",
+ "key_points": [
+  "A distillation unit has two core parts: a boiler that heats the mixture to a target boiling point, and a condenser that cools the resulting vapor back into liquid.",
+  "At a given boiling point, only the matching substance turns to gas and leaves the boiler; other components stay behind in the liquid mixture.",
+  "Once a liquid reaches its boiling point, additional heat converts more of it to vapor rather than raising its temperature further, as long as the vapor can escape.",
+  "Distillation is described as the primary method for separating a fuel mixture into pure products such as gasoline and ethanol."
+ ],
+ "relationships": [
+  "Underpins refining processes that convert mixed feedstocks into distinct, separately traded fuel products"
+ ],
+ "trading_implications": [
+  "Because each fuel product requires its own distillation step, the energy cost of running boilers and condensers is a structural input to refined-product economics \u2014 relevant to margin analysis between crude/feedstock and finished fuels."
+ ],
+ "caveats": [
+  "Continuing to heat a liquid that is already at its boiling point does not make it hotter; it only speeds up the liquid-to-gas conversion, a common intuitive error."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 11,
+   "pages": "294-295"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch11/chunk_001.json",
+   "idx": 0,
+   "topic": "Distillation as a Separation Method"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

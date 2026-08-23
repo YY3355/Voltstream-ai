@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "National positions in emissions allocation disputes",
+ "type": "example",
+ "category": "Emissions Markets",
+ "subcategory": "History / Policy",
+ "definition": "Different blocs proposed emissions frameworks that each happened to favor their own economic position: the EU proposed taxing high-polluting countries to pay efficient ones; Russia pushed for caps set at 1990 historical levels; China and India pushed for per-capita emissions allocations; industrialized countries (US, EU, Russia, Japan) agreed among themselves to a 5% cut below 1990 levels.",
+ "core_idea": "Each bloc's proposed allocation rule tended to maximize its own emissions rights or economic advantage, which the author presents as the underlying reason a global compromise proved unreachable.",
+ "key_points": [
+  "The EU, having relatively efficient power plants, favored a scheme taxing high-polluting countries and transferring proceeds to efficient ones.",
+  "Russia advocated capping rights at 1990 historical levels; because Russia's economy (and thus emissions) had collapsed roughly 30% below 1990 levels by the mid-1990s negotiations, this would have given it large surplus emissions rights to resell \u2014 described as 'hot air' surplus capacity.",
+  "China and India, the world's largest and fourth-largest carbon emitters respectively at the time, advocated per-capita emissions targets, which \u2014 given their large populations \u2014 would let them keep building coal plants while still holding sellable surplus credits.",
+  "The US, EU, Russia, and Japan (as industrialized countries) agreed among themselves to cut emissions to 5% below 1990 levels, but the author notes this would still be insufficient to halt climate change if developing countries kept building highly polluting coal plants.",
+  "Despite the UN failing to reach a binding global agreement, many countries voluntarily followed most UN suggestions, resulting in uneven implementation of carbon emission schemes worldwide."
+ ],
+ "relationships": [
+  "Directly follows from the cost-allocation deadlock described above; feeds into the Kyoto Protocol's difficulty setting binding national allocations."
+ ],
+ "trading_implications": [
+  "A country's realized emissions relative to any negotiated baseline (e.g., Russia's post-Soviet collapse vs. a 1990 baseline) can create large surplus tradable allowances unrelated to actual abatement effort."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "264-265"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_000.json",
+   "idx": 7,
+   "topic": "National positions in emissions allocation disputes"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Day/night linkage forces joint valuation of operating scenarios",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Tolling Agreements / Valuation",
+ "definition": "Because some turbines (particularly steam turbines) cannot be cheaply shut down and restarted, the profitability of an operating scenario must be evaluated jointly across linked day and night periods rather than optimized period-by-period.",
+ "core_idea": "A single dispatch decision can bind daytime and nighttime operation together \u2014 e.g., a steam turbine may need to keep running at reduced capacity overnight (at a loss) purely to be available for daytime profits \u2014 so scenario valuation must net the day gain against the night loss as one combined outcome; this necessitated two additional named scenarios, 'CC Max' and 'Peaking Only.'",
+ "key_points": [
+  "Steam turbines may be unable to fully shut down and quickly restart due to restart costs, forcing reduced-capacity overnight operation.",
+  "Nighttime and weekend power prices are generally much lower than daytime prices.",
+  "A plant may need to accept an overnight loss in order to capture daytime profit; the scenario's value must combine both periods since one decision drives both.",
+  "'CC Max' scenario: combined-cycle units run at maximum dispatch during the day, drop to their most efficient mode at night to minimize losses.",
+  "'Peaking Only' scenario: added for cases where nighttime prices are so low that running the steam turbines at all is unprofitable, so only the peaking gas turbines operate."
+ ],
+ "relationships": [
+  "Extends the operating-scenarios framework; reflects the 'no single power price' theme (day vs. night power as different products)"
+ ],
+ "trading_implications": [
+  "Valuation must treat linked day/night dispatch decisions as one joint bet rather than optimizing each period in isolation"
+ ],
+ "caveats": [
+  "Assuming each time period (day, night) can be optimized independently when physical restart constraints link them"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "431-432"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 5,
+   "topic": "Day/night linkage forces joint valuation of operating scenarios"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

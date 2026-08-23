@@ -1,0 +1,50 @@
+{
+ "canonical_topic": "Location spread trade example: NP-15 vs. MID-C on an early snowmelt view",
+ "type": "example",
+ "category": "Power Markets",
+ "subcategory": "Locational Spreads",
+ "definition": "A worked example of a March location spread between California (NP-15) and the Pacific Northwest (MID-C) built on a forecast of an earlier-than-normal Cascade snowmelt.",
+ "core_idea": "A trader who believes government meteorologists' early-thaw forecast is correct, and that the market hasn't priced it in, goes long NP-15 and short MID-C futures to bet that California prices will be relatively higher than Pacific Northwest prices for March.",
+ "key_points": [
+  "Normally, Pacific Northwest power prices hit their seasonal low in April when Cascade snowmelt forces hydro dams to run at full capacity around the clock to avoid flooding, regardless of demand \u2014 this generation cannot be curtailed.",
+  "The trader's thesis: forecast warm Pacific water temperatures will bring an early thaw, pulling this low-price, must-run hydro period earlier than the market expects.",
+  "Trade structure: buy NP-15 peak power futures (long California) and sell MID-C peak power futures (short Pacific Northwest) for the March contract.",
+  "A key risk the author flags: natural gas is the marginal fuel in California, so if gas prices fall, California power prices fall too, working against the long NP-15 leg independent of the snowmelt thesis.",
+  "The author also questions the spread structure itself: an early warm front and cheap Columbia River hydro power is more likely to push California prices down than up, suggesting an outright short MID-C position might carry less risk than the spread.",
+  "Because there is no transmission link being used, the position must be closed by an offsetting futures trade before expiration \u2014 it cannot be settled by physically delivering power."
+ ],
+ "relationships": [
+  "Illustrates location spread trades",
+  "Depends on marginal-fuel price transmission (gas -> California power)"
+ ],
+ "trading_implications": [
+  "Profit or loss is realized only if futures prices move in the expected direction by the time the position is liquidated, and liquidation must occur before contract expiration.",
+  "A directional (outright) trade can sometimes be a lower-risk expression of a market view than a spread, if the two legs' expected price responses to the same event are not actually offsetting."
+ ],
+ "caveats": [
+  "Choosing a spread trade isn't automatically lower risk than an outright position \u2014 if the underlying event is expected to move both legs in the same direction, the spread structure itself may be the wrong trade design."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "447-448"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_002.json",
+   "idx": 4,
+   "topic": "Location spread trade example: NP-15 vs. MID-C on an early snowmelt view"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

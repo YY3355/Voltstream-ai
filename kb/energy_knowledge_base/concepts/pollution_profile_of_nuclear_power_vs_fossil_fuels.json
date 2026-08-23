@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Pollution profile of nuclear power vs. fossil fuels",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Nuclear power produces no CO2, sulfur dioxide, or nitrogen oxide emissions, but concentrated nuclear waste poses an immediate, deadly health hazard that differs in kind from diffuse fossil-fuel pollution.",
+ "core_idea": "The author contrasts fossil-fuel pollution, which mainly causes gradual harm (climate change, ecosystem damage) without an immediate lethal threat, against nuclear waste, which is deadly when concentrated and thus presents a direct, acute danger rather than a diffuse one.",
+ "key_points": [
+  "Nuclear power generates no CO2, sulfur dioxide, or nitrogen oxide pollution.",
+  "Fossil fuel pollution is characterized as causing climate change, wildlife harm, and environmental damage, but not an immediate lethal threat to people.",
+  "Concentrated nuclear waste is deadly and presents an immediate health threat.",
+  "Storing concentrated nuclear waste safely is described as very problematic given its danger."
+ ],
+ "relationships": [
+  "Builds on the earlier point that regulation forces nuclear waste to be concentrated rather than diluted."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "\"Nuclear is pollution-free\" overlooks that the author distinguishes emissions-free operation from the separate, acute hazard posed by concentrated radioactive waste."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "475-475"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 7,
+   "topic": "Pollution profile of nuclear power vs. fossil fuels"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

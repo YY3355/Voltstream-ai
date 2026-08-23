@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Physical assets as a cheaper substitute for financial options",
+ "type": "trading_strategy",
+ "category": "Derivatives",
+ "subcategory": "Physical vs. Financial Optionality",
+ "definition": "Because financial option premiums can be very expensive, a trader can sometimes obtain equivalent exposure more cheaply by investing in physical infrastructure (like transmission or generation capacity) whose construction cost is lower than the premium for the equivalent financial option.",
+ "core_idea": "Physical wheeling deals let a trader buy optionality priced off construction/rental cost rather than financial option premiums, and the trader can later lock in profit by selling the equivalent financial option once the physical position is in place.",
+ "key_points": [
+  "Wheeling deals let traders acquire option-like exposure priced by equipment/construction cost rather than by the market price of a financial option.",
+  "If construction costs are low relative to the financial option's value, the physical route is a cheaper way to obtain the same financial exposure.",
+  "A trader can lock in a riskless profit by later selling the equivalent financial option and keeping the difference between the two costs."
+ ],
+ "relationships": [
+  "Option premiums",
+  "Physical infrastructure investment",
+  "Arbitrage"
+ ],
+ "trading_implications": [
+  "Compare the cost of a physical build/rental versus the market premium of the equivalent financial option before choosing how to express a trade view."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "53"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 2,
+   "topic": "Physical assets as a cheaper substitute for financial options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

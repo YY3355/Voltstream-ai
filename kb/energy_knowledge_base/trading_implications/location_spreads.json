@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Location spreads",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Trading Strategies",
+ "definition": "A spread trade that speculates on the natural gas price difference between two different geographic locations.",
+ "core_idea": "Because gas transport isn't instantaneous and storage is often limited, regional supply-demand imbalances create price differences between locations that a trader can bet on.",
+ "key_points": [
+  "Natural gas transportation is not instantaneous, and storage capacity is often limited.",
+  "In peak-demand periods, an area's demand can exceed what pipelines or storage can supply, pushing local prices up until more supply arrives.",
+  "Mild weather can reduce demand and create a regional supply glut, causing prices to fall."
+ ],
+ "relationships": [
+  "A type of spread trade"
+ ],
+ "trading_implications": [
+  "Traders can profit from anticipated regional supply-demand mismatches without taking a view on the overall market direction."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "152-156"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_004.json",
+   "idx": 1,
+   "topic": "Location spreads"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

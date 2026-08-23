@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "FTR Options",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Congestion / Basis Risk Management",
+ "definition": "An FTR option is a variant of the FTR contract where one party pays an up-front premium to avoid ever having to pay congestion charges, rather than taking on a two-way obligation.",
+ "core_idea": "Buying an FTR option functions like buying insurance against higher prices caused by congestion \u2014 the buyer's downside is capped at the premium paid, unlike a standard obligation-style FTR where either side can end up paying.",
+ "key_points": [
+  "Structured as an option rather than an obligation: buyer pays a premium up front.",
+  "Protects the buyer only from paying on congestion charges (asymmetric protection vs. the two-way obligation FTR)."
+ ],
+ "relationships": [
+  "Derived from / structured as a variant of the base FTR obligation contract."
+ ],
+ "trading_implications": [
+  "Preferred over a standard FTR obligation when a party wants defined, capped downside (premium only) rather than open-ended two-way congestion payment risk."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "178"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 2,
+   "topic": "FTR Options"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

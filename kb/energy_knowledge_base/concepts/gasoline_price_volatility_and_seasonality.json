@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Gasoline price volatility and seasonality",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Gasoline",
+ "definition": "Gasoline prices are highly volatile and follow a seasonal pattern: rising rapidly in early spring/summer, stabilizing in late summer, and declining in the coldest winter months, driven by crude prices, consumer demand, and formulation requirements.",
+ "core_idea": "Gasoline's high price volatility stems from limited refinery-driven supply flexibility combined with consumers' inability to substitute other fuels for gasoline, layered on top of a seasonal demand/formulation cycle.",
+ "key_points": [
+  "Gas prices generally rise rapidly in early spring and summer, stabilize later in summer, and decline in the coldest winter months.",
+  "Gasoline price volatility is heightened because refinery supply is limited in how much it can flex and because consumers have no practical substitute fuel for gasoline.",
+  "Gasoline prices are driven by the combination of crude oil prices, consumer demand, and formulation requirements."
+ ],
+ "relationships": [
+  "Seasonal demand pattern (per the gasoline demand item) combines with supply inflexibility to produce high volatility"
+ ],
+ "trading_implications": [
+  "The inelastic supply/demand combination implies gasoline prices can react sharply to short-term supply disruptions (e.g. refinery outages) more than crude oil itself."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "228-230"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 7,
+   "topic": "Gasoline price volatility and seasonality"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

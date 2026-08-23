@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Anthracite coal",
+ "type": "definition",
+ "category": "Commodities",
+ "subcategory": "Coal Types",
+ "definition": "Anthracite is the highest-grade fuel coal, about 95% carbon with a hard glossy black surface, difficult to ignite but burns with a steady flame, has low moisture and produces relatively little pollution; it has roughly the same heat energy as bituminous coal, is much less common, and its high price makes it uneconomical for power plant use.",
+ "core_idea": "Anthracite is the cleanest and highest-carbon fuel coal, but its difficulty of ignition, scarcity, and cost put it outside the economics of typical power plant use despite comparable heat content to bituminous coal.",
+ "key_points": [
+  "Anthracite is about 95 percent carbon with a hard, glossy black surface.",
+  "It ignites with difficulty but produces a steady flame once lit.",
+  "It has low moisture content and produces relatively little pollution compared to other coal grades.",
+  "Its heat energy is approximately the same as bituminous coal.",
+  "It is much less common than bituminous coal.",
+  "Its high price makes it uneconomical to use in power plants."
+ ],
+ "relationships": [
+  "Highest rank of the four fuel coal types; comparable heat content to bituminous coal despite much higher carbon content."
+ ],
+ "trading_implications": [
+  "Despite being the 'best' fuel coal by carbon/pollution profile, anthracite's price and scarcity exclude it from typical power-generation economics, so it should not be assumed to compete directly with bituminous coal for that use."
+ ],
+ "caveats": [
+  "Higher carbon/quality grade (anthracite) does not translate into more heat energy than bituminous coal \u2014 the text states the two are approximately equal in heat energy."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "252"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 8,
+   "topic": "Anthracite coal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

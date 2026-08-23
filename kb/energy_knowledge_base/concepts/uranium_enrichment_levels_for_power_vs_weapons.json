@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Uranium enrichment levels for power vs. weapons",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Nuclear Power",
+ "definition": "Raw uranium ore does not come out of the ground with the right concentration of fissionable Uranium-235 for use as reactor fuel, so it must be processed to hit a target enrichment level \u2014 too little U-235 and the reaction won't sustain, too much and it runs away too fast.",
+ "core_idea": "A commercial reactor targets a fairly low enrichment (around 4% U-235) for a controlled, moderate reaction, while weapons-grade material requires much higher purity (90%+).",
+ "key_points": [
+  "Nuclear fuel must be processed/enriched before use because raw uranium does not have the correct U-235 concentration.",
+  "Too little U-235 means the chain reaction won't occur; too much means it happens too fast (uncontrolled).",
+  "A power plant might target roughly 4% U-235 enrichment for a moderate, controllable reaction.",
+  "A weapon requires much higher enrichment, around 90% or more.",
+  "After enrichment, uranium is converted back into a solid form (uranium dioxide, UO2) and shaped for its final use."
+ ],
+ "relationships": [
+  "Same enrichment process underlies both civilian fuel and weapons-grade material, which is the technical basis of the proliferation concern."
+ ],
+ "trading_implications": [
+  "The wide gap between power-grade (~4%) and weapons-grade (~90%+) enrichment is the technical basis for enrichment-capacity policy risk, which can affect uranium/enrichment supply chains relevant to nuclear generator fuel costs."
+ ],
+ "caveats": [
+  "Nuclear fuel is not simply mined uranium \u2014 it must be enriched to a specific, narrow target concentration, not maximized."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 22,
+   "pages": "473-473"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch22/chunk_001.json",
+   "idx": 0,
+   "topic": "Uranium enrichment levels for power vs. weapons"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

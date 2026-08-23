@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Why peak-driven pricing alone is an unpopular way to fund reliability",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "The economic problem that secondary markets like capacity markets exist to solve: how to pay generators who are needed only rarely, at peak, without relying solely on price spikes.",
+ "core_idea": "If grids build enough capacity for extreme peak demand, much of that capacity sits idle most of the year; the only way to make it economic through energy prices alone is to let prices spike sharply during peaks, which angers consumers, so grids instead created separate payment mechanisms (ancillary services, capacity, PPA markets) to compensate underutilized generation.",
+ "key_points": [
+  "Peak demand from extreme weather can be double or triple demand in normal periods.",
+  "Capacity built for peak events lies idle for extended periods otherwise, so someone must fund its construction/maintenance.",
+  "Allowing energy prices to spike during peak periods is one way to compensate owners of underused plants, but it produces unpopular high consumer bills.",
+  "As an alternative, markets developed ancillary services, capacity, and PPA mechanisms to compensate generators for meeting uncertain demand without relying purely on price spikes."
+ ],
+ "relationships": [
+  "Motivates the existence of ancillary services markets and capacity markets."
+ ],
+ "trading_implications": [
+  "Scarcity/peaker economics can show up either as energy price spikes or as separate capacity/ancillary payments depending on market design \u2014 the two are substitutes for compensating idle capacity."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 25,
+   "pages": "494"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch25/chunk_000.json",
+   "idx": 1,
+   "topic": "Why peak-driven pricing alone is an unpopular way to fund reliability"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

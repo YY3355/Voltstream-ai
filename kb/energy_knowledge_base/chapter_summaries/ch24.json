@@ -1,0 +1,7 @@
+{
+ "chapter": 24,
+ "title": "4.9 LEVELIZED COST OF ENTRY",
+ "n_concepts": 3,
+ "summary": "LCOE analysis is presented as a way to gauge whether long-term power prices sit near a fundamental equilibrium, since new generation only gets built when expected prices clear the cost of entry. The chapter breaks down how that break-even cost is actually assembled \u2014 spreading the cost of new entry over an asset's life using discounted cash flow, with the weighted average cost of capital and capital recovery factor converting that stream into a levelized figure. It also notes that this framework isn't limited to long-horizon forecasting alone but shows up in a range of other commercial and regulatory uses.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

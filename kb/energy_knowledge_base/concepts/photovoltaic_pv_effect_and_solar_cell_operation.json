@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Photovoltaic (PV) effect and solar cell operation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Solar Power",
+ "definition": "PV power generation relies on sunlight striking a semiconductor and dislodging electrons, which can then be captured as electrical current.",
+ "core_idea": "Photons hitting a semiconductor knock electrons out of their normal orbit (valence band) into a free-moving state (conduction band); wiring the semiconductor into a circuit turns that freed-electron field into usable current.",
+ "key_points": [
+  "The 'band gap' is the energy threshold needed to knock an electron from the valence band into the conduction band.",
+  "Photons below the band gap energy pass through the semiconductor unabsorbed and contribute nothing.",
+  "Photons above the band gap free an electron; any energy in excess of the band gap is wasted as heat rather than converted to electricity.",
+  "Individual solar cells are small but are wired together into arrays (solar panels) to scale output."
+ ],
+ "relationships": [
+  "Band gap mismatch with photon energy is a core source of PV inefficiency, motivating multi-layer cell designs."
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Not all sunlight striking a panel is convertible \u2014 photons either too weak (pass through) or too strong (excess becomes heat) are both partly or fully wasted."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "454-455"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_001.json",
+   "idx": 0,
+   "topic": "Photovoltaic (PV) effect and solar cell operation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

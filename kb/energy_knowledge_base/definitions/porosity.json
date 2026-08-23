@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Porosity",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Geology",
+ "definition": "Porosity is the proportion of a rock's total volume that consists of empty space (holes), usually expressed as a percentage.",
+ "core_idea": "Porosity measures how much void space a rock contains, which affects how much gas it can potentially hold, but says nothing on its own about whether that gas can be extracted.",
+ "key_points": [
+  "Nearly all rock has some porosity, but the amount, size, and type of pores vary widely by rock type.",
+  "Porosity alone does not determine whether gas can flow out of the rock \u2014 that depends on permeability."
+ ],
+ "relationships": [
+  "Permeability",
+  "Reservoir storage capacity"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "That high porosity by itself implies a rock is a good gas producer \u2014 it must also be permeable."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "139"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_001.json",
+   "idx": 4,
+   "topic": "Porosity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Basis - divergent meaning in energy markets",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Basis",
+ "definition": "In most financial markets, basis means the difference between a spot price and a forward price of the same commodity at the same location. In energy markets that time-based definition doesn't hold well because the spot-to-forward relationship is not stable.",
+ "core_idea": "Energy prices follow strong seasonal patterns (expensive in summer and winter, cheap in spring and fall), so the gap between spot and forward prices for the same commodity swings cyclically through the year rather than behaving as a stable, predictable basis.",
+ "key_points": [
+  "Standard financial-market usage: basis = cash/spot price minus forward price.",
+  "Energy markets lack a stable spot-forward price relationship, so this time-based basis concept is less useful there.",
+  "The expected gap between, say, a three-month forward price and the spot price varies by season.",
+  "Energy is typically expensive in summer and winter and cheap in spring and fall, making the spot/forward relationship cyclical along with the underlying prices."
+ ],
+ "relationships": [
+  "Sets up the contrast with the energy-specific (locational) meaning of basis used in natural gas markets."
+ ],
+ "trading_implications": [
+  "Traders can't treat energy basis the way they would in other asset classes; seasonal cyclicality has to be accounted for separately."
+ ],
+ "caveats": [
+  "The word \"basis\" carries a different practical meaning in energy trading than in other financial markets \u2014 it doesn't reduce to a simple, stable time-based cash-forward gap."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "110-113"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_008.json",
+   "idx": 5,
+   "topic": "Basis - divergent meaning in energy markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

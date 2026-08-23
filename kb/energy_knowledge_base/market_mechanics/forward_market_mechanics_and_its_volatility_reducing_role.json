@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Forward Market Mechanics and Its Volatility-Reducing Role",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Forward Contracts",
+ "definition": "The forward market lets buyers and sellers agree on transaction terms ahead of the actual delivery date, giving both sides time to prepare for physical delivery or receipt. A forward trade is typically specified by five terms: the underlying instrument (the commodity and its minimum quality standard), the quantity to be delivered, the delivery price, the delivery date, and the delivery location.",
+ "core_idea": "Letting counterparties line up trades in advance reduces energy-price volatility because it gives producers and consumers time to arrange transport, storage, or backup supply rather than reacting to an immediate imbalance \u2014 this is also why the high volatility and weak cross-region correlation seen in spot markets tends to fade out in the forward market.",
+ "key_points": [
+  "Five defining elements of a forward trade: underlying instrument, quantity, delivery price, delivery date, delivery location.",
+  "Because energy is hard to store and transport, arranging trades ahead of time reduces uncertainty from short-term supply/demand imbalances.",
+  "With more lead time (e.g., a plant outage expected six months out), it is often possible to arrange cheaper backup generation instead of relying on units that can be started immediately \u2014 this is part of why distant forward prices track macroeconomic/seasonal expectations rather than short-term shocks.",
+  "Buying and reselling (trading) happens almost exclusively in the forward market; the exceptions are traders who can immediately deliver a physical asset, or who can buy and then store/relocate it."
+ ],
+ "relationships": [
+  "Volatility term structure (spot vs. forward)",
+  "Local fragmentation and volatility of spot markets"
+ ],
+ "trading_implications": [
+  "Most active trading activity (buying and reselling) is a forward-market phenomenon, not a spot-market one, except for traders positioned to take or move physical delivery immediately."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "78"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 2,
+   "topic": "Forward Market Mechanics and Its Volatility-Reducing Role"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

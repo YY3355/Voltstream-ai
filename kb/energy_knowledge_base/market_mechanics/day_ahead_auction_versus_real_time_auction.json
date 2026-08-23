@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Day-ahead auction versus real-time auction",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Auction Mechanics",
+ "definition": "Deregulated power markets typically run a day-ahead auction that schedules generators to run for full-hour blocks based on forecast load, followed by a real-time auction that adjusts production to reconcile actual demand with the day-ahead schedule.",
+ "core_idea": "The real-time auction exists specifically to correct for load-forecast error or intra-hour demand swings that the day-ahead schedule cannot anticipate.",
+ "key_points": [
+  "Day-ahead auction commits generators to operate for an entire hour based on predicted load",
+  "Real-time auction balances production against demand when the forecast proves wrong or demand fluctuates within the hour",
+  "Generators submit offer curves (generation levels tied to acceptable prices) plus technical constraints such as startup costs and minimum up time",
+  "The ISO selects the generator combination that minimizes total cost to the market",
+  "Most of a day's power is transacted in the day-ahead auction; real-time mainly handles short-term balancing and unexpected demand"
+ ],
+ "relationships": [
+  "Sets up the bid-placement and real-time participation strategies"
+ ],
+ "trading_implications": [
+  "A generator must choose how much capacity to sell day-ahead versus hold back for the real-time market, trading certainty of a sale for potential upside"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "407-408"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_000.json",
+   "idx": 4,
+   "topic": "Day-ahead auction versus real-time auction"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

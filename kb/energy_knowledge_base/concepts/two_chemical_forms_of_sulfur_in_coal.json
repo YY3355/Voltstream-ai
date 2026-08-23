@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Two chemical forms of sulfur in coal",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Coal Composition & Pollution Control",
+ "definition": "Sulfur in coal exists in two distinct forms \u2014 pyrite (iron-bound) and organic sulfur (carbon-bound) \u2014 and each requires a different removal technique.",
+ "core_idea": "Most coal sulfur is bound with iron as pyrite crystals ('fool's gold') physically scattered through the coal, while the remainder is chemically bonded to the coal's carbon as organic sulfur; because the two forms are held differently, pyrite can be mechanically separated before combustion but organic sulfur can only be addressed after combustion, via stack scrubbers.",
+ "key_points": [
+  "Pyrite is the more common sulfur form, an iron-sulfur mineral distinct from the coal matrix",
+  "Organic sulfur is chemically bonded to the coal's carbon and cannot be physically separated",
+  "Pyrite is removable pre-combustion; organic sulfur removal requires post-combustion exhaust scrubbing"
+ ],
+ "relationships": [
+  "Pyrite removal \u2192 coal washing",
+  "Organic sulfur removal \u2192 flue gas desulfurization"
+ ],
+ "trading_implications": [
+  "Sulfur form/content affects processing and compliance costs baked into delivered coal economics"
+ ],
+ "caveats": [
+  "Not all sulfur in coal can be removed the same way \u2014 the removal method depends on which chemical form is present"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "253-254"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_002.json",
+   "idx": 1,
+   "topic": "Two chemical forms of sulfur in coal"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

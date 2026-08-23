@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Force majeure clause",
+ "type": "definition",
+ "category": "Contracts / Legal",
+ "subcategory": "Contract Terms",
+ "definition": "A standard contract clause, from the French for 'greater force,' that releases both parties from liability when extraordinary, uncontrollable events (war, natural disaster, etc.) prevent performance.",
+ "core_idea": "Force majeure protects both counterparties from breach liability when performance becomes impossible due to events outside either party's control.",
+ "key_points": [
+  "Covers events like wars and natural disasters that are outside the control of either contracting party.",
+  "Its effect is to excuse one or both parties from fulfilling contract obligations under such circumstances."
+ ],
+ "relationships": [
+  "Relevant to firm contracts, where nonperformance otherwise carries legal recourse."
+ ],
+ "trading_implications": [
+  "Even firm, legally binding contracts carry an escape valve for extraordinary disruptions, which matters when assessing counterparty delivery risk."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "521"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 5,
+   "topic": "Force majeure clause"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Nuclear power thermal efficiency",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Conventional / Alternative Generation",
+ "definition": "Nuclear power plants generate electricity the same basic way as coal plants \u2014 producing superheated steam to drive turbines \u2014 and, like coal plants, become more efficient at converting heat to electricity the higher their operating temperature.",
+ "core_idea": "Operating temperature is a key efficiency driver for both nuclear and coal steam-turbine plants: lower-temperature plants convert roughly 25% of heat energy to electricity, while larger, hotter plants can convert 50-60%.",
+ "key_points": [
+  "Nuclear power is not renewable but is presented as an alternative to fossil-fuel-based electricity generation.",
+  "Both coal and nuclear plants produce superheated steam to drive electrical turbines.",
+  "Higher operating temperature increases thermal-to-electrical conversion efficiency.",
+  "A low-temperature plant might convert about 25% of heat energy to electricity; a larger, hotter plant might convert 50-60%."
+ ],
+ "relationships": [
+  "Coal-fired generation",
+  "Thermal efficiency",
+  "Steam turbine generation"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Nuclear plants are sometimes assumed to be a totally different generation technology from coal, but the source frames them as sharing the same steam-turbine efficiency dynamics."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "54-55"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 7,
+   "topic": "Nuclear power thermal efficiency"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

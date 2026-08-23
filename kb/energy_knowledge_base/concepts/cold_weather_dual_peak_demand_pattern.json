@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Cold-weather dual-peak demand pattern",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Fundamentals / Load Forecasting",
+ "definition": "In cold weather (daily highs below 60\u00b0F), regional power demand shows two distinct daily peaks: a morning peak (~6 a.m., as homes/offices heat up for the day) and an evening peak (as people return home).",
+ "core_idea": "The timing of heating-driven demand peaks stays fairly constant regardless of exact temperature, but colder weather raises overall usage \u2014 especially overnight \u2014 and sharpens the morning and evening peaks.",
+ "key_points": [
+  "Two peaks in cold weather: a morning peak around 6 a.m. (heating homes/offices for the day) and an evening peak (people arriving home).",
+  "The timing of when people use heating is fairly constant across a range of cold temperatures, even though colder days use more total power.",
+  "Colder weather generally increases overnight power usage and produces more sharply defined peaks at the start and end of the day.",
+  "Load profiles differ by region, but this cold-weather dual-peak shape is described as typical for the pattern discussed."
+ ],
+ "relationships": [
+  "An example of the seasonal/time-of-day cyclicality that makes load forecasting tractable."
+ ],
+ "trading_implications": [
+  "Forecasters/traders in cold-weather regions should expect demand (and price) risk to concentrate around the two peak windows (early morning and evening) rather than uniformly through the day."
+ ],
+ "caveats": [
+  "More power used on colder days does not mean the peak timing shifts \u2014 the author notes peak timing is fairly constant even as magnitude and overnight usage rise with colder temperatures."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "181-182"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_002.json",
+   "idx": 9,
+   "topic": "Cold-weather dual-peak demand pattern"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

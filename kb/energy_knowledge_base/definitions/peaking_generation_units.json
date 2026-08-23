@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Peaking generation units",
+ "type": "definition",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack",
+ "definition": "Peaking plants sit at the very top of the generation stack, exist to supply short bursts of power during periods of peak demand (e.g., summer afternoons), and are optimized for fast startup and low maintenance rather than fuel efficiency.",
+ "core_idea": "Because peakers may only run a few hundred hours a year and fuel efficiency is not a priority, they must charge high prices to recover costs, and they participate almost exclusively in the real-time market except when day-ahead prices are already very high.",
+ "key_points": [
+  "Peaking units sit at the top of the generation stack and serve short-term demand spikes such as summer-afternoon peaks.",
+  "They are built to start up quickly and be cheap to maintain, but conserving fuel is not a priority since they only run when prices are high enough to justify it.",
+  "Structurally many are simple, jet-engine-like designs: few moving parts, fuel ignited directly, and a lot of wasted heat.",
+  "Many peaking plants operate only a few hundred hours per year, so they need high per-hour prices to recover their costs.",
+  "Peakers operate almost entirely in the real-time market, appearing in the day-ahead market only when day-ahead prices are already extremely high."
+ ],
+ "relationships": [
+  "baseload generation",
+  "real-time vs day-ahead market participation"
+ ],
+ "trading_implications": [
+  "Peaking unit availability and cost structure are a key driver of real-time price spikes during high-demand periods; their unusual appearance in day-ahead bidding is itself a signal of expected extreme prices."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "411-412"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_001.json",
+   "idx": 2,
+   "topic": "Peaking generation units"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

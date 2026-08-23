@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Deregulated vs Regulated Markets",
+ "type": "definition",
+ "category": "Market Structure",
+ "subcategory": "Market Types",
+ "definition": "Deregulation is the elimination of a government-created monopoly to introduce spot-market competition, most commonly applied to breaking up government power-generation monopolies. A regulated market is a physical spot market still dominated by a government monopoly.",
+ "core_idea": "Deregulation and regulation describe opposite ends of the same spectrum for how a physical power market is structured \u2014 competitive vs. monopoly-controlled.",
+ "key_points": [
+  "Deregulation is most commonly discussed in the context of power generation.",
+  "Regulated local electrical markets remain fairly common even today, per the author."
+ ],
+ "relationships": [
+  "Directly tied to Physical/Spot Market definitions since both terms describe structures of a physical spot market."
+ ],
+ "trading_implications": [
+  "A regulated market limits the opportunities for competitive trading strategies since a government monopoly controls generation/supply."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "114-117"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_009.json",
+   "idx": 1,
+   "topic": "Deregulated vs Regulated Markets"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

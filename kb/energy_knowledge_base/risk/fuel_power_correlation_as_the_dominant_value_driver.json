@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Fuel-power correlation as the dominant value driver",
+ "type": "risk",
+ "category": "Risk",
+ "subcategory": "Tolling Agreement Valuation",
+ "definition": "The statistical correlation between fuel prices and power prices is identified as the single largest factor determining a tolling agreement's economic value.",
+ "core_idea": "Because a tolling agreement's payoff depends on the spread between two commodities, how tightly (and in what direction) fuel and power prices move together dominates the option-like value of the deal more than any other single factor.",
+ "key_points": [
+  "Tolling value is fundamentally a spread-option value, and spread options are highly sensitive to the correlation between the two underlying legs.",
+  "This correlation sensitivity is why spread-option-specific formulas (e.g., Kirk's approximation) rather than plain single-asset option formulas are used."
+ ],
+ "relationships": [
+  "Directly drives the value produced by spark spread option / real options models"
+ ],
+ "trading_implications": [
+  "Risk management and valuation for tolling deals should focus heavily on modeling and monitoring the fuel-power correlation, not just each commodity's standalone volatility."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "423-424"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 2,
+   "topic": "Fuel-power correlation as the dominant value driver"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

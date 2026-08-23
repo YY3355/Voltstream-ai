@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Pumped Hydropower \u2014 Operational, Environmental, and Execution Risks",
+ "type": "risk",
+ "category": "Power Markets",
+ "subcategory": "Energy Storage",
+ "definition": "The non-price risks that make a pumped-hydro storage arbitrage strategy unattractive to most investors despite a favorable, low-risk price-cycle trading logic.",
+ "core_idea": "Even though buying low and selling high on cyclical power prices is described as comparatively low-risk, the surrounding physical and legal burdens \u2014 assumed environmental cleanup liability, dam construction complexity, high maintenance costs from corrosive water, and daily trade execution overhead \u2014 are severe enough to deter nearly all investors.",
+ "key_points": [
+  "Taking on legal liability for someone else's toxic-pond cleanup is identified as the primary deal-killer.",
+  "Physical construction of a dam to move water up and down a mountain adds major engineering complexity.",
+  "Corrosive, highly acidic water in the ponds is expected to drive high ongoing maintenance costs.",
+  "Executing the trade requires both an operational team to run the physical facility and a separate team to handle daily power purchase/sale scheduling and paperwork.",
+  "The author concludes that most investors will pass on this investment despite the underlying trading logic being sound."
+ ],
+ "relationships": [
+  "environmental liability",
+  "physical trade execution overhead"
+ ],
+ "trading_implications": [
+  "A financially attractive arbitrage logic does not by itself make a physical storage project investable once legal, environmental, and operational costs are weighed."
+ ],
+ "caveats": [
+  "Assuming a favorable price-arbitrage rationale alone justifies a physical storage project, without weighing legal, environmental, and operational overhead."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 23,
+   "pages": "484-485"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch23/chunk_001.json",
+   "idx": 5,
+   "topic": "Pumped Hydropower \u2014 Operational, Environmental, and Execution Risks"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

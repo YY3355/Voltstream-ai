@@ -1,0 +1,7 @@
+{
+ "chapter": 14,
+ "title": "3.5 OPTION PRICING",
+ "n_concepts": 34,
+ "summary": "This chapter builds option pricing from its foundational logic \u2014 replicating an option's payoff with a portfolio of other assets under arbitrage-free conditions \u2014 and traces how that logic extends from a single-period example into multi-period binomial trees, including trees for interest rates as well as prices. It surveys the statistical assumptions underlying these models, from lognormal returns and Brownian motion to martingales, the fat-tail problem, and jump diffusion, and contrasts closed-form and open-form solution methods along with the tradeoff between model complexity and accessibility. From there it turns to practical mechanics: the Greeks (delta, gamma, theta, vega, rho) as sensitivity measures, implied volatility as the unobservable input backed out of market prices, the volatility smile, and the pricing of exotic instruments like Asian options. A closing thread examines options as an asymmetric, insurance-like payoff structure and the market dynamics that make writers, not buyers, the scarce side of the trade.",
+ "provenance": "rewritten orientation from this chapter's concept set; no new claims"
+}

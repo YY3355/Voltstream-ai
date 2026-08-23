@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Concentrated solar power and the collector-vs-panel trade-off",
+ "type": "trading_strategy",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "Concentrated solar power (CSP) redirects sunlight collected over a large area onto a small focal point (often via a parabolic mirror) to intensify the energy delivered to a single collector, as an alternative to simply covering the same area with more solar panels.",
+ "core_idea": "For a given plot of land, a developer faces a design trade-off between filling the space with multiple standard solar panels versus installing a single large concentrator feeding one panel \u2014 there is no universally correct choice, since it depends on the specific installation's constraints.",
+ "key_points": [
+  "The mechanism is analogous to a magnifying glass concentrating light from a wide area onto a small spot.",
+  "Example given: a 10-by-10-foot plot could either hold four 5-by-5-foot solar panels (filling the space with panels) or one 10-by-10-foot concentrator feeding a single panel.",
+  "Neither approach is universally superior \u2014 the source frames it explicitly as a trade-off decision made case by case."
+ ],
+ "relationships": [
+  "Directly connects to solar tracking systems, since concentrators benefit most from precise, adjustable sun-facing."
+ ],
+ "trading_implications": [
+  "This is fundamentally a capex/design decision affecting an installation's cost structure and output profile, relevant to evaluating or structuring investment in a specific solar project."
+ ],
+ "caveats": [
+  "Assuming concentrators are always more efficient or preferable to flat panel arrays \u2014 the source presents it as installation-specific, not a strict improvement."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "451-452"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_000.json",
+   "idx": 3,
+   "topic": "Concentrated solar power and the collector-vs-panel trade-off"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

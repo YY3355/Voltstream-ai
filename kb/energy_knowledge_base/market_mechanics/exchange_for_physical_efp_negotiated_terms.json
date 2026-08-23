@@ -1,0 +1,60 @@
+{
+ "canonical_topic": "Exchange for Physical (EFP) negotiated terms",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Exchange for Physical",
+ "definition": "The set of terms two counterparties must agree on when converting a futures position into a physical delivery obligation via an EFP.",
+ "core_idea": "An EFP requires the parties to pin down how the futures settlement price maps to an actual physical transaction: what price adjustment applies, where and when the commodity moves, and how much is delivered.",
+ "key_points": [
+  "Index price is simply the futures settlement price used as the pricing anchor.",
+  "Differential (basis price) is a negotiated adjustment \u2014 positive, negative, or zero \u2014 that reconciles the futures price to the value of the specific physical commodity being delivered.",
+  "Invoice price is index price plus differential; it is the actual amount the buyer pays the seller for the physical delivery.",
+  "Delivery point, volume, and delivery date are all separately negotiated as part of the EFP, and volume/date can be expressed as totals, per-day rates, or a count of underlying futures contracts."
+ ],
+ "relationships": [
+  "Differential reflects basis risk between the futures contract and the specific physical commodity/location delivered."
+ ],
+ "trading_implications": [
+  "A trader using an EFP to take physical delivery must negotiate basis, location, timing, and volume separately from the futures price itself \u2014 the futures price alone is not the delivered cost."
+ ],
+ "caveats": [
+  "Assuming the futures settlement price is the same as what will actually be paid for physical delivery; the differential can move the invoice price materially away from the index price."
+ ],
+ "formulas": [
+  {
+   "name": "Invoice Price",
+   "formula": "Invoice Price = Index Price + Differential",
+   "variables": {
+    "Index Price": "settlement price of the futures contract",
+    "Differential": "negotiated basis adjustment between futures and physical value"
+   },
+   "source": {
+    "chapter": 2,
+    "pages": "97-103",
+    "section_hint": "1.2 Trading Markets \u2014 Exchange for Physical"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 0,
+   "topic": "Exchange for Physical (EFP) negotiated terms"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

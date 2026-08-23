@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Hydrocarbon classification by carbon chain length",
+ "type": "concept",
+ "category": "Fundamentals",
+ "subcategory": "Fuel Types",
+ "definition": "Hydrocarbon fuels are categorized by the length of their carbon chain, notated Cn where n is the number of carbon atoms; chain length determines whether the fuel is a gas, liquid, or solid at standard temperature and pressure.",
+ "core_idea": "Short carbon chains form natural gas (gaseous), mid-length chains form petroleum (liquid), and the longest chains form coal (solid).",
+ "key_points": [
+  "Carbon-chain notation: capital C plus a subscript for the number of carbon atoms, e.g. C5 = five-carbon molecule.",
+  "Shortest chains (natural gases) are gaseous at standard temperature and pressure.",
+  "Mid-length chains (petroleum) are liquid.",
+  "Longest chains (coal) are solid.",
+  "Even after processing, fuels remain mixtures of hydrocarbons of varying chain length rather than a single pure molecule \u2014 e.g. gasoline is predominantly C7\u2013C11 but also contains some C5, C6, C12, C13, etc.",
+  "The proportion of lighter/heavier molecules in a fuel like gasoline can vary substantially, so the carbon-chain makeup of a named fuel (e.g. 'gasoline') may be defined slightly differently across countries, states, or even processing locations."
+ ],
+ "relationships": [
+  "Carbon chain length is the underlying variable linking natural gas, petroleum, and coal as points on one spectrum rather than unrelated substances."
+ ],
+ "trading_implications": [
+  "Because named fuel grades (e.g. gasoline) are regionally-defined mixtures rather than fixed chemical formulas, specification differences across jurisdictions can matter for physical delivery/quality contracts."
+ ],
+ "caveats": [
+  "Natural gas, petroleum, and coal are not chemically distinct categories in an absolute sense \u2014 they are ranges along a continuous carbon-chain-length spectrum."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 3,
+   "pages": "119-120"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch03/chunk_000.json",
+   "idx": 2,
+   "topic": "Hydrocarbon classification by carbon chain length"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

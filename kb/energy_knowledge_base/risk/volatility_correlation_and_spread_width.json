@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Volatility, Correlation, and Spread Width",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Correlation Estimation",
+ "definition": "Relationship describing how asset price volatility and correlation between two assets jointly determine how wide the spread between them tends to be.",
+ "core_idea": "Higher volatility in the underlying assets tends to widen the spread, while higher correlation between the two assets narrows it because the assets move more like a single asset; this dispersion directly affects who benefits in a spread option trade.",
+ "key_points": [
+  "When asset prices are more volatile, the spread tends to be wider.",
+  "When two assets are highly correlated, they behave almost like the same asset, producing a narrow spread.",
+  "An option buyer benefits from a wide dispersion of possible spreads, since an unusual (wide) spread never causes the buyer a loss.",
+  "An option seller benefits from a tight dispersion of spreads; outlying (wide) results hurt the seller, whose gain is capped at the premium but whose losses are unbounded."
+ ],
+ "relationships": [
+  "Feeds into Correlation Risk in Spread Options \u2014 dispersion (driven by volatility and correlation) determines option profitability for each side of the trade."
+ ],
+ "trading_implications": [
+  "Option buyers want to identify situations of underestimated volatility/dispersion; option sellers want tight, well-correlated spreads.",
+  "Misjudging correlation/dispersion causes consistent losses to a counterparty who estimates it better."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 15,
+   "pages": "378-378"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 6,
+   "topic": "Volatility, Correlation, and Spread Width"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

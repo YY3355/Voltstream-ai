@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "ISDA master agreement and netting",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Legal/Documentation",
+ "definition": "A standardized legal framework (per the ISDA master agreement) under which bilateral trades between two counterparties are documented, including a master netting clause that treats all transactions between the parties as a single contract.",
+ "core_idea": "Standardized documentation lets most forward/swap trades be recorded quickly as short-form addenda to a pre-negotiated master agreement, and the netting clause protects both parties in a counterparty bankruptcy by preventing selective enforcement of individual trades.",
+ "key_points": [
+  "Most forwards, despite being theoretically customizable, follow standardized terms similar to futures contracts.",
+  "The master netting clause bundles all trades between two parties into a single contract, so a bankruptcy court cannot enforce favorable trades while disclaiming unfavorable ones (cherry-picking).",
+  "New trades are usually documented as short-form transactions (addenda to the master agreement); long-form transactions \u2014 where all terms are spelled out \u2014 are used only when the two parties have never traded before, and are far less common."
+ ],
+ "relationships": [
+  "Master agreement documentation underlies the credit-risk management features of forwards and swaps."
+ ],
+ "trading_implications": [
+  "Trading under an established ISDA master agreement with netting reduces bankruptcy-related counterparty risk and speeds up trade documentation via short-form confirms."
+ ],
+ "caveats": [
+  "Believing each individual forward/swap trade is a fully separate legal contract \u2014 under a master netting agreement they are treated as one contract for bankruptcy purposes."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 4,
+   "topic": "ISDA master agreement and netting"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

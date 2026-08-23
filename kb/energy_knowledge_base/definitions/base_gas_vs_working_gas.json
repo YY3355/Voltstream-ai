@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Base gas vs. working gas",
+ "type": "definition",
+ "category": "Natural Gas",
+ "subcategory": "Storage",
+ "definition": "Working gas is the volume of stored gas that can actually be withdrawn and delivered; base (or cushion) gas is the portion left behind to keep the facility pressurized enough to push the working gas out at a usable rate.",
+ "core_idea": "Base gas is normally never withdrawn during routine operation because removing it drops the facility's pressure and slows down how fast working gas can be extracted, so a fixed cushion has to be maintained to meet ongoing deliverability needs.",
+ "key_points": [
+  "Extractable gas splits into base (cushion) gas and working gas.",
+  "Base gas exists to maintain enough pressure to get working gas out in a reasonable time.",
+  "Operators trade off a large working-gas volume that can only be withdrawn slowly against a smaller volume that can be withdrawn quickly.",
+  "During peak demand, some base gas can temporarily be delivered as working gas.",
+  "Over the long run the cushion must stay intact, since drawing it down reduces pressure and future extraction speed."
+ ],
+ "relationships": [
+  "Determines a facility's deliverability, which is one of the two dimensions (capacity, speed) that differentiate storage facilities."
+ ],
+ "trading_implications": [
+  "Deliverability constraints from the base/working gas split mean a facility's peak withdrawal rate is not simply proportional to its total inventory, which matters when assessing whether storage can meet a spike in demand."
+ ],
+ "caveats": [
+  "Total stored volume is not the same as usable (working) supply \u2014 a chunk of stored gas is permanently reserved as cushion."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "60-61"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 2,
+   "topic": "Base gas vs. working gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

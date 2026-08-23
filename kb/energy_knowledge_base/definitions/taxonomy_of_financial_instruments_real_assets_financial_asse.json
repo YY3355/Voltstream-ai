@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Taxonomy of Financial Instruments: Real Assets, Financial Assets, Derivatives",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Financial Instruments",
+ "definition": "Trading centers on financial instruments (securities), which fall into three types: real assets (physical commodities like crude oil, electricity, gold, plus legislatively created rights like carbon emissions rights), financial assets (contracts conferring an ownership interest in a company \u2014 stocks \u2014 a lien on a company \u2014 bonds \u2014 or currencies), and derivatives (contracts whose value is derived from other financial instruments). To count as a financial instrument, an asset must be tradable, meaning it can be legally assigned to someone else for a cash payment.",
+ "core_idea": "Nearly all energy market transactions take the form of derivatives rather than direct trades of the physical commodity or of financial assets.",
+ "key_points": [
+  "Real assets = physical commodities + legislatively created rights (e.g., carbon emissions rights).",
+  "Financial assets = ownership interest (stocks), a lien on a company (bonds), or currencies.",
+  "Derivatives = contracts that derive their value from other financial instruments; the vast majority of energy transactions fall in this category.",
+  "Tradability requirement: an asset must be legally assignable to another party for a cash payment to qualify as a financial instrument."
+ ],
+ "relationships": [
+  "Physical delivery vs. financial settlement",
+  "Forward market mechanics"
+ ],
+ "trading_implications": [
+  "Because most energy exposure is taken via derivatives rather than physical assets, understanding the underlying instrument a derivative references is central to trading it."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "79-80"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_001.json",
+   "idx": 5,
+   "topic": "Taxonomy of Financial Instruments: Real Assets, Financial Assets, Derivatives"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

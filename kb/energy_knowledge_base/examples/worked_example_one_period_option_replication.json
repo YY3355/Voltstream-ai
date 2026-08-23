@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Worked example: one-period option replication",
+ "type": "example",
+ "category": "Derivatives",
+ "subcategory": "Option Pricing Methodology",
+ "definition": "A numeric walk-through showing that solving the replication equations, rather than using a naive probability-weighted payoff, produces a higher and more risk-adjusted fair option value.",
+ "core_idea": "For an underlying priced at $100/unit with a 5% risk-free rate and a scenario with a 60% chance of a $10 option payoff, the naive probability-weighted value is $6, but solving the replicating portfolio requires 0.4 units of underlying ($40) financed partly by a \u2212$32.38 risk-free investment position, giving a fair option value of $7.62.",
+ "key_points": [
+  "Naive expected-value pricing (60% chance of $10) gives $6, which the author states undercompensates the option seller",
+  "The replication solution requires holding 0.4 units of the underlying",
+  "Cost of the underlying leg: 0.4 unit \u00d7 $100/unit = $40",
+  "The risk-free investment leg values at \u2212$32.38",
+  "Combining the two legs ($40 \u2212 $32.38) gives a fair option value of $7.62, higher than the naive $6 estimate"
+ ],
+ "relationships": [
+  "Illustrates the arbitrage-free replication method"
+ ],
+ "trading_implications": [
+  "Confirms that proper replication-based pricing compensates the option seller more than a naive expected-value calculation would"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 14,
+   "pages": "357-358"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 5,
+   "topic": "Worked example: one-period option replication"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

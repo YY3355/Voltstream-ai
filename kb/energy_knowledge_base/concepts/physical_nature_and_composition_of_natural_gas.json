@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Physical nature and composition of natural gas",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Fundamentals",
+ "definition": "Natural gas is a nonrenewable fossil fuel that exists as a colorless, odorless gas mixture at room temperature, used mainly for heating and power generation.",
+ "core_idea": "Natural gas is mostly methane but can carry varying amounts of ethane, propane, butane, and non-hydrocarbon gases like nitrogen and CO2, so its composition \u2014 and therefore its heat content per unit volume \u2014 is not fixed.",
+ "key_points": [
+  "Primary component is methane (CH4); commonly present alongside ethane (C2H6), propane (C3H8), and butane (C4H10)",
+  "'Dry' gas is nearly pure methane; 'wet' gas carries significant amounts of the heavier hydrocarbons",
+  "Can also contain non-hydrocarbon gases such as nitrogen and carbon dioxide",
+  "Because composition varies, it is traded in heat-energy units (Btu, Joules) rather than volume units like cubic feet"
+ ],
+ "relationships": [
+  "Composition variability is the reason gas is priced/traded by energy content rather than volume"
+ ],
+ "trading_implications": [
+  "Traders must think in energy-content terms (Btu/MMBtu) rather than raw volume when comparing gas across sources of differing composition"
+ ],
+ "caveats": [
+  "Assuming natural gas is a pure, uniform substance (pure methane) rather than a variable hydrocarbon mixture"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "133-134"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 0,
+   "topic": "Physical nature and composition of natural gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Crude oil quality: density and sulfur classification",
+ "type": "concept",
+ "category": "Oil",
+ "subcategory": "Crude Oil Quality",
+ "definition": "Crude oils are characterized along two quality dimensions: density (light vs. heavy) and sulfur content (sweet vs. sour), which together determine value.",
+ "core_idea": "Light, sweet crude is the most valuable and easiest to refine into high-value products like gasoline, while heavy or sour crude requires more processing and carries a pollution/cost penalty from sulfur removal.",
+ "key_points": [
+  "Light (low-density) crude has more light hydrocarbons that convert easily into high-value products like gasoline; it visibly flows more freely.",
+  "Heavy crude has more low-value components requiring extra downstream processing; it is more viscous.",
+  "Sweet crude has low sulfur content; sour crude has high sulfur content.",
+  "High sulfur is undesirable because it is a pollutant removable only via expensive processing.",
+  "Light, sweet crudes (e.g., WTI, Brent) are the most valuable and are termed \"premium\" crude oils."
+ ],
+ "relationships": [
+  "WTI and Brent as premium benchmarks",
+  "Distillation/refining economics"
+ ],
+ "trading_implications": [
+  "Crude quality (density + sulfur) directly affects refining cost and product yield, which feeds into pricing differentials between crude grades."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "36"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 5,
+   "topic": "Crude oil quality: density and sulfur classification"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

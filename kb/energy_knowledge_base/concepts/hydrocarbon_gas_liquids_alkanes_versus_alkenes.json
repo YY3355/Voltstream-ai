@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Hydrocarbon gas liquids: alkanes versus alkenes",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Hydrocarbon Gas Liquids",
+ "definition": "NGLs belong to the broader category of hydrocarbon gas liquids (HGLs), which splits into alkanes (paraffins \u2014 the NGLs proper) and alkenes (olefins \u2014 petrochemical feedstock products).",
+ "core_idea": "Alkanes have single covalent bonds between carbon atoms while alkenes have one or more double bonds, giving alkenes fewer hydrogen atoms for the same carbon count; alkenes serve as feedstock for plastics, artificial rubber, paints, and solvents.",
+ "key_points": [
+  "Alkanes (paraffins) = the conventional NGLs.",
+  "Alkenes (olefins) = feedstock products for plastics/rubber/paint/solvent manufacturing.",
+  "Chemical distinction: alkenes have double carbon-carbon bonds and thus fewer hydrogen atoms than alkanes with the same carbon count."
+ ],
+ "relationships": [
+  "Alkanes and alkenes are both HGLs but differ in bonding and downstream use"
+ ],
+ "trading_implications": [
+  "There is no major trading market for refinery/petrochemical feedstocks (alkenes) \u2014 from a trading perspective it's mostly enough to know they exist."
+ ],
+ "caveats": [
+  "Alkenes/olefins are sometimes lumped in with tradeable NGLs, but the author notes they aren't meaningfully traded as a market."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 9,
+   "pages": "277"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch09/chunk_000.json",
+   "idx": 4,
+   "topic": "Hydrocarbon gas liquids: alkanes versus alkenes"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

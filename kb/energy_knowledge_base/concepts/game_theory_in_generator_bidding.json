@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Game Theory in generator bidding",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack / Bidding Strategy",
+ "definition": "Game Theory is a branch of mathematics used to analyze how rational participants (players) make decisions in situations where each player's outcome depends on the choices of others; it is applied to model how generators bid into power auctions.",
+ "core_idea": "Optimal generator bidding is forward-looking rather than purely reactive to the current price, because avoiding unnecessary shutdown/restart costs can justify taking a loss in one period to save startup costs later; Game Theory concepts (utility maximization, Nash Equilibrium) formalize this kind of multi-period, competitive decision-making.",
+ "key_points": [
+  "A player's 'utility' is the benefit or loss they receive from playing the game; every player seeks to maximize their own utility.",
+  "A Nash Equilibrium is the stable pattern that results when all players' utility-maximizing decisions converge.",
+  "Optimal bidding strategies often incorporate predictions of future decisions (own and rivals'), not just a reaction to the current price, since restarting a shut-down steam turbine is costly.",
+  "Game Theory is often criticized as overly self-interested/harsh, but the author argues the real problem is usually that the 'game' itself was defined incorrectly (missing players or incentives), illustrated by a restaurant-tipping example where an unwitnessed-seeming interaction actually had an additional observer (the client).",
+  "Day-ahead and real-time power auctions are structured so that the equilibrium (optimal) bidding strategy for a generator is to bid its own true cost of production, and this is generally what is observed in practice."
+ ],
+ "relationships": [
+  "Connects to unit commitment / thermal cycling economics (startup and shutdown costs).",
+  "Connects to day-ahead and real-time auction design."
+ ],
+ "trading_implications": [
+  "A generator may rationally bid below its short-run marginal cost (take a loss) in some hours specifically to avoid a costly shutdown/restart cycle later.",
+  "Bidding strategy simulations that only look at current prices miss this dynamic; multi-period, game-theoretic reasoning is needed."
+ ],
+ "caveats": [
+  "Assuming Game Theory always prescribes purely selfish, harsh behavior; in practice, poor outcomes often stem from mis-specifying who the real players/observers are, not from the framework itself."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "414-415"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_002.json",
+   "idx": 0,
+   "topic": "Game Theory in generator bidding"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Swing contracts with interruptible transportation for opportunistic gas purchases",
+ "type": "trading_strategy",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "A worked example of a chemical processor with a substitute feedstock (corn stover) using nonbinding swing contracts and interruptible transportation to buy natural gas only when it is cheapest.",
+ "core_idea": "A buyer with a flexible, substitutable feedstock can minimize gas cost by only buying on a nonbinding, as-available basis during low-demand periods, since firm transportation would be unnecessary (and wasteful) for a buyer who only wants gas when almost no one else does.",
+ "key_points": [
+  "Framing: regional gas markets act like an auction \u2014 the highest bidders get available supply at that moment, everyone else waits.",
+  "Processor's flexibility: it can substitute natural gas with corn stover (agricultural waste) as a methanol feedstock, so it only wants gas when it's cheap.",
+  "Because the processor only buys when prices (and thus overall demand) are low, this naturally coincides with times of low demand for pipeline transportation too \u2014 so firm transportation reservation is unnecessary.",
+  "Strategy: a swing contract \u2014 a nonbinding agreement to purchase gas on an as-available basis using nonguaranteed (interruptible) transportation.",
+  "Risk: low \u2014 the processor pays low prices in periods of little competing demand; the downside is that during high-demand periods, essentially no supply is available and the processor must fall back on corn stover instead.",
+  "Conclusion: pairing swing contracts with interruptible transportation is described as the lowest-cost way to buy physical gas, at the cost of supply certainty."
+ ],
+ "relationships": [
+  "Swing contracts are a practical application of the short term interruptible contract tier described among buyer-seller contract types."
+ ],
+ "trading_implications": [
+  "Buyers with a substitutable input can structure purchasing around price/demand troughs rather than reserving guaranteed supply, trading supply certainty for lower average cost.",
+  "This strategy only works because the buyer has a real fallback (corn stover) for periods when gas is unavailable."
+ ],
+ "caveats": [
+  "A swing/interruptible strategy is not a hedge against gas being unavailable \u2014 it deliberately accepts that risk in exchange for lower cost, relying on a substitute feedstock rather than guaranteed supply."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "520-521"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_002.json",
+   "idx": 4,
+   "topic": "Swing contracts with interruptible transportation for opportunistic gas purchases"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

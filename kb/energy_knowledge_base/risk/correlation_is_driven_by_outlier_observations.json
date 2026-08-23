@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Correlation is driven by outlier observations",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Statistics",
+ "definition": "The mechanics of the correlation calculation mean that values close to the mean contribute little, while extreme (outlier) values dominate the result.",
+ "core_idea": "Because the correlation calculation multiplies each series' deviations from its own mean, any value near the mean (or a zero deviation) cancels out its pair, while large deviations multiply into large numbers \u2014 so a handful of outlier prices can determine the measured correlation between two series.",
+ "key_points": [
+  "Each series has its mean subtracted before the values from the two series are multiplied together.",
+  "A near-zero deviation on either side effectively zeroes out that observation's contribution.",
+  "Large deviations from the mean produce large products, so they dominate the result.",
+  "For volatile energy prices in particular, a small number of outlier days can determine the overall correlation reading."
+ ],
+ "relationships": [
+  "Explains why correlation can look strong even when it is driven by a few shared price spikes rather than consistent co-movement."
+ ],
+ "trading_implications": [
+  "A trader should check which observations are driving a correlation estimate rather than trusting the summary statistic alone, especially for volatile commodities."
+ ],
+ "caveats": [
+  "Assuming a high correlation coefficient reflects consistent day-to-day agreement between series, when it may really reflect agreement only on a few extreme days."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "322"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_003.json",
+   "idx": 1,
+   "topic": "Correlation is driven by outlier observations"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

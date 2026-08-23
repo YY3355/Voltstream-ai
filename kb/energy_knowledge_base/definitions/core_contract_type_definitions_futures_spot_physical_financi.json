@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Core Contract Type Definitions: Futures, Spot, Physical, Financial",
+ "type": "definition",
+ "category": "Derivatives",
+ "subcategory": "Contract Types",
+ "definition": "Four foundational trading terms distinguishing exchange-traded vs. bilateral agreements, and physically-delivered vs. cash-settled transactions.",
+ "core_idea": "A futures contract is an exchange-traded agreement for future delivery and payment at a fixed price; a spot contract is a bilateral agreement for immediate/short-term delivery; a physical transaction delivers the actual commodity for cash, while a financial transaction settles in cash only, with no commodity delivered.",
+ "key_points": [
+  "Futures Contract: an agreement traded on an organized exchange to buy or sell assets at a fixed price, with delivery and payment both occurring at a future point in time",
+  "Spot Contract: a bilateral (direct, two-party) agreement to buy or sell assets for immediate or short-term delivery; in theory cash and commodity exchange 'on the spot', but in practice spot delivery typically means within the next four weeks",
+  "Physical Transaction: an exchange of commodity for cash",
+  "Financial Transaction: cash-settled \u2014 the commodity is not physically delivered; instead one party pays the other"
+ ],
+ "relationships": [
+  "Physical Trading of Crude Priced off Futures",
+  "Spot Market Contract Standard Terms"
+ ],
+ "trading_implications": [],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "233"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_003.json",
+   "idx": 5,
+   "topic": "Core Contract Type Definitions: Futures, Spot, Physical, Financial"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

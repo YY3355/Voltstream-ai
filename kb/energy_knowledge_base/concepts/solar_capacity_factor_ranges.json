@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Solar capacity factor ranges",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Renewable Generation",
+ "definition": "The capacity factor of a solar facility measures actual annual output against the theoretical maximum if the DC nameplate rating ran continuously.",
+ "core_idea": "Solar plants typically realize only 10-20% of DC nameplate capacity over a year, mainly because the sun is unavailable roughly half of each day plus additional system losses; sustained output above 35% would be atypical.",
+ "key_points": [
+  "Typical annual capacity factor for DC-nameplate-rated solar is 10-20%.",
+  "Location and panel technology both drive variation in realized capacity factor.",
+  "Night-time hours (roughly half the day) plus system losses cap realistic capacity factors well below 100%.",
+  "A capacity factor above 35% would be considered very unusual for solar."
+ ],
+ "relationships": [
+  "Capacity factor comparisons are commonly benchmarked against wind and thermal generation, though this passage covers solar only."
+ ],
+ "trading_implications": [
+  "Low and variable capacity factors mean solar output forecasts must account for seasonal/monthly patterns, not just nameplate capacity, when valuing generation or structuring supply contracts."
+ ],
+ "caveats": [
+  "Nameplate (DC) capacity significantly overstates expected average output; assuming near-nameplate generation would badly mis-forecast supply."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 20,
+   "pages": "458-459"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch20/chunk_002.json",
+   "idx": 0,
+   "topic": "Solar capacity factor ranges"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

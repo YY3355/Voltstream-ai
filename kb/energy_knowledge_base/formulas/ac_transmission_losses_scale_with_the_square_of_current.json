@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "AC transmission losses scale with the square of current",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Transmission / Physics",
+ "definition": "Long-distance power transmission is typically done via overhead high-voltage AC lines; some transmitted power converts to heat, with the heat loss proportional to the square of the current, so raising voltage (to lower current for the same power) is the primary way to cut losses.",
+ "core_idea": "Because resistive losses scale with current squared, transmission systems minimize losses by using transformers to push current down and voltage up for the same amount of delivered power.",
+ "key_points": [
+  "Overhead high-voltage AC lines are the most common long-distance transmission method.",
+  "Heat loss during transmission increases with the square of the current on the line.",
+  "Reducing current is the primary lever for reducing transmission losses; increasing voltage is the primary way to reduce current.",
+  "Voltage and current together determine how much power a line carries."
+ ],
+ "relationships": [
+  "Higher voltage (via transformers) enables lower current for the same delivered power, which reduces I\u00b2-driven heat losses."
+ ],
+ "trading_implications": [
+  "Long-distance wheeling economics depend on line loss characteristics, which are driven by the voltage/current design of the line, not just distance alone."
+ ],
+ "caveats": [
+  "It's easy to assume losses scale linearly with current; the author states the relationship is with the square of current, so small current reductions yield outsized loss reductions."
+ ],
+ "formulas": [
+  {
+   "name": "Resistive (I\u00b2) transmission loss relationship",
+   "formula": "Loss \u221d I^2",
+   "variables": {
+    "I": "current flowing on the transmission line"
+   },
+   "source": {
+    "chapter": 19,
+    "pages": "442-442",
+    "section_hint": "4.4 Wheeling Power - Long-Distance AC Transmission"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 19,
+   "pages": "442-442"
+  }
+ ],
+ "validation_rollup": {
+  "SUPPORTED": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 4,
+   "topic": "AC transmission losses scale with the square of current"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

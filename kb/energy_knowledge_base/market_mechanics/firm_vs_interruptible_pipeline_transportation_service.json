@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Firm vs. Interruptible Pipeline Transportation Service",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Transportation and Storage",
+ "definition": "The two main service tiers for contracting natural gas pipeline capacity, distinguished by reliability guarantee and price.",
+ "core_idea": "Firm service guarantees capacity availability except in cases of Force Majeure and costs more, while interruptible service is offered only on a best-efforts basis at a lower price and can be curtailed for various reasons, most commonly to help balance pipeline flow.",
+ "key_points": [
+  "Firm service: highly reliable, guaranteed except for Force Majeure events, but expensive",
+  "Interruptible service: cheap, best-efforts only, can be interrupted for any valid reason or may not be available at all",
+  "The most common reason for interrupting service is balancing gas flow on the pipeline",
+  "Gas movement can never be precisely controlled, making even simple pipeline flow optimization complex",
+  "Firm and interruptible are general descriptive terms; exact service definitions vary by individual pipeline system"
+ ],
+ "relationships": [
+  "Builds on pipeline pressure/flow-balancing dynamics"
+ ],
+ "trading_implications": [
+  "Shippers trade off cost against curtailment risk when choosing between firm and interruptible transportation capacity"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "59-59"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_010.json",
+   "idx": 8,
+   "topic": "Firm vs. Interruptible Pipeline Transportation Service"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

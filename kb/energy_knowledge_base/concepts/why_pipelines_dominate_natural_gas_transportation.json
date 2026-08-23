@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Why pipelines dominate natural gas transportation",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Transportation",
+ "definition": "Natural gas is transported almost exclusively by pipeline because the alternatives are impractical: gas must be kept in airtight, pressurized containers to avoid dispersing, making truck/rail transport heavy and costly, and liquefying gas (cooling to about -260\u00b0F) requires expensive insulated handling and re-heating at delivery that only makes sense at larger scale.",
+ "core_idea": "Pipelines avoid the cost of moving heavy pressurized containers and, once built, are cheap to operate with few moving parts, which is why they became the dominant delivery method and why non-pipeline-connected areas become effectively isolated from the gas market.",
+ "key_points": [
+  "Gas must be contained (it disperses if not airtight), and container weight drives up non-pipeline transport cost.",
+  "Liquefaction to about -260\u00b0F is possible but the cost/complexity of supercooling and re-heating limits it to non-small-scale use.",
+  "Once built, pipelines are cost-effective to run: few moving parts, continuous operation.",
+  "Areas not connected to the pipeline network are called 'stranded' - very hard to get gas in or out."
+ ],
+ "relationships": [
+  "Stranded gas relates to regional basis/price dislocations since it cannot easily reach market."
+ ],
+ "trading_implications": [
+  "Regions cut off from pipeline access ('stranded' gas) can trade at persistently different prices because arbitrage via alternate transport is impractical."
+ ],
+ "caveats": [
+  "That trucking or rail could be a routine substitute for pipeline transport - the source frames these as difficult/impractical, not just costlier."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 26,
+   "pages": "506-507"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch26/chunk_000.json",
+   "idx": 0,
+   "topic": "Why pipelines dominate natural gas transportation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

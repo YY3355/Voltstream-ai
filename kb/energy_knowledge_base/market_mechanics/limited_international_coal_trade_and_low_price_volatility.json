@@ -1,0 +1,46 @@
+{
+ "canonical_topic": "Limited international coal trade and low price volatility",
+ "type": "market_mechanic",
+ "category": "Commodities",
+ "subcategory": "Coal Market Structure",
+ "definition": "Because coal power plants are usually sited near an abundant local supply and transportation costs are a large share of delivered coal price, long-distance and international coal trade is generally uneconomical, which keeps coal prices comparatively stable.",
+ "core_idea": "Coal's cost structure is dominated by transportation, so plants source locally under long-term contracts rather than trading it internationally, and this local, contract-based structure makes coal prices much less volatile than other fossil fuels.",
+ "key_points": [
+  "Coal power plants are typically built close to an abundant local coal supply.",
+  "Transportation costs make up a substantial share of delivered coal price, so imported coal is usually much more expensive than local coal.",
+  "It is generally uneconomical to transport coal over long distances, limiting international trade.",
+  "Coal prices are much less volatile than the prices of other fossil fuels, partly as a result of this limited long-distance trade."
+ ],
+ "relationships": [
+  "Transportation-cost share of price drives the limited-trade outcome, which in turn drives lower price volatility."
+ ],
+ "trading_implications": [
+  "Coal is less suited to global arbitrage trading than oil or natural gas because delivered economics are dominated by local transport cost rather than a globally arbitraged commodity price."
+ ],
+ "caveats": [
+  "Coal is not a globally fungible commodity in the way oil is; 'the price of coal' is much more locationally specific."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "250"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_001.json",
+   "idx": 1,
+   "topic": "Limited international coal trade and low price volatility"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

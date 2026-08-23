@@ -1,0 +1,42 @@
+{
+ "canonical_topic": "Monte Carlo analysis as a valuation tool",
+ "type": "concept",
+ "category": "Quantitative Methods",
+ "subcategory": "Simulation",
+ "definition": "Monte Carlo analysis uses statistical simulation to solve mathematical problems that are difficult to solve directly with algebra or calculus.",
+ "core_idea": "It is one of the primary techniques used to value complicated investments when a closed-form (algebraic/calculus-based) solution isn't practical.",
+ "key_points": [
+  "Monte Carlo analysis applies statistics/simulation rather than closed-form math.",
+  "It is a primary method for valuing complex investments."
+ ],
+ "relationships": [
+  "Built on the same statistical foundation as volatility and correlation."
+ ],
+ "trading_implications": [
+  "Used when investments are too complicated to value with straightforward algebraic or calculus-based formulas."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 12,
+   "pages": "301-302"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch12/chunk_000.json",
+   "idx": 3,
+   "topic": "Monte Carlo analysis as a valuation tool"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

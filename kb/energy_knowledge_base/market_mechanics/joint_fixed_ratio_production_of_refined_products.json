@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Joint (fixed-ratio) production of refined products",
+ "type": "market_mechanic",
+ "category": "Oil",
+ "subcategory": "Refining",
+ "definition": "Refining crude oil into gasoline necessarily also produces every other refined product simultaneously, so a refiner cannot isolate output to just one product without risking oversupply of the co-products.",
+ "core_idea": "Because distillation and cracking of a barrel of crude yields a whole slate of products at once, a refiner responding to high gasoline prices by increasing throughput also increases output of all other refined products, which can flood those other product markets.",
+ "key_points": [
+  "It is impossible to produce a single refined product (e.g., gasoline only) without producing the others at the same time.",
+  "Increasing refinery output to capture higher gasoline prices raises supply of all other refined products too.",
+  "This can create a risk of glutting the market for the refinery's other (non-target) products."
+ ],
+ "relationships": [
+  "Directly follows from the distillation/cracking process producing a full product slate from each barrel"
+ ],
+ "trading_implications": [
+  "Gasoline price rallies can indirectly pressure other refined product prices lower as refiners ramp output to capture gasoline margins, a cross-product effect worth tracking in refined products trading."
+ ],
+ "caveats": [
+  "A refiner cannot simply 'dial in' higher gasoline output in isolation \u2014 the joint-product nature of distillation means all co-products scale together."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 6,
+   "pages": "223-224"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch06/chunk_001.json",
+   "idx": 10,
+   "topic": "Joint (fixed-ratio) production of refined products"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

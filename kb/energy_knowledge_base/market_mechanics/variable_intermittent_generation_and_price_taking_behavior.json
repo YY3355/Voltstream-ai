@@ -1,0 +1,48 @@
+{
+ "canonical_topic": "Variable (intermittent) generation and price-taking behavior",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Generation Stack / Renewable Integration",
+ "definition": "Variable generation refers to power sources\u2014solar, wind, hydro, and cross-grid imports/exports\u2014whose output is driven by external conditions rather than by dispatch decisions, and which often cannot be shut down on short notice or guarantee delivery once scheduled.",
+ "core_idea": "Because variable generators cannot reliably control their own output or reduce non-delivery risk, they typically bid at zero cost and simply accept whatever price the market clears at, making them price takers whose share of the generation stack shifts throughout the day.",
+ "key_points": [
+  "Solar output tracks sunlight availability, peaking around midday and falling off in early morning/late evening.",
+  "Once power is scheduled to be imported from another grid, it generally can't be cancelled; solar, wind, and hydro likewise can't easily shut down on short notice or guarantee delivery.",
+  "Because they can't control output or guarantee delivery, these suppliers bid zero cost and are paid the market clearing price set by other participants (price takers).",
+  "Day-ahead predictions of variable output are usually fairly accurate, but accuracy degrades over longer horizons; hydro output, for example, depends on rainfall that is well known a day ahead but much less predictable a month or two out.",
+  "Even over short spans like a week or two, variable production can change substantially (illustrated by PJM output on two different days in August 2005, Figure 4.2.5)."
+ ],
+ "relationships": [
+  "Connects to marginal-generator price sensitivity (small supply shifts affecting price)."
+ ],
+ "trading_implications": [
+  "Shifts in variable generation change which unit is marginal, which is a major reason the same demand level at different times can clear at very different prices.",
+  "This makes it difficult to reverse-engineer the true generation stack purely from published ISO/RTO load and price data."
+ ],
+ "caveats": [
+  "Assuming price differences between periods with identical demand must reflect demand-side factors, when they may instead be driven by shifts in variable (renewable/hydro/import) supply."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 17,
+   "pages": "415-416"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch17/chunk_002.json",
+   "idx": 1,
+   "topic": "Variable (intermittent) generation and price-taking behavior"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

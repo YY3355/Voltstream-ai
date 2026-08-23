@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Coal's dominant use is electrical generation",
+ "type": "concept",
+ "category": "Coal",
+ "subcategory": "Demand / End Use",
+ "definition": "The overwhelming majority of mined coal is consumed by power plants to generate electricity, rather than by industrial uses such as steelmaking or plastics feedstock.",
+ "core_idea": "Coal demand is essentially a proxy for electrical generation demand, since over 90% of North American coal use and roughly half of global electrical generation capacity ties back to coal-fired power.",
+ "key_points": [
+  "Over 90 percent of coal consumed in North America goes to electrical power generation.",
+  "Industrial uses of coal (e.g., steelmaking, plastics raw materials) exist but represent a much smaller market than power generation.",
+  "About half of North American electrical power historically has come from coal plants.",
+  "Globally, coal accounts for over half of the world's electrical generation capacity."
+ ],
+ "relationships": [
+  "Coal demand is closely tied to electrical grid generation mix and to industrial demand for steel/plastics feedstock to a much smaller degree."
+ ],
+ "trading_implications": [
+  "Because coal demand is concentrated almost entirely in power generation, coal market analysis largely reduces to analyzing electricity generation trends."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 7,
+   "pages": "247-247"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch07/chunk_000.json",
+   "idx": 1,
+   "topic": "Coal's dominant use is electrical generation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

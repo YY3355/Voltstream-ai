@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Typical payoff pattern: option buyers lose often with rare big wins; option sellers win often with rare big losses",
+ "type": "concept",
+ "category": "Derivatives",
+ "subcategory": "Options \u2014 Risk Characteristics",
+ "definition": "If options are priced fairly so buyers and sellers break even on average over time, buying options loses money in most individual instances, offset by occasional large profits. Selling options has the mirror-image payoff pattern: steady small profits most of the time, punctuated by occasional large losses.",
+ "core_idea": "Fair option pricing forces a specific payoff shape on each side of the trade \u2014 buyers are structured for frequent small losses and rare big wins, sellers for frequent small wins and rare big losses \u2014 not a general edge for either side.",
+ "key_points": [
+  "Buying options loses money most of the time under fair pricing, counterbalanced by occasional large profits.",
+  "Selling options returns steady small profits most of the time, with occasional large losses.",
+  "Referenced by the author as Figure 3.4.2, illustrating these typical payoff shapes."
+ ],
+ "relationships": [
+  "Extends the earlier 'options behave like insurance' concept with the mirror-image seller-side payoff detail"
+ ],
+ "trading_implications": [
+  "Traders should expect the frequency/size profile of gains and losses to differ sharply between being long and being short options, even when both sides are fairly priced on average."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 13,
+   "pages": "331-332"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch13/chunk_001.json",
+   "idx": 6,
+   "topic": "Typical payoff pattern: option buyers lose often with rare big wins; option sellers win often with rare big losses"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

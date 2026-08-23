@@ -1,0 +1,56 @@
+{
+ "canonical_topic": "Expected profit per megawatt from profitable spread scenarios",
+ "type": "formula",
+ "category": "Derivatives",
+ "subcategory": "Tolling Agreements / Spark Spread Options",
+ "definition": "The expected profit from a tolling agreement scenario is derived by averaging only the profitable portion of the spread distribution and scaling by the plant's dispatch capacity.",
+ "core_idea": "At expiration, only the spreads above the plant's break-even (profitable) point matter; averaging those profitable spreads gives a profit-per-MW figure, and multiplying by the dispatch rate (MW) gives the total expected profit for that scenario.",
+ "key_points": [
+  "Only spreads in the profitable region of the distribution are used in the average \u2014 unprofitable spreads are excluded because the plant would simply not run.",
+  "Total expected profit scales linearly with the plant's dispatch rate (its MW capacity)."
+ ],
+ "relationships": [
+  "Depends on the spread distribution described in the prior item and the plant's heat-rate-determined profitability threshold"
+ ],
+ "trading_implications": [
+  "This is the basic building block of a spark spread option valuation model: identify the profitable tail of the distribution, average it, then scale by capacity."
+ ],
+ "caveats": [],
+ "formulas": [
+  {
+   "name": "Expected profit from a dispatch scenario",
+   "formula": "Expected Profit = Average(Profitable Spreads) \u00d7 Dispatch Rate",
+   "variables": {
+    "Average(Profitable Spreads)": "average price ($/MWh) across only the spread outcomes where running the plant is profitable",
+    "Dispatch Rate": "plant output capacity in megawatts (MW)"
+   },
+   "source": {
+    "chapter": 18,
+    "pages": "434-435",
+    "section_hint": "4.3 Tolling Agreements \u2014 Valuation and Volatility"
+   }
+  }
+ ],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 18,
+   "pages": "434-435"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 4,
+   "topic": "Expected profit per megawatt from profitable spread scenarios"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

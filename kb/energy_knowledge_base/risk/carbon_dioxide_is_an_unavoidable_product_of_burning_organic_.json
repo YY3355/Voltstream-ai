@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Carbon dioxide is an unavoidable product of burning organic fuel",
+ "type": "concept",
+ "category": "Risk",
+ "subcategory": "Environmental / Combustion chemistry",
+ "definition": "Combustion breaks the long carbon chains in organic fuels by combining carbon with oxygen, a self-sustaining exothermic reaction once ignited, which necessarily produces carbon dioxide; large-scale CO2 release can strengthen the greenhouse effect.",
+ "core_idea": "Because almost all fuels are carbon-based, and combustion chemically requires combining carbon with oxygen, it is essentially impossible to burn a fuel without generating CO2.",
+ "key_points": [
+  "Organic fuels are long chains of carbon molecules; combustion breaks these chains by combining carbon with oxygen.",
+  "Combustion needs an initial spark but then is self-sustaining, producing more heat than needed to start it.",
+  "CO2 is odorless and nontoxic on its own.",
+  "It is essentially impossible to burn carbon-based fuels \u2014 which is nearly all fuels \u2014 without producing CO2.",
+  "Large volumes of released CO2 can strengthen the greenhouse effect."
+ ],
+ "relationships": [
+  "Two general categories of combustion pollution"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Thinking CO2 itself is toxic \u2014 the author notes it is odorless and nontoxic; the risk is the climate-scale greenhouse effect, not direct toxicity."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "40-40"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_005.json",
+   "idx": 8,
+   "topic": "Carbon dioxide is an unavoidable product of burning organic fuel"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "canonical_topic": "Day-ahead/real-time auctions, forward markets, and the clearing price",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "Price Formation",
+ "definition": "Regional daily power auctions (hourly, day-ahead, and five-minute real-time) set the physical clearing price for electricity; separately, forward markets at major hubs are where most speculative trading occurs, spanning from the rest of the current month out to about five years.",
+ "core_idea": "Physical power price is set auction-by-auction through merit-order bidding, while financial/speculative activity mostly happens in a separate forward market tied to hub prices.",
+ "key_points": [
+  "Daily auctions let producers sell power to consumers on the local grid, typically hourly on a day-ahead basis or in five-minute increments in real time.",
+  "Forward markets, based on prices at major hubs, are where most speculative power trading occurs, separate from the daily physical auctions.",
+  "Forward trade horizons typically range from the remainder of the current month out to roughly five years.",
+  "On delivery day, all producers and consumers in a local market generally receive/pay the same clearing price per megawatt.",
+  "In deregulated markets, the clearing price comes from bids (price/volume schedules) submitted by producers.",
+  "Plants are dispatched from lowest-cost to highest-cost until demand is met (merit-order dispatch).",
+  "The clearing price is set by the cost of the last (marginal) plant activated to meet demand \u2014 the marginal price of power \u2014 and that plant is the marginal power plant."
+ ],
+ "relationships": [
+  "Clearing price = marginal price of power = cost of the marginal (last-dispatched) power plant.",
+  "Merit-order dispatch (lowest to highest cost) directly determines which plant is marginal."
+ ],
+ "trading_implications": [
+  "Understanding which plant is likely to be marginal (its fuel/cost) is central to forecasting the clearing price.",
+  "Speculative strategies concentrate in hub-based forward products rather than the physical daily auctions."
+ ],
+ "caveats": [
+  "The clearing price is not an average of all bids \u2014 it is set specifically by the cost of the marginal (last needed) unit, and (in general) that same price applies to all participants that day."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "27-28"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 2,
+   "topic": "Day-ahead/real-time auctions, forward markets, and the clearing price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "canonical_topic": "Long-run natural gas supply as a function of price",
+ "type": "concept",
+ "category": "Natural Gas",
+ "subcategory": "Prices, Supply, and Demand",
+ "definition": "Over long time horizons, the usual supply-and-demand-sets-price logic reverses for natural gas: expected demand and price levels determine how much supply gets developed, because higher prices make previously uneconomical reserves worth extracting.",
+ "core_idea": "For exploration and development decisions, higher expected natural gas prices justify tapping harder-to-reach reserves and make new exploration a better investment, so in the long run supply follows price and demand rather than the other way around.",
+ "key_points": [
+  "Over very long time frames, treating natural gas prices as simply a function of supply and demand is misleading.",
+  "Higher prices make extraction from difficult-to-reach reserves more economical.",
+  "Higher prices also make new exploration a more attractive investment.",
+  "Exploration companies forecast delivery costs and add a target profit margin when planning supply.",
+  "Higher demand leads to higher prices, and those higher prices in turn make it economical to develop new supply."
+ ],
+ "relationships": [
+  "Long-run supply dynamic contrasts with short-run spot market behavior, which is purely supply/demand driven and inelastic."
+ ],
+ "trading_implications": [
+  "Long-dated price forecasts should be built around expected demand, not current supply, since supply itself adjusts to price over time."
+ ],
+ "caveats": [
+  "Treating natural gas supply as fixed/independent of price in long-run price modeling."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "157-163"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_005.json",
+   "idx": 3,
+   "topic": "Long-run natural gas supply as a function of price"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Structure of the energy market",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Market Structure",
+ "definition": "The energy market is a chain of distinct sub-industries (exploration/production, transportation, generation, conversion, and distribution) that together move fuel and power from the ground to end consumers.",
+ "core_idea": "Because the market is fragmented into specialized sub-industries, most participants only ever see one slice of it, but each slice has its own quirks that a trader still needs to understand alongside the big picture.",
+ "key_points": [
+  "Sub-industries include finding/developing raw fuel sources, transporting them (pipeline, ship), generating power (plants, wind, solar), converting raw materials into finished products, and distributing to consumers (utilities, gas stations).",
+  "The energy sector touches nearly every part of the broader economy.",
+  "The core of the market is drilling for fuel, building power plants, and running power lines.",
+  "The primary commodities are petroleum, natural gas, and electricity, with coal, carbon emissions, nuclear, solar, and wind as secondary/related commodities.",
+  "Deregulation turned energy from a purely industrial/operational business into a major financial market on par with stocks and bonds, drawing in Wall Street participation."
+ ],
+ "relationships": [
+  "Sets up the physical-vs-financial and spot-vs-forward distinctions discussed later in the chapter."
+ ],
+ "trading_implications": [
+  "A trader benefits from understanding both their own niche and how the overall chain connects, since events in one sub-industry (e.g., outages, transport constraints) ripple into others."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "18-19"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_000.json",
+   "idx": 0,
+   "topic": "Structure of the energy market"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

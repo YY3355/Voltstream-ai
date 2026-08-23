@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Exchange for Principal (EFP) Transaction Confirmation",
+ "type": "market_mechanic",
+ "category": "Derivatives",
+ "subcategory": "Exchange Mechanics",
+ "definition": "An exchange for principal (EFP) transaction lets traders customize the commodity delivered under a futures-linked deal; the trade is negotiated directly between counterparties off-exchange and then cleared on the exchange, with the confirmation specifying (among other terms) a description of the physical commodity being delivered.",
+ "core_idea": "EFP transactions are privately sourced deals (traders must find their own counterparty) that get formalized into an exchange-clearable confirmation, giving flexibility on commodity specification beyond the standard futures contract terms.",
+ "key_points": [
+  "These trades are negotiated off the exchange; traders must find a willing counterparty themselves.",
+  "Once agreed, the transaction is cleared on the exchange.",
+  "The trade confirmation includes a description of the physical commodity being delivered, among other negotiated terms."
+ ],
+ "relationships": [
+  "Related to but distinct from the general Exchange for Physical (EFP) mechanism described in the same section; both are submitted to the exchange to pair traders for delivery."
+ ],
+ "trading_implications": [
+  "Useful when a trader needs delivery of a commodity variant that doesn't match the standard futures contract specification."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "95-96"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_005.json",
+   "idx": 6,
+   "topic": "Exchange for Principal (EFP) Transaction Confirmation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

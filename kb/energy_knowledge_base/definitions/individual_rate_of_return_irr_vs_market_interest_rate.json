@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Individual rate of return (IRR) vs. market interest rate",
+ "type": "definition",
+ "category": "Risk",
+ "subcategory": "Time Value of Money",
+ "definition": "An individual's expected rate of return on their own investments is their individual rate of return (IRR); the interest rate is the aggregate consensus of all market participants' IRRs.",
+ "core_idea": "Interest rates observed in the market are essentially a collective aggregation of individual investors' expected returns, used as the benchmark for time-value-of-money comparisons.",
+ "key_points": [
+  "IRR is personal/individual \u2014 it reflects one investor's own expected return from their investment opportunities.",
+  "The market interest rate emerges as the consensus across all participants' individual rates of return."
+ ],
+ "relationships": [
+  "IRR feeds into the broader market interest rate, which is then used generally as the time-value-of-money benchmark."
+ ],
+ "trading_implications": [
+  "A trader's personal discount rate (IRR) may differ from the quoted market interest rate, affecting how they individually value future cash flows relative to the broader market."
+ ],
+ "caveats": [
+  "Treating 'interest rate' and 'individual rate of return' as synonyms; the former is a market consensus, the latter is specific to one participant."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 2,
+   "pages": "97-103"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch02/chunk_006.json",
+   "idx": 8,
+   "topic": "Individual rate of return (IRR) vs. market interest rate"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

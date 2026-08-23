@@ -1,0 +1,49 @@
+{
+ "canonical_topic": "Henry Hub Benchmark and NYMEX Futures Contract",
+ "type": "market_mechanic",
+ "category": "Natural Gas",
+ "subcategory": "Benchmarks & Derivatives",
+ "definition": "Henry Hub is both a physical interconnection of 13 pipelines on the Louisiana Gulf Coast and the delivery point for the NYMEX natural gas futures contract, making it the dominant price benchmark for U.S. natural gas.",
+ "core_idea": "Unlike broad-market benchmarks such as the S&P 500 that average many components, the Henry Hub natural gas benchmark is the actual price at one specific physical location, and most other natural gas (and even electricity) forward prices are built heavily off this single contract.",
+ "key_points": [
+  "Henry Hub sits at the interconnection of 13 major pipelines near the Louisiana Gulf Coast.",
+  "It is the designated delivery location for the NYMEX natural gas futures contract.",
+  "It functions as the primary U.S. natural gas price index, comparable in importance to the S&P 500 for equities.",
+  "Key distinction from an equity index: Henry Hub is a single-location transaction price, not an average across many locations or instruments.",
+  "Most natural gas forward prices, and many electricity forward prices, are heavily derived from this contract."
+ ],
+ "relationships": [
+  "Underpins forward curves for both gas and electricity",
+  "Its physical role as an interconnection hub is what makes it useful as a financial benchmark"
+ ],
+ "trading_implications": [
+  "Basis trades are commonly structured as the spread between a local hub/citygate price and the Henry Hub benchmark",
+  "Electricity forward pricing often references Henry Hub gas prices given gas-fired generation's influence on power prices"
+ ],
+ "caveats": [
+  "Henry Hub is not an averaged index like a stock index \u2014 it is literally the price at one physical location"
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 4,
+   "pages": "142-143"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 2,
+   "topic": "Henry Hub Benchmark and NYMEX Futures Contract"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

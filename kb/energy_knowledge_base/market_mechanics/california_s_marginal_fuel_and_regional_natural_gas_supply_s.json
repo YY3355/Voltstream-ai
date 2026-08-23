@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "California's marginal fuel and regional natural gas supply split",
+ "type": "market_mechanic",
+ "category": "Power Markets",
+ "subcategory": "California (CAISO)",
+ "definition": "Because natural-gas-fired plants are typically the marginal (price-setting) generators in California, the state's power prices are tied to gas supply, which comes from two distinct sources depending on region.",
+ "core_idea": "Southern California draws its marginal gas supply from the Rocky Mountains and West Texas, while Northern California draws from western Canada, so a price divergence between those two gas supply basins can create corresponding divergence in regional power prices.",
+ "key_points": [
+  "Natural-gas-fired plants are usually the marginal producers of power in California",
+  "Southern part of the region gets gas from the Rocky Mountains and West Texas",
+  "Northern part gets gas from western Canada",
+  "Divergent fuel prices between the two source basins can affect regional power price differentials"
+ ],
+ "relationships": [
+  "Natural gas basis/regional pricing",
+  "California (CAISO) NP-15/SP-15 zones"
+ ],
+ "trading_implications": [
+  "Gas basis spreads between Rockies/West Texas and western Canada are a useful signal for anticipated NP-15 vs SP-15 power price divergence"
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 5,
+   "pages": "200"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch05/chunk_006.json",
+   "idx": 3,
+   "topic": "California's marginal fuel and regional natural gas supply split"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

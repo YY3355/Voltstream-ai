@@ -1,0 +1,43 @@
+{
+ "canonical_topic": "Hourly (diurnal) load shape varies by season and day type",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "The shape of the daily load curve changes with season because the underlying driver of consumption shifts between cooling and heating/occupancy behavior.",
+ "core_idea": "In summer, demand peaks in the early afternoon as air conditioning ramps with heat; in winter, demand peaks in the early morning (waking up) and early evening (arriving home), with a trough while people are at work or asleep.",
+ "key_points": [
+  "Summer (August) example: overnight usage is similar on weekdays and weekends, but weekday afternoon usage is much higher than weekend afternoon usage because offices are empty and unair-conditioned on weekends.",
+  "Winter (January) example: weekday demand spikes around a 7 a.m. morning peak, while weekend demand doesn't ramp up until later, peaking around 10 a.m. \u2014 attributed to people sleeping later on weekends.",
+  "Winter also shows a second peak in the early evening when people return home and raise thermostats, versus lowering them during work/sleep hours."
+ ],
+ "relationships": [
+  "Builds on the weekday/weekend demand gap; both feed into a combined temperature + hour-of-day + day-type load model."
+ ],
+ "trading_implications": [
+  "Load forecasts and hourly price shape assumptions should use season-specific and day-type-specific hourly profiles rather than a single average daily shape."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "399-402"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_002.json",
+   "idx": 1,
+   "topic": "Hourly (diurnal) load shape varies by season and day type"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

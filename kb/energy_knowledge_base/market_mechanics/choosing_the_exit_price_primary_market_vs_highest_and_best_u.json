@@ -1,0 +1,45 @@
+{
+ "canonical_topic": "Choosing the exit price: primary market vs. highest and best use",
+ "type": "market_mechanic",
+ "category": "Risk",
+ "subcategory": "Fair Value Accounting",
+ "definition": "When an asset or liability could be liquidated in more than one venue, accounting standards say to use the primary market's price if one venue accounts for the majority of trading; otherwise, use the venue/approach that maximizes the asset's value, known as the highest and best use or most advantageous market.",
+ "core_idea": "Fair value accounting resolves ambiguity about which market's price to use by defaulting to the dominant trading venue, and falling back to the value-maximizing venue when no single market dominates.",
+ "key_points": [
+  "If a primary market exists (one venue handling the majority of trading), its prices should be used for the exit price.",
+  "If no primary market exists, accounting standards direct companies to use the approach maximizing the asset's value.",
+  "This value-maximizing approach is termed the 'highest and best use' or 'most advantageous market.'"
+ ],
+ "relationships": [
+  "Applies the exit-price definition from ASC 820 / IFRS 13"
+ ],
+ "trading_implications": [
+  "Where an asset trades across multiple venues, the accounting-mandated exit price may not equal the price achievable in the venue a trader would actually use."
+ ],
+ "caveats": [
+  "Assuming any convenient market's price can be used for fair value, rather than following the primary-market-first, most-advantageous-market-otherwise rule."
+ ],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 29,
+   "pages": "550-550"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch29/chunk_001.json",
+   "idx": 8,
+   "topic": "Choosing the exit price: primary market vs. highest and best use"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}

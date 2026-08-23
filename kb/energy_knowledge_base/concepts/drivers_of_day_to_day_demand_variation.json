@@ -1,0 +1,44 @@
+{
+ "canonical_topic": "Drivers of day-to-day demand variation",
+ "type": "concept",
+ "category": "Power Markets",
+ "subcategory": "Load Forecasting",
+ "definition": "Even within the same region, daily electricity demand fluctuates, and most of that fluctuation is attributable to calendar effects (such as day of week or hour of day) and weather (primarily temperature).",
+ "core_idea": "Short-term load forecasting is fundamentally about understanding why people use electricity \u2014 much of which reduces to routine schedules and temperature-driven equipment use (like heating and cooling).",
+ "key_points": [
+  "Calendar effects: predictable patterns like an office's 9-to-5 schedule recur every weekday.",
+  "Weather effects: demand shifts with temperature because buildings run heating or air conditioning to hold a constant indoor temperature.",
+  "Different consumer types (e.g., a downtown business district vs. a residential suburb) have distinct demand profiles even though both can be modeled from historical behavior.",
+  "Location matters because climate varies by region (the book contrasts central Florida vs. the Mid-Atlantic coastline in February) so the same type of consumer will show different usage patterns in different places."
+ ],
+ "relationships": [
+  "Feeds directly into building a short-term load forecasting model"
+ ],
+ "trading_implications": [
+  "Because weather and calendar effects drive short-term demand swings, and demand drives price, these are the practical inputs a trader would want a forecasting model to capture."
+ ],
+ "caveats": [],
+ "formulas": [],
+ "contradictions": [],
+ "n_merged": 1,
+ "source_refs": [
+  {
+   "chapter": 16,
+   "pages": "389-391"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 1
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch16/chunk_000.json",
+   "idx": 3,
+   "topic": "Drivers of day-to-day demand variation"
+  }
+ ],
+ "_synth_validation": {
+  "status": "SINGLETON",
+  "unsupported": []
+ }
+}
