@@ -38,8 +38,16 @@ listed in excluded_from_pass3.json. Recomputed from _validation each run (re-run
       RECONCILE: 857 trusted in == 857 contributing items out (nothing lost); 857 trusted + 54 excluded
       = 911. Provenance re-checked on 5 random objects (source_refs + contributing_items + formula sources
       all present). ✔
-- [ ] 5 — REPORT PDF: canonical count, merge stats, top-10 by source breadth, contradictions, excluded count,
-      honest caveat (queue open, Pass 5-6 + Co-Pilot NOT built).
+- [x] 5 — REPORT. kb_synth_report.py -> kb/kb_synth_report.pdf, every figure read from disk. Canonical 733
+      (24 merged + 709 singletons) + folder breakdown; merge stats (24/24, 8/24=33% flag vs ~1/3 pilot, 0
+      scars, breaker untripped); top-10 by source breadth (heat rate 5 ch, spark spread/hedging/spread
+      option 4); 4 contradictions verbatim, UNRESOLVED; graph 732 nodes/280 edges (honestly 732 not 733 —
+      one shared topic label); reconcile 857 trusted + 54 excluded = 911, nothing lost; excluded 47
+      UNSUPPORTED + 7 UNCLEAR; honest-caveat block (TWO queues open: 54 Pass-2 + 8 synth; Pass 5-6 NOT
+      built; Co-Pilot NOT wired). VERIFY: extracted PDF text, recomputed every number from disk -> ALL
+      GREEN. ✔
+
+## Pass 3 COMPLETE — 5/5 tasks, iterations 5/10. Synthesis done; two review queues open (human triage).
 
 ## Append-only log
 - setup (2026-08-21) — Pass 2 done (911 validated, 54 review queue open). Pass 3 = synthesis+dedup on the
