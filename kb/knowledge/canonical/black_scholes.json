@@ -1,0 +1,143 @@
+{
+ "canonical_topic": "black scholes",
+ "type": "concept",
+ "n_merged": 9,
+ "definition": "The Black Scholes formula is a closed-form equation for pricing European-style stock options, developed by Fischer Black, Myron Scholes, and Robert Merton in the late 1960s/early 1970s by combining dynamic hedging, price diffusion, and put/call parity into a continuous-time framework; it arises as the continuous-time limit of the binomial tree (infinitely small time steps requiring calculus rather than algebra), and 'Black Scholes genre' denotes the broader family of variant models built on it.",
+ "core_idea": "The still-used core idea behind the formula is dynamic hedging: an option's payoff can be replicated by continuously trading the underlying asset. The formula itself takes exactly five variables \u2014 underlying price, strike price, volatility, risk-free interest rate, and time to expiration \u2014 and produces a unique, direct price once they are plugged in, without requiring the user to understand the underlying derivation.",
+ "key_points": [
+  "Commodity options were traded for thousands of years before the mathematics of pricing them was formalized.",
+  "Louis Bachelier's 1900 'Th\u00e9orie de la sp\u00e9culation' applied Brownian motion (a diffusion process where a moving particle/price diverges from its start via a random walk) to model stock price movement \u2014 the first major mathematical breakthrough in option pricing, and a precursor to Black-Scholes.",
+  "Black, Scholes, and Merton combined dynamic hedging, price diffusion, and put/call parity into a continuous-time framework, producing the Black Scholes formula as the second major breakthrough in option pricing history.",
+  "Its creators won a Nobel Prize; the formula opened option trading to general/mass investors by removing the need to understand the underlying math, though Black, Scholes, and Merton were not the sole contributors to option pricing theory.",
+  "Taking a binomial tree's time steps to their logical extreme (infinitely small increments) requires calculus rather than algebra, producing a direct pricing equation instead of iterating through each tree node.",
+  "The formula is the basis for the broader 'Black Scholes genre' family of models.",
+  "The original formula relies on six assumptions: (1) the underlying's future price is best estimated by its current price (a Martingale process), (2) it can be bought/sold without large transaction costs or taxes, (3) trading is continuous with no price jumps, (4) borrowing and lending occur at the same constant risk-free rate, (5) holding the underlying carries no benefit or penalty (no dividends/storage cost), (6) no arbitrage opportunities persist.",
+  "These six assumptions are generally reasonable for energy options based on futures/forwards rather than the physical commodity; if unmet, the formula becomes inaccurate or wrong and a binomial-tree-variant approach is typically needed instead.",
+  "The Black Scholes genre as a whole shares five general assumptions: arbitrage-free markets, frictionless/continuous markets, borrowing/lending at a risk-free rate, lognormally distributed (geometric Brownian motion) price movements, and constant volatility across the option's life.",
+  "Genre variants differ mainly in how expiration-date value is discounted back to a present valuation-date value depending on the underlying: Black Scholes (stocks, spot price drifting up at the risk-free rate), Merton (stocks with continuous dividend yield), Black 76 (commodity futures, forward price present-valued \u2014 the variant most used in energy markets), Asay (exchange-traded futures, skips present-valuing due to daily margining), and Garman-Kohlhagen (FX futures, each currency discounted at its own rate).",
+  "Because forward/futures-based options (as in Black 76) have no benefit to early exercise, standard Black Scholes assumptions can be reused just by changing the underlying's starting price.",
+  "The term 'cost of carry' (b) in the generalized Black Scholes formula represents the cost of holding a position, originates in the bond market, and is the key parameter differentiating the genre's formulas from one another; carry payments go to the owner of the underlying (not the option), which is why they reduce option value."
+ ],
+ "relationships": [
+  "Bachelier's Brownian motion work is a precursor to the Black Scholes formula.",
+  "Builds on the general options and payoff concepts discussed earlier in the source material.",
+  "Is the basis for the broader family of 'Black Scholes genre' models.",
+  "Underpins why energy options are often priced with Black-76 rather than the plain-vanilla Black Scholes model.",
+  "Shares its general assumptions as the foundation across Black Scholes (stocks), Merton, Black 76, Asay, and Garman-Kohlhagen models.",
+  "Cost of carry (b) is the parameter that distinguishes Black Scholes, Merton, Black 76, Asay, and Garman-Kohlhagen from one another.",
+  "Serves as historical context for the option-pricing/Greeks framework discussed in the source chapter."
+ ],
+ "trading_implications": [
+  "Practitioners should prefer simpler, well-understood models and actively monitor for assumption drift rather than reaching for complexity by default.",
+  "Before applying a vanilla option formula, confirm its standard assumptions actually hold for the specific situation; if not, an exotic-option or binomial-tree approach is needed.",
+  "Traders can price options quickly using only observable/quotable market inputs, without needing to understand the derivation.",
+  "Before applying Black Scholes-style pricing to an energy option, check whether it is forward/futures-based (assumptions more likely to hold) versus spot-commodity-based (assumptions may break down, requiring an alternative model).",
+  "Energy option traders should default to thinking in terms of Black 76 (forward/futures-based) rather than the plain stock-based Black Scholes model, since most energy options are written on futures/forwards."
+ ],
+ "caveats": [
+  "Models are approximations, not substitutes for understanding the real situation; if a formula's assumptions don't hold, it becomes inaccurate or wrong, and not every option can be reasonably approximated this way \u2014 such options typically need a binomial-tree-variant approach instead.",
+  "Model assumptions can drift over time, but option models rarely fail overnight \u2014 problems typically surface years before causing real economic damage, so practitioners must catch and fix issues early.",
+  "Black, Scholes, and Merton were not the sole contributors to option pricing theory, though their work is credited with opening options markets to general investors."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "44-45"
+  },
+  {
+   "chapter": 14,
+   "pages": "347-348"
+  },
+  {
+   "chapter": 14,
+   "pages": "359-360"
+  },
+  {
+   "chapter": 14,
+   "pages": "361-362"
+  },
+  {
+   "chapter": 14,
+   "pages": "362-363"
+  },
+  {
+   "chapter": 14,
+   "pages": "363"
+  },
+  {
+   "chapter": 14,
+   "pages": "363-364"
+  },
+  {
+   "chapter": 14,
+   "pages": "365"
+  },
+  {
+   "chapter": 14,
+   "pages": "372-373"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 9
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_006.json",
+   "idx": 5,
+   "topic": "Option valuation philosophy: vanilla vs. exotic models, and the Black-Scholes origin"
+  },
+  {
+   "file": "raw/ch14/chunk_000.json",
+   "idx": 5,
+   "topic": "History of option pricing theory: Bachelier and Black-Scholes-Merton"
+  },
+  {
+   "file": "raw/ch14/chunk_002.json",
+   "idx": 7,
+   "topic": "Black-Scholes formula as the continuous-time limit of the binomial tree"
+  },
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 0,
+   "topic": "Black Scholes formula"
+  },
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 2,
+   "topic": "Black Scholes assumptions for energy/futures-based options"
+  },
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 3,
+   "topic": "General assumptions of Black Scholes genre models"
+  },
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 4,
+   "topic": "Black Scholes genre option model variants"
+  },
+  {
+   "file": "raw/ch14/chunk_003.json",
+   "idx": 5,
+   "topic": "Cost of carry (generalized Black Scholes)"
+  },
+  {
+   "file": "raw/ch14/chunk_005.json",
+   "idx": 4,
+   "topic": "Origin of modern option pricing theory (Black-Scholes-Merton)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "trading_implications",
+    "claim": "Before applying a vanilla option formula, confirm its standard assumptions actually hold for the specific situation; if not, an exotic-option or binomial-tree approach is needed.",
+    "reason": "Source item 1's trading_implication only names an 'exotic-option approach' as the remedy when vanilla assumptions fail. The 'binomial-tree approach' remedy comes from item 5, which ties it specifically to the six energy/futures Black Scholes assumptions, not to the general vanilla-vs-exotic distinction in item 1. Splicing 'or binomial-tree approach' into item 1's generic vanilla-formula guidance is an invented bridging claim not stated together in any single source item."
+   }
+  ],
+  "checked_at": "2026-08-22T23:27:59+00:00"
+ }
+}

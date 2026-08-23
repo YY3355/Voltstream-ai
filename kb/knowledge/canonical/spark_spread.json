@@ -1,0 +1,186 @@
+{
+ "canonical_topic": "spark spread",
+ "type": "concept",
+ "n_merged": 9,
+ "definition": "The spark spread is the theoretical per-unit profit estimate for converting fuel into electricity: the plant's power sale price minus its fuel cost, adjusted for the plant's conversion efficiency (heat rate). It is a gross rather than fully net figure \u2014 other operating costs are typically excluded/ignored because fuel dominates total cost. The coal-plant equivalent is called a dark spread, and versions that fold in emissions credit costs are called clean or green spreads.",
+ "core_idea": "Spark spread is the per-unit profit metric for a generator (power price minus heat-rate-adjusted fuel price) and serves as the building block for valuing power plants and tolling agreements via spread-option models, where the plant's payoff each period is the spread minus operating cost, capturing its option to run or not run. Its practical use is bounded by simplifications \u2014 excluded operating costs, reactive and independent-decision dispatch assumptions, ignored physical/regulatory constraints, and a pooled (non-seasonal) distribution \u2014 that can materially overstate profitability and understate risk.",
+ "key_points": [
+  "Spark spread = power price minus fuel cost adjusted by heat rate; other operating costs are typically excluded/ignored because fuel dominates total cost.",
+  "Spark spread can be negative when fuel cost exceeds the value of power produced.",
+  "Total plant profit = per-unit spark spread \u00d7 total electricity produced (dispatch rate).",
+  "Discussing spark spreads requires specifying both the assumed heat rate and the pricing location, since both affect the result.",
+  "Dark spread is the coal-plant equivalent of spark spread; clean/green spread adjusts the calculation for emissions credit costs.",
+  "Plant profitability depends jointly on per-unit profit (spark spread) and quantity produced (dispatch rate); higher output requires more fuel per MWh (worse heat rate), reducing per-unit profit as output rises, so valuation must find the profit-maximizing balance per period rather than maximize output or efficiency alone.",
+  "Power plant/tolling valuation commonly models the plant as a series of spark spread options: payoff per period = power price \u2212 fuel price \u2212 operating cost; if price falls below the plant's cost of production, the plant can shut down and earn nothing rather than run at a loss.",
+  "Spark spread option value depends on modeling electricity and fuel prices as correlated (not independent) random walks, since power prices are affected by fuel prices.",
+  "The spark spread distribution clusters around zero and can be roughly approximated by a normal distribution, but this breaks down at extremes (e.g., a real summer price spike) and ignores seasonal demand swings.",
+  "In low-demand shoulder seasons only efficient generators run, keeping the spread low; in high-demand seasons less efficient plants are dispatched, pushing spreads higher, with the most extreme demand days causing spikes. Because the marginal generator mix shifts seasonally, a more accurate model fits a separate distribution per season rather than one pooled annual distribution.",
+  "Spark spread option models simplify away real physical/behavioral constraints \u2014 ramp-up/cycling time, startup/cooling costs that vary with ambient temperature, and local grid-reliability rules \u2014 which can overstate profitability by as much as 20\u201330%, with the size of the overestimation being plant/location-specific (no general-purpose correction factor).",
+  "These models are typically 'reactive' \u2014 turning the plant on/off purely based on the current price spread \u2014 rather than anticipatory; real operators may run at a short-term loss to position for larger future gains, with the importance of this effect varying by generator.",
+  "Models typically assume each dispatch decision is independent of prior decisions, though real plants can be path dependent (today's operation depends on whether the plant ran yesterday).",
+  "More complex models that address these limitations are harder to verify, slower to run, and more likely to become invalid over time; simpler models are generally preferable but must be tested regularly since they aren't always appropriate.",
+  "Modeling errors from overoptimistic spread-option assumptions can propagate into other risk systems (e.g., VaR) undetected for extended periods."
+ ],
+ "relationships": [
+  "Forms the basis of the spark spread option payoff used in power plant and tolling agreement valuation.",
+  "Built from heat rate (and market-implied heat rate) as its efficiency input.",
+  "Dark spread and clean/green spread are named variants of the same underlying spark spread calculation.",
+  "Feeds into spread option valuation (and Kirk's approximation, referenced in the same section).",
+  "Connects to the broader theme of correlation between non-fungible underlying instruments (electricity and fuel) in option pricing.",
+  "The reactive-dispatch assumption and the omitted physical-constraint limitations are two distinct, compounding sources of model risk in spark spread option models."
+ ],
+ "trading_implications": [
+  "Traders use spark-spread displays segmented by heat rate and location to see which plant efficiency classes are profitable in each region.",
+  "Because spark spread excludes operating costs, it overstates a plant's true net profitability.",
+  "Total plant profit scales linearly with output once the per-unit spark spread is known, making it a standard building block for plant profit-and-loss estimation.",
+  "Valuation requires solving for the profit-maximizing operating mode per period, not simply running at maximum output or maximum efficiency.",
+  "Option-pricing models for tolling agreements must incorporate electricity-fuel correlation rather than modeling each commodity's price independently.",
+  "Risk models built on a single annual spread distribution will underestimate tail risk in peak seasons and overstate it in shoulder seasons; seasonal segmentation of historical spread data gives a more realistic input to option and plant valuation.",
+  "Profitability and VaR figures derived from spark spread models should be treated as potentially overstated by up to 20\u201330%, with the exact bias being plant/location-specific; valuation and risk teams should haircut or stress-test outputs against known physical constraints (ramp time, startup fuel, seasonal effects) and periodically audit VaR/P&L systems fed by these valuations against realized plant performance.",
+  "Model choice (simple vs. path-dependent/anticipatory) should be periodically re-tested rather than assumed permanently valid.",
+  "When building or reviewing a dispatch/valuation model, consider whether scenario design should include forward-looking (anticipatory) dispatch logic rather than purely reactive rules, especially for generators where startup costs or grid commitments make anticipation valuable."
+ ],
+ "caveats": [
+  "The raw spark spread metric (power price minus heat-rate-adjusted fuel price, with operating costs excluded) is distinct from the spark spread OPTION MODEL's payoff, which subtracts operating cost as well as fuel cost \u2014 a scope difference between the two, not a conflicting definition of the same quantity.",
+  "No general-purpose correction factor exists for the 20\u201330% profitability overestimation; its size depends on local/plant-specific characteristics.",
+  "A large outlier (August 2001) sits well above what a zero-centered normal approximation would predict; this is treated as a real summer price spike rather than bad data."
+ ],
+ "contradictions": [],
+ "formulas": [
+  {
+   "name": "Spark spread",
+   "formula": "Spark Spread = Power Price \u2212 (Heat Rate \u00d7 Fuel Price)",
+   "variables": {
+    "Power Price": "market price of electricity ($/MWh)",
+    "Heat Rate": "plant heat rate (MMBtu/MWh)",
+    "Fuel Price": "market price of fuel ($/MMBtu)",
+    "Spark Spread": "$/MWh theoretical gross margin, excluding operating costs"
+   },
+   "source": {
+    "chapter": 5,
+    "pages": "194",
+    "section_hint": "2.2 Electricity \u2014 Spark spreads"
+   }
+  },
+  {
+   "name": "Spark spread (net profit per unit)",
+   "formula": "Spark Spread = Power Price \u2212 (Heat Rate \u00d7 Fuel Price)",
+   "variables": {
+    "Power Price": "market price of electricity per unit of output",
+    "Heat Rate": "plant's fuel-to-electricity conversion efficiency factor",
+    "Fuel Price": "market price of the fuel input"
+   },
+   "source": {
+    "chapter": 18,
+    "pages": "424-425",
+    "section_hint": "4.3 Tolling Agreements \u2014 Converting Fuel to Electricity"
+   }
+  },
+  {
+   "name": "Plant profitability (conceptual)",
+   "formula": "Total Profit \u2248 Spark Spread (per-unit profit) \u00d7 Dispatch Rate (quantity produced)",
+   "variables": {
+    "Spark Spread": "profit per MWh, driven by power price minus fuel cost via heat rate",
+    "Dispatch Rate": "quantity of electricity produced, MWh"
+   },
+   "source": {
+    "chapter": 18,
+    "pages": "429-430",
+    "section_hint": "4.3 Tolling Agreements \u2014 Physical Model of a Power Plant"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "51"
+  },
+  {
+   "chapter": 1,
+   "pages": "51-52"
+  },
+  {
+   "chapter": 5,
+   "pages": "194"
+  },
+  {
+   "chapter": 15,
+   "pages": "381-382"
+  },
+  {
+   "chapter": 18,
+   "pages": "424-425"
+  },
+  {
+   "chapter": 18,
+   "pages": "429-430"
+  },
+  {
+   "chapter": 18,
+   "pages": "432"
+  },
+  {
+   "chapter": 18,
+   "pages": "435-436"
+  },
+  {
+   "chapter": 18,
+   "pages": "436"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 9
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 4,
+   "topic": "Spark spread option model for power plant valuation"
+  },
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 5,
+   "topic": "Limitations of spark spread option models"
+  },
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 2,
+   "topic": "Spark spread and its variants (dark spread, clean/green spread)"
+  },
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 0,
+   "topic": "Seasonal behavior of the spark spread distribution"
+  },
+  {
+   "file": "raw/ch18/chunk_000.json",
+   "idx": 4,
+   "topic": "Spark spread"
+  },
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 3,
+   "topic": "Spark spread vs. dispatch rate: the core profitability tradeoff"
+  },
+  {
+   "file": "raw/ch18/chunk_001.json",
+   "idx": 6,
+   "topic": "Spark spread option value depends on correlated electricity/fuel random walks"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 7,
+   "topic": "Spark spread option models can overstate real plant profitability"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 8,
+   "topic": "Reactive dispatch assumption in spark spread models understates anticipatory operating strategy"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:31:21+00:00"
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "canonical_topic": "weather derivative",
+ "type": "concept",
+ "n_merged": 9,
+ "definition": "A weather derivative is a financial contract whose payout is determined by a measured weather variable \u2014 most commonly average temperature, but also rainfall, snowfall, or hurricane activity \u2014 rather than the price or delivery of a traded commodity. Contracts are typically negotiated bilaterally between counterparties rather than exchange-traded, and are used mainly by utilities and insurance companies to manage a combined volume-and-price weather risk that ordinary commodity hedges do not address.",
+ "core_idea": "Weather derivatives pay out on a weather index rather than a commodity price, filling a volumetric-risk gap that price hedges leave open (e.g. a cold winter both raises heating demand and pushes gas prices higher). They take the form of a swap (no upfront cost, both parties at risk) or an option (buyer pays a premium, only the seller at risk, payouts often capped), are documented with a standard set of confirmation terms, and \u2014 because no traded forward market for weather exists \u2014 are valued from historical weather observations rather than by market or cost-of-carry pricing.",
+ "key_points": [
+  "Payoff is indexed to a weather measurement, most commonly average temperature, but also rainfall, snowfall, or hurricane data.",
+  "Usually bilaterally negotiated between counterparties rather than standardized exchange products.",
+  "Primary users are utilities and insurance companies.",
+  "Weather creates a combined volume-and-price risk that ordinary financial hedges struggle to address: an unusually cold winter both drains gas storage (more heating demand) and pushes gas prices higher.",
+  "Compared with insurance, weather derivatives typically cover events with a relatively high probability of occurring and comparatively modest losses, while insurance typically covers rare, high-severity events.",
+  "Insurance example given: protection against flood or hurricane damage, a very large loss that might occur only about once every 100 years.",
+  "Weather derivative example given: protection for an airline against lost business if rainfall runs 10 percent above average, a smaller loss that might recur several times within a 10-year period.",
+  "Two contractual forms: a swap, where both parties are at risk and there is no cost to enter, or an option, where the buyer pays a premium to the seller and only the seller is at risk.",
+  "The option premium is typically large, often around 20 percent of the maximum payout.",
+  "It is fairly common for weather derivatives to cap the maximum profit or loss.",
+  "Standard confirmation terms include Buyer/Seller, Trade Date, Effective Date, Termination Date, HDD Reference Level, Strike, Notional Amount, Maximum Transaction Payment Amount, Premium and Premium Payment Date, Reference Weather Station (and combination method if multiple stations), Weather Index Unit, and Transaction Type.",
+  "Unlike most forward prices, which come from active trading markets (nonstorable products) or cost-of-carry/storage economics (storable products), a weather derivative's pre-expiration expected payoff is typically estimated from historical weather observations because there is no equivalent traded forward market for weather.",
+  "Historical weather data appears to trend rather than consistently revert to an expected value, making it hard to specify a dependable 'expected temperature' for the following year.",
+  "There is no historically observable 'true' average temperature for a location, so valuing or trading weather derivatives requires explicit modeling assumptions.",
+  "Trend adjustment is one such assumption: correcting the historical temperature series for a long-term warming or cooling drift before using it as a baseline; the choice of start year for this calculation is itself a separate, consequential decision (e.g. in the Paris example, starting in 1958, an unusually warm year, versus 1963, an unusually cold year, produces different trend results).",
+  "Data truncation is a second, separate modeling decision: how many years of historical temperature data to include when building the baseline, motivated by the observation that older data may be less predictive of current/future temperatures than more recent data."
+ ],
+ "relationships": [
+  "Distinct from but conceptually adjacent to insurance contracts, differentiated by the probability and severity profile of the covered event rather than by payout mechanism.",
+  "Addresses a risk type (combined volume and price risk) that standard commodity hedges don't cover.",
+  "The swap/option structure mirrors other derivative types but with an unusually high premium-to-payout ratio for options.",
+  "Standard confirmation terms collectively define how the contract's HDD/CDD formula translates into an actual cash payoff.",
+  "Weather derivative valuation contrasts with standard forward-pricing methods used elsewhere in energy trading, since it relies on historical data analysis rather than a traded forward market or storage economics.",
+  "Trend adjustment and data truncation are paired as the two key modeling assumptions required for weather derivative valuation."
+ ],
+ "trading_implications": [
+  "A utility could use a temperature-linked derivative to offset the revenue/cost impact of an unusually mild or extreme season, complementing commodity hedges.",
+  "A pure price hedge (e.g., a gas swap) does not protect a utility against volumetric risk, so weather derivatives fill a separate hedging need.",
+  "Firms choosing between weather derivatives and insurance should match the product to the frequency/severity profile of the risk being managed \u2014 derivatives for frequent moderate risk, insurance for rare catastrophic risk.",
+  "The high premium (~20% of max payout) on weather options reflects the difficulty of precisely modeling weather outcomes and should be weighed against the capped payout when evaluating option economics.",
+  "Reviewing all standard confirmation fields \u2014 not just strike and notional \u2014 is necessary to fully understand a weather derivative's risk exposure, since caps and reference station definitions materially affect payout.",
+  "Pricing models that assume mean-reverting historical averages may misstate expected weather derivative payoffs given the observed trending behavior of weather data.",
+  "Different reasonable choices of trend start-year can produce materially different expected-temperature baselines and therefore different valuations for the same contract; traders/valuers should test sensitivity to that choice.",
+  "Using a shorter, more recent data window versus the full historical record changes the modeled expected temperature baseline and therefore the fair value assigned to a weather derivative."
+ ],
+ "caveats": [
+  "There is no historically observable 'true' average temperature for a location, so weather derivative valuation always rests on explicit, debatable modeling assumptions (trend adjustment and data truncation) rather than an objective baseline."
+ ],
+ "contradictions": [],
+ "formulas": [
+  {
+   "name": "Generic HDD option payoff",
+   "formula": "Payoff = (Notional Amount) * Max(Strike \u2013 Accumulated HDD, 0)",
+   "variables": {
+    "Notional Amount": "monetary multiplier defined in the contract",
+    "Strike": "HDD quantity that triggers payoff",
+    "Accumulated HDD": "sum of daily HDD over the contract period"
+   },
+   "source": {
+    "chapter": 34,
+    "pages": "606-608",
+    "section_hint": "6.6 Weather Derivatives \u2014 Weather Contracts / Common Terms"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "71-72"
+  },
+  {
+   "chapter": 1,
+   "pages": "71-72"
+  },
+  {
+   "chapter": 34,
+   "pages": "603-604"
+  },
+  {
+   "chapter": 34,
+   "pages": "604"
+  },
+  {
+   "chapter": 34,
+   "pages": "604-605"
+  },
+  {
+   "chapter": 34,
+   "pages": "606-608"
+  },
+  {
+   "chapter": 34,
+   "pages": "608-609"
+  },
+  {
+   "chapter": 34,
+   "pages": "610-610"
+  },
+  {
+   "chapter": 34,
+   "pages": "610-610"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 9
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_014.json",
+   "idx": 0,
+   "topic": "Weather Derivatives"
+  },
+  {
+   "file": "raw/ch01/chunk_014.json",
+   "idx": 2,
+   "topic": "Weather Derivatives vs. Insurance"
+  },
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 0,
+   "topic": "Weather Derivatives: Purpose and Volumetric Risk"
+  },
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 1,
+   "topic": "Weather Derivatives vs. Insurance"
+  },
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 2,
+   "topic": "Weather Derivative Structures: Swap vs. Option"
+  },
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 5,
+   "topic": "Standard Terms in a Weather Derivative Confirmation"
+  },
+  {
+   "file": "raw/ch34/chunk_000.json",
+   "idx": 6,
+   "topic": "Valuing Weather Derivatives from Historical Data"
+  },
+  {
+   "file": "raw/ch34/chunk_001.json",
+   "idx": 0,
+   "topic": "Trend adjustment in weather derivative temperature modeling"
+  },
+  {
+   "file": "raw/ch34/chunk_001.json",
+   "idx": 1,
+   "topic": "Data truncation in weather derivative temperature modeling"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T09:20:49+00:00"
+ }
+}

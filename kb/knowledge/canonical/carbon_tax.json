@@ -1,0 +1,59 @@
+{
+ "canonical_topic": "carbon tax",
+ "type": "concept",
+ "n_merged": 2,
+ "definition": "A fixed per-unit charge levied whenever carbon dioxide or another greenhouse gas is emitted, intended to make polluting technology more expensive relative to cleaner alternatives.",
+ "core_idea": "A carbon tax adds a fixed cost to emitting energy sources, is relatively easy to implement within a single country using existing tax infrastructure, and can fund subsidies for cleaner technology \u2014 but domestically its main weakness is that power companies pass the cost through to captive consumers rather than absorbing pressure to change their own technology, and internationally it is complicated by disputes over which government should receive cross-border revenue.",
+ "key_points": [
+  "Tax revenue can be redirected to subsidize less-polluting technology, widening the cost gap between clean and dirty options",
+  "Relatively easy to implement within a single country since tax infrastructure already exists",
+  "Adds a fixed cost to energy, unlike cap-and-trade's variable surcharge",
+  "A tax system typically results in a direct cash payment to a government (not revenue-neutral)",
+  "Cross-border taxation is complicated because it's unclear which government should receive the revenue",
+  "Carbon taxes and cap-and-trade are not mutually exclusive and often coexist in practice",
+  "Energy consumers are described as a captive audience under domestic carbon taxation",
+  "Power companies pass taxes along directly to consumers rather than absorbing the cost",
+  "Because the financial burden lands on consumers, the companies with the ability to adopt cleaner technology lack strong direct motivation to do so under a taxation system"
+ ],
+ "relationships": [
+  "Contrasted directly with cap and trade",
+  "Trade-off against the administrative simplicity/local-reinvestment advantages of taxes"
+ ],
+ "trading_implications": [],
+ "caveats": [
+  "Domestically, the tax burden tends to pass through to consumers (a captive audience) rather than compelling producers to change technology, since power companies pass the cost along directly instead of absorbing it",
+  "Cross-border carbon taxation is complicated by the ambiguity of which government should receive the revenue"
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 8,
+   "pages": "267-268"
+  },
+  {
+   "chapter": 8,
+   "pages": "273"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch08/chunk_001.json",
+   "idx": 1,
+   "topic": "Carbon tax"
+  },
+  {
+   "file": "raw/ch08/chunk_002.json",
+   "idx": 6,
+   "topic": "Domestic weakness of carbon taxes: consumer cost pass-through"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:51:31+00:00"
+ }
+}

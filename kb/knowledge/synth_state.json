@@ -1,0 +1,148 @@
+{
+ "done": {
+  "mark_to_market": {
+   "n_merged": 13,
+   "formulas": 1,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "value_at_risk": {
+   "n_merged": 12,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "wheeling": {
+   "n_merged": 12,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "black_scholes": {
+   "n_merged": 9,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "spark_spread": {
+   "n_merged": 9,
+   "formulas": 3,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "weather_derivative": {
+   "n_merged": 9,
+   "formulas": 1,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "cap_and_trade": {
+   "n_merged": 8,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "heat_rate": {
+   "n_merged": 7,
+   "formulas": 3,
+   "contradictions": 1,
+   "synth_status": "CLEAN"
+  },
+  "hedging": {
+   "n_merged": 7,
+   "formulas": 0,
+   "contradictions": 1,
+   "synth_status": "CLEAN"
+  },
+  "natural_gas_storage": {
+   "n_merged": 7,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "spread_option": {
+   "n_merged": 7,
+   "formulas": 2,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "credit_risk": {
+   "n_merged": 6,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "tolling_agreement": {
+   "n_merged": 6,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "crack_spread": {
+   "n_merged": 5,
+   "formulas": 1,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "load_forecasting": {
+   "n_merged": 5,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "model_risk": {
+   "n_merged": 5,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "financial_transmission_rights": {
+   "n_merged": 4,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "hedge_accounting": {
+   "n_merged": 4,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  },
+  "liquefied_natural_gas": {
+   "n_merged": 3,
+   "formulas": 0,
+   "contradictions": 1,
+   "synth_status": "CLEAN"
+  },
+  "carbon_tax": {
+   "n_merged": 2,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "generation_stack": {
+   "n_merged": 2,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "historical_cost_accounting": {
+   "n_merged": 2,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "CLEAN"
+  },
+  "implied_heat_rate": {
+   "n_merged": 2,
+   "formulas": 2,
+   "contradictions": 1,
+   "synth_status": "CLEAN"
+  },
+  "natural_gas_liquids": {
+   "n_merged": 2,
+   "formulas": 0,
+   "contradictions": 0,
+   "synth_status": "FLAGGED"
+  }
+ }
+}

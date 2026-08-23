@@ -1,0 +1,88 @@
+{
+ "canonical_topic": "liquefied natural gas",
+ "type": "concept",
+ "n_merged": 3,
+ "definition": "LNG is natural gas cooled to roughly \u2212263\u00b0F (\u2212160\u00b0C) until it liquefies, greatly increasing its density so it can be shipped in bulk (mainly across oceans by specially insulated tanker) to regions not connected by pipeline, and is then regasified (reheated back into gas) at the destination before entering the local pipeline/distribution grid.",
+ "core_idea": "Supercooling natural gas into liquid form shrinks its volume dramatically, making ocean tanker transport (and storage) practical for a commodity that otherwise moves only by pipeline; the gas is reheated back to gaseous form before final delivery.",
+ "key_points": [
+  "Liquefaction requires cooling natural gas to about \u2212263\u00b0F (\u2212160\u00b0C).",
+  "As a liquid, LNG is far denser / occupies far less volume than gaseous natural gas, holding substantially more energy per unit volume.",
+  "LNG is the second major method (alongside pipelines) for moving natural gas in bulk.",
+  "Transport uses specially insulated tanker ships; the extreme cold requires heavy insulation that is only cost-effective at large scale.",
+  "The three main steps are liquefaction, transportation, and regasification.",
+  "Liquefaction happens in a multistage sequence of cooling units called a 'train,' which also separates out heavier hydrocarbons from the gas.",
+  "Liquefaction plants are typically linked to producing regions by short-range pipelines.",
+  "LNG's main use is long-distance ocean transport where pipeline construction is impractical; it is also sometimes used for storage.",
+  "After transport, LNG is regasified (reheated) and injected into a pipeline; natural gas is almost always converted back to gas form before reaching end consumers/local distribution."
+ ],
+ "relationships": [
+  "Alternative to pipeline transport for long-distance/overseas movement.",
+  "Enables the market-linking (globalization) effect described in the LNG globalization item.",
+  "Liquefaction trades off increased energy density against the cost/complexity of supercooling and specialized handling equipment.",
+  "Liquefaction's hydrocarbon-separation step echoes earlier gas-processing steps."
+ ],
+ "trading_implications": [
+  "LNG shipping enables natural gas trade between regions not connected by pipeline (e.g., intercontinental trade), effectively globalizing what is otherwise a regionally-bound commodity.",
+  "LNG enables gas arbitrage between geographically disconnected markets (e.g., Henry Hub vs. overseas hubs) that pipelines cannot physically bridge.",
+  "The scale economics of insulation and cooling mean LNG projects are large and capital-intensive, favoring sustained large volumes over small shipments."
+ ],
+ "caveats": [
+  "Natural gas is almost always, not universally, converted back to gas before final delivery \u2014 LNG is also sometimes used for storage rather than being immediately regasified."
+ ],
+ "contradictions": [
+  {
+   "field": "density/volume reduction factor upon liquefaction",
+   "versions": [
+    {
+     "statement": "Liquid form is roughly 600 times denser than gaseous form.",
+     "from_item": "Liquefied natural gas (LNG) and ocean transport"
+    },
+    {
+     "statement": "As a liquid, natural gas occupies only about 1/610 of its gaseous volume.",
+     "from_item": "Liquefied Natural Gas (LNG) Process"
+    }
+   ],
+   "note": "Both describe the same liquefaction density effect but cite slightly different figures (600x vs 610x); not resolved/averaged here."
+  }
+ ],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "61-62"
+  },
+  {
+   "chapter": 4,
+   "pages": "134-135"
+  },
+  {
+   "chapter": 4,
+   "pages": "144-146"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 3
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_011.json",
+   "idx": 5,
+   "topic": "Liquefied natural gas (LNG) and ocean transport"
+  },
+  {
+   "file": "raw/ch04/chunk_000.json",
+   "idx": 5,
+   "topic": "Liquefied natural gas (LNG)"
+  },
+  {
+   "file": "raw/ch04/chunk_002.json",
+   "idx": 6,
+   "topic": "Liquefied Natural Gas (LNG) Process"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:50:48+00:00"
+ }
+}

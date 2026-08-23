@@ -1,0 +1,53 @@
+{
+ "canonical_topic": "historical cost accounting",
+ "type": "concept",
+ "n_merged": 2,
+ "definition": "Historical cost accounting is an accounting approach that values an asset at its original acquisition price and, with a few exceptions, keeps it recorded at that price until the asset is actually sold, without revaluing it as market conditions change.",
+ "core_idea": "An asset is booked at its original purchase price and held there until sale, rather than being revalued as the market moves.",
+ "key_points": [
+  "Typically applied to physical, non-tradable investments such as buildings and equipment.",
+  "Asset value is held at purchase price until actual sale, with a few exceptions, staying flat on the books regardless of market moves \u2014 unlike mark-to-market.",
+  "Can be misleading for long-dated assets since their true economic/carried value isn't regularly updated or refreshed.",
+  "Which method applies (mark-to-market vs. historical cost) is usually dictated by accounting rules, not a discretionary choice."
+ ],
+ "relationships": [
+  "Contrasts with mark-to-market accounting.",
+  "Primary alternative to mark-to-market accounting; hedge accounting is a separate alternative for derivatives hedging physical assets."
+ ],
+ "trading_implications": [
+  "A power plant with fully locked-in fuel and sales contracts may be economically hedged, but if the plant is booked at historical cost while its OTC hedges are marked to market, the combination can look artificially risky because the two sides don't revalue together."
+ ],
+ "caveats": [],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "63-64"
+  },
+  {
+   "chapter": 29,
+   "pages": "544-547"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 2
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 1,
+   "topic": "Historical Cost Accounting"
+  },
+  {
+   "file": "raw/ch29/chunk_000.json",
+   "idx": 1,
+   "topic": "Historical Cost Accounting"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:52:31+00:00"
+ }
+}

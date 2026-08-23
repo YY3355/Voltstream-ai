@@ -1,0 +1,169 @@
+{
+ "canonical_topic": "value at risk",
+ "type": "concept",
+ "n_merged": 12,
+ "definition": "A risk statistic that reduces a portfolio's full distribution of possible P&L (profit and loss) outcomes to a single number, describing how large a P&L move can be expected to happen with a given frequency. It treats portfolio risk as synonymous with P&L volatility and relies on mark-to-market accounting prices as its foundation.",
+ "core_idea": "VAR compresses the combined trading risk of a portfolio into one representative number by picking a chosen percentile/frequency point on the distribution of possible P&L outcomes, trading detail and accuracy for simplicity and for comparability of risk across very different asset classes and instrument types.",
+ "key_points": [
+  "Reduces a full P&L distribution to a single representative number, trading accuracy/detail for simplicity.",
+  "Calculated in two steps: (1) establish mark-to-market prices and build the distribution of possible P&L outcomes via simulation or historical data, (2) find the value at the desired probability/frequency (percentile).",
+  "Notional cost to enter a position (cash required) is not a reliable measure of its size or risk (e.g., a stock position vs. a futures position with a small margin deposit); VAR expresses risk in terms of P&L volatility instead of notional or trade count.",
+  "A complete VAR statement has four components: frequency (a percentile, e.g. 95th \u2248 a 1-in-20 event \u2248 roughly once a month given ~20 trading days/month; 99th \u2248 about 2.5 times a year), time horizon of the move (e.g. one day or one week), sidedness (one-sided vs two-sided), and magnitude of the move in dollar terms.",
+  "VAR states the minimum threshold expected to be exceeded at the stated frequency \u2014 it does not say how much worse the loss could be beyond that threshold (e.g. whether it would be $1 million, $2 million, or $10 million).",
+  "One-sided VAR examines only losses; two-sided VAR examines both profits and losses (volatility in both directions). One-sided VAR is the more commonly used convention because risk managers typically want VAR to represent worst-case loss/stress exposure, not general volatility; two-sided VAR forces a single figure independent of long/short direction, making it primarily a volatility measure.",
+  "Different assets or portfolios can share the same VAR number despite having different underlying risk profiles or return distributions.",
+  "Almost all risk management practice is at least partly built around some form of VAR methodology, and it is one of the primary components of most risk practices, even though methodologies vary across firms.",
+  "VAR describes 'the big picture' of a portfolio rather than analyzing any specific trade; individual trade-level risks are obscured, not eliminated, by the summary.",
+  "VAR's single-number format makes it easy to spot trends over time \u2014 e.g. a $20 million drop in VAR over a week signals a meaningful change in portfolio risk.",
+  "VAR analysis is almost always paired with more granular techniques such as stress testing or worst-case scenario analysis, since VAR alone is only part of the risk picture; common stress tests examine specific scenarios (e.g. expected losses in a financial crisis or natural disaster) and are often reported alongside daily VAR.",
+  "Portfolio VAR combines VAR across multiple assets into one figure that accounts for diversification rather than simply summing individual VARs; the diversification benefit depends entirely on the correlation between the assets combined \u2014 perfect positive correlation (e.g. two identical crude oil contracts) gives no diversification benefit and risk is simply additive, while perfect negative correlation (e.g. offsetting buy/sell positions in the same commodity) lets the risks fully cancel.",
+  "Two mathematical approaches combine portfolio VAR: observed/simulated VAR (value the portfolio across past data or a simulation of future price movements and sample the resulting earnings distribution directly) and parametric VAR (model each asset's returns as a well-known distribution, commonly normal, and combine analytically; convenient because a normal distribution needs only two parameters \u2014 mean and standard deviation \u2014 and the mean is often approximated as zero for financial assets).",
+  "Real-world/energy P&L is often not normally distributed \u2014 gains and losses aren't equally likely. Energy assets that behave like options have asymmetric payoffs a single VAR number doesn't capture well: a peaking power plant loses small, steady amounts most days and earns rare large windfalls on hot summer afternoons; a firm-delivery gas pipeline earns steady profits until an equipment failure causes a large loss, with failures having some but far less seasonality than temperature-driven power demand.",
+  "Season-specific VAR distributions are a possible partial fix for asymmetric/seasonal P&L profiles but not a general solution across asset types; no general model can handle every special case, which is why VAR is limited rather than worthless \u2014 it remains useful precisely because it is simple and gets checked regularly."
+ ],
+ "relationships": [
+  "Depends on / is used alongside mark-to-market accounting prices as its foundation.",
+  "Basis for the one-sided and two-sided VAR variants; two-sided VAR converges with the general concept of portfolio variance/volatility.",
+  "Portfolio VAR depends on the correlation structure between the assets being combined.",
+  "Parametric VAR's reliance on a normal-distribution assumption connects to VAR's weaknesses for asymmetric, fat-tailed, or option-like payoffs.",
+  "Complementary to, not a replacement for, stress testing and worst-case scenario analysis."
+ ],
+ "trading_implications": [
+  "Lets risk managers set common position size/risk limits across very different asset classes and instrument types on a like-for-like basis, since notional cash cost isn't a reliable comparison.",
+  "Different firms choose different frequency percentiles for VAR \u2014 some prefer more frequent, easily-checkable/accurate thresholds, others prefer rarer thresholds meant to represent worst-case scenarios.",
+  "Two portfolios with the same VAR are not necessarily equally risky in every respect, since VAR is a single chosen point on a distribution and the full distribution shape can still differ.",
+  "A desk reporting one-sided VAR is communicating worst-case downside risk, which is more directly actionable for setting loss limits than a two-sided figure.",
+  "A trader combining positions should evaluate their correlation, not just their individual sizes: highly correlated positions add risk roughly additively, while offsetting positions can materially reduce portfolio VAR \u2014 e.g. large but oppositely-directed positions in the same underlying (such as a buy and a sell agreement on crude oil) can largely neutralize price risk despite large notional size on each leg.",
+  "Parametric VAR is computationally simpler and faster to update but inherits the normal-distribution assumption's blind spots for asymmetric or fat-tailed positions; observed/simulated VAR can capture non-normal, asymmetric portfolio behavior more faithfully but requires historical data or a simulation engine.",
+  "Risk limits sized off a single VAR number may understate the true tail risk of assets with option-like, seasonally concentrated payoffs (e.g. peaking plants); a portfolio showing frequent small VAR-consistent losses may still be a good structural bet if its asymmetric upside is under-represented by the VAR metric.",
+  "A risk manager should not rely on VAR alone; material trade-level risks can be present without moving the headline VAR number, so risk desks should pair VAR with scenario/stress reporting for portfolios with known asymmetric or crisis-sensitive exposure."
+ ],
+ "caveats": [
+  "VAR states only the minimum threshold expected to be exceeded at the stated frequency; it does not indicate how much worse the loss could be beyond that threshold.",
+  "The choice of frequency/percentile is a judgment call trading off verifiability (more frequent thresholds) against worst-case representativeness (rarer thresholds).",
+  "Season-specific VAR distributions are only a partial fix for asymmetric/seasonal payoff profiles, not a general solution across asset types.",
+  "No general model can handle every special case, so VAR is limited rather than worthless \u2014 its value comes from being simple enough to implement and regularly reviewed."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "64-66"
+  },
+  {
+   "chapter": 1,
+   "pages": "65-66"
+  },
+  {
+   "chapter": 1,
+   "pages": "67"
+  },
+  {
+   "chapter": 30,
+   "pages": "557-558"
+  },
+  {
+   "chapter": 30,
+   "pages": "557-559"
+  },
+  {
+   "chapter": 30,
+   "pages": "558-560"
+  },
+  {
+   "chapter": 30,
+   "pages": "560-561"
+  },
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  },
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  },
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  },
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  },
+  {
+   "chapter": 30,
+   "pages": "562-565"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 12
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 4,
+   "topic": "Value at Risk (VAR)"
+  },
+  {
+   "file": "raw/ch01/chunk_012.json",
+   "idx": 5,
+   "topic": "One-Sided vs Two-Sided VAR"
+  },
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 0,
+   "topic": "Asymmetric P&L and Seasonal VAR Limitations"
+  },
+  {
+   "file": "raw/ch30/chunk_000.json",
+   "idx": 0,
+   "topic": "Value at Risk (VAR) \u2014 definition and purpose"
+  },
+  {
+   "file": "raw/ch30/chunk_000.json",
+   "idx": 1,
+   "topic": "VAR as a summary statistic \u2014 strengths and limits"
+  },
+  {
+   "file": "raw/ch30/chunk_000.json",
+   "idx": 2,
+   "topic": "The four components of a VAR description"
+  },
+  {
+   "file": "raw/ch30/chunk_000.json",
+   "idx": 3,
+   "topic": "Calculating VAR \u2014 the two-step process"
+  },
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 0,
+   "topic": "One-sided vs. two-sided VAR"
+  },
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 1,
+   "topic": "Portfolio VAR and diversification"
+  },
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 2,
+   "topic": "Observed/simulated VAR vs. parametric VAR"
+  },
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 4,
+   "topic": "Weaknesses of VAR: single-number abstraction and asymmetric payoffs"
+  },
+  {
+   "file": "raw/ch30/chunk_001.json",
+   "idx": 5,
+   "topic": "Stress testing as a supplement to VAR"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T05:26:45+00:00"
+ }
+}

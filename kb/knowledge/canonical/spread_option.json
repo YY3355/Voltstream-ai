@@ -1,0 +1,151 @@
+{
+ "canonical_topic": "spread option",
+ "type": "concept",
+ "n_merged": 7,
+ "definition": "A spread option is an option whose payoff depends on the difference between two underlying asset prices exceeding a strike/threshold level, rather than a single asset price exceeding a fixed strike \u2014 equivalent to an option with a variable strike price instead of a fixed one.",
+ "core_idea": "Spread options generalize single-asset option payoffs to two underlying assets and dominate energy derivatives because so many energy deals hinge on a spread: price-here-vs-price-there minus transport cost (location), price-now-vs-price-later minus storage cost (time), and fuel-vs-power minus conversion cost (input/output). They cannot be priced exactly with standard single-asset formulas, only closely approximated (e.g. via Kirk's approximation), and their valuation is dominated by the correlation between the two underlyings \u2014 a hard-to-observe, continuously-monitored input rather than a one-time calibration.",
+ "key_points": [
+  "Payoff depends on the difference between two underlying asset prices exceeding a strike/threshold, analogous to a normal option payoff but with two underlyings.",
+  "Equivalent to thinking of it as an option with a variable strike price rather than a fixed one.",
+  "Prevalent in energy markets because deals commonly hinge on: a location spread minus transportation cost, a time spread minus storage cost, or a fuel-to-power spread minus conversion cost.",
+  "Cannot be exactly priced with standard (single-asset) option pricing formulas, but can be closely approximated.",
+  "Correlation between the two underlying assets is the single most important \u2014 and hardest \u2014 input to spread option valuation.",
+  "Correlation is difficult to estimate: historical data can be misleading, there usually isn't a liquid enough market to infer what correlation other participants are using, and available data is often spot price data, which is more volatile and less correlated than forward price data.",
+  "Correlation risk must be actively monitored for the entire life of the trade, not just estimated once at inception.",
+  "Managing a spread options portfolio requires dedicated infrastructure to examine correlations between products on an ongoing basis.",
+  "Incorrectly estimating correlation is called the single easiest way to mis-value a spread option position.",
+  "Whichever side (buyer or seller) estimates correlation more accurately will systematically profit relative to the other.",
+  "Kirk's approximation adapts the Black Scholes / Black 76 framework by modeling the ratio of the two underlying prices, F1/(F2+X), instead of their difference, avoiding the negative-price problem inherent to spreads, and multiplies the resulting value by (F2 + X).",
+  "Kirk's approximation is termed an 'approximation' specifically because of how the volatility input is estimated, not because the payoff transformation itself is inexact; it is only an approximate solution overall but is described as typically producing reasonably accurate results.",
+  "A spread option's downside is capped at zero (e.g. a plant simply doesn't run) while its upside is uncapped, so a wider distribution of possible expiration spreads raises the option's expected value.",
+  "Wheeling (transmission) can be modeled as a series of spread options: up-front line rental/construction cost is like the option premium, variable transport costs (line losses, other variable expenses) are like the strike price, and the payoff each period depends on the price difference between the two regions."
+ ],
+ "relationships": [
+  "Generalizes single-asset (vanilla) option payoff logic to two underlying assets.",
+  "Kirk's approximation extends the Black Scholes / Black 76 option pricing framework to spread options and requires an implied volatility and implied correlation estimation step.",
+  "Correlation risk in spread options is a specific instance of model risk.",
+  "Underlies the pricing of physical energy deals such as transport, storage, and conversion economics.",
+  "Distribution width of the spread at expiration is itself driven by time-to-expiration and correlation, which in turn drives option value.",
+  "Wheeling valuation as a spread option builds on regional power price divergence as the source of the spread payoff."
+ ],
+ "trading_implications": [
+  "Firms trading spread options need infrastructure specifically for monitoring correlation risk between products, continuously over the life of a trade, not just at inception.",
+  "Misestimating correlation is the single easiest way to mis-value a spread option position; the side that estimates it more accurately profits systematically relative to the other.",
+  "Spread option books carry embedded model risk that is less visible than price risk, since the key correlation input isn't independently observable.",
+  "Used to value physical deals: location spreads (transport), time spreads (storage), and fuel-to-power conversion spreads.",
+  "Kirk's approximation provides a tractable, computationally simple way to price spread options (e.g. spark spreads, locational spreads) without a full two-factor numerical model.",
+  "Higher expected volatility in the power-fuel relationship should be treated as value-additive for a plant owner, given the option's asymmetric payoff, not purely as a risk to hedge away.",
+  "Transmission line capacity should be used only in periods when the regional price spread exceeds variable transport costs; a prospective wheeling investment can be valued as pricing a strip of spread options rather than a single price bet."
+ ],
+ "caveats": [
+  "Spread options cannot be exactly priced with standard single-asset option pricing formulas \u2014 only closely approximated.",
+  "Kirk's approximation is only an approximate solution overall, specifically because of how the volatility input is estimated, though it is described as typically producing reasonably accurate results.",
+  "Correlation between highly correlated assets produces very different spread behavior than correlation between uncorrelated assets, and correlation itself is difficult to estimate reliably: historical/spot data can mislead, and markets are often not liquid enough to observe the correlation other participants are using."
+ ],
+ "contradictions": [],
+ "formulas": [
+  {
+   "name": "Spread option call payoff (spread expressed as the option's price)",
+   "formula": "Call_Payoff = (Asset_Price1 - Asset_Price2) - Strike_Price",
+   "variables": {
+    "Asset_Price1": "price of the first underlying asset",
+    "Asset_Price2": "price of the second underlying asset",
+    "Strike_Price": "strike level applied to the spread"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "47-48",
+    "section_hint": "Spread Options"
+   }
+  },
+  {
+   "name": "Spread option call payoff (second asset folded into strike)",
+   "formula": "Call_Payoff = Asset_Price - (Asset_Price2 + Strike_Price)",
+   "variables": {
+    "Asset_Price": "price of the first underlying asset",
+    "Asset_Price2": "price of the second underlying asset",
+    "Strike_Price": "strike level applied before combining with Asset_Price2"
+   },
+   "source": {
+    "chapter": 1,
+    "pages": "47-48",
+    "section_hint": "Spread Options"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "47-48"
+  },
+  {
+   "chapter": 1,
+   "pages": "69"
+  },
+  {
+   "chapter": 15,
+   "pages": "374-375"
+  },
+  {
+   "chapter": 15,
+   "pages": "375-378"
+  },
+  {
+   "chapter": 15,
+   "pages": "382-384"
+  },
+  {
+   "chapter": 18,
+   "pages": "435"
+  },
+  {
+   "chapter": 19,
+   "pages": "438-440"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 7
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_007.json",
+   "idx": 2,
+   "topic": "Spread options and why they dominate energy derivatives"
+  },
+  {
+   "file": "raw/ch01/chunk_013.json",
+   "idx": 6,
+   "topic": "Correlation Risk in Spread Options"
+  },
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 0,
+   "topic": "Spread Options"
+  },
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 5,
+   "topic": "Correlation Risk in Spread Options"
+  },
+  {
+   "file": "raw/ch15/chunk_001.json",
+   "idx": 2,
+   "topic": "Kirk's approximation for valuing spread options"
+  },
+  {
+   "file": "raw/ch18/chunk_002.json",
+   "idx": 5,
+   "topic": "Wider spread distributions increase spread option value (asymmetric payoff)"
+  },
+  {
+   "file": "raw/ch19/chunk_000.json",
+   "idx": 3,
+   "topic": "Wheeling valued as a spread option on transmission capacity"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:39:56+00:00"
+ }
+}

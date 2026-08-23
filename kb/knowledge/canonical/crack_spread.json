@@ -1,0 +1,121 @@
+{
+ "canonical_topic": "crack spread",
+ "type": "concept",
+ "n_merged": 5,
+ "definition": "The crack spread is the price relationship between crude oil and the refined products made from it (e.g., gasoline, diesel/heating oil): crude oil price moves push all refined product prices in the same direction (a shared cost link), while distillation's joint-production nature can create negative correlation among the refined products themselves. It is also measured as the difference between the wholesale price of finished refined products and the price of the crude oil used to make them, approximating a refiner's profit margin from cracking (the refining process of separating and transforming crude oil into commercially saleable products).",
+ "core_idea": "Crack spread describes both (a) the linked-but-distinct price relationship between crude and refined products \u2014 crude moves them together while joint production can pull them apart from each other \u2014 and (b) the measurable refining margin (refined product price minus crude price) that refiners earn and that traders can take a position on independent of outright crude direction.",
+ "key_points": [
+  "Crude oil price increases raise the price of all refined products (a shared cost link).",
+  "Distillation's joint-production nature creates a separate, often negative-correlation link among refined product prices: refiners cannot produce more of one refined product (e.g. gasoline) without also producing more of the others as a byproduct.",
+  "Extra output of co-produced products from that joint production can flood their market and drive those prices down even while crude and the targeted product move up (e.g. a gasoline shortage response glutting other distillates).",
+  "This crude-to-refined-product relationship, plus the product-to-product tension it creates, is what the term 'crack spread' refers to.",
+  "Cracking is the refining process of separating and transforming crude oil into commercially saleable products.",
+  "Crack Spread = Price(Refined Products) - Price(Crude Oil), approximating a refiner's profit margin.",
+  "Because most refined products (unlike crude oil) are not exported internationally, crack spreads vary substantially by region, set by local supply and demand for finished products.",
+  "If the spread between finished products and crude oil is too narrow to be profitable, refiners cut back production until finished product prices rise enough to restore a profit.",
+  "Standard crack-spread trades combine crude oil, gasoline (RBOB), and diesel/heating oil futures in a stated ratio X:Y:Z (crude:gasoline:diesel contracts); 3:2:1 is most common, with 2:1:1 and 5:3:2 also fairly common.",
+  "Regional benchmark crudes: WTI Crude in North America, Brent Crude in Europe.",
+  "Crude oils differ in composition as well as price \u2014 premium crudes like WTI or Nigerian Bonny Light yield a higher percentage of light, gasoline-like products from simple distillation than lower-quality crudes.",
+  "Refiners must optimize which crude oils they run to produce the most profitable regional mix of refined products.",
+  "Refiners face price risk between when they buy crude and when they can sell finished products, so they hedge by trading crude, gasoline, and diesel/heating oil futures to lock in a sales margin ahead of time.",
+  "Crack spreads also let major consumers of refined products lock in a spread without taking on large outright crude price exposure.",
+  "Refiners are naturally long the crack spread (they benefit when refined products appreciate relative to crude) and can eliminate that exposure by selling/going short the crack spread.",
+  "Short-term supply/demand issues can temporarily widen or move the spread.",
+  "Refinery competition tends to restore the spread toward the conversion cost over the long run."
+ ],
+ "relationships": [
+  "Distillation process",
+  "Crude oil pricing",
+  "Underlies both refiner hedging and speculative crack-spread trading",
+  "Refined products can be negatively correlated with each other despite shared positive correlation with crude",
+  "Builds on the basic crack spread definition (ratio-based crude:gasoline:diesel trades)",
+  "Example of Mean Reversion vs. Martingale Behavior in Spreads"
+ ],
+ "trading_implications": [
+  "The crack spread is a distinct risk/trading factor separate from outright crude price risk, since refined product prices can diverge from each other even as they move together with crude.",
+  "A trader targeting a gasoline shortage trade should also watch for downward pressure on other distillates from the increased joint output.",
+  "Crack spread positions capture the input-output margin, not just the outright direction of crude.",
+  "A typical crack-spread trade is to buy (go long) a spread that is currently too narrow for refiners to profit from, expecting production cutbacks to widen the spread as product prices rise.",
+  "Because crude and refined product prices tend to move up and down together, holding a crack spread has limited net exposure to outright crude oil price moves.",
+  "Being long the crack spread benefits from refined products rising relative to crude \u2014 the refiner's natural, unhedged position.",
+  "Selling (going short) the crack spread benefits when crude oil prices rise or refined product prices decline, and is used by refiners to offset their natural long exposure.",
+  "A variant spread trade speculates on the relationship between gasoline and heating oil directly rather than against crude."
+ ],
+ "caveats": [
+  "Crack spreads vary substantially by region since most refined products, unlike crude oil, are not exported internationally.",
+  "Short-term supply/demand issues can temporarily widen or move the spread away from the conversion-cost level before refinery competition restores it over the long run."
+ ],
+ "contradictions": [],
+ "formulas": [
+  {
+   "name": "Crack Spread",
+   "formula": "Crack Spread = Price(Refined Products) - Price(Crude Oil)",
+   "variables": {
+    "Price(Refined Products)": "wholesale price of finished petroleum products (e.g., gasoline, diesel/heating oil)",
+    "Price(Crude Oil)": "price of the crude oil feedstock"
+   },
+   "source": {
+    "chapter": 6,
+    "pages": "238-239",
+    "section_hint": "2.3 Oil \u2014 Crack Spreads"
+   }
+  }
+ ],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "37"
+  },
+  {
+   "chapter": 6,
+   "pages": "226-226"
+  },
+  {
+   "chapter": 6,
+   "pages": "238-239"
+  },
+  {
+   "chapter": 6,
+   "pages": "238-239"
+  },
+  {
+   "chapter": 15,
+   "pages": "377-377"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 5
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_004.json",
+   "idx": 7,
+   "topic": "The crack spread relationship between crude and refined products"
+  },
+  {
+   "file": "raw/ch06/chunk_002.json",
+   "idx": 0,
+   "topic": "Crack spread relationship between crude oil and refined products"
+  },
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 2,
+   "topic": "Crack spread \u2014 definition and refining economics"
+  },
+  {
+   "file": "raw/ch06/chunk_004.json",
+   "idx": 3,
+   "topic": "Crack spread ratios, benchmark crudes, and refiner hedging"
+  },
+  {
+   "file": "raw/ch15/chunk_000.json",
+   "idx": 7,
+   "topic": "Crack Spread (Conversion-Linked Spread Example)"
+  }
+ ],
+ "_synth_validation": {
+  "status": "CLEAN",
+  "unsupported": [],
+  "checked_at": "2026-08-22T23:43:57+00:00"
+ }
+}

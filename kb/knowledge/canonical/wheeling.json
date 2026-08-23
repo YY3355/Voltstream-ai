@@ -1,0 +1,180 @@
+{
+ "canonical_topic": "wheeling",
+ "type": "concept",
+ "n_merged": 12,
+ "definition": "Wheeling is the physical transport of electricity from one regional grid or market to another \u2014 typically to move low-cost power into a higher-price region and capture the price spread \u2014 with profitability requiring that the spread exceed transmission losses and costs; at least one leg of the trade (the purchase at the cheap end, the delivery/sale at the expensive end) must occur in the physical spot market, so wheeling cannot be replicated with financial contracts alone.",
+ "core_idea": "Wheeling captures regional electricity price divergence by physically renting/using transmission capacity to move power from a low-price (or low-volatility) market to a high-price (or high-volatility) market, weighing generation-cost savings and captured price spread against transmission cost, transmission losses, and the operational/delivery risk of the physical leg.",
+ "key_points": [
+  "Wheeling is the transport of electricity from one regional grid or market to another.",
+  "Regional price differences (e.g. driven by local generation mix such as hydro availability, or by differing marginal fuels) are the source of wheeling profitability; wheeling is only profitable if the price spread exceeds transmission losses and costs.",
+  "Seasonal conditions (e.g. spring snowmelt driving Pacific Northwest hydro prices to zero or negative) can create predictable windows of very cheap power in a source region.",
+  "Total cost of delivered power = generation cost + transmission cost; producing power where it is consumed minimizes transmission cost, while larger, more efficient plants have historically pushed toward centralized generation, increasing transmission distance/cost \u2014 wheeling economics balance this trade-off.",
+  "The purpose of wheeling is to move low-cost power to high-price areas, lowering consumer costs, and was a major driver of electricity market deregulation.",
+  "Wheeling models are used to evaluate building new high-efficiency power plants versus building new long-distance transmission lines.",
+  "Some generation types (cogeneration, hydroelectric, solar) are location-constrained; their lower generation cost must outweigh the cost of transmitting power from that fixed location.",
+  "The U.S. has three major synchronized interconnects \u2014 Eastern (east of the Rockies), Western (west of the Rockies), and ERCOT (Texas) \u2014 within which power moves freely, but prices remain a regional phenomenon (even within one interconnect) due to differences in population, industry mix, and weather.",
+  "Wheeling power between grids within one interconnect, where the two locations' marginal fuels differ (e.g. coal-marginal Midwest vs. gas-marginal Gulf Coast), can resemble an option: a fixed cost is paid up front to rent/reserve transmission capacity, and the payoff depends on whether the price divergence between the marginal fuels materializes.",
+  "At least one leg of a wheeling trade must occur in the physical spot market, tying wheeling profits to actual transmission capacity rather than to a purely financial/paper position.",
+  "Wheeling can replicate the economic exposure of a financial option at lower cost by paying the construction/rental cost of a physical transmission line instead of an option premium, when that cost is low relative to the premium \u2014 illustrating that physical infrastructure can substitute for financial derivatives when the physical route is cheaper.",
+  "Imported (wheeled) power typically displaces existing local generation; if transmission capacity to deliver the import proves insufficient, the region must fall back on expensive, fast-starting peaking generation (since decommissioned local units can't be quickly restarted), and even a short period of peaker reliance can erase the entire economic benefit of the wheeling deal.",
+  "A wheeling trade can function as a volatility play: renting transmission to move power from a low-volatility to a high-volatility market (e.g. differing marginal-fuel volatility) captures periodic price spikes in the volatile region even when average prices are similar between the two; profit comes from repeated spot-market trades plus seasonal futures trades where predictable weather-driven demand differences exist.",
+  "A wheeling volatility position can be hedged by selling natural gas options or locking in seasonal futures, since it is structurally long volatility; execution requires a long-term transmission rental contract plus per-transaction scheduling of delivery, transmission, and sale, creating significant operational overhead and risk.",
+  "Location spread trades \u2014 long futures/forwards in one region and short in another \u2014 are the purely financial analog of wheeling: used when transmission is unavailable (so power bought in a market must be resold in that same market), operationally simpler (no physical scheduling, cash-settled), but unable to physically deliver power to meet an obligation in the other region and must be unwound before physical delivery/expiration."
+ ],
+ "relationships": [
+  "Regional price divergence (from local generation mix, marginal fuel, weather, population, or industry differences) is the source of wheeling profitability.",
+  "Trade-off between generation efficiency (favors large centralized plants) and transmission cost (favors local generation).",
+  "Linked to electricity market deregulation and to transmission-line/new-plant investment decisions.",
+  "Wheeling between grids with different marginal fuels resembles an option: transmission capacity rental (fixed cost) for a payoff tied to marginal-fuel price divergence.",
+  "Transmission capacity availability directly determines whether decommissioning local generation in favor of imports is economically safe.",
+  "Location spread trades are the financial substitute for a wheeling trade when transmission is unavailable.",
+  "Wheeling economics depend on the transmission-loss trade-off noted for long-distance transport."
+ ],
+ "trading_implications": [
+  "Traders can exploit price spreads between adjacent or interconnected regional grids by wheeling power, provided the spread exceeds transmission losses and costs.",
+  "Seasonal hydro or weather conditions can create predictable windows of very cheap, negative-priced, or volatile power that wheeling can exploit, including via seasonal futures.",
+  "A wheeling opportunity exists when the price differential between two locations exceeds the cost of transmitting power between them.",
+  "Physical transmission capacity purchases can be used to get option-like exposure to marginal-fuel price divergence between regions.",
+  "Profitability rises with the size and persistence of the price gap between the two connected regions.",
+  "Wheeling profits are capped by actual transmission line capacity, not just by the size of the price spread.",
+  "Comparing a locational spread option (or a location spread trade) to a wheeling deal means weighing the option premium/operational simplicity against the transmission rental cost and physical delivery capability.",
+  "Wheeling deals carry asymmetric delivery-failure risk: peaker fallback costs can exceed the import savings if transmission capacity proves insufficient; risk assessment should include the probability and cost of a transmission shortfall, not just the price spread.",
+  "The main risk in a wheeling volatility play is overpaying for the transmission rental, analogous to overpaying an option premium; substantial operational risk exists because every trade requires physically scheduling deliveries and transmission.",
+  "A trading desk pursuing wheeling needs the capability to handle scheduling and paperwork for physical transactions, not just financial execution.",
+  "Location spreads have lower operational risk than wheeling (no physical scheduling) but cannot physically deliver power to cover another region's obligation, and must be unwound via offsetting trades before physical delivery/expiration."
+ ],
+ "caveats": [
+  "Wheeling involves significant power loss over long-distance transport, which can be substantial relative to the captured price spread.",
+  "ERCOT's status as its own distinct interconnect (separate from Eastern/Western) is directly relevant to why its prices/dynamics can diverge from the rest of the U.S. grid.",
+  "A short period of transmission shortfall (a couple of days, per one source) can eliminate the entire economic benefit of a wheeling deal.",
+  "Wheeling requires a physical spot-market leg and cannot be fully replicated with financial contracts alone."
+ ],
+ "contradictions": [],
+ "formulas": [],
+ "source_refs": [
+  {
+   "chapter": 1,
+   "pages": "28"
+  },
+  {
+   "chapter": 1,
+   "pages": "52"
+  },
+  {
+   "chapter": 1,
+   "pages": "53"
+  },
+  {
+   "chapter": 1,
+   "pages": "53"
+  },
+  {
+   "chapter": 5,
+   "pages": "196-197"
+  },
+  {
+   "chapter": 19,
+   "pages": "437-438"
+  },
+  {
+   "chapter": 19,
+   "pages": "437-438"
+  },
+  {
+   "chapter": 19,
+   "pages": "441-441"
+  },
+  {
+   "chapter": 19,
+   "pages": "441-442"
+  },
+  {
+   "chapter": 19,
+   "pages": "445-446"
+  },
+  {
+   "chapter": 19,
+   "pages": "446-447"
+  },
+  {
+   "chapter": 19,
+   "pages": "445-446"
+  }
+ ],
+ "validation_rollup": {
+  "det-pass": 12
+ },
+ "contributing_items": [
+  {
+   "file": "raw/ch01/chunk_002.json",
+   "idx": 4,
+   "topic": "Wheeling and inter-regional power price differences"
+  },
+  {
+   "file": "raw/ch01/chunk_008.json",
+   "idx": 6,
+   "topic": "Wheeling and the generation-transmission cost trade-off"
+  },
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 0,
+   "topic": "Wheeling and locational price arbitrage"
+  },
+  {
+   "file": "raw/ch01/chunk_009.json",
+   "idx": 1,
+   "topic": "Inter-interconnect wheeling as an embedded option"
+  },
+  {
+   "file": "raw/ch05/chunk_005.json",
+   "idx": 7,
+   "topic": "Regional power markets and wheeling"
+  },
+  {
+   "file": "raw/ch19/chunk_000.json",
+   "idx": 0,
+   "topic": "Wheeling (long-distance power transmission trading)"
+  },
+  {
+   "file": "raw/ch19/chunk_000.json",
+   "idx": 2,
+   "topic": "Wheeling requires a physical spot-market leg"
+  },
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 0,
+   "topic": "Wheeling as a low-cost alternative to buying financial options"
+  },
+  {
+   "file": "raw/ch19/chunk_001.json",
+   "idx": 3,
+   "topic": "Wheeling's economic purpose can be undone by transmission shortfalls"
+  },
+  {
+   "file": "raw/ch19/chunk_002.json",
+   "idx": 0,
+   "topic": "Wheeling trades as a volatility play"
+  },
+  {
+   "file": "raw/ch19/chunk_002.json",
+   "idx": 1,
+   "topic": "Location spread trades as the financial analog of wheeling"
+  },
+  {
+   "file": "raw/ch19/chunk_002.json",
+   "idx": 3,
+   "topic": "Wheeling trade example: Midwest coal to Gulf Coast gas"
+  }
+ ],
+ "_synth_validation": {
+  "status": "FLAGGED",
+  "unsupported": [
+   {
+    "field": "trading_implications",
+    "claim": "Seasonal hydro or weather conditions can create predictable windows of very cheap, negative-priced, or volatile power that wheeling can exploit, including via seasonal futures.",
+    "reason": "Conflates two separate source facts into a new bridging claim: the Pacific Northwest hydro/snowmelt cheap-or-negative-price window (source item 1, spot-market only, no futures mentioned) and the seasonal-futures point (source items 10/12), which is specifically tied to predictable South-vs-Midwest weather-driven demand timing in the marginal-fuel volatility trade, not to hydro-driven price windows. No source item states that seasonal futures can be used to exploit hydro-driven cheap/negative-price windows \u2014 this generalizes 'seasonal futures' to a broader set of conditions than any source supports."
+   }
+  ],
+  "checked_at": "2026-08-22T05:28:23+00:00"
+ }
+}

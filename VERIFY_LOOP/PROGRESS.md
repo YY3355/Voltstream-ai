@@ -25,7 +25,10 @@ listed in excluded_from_pass3.json. Recomputed from _validation each run (re-run
       aware judge caught 3/3 (real subtle over-reaches). DESIGN = Option A: judge is the guarantee, flagged
       objects reach production FLAGGED (Pass-2 architecture); B-line folded as flag-rate reducer (not a
       gate). ✔
-- [ ] 3 — FULL SYNTHESIS (on go): all chapters + global pass. Resumable.
+- [x] 3 — FULL SYNTHESIS. 24/24 multi-item groups merged (killed once, resumed clean from synth_state).
+      0 error scars (3 transient rc=1 retried OK on resume). Flag rate 8/24 = 33% (== ~1/3 pilot baseline;
+      circuit-breaker not tripped). 4 contradictions. 8 flagged objects -> synth-review queue (Option A).
+      707 singletons still to fold in as pass-through canonical objects in T4. ✔
 - [ ] 4 — STRUCTURE + OUTPUTS: energy_knowledge_base/ layout + taxonomy/concept_graph/contradictions. Counts
       reconcile; 5 random re-checked.
 - [ ] 5 — REPORT PDF: canonical count, merge stats, top-10 by source breadth, contradictions, excluded count,
